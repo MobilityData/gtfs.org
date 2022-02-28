@@ -1,9 +1,6 @@
 # GTFS Realtime Protobuf
-
 Download the [gtfs-realtime.proto](gtfs-realtime.proto) file and use it to compile your GTFS-realtime feed. The contents of the file are shown inline below.
-
 For more information about using protobufs, see the [Protocol Buffers Developer Guide](https://developers.google.com/protocol-buffers/docs/overview).
-
 ```protobuf
 // Copyright 2015 The GTFS Specifications Authors.
 //

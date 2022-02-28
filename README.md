@@ -48,13 +48,18 @@ The GTFS Documentation Platform is based on open source content pulled from vari
 | /extensions/ | TBD | |
 | /about/ | TBD | |
 
+## Building the site locally
+
+1. Clone this repository: `git clone https://github.com/MobilityData/gtfs.org`
+1. Ensure you have an up-to-date version of pip: `pip install pip`
+1. Have [`requirements.txt`](requirments.txt) installed: `pip install ~/mobilitydata/gtfs.org/requirements.txt`
+1. In the terminal, navigate to the repository directory (`~/mobilitydata/gtfs.org`) and run this command to update the content for the specification references and best practices: `bash scripts/fetchdata.sh`
+1. To run the site locally: `mkdocs serve`
+1. To deploy the site to GitHub Pages: `mkdocs gh-deploy`
+
 ## Updating site structure
 
 If a [source of truth](#source-of-truth-licenses) is specified, the site content is pulled, cleaned programatically, and given a directory destination in the repository. If a source of truth is unspecified, the content lives in this repository. The site structure is manually built in `mkdocs.yml` under `nav: `.
-
-## Maintenance
-
-- Script for site maintenance will be published soon.
 
 ## License
 
