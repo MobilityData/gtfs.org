@@ -40,13 +40,13 @@ message MyTripDescriptorExtension {
 
 |Extension ID|Developer|Contact|Details|
 |------------|---------|-------|-------|
-|1000|OneBusAway|[onebusaway-developers](http://groups.google.com/group/onebusaway-developers)|https://github.com/OneBusAway/onebusaway/wiki/GTFS-Realtime-Resources|
-|1001|New York City MTA|[mtadeveloperresources](http://groups.google.com/group/mtadeveloperresources)|http://mta.info/developers/|
+|1000|OneBusAway|[onebusaway-developers](https://groups.google.com/group/onebusaway-developers)|https://github.com/OneBusAway/onebusaway/wiki/GTFS-Realtime-Resources|
+|1001|New York City MTA|[mtadeveloperresources](https://groups.google.com/group/mtadeveloperresources)|https://mta.info/developers/|
 |1002|Google|[transit-realtime-partner-support@google.com](mailto:transit-realtime-partner-support@google.com)|Google Maps Live Transit Updates|
-|1003|OVapi|gtfs-rt at ovapi.nl|http://gtfs.ovapi.nl|
+|1003|OVapi|gtfs-rt at ovapi.nl|https://gtfs.ovapi.nl|
 |1004|Metra|[William Ashbaugh <w.l.ashbaugh@gmail.com>](mailto:w.l.ashbaugh@gmail.com)|
 |1005|Metro-North Railroad|[John Larsen](mailto:mnrappdev@mnr.org)|
-|1006|realCity|[David Varga](mailto:transit@realcity.io)|http://realcity.io|
+|1006|realCity|[David Varga](mailto:transit@realcity.io)|https://realcity.io|
 |1007|Transport for NSW|[timetable@transport.nsw.gov.au](mailto:timetable@transport.nsw.gov.au)|[Group discussion](https://groups.google.com/forum/#!msg/gtfs-realtime/WYwIs4Hd_E0/PbkMnELUAwAJ)|
 |1008|SEPTA - Southeastern Pennsylvania Transportation Authority|[Gregory Apessos](mailto:GApessos@septa.org)|https://github.com/septadev|
 |1009|Swiftly|[mike@goswift.ly](mailto:mike@goswift.ly)|[Group Discussion](https://groups.google.com/forum/#!msg/gtfs-realtime/mmnZV6L-2ls/wVWdknhLBwAJ)|

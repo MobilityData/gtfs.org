@@ -1,6 +1,6 @@
 # GTFS Schedule Best Practices
 
-These are recommended practices for describing public transportation services in the [General Transit Feed Specification (GTFS)](../reference). These practices have been synthesized from the experience of the [GTFS Best Practices working group](#gtfs-best-practices-working-group) members and [application-specific GTFS practice recommendations](http://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS). 
+These are recommended practices for describing public transportation services in the [General Transit Feed Specification (GTFS)](../reference). These practices have been synthesized from the experience of the [GTFS Best Practices working group](#gtfs-best-practices-working-group) members and [application-specific GTFS practice recommendations](https://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS). 
 
 For further background, see the [Frequently Asked Questions](#frequently-asked-questions-faq).
 
@@ -71,7 +71,7 @@ __Examples:__
 | Field Name | Recommendation |
 | --- | --- |
 | `route_short_name` | Include `route_short_name` if there is a brief service designation. This should be the commonly-known passenger name of the service, no longer than 12 characters. |
-| `route_long_name` | The definition from Specification reference: <q>This name is generally more descriptive than the <code>route_short_name</code> and will often include the route's destination or stop. At least one of <code>route_short_name</code> or <code>route_long_name</code> must be specified, or potentially both if appropriate. If the route does not have a long name, please specify a <code>route_short_name</code> and use an empty string as the value for this field.</q><br>Examples of types of long names are below:<table class='example'><thead><tr><th colspan='3'>Primary Travel Path or Corridor</th></tr><tr><th>Route Name</th><th>Form</th><th>Agency</th></tr></thead><tbody><tr><td><a href='https://www.sfmta.com/getting-around/transit/routes-stops/n-judah'>“N”/“Judah”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td><td><a href='https://www.sfmta.com/'>Muni</a>, in San Francisco</td></tr><tr><td><a href='https://trimet.org/schedules/r006.htm'>“6“/“ML King Jr Blvd“</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td><td><a href='https://trimet.org/'>TriMet</a>, in Portland, Or.</td></tr><tr><td><a href='http://www.ratp.fr/informer/pdf/orienter/f_plan.php?nompdf=m6'>“6”/“Nation - Étoile”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td><td><a href='http://www.ratp.fr/'>RATP</a>, in Paris France.</td></tr><tr><td><a href='http://www.bvg.de/images/content/linienverlaeufe/LinienverlaufU2.pdf'>“U2”-“Pankow – Ruhleben”</a></td><td><code>route_short_name</code>-<br><code>route_long_name</code></td><td><a href='http://www.bvg.de/'>BVG</a>, in Berlin, Germany</td></tr></tbody></table><table class='example'><thead><tr><th>Description of the Service</th></tr></thead><tbody><tr><td><a href='https://128bc.org/schedules/rev-bus-hartwell-area/'>“Hartwell Area Shuttle“</a></td></tr></tbody></table>        
+| `route_long_name` | The definition from Specification reference: <q>This name is generally more descriptive than the <code>route_short_name</code> and will often include the route's destination or stop. At least one of <code>route_short_name</code> or <code>route_long_name</code> must be specified, or potentially both if appropriate. If the route does not have a long name, please specify a <code>route_short_name</code> and use an empty string as the value for this field.</q><br>Examples of types of long names are below:<table class='example'><thead><tr><th colspan='3'>Primary Travel Path or Corridor</th></tr><tr><th>Route Name</th><th>Form</th><th>Agency</th></tr></thead><tbody><tr><td><a href='https://www.sfmta.com/getting-around/transit/routes-stops/n-judah'>“N”/“Judah”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td><td><a href='https://www.sfmta.com/'>Muni</a>, in San Francisco</td></tr><tr><td><a href='https://trimet.org/schedules/r006.htm'>“6“/“ML King Jr Blvd“</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td><td><a href='https://trimet.org/'>TriMet</a>, in Portland, Or.</td></tr><tr><td><a href='https://www.ratp.fr/informer/pdf/orienter/f_plan.php?nompdf=m6'>“6”/“Nation - Étoile”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td><td><a href='https://www.ratp.fr/'>RATP</a>, in Paris France.</td></tr><tr><td><a href='https://www.bvg.de/images/content/linienverlaeufe/LinienverlaufU2.pdf'>“U2”-“Pankow – Ruhleben”</a></td><td><code>route_short_name</code>-<br><code>route_long_name</code></td><td><a href='https://www.bvg.de/'>BVG</a>, in Berlin, Germany</td></tr></tbody></table><table class='example'><thead><tr><th>Description of the Service</th></tr></thead><tbody><tr><td><a href='https://128bc.org/schedules/rev-bus-hartwell-area/'>“Hartwell Area Shuttle“</a></td></tr></tbody></table>        
 | | `route_long_name` should not contain the `route_short_name`. |
 | | Include the full designation including a service identity when populating `route_long_name`. Examples:<table class='example'><thead><tr><th>Service Identity</th><th>Recommendation</th><th>Examples</th></tr></thead><tbody><tr><td>"MAX Light Rail"<br>TriMet, in Portland, Oregon</td><td>The <code>route_long_name</code> should include the brand (MAX) and the specific route designation</td><td>"MAX Red Line" "MAX Blue Line"</td></tr><tr><td>"Rapid Ride"<br>ABQ Ride, in Albuquerque, New Mexico</td><td>The <code>route_long_name</code> should include the brand (Rapid Ride) and the specific route designation</td><td>"Rapid Ride Red Line"<br>"Rapid Ride Blue Line"</td></tr></tbody></table>
 | `route_id` | All trips on a given named route should reference the same `route_id`. <li>Different directions of a route should not be separated into different `route_id` values.</li><li>Different spans of operation of a route should not be separated into different `route_id` values. i.e. do not create different records in `routes.txt` for “Downtown AM” and “Downtown PM” services).</li> |
@@ -228,13 +228,13 @@ Lasso routes combine aspects of a loop route and directional route.
 | Examples: |
 | -------- |
 | Subway Routes ([Chicago](https://www.transitchicago.com/assets/1/6/ctamap_Lsystem.pdf)) |
-| Bus Suburb to Downtown Routes ([St. Albert](https://stalbert.ca/uploads/PDF-infosheets/RideGuide-201-207_Revised_Oct_2017.pdf) or [Edmonton](http://webdocs.edmonton.ca/transit/route_schedules_and_maps/future/RT039.pdf)) |
-| CTA Brown Line ([CTA Website](http://www.transitchicago.com/brownline/) and [TransitFeeds](https://transitfeeds.com/p/chicago-transit-authority/165/latest/route/Brn)) |
+| Bus Suburb to Downtown Routes ([St. Albert](https://stalbert.ca/uploads/PDF-infosheets/RideGuide-201-207_Revised_Oct_2017.pdf) or [Edmonton](https://webdocs.edmonton.ca/transit/route_schedules_and_maps/future/RT039.pdf)) |
+| CTA Brown Line ([CTA Website](https://www.transitchicago.com/brownline/) and [TransitFeeds](https://transitfeeds.com/p/chicago-transit-authority/165/latest/route/Brn)) |
 
 | Field Name | Recommendation |
 | --- | --- |
 | `trips.trip_id` | The full extent of a “vehicle round-trip” (see illustration [above](#lasso-route-fig)) consists of travel from A to B to B and back to A. An entire vehicle round-trip may be expressed by: <li>A __single__ `trip_id` value/record in `trips.txt`</li><li>__Multiple__ `trip_id` values/records in `trips.txt`, with continuous travel indicated by `block_id`.</li> |
-| `stop_times.stop_headsign` | The stops along the A-B section will be passed through in both directions. `stop_headsign` facilitates distinguishing travel direction. Therefore, providing `stop_headsign` is recommended for these trips.example_table: <table class="example"><thead>  <tr><th>Examples:</th></tr></thead><tbody><tr><td>"A via B"</td></tr><tr><td>"A"</td></tr></tbody></table><table class="example"><thead><tr><th>Chicago Transit Authority's <a href="http://www.transitchicago.com/purpleline/">Purple Line</a></th></tr></thead><tbody><tr><td>"Southbound to Loop"</td></tr><tr><td>"Northbound via Loop"</td></tr><tr><td>"Northbound to Linden"</td></tr></tbody></table><table class="example"><thead><tr><th>Edmonton Transit Service Bus Lines, here <a href="http://webdocs.edmonton.ca/transit/route_schedules_and_maps/future/RT039.pdf">the 39</a></th></tr></thead><tbody><tr><td>"Rutherford"</td></tr><tr><td>"Century Park"</td></tr></tbody></table>
+| `stop_times.stop_headsign` | The stops along the A-B section will be passed through in both directions. `stop_headsign` facilitates distinguishing travel direction. Therefore, providing `stop_headsign` is recommended for these trips.example_table: <table class="example"><thead>  <tr><th>Examples:</th></tr></thead><tbody><tr><td>"A via B"</td></tr><tr><td>"A"</td></tr></tbody></table><table class="example"><thead><tr><th>Chicago Transit Authority's <a href="https://www.transitchicago.com/purpleline/">Purple Line</a></th></tr></thead><tbody><tr><td>"Southbound to Loop"</td></tr><tr><td>"Northbound via Loop"</td></tr><tr><td>"Northbound to Linden"</td></tr></tbody></table><table class="example"><thead><tr><th>Edmonton Transit Service Bus Lines, here <a href="https://webdocs.edmonton.ca/transit/route_schedules_and_maps/future/RT039.pdf">the 39</a></th></tr></thead><tbody><tr><td>"Rutherford"</td></tr><tr><td>"Century Park"</td></tr></tbody></table>
 | `trip.trip_headsign` | The trip headsign should be a global description of the trip, like displayed in the schedules. Could be “Linden to Linden via Loop” (Chicago example), or “A to A via B” (generic example). |
 
 ### Branches
@@ -263,7 +263,7 @@ Without coordinated GTFS Best Practices, various GTFS-consuming applications may
 
 ### How were they developed? Who developed them?
 
-These Best Practices were developed by a working group of 17 organizations involved in GTFS, including app providers & data consumers, transit providers, and consultants with extensive involvement in GTFS. The working group was convened and facilitated by [Rocky Mountain Institute](http://www.rmi.org/mobility).
+These Best Practices were developed by a working group of 17 organizations involved in GTFS, including app providers & data consumers, transit providers, and consultants with extensive involvement in GTFS. The working group was convened and facilitated by [Rocky Mountain Institute](https://www.rmi.org/mobility).
 
 Working Group members voted on each Best Practice. Most Best Practices were approved by a unanimous vote. In a minority of cases, Best Practices were approved a large majority of organizations.
 
@@ -316,23 +316,23 @@ If a GTFS-consuming application makes requirements or recommendations for GTFS d
 
 ### GTFS Best Practices Working Group
 
-The GTFS Best Practices Working Group was convened by [Rocky Mountain Institute](http://rmi.org/) in 2016-17, consisting of public transportation providers, developers of GTFS-consuming applications, consultants, and academic organizations to define common practices and expectations for GTFS data. 
+The GTFS Best Practices Working Group was convened by [Rocky Mountain Institute](https://rmi.org/) in 2016-17, consisting of public transportation providers, developers of GTFS-consuming applications, consultants, and academic organizations to define common practices and expectations for GTFS data. 
 Members of this working group included:
 
 * [Cambridge Systematics](https://www.camsys.com/)
 * [Capital Metro](https://www.capmetro.org/)
 * [Center for Urban Transportation Research at University of South Florida](https://www.cutr.usf.edu/)
-* [Conveyal](http://conveyal.com/)
+* [Conveyal](https://conveyal.com/)
 * [Google](https://www.google.com/)
-* [IBI Group](http://www.ibigroup.com/)
+* [IBI Group](https://www.ibigroup.com/)
 * [Mapzen](https://mapzen.com/)
 * [Microsoft](https://www.microsoft.com/)
 * [Moovel](https://www.moovel.com/)
-* [Oregon Department of Transportation](http://www.oregon.gov/odot/)
+* [Oregon Department of Transportation](https://www.oregon.gov/odot/)
 * [Swiftly](https://goswift.ly/)
 * [Transit](https://transitapp.com/)
-* [Trillium](http://trilliumtransit.com/)
+* [Trillium](https://trilliumtransit.com/)
 * [TriMet](https://trimet.org/)
-* [World Bank](http://www.worldbank.org/)
+* [World Bank](https://www.worldbank.org/)
 
-Today, this document is maintained by [MobilityData](http://mobilitydata.org/).
+Today, this document is maintained by [MobilityData](https://mobilitydata.org/).

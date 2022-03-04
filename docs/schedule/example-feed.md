@@ -6,12 +6,12 @@ This example GTFS feed shows comma-delimited data samples for each file in a tra
 
 ```
 agency_id,agency_name,agency_url,agency_timezone,agency_phone,agency_lang
-FunBus,The Fun Bus,http://www.thefunbus.org,America/Los_Angeles,(310) 555-0222,en
+FunBus,The Fun Bus,https://www.thefunbus.org,America/Los_Angeles,(310) 555-0222,en
 ```
 
 ```
 agency_id,agency_name,agency_url,agency_timezone,agency_lang
-agency001,Transit Agency,http://www.transitcommuterbus.com/,PST,en
+agency001,Transit Agency,https://www.transitcommuterbus.com/,PST,en
 [...]
 ```
 

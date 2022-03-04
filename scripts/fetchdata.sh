@@ -70,5 +70,16 @@ sed -i.bak "1s/.*/$new_header/" docs/realtime/best-practices.md
 sed -i.bak "s,#practice-recommendations-organized-by-case,#practice-recommendations-organized-by-use-case,g" docs/realtime/best-practices.md
 sed -i.bak "s,https://gtfs.org/reference/realtime/v2/,../reference,g" docs/realtime/best-practices.md
 
+# All files
+
+## convert http to https
+grep -rl 'http:' docs | xargs sed -i.bak 's/http:/https:/g'
+
+sed -i.bak "s,https,http,g" docs/assets/*.svg
+sed -i.bak "s,includes https://,includes http://,g" docs/schedule/reference.md
+sed -i.bak "s,includes https://,includes http://,g" docs/realtime/reference.md
+sed -i.bak "s,includes https://,includes http://,g" docs/realtime/gtfs-realtime.proto
+sed -i.bak "s,includes https://,includes http://,g" docs/realtime/proto.md
+
 # remove all temporary .bak files
 find . -name "*.bak" -type f -delete

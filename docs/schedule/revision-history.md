@@ -249,7 +249,7 @@ Added trips.txt 'wheelchair_accessible' proposal to spec: [discussion](https://g
 * Support for route colors with addition of optional route_color and route_text_color in routes.txt.
 * Removed the ability to specify stops using street addresses. The previous version of the spec allowed you to give the location of a transit stop using a street address in the stop_street, stop_city, stop_region, stop_postcode, and stop_country fields. Now stop locations must be given using stop_lat for latitude and stop_lon for longitude, which are more useful for most applications.
 * Addition of cable car vehicle type for route_type field in routes.txt.
-* See the original [Headway blog post](http://headwayblog.com/2007/03/02/google-feed-spec-update-2007-02/) summary of the changes.
+* See the original [Headway blog post](https://headwayblog.com/2007/03/02/google-feed-spec-update-2007-02/) summary of the changes.
 
 **November 29, 2006**
 

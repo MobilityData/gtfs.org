@@ -58,7 +58,7 @@ Presence conditions applicable to fields and files:
 - **Email** - An email address. <br> *Example: `example@example.com`*
 - **Enum** - An option from a set of predefined constants defined in the "Description" column. <br> *Example: The `route_type` field contains a `0` for tram, a `1` for subway...*
 - **ID** - An ID field value is an internal ID, not intended to be shown to riders, and is a sequence of any UTF-8 characters. Using only printable ASCII characters is recommended. An ID is labeled "unique ID" when it must be unique within a file. IDs defined in one .txt file are often referenced in another .txt file. IDs that reference an ID in another table are labeled "foreign ID".<br> *Example: The `stop_id` field in [stops.txt](#stopstxt) is a "unique ID". The `parent_station` field in [stops.txt](#stopstxt) is a "foreign ID referencing `stops.stop_id`".*
-- **Language code** - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to [http://www.rfc-editor.org/rfc/bcp/bcp47.txt](http://www.rfc-editor.org/rfc/bcp/bcp47.txt) and [http://www.w3.org/International/articles/language-tags/](http://www.w3.org/International/articles/language-tags/). <br> *Example: `en` for English, `en-US` for American English or `de` for German.*
+- **Language code** - An IETF BCP 47 language code. For an introduction to IETF BCP 47, refer to [https://www.rfc-editor.org/rfc/bcp/bcp47.txt](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) and [https://www.w3.org/International/articles/language-tags/](https://www.w3.org/International/articles/language-tags/). <br> *Example: `en` for English, `en-US` for American English or `de` for German.*
 - **Latitude** - WGS84 latitude in decimal degrees. The value must be greater than or equal to -90.0 and less than or equal to 90.0. *<br> Example: `41.890169` for the Colosseum in Rome.*
 - **Longitude** - WGS84 longitude in decimal degrees. The value must be greater than or equal to -180.0 and less than or equal to 180.0. <br> *Example: `12.492269` for the Colosseum in Rome.*
 - **Float** - A floating point number.
@@ -66,8 +66,8 @@ Presence conditions applicable to fields and files:
 - **Phone number** - A phone number.
 - **Time** - Time in the HH:MM:SS format (H:MM:SS is also accepted). The time is measured from "noon minus 12h" of the service day (effectively midnight except for days on which daylight savings time changes occur). For times occurring after midnight, enter the time as a value greater than 24:00:00 in HH:MM:SS local time for the day on which the trip schedule begins. <br> *Example: `14:30:00` for 2:30PM or `25:35:00` for 1:35AM on the next day.*
 - **Text** - A string of UTF-8 characters, which is aimed to be displayed and which must therefore be human readable.
-- **Timezone** - TZ timezone from the [https://www.iana.org/time-zones](https://www.iana.org/time-zones). Timezone names never contain the space character but may contain an underscore. Refer to [http://en.wikipedia.org/wiki/List\_of\_tz\_zones](http://en.wikipedia.org/wiki/List\_of\_tz\_zones) for a list of valid values. <br> *Example: `Asia/Tokyo`, `America/Los_Angeles` or `Africa/Cairo`.*
-- **URL** - A fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See the following [http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html](http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html) for a description of how to create fully qualified URL values.
+- **Timezone** - TZ timezone from the [https://www.iana.org/time-zones](https://www.iana.org/time-zones). Timezone names never contain the space character but may contain an underscore. Refer to [https://en.wikipedia.org/wiki/List\_of\_tz\_zones](https://en.wikipedia.org/wiki/List\_of\_tz\_zones) for a list of valid values. <br> *Example: `Asia/Tokyo`, `America/Los_Angeles` or `Africa/Cairo`.*
+- **URL** - A fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See the following [https://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html](https://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html) for a description of how to create fully qualified URL values.
 
 ### Field Signs
 Signs applicable to Float or Integer field types:
@@ -115,14 +115,14 @@ The following requirements apply to the format and contents of the dataset files
 * The first line of each file must contain field names. Each subsection of the [Field Definitions](#field-definitions) section corresponds to one of the files in a GTFS dataset and lists the field names that may be used in that file.
 * All file and field names are case-sensitive.
 * Field values must not contain tabs, carriage returns or new lines.
-* Field values that contain quotation marks or commas must be enclosed within quotation marks. In addition, each quotation mark in the field value must be preceded with a quotation mark. This is consistent with the manner in which Microsoft Excel outputs comma-delimited (CSV) files. For more information on the CSV file format, see [http://tools.ietf.org/html/rfc4180](http://tools.ietf.org/html/rfc4180).
+* Field values that contain quotation marks or commas must be enclosed within quotation marks. In addition, each quotation mark in the field value must be preceded with a quotation mark. This is consistent with the manner in which Microsoft Excel outputs comma-delimited (CSV) files. For more information on the CSV file format, see [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180).
 The following example demonstrates how a field value would appear in a comma-delimited file:
   * **Original field value:** `Contains "quotes", commas and text`
   * **Field value in CSV file:** `"Contains ""quotes"", commas and text"`
 * Field values must not contain HTML tags, comments or escape sequences.
 * Extra spaces between fields or field names should be removed. Many parsers consider the spaces to be part of the value, which may cause errors.
 * Each line must end with a CRLF or LF linebreak character.
-* Files should be encoded in UTF-8 to support all Unicode characters. Files that include the Unicode byte-order mark (BOM) character are acceptable. See [http://unicode.org/faq/utf_bom.html#BOM](http://unicode.org/faq/utf_bom.html#BOM) for more information on the BOM character and UTF-8.
+* Files should be encoded in UTF-8 to support all Unicode characters. Files that include the Unicode byte-order mark (BOM) character are acceptable. See [https://unicode.org/faq/utf_bom.html#BOM](https://unicode.org/faq/utf_bom.html#BOM) for more information on the BOM character and UTF-8.
 * All dataset files must be zipped together.
 
 ## Field Definitions

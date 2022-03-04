@@ -47,11 +47,11 @@ For more details, see the [.NET project page](https://github.com/google/gtfs-rea
 
 ## Java
 
-To use the `gtfs-realtime-bindings` Java classes in your own project, you need to add an appropriate dependency. We publish our module to the [Maven Central Repository](http://search.maven.org/) so that it can be easily referenced by Java build tools like Maven, Ivy, and Gradle.
+To use the `gtfs-realtime-bindings` Java classes in your own project, you need to add an appropriate dependency. We publish our module to the [Maven Central Repository](https://search.maven.org/) so that it can be easily referenced by Java build tools like Maven, Ivy, and Gradle.
 
-In the dependency snippets below, replace version string `X.Y.Z` with the latest version available in the [Maven Central Repository](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22gtfs-realtime-bindings%22).
+In the dependency snippets below, replace version string `X.Y.Z` with the latest version available in the [Maven Central Repository](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22gtfs-realtime-bindings%22).
 
-For [Maven](http://maven.apache.org/), add the following to your `pom.xml` dependencies section:
+For [Maven](https://maven.apache.org/), add the following to your `pom.xml` dependencies section:
 
 ```xml
 <dependency>
@@ -100,7 +100,7 @@ To use the `gtfs-realtime-bindings` JavaScript Node.js classes in your own proje
 npm install gtfs-realtime-bindings
 ```
 
-These bindings are designed to be used in the [Node.js](http://nodejs.org/) environment, but with some effort, they can probably be used in other JavaScript environments as well.
+These bindings are designed to be used in the [Node.js](https://nodejs.org/) environment, but with some effort, they can probably be used in other JavaScript environments as well.
 
 The following Node.js code snippet demonstrates downloading a GTFS realtime data feed from a particular URL, parsing it as a `FeedMessage` (the root type of the GTFS realtime schema), and iterating over the results.
 
