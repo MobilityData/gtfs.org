@@ -16,9 +16,9 @@ The GTFS Documentation Platform is based on open source content pulled from vari
 
 | gtfs.org | Source of truth | License |
 | - | - | - |
-| / | TBD |  | 
-| /background/ | TBD  | | 
-| /schedule/ | TBD | | 
+| / | https://github.com/MobilityData/gtfs.org/blob/main/docs/index.md | CC BY 3.0 | 
+| /background/ | https://github.com/MobilityData/gtfs.org/blob/main/docs/background.md | CC BY 3.0 | 
+| /schedule/ | https://github.com/MobilityData/gtfs.org/blob/main/docs/schedule/index.md | CC BY 3.0 | 
 | /schedule/reference/ | https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md | Apache License 2.0 | 
 | /schedule/best-practices/ | https://github.com/MobilityData/GTFS_Schedule_Best-Practices | CC BY 3.0 | 
 | /schedule/examples/ | TBD | |
@@ -45,8 +45,8 @@ The GTFS Documentation Platform is based on open source content pulled from vari
 | /realtime/revision-history/ | https://github.com/google/transit/blob/master/gtfs-realtime/CHANGES.md | Apache License 2.0 | 
 | /realtime/extensions/ | https://github.com/google/transit/blob/master/gtfs-realtime/CHANGES.md | Apache License 2.0 | 
 | /resources/*/ | https://github.com/CUTR-at-USF/awesome-transit/blob/master/README.md | CC0 1.0 Universal | 
-| /extensions/ | TBD | |
-| /about/ | TBD | |
+| /extensions/ | https://github.com/MobilityData/gtfs.org/blob/main/docs/extensions.md | CC BY 3.0 |
+| /about/ | https://github.com/MobilityData/gtfs.org/blob/main/docs/about.md | CC BY 3.0 |
 
 ## Building the site locally
 
