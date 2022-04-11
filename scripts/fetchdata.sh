@@ -173,6 +173,72 @@ The following example is an ASCII representation of an full-dataset Trip Update 
 
 rm docs/realtime/temp*
 
+# AWESOME-TRANSIT RESOURCE LIST
+rm docs/resources/*
+curl https://raw.githubusercontent.com/CUTR-at-USF/awesome-transit/master/README.md -o docs/resources/awesome.md
+
+## remove toc
+# sed -i.bak -e '9,39d' docs/resources/awesome.md
+
+## split awesome by heading level 2 (requires installation of gcsplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
+gcsplit --prefix='awesome' --suffix-format='%02d.md' docs/resources/awesome.md /^'## '/ "{*}"
+mv awesome* docs/resources
+rm -r docs/resources/awesome.md
+
+## split resources by heading level 3 (requires installtion of gcsplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
+gcsplit --prefix='resources' --suffix-format='%02d.md' docs/resources/awesome00.md /^'### '/ "{*}"
+mv resources* docs/resources
+rm -r docs/resources/awesome00.md
+
+## bump up headers
+sed -i.bak 's/##/#/g' docs/resources/awesome*
+sed -i.bak 's/###/#/g' docs/resources/resources*
+
+## remove all temporary .bak files
+find . -name "*.bak" -type f -delete
+
+## rename split resources files
+strings=(
+    license
+    about
+    temp
+    toc
+    getting-started
+    community
+    data
+    software-for-creating-apis
+    agency-tools
+    hardware
+    apps
+    sdk
+    visualizations
+    gtfs
+    gtfs-realtime
+    siri
+    multimodal
+    other
+)
+files=(docs/resources/*)
+let "count=0"
+for newname in "${strings[@]}"; do
+    mv "${files[$count]}" "docs/resources/$newname.md"
+    let "count++" 
+done
+
+## replace headers
+new_header='# Resources'
+sed -i.bak "1 s/.*/$new_header/" docs/resources/temp.md
+new_header='# Other Resources'
+sed -i.bak "1 s/.*/$new_header/" docs/resources/other.md
+
+sed -i.bak 's/# Table of Contents/## Table of Contents/g' docs/resources/toc.md
+sed -i.bak 's/# About/## About/g' docs/resources/about.md
+sed -i.bak 's/# License/## License/g' docs/resources/license.md
+
+cat docs/resources/temp.md docs/resources/toc.md docs/resources/about.md docs/resources/license.md > docs/resources/index.md
+
+rm -r docs/resources/temp.md docs/resources/toc.md docs/resources/license.md docs/resources/about.md
+
 # ALL FILES
 
 ## convert http to https
@@ -187,80 +253,12 @@ sed -i.bak "s,includes https://,includes http://,g" docs/realtime/proto.md
 # remove all temporary .bak files
 find . -name "*.bak" -type f -delete
 
-# ##PASTE OF ORIGINAL
 
-# # GTFS Realtime
+
+# ##TO DO
 
 # ## GTFS Realtime changes
 
+# ## Resources TOC
+
 # # curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/CHANGES.md 
-
-# # awesome-transit resource list
-# rm docs/resources/*
-# curl https://raw.githubusercontent.com/CUTR-at-USF/awesome-transit/master/README.md -o docs/resources/awesome.md
-
-# ## remove toc
-# # sed -i.bak -e '9,39d' docs/resources/awesome.md
-
-# ## split awesome by heading level 2 (requires installation of gcsplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
-# gcsplit --prefix='awesome' --suffix-format='%02d.md' docs/resources/awesome.md /^'## '/ "{*}"
-# mv awesome* docs/resources
-# rm -r docs/resources/awesome.md
-
-# ## split resources by heading level 3 (requires installtion of gcsplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
-# gcsplit --prefix='resources' --suffix-format='%02d.md' docs/resources/awesome00.md /^'### '/ "{*}"
-# mv resources* docs/resources
-# rm -r docs/resources/awesome00.md
-
-# ## bump up headers
-# sed -i.bak 's/##/#/g' docs/resources/awesome*
-# sed -i.bak 's/###/#/g' docs/resources/resources*
-
-# ## remove all temporary .bak files
-# find . -name "*.bak" -type f -delete
-
-# ## rename split resources files
-# strings=(
-#     license
-#     about
-#     temp
-#     toc
-#     getting-started
-#     community
-#     data
-#     software-for-creating-apis
-#     agency-tools
-#     hardware
-#     apps
-#     sdk
-#     visualizations
-#     gtfs
-#     gtfs-realtime
-#     siri
-#     multimodal
-#     other
-# )
-# files=(docs/resources/*)
-# let "count=1"
-# for newname in "${strings[@]}"; do
-#     mv "${files[$count]}" "docs/resources/$newname.md"
-#     let "count++" 
-# done
-
-# ## replace headers
-# new_header='# Resources'
-# sed -i.bak "1 s/.*/$new_header/" docs/resources/temp.md
-# new_header='# Other Resources'
-# sed -i.bak "1 s/.*/$new_header/" docs/resources/other.md
-
-# sed -i.bak 's/# Table of Contents/## Table of Contents/g' docs/resources/toc.md
-# sed -i.bak 's/# About/## About/g' docs/resources/about.md
-# sed -i.bak 's/# License/## License/g' docs/resources/license.md
-
-# cat docs/resources/temp.md docs/resources/toc.md docs/resources/about.md docs/resources/license.md > docs/resources/index.md
-
-# rm -r docs/resources/temp.md docs/resources/toc.md docs/resources/license.md docs/resources/about.md
-
-
-# ## remove all temporary .bak files
-# find . -name "*.bak" -type f -delete
