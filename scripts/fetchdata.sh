@@ -143,6 +143,36 @@ curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/
 new_header='# Vehicle Positions'
 sed -i.bak "1s/^/$new_header\n\n/" docs/realtime/vehicle-positions.md
 
+## GTFS Realtime Feed Examples
+
+curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/examples/alerts.asciipb -o docs/realtime/temp-alerts.md
+curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/examples/trip-updates-full.asciipb -o docs/realtime/temp-updates.md
+
+ALERTS=docs/realtime/temp-alerts.md
+UPDATES=docs/realtime/temp-updates.md
+
+echo "# Feed Examples
+
+The following examples show a textual representation of feeds. During development it is more convenient to produce ASCII protocol buffer output for easier debugging. You can compare your text output with these examples to check for the validity of data.
+
+## Service alert
+The following example is an ASCII representation of an Alert feed.
+
+\`\`\`python
+`cat $ALERTS`
+\`\`\`
+
+## Trip Update
+The following example is an ASCII representation of an full-dataset Trip Update feed.
+
+\`\`\`python
+`cat $UPDATES`
+\`\`\`
+
+" > docs/realtime/feed-examples.md
+
+rm docs/realtime/temp*
+
 # ALL FILES
 
 ## convert http to https
@@ -160,36 +190,6 @@ find . -name "*.bak" -type f -delete
 # ##PASTE OF ORIGINAL
 
 # # GTFS Realtime
-
-# ## GTFS Realtime Feed Examples
-
-# curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/examples/alerts.asciipb -o docs/realtime/temp-alerts.md
-# curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/examples/trip-updates-full.asciipb -o docs/realtime/temp-updates.md
-
-# ALERTS=docs/realtime/temp-alerts.md
-# UPDATES=docs/realtime/temp-updates.md
-
-# echo "# Feed Examples
-
-# The following examples show a textual representation of feeds. During development it is more convenient to produce ASCII protocol buffer output for easier debugging. You can compare your text output with these examples to check for the validity of data.
-
-# ## Service alert
-# The following example is an ASCII representation of an Alert feed.
-
-# \`\`\`python
-# `cat $ALERTS`
-# \`\`\`
-
-# ## Trip Update
-# The following example is an ASCII representation of an full-dataset Trip Update feed.
-
-# \`\`\`python
-# `cat $ALERTS`
-# \`\`\`
-
-# " > docs/realtime/feed-examples.md
-
-# rm docs/realtime/temp*
 
 # ## GTFS Realtime changes
 
