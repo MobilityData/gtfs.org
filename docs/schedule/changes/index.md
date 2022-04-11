@@ -5,3 +5,4 @@ The GTFS Specification is not set in stone. Instead, it is an open specification
 <br><div class=landing-page>
     <a class=button href=../process>Specification Amendment Process</a><a class=button href=../guiding-principles>Guiding Principles</a><a class=button href=../revision-history>Revision History</a>
 </div>
+
