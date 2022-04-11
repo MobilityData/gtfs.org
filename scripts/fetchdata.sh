@@ -116,6 +116,33 @@ sed -i.bak "1s/.*/$new_header/" docs/realtime/best-practices.md
 sed -i.bak "s,#practice-recommendations-organized-by-case,#practice-recommendations-organized-by-use-case,g" docs/realtime/best-practices.md
 sed -i.bak "s,https://gtfs.org/reference/realtime/v2/,../reference,g" docs/realtime/best-practices.md
 
+## GTFS Realtime feed entities
+
+### Feed Entities
+curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/feed-entities.md -o docs/realtime/feed-entities/index.md
+new_header='# Feed Entities'
+sed -i.bak "1s/^/$new_header\n\n/" docs/realtime/feed-entities/index.md
+
+#### patch links
+sed -i.bak "s,trip-updates.md,../trip-updates.md,g" docs/realtime/feed-entities/index.md
+sed -i.bak "s,service-alerts.md,../service-alerts.md,g" docs/realtime/feed-entities/index.md
+sed -i.bak "s,vehicle-positions.md,../vehicle-positions.md,g" docs/realtime/feed-entities/index.md
+
+### Trip Updates
+curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/trip-updates.md -o docs/realtime/trip-updates.md
+new_header='# Trip Updates'
+sed -i.bak "1s/^/$new_header\n\n/" docs/realtime/trip-updates.md
+
+### Trip Updates
+curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/service-alerts.md -o docs/realtime/service-alerts.md
+new_header='# Service Alerts'
+sed -i.bak "1s/^/$new_header\n\n/" docs/realtime/service-alerts.md
+
+### Vehicle Positions
+curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/vehicle-positions.md -o docs/realtime/vehicle-positions.md
+new_header='# Vehicle Positions'
+sed -i.bak "1s/^/$new_header\n\n/" docs/realtime/vehicle-positions.md
+
 # ALL FILES
 
 ## convert http to https
@@ -132,34 +159,7 @@ find . -name "*.bak" -type f -delete
 
 # ##PASTE OF ORIGINAL
 
-# # GTFS Schedule
-
-
-
-
 # # GTFS Realtime
-
-# ## GTFS Realtime feed entities
-
-# ### Feed Entities
-# curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/feed-entities.md -o docs/realtime/feed-entities/index.md
-# new_header='# Feed Entities'
-# sed -i.bak "1s/^/$new_header\n\n/" docs/realtime/feed-entities/index.md
-
-# ### Trip Updates
-# curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/trip-updates.md -o docs/realtime/trip-updates.md
-# new_header='# Trip Updates'
-# sed -i.bak "1s/^/$new_header\n\n/" docs/realtime/trip-updates.md
-
-# ### Trip Updates
-# curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/service-alerts.md -o docs/realtime/service-alerts.md
-# new_header='# Service Alerts'
-# sed -i.bak "1s/^/$new_header\n\n/" docs/realtime/service-alerts.md
-
-# ### Vehicle Positions
-# curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/vehicle-positions.md -o docs/realtime/vehicle-positions.md
-# new_header='# Vehicle Positions'
-# sed -i.bak "1s/^/$new_header\n\n/" docs/realtime/vehicle-positions.md
 
 # ## GTFS Realtime Feed Examples
 
