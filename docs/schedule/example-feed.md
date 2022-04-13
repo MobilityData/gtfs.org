@@ -1,6 +1,6 @@
 # Example GTFS Feed
 
-This example GTFS feed shows comma-delimited data samples for each file in a transit feed. The sample data files shown here aren't all related to each other. You can also [download a complete GTFS feed](sample-feed.zip) in final form to work with as well.
+This example GTFS feed shows comma-delimited data samples for each file in a transit feed. The sample data files shown here aren't all related to each other. You can also [download a complete GTFS feed](https://github.com/google/transit/blob/master/gtfs/spec/en/examples/sample-feed-1.zip?raw=true) in final form to work with as well, or browse the individual files of that same feed online [here](https://github.com/google/transit/tree/master/gtfs/spec/en/examples/sample-feed-1).
 
 ## agency.txt
 
@@ -80,6 +80,8 @@ WD,1,1,1,1,1,0,0,20060701,20060731
 
 ## calendar_dates.txt
 
+This example shows service exceptions for the Independence Day holiday in 2006. On Monday July 3, 2006, regular weekday service (`service_id=WD`) is interrupted (`exception_type=2`). Instead, weekend service (`service_id=WE`) runs on that date (`exception_type=1`). The same change applies on Tuesday July 4, as well.
+
 ```
 service_id,date,exception_type
 WD,20060703,2
@@ -124,6 +126,24 @@ A_shp,37.64430,-122.41070,2,6.8310
 A_shp,37.65863,-122.30839,3,15.8765
 ```
 
+## frequencies.txt
+
+```
+trip_id,start_time,end_time,headway_secs
+AWE1,05:30:00,06:30:00,300
+AWE1,06:30:00,20:30:00,180
+AWE1,20:30:00,28:00:00,420
+```
+
+## transfers.txt
+
+```
+from_stop_id,to_stop_id,transfer_type,min_transfer_time
+S6,S7,2,300
+S7,S6,3,
+S23,S7,1,
+```
+
 ## pathways.txt
 
 ```
@@ -149,24 +169,6 @@ N4B3,N4,B3,2,1
 N4-B3,N4,B3,4,0
 B3-N4,B3,N4,4,0
 B3B4,B3,B4,2,1
-```
-
-## frequencies.txt
-
-```
-trip_id,start_time,end_time,headway_secs
-AWE1,05:30:00,06:30:00,300
-AWE1,06:30:00,20:30:00,180
-AWE1,20:30:00,28:00:00,420
-```
-
-## transfers.txt
-
-```
-from_stop_id,to_stop_id,transfer_type,min_transfer_time
-S6,S7,2,300
-S7,S6,3,
-S23,S7,1,
 ```
 
 ## levels.txt

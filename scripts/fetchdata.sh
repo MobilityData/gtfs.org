@@ -17,6 +17,15 @@ curl https://raw.githubusercontent.com/MobilityData/GTFS_Schedule_Best-Practices
 sed -i.bak "s,#dataset-publishing--general-practices,#dataset-publishing-general-practices,g" docs/schedule/best-practices.md
 sed -i.bak "s,https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md,../reference,g" docs/schedule/best-practices.md
 
+## GTFS Schedule examples
+
+### GTFS Schedule example feed
+curl https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/examples/README.md -o docs/schedule/example-feed.md
+
+#### patch links
+sed -i.bak "s,sample-feed-1.zip,https://github.com/google/transit/blob/master/gtfs/spec/en/examples/sample-feed-1.zip?raw=true,g" docs/schedule/example-feed.md
+sed -i.bak "s,(sample-feed-1),(https://github.com/google/transit/tree/master/gtfs/spec/en/examples/sample-feed-1),g" docs/schedule/example-feed.md
+
 ## GTFS Schedule changes
 rm docs/schedule/changes/*
 
