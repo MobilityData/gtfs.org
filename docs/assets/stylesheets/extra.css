@@ -225,3 +225,27 @@ c {
         min-width: 90vw;
       }
   }
+
+@media only screen and (max-width: 704px) {
+    .code-example-landing {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    .code-example-landing > .button {
+            display: inline-flex;
+            justify-content: center;
+            padding: 10px 20px;
+            text-align: center;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff !important;
+            font-weight: bold;
+            background-color: #172f50;
+            border-radius: 6px;
+            outline: none;
+            margin: 0.5em 1em;
+            min-width: 90vw;
+          }
+}
