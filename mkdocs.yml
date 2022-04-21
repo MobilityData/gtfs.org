@@ -71,6 +71,22 @@ plugins:
   - mkdocs-simple-hooks:
       hooks:
         on_config: "hooks.on_config:deploy_hooks"
+  - i18n:
+      default_language: en
+      default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, false]
+      languages:
+        en: English
+        id: Bahasa Indonesia
+        de: Deutsch
+        es: Español
+        fr: Français
+        pt_BR: Português - Brasil
+        ru: Русский
+        zh: 中文 – 简体
+        zh_TW: 中文 – 繁體
+        ja: 日本語
+        ko: 한국어
+
 nav:
 - Home: index.md
 - GTFS Schedule:
