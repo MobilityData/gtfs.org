@@ -1,0 +1,10 @@
+{
+    "source_language": "EN",
+    "target_languages": [
+        "FR"
+    ],
+    "interpolation": "laravel",
+    "input_path": "docs/realtime/feed-entities/*.md",
+    "output_path": "docs/realtime/feed-entities/$FILE.$locale.md",
+    "auth_key": ""
+}
