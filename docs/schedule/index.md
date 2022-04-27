@@ -1,7 +1,10 @@
 # GTFS Schedule Overview
 
 <div class="landing-page">
-    <a class="button" href="reference">Reference</a><a class="button" href="best-practices">Best Practices</a><a class="button" href="examples">Examples</a><a class="button" href="changes">Changes</a>
+    <a class="button" href="reference">Reference</a>
+    <a class="button" href="best-practices">Best Practices</a>
+    <a class="button" href="examples">Examples</a>
+    <a class="button" href="changes">Changes</a>
 </div>
 
 ## Getting Started

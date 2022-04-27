@@ -6,6 +6,11 @@ GTFS is split into a [schedule component](schedule) that contains schedule, fare
 
 [More GTFS background](background.md)
 
-<br><div class="landing-page">
-    <a class="button" href="schedule">GTFS Schedule</a><a class="button" href="realtime">GTFS Realtime</a><a class="button" href="resources">Resources</a><a class="button" href="extensions">Extensions</a>
+</br>
+
+<div class="landing-page">
+    <a class="button" href="schedule">GTFS Schedule</a>
+    <a class="button" href="realtime">GTFS Realtime</a>
+    <a class="button" href="resources">Resources</a>
+    <a class="button" href="extensions">Extensions</a>
 </div>

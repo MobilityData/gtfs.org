@@ -10,7 +10,12 @@ Because generating GTFS realtime data model classes from the [gtfs-realtime.prot
 Read on for language-specific details on parsing GTFS realtime data.
 
 <div class="code-example-landing">
-    <a class="button" href="dotnet">.NET</a><a class="button" href="java">Java</a><a class="button" href="nodejs">JavaScript/Node.js</a></div><div class="code-example-landing"><a class="button" href="php">PHP</a><a class="button" href="python">Python</a><a class="button" href="ruby">Ruby</a></div>
+    <a class="button" href="dotnet">.NET</a>
+    <a class="button" href="java">Java</a><a class="button" href="nodejs">JavaScript/Node.js</a></div>
+    
+<div class="code-example-landing">
+    <a class="button" href="php">PHP</a>
+    <a class="button" href="python">Python</a><a class="button" href="ruby">Ruby</a></div>
 
 ### Other Languages
 We have tried to provide language bindings for all programming languages where (a) developers want to use GTFS realtime and (b) there is a mechanism for packaging code for easy re-use.
