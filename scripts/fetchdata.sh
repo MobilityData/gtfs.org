@@ -265,17 +265,3 @@ find . -name "*.bak" -type f -delete
 
 # # curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/CHANGES.md 
 
-# TRANSLATIONS
-
-find . -name "*.id.md" -type f -delete
-find . -name "*.de.md" -type f -delete
-find . -name "*.es.md" -type f -delete
-find . -name "*.fr.md" -type f -delete
-find . -name "*.pr_BR.md" -type f -delete
-find . -name "*.ru.md" -type f -delete
-find . -name "*.zh.md" -type f -delete
-find . -name "*.zh_TW.md" -type f -delete
-find . -name "*.ja.md" -type f -delete
-find . -name "*.ko.md" -type f -delete
-
-yarn simpleen translate

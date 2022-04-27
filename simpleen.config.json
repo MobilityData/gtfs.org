@@ -1,10 +1,18 @@
 {
     "source_language": "EN",
     "target_languages": [
-        "FR"
+        "ZH",
+        "FR",
+        "DE",
+        "id",
+        "JA",
+        "ko",
+        "PT-BR",
+        "RU",
+        "ES"
     ],
-    "interpolation": "laravel",
-    "input_path": "docs/realtime/feed-entities/*.md",
-    "output_path": "docs/realtime/feed-entities/$FILE.$locale.md",
+    "interpolation": "default",
+    "input_path": "docs/schedule/*.md",
+    "output_path": "docs/schedule/$FILE.$locale.md",
     "auth_key": ""
 }
