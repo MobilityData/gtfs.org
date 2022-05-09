@@ -72,6 +72,9 @@ echo "<br><div class=landing-page>
 </div>
 " >> docs/schedule/changes/index.md
 
+#### patch links
+sed -i.bak "s,../CONTRIBUTING.md,https://github.com/google/transit/blob/master/CONTRIBUTING.md,g" docs/schedule/process.md
+
 # GTFS REALTIME
 
 ## GTFS Realtime reference
