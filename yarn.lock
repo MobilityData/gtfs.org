@@ -1042,10 +1042,10 @@ signal-exit@^3.0.2:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.7.tgz#a9a1767f8af84155114eaabd73f99273c8f59ad9"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
 
-simpleen@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/simpleen/-/simpleen-0.6.0.tgz#ed0e0add5672e4deda25359c12a5f687a1e04e26"
-  integrity sha512-bd7pfAQRwbFjmgZ6F9RgEMJ/PAclbxQsm64z2JsaO5TZHcZvMp6Pquxktej4ANTjyHLqtUEmpTIeKH+Bydw9rA==
+simpleen@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/simpleen/-/simpleen-0.6.1.tgz#5a7ef8090d60ee1324761dc6dbb0c0123e61cc71"
+  integrity sha512-zf8zRBjPg2mciMpXuF1oSy3JVp1MxuYSP99n9ciTMR5Wzj7tY3PjVfh6veEY1vsGOGw3KQStIqpyjw9tmKKjKg==
   dependencies:
     "@oclif/command" "^1"
     "@oclif/config" "^1"

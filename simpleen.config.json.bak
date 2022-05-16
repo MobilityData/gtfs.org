@@ -5,6 +5,6 @@
     ],
     "interpolation": "default",
     "input_path": "docs/schedule/*.md",
-    "output_path": "docs/schedule/$FILE.$locale.md",
-    "auth_key": ""
+    "output_path": "docs/$FILE.$locale.md",
+    "auth_key": "91b7a099-161d-4b27-8f23-a3c3e0d64311"
 }
