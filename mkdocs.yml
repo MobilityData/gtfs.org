@@ -119,5 +119,8 @@ nav:
   - resources/siri.md
   - resources/multimodal.md
   - resources/other.md
-- Extensions: extensions.md
+- Extensions: 
+  - Extensions: extensions/index.md
+  - Participate: extensions/participate.md
+  - Glossary: extensions/glossary.md
 - About: about.md
