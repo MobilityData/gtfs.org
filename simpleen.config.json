@@ -1,0 +1,10 @@
+{
+    "source_language": "EN",
+    "target_languages": [
+        "FR"
+    ],
+    "interpolation": "default",
+    "input_path": "docs/temp/ref34.md",
+    "output_path": "docs/temp/$FILE.$locale.md",
+    "auth_key": "ef024bec-3dfb-47d3-999b-a702aad54fb5"
+}
