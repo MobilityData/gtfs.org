@@ -55,6 +55,7 @@ plugins:
         'reference/static.md': 'schedule/reference.md'
         'reference/realtime/v2.md': 'realtime/reference.md'
         'reference/realtime/v1.md': 'realtime/reference.md'
+        'reference/realtime/index.md': 'realtime/reference.md'
         'getting-started.md': 'schedule/index.md'
         'examples.md': 'schedule/examples/index.md'
         'testing.md': 'resources/gtfs.md'
