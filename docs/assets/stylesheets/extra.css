@@ -15,6 +15,7 @@
     --md-footer-bg-color--dark: #343a3f;
     --md-footer-fg-color: var(--md-default-bg-color);
     --md-footer-fg-color--light: var(--md-primary-bg-color--light);
+    --md-typeset-color: #212121;
     --md-typeset-a-color: var(--md-accent-fg-color);
 }
 
@@ -57,6 +58,10 @@ code:not(.highlight code) {
     background-color: rgba(255, 255, 255, 0);
     /* font-weight: 500 !important; */
 }
+
+.md-content a {
+    color: #4386FF;
+}
   
 /* hover highlight */
 div.md-content a:hover {
@@ -97,6 +102,11 @@ table.example {
 }
   
 /* footer styles */
+
+footer {
+    background-color: #4B555C !important;
+}
+
 a.footer-link:not(:hover) {
     opacity: 56%;
     transition: 0.15s;
@@ -144,6 +154,10 @@ c {
     color: var(--md-typeset-color) !important;
 } */
 
+.md-nav__link--active {
+    color: #4386FF !important;
+}
+
 
 @media only screen and (max-width: 550px) {
     .md-tabs {
@@ -184,9 +198,31 @@ c {
         margin: 15px;
     }
 
+    /* neutral nav header */
+    .md-nav__item > .md-nav__link.md-nav__container { 
+        background-color: unset !important;
+        box-shadow: 0px 0px 2px 2px #efefef !important;
+        position: relative !important;
+    }
+
+    .md-sidebar__inner > .md-nav.md-nav--primary.md-nav--lifted.md-nav--integrated > .md-nav__list > .md-nav__item.md-nav__item--active > .md-nav__link.md-nav__link--active{ 
+        background-color: unset !important;
+        box-shadow: 0px 0px 2px 2px #efefef !important;
+    }
+
+    /* bold nav heading */
+    .md-sidebar__inner > .md-nav.md-nav--primary.md-nav--lifted.md-nav--integrated > .md-nav__list > .md-nav__item > .md-nav__link.md-nav__container > a > span {
+        font-weight: bold !important;
+    }
+
+    .md-sidebar__scrollwrap > .md-sidebar__inner > .md-nav.md-nav--primary.md-nav--lifted.md-nav--integrated > .md-nav__list > .md-nav__item > .md-nav__link > span {
+        font-weight: bold !important;
+    }
+
     .md-sidebar.md-sidebar--primary {
         width: 200px;
     }
+
     .md-sidebar--primary .md-sidebar__scrollwrap {
         background-color: #efefef;
         flex: 0 0 12em;
