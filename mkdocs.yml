@@ -60,6 +60,7 @@ plugins:
         'reference/static.md': 'schedule/reference.md'
         'reference/realtime/v2.md': 'realtime/reference.md'
         'reference/realtime/v1.md': 'realtime/reference.md'
+        'reference/realtime/index.md': 'realtime/reference.md'
         'getting-started.md': 'schedule/index.md'
         'examples.md': 'schedule/examples/index.md'
         'testing.md': 'resources/gtfs.md'
@@ -70,6 +71,9 @@ plugins:
         'reference/static/changes.md': 'schedule/changes/index.md'
         'applications.md': 'resources/apps.md'
         'license.md': 'about.md'
+        'realtime/service-alerts.md': 'realtime/feed-entities/service-alerts.md'
+        'realtime/trip-updates.md': 'realtime/feed-entities/trip-updates.md'
+        'realtime/vehicle-positions.md': 'realtime/feed-entities/vehicle-positions.md'
   - mkdocs-simple-hooks:
       hooks:
         on_config: "hooks.on_config:deploy_hooks"
@@ -95,13 +99,21 @@ nav:
   - Best Practices: realtime/best-practices.md
   - Feed Entities:
     - realtime/feed-entities/index.md
-    - Trip Updates: realtime/trip-updates.md
-    - Service Alerts: realtime/service-alerts.md
-    - Vehicle Positions: realtime/vehicle-positions.md
-  - Examples:
-    - realtime/examples/index.md
-    - Feed Examples: realtime/feed-examples.md
-    - Code Examples: realtime/code-examples.md
+    - Trip Updates: realtime/feed-entities/trip-updates.md
+    - Service Alerts: realtime/feed-entities/service-alerts.md
+    - Vehicle Positions: realtime/feed-entities/vehicle-positions.md
+  - Feed Examples:
+    - realtime/feed-examples/index.md
+    - Trip Updates: realtime/feed-examples/trip-updates.md
+    - Service Alerts: realtime/feed-examples/service-alerts.md
+  - Code Examples: 
+    - realtime/code-examples/index.md
+    - .NET: realtime/code-examples/dotnet.md
+    - Java: realtime/code-examples/java.md
+    - JavaScript/Node.js: realtime/code-examples/nodejs.md
+    - PHP: realtime/code-examples/php.md
+    - Python: realtime/code-examples/python.md
+    - Ruby: realtime/code-examples/ruby.md
   - Changes:
     - realtime/changes/index.md
     - Specification Amendment Process: realtime/process.md
