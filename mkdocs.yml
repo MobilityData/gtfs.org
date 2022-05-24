@@ -19,9 +19,12 @@ theme:
      - navigation.indexes
      - navigation.top
      - toc.integrate
+     - content.tabs.link
   custom_dir: theme_overrides
 extra_css:
   - assets/stylesheets/extra.css
+extra_javascript:
+  - assets/javascripts/extra.js
 extra:
   analytics:
     provider: google
