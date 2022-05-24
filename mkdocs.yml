@@ -53,6 +53,8 @@ plugins:
       redirect_maps:
         'gtfs-background.md': 'background.md'
         'reference/static.md': 'schedule/reference.md'
+        'schedule/example-feed.md': 'schedule/examples/feed.md'
+        'schedule/data-examples.md': 'schedule/examples/data-examples.md'
         'reference/realtime/v2.md': 'realtime/reference.md'
         'reference/realtime/v1.md': 'realtime/reference.md'
         'reference/realtime/index.md': 'realtime/reference.md'
@@ -80,8 +82,8 @@ nav:
   - Best Practices: schedule/best-practices.md
   - Examples:
     - schedule/examples/index.md
-    - Example GTFS Feed: schedule/example-feed.md
-    - Data Examples: schedule/data-examples.md
+    - Example GTFS Feed: schedule/examples/feed.md
+    - Data Examples: schedule/examples/data-examples.md
   - Changes:
     - schedule/changes/index.md
     - Specification Amendment Process: schedule/process.md
