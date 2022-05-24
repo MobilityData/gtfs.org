@@ -47,3 +47,26 @@
   <h3>Paris</h3>
   <p>Paris is the capital of France.</p> 
 </div>
+
+### Extension Registry &ensp;<img src="../assets/pr-active.svg" style="height:1em;"/>
+
+=== "GTFS Schedule"
+
+    <div>
+        <strong>GTFS-Fares v2 base implementation</strong>
+        <p>London is the capital city of England.</p>
+        <hr>
+        <strong>GTFS-Fares v2 base implementation</strong>
+        <p>London is the capital city of England.</p>
+    </div>
+
+=== "GTFS Realtime"
+
+    ``` c++
+    #include <iostream>
+
+    int main(void) {
+      std::cout << "Hello world!" << std::endl;
+      return 0;
+    }
+    ```
