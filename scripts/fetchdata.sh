@@ -1,6 +1,6 @@
 # GTFS SCHEDULE
 
-## GTFS Schedule reference
+## GTFS Schedule reference (schedule/reference) 
 curl https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/reference.md -o docs/schedule/reference.md
 
 ### replace header
@@ -10,23 +10,25 @@ sed -i.bak "1 s/.*/$new_header/" docs/schedule/reference.md
 ### patch links
 sed -i.bak "s,../../CHANGES.md,../revision-history,g" docs/schedule/reference.md
 
-## GTFS Schedule best practices
+## GTFS Schedule best practices (schedule/best-practices)
 curl https://raw.githubusercontent.com/MobilityData/GTFS_Schedule_Best-Practices/master/en/best-practices.md -o docs/schedule/best-practices.md
 
 ### patch links
 sed -i.bak "s,#dataset-publishing--general-practices,#dataset-publishing-general-practices,g" docs/schedule/best-practices.md
 sed -i.bak "s,https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md,../reference,g" docs/schedule/best-practices.md
 
-## GTFS Schedule examples
+## GTFS Schedule examples 
 
-### GTFS Schedule example feed
+### GTFS Schedule example feed (schedule/example-feed)
 curl https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/examples/README.md -o docs/schedule/example-feed.md
 
 #### patch links
 sed -i.bak "s,sample-feed-1.zip,https://github.com/google/transit/blob/master/gtfs/spec/en/examples/sample-feed-1.zip?raw=true,g" docs/schedule/example-feed.md
 sed -i.bak "s,(sample-feed-1),(https://github.com/google/transit/tree/master/gtfs/spec/en/examples/sample-feed-1),g" docs/schedule/example-feed.md
 
-## GTFS Schedule changes
+### GTFS Schedule data examples (schedule/data-examples) google/transit PR#329
+
+## GTFS Schedule changes (schedule/changes/*)
 rm docs/schedule/changes/*
 
 curl https://raw.githubusercontent.com/google/transit/master/gtfs/CHANGES.md -o docs/schedule/changes/changes.md
@@ -76,6 +78,8 @@ echo "<br><div class=landing-page>
 sed -i.bak "s,../CONTRIBUTING.md,https://github.com/google/transit/blob/master/CONTRIBUTING.md,g" docs/schedule/process.md
 
 # GTFS REALTIME
+
+## GTFS Realtime overview (PR #330)
 
 ## GTFS Realtime reference
 curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/reference.md -o docs/realtime/reference.md
@@ -177,6 +181,8 @@ The following example is an ASCII representation of an full-dataset Trip Update 
 \`\`\`
 
 " > docs/realtime/feed-examples/trip-updates.md
+
+## GTFS Realtime code examples (PR #331)
 
 # AWESOME-TRANSIT RESOURCE LIST
 rm docs/resources/*

@@ -21,14 +21,14 @@ The GTFS Documentation Platform is based on open source content pulled from vari
 | /schedule/ | https://github.com/MobilityData/gtfs.org/blob/main/docs/schedule/index.md | CC BY 3.0 | 
 | /schedule/reference/ | https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md | Apache License 2.0 | 
 | /schedule/best-practices/ | https://github.com/MobilityData/GTFS_Schedule_Best-Practices | CC BY 3.0 | 
-| /schedule/examples/ | TBD | |
-| /schedule/examples/example-feed/ | https://github.com/google/transit/blob/master/gtfs/spec/en/examples/README.md | Apache License 2.0 |
-| /schedule/examples/data-examples/ | TBD | | 
+| /schedule/examples/ | https://github.com/MobilityData/gtfs.org/blob/main/docs/schedule/examples/index.md | CC BY 3.0 |
+| /schedule/example-feed/ | https://github.com/google/transit/blob/master/gtfs/spec/en/examples/README.md | Apache License 2.0 |
+| /schedule/data-examples/ | https://github.com/google/transit/tree/master/gtfs/spec/en/examples/data-examples (TBD [PR #329](https://github.com/google/transit/pull/329)) | Apache License 2.0 | 
 | /schedule/changes/ | https://github.com/google/transit/blob/master/gtfs/CHANGES.md | Apache License 2.0|  
 | /schedule/changes/process | https://github.com/google/transit/blob/master/gtfs/CHANGES.md | Apache License 2.0 |  
 | /schedule/changes/guiding-principles | https://github.com/google/transit/blob/master/gtfs/CHANGES.md | Apache License 2.0 |  
 | /schedule/changes/revision-history | https://github.com/google/transit/blob/master/gtfs/CHANGES.md | Apache License 2.0 | 
-| /realtime/ | TBD | |
+| /realtime/ | https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/README.md (TBD [PR #330](https://github.com/google/transit/pull/330)) | Apache License 2.0 |
 | /realtime/reference/ | https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/reference.md | Apache License 2.0 |
 | /realtime/proto/ | https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto | Apache License 2.0 | 
 | /realtime/best-practices/ | https://github.com/MobilityData/GTFS_realtime_Best-Practices | CC BY 3.0 |
@@ -36,9 +36,9 @@ The GTFS Documentation Platform is based on open source content pulled from vari
 | /realtime/trip-updates/ | https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/trip-updates.md | Apache License 2.0 | 
 | /realtime/service-alerts/ | https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/service-alerts.md | Apache License 2.0 | 
 | /realtime/vehicle-positions/ | https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/vehicle-positions.md | Apache License 2.0 | 
-| /realtime/examples/ | TBD | | 
+| /realtime/examples/ | https://github.com/MobilityData/gtfs.org/blob/main/docs/realtime/examples/index.md | CC BY 3.0 | 
 | /realtime/feed-examples/ | https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/examples | Apache License 2.0 | 
-| /realtime/code-examples/ | TBD | | 
+| /realtime/code-examples/*/ | https://github.com/google/transit/tree/master/gtfs-realtime/spec/en/examples/code-examples (TBD [PR #331](https://github.com/google/transit/pull/331)) | Apache License 2.0 | 
 | /realtime/changes/ | https://github.com/google/transit/blob/master/gtfs-realtime/CHANGES.md | Apache License 2.0 | 
 | /realtime/process/ | https://github.com/google/transit/blob/master/gtfs-realtime/CHANGES.md | Apache License 2.0 | 
 | /realtime/guiding-principles/ | https://github.com/google/transit/blob/master/gtfs-realtime/CHANGES.md | Apache License 2.0 | 
