@@ -79,7 +79,31 @@ sed -i.bak "s,../CONTRIBUTING.md,https://github.com/google/transit/blob/master/C
 
 # GTFS REALTIME
 
-## GTFS Realtime overview (PR #330)
+## GTFS Realtime overview (realtime/)
+curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/README.md -o docs/realtime/index.md
+
+### add intro
+INTRO=docs/realtime/index.md
+echo "# GTFS Realtime Overview
+
+<div class="landing-page">
+    <a class="button" href="reference">Reference</a><a class="button" href="best-practices">Best Practices</a><a class="button" href="feed-examples">Examples</a><a class="button" href="changes">Changes</a>
+</div>
+
+## Getting Started
+
+Providing users transit data updates in real time greatly enhances their experience of your transit services. Providing up-to-date information about current arrival and departure times allows users to smoothly plan their trips. As a result, in case of an unfortunate delay, a rider would be relieved to know that they can stay home a little bit longer.
+
+`cat $INTRO`" > docs/realtime/index.md
+
+### patch links
+sed -i.bak "s,https://developers.google.com/transit/gtfs/reference,../schedule/reference,g" docs/realtime/index.md
+sed -i.bak "s,feed-entities.md,feed-entities,g" docs/realtime/index.md
+sed -i.bak "s,examples/,feed-examples,g" docs/realtime/index.md
+sed -i.bak "s,reference.md,reference,g" docs/realtime/index.md
+sed -i.bak "s,Publish your feed,[Publish your feed](best-practices/#feed-publishing-general-practices),g" docs/realtime/index.md
+sed -i.bak "s,../../proto/gtfs-realtime.proto,proto,g" docs/realtime/index.md
+
 
 ## GTFS Realtime reference
 curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/reference.md -o docs/realtime/reference.md
