@@ -104,6 +104,7 @@ nav:
   - Code Examples: 
     - realtime/code-examples/index.md
     - .NET: realtime/code-examples/dotnet.md
+    - Golang: realtime/code-examples/golang.md
     - Java: realtime/code-examples/java.md
     - JavaScript/Node.js: realtime/code-examples/nodejs.md
     - PHP: realtime/code-examples/php.md

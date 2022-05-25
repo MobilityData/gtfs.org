@@ -1,21 +1,54 @@
-# Code Examples
+# gtfs-realtime-bindings
+[![Join the MobilityData chat](https://bit.ly/mobilitydata-slack)](https://bit.ly/mobilitydata-slack)
 
-GTFS-realtime data is encoded and decoded using [Protocol Buffers](https://developers.google.com/protocol-buffers/), a compact binary representation designed for fast and efficient processing. How does one generate or parse this binary data? Read on for code samples to help you get started.
+Language bindings generated from the
+[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) protocol
+buffer spec for popular languages.
 
-### Language Bindings
-To work with GTFS realtime data, a developer would typically use the [gtfs-realtime.proto](../proto) schema to generate classes in the programming language of their choice. These classes can then be used for constructing GTFS realtime data model objects and serializing them as binary data or, in the reverse direction, parsing binary data into data model objects.
+## Introduction
 
-Because generating GTFS realtime data model classes from the [gtfs-realtime.proto](../proto)  schema is such a common task, but also one that sometimes causes confusion for first-time developers, we provide pre-generated GTFS realtime language bindings for a number of the most popular programming languages through the open-source [gtfs-realtime-bindings](https://github.com/google/gtfs-realtime-bindings) project.
+[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) is a data
+format for communicating real-time information about public transit systems.
+GTFS Realtime data is encoded and decoded using [Protocol
+Buffers](https://developers.google.com/protocol-buffers/), a compact binary
+representation designed for fast and efficient processing.  The data schema
+itself is defined in
+[gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto).
 
-Read on for language-specific details on parsing GTFS realtime data.
+To work with GTFS Realtime data, a developer would typically use the
+`gtfs-realtime.proto` schema to generate classes in the programming language of
+their choice.  These classes can then be used for constructing GTFS-realtime
+data model objects and serializing them as binary data or, in the reverse
+direction, parsing binary data into data model objects.
 
-<div class="code-example-landing">
-    <a class="button" href="dotnet">.NET</a><a class="button" href="java">Java</a><a class="button" href="nodejs">JavaScript/Node.js</a></div><div class="code-example-landing"><a class="button" href="php">PHP</a><a class="button" href="python">Python</a><a class="button" href="ruby">Ruby</a></div>
+Because generating GTFS Realtime data model classes from the
+`gtfs-realtime.proto` schema is such a common task, but also one that sometimes
+causes confusion for first-time developers, this project aims to provide
+pre-generated GTFS Realtime language bindings for a number of the most popular
+programming languages.  Where possible, these language bindings will be
+published as packages to facilitate their use in other projects.
 
-### Other Languages
-We have tried to provide language bindings for all programming languages where (a) developers want to use GTFS realtime and (b) there is a mechanism for packaging code for easy re-use.
+## Supported Languages
 
-If you feel that your favorite language has been unjustly left off the list, you have two options:
+* [.NET](dotnet/README.md)
+* [Java](java/README.md)
+* [JavaScript / Node.js](nodejs/README.md)
+* [Python](python/README.md)
+* [Golang](golang/README.md)
+* ~~[Ruby](ruby/README.md)~~ *(Deprecated as of early 2019)*
+* ~~[PHP](https://github.com/google/gtfs-realtime-bindings-php)~~ *(Deprecated as of early 2019)*
 
-1. Open an issue at the [gtfs-realtime-bindings](https://github.com/google/gtfs-realtime-bindings) project page requesting that the language be added.
-2. Generate your own [Protocol Buffer](https://developers.google.com/protocol-buffers/) bindings, possibly using a [Third-Party Add On](https://github.com/google/protobuf/blob/master/docs/third_party.md).
+## Other Languages
+
+We don't provide generated code for C++, use the official protoc compiler for that (from [here](https://developers.google.com/protocol-buffers/docs/downloads) or [here](https://github.com/google/protobuf))
+
+Are we missing your favorite language? Consider contributing:
+
+1. Read [CONTRIBUTING.md](CONTRIBUTING.md).
+2. Open a pull request with your language of choice. Please include update instructions (ideally, scripts). Also, provide packaging suitable for the language ecosystem.
+
+## Project History
+
+This project was originally created by Google - MobilityData started to maintain the project in early 2019. 
+
+Older versions of the bindings libraries are still published under Google's name.  See the documentation for each language [here](https://github.com/MobilityData/gtfs-realtime-bindings/tree/final-google-version) to find the last version published by Google.
