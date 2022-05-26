@@ -215,6 +215,14 @@ echo "# Language Bindings
 **[Join the MobilityData chat](https://bit.ly/mobilitydata-slack)**
 `cat $BINDINGS`
 " > docs/realtime/language-bindings/index.md
+sed -i.bak 's,dotnet/README.md,dotnet.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,java/README.md,java.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,nodejs/README.md,nodejs.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,python/README.md,python.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,golang/README.md,golang.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,ruby/README.md,ruby.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,https://github.com/google/gtfs-realtime-bindings-php,php.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,(CONTRIBUTING.md),(https://github.com/MobilityData/gtfs-realtime-bindings/blob/master/CONTRIBUTING.md),g' docs/realtime/language-bindings/index.md
 curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/dotnet/README.md -o docs/realtime/language-bindings/dotnet.md
 curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/java/README.md -o docs/realtime/language-bindings/java.md
 curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/nodejs/README.md -o docs/realtime/language-bindings/nodejs.md

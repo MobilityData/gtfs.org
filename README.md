@@ -38,7 +38,7 @@ The GTFS Documentation Platform is based on open source content pulled from vari
 | /realtime/vehicle-positions/ | https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/vehicle-positions.md | Apache License 2.0 | 
 | /realtime/examples/ | https://github.com/MobilityData/gtfs.org/blob/main/docs/realtime/examples/index.md | CC BY 3.0 | 
 | /realtime/feed-examples/ | https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/examples | Apache License 2.0 | 
-| /realtime/code-examples/*/ | https://github.com/google/transit/tree/master/gtfs-realtime/spec/en/examples/code-examples (TBD [PR #331](https://github.com/google/transit/pull/331)) | Apache License 2.0 | 
+| /realtime/language-bindings/*/ | https://github.com/MobilityData/gtfs-realtime-bindings | Apache License 2.0 | 
 | /realtime/changes/ | https://github.com/google/transit/blob/master/gtfs-realtime/CHANGES.md | Apache License 2.0 | 
 | /realtime/process/ | https://github.com/google/transit/blob/master/gtfs-realtime/CHANGES.md | Apache License 2.0 | 
 | /realtime/guiding-principles/ | https://github.com/google/transit/blob/master/gtfs-realtime/CHANGES.md | Apache License 2.0 | 

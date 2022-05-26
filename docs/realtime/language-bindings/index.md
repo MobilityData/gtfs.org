@@ -31,13 +31,13 @@ published as packages to facilitate their use in other projects.
 
 ## Supported Languages
 
-* [.NET](dotnet/README.md)
-* [Java](java/README.md)
-* [JavaScript / Node.js](nodejs/README.md)
-* [Python](python/README.md)
-* [Golang](golang/README.md)
-* ~~[Ruby](ruby/README.md)~~ *(Deprecated as of early 2019)*
-* ~~[PHP](https://github.com/google/gtfs-realtime-bindings-php)~~ *(Deprecated as of early 2019)*
+* [.NET](dotnet.md)
+* [Java](java.md)
+* [JavaScript / Node.js](nodejs.md)
+* [Python](python.md)
+* [Golang](golang.md)
+* ~~[Ruby](ruby.md)~~ *(Deprecated as of early 2019)*
+* ~~[PHP](php.md)~~ *(Deprecated as of early 2019)*
 
 ## Other Languages
 
@@ -45,7 +45,7 @@ We don't provide generated code for C++, use the official protoc compiler for th
 
 Are we missing your favorite language? Consider contributing:
 
-1. Read [CONTRIBUTING.md](CONTRIBUTING.md).
+1. Read [CONTRIBUTING.md](https://github.com/MobilityData/gtfs-realtime-bindings/blob/master/CONTRIBUTING.md).
 2. Open a pull request with your language of choice. Please include update instructions (ideally, scripts). Also, provide packaging suitable for the language ecosystem.
 
 ## Project History
