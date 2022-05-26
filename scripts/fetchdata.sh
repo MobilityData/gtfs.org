@@ -26,7 +26,13 @@ curl https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/exampl
 sed -i.bak "s,sample-feed-1.zip,https://github.com/google/transit/blob/master/gtfs/spec/en/examples/sample-feed-1.zip?raw=true,g" docs/schedule/example-feed.md
 sed -i.bak "s,(sample-feed-1),(https://github.com/google/transit/tree/master/gtfs/spec/en/examples/sample-feed-1),g" docs/schedule/example-feed.md
 
-### GTFS Schedule data examples (schedule/data-examples) google/transit PR#329
+### GTFS Schedule data examples (schedule/data-examples)
+curl https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/examples/data-examples.md -o docs/schedule/data-examples.md
+sed -i.bak "s,../reference.md#routestxt,../reference/#routestxt,g" docs/schedule/data-examples.md
+sed -i.bak "s,victor-valley-transit.svg,../assets/victor-valley-transit.svg,g" docs/schedule/data-examples.md
+sed -i.bak "s,../reference.md#stopstxt,../reference/#stopstxt,g" docs/schedule/data-examples.md
+sed -i.bak "s,../reference.md#stoptimestxt,../reference/#stop_timestxt,g" docs/schedule/data-examples.md
+sed -i.bak "s,../reference.md#stop_timestxt,../reference/#stop_timestxt,g" docs/schedule/data-examples.md
 
 ## GTFS Schedule changes (schedule/changes/*)
 rm docs/schedule/changes/*

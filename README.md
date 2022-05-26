@@ -23,7 +23,7 @@ The GTFS Documentation Platform is based on open source content pulled from vari
 | /schedule/best-practices/ | https://github.com/MobilityData/GTFS_Schedule_Best-Practices | CC BY 3.0 | 
 | /schedule/examples/ | https://github.com/MobilityData/gtfs.org/blob/main/docs/schedule/examples/index.md | CC BY 3.0 |
 | /schedule/example-feed/ | https://github.com/google/transit/blob/master/gtfs/spec/en/examples/README.md | Apache License 2.0 |
-| /schedule/data-examples/ | https://github.com/google/transit/tree/master/gtfs/spec/en/examples/data-examples (TBD [PR #329](https://github.com/google/transit/pull/329)) | Apache License 2.0 | 
+| /schedule/data-examples/ | https://github.com/google/transit/blob/master/gtfs/spec/en/examples/data-examples.md | Apache License 2.0 | 
 | /schedule/changes/ | https://github.com/google/transit/blob/master/gtfs/CHANGES.md | Apache License 2.0|  
 | /schedule/changes/process | https://github.com/google/transit/blob/master/gtfs/CHANGES.md | Apache License 2.0 |  
 | /schedule/changes/guiding-principles | https://github.com/google/transit/blob/master/gtfs/CHANGES.md | Apache License 2.0 |  
