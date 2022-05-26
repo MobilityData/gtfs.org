@@ -206,17 +206,20 @@ The following example is an ASCII representation of an full-dataset Trip Update 
 
 " > docs/realtime/feed-examples/trip-updates.md
 
-## GTFS Realtime code examples
-curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/README.md -o docs/realtime/code-examples/index.md
-curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/dotnet/README.md -o docs/realtime/code-examples/dotnet.md
-curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/golang/README.md -o docs/realtime/code-examples/golang.md
-curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/java/README.md -o docs/realtime/code-examples/java.md
-curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/nodejs/README.md -o docs/realtime/code-examples/nodejs.md
-curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings-php/master/README.md -o docs/realtime/code-examples/php.md
-curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/python/README.md -o docs/realtime/code-examples/python.md
-curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/ruby/README.md -o docs/realtime/code-examples/ruby.md
+## GTFS Realtime Language Bindings
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/README.md -o docs/realtime/language-bindings/index.md
+sed -i.bak '1,2d' docs/realtime/language-bindings/index.md
+BINDINGS=docs/realtime/language-bindings/index.md
+echo "# Language Bindings
 
-
+**[Join the MobilityData chat](https://bit.ly/mobilitydata-slack)**
+`cat $BINDINGS`
+" > docs/realtime/language-bindings/index.md
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/dotnet/README.md -o docs/realtime/language-bindings/dotnet.md
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/java/README.md -o docs/realtime/language-bindings/java.md
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/nodejs/README.md -o docs/realtime/language-bindings/nodejs.md
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/python/README.md -o docs/realtime/language-bindings/python.md
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/golang/README.md -o docs/realtime/language-bindings/golang.md
 
 # AWESOME-TRANSIT RESOURCE LIST
 rm docs/resources/*
