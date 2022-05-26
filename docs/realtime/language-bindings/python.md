@@ -1,6 +1,6 @@
 # Python GTFS-realtime Language Bindings
 
-[![PyPI version](https://badge.fury.io/py/gtfs-realtime-bindings.svg)](http://badge.fury.io/py/gtfs-realtime-bindings)
+[![PyPI version](https://badge.fury.io/py/gtfs-realtime-bindings.svg)](https://badge.fury.io/py/gtfs-realtime-bindings)
 
 Provides Python classes generated from the
 [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) Protocol

@@ -1,6 +1,6 @@
 # Ruby GTFS-realtime Language Bindings
 
-[![Gem Version](https://badge.fury.io/rb/gtfs-realtime-bindings.svg)](http://badge.fury.io/rb/gtfs-realtime-bindings)
+[![Gem Version](https://badge.fury.io/rb/gtfs-realtime-bindings.svg)](https://badge.fury.io/rb/gtfs-realtime-bindings)
 
 Provides Ruby classes generated from the
 [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) Protocol

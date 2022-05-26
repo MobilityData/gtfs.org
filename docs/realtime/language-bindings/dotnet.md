@@ -1,6 +1,6 @@
 # .NET GTFS-realtime Language Bindings
 
-[![NuGet version](https://badge.fury.io/nu/GtfsRealtimeBindings.svg)](http://badge.fury.io/nu/GtfsRealtimeBindings)
+[![NuGet version](https://badge.fury.io/nu/GtfsRealtimeBindings.svg)](https://badge.fury.io/nu/GtfsRealtimeBindings)
 
 Provides .NET classes generated from the
 [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) Protocol

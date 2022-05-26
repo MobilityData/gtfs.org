@@ -9,10 +9,10 @@ GTFS-realtime data feed into Java objects.
 ## Add the Dependency 
 
 To use the `gtfs-realtime-bindings` classes in your own project, you need to add
-an appropriate dependency.  We publish our module to the [Maven Central Repository](http://search.maven.org/)
+an appropriate dependency.  We publish our module to the [Maven Central Repository](https://search.maven.org/)
 so that it can be easily referenced by Java build tools like Maven, Ivy, and Gradle.
 
-For [Maven](http://maven.apache.org/), add the following to your `pom.xml`
+For [Maven](https://maven.apache.org/), add the following to your `pom.xml`
 dependencies section:
 
 ```xml

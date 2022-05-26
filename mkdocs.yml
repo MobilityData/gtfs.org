@@ -98,7 +98,6 @@ nav:
 - GTFS Realtime: 
   - Getting Started: realtime/index.md
   - Reference: realtime/reference.md
-  - Protobuf: realtime/proto.md
   - Best Practices: realtime/best-practices.md
   - Feed Entities:
     - realtime/feed-entities/index.md
@@ -109,6 +108,7 @@ nav:
     - realtime/feed-examples/index.md
     - Trip Updates: realtime/feed-examples/trip-updates.md
     - Service Alerts: realtime/feed-examples/service-alerts.md
+  - Protobuf: realtime/proto.md
   - Language Bindings: 
     - realtime/language-bindings/index.md
     - .NET: realtime/language-bindings/dotnet.md

@@ -1,6 +1,6 @@
 # PHP GTFS-realtime Language Bindings
 
-[![PHP version](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings.svg)](http://badge.fury.io/ph/google%2Fgtfs-realtime-bindings)
+[![PHP version](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings.svg)](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings)
 
 Provides PHP classes generated from the
 [GTFS-realtime](https://developers.google.com/transit/gtfs-realtime/) Protocol
@@ -30,7 +30,7 @@ so, add a dependency in your `composer.json` file:
 
 Where `x.y.z` is the latest release version:
 
-[![PHP version](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings.svg)](http://badge.fury.io/ph/google%2Fgtfs-realtime-bindings)
+[![PHP version](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings.svg)](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings)
 
 Then update your Composer dependencies:
 

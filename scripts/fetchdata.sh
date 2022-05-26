@@ -9,6 +9,8 @@ sed -i.bak "1 s/.*/$new_header/" docs/schedule/reference.md
 
 ### patch links
 sed -i.bak "s,../../CHANGES.md,../revision-history,g" docs/schedule/reference.md
+sed -i.bak 's,examples/2-leg.svg,../assets/2-leg.svg,g' docs/schedule/reference.md
+sed -i.bak 's,examples/3-leg.svg,../assets/3-leg.svg,g' docs/schedule/reference.md
 
 ## GTFS Schedule best practices (schedule/best-practices)
 curl https://raw.githubusercontent.com/MobilityData/GTFS_Schedule_Best-Practices/master/en/best-practices.md -o docs/schedule/best-practices.md
