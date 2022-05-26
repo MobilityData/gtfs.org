@@ -58,7 +58,7 @@ E,Oro Grande Post Office,34.599292,-117.334452
 F,Silver Lakes Market,34.744662,-117.335407
 ```
 
-[File stop_times.txt](../reference/#stoptimestxt)
+[File stop_times.txt](../reference/#stop_timestxt)
 
 ```
 trip_id,stop_id,stop_sequence,departure_time,arrival_time,continuous_pickup,continuous_drop_off
@@ -89,7 +89,7 @@ E,Oro Grande Post Office,34.599292,-117.334452
 F,Silver Lakes Market,34.744662,-117.335407
 ```
 
-[File stop_times.txt](../reference/#stoptimestxt)
+[File stop_times.txt](../reference/#stop_timestxt)
 
 ```
 trip_id,stop_id,stop_sequence,departure_time,arrival_time,continuous_pickup,continuouse_drop_off,timepoint

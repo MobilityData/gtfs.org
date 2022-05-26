@@ -1,6 +1,6 @@
 # GTFS SCHEDULE
 
-## GTFS Schedule reference
+## GTFS Schedule reference (schedule/reference) 
 curl https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/reference.md -o docs/schedule/reference.md
 
 ### replace header
@@ -9,24 +9,34 @@ sed -i.bak "1 s/.*/$new_header/" docs/schedule/reference.md
 
 ### patch links
 sed -i.bak "s,../../CHANGES.md,../revision-history,g" docs/schedule/reference.md
+sed -i.bak 's,examples/2-leg.svg,../assets/2-leg.svg,g' docs/schedule/reference.md
+sed -i.bak 's,examples/3-leg.svg,../assets/3-leg.svg,g' docs/schedule/reference.md
 
-## GTFS Schedule best practices
+## GTFS Schedule best practices (schedule/best-practices)
 curl https://raw.githubusercontent.com/MobilityData/GTFS_Schedule_Best-Practices/master/en/best-practices.md -o docs/schedule/best-practices.md
 
 ### patch links
 sed -i.bak "s,#dataset-publishing--general-practices,#dataset-publishing-general-practices,g" docs/schedule/best-practices.md
 sed -i.bak "s,https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md,../reference,g" docs/schedule/best-practices.md
 
-## GTFS Schedule examples
+## GTFS Schedule examples 
 
-### GTFS Schedule example feed
+### GTFS Schedule example feed (schedule/example-feed)
 curl https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/examples/README.md -o docs/schedule/example-feed.md
 
 #### patch links
 sed -i.bak "s,sample-feed-1.zip,https://github.com/google/transit/blob/master/gtfs/spec/en/examples/sample-feed-1.zip?raw=true,g" docs/schedule/example-feed.md
 sed -i.bak "s,(sample-feed-1),(https://github.com/google/transit/tree/master/gtfs/spec/en/examples/sample-feed-1),g" docs/schedule/example-feed.md
 
-## GTFS Schedule changes
+### GTFS Schedule data examples (schedule/data-examples)
+curl https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/examples/data-examples.md -o docs/schedule/data-examples.md
+sed -i.bak "s,../reference.md#routestxt,../reference/#routestxt,g" docs/schedule/data-examples.md
+sed -i.bak "s,victor-valley-transit.svg,../assets/victor-valley-transit.svg,g" docs/schedule/data-examples.md
+sed -i.bak "s,../reference.md#stopstxt,../reference/#stopstxt,g" docs/schedule/data-examples.md
+sed -i.bak "s,../reference.md#stoptimestxt,../reference/#stop_timestxt,g" docs/schedule/data-examples.md
+sed -i.bak "s,../reference.md#stop_timestxt,../reference/#stop_timestxt,g" docs/schedule/data-examples.md
+
+## GTFS Schedule changes (schedule/changes/*)
 rm docs/schedule/changes/*
 
 curl https://raw.githubusercontent.com/google/transit/master/gtfs/CHANGES.md -o docs/schedule/changes/changes.md
@@ -76,6 +86,32 @@ echo "<br><div class=landing-page>
 sed -i.bak "s,../CONTRIBUTING.md,https://github.com/google/transit/blob/master/CONTRIBUTING.md,g" docs/schedule/process.md
 
 # GTFS REALTIME
+
+## GTFS Realtime overview (realtime/)
+curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/README.md -o docs/realtime/index.md
+
+### add intro
+INTRO=docs/realtime/index.md
+echo "# GTFS Realtime Overview
+
+<div class="landing-page">
+    <a class="button" href="reference">Reference</a><a class="button" href="best-practices">Best Practices</a><a class="button" href="feed-examples">Examples</a><a class="button" href="changes">Changes</a>
+</div>
+
+## Getting Started
+
+Providing users transit data updates in real time greatly enhances their experience of your transit services. Providing up-to-date information about current arrival and departure times allows users to smoothly plan their trips. As a result, in case of an unfortunate delay, a rider would be relieved to know that they can stay home a little bit longer.
+
+`cat $INTRO`" > docs/realtime/index.md
+
+### patch links
+sed -i.bak "s,https://developers.google.com/transit/gtfs/reference,../schedule/reference,g" docs/realtime/index.md
+sed -i.bak "s,feed-entities.md,feed-entities,g" docs/realtime/index.md
+sed -i.bak "s,examples/,feed-examples,g" docs/realtime/index.md
+sed -i.bak "s,reference.md,reference,g" docs/realtime/index.md
+sed -i.bak "s,Publish your feed,[Publish your feed](best-practices/#feed-publishing-general-practices),g" docs/realtime/index.md
+sed -i.bak "s,../../proto/gtfs-realtime.proto,proto,g" docs/realtime/index.md
+
 
 ## GTFS Realtime reference
 curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/reference.md -o docs/realtime/reference.md
@@ -177,6 +213,29 @@ The following example is an ASCII representation of an full-dataset Trip Update 
 \`\`\`
 
 " > docs/realtime/feed-examples/trip-updates.md
+
+## GTFS Realtime Language Bindings
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/README.md -o docs/realtime/language-bindings/index.md
+sed -i.bak '1,2d' docs/realtime/language-bindings/index.md
+BINDINGS=docs/realtime/language-bindings/index.md
+echo "# Language Bindings
+
+**[Join the MobilityData chat](https://bit.ly/mobilitydata-slack)**
+`cat $BINDINGS`
+" > docs/realtime/language-bindings/index.md
+sed -i.bak 's,dotnet/README.md,dotnet.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,java/README.md,java.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,nodejs/README.md,nodejs.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,python/README.md,python.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,golang/README.md,golang.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,ruby/README.md,ruby.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,https://github.com/google/gtfs-realtime-bindings-php,php.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,(CONTRIBUTING.md),(https://github.com/MobilityData/gtfs-realtime-bindings/blob/master/CONTRIBUTING.md),g' docs/realtime/language-bindings/index.md
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/dotnet/README.md -o docs/realtime/language-bindings/dotnet.md
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/java/README.md -o docs/realtime/language-bindings/java.md
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/nodejs/README.md -o docs/realtime/language-bindings/nodejs.md
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/python/README.md -o docs/realtime/language-bindings/python.md
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/golang/README.md -o docs/realtime/language-bindings/golang.md
 
 # AWESOME-TRANSIT RESOURCE LIST
 rm docs/resources/*
