@@ -27,7 +27,7 @@ extra:
     provider: google
     property: G-DRBTC7SSDT
     feedback:
-      title: Was this page helpful?
+      # title: Was this page helpful?
       ratings:
         - icon: material/emoticon-happy-outline
           name: This page was helpful
