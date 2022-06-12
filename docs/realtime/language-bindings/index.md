@@ -1,3 +1,7 @@
+<a href="https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/README.md" title="Edit this page" target="_blank">
+    <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+  </a>
+  
 # Language Bindings
 
 **[Join the MobilityData chat](https://bit.ly/mobilitydata-slack)**
@@ -53,4 +57,3 @@ Are we missing your favorite language? Consider contributing:
 This project was originally created by Google - MobilityData started to maintain the project in early 2019. 
 
 Older versions of the bindings libraries are still published under Google's name.  See the documentation for each language [here](https://github.com/MobilityData/gtfs-realtime-bindings/tree/final-google-version) to find the last version published by Google.
-

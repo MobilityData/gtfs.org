@@ -1,3 +1,7 @@
+<a href="https://github.com/MobilityData/gtfs.org/edit/main/docs/background.md" title="Edit this page" target="_blank">
+    <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+  </a>
+  
 # Background
 
 TriMet in Portland, Oregon, along with Google, was one of the first public agencies to try and tackle the problem of online transit trip planners through the use of open datasets that are shared with the general public ([How Google and Portland’s TriMet Set the Standard for Open Transit Data in Streetsblog SF](https://sf.streetsblog.org/2010/01/05/how-google-and-portlands-trimet-set-the-standard-for-open-transit-data/){target=_blank}). TriMet worked with Google to format their transit data into an easily maintainable and consumable format that could be imported into Google Maps. This transit data format was originally known as the Google Transit Feed Specification (GTFS).

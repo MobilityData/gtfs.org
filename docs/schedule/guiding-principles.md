@@ -1,3 +1,7 @@
+<a href="https://github.com/google/transit/edit/master/gtfs/CHANGES.md" title="Edit this page" target="_blank">
+    <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+  </a>
+  
 # Guiding Principles
 In order to preserve the original vision of GTFS, a number of guiding principles have been established to take into consideration when extending the spec:
 
@@ -15,4 +19,3 @@ When adding features to the specification, we want to avoid making changes that 
 
 **Speculative features are discouraged**<br>
 Every new feature adds complexity to the creation and reading of feeds. Therefore, we want to take care to only add features that we know to be useful. Ideally, any proposal will have been tested by generating data for a real transit system that uses the new feature and writing software to read and display it. Note that the GTFS readily allows for extensions to the format through the addition of extra columns and files that are ignored by the official parsers & validators, so proposals can be easily prototyped and tested on existing feeds.
-

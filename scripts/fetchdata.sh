@@ -303,6 +303,8 @@ cat docs/resources/temp.md docs/resources/toc.md docs/resources/about.md docs/re
 
 rm -r docs/resources/temp.md docs/resources/toc.md docs/resources/license.md docs/resources/about.md
 
+
+
 # ALL FILES
 
 ## convert http to https
@@ -323,7 +325,7 @@ find . -name "*.bak" -type f -delete
 
 ## /
 PAGE=docs/index.md
-echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/index.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/index.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -332,7 +334,7 @@ echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/index.md
 ## /background.md
 
 PAGE=docs/background.md
-echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/background.md\">
+echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/background.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -340,7 +342,7 @@ echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/backgrou
 
 ## schedule/index.md
 PAGE=docs/schedule/index.md
-echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/schedule/index.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/schedule/index.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -348,7 +350,7 @@ echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/schedule
 
 ## schedule/reference.md
 PAGE=docs/schedule/reference.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/spec/en/reference.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/spec/en/reference.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -356,7 +358,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/spec/en/refer
 
 ## schedule/best-practices.md
 PAGE=docs/schedule/best-practices.md
-echo "<a href=\"https://github.com/MobilityData/GTFS_Schedule_Best-Practices/edit/master/en/best-practices.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/MobilityData/GTFS_Schedule_Best-Practices/edit/master/en/best-practices.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -364,7 +366,7 @@ echo "<a href=\"https://github.com/MobilityData/GTFS_Schedule_Best-Practices/edi
 
 ## schedule/examples/index.md
 PAGE=docs/schedule/examples/index.md
-echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/schedule/examples/index.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/schedule/examples/index.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -372,7 +374,7 @@ echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/schedule
 
 ## schedule/example-feed.md
 PAGE=docs/schedule/example-feed.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/spec/en/examples/README.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/spec/en/examples/README.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -380,7 +382,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/spec/en/examp
 
 ## schedule/data-examples.md
 PAGE=docs/schedule/data-examples.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/spec/en/examples/data-examples.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/spec/en/examples/data-examples.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -388,7 +390,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/spec/en/examp
 
 ## schedule/changes/index.md
 PAGE=docs/schedule/changes/index.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -396,7 +398,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" 
 
 ## schedule/process.md
 PAGE=docs/schedule/process.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -404,7 +406,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" 
 
 ## schedule/guiding-principles.md
 PAGE=docs/schedule/guiding-principles.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -412,7 +414,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" 
 
 ## schedule/revision-history.md
 PAGE=docs/schedule/revision-history.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -420,7 +422,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" 
 
 ## realtime/index.md
 PAGE=docs/realtime/index.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/README.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/README.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -428,7 +430,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec
 
 ## realtime/reference.md
 PAGE=docs/realtime/reference.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/reference.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/reference.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -436,7 +438,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec
 
 ## realtime/best-practices.md
 PAGE=docs/realtime/best-practices.md
-echo "<a href=\"https://github.com/MobilityData/GTFS_Realtime_Best-Practices/tree/master/en\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/MobilityData/GTFS_Realtime_Best-Practices/tree/master/en\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -444,7 +446,7 @@ echo "<a href=\"https://github.com/MobilityData/GTFS_Realtime_Best-Practices/tre
 
 ## realtime/feed-entities/index.md
 PAGE=docs/realtime/feed-entities/index.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/feed-entities.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/feed-entities.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -452,7 +454,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec
 
 ## realtime/feed-entities/trip-updates.md
 PAGE=docs/realtime/feed-entities/trip-updates.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/trip-updates.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/trip-updates.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -460,7 +462,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec
 
 ## realtime/feed-entities/service-alerts.md
 PAGE=docs/realtime/feed-entities/service-alerts.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/service-alerts.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/service-alerts.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -468,7 +470,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec
 
 ## realtime/feed-entities/vehicle-positions.md
 PAGE=docs/realtime/feed-entities/vehicle-positions.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/vehicle-positions.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/vehicle-positions.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -476,7 +478,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec
 
 ## realtime/feed-examples/index.md
 PAGE=docs/realtime/feed-examples/index.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/examples/README.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/examples/README.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -484,7 +486,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec
 
 ## realtime/feed-examples/trip-updates.md
 PAGE=docs/realtime/feed-examples/trip-updates.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/examples/trip-updates-full.asciipb\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/examples/trip-updates-full.asciipb\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -492,7 +494,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec
 
 ## realtime/feed-examples/service-alerts.md
 PAGE=docs/realtime/feed-examples/service-alerts.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/examples/alerts.asciipb\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/examples/alerts.asciipb\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -500,7 +502,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec
 
 ## realtime/proto.md
 PAGE=docs/realtime/proto.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/proto/gtfs-realtime.proto\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/proto/gtfs-realtime.proto\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -508,7 +510,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/prot
 
 ## realtime/language-bindings/index.md
 PAGE=docs/realtime/language-bindings/index.md
-echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/README.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/README.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -516,7 +518,7 @@ echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/mast
 
 ## realtime/language-bindings/dotnet.md
 PAGE=docs/realtime/language-bindings/dotnet.md
-echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/dotnet/README.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/dotnet/README.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -524,7 +526,7 @@ echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/mast
 
 ## realtime/language-bindings/java.md
 PAGE=docs/realtime/language-bindings/java.md
-echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/java/README.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/java/README.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -532,7 +534,7 @@ echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/mast
 
 ## realtime/language-bindings/nodejs.md
 PAGE=docs/realtime/language-bindings/nodejs.md
-echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/nodejs/README.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/nodejs/README.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -540,7 +542,7 @@ echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/mast
 
 ## realtime/language-bindings/python.md
 PAGE=docs/realtime/language-bindings/python.md
-echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/python/README.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/python/README.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -548,7 +550,7 @@ echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/mast
 
 ## realtime/language-bindings/golang.md
 PAGE=docs/realtime/language-bindings/golang.md
-echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/golang/README.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/golang/README.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -556,7 +558,7 @@ echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/mast
 
 ## realtime/language-bindings/ruby.md
 PAGE=docs/realtime/language-bindings/ruby.md
-echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/ruby/README.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/ruby/README.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -564,7 +566,7 @@ echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/mast
 
 ## realtime/language-bindings/php.md
 PAGE=docs/realtime/language-bindings/php.md
-echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings-php/edit/master/README.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings-php/edit/master/README.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -572,7 +574,7 @@ echo "<a href=\"https://github.com/MobilityData/gtfs-realtime-bindings-php/edit/
 
 ## realtime/changes/index.md
 PAGE=docs/realtime/changes/index.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHANGES.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -580,7 +582,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHAN
 
 ## realtime/process.md
 PAGE=docs/realtime/process.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHANGES.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -588,7 +590,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHAN
 
 ## realtime/guiding-principles.md
 PAGE=docs/realtime/guiding-principles.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHANGES.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -596,7 +598,7 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHAN
 
 ## realtime/revision-history.md
 PAGE=docs/realtime/revision-history.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHANGES.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -604,23 +606,23 @@ echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHAN
 
 ## realtime/extensions.md
 PAGE=docs/realtime/extensions.md
-echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHANGES.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
 `cat $PAGE`" > $PAGE
 
 ## resources/*.md
-PAGE=docs/resources/*.md
-echo "<a href=\"https://github.com/CUTR-at-USF/awesome-transit/edit/master/README.md\" title=\"Edit this page\">
-    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
-  </a>
+# PAGE=docs/resources/*.md
+# echo "<a href=\"https://github.com/CUTR-at-USF/awesome-transit/edit/master/README.md\" title=\"Edit this page\" target=\"_blank\">
+#     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
+#   </a>
   
-`cat $PAGE`" > $PAGE
+# `cat $PAGE`" > $PAGE
 
 ## extensions.md
 PAGE=docs/extensions.md
-echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/extensions.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/extensions.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
@@ -628,7 +630,7 @@ echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/extensio
 
 ## about.md
 PAGE=docs/about.md
-echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/about.md\" title=\"Edit this page\">
+echo "<a href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/about.md\" title=\"Edit this page\" target=\"_blank\">
     <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z\"></path></svg>
   </a>
   
