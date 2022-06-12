@@ -1,3 +1,7 @@
+<a href="https://github.com/CUTR-at-USF/awesome-transit/edit/master/README.md" title="Edit this page" target="_blank">
+    <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+  </a>
+  
 # Software for Creating APIs
 
 Software that you can set up to provide an API to transit and multimodal data.
@@ -13,4 +17,3 @@ Software that you can set up to provide an API to transit and multimodal data.
 - [pyBikes](https://github.com/eskerda/pybikes) - Software powering [CityBikes](https://api.citybik.es) for worldwide bikeshare system info
 - [TransitClock](https://thetransitclock.org) - Java application that can consume raw vehicle positions and generate prediction times in formats such as GTFS-realtime.  Formerly known as "Transitime".
 - [TransiCast](https://www.transicast.com/) - Provides public transportation data for North America in a single, integrated call and response format. The data is provided in stream-parsable XML and JSON formats.  Open-source on [Google Code](https://code.google.com/archive/p/rasa/).  Hosted version at www.transitcast.com [requires payment](https://www.transicast.com/coststructure.html).
-
