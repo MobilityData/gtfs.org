@@ -1,26 +1,15 @@
 # Extensions
 
-<!-- ### Recently Merged Proposals &ensp;<img src="../assets/pr-merged.svg" style="height:1em;"/> -->
+Additional files and fields can be extended onto GTFS datasets to accommodate a variety of application-specific needs, even if these fields are not in the official specification. Below is a list of GTFS extensions that may be implemented. Note that some of these extensions may become active proposals and subsequently merged into the official specification via the Specification Amendment Process.
 
 === "GTFS Schedule"
 
-    ### **Recently Merged Proposals** &ensp;<img src="../assets/pr-merged.svg" style="height:1em;"/>
+    ## Active Proposals &ensp;<img src="../assets/pr-active.svg" style="height:1em;"/>
 
-    Recently merged proposals that are now part of the official specification.
-
-    <hr>
-
-    <div>
-        <strong>GTFS-Fares v2 base implementation</strong>
-        <p>London is the capital city of England.</p>
-        <hr>
-        <strong>GTFS-Fares v2 base implementation</strong>
-        <p>London is the capital city of England.</p>
-    </div>
-
-    <hr>
-
-    ### **Active Proposals** &ensp;<img src="../assets/pr-active.svg" style="height:1em;"/>
-
+    ## Extension Registry ➕
 
 === "GTFS Realtime"
+
+    ## Active Proposals &ensp;<img src="../assets/pr-active.svg" style="height:1em;"/>
+
+    ## Extension Registry ➕

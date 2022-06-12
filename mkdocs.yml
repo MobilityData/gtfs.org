@@ -136,6 +136,6 @@ nav:
   - resources/other.md
 - Extensions: 
   - Extensions: extensions/index.md
-  - Participate: extensions/participate.md
-  - Glossary: extensions/glossary.md
+  # - Participate: extensions/participate.md
+  # - Glossary: extensions/glossary.md
 - About: about.md
