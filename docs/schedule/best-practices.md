@@ -1,3 +1,7 @@
+<a href="https://github.com/MobilityData/GTFS_Schedule_Best-Practices/edit/master/en/best-practices.md" title="Edit this page" target="_blank">
+    <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
+  </a>
+  
 # GTFS Schedule Best Practices
 
 These are recommended practices for describing public transportation services in the [General Transit Feed Specification (GTFS)](../reference). These practices have been synthesized from the experience of the [GTFS Best Practices working group](#gtfs-best-practices-working-group) members and [application-specific GTFS practice recommendations](https://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS). 

@@ -8,7 +8,7 @@ This site was built using [MkDocs](https://www.mkdocs.org/), a static site gener
 
 To propose a feature, content addition, or UI/UX improvement, open an [issue](https://github.com/MobilityData/gtfs.org/issues/new) or [pull request](https://github.com/MobilityData/gtfs.org/pulls) on this repository. 
 
-To edit site content, click on the pencil icon on the top right corner of the webpage to find the source-of-truth document. ✏️
+To edit site content, click on the pencil icon on the top right corner of the webpage to find the source-of-truth document. 📝
 
 ## Building the site locally
 
