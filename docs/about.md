@@ -10,7 +10,7 @@ MobilityData began in 2015 as a Rocky Mountain Institute project with the missio
 
 Learn more at [mobilitydata.org](https://mobilitydata.org/).
 
-<a href="https://mobilitydata.org/" target="_blank" rel="noopener" alt="MobilityData">
+<a class="img" href="https://mobilitydata.org/" target="_blank" rel="noopener" alt="MobilityData">
     <img src="../assets/md-black.svg#only-light" width=150rem style="float: left">
     <img src="../assets/md-white.svg#only-dark" width=150rem style="float: left">
 </a><br><br>
