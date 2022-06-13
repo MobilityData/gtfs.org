@@ -36,55 +36,6 @@ sed -i.bak "s,../reference.md#stopstxt,../reference/#stopstxt,g" docs/schedule/d
 sed -i.bak "s,../reference.md#stoptimestxt,../reference/#stop_timestxt,g" docs/schedule/data-examples.md
 sed -i.bak "s,../reference.md#stop_timestxt,../reference/#stop_timestxt,g" docs/schedule/data-examples.md
 
-## GTFS Schedule changes (schedule/changes/*)
-rm docs/schedule/changes/*
-
-curl https://raw.githubusercontent.com/google/transit/master/gtfs/CHANGES.md -o docs/schedule/changes/changes.md
-
-### split changes file by heading level 3 (requires installation of gcsplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
-
-new_header='# GTFS Schedule Changes'
-sed -i.bak "1s/^/$new_header\n\n/" docs/schedule/changes/changes.md
-
-### bump up headers
-sed -i.bak 's/###/##/g' docs/schedule/changes/changes.md
-
-### convert heading level 3 to bold
-sed -i.bak '/^### */ s/$/&**<br>/' docs/schedule/changes/changes.md
-sed -i.bak 's/### /**/g' docs/schedule/changes/changes.md
-sed -i.bak 's/##/#/g' docs/schedule/changes/changes.md
-find . -name "*.bak" -type f -delete
-
-gcsplit --prefix='changes' --suffix-format='%02d.md' docs/schedule/changes/changes.md /^'# '/ "{*}"
-rm -r docs/schedule/changes/changes.md
-rm -r changes00.md
-
-mv changes* docs/schedule/changes
-
-### rename split changes files
-strings=(
-    index
-    process
-    guiding-principles
-    revision-history
-)
-files=(docs/schedule/changes/*)
-let "count=0"
-for newname in "${strings[@]}"; do
-    mv "${files[$count]}" "docs/schedule/changes/$newname.md"
-    let "count++" 
-done
-
-mv docs/schedule/changes/process.md docs/schedule/changes/guiding-principles.md docs/schedule/changes/revision-history.md docs/schedule
-
-echo "<br><div class=landing-page>
-    <a class=button href=../process>Specification Amendment Process</a><a class=button href=../guiding-principles>Guiding Principles</a><a class=button href=../revision-history>Revision History</a>
-</div>
-" >> docs/schedule/changes/index.md
-
-#### patch links
-sed -i.bak "s,../CONTRIBUTING.md,https://github.com/google/transit/blob/master/CONTRIBUTING.md,g" docs/schedule/process.md
-
 # GTFS REALTIME
 
 ## GTFS Realtime overview (realtime/)
@@ -639,8 +590,6 @@ echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs.org/e
 `cat $PAGE`" > $PAGE
 
 # ##TO DO
-
-# ## GTFS Realtime changes
 
 # ## Resources TOC
 

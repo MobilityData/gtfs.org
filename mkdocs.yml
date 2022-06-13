@@ -95,6 +95,8 @@ plugins:
         'realtime/code-examples/golang.md': 'realtime/language-bindings/golang.md'
         'realtime/code-examples/ruby.md': 'realtime/language-bindings/ruby.md'
         'realtime/code-examples/php.md': 'realtime/language-bindings/php.md'
+        'schedule/guiding-principles.md': 'schedule/process.md'
+        'schedule/revision-history': 'schedule/process.md'
   - mkdocs-simple-hooks:
       hooks:
         on_config: "hooks.on_config:deploy_hooks"
@@ -111,8 +113,6 @@ nav:
   - Changes:
     - schedule/changes/index.md
     - Specification Amendment Process: schedule/process.md
-    - Guiding Principles: schedule/guiding-principles.md
-    - Revision History: schedule/revision-history.md
 - GTFS Realtime: 
   - Getting Started: realtime/index.md
   - Reference: realtime/reference.md

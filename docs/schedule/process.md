@@ -3,12 +3,16 @@
   </a>
   
 # Specification amendment process
-The official specification, reference and documentation are written in English. If a translation to a different language differs from the English original, the latter takes precedence. All communication is performed in English.
+The GTFS Specification is not set in stone. Instead, it is an open specification developed and maintained by the community of transit agencies, developers, and other stakeholders who use GTFS. It is expected that this community of producers and consumers of GTFS data will have proposals for extending the spec to enable new capabilities. To help manage that process, the following procedures and guidelines have been established.
+
+!!! note
+
+	The official specification, reference and documentation are written in English. If a translation to a different language differs from the English original, the latter takes precedence. All communication is performed in English.
 
 1. Create a git branch with update of all relevant parts of protocol definition, specification and documentation files (except for translations).
 1. Create pull request on https://github.com/google/transit. Pull request must contain an extended description of the patch. The creator of the pull request becomes the _advocate_.
 1. Once pull request is registered, it must be announced by its advocate in the [GTFS Changes mailing list](https://groups.google.com/forum/#!forum/gtfs-changes), including a link to the pull request. Once announced, the pull request is considered a proposal.  The pull request should also be edited to contain a link to the Google Groups announcement so they can easily be cross-referenced.
-  	- Since the advocate is a contributor, they must sign the [Contributor License Agreement](https://github.com/google/transit/blob/master/CONTRIBUTING.md) before pull request can be accepted.
+  	- Since the advocate is a contributor, they must sign the [Contributor License Agreement](../CONTRIBUTING.md) before pull request can be accepted.
 1. The discussion of the proposal follows. Pull request comments should be used as the sole discussion forum.
   	- The discussion lasts for as long as the advocate feels necessary, but must be at least 7 calendar days.
   	- The advocate is responsible for timely update of the proposal (i.e. pull request) based on the comments for which they agree to.
@@ -30,7 +34,305 @@ The official specification, reference and documentation are written in English. 
   	- If the advocate continues the work on proposal then a new vote can be called for at any point in time.
 1. Any pull request remaining inactive for 30 calendar days will be closed. When a pull request is closed, the corresponding proposal is considered abandoned. The advocate may reopen the pull request at any time if they wish to continue or maintain the conversation.
 1. If the proposal is accepted:
-  	- Google is committed to merging the voted upon version of the pull request (provided that the contributors have signed the [CLA](https://github.com/google/transit/blob/master/CONTRIBUTING.md)), and performing the pull request within 5 business days.
+  	- Google is committed to merging the voted upon version of the pull request (provided that the contributors have signed the [CLA](../CONTRIBUTING.md)), and performing the pull request within 5 business days.
   	- Translations must not be included into the original pull request.
     Google is responsible for eventually updating relevant translations into supported languages, but pure translation pull requests from the community are welcome and will be accepted as soon as all editorial comments are addressed.
 1. The final result of the pull request (accepted or abandoned) should be announced on the same Google Groups thread where the pull request was originally announced.
+
+<hr>
+
+## Guiding Principles
+In order to preserve the original vision of GTFS, a number of guiding principles have been established to take into consideration when extending the spec:
+
+**Feeds should be easy to create and edit**<br>
+We chose CSV as the basis for the specification because it's easy to view and edit using spreadsheet programs and text editors, which is helpful for smaller agencies. It's also straightforward to generate from most programming languages and databases, which is good for publishers of larger feeds.
+
+**Feeds should be easy to parse**<br>
+Feed readers should be able to extract the information they're looking for with as little work as possible. Changes and additions to the feed should be as broadly useful as possible, to minimize the number of code paths that readers of the feed need to implement. (However, making creation easier should be given precedence, since there will ultimately be more feed publishers than feed readers.)
+
+**The spec is about passenger information**<br>
+GTFS is primarily concerned with passenger information. That is, the spec should include information that can help power tools for riders, first and foremost. There is potentially a large amount of operations-oriented information that transit agencies might want to transmit internally between systems. GTFS is not intended for that purpose and there are potentially other operations-oriented data-standards that may be more appropriate.
+
+**Changes to the spec should be backwards-compatible**<br>
+When adding features to the specification, we want to avoid making changes that will make existing feeds invalid. We don't want to create more work for existing feed publishers until they want to add capabilities to their feeds. Also, whenever possible, we want existing parsers to be able to continue to read the older parts of newer feeds.
+
+**Speculative features are discouraged**<br>
+Every new feature adds complexity to the creation and reading of feeds. Therefore, we want to take care to only add features that we know to be useful. Ideally, any proposal will have been tested by generating data for a real transit system that uses the new feature and writing software to read and display it. Note that the GTFS readily allows for extensions to the format through the addition of extra columns and files that are ignored by the official parsers & validators, so proposals can be easily prototyped and tested on existing feeds.
+
+<hr>
+
+## Revision History
+
+**September 15, 2021**<br>
+
+* Allowed fare gates (pathway_mode=6) to be bidirectional. See [discussion](https://github.com/google/transit/pull/276).
+
+**September 13, 2021**<br>
+
+* Updated `stop_name` best practices. See [discussion](https://github.com/google/transit/pull/282).
+
+**August 27, 2021**<br>
+
+* Updated GTFS Schedule to [RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119). See [discussion](https://github.com/google/transit/pull/277).
+
+**January 4, 2021**<br>
+
+* Clarified description of `stop_times.stop_id`. See [discussion](https://github.com/google/transit/pull/258).
+* Defined positive and non-zero field signs. See [discussion](https://github.com/google/transit/pull/251).
+
+**October 2, 2020**<br>
+
+* Changed field type of `frequencies.headway_secs` from non-negative to positive integer. See [discussion](https://github.com/google/transit/pull/249).
+
+**May 25, 2020**<br>
+
+* Defined `pathways.txt`, `levels.txt` and `attributions.txt` as translatable tables. Added recommendations for translating multilingual `signposted_as` values. See [discussion](https://github.com/google/transit/pull/220).
+
+**May 13, 2020**<br>
+
+* Added `continuous_pickup` and `continuous_drop_off` to `routes.txt` and `stop_times.txt`. Changed `shape_id` from "Optional" to "Conditionally required". See [discussion](https://github.com/google/transit/pull/208).
+
+**March 24, 2020**<br>
+
+* Defined text-to-speech field and added `tts_stop_name` to `stops.txt`. See [discussion](https://github.com/google/transit/pull/49).
+
+**February 5, 2020**<br>
+
+* Added trolleybus and monorail `route_types`. See [discussion](https://github.com/google/transit/pull/174).
+
+**January 9, 2020**<br>
+
+* Added `translations.txt`. See [discussion](https://github.com/google/transit/pull/180).
+
+**December 26, 2019**<br>
+
+* Updated definitions for cable tram and aerial lift in `route_type`. See [discussion](https://github.com/google/transit/pull/186).
+
+**December 20, 2019**<br>
+
+* Added `attributions.txt`. See [discussion](https://github.com/google/transit/pull/192).
+
+**August 26, 2019**<br>
+
+* Specified that `stop_lat` and `stop_lon` be positioned where passengers wait to board the vehicle. See [discussion](https://github.com/google/transit/pull/179).
+
+**July 9, 2019**<br>
+
+* Added arrival and departure time best practices. See [discussion](https://github.com/google/transit/pull/165).
+* Added headsign best practices. See [discussion](https://github.com/google/transit/pull/167).
+* Added `stop_id` best practices. See [discussion](https://github.com/google/transit/pull/169).
+
+**June 25, 2019**<br>
+
+* Clarified relationship of shape points and stops. See [discussion](https://github.com/google/transit/pull/39).
+
+**April 4, 2019**<br>
+
+* Added `platform_code` field in `stops.txt`. See [discussion](https://github.com/google/transit/pull/146).
+
+**March 27, 2019**<br>
+
+* Added `pathways.txt` and `levels.txt`. See [discussion](https://github.com/google/transit/pull/143).
+
+**February 6, 2019**<br>
+
+* Editorial and formatting changes for clarity.  See [discussion](https://github.com/google/transit/pull/120).
+
+**October 2, 2018**<br>
+
+* Factorized field types. See [discussion](https://github.com/google/transit/pull/104).
+
+**September 14, 2018**<br>
+
+* Added "Conditionally required" concept. See [discussion](https://github.com/google/transit/pull/100).
+
+**September 4, 2018**<br>
+
+* Unified the definitions of `agency_lang` and `feed_lang`. See [discussion](https://github.com/google/transit/pull/98).
+
+**August 27, 2018**<br>
+
+* Updated `CHANGES.md` and last revised date. See [discussion](https://github.com/google/transit/pull/99).
+
+**August 22, 2018**<br>
+
+* Added `feed_contact_email` and `feed_contact_url` fields in the `feed_info.txt` file. See [discussion](https://github.com/google/transit/pull/31).
+
+**December 11, 2017**<br>
+
+* Added `route_sort_order` to `routes.txt`. See [discussion](https://github.com/google/transit/pull/83).
+
+**March 15, 2017**<br>
+
+* Clarified that a proposer's vote does not count towards total. See [discussion](https://github.com/google/transit/pull/50).
+* Specified that at before calling a vote, at least one GTFS producer and one GTFS consumer should implement the proposed change. See [discussion](https://github.com/google/transit/pull/46).
+
+**February 7, 2017**<br>
+
+* Clarified relationship of `block_id` and `service_id`. See [discussion](https://github.com/google/transit/pull/44).
+* Clarified that frequency-based service begins at vehicle departure. See [discussion](https://github.com/google/transit/pull/42).
+* Clarified descriptions of `stop_id` and `stop_code`. See [discussion](https://github.com/google/transit/pull/40).
+
+**December 11, 2017**<br>
+
+* Added `route_sort_order` field in the `routes.txt` file. See [discussion](https://github.com/google/transit/pull/83).
+
+**November 27, 2016**<br>
+
+* Added station entrance as a `stops.location_type`. See [discussion](https://github.com/google/transit/pull/30).
+
+**September 2, 2016**<br>
+
+* Updated documentation to add `agency_id` under `fare_attributes.txt`. See [discussion](https://github.com/google/transit/pull/27).
+
+**March 16, 2016**<br>
+
+* Transition of GTFS documentation to Github at https://github.com/google/transit
+
+**February 3, 2016**<br>
+
+* Added  `agency_email` to `agency.txt` proposal to spec: [discussion](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/aezjQsriLYA)
+
+**February 2, 2015**<br>
+
+* Added stop_times.txt 'timepoint' proposal to spec: [discussion](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/Ah-J9JP2rJY)
+
+**February 17, 2014**<br>
+
+* Added trips.txt 'bikes_allowed' proposal to spec: [discussion](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/rEiSeKNc4cs)
+
+**October 15, 2012**<br>
+
+Added trips.txt 'wheelchair_accessible' proposal to spec: [discussion](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
+
+**June 20, 2012**<br>
+
+* Added 'wheelchair_boarding' proposal to spec: [discussion](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
+
+**February 2, 2012**<br>
+
+* Added 'stop_timezone' proposal to spec: [discussion](https://groups.google.com/forum/#!topic/gtfs-changes/2Il0Q9OXqu4)
+
+**January 18, 2012**<br>
+
+* Migrated documentation from old code.google.com to their new location at developers.google.com.
+
+**September 26, 2011**<br>
+
+* Added 'feed_info' proposal to spec: [discussion](https://groups.google.com/forum/#!topic/gtfs-changes/Sh0e4o9o2Gw)
+
+**September 6, 2011**<br>
+
+* Added 'agency_fare_url' proposal to spec: [discussion](https://groups.google.com/forum/#!topic/gtfs-changes/Zp9rPG07CgE)
+* Added 'exact_times' proposal to spec: [discussion](https://groups.google.com/forum/#!topic/gtfs-changes/nZF9lbQ7TQs)
+
+**March 30, 2009**<br>
+
+* A new section on making a transit feed publicly available. This wasn't previously discussed on the group, because it wasn't strictly a change to how the data is interpreted or written. However, some of the folks at Google thought that it would be informative to include discussion of non-Google uses of GTFS, since there are an increasing number of applications that can make use of GTFS-formatted data.
+* CSV format clarifications: [discussion](https://groups.google.com/forum/#!topic/gtfs-changes/03qz5aTA2mk).
+* Additional guidance on how to pick contrasting colors in the descriptions of the route_color and route_text_color fields.
+* trip_short_name, as proposed and tested in these threads: a and b.
+* A fix for a minor error in the sample data included at the end of the document (giving stop S7 the parent_station S8).
+* Added "agency_lang" information to the sample data at the end of the document, as suggested by Marcy during the comment period: [discussion](https://groups.google.com/forum/#!topic/gtfs-changes/5qP1kDUFqx0).
+* Updated the link to OCTA's GTFS feed in the sidebar
+* See [original summary](https://groups.google.com/forum/#!topic/gtfs-changes/cL1E4oKKpKw).
+
+**February 26, 2009**<br>
+
+* Removed most of the Google-specific feed submission instructions, since there are many other applications that consume GTFS data at this point.
+* Fixed a broken link in the sidebar to Orange County OCTA's public feed.
+
+**August 7, 2008**<br>
+
+* Restored the stop_url field, which was accidentally omitted in the August 6 version
+* Added agency_phone to sample data
+* Added a mention of the data use agreement when submitting a feed to Google
+
+**August 6, 2008**<br>
+
+* Added transfers.txt file, allowing the feed publishers to provide hints on preferred transfer behavior ([original proposal](https://groups.google.com/forum/#!topic/gtfs-changes/cL1E4oKKpKw))
+* Added location_type and parent_station fields to stops.txt, allowing stop points to be grouped into stations ([original proposal](https://groups.google.com/forum/#!topic/gtfs-changes/ScGAyZ9a_yw))
+* Added agency_phone field for providing voice telephone number for an agency ([original proposal](https://groups.google.com/forum/#!topic/gtfs-changes/8Itt58ueyqA))
+* Added "Testing Your Feeds" section mentioning open-source testing tools
+* Added clarifications about CSV format, agency_timezone, agency_lang, route_color, route_text_color, arrival_time, departure_time, calendar.txt vs. calendar_dates.txt, fare tables, and frequencies.txt
+* Added link to feed history document, and corrected some public feed links
+* Updated example images to depict the current Google Maps UI
+* Updated/fixed sample data in document
+
+**February 29, 2008**<br>
+
+* Added the stop_code field in stops.txt to allow for the specification of rider-facing stop codes ([original proposal](https://groups.google.com/forum/#!topic/gtfs-changes/k9A95fYZexc))
+* Clarified the descriptions of route_short_name and route_long_name in routes.txt
+* Clarified the descriptions of arrival_time and departure_time in stop_times.txt
+* Fixed typos in the Sample Data section
+
+**November 20, 2007**<br>
+
+* Clarified block_id description
+* Changed language to de-emphasize Google Transit (since non-Google applications are using GTFS, and transit routing is now an integrated feature of Google Maps), and to fix assorted typos
+* Updated example screenshots to reflect the presentation of GTFS fields in the current Google Maps UI
+* Updated the Google contact email address for transit data providers
+* Updated formatting
+
+**October 5, 2007**<br>
+
+* Changed stop_sequence and shape_pt_sequence to allow for any increasing non-negative integers
+* Clarified descriptions and fixed typos
+
+**May 31, 2007**<br>
+
+* Updated page style, made HTML cleaner and more accessible
+* Added links to public feed examples and other useful sites
+* Removed examples from individual field descriptions
+
+**April 9, 2007**<br>
+
+* Added section on [submitting a feed](https://developers.google.com/transit/google-transit#SubmitFeedToGoogle).
+* Added the [Example Demo Transit Agency feed](https://developers.google.com/transit/gtfs/examples/gtfs-feed).
+* Added note that calendar.txt can be omitted if all the service dates are defined in calendar_dates.txt.
+* Made the agency_id field optional in feeds containing only one agency. This allows existing feeds without agency_id to remain valid.
+* Added fuller specification of agency_url, stop_url, and route_url, and additional example values for those fields.
+* Added 6 (Gondola) and 7 (Funicular) as valid route_type values.
+
+**March 8, 2007**<br>
+
+* Minor edit to move the stop_url field from stop_times.txt, where it was incorrectly specified in the Feb. 28 update, to stops.txt, where it belongs.
+
+**March 5, 2007**<br>
+
+* Minor edit to clarify the description of the route_long_name field.
+
+**February 28, 2007**<br>
+
+* Addition of frequencies.txt for headway-based schedule support.
+* Multiple agencies now allowed in the the same feed. Also added new agency_id field in both agencies.txt and routes.txt that lets you specify which route is operated by which agency.
+* Addition of per-route and per-stop URLs.
+* Addition of direction_id field in trips.txt.
+* Support for mid-trip headsign changes with addition of stop_headsign field in stop_times.txt.
+* Support for route colors with addition of optional route_color and route_text_color in routes.txt.
+* Removed the ability to specify stops using street addresses. The previous version of the spec allowed you to give the location of a transit stop using a street address in the stop_street, stop_city, stop_region, stop_postcode, and stop_country fields. Now stop locations must be given using stop_lat for latitude and stop_lon for longitude, which are more useful for most applications.
+* Addition of cable car vehicle type for route_type field in routes.txt.
+* See the original [Headway blog post](https://headwayblog.com/2007/03/02/google-feed-spec-update-2007-02/) summary of the changes.
+
+**November 29, 2006**<br>
+
+* Added support for trip shape information via shapes.txt
+* Clarified the definition of stop_sequence
+* Marked pickup_type and drop_off_type optional
+
+**October 31, 2006**<br>
+
+* Added support for fare information
+* Removed dates from individual file names
+* Changed the route_type value definitions
+* Allowed for multiple feed files to be posted at the same time, as long as their service periods didn't overlap
+* Fixed block_id in trips.txt so that it was correctly marked Optional
+* Noted that column headers must be included
+
+**September 29, 2006**<br>
+
+* Minor edit to fix a couple errors in the examples.
+
+**September 25, 2006**<br>
+
+* Initial version.
