@@ -1,6 +1,6 @@
 # GTFS SCHEDULE
 
-## GTFS Schedule reference
+## GTFS Schedule reference (schedule/reference) 
 curl https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/reference.md -o docs/schedule/reference.md
 
 ### replace header
@@ -9,24 +9,34 @@ sed -i.bak "1 s/.*/$new_header/" docs/schedule/reference.md
 
 ### patch links
 sed -i.bak "s,../../CHANGES.md,../revision-history,g" docs/schedule/reference.md
+sed -i.bak 's,examples/2-leg.svg,../assets/2-leg.svg,g' docs/schedule/reference.md
+sed -i.bak 's,examples/3-leg.svg,../assets/3-leg.svg,g' docs/schedule/reference.md
 
-## GTFS Schedule best practices
+## GTFS Schedule best practices (schedule/best-practices)
 curl https://raw.githubusercontent.com/MobilityData/GTFS_Schedule_Best-Practices/master/en/best-practices.md -o docs/schedule/best-practices.md
 
 ### patch links
 sed -i.bak "s,#dataset-publishing--general-practices,#dataset-publishing-general-practices,g" docs/schedule/best-practices.md
 sed -i.bak "s,https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md,../reference,g" docs/schedule/best-practices.md
 
-## GTFS Schedule examples
+## GTFS Schedule examples 
 
-### GTFS Schedule example feed
+### GTFS Schedule example feed (schedule/example-feed)
 curl https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/examples/README.md -o docs/schedule/example-feed.md
 
 #### patch links
 sed -i.bak "s,sample-feed-1.zip,https://github.com/google/transit/blob/master/gtfs/spec/en/examples/sample-feed-1.zip?raw=true,g" docs/schedule/example-feed.md
 sed -i.bak "s,(sample-feed-1),(https://github.com/google/transit/tree/master/gtfs/spec/en/examples/sample-feed-1),g" docs/schedule/example-feed.md
 
-## GTFS Schedule changes
+### GTFS Schedule data examples (schedule/data-examples)
+curl https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/examples/data-examples.md -o docs/schedule/data-examples.md
+sed -i.bak "s,../reference.md#routestxt,../reference/#routestxt,g" docs/schedule/data-examples.md
+sed -i.bak "s,victor-valley-transit.svg,../assets/victor-valley-transit.svg,g" docs/schedule/data-examples.md
+sed -i.bak "s,../reference.md#stopstxt,../reference/#stopstxt,g" docs/schedule/data-examples.md
+sed -i.bak "s,../reference.md#stoptimestxt,../reference/#stop_timestxt,g" docs/schedule/data-examples.md
+sed -i.bak "s,../reference.md#stop_timestxt,../reference/#stop_timestxt,g" docs/schedule/data-examples.md
+
+## GTFS Schedule changes (schedule/changes/*)
 rm docs/schedule/changes/*
 
 curl https://raw.githubusercontent.com/google/transit/master/gtfs/CHANGES.md -o docs/schedule/changes/changes.md
@@ -76,6 +86,32 @@ echo "<br><div class=landing-page>
 sed -i.bak "s,../CONTRIBUTING.md,https://github.com/google/transit/blob/master/CONTRIBUTING.md,g" docs/schedule/process.md
 
 # GTFS REALTIME
+
+## GTFS Realtime overview (realtime/)
+curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/README.md -o docs/realtime/index.md
+
+### add intro
+INTRO=docs/realtime/index.md
+echo "# GTFS Realtime Overview
+
+<div class="landing-page">
+    <a class="button" href="reference">Reference</a><a class="button" href="best-practices">Best Practices</a><a class="button" href="feed-examples">Examples</a><a class="button" href="changes">Changes</a>
+</div>
+
+## Getting Started
+
+Providing users transit data updates in real time greatly enhances their experience of your transit services. Providing up-to-date information about current arrival and departure times allows users to smoothly plan their trips. As a result, in case of an unfortunate delay, a rider would be relieved to know that they can stay home a little bit longer.
+
+`cat $INTRO`" > docs/realtime/index.md
+
+### patch links
+sed -i.bak "s,https://developers.google.com/transit/gtfs/reference,../schedule/reference,g" docs/realtime/index.md
+sed -i.bak "s,feed-entities.md,feed-entities,g" docs/realtime/index.md
+sed -i.bak "s,examples/,feed-examples,g" docs/realtime/index.md
+sed -i.bak "s,reference.md,reference,g" docs/realtime/index.md
+sed -i.bak "s,Publish your feed,[Publish your feed](best-practices/#feed-publishing-general-practices),g" docs/realtime/index.md
+sed -i.bak "s,../../proto/gtfs-realtime.proto,proto,g" docs/realtime/index.md
+
 
 ## GTFS Realtime reference
 curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/reference.md -o docs/realtime/reference.md
@@ -178,6 +214,29 @@ The following example is an ASCII representation of an full-dataset Trip Update 
 
 " > docs/realtime/feed-examples/trip-updates.md
 
+## GTFS Realtime Language Bindings
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/README.md -o docs/realtime/language-bindings/index.md
+sed -i.bak '1,2d' docs/realtime/language-bindings/index.md
+BINDINGS=docs/realtime/language-bindings/index.md
+echo "# Language Bindings
+
+**[Join the MobilityData chat](https://bit.ly/mobilitydata-slack)**
+`cat $BINDINGS`
+" > docs/realtime/language-bindings/index.md
+sed -i.bak 's,dotnet/README.md,dotnet.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,java/README.md,java.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,nodejs/README.md,nodejs.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,python/README.md,python.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,golang/README.md,golang.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,ruby/README.md,ruby.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,https://github.com/google/gtfs-realtime-bindings-php,php.md,g' docs/realtime/language-bindings/index.md
+sed -i.bak 's,(CONTRIBUTING.md),(https://github.com/MobilityData/gtfs-realtime-bindings/blob/master/CONTRIBUTING.md),g' docs/realtime/language-bindings/index.md
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/dotnet/README.md -o docs/realtime/language-bindings/dotnet.md
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/java/README.md -o docs/realtime/language-bindings/java.md
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/nodejs/README.md -o docs/realtime/language-bindings/nodejs.md
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/python/README.md -o docs/realtime/language-bindings/python.md
+curl https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/golang/README.md -o docs/realtime/language-bindings/golang.md
+
 # AWESOME-TRANSIT RESOURCE LIST
 rm docs/resources/*
 curl https://raw.githubusercontent.com/CUTR-at-USF/awesome-transit/master/README.md -o docs/resources/awesome.md
@@ -244,6 +303,8 @@ cat docs/resources/temp.md docs/resources/toc.md docs/resources/about.md docs/re
 
 rm -r docs/resources/temp.md docs/resources/toc.md docs/resources/license.md docs/resources/about.md
 
+
+
 # ALL FILES
 
 ## convert http to https
@@ -259,6 +320,323 @@ sed -i.bak "s,includes https://,includes http://,g" docs/realtime/proto.md
 find . -name "*.bak" -type f -delete
 
 
+
+# EDIT CONTENT SOURCE OF TRUTH
+
+## /
+PAGE=docs/index.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/index.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## /background.md
+
+PAGE=docs/background.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/background.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## schedule/index.md
+PAGE=docs/schedule/index.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/schedule/index.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## schedule/reference.md
+PAGE=docs/schedule/reference.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs/spec/en/reference.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## schedule/best-practices.md
+PAGE=docs/schedule/best-practices.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/GTFS_Schedule_Best-Practices/edit/master/en/best-practices.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## schedule/examples/index.md
+PAGE=docs/schedule/examples/index.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/schedule/examples/index.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## schedule/example-feed.md
+PAGE=docs/schedule/example-feed.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs/spec/en/examples/README.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## schedule/data-examples.md
+PAGE=docs/schedule/data-examples.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs/spec/en/examples/data-examples.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## schedule/changes/index.md
+PAGE=docs/schedule/changes/index.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## schedule/process.md
+PAGE=docs/schedule/process.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## schedule/guiding-principles.md
+PAGE=docs/schedule/guiding-principles.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## schedule/revision-history.md
+PAGE=docs/schedule/revision-history.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/index.md
+PAGE=docs/realtime/index.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/README.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/reference.md
+PAGE=docs/realtime/reference.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/reference.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/best-practices.md
+PAGE=docs/realtime/best-practices.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/GTFS_Realtime_Best-Practices/tree/master/en\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/feed-entities/index.md
+PAGE=docs/realtime/feed-entities/index.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/feed-entities.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/feed-entities/trip-updates.md
+PAGE=docs/realtime/feed-entities/trip-updates.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/trip-updates.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/feed-entities/service-alerts.md
+PAGE=docs/realtime/feed-entities/service-alerts.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/service-alerts.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/feed-entities/vehicle-positions.md
+PAGE=docs/realtime/feed-entities/vehicle-positions.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/vehicle-positions.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/feed-examples/index.md
+PAGE=docs/realtime/feed-examples/index.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/examples/README.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/feed-examples/trip-updates.md
+PAGE=docs/realtime/feed-examples/trip-updates.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/examples/trip-updates-full.asciipb\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/feed-examples/service-alerts.md
+PAGE=docs/realtime/feed-examples/service-alerts.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/examples/alerts.asciipb\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/proto.md
+PAGE=docs/realtime/proto.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs-realtime/proto/gtfs-realtime.proto\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/language-bindings/index.md
+PAGE=docs/realtime/language-bindings/index.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/README.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/language-bindings/dotnet.md
+PAGE=docs/realtime/language-bindings/dotnet.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/dotnet/README.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/language-bindings/java.md
+PAGE=docs/realtime/language-bindings/java.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/java/README.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/language-bindings/nodejs.md
+PAGE=docs/realtime/language-bindings/nodejs.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/nodejs/README.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/language-bindings/python.md
+PAGE=docs/realtime/language-bindings/python.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/python/README.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/language-bindings/golang.md
+PAGE=docs/realtime/language-bindings/golang.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/golang/README.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/language-bindings/ruby.md
+PAGE=docs/realtime/language-bindings/ruby.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs-realtime-bindings/edit/master/ruby/README.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/language-bindings/php.md
+PAGE=docs/realtime/language-bindings/php.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs-realtime-bindings-php/edit/master/README.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/changes/index.md
+PAGE=docs/realtime/changes/index.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/process.md
+PAGE=docs/realtime/process.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/guiding-principles.md
+PAGE=docs/realtime/guiding-principles.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/revision-history.md
+PAGE=docs/realtime/revision-history.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## realtime/extensions.md
+PAGE=docs/realtime/extensions.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs-realtime/CHANGES.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## resources/*.md
+for file in docs/resources/*; do
+    PAGE=$file
+    echo "<a class=\"pencil-link\" href=\"https://github.com/CUTR-at-USF/awesome-transit/edit/master/README.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+done
+
+## extensions.md
+PAGE=docs/extensions.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/extensions.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+
+## about.md
+PAGE=docs/about.md
+echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs.org/edit/main/docs/about.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
 
 # ##TO DO
 

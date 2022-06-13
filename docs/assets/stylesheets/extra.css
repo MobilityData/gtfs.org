@@ -91,9 +91,20 @@ table.example {
     font-size: 0.61rem;
 }
   
-/* hide edit content button */
+/* hide default edit content button */
 .md-content__button {
     display: none;
+}
+/* custom edit content button */
+.pencil {
+    height: 1.5em !important;
+    fill: #ADADAD;
+    transition: 100ms ease-in-out;
+    position: relative;
+    float: right;
+}
+.pencil:hover {
+    fill: #4386FF;
 }
   
 /* side nav style */
@@ -102,7 +113,6 @@ table.example {
 }
   
 /* footer styles */
-
 footer {
     background-color: #4B555C !important;
 }
@@ -145,6 +155,13 @@ c {
     margin: 0 1em 1em 1em;
     min-width: 12em;
   }
+
+/* space between feedback widget icons */
+.md-feedback__inner > * {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
   
 /* details {
     width: 25%;
@@ -158,6 +175,12 @@ c {
     color: #4386FF !important;
 }
 
+/* external link icon */
+.md-content a[href^="https://"]:not(.img, .pencil-link) {
+    background: url(../external.svg) center right no-repeat;
+    padding-right: 13px;
+    background-size: 0.65em;
+}
 
 @media only screen and (max-width: 550px) {
     .md-tabs {

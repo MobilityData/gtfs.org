@@ -27,6 +27,21 @@ extra:
   analytics:
     provider: google
     property: G-DRBTC7SSDT
+    feedback:
+      # title: Was this page helpful?
+      ratings:
+        - icon: material/numeric-positive-1
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/numeric-negative-1
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="https://forms.gle/doLqdVPN9DErC95u9" target=_blank>feedback form</a>.
+
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/MobilityData
@@ -72,6 +87,14 @@ plugins:
         'realtime/service-alerts.md': 'realtime/feed-entities/service-alerts.md'
         'realtime/trip-updates.md': 'realtime/feed-entities/trip-updates.md'
         'realtime/vehicle-positions.md': 'realtime/feed-entities/vehicle-positions.md'
+        'realtime/code-examples/index.md': 'realtime/language-bindings/index.md'
+        'realtime/code-examples/dotnet.md': 'realtime/language-bindings/dotnet.md'
+        'realtime/code-examples/java.md': 'realtime/language-bindings/java.md'
+        'realtime/code-examples/nodejs.md': 'realtime/language-bindings/nodejs.md'
+        'realtime/code-examples/python.md': 'realtime/language-bindings/python.md'
+        'realtime/code-examples/golang.md': 'realtime/language-bindings/golang.md'
+        'realtime/code-examples/ruby.md': 'realtime/language-bindings/ruby.md'
+        'realtime/code-examples/php.md': 'realtime/language-bindings/php.md'
   - mkdocs-simple-hooks:
       hooks:
         on_config: "hooks.on_config:deploy_hooks"
@@ -93,7 +116,6 @@ nav:
 - GTFS Realtime: 
   - Getting Started: realtime/index.md
   - Reference: realtime/reference.md
-  - Protobuf: realtime/proto.md
   - Best Practices: realtime/best-practices.md
   - Feed Entities:
     - realtime/feed-entities/index.md
@@ -104,14 +126,16 @@ nav:
     - realtime/feed-examples/index.md
     - Trip Updates: realtime/feed-examples/trip-updates.md
     - Service Alerts: realtime/feed-examples/service-alerts.md
-  - Code Examples: 
-    - realtime/code-examples/index.md
-    - .NET: realtime/code-examples/dotnet.md
-    - Java: realtime/code-examples/java.md
-    - JavaScript/Node.js: realtime/code-examples/nodejs.md
-    - PHP: realtime/code-examples/php.md
-    - Python: realtime/code-examples/python.md
-    - Ruby: realtime/code-examples/ruby.md
+  - Protobuf: realtime/proto.md
+  - Language Bindings: 
+    - realtime/language-bindings/index.md
+    - .NET: realtime/language-bindings/dotnet.md
+    - Java: realtime/language-bindings/java.md
+    - JavaScript/Node.js: realtime/language-bindings/nodejs.md
+    - Python: realtime/language-bindings/python.md
+    - Golang: realtime/language-bindings/golang.md
+    - Ruby: realtime/language-bindings/ruby.md
+    - PHP: realtime/language-bindings/php.md
   - Changes:
     - realtime/changes/index.md
     - Specification Amendment Process: realtime/process.md
