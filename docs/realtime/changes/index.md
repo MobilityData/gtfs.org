@@ -23,8 +23,8 @@ Recently merged proposals that are now features of the [official GTFS Schedule s
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank"></a></h3>
-        <p class="maintainer">#286 by <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> was merged on May 17, 2022</p>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/283" class="no-icon" target="_blank">Feature/image in alerts</a></h3>
+        <p class="maintainer">#283 by <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> was merged on Nov 26, 2021</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -37,8 +37,8 @@ Recently merged proposals that are now features of the [official GTFS Schedule s
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/284" class="no-icon" target="_blank"></a></h3>
-        <p class="maintainer">#284 by <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> was merged on Oct 5, 2021</p>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/272" class="no-icon" target="_blank">Add GTFS-NewShapes as experimental</a></h3>
+        <p class="maintainer">#272 by <a href="https://github.com/ericouyang" class="no-icon" target="_blank">ericouyang</a> was merged on Aug 30, 2021</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -50,8 +50,8 @@ Recently merged proposals that are now features of the [official GTFS Schedule s
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/208" class="no-icon" target="_blank"></a></h3>
-        <p class="maintainer">#208 by <a href="https://github.com/timMillet" class="no-icon" target="_blank">timMillet</a> was merged on May 13, 2020</p>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/260" class="no-icon" target="_blank">Add departure_occupancy_status to TripUpdate</a></h3>
+        <p class="maintainer">#260 by <a href="https://github.com/jakehoare" class="no-icon" target="_blank">jakehoare</a> was merged on Apr 14, 2021</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -62,8 +62,8 @@ Recently merged proposals that are now features of the [official GTFS Schedule s
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/180" class="no-icon" target="_blank"></a></h3>
-        <p class="maintainer">#180 by <a href="https://github.com/LeoFrachet" class="no-icon" target="_blank">LeoFrachet</a> was merged on Jan 9, 2020</p>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/237" class="no-icon" target="_blank">Support multi-car crowding</a></h3>
+        <p class="maintainer">#237 by <a href="https://github.com/lfontolliet" class="no-icon" target="_blank">lfontolliet</a> was merged on Sep 10, 2020</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -74,8 +74,8 @@ Recently merged proposals that are now features of the [official GTFS Schedule s
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/192" class="no-icon" target="_blank"></a></h3>
-        <p class="maintainer">#192 by <a href="https://github.com/timMillet" class="no-icon" target="_blank">timMillet</a> was merged on Dec 20, 2019</p>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/230" class="no-icon" target="_blank">Label GTFS-RT ADDED trips as not fully specified</a></h3>
+        <p class="maintainer">#230 by <a href="https://github.com/barbeau" class="no-icon" target="_blank">barbeau</a> was merged on Jul 15, 2020</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -89,11 +89,19 @@ Recently merged proposals that are now features of the [official GTFS Schedule s
 ## Active Proposals &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 Active proposals for new features in GTFS Schedule. Join the discussions on <a href="https://github.com/google/transit" target="_blank">Github</a>!
- 
-<div class="row no-active">
+
+<div class="row">
+    <div class="active-container">
+        <h3 class="title"><a class="no-icon" href="https://github.com/google/transit/pull/332" target="_blank">Add cause_detail and effect_detail to Alerts</a></h3>
+        <p class="maintainer">#332 opened on May 31, 2022 by <a class="no-icon" href="https://github.com/mckenzie-maidl-ibigroup" target="_blank">mckenzie-maidl-ibigroup</a></p>
+    </div>
+</div>
+<div class="row"></div>
+
+<!-- <div class="row no-active">
     <div class="no-active-container">
         <h3 class="title">There are currently no active proposals for GTFS Realtime.</h3>
         <p class="prompt">Have a proposal? &ensp;➜&ensp; Open a <a href="https://github.com/google/transit/pulls" target="_blank">pull request</a>.</p>
     </div>
 </div>
-<div class="row"></div>
+<div class="row"></div> -->

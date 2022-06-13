@@ -102,3 +102,11 @@ Active proposals for new features in GTFS Schedule. Join the discussions on <a h
     </div>
 </div>
 <div class="row"></div>
+
+<!-- <div class="row no-active">
+    <div class="no-active-container">
+        <h3 class="title">There are currently no active proposals for GTFS Schedule.</h3>
+        <p class="prompt">Have a proposal? &ensp;➜&ensp; Open a <a href="https://github.com/google/transit/pulls" target="_blank">pull request</a>.</p>
+    </div>
+</div>
+<div class="row"></div> -->
