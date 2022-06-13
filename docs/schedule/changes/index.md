@@ -87,7 +87,7 @@ Recently merged proposals that are now features of the [official GTFS Schedule s
 
 ## Active Proposals &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
 
-Active proposals for new features in GTFS Schedule. Join the discussions on <a href="https://github.com/google/transit" target="_blank">Github</a>!
+Active proposals for new features in GTFS Schedule. Join the discussions on <a href="https://github.com/google/transit" target="_blank">Github</a> !
 
 <div class="row">
     <div class="active-container">

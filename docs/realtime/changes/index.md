@@ -19,7 +19,7 @@ To contribute to GTFS Realtime, read the [Specification Amendment Process](../pr
 
 ## Recently Merged Proposals &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
-Recently merged proposals that are now features of the [official GTFS Schedule specification](../reference). See the complete [Revision History](../process#revision-history) for more.
+Recently merged proposals that are now features of the [official GTFS Realtime specification](../reference). See the complete [Revision History](../process#revision-history) for more.
 
 <div class="row">
     <div class="leftcontainer">
@@ -88,7 +88,7 @@ Recently merged proposals that are now features of the [official GTFS Schedule s
 
 ## Active Proposals &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
 
-Active proposals for new features in GTFS Schedule. Join the discussions on <a href="https://github.com/google/transit" target="_blank">Github</a>!
+Active proposals for new features in GTFS Realtime. Join the discussions on <a href="https://github.com/google/transit" target="_blank">Github</a> !
 
 <div class="row">
     <div class="active-container">
