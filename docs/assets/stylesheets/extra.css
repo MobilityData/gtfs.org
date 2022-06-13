@@ -113,7 +113,6 @@ table.example {
 }
   
 /* footer styles */
-
 footer {
     background-color: #4B555C !important;
 }
@@ -156,6 +155,13 @@ c {
     margin: 0 1em 1em 1em;
     min-width: 12em;
   }
+
+/* space between feedback widget icons */
+.md-feedback__inner > * {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
   
 /* details {
     width: 25%;
@@ -169,6 +175,12 @@ c {
     color: #4386FF !important;
 }
 
+/* external link icon */
+.md-content a[href^="https://"]:not(.img) {
+    background: url(../external.svg) center right no-repeat;
+    padding-right: 13px;
+    background-size: 0.65em;
+}
 
 @media only screen and (max-width: 550px) {
     .md-tabs {
