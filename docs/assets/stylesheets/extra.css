@@ -176,7 +176,7 @@ c {
 }
 
 /* external link icon */
-.md-content a[href^="https://"]:not(.img) {
+.md-content a[href^="https://"]:not(.img, .pencil-link) {
     background: url(../external.svg) center right no-repeat;
     padding-right: 13px;
     background-size: 0.65em;
