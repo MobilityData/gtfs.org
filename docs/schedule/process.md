@@ -5,7 +5,7 @@
 # Specification amendment process
 The GTFS Specification is not set in stone. Instead, it is an open specification developed and maintained by the community of transit agencies, developers, and other stakeholders who use GTFS. It is expected that this community of producers and consumers of GTFS data will have proposals for extending the spec to enable new capabilities. To help manage that process, the following procedures and guidelines have been established.
 
-!!! note
+!!! note ""
 
 	The official specification, reference and documentation are written in English. If a translation to a different language differs from the English original, the latter takes precedence. All communication is performed in English.
 

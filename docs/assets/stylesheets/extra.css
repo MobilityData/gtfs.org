@@ -372,3 +372,14 @@ c {
 .featurelist ul li {
     margin: 0.3em 0 !important;
 }
+
+.no-active-container h3 {
+    font-weight: bold !important;
+}
+.no-active-container {
+    text-align: center;
+}
+.row.no-active {
+    display: flex;
+    justify-content: center;
+}
