@@ -158,6 +158,12 @@ c {
     color: #4386FF !important;
 }
 
+/* external link icon */
+.md-content a[href^="https://"]:not(.img) {
+    background: url(../external.svg) center right no-repeat;
+    padding-right: 13px;
+    background-size: 0.65em;
+}
 
 @media only screen and (max-width: 550px) {
     .md-tabs {
