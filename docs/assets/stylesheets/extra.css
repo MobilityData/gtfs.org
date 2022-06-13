@@ -285,3 +285,51 @@ c {
             min-width: 90vw;
           }
 }
+
+.leftcontainer {
+    float: left;
+    width: 400px;
+    padding: 0 4em 0 0 !important;
+    margin: 0 !important;
+}
+
+.title {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 110% !important;
+}
+
+.title a {
+    font-weight: bold;
+    color: var(--md-typeset-color) !important;
+}
+
+.title a:hover {
+}
+
+.maintainer {
+    margin-top: 0;
+    padding-top: 0.75em;
+    font-size: 0.75em;
+    color: #717171;
+}
+
+.maintainer a {
+    color: #717171;
+}
+.maintainer a:hover {
+    color: #4386FF;
+    text-decoration: none;
+}
+
+.featurelist {
+    font-size: 0.85em;
+    text-overflow: clip;
+    /* float: right; */
+}
+
+.row {
+    border-top: 1.5px solid #EDEDED;
+    padding: 10px 0 10px 0;
+    margin: 10px 0 10px 0;
+}
