@@ -321,6 +321,7 @@ c {
     font-weight: bold;
     color: var(--md-typeset-color) !important;
 }
+
 .maintainer {
     margin-top: 0;
     padding-top: 0.75em;
@@ -328,11 +329,7 @@ c {
     color: #717171;
 }
 .maintainer a {
-    color: #717171;
-}
-.maintainer a:hover {
-    color: #4386FF;
-    text-decoration: none;
+    color: #717171 !important;
 }
 .featurelist {
     font-size: 0.9em;
