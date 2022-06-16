@@ -27,7 +27,7 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
     
     Below is a list of GTFS Schedule extensions that may be implemented. ➕
     
-    !!! info 
+    !!! note "" 
 
         Extensions may become [active proposals](../schedule/changes/#active-proposals) and subsequently [merged](../schedule/changes/#recently-merged-proposals) into the official specification via the [Specification Amendment Process](../schedule/process).
 
@@ -109,7 +109,7 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
     
     Below is a list of GTFS Realtime extensions that may be implemented. ➕
     
-    !!! info
+    !!! note ""
         
         Extensions may become [active proposals](../realtime/changes/#active-proposals) and subsequently [merged](../realtime/changes/#recently-merged-proposals) into the official specification via the [Specification Amendment Process](../realtime/process).
 
