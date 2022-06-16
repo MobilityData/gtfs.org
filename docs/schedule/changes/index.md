@@ -16,6 +16,32 @@ To contribute to GTFS, read the [Specification Amendment Process](../process) an
 
 	The official specification, reference and documentation are written in English. If a translation to a different language differs from the English original, the latter takes precedence. All communication is performed in English.
 
+## Active Proposals &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
+
+Active proposals for new features in GTFS Schedule. Join the discussions on <a href="https://github.com/google/transit" target="_blank">Github</a> !
+
+<div class="row">
+    <div class="active-container">
+        <h3 class="title"><a class="no-icon" href="https://github.com/google/transit/pull/303" target="_blank">Add trip-to-trip transfers with in-seat option</a></h3>
+        <p class="maintainer">#303 opened on Jan 26, 2022 by <a class="no-icon" href="https://github.com/gcamp" target="_blank">gcamp</a></p>
+    </div>
+</div>
+<div class="row">
+    <div class="active-container">
+        <h3 class="title"><a class="no-icon" href="https://github.com/google/transit/pull/76" target="_blank">Add *_icon_url to facilitate icons on maps and itineraries</a></h3>
+        <p class="maintainer">#76 opened on Sep 29, 2017 by <a class="no-icon" href="https://github.com/skinkie" target="_blank">skinkie</a></p>
+    </div>
+</div>
+<div class="row"></div>
+
+<!-- <div class="row no-active">
+    <div class="no-active-container">
+        <h3 class="title">There are currently no active proposals for GTFS Schedule.</h3>
+        <p class="prompt">Have a proposal? &ensp;➜&ensp; Open a <a href="https://github.com/google/transit/pulls" target="_blank">pull request</a>.</p>
+    </div>
+</div>
+<div class="row"></div> -->
+
 ## Recently Merged Proposals &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Recently merged proposals that are now features of the [official GTFS Schedule specification](../reference). See the complete [Revision History](../process#revision-history) for more.
@@ -84,29 +110,3 @@ Recently merged proposals that are now features of the [official GTFS Schedule s
 </div>
 
 <div class="row"></div>
-
-## Active Proposals &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
-
-Active proposals for new features in GTFS Schedule. Join the discussions on <a href="https://github.com/google/transit" target="_blank">Github</a> !
-
-<div class="row">
-    <div class="active-container">
-        <h3 class="title"><a class="no-icon" href="https://github.com/google/transit/pull/303" target="_blank">Add trip-to-trip transfers with in-seat option</a></h3>
-        <p class="maintainer">#303 opened on Jan 26, 2022 by <a class="no-icon" href="https://github.com/gcamp" target="_blank">gcamp</a></p>
-    </div>
-</div>
-<div class="row">
-    <div class="active-container">
-        <h3 class="title"><a class="no-icon" href="https://github.com/google/transit/pull/76" target="_blank">Add *_icon_url to facilitate icons on maps and itineraries</a></h3>
-        <p class="maintainer">#76 opened on Sep 29, 2017 by <a class="no-icon" href="https://github.com/skinkie" target="_blank">skinkie</a></p>
-    </div>
-</div>
-<div class="row"></div>
-
-<!-- <div class="row no-active">
-    <div class="no-active-container">
-        <h3 class="title">There are currently no active proposals for GTFS Schedule.</h3>
-        <p class="prompt">Have a proposal? &ensp;➜&ensp; Open a <a href="https://github.com/google/transit/pulls" target="_blank">pull request</a>.</p>
-    </div>
-</div>
-<div class="row"></div> -->

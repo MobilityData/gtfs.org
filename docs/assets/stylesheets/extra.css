@@ -323,7 +323,7 @@ c {
 }
 
 .maintainer {
-    margin-top: 0;
+    margin: 0;
     padding-top: 0.75em;
     font-size: 0.75em;
     color: #717171;
@@ -353,6 +353,10 @@ c {
     justify-content: center;
 }
 
+.tabbed-block > p:nth-child(n+2):nth-child(-n+20) {
+        margin: 0 !important;
+}
+
 /* Proposals on "Changes" pages, responsive */
 @media only screen and (min-width: 760px) {
     .active-container {
@@ -376,7 +380,7 @@ c {
     }
     
     .featurelist ul {
-        margin: 0;
+        margin: 0 !important;
     }
     
     .featurelist ul li {

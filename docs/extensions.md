@@ -23,146 +23,173 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
 
 === "GTFS Schedule"
 
-    Additional files and fields can be extended onto GTFS Schedule datasets to accommodate a variety of application-specific needs communicated between transit agencies and software vendors, even if these fields are not in the [official specification](../schedule/reference). Below is a list of GTFS Schedule extensions that may be implemented. Note that some of these extensions may become [active proposals](../schedule/changes/#active-proposals) and subsequently [merged](../schedule/changes/#recently-merged-proposals) into the official specification via the [Specification Amendment Process](../schedule/process). ➕
+    Additional files and fields can be extended onto GTFS Schedule datasets to accommodate a variety of application-specific needs communicated between transit agencies and software vendors, even if these fields are not in the [official specification](../schedule/reference). 
+    
+    Below is a list of GTFS Schedule extensions that may be implemented. ➕
+    
+    !!! info 
+
+        Extensions may become [active proposals](../schedule/changes/#active-proposals) and subsequently [merged](../schedule/changes/#recently-merged-proposals) into the official specification via the [Specification Amendment Process](../schedule/process).
 
     <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank">GTFS-Fares v2 base implementation</a></h3>
-        <p class="maintainer">#286 by <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> was merged on May 17, 2022</p>
+            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
+            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
     </div>
     <div class="featurelist">
         <ul>
-            <li>Transit fares and tickets</li>
-            <li>Cost modelling for complex fares and transfers (multi-network, time-based, and count-based transfers)</li>
-            <li>Model to associate stops to fare areas</li>
+            <li></li>
+            <li></li>
+            <li></li>
         </ul>
     </div>
     </div>
 
     <div class="row">
-        <div class="leftcontainer">
-            <h3 class="title"><a href="https://github.com/google/transit/pull/284" class="no-icon" target="_blank">Trip-to-trip and route-to-route transfers</a></h3>
-            <p class="maintainer">#284 by <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> was merged on Oct 5, 2021</p>
-        </div>
-        <div class="featurelist">
-            <ul>
-                <li>Specify rules for transfers between stop, trip or route pairs in transfers.txt</li>
-                <li>Ranked specificity of transfer rules based on different pair arrangements</li>
-            </ul>
-        </div>
+    <div class="leftcontainer">
+            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
+            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
     </div>
 
     <div class="row">
-        <div class="leftcontainer">
-            <h3 class="title"><a href="https://github.com/google/transit/pull/208" class="no-icon" target="_blank">GTFS-ContinuousStops</a></h3>
-            <p class="maintainer">#208 by <a href="https://github.com/timMillet" class="no-icon" target="_blank">timMillet</a> was merged on May 13, 2020</p>
-        </div>
-        <div class="featurelist">
-            <ul>
-                <li>Allows rider pickup or dropoff anywhere along a vehicle’s travel path</li>
-            </ul>
-        </div>
+    <div class="leftcontainer">
+            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
+            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
     </div>
 
     <div class="row">
-        <div class="leftcontainer">
-            <h3 class="title"><a href="https://github.com/google/transit/pull/180" class="no-icon" target="_blank">GTFS-Translations</a></h3>
-            <p class="maintainer">#180 by <a href="https://github.com/LeoFrachet" class="no-icon" target="_blank">LeoFrachet</a> was merged on Jan 9, 2020</p>
-        </div>
-        <div class="featurelist">
-            <ul>
-                <li>Translations for text fields, localized URLs, and contact information</li>
-            </ul>
-        </div>
+    <div class="leftcontainer">
+            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
+            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
     </div>
 
     <div class="row">
-        <div class="leftcontainer">
-            <h3 class="title"><a href="https://github.com/google/transit/pull/192" class="no-icon" target="_blank">GTFS-Attributions (core only)</a></h3>
-            <p class="maintainer">#192 by <a href="https://github.com/timMillet" class="no-icon" target="_blank">timMillet</a> was merged on Dec 20, 2019</p>
-        </div>
-        <div class="featurelist">
-            <ul>
-                <li>Allows attributions by name of producers, operators, or authorities of a GTFS Schedule dataset per field, row, or value</li>
-            </ul>
-        </div>
+    <div class="leftcontainer">
+            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
+            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
     </div>
 
     <div class="row"></div>
 
 === "GTFS Realtime"
 
-    Additional files and fields can be extended onto GTFS Realtime feeds to accommodate a variety of application-specific needs communicated between transit agencies and software vendors, even if these fields are not in the [official specification](../realtime/reference). Below is a list of GTFS Realtime extensions that may be implemented. Note that some of these extensions may become [active proposals](../realtime/changes/#active-proposals) and subsequently [merged](../realtime/changes/#recently-merged-proposals) into the official specification via the [Specification Amendment Process](../realtime/process). ➕
+    Additional files and fields can be extended onto GTFS Realtime feeds to accommodate a variety of application-specific needs communicated between transit agencies and software vendors, even if these fields are not in the [official specification](../realtime/reference). 
+    
+    Below is a list of GTFS Realtime extensions that may be implemented. ➕
+    
+    !!! info
+        
+        Extensions may become [active proposals](../realtime/changes/#active-proposals) and subsequently [merged](../realtime/changes/#recently-merged-proposals) into the official specification via the [Specification Amendment Process](../realtime/process).
 
     <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank">GTFS-Fares v2 base implementation</a></h3>
-        <p class="maintainer">#286 by <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> was merged on May 17, 2022</p>
+            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
+            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
     </div>
     <div class="featurelist">
         <ul>
-            <li>Transit fares and tickets</li>
-            <li>Cost modelling for complex fares and transfers (multi-network, time-based, and count-based transfers)</li>
-            <li>Model to associate stops to fare areas</li>
+            <li></li>
+            <li></li>
+            <li></li>
         </ul>
     </div>
     </div>
 
     <div class="row">
-        <div class="leftcontainer">
-            <h3 class="title"><a href="https://github.com/google/transit/pull/284" class="no-icon" target="_blank">Trip-to-trip and route-to-route transfers</a></h3>
-            <p class="maintainer">#284 by <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> was merged on Oct 5, 2021</p>
-        </div>
-        <div class="featurelist">
-            <ul>
-                <li>Specify rules for transfers between stop, trip or route pairs in transfers.txt</li>
-                <li>Ranked specificity of transfer rules based on different pair arrangements</li>
-            </ul>
-        </div>
+    <div class="leftcontainer">
+            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
+            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
     </div>
 
     <div class="row">
-        <div class="leftcontainer">
-            <h3 class="title"><a href="https://github.com/google/transit/pull/208" class="no-icon" target="_blank">GTFS-ContinuousStops</a></h3>
-            <p class="maintainer">#208 by <a href="https://github.com/timMillet" class="no-icon" target="_blank">timMillet</a> was merged on May 13, 2020</p>
-        </div>
-        <div class="featurelist">
-            <ul>
-                <li>Allows rider pickup or dropoff anywhere along a vehicle’s travel path</li>
-            </ul>
-        </div>
+    <div class="leftcontainer">
+            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
+            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
     </div>
 
     <div class="row">
-        <div class="leftcontainer">
-            <h3 class="title"><a href="https://github.com/google/transit/pull/180" class="no-icon" target="_blank">GTFS-Translations</a></h3>
-            <p class="maintainer">#180 by <a href="https://github.com/LeoFrachet" class="no-icon" target="_blank">LeoFrachet</a> was merged on Jan 9, 2020</p>
-        </div>
-        <div class="featurelist">
-            <ul>
-                <li>Translations for text fields, localized URLs, and contact information</li>
-            </ul>
-        </div>
+    <div class="leftcontainer">
+            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
+            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
     </div>
 
     <div class="row">
-        <div class="leftcontainer">
-            <h3 class="title"><a href="https://github.com/google/transit/pull/192" class="no-icon" target="_blank">GTFS-Attributions (core only)</a></h3>
-            <p class="maintainer">#192 by <a href="https://github.com/timMillet" class="no-icon" target="_blank">timMillet</a> was merged on Dec 20, 2019</p>
-        </div>
-        <div class="featurelist">
-            <ul>
-                <li>Allows attributions by name of producers, operators, or authorities of a GTFS Schedule dataset per field, row, or value</li>
-            </ul>
-        </div>
+    <div class="leftcontainer">
+            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
+            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
     </div>
 
     <div class="row"></div>
 
     ## Protobuf Extensions
+    
     To allow producers to add custom information to a GTFS Realtime feed, we will take advantage of the [Extensions feature of Protocol Buffers](https://developers.google.com/protocol-buffers/docs/proto#extensions). Extensions allow us to define a namespace in a Protocol Buffer message where third-party developers can define additional fields without the need to modify the original proto definition.
 
-    When possible we should avoid extensions and add fields useful to many agencies to the main specification to avoid fragmentation and extra work for consumers to support various extensions to the spec.  Before requesting an extension id, producers should propose adding the field to the specification (see [Adding new fields to GTFS Realtime](../process))
+    When possible we should avoid extensions and add fields useful to many agencies to the main specification to avoid fragmentation and extra work for consumers to support various extensions to the spec.  Before requesting an extension id, producers should propose adding the field to the specification (see [Adding new fields to GTFS Realtime](../realtime/process)).
 
     The extension IDs within the range 9000-9999 are reserved for private use by GTFS-rt producers. These IDs should only be used to convey information internally to your organization. Extensions in this range **must not** be used in public feeds. 
 
