@@ -26,12 +26,6 @@ Active proposals for new features in GTFS Schedule. Join the discussions on <a h
         <p class="maintainer">#303 opened on Jan 26, 2022 by <a class="no-icon" href="https://github.com/gcamp" target="_blank">gcamp</a></p>
     </div>
 </div>
-<div class="row">
-    <div class="active-container">
-        <h3 class="title"><a class="no-icon" href="https://github.com/google/transit/pull/76" target="_blank">Add *_icon_url to facilitate icons on maps and itineraries</a></h3>
-        <p class="maintainer">#76 opened on Sep 29, 2017 by <a class="no-icon" href="https://github.com/skinkie" target="_blank">skinkie</a></p>
-    </div>
-</div>
 <div class="row"></div>
 
 <!-- <div class="row no-active">
