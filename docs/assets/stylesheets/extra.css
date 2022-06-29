@@ -388,11 +388,9 @@ c {
     }
 }
 
-/* .md-banner {
-    background-color: #EFEFEF;
-    color: #212121;
-} */
-
+.md-banner {
+    background: linear-gradient(0deg, #172F50 10%,#08111d 100%) !important;
+}
 .md-banner > * > a {
     color: #4385FF;
 }
