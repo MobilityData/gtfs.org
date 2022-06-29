@@ -577,7 +577,7 @@ Describes levels in a station. Useful in conjunction with `pathways.txt`, and is
 
 File: **Optional**
 
-Primary key (`*`)
+Primary key (`table_name`, `field_name`, `language`, `record_id`, `record_sub_id`, `field_value`)
 
 In regions that have multiple official languages, transit agencies/operators typically have language-specific names and web pages. In order to best serve riders in those regions, it is useful for the dataset to include these language-dependent values.
 
@@ -598,6 +598,8 @@ File: **Optional** (**Required** if `translations.txt` is provided)
 Primary key (none)
 
 The file contains information about the dataset itself, rather than the services that the dataset describes. In some cases, the publisher of the dataset is a different entity than any of the agencies.
+
+If both referencing methods (`record_id`, `record_sub_id`) and `field_value` are used to translate the same value in 2 different rows, the translation provided with (`record_id`, `record_sub_id`) takes precedence.
 
 |  Field Name | Type | Presence | Description |
 |  ------ | ------ | ------ | ------ |
