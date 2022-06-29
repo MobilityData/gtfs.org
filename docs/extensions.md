@@ -27,76 +27,98 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
     
     Below is a list of GTFS Schedule extensions that may be implemented. ➕
     
-    !!! note "" 
+    !!! info "Making an extension official in the specification" 
 
         Extensions may become [active proposals](../schedule/changes/#active-proposals) and subsequently [merged](../schedule/changes/#recently-merged-proposals) into the official specification via the [Specification Amendment Process](../schedule/process).
 
+    !!! note "Contributing to this list"
+
+        Have an extension you want to share with the GTFS community? Request to add an extension to GTFS.org <a href="https://forms.gle/fUVHy5EEw2uXMdmT6" target="_blank">here</a>.
+
     <div class="row">
     <div class="leftcontainer">
-            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
-            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
+            <h3 class="title"><a href="http://bit.ly/gtfs-pathways" class="no-icon" target="_blank">GTFS-Pathways</a></h3>
+            <p class="maintainer">Maintained by <a href="https://mobilitydata.org/" class="no-icon" target="_blank">MobilityData</a></p>
     </div>
     <div class="featurelist">
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Accessibility-focused for pathways linking together locations within transit stations for route planning and wayfinding.</li>
+            <li>While the core specification of GTFS-Pathways has been completely integrated into GTFS, additional information such as text-to-speech instructions, wheelchair assistance information, equipment-failure reporting, planned or scheduled entrance or exit closures, and elevator and escalator outages need to be added.</li>
         </ul>
     </div>
     </div>
 
     <div class="row">
     <div class="leftcontainer">
-            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
-            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
+            <h3 class="title"><a href="http://bit.ly/gtfs-fares" class="no-icon" target="_blank">GTFS-Fares v2</a></h3>
+            <p class="maintainer">Maintained by <a href="https://mobilitydata.org/" class="no-icon" target="_blank">MobilityData</a></p>
     </div>
     <div class="featurelist">
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Enables trip planning apps to display pricing information to riders.</li>
+            <li>While the base implementation of GTFS-Fares v2 has recently been voted to pass into GTFS, some features and functionalities of this extension that are still remaining include zonal/distance-based fares, rider categories, fare capping and ranges, fare bundles passes and containers, rush hour/holiday pricing, transfer sequences, and one route behaviour.</li>
         </ul>
     </div>
     </div>
 
     <div class="row">
     <div class="leftcontainer">
-            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
-            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
+            <h3 class="title"><a href="https://github.com/MobilityData/gtfs-flex" class="no-icon" target="_blank">GTFS-Flex v2</a></h3>
+            <p class="maintainer">Maintained by <a href="https://mobilitydata.org/" class="no-icon" target="_blank">MobilityData</a></p>
     </div>
     <div class="featurelist">
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Extends GTFS by including deviated fixed routes and on-demand transportation service features in its data modeling that do not always follow the same for fixed stops.</li>
+            <li>The proposal is composed of 2 extensions: GTFS-FlexibleTrips, which describes the service itself and GTFS-BookingRules, which provides the booking information of GTFS-FlexibleTrips.</li>
         </ul>
     </div>
     </div>
 
     <div class="row">
     <div class="leftcontainer">
-            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
-            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
+            <h3 class="title"><a href="http://bit.ly/gtfs-occupancies" class="no-icon" target="_blank">GTFS-Occupancies</a></h3>
+            <p class="maintainer">Maintained by <a href="https://mobilitydata.org/" class="no-icon" target="_blank">MobilityData</a></p>
     </div>
     <div class="featurelist">
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Describes a vehicle’s passenger crowdedness on a usual or projected basis.</li>
+            <li>Supplements the availability of crowdedness information described in GTFS Realtime by offering static predictions for future trips based on previous trends, which can assist riders plan trips based on their crowdedness preferences and comfortability.</li>
         </ul>
     </div>
     </div>
 
     <div class="row">
     <div class="leftcontainer">
-            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
-            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
+            <h3 class="title"><a href="https://developers.google.com/transit/gtfs/reference/gtfs-extensions" class="no-icon" target="_blank">Google Transit Extensions to GTFS</a></h3>
+            <p class="maintainer">Maintained by <a href="https://developers.google.com/transit" class="no-icon" target="_blank">Google</a></p>
     </div>
     <div class="featurelist">
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Provides translation support, extends route types, allows for more detailed transfer rules and adds a number of other functions.</li>
+        </ul>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="leftcontainer">
+            <h3 class="title"><a href="https://www.transitwiki.org/TransitWiki/index.php/File:GTFS%2B_Additional_Files_Format_Ver_1.7.pdf" class="no-icon" target="_blank">MTC GTFS+</a></h3>
+            <p class="maintainer">Maintained by <a href="https://mtc.ca.gov/" class="no-icon" target="_blank">MTC</a></p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Created by the San Francisco Bay Area Metropolitan Transportation Commission. Adds additional real time information, directions, rider categories and more.</li>
+        </ul>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="leftcontainer">
+            <h3 class="title"><a href="https://github.com/mbta/gtfs-documentation/" class="no-icon" target="_blank">MBTA</a></h3>
+            <p class="maintainer">Maintained by <a href="https://www.mbta.com/" class="no-icon" target="_blank">MBTA</a></p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Adds on-time performance tracking checkpoints, station and facility information and more.</li>
         </ul>
     </div>
     </div>
@@ -109,76 +131,34 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
     
     Below is a list of GTFS Realtime extensions that may be implemented. ➕
     
-    !!! note ""
+    !!! info "Making an extension official in the specification" 
         
         Extensions may become [active proposals](../realtime/changes/#active-proposals) and subsequently [merged](../realtime/changes/#recently-merged-proposals) into the official specification via the [Specification Amendment Process](../realtime/process).
+    
+    !!! note "Contributing to this list"
+
+        Have an extension you want to share with the GTFS community? Request to add an extension to GTFS.org <a href="https://forms.gle/fUVHy5EEw2uXMdmT6" target="_blank">here</a>.
 
     <div class="row">
     <div class="leftcontainer">
-            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
-            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
+            <h3 class="title"><a href="https://docs.google.com/document/d/1qJOTe4m_a4dcJnvXYt4smYj4QQ1ejZ8CvLBYzDM5IyM/edit#bookmark=id.av58okxmwekh" class="no-icon" target="_blank">GTFS-PathwayUpdates</a></h3>
+            <p class="maintainer">Maintained by <a href="https://mobilitydata.org/" class="no-icon" target="_blank">MobilityData</a></p>
     </div>
     <div class="featurelist">
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Describe changes to station pathways in real time such as elevator downtime or closed pathways.</li>
         </ul>
     </div>
     </div>
 
     <div class="row">
     <div class="leftcontainer">
-            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
-            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
+            <h3 class="title"><a href="https://github.com/google/transit/pull/212" class="no-icon" target="_blank">GTFS-OccupancyStatus</a></h3>
+            <p class="maintainer">Maintained by <a href="https://mobilitydata.org/" class="no-icon" target="_blank">MobilityData</a></p>
     </div>
     <div class="featurelist">
         <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
-    </div>
-
-    <div class="row">
-    <div class="leftcontainer">
-            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
-            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
-    </div>
-    <div class="featurelist">
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
-    </div>
-
-    <div class="row">
-    <div class="leftcontainer">
-            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
-            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
-    </div>
-    <div class="featurelist">
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
-    </div>
-
-    <div class="row">
-    <div class="leftcontainer">
-            <h3 class="title"><a href="" class="no-icon" target="_blank">Extension Name</a></h3>
-            <p class="maintainer">Maintained by <a href="" class="no-icon" target="_blank">MobilityData</a></p>
-    </div>
-    <div class="featurelist">
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Provide information in real time on the crowding of transit vehicles.</li>
         </ul>
     </div>
     </div>

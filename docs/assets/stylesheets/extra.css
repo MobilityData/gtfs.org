@@ -353,8 +353,8 @@ c {
     justify-content: center;
 }
 
-.tabbed-block > p:nth-child(n+2):nth-child(-n+20) {
-        margin: 0 !important;
+.tabbed-block > p:empty {
+    margin: 0 !important;
 }
 
 /* Proposals on "Changes" pages, responsive */
@@ -388,3 +388,11 @@ c {
     }
 }
 
+/* .md-banner {
+    background-color: #EFEFEF;
+    color: #212121;
+} */
+
+.md-banner > * > a {
+    color: #4385FF;
+}
