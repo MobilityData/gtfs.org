@@ -19,6 +19,7 @@ theme:
      - navigation.indexes
      - navigation.top
      - toc.integrate
+     - content.tabs.link
   custom_dir: theme_overrides
 extra_css:
   - assets/stylesheets/extra.css
@@ -61,6 +62,8 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
 
 plugins:
   - search
@@ -92,6 +95,11 @@ plugins:
         'realtime/code-examples/golang.md': 'realtime/language-bindings/golang.md'
         'realtime/code-examples/ruby.md': 'realtime/language-bindings/ruby.md'
         'realtime/code-examples/php.md': 'realtime/language-bindings/php.md'
+        'schedule/guiding-principles.md': 'schedule/process.md'
+        'schedule/revision-history': 'schedule/process.md'
+        'realtime/guiding-principles.md': 'realtime/process.md'
+        'realtime/revision-history': 'realtime/process.md'
+        'realtime/extensions': 'realtime/process.md'
   - mkdocs-simple-hooks:
       hooks:
         on_config: "hooks.on_config:deploy_hooks"
@@ -108,8 +116,6 @@ nav:
   - Changes:
     - schedule/changes/index.md
     - Specification Amendment Process: schedule/process.md
-    - Guiding Principles: schedule/guiding-principles.md
-    - Revision History: schedule/revision-history.md
 - GTFS Realtime: 
   - Getting Started: realtime/index.md
   - Reference: realtime/reference.md
@@ -136,9 +142,6 @@ nav:
   - Changes:
     - realtime/changes/index.md
     - Specification Amendment Process: realtime/process.md
-    - Guiding Principles: realtime/guiding-principles.md
-    - Revision History: realtime/revision-history.md
-    - Realtime Extensions: realtime/extensions.md
 - Resources:
   - resources/index.md
   - resources/getting-started.md
@@ -156,4 +159,6 @@ nav:
   - resources/multimodal.md
   - resources/other.md
 - Extensions: extensions.md
+  # - Participate: extensions/participate.md
+  # - Glossary: extensions/glossary.md
 - About: about.md

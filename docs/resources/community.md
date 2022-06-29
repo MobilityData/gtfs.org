@@ -11,7 +11,7 @@ Places to ask questions and find other community resources.
     - [OpenTripPlanner User mailing list](https://groups.google.com/forum/#!forum/opentripplanner-users)
     - [OpenTripPlanner Developers mailing list](https://groups.google.com/forum/#!forum/opentripplanner-dev)
 - [TransitWiki](https://transitwiki.org) - A community wiki for transit planners. Like this repo, but better.
-- [MobilityData Slack chat](https://mobilitydata-io.herokuapp.com/)
+- [MobilityData Slack chat](https://share.mobilitydata.org/slack)
 - [Transit Developers mailing list](https://groups.google.com/forum/#!forum/transit-developers)
 - OneBusAway
     - [OneBusAway User mailing list](https://groups.google.com/group/onebusaway-users)
