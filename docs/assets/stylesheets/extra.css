@@ -54,9 +54,12 @@ h1, h2, h3 {
 
 /* inline code style */
 code:not(.highlight code) {
-    color: #e83f8b !important;
-    background-color: rgba(255, 255, 255, 0);
+    color: #212121 !important;
+    /* background-color: rgba(255, 255, 255, 0); */
     /* font-weight: 500 !important; */
+    /* color: var(--md-typesetcolor); */
+    background-color: #EEF1F2;
+    border-radius: 5px;
 }
 
 .md-content a {
@@ -194,6 +197,12 @@ c {
     }
 }
 
+@media only screen and (max-width: 1219px) {
+    .md-main__inner.md-grid {
+        margin: 0px auto 0px auto;
+    }
+}
+
 @media only screen and (min-width: 1220px) {
 
     body {
@@ -218,7 +227,7 @@ c {
         z-index: 4;
     }
     .md-content {
-        margin: 15px;
+        margin: 0px 15px 0px 15px;
     }
 
     /* neutral nav header */
