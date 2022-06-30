@@ -19,7 +19,7 @@ Recommended practices are organized into two primary sections
 
 * Feeds should be published at a public, permanent URL
 * The URL should be directly accessible without requiring a login to access the feed. If desired, API keys may be used but registration for API keys should be automated and available to all.
-* Maintain persistent identifiers (id fields) within a GTFS Realtime feed (e.g., FeedEntity.id, VehicleDescriptor.id, CarriageDetails.id) across feed iterations.
+* Maintain persistent identifiers (id fields) within a GTFS Realtime feed (e.g., `FeedEntity.id`, `VehicleDescriptor.id`, `CarriageDetails.id`) across feed iterations.
 * GTFS Realtime feeds should be refreshed at least once every 30 seconds, or whenever the information represented within the feed (position of a vehicle) changes, whichever is more frequent. VehiclePositions tend to change more frequently than other feed entities and should be updated as frequently as possible. If the content has not changed, the feed should be updated with a new `FeedHeader.timestamp` reflecting that the information is still relevant as of that timestamp.
 * Data within a GTFS Realtime feed should not be older than 90 seconds for Trip Updates and Vehicle Positions and not older than 10 minutes for Service Alerts. For example, even if a producer is continuously refreshing the `FeedHeader.timestamp` timestamp every 30 seconds, the age of VehiclePositions within that feed should not be older than 90 seconds.
 * The server hosting GTFS Realtime data should be reliable and consistently return validly-formatted protobuf-encoded responses. Fewer than 1% of responses should be invalid (protobuf errors or fetching errors).
@@ -34,10 +34,9 @@ Recommended practices are organized into two primary sections
 
 | Field Name | Recommendation |
 | --- | --- |
-| gtfs_realtime_version | Current version is "2.0".  All GTFS Realtime feeds should be "2.0" or higher, as early version of GTFS Realtime did not require all fields needed to represent various transit situations adequately. |
-| incrementality | | 
-| timestamp | This timestamp should not decrease between two sequential feed iterations. |
-|  | This timestamp value should always change if the feed contents change - the feed contents should not change without updating the header `timestamp`.<br>*Common mistakes* - If there are multiple instances of GTFS Realtime feed behind a load balancer, each instance may be pulling information from the realtime data source and publishing it to consumers slightly out of sync. If a GTFS Realtime consumer makes two back-to-back requests, and each request is served by a different GTFS Realtime feed instance, the same feed contents could potentially be returned to the consumer with different timestamps.<br>*Possible solution* - Configure the load balancer for "sticky routes", so that the consumer always receives the GTFS Realtime feed contents from the same GTFS Realtime instance. |
+| `gtfs_realtime_version` | Current version is "2.0".  All GTFS Realtime feeds should be "2.0" or higher, as early version of GTFS Realtime did not require all fields needed to represent various transit situations adequately. |
+| `timestamp` | This timestamp should not decrease between two sequential feed iterations. |
+|  | This timestamp value should always change if the feed contents change - the feed contents should not change without updating the header `timestamp`.<br><br>*Common mistakes* - If there are multiple instances of GTFS Realtime feed behind a load balancer, each instance may be pulling information from the realtime data source and publishing it to consumers slightly out of sync. If a GTFS Realtime consumer makes two back-to-back requests, and each request is served by a different GTFS Realtime feed instance, the same feed contents could potentially be returned to the consumer with different timestamps.<br><br>*Possible solution* - Producers should provide a `Last-Modified` HTTP header, and consumers should pass their most recent `If-Modified-Since` HTTP header to avoid receiving stale data.<br><br>*Possible solution* - If HTTP headers cannot be used, options such as sticky sessions can be used to ensure that each consumer is routed to the same producer server. |
 
 ### FeedEntity
 
@@ -45,28 +44,25 @@ All entities should only be removed from a GTFS Realtime feed when they are no l
 
 | Field Name | Recommendation |
 | --- | --- |
-| id | Should be kept stable over the entire trip duration |
-| is_deleted | |
-| trip_update | |
-| vehicle |  |
-| alert |  |
+| `id` | Should be kept stable over the entire trip duration |
 
 ### TripUpdate
 
 General guidelines for trip cancellations:
+
 * When canceling trips over a number of days, producers should provide TripUpdates referencing the given `trip_ids` and `start_dates` as `CANCELED` as well as an Alert with `NO_SERVICE` referencing the same `trip_ids` and `TimeRange` that can be shown to riders explaining the cancellation (e.g., detour).
 * If no stops in a trip will be visited, the trip should be `CANCELED` instead of having all `stop_time_updates` being marked as `SKIPPED`.  
 
 | Field Name | Recommendation |
 | --- | --- |
-| trip | refer to [message TripDescriptor](#TripDescriptor) |
-|  | If separate `VehiclePosition` and `TripUpdate` feeds are provided, [TripDescriptor](#TripDescriptor) and [VehicleDescriptor](#VehicleDescriptor) ID values pairing should match between the two feeds.<br>For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then the corresponding `TripUpdate` entity should also have `vehicle_id:A` and `trip_id:4`. If any `TripUpdate` entity has `trip_id:4` and any `vehicle_id` other than 4, this is an error. |
-| vehicle | refer to [message VehicleDescriptor](#VehicleDescriptor) |
-|  | If separate `VehiclePosition` and `TripUpdate` feeds are provided, [TripDescriptor](#TripDescriptor) and [VehicleDescriptor](#VehicleDescriptor) ID values pairing should match between the two feeds.<br/>For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then the corresponding `TripUpdate` entity should also have `vehicle_id:A` and `trip_id:4`. If any `TripUpdate` entity has `trip_id:4` and any `vehicle_id` other than 4, this is an error. |
-| stop_time_update | `stop_time_updates` for a given `trip_id` should be strictly ordered by increasing `stop_sequence` and no `stop_sequence` should be repeated. |
-|  | All TripUpdates should include at least one `stop_time_update` with a predicted arrival or departure time in the future. If all `stop_time_updates` for a trip reference past arrival and departure times, consumers should assume that no real-time data is available for the trip. |
-| timestamp | Should reflect the time this prediction for this trip was updated |
-| delay | `TripUpdate.delay` should represent schedule deviation, i.e., the observed past value for how ahead/behind schedule the vehicle is. Predictions for future stops should be provided through `StopTimeEvent.delay` or `StopTimeEvent.time` |
+| `trip` | Refer to [message TripDescriptor](#TripDescriptor). |
+|  | If separate `VehiclePosition` and `TripUpdate` feeds are provided, [TripDescriptor](#TripDescriptor) and [VehicleDescriptor](#VehicleDescriptor) ID values pairing should match between the two feeds.<br><br>For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then the corresponding `TripUpdate` entity should also have `vehicle_id:A` and `trip_id:4`. If any `TripUpdate` entity has `trip_id:4` and any `vehicle_id` other than 4, this is an error. |
+| `vehicle` | Refer to [message VehicleDescriptor](#VehicleDescriptor). |
+|  | If separate `VehiclePosition` and `TripUpdate` feeds are provided, [TripDescriptor](#TripDescriptor) and [VehicleDescriptor](#VehicleDescriptor) ID values pairing should match between the two feeds.<br><br>For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then the corresponding `TripUpdate` entity should also have `vehicle_id:A` and `trip_id:4`. If any `TripUpdate` entity has `trip_id:4` and any `vehicle_id` other than 4, this is an error. |
+| `stop_time_update` | `stop_time_updates` for a given `trip_id` should be strictly ordered by increasing `stop_sequence` and no `stop_sequence` should be repeated. |
+|  | While the trip is in progress, all `TripUpdates` should include at least one `stop_time_update` with a predicted arrival or departure time in the future. Note that the [GTFS Realtime spec](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/trip-updates.md#stop-time-updates) says that producers should not drop a past `StopTimeUpdate` if it refers to a stop with a scheduled arrival time in the future for the given trip (i.e. the vehicle has passed the stop ahead of schedule), as otherwise it will be concluded that there is no update for this stop. |
+| `timestamp` | Should reflect the time this prediction for this trip was updated. |
+| `delay` | `TripUpdate.delay` should represent schedule deviation, i.e., the observed past value for how ahead/behind schedule the vehicle is. Predictions for future stops should be provided through `StopTimeEvent.delay` or `StopTimeEvent.time`. |
 
 ### TripDescriptor
 
@@ -76,43 +72,34 @@ For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then
 
 | Field Name | Recommendation |
 | --- | --- |
-| trip_id | |
-| route_id | |
-| direction_id | |
-| start_time | |
-| start_date | |
-| schedule_relationship | The behavior of `ADDED` trips are unspecified and the use of this enumeration is not recommended. |
+| `schedule_relationship` | The behavior of `ADDED` trips are unspecified and the use of this enumeration is not recommended. |
 
 
 ### VehicleDescriptor
 
-If separate `VehiclePosition` and `TripUpdate` feeds are provided, [TripDescriptor](#TripDescriptor) and [VehicleDescriptor](#VehicleDescriptor) ID values pairing should match between the two feeds.<br/>For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then the corresponding `TripUpdate` entity should also have `vehicle_id:A` and `trip_id:4`.
+If separate `VehiclePosition` and `TripUpdate` feeds are provided, [TripDescriptor](#TripDescriptor) and [VehicleDescriptor](#VehicleDescriptor) ID values pairing should match between the two feeds.
+
+For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then the corresponding `TripUpdate` entity should also have `vehicle_id:A` and `trip_id:4`.
 
 | Field Name | Recommendation |
 | --- | --- |
-| id | Should uniquely and stably identify a vehicle over the entire trip duration |
-| label | |
-| license_plate |  |
+| `id` | Should uniquely and stably identify a vehicle over the entire trip duration |
 
 ### StopTimeUpdate
 
 | Field Name | Recommendation |
 | --- | --- |
-| stop_sequence | Provide `stop_sequence` whenever possible, as it unambiguously resolves to a GTFS stop time in `stop_times.txt` unlike `stop_id`, which can occur more than once in a trip (e.g., loop route). |
-| stop_id | |
-| arrival | Arrival times between sequential stops should increase - they should not be the same or decrease. | 
+| `stop_sequence` | Provide `stop_sequence` whenever possible, as it unambiguously resolves to a GTFS stop time in `stop_times.txt` unlike `stop_id`, which can occur more than once in a trip (e.g., loop route). |
+| `arrival` | Arrival times between sequential stops should increase - they should not be the same or decrease. | 
 |         | Arrival `time` (specified in [StopTimeEvent](#StopTimeEvent)) should be before the departure `time` for the same stop if a layover or dwell time is expected - otherwise, arrival `time` should be be the same as departure `time`. |
-| departure | Departure times between sequential stops should increase - they should not be the same or decrease. |
+| `departure` | Departure times between sequential stops should increase - they should not be the same or decrease. |
 |           | Departure `time` (specified in [StopTimeEvent](#StopTimeEvent)) should be the same as the arrival `time` for the same stop if no layover or dwell time is expected - otherwise, departure `time` should be after arrival `time` . |
-| schedule_relationship | |
 
 ### StopTimeEvent
 
 | Field Name | Recommendation |
 | --- | --- |
-| delay | If only `delay` is provided in a `stop_time_update` `arrival` or `departure` (and not `time`), then the GTFS [stop_times.txt](https://gtfs.org/reference/static#stopstxt) should contain arrival_times and/or departure_times for these corresponding stops. A `delay` value in the realtime feed is meaningless unless you have a clock time to add it to in the GTFS `stop_times.txt` file. |
-| time | |
-| uncertainty |  |
+| `delay` | If only `delay` is provided in a `stop_time_update` `arrival` or `departure` (and not `time`), then the GTFS [`stop_times.txt`](https://gtfs.org/reference/static#stopstxt) should contain `arrival_times` and/or `departure_times` for these corresponding stops. A `delay` value in the realtime feed is meaningless unless you have a clock time to add it to in the GTFS `stop_times.txt` file. |
 
 ### VehiclePosition
 
@@ -120,35 +107,18 @@ Following are the recommended fields that should be included for a VehiclePostio
 
 | Field name | Notes |
 | --- | --- |
-| entity.id | Should be kept stable over the entire trip duration
-| vehicle (VehiclePosition) |
-| vehicle.timestamp | Providing the timestamp at which vehicle position was measured is strongly recommended. Otherwise, consumers must use the message timestamp, which can have misleading results for riders when the last message was updated more frequently than the individual position.
-| vehicle.trip | 
-| vehicle.trip.trip_id |
-| vehicle.trip.start_time |
-| vehicle.trip.start_date |
-| vehicle.trip.schedule_relationship |
-| vehicle.position | 
-| vehicle.position.latitude |  
-| vehicle.position.longitude |  
-| vehicle.vehicle (VehicleDescriptor) |
-| vehicle.vehicle.id | Should uniquely and stably identify a vehicle over the entire trip duration |
+| `entity.id` | Should be kept stable over the entire trip duration
+| `vehicle.timestamp` | Providing the timestamp at which vehicle position was measured is strongly recommended. Otherwise, consumers must use the message timestamp, which can have misleading results for riders when the last message was updated more frequently than the individual position.
+| `vehicle.vehicle.id` | Should uniquely and stably identify a vehicle over the entire trip duration |
 
 ### Position
 
-The vehicle position should be within 200 meters of the GTFS shapes.txt data for the current trip unless there is an alert with the effect of `DETOUR` for this `trip_id`.
-
-| Field Name | Recommendation |
-| --- | --- |
-| latitude |  |
-| longitude | |
-| bearing |  |
-| odometer |  |
-| speed |  |
+The vehicle position should be within 200 meters of the GTFS `shapes.txt` data for the current trip unless there is an alert with the effect of `DETOUR` for this `trip_id`.
 
 ### Alert
 
 General guidelines for alerts:
+
 * When `trip_id` and `start_time` are within `exact_time=1` interval, `start_time` should be later than the beginning of the interval by an exact multiple of `headway_secs`. 
 * When canceling trips over a number of days, producers should provide TripUpdates referencing the given `trip_ids` and `start_dates` as `CANCELED` as well as an Alert with `NO_SERVICE` referencing the same `trip_ids` and `TimeRange` that can be shown to riders explaining the cancellation (e.g., detour).
 * If an alert affects all stops on a line, use a line-based alert instead of a stop-based alert. Do not apply the alert to every stop of the line.
@@ -156,16 +126,7 @@ General guidelines for alerts:
 
 | Field Name | Recommendation |
 | --- | --- |
-| active_period |  | 
-| informed_entity |
-| cause |  |
-| effect | |
-| url |  |
-| header_text |  |
-| description_text | Use line breaks to make your service alert easier to read. |
-| tts_header_text |  |
-| tts_description_text |  |
-| severity_level |  |
+| `description_text` | Use line breaks to make your service alert easier to read. |
 
 ## Practice Recommendations Organized by Use Case
 
