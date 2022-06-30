@@ -54,7 +54,7 @@ h1, h2, h3 {
 
 /* inline code style */
 code:not(.highlight code) {
-    /* color: #e83f8b !important; */
+    color: #212121 !important;
     /* background-color: rgba(255, 255, 255, 0); */
     /* font-weight: 500 !important; */
     /* color: var(--md-typesetcolor); */
