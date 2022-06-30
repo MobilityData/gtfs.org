@@ -144,20 +144,20 @@ nav:
     - Specification Amendment Process: realtime/process.md
 - Resources:
   - resources/index.md
-  - resources/getting-started.md
-  - resources/community.md
-  - resources/data.md
-  - resources/software-for-creating-apis.md
-  - resources/agency-tools.md
-  - resources/hardware.md
-  - resources/apps.md
-  - resources/sdk.md
-  - resources/visualizations.md
-  - resources/gtfs.md
-  - resources/gtfs-realtime.md
-  - resources/siri.md
-  - resources/multimodal.md
-  - resources/other.md
+  - Getting Started: resources/getting-started.md
+  - Community: resources/community.md
+  - Data: resources/data.md
+  - Software for Creating APIs: resources/software-for-creating-apis.md
+  - Agency Tools: resources/agency-tools.md
+  - Hardware: resources/hardware.md
+  - Apps: resources/apps.md
+  - SDKs: resources/sdk.md
+  - Visualizations: resources/visualizations.md
+  - GTFS: resources/gtfs.md
+  - GTFS Realtime: resources/gtfs-realtime.md
+  - SIRI: resources/siri.md
+  - Multimodal: resources/multimodal.md
+  - Other: resources/other.md
 - Extensions: extensions.md
   # - Participate: extensions/participate.md
   # - Glossary: extensions/glossary.md
