@@ -23,6 +23,13 @@ Active proposals for new features in GTFS Realtime. Join the discussions on <a h
 
 <div class="row">
     <div class="active-container">
+        <h3 class="title"><a class="no-icon" href="https://github.com/google/transit/pull/340" target="_blank">GTFS-rt : wheelchair access update</a></h3>
+        <p class="maintainer">#340 opened on Jul 6, 2022 by <a class="no-icon" href="https://github.com/flaktack" target="_blank">flaktack</a></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="active-container">
         <h3 class="title"><a class="no-icon" href="https://github.com/google/transit/pull/332" target="_blank">Add cause_detail and effect_detail to Alerts</a></h3>
         <p class="maintainer">#332 opened on May 31, 2022 by <a class="no-icon" href="https://github.com/mckenzie-maidl-ibigroup" target="_blank">mckenzie-maidl-ibigroup</a></p>
     </div>
