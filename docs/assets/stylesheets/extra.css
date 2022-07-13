@@ -403,3 +403,7 @@ c {
 .md-banner > * > a {
     color: #4385FF;
 }
+
+.admonition.warning {
+    margin-right: 55px;
+}
