@@ -103,6 +103,69 @@ plugins:
   - mkdocs-simple-hooks:
       hooks:
         on_config: "hooks.on_config:deploy_hooks"
+  - i18n:
+      default_language: en
+      default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, false]
+      languages:
+        en: English
+        id: Bahasa Indonesia
+        de: Deutsch
+        es: Español
+        fr: Français
+        pt_BR: Português - Brasil
+        ru: Русский
+        zh: 中文 - 简体
+        ja: 日本語
+        ko: 한국어
+      nav_translations:
+        fr:
+          Home: Accueil
+          Reference: Référence
+          Best Practices: Meilleures pratiques
+          Examples: Exemples
+          Example GTFS Feed: Exemple de flux GTFS
+          Data Examples: Exemples de données
+          Changes: Changements
+          Specification Amendment Process: Processus de modification de la spécification
+          Feed Entities: Entités de flux de données
+          Feed Examples: Exemples de flux de données 
+          Resources: Ressources
+          Getting Started: Pour commencer
+          Community: Communauté
+          Data: Données
+          Software for Creating APIs: Logiciels pour la création d'API
+          Agency Tools: Outils de l'agence
+          Hardware: Matériel informatique
+          Apps: Applications
+          Visualizations: Visualisations
+          Multimodal: Multimodales
+          Other: Autres ressources
+          About: À propos
+        es:
+          Home: Inicio
+          Extensions: Extensiones
+          Reference: Referencia
+          Best Practices: Mejores prácticas
+          Examples: Ejemplos
+          Example GTFS Feed: 
+          Data Examples: 
+          Changes: Cambios
+          Specification Amendment Process: 
+          Feed Entities: 
+          Feed Examples: 
+          Resources: Recursos
+          Getting Started: 
+          Community: 
+          Data: 
+          Software for Creating APIs: 
+          Agency Tools: 
+          Hardware:
+          Apps:
+          Visualizations: 
+          Multimodal: 
+          Other:  
+          About: Acerca de
+        
 nav:
 - Home: index.md
 - GTFS Schedule:
