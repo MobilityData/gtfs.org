@@ -118,6 +118,90 @@ plugins:
         ja: 日本語
         ko: 한국어
       nav_translations:
+        id:
+          Home: Rumah
+          Resources: Sumber Daya
+          Extensions: Ekstensi
+          About: Tentang
+          Reference: Referensi
+          Best Practices: Praktik Terbaik
+          Examples: Contoh
+          Example GTFS Feed: Contoh Dataset GTFS
+          Data Examples: Contoh Data
+          Changes: Perubahan
+          Specification Amendment Process: Proses Amandemen Spesifikasi
+          Feed Entities: Entitas data
+          Feed Examples: Contoh Data
+          Protobuf: Penyangga Protokol
+          Language Bindings: Pengikatan Bahasa
+          Getting Started: Memulai
+          Community: Komunitas
+          Data: Data
+          Software for Creating APIs: Perangkat Lunak untuk Membuat API
+          Agency Tools: Alat-alat Agensi
+          Hardware: Perangkat Keras
+          Apps: Aplikasi
+          SDKs: SDK
+          Visualizations: Visualisasi
+          SIRI: SIRI
+          Multimodal: Multimodal
+          Other: Lainnya
+        de:
+          Home: Startseite
+          Resources: Ressourcen
+          Extensions: Erweiterungen
+          About: Über
+          Reference: Referenz
+          Best Practices: Bewährte Praktiken
+          Examples: Beispiele
+          Example GTFS Feed: Beispiel GTFS-Feed
+          Data Examples: Daten Beispiele
+          Changes: Änderungen
+          Specification Amendment Process: Prozess zur Änderung der Spezifikation
+          Feed Entities: Daten-Entitäten
+          Feed Examples: Daten Beispiele
+          Protobuf: Protokoll Puffer
+          Language Bindings: Sprachbindungen
+          Getting Started: Erste Schritte
+          Community: Gemeinschaft
+          Data: Daten
+          Software for Creating APIs: Software zur Erstellung von APIs
+          Agency Tools: Agentur-Tools
+          Hardware: Hardware
+          Apps: Apps
+          SDKs: SDKs
+          Visualizations: Visualisierungen
+          SIRI: SIRI
+          Multimodal: Multimodal
+          Other: Andere
+        es:
+          Home: Inicio
+          Resources: Recursos
+          Extensions: Extensiones
+          About: Acerca de
+          Reference: Referencia
+          Best Practices: Mejores prácticas
+          Examples: Ejemplos
+          Example GTFS Feed: Ejemplo de conjunto de datos GTFS
+          Data Examples: Ejemplos de datos
+          Changes: Cambios
+          Specification Amendment Process: Proceso de modificación del pliego de condiciones
+          Feed Entities: Entidades de datos
+          Feed Examples: Ejemplos de datos
+          Protobuf: Buffer de protocolo
+          Language Bindings: Enlaces lingüísticos
+          Getting Started: Cómo empezar
+          Community: Comunidad
+          Data: Datos
+          Software for Creating APIs: Software para la creación de APIs
+          Agency Tools: Herramientas de la Agencia
+          Hardware: Hardware
+          Apps: Aplicaciones
+          SDKs: SDKs
+          Visualizations: Visualizaciones
+          SIRI: SIRI
+          Multimodal: Multimodal
+          Other: Otros
         fr:
           Home: Accueil
           Reference: Référence
@@ -129,6 +213,7 @@ plugins:
           Specification Amendment Process: Processus de modification de la spécification
           Feed Entities: Entités de flux de données
           Feed Examples: Exemples de flux de données 
+          Protobuf: Tampon de protocole
           Resources: Ressources
           Getting Started: Pour commencer
           Community: Communauté
@@ -141,30 +226,146 @@ plugins:
           Multimodal: Multimodales
           Other: Autres ressources
           About: À propos
-        es:
-          Home: Inicio
-          Extensions: Extensiones
-          Reference: Referencia
-          Best Practices: Mejores prácticas
-          Examples: Ejemplos
-          Example GTFS Feed: 
-          Data Examples: 
-          Changes: Cambios
-          Specification Amendment Process: 
-          Feed Entities: 
-          Feed Examples: 
+        pt_BR:
+          Home: Início
           Resources: Recursos
-          Getting Started: 
-          Community: 
-          Data: 
-          Software for Creating APIs: 
-          Agency Tools: 
-          Hardware:
-          Apps:
-          Visualizations: 
-          Multimodal: 
-          Other:  
-          About: Acerca de
+          Extensions: Extensões
+          About: Sobre
+          Reference: Referência
+          Best Practices: Melhores Práticas
+          Examples: Exemplos
+          Example GTFS Feed: Exemplo GTFS Dataset
+          Data Examples: Exemplos de dados
+          Changes: Mudanças
+          Specification Amendment Process: Processo de Alteração de Especificações
+          Feed Entities: Entidades de dados
+          Feed Examples: Exemplos de dados
+          Protobuf: Buffer de protocolo
+          Language Bindings: Encadernação de idiomas
+          Getting Started: Como Começar
+          Community: Comunidade
+          Data: Dados
+          Software for Creating APIs: Software para criação de APIs
+          Agency Tools: Ferramentas de Agência
+          Hardware: Hardware
+          Apps: Apps
+          SDKs: SDKs
+          Visualizations: Visualizações
+          SIRI: SIRI
+          Multimodal: Multimodal
+          Other: Outros
+        ru:
+          Home: Главная
+          Resources: Ресурсы
+          Extensions: Расширения
+          About: О сайте
+          Reference: Ссылка
+          Best Practices: Лучшие практики
+          Examples: Примеры
+          Example GTFS Feed: Пример набора данных GTFS
+          Data Examples: Примеры данных
+          Changes: Изменения
+          Specification Amendment Process: Процесс внесения изменений в спецификацию
+          Feed Entities: Сущности данных
+          Feed Examples: Примеры данных
+          Protobuf: Буфер протокола
+          Language Bindings: Языковые привязки
+          Getting Started: Начало работы
+          Community: Сообщество
+          Data: Данные
+          Software for Creating APIs: Программное обеспечение для создания API
+          Agency Tools: Инструменты агентства
+          Hardware: Оборудование
+          Apps: Приложения
+          SDKs: SDKs
+          Visualizations: Визуализации
+          SIRI: SIRI
+          Multimodal: Мультимодальный
+          Other: Другое
+        zh:
+          Home: 首页
+          Resources: 资源
+          Extensions: 延伸
+          About: 关于
+          Reference: 参考资料
+          Best Practices: 最佳实践
+          Examples: 实例
+          Example GTFS Feed: GTFS数据集示例
+          Data Examples: 数据实例
+          Changes: 变化
+          Specification Amendment Process: 规范修订过程
+          Feed Entities: 数据实体
+          Feed Examples: 数据实例
+          Protobuf: 协议缓冲区
+          Language Bindings: 语言绑定
+          Getting Started: 入门
+          Community: 社区
+          Data: 数据
+          Software for Creating APIs: 创建API的软件
+          Agency Tools: 机构工具
+          Hardware: 硬件设施
+          Apps: 应用
+          SDKs: SDKs
+          Visualizations: 视觉化
+          SIRI: シリーズ
+          Multimodal: 多式联运
+          Other: 其他
+        ja:
+          Home: ホーム
+          Resources: リソース
+          Extensions: エクステンション
+          About: について
+          Reference: 参考
+          Best Practices: ベストプラクティス
+          Examples: 事例紹介
+          Example GTFS Feed: GTFSデータセットの例
+          Data Examples: データ例
+          Changes: 変更点
+          Specification Amendment Process: 仕様変更プロセス
+          Feed Entities: データエンティティ
+          Feed Examples: データ例
+          Protobuf: プロトコルバッファ
+          Language Bindings: 言語バインディング
+          Getting Started: はじめに
+          Community: コミュニティ
+          Data: データ
+          Software for Creating APIs: APIを作成するためのソフトウェア
+          Agency Tools: エージェンシーツール
+          Hardware: ハードウェア
+          Apps: アプリ
+          SDKs: SDK
+          Visualizations: ビジュアライゼーション
+          SIRI: SIRI
+          Multimodal: マルチモーダル
+          Other: その他
+        ko:
+          Home: 집
+          Resources: 자원
+          Extensions: 확장
+          About: 에 대한
+          Reference: 참조
+          Best Practices: 모범 사례
+          Examples: 예
+          Example GTFS Feed: GTFS 데이터세트 예시
+          Data Examples: 데이터 예
+          Changes: 변경 사항
+          Specification Amendment Process: 사양 수정 프로세스
+          Feed Entities: 데이터 개체
+          Feed Examples: 데이터 예
+          Protobuf: 프로토콜 버퍼
+          Language Bindings: 언어 바인딩
+          Getting Started: 시작하기
+          Community: 지역 사회
+          Data: 데이터
+          Software for Creating APIs: API 생성용 소프트웨어
+          Agency Tools: 대행사 도구
+          Hardware: 하드웨어
+          Apps: 앱
+          SDKs: SDK
+          Visualizations: 시각화
+          SIRI: SIRI
+          Multimodal: 멀티모달
+          Other: 다른
         
 nav:
 - Home: index.md
