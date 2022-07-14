@@ -10,6 +10,16 @@ zh "本页尚未有中文翻译。"
 ja "このページの日本語訳はまだありません。"
 ko "이 페이지에 대한 한국어 번역은 아직 제공되지 않습니다."
 
+# echo front matter to hide page from search
+---
+search:
+  exclude: true
+---
+
+
+# echo note
+
 !!! Warning ""
 
     [string]
+
