@@ -1,4 +1,4 @@
-# Schedule Übersicht
+# GTFS Schedule Übersicht
 
 <div class="landing-page">
    <a class="button" href="reference">Referenz
@@ -22,7 +22,7 @@ Gehen Sie wie folgt vor, um einen GTFS zu erstellen.
 
 <hr/>
 
-Datensätze sollten unter einer öffentlichen, dauerhaften URL veröffentlicht werden, die auch den Namen der Zip-Datei enthält. (z. B. www. [GTFS/GTFS.zip">GTFS](<http://www.agency.org/\<glossary variable=>). Im Idealfall sollte die URL direkt heruntergeladen werden können, ohne dass eine Anmeldung für den Zugriff auf die Datei erforderlich ist, um das Herunterladen durch Softwareanwendungen zu erleichtern. Es wird zwar empfohlen (und ist die gängigste Praxis), einen GTFS offen zum Herunterladen bereitzustellen, doch wenn ein Datenanbieter den Zugriff auf GTFS aus lizenzrechtlichen oder anderen Gründen kontrollieren muss, wird empfohlen, den Zugriff auf den GTFS mithilfe von API-Schlüsseln zu kontrollieren, was automatische Downloads erleichtert.
+Datensätze sollten unter einer öffentlichen, dauerhaften URL veröffentlicht werden, die auch den Namen der Zip-Datei enthält. (z. B. www.agency.org/gtfs/gtfs.zip). Im Idealfall sollte die URL direkt heruntergeladen werden können, ohne dass eine Anmeldung für den Zugriff auf die Datei erforderlich ist, um das Herunterladen durch Softwareanwendungen zu erleichtern. Es wird zwar empfohlen (und ist die gängigste Praxis), einen GTFS offen zum Herunterladen bereitzustellen, doch wenn ein Datenanbieter den Zugriff auf GTFS aus lizenzrechtlichen oder anderen Gründen kontrollieren muss, wird empfohlen, den Zugriff auf den GTFS mithilfe von API-Schlüsseln zu kontrollieren, was automatische Downloads erleichtert.
 
 Der Web-Server, der die GTFS hostet, sollte so konfiguriert sein, dass er das Änderungsdatum der Datei korrekt meldet (siehe HTTP/1.1 - Request for Comments 2616, unter Abschnitt 14.29).
 
@@ -32,7 +32,7 @@ Siehe "[Bewährte Praktiken: Dataset Publishing](best-practices/#dataset-publish
 
 <hr/>
 
-Der Open Learning Campus (OLC) der Weltbank bietet einen Online-Kurs zum Selbststudium mit dem Titel "[GTFS-and-informal-transit-system-mapping">Introduction to the General Transit Feed Specification (GTFS](<https://olc.worldbank.org/content/introduction-general-transit-feed-specification-\<glossary variable=>)) and Informal Transit System Mapping" an. Dieser Kurs umfasst die folgenden Abschnitte:
+Der Open Learning Campus (OLC) der Weltbank bietet einen Online-Kurs zum Selbststudium mit dem Titel “[Introduction to the General Transit Feed Specification (GTFS) and Informal Transit System Mapping](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)”. Dieser Kurs umfasst die folgenden Abschnitte:
 
 * Was ist GTFS? Geschichte und Dateistruktur
 * Was ist GTFS? Visualisierung & Gemeinschaft
@@ -42,7 +42,7 @@ Der Open Learning Campus (OLC) der Weltbank bietet einen Online-Kurs zum Selbsts
 * Wie man Transitdaten abbildet
 * Wie man Daten für den ersten Feed einer Stadt sammelt
 * App-Übersicht
-* GTFS
+* GTFS-Realtime
 
 Siehe weitere [Online-Kurse](../resources/other/#on-line-courses).
 
@@ -54,15 +54,19 @@ Siehe weitere [Online-Kurse](../resources/other/#on-line-courses).
 
 Es gibt eine Reihe von Mailinglisten, die bei Fragen zu ÖPNV-Daten, Software, Formaten wie GTFS und GTFS und anderen Themen eine gute Anlaufstelle sind:
 
-* [GTFS-changes">GTFS](<https://groups.google.com/group/\<glossary variable=>): Diskussion des Vorschlags zur Erweiterung der GTFS.
-* [MobilityData Slack](https://mobilitydata-io.slack.com/): Slack-"Organisation" mit Kanälen, die sich mit GTFS befassen. [Fordern Sie hier eine Einladung zu mobilitydata-io.slack.com an](https://share.mobilitydata.org/slack).
-* [Transit Developers](https://groups.google.com/group/transit-developers): Allgemeine Diskussionen von Entwicklern im Bereich Verkehrswesen. Viele Verkehrsbetriebe haben auch ihre eigenen Mailinglisten für Entwickler, die speziell auf den Betrieb zugeschnitten sind. Zum Beispiel:
-  * [NYC MTA](https://groups.google.com/group/mtadeveloperresources)
-  * [Portland, OR](https://groups.google.com/group/transit-developers-pdx)
-  * [BART - San Francisco, CA](https://groups.google.com/group/bart-developers)
-  * [MassDOT](https://groups.google.com/group/massdotdevelopers)
-  * [Region Atlanta, GA](https://groups.google.com/forum/#!forum/atl-transit-developers)
-  * [511 San Francisco Bay Area Ressourcen für Entwickler](https://groups.google.com/forum/#!forum/511sfbaydeveloperresources)
-* Erkundigen Sie sich bei Ihrer örtlichen Verkehrsgesellschaft, ob sie eine eigene Mailingliste hat.
+* [GTFS Changes](https://groups.google.com/group/gtfs-changes): Diskussion der Vorschläge zur Erweiterung der GTFS, wie im [GTFS Changes](https://github.com/google/transit/blob/master/gtfs/CHANGES.md) dargelegt.
+* [GTFS Realtime](https://groups.google.com/group/gtfs-realtime): Diskussion über die [GTFS-realtime specification](https://github.com/google/transit/tree/master/gtfs-realtime).
+* [MobilityData Slack](https://mobilitydata-io.slack.com/): Slack-"Organisation" mit Kanälen, die sich mit GTFS befassen. [Fordern Sie hier eine Einladung zu mobilitydata-io.slack.com](https://share.mobilitydata.org/slack) an.
+* [transitfeed](https://groups.google.com/group/transitfeed): Diskussion über das Open-Source-Projekt [transitfeed](https://groups.google.com/group/transitfeed) sowie über die GTFS und zugehörige Tools.
+* [transit-developers](https://groups.google.com/group/transit-developers): allgemeine Transit-Entwickler-Diskussionen. Viele Verkehrsbetriebe haben auch ihre eigenen Mailinglisten für Entwickler, die speziell auf den Betrieb zugeschnitten sind. Zum Beispiel:
+      * [NYC MTA](https://groups.google.com/group/mtadeveloperresources)
+      * [Portland, OR](https://groups.google.com/group/transit-developers-pdx)
+      * [BART - San Francisco, CA](https://groups.google.com/group/bart-developers)
+      * [MassDOT](https://groups.google.com/group/massdotdevelopers)
+      * [Region Atlanta, GA](https://groups.google.com/forum/#!forum/atl-transit-developers)
+      * [511 San Francisco Bay Area Ressourcen für Entwickler](https://groups.google.com/forum/#!forum/511sfbaydeveloperresources)
+
+Erkundigen Sie sich bei Ihrer örtlichen Verkehrsgesellschaft, ob sie eine eigene Mailingliste hat.
+
 
 Siehe weitere [Ressourcen der Gemeinschaft](../resources/community).

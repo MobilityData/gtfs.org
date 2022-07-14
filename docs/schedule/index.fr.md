@@ -42,7 +42,7 @@ L'Open Learning Campus (OLC) de la Banque mondiale propose un cours en ligne aut
 * Comment cartographier les données sur les transports en commun
 * Comment collecter des données pour le premier flux d'une ville ?
 * Enquête sur les applications
-* GTFS
+* GTFS-Realtime
 
 Voir plus de [cours en ligne](../resources/other/#on-line-courses).
 

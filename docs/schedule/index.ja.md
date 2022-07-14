@@ -22,7 +22,7 @@ GTFSフィードを作成するには、以下のステップに従います。
 
 <hr/>
 
-データセットは、ZIPファイル名を含む公開された恒久的なURLで公開されるべきである。(例:[GTFS/GTFS.zip">GTFS](<http://www.agency.org/\<glossary variable=>)。理想的には，消費するソフトウェア・アプリケーションによるダウンロードを容易にするため，ファイルにアクセスするためにログインを必要とせず，直接ダウンロードできるURLであるべきである．GTFSデータセットはオープンにダウンロードできるようにすることが推奨されるが（最も一般的な方法）、データ提供者がライセンスその他の理由でGTFSアクセスを制御する必要がある場合は、APIキーを用いてGTFSデータセットへのアクセスを制御し、自動ダウンロードを容易にすることが推奨される。
+データセットは、ZIPファイル名を含む公開された恒久的なURLで公開されるべきである。(例:www.agency.org/gtfs/gtfs.zip)。理想的には，消費するソフトウェア・アプリケーションによるダウンロードを容易にするため，ファイルにアクセスするためにログインを必要とせず，直接ダウンロードできるURLであるべきである．GTFSデータセットはオープンにダウンロードできるようにすることが推奨されるが（最も一般的な方法）、データ提供者がライセンスその他の理由でGTFSアクセスを制御する必要がある場合は、APIキーを用いてGTFSデータセットへのアクセスを制御し、自動ダウンロードを容易にすることが推奨される。
 
 GTFSデータをホストするWebサーバーは、ファイルの更新日を正しく報告するように設定する必要があります（14.29項の「HTTP/1.1 - Request for Comments 2616」を参照）。
 
@@ -32,7 +32,7 @@ GTFSデータをホストするWebサーバーは、ファイルの更新日を�
 
 <hr/>
 
-世界銀行オープンラーニングキャンパス（OLC）は、「[GTFS-and-informal-transit-system-mapping">Introduction to theGeneral Transit Feed Specification(GTFS](<https://olc.worldbank.org/content/introduction-general-transit-feed-specification-\<glossary variable=>)) and Informal Transit System Mapping」というセルフベースのオンラインコースを提供しています。このコースには、以下のセクションがあります。
+世界銀行オープンラーニングキャンパス（OLC）は、「[Introduction to the General Transit Feed Specification (GTFS) and Informal Transit System Mapping](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)」というセルフベースのオンラインコースを提供しています。このコースには、以下のセクションがあります。
 
 * GTFS？歴史とファイル構造
 * GTFS？可視化およびコミュニティ
@@ -42,7 +42,7 @@ GTFSデータをホストするWebサーバーは、ファイルの更新日を�
 * トランジットデータをマッピングする方法
 * 都市初のフィードのためのデータを収集する方法
 * アプリ調査
-* GTFS
+* GTFS-Realtime
 
 他の[オンラインコースも](../resources/other/#on-line-courses)ご覧ください。
 
@@ -54,15 +54,19 @@ GTFSデータをホストするWebサーバーは、ファイルの更新日を�
 
 公共交通機関のデータ、ソフトウェア、GTFS GTFSようなフォーマット、その他の問題について質問がある場合、良いリソースとなるメーリングリストが数多く存在します。
 
-* [GTFS-changes">GTFS](<https://groups.google.com/group/\<glossary variable=>)変更：GTFS仕様の拡張に関する提案の議論。
-* [MobilityDataのSlack](https://mobilitydata-io.slack.com/)。GTFSトピックに専念するチャンネルを持つSlackの「組織」です。[mobilitydata-io.slack.comへの招待は](https://share.mobilitydata.org/slack)こちらでリクエストしてください。
-* [Transit Developers](https://groups.google.com/group/transit-developers): 一般的な交通機関開発者向けの議論。多くの交通機関は、その機関に特化した独自の開発者向けメーリングリストも持っています。たとえば
-  * [NYC MTA](https://groups.google.com/group/mtadeveloperresources)
-  * [ポートランド(OR)](https://groups.google.com/group/transit-developers-pdx)
-  * [BART - サンフランシスコ、カリフォルニア州](https://groups.google.com/group/bart-developers)
-  * [MassDOT](https://groups.google.com/group/massdotdevelopers)
-  * [アトランタ（ジョージア州）地域](https://groups.google.com/forum/#!forum/atl-transit-developers)
-  * [511 サンフランシスコ・ベイエリア開発者向けリソース](https://groups.google.com/forum/#!forum/511sfbaydeveloperresources)
-* 地元の交通機関に問い合わせて、独自のメーリングリストがあるかどうか確認してください。
+* GTFS Changes](https://groups.google.com/group/gtfs-changes): [GTFS Changes 文書](https://github.com/google/transit/blob/master/gtfs/CHANGES.md)に記載された GTFS 仕様の拡張案について議論します。
+* GTFS Realtime](https://groups.google.com/group/gtfs-realtime): [GTFS-realtime specification](https://github.com/google/transit/tree/master/gtfs-realtime) について議論しました。
+* [MobilityData Slack](https://mobilitydata-io.slack.com/): GTFSのトピックに特化したチャンネルを持つSlackの "組織"。[mobilitydata-io.slack.com への招待はこちら](https://share.mobilitydata.org/slack).
+* transitfeed](https://groups.google.com/group/transitfeed): オープンソースの [transitfeed](https://groups.google.com/group/transitfeed) プロジェクトの議論と、GTFS仕様と関連ツールの議論です。
+* [transit-developers](https://groups.google.com/group/transit-developers): 一般的な交通機関開発者の議論です。多くの交通機関は、その機関に特化した独自の開発者用メーリングリストも持っています。たとえば
+    * [NYC MTA](https://groups.google.com/group/mtadeveloperresources)
+    * [ポートランド、オレゴン](https://groups.google.com/group/transit-developers-pdx)
+    * [BART - サンフランシスコ、カリフォルニア](https://groups.google.com/group/bart-developers)
+    * [マスドット](https://groups.google.com/group/massdotdevelopers)
+    * [ジョージア州アトランタ地域](https://groups.google.com/forum/#!forum/atl-transit-developers)
+    * [511 サンフランシスコ・ベイエリア開発者リソース](https://groups.google.com/forum/#!forum/511sfbaydeveloperresources)
+
+地元の交通機関が独自のメーリングリストを持っているかどうか、確認してみてください。
+
 
 その他の[コミュニティ](../resources/community)リソースを見る
