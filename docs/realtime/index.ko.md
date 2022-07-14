@@ -1,4 +1,4 @@
-# GTFSRealtime 개요
+# GTFS Realtime 개요
 
 <div class="landing-page"><a class="button" href="reference">참조</a> <a class="button" href="best-practices">모범 사례</a> <a class="button" href="feed-examples">예</a> <a class="button" href="changes">변경 사항</a></div>
 
@@ -6,7 +6,7 @@
 
 사용자에게 대중 교통 데이터 업데이트를 실시간으로 제공하면 대중 교통 서비스 경험이 크게 향상됩니다. 현재 도착 및 출발 시간에 대한 최신 정보를 제공하여 사용자가 원활하게 여행을 계획할 수 있습니다. 결과적으로, 불행히도 지연되는 경우, 라이더는 집에 조금 더 머물 수 있다는 사실을 알게 되어 안도할 것입니다.
 
-GTFSRealtime 대중 교통 기관에서 제공할 수 있는 피드 사양입니다.Realtime 플릿에 대한 업데이트를 애플리케이션 개발자에게 제공합니다. [일정](<../\<glossary variable=>) 의 확장입니다. [/참조">](<../\<glossary variable=>)GTFS (General Transit Feed Specification ), 대중 교통 일정 및 관련 지리 정보를 위한 개방형 데이터 형식입니다.GTFSRealtime 구현 용이성을 중심으로 설계되었습니다.GTFS 상호 운용성 및 승객 정보에 중점을 둡니다.
+GTFSRealtime 대중 교통 기관에서 제공할 수 있는 피드 사양입니다.Realtime 플릿에 대한 업데이트를 애플리케이션 개발자에게 제공합니다. [GTFS](../schedule/reference) (General Transit Feed Specification ), 대중 교통 일정 및 관련 지리 정보를 위한 개방형 데이터 형식입니다.GTFSRealtime 구현 용이성을 중심으로 설계되었습니다.GTFS 상호 운용성 및 승객 정보에 중점을 둡니다.
 
 사양은 초기 [Live Transit Updates](https://developers.google.com/transit/google-transit#LiveTransitUpdates) 파트너 대행사, 여러 대중교통 개발자 및 Google의 파트너십을 통해 설계되었습니다. 사양은 [Apache 2.0 라이선스](https://www.apache.org/licenses/LICENSE-2.0.html) 하에 게시됩니다.
 
@@ -36,13 +36,13 @@ GTFSRealtime 대중 교통 기관에서 제공할 수 있는 피드 사양입니
 
 그만큼GTFSRealtime 데이터 교환 형식은 [프로토콜 버퍼](https://developers.google.com/protocol-buffers/) 를 기반으로 합니다.
 
-프로토콜 버퍼는language - 구조화된 데이터를 직렬화하기 위한 플랫폼 중립적 메커니즘(XML을 생각하지만 더 작고 빠르고 간단함). 데이터 구조는 다음과 같이 정의됩니다.GTFS [-](proto)Realtime [.proto](proto) 파일은 다양한 언어를 사용하여 다양한 데이터 스트림에서 구조화된 데이터를 쉽게 읽고 쓸 수 있는 소스 코드를 생성하는 데 사용됩니다.Java , C++ 또는Python .
+프로토콜 버퍼는language - 구조화된 데이터를 직렬화하기 위한 플랫폼 중립적 메커니즘(XML을 생각하지만 더 작고 빠르고 간단함). 데이터 구조는 다음과 같이 정의됩니다.[gtfs-realtime.proto](proto) 파일은 다양한 언어를 사용하여 다양한 데이터 스트림에서 구조화된 데이터를 쉽게 읽고 쓸 수 있는 소스 코드를 생성하는 데 사용됩니다.Java , C++ 또는Python .
 
 [프로토콜 버퍼에 대한 추가 정보....](https://developers.google.com/protocol-buffers/)
 
 ## 데이터 구조
 
-요소의 계층 구조와 해당 유형 정의는GTFS [-](proto)Realtime [.proto](proto) 파일.
+요소의 계층 구조와 해당 유형 정의는 [gtfs-realtime.proto](proto) 파일.
 
 이 텍스트 파일은 선택한 프로그래밍에 필요한 라이브러리를 생성하는 데 사용됩니다.language . 이 라이브러리는 유효한 생성에 필요한 클래스와 기능을 제공합니다.GTFSRealtime 피드. 라이브러리는 피드 생성을 더 쉽게 만들 뿐만 아니라 유효한 피드만 생성되도록 합니다.
 
@@ -50,7 +50,7 @@ GTFSRealtime 대중 교통 기관에서 제공할 수 있는 피드 사양입니
 
 ## 도움을 받다
 
-주변의 토론에 참여하려면GTFSRealtime 사양 변경 및 추가 제안, [GTFS](<https://groups.google.com/group/\<glossary variable=>) 가입 [-실시간">](<https://groups.google.com/group/\<glossary variable=>)GTFSRealtime [메일링 리스트](<https://groups.google.com/group/\<glossary variable=>) 및 [google/transit GitHub 저장소](https://github.com/google/transit) 의 대화를 팔로우하세요.
+주변의 토론에 참여하려면GTFSRealtime 사양 변경 및 추가 제안, [GTFS Realtime mailing list](https://groups.google.com/group/gtfs-realtime) 및 [google/transit GitHub 저장소](https://github.com/google/transit) 의 대화를 팔로우하세요.
 
 ## Google 지도 및 실시간 대중교통 업데이트
 

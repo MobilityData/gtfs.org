@@ -1,4 +1,4 @@
-# Visão geral doGTFS Realtime
+# Visão geral do GTFS Realtime
 
 <div class="landing-page">
    <a class="button" href="reference">Referência</a>
@@ -11,7 +11,7 @@
 
 Fornecer aos usuários atualizações de dados de trânsito em tempo real melhora muito sua experiência de seus serviços de trânsito. O fornecimento de informações atualizadas sobre os horários atuais de chegada e partida permite que os usuários planejem facilmente suas viagens. Como resultado, em caso de um infeliz atraso, um passageiro ficaria aliviado em saber que pode ficar em casa por um pouco mais de tempo.
 
-GTFS Realtime é uma especificação de alimentação que permite que as agências de transporte público forneçam atualizações Realtime sobre sua frota aos desenvolvedores de aplicações. É uma extensão do [Schedule/reference">GTFS](<../\<glossary variable=>)General Transit Feed Specification), um formato de dados aberto para horários de transporte público e informações geográficas associadas. O GTFS Realtime foi projetado em torno da facilidade de implementação, boa interoperabilidade GTFS e um foco nas informações sobre passageiros.
+GTFS Realtime é uma especificação de alimentação que permite que as agências de transporte público forneçam atualizações Realtime sobre sua frota aos desenvolvedores de aplicações. É uma extensão do [GTFS](../schedule/reference) (General Transit Feed Specification), um formato de dados aberto para horários de transporte público e informações geográficas associadas. O GTFS Realtime foi projetado em torno da facilidade de implementação, boa interoperabilidade GTFS e um foco nas informações sobre passageiros.
 
 A especificação foi projetada através de uma parceria das agências parceiras iniciais [Live Transit Updates](https://developers.google.com/transit/google-transit#LiveTransitUpdates), de vários desenvolvedores de trânsito e do Google. A especificação é publicada sob a [licença Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
 
@@ -41,13 +41,13 @@ Como o GTFS Realtime permite que você apresente o status _real_ de sua frota, o
 
 O formato de troca de dados Realtime GTFS é baseado em [Protocol Buffers](https://developers.google.com/protocol-buffers/)
 
-Os buffers de protocolo são um mecanismo de language e plataforma neutro para a serialização de dados estruturados (pense em XML, mas menor, mais rápido e mais simples). A estrutura de dados é definida em um arquivo [GTFS](proto).proto, que então é usado para gerar código fonte para ler e escrever facilmente seus dados estruturados de e para uma variedade de fluxos de dados, usando uma variedade de linguagens - por exemplo, Java, C++ ou Python.
+Os buffers de protocolo são um mecanismo de language e plataforma neutro para a serialização de dados estruturados (pense em XML, mas menor, mais rápido e mais simples). A estrutura de dados é definida em um arquivo [gtfs-realtime.proto](proto), que então é usado para gerar código fonte para ler e escrever facilmente seus dados estruturados de e para uma variedade de fluxos de dados, usando uma variedade de linguagens - por exemplo, Java, C++ ou Python.
 
 [Mais sobre Protocol Buffers....](https://developers.google.com/protocol-buffers/)
 
 ## Estrutura de dados
 
-A hierarquia de elementos e suas definições de tipo estão especificadas no arquivo [GTFS](proto).proto.
+A hierarquia de elementos e suas definições de tipo estão especificadas no arquivo [gtfs-realtime.proto](proto).
 
 Este arquivo de texto é usado para gerar as bibliotecas necessárias na sua escolha de language programação. Estas bibliotecas fornecem as classes e funções necessárias para gerar feeds GTFS válidos Realtime. As bibliotecas não apenas facilitam a criação de feeds, mas também garantem que somente feeds válidos sejam produzidos.
 
@@ -55,7 +55,7 @@ Este arquivo de texto é usado para gerar as bibliotecas necessárias na sua esc
 
 ## Obtendo ajuda
 
-Para participar das discussões em torno do GTFS Realtime e sugerir mudanças e adições à especificação, junte-se à [GTFS-realtime">lista de discussãoGTFS Realtime](<https://groups.google.com/group/\<glossary variable=>) e siga as conversas no [repositório google/transit GitHub](https://github.com/google/transit).
+Para participar das discussões em torno do GTFS Realtime e sugerir mudanças e adições à especificação, junte-se à [GTFS Realtime mailing list](https://groups.google.com/group/gtfs-realtime) e siga as conversas no [repositório google/transit GitHub](https://github.com/google/transit).
 
 ## Google Maps e Live Transit Updates
 

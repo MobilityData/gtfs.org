@@ -40,7 +40,7 @@ Because GTFS Realtime allows you to present the _actual_ status of your fleet, t
 
 ## Data format
 
-The GTFS Realtime data exchange format is based on [Protocol Buffers](https://developers.google.com/protocol-buffers/)
+The GTFS Realtime data exchange format is based on [Protocol Buffers](https://developers.google.com/protocol-buffers/).
 
 Protocol buffers are a language- and platform-neutral mechanism for serializing structured data (think XML, but smaller, faster, and simpler). The data structure is defined in a [gtfs-realtime.proto](proto) file, which then is used to generate source code to easily read and write your structured data from and to a variety of data streams, using a variety of languages – e.g. Java, C++ or Python.
 

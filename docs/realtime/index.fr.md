@@ -13,7 +13,7 @@ Fournir aux usagers des données actualisées en temps réel sur les transports 
 
 GTFS Realtime est une spécification de flux qui permet aux agences de transport public de fournir des mises à jour en temps réel de leur flotte aux développeurs d'applications. Il s'agit d'une extension de [GTFS](../schedule/reference) (General Transit Feed Specification), un format de données ouvert pour les horaires des transports publics et les informations géographiques associées. GTFS Realtime a été conçu pour faciliter la mise en œuvre, assurer une bonne interopérabilité avec GTFS et mettre l'accent sur l'information des passagers.
 
-La spécification a été conçue grâce à un partenariat entre les agences partenaires initiales de [Live Transit Updates] (https://developers.google.com/transit/google-transit#LiveTransitUpdates), un certain nombre de développeurs de transport en commun et Google. La spécification est publiée sous la [Licence Apache 2.0] (https://www.apache.org/licenses/LICENSE-2.0.html).
+La spécification a été conçue grâce à un partenariat entre les agences partenaires initiales de [Live Transit Updates](https://developers.google.com/transit/google-transit#LiveTransitUpdates), un certain nombre de développeurs de transport en commun et Google. La spécification est publiée sous la [Licence Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
 
 ## Comment commencer ?
 

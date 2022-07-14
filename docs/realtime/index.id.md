@@ -1,12 +1,12 @@
-# GTFSRealtime Ringkasan
+# GTFS Realtime Ringkasan
 
-<div class="landing-page"><a class="button" href="reference">Referensi</a> <a class="button" href="feed-examples">Contoh</a> <a class="button" href="best-practices">Praktik Terbaik</a> <a class="button" href="changes">Perubahan</a></div>
+<div class="landing-page"><a class="button" href="reference">Referensi</a>  <a class="button" href="best-practices">Praktik Terbaik</a> <a class="button" href="feed-examples">Contoh</a> <a class="button" href="changes">Perubahan</a></div>
 
 ## Mulai
 
 Memberikan pembaruan data transit kepada pengguna secara real time sangat meningkatkan pengalaman mereka terhadap layanan transit Anda. Memberikan informasi terkini tentang waktu kedatangan dan keberangkatan saat ini memungkinkan pengguna untuk merencanakan perjalanan mereka dengan lancar. Akibatnya, jika terjadi keterlambatan yang tidak menguntungkan, pengendara akan lega mengetahui bahwa mereka dapat tinggal di rumah sedikit lebih lama.
 
-GTFSRealtime adalah spesifikasi umpan yang memungkinkan agen transportasi umum untuk menyediakanRealtime update tentang armada mereka untuk pengembang aplikasi. Ini adalah perpanjangan dari [Jadwal](<../\<glossary variable=>) [/referensi">](<../\<glossary variable=>)GTFS (General Transit Feed Specification ), format data terbuka untuk jadwal transportasi umum dan informasi geografis terkait.GTFSRealtime dirancang di sekitar kemudahan implementasi, bagusGTFS interoperabilitas dan fokus pada informasi penumpang.
+GTFSRealtime adalah spesifikasi umpan yang memungkinkan agen transportasi umum untuk menyediakanRealtime update tentang armada mereka untuk pengembang aplikasi. Ini adalah perpanjangan dari [GTFS](../schedule/reference) (General Transit Feed Specification ), format data terbuka untuk jadwal transportasi umum dan informasi geografis terkait.GTFSRealtime dirancang di sekitar kemudahan implementasi, bagusGTFS interoperabilitas dan fokus pada informasi penumpang.
 
 Spesifikasi ini dirancang melalui kemitraan awal dengan agensi mitra [Pembaruan Transit Langsung](https://developers.google.com/transit/google-transit#LiveTransitUpdates) , sejumlah pengembang angkutan umum dan Google. Spesifikasi diterbitkan di bawah [Lisensi Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) .
 
@@ -36,21 +36,21 @@ KarenaGTFSRealtime memungkinkan Anda untuk menyajikan status _aktual_ armada And
 
 ItuGTFSRealtime format pertukaran data didasarkan pada [Protocol Buffer](https://developers.google.com/protocol-buffers/)
 
-Buffer protokol adalahlanguage - dan mekanisme platform-netral untuk membuat serialisasi data terstruktur (pikirkan XML, tetapi lebih kecil, lebih cepat, dan lebih sederhana). Struktur data didefinisikan dalamGTFS [-](proto)Realtime file [.proto](proto) , yang kemudian digunakan untuk menghasilkan kode sumber agar mudah membaca dan menulis data terstruktur Anda dari dan ke berbagai aliran data, menggunakan berbagai bahasa – misalnyaJava , C++ atauPython .
+Buffer protokol adalahlanguage - dan mekanisme platform-netral untuk membuat serialisasi data terstruktur (pikirkan XML, tetapi lebih kecil, lebih cepat, dan lebih sederhana). Struktur data didefinisikan dalam [gtfs-realtime.proto](proto), yang kemudian digunakan untuk menghasilkan kode sumber agar mudah membaca dan menulis data terstruktur Anda dari dan ke berbagai aliran data, menggunakan berbagai bahasa – misalnyaJava , C++ atauPython .
 
 [Lebih lanjut tentang Protokol Buffer...](https://developers.google.com/protocol-buffers/) .
 
 ## Struktur data
 
-Hirarki elemen dan definisi tipenya ditentukan dalamGTFS [-](proto)Realtime [.proto](proto) file.
+Hirarki elemen dan definisi tipenya ditentukan dalam [gtfs-realtime.proto](proto) file.
 
-File teks ini digunakan untuk menghasilkan perpustakaan yang diperlukan dalam pilihan pemrograman Andalanguage . Pustaka ini menyediakan kelas dan fungsi yang diperlukan untuk menghasilkanGTFSRealtime feed. Pustaka tidak hanya membuat pembuatan feed lebih mudah tetapi juga memastikan bahwa hanya feed yang valid yang diproduksi.
+File teks ini digunakan untuk menghasilkan perpustakaan yang diperlukan dalam pilihan pemrograman Andalanguage. Pustaka ini menyediakan kelas dan fungsi yang diperlukan untuk menghasilkanGTFSRealtime feed. Pustaka tidak hanya membuat pembuatan feed lebih mudah tetapi juga memastikan bahwa hanya feed yang valid yang diproduksi.
 
 [Selengkapnya tentang struktur data...](reference)
 
 ## Mendapatkan bantuan
 
-Untuk berpartisipasi dalam diskusi seputarGTFSRealtime dan menyarankan perubahan dan penambahan spesifikasi, bergabunglah dengan [GTFS](<https://groups.google.com/group/\<glossary variable=>) [-waktu nyata">](<https://groups.google.com/group/\<glossary variable=>)GTFSRealtime [milis](<https://groups.google.com/group/\<glossary variable=>) dan ikuti percakapan di [repositori Google/transit GitHub](https://github.com/google/transit) .
+Untuk berpartisipasi dalam diskusi seputarGTFSRealtime dan menyarankan perubahan dan penambahan spesifikasi, bergabunglah dengan GTFS Realtime mailing list](https://groups.google.com/group/gtfs-realtime) dan ikuti percakapan di [repositori Google/transit GitHub](https://github.com/google/transit) .
 
 ## Google Maps dan Pembaruan Transit Langsung
 
