@@ -1,4 +1,7 @@
 
+# remove, and duplicate all untranslated into every language extension
+
+# notes to echo per language
 
 id "Terjemahan untuk halaman ini ke dalam bahasa Indonesia belum tersedia."
 de "Für diese Seite sind noch keine Übersetzungen ins Deutsche verfügbar."
