@@ -411,16 +411,16 @@ Pour traiter le coût d'un voyage à plusieurs étapes :
 1. Les groupes de segments tarifaires applicables définis dans `fare_leg_rules.txt` devraient être déterminés pour tous les segments individuels du voyage en fonction du trajet du coureur.
 
 2. Le fichier `fare_transfer_rules.txt` doit être filtré par les champs qui définissent les caractéristiques du transfert, ces champs sont :
-   - `fare_transfer_rules.from_leg_group_id`
-   - `fare_transfer_rules.to_leg_group_id`<br/>
-   <br/>
+      - `fare_transfer_rules.from_leg_group_id`
+      - `fare_transfer_rules.to_leg_group_id`<br/>
+      <br/>
 
 3. Si le transfert correspond exactement à un enregistrement dans `fare_transfer_rules.txt` en fonction des caractéristiques du transfert, alors cet enregistrement doit être traité pour déterminer le coût du transfert.
 
 4. Si aucune correspondance exacte n'est trouvée, les entrées vides dans `from_leg_group_id` ou dans `to_leg_group_id` doivent être vérifiées pour calculer le coût du transfert :
-   - Une entrée vide dans `fare_transfer_rules.from_leg_group_id` correspond à tous les groupes de segments définis dans `fare_leg_rules.leg_group_id`, à l'exclusion de ceux énumérés dans `fare_transfer_rules.from_leg_group_id`.
-   - Une entrée vide dans `fare_transfer_rules.to_leg_group_id` correspond à tous les groupes de segments définis dans `fare_leg_rules.leg_group_id`, à l'exception de ceux énumérés dans `fare_transfer_rules.to_leg_group_id`<br/>
-   <br/>
+      - Une entrée vide dans `fare_transfer_rules.from_leg_group_id` correspond à tous les groupes de segments définis dans `fare_leg_rules.leg_group_id`, à l'exclusion de ceux énumérés dans `fare_transfer_rules.from_leg_group_id`.
+      - Une entrée vide dans `fare_transfer_rules.to_leg_group_id` correspond à tous les groupes de segments définis dans `fare_leg_rules.leg_group_id`, à l'exception de ceux énumérés dans `fare_transfer_rules.to_leg_group_id`<br/>
+      <br/>
 
 5. Si le transfert ne correspond à aucune des règles décrites ci-dessus, il n'y a pas d'arrangement de transfert et les segments sont considérés comme distincts.
 

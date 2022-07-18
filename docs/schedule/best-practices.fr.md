@@ -315,22 +315,22 @@ Si une application GTFS formule des exigences ou des recommandations pour les pr
 
 ### Groupe de travail sur les meilleures pratiques GTFS
 
-Le groupe de travail sur les meilleures pratiques GTFS a été convoqué par le [Rocky Mountain Institute](https://rmi.org/) en 2016-17, composé de fournisseurs de transport public, de développeurs d'applications GTFS, de consultants et d'organisations universitaires, afin de définir des pratiques et des attentes communes pour les données GTFS.Les membres de ce groupe de travail comprenaient :
+Le groupe de travail sur les meilleures pratiques GTFS a été convoqué par le [Rocky Mountain Institute](https://rmi.org/) en 2016-17, composé de fournisseurs de transport public, de développeurs d'applications GTFS, de consultants et d'organisations universitaires, afin de définir des pratiques et des attentes communes pour les données GTFS. Les membres de ce groupe de travail comprenaient :
 
 * [Cambridge Systematics](https://www.camsys.com/)
 * [Capital Metro](https://www.capmetro.org/)
-* [Centre de recherche sur les transports urbains de l'Université de Floride du Sud](https://www.cutr.usf.edu/)
+* [Center for Urban Transportation Research at University of South Florida](https://www.cutr.usf.edu/)
 * [Conveyal](https://conveyal.com/)
 * [Google](https://www.google.com/)
 * [IBI Group](https://www.ibigroup.com/)
 * [Mapzen](https://mapzen.com/)
 * [Microsoft](https://www.microsoft.com/)
 * [Moovel](https://www.moovel.com/)
-* [Département des transports de l'Oregon](https://www.oregon.gov/odot/)
+* [Oregon Department of Transportation](https://www.oregon.gov/odot/)
 * [Swiftly](https://goswift.ly/)
 * [Transit](https://transitapp.com/)
 * [Trillium](https://trilliumtransit.com/)
 * [TriMet](https://trimet.org/)
-* [Banque Mondiale](https://www.worldbank.org/)
+* [World Bank](https://www.worldbank.org/)
 
 Aujourd'hui, ce document est maintenu par [MobilityData](https://mobilitydata.org/).

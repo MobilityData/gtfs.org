@@ -1,4 +1,4 @@
-# GTFS : 대중교통 데이터를 보편적으로 이용 가능하게 만들기
+# GTFS: 대중교통 데이터를 보편적으로 이용 가능하게 만들기
 
 <div class="landing-page">
     <a class="button" href="schedule">GTFS Schedule</a><a class="button" href="realtime">GTFS Realtime</a><a class="button" href="resources">자원</a><a class="button" href="extensions">확장</a>

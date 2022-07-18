@@ -317,20 +317,20 @@ GTFSアプリケーションが、ここに記載されていないGTFSデータ
 
 GTFSベストプラクティスワーキンググループは、2016-17年に[ロッキーマウンテン研究所](https://rmi.org/)によって招集され、公共交通機関プロバイダー、GTFSアプリケーションの開発者、コンサルタント、学術団体で構成され、GTFSデータに関する共通のプラクティスと期待を定義しました。このワーキンググループのメンバーは次の通りです。
 
-* [ケンブリッジ・システマティクス](https://www.camsys.com/)
-* [キャピタルメトロ](https://www.capmetro.org/)
-* [南フロリダ大学都市交通研究センター](https://www.cutr.usf.edu/)
+* [Cambridge Systematics](https://www.camsys.com/)
+* [Capital Metro](https://www.capmetro.org/)
+* [Center for Urban Transportation Research at University of South Florida](https://www.cutr.usf.edu/)
 * [Conveyal](https://conveyal.com/)
 * [Google](https://www.google.com/)
-* [IBIグループ](https://www.ibigroup.com/)
+* [IBI Group](https://www.ibigroup.com/)
 * [Mapzen](https://mapzen.com/)
-* [マイクロソフト](https://www.microsoft.com/)
-* [ムーベル](https://www.moovel.com/)
-* [オレゴン州運輸局](https://www.oregon.gov/odot/)
-* [スイフトリー](https://goswift.ly/)
-* [トランジット](https://transitapp.com/)
-* [トリリウム](https://trilliumtransit.com/)
-* [トライメット](https://trimet.org/)
-* [世界銀行](https://www.worldbank.org/)
+* [Microsoft](https://www.microsoft.com/)
+* [Moovel](https://www.moovel.com/)
+* [Oregon Department of Transportation](https://www.oregon.gov/odot/)
+* [Swiftly](https://goswift.ly/)
+* [Transit](https://transitapp.com/)
+* [Trillium](https://trilliumtransit.com/)
+* [TriMet](https://trimet.org/)
+* [World Bank](https://www.worldbank.org/)
 
 現在、このドキュメントは[MobilityDataによって](https://mobilitydata.org/)管理されています。

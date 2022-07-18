@@ -1,4 +1,4 @@
-# Referência de ScheduleGTFS
+# Referência de GTFS Schedule
 
 **Revisado em 9 de maio de 2022. Veja o [Histórico de Revisões](../revision-history)** para mais detalhes.
 
@@ -10,28 +10,28 @@ Este documento define o formato e a estrutura dos arquivos que compõem um conju
 2. [Arquivos de Dataset](#dataset-files)
 3. [Requisitos do arquivo](#file-requirements)
 4. [Definições de campo](#field-definitions)
-   - [agency.txt](#agencytxt)
-   - [stops.txt](#stopstxt)
-   - [routes.txt](#routestxt)
-   - [trips.txt](#tripstxt)
-   - [stop_times.txt](#stop_timestxt)
-   - [calendar.txt](#calendartxt)
-   - [calendar_dates.txt](#calendar_datestxt)
-   - [fare_attributes.txt](#fare_attributestxt)
-   - [fare_rules.txt](#fare_rulestxt)
-   - [fare_products.txt](#fare_productstxt)
-   - [fare_leg_rules.txt](#fare_leg_rulestxt)
-   - [fare_transfer_rules.txt](#fare_transfer_rulestxt)
-   - [areas.txt](#areastxt)
-   - [stop_areas.txt](#stop_areastxt)
-   - [shapes.txt](#shapestxt)
-   - [frequencies.txt](#frequenciestxt)
-   - [transfers.txt](#transferstxt)
-   - [pathways.txt](#pathwaystxt)
-   - [levels.txt](#levelstxt)
-   - [translations.txt](#translationstxt)
-   - [feed_info.txt](#feed_infotxt)
-   - [attributions.txt](#attributionstxt)
+      - [agency.txt](#agencytxt)
+      - [stops.txt](#stopstxt)
+      - [routes.txt](#routestxt)
+      - [trips.txt](#tripstxt)
+      - [stop_times.txt](#stop_timestxt)
+      - [calendar.txt](#calendartxt)
+      - [calendar_dates.txt](#calendar_datestxt)
+      - [fare_attributes.txt](#fare_attributestxt)
+      - [fare_rules.txt](#fare_rulestxt)
+      - [fare_products.txt](#fare_productstxt)
+      - [fare_leg_rules.txt](#fare_leg_rulestxt)
+      - [fare_transfer_rules.txt](#fare_transfer_rulestxt)
+      - [areas.txt](#areastxt)
+      - [stop_areas.txt](#stop_areastxt)
+      - [shapes.txt](#shapestxt)
+      - [frequencies.txt](#frequenciestxt)
+      - [transfers.txt](#transferstxt)
+      - [pathways.txt](#pathwaystxt)
+      - [levels.txt](#levelstxt)
+      - [translations.txt](#translationstxt)
+      - [feed_info.txt](#feed_infotxt)
+      - [attributions.txt](#attributionstxt)
 
 ## Convenções de documentos
 
@@ -41,7 +41,7 @@ As palavras-chave "DEVE", "NÃO DEVE", "REQUERIDO", "DEVERÁ", "NÃO DEVERÁ", "
 
 Esta seção define os termos que são utilizados ao longo deste documento.
 
-- **Dataset** - Um conjunto completo de arquivos definidos por esta referência de especificação. A alteração do conjunto de dados cria uma nova versão do conjunto de dados. Os conjuntos de dados devem ser publicados em uma URL pública e permanente, incluindo o nome do arquivo zip. (por exemplo, [GTFS/GTFS.zip">GTFS](<https://www.agency.org/\<glossary variable=>).
+- **Dataset** - Um conjunto completo de arquivos definidos por esta referência de especificação. A alteração do conjunto de dados cria uma nova versão do conjunto de dados. Os conjuntos de dados devem ser publicados em uma URL pública e permanente, incluindo o nome do arquivo zip. (por exemplo, https://www.agency.org/gtfs/gtfs.zip).
 - **Registro** - Uma estrutura básica de dados composta de uma série de diferentes valores de campo descrevendo uma única entidade (por exemplo, agência de trânsito, parada, rota, etc.). Representado, em uma tabela, como uma linha.
 - **Campo** - Uma propriedade de um objeto ou entidade. Representado, em uma tabela, como uma coluna.
 - **Valor do campo** - Uma entrada individual em um campo. Representado, em uma tabela, como uma única célula.
@@ -374,17 +374,17 @@ As tarifas em [`fare_leg_rules.txt`](#fare_leg_rulestxt) devem ser consultadas f
 Para processar o custo de uma perna:
 
 1. O arquivo `fare_leg_rules.txt` deve ser filtrado pelos campos que definem as características da viagem, estes campos são:
-   - `fare_leg_rules.network_id`
-   - `from_area_id`
-   - `regras_regras_de_regras.to_area_id`<br/>
+      - `fare_leg_rules.network_id`
+      - `from_area_id`
+      - `regras_regras_de_regras.to_area_id`<br/>
 
 <br/>
 
 2. Se a perna corresponder exatamente a um registro em `fare_leg_rules.txt` baseado nas características da viagem, esse registro deve ser processado para determinar o custo da perna.
 3. Se não forem encontradas correspondências exatas, então as entradas vazias em `fare_leg_rules.network_id`, `fare_leg_rules.from_area_id`, and `fare_leg_rules.to_area_id` devem ser verificadas para processar o custo da perna:
-   - Uma entrada vazia em `fare_leg_rules.network_id` corresponde a todas as redes definidas em `routes.txt` excluindo as listadas em `fare_leg_rules.network_id`
-   - Uma entrada vazia em `fare_leg_rules.from_area_id` corresponde a todas as áreas definidas em `áreas.area_id` excluindo as listadas em `fare_leg_rules.from_area_id`
-   - Uma entrada vazia em `fare_leg_rules.to_area_id` corresponde a todas as áreas definidas em `áreas.area_id` excluindo as listadas em `fare_leg_rules.to_area_id`<br/>
+      - Uma entrada vazia em `fare_leg_rules.network_id` corresponde a todas as redes definidas em `routes.txt` excluindo as listadas em `fare_leg_rules.network_id`
+      - Uma entrada vazia em `fare_leg_rules.from_area_id` corresponde a todas as áreas definidas em `áreas.area_id` excluindo as listadas em `fare_leg_rules.from_area_id`
+      - Uma entrada vazia em `fare_leg_rules.to_area_id` corresponde a todas as áreas definidas em `áreas.area_id` excluindo as listadas em `fare_leg_rules.to_area_id`<br/>
 
 <br/>
 
@@ -413,16 +413,16 @@ Para processar o custo de uma viagem com várias pernas:
 1. Os grupos de trajetos aplicáveis definidos em `fare_leg_rules.txt` devem ser determinados para todos os trajetos individuais de viagem com base na viagem do cavaleiro.
 
 2. O arquivo `fare_transfer_rules.txt` deve ser filtrado pelos campos que definem as características da transferência, estes campos são:
-   - `fare_transferir_rules.from_leg_group_id`
-   - `regras_de_transferência_de_regras.to_leg_group_id`<br/>
-   <br/>
+      - `fare_transferir_rules.from_leg_group_id`
+      - `regras_de_transferência_de_regras.to_leg_group_id`<br/>
+      <br/>
 
 3. Se a transferência corresponder exatamente a um registro em `fare_transfer_rules.txt` baseado nas características da transferência, então esse registro deve ser processado para determinar o custo da transferência.
 
 4. Se nenhuma correspondência exata for encontrada, então as entradas vazias em `from_leg_group_id` ou in `to_leg_group_id` devem ser verificadas para processar o custo da transferência:
-   - Uma entrada vazia em `fare_transfer_rules.from_leg_group_id` corresponde a todos os grupos de pernas definidos em `fare_leg_rules.leg_group_id` excluindo os listados em `fare_transfer_rules.from_leg_group_id`
-   - Uma entrada vazia em `fare_transfer_rules.to_leg_group_id` corresponde a todos os grupos de pernas definidos em `fare_leg_rules.leg_group_id` excluindo os listados em `fare_transfer_rules.to_leg_group_id`<br/>
-   <br/>
+      - Uma entrada vazia em `fare_transfer_rules.from_leg_group_id` corresponde a todos os grupos de pernas definidos em `fare_leg_rules.leg_group_id` excluindo os listados em `fare_transfer_rules.from_leg_group_id`
+      - Uma entrada vazia em `fare_transfer_rules.to_leg_group_id` corresponde a todos os grupos de pernas definidos em `fare_leg_rules.leg_group_id` excluindo os listados em `fare_transfer_rules.to_leg_group_id`<br/>
+      <br/>
 
 5. Se a transferência não corresponder a nenhuma das regras descritas acima, então não há acordo de transferência e as pernas são consideradas separadas.
 

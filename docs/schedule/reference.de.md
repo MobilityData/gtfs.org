@@ -1,6 +1,6 @@
 # Schedule
 
-**Überarbeitet am 9. Mai 2022. Siehe [Revisionshistorie](../revision-history)** für weitere Details.
+**Überarbeitet am 9. Mai 2022. Siehe [historie](../revision-history)** für weitere Details.
 
 Dieses Dokument definiert das Format und die Struktur der Dateien, aus denen ein GTFS besteht.
 
@@ -10,28 +10,28 @@ Dieses Dokument definiert das Format und die Struktur der Dateien, aus denen ein
 2. [Dataset-Dateien](#dataset-files)
 3. [Datei-Anforderungen](#file-requirements)
 4. [Felddefinitionen](#field-definitions)
-   - [agency.txt](#agencytxt)
-   - [stops.txt](#stopstxt)
-   - [routes.txt](#routestxt)
-   - [trips.txt](#tripstxt)
-   - [stop_times.txt](#stop_timestxt)
-   - [calendar.txt](#calendartxt)
-   - [calendar_dates.txt](#calendar_datestxt)
-   - [fare_attributes.txt](#fare_attributestxt)
-   - [fare_rules.txt](#fare_rulestxt)
-   - [fare_products.txt](#fare_productstxt)
-   - [fare_leg_rules.txt](#fare_leg_rulestxt)
-   - [fare_transfer_rules.txt](#fare_transfer_rulestxt)
-   - [areas.txt](#areastxt)
-   - [stop_areas.txt](#stop_areastxt)
-   - [shapes.txt](#shapestxt)
-   - [frequencies.txt](#frequenciestxt)
-   - [transfers.txt](#transferstxt)
-   - [pathways.txt](#pathwaystxt)
-   - [levels.txt](#levelstxt)
-   - [translations.txt](#translationstxt)
-   - [feed_info.txt](#feed_infotxt)
-   - [attributions.txt](#attributionstxt)
+      - [agency.txt](#agencytxt)
+      - [stops.txt](#stopstxt)
+      - [routes.txt](#routestxt)
+      - [trips.txt](#tripstxt)
+      - [stop_times.txt](#stop_timestxt)
+      - [calendar.txt](#calendartxt)
+      - [calendar_dates.txt](#calendar_datestxt)
+      - [fare_attributes.txt](#fare_attributestxt)
+      - [fare_rules.txt](#fare_rulestxt)
+      - [fare_products.txt](#fare_productstxt)
+      - [fare_leg_rules.txt](#fare_leg_rulestxt)
+      - [fare_transfer_rules.txt](#fare_transfer_rulestxt)
+      - [areas.txt](#areastxt)
+      - [stop_areas.txt](#stop_areastxt)
+      - [shapes.txt](#shapestxt)
+      - [frequencies.txt](#frequenciestxt)
+      - [transfers.txt](#transferstxt)
+      - [pathways.txt](#pathwaystxt)
+      - [levels.txt](#levelstxt)
+      - [translations.txt](#translationstxt)
+      - [feed_info.txt](#feed_infotxt)
+      - [attributions.txt](#attributionstxt)
 
 ## Dokument-Konventionen
 
@@ -41,7 +41,7 @@ Die Schlüsselwörter "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHO
 
 In diesem Abschnitt werden Begriffe definiert, die in diesem Dokument verwendet werden.
 
-- **Datensatz** - Ein vollständiger Satz von Dateien, die durch diese Spezifikationsreferenz definiert sind. Eine Änderung des Datensatzes erzeugt eine neue Version des Datensatzes. Datensätze sollten unter einer öffentlichen, dauerhaften URL veröffentlicht werden, die auch den Namen der Zip-Datei enthält. (z. B. https\://www. [GTFS/GTFS.zip">GTFS](<https://www.agency.org/\<glossary variable=>).
+- **Datensatz** - Ein vollständiger Satz von Dateien, die durch diese Spezifikationsreferenz definiert sind. Eine Änderung des Datensatzes erzeugt eine neue Version des Datensatzes. Datensätze sollten unter einer öffentlichen, dauerhaften URL veröffentlicht werden, die auch den Namen der Zip-Datei enthält. (z. B. https://www.agency.org/gtfs/gtfs.zip).
 - **Datensatz** - Eine grundlegende Datenstruktur, die aus einer Reihe von verschiedenen Feldwerten besteht, die eine einzelne Einheit beschreiben (z. B. Verkehrsunternehmen, Haltestelle, Strecke usw.). Wird in einer Tabelle als Zeile dargestellt.
 - **Feld** - Eine Eigenschaft eines Objekts oder einer Entität. Wird in einer Tabelle als Spalte dargestellt.
 - **Feldwert** - Ein einzelner Eintrag in einem Feld. Wird in einer Tabelle als eine einzelne Zelle dargestellt.
@@ -70,7 +70,7 @@ Anwesenheitsbedingungen, die für Felder und Dateien gelten:
 - **Email** - Eine Email-Adresse.<br/>*Beispiel: `example@example.com`*
 - **Enum** - Eine Option aus einer Reihe von vordefinierten Konstanten, die in der Spalte "Beschreibung" definiert sind.<br/>*Beispiel: Das Feld `route_type` enthält eine `0` für Straßenbahn, eine `1`* für U-Bahn...
 - **ID** - Der Wert eines ID-Feldes ist eine interne ID, die den Fahrgästen nicht angezeigt werden soll, und besteht aus einer Folge beliebiger UTF-8-Zeichen. Es wird empfohlen, nur druckbare ASCII-Zeichen zu verwenden. Eine ID wird als "eindeutige ID" bezeichnet, wenn sie innerhalb einer Datei eindeutig sein muss. IDs, die in einer .txt-Datei definiert sind, werden oft in einer anderen .txt-Datei referenziert. IDs, die auf eine ID in einer anderen Tabelle verweisen, werden als "Fremd-ID" bezeichnet.<br/>*Beispiel: Das Feld `stop_id` in [stops.txt](#stopstxt) ist eine "eindeutige ID". Das Feld `parent_station` in [stops.txt](#stopstxt) ist eine "fremde ID, die auf `stops.stop_id`* verweist".
-- **language** - Ein IETF BCP language. Eine Einführung in IETF BCP 47 finden Sie unter <https://www.rfc-editor.org/rfc/bcp/bcp47.txt> und [language-tags/">language](<https://www.w3.org/International/articles/\<glossary variable=>)<br/>*Beispiel: `en` für Englisch, `en-US` für amerikanisches Englisch oder `de`* für Deutsch.
+- **language** - Ein IETF BCP language. Eine Einführung in IETF BCP 47 finden Sie unter [https://www.rfc-editor.org/rfc/bcp/bcp47.txt](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) und [https://www.w3.org/International/articles/language-tags/](https://www.w3.org/International/articles/language-tags/)<br/>*Beispiel: `en` für Englisch, `en-US` für amerikanisches Englisch oder `de`* für Deutsch.
 - **Breitengrad** - WGS84-Breitengrad in Dezimalgraden. Der Wert muss größer als oder gleich -90,0 und kleiner als oder gleich 90,0 sein.*<br/>Beispiel: `41.890169`* für das Kolosseum in Rom.
 - **Längengrad** - WGS84-Längengrad in Dezimalgraden. Der Wert muss größer als oder gleich -180,0 und kleiner als oder gleich 180,0 sein.<br/>*Beispiel: `12.492269`* für das Kolosseum in Rom.
 - **Float** - Eine Fließkommazahl.
@@ -79,7 +79,7 @@ Anwesenheitsbedingungen, die für Felder und Dateien gelten:
 - **Zeit** - Zeit im Format HH:MM:SS (H:MM:SS wird ebenfalls akzeptiert). Die Zeit wird von "Mittag minus 12 Uhr" des Diensttages gemessen (effektiv Mitternacht, außer an Tagen, an denen die Sommerzeit umgestellt wird). Für Zeiten, die nach Mitternacht liegen, geben Sie die Zeit als einen Wert größer als 24:00:00 in HH:MM:SS Ortszeit für den Tag an, an dem der Schedule beginnt.<br/>*Beispiel: `14:30:00` für 2:30PM oder `25:35:00`* für 1:35AM am nächsten Tag.
 - **Text** - Eine Zeichenkette aus UTF-8-Zeichen, die angezeigt werden soll und daher für Menschen lesbar sein muss.
 - **Zeitzone** - TZ-Zeitzone von [https://www.iana.org/time-zones.](https://www.iana.org/time-zones) Zeitzonennamen enthalten nie das Leerzeichen, können aber einen Unterstrich enthalten. Eine Liste der gültigen Werte finden Sie unter <https://en.wikipedia.org/wiki/List_of_tz_zones>.<br/>*Beispiel: `Asien/Tokio`, `Amerika/Los_Angeles` oder `Afrika/Kairo`*.
-- **URL** - Eine vollständig qualifizierte URL, die http\:// oder https\:// enthält, wobei alle Sonderzeichen in der URL korrekt escaped werden müssen. Unter <https://www.w3.org/Addressing/URL/4_URI_Recommentations.html> finden Sie eine Beschreibung, wie Sie vollständig qualifizierte URL-Werte erstellen können.
+- **URL** - Eine vollständig qualifizierte URL, die http\:// oder https\:// enthält, wobei alle Sonderzeichen in der URL korrekt escaped werden müssen. Unter [https://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html](https://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html) finden Sie eine Beschreibung, wie Sie vollständig qualifizierte URL-Werte erstellen können.
 
 ### Feld-Zeichen
 
@@ -114,7 +114,7 @@ Diese Spezifikation definiert die folgenden Dateien:
 | [fare_rules.txt](#fare_rulestxt)                   | **Bedingt erforderlich** | Regeln für die Anwendung von Fahrpreisen für Streckenabschnitte.<br/><br/>Bedingt erforderlich:<br/>- **Erforderlich** wenn [fare_attributes.txt](#fare_attributestxt) ist definiert.<br/>- **Verboten** sonst.                                                                                                                                                                                                                                                                      |
 | [fare_products.txt](#fare_productstxt)             | Fakultativ               | Beschreibung der verschiedenen Arten von Fahrkarten oder Tarifen, die von Fahrgästen erworben werden können.<br/><br/>Datei [fare_products.txt](fare_productstxt) beschreibt Tarifprodukte, die nicht in [fare_attributes.txt](#fare_attributestxt) und [fare_rules.txt](#fare_rulestxt). Als solches ist die Verwendung von [fare_products.txt](#fare_productstxt) völlig getrennt von den Dateien [fare_attributes.txt](#fare_attributestxt) und [fare_rules.txt](#fare_rulestxt). |
 | [fare_leg_rules.txt](#fare_leg_rulestxt)           | Fakultativ               | Tarifbestimmungen für die einzelnen Streckenabschnitte.<br/><br/>Datei [fare_leg_rules.txt](#fare_leg_rulestxt) bietet eine detailliertere Methode zur Modellierung von Tarifstrukturen. Daher bietet die Verwendung von [fare_leg_rules.txt](#fare_leg_rulestxt) ist völlig getrennt von Dateien [fare_attributes.txt](#fare_attributestxt) und [fare_rules.txt](#fare_rulestxt).                                                                                                   |
-| [fare_transfer_rules.txt](#fare_transfer_rulestxt) | Fakultativ               | Tarifregeln für Transfers zwischen Teilstrecken.<br/><br/>Zusammen mit [fare_leg_rules.txt](#fare_leg_rulestxt)Datei [fare_transfer_rules.txt](#fare_transfer_rulestxt) bietet eine detailliertere Methode zur Modellierung von Tarifstrukturen. Als solches bietet die Verwendung von [fare_transfer_rules.txt](#fare_transfer_rulestxt) ist völlig getrennt von Dateien [fare_attributes.txt](#fare_attributestxt) und [fare_rules.txt](#fare_rulestxt).                           |
+| [fare_transfer_rules.txt](#fare_transfer_rulestxt) | Fakultativ               | Tarifregeln für Transfers zwischen Teilstrecken.<br/><br/>Zusammen mit [fare_leg_rules.txt](#fare_leg_rulestxt) Datei [fare_transfer_rules.txt](#fare_transfer_rulestxt) bietet eine detailliertere Methode zur Modellierung von Tarifstrukturen. Als solches bietet die Verwendung von [fare_transfer_rules.txt](#fare_transfer_rulestxt) ist völlig getrennt von Dateien [fare_attributes.txt](#fare_attributestxt) und [fare_rules.txt](#fare_rulestxt).                           |
 | [areas.txt](areastxt)                              | Fakultativ               | Bereichsgruppierung von Orten.                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | [stop_areas.txt](stop_areastxt)                    | Fakultativ               | Regeln für die Zuordnung von Haltestellen zu Gebieten.                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | [shapes.txt](#shapestxt)                           | Fakultativ               | Regeln für die Abbildung der Fahrwege von Fahrzeugen, manchmal auch als Routenausrichtung bezeichnet.                                                                                                                                                                                                                                                                                                                                                                                |
@@ -134,10 +134,8 @@ Die folgenden Anforderungen gelten für das Format und den Inhalt der Datensatzd
 - Die erste Zeile einer jeden Datei muss Feldnamen enthalten. Jeder Unterabschnitt des Abschnitts [Felddefinitionen](#field-definitions) entspricht einer der Dateien in einem GTFS und führt die Feldnamen auf, die in dieser Datei verwendet werden können.
 - Bei allen Datei- und Feldnamen ist die Groß- und Kleinschreibung zu beachten.
 - Feldwerte dürfen keine Tabulatoren, Zeilenumbrüche oder neue Zeilen enthalten.
-- Feldwerte, die Anführungszeichen oder Kommas enthalten, müssen in Anführungszeichen gesetzt werden. Darüber hinaus muss jedem Anführungszeichen im Feldwert ein Anführungszeichen vorangestellt werden. Dies entspricht der Art und Weise, in der Microsoft Excel kommagetrennte (CSV) Dateien ausgibt. Weitere Informationen über das CSV-Dateiformat finden Sie unter [https://tools.ietf.org/html/rfc4180.](https://tools.ietf.org/html/rfc4180)
-
-Das folgende Beispiel zeigt, wie ein Feldwert in einer kommagetrennten Datei aussehen würde:
-
+- Feldwerte, die Anführungszeichen oder Kommas enthalten, müssen in Anführungszeichen gesetzt werden. Darüber hinaus muss jedem Anführungszeichen im Feldwert ein Anführungszeichen vorangestellt werden. Dies entspricht der Art und Weise, in der Microsoft Excel kommagetrennte (CSV) Dateien ausgibt. Weitere Informationen über das CSV-Dateiformat finden Sie unter [https://tools.ietf.org/html/rfc4180.](https://tools.ietf.org/html/rfc4180).
+- Das folgende Beispiel zeigt, wie ein Feldwert in einer kommagetrennten Datei aussehen würde:
 - **Ursprünglicher Feldwert:** `Enthält "Anführungszeichen", Kommas und Text`
 - **Feldwert in der CSV-Datei:** `"Enthält "Anführungszeichen", Kommas und Text"`
 - Feldwerte dürfen keine HTML-Tags, Kommentare oder Escape-Sequenzen enthalten.
@@ -152,7 +150,7 @@ Das folgende Beispiel zeigt, wie ein Feldwert in einer kommagetrennten Datei aus
 
 Datei: **Erforderlich**
 
-Primärschlüssel`agency_id`)
+Primärschlüssel (`agency_id`)
 
 | Feldname          | Typ           | Anwesenheit              | Beschreibung                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | ----------------- | ------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -169,7 +167,7 @@ Primärschlüssel`agency_id`)
 
 Datei: **Erforderlich**
 
-Primärschlüssel`stop_id`)
+Primärschlüssel (`stop_id`)
 
 | Feldname              | Typ                                              | Anwesenheit              | Beschreibung                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | --------------------- | ------------------------------------------------ | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -193,7 +191,7 @@ Primärschlüssel`stop_id`)
 
 Datei: **Erforderlich**
 
-Primärschlüssel`route_id`)
+Primärschlüssel (`route_id`)
 
 | Feldname              | Typ                                               | Anwesenheit              | Beschreibung                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | --------------------- | ------------------------------------------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -215,7 +213,7 @@ Primärschlüssel`route_id`)
 
 Datei: **Erforderlich**
 
-Primärschlüssel`trip_id`)
+Primärschlüssel (`trip_id`)
 
 | Feldname                | Typ                                                                                   | Anwesenheit              | Beschreibung                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | ----------------------- | ------------------------------------------------------------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -251,7 +249,7 @@ Anmerkungen zur obigen Tabelle:
 
 Datei: **Erforderlich**
 
-Primärschlüssel`trip_id`, `stop_sequence`)
+Primärschlüssel (`trip_id`, `stop_sequence`)
 
 | Feldname              | Typ                                     | Anwesenheit              | Beschreibung                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |   |
 | --------------------- | --------------------------------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | - |
@@ -272,7 +270,7 @@ Primärschlüssel`trip_id`, `stop_sequence`)
 
 Datei: **Bedingt erforderlich**
 
-Primärschlüssel`service_id`)
+Primärschlüssel (`service_id`)
 
 | Feldname     | Typ           | Anwesenheit      | Beschreibung                                                                                                                                                                                                                                                                                                                                                                                   |
 | ------------ | ------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -291,7 +289,7 @@ Primärschlüssel`service_id`)
 
 Datei: **Bedingt erforderlich**
 
-Primärschlüssel`service_id`, `Datum`)
+Primärschlüssel (`service_id`, `date`)
 
 Die Tabelle [calendar_dates.txt](#calendar_datestxt) aktiviert oder deaktiviert den Betrieb explizit nach Datum. Sie kann auf zwei Arten verwendet werden.
 
@@ -308,7 +306,7 @@ Die Tabelle [calendar_dates.txt](#calendar_datestxt) aktiviert oder deaktiviert 
 
 Datei: **Optional**
 
-Primärschlüssel`fare_id`)
+Primärschlüssel (`fare_id`)
 
 **Versionen**<br/>Es gibt zwei Modellierungsoptionen für die Beschreibung von Fahrpreisen. GTFS V1 ist die Legacy-Option für die Beschreibung von minimalen Tarifinformationen. GTFS V2 ist eine aktualisierte Methode, die eine detailliertere Darstellung der Tarifstruktur einer Agentur ermöglicht. Beide können in einem Datensatz vorhanden sein, aber nur eine Methode sollte von einem Datenkonsumenten für einen bestimmten Datensatz verwendet werden. Es wird empfohlen, dass GTFS V2 Vorrang vor GTFS V1 hat.<br/><br/>Die mit GTFS V1 verbundenen Dateien sind<br/>- [fare_attributes.txt](#fare_attributestxt)<br/>- [fare_rules.txt](#fare_rulestxt)<br/><br/>Die Dateien, die mit GTFS V2 verbunden sind, sind:<br/>- [fare_products.txt](#fare_productstxt)<br/>- [fare_leg_rules.txt](#fare_leg_rulestxt)<br/>- [fare_transfer_rules.txt](#fare_transfer_rulestxt)
 
@@ -328,7 +326,7 @@ Primärschlüssel`fare_id`)
 
 Datei: **Bedingt** erforderlich
 
-Primärschlüssel`(*`)
+Primärschlüssel (`*`)
 
 Die Tabelle [fare_rules.txt](#farerulestxt) gibt an, wie die Tarife in [fare_attributes.txt](#fare_attributestxt) auf eine Reiseroute anzuwenden sind. Die meisten Tarifstrukturen verwenden eine Kombination der folgenden Regeln:
 
@@ -350,7 +348,7 @@ Beispiele für die Angabe einer Tarifstruktur mit [fare_rules.txt](#farerulestxt
 
 Datei: **Optional**
 
-Primärschlüssel`fare_product_id`)
+Primärschlüssel (`fare_product_id`)
 
 Beschreibung der verschiedenen Arten von Fahrkarten oder Tarifen, die von Fahrgästen erworben werden können.
 
@@ -365,7 +363,7 @@ Beschreibung der verschiedenen Arten von Fahrkarten oder Tarifen, die von Fahrg�
 
 Datei: **Optional**
 
-Primärschlüssel`network_id, from_area_id, to_area_id, fare_product_id`)
+Primärschlüssel (`network_id, from_area_id, to_area_id, fare_product_id`)
 
 Fahrpreisregeln für einzelne Streckenabschnitte.
 
@@ -374,23 +372,19 @@ Die Tarife in [`fare_leg_rules.txt`](#fare_leg_rulestxt) müssen abgefragt werde
 Zur Verarbeitung der Kosten einer Strecke:
 
 1. Die Datei `fare_leg_rules.txt` muss nach den Feldern gefiltert werden, die die Merkmale der Reise definieren, diese Felder sind:
-   - `fare_leg_rules.network_id`
-   - `fare_leg_rules.from_area_id`
-   - `fare_leg_rules.to_area_id`<br/>
 
-<br/>
+      - `fare_leg_rules.network_id`
+      - `fare_leg_rules.from_area_id`
+      - `fare_leg_rules.to_area_id`
 
 2. Wenn die Strecke exakt mit einem Datensatz in `fare_leg_rules.txt` übereinstimmt, der auf den Reisemerkmalen basiert, muss dieser Datensatz verarbeitet werden, um die Kosten für die Strecke zu ermitteln.
 3. Wenn keine exakten Übereinstimmungen gefunden werden, müssen leere Einträge in `fare_leg_rules.network_id`, `fare_leg_rules.from_area_id` und `fare_leg_rules.to_area_id` überprüft werden, um die Kosten der Strecke zu verarbeiten:
+
    - Ein leerer Eintrag in `fare_leg_rules.network_id` entspricht allen in `routes.txt` definierten Netzen mit Ausnahme der unter `fare_leg_rules.network_id` aufgeführten
    - Ein leerer Eintrag in `fare_leg_rules.from_area_id` entspricht allen Gebieten, die in `areas.area_id` definiert sind, mit Ausnahme derer, die unter `fare_leg_rules` aufgeführt sind `.from_area_id`
-   - Ein leerer Eintrag in `fare_leg_rules.to_area_id` entspricht allen in `areas` definierten Gebieten `.area_id` mit Ausnahme der unter `fare_leg_rules` aufgeführten `.to_area_id`<br/>
-
-<br/>
+   - Ein leerer Eintrag in `fare_leg_rules.to_area_id` entspricht allen in `areas` definierten Gebieten `.area_id` mit Ausnahme der unter `fare_leg_rules` aufgeführten `.to_area_id`
 
 4. Entspricht die Strecke keiner der oben beschriebenen Regeln, so ist der Tarif unbekannt.
-
-<br/>
 
 | Feldname          | Typ                                                     | Anwesenheit      | Beschreibung                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | ----------------- | ------------------------------------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -404,7 +398,7 @@ Zur Verarbeitung der Kosten einer Strecke:
 
 Datei: **Optional**
 
-Primärschlüssel`from_leg_group_id, to_leg_group_id, fare_product_id, transfer_count, duration_limit`)
+Primärschlüssel (`from_leg_group_id, to_leg_group_id, fare_product_id, transfer_count, duration_limit`)
 
 Fahrpreisregeln für Transfers zwischen Teilstrecken, die in [`fare_leg_rules.txt`](#fare_leg_rulestxt) definiert sind.
 
@@ -413,20 +407,18 @@ Zur Verarbeitung der Kosten einer Mehrstreckenfahrt:
 1. Die in `fare_leg_rules.txt` definierten Tarifgruppen sollten für alle einzelnen Streckenabschnitte auf der Grundlage der Fahrt des Fahrers ermittelt werden.
 
 2. Die Datei `fare_transfer_rules.txt` xt muss nach den Feldern gefiltert werden, die die Merkmale des Transfers definieren, diese Felder sind
-   - `fare_transfer_rules.from_leg_group_id`
-   - `fare_transfer_rules.to_leg_group_id`<br/>
-   <br/>
+
+      - `fare_transfer_rules.from_leg_group_id`
+      - `fare_transfer_rules.to_leg_group_id`
 
 3. Wenn die Überweisung exakt mit einem Datensatz in `fare_transfer_rules.txt` übereinstimmt, der auf den Merkmalen der Überweisung basiert, muss dieser Datensatz verarbeitet werden, um die Überweisungskosten zu ermitteln.
 
 4. Wenn keine exakten Übereinstimmungen gefunden werden, müssen leere Einträge in `from_leg_group_id` oder in `to_leg_group_id` überprüft werden, um die Transferkosten zu ermitteln:
-   - Ein leerer Eintrag in `fare_transfer_rules.from_leg_group_id` entspricht allen unter `fare_leg_rules.leg_group_id` definierten Streckengruppen mit Ausnahme der unter `fare_transfer_rules.from_leg_group_id` aufgeführten
-   - Ein leerer Eintrag in `fare_transfer_rules.to_leg_group_id` entspricht allen unter `fare_leg_rules.leg_group_id` definierten Streckengruppen mit Ausnahme der unter `fare_transfer_rules aufgeführten.to_leg_group_id`<br/>
-   <br/>
+      - Ein leerer Eintrag in `fare_transfer_rules.from_leg_group_id` entspricht allen unter `fare_leg_rules.leg_group_id` definierten Streckengruppen mit Ausnahme der unter `fare_transfer_rules.from_leg_group_id` aufgeführten
+      - Ein leerer Eintrag in `fare_transfer_rules.to_leg_group_id` entspricht allen unter `fare_leg_rules.leg_group_id` definierten Streckengruppen mit Ausnahme der unter `fare_transfer_rules aufgeführten.to_leg_group_id`
 
 5. Entspricht die Umsteigeverbindung keiner der oben beschriebenen Regeln, dann gibt es keine Umsteigeverbindung und die Strecken werden als getrennt betrachtet.
 
-<br/>
 
 | Feldname              | Typ                                                     | Anwesenheit              | Beschreibung                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | --------------------- | ------------------------------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -442,7 +434,7 @@ Zur Verarbeitung der Kosten einer Mehrstreckenfahrt:
 
 Datei: **Fakultativ**
 
-Primärschlüssel`area_id`)
+Primärschlüssel (`area_id`)
 
 Definiert Bereichskennungen.
 
@@ -455,7 +447,7 @@ Definiert Bereichskennungen.
 
 Datei: **Optional**
 
-Primärschlüssel`(*`)
+Primärschlüssel (`*`)
 
 Weist die Haltestellen aus [stops.txt](#stopstxt) den Bereichen zu.
 
@@ -468,7 +460,7 @@ Weist die Haltestellen aus [stops.txt](#stopstxt) den Bereichen zu.
 
 Datei: **Optional**
 
-Primärschlüssel`shape_id`, `shape_pt_sequence`)
+Primärschlüssel (`shape_id`, `shape_pt_sequence`)
 
 Shapes beschreiben den Weg, den ein Fahrzeug entlang einer Streckenführung zurücklegt, und sind in der Datei shapes.txt definiert. Shapes sind mit Trips verbunden und bestehen aus einer Folge von Punkten, die das Fahrzeug der Reihe nach durchfährt. Die Shapes müssen die Lage der Haltestellen nicht exakt abbilden, aber alle Haltestellen auf einer Fahrt sollten innerhalb eines kleinen Abstands zum Shape für diese Fahrt liegen, d. h. in der Nähe von geraden Liniensegmenten, die die Shape-Punkte verbinden.
 
@@ -484,7 +476,7 @@ Shapes beschreiben den Weg, den ein Fahrzeug entlang einer Streckenführung zur�
 
 Datei: **Optional**
 
-Primärschlüssel`trip_id`, `start_time`)
+Primärschlüssel (`trip_id`, `start_time`)
 
 [frequencies.txt](#frequenciestxt) repräsentiert Fahrten, die in regelmäßigen Abständen fahren (Zeit zwischen den Fahrten). Diese Datei kann verwendet werden, um zwei verschiedene Arten von Diensten darzustellen.
 
@@ -503,7 +495,7 @@ Primärschlüssel`trip_id`, `start_time`)
 
 Datei: **Optional**
 
-Primärschlüssel`from_stop_id`, `to_stop_id`, `from_trip_id`, `to_trip_id`, `from_route_id`, `to_route_id`)
+Primärschlüssel (`from_stop_id`, `to_stop_id`, `from_trip_id`, `to_trip_id`, `from_route_id`, `to_route_id`)
 
 Bei der Berechnung eines Fahrplans interpolieren GTFS die Umsteigevorgänge auf der Grundlage der zulässigen Zeit und der Nähe der Haltestellen. [transfers.txt](#transferstxt) gibt zusätzliche Regeln und Überschreibungen für ausgewählte Umsteigevorgänge an.
 
@@ -533,7 +525,7 @@ Für ein gegebenes geordnetes Paar aus ankommender und abfahrender Reise wird di
 
 Datei: **Optional**
 
-Primärschlüssel`pathway_id`)
+Primärschlüssel (`pathway_id`)
 
 Die Dateien [pathways.txt](#pathwaystxt) und [levels.txt](levelstxt) xt verwenden eine graphische Darstellung, um U-Bahn- oder Zugstationen zu beschreiben, wobei die Knoten die Orte und die Kanten die Wege darstellen.
 
@@ -564,7 +556,7 @@ Pfade müssen in einer Station vollständig definiert werden. Wenn Wege definier
 
 Datei: **Bedingt** erforderlich
 
-Primärschlüssel`level_id`)
+Primärschlüssel (`level_id`)
 
 Beschreibt die Ebenen in einer Station. Nützlich in Verbindung mit `pathways.txt`, und erforderlich für die Navigation von Pfaden mit Aufzügen`(pathway_mode=5`).
 
@@ -578,7 +570,7 @@ Beschreibt die Ebenen in einer Station. Nützlich in Verbindung mit `pathways.tx
 
 Datei: **Optional**
 
-Primärschlüssel`table_name`, `field_name`, `language`, `record_id`, `record_sub_id`, `field_value`)
+Primärschlüssel (`table_name`, `field_name`, `language`, `record_id`, `record_sub_id`, `field_value`)
 
 In Regionen mit mehreren Amtssprachen haben die Verkehrsbetriebe in der Regel language Namen und Webseiten. Um die Fahrgäste in diesen Regionen optimal bedienen zu können, ist es sinnvoll, dass der Datensatz diese language Werte enthält.
 
@@ -618,7 +610,7 @@ Wenn beide Referenzierungsmethoden`record_id`, `record_sub_id`) und `field_value
 
 Datei: **Fakultativ**
 
-Primärschlüssel`attribution_id`)
+Primärschlüssel (`attribution_id`)
 
 Die Datei definiert die auf den Datensatz angewandten Attributionen.
 

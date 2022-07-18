@@ -1,4 +1,4 @@
-# Обзор ScheduleGTFS
+# Обзор GTFS Schedule
 
 <div class="landing-page">
    <a class="button" href="reference">Ссылка</a>

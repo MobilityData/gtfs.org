@@ -10,28 +10,28 @@
 2. [数据集文件](#dataset-files)
 3. [文件要求](#file-requirements)
 4. [字段定义](#field-definitions)
-   - [agency.txt](#agencytxt)
-   - [stops.txt](#stopstxt)
-   - [routes.txt](#routestxt)
-   - [trips.txt](#tripstxt)
-   - [stop_times.txt](#stop_timestxt)
-   - [calendar.txt](#calendartxt)
-   - [calendar_dates.txt](#calendar_datestxt)
-   - [fare_attributes.txt](#fare_attributestxt)
-   - [fare_rules.txt](#fare_rulestxt)
-   - [fare_products.txt](#fare_productstxt)
-   - [fare_leg_rules.txt](#fare_leg_rulestxt)
-   - [fare_transfer_rules.txt](#fare_transfer_rulestxt)
-   - [areas.txt](#areastxt)
-   - [stop_areas.txt](#stop_areastxt)
-   - [shapes.txt](#shapestxt)
-   - [frequencies.txt](#frequenciestxt)
-   - [transfers.txt](#transferstxt)
-   - [pathways.txt](#pathwaystxt)
-   - [levels.txt](#levelstxt)
-   - [translations.txt](#translationstxt)
-   - [feed_info.txt](#feed_infotxt)
-   - [attributions.txt](#attributionstxt)
+      - [agency.txt](#agencytxt)
+      - [stops.txt](#stopstxt)
+      - [routes.txt](#routestxt)
+      - [trips.txt](#tripstxt)
+      - [stop_times.txt](#stop_timestxt)
+      - [calendar.txt](#calendartxt)
+      - [calendar_dates.txt](#calendar_datestxt)
+      - [fare_attributes.txt](#fare_attributestxt)
+      - [fare_rules.txt](#fare_rulestxt)
+      - [fare_products.txt](#fare_productstxt)
+      - [fare_leg_rules.txt](#fare_leg_rulestxt)
+      - [fare_transfer_rules.txt](#fare_transfer_rulestxt)
+      - [areas.txt](#areastxt)
+      - [stop_areas.txt](#stop_areastxt)
+      - [shapes.txt](#shapestxt)
+      - [frequencies.txt](#frequenciestxt)
+      - [transfers.txt](#transferstxt)
+      - [pathways.txt](#pathwaystxt)
+      - [levels.txt](#levelstxt)
+      - [translations.txt](#translationstxt)
+      - [feed_info.txt](#feed_infotxt)
+      - [attributions.txt](#attributionstxt)
 
 ## 文件约定
 
@@ -41,7 +41,7 @@
 
 本节对本文件中使用的术语进行定义。
 
-- **数据集（Dataset**）--本规范引用定义的一套完整的文件。改变数据集会创建一个新版本的数据集。数据集应该发布在一个公开的、永久的URL上，包括压缩文件的名称。(例如，[GTFS/GTFS.zip">GTFS](<https://www.agency.org/\<glossary variable=>)。
+- **数据集（Dataset**）--本规范引用定义的一套完整的文件。改变数据集会创建一个新版本的数据集。数据集应该发布在一个公开的、永久的URL上，包括压缩文件的名称。(例如，https://www.agency.org/gtfs/gtfs.zip)。
 - **记录**- 一个基本的数据结构，由若干不同的字段值组成，描述一个单一的实体（如交通机构、车站、路线等）。在表格中表示为一行。
 - **字段**- 一个对象或实体的属性。在表格中，表示为一列。
 - **字段值**- 一个字段中的单个条目。在一个表格中，表示为一个单元格。

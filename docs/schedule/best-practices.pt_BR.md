@@ -1,6 +1,6 @@
 # GTFS Schedule melhores práticas
 
-Estas são práticas recomendadas para descrever os serviços de transporte público na [General Transit Feed Specification (GTFS](../reference)). Estas práticas foram sintetizadas a partir da experiência dos membros do [GTFS-best-practices-working-group">GTFS](<#\<glossary variable=>) Best Practices working group members e [PHP/Best_practices_for_creating_GTFS">recomendações de práticas específicas para aplicações GTFS](<https://www.transitwiki.org/TransitWiki/index.\<glossary variable=>).
+Estas são práticas recomendadas para descrever os serviços de transporte público na [General Transit Feed Specification (GTFS](../reference)). Estas práticas foram sintetizadas a partir da experiência dos membros do [GTFS Best Practices working group](#gtfs-best-practices-working-group) e [recomendações de práticas específicas para aplicações GTFS](https://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS).
 
 Para maiores informações, veja as [Perguntas Mais Frequentes](#frequently-asked-questions-faq).
 
@@ -10,7 +10,7 @@ As práticas estão organizadas em quatro seções primárias:
 
 * __[Dataset Publishing & General Practices](#dataset-publishing-general-practices)__: Estas práticas estão relacionadas à estrutura geral do conjunto de dados GTFS e à maneira pela qual os conjuntos de dados GTFS são publicados.
 * __[Recomendações Práticas Organizadas por Arquivo](#practice-recommendations-organized-by-file)__: As recomendações são organizadas por arquivo e campo no GTFS para facilitar as práticas de mapeamento de volta à referência oficial do GTFS.
-* __Recomendações Práticas[Organizadas por Caso](#practice-recommendations-organized-by-case)__: Com casos particulares, como rotas de loop, as práticas podem precisar ser aplicadas em vários arquivos e campos. Tais recomendações são consolidadas nesta seção.
+* __[Recomendações Práticas Organizadas por Caso](#practice-recommendations-organized-by-case)__: Com casos particulares, como rotas de loop, as práticas podem precisar ser aplicadas em vários arquivos e campos. Tais recomendações são consolidadas nesta seção.
 
 ## Dataset Publishing & General Practices
 
@@ -18,8 +18,8 @@ As práticas estão organizadas em quatro seções primárias:
 * Os dadosGTFS são publicados em iterações para que um único arquivo em um local estável sempre contenha a última descrição oficial de serviço para uma agência (ou agências) de trânsito.
 * Manter identificadores persistentes (campos id) para `stop_id`, `route_id` e `agency_id` através de iterações de dados sempre que possível.
 * Um conjunto de dados GTFS deve conter serviços atuais e futuros (às vezes chamados de conjuntos de dados "fundidos"). A [função de fusão](https://github.com/google/transitfeed/wiki/Merge) da ferramenta Google transitfeed pode ser usada para criar um conjunto de dados fundidos a partir de dois alimentadores GTFS diferentes.
-  * A qualquer momento, o conjunto de dados GTFS publicado deve ser válido por pelo menos os próximos 7 dias e, idealmente, enquanto o operador estiver confiante de que a Schedule continuará a ser operada.
-  * Se possível, o conjunto de dados GTFS deve cobrir pelo menos os próximos 30 dias de serviço.
+    * A qualquer momento, o conjunto de dados GTFS publicado deve ser válido por pelo menos os próximos 7 dias e, idealmente, enquanto o operador estiver confiante de que a Schedule continuará a ser operada.
+    * Se possível, o conjunto de dados GTFS deve cobrir pelo menos os próximos 30 dias de serviço.
 * Remover os serviços antigos (calendários vencidos) da ração.
 * Se uma modificação do serviço entrar em vigor em 7 dias ou menos, expresse esta mudança de serviço através de um feed [GTFS-Realtime/">GTFS](<https://developers.google.com/transit/\<glossary variable=>) (serviços de consultoria ou atualizações de viagem) em vez de um conjunto de dados GTFS estático.
 * O servidor web que hospeda os dados GTFS deve ser configurado para informar corretamente a data de modificação do arquivo (ver [HTTP/1.1 - Request for Comments 2616](https://tools.ietf.org/html/rfc2616#section-14.29), na seção 14.29).
@@ -305,7 +305,7 @@ O objetivo de manter as Melhores Práticas GTFS é o de:
 
 ### Como propor ou alterar as Melhores Práticas publicadas no GTFS
 
-As aplicações e práticasGTFS evoluem e, portanto, este documento pode precisar ser emendado de tempos em tempos. Para propor uma emenda a este documento, abra uma solicitação pull no [GTFS-best-practices">repositório de Melhores Práticas do GTFS](<https://github.com/MobilityData/\<glossary variable=>) GitHub e defenda a mudança. Você pode enviar qualquer comentário por e-mail para <specifications@mobilitydata.org>.
+As aplicações e práticasGTFS evoluem e, portanto, este documento pode precisar ser emendado de tempos em tempos. Para propor uma emenda a este documento, abra uma solicitação pull no [GTFS Best Practices GitHub repository](https://github.com/MobilityData/gtfs-best-practices) GitHub e defenda a mudança. Você pode enviar qualquer comentário por e-mail para <specifications@mobilitydata.org>.
 
 ### Ligação com este documento
 
@@ -318,19 +318,19 @@ Se uma aplicação GTFS faz exigências ou recomendações para práticas de dad
 O Grupo de Trabalho de Melhores Práticas do GTFS foi convocado pelo [Instituto Rocky Mountain](https://rmi.org/) em 2016-17, composto por fornecedores de transporte público, desenvolvedores de aplicações GTFS, consultores e organizações acadêmicas para definir práticas e expectativas comuns para os dados do GTFS:
 
 * [Cambridge Systematics](https://www.camsys.com/)
-* [Metrô Capital](https://www.capmetro.org/)
-* [Centro de Pesquisa em Transporte Urbano da Universidade do Sul da Flórida](https://www.cutr.usf.edu/)
-* [Transporte](https://conveyal.com/)
+* [Capital Metro](https://www.capmetro.org/)
+* [Center for Urban Transportation Research at University of South Florida](https://www.cutr.usf.edu/)
+* [Conveyal](https://conveyal.com/)
 * [Google](https://www.google.com/)
-* [Grupo IBI](https://www.ibigroup.com/)
+* [IBI Group](https://www.ibigroup.com/)
 * [Mapzen](https://mapzen.com/)
 * [Microsoft](https://www.microsoft.com/)
 * [Moovel](https://www.moovel.com/)
-* [Departamento de Transportes de Oregon](https://www.oregon.gov/odot/)
-* [Rapidamente](https://goswift.ly/)
-* [Trânsito](https://transitapp.com/)
+* [Oregon Department of Transportation](https://www.oregon.gov/odot/)
+* [Swiftly](https://goswift.ly/)
+* [Transit](https://transitapp.com/)
 * [Trillium](https://trilliumtransit.com/)
 * [TriMet](https://trimet.org/)
-* [Banco Mundial](https://www.worldbank.org/)
+* [World Bank](https://www.worldbank.org/)
 
 Hoje, este documento é mantido pela [MobilityData](https://mobilitydata.org/).

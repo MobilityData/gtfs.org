@@ -1,4 +1,4 @@
-# GTFSSchedule 개요
+# GTFS Schedule 개요
 
 <div class="landing-page"><a class="button" href="reference">참조</a> <a class="button" href="best-practices">모범 사례</a> <a class="button" href="examples">예</a> <a class="button" href="changes">변경 사항</a></div>
 

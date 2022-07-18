@@ -10,28 +10,28 @@
 2. [データセットファイル](#dataset-files)
 3. [ファイル要件](#file-requirements)
 4. [フィールド定義](#field-definitions)
-   - [agency.txt](#agencytxt)
-   - [stops.txt](#stopstxt)
-   - [routes.txt](#routestxt)
-   - [trips.txt](#tripstxt)
-   - [stop_times.txt](#stop_timestxt)
-   - [calendar.txt](#calendartxt)
-   - [calendar_dates.txt](#calendar_datestxt)
-   - [fare_attributes.txt](#fare_attributestxt)
-   - [fare_rules.txt](#fare_rulestxt)
-   - [fare_products.txt](#fare_productstxt)
-   - [fare_leg_rules.txt](#fare_leg_rulestxt)
-   - [fare_transfer_rules.txt](#fare_transfer_rulestxt)
-   - [areas.txt](#areastxt)
-   - [stop_areas.txt](#stop_areastxt)
-   - [shapes.txt](#shapestxt)
-   - [frequencies.txt](#frequenciestxt)
-   - [transfers.txt](#transferstxt)
-   - [pathways.txt](#pathwaystxt)
-   - [levels.txt](#levelstxt)
-   - [translations.txt](#translationstxt)
-   - [feed_info.txt](#feed_infotxt)
-   - [attributions.txt](#attributionstxt)
+      - [agency.txt](#agencytxt)
+      - [stops.txt](#stopstxt)
+      - [routes.txt](#routestxt)
+      - [trips.txt](#tripstxt)
+      - [stop_times.txt](#stop_timestxt)
+      - [calendar.txt](#calendartxt)
+      - [calendar_dates.txt](#calendar_datestxt)
+      - [fare_attributes.txt](#fare_attributestxt)
+      - [fare_rules.txt](#fare_rulestxt)
+      - [fare_products.txt](#fare_productstxt)
+      - [fare_leg_rules.txt](#fare_leg_rulestxt)
+      - [fare_transfer_rules.txt](#fare_transfer_rulestxt)
+      - [areas.txt](#areastxt)
+      - [stop_areas.txt](#stop_areastxt)
+      - [shapes.txt](#shapestxt)
+      - [frequencies.txt](#frequenciestxt)
+      - [transfers.txt](#transferstxt)
+      - [pathways.txt](#pathwaystxt)
+      - [levels.txt](#levelstxt)
+      - [translations.txt](#translationstxt)
+      - [feed_info.txt](#feed_infotxt)
+      - [attributions.txt](#attributionstxt)
 
 ## ドキュメント規約
 
@@ -41,7 +41,7 @@
 
 本書で使用する用語の定義です。
 
-- **データセット**- この仕様書で定義されているファイルの完全なセット。データセットを変更すると、そのデータセットの新しいバージョンが作成される。データセットは、zipファイル名を含む、公開された恒久的なURLで公開されるべきである。(例: https:[GTFS/GTFS.zip">GTFS](<https://www.agency.org/\<glossary variable=>)。
+- **データセット**- この仕様書で定義されているファイルの完全なセット。データセットを変更すると、そのデータセットの新しいバージョンが作成される。データセットは、zipファイル名を含む、公開された恒久的なURLで公開されるべきである。(例: https://www.agency.org/gtfs/gtfs.zip)。
 - **レコード**- 1つのエンティティ（交通機関、停留所、路線など）を記述する多数の異なるフィールド値で構成される基本的なデータ構造。テーブルでは、行として表現される。
 - **フィールド**- オブジェクトまたはエンティティのプロパティ。テーブルでは列として表現される。
 - **フィールド値**- フィールド内の個々の項目。テーブルでは1つのセルとして表現される。

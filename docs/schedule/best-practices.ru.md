@@ -1,6 +1,6 @@
-# Лучшая практика составления ScheduleGTFS
+# Лучшая практика составления GTFS Schedule
 
-Это рекомендуемые практики для описания услуг общественного транспорта в [General Transit Feed Specification (GTFS](../reference)). Эти рекомендации были обобщены на основе опыта членов [GTFS-best-practices-working-group">рабочей группыGTFS](<#\<glossary variable=>) Best Practices и [PHP/Best_practices_for_creating_GTFS">рекомендаций GTFS](<https://www.transitwiki.org/TransitWiki/index.\<glossary variable=>) по [PHP/Best_practices_for_creating_GTFS">конкретным приложениям](<https://www.transitwiki.org/TransitWiki/index.\<glossary variable=>).
+Это рекомендуемые практики для описания услуг общественного транспорта в [General Transit Feed Specification (GTFS](../reference)). Эти рекомендации были обобщены на основе опыта членов [GTFS Best Practices working group](#gtfs-best-practices-working-group) и [application-specific GTFS practice recommendations](https://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS).
 
 Для получения дополнительной информации см. раздел [Часто задаваемые вопросы](#frequently-asked-questions-faq).
 
@@ -18,8 +18,8 @@
 * ДанныеGTFS публикуются итерациями, так что в одном файле в стабильном месте всегда содержится последнее официальное описание услуг для транзитного агентства (или агентств).
 * Поддерживать постоянные идентификаторы (поля id) для `stop_id`, `route_id` и `agency_id` во всех итерациях данных, когда это возможно.
 * Один набор данных GTFS должен содержать текущие и предстоящие услуги (иногда его называют "объединенным" набором данных). Для создания объединенного набора данных из двух разных фидов GTFS можно использовать [функцию слияния](https://github.com/google/transitfeed/wiki/Merge) инструмента Google transitfeed.
-  * В любое время опубликованный набор данных GTFS должен быть действителен как минимум на ближайшие 7 дней, а в идеале - до тех пор, пока оператор уверен, что Schedule будет действовать.
-  * Если возможно, набор данных GTFS должен охватывать как минимум следующие 30 дней обслуживания.
+    * В любое время опубликованный набор данных GTFS должен быть действителен как минимум на ближайшие 7 дней, а в идеале - до тех пор, пока оператор уверен, что Schedule будет действовать.
+    * Если возможно, набор данных GTFS должен охватывать как минимум следующие 30 дней обслуживания.
 * Удалите старые услуги (просроченные календари) из фида.
 * Если изменения в обслуживании вступят в силу через 7 дней или менее, выразите эти изменения в обслуживании через [GTFS-Realtime/">GTFS](<https://developers.google.com/transit/\<glossary variable=>) feed (сервисные рекомендации или обновления поездок), а не через статический набор данных GTFS.
 * Веб-сервер, на котором размещаются данные GTFS, должен быть настроен на корректное сообщение даты модификации файла (см. [HTTP/1.1 - Запрос на комментарии 2616](https://tools.ietf.org/html/rfc2616#section-14.29), раздел 14.29).
@@ -318,19 +318,19 @@ __Примеры моделирования круговых поездок:__
 Рабочая группа по лучшей практике GTFS была созвана [Институтом Роки Маунтин](https://rmi.org/) в 2016-17 годах и состояла из поставщиков общественного транспорта, разработчиков приложений GTFS, консультантов и научных организаций для определения общей практики и ожиданий в отношении данных GTFS:
 
 * [Cambridge Systematics](https://www.camsys.com/)
-* [Столичный метрополитен](https://www.capmetro.org/)
-* [Центр исследований городского транспорта при Университете Южной Флориды](https://www.cutr.usf.edu/)
+* [Capital Metro](https://www.capmetro.org/)
+* [Center for Urban Transportation Research at University of South Florida](https://www.cutr.usf.edu/)
 * [Conveyal](https://conveyal.com/)
 * [Google](https://www.google.com/)
 * [IBI Group](https://www.ibigroup.com/)
 * [Mapzen](https://mapzen.com/)
 * [Microsoft](https://www.microsoft.com/)
 * [Moovel](https://www.moovel.com/)
-* [Департамент транспорта штата Орегон](https://www.oregon.gov/odot/)
+* [Oregon Department of Transportation](https://www.oregon.gov/odot/)
 * [Swiftly](https://goswift.ly/)
-* [Транзит](https://transitapp.com/)
+* [Transit](https://transitapp.com/)
 * [Trillium](https://trilliumtransit.com/)
 * [TriMet](https://trimet.org/)
-* [Всемирный банк](https://www.worldbank.org/)
+* [World Bank](https://www.worldbank.org/)
 
 Сегодня этот документ поддерживается компанией [MobilityData](https://mobilitydata.org/).

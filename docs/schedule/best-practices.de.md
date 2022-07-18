@@ -1,6 +1,6 @@
 # GTFS Schedule Bewährte Praktiken
 
-Dies sind empfohlene Praktiken für die Beschreibung von öffentlichen Verkehrsdiensten in der [General Transit Feed Specification (GTFS](../reference)). Diese Praktiken wurden aus den Erfahrungen der Mitglieder der [GTFS-best-practices-working-group">GTFS](<#\<glossary variable=>) " [GTFS-best-practices-working-group">Best Practices"](<#\<glossary variable=>) und [PHP/Best_practices_for_creating_GTFS">anwendungsspezifischen GTFS](<https://www.transitwiki.org/TransitWiki/index.\<glossary variable=>) zusammengeführt.
+Dies sind empfohlene Praktiken für die Beschreibung von öffentlichen Verkehrsdiensten in der [General Transit Feed Specification (GTFS](../reference)). Diese Praktiken wurden aus den Erfahrungen der Mitglieder der [GTFS Best Practices working group](#gtfs-best-practices-working-group) und [anwendungsspezifischen GTFS zusammengeführt](https://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS).
 
 Weitere Hintergrundinformationen finden Sie in den [Häufig gestellten Fragen](#frequently-asked-questions-faq).
 
@@ -14,14 +14,14 @@ Die Praktiken sind in vier Hauptabschnitte unterteilt:
 
 ## Veröffentlichung von Datensätzen & Allgemeine Praktiken
 
-* Datensätze sollten unter einer öffentlichen, dauerhaften URL veröffentlicht werden, die auch den Namen der Zip-Datei enthält. (z. B. www. [GTFS/GTFS.zip">GTFS](<http://www.agency.org/\<glossary variable=>). Im Idealfall sollte die URL direkt heruntergeladen werden können, ohne dass eine Anmeldung für den Zugriff auf die Datei erforderlich ist, um das Herunterladen durch Softwareanwendungen zu erleichtern. Es wird zwar empfohlen (und ist die gängigste Praxis), einen GTFS offen zum Herunterladen bereitzustellen, doch wenn ein Datenanbieter den Zugriff auf GTFS aus lizenzrechtlichen oder anderen Gründen kontrollieren muss, wird empfohlen, den Zugriff auf den GTFS mithilfe von API-Schlüsseln zu kontrollieren, was automatische Downloads erleichtert.
+* Datensätze sollten unter einer öffentlichen, dauerhaften URL veröffentlicht werden, die auch den Namen der Zip-Datei enthält. (z. B. www.agency.org/gtfs/gtfs.zip). Im Idealfall sollte die URL direkt heruntergeladen werden können, ohne dass eine Anmeldung für den Zugriff auf die Datei erforderlich ist, um das Herunterladen durch Softwareanwendungen zu erleichtern. Es wird zwar empfohlen (und ist die gängigste Praxis), einen GTFS offen zum Herunterladen bereitzustellen, doch wenn ein Datenanbieter den Zugriff auf GTFS aus lizenzrechtlichen oder anderen Gründen kontrollieren muss, wird empfohlen, den Zugriff auf den GTFS mithilfe von API-Schlüsseln zu kontrollieren, was automatische Downloads erleichtert.
 * GTFS werden in Iterationen veröffentlicht, so dass eine einzige Datei an einem stabilen Ort immer die aktuellste offizielle Leistungsbeschreibung für ein Verkehrsunternehmen (oder mehrere Verkehrsunternehmen) enthält.
 * Beibehaltung dauerhafter Identifikatoren (id-Felder) für `stop_id`, `route_id` und `agency_id` über Dateniterationen hinweg, wann immer möglich.
 * Ein GTFS sollte den aktuellen und den kommenden Dienst enthalten (manchmal auch als "zusammengeführter" Datensatz bezeichnet). Die [Merge-Funktion](https://github.com/google/transitfeed/wiki/Merge) des Google-Transitfeed-Tools kann verwendet werden, um einen zusammengeführten Datensatz aus zwei verschiedenen GTFS zu erstellen.
-  * Der veröffentlichte GTFS sollte zu jedem Zeitpunkt mindestens für die nächsten 7 Tage gültig sein und idealerweise so lange, wie der Betreiber zuversichtlich ist, dass der Schedule weiterhin bedient wird.
-  * Wenn möglich, sollte der GTFS mindestens die nächsten 30 Tage des Betriebs abdecken.
+    * Der veröffentlichte GTFS sollte zu jedem Zeitpunkt mindestens für die nächsten 7 Tage gültig sein und idealerweise so lange, wie der Betreiber zuversichtlich ist, dass der Schedule weiterhin bedient wird.
+    * Wenn möglich, sollte der GTFS mindestens die nächsten 30 Tage des Betriebs abdecken.
 * Entfernen Sie alte Dienste (abgelaufene Kalender) aus dem Feed.
-* Wenn eine Serviceänderung innerhalb von 7 Tagen oder weniger in Kraft tritt, sollte diese Serviceänderung durch einen [GTFS-Realtime/">GTFS](<https://developers.google.com/transit/\<glossary variable=>) (Service Advisories oder Trip Updates) und nicht durch einen statischen GTFS dargestellt werden.
+* Wenn eine Serviceänderung innerhalb von 7 Tagen oder weniger in Kraft tritt, sollte diese Serviceänderung durch einen [GTFS-realtime](https://developers.google.com/transit/gtfs-realtime/) (Service Advisories oder Trip Updates) und nicht durch einen statischen GTFS dargestellt werden.
 * Der Web-Server, der die GTFS hostet, sollte so konfiguriert sein, dass er das Änderungsdatum der Datei korrekt meldet (siehe [HTTP/1.1 - Request for Comments 2616](https://tools.ietf.org/html/rfc2616#section-14.29), unter Abschnitt 14.29).
 
 ## Praxisempfehlungen nach Datei geordnet
@@ -274,7 +274,7 @@ Die Arbeitsgruppe geht davon aus, dass einige GTFS schließlich Teil der GTFS we
 
 ### Überprüfen GTFS die Übereinstimmung mit diesen Best Practices?
 
-Kein Validierungswerkzeug prüft derzeit die Übereinstimmung mit allen Best Practices. Verschiedene Validierungstools überprüfen die Übereinstimmung mit einigen dieser Best Practices. Eine Liste der GTFS finden Sie unter [GTFS-validators">GTFS](<https://github.com/CUTR-at-USF/awesome-transit#\<glossary variable=>). Wenn Sie ein GTFS schreiben, das auf diese Best Practices verweist, senden Sie bitte eine E-Mail an [specifications@mobilitydata.org.](mailto:specifications@mobilitydata.org)
+Kein Validierungswerkzeug prüft derzeit die Übereinstimmung mit allen Best Practices. Verschiedene Validierungstools überprüfen die Übereinstimmung mit einigen dieser Best Practices. Eine Liste der GTFS finden Sie unter [GTFS Validators](https://github.com/CUTR-at-USF/awesome-transit#gtfs-validators). Wenn Sie ein GTFS schreiben, das auf diese Best Practices verweist, senden Sie bitte eine E-Mail an [specifications@mobilitydata.org.](mailto:specifications@mobilitydata.org)
 
 ### Ich vertrete ein Verkehrsunternehmen. Welche Maßnahmen kann ich ergreifen, damit unsere Softwaredienstleister und Anbieter diese Best Practices befolgen?
 
@@ -286,7 +286,7 @@ Identifizieren Sie den Kontakt für den Feed, indem Sie die [vorgeschlagenen](ht
 
 ### Ich möchte eine Änderung/Ergänzung zu den Best Practices vorschlagen. Wie kann ich das tun?
 
-Schicken Sie eine E-Mail an <specifications@mobilitydata.org> oder öffnen Sie eine Anfrage oder einen Pull Request im [GTFS-best-practices">GitHub GTFS](<https://github.com/rocky-mountain-institute/\<glossary variable=>) Best Practices Repo.
+Schicken Sie eine E-Mail an [specifications@mobilitydata.org](mailto:specifications@mobilitydata.org) oder öffnen Sie eine Anfrage oder einen Pull Request im GitHub GTFS Best Practices repo](https://github.com/rocky-mountain-institute/gtfs-best-practices).
 
 ### Wie kann ich mich einbringen?
 
@@ -305,7 +305,7 @@ Die Ziele der Beibehaltung der GTFS Best Practices sind:
 
 ### Wie man veröffentlichte GTFS vorschlägt oder ändert
 
-GTFS und -Praktiken entwickeln sich weiter, so dass dieses Dokument möglicherweise von Zeit zu Zeit geändert werden muss. Um eine Änderung dieses Dokuments vorzuschlagen, öffnen Sie eine Pull-Anfrage [GTFS-best-practices">im GitHub-Repository GTFS](<https://github.com/MobilityData/\<glossary variable=>) Best Practices und befürworten Sie die Änderung. Sie können Kommentare auch per E-Mail an [specifications@mobilitydata.org senden.](mailto:specifications@mobilitydata.org)
+GTFS und -Praktiken entwickeln sich weiter, so dass dieses Dokument möglicherweise von Zeit zu Zeit geändert werden muss. Um eine Änderung dieses Dokuments vorzuschlagen, öffnen Sie eine Pull-Anfrage im [GitHub-Repository GTFS Best Practices](https://github.com/MobilityData/gtfs-best-practices) und befürworten Sie die Änderung. Sie können Kommentare auch per E-Mail an [specifications@mobilitydata.org senden.](mailto:specifications@mobilitydata.org)
 
 ### Verlinkung auf dieses Dokument
 
@@ -319,18 +319,18 @@ Die GTFS Best Practices Working Group wurde 2016-17 vom [Rocky Mountain Institut
 
 * [Cambridge Systematics](https://www.camsys.com/)
 * [Capital Metro](https://www.capmetro.org/)
-* [Zentrum für Stadtverkehrsforschung an der Universität von Südflorida](https://www.cutr.usf.edu/)
+* [Center for Urban Transportation Research at University of South Florida](https://www.cutr.usf.edu/)
 * [Conveyal](https://conveyal.com/)
 * [Google](https://www.google.com/)
-* [IBI-Gruppe](https://www.ibigroup.com/)
+* [IBI Group](https://www.ibigroup.com/)
 * [Mapzen](https://mapzen.com/)
 * [Microsoft](https://www.microsoft.com/)
 * [Moovel](https://www.moovel.com/)
-* [Verkehrsministerium von Oregon](https://www.oregon.gov/odot/)
-* [Zügig](https://goswift.ly/)
-* [Durchfahrt](https://transitapp.com/)
+* [Oregon Department of Transportation](https://www.oregon.gov/odot/)
+* [Swiftly](https://goswift.ly/)
+* [Transit](https://transitapp.com/)
 * [Trillium](https://trilliumtransit.com/)
 * [TriMet](https://trimet.org/)
-* [Weltbank](https://www.worldbank.org/)
+* [World Bank](https://www.worldbank.org/)
 
 Heute wird dieses Dokument von [MobilityData](https://mobilitydata.org/) verwaltet.

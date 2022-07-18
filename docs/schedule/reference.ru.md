@@ -1,4 +1,4 @@
-# Ссылка на ScheduleGTFS
+# Ссылка на GTFS Schedule
 
 **Пересмотрено 9 мая 2022 года. Более подробную информацию см. в [Истории пересмотра](../revision-history)**.
 
@@ -10,28 +10,28 @@
 2. [Файлы наборов данных](#dataset-files)
 3. [Требования к файлам](#file-requirements)
 4. [Определения полей](#field-definitions)
-   - [agency.txt](#agencytxt)
-   - [stops.txt](#stopstxt)
-   - [routes.txt](#routestxt)
-   - [trips.txt](#tripstxt)
-   - [stop_times.txt](#stop_timestxt)
-   - [calendar.txt](#calendartxt)
-   - [calendar_dates.txt](#calendar_datestxt)
-   - [fare_attributes.txt](#fare_attributestxt)
-   - [fare_rules.txt](#fare_rulestxt)
-   - [fare_products.txt](#fare_productstxt)
-   - [fare_leg_rules.txt](#fare_leg_rulestxt)
-   - [fare_transfer_rules.txt](#fare_transfer_rulestxt)
-   - [areas.txt](#areastxt)
-   - [stop_areas.txt](#stop_areastxt)
-   - [shapes.txt](#shapestxt)
-   - [frequencies.txt](#frequenciestxt)
-   - [transfers.txt](#transferstxt)
-   - [pathways.txt](#pathwaystxt)
-   - [levels.txt](#levelstxt)
-   - [translations.txt](#translationstxt)
-   - [feed_info.txt](#feed_infotxt)
-   - [attributions.txt](#attributionstxt)
+      - [agency.txt](#agencytxt)
+      - [stops.txt](#stopstxt)
+      - [routes.txt](#routestxt)
+      - [trips.txt](#tripstxt)
+      - [stop_times.txt](#stop_timestxt)
+      - [calendar.txt](#calendartxt)
+      - [calendar_dates.txt](#calendar_datestxt)
+      - [fare_attributes.txt](#fare_attributestxt)
+      - [fare_rules.txt](#fare_rulestxt)
+      - [fare_products.txt](#fare_productstxt)
+      - [fare_leg_rules.txt](#fare_leg_rulestxt)
+      - [fare_transfer_rules.txt](#fare_transfer_rulestxt)
+      - [areas.txt](#areastxt)
+      - [stop_areas.txt](#stop_areastxt)
+      - [shapes.txt](#shapestxt)
+      - [frequencies.txt](#frequenciestxt)
+      - [transfers.txt](#transferstxt)
+      - [pathways.txt](#pathwaystxt)
+      - [levels.txt](#levelstxt)
+      - [translations.txt](#translationstxt)
+      - [feed_info.txt](#feed_infotxt)
+      - [attributions.txt](#attributionstxt)
 
 ## Условные обозначения документов
 
@@ -41,7 +41,7 @@
 
 В этом разделе даются определения терминов, которые используются в данном документе.
 
-- **Набор данных** - полный набор файлов, определенных в данной спецификации. Изменение набора данных создает новую версию набора данных. Наборы данных должны быть опубликованы на общедоступном, постоянном URL, включая имя файла zip. (например, [GTFS/GTFS.zip">GTFS](<https://www.agency.org/\<glossary variable=>).
+- **Набор данных** - полный набор файлов, определенных в данной спецификации. Изменение набора данных создает новую версию набора данных. Наборы данных должны быть опубликованы на общедоступном, постоянном URL, включая имя файла zip. (например, https://www.agency.org/gtfs/gtfs.zip).
 - **Запись** - базовая структура данных, состоящая из нескольких различных значений полей, описывающих один объект (например, транзитное агентство, остановка, маршрут и т.д.). В таблице представлена в виде строки.
 - **Поле** - свойство объекта или сущности. В таблице представлено в виде столбца.
 - **Значение поля** - отдельная запись в поле. В таблице представлено в виде одной ячейки.
@@ -310,7 +310,11 @@
 
 Первичный ключ`fare_id`)
 
-**Версии**<br/>Существует два варианта моделирования для описания тарифов. GTFS V1 - это унаследованный вариант для описания минимальной информации о тарифах. GTFS V2 - это обновленный метод, позволяющий более детально описать структуру тарифов агентства. Оба метода могут присутствовать в наборе данных, но потребитель данных должен использовать только один метод для данного набора данных. Рекомендуется, чтобы GTFS V2 имел приоритет над GTFS V1.<br/><br/>Файлы, связанные с GTFS V1, следующие:<br/>- [fare_attributes.txt](#fare_attributestxt)<br/>- [fare_rules.txt](#fare_rulestxt)<br/><br/>Файлами, связанными с GTFS V2, являются:<br/>- [fare_products.txt](#fare_productstxt)<br/>- [fare_leg_rules.txt](#fare_leg_rulestxt)<br/>- [fare_transfer_rules.txt](#fare_transfer_rulestxt)
+**Версии**<br/>Существует два варианта моделирования для описания тарифов. 
+
+GTFS V1 - это унаследованный вариант для описания минимальной информации о тарифах. 
+
+GTFS V2 - это обновленный метод, позволяющий более детально описать структуру тарифов агентства. Оба метода могут присутствовать в наборе данных, но потребитель данных должен использовать только один метод для данного набора данных. Рекомендуется, чтобы GTFS V2 имел приоритет над GTFS V1.<br/><br/>Файлы, связанные с GTFS V1, следующие:<br/>- [fare_attributes.txt](#fare_attributestxt)<br/>- [fare_rules.txt](#fare_rulestxt)<br/><br/>Файлами, связанными с GTFS V2, являются:<br/>- [fare_products.txt](#fare_productstxt)<br/>- [fare_leg_rules.txt](#fare_leg_rulestxt)<br/>- [fare_transfer_rules.txt](#fare_transfer_rulestxt)
 
 <br/>
 
@@ -374,23 +378,16 @@
 Для обработки стоимости ноги:
 
 1. Файл `fare_leg_rules.txt` должен быть отфильтрован по полям, определяющим характеристики поездки, этими полями являются:
-   - `fare_leg_rules.network_id`
-   - `fare_leg_rules.from_area_id`
-   - `fare_leg_rules.to_area_id`<br/>
-
-<br/>
-
+      - `fare_leg_rules.network_id`
+      - `fare_leg_rules.from_area_id`
+      - `fare_leg_rules.to_area_id`
 2. Если этап точно совпадает с записью в файле `fare_leg_rules.txt` по характеристикам поездки, эта запись должна быть обработана для определения стоимости этапа.
 3. Если точных совпадений не найдено, то пустые записи в `fare_leg_rules.network_id`, `fare_leg_rules.from_area_id` и `fare_leg_rules.to_area_id` должны быть проверены для обработки стоимости этапа:
-   - Пустая запись в `fare_leg_rules.network_id` соответствует всем сетям, определенным в `routes.txt`, за исключением тех, которые перечислены в `fare_leg_rules.network_id`.
-   - Пустая запись в `fare_leg_rules.from_area_id` соответствует всем областям, определенным в `areas.area_id`, исключая те, которые перечислены в `fare_leg_rules.from_area_id`
-   - Пустая запись в `fare_leg_rules.to_area_id` соответствует всем областям, определенным в `areas.area_id` исключая те, которые перечислены в `fare_leg_rules.to_area_id`<br/>
-
-<br/>
-
+      - Пустая запись в `fare_leg_rules.network_id` соответствует всем сетям, определенным в `routes.txt`, за исключением тех, которые перечислены в `fare_leg_rules.network_id`.
+      - Пустая запись в `fare_leg_rules.from_area_id` соответствует всем областям, определенным в `areas.area_id`, исключая те, которые перечислены в `fare_leg_rules.from_area_id`
+      - Пустая запись в `fare_leg_rules.to_area_id` соответствует всем областям, определенным в `areas.area_id` исключая те, которые перечислены в `fare_leg_rules.to_area_id`
 4. Если нога не соответствует ни одному из правил, описанных выше, то тариф неизвестен.
 
-<br/>
 
 | Имя поля          | Тип                                                                 | Присутствие   | Описание                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | ----------------- | ------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -413,16 +410,16 @@
 1. Применимые группы ног тарифа, определенные в `fare_leg_rules.txt`, должны быть определены для всех отдельных ног поездки на основе поездки велосипедиста.
 
 2. Файл `fare_transfer_rules.txt` должен быть отфильтрован по полям, определяющим характеристики пересадки, такими полями являются:
-   - `fare_transfer_rules.from_leg_group_id`
-   - `fare_transfer_rules.to_leg_group_id`<br/>
-   <br/>
+      - `fare_transfer_rules.from_leg_group_id`
+      - `fare_transfer_rules.to_leg_group_id`<br/>
+      <br/>
 
 3. Если трансфер точно соответствует записи в файле `fare_transfer_rules.txt` по характеристикам трансфера, то эта запись должна быть обработана для определения стоимости трансфера.
 
 4. Если точных совпадений не найдено, то для обработки стоимости трансфера необходимо проверить пустые записи в `from_leg_group_id` или `to_leg_group_id`:
-   - Пустая запись в `fare_transfer_rules.from_leg_group_id` соответствует всем группам ног, определенным в `fare_leg_rules.leg_group_id`, за исключением тех, которые перечислены в `fare_transfer_rules.from_leg_group_id`.
-   - Пустая запись в `fare_transfer_rules.to_leg_group_id` соответствует всем группам ног, определенным в `fare_leg_rules.leg_group_id`, исключая те, которые перечислены в `fare_transfer_rules.to_leg_group_id`<br/>
-   <br/>
+      - Пустая запись в `fare_transfer_rules.from_leg_group_id` соответствует всем группам ног, определенным в `fare_leg_rules.leg_group_id`, за исключением тех, которые перечислены в `fare_transfer_rules.from_leg_group_id`.
+      - Пустая запись в `fare_transfer_rules.to_leg_group_id` соответствует всем группам ног, определенным в `fare_leg_rules.leg_group_id`, исключая те, которые перечислены в `fare_transfer_rules.to_leg_group_id`<br/>
+      <br/>
 
 5. Если трансфер не соответствует ни одному из правил, описанных выше, то трансфер не организуется, и ноги считаются отдельными.
 

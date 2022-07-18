@@ -1,6 +1,6 @@
-# Mejores prácticas de ScheduleGTFS
+# Mejores prácticas de GTFS Schedule
 
-Se trata de prácticas recomendadas para describir los servicios de transporte público en la [General Transit Feed Specification](../reference)( [GTFS](../reference) [GTFS](../reference)). Estas prácticas se han sintetizado a partir de la experiencia de los miembros del [GTFS-best-practices-working-group">grupo de trabajo de las mejores prácticas](<#\<glossary variable=>) [GTFS-best-practices-working-group">GTFS](<#\<glossary variable=>) [GTFS-best-practices-working-group">GTFS](<#\<glossary variable=>) y de [PHP/Best_practices_for_creating_GTFS">las recomendaciones de prácticas GTFS](<https://www.transitwiki.org/TransitWiki/index.\<glossary variable=>) específicas para cada aplicación.
+Se trata de prácticas recomendadas para describir los servicios de transporte público en la [General Transit Feed Specification](../reference). Estas prácticas se han sintetizado a partir de la experiencia de los miembros del [grupo de trabajo de las mejores prácticas](#gtfs-best-practices-working-group) y de [las recomendaciones de prácticas GTFS específicas para cada aplicación](https://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS).
 
 Para más información, consulte las [Preguntas](#frequently-asked-questions-faq) frecuentes.
 
@@ -9,24 +9,24 @@ Para más información, consulte las [Preguntas](#frequently-asked-questions-faq
 Las prácticas están organizadas en cuatro secciones principales:
 
 * __[Publicación de conjuntos de datos y prácticas generales](#dataset-publishing-general-practices)__: Estas prácticas se refieren a la estructura general del conjunto de datos GTFS y a la forma en que se publican los conjuntos de datos GTFS.
-* Recomendaciones prácticas organizadas por__[archivo](#practice-recommendations-organized-by-file)__: Las recomendaciones están organizadas por archivo y campo en el GTFS para facilitar la asignación de prácticas a la referencia oficial GTFS.
-* __Recomendaciones prácticas organizadas por[casos](#practice-recommendations-organized-by-case)__: En casos particulares, como las rutas de bucle, es posible que las prácticas deban aplicarse en varios archivos y campos. Estas recomendaciones se consolidan en esta sección.
+* __[Recomendaciones prácticas organizadas por archivo](#practice-recommendations-organized-by-file)__: Las recomendaciones están organizadas por archivo y campo en el GTFS para facilitar la asignación de prácticas a la referencia oficial GTFS.
+* __[Recomendaciones prácticas organizadas porcasos](#practice-recommendations-organized-by-case)__: En casos particulares, como las rutas de bucle, es posible que las prácticas deban aplicarse en varios archivos y campos. Estas recomendaciones se consolidan en esta sección.
 
 ## Publicación de conjuntos de datos y prácticas generales
 
-* Los conjuntos de datos deben publicarse en una URL pública y permanente, incluyendo el nombre del archivo zip. (por ejemplo, [GTFS/GTFS.zip">GTFS](<http://www.agency.org/\<glossary variable=>). Idealmente, la URL debería poder descargarse directamente sin necesidad de iniciar sesión para acceder al archivo, para facilitar la descarga por parte de las aplicaciones de software consumidoras. Aunque se recomienda (y es la práctica más habitual) que un conjunto de datos GTFS pueda descargarse abiertamente, si un proveedor de datos necesita controlar el acceso a GTFS por razones de licencia o de otro tipo, se recomienda controlar el acceso al conjunto de datos GTFS mediante claves API, lo que facilitará las descargas automáticas.
+* Los conjuntos de datos deben publicarse en una URL pública y permanente, incluyendo el nombre del archivo zip. (por ejemplo, www.agency.org/gtfs/gtfs.zip). Idealmente, la URL debería poder descargarse directamente sin necesidad de iniciar sesión para acceder al archivo, para facilitar la descarga por parte de las aplicaciones de software consumidoras. Aunque se recomienda (y es la práctica más habitual) que un conjunto de datos GTFS pueda descargarse abiertamente, si un proveedor de datos necesita controlar el acceso a GTFS por razones de licencia o de otro tipo, se recomienda controlar el acceso al conjunto de datos GTFS mediante claves API, lo que facilitará las descargas automáticas.
 * Los datosGTFS se publican en iteraciones, de modo que un único archivo en una ubicación estable contiene siempre la última descripción oficial del servicio de una agencia de transporte (o agencias).
 * Mantener identificadores persistentes (campos id) para `stop_id`, `route_id`, y `agency_id` a través de iteraciones de datos siempre que sea posible.
 * Un conjunto de datos GTFS debe contener el servicio actual y el próximo (a veces denominado conjunto de datos "fusionado"). La [función de fusión](https://github.com/google/transitfeed/wiki/Merge) de la herramienta Google transitfeed puede utilizarse para crear un conjunto de datos fusionado a partir de dos fuentes GTFS diferentes.
-  * En cualquier momento, el conjunto de datos GTFS publicado debe ser válido durante al menos los próximos 7 días, e idealmente durante todo el tiempo que el operador confíe en que el Schedule seguirá funcionando.
-  * Si es posible, el conjunto de datos GTFS debería cubrir al menos los próximos 30 días de servicio.
+    * En cualquier momento, el conjunto de datos GTFS publicado debe ser válido durante al menos los próximos 7 días, e idealmente durante todo el tiempo que el operador confíe en que el Schedule seguirá funcionando.
+    * Si es posible, el conjunto de datos GTFS debería cubrir al menos los próximos 30 días de servicio.
 * Eliminar los servicios antiguos (calendarios caducados) del feed.
 * Si una modificación del servicio entrará en vigor en 7 días o menos, exprese este cambio de servicio a través de un feed [GTFS-Realtime/">GTFS](<https://developers.google.com/transit/\<glossary variable=>) (avisos de servicio o actualizaciones de viaje) en lugar de un conjunto de datos GTFS estático.
 * El servidor web que aloja los datos GTFS debe estar configurado para informar correctamente de la fecha de modificación del archivo (véase [HTTP/1.1 - Solicitud de comentarios 2616](https://tools.ietf.org/html/rfc2616#section-14.29), en la sección 14.29).
 
 ## Recomendaciones prácticas organizadas por expediente
 
-Esta sección muestra las prácticas organizadas por archivo y campo, alineándose con la [referencia](../reference) [GTFS](../reference) [GTFS](../reference).
+Esta sección muestra las prácticas organizadas por archivo y campo, alineándose con la [referencia](../reference).
 
 ### Todos los archivos
 
@@ -319,18 +319,18 @@ El Grupo de Trabajo de Mejores Prácticas de GTFS fue convocado por el [Rocky Mo
 
 * [Cambridge Systematics](https://www.camsys.com/)
 * [Capital Metro](https://www.capmetro.org/)
-* [Centro de Investigación del Transporte Urbano de la Universidad del Sur de Florida](https://www.cutr.usf.edu/)
+* [Center for Urban Transportation Research at University of South Florida](https://www.cutr.usf.edu/)
 * [Conveyal](https://conveyal.com/)
 * [Google](https://www.google.com/)
-* [Grupo IBI](https://www.ibigroup.com/)
+* [IBI Group](https://www.ibigroup.com/)
 * [Mapzen](https://mapzen.com/)
 * [Microsoft](https://www.microsoft.com/)
 * [Moovel](https://www.moovel.com/)
-* [Departamento de Transporte de Oregón](https://www.oregon.gov/odot/)
+* [Oregon Department of Transportation](https://www.oregon.gov/odot/)
 * [Swiftly](https://goswift.ly/)
-* [Tránsito](https://transitapp.com/)
+* [Transit](https://transitapp.com/)
 * [Trillium](https://trilliumtransit.com/)
 * [TriMet](https://trimet.org/)
-* [Banco Mundial](https://www.worldbank.org/)
+* [World Bank](https://www.worldbank.org/)
 
 Actualmente, este documento es mantenido por [MobilityData](https://mobilitydata.org/).
