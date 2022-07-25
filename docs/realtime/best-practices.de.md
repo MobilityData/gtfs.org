@@ -1,4 +1,4 @@
-# GTFS Realtime Best Practices
+# GTFS Realtime Bewährte Praktiken
 
 ## Einführung
 
@@ -147,7 +147,7 @@ Die Ziele der Pflege der GTFS Realtime Best Practices sind:
 
 ### Wie man veröffentlichte GTFS Realtime Best Practices vorschlägt oder ändert
 
-GTFS und -Praktiken entwickeln sich weiter, so dass dieses Dokument möglicherweise von Zeit zu Zeit geändert werden muss. Um eine Änderung dieses Dokuments vorzuschlagen, öffnen Sie einen Pull-Request [im GitHub-Repository GTFS](https://github.com/MobilityData/GTFS_Realtime_Best-Practices) [GTFS](https://github.com/MobilityData/GTFS_Realtime_Best-Practices) [GTFS](https://github.com/MobilityData/GTFS_Realtime_Best-Practices) [Realtime](https://github.com/MobilityData/GTFS_Realtime_Best-Practices) Best Practices und befürworten Sie die Änderung.
+GTFS und -Praktiken entwickeln sich weiter, so dass dieses Dokument möglicherweise von Zeit zu Zeit geändert werden muss. Um eine Änderung dieses Dokuments vorzuschlagen, öffnen Sie einen Pull-Request [im GitHub-Repository GTFS](https://github.com/MobilityData/GTFS_Realtime_Best-Practices) Best Practices und befürworten Sie die Änderung.
 
 ### Verlinkung auf dieses Dokument
 
