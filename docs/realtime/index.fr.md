@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # Aperçu du GTFS Realtime
 
 <div class=landing-page>

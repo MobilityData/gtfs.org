@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # Visão geral da GTFS Schedule
 
 <div class="landing-page">

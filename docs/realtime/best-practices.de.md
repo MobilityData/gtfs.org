@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS Realtime Bewährte Praktiken
 
 ## Einführung

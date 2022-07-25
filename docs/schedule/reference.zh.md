@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS Schedule参考
 
 **2022年5月9日修订。更多细节见[修订历史](../revision-history)。**

@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS Realtime概要
 
 <div class="landing-page">

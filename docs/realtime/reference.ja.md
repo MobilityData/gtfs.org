@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS Realtimeリアルタイムリファレンス
 
 GTFS RealtimeRealtime フィードにより、交通機関は、サービスの中断（駅の閉鎖、路線の運休、重要な遅延など）に関するリアルタイムの情報を消費者に提供することができます。

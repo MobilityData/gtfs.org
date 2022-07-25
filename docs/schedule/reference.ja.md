@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS Schedule参照
 
 **2022年5月9日に改訂しました。詳しくは[改訂履歴](../revision-history)**をご覧ください。

@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFSSchedule 참조
 
 **2022년 5월 9일에 개정되었습니다. 자세한 내용은 [개정 내역](../revision-history) 을 참조하십시오.**

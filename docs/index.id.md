@@ -1,3 +1,9 @@
+---
+search:
+  exclude: true
+---
+
+
 # GTFS: Membuat Data Angkutan Umum Dapat Diakses Secara Universal
 
 <div class="landing-page">

@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS Realtime 참조
 
 ㅏGTFS Realtime 피드를 통해 대중 교통 기관은 서비스 중단(폐쇄된 역, 운행하지 않는 노선, 중요한 지연 등) 차량의 위치 및 예상되는 서비스 중단에 대한 실시간 정보를 소비자에게 제공할 수 있습니다.arrival 타임스.

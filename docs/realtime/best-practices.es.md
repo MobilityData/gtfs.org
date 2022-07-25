@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # Mejores prácticas Realtime tiempo real deGTFS
 
 ## Introducción

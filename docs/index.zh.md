@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS：使公共交通数据普遍可及
 
 <div class="landing-page">

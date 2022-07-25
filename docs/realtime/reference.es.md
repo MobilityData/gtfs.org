@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # Referencia de GTFS Realtime
 
 Un feed GTFS Realtime permite a las agencias de transporte proporcionar a los consumidores información en tiempo real sobre las interrupciones de su servicio (estaciones cerradas, líneas no operativas, retrasos importantes, etc.) la ubicación de sus vehículos y las horas de arrival previstas.

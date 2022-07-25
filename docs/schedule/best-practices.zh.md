@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS Schedule最佳做法
 
 这些是在《[General Transit Feed Specification](../reference)》[（GTFS](../reference)）中描述公共交通服务的推荐做法。这些实践是根据[GTFS-best-practices-working-group">GTFS](<#\<glossary variable=>)最佳实践工作组成员的经验和[PHP/Best_practices_for_creating_GTFS">特定应用的GTFS](<https://www.transitwiki.org/TransitWiki/index.\<glossary variable=>)实践建议综合而成。

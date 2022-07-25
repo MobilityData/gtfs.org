@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS Schedule Ringkasan
 
 <div class="landing-page"><a class="button" href="reference">Referensi</a> <a class="button" href="examples">Contoh</a> <a class="button" href="best-practices">Praktik Terbaik</a> <a class="button" href="changes">Perubahan</a></div>

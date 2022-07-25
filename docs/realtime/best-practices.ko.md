@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFSRealtime 모범 사례
 
 ## 소개

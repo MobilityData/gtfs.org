@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS Scheduleベストプラクティス
 
 これらは、[General Transit Feed Specification(GTFS](../reference))において公共交通機関のサービスを記述するための推奨事項です。これらのプラクティスは、[GTFS-best-practices-working-group">GTFS](<#\<glossary variable=>)ベストプラクティスワーキンググループメンバーの経験と、[PHP/Best_practices_for_creating_GTFS">アプリケーション固有のGTFS](<https://www.transitwiki.org/TransitWiki/index.\<glossary variable=>)プラクティスの推奨事項から総合的に構成されたものです。

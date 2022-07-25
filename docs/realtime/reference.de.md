@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS Realtime Referenz
 
 Mit einem GTFS Realtime Realtime-Feed können Verkehrsunternehmen ihre Kunden in Echtzeit über Störungen ihres Dienstes (geschlossene Bahnhöfe, ausgefallene Linien, große Verspätungen usw.), den Standort ihrer Fahrzeuge und die voraussichtlichen arrival informieren.

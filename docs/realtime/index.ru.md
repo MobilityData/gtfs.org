@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # Обзор GTFS Realtime
 
 <div class="landing-page">

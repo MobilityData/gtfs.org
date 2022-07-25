@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFSSchedule Praktik terbaik
 
 Ini adalah praktik yang direkomendasikan untuk menggambarkan layanan transportasi umum diGeneral Transit Feed Specification [(](../reference)GTFS [)](../reference) . Praktik-praktik ini telah disintesis dari pengalaman [GTFS](<#\<glossary variable=>) [-praktik-terbaik-kelompok-kerja">](<#\<glossary variable=>)GTFS Anggota [kelompok kerja Praktik Terbaik](<#\<glossary variable=>) dan [PHP](<https://www.transitwiki.org/TransitWiki/index.\<glossary variable=>) [/Best_practices_for_creating_GTFS">khusus aplikasi](<https://www.transitwiki.org/TransitWiki/index.\<glossary variable=>)GTFS [rekomendasi praktik](<https://www.transitwiki.org/TransitWiki/index.\<glossary variable=>) .

@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # Référence GTFS Realtime
 
 Un flux GTFS Realtime permet aux organismes de transport en commun de fournir aux consommateurs des informations en temps réel sur les perturbations de leur service (stations fermées, lignes non exploitées, retards importants, etc.), la localisation de leurs véhicules et les heures d'arrival prévues.

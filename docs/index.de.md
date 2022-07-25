@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS: Öffentliche Verkehrsdaten universell zugänglich machen
 
 <div class="landing-page">

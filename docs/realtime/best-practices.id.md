@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFSRealtime Praktik terbaik
 
 ## pengantar

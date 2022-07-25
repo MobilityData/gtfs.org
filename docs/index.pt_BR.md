@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS: Tornando os dados de trânsito público universalmente acessíveis
 
 <div class="landing-page">

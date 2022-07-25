@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS Realtime实时参考
 
 GTFS Realtime实时馈送让交通机构向消费者提供关于服务中断的实时信息（车站关闭、线路不运行、重要延误等）车辆的位置，以及预期arrival时间。

@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # Schedule
 
 **Überarbeitet am 9. Mai 2022. Siehe [historie](../revision-history)** für weitere Details.

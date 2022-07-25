@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS：公共交通機関のデータを汎用的に利用できるようにする
 
 <div class="landing-page">

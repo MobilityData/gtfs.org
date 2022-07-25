@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # Referencia de GTFS Schedule
 
 **Revisado el 9 de mayo de 2022. Véase [el historial de revisiones](../revision-history)** para más detalles.

@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS Realtime Referensi
 
 SEBUAHGTFS Realtime feed memungkinkan agen transit memberikan informasi waktu nyata kepada konsumen tentang gangguan pada layanan mereka (stasiun ditutup, jalur tidak beroperasi, penundaan penting, dll.) lokasi kendaraan mereka, dan perkiraanarrival waktu.

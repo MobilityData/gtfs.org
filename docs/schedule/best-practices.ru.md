@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # Лучшая практика составления GTFS Schedule
 
 Это рекомендуемые практики для описания услуг общественного транспорта в [General Transit Feed Specification (GTFS](../reference)). Эти рекомендации были обобщены на основе опыта членов [GTFS Best Practices working group](#gtfs-best-practices-working-group) и [application-specific GTFS practice recommendations](https://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS).

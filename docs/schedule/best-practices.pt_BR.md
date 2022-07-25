@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS Schedule melhores práticas
 
 Estas são práticas recomendadas para descrever os serviços de transporte público na [General Transit Feed Specification (GTFS](../reference)). Estas práticas foram sintetizadas a partir da experiência dos membros do [GTFS Best Practices working group](#gtfs-best-practices-working-group) e [recomendações de práticas específicas para aplicações GTFS](https://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS).

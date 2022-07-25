@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS Realtime Referência
 
 Uma alimentação GTFS Realtime permite que as agências de trânsito forneçam aos consumidores informações em tempo real sobre interrupções em seus serviços (estações fechadas, linhas não operando, atrasos importantes, etc.) localização de seus veículos, e horários de arrival previstos.

@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS Melhores Práticas Realtime
 
 ## Introdução

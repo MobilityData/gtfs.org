@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # Обзор GTFS Schedule
 
 <div class="landing-page">

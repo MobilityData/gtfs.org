@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFS: hacer que los datos del transporte público sean universalmente accesibles
 
 <div class="landing-page">

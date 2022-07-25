@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFSSchedule 모범 사례
 
 다음은 대중 교통 서비스를 설명하기 위해 권장되는 관행입니다.General Transit Feed Specification [(](../reference)GTFS [)](../reference) . 이러한 관행은 [GTFS](<#\<glossary variable=>) 의 경험에서 종합되었습니다. [-모범 사례-워킹 그룹">](<#\<glossary variable=>)GTFS [모범 사례 작업 그룹](<#\<glossary variable=>) 구성원 및 [PHP](<https://www.transitwiki.org/TransitWiki/index.\<glossary variable=>) [/Best_practices_for_creating_GTFS">애플리케이션별](<https://www.transitwiki.org/TransitWiki/index.\<glossary variable=>)GTFS [연습 권장 사항](<https://www.transitwiki.org/TransitWiki/index.\<glossary variable=>) .

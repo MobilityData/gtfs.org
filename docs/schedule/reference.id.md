@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # GTFSSchedule Referensi
 
 **Direvisi 9 Mei 2022. Lihat [Riwayat Revisi](../revision-history) untuk lebih jelasnya.**
