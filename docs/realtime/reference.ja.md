@@ -1,576 +1,556 @@
-# GTFS Realtimeリファレンス
+<a class="pencil-link" href="https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/reference.md" title="Edit this page" target="_blank">
+    <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
+  </a>
+  
+# GTFS Realtime Reference
 
-GTFS Realtimeフィードにより、交通機関は消費者にサービスの中断（駅の閉鎖、路線の運休、重要な遅延など）、車両の位置、到着予定時刻などの情報をRealtime提供することができます。
+A GTFS Realtime feed lets transit agencies provide consumers with realtime information about disruptions to their service (stations closed, lines not operating, important delays, etc.) location of their vehicles, and expected arrival times.
 
-フィードの仕様のバージョン2.0については、このサイトで説明し、文書化されています。有効なバージョンは "2.0", "1.0 "です。
+Version 2.0 of the feed specification is discussed and documented on this site. Valid versions are "2.0", "1.0".
 
-### 用語の定義
+### Term Definitions
 
-#### 必須
+#### Required
 
-GTFS v2.0以降では、_Required_カラムは、トランジットデータが有効であり、消費するアプリケーションにとって意味をなすために、生産者が提供しなければならないフィールドを記述しています。
+In GTFS-realtime v2.0 and higher, the *Required* column describes what fields must be provided by a producer in order for the transit data to be valid and make sense to a consuming application.
 
-_Required_欄には、以下の値が使用される。
+The following values are used in the *Required* field:
 
-*   Required（**必須**）。このフィールドは、GTFS フィードのプロデューサが提供しなければならない。
-*   **条件付きで必須**。このフィールドは特定の条件下で必須であり、その概要はフィールドの_説明に_記載されている。これらの条件以外では、このフィールドは任意である。
-*   **オプション**。このフィールドはオプションであり、制作者が実装する必要はない。しかし、もしデータが基礎となる自動車両位置情報システム（例えば、VehiclePosition`timestamp`）で利用可能であれば、製作者は可能な限りこれらのオプションフィールドを提供することが推奨される。
+*   **Required**: This field must be provided by a GTFS-realtime feed producer.
+*   **Conditionally required**: This field is required under certain conditions, which are outlined in the field *Description*. Outside of these conditions, the field is optional.
+*   **Optional**: This field is optional and is not required to be implemented by producers. However, if the data is available in the underlying automatic vehicle location systems (e.g., VehiclePosition `timestamp`) it is recommended that producers provide these optional fields when possible.
 
-_なお、GTFSバージョン1.0ではセマンティック要件が定義されていないため、`gtfs_realtime_version が` `1の`フィードはこの要件を満たさない可能性がある（詳細は[セマンティック要件に関する提案書を](https://github.com/google/transit/pull/64)_参照されたい）。
+*Note that semantic requirements were not defined in GTFS-realtime version 1.0, and therefore feeds with `gtfs_realtime_version` of `1` may not meet these requirements (see [the proposal for semantic requirements](https://github.com/google/transit/pull/64) for details).*
 
-#### カーディナリティ
+#### Cardinality
 
-_Cardinalityは_、特定のフィールドに提供できる要素の数を表し、以下の値がある。
+*Cardinality* represents the number of elements that may be provided for a particular field, with the following values:
 
-*   **One**- このフィールドには、1つの要素を指定することができる。これは[プロトコルバッファの_必須(Required)_および_オプション(Optional)の_](https://developers.google.com/protocol-buffers/docs/proto#simple)カーディナリティに対応する。
-*   **Many**- このフィールドには、多くの要素(0、1、またはそれ以上)を指定することができる。これは、プロトコルバッファの[ _繰り返し_](https://developers.google.com/protocol-buffers/docs/proto#simple)カーディナリティにマッピングされる。
+* **One** - A single one element may be provided for this field. This maps to the [Protocol Buffer *required* and *optional* cardinalities](https://developers.google.com/protocol-buffers/docs/proto#simple).
+* **Many** - Many elements (0, 1, or more) may be provided for this field. This maps to the [Protocol Buffer *repeated* cardinality](https://developers.google.com/protocol-buffers/docs/proto#simple).
 
-フィールドが必須、条件付き必須、オプションのいずれであるかを確認するには、常に_Required_および_Description_フィールドを参照すること。プロトコルバッファのカーディナリティについては、[GTFS-Realtime/proto/GTFS-Realtime.proto">`GTFS`](<https://github.com/google/transit/blob/master/\<glossary variable=>).proto を参照すること。
+Always reference the *Required* and *Description* fields to see when a field is required, conditionally required, or optional. Please reference [`gtfs-realtime.proto`](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto) for Protocol Buffer cardinality.
 
-#### プロトコルバッファーデータタイプ
+#### Protocol Buffer data types
 
-以下のプロトコルバッファのデータ型は、フィードエレメントを記述するために使用されます。
+The following protocol buffer data types are used to describe feed elements:
 
-*   **メッセージ**複合型
-*   **enum**。固定値のリスト
+*   **message**: Complex type
+*   **enum**: List of fixed values
 
-#### 実験的なフィールド
+#### Experimental fields
 
-**experimentalと**ラベル付けされたフィールドは、変更の可能性があり、まだ仕様に正式に採用されていない。**実験的な**フィールドは、将来的に正式に採用される可能性がある。
+Fields labeled as **experimental** are subject to change and not yet formally adopted into the specification. An **experimental** field may be formally adopted in the future.
 
-## 要素インデックス
+## Element Index
 
-*   [フィードメッセージ（FeedMessage](#message-feedmessage)
-    *   [フィードヘッダ](#message-feedheader)
-
-        *   [インクリメンタル](#enum-incrementality)
-
-    *   [フィードエンティティ](#message-feedentity)
-
+*   [FeedMessage](#message-feedmessage)
+    *   [FeedHeader](#message-feedheader)
+        *   [Incrementality](#enum-incrementality)
+    *   [FeedEntity](#message-feedentity)
         *   [TripUpdate](#message-tripupdate)
-
             *   [TripDescriptor](#message-tripdescriptor)
-
                 *   [ScheduleRelationship](#enum-schedulerelationship-1)
-
-            *   [車両記述子（VehicleDescriptor](#message-vehicledescriptor)
-
-            *   [停止時間更新](#message-stoptimeupdate)
-
+            *   [VehicleDescriptor](#message-vehicledescriptor)
+            *   [StopTimeUpdate](#message-stoptimeupdate)
                 *   [StopTimeEvent](#message-stoptimeevent)
-                *   [スケジュール関係](#enum-schedulerelationship)
-                *   [ストップタイムプロパティ](#message-stoptimeproperties)
-
-            *   [トリッププロパティ](#message-tripproperties)
-
-        *   [車両位置](#message-vehicleposition)
-
+                *   [ScheduleRelationship](#enum-schedulerelationship)
+                *   [StopTimeProperties](#message-stoptimeproperties)
+            *   [TripProperties](#message-tripproperties)
+        *   [VehiclePosition](#message-vehicleposition)
             *   [TripDescriptor](#message-tripdescriptor)
-
-                *   [スケジュール関係](#enum-schedulerelationship-1)
-
-            *   [車両記述子](#message-vehicledescriptor)
-
-            *   [位置情報](#message-position)
-
-            *   [車両停止状態](#enum-vehiclestopstatus)
-
-            *   [混雑度](#enum-congestionlevel)
-
-            *   [占有状況](#enum-occupancystatus)
-
-            *   [車両詳細](#message-carriagedetails)
-
-        *   [アラート](#message-alert)
-
-            *   [時間範囲](#message-timerange)
-
-            *   [エンティティ セレクタ](#message-entityselector)
-
+                *   [ScheduleRelationship](#enum-schedulerelationship-1)
+            *   [VehicleDescriptor](#message-vehicledescriptor)
+            *   [Position](#message-position)
+            *   [VehicleStopStatus](#enum-vehiclestopstatus)
+            *   [CongestionLevel](#enum-congestionlevel)
+            *   [OccupancyStatus](#enum-occupancystatus)
+            *   [CarriageDetails](#message-carriagedetails)
+        *   [Alert](#message-alert)
+            *   [TimeRange](#message-timerange)
+            *   [EntitySelector](#message-entityselector)
                 *   [TripDescriptor](#message-tripdescriptor)
+                    *   [ScheduleRelationship](#enum-schedulerelationship-1)
+            *   [Cause](#enum-cause)
+            *   [Effect](#enum-effect)
+            *   [TranslatedString](#message-translatedstring)
+                *   [Translation](#message-translation)
+            *   [SeverityLevel](#enum-severitylevel)
 
-                    *   [スケジュール関係](#enum-schedulerelationship-1)
+## Elements
 
-            *   [原因](#enum-cause)
+## _message_ FeedMessage
 
-            *   [効果](#enum-effect)
+The contents of a feed message. Each message in the stream is obtained as a response to an appropriate HTTP GET request. A realtime feed is always defined with relation to an existing GTFS feed. All the entity ids are resolved with respect to the GTFS feed.
 
-            *   [翻訳済み文字列](#message-translatedstring)
+**Fields**
 
-                *   [翻訳](#message-translation)
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+|**header** | [FeedHeader](#message-feedheader) | Required | One | Metadata about this feed and feed message. |
+|**entity** | [FeedEntity](#message-feedentity) | Conditionally required | Many | Contents of the feed.  If there is real-time information available for the transit system, this field must be provided.  If this field is empty, consumers should assume there is no real-time information available for the system. |
 
-            *   [深刻度レベル（SeverityLevel](#enum-severitylevel)
+## _message_ FeedHeader
 
-## 要素
+Metadata about a feed, included in feed messages.
 
-## _message_FeedMessage
+**Fields**
 
-フィードメッセージの内容。ストリーム内の各メッセージは、適切な HTTP GET リクエストに対する応答として取得されます。Realtimeフィードは、常に既存のGTFSフィードに関連して定義されます。すべてのエンティティIDは、GTFSフィードを基準として解決されます。
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **gtfs_realtime_version** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | Version of the feed specification. The current version is 2.0. |
+| **incrementality** | [Incrementality](#enum-incrementality) | Required | One |
+| **timestamp** | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | This timestamp identifies the moment when the content of this feed has been created (in server time). In POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). To avoid time skew between systems producing and consuming realtime information it is strongly advised to derive timestamp from a time server. It is completely acceptable to use Stratum 3 or even lower strata servers since time differences up to a couple of seconds are tolerable. |
 
-**フィールド**
+## _enum_ Incrementality
 
-| _**フィールド名**_ | _**タイプ**_                         | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                        |
-| ------------ | --------------------------------- | -------- | -------------- | --------------------------------------------------------------------------------------------------------------- |
-| **ヘッダー**     | [フィードヘッダ](#message-feedheader)    | 必須       | 一人             | このフィードとフィードメッセージに関するメタデータ。                                                                                      |
-| **エンティティ**   | [フィードエンティティ](#message-feedentity) | 条件付きで必須  | 多数             | フィードの内容。  輸送システムで利用可能なリアルタイム情報がある場合、このフィールドは提供されなければならない。  このフィールドが空の場合、消費者はそのシステムで利用可能なリアルタイム情報がないものと考えるべきである。 |
+Determines whether the current fetch is incremental.
 
-## _メッセージ_FeedHeader
+*   **FULL_DATASET**: this feed update will overwrite all preceding realtime information for the feed. Thus this update is expected to provide a full snapshot of all known realtime information.
+*   **DIFFERENTIAL**: currently, this mode is **unsupported** and behavior is **unspecified** for feeds that use this mode. There are discussions on the [GTFS Realtime mailing list](https://groups.google.com/group/gtfs-realtime) around fully specifying the behavior of DIFFERENTIAL mode and the documentation will be updated when those discussions are finalized.
 
-フィードに関するメタデータで、フィードメッセージに含まれる。
+**Values**
 
-**フィールド**
+| _**Value**_ |
+|-------------|
+| **FULL_DATASET** |
+| **DIFFERENTIAL** |
 
-| _**フィールド名**_              | _**タイプ**_                                                                  | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                                                                                               |
-| ------------------------- | -------------------------------------------------------------------------- | -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **gtfs_realtime_version** | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar)    | 必須       | 一人             | フィードの仕様のバージョン。現在のバージョンは2.0です。                                                                                                                                                                                          |
-| **インクリメンタル**              | [インクリメンタル](#enum-incrementality)                                           | 必須       | 一人             |                                                                                                                                                                                                                        |
-| **タイムスタンプ**               | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必須       | 一人             | このタイムスタンプは、このフィードのコンテンツが作成された時点 (サーバ時間) を表すものです。POSIX 時間 (1970 年 1 月 1 日 00:00:00 UTC 以降の秒数) で指定します。Realtime情報を生成・消費するシステム間の時間のずれを避けるために、タイムスタンプはタイムサーバから取得することを強くお勧めします。Stratum 3やそれ以下の階層のサーバーを使用しても、数秒の時差は許容されるからです。 |
+## _message_ FeedEntity
 
-## _enum_Incrementality
+A definition (or update) of an entity in the transit feed. If the entity is not being deleted, exactly one of 'trip_update', 'vehicle', 'alert' and 'shape' fields should be populated.
 
-現在のフェッチがインクリメンタルであるかどうかを決定する。
+**Fields**
 
-*   **FULL_DATASET**: このフィードの更新は、そのフィードの以前のRealtime情報をすべて上書きする。したがって、この更新では既知のすべてのRealtime情報の完全なスナップショットを提供することが期待されます。
-*   **DIFFERENTIAL**: 現在、このモードは**サポートされて**おらず、このモードを使用するフィードの動作は**指定されて**いません。[GTFS-realtime">GTFS Realtime](<https://groups.google.com/group/\<glossary variable=>)メーリングリストでは、DIFFERENTIAL モードの挙動について議論されており、その議論がまとまった時点でドキュメントが更新される予定です。
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | Feed-unique identifier for this entity. The ids are used only to provide incrementality support. The actual entities referenced by the feed must be specified by explicit selectors (see EntitySelector below for more info). |
+| **is_deleted** | [bool](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Whether this entity is to be deleted. Should be provided only for feeds with Incrementality of DIFFERENTIAL - this field should NOT be provided for feeds with Incrementality of FULL_DATASET. |
+| **trip_update** | [TripUpdate](#message-tripupdate) | Conditionally required | One | Data about the realtime departure delays of a trip.  At least one of the fields trip_update, vehicle, alert, or shape must be provided - all these fields cannot be empty. |
+| **vehicle** | [VehiclePosition](#message-vehicleposition) | Conditionally required | One | Data about the realtime position of a vehicle. At least one of the fields trip_update, vehicle, alert, or shape must be provided - all these fields cannot be empty. |
+| **alert** | [Alert](#message-alert) | Conditionally required | One | Data about the realtime alert. At least one of the fields trip_update, vehicle, alert, or shape must be provided - all these fields cannot be empty. |
+| **shape** | [Shape](#message-shape) | Conditionally required | One | Data about the realtime added shapes, such as for a detour. At least one of the fields trip_update, vehicle, alert, or shape must be provided - all these fields cannot be empty. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-**値**
 
-| _**値**_              |
-| -------------------- |
-| **FULL_DATASET**     |
-| **差分(DIFFERENTIAL)** |
+## _message_ TripUpdate
 
-## _メッセージ_FeedEntity
+Realtime update on the progress of a vehicle along a trip. Please also refer to the general discussion of the [trip updates entities](/realtime/trip-updates).
 
-トランジットフィードにおけるエンティティの定義(または更新)。エンティティが削除されない場合は、 'trip_update', 'vehicle', 'alert', 'shape' フィールドのうち、ちょうど1つが入力されなければならない。
+Depending on the value of ScheduleRelationship, a TripUpdate can specify:
 
-**フィールド**
+*   A trip that proceeds along the schedule.
+*   A trip that proceeds along a route but has no fixed schedule.
+*   A trip that has been added or removed with regard to schedule.
+*   A new trip that is a copy of an existing trip in static GTFS. It will run at the service date and time specified in TripProperties.
 
-| _**フィールド名**_    | _**タイプ**_                                                                | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                                                                                        |
-| --------------- | ------------------------------------------------------------------------ | -------- | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **id**          | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 必須       | 一人             | このエンティティのフィード固有の識別子。この ID は、インクリメンタルなサポートを提供するためにのみ使用されます。フィードから参照される実際のエンティティは、 明示的なセレクタで指定する必要があります (詳細については、以下の EntitySelector を参照ください)。                                                                     |
-| **is_deleted**  | [ブール値](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 任意       | 一人             | このエンティティが削除されるかどうか。Incrementality が DIFFERENTIAL のフィードに対してのみ提供されるべきです - このフィールドは Incrementality が FULL_DATASET のフィードには提供されるべきではありません。                                                                           |
-| **trip_update** | [TripUpdate](#message-tripupdate)                                        | 条件付きで必須  | 一人             | トリップのRealtime出発遅延に関するデータ。  trip_update、vehicle、alert、shapeのフィールドのうち、少なくとも1つは提供されなければならない - これらすべてのフィールドを空にすることはできない。                                                                                            |
-| **車両**          | [車両位置](#message-vehicleposition)                                         | 条件付きで必須  | 一人             | 車両のRealtime位置に関するデータ。trip_update、vehicle、alert、shapeのうち、少なくとも1つのフィールドを指定する必要があります - これらすべてのフィールドを空にすることはできません。                                                                                                  |
-| **アラート**        | [注意事項](#message-alert)                                                   | 条件付きで必須  | 一人             | Realtimeデータ。trip_update、vehicle、alert、shapeのうち、少なくとも1つのフィールドを指定する必要があります - これらすべてのフィールドを空にすることはできません。                                                                                                           |
-| **shape**       | [形状](#message-shape)                                                     | 条件付きで必須  | 一人             | 迂回路など、Realtime追加される形状に関するデータ。trip_update、vehicle、alert、shapeの少なくとも1つのフィールドを指定する必要があり、これらすべてのフィールドを空にすることはできません。 <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。 |
+The updates can be for future, predicted arrival/departure events, or for past events that already occurred. In most cases information about past events is a measured value thus its uncertainty value is recommended to be 0\. Although there could be cases when this does not hold so it is allowed to have uncertainty value different from 0 for past events. If an update's uncertainty is not 0, either the update is an approximate prediction for a trip that has not completed or the measurement is not precise or the update was a prediction for the past that has not been verified after the event occurred.
 
-## _メッセージ_TripUpdate
+If a vehicle is serving multiple trips within the same block (for more information about trips and blocks, please refer to [GTFS trips.txt](/schedule/reference/#tripstxt)):
 
-トリップ中の車両の進行状況をRealtime表示します。[Realtime/trip-updates">トリップアップデートエンティティの](</\<glossary variable=>)一般的な議論も参照してください。
+* the feed should include a TripUpdate for the trip currently being served by the vehicle. Producers are encouraged to include TripUpdates for one or more trips after the current trip in this vehicle's block if the producer is confident in the quality of the predictions for these future trip(s). Including multiple TripUpdates for the same vehicle avoids prediction "pop-in" for riders as the vehicle transitions from one trip to another and also gives riders advance notice of delays that impact downstream trips (e.g., when the known delay exceeds planned layover times between trips).
+* the respective TripUpdate entities are not required to be added to the feed in the same order that they are scheduled in the block. For example, if there are trips with `trip_ids` 1, 2, and 3 that all belong to one block, and the vehicle travels trip 1, then trip 2, and then trip 3, the `trip_update` entities may appear in any order - for example, adding trip 2, then trip 1, and then trip 3 is allowed.
 
-ScheduleRelationshipの値に応じて、TripUpdateは指定することができる。
+Note that the update can describe a trip that has already completed.To this end, it is enough to provide an update for the last stop of the trip. If the time of arrival at the last stop is in the past, the client will conclude that the whole trip is in the past (it is possible, although inconsequential, to also provide updates for preceding stops). This option is most relevant for a trip that has completed ahead of schedule, but according to the schedule, the trip is still proceeding at the current time. Removing the updates for this trip could make the client assume that the trip is still proceeding. Note that the feed provider is allowed, but not required, to purge past updates - this is one case where this would be practically useful.
 
-*   Schedule に沿って進行するトリップ。
-*   Schedule進行するトリップ。
-*   Schedule追加または削除されたトリップ。
-*   静的なGTFSある既存のトリップをコピーした新しいトリップ。TripPropertiesで指定された運行日時に運行されます。
+**Fields**
 
-更新は、将来予測される到着/出発イベント、またはすでに発生した過去のイベントに対して行うことができます。多くの場合、過去のイベントに関する情報は測定値であるため、その不確実性の値は0であることが推奨されます。しかし、そうでない場合もあるため、過去のイベントの不確実性の値が0と異なることは許容されます。更新の不確実性が0でない場合、その更新は完了していない旅行に対するおおよその予測であるか、測定が正確でないか、またはイベント発生後に検証されていない過去の予測であるかのいずれかである。
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **trip** | [TripDescriptor](#message-tripdescriptor) | Required | One | The Trip that this message applies to. There can be at most one TripUpdate entity for each actual trip instance. If there is none, that means there is no prediction information available. It does *not* mean that the trip is progressing according to schedule. |
+| **vehicle** | [VehicleDescriptor](#message-vehicledescriptor) | Optional | One | Additional information on the vehicle that is serving this trip. |
+| **stop_time_update** | [StopTimeUpdate](#message-stoptimeupdate) | Conditionally required | Many | Updates to StopTimes for the trip (both future, i.e., predictions, and in some cases, past ones, i.e., those that already happened). The updates must be sorted by stop_sequence, and apply for all the following stops of the trip up to the next specified stop_time_update.  At least one stop_time_update must be provided for the trip unless the trip.schedule_relationship is CANCELED or DUPLICATED - if the trip is canceled, no stop_time_updates need to be provided. If the trip is duplicated, stop_time_updates may be provided to indicate real-time information for the new trip. |
+| **timestamp** | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | The most recent moment at which the vehicle's real-time progress was measured to estimate StopTimes in the future. When StopTimes in the past are provided, arrival/departure times may be earlier than this value. In POSIX time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC). |
+| **delay** | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | The current schedule deviation for the trip. Delay should only be specified when the prediction is given relative to some existing schedule in GTFS.<br>Delay (in seconds) can be positive (meaning that the vehicle is late) or negative (meaning that the vehicle is ahead of schedule). Delay of 0 means that the vehicle is exactly on time.<br>Delay information in StopTimeUpdates take precedent of trip-level delay information, such that trip-level delay is only propagated until the next stop along the trip with a StopTimeUpdate delay value specified.<br>Feed providers are strongly encouraged to provide a TripUpdate.timestamp value indicating when the delay value was last updated, in order to evaluate the freshness of the data.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.|
+| **trip_properties** | [TripProperties](#message-tripproperties) | Optional | One | Provides the updated properties for the trip. <br><br>**Caution:** this message is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-車両が同じブロック内で複数のトリップに対応している場合（トリップとブロックの詳細については、[Schedule/reference/#tripstxt">GTFS trips.txt](</\<glossary variable=>)参照してください）。
+## _message_ StopTimeEvent
 
-*   フィードには、その車両が現在担当しているトリップの TripUpdate を含める必要があります。生産者は、この車両ブロックの現在のトリップの後に、1つ以上のトリップのTripUpdateを含めることが推奨されます（生産者が将来のトリップの予測の品質に自信を持っている場合）。同じ車両に複数のTripUpdateを含めることで、車両がある旅行から別の旅行に移行する際に、利用者が予測を「ポップイン」することを回避できます。また、利用者は、下流の旅行に影響を与える遅延を事前に知ることができます（例：既知の遅延が旅行間の計画待ち時間を超えた場合など）。
-*   の場合、それぞれのTripUpdateエンティティは、ブロック内でスケジュールされているのと同じ順序でフィードに追加される必要はない。たとえば、`trip_id が`1、2、3 で、すべて 1 つのブロックに属するトリップがあり、車両がトリップ 1、トリップ 2、トリップ 3 の順に移動する場合、`trip_update`エンティティは任意の順序で表示することができる。たとえば、トリップ 2、トリップ 1、トリップ 3 と追加しても構わない。
+Timing information for a single predicted event (either arrival or departure). Timing consists of delay and/or estimated time, and uncertainty.
 
-このためには、旅行の最終目的地の更新を提供すれば十分である。最終目的地への到着時刻が過去であれば、クライアントは旅行全体が過去であると判断する(重要ではないが、以前の目的地の更新も提供することが可能である)。このオプションは、Schedule早く完了したトリップに最も関連性があるが、Scheduleよると、トリップは現在の時刻でも進行中である。このトリップの更新を削除すると、クライアントは、トリップがまだ進行していると見なす可能性がある。フィードプロバイダーは過去の更新を削除することができるが、必須ではないことに注意。
+*   delay should be used when the prediction is given relative to some existing schedule in GTFS.
+*   time should be given whether there is a predicted schedule or not. If both time and delay are specified, time will take precedence (although normally, time, if given for a scheduled trip, should be equal to scheduled time in GTFS + delay).
 
-**フィールド**
+Uncertainty applies equally to both time and delay. The uncertainty roughly specifies the expected error in true delay (but note, we don't yet define its precise statistical meaning). It's possible for the uncertainty to be 0, for example for trains that are driven under computer timing control.
 
-| _**フィールド名**_      | _**タイプ**_                                                                  | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| ----------------- | -------------------------------------------------------------------------- | -------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **トリップ**          | [TripDescriptor](#message-tripdescriptor)                                  | 必須       | 一人             | このメッセージが適用されるトリップ。実際のトリップインスタンスごとに最大1つのTripUpdateエンティティが存在することができる。1 つもない場合は、利用可能な予測情報がないことを意味します。しかし _ない_トリップがSchedule に従って進行していることを意味する。                                                                                                                                                                                                                                                                                                                                       |
-| **車両**            | [VehicleDescriptor](#message-vehicledescriptor)                            | 任意       | 一人             | このトリップにサービスを提供している車両に関する追加情報。                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| **ストップタイムアップデート** | [StopTimeUpdate](#message-stoptimeupdate)                                  | 条件付きで必須  | 多数             | トリップのStopTimeの更新（未来、つまり予測、場合によっては過去、つまりすでに起こったものの両方がある）。更新はstop_sequenceソートされ、次に指定されたstop_time_updateまでのトリップのすべての次の停留所に適用される必要がある。  trip.schedule_relationshipがCANCELEDまたはDUPLICATEDでない限り、少なくとも1つのstop_time_updateを提供する必要があります - 旅行がキャンセルされた場合、stop_time_updateは提供する必要はない。トリップが重複している場合、新しいトリップのリアルタイム情報を示すためにstop_time_updatesが提供されるかもしれません。                                                                                                                                    |
-| **タイムスタンプ**       | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 任意       | 一人             | 将来のStopTimeを推定するために、車両のリアルタイムの進捗を測定した直近の瞬間。過去の StopTimes が提供される場合、到着/出発時刻はこの値より早いかもしれない。POSIX時間（すなわち、1970年1月1日0時0分0秒UTCからの秒数）。                                                                                                                                                                                                                                                                                                                                                   |
-| **遅延**            | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 任意       | 一人             | トリップの現在のSchedule偏差。遅延は、GTFS既存のSchedule比較して予測される場合にのみ指定される必要がある。<br/>遅延（秒）は、正（車両が遅れていることを意味する）または負（車両がSchedule進んでいることを意味する）であることができる。遅延が0であれば、その車両が時間通りに運行されていることを意味する。<br/>StopTimeUpdateの遅延情報は、トリップレベルの遅延情報よりも優先され、トリップレベルの遅延は、StopTimeUpdate遅延値が指定されたトリップに沿って次の停車駅までしか伝搬されないようになっています。<br/>フィード・プロバイダーは、データの鮮度を評価するために、遅延値が最後に更新された日時を示す TripUpdate.timestamp 値を提供することが強く推奨される。<br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。 |
-| **トリッププロパティ**     | [トリッププロパティ](#message-tripproperties)                                       | 任意       | 一人             | トリップの更新されたプロパティを提供します。 <br/><br/>**注意**このメッセージはまだ **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。                                                                                                                                                                                                                                                                                                                                                                    |
+**Fields**
 
-## _メッセージ_StopTimeEvent
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **delay** | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | Delay (in seconds) can be positive (meaning that the vehicle is late) or negative (meaning that the vehicle is ahead of schedule). Delay of 0 means that the vehicle is exactly on time.  Either delay or time must be provided within a StopTimeEvent - both fields cannot be empty. |
+| **time** | [int64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | Event as absolute time. In POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). Either delay or time must be provided within a StopTimeEvent - both fields cannot be empty. |
+| **uncertainty** | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | If uncertainty is omitted, it is interpreted as unknown. To specify a completely certain prediction, set its uncertainty to 0. |
 
-単一の予測されたイベント（到着または出発のいずれか）のためのタイミング情報。タイミングは、遅延と推定時間、および不確実性からなる。
+## _message_ StopTimeUpdate
 
-*   delayは、GTFS既存のSchedule比較して予測する場合に使用される。
-*   time は、予測されるScheduleあるなしに関わらず指定される。timeとdelayの両方が指定された場合、timeが優先されます(ただし、通常、timeは予定されている旅行に対して指定された場合、GTFS予定時間＋delayに等しくなければなりません。)。
+Realtime update for arrival and/or departure events for a given stop on a trip. Please also refer to the general discussion of stop time updates in the [TripDescriptor](#message-tripdescriptor) and [trip updates entities](/realtime/trip-updates) documentation.
 
-不確かさは、時間と遅延の両方に等しく適用されます。不確かさは、おおよそ真の遅延の予想誤差を指定します（ただし、その正確な統計的意味はまだ定義されていません）。例えば、コンピュータのタイミング制御の下で運転される列車では、不確かさが0になることもあり得ます。
+Updates can be supplied for both past and future events. The producer is allowed, although not required, to drop past events.
 
-**フィールド**
+The update is linked to a specific stop either through stop_sequence or stop_id, so one of these fields must necessarily be set.  If the same stop_id is visited more than once in a trip, then stop_sequence should be provided in all StopTimeUpdates for that stop_id on that trip.
 
-| _**フィールド名**_ | _**タイプ**_                                                                 | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                                         |
-| ------------ | ------------------------------------------------------------------------- | -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **遅延**       | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 条件付きで必須  | 一人             | 遅延（秒）は、正の値（車両が遅れていることを意味する）または負の値（車両がSchedule早く進んでいることを意味する）となる。遅延が0であれば、その車両が時間通りに運行されていることを意味する。  遅延または時間のいずれかをStopTimeEvent内で指定する必要があり、両方のフィールドを空にすることはできません。 |
-| **時間**       | [int64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 条件付きで必須  | 一人             | 絶対時間としてのイベント。POSIX時間（すなわち、1970年1月1日午前0時00分00秒UTCからの秒数）。遅延または時間のいずれかが StopTimeEvent 内で提供されなければならない - 両フィールドを空にすることはできない。                                          |
-| **不確実性**     | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 任意       | 一人             | uncertaintyが省略された場合、unknownとして解釈されます。完全に確実な予測を指定するには、その不確実性を0に設定します。                                                                                             |
+**Fields**
 
-## _メッセージ_StopTimeUpdate
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **stop_sequence** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | Must be the same as in stop_times.txt in the corresponding GTFS feed.  Either stop_sequence or stop_id must be provided within a StopTimeUpdate - both fields cannot be empty.  stop_sequence is required for trips that visit the same stop_id more than once (e.g., a loop) to disambiguate which stop the prediction is for. If `StopTimeProperties.assigned_stop_id` is populated, then `stop_sequence` must be populated. |
+| **stop_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | Must be the same as in stops.txt in the corresponding GTFS feed. Either stop_sequence or stop_id must be provided within a StopTimeUpdate - both fields cannot be empty. If `StopTimeProperties.assigned_stop_id` is populated, it is preferred to omit `stop_id` and use only `stop_sequence`. If `StopTimeProperties.assigned_stop_id` and `stop_id` are populated, `stop_id` must match `assigned_stop_id`. |
+| **arrival** | [StopTimeEvent](#message-stoptimeevent) | Conditionally required | One | If schedule_relationship is empty or SCHEDULED, either arrival or departure must be provided within a StopTimeUpdate - both fields cannot be empty. arrival and departure may both be empty when schedule_relationship is SKIPPED.  If schedule_relationship is NO_DATA, arrival and departure must be empty. |
+| **departure** | [StopTimeEvent](#message-stoptimeevent) | Conditionally required | One | If schedule_relationship is empty or SCHEDULED, either arrival or departure must be provided within a StopTimeUpdate - both fields cannot be empty. arrival and departure may both be empty when schedule_relationship is SKIPPED.  If schedule_relationship is NO_DATA, arrival and departure must be empty. |
+| **departure_occupancy_status** | [OccupancyStatus](#enum-occupancystatus) | Optional | One | The predicted state of passenger occupancy for the vehicle immediately after departure from the given stop. If provided, stop_sequence must be provided. To provide departure_occupancy_status without providing any real-time arrival or departure predictions, populate this field and set StopTimeUpdate.schedule_relationship = NO_DATA. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **schedule_relationship** | [ScheduleRelationship](#enum-schedulerelationship) | Optional | One | The default relationship is SCHEDULED. |
+| **stop_time_properties** | [StopTimeProperties](#message-stoptimeproperties) | Optional | One | Realtime updates for certain properties defined within GTFS stop_times.txt <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-トリップの所定の停留所の到着および／または出発イベントに関するRealtime更新。[TripDescriptor](#message-tripdescriptor)および[Realtime/trip-updates">trip updatesエンティティの](</\<glossary variable=>)ドキュメントにある停車時間更新の一般的な説明も参照してください。
+## _enum_ ScheduleRelationship
 
-更新は、過去と未来のイベントの両方について供給することができる。プロデューサは、必須ではありませんが、過去のイベントを削除することができます。
+The relation between this StopTime and the static schedule.
 
-更新はstop_sequenceまたはstop_id特定のストップにリンクされるので、これらのフィールドのいずれかが必ず設定されなければならない。 同じstop_idを 1 つの旅行で複数回訪れる場合は、その旅行でそのstop_idのすべての StopTimeUpdate でstop_sequenceが提供される必要があります。
+**Values**
 
-**フィールド**
+| _**Value**_ | _**Comment**_ |
+|-------------|---------------|
+| **SCHEDULED** | The vehicle is proceeding in accordance with its static schedule of stops, although not necessarily according to the times of the schedule. This is the **default** behavior. At least one of arrival and departure must be provided. Frequency-based trips (GTFS frequencies.txt with exact_times = 0) should not have a SCHEDULED value and should use UNSCHEDULED instead. |
+| **SKIPPED** | The stop is skipped, i.e., the vehicle will not stop at this stop. Arrival and departure are optional. When set `SKIPPED` is not propagated to subsequent stops in the same trip (i.e., the vehicle will stop at subsequent stops in the trip unless those stops also have a `stop_time_update` with `schedule_relationship: SKIPPED`). Delay from a previous stop in the trip *does* propagate over the `SKIPPED` stop. In other words, if a `stop_time_update` with an `arrival` or `departure` prediction is not set for a stop after the `SKIPPED` stop, the prediction upstream of the `SKIPPED` stop will be propagated to the stop after the `SKIPPED` stop and subsequent stops in the trip until a `stop_time_update` for a subsequent stop is provided.  |
+| **NO_DATA** | No data is given for this stop. It indicates that there is no realtime timing information available. When set NO_DATA is propagated through subsequent stops so this is the recommended way of specifying from which stop you do not have realtime timing information. When NO_DATA is set neither arrival nor departure should be supplied. |
+| **UNSCHEDULED** | The vehicle is operating a frequency-based trip (GTFS frequencies.txt with exact_times = 0). This value should not be used for trips that are not defined in GTFS frequencies.txt, or trips in GTFS frequencies.txt with exact_times = 1. Trips containing `stop_time_updates` with `schedule_relationship: UNSCHEDULED` must also set the TripDescriptor `schedule_relationship: UNSCHEDULED` <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
 
-| _**フィールド名**_      | _**タイプ**_                                                                  | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                                                                                                                                                                                                               |
-| ----------------- | -------------------------------------------------------------------------- | -------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **stop_sequence** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 条件付きで必須  | 一人             | 対応するGTFSフィードのstop_times.txt同じである必要があります。  StopTimeUpdateでは、stop_sequence stop_idどちらかを指定する必要があります。stop_sequence、同じstop_id2回以上訪れるトリップ（例：ループ）に対して必要となり、予測の対象がどのストップであるかを曖昧にすることができます。もし `StopTimeProperties.assigned_stop_id`が入力されている場合は `stop_sequence`は入力されていなければならない。                                                                  |
-| **stop_id**       | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar)    | 条件付きで必須  | 一人             | 対応するGTFSフィードのstops.txt同じである必要があります。StopTimeUpdate では、stop_sequenceとstop_idのどちらかを指定する必要があり、両方のフィールドを空にすることはできません。もし `StopTimeProperties.assigned_stop_id`が入力されている場合は、省略することが推奨されます。 `stop_id`のみを使用します。 `stop_sequence`.もし `StopTimeProperties.assigned_stop_id`そして `stop_id`が入力されている場合は、省略し `stop_id`と一致しなければなりません。 `assigned_stop_id`. |
-| **到着**            | [ストップタイムイベント（StopTimeEvent](#message-stoptimeevent)                        | 条件付きで必須  | 一人             | schedule_relationshipが空またはSCHEDULEDの場合、到着または出発のどちらかをStopTimeUpdate内で指定する必要があります - 両フィールドを空にすることはできません。schedule_relationshipがSKIPPEDの場合、到着と出発の両方を空にすることができます。  schedule_relationshipがNO_DATAの場合、arrivalとdepartureは空でなければなりません。                                                                                                          |
-| **出発**            | [ストップタイムイベント（StopTimeEvent](#message-stoptimeevent)                        | 条件付きで必須  | 一人             | schedule_relationshipが空またはSCHEDULEDの場合、到着または出発のどちらかをStopTimeUpdate内で指定する必要があります - 両フィールドを空にすることはできません。schedule_relationshipがSKIPPEDの場合、到着と出発の両方を空にすることができます。  schedule_relationshipがNO_DATAの場合、arrivalとdepartureは空でなければなりません。                                                                                                          |
-| **出発時の占有状況**      | [入居状況](#enum-occupancystatus)                                              | 任意       | 一人             | 指定された停留所から出発した直後の車両の予測される乗客の占有状況。提供する場合、stop_sequenceを指定する必要がある。リアルタイムの到着または出発予測を提供せずに departure_occupancy_status を提供するには、このフィールドを入力し、 StopTimeUpdate.schedule_relationship = NO_DATA と設定します。 <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。                                          |
-| **スケジュール関係**      | [スケジュール関係](#enum-schedulerelationship)                                     | 任意       | 一人             | デフォルトの関係はSCHEDULEDです。                                                                                                                                                                                                                                                                                                                  |
-| **ストップタイムプロパティ**  | [ストップタイムプロパティ](#message-stoptimeproperties)                                | 任意       | 一人             | GTFS stop_times.txt内で定義された特定のプロパティに対するRealtime更新。 <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。                                                                                                                                                                                      |
+## _message_ StopTimeProperties
 
-## _enum_ScheduleRelationship
+Realtime update for certain properties defined within GTFS stop_times.txt.
 
-このStopTimeと静的なSchedule関係。
+**Caution:** this message is still **experimental**, and subject to change. It may be formally adopted in the future.<br> 
 
-**値**
+**Fields**
 
-| _**値**_                    | _**コメント**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **スケジュール済み**               | 車両は静的な停車Schedule進行しているが、必ずしもSchedule時間通りに進行している必要はない。これは **デフォルト**の動作である。到着と出発の少なくとも一方を記載する必要がある。頻度ベースのトリップGTFS frequencies.txtで exact_times = 0）は SCHEDULED 値を持たず、UNSCHEDULED を用いるべきである。                                                                                                                                                                                                                                                                                                |
-| **SKIPPED**                | この停留所はスキップされる、すなわち、車両はこの停留所には停車しない。到着と出発は任意である。設定された場合 `SKIPPED`が設定されると、同じトリップ内の後続の停留所には伝搬されない(つまり、そのトリップ内の後続の停留所でも、その停留所に `stop_time_update`と `schedule_relationship: SKIPPED`).トリップ内の前の停留所からの遅延 _は行う_を越えて伝搬する。 `SKIPPED`に伝播する。言い換えれば、もし `stop_time_update`を持つ `arrival`または `departure`が設定されていない場合、その停留所より上流の予測は `SKIPPED`の上流にある予測は `SKIPPED`が設定されていない場合、その上流の予測は、その停車駅の後の停車駅に伝搬されます。 `SKIPPED`が設定されるまで、その停留所以降の停留所に伝搬される。 `stop_time_update`が設定されるまで、その停車駅の上流にある予測は、その停車駅の次の停車駅に伝播します。 |
-| **NO_DATA**                | この停車駅のデータはありません。これは、Realtimeタイミング情報がないことを示す。NO_DATA を設定すると、後続の停留所に伝搬されるので、どの停留所からRealtimeタイミング情報がないかを指定するのに推奨される方法である。NO_DATA を設定した場合、到着と出発のどちらも指定してはならない。                                                                                                                                                                                                                                                                                                                               |
-| **UNSCHEDULED（アンシュードゥルード** | 車両は周波数ベースのトリップGTFS frequencies.txtで exact_times = 0)で運行中である。GTFS frequencies.txt で定義されていないトリップや、GTFS frequencies.txttxt で exact_times = 1 のトリップには、この値を使用してはならない。を含むトリップ `stop_time_updates`と `schedule_relationship: UNSCHEDULED`は、TripDescriptor も設定する必要があります。 `schedule_relationship: UNSCHEDULED` <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。                                                                                     |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **assigned_stop_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Supports real-time stop assignments. Refers to a `stop_id` defined in the GTFS `stops.txt`. <br> The new `assigned_stop_id` should not result in a significantly different trip experience for the end user than the `stop_id` defined in GTFS `stop_times.txt`. In other words, the end user should not view this new `stop_id` as an "unusual change" if the new stop was presented within an app without any additional context. For example, this field is intended to be used for platform assignments by using a `stop_id` that belongs to the same station as the stop originally defined in GTFS `stop_times.txt`. <br> To assign a stop without providing any real-time arrival or departure predictions, populate this field and set `StopTimeUpdate.schedule_relationship = NO_DATA`. <br> If this field is populated, `StopTimeUpdate.stop_sequence` must be populated and `StopTimeUpdate.stop_id` should not be populated. Stop assignments should be reflected in other GTFS-realtime fields as well (e.g., `VehiclePosition.stop_id`). <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-## _メッセージ_StopTimeProperties
+## _message_ TripProperties
 
-GTFS stop_times.txt内で定義された特定のプロパティに対するRealtime更新。
+Defines updated properties of the trip
 
-**注意：**このメッセージはまだ**実験的な**ものであり、変更される可能性がある。将来、正式に採用される可能性がある。<br/>
+**Caution:** this message is still **experimental**, and subject to change. It may be formally adopted in the future.<br>.
 
-**フィールド**
+**Fields**
 
-| _**フィールド名**_         | _**タイプ**_                                                               | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| -------------------- | ----------------------------------------------------------------------- | -------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **assigned_stop_id** | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 任意       | 一人             | リアルタイムの停止位置の割り当てをサポートします。を指す。 `stop_id`GTFSで定義されている `stops.txt`. <br/>新しい `assigned_stop_id`は、エンドユーザーの旅行体験を大きく変えるものであってはならない。 `stop_id`を含むトリップは、GTFSで定義されている `stop_times.txt`.言い換えれば、エンドユーザはこの新し `stop_id`新しい停留所が追加のコンテキストなしにアプリ内で提示された場合、"異常な変更 "と見なされる。例えば、このフィールドは、プラットフォーム割り当てのために、次のようなものを使用することを意図している。 `stop_id`は，もともとGTFS定義された停留所と同じ駅に属するものでなければなりません． `stop_times.txt`. <br/>リアルタイムの到着または出発の予測を提供せずに停留所を割り当てるには、このフィールドに値を入力し、次のように設定します。 `StopTimeUpdate.schedule_relationship = NO_DATA`. <br/>このフィールドが入力されている場合 `StopTimeUpdate.stop_sequence`は必ず入力し `StopTimeUpdate.stop_id`は入力してはならない。停車駅の割り当ては、他のGTFSフィールドにも反映されるべきである（例． `VehiclePosition.stop_id`). <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。 |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **trip_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One |  Defines the identifier of a new trip that is a duplicate of an existing trip defined in (CSV) GTFS trips.txt but will start at a different service date and/or time (defined using `TripProperties.start_date` and `TripProperties.start_time`). See definition of `trips.trip_id` in (CSV) GTFS. Its value must be different than the ones used in the (CSV) GTFS. This field is required if `schedule_relationship` is `DUPLICATED`, otherwise this field must not be populated and will be ignored by consumers. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **start_date** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | Service date on which the duplicated trip will be run. Must be provided in YYYYMMDD format. This field is required if `schedule_relationship` is `DUPLICATED`, otherwise this field must not be populated and will be ignored by consumers. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **start_time** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | Defines the departure start time of the trip when it’s duplicated. See definition of `stop_times.departure_time` in (CSV) GTFS. Scheduled arrival and departure times for the duplicated trip are calculated based on the offset between the original trip `departure_time` and this field. For example, if a GTFS trip has stop A with a `departure_time` of `10:00:00` and stop B with `departure_time` of `10:01:00`, and this field is populated with the value of `10:30:00`, stop B on the duplicated trip will have a scheduled `departure_time` of `10:31:00`. Real-time prediction `delay` values are applied to this calculated schedule time to determine the predicted time. For example, if a departure `delay` of `30` is provided for stop B, then the predicted departure time is `10:31:30`. Real-time prediction `time` values do not have any offset applied to them and indicate the predicted time as provided.  For example, if a departure `time` representing 10:31:30 is provided for stop B, then the predicted departure time is `10:31:30`.This field is required if `schedule_relationship` is `DUPLICATED`, otherwise this field must not be populated and will be ignored by consumers. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **shape_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Specifies the shape of the vehicle travel path for this trip when it differs from the original. Refers to a shape defined in the (CSV) GTFS or a new shape entity in a real-time feed. See definition of `trips.shape_id` in (CSV) GTFS. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-## _メッセージ_TripProperties
+## _message_ VehiclePosition
 
-トリップの更新されたプロパティを定義する
+Realtime positioning information for a given vehicle.
 
-注意**：**このメッセージはまだ**実験的な**ものであり、変更される可能性があります。将来、正式に採用される可能性があります。<br/>.
+**Fields**
 
-**フィールド**
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **trip** | [TripDescriptor](#message-tripdescriptor) | Optional | One | The Trip that this vehicle is serving. Can be empty or partial if the vehicle can not be identified with a given trip instance. |
+| **vehicle** | [VehicleDescriptor](#message-vehicledescriptor) | Optional | One | Additional information on the vehicle that is serving this trip. Each entry should have a **unique** vehicle id. |
+| **position** | [Position](#message-position) | Optional | One | Current position of this vehicle. |
+| **current_stop_sequence** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | The stop sequence index of the current stop. The meaning of current_stop_sequence (i.e., the stop that it refers to) is determined by current_status. If current_status is missing IN_TRANSIT_TO is assumed. |
+| **stop_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Identifies the current stop. The value must be the same as in stops.txt in the corresponding GTFS feed. If `StopTimeProperties.assigned_stop_id` is used to assign a `stop_id`, this field should also reflect the change in `stop_id`. |
+| **current_status** | [VehicleStopStatus](#enum-vehiclestopstatus) | Optional | One | The exact status of the vehicle with respect to the current stop. Ignored if current_stop_sequence is missing. |
+| **timestamp** | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Moment at which the vehicle's position was measured. In POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). |
+| **congestion_level** | [CongestionLevel](#enum-congestionlevel) | Optional | One |
+| **occupancy_status** | [OccupancyStatus](#enum-occupancystatus) | _Optional_ | One | The state of passenger occupancy for the vehicle or carriage. If multi_carriage_details is populated with per-carriage OccupancyStatus, then this field should describe the entire vehicle with all carriages accepting passengers considered.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.|
+| **occupancy_percentage** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | A percentage value indicating the degree of passenger occupancy in the vehicle. The value 100 should represent the total maximum occupancy the vehicle was designed for, including both seating and standing capacity, and current operating regulations allow. The value may exceed 100 if there are more passengers than the maximum designed capacity. The precision of occupancy_percentage should be low enough that individual passengers cannot be tracked boarding or alighting the vehicle. If multi_carriage_details is populated with per-carriage occupancy_percentage, then this field should describe the entire vehicle with all carriages accepting passengers considered.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **multi_carriage_details** | [CarriageDetails](#message-CarriageDetails) | Optional | Many | Details of the multiple carriages of this given vehicle. The first occurrence represents the first carriage of the vehicle, **given the current direction of travel**. The number of occurrences of the multi_carriage_details field represents the number of carriages of the vehicle. It also includes non boardable carriages, like engines, maintenance carriages, etc… as they provide valuable information to passengers about where to stand on a platform.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-| _**フィールド名**_   | _**タイプ**_                                                               | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| -------------- | ----------------------------------------------------------------------- | -------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **trip_id**    | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 条件付きで必須  | 一人             | (CSV)GTFS trips.txt定義された既存のトリップと重複するが、異なる運行日および時間(start_dateで定義)で開始する新しいトリップの識別子を定義する。 `TripProperties.start_date`そして `TripProperties.start_time`).の定義を参照。 `trips.trip_id`の定義を参照。この値は、(CSV)GTFS で使用されている値とは異なるものでなければならない。の場合、このフィールドは必須である。 `schedule_relationship`は `DUPLICATED`それ以外の場合、このフィールドは入力されてはならず、消費者によって無視されます。 <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| **開始日**        | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 条件付きで必須  | 一人             | 複製されたトリップが実行されるサービス日。YYYYMMDD 形式で提供する必要があります。このフィールドは以下の場合に必要である。 `schedule_relationship`は `DUPLICATED`それ以外の場合、このフィールドは入力されてはならず、消費者によって無視されます。 <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| **start_time** | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 条件付きで必須  | 一人             | トリップが複製される際の出発開始時刻を定義する。の定義を参照。 `stop_times.departure_time`(CSV)GTFS における定義を参照。複製されたトリップの到着予定時刻および出発予定時刻は、元のトリップとこのフィールドのオフセットに基づいて計算されます。 `departure_time`とこのフィールドのオフセットに基づいて計算されます。例えば、GTFSトリップの場合、停留所Aに `departure_time`の `10:00:00`で、停留所Bは `departure_time`の `10:01:00`という値が設定されている場合、複製されたトリップのBの到着時刻と出発時刻は、このフィールドの値に基づいて計算されます。 `10:30:00`という値が設定されている場合、複製されたトリップの停留所Bは、予定通り `departure_time`の `10:31:00`.リアルタイム予測 `delay`の値をこの算出されたSchedule時間に適用し、予測時間を決定する。例えば、停留所Bの出発時刻が `delay`の `30`が停留所Bについて提供されている場合、予測される出発時刻は `10:31:30`.リアルタイム予測 `time`の値は、オフセットが適用されず、提供された予測時刻を示す。  例えば、10:31:30を表す出発が提供された場合 `time`10:31:30 を表す出発が停留所 B に対して提供されている場合、予測される出発時刻は `10:31:30`.このフィールドは、以下の場合に必要である。 `schedule_relationship`は `DUPLICATED`それ以外の場合、このフィールドは入力されてはならず、消費者によって無視されます。 <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。 |
-| **shape_id**   | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 任意       | 一人             | このトリップの車両走行経路の形状が、オリジナルと異なる場合に指定する。(CSV)GTFSで定義された形状、またはリアルタイムフィードの新規形状エンティティを指す。の定義を参照。 `trips.shape_id`(CSV)GTFS に含まれる場合、このフィールドは必須です。 <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
-## _メッセージ_VehiclePosition
+## _enum_ VehicleStopStatus
 
-指定された車両のRealtime測位情報。
+**Values**
 
-**フィールド**
+| _**Value**_ | _**Comment**_ |
+|-------------|---------------|
+| **INCOMING_AT** | The vehicle is just about to arrive at the stop (on a stop display, the vehicle symbol typically flashes). |
+| **STOPPED_AT** | The vehicle is standing at the stop. |
+| **IN_TRANSIT_TO** | The vehicle has departed the previous stop and is in transit. |
 
-| _**フィールド名**_       | _**タイプ**_                                                                  | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                                                                                                                                                                                                                                                         |
-| ------------------ | -------------------------------------------------------------------------- | -------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **トリップ**           | [TripDescriptor](#message-tripdescriptor)                                  | 任意       | 一人             | この車両がサービスを提供しているトリップ。車両がトリップインスタンスで識別できない場合、空または部分的になることがある。                                                                                                                                                                                                                                                                                                                     |
-| **車両**             | [VehicleDescriptor](#message-vehicledescriptor)                            | 任意       | 一人             | このトリップを提供している車両に関する追加情報。各エントリには **一意**車両ID。                                                                                                                                                                                                                                                                                                                                      |
-| **位置**             | [位置情報](#message-position)                                                  | 任意       | 一人             | この車両の現在位置。                                                                                                                                                                                                                                                                                                                                                                       |
-| **カレントストップシーケンス**  | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 任意       | 一人             | 現在の停車駅の停車駅シーケンスインデックス。current_stop_sequence の意味（参照する停留所）は current_status によって決定される。current_status がない場合、IN_TRANSIT_TO と見なされる。                                                                                                                                                                                                                                                    |
-| **stop_id**        | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar)    | 任意       | 一人             | 現在の停車駅を特定する。対応するGTFSフィードのstops.txt同じ値である必要がある。もし `StopTimeProperties.assigned_stop_id`を割り当てるために使用される場合，このフィールドは `stop_id`を割り当てるために使用される場合、このフィールドは以下の変更も反映する必要がある。 `stop_id`.                                                                                                                                                                                                    |
-| **current_status** | [車両停止状況](#enum-vehiclestopstatus)                                          | 任意       | 一人             | 現在の停車位置に関する車両の正確な状態。current_stop_sequence が存在しない場合は無視される。                                                                                                                                                                                                                                                                                                                        |
-| **タイムスタンプ**        | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 任意       | 一人             | 車両の位置が測定された瞬間。POSIX時間（1970年1月1日00:00:00 UTCからの秒数）。                                                                                                                                                                                                                                                                                                                               |
-| **混雑度**            | [混雑度](#enum-congestionlevel)                                               | 任意       | 一人             |                                                                                                                                                                                                                                                                                                                                                                                  |
-| **占有状況**           | [入居状況](#enum-occupancystatus)                                              | _任意_     | 一人             | 車両または車台の乗客の占有状態。multi_carriage_details にキャリッジごとの OccupancyStatus が設定されている場合、このフィールドは、乗客を受け入れているすべてのキャリッジを考慮した上で、車両全体を記述する必要がある。<br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。                                                                                                                                                   |
-| **占有率**            | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 任意       | 一人             | 車両の搭乗率を示すパーセンテージ値。値100は、座席と立席の両方を含む、車両が設計され、現行の運用規則で許容される最大乗員数の合計を表すべきである。設計上の最大定員を超える乗客がいる場合、値は100を超える可能性がある。occupancy_percentageの精度は、個々の乗客の乗降を追跡できない程度に低くする必要がある。multi_carriage_detailsにcarriage毎のoccupancy_percentageが入力されている場合、このフィールドは乗客を受け入れている全ての車両を考慮した上で、車両全体を記述する必要がある。<br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。 |
-| **マルチキャリッジの詳細**    | [車両詳細](#message-CarriageDetails)                                           | 任意       | 多数             | この与えられた車両の複数のキャリッジの詳細。最初の出現は、その車両の最初のキャリッジを表す。 **現在の進行方向から見て**.multi_carriage_detailsフィールドの出現回数は、車両の台車の数を表す。また、機関車や保守用車両など、乗車できない車両も含まれる。これらは、乗客にプラットフォームのどこに立つべきかという貴重な情報を提供するからである。<br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。                                                                                             |
+## _enum_ CongestionLevel
 
-## _enum_VehicleStopStatus
+Congestion level that is affecting this vehicle.
 
-**値**
+**Values**
 
-| _**値**_           | _**コメント**_                                     |
-| ----------------- | ---------------------------------------------- |
-| **INCOMING_AT**   | 車両はちょうど停留所に到着するところである（停留所表示では、通常、車両シンボルが点滅する）。 |
-| **STOPPED_AT**    | 車両が停車駅に停車中である。                                 |
-| **IN_TRANSIT_TO** | 車両は前の停留所を出発し、通過中である。                           |
-
-## _enum_CongestionLevel
-
-この車両に影響を及ぼしている混雑度。
-
-**値**
-
-| _**値**_                      |
-| ---------------------------- |
-| **unknown_congestion_level** |
-| **running_smoothly**         |
-| **STOP_AND_GO**              |
-| **CONGESTION**               |
-| **深刻な混雑**                    |
+| _**Value**_ |
+|-------------|
+| **UNKNOWN_CONGESTION_LEVEL** |
+| **RUNNING_SMOOTHLY** |
+| **STOP_AND_GO** |
+| **CONGESTION** |
+| **SEVERE_CONGESTION** |
 
 ## _enum OccupancyStatus_
 
-車両またはキャリッジの乗客の占有状態。
+The state of passenger occupancy for the vehicle or carriage.
 
-個々の生産者は、すべてのOccupancyStatusの値を公開しないかもしれません。したがって、消費者は、OccupancyStatus の値が直線的な尺度に従うと仮定してはならない。消費者は、OccupancyStatus の値を、生産者が示し、意図した状態として表現すべきである。同様に、制作者は実際の車両占有状態に対応した OccupancyStatus 値を使用しなければならない。
+Individual producers may not publish all OccupancyStatus values. Therefore, consumers must not assume that the OccupancyStatus values follow a linear scale. Consumers should represent OccupancyStatus values as the state indicated and intended by the producer. Likewise, producers must use OccupancyStatus values that correspond to actual vehicle occupancy states.
 
-リニアスケールでの乗客の占有レベルの記述については、`occupancy_percentage` を参照のこと。
+For describing passenger occupancy levels on a linear scale, see `occupancy_percentage`.
 
-注意**：**このフィールドはまだ実験**的**なものであり、変更される可能性がある。将来、正式に採用される可能性がある。
+**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
 
-_**値**_
+***Values***
 
-| _**値**_                       | _**コメント**_                                                                    |
-| ----------------------------- | ----------------------------------------------------------------------------- |
-| _**空（EMPTY**_                 | _この車両は、ほとんどの指標で空車とみなされ、乗客はほとんど、あるいは全く乗っていないが、まだ乗客を受け入れている。_                   |
-| _**多座席**_                     | _この車両・台車には多くの空席がある。このカテゴリに入るのに十分な大きさとみなされる、利用可能な全座席のうちの自由席の量は、製作者の裁量で決定されます。_ |
-| _**空席が少ない**_                  | _この車両・台車は、利用可能な座席数が少ない。このカテゴリーに該当するほど少ないとみなされる全座席のうち自由席の量は、製作者の裁量で決定されます。_    |
-| _**スタンディング・ルーム・オンリー**_        | _現在、車両や客車は立っている乗客しか収容できない。_                                                   |
-| _**クラッシュド・スタンディング・ルーム・オンリー**_ | _この車両または客車は、現在立っている乗客しか収容できず、そのためのスペースは限られています。_                              |
-| _**フル**_                      | _この車両はほとんどの手段で満席と見なされますが、まだ乗客の搭乗を許可している可能性があります。_                             |
-| _**乗客の受け入れ拒否**_               | _この車両またはキャリッジは乗客を受け入れていません。この車両またはキャリッジは通常、乗客の乗車を受け入れています。_                   |
-| _**ノー・データ・エイブル**_             | _その車両またはキャリッジは、その時点で利用可能な搭乗率データを持っていません。_                                     |
-| _**NOT_BOARDABLE**_           | _その車両や客車は乗車可能ではなく、乗客を受け入れることはない。特殊な車両やキャリッジ（エンジン、メンテナンス用キャリッジなど）の場合に有効。_      |
+| _**Value**_ | _**Comment**_ |
+|-------------|---------------|
+| _**EMPTY**_ | _The vehicle is considered empty by most measures, and has few or no passengers onboard, but is still accepting passengers._ |
+| _**MANY_SEATS_AVAILABLE**_ | _The vehicle or carriage has a large number of seats available. The amount of free seats out of the total seats available to be considered large enough to fall into this category is determined at the discretion of the producer._ |
+| _**FEW_SEATS_AVAILABLE**_ | _The vehicle or carriage has a small number of seats available. The amount of free seats out of the total seats available to be considered small enough to fall into this category is determined at the discretion of the producer._ |
+| _**STANDING_ROOM_ONLY**_ | _The vehicle or carriage can currently accommodate only standing passengers._ |
+| _**CRUSHED_STANDING_ROOM_ONLY**_ | _The vehicle or carriage can currently accommodate only standing passengers and has limited space for them._ |
+| _**FULL**_ | _The vehicle is considered full by most measures, but may still be allowing passengers to board._ |
+| _**NOT_ACCEPTING_PASSENGERS**_ | _The vehicle or carriage is not accepting passengers. The vehicle or carriage usually accepts passengers for boarding._ |
+| _**NO_DATA_AVAILABLE**_ | _The vehicle or carriage doesn't have any occupancy data available at that time._ |
+| _**NOT_BOARDABLE**_ | _The vehicle or carriage is not boardable and never accepts passengers. Useful for special vehicles or carriages (engine, maintenance carriage, etc…)._ |
 
-## _メッセージ_CarriageDetails
 
-複数の客車で構成される車両に使用される、客車固有の詳細。
+## _message_ CarriageDetails
 
-注意**：**このメッセージはまだ実験**的**なものであり、変更される可能性があります。将来、正式に採用される可能性があります。
+Carriage specific details, used for vehicles composed of several carriages.
 
-**フィールド**
+**Caution:** this message is still **experimental**, and subject to change. It may be formally adopted in the future.
 
-| _**フィールド名**_                    | _**タイプ**_                                                                  | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| ------------------------------- | -------------------------------------------------------------------------- | -------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **id**                          | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar)    | 任意       | 一人             | キャリッジの識別。車両ごとにユニークであるべき。 <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。                                                                                                                                                                                                                                                                                                                                     |
-| **ラベル**                         | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar)    | 任意       | 一人             | 車両を識別するために乗客に表示される可能性のある、ユーザーが見えるラベル。例"7712"、"車両ABC-32 "など... <br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。                                                                                                                                                                                                                                                                                                     |
-| **占有状況**                        | [入居状況](#enum-occupancystatus)                                              | 任意       | 一人             | この車両における、このキャリッジの占有状況。デフォルトは `NO_DATA_AVAILABLE`.<br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。                                                                                                                                                                                                                                                                                                             |
-| **占有率**                         | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 任意       | 一人             | この車両における、この車両の乗車率。VehiclePosition.occupancy_percentage "と同じルールに従う。このキャリッジのデータがない場合は、-1 を使用する。<br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。                                                                                                                                                                                                                                                                 |
-| **carriage_sequence に設定されている。** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必須       | 一人             | CarriageStatus の車両リスト内の他の車両に対する、このキャリッジの順序を識別する。進行方向の最初のキャリッジは値 1 を持たなければならず、2 番目の値は進行方向の 2 番目のキャリッジに対応し、値 2 を持たなければならない、といった具合に。例えば、進行方向の1番目のキャリッジの値が1であり、進行方向の2番目のキャリッジの値が3である場合、消費者はすべてのキャリッジのデータ（すなわち、multi_carriage_detailsフィールド）を破棄する。データのない馬車は、有効な carriage_sequence 番号で表現されなければならず、データのないフィールドは省略されなければならない（代わりに、それらのフィールドを含めて「データなし」の値に設定することもできる）。 <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。 |
+**Fields**
 
-## _メッセージ_アラート
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Identification of the carriage. Should be unique per vehicle. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **label** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | User visible label that may be shown to the passenger to help identify the carriage. Example: "7712", "Car ABC-32", etc... <br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **occupancy_status** | [OccupancyStatus](#enum-occupancystatus) | Optional | One | Occupancy status for this given carriage, in this vehicle. Default is set to `NO_DATA_AVAILABLE`.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.|
+| **occupancy_percentage** | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Occupancy percentage for this given carriage, in this vehicle. Follows the same rules as "VehiclePosition.occupancy_percentage". Use -1 in case data is not available for this given carriage.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **carriage_sequence** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | Identifies the order of this carriage with respect to the other carriages in the vehicle's list of CarriageStatus. The first carriage in the direction of travel must have a value of 1. The second value corresponds to the second carriage in the direction of travel and must have a value of 2, and so forth. For example, the first carriage in the direction of travel has a value of 1. If the second carriage in the direction of travel has a value of 3, consumers will discard data for all carriages (i.e., the multi_carriage_details field). Carriages without data must be represented with a valid carriage_sequence number and the fields without data should be omitted (alternately, those fields could also be included and set to the "no data" values). <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-公共交通機関のネットワークで何らかのインシデントが発生したことを示すアラート。
+## _message_ Alert
 
-**フィールド**
+An alert, indicating some sort of incident in the public transit network.
 
-| _**フィールド名**_               | _**タイプ**_                                              | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                                                                                                                                                             |
-| -------------------------- | ------------------------------------------------------ | -------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **アクティブ期間**                | [時間範囲](#message-timerange)                             | 任意       | 多数             | アラートがユーザーに表示される時間。指定しない場合は、フィードに表示されている間、アラートが表示されます。複数の範囲を指定した場合、そのすべての範囲にアラートが表示されます。                                                                                                                                                                                              |
-| **informed_entity**        | [エンティティセレクタ](#message-entityselector)                  | 必須       | 多数             | このアラートをユーザに通知すべきエンティティ。  少なくとも1つのinformed_entityを指定する必要があります。                                                                                                                                                                                                                        |
-| **原因**                     | [原因](#enum-cause)                                      | 任意       | 一人             |                                                                                                                                                                                                                                                                                      |
-| **効果**                     | [効果](#enum-effect)                                     | 任意       | 一人             |                                                                                                                                                                                                                                                                                      |
-| **url**                    | [翻訳された文字列（TranslatedString](#message-translatedstring) | 任意       | 一人             | アラートに関する追加情報を提供するURL。                                                                                                                                                                                                                                                                |
-| **header_text**            | [翻訳された文字列（TranslatedString](#message-translatedstring) | 必須       | 一人             | 警告のヘッダー。このプレーンテキスト文字列は、太字などで強調表示されます。                                                                                                                                                                                                                                                |
-| **description_text**       | [翻訳された文字列（TranslatedString](#message-translatedstring) | 必須       | 一人             | 警告のための説明。このプレーンテキスト文字列は、アラートの本文としてフォーマットされます(または、ユーザーによる明示的な "展開 "リクエストで表示されます)。説明の情報は、ヘッダの情報に追加する必要があります。                                                                                                                                                                           |
-| **tts_header_text**        | [翻訳された文字列（TranslatedString](#message-translatedstring) | 任意       | 一人             | 音声合成の実装に使用されるアラートのヘッダーを含むテキスト。このフィールドはheader_textの音声合成版です。header_textと同じ情報を含みますが、音声合成で読めるようにフォーマットされている必要があります（例えば、省略形の削除、数字のスペルアウトなど）。                                                                                                                                              |
-| **tts_description_text**   | [翻訳された文字列（TranslatedString](#message-translatedstring) | 任意       | 一人             | 音声合成の実装に使用されるアラートの説明を含むテキスト。このフィールドは、description_text の音声合成バージョンである。description_text と同じ情報を含みますが、音声合成用にフォーマットされている必要があります (例: 省略形の削除、数字のスペルアウトなど)。                                                                                                                                   |
-| **重要度レベル(severity_level)** | [SeverityLevel](#enum-severitylevel)                   | 任意       | 一人             | 警告の深刻度。                                                                                                                                                                                                                                                                              |
-| **画像**                     | [翻訳された画像](#message-translatedimage)                    | 任意       | 一人             | アラートテキストに沿って表示されるTranslatedImage。迂回路、駅閉鎖などの警報効果を視覚的に説明するために使用する。画像は警報の理解を深めるものでなければならず、重要な情報の唯一の場所であってはならない。以下のタイプの画像は推奨されない：主にテキストを含む画像、マーケティング用またはブランド用の画像で、追加的な情報を提供しないもの。 <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。        |
-| **画像代替テキスト**               | [翻訳された文字列（TranslatedString](#message-translatedstring) | 任意       | 一人             | リンクされた画像の外観を説明するテキスト。 `image`フィールドにリンクされた画像の外観を説明するテキスト（例：アクセシビリティ上の理由で画像を表示できない場合、またはユーザーが画像を見ることができない場合など）。alt画像テキストについては、HTML [の仕様を参照してください。](https://html.spec.whatwg.org/#alt). <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。 |
+**Fields**
 
-## _enum_Cause
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **active_period** | [TimeRange](#message-timerange) | Optional | Many | Time when the alert should be shown to the user. If missing, the alert will be shown as long as it appears in the feed. If multiple ranges are given, the alert will be shown during all of them. |
+| **informed_entity** | [EntitySelector](#message-entityselector) | Required | Many | Entities whose users we should notify of this alert.  At least one informed_entity must be provided. |
+| **cause** | [Cause](#enum-cause) | Optional | One |
+| **effect** | [Effect](#enum-effect) | Optional | One |
+| **url** | [TranslatedString](#message-translatedstring) | Optional | One | The URL which provides additional information about the alert. |
+| **header_text** | [TranslatedString](#message-translatedstring) | Required | One | Header for the alert. This plain-text string will be highlighted, for example in boldface. |
+| **description_text** | [TranslatedString](#message-translatedstring) | Required | One | Description for the alert. This plain-text string will be formatted as the body of the alert (or shown on an explicit "expand" request by the user). The information in the description should add to the information of the header. |
+| **tts_header_text** | [TranslatedString](#message-translatedstring) | Optional | One | Text containing the alert's header to be used for text-to-speech implementations. This field is the text-to-speech version of header_text. It should contain the same information as header_text but formatted such that it can read as text-to-speech (for example, abbreviations removed, numbers spelled out, etc.) |
+| **tts_description_text** | [TranslatedString](#message-translatedstring) | Optional | One | Text containing a description for the alert to be used for text-to-speech implementations. This field is the text-to-speech version of description_text. It should contain the same information as description_text but formatted such that it can be read as text-to-speech (for example, abbreviations removed, numbers spelled out, etc.) |
+| **severity_level** | [SeverityLevel](#enum-severitylevel) | Optional | One | Severity of the alert. |
+| **image** | [TranslatedImage](#message-translatedimage) | Optional | One | TranslatedImage to be displayed along the alert text. Used to explain visually the alert effect of a detour, station closure, etc. The image should enhance the understanding of the alert and must not be the only location of essential information. The following types of images are discouraged : image containing mainly text, marketing or branded images that add no additional information. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **image_alternative_text** | [TranslatedString](#message-translatedstring) | Optional | One | Text describing the appearance of the linked image in the `image` field (e.g., in case the image can't be displayed or the user can't see the image for accessibility reasons). See the HTML [spec for alt image text](https://html.spec.whatwg.org/#alt). <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-この警告の原因。
 
-**値**
+## _enum_ Cause
 
-| _**値**_           |
-| ----------------- |
+Cause of this alert.
+
+**Values**
+
+| _**Value**_ |
+|-------------|
 | **UNKNOWN_CAUSE** |
-| **OTHER_CAUSE**   |
-| **技術的問題**         |
-| **ストライク**         |
-| **デモ**            |
-| **事故**            |
-| **休日**            |
-| **天候**            |
-| **メンテナンス**        |
-| **工事**            |
-| **警察活動**          |
-| **医療・救急**         |
+| **OTHER_CAUSE** |
+| **TECHNICAL_PROBLEM** |
+| **STRIKE** |
+| **DEMONSTRATION** |
+| **ACCIDENT** |
+| **HOLIDAY** |
+| **WEATHER** |
+| **MAINTENANCE** |
+| **CONSTRUCTION** |
+| **POLICE_ACTIVITY** |
+| **MEDICAL_EMERGENCY** |
 
-## _enum_効果
+## _enum_ Effect
 
-この問題が影響を受けるエンティティに及ぼす影響。
+The effect of this problem on the affected entity.
 
-**値**
+**Values**
 
-| _**値**_             |
-| ------------------- |
-| **サービスなし**          |
-| **reduced_service** |
-| **大幅な遅延**           |
-| **ディトゥアー**          |
-| **追加サービス**          |
-| **変更されたサービス**       |
-| **その他の影響**          |
-| **不明なエフェクト**        |
-| **移動停止**            |
-| **ノーエフェクト**         |
-| **アクセシビリティ問題**      |
+| _**Value**_ |
+|-------------|
+| **NO_SERVICE** |
+| **REDUCED_SERVICE** |
+| **SIGNIFICANT_DELAYS** |
+| **DETOUR** |
+| **ADDITIONAL_SERVICE** |
+| **MODIFIED_SERVICE** |
+| **OTHER_EFFECT** |
+| **UNKNOWN_EFFECT** |
+| **STOP_MOVED** |
+| **NO_EFFECT** |
+| **ACCESSIBILITY_ISSUE** |
 
-## _enum_SeverityLevel
+## _enum_ SeverityLevel
 
-警告の深刻度
+The severity of the alert.
 
-注意**：**このフィールドはまだ実験**的**なものであり、変更される可能性がある。将来、正式に採用される可能性がある。
+**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
 
-**値**
+**Values**
 
-| _**値**_              |
-| -------------------- |
-| **unknown_severity** |
-| **INFO**             |
-| **警告**               |
-| **激しい**              |
+| _**Value**_ |
+|-------------|
+| **UNKNOWN_SEVERITY** |
+| **INFO** |
+| **WARNING** |
+| **SEVERE** |
 
-## _メッセージ_TimeRange
+## _message_ TimeRange
 
-時間間隔。時間間隔は、`tが`開始時間以上、終了時間未満であれば、時間`tで`アクティブとみなされる。
+A time interval. The interval is considered active at time `t` if `t` is greater than or equal to the start time and less than the end time.
 
-**フィールド**
+**Fields**
 
-| _**フィールド名**_ | _**タイプ**_                                                                  | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                       |
-| ------------ | -------------------------------------------------------------------------- | -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **開始位置**     | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 条件付きで必須  | 一人             | 開始時刻はPOSIX時間（すなわち、1970年1月1日00:00:00 UTCからの秒数）です。これがない場合、間隔はマイナス無限大から始まる。  TimeRangeを指定する場合は、開始時刻と終了時刻のどちらかを指定する必要があります（両方のフィールドを空にすることはできません）。 |
-| **終了**       | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 条件付きで必須  | 一人             | POSIX時間での終了時間（すなわち、1970年1月1日午前0時00分00秒UTCからの秒数）。省略した場合、区間はプラス無限大で終了する。TimeRangeが提供される場合、startまたはendのどちらかが提供されなければならない - 両フィールドは空であってはならない。     |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **start** | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | Start time, in POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). If missing, the interval starts at minus infinity.  If a TimeRange is provided, either start or end must be provided - both fields cannot be empty. |
+| **end** | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | End time, in POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). If missing, the interval ends at plus infinity. If a TimeRange is provided, either start or end must be provided - both fields cannot be empty. |
 
-## _メッセージ_位置
+## _message_ Position
 
-車両の地理的な位置。
+A geographic position of a vehicle.
 
-**フィールド**
+**Fields**
 
-| _**フィールド名**_ | _**タイプ**_                                                                | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                     |
-| ------------ | ------------------------------------------------------------------------ | -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| **緯度**       | [フロート](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必須       | 一人             | 北緯度、WGS-84座標系での値。                                                                                                            |
-| **経度**       | [フロート](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必須       | 一人             | 東経の度数、WGS-84座標系での値。                                                                                                          |
-| **方位**       | [フロート](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 任意       | 一人             | 方位、真北から時計回りで、すなわち0は北、90は東である。これはコンパスの方位であったり、次の停車駅や中間地点に向かう方位であったりする。これは、クライアントが以前のデータから計算することができる、以前の位置のシーケンスから推測されるべきではない。 |
-| **オドメーター**   | [ダブル](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 任意       | 一人             | オドメーターの値、単位はメートル                                                                                                             |
-| **速度**       | [フロート](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 任意       | 一人             | 車両が計測した瞬間速度、単位はメートル毎秒。                                                                                                       |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **latitude** | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | Degrees North, in the WGS-84 coordinate system. |
+| **longitude** | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | Degrees East, in the WGS-84 coordinate system. |
+| **bearing** | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Bearing, in degrees, clockwise from True North, i.e., 0 is North and 90 is East. This can be the compass bearing, or the direction towards the next stop or intermediate location. This should not be deduced from the sequence of previous positions, which clients can compute from previous data. |
+| **odometer** | [double](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Odometer value, in meters. |
+| **speed** | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Momentary speed measured by the vehicle, in meters per second. |
 
-## _message_TripDescriptor
+## _message_ TripDescriptor
 
-GTFSトリップのインスタンスを特定するための記述子。
+A descriptor that identifies a single instance of a GTFS trip.
 
-トリップのインスタンスは、多くの場合、`trip_id`のみで十分である。ただし、以下の場合は、トリップインスタンスを特定するために追加情報が必要である。
+To specify a single trip instance, in many cases a `trip_id` by itself is sufficient. However, the following cases require additional information to resolve to a single trip instance:
 
-*   frequencies.txt定義されたトリップの場合、`trip_id`加え、`start_dateと` `start_time`必要である。
-*   トリップが24時間以上継続する場合、または翌日に予定されているトリップと衝突するような遅延がある場合、`trip_id`加え`start_dateが`必要です。
-*   `trip_id`フィールドを提供できない場合、`route_id`、`direction_id`、`start_date`、`start_time`の全てを提供する必要がある。
+* For trips defined in frequencies.txt, `start_date` and `start_time` are required in addition to `trip_id`
+* If the trip lasts for more than 24 hours, or is delayed such that it would collide with a scheduled trip on the following day, then `start_date` is required in addition to `trip_id`
+* If the `trip_id` field can't be provided, then `route_id`, `direction_id`, `start_date`, and `start_time` must all be provided
 
-いずれの場合も、`trip_id` に加えて`route_id`を指定する場合は、GTFS trips.txt で指定されたトリップと同じ`route_id`でなければならない。
+In all cases, if `route_id` is provided in addition to `trip_id`, then the `route_id` must be the same `route_id` as assigned to the given trip in GTFS trips.txt.
 
-`trip_id`フィールドは、単独で、または他の TripDescriptor フィールドと組み合わせて、複数のトリップインスタンスを識別するために使用することはできない。たとえば、GTFS frequencies.txtの exact_times=0 のトリップに対して、TripDescriptor はtrip_id単独で指定してはならない。これは、1 日のうち特定の時刻に始まる単一のトリップインスタンスを解決するためにstart_timeも必要であるためである。TripDescriptor が単一のトリップインスタンスに解決しない場合（すなわち、ゼロまたは複数のトリップイン スタンスに解決する場合）、エラーと見なされ、誤った TripDescriptor を含むエンティティは消費者によって廃棄される可能性がある。
+The `trip_id` field cannot, by itself or in combination with other TripDescriptor fields, be used to identify multiple trip instances. For example, a TripDescriptor should never specify trip_id by itself for GTFS frequencies.txt exact_times=0 trips because start_time is also required to resolve to a single trip instance starting at a specific time of the day. If the TripDescriptor does not resolve to a single trip instance (i.e., it resolves to zero or multiple trip instances), it is considered an error and the entity containing the erroneous TripDescriptor may be discarded by consumers.
 
-trip_idが不明な場合、TripUpdate のステーションシーケンス ID では不十分であり、stop_id も提供する必要があることに注意すること。さらに、絶対的な到着時刻と出発時刻も提供されなければならない。
+Note that if the trip_id is not known, then station sequence ids in TripUpdate are not sufficient, and stop_ids must be provided as well. In addition, absolute arrival/departure times must be provided.
 
-TripDescriptor.route_idroute_idAlert EntitySelector内で使用して、ルートのすべてのトリップに影響するルートワイドアラートを指定することはできない。
+TripDescriptor.route_id cannot be used within an Alert EntitySelector to specify a route-wide alert that affects all trips for a route - use EntitySelector.route_id instead.
 
-**フィールド**
+**Fields**
 
-| _**フィールド名**_     | _**タイプ**_                                                                  | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| ---------------- | -------------------------------------------------------------------------- | -------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **trip_id**      | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar)    | 条件付きで必須  | 一人             | このセレクタが参照するGTFSフィードのtrip_id。頻度制でないトリップ（GTFS frequencies.txt定義されていないトリップ）の場合、このフィールドだけでトリップを一意に特定できます。GTFS frequencies.txtxtで定義されているフリークエンシーベーストリップの場合、trip_id、start_time、start_dateはすべて必須です。スケジュール型トリップ（GTFS frequencies.txt定義されていないトリップ）の場合、trip_id省略できるのは、route_id, direction_id,start_time, start_dateの組み合わせでトリップを一意に特定できる場合で、これらのフィールドがすべて提供されている場合のみである。TripUpdateでschedule_relationshipがDUPLICATEDの場合、trip_id静的GTFS複製するトリップを特定する。Schedule_relationship が VehiclePosition 内で DUPLICATED の場合、trip_idは新たに複製されるトリップを識別し、対応する TripUpdate.TripProperties.trip_id の値を含まなければならない。                                |
-| **route_id**     | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar)    | 条件付きで必須  | 一人             | このセレクタが参照するGTFSのroute_idを示す。trip_idが省略された場合、トリップインスタンスを識別するためにroute_id, direction_id,start_time, schedule_relationship=SCHEDULED がすべて設定されていなければならない。TripDescriptor.route_idAlert EntitySelector内で使用して、ルートのすべてのトリップに影響するルート全体の警告を指定することはできません - 代わりにEntitySelector.route_id使用してください。                                                                                                                                                                                                                                                                                                                            |
-| **direction_id** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 条件付きで必須  | 一人             | GTFSフィードのtrips.txtファイルにある direction_id で、このセレクタが参照するトリップの進行方向を示しま す。trip_idが省略された場合は、direction_id を指定する必要があります。 <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。<br/>                                                                                                                                                                                                                                                                                                                                                                                           |
-| **start_time**   | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar)    | 条件付きで必須  | 一人             | このトリップインスタンスの開始予定時刻。trip_id非頻度ベースのトリップに対応する場合、このフィールドは省略されるか、GTFSフィードの値と等しくなければならない。trip_idがGTFS frequencies.txt で定義された頻度制トリップに対応する場合、start_timeは必須であり、トリップの更新と車両位置のために指定する必要がある。トリップが exact_times=1 のGTFSレコードに対応する場合、start_timeは、対応する時間帯のfrequencies.txt start_timeより headway_secs の倍数（0 を含む）遅くなければならない。exact_times=0に対応するトリップの場合、そのstart_time任意であり、当初はトリップの最初の出発時刻となることが予想される。一度設定された頻度ベースのexact_times=0トリップのstart_time、最初の出発時刻が変更されても、不変であると考えるべきである -- その時刻変更は、代わりにStopTimeUpdateに反映されるかもしれない。trip_idが省略された場合、start_timeが指定されなければならない。このフィールドのフォーマットと意味は、GTFSfrequencies.txtものと同じである（例：11:15:35、25:15:35）。 |
-| **開始日**          | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar)    | 条件付きで必須  | 一人             | このトリップインスタンスの開始日（YYYYMMDD形式）。予定されているトリップ（GTFS frequencies.txt定義されていないトリップ）については、このフィールドは、翌日に予定されているトリップと衝突するほど遅いトリップをあいまいにするために提供されなければなりません。例えば、毎日8時と20時に出発する列車が12時間遅れた場合、同じ時刻に2つの異なるトリップが存在することになる。このフィールドは、このような衝突が不可能なスケジュール（例えば、1時間Schedule運行するサービスで、1時間遅れの車両はもうSchedule関係ないと考えられる）のために提供することができますが、必須ではありません。GTFS frequencies.txt定義された頻度ベースのトリップの場合、このフィールドは必須である。trip_idが省略された場合、start_date を指定する必要がある。                                                                                                                                                                                                 |
-| **スケジュール関係**     | [スケジュール関係](#enum-schedulerelationship-1)                                   | 任意       | 一人             | このトリップと静止Schedule関係。アラートで TripDescriptor が提供される場合、このフィールドはコンシューマによって無視される。 `EntitySelector`また `schedule_relationship`フィールドは、一致するトリップインスタンスを特定する際にコンシューマーによって無視されます。                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **trip_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The trip_id from the GTFS feed that this selector refers to. For non frequency-based trips (trips not defined in GTFS frequencies.txt), this field is enough to uniquely identify the trip. For frequency-based trips defined in GTFS frequencies.txt, trip_id, start_time, and start_date are all required. For scheduled-based trips (trips not defined in GTFS frequencies.txt), trip_id can only be omitted if the trip can be uniquely identified by a combination of route_id, direction_id, start_time, and start_date, and all those fields are provided. When schedule_relationship is DUPLICATED within a TripUpdate, the trip_id identifies the trip from static GTFS to be duplicated. When schedule_relationship is DUPLICATED within a VehiclePosition, the trip_id identifies the new duplicate trip and must contain the value for the corresponding TripUpdate.TripProperties.trip_id. |
+| **route_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The route_id from the GTFS that this selector refers to. If trip_id is omitted, route_id, direction_id, start_time, and schedule_relationship=SCHEDULED must all be set to identify a trip instance. TripDescriptor.route_id should not be used within an Alert EntitySelector to specify a route-wide alert that affects all trips for a route - use EntitySelector.route_id instead. |
+| **direction_id** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The direction_id from the GTFS feed trips.txt file, indicating the direction of travel for trips this selector refers to. If trip_id is omitted, direction_id must be provided. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.<br>|
+| **start_time** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The initially scheduled start time of this trip instance. When the trip_id corresponds to a non-frequency-based trip, this field should either be omitted or be equal to the value in the GTFS feed. When the trip_id correponds to a frequency-based trip defined in GTFS frequencies.txt, start_time is required and must be specified for trip updates and vehicle positions. If the trip corresponds to exact_times=1 GTFS record, then start_time must be some multiple (including zero) of headway_secs later than frequencies.txt start_time for the corresponding time period. If the trip corresponds to exact_times=0, then its start_time may be arbitrary, and is initially expected to be the first departure of the trip. Once established, the start_time of this frequency-based exact_times=0 trip should be considered immutable, even if the first departure time changes -- that time change may instead be reflected in a StopTimeUpdate. If trip_id is omitted, start_time must be provided. Format and semantics of the field is same as that of GTFS/frequencies.txt/start_time, e.g., 11:15:35 or 25:15:35. |
+| **start_date** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The start date of this trip instance in YYYYMMDD format. For scheduled trips (trips not defined in GTFS frequencies.txt), this field must be provided to disambiguate trips that are so late as to collide with a scheduled trip on a next day. For example, for a train that departs 8:00 and 20:00 every day, and is 12 hours late, there would be two distinct trips on the same time. This field can be provided but is not mandatory for schedules in which such collisions are impossible - for example, a service running on hourly schedule where a vehicle that is one hour late is not considered to be related to schedule anymore. This field is required for frequency-based trips defined in GTFS frequencies.txt. If trip_id is omitted, start_date must be provided. |
+| **schedule_relationship** | [ScheduleRelationship](#enum-schedulerelationship-1) | Optional | One | The relation between this trip and the static schedule. If TripDescriptor is provided in an Alert `EntitySelector`, the `schedule_relationship` field is ignored by consumers when identifying the matching trip instance.
 
-## _enum_ScheduleRelationship
+## _enum_ ScheduleRelationship
 
-このトリップと静的なSchedule関係。GTFS反映されていない一時的なScheduleトリップが行われる場合、それはSCHEDULEDとマークされるべきではなく、ADDEDとマークされるべきです。
+The relation between this trip and the static schedule. If a trip is done in accordance with temporary schedule, not reflected in GTFS, then it shouldn't be marked as SCHEDULED, but marked as ADDED.
 
-**値**
+**Values**
 
-| _**値**_                    | _**コメント**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **スケジュール済み**               | GTFS Schedule運行されているトリップ、もしくはスケジュールされたトリップと関連づけられるほど近接しているトリップ。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| **ADDED**                  | 故障した車両の交換や、急な乗客の増加に対応するため、実行中のSchedule追加されたトリップ。 _注：現在、このモードを使用するフィードの動作は指定されていません。GTFSGitHubで議論が行われています。 [(1)](https://github.com/google/transit/issues/106) [(2)](https://github.com/google/transit/pull/221) [(3)](https://github.com/google/transit/pull/219)にて、ADDEDトリップの完全な指定や非推奨について議論されており、それらの議論がまとまった時点でドキュメントが更新される予定です。_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| **UNSCHEDULED（アンシュードゥルード** | GTFSfrequenciesfrequencies.txt frequencies.txt定義されていないトリップや、GTFS frequencies.txtexact_times=1のトリップを説明するために使用するべきではありません。を持つトリップは `schedule_relationship: UNSCHEDULED`のトリップは、すべてのStopTimeUpdateを設定する必要があります。 `schedule_relationship: UNSCHEDULED`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| **キャンセル**                  | Schedule上に存在し、削除されたトリップ。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **重複**                     | 新規に作成されたトリップで、運行開始日時以外は既存のスケジュールと同じもの。と共に使用します。 `TripUpdate.TripProperties.trip_id`, `TripUpdate.TripProperties.start_date`と `TripUpdate.TripProperties.start_time`と共に使用され、静的なGTFS既存のトリップをコピーしますが、サービス開始日および／または時間が異なります。トリップの複製は、(CSV)GTFS複製元のトリップに関連するサービスが(中略)今後30日以内に運行される場合に許可されます。 `calendar.txt`または `calendar_dates.txt`のトリップに関連するサービスが今後30日以内に運行される場合、トリップの複製が可能です。複製されるトリップは、以下の方法で特定される。 `TripUpdate.TripDescriptor.trip_id`. <br/><br/>この列挙は、(CSV)で参照される既存のトリップを変更しない。 `TripUpdate.TripDescriptor.trip_id`- 製作者がオリジナルのトリップをキャンセルしたい場合は、別途、CANCELED の値を持つトリップを発行する必要があります。 `TripUpdate`を発行しなければならない。GTFS定義されたトリップ `frequencies.txt`と `exact_times`で定義されたトリップは、空であるか `0`に等しいトリップは、複製できない。新しいトリップの `VehiclePosition.TripDescriptor.trip_id`には、新しいトリップに対応する値が含まれていなければなりません。 `TripUpdate.TripProperties.trip_id`そして `VehiclePosition.TripDescriptor.ScheduleRelationship`にも設定されていなければならない。 `DUPLICATED`.  <br/><br/>_ADDED列挙を使用して重複するトリップを表現していた既存のプロデューサーおよびコンシューマーは [移行ガイド](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/examples/migration-duplicated.md)に従って、DUPLICATED 列挙に移行しなければならない。_ |
+| _**Value**_ | _**Comment**_ |
+|-------------|---------------|
+| **SCHEDULED** | Trip that is running in accordance with its GTFS schedule, or is close enough to the scheduled trip to be associated with it. |
+| **ADDED** | An extra trip that was added in addition to a running schedule, for example, to replace a broken vehicle or to respond to sudden passenger load. *NOTE: Currently, behavior is unspecified for feeds that use this mode. There are discussions on the GTFS GitHub [(1)](https://github.com/google/transit/issues/106) [(2)](https://github.com/google/transit/pull/221) [(3)](https://github.com/google/transit/pull/219) around fully specifying or deprecating ADDED trips and the documentation will be updated when those discussions are finalized.* |
+| **UNSCHEDULED** | A trip that is running with no schedule associated to it - this value is used to identify trips defined in GTFS frequencies.txt with exact_times = 0. It should not be used to describe trips not defined in GTFS frequencies.txt, or trips in GTFS frequencies.txt with exact_times = 1. Trips with `schedule_relationship: UNSCHEDULED` must also set all StopTimeUpdates `schedule_relationship: UNSCHEDULED`|
+| **CANCELED** | A trip that existed in the schedule but was removed. |
+| **DUPLICATED** | A new trip that is the same as an existing scheduled trip except for service start date and time. Used with `TripUpdate.TripProperties.trip_id`, `TripUpdate.TripProperties.start_date`, and `TripUpdate.TripProperties.start_time` to copy an existing trip from static GTFS but start at a different service date and/or time. Duplicating a trip is allowed if the service related to the original trip in (CSV) GTFS (in `calendar.txt` or `calendar_dates.txt`) is operating within the next 30 days. The trip to be duplicated is identified via `TripUpdate.TripDescriptor.trip_id`. <br><br> This enumeration does not modify the existing trip referenced by `TripUpdate.TripDescriptor.trip_id` - if a producer wants to cancel the original trip, it must publish a separate `TripUpdate` with the value of CANCELED. Trips defined in GTFS `frequencies.txt` with `exact_times` that is empty or equal to `0` cannot be duplicated. The `VehiclePosition.TripDescriptor.trip_id` for the new trip must contain the matching value from `TripUpdate.TripProperties.trip_id` and `VehiclePosition.TripDescriptor.ScheduleRelationship` must also be set to `DUPLICATED`.  <br><br>*Existing producers and consumers that were using the ADDED enumeration to represent duplicated trips must follow the [migration guide](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/examples/migration-duplicated.md) to transition to the DUPLICATED enumeration.* |
 
-## _メッセージ_VehicleDescriptor
+## _message_ VehicleDescriptor
 
-トリップを実行する車両の識別情報。
+Identification information for the vehicle performing the trip.
 
-**フィールド**
+**Fields**
 
-| _**フィールド名**_      | _**タイプ**_                                                               | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                          |
-| ----------------- | ----------------------------------------------------------------------- | -------- | -------------- | ----------------------------------------------------------------------------------------------------------------- |
-| **id**            | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 任意       | 一人             | 車両の内部システム識別。車両ごとにあるべき **一意**車両ごとに存在すべきであり、システムを通過する際に車両を追跡するために使用される。この ID はエンドユーザーには見えないようにする必要がある。 **ラベル**フィールド |
-| **ラベル**           | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 任意       | 一人             | ユーザー可視ラベル、つまり正しい車両を識別するために乗客に見せなければならないもの。                                                                        |
-| **license_plate** | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 任意       | 一人             | 車両のナンバープレート。                                                                                                      |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Internal system identification of the vehicle. Should be **unique** per vehicle, and is used for tracking the vehicle as it proceeds through the system. This id should not be made visible to the end-user; for that purpose use the **label** field |
+| **label** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | User visible label, i.e., something that must be shown to the passenger to help identify the correct vehicle. |
+| **license_plate** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | The license plate of the vehicle. |
 
-## _message_EntitySelector
+## _message_ EntitySelector
 
-GTFSフィードのエンティティに対するセレクタ。フィールドの値は、GTFSフィードの適切なフィールドに対応するものでなければならない。少なくとも1つの指定子を与えなければならない。複数指定した場合は、論理`AND`演算子で結合されたものとして解釈されます。 さらに、指定子の組み合わせは、GTFSフィードの対応する情報と一致しなければなりません。 言い換えれば、GTFSエンティティに警告を適用するには、提供されたEntitySelectorフィールドのすべてに一致する必要があります。 たとえば、EntitySelector に`route_id`.5 と route_type.5 のフィールドが含まれているとします。`5」`、「`route_type:`「`3 "という`フィールドを含む EntitySelector は、`route_id`"5 "のバスにのみ適用され、`route_type.`3 の他のルートには適用されません。"`3".` route`route_id`: "5 "とroute_type: "3 "の他のルートには適用されません。`5 "`と "rout`e_type:`もし、製作者が`route_id`: "5" と route_type:`"3"` に警告を適用したい場合、2つの別々の EntitySelectors を提供する必要があります。5`"`を参照するものと、"route`_type`"を参照するものです。`"3".`
+A selector for an entity in a GTFS feed. The values of the fields should correspond to the appropriate fields in the GTFS feed. At least one specifier must be given. If several are given, they should be interpreted as being joined by the logical `AND` operator.  Additionally, the combination of specifiers must match the corresponding information in the GTFS feed.  In other words, in order for an alert to apply to an entity in GTFS it must match all of the provided EntitySelector fields.  For example, an EntitySelector that includes the fields `route_id: "5"` and `route_type: "3"` applies only to the `route_id: "5"` bus - it does not apply to any other routes of `route_type: "3"`.  If a producer wants an alert to apply to `route_id: "5"` as well as `route_type: "3"`, it should provide two separate EntitySelectors, one referencing `route_id: "5"` and another referencing `route_type: "3"`.
 
-少なくとも 1 つの指定子を指定する必要があります。EntitySelector のすべてのフィールドを空にすることはできません。
+At least one specifier must be given - all fields in an EntitySelector cannot be empty.
 
-**フィールド**
+**Fields**
 
-| _**フィールド名**_     | _**タイプ**_                                                                  | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                                                                                                           |
-| ---------------- | -------------------------------------------------------------------------- | -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **agency_id**    | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar)    | 条件付きで必須  | 一人             | このセレクタが参照するGTFSフィードのagency_id。                                                                                                                                                                                                     |
-| **route_id**     | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar)    | 条件付きで必須  | 一人             | このセレクタが参照するGTFSのroute_idです。direction_id を指定する場合、route_idも指定する必要がある。                                                                                                                                                                |
-| **ルートタイプ**       | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 条件付きで必須  | 一人             | このセレクタが参照するGTFSの route_type を指定する。                                                                                                                                                                                                 |
-| **direction_id** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 条件付きで必須  | 一人             | GTFSfeedtrips.txtから、route_id で指定された経路の一方向のトリップを全て選択するための direction_id を指定する。direction_id が指定された場合、route_idも指定されなければならない。 <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。<br/>      |
-| **トリップ**         | [TripDescriptor](#message-tripdescriptor)                                  | 条件付きで必須  | 一人             | このセレクタが参照するGTFSからのトリップインスタンス。この TripDescriptor はGTFSデータ内の単一のトリップインスタンスに解決する必要がある（例：プロデューサは exact_times=0 のトリップに対してtrip_idのみを提供することはできない）。この TripDescriptor に ScheduleRelationship フィールドが入力されている場合、コンシューマがGTFSトリップを識別しようとすると無視されます。 |
-| **stop_id**      | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar)    | 条件付きで必須  | 一人             | このセレクタが参照するGTFSフィードからのstop_idです。                                                                                                                                                                                                   |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **agency_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The agency_id from the GTFS feed that this selector refers to.
+| **route_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The route_id from the GTFS that this selector refers to. If direction_id is provided, route_id must also be provided.
+| **route_type** | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The route_type from the GTFS that this selector refers to.
+| **direction_id** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The direction_id from the GTFS feed trips.txt file, used to select all trips in one direction for a route, specified by route_id. If direction_id is provided, route_id must also be provided. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.<br>|
+| **trip** | [TripDescriptor](#message-tripdescriptor) | Conditionally required | One | The trip instance from the GTFS that this selector refers to. This TripDescriptor must resolve to a single trip instance in the GTFS data (e.g., a producer cannot provide only a trip_id for exact_times=0 trips). If the ScheduleRelationship field is populated within this TripDescriptor it will be ignored by consumers when attempting to identify the GTFS trip.
+| **stop_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The stop_id from the GTFS feed that this selector refers to.
 
-## _メッセージ_TranslatedString
+## _message_ TranslatedString
 
-テキストやURLのスニペットの言語ごとのバージョンを含む国際化メッセージ。メッセージから文字列の1つがピックアップされます。解決は次のように進みます。UIlanguage翻訳のlanguageコードと一致する場合、最初に一致した翻訳がピックアップされます。デフォルトのUIlanguage(例: 英語) が翻訳のlanguageコードと一致する場合、最初に一致した翻訳が選択されます。languageコードが指定されていない翻訳がある場合、その翻訳が選択されます。
+An internationalized message containing per-language versions of a snippet of text or a URL. One of the strings from a message will be picked up. The resolution proceeds as follows: If the UI language matches the language code of a translation, the first matching translation is picked. If a default UI language (e.g., English) matches the language code of a translation, the first matching translation is picked. If some translation has an unspecified language code, that translation is picked.
 
-**フィールド**
+**Fields**
 
-| _**フィールド名**_ | _**タイプ**_                  | _**必須**_ | _**カーディナリティ**_ | _**説明**_                |
-| ------------ | -------------------------- | -------- | -------------- | ----------------------- |
-| **翻訳**       | [翻訳](#message-translation) | 必須       | 多数             | 少なくとも1つの翻訳を提供する必要があります。 |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **translation** | [Translation](#message-translation) | Required | Many | At least one translation must be provided. |
 
-## _message_翻訳
+## _message_ Translation
 
-languageマッピングされたローカライズされた文字列。
+A localized string mapped to a language.
 
-| _**フィールド名**_ | _**タイプ**_                                                               | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                     |
-| ------------ | ----------------------------------------------------------------------- | -------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| **テキスト**     | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必須       | 一人             | メッセージを含むUTF-8文字列。                                                                                                                            |
-| **language** | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 条件付きで必須  | 一人             | BCP-47 のlanguageコード。language不明な場合、あるいはフィードの国際化がまったく行われていない場合は省略可能です。未指定のlanguageタグを指定できるのは、最大でひとつの翻訳だけです。複数の翻訳がある場合は、そのlanguage指定しなければなりません。 |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **text** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | A UTF-8 string containing the message. |
+| **language** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | BCP-47 language code. Can be omitted if the language is unknown or if no internationalization is done at all for the feed. At most one translation is allowed to have an unspecified language tag - if there is more than one translation, the language must be provided. |
 
-## _メッセージ_TranslatedImage
+## _message_ TranslatedImage
 
-言語ごとの画像を含む、国際化されたメッセージ。メッセージから画像の1つがピックアップされます。解決は次のように進みます。UIlanguage翻訳のlanguageコードと一致する場合、最初に一致した翻訳がピックアップされます。デフォルトのUIlanguage（例えば、英語）が翻訳のlanguageコードと一致する場合、最初に一致する翻訳が選ばれます。languageコードが指定されていない翻訳がある場合、その翻訳が選択されます。
+An internationalized message containing per-language versions of an image. One of the images from a message will be picked up. The resolution proceeds as follows: If the UI language matches the language code of a translation, the first matching translation is picked. If a default UI language (e.g., English) matches the language code of a translation, the first matching translation is picked. If some translation has an unspecified language code, that translation is picked.
 
-注意**：**このメッセージはまだ実験**的**なものであり、変更される可能性があります。将来、正式に採用される可能性があります。
+**Caution:** this message is still **experimental**, and subject to change. It may be formally adopted in the future.
 
-**フィールド**
+**Fields**
 
-| _**フィールド名**_    | _**タイプ**_                              | _**必須**_ | _**カーディナリティ**_ | _**説明**_                         |
-| --------------- | -------------------------------------- | -------- | -------------- | -------------------------------- |
-| **ローカライズされた画像** | [ローカライズされた画像](#message-localizedimage) | 必須       | 多数             | 少なくとも1つのローカライズされた画像を提供する必要があります。 |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **localized_image** | [LocalizedImage](#message-localizedimage) | Required | Many | At least one localized image must be provided. |
 
-## _メッセージ_LocalizedImage
+## _message_ LocalizedImage
 
-あるlanguageマップされたローカライズ画像のURL．
+A localized image URL mapped to a language.
 
-| _**フィールド名**_ | _**タイプ**_                                                               | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                                                                                                                                                                                                                             |
-| ------------ | ----------------------------------------------------------------------- | -------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **url**      | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必須       | 一人             | 画像へのリンクURLを含む文字列．リンク先の画像は2MB未満でなければならない。消費者側で更新が必要なほど画像が大幅に変更された場合、製作者は URL を新しいものに更新しなければならない。<br/><br/>URLは、http:// または https:// を含む完全修飾URLでなければならず、URL内の特殊文字は正しくエスケープされていなければなりません。以下を参照してください。 [については、https://www.w3.org/Addressing/URL/4_URI_Recommentations.html。](https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for)を参照してください。 |
-| **メディアタイプ**  | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必須       | 一人             | 表示する画像の種類を指定するための IANA メディアタイプ。タイプは "image/" で始まらなければならない。                                                                                                                                                                                                                                                                                           |
-| **language** | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 条件付きで必須  | 一人             | BCP-47 のlanguageコード。language不明な場合、あるいはフィードの国際化がまったく行われていない場合は省略可能です。未指定のlanguageタグを指定できるのは、最大でひとつの翻訳だけです。複数の翻訳がある場合は、そのlanguage指定しなければなりません。                                                                                                                                                                                                         |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **url** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | String containing an URL linking to an image. The image linked must less than 2MB. If an image changes in a significant enough way that an update is required on the consumer side, the producer must update the URL to a new one.<br><br> The URL should be a fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See the following https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.  |
+| **media_type** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | IANA media type as to specify the type of image to be displayed. The type must start with "image/" |
+| **language** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | BCP-47 language code. Can be omitted if the language is unknown or if no internationalization is done at all for the feed. At most one translation is allowed to have an unspecified language tag - if there is more than one translation, the language must be provided. |
 
-## _メッセージ_形状
+## _message_ Shape
 
-形状が（CSV）GTFS一部でない場合、車両が通る物理的な経路を記述する（アドホックな回り道の場合など）。シェイプはトリップに属し、より効率的な伝送のためにエンコードされたポリラインで構成される。 ShapeはStopの位置を正確に捉える必要はないが、トリップ上の全てのStopはそのトリップのShapeからわずかな距離、すなわちShapeの点を結ぶ直線セグメントに近い位置にあるべきである。
+Describes the physical path that a vehicle takes when the shape is not part of the (CSV) GTFS, such as for an ad-hoc detour. Shapes belong to Trips and consist of an encoded polyline for more efficient transmission.  Shapes do not need to intercept the location of Stops exactly, but all Stops on a trip should lie within a small distance of the shape for that trip, i.e. close to straight line segments connecting the shape points
 
-注意**：**このメッセージはまだ**実験的な**ものであり、変更される可能性があります。将来、正式に採用される可能性があります。<br/>.
+**Caution:** this message is still **experimental**, and subject to change. It may be formally adopted in the future.<br>.
 
-**フィールド**
+**Fields**
 
-| _**フィールド名**_      | _**タイプ**_                                                               | _**必須**_ | _**カーディナリティ**_ | _**説明**_                                                                                                                                                                                                                                        |
-| ----------------- | ----------------------------------------------------------------------- | -------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **shape_id**      | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必須       | 一人             | 形状の識別子。CSVで定義されたものと異なっている必要がある。 `shape_id`(CSV)GTFS で定義されているものとは異なるものでなければならない。 <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。                                                                 |
-| **エンコードされたポリライン** | [文字列](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必須       | 一人             | 形状の符号化されたポリライン表現。このポリラインは少なくとも2点を含んでいなければならない。エンコードポリラインの詳細については <https://developers.google.com/maps/documentation/utilities/polylinealgorithm> <br/><br/>**注意**this field is still **実験的**将来、正式に採用されるかもしれないし、変更されるかもしれない。将来的に正式に採用される可能性があります。 |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **shape_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One |  Identifier of the shape. Must be different than any `shape_id` defined in the (CSV) GTFS. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **encoded_polyline** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | Encoded polyline representation of the shape. This polyline must contain at least two points. For more information about encoded polylines, see https://developers.google.com/maps/documentation/utilities/polylinealgorithm <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |

@@ -1,576 +1,556 @@
-# GTFS Realtime参考
+<a class="pencil-link" href="https://github.com/google/transit/edit/master/gtfs-realtime/spec/en/reference.md" title="Edit this page" target="_blank">
+    <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
+  </a>
+  
+# GTFS Realtime Reference
 
-GTFS Realtime信息让公交机构向消费者提供有关服务中断（车站关闭、线路不运行、重要延误等）、车辆位置和预计到达时间的Realtime信息。
+A GTFS Realtime feed lets transit agencies provide consumers with realtime information about disruptions to their service (stations closed, lines not operating, important delays, etc.) location of their vehicles, and expected arrival times.
 
-本网站讨论并记录了2.0版本的饲料规范。有效的版本是 "2.0"、"1.0"。
+Version 2.0 of the feed specification is discussed and documented on this site. Valid versions are "2.0", "1.0".
 
-### 术语定义
+### Term Definitions
 
-#### 需要
+#### Required
 
-在GTFS v2.0及以上版本中，"_需要_"一栏描述了生产者必须提供哪些字段才能使过境数据有效并对消费应用程序有意义。
+In GTFS-realtime v2.0 and higher, the *Required* column describes what fields must be provided by a producer in order for the transit data to be valid and make sense to a consuming application.
 
-以下数值用于_必填_字段。
+The following values are used in the *Required* field:
 
-*   **需要**。这个字段必须由GTFS饲料生产商提供。
-*   **有条件要求**。该字段在某些条件下是必需的，这些条件在字段_描述_中列出。在这些条件之外，该字段是可选的。
-*   **可选的**。这个字段是可选的，不要求生产者实施。然而，如果数据在底层的自动车辆定位系统中可用（例如，VehiclePosition`时间戳`），则建议生产者在可能的情况下提供这些可选字段。
+*   **Required**: This field must be provided by a GTFS-realtime feed producer.
+*   **Conditionally required**: This field is required under certain conditions, which are outlined in the field *Description*. Outside of these conditions, the field is optional.
+*   **Optional**: This field is optional and is not required to be implemented by producers. However, if the data is available in the underlying automatic vehicle location systems (e.g., VehiclePosition `timestamp`) it is recommended that producers provide these optional fields when possible.
 
-_请注意，语义要求没有在GTFS 1.0版本中定义，因此`gtfs_realtime_version`为`1`的馈送可能不符合这些要求（详见[语义要求的建议](https://github.com/google/transit/pull/64)）。_
+*Note that semantic requirements were not defined in GTFS-realtime version 1.0, and therefore feeds with `gtfs_realtime_version` of `1` may not meet these requirements (see [the proposal for semantic requirements](https://github.com/google/transit/pull/64) for details).*
 
-#### 心数
+#### Cardinality
 
-_Cardinality_表示可以为一个特定字段提供的元素数量，其数值如下。
+*Cardinality* represents the number of elements that may be provided for a particular field, with the following values:
 
-*   **一**- 可以为这个字段提供一个单一的一元素。这与[协议缓冲区_的必要_和_可选的_](https://developers.google.com/protocol-buffers/docs/proto#simple)卡位相对应。
-*   **许多**- 可以为这个字段提供许多元素（0，1，或更多）。这映射到[协议缓冲区](https://developers.google.com/protocol-buffers/docs/proto#simple)的[ _重复_](https://developers.google.com/protocol-buffers/docs/proto#simple)卡位。
+* **One** - A single one element may be provided for this field. This maps to the [Protocol Buffer *required* and *optional* cardinalities](https://developers.google.com/protocol-buffers/docs/proto#simple).
+* **Many** - Many elements (0, 1, or more) may be provided for this field. This maps to the [Protocol Buffer *repeated* cardinality](https://developers.google.com/protocol-buffers/docs/proto#simple).
 
-始终参考 "_需要_"和 "_描述_"字段，以了解一个字段何时是需要的、有条件的、或可选的。请参考[GTFS-Realtime/proto/GTFS-Realtime.proto">`GTFS`](<https://github.com/google/transit/blob/master/\<glossary variable=>).proto以了解协议缓冲区的cardinality。
+Always reference the *Required* and *Description* fields to see when a field is required, conditionally required, or optional. Please reference [`gtfs-realtime.proto`](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto) for Protocol Buffer cardinality.
 
-#### 协议缓冲区数据类型
+#### Protocol Buffer data types
 
-以下协议缓冲区的数据类型用于描述进给元素。
+The following protocol buffer data types are used to describe feed elements:
 
-*   **消息**。复杂类型
-*   **枚举**。固定值的列表
+*   **message**: Complex type
+*   **enum**: List of fixed values
 
-#### 实验性字段
+#### Experimental fields
 
-标记为**实验性的**字段是可以改变的，并且尚未被正式纳入规范。**实验性**字段可能会在将来被正式采用。
+Fields labeled as **experimental** are subject to change and not yet formally adopted into the specification. An **experimental** field may be formally adopted in the future.
 
-## 元素索引
+## Element Index
 
-*   [馈送信息](#message-feedmessage)
-    *   [饲料标题](#message-feedheader)
-
-        *   [增量](#enum-incrementality)
-
-    *   [饲料实体](#message-feedentity)
-
-        *   [行程更新](#message-tripupdate)
-
-            *   [行程描述符](#message-tripdescriptor)
-
-                *   [计划关系](#enum-schedulerelationship-1)
-
-            *   [车辆描述符](#message-vehicledescriptor)
-
-            *   [停止时间更新](#message-stoptimeupdate)
-
-                *   [停止时间事件](#message-stoptimeevent)
-                *   [时间关系](#enum-schedulerelationship)
-                *   [停顿时间属性](#message-stoptimeproperties)
-
-            *   [行程属性](#message-tripproperties)
-
-        *   [车辆位置](#message-vehicleposition)
-
-            *   [旅程描述符](#message-tripdescriptor)
-
-                *   [时间安排关系](#enum-schedulerelationship-1)
-
-            *   [车辆描述符](#message-vehicledescriptor)
-
-            *   [位置参数](#message-position)
-
-            *   [车辆停靠状态](#enum-vehiclestopstatus)
-
-            *   [拥堵程度](#enum-congestionlevel)
-
-            *   [占用状态](#enum-occupancystatus)
-
-            *   [车厢细节](#message-carriagedetails)
-
-        *   [警报](#message-alert)
-
-            *   [时间范围](#message-timerange)
-
-            *   [实体选择器](#message-entityselector)
-
+*   [FeedMessage](#message-feedmessage)
+    *   [FeedHeader](#message-feedheader)
+        *   [Incrementality](#enum-incrementality)
+    *   [FeedEntity](#message-feedentity)
+        *   [TripUpdate](#message-tripupdate)
+            *   [TripDescriptor](#message-tripdescriptor)
+                *   [ScheduleRelationship](#enum-schedulerelationship-1)
+            *   [VehicleDescriptor](#message-vehicledescriptor)
+            *   [StopTimeUpdate](#message-stoptimeupdate)
+                *   [StopTimeEvent](#message-stoptimeevent)
+                *   [ScheduleRelationship](#enum-schedulerelationship)
+                *   [StopTimeProperties](#message-stoptimeproperties)
+            *   [TripProperties](#message-tripproperties)
+        *   [VehiclePosition](#message-vehicleposition)
+            *   [TripDescriptor](#message-tripdescriptor)
+                *   [ScheduleRelationship](#enum-schedulerelationship-1)
+            *   [VehicleDescriptor](#message-vehicledescriptor)
+            *   [Position](#message-position)
+            *   [VehicleStopStatus](#enum-vehiclestopstatus)
+            *   [CongestionLevel](#enum-congestionlevel)
+            *   [OccupancyStatus](#enum-occupancystatus)
+            *   [CarriageDetails](#message-carriagedetails)
+        *   [Alert](#message-alert)
+            *   [TimeRange](#message-timerange)
+            *   [EntitySelector](#message-entityselector)
                 *   [TripDescriptor](#message-tripdescriptor)
+                    *   [ScheduleRelationship](#enum-schedulerelationship-1)
+            *   [Cause](#enum-cause)
+            *   [Effect](#enum-effect)
+            *   [TranslatedString](#message-translatedstring)
+                *   [Translation](#message-translation)
+            *   [SeverityLevel](#enum-severitylevel)
 
-                    *   [时间关系](#enum-schedulerelationship-1)
+## Elements
 
-            *   [原因](#enum-cause)
+## _message_ FeedMessage
 
-            *   [影响](#enum-effect)
+The contents of a feed message. Each message in the stream is obtained as a response to an appropriate HTTP GET request. A realtime feed is always defined with relation to an existing GTFS feed. All the entity ids are resolved with respect to the GTFS feed.
 
-            *   [翻译的字符串](#message-translatedstring)
+**Fields**
 
-                *   [翻译](#message-translation)
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+|**header** | [FeedHeader](#message-feedheader) | Required | One | Metadata about this feed and feed message. |
+|**entity** | [FeedEntity](#message-feedentity) | Conditionally required | Many | Contents of the feed.  If there is real-time information available for the transit system, this field must be provided.  If this field is empty, consumers should assume there is no real-time information available for the system. |
 
-            *   [严重性等级（SeverityLevel](#enum-severitylevel)
+## _message_ FeedHeader
 
-## 讯息
+Metadata about a feed, included in feed messages.
 
-## _消息_FeedMessage
+**Fields**
 
-一个Feed消息的内容。流中的每个消息是作为对适当的HTTP GET请求的响应而获得的。Realtime馈送总是与现有的GTFS馈送一起定义。所有的实体ID都是相对于GTFS馈送而解决的。
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **gtfs_realtime_version** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | Version of the feed specification. The current version is 2.0. |
+| **incrementality** | [Incrementality](#enum-incrementality) | Required | One |
+| **timestamp** | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | This timestamp identifies the moment when the content of this feed has been created (in server time). In POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). To avoid time skew between systems producing and consuming realtime information it is strongly advised to derive timestamp from a time server. It is completely acceptable to use Stratum 3 or even lower strata servers since time differences up to a couple of seconds are tolerable. |
 
-**领域**
+## _enum_ Incrementality
 
-| _**字段名**_ | _**类型**_                          | _**需要**_ | _**心数**_ | _**说明**_                                                   |
-| --------- | --------------------------------- | -------- | -------- | ---------------------------------------------------------- |
-| **标题**    | [FeedHeader](#message-feedheader) | 需要       | 一        | 关于此饲料和饲料消息的元数据。                                            |
-| **实体**    | [FeedEntity](#message-feedentity) | 有条件要求    | 许多       | 反馈的内容。  如果交通系统有实时信息，这个字段必须被提供。  如果这个字段是空的，消费者应假定该系统没有实时信息。 |
+Determines whether the current fetch is incremental.
 
-## _消息_FeedHeader
+*   **FULL_DATASET**: this feed update will overwrite all preceding realtime information for the feed. Thus this update is expected to provide a full snapshot of all known realtime information.
+*   **DIFFERENTIAL**: currently, this mode is **unsupported** and behavior is **unspecified** for feeds that use this mode. There are discussions on the [GTFS Realtime mailing list](https://groups.google.com/group/gtfs-realtime) around fully specifying the behavior of DIFFERENTIAL mode and the documentation will be updated when those discussions are finalized.
 
-关于feed的元数据，包括在feed消息中。
+**Values**
 
-**领域**
-
-| _**字段名**_                 | _**类型**_                                                                   | _**需要**_ | _**心数**_ | _**说明**_                                                                                                                                                      |
-| ------------------------- | -------------------------------------------------------------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **gtfs_realtime_version** | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar)      | 需要       | 一        | 饲料规范的版本。目前的版本是2.0。                                                                                                                                            |
-| **递增性**                   | [增量](#enum-incrementality)                                                 | 需要       | 一        |                                                                                                                                                               |
-| **时间戳**                   | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 需要       | 一        | 这个时间戳标识了这个feed的内容被创建的时刻（在服务器时间）。在POSIX时间（即从1970年1月1日00:00:00 UTC开始的秒数）。为了避免产生和消费Realtime信息的系统之间的时间偏差，强烈建议从时间服务器中获得时间戳。使用第3层甚至更低层的服务器是完全可以接受的，因为几秒钟的时间差是可以容忍的。 |
-
-## _enum_Incrementality
-
-确定当前获取的数据是否是增量的。
-
-*   **FULL_DATASET**：该信息源更新将覆盖该信息源的所有先前的Realtime信息。因此，该更新预计将提供所有已知Realtime信息的完整快照。
-*   **DIFFERENTIAL**：目前，这种模式是**不被支持的**，对于使用这种模式的饲料，行为也**没有被指定**。在[GTFS-realtime">GTFS Realtime](<https://groups.google.com/group/\<glossary variable=>)邮件列表中，有关于完全指定DIFFERENTIAL模式的行为的讨论，当这些讨论最终完成时，文档将被更新。
-
-**价值**
-
-| _**价值**_         |
-| ---------------- |
+| _**Value**_ |
+|-------------|
 | **FULL_DATASET** |
-| **二次方**          |
+| **DIFFERENTIAL** |
 
-## _消息_FeedEntity
+## _message_ FeedEntity
 
-转运资料中的一个实体的定义（或更新）。如果该实体没有被删除，'trip_update'、'vehicle'、'alert'和'shape'中的一个字段应该被填入。
+A definition (or update) of an entity in the transit feed. If the entity is not being deleted, exactly one of 'trip_update', 'vehicle', 'alert' and 'shape' fields should be populated.
 
-**领域**
+**Fields**
 
-| _**字段名**_      | _**类型**_                                                                 | _**需要**_ | _**心数**_ | _**说明**_                                                                                                                                              |
-| -------------- | ------------------------------------------------------------------------ | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **id**         | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar)    | 需要       | 一        | 这个实体的feed-unique标识符。这些标识符只用于提供增量支持。饲料引用的实际实体必须由明确的选择器来指定（更多信息见下面的EntitySelector）。                                                                     |
-| **is_deleted** | [bool](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的      | 一        | 这个实体是否要被删除。只应提供给增量为DIFFERENTIAL的馈送 - 这个字段不应该提供给增量为FULL_DATASET的馈送。                                                                                    |
-| **行程_更新**      | [TripUpdate](#message-tripupdate)                                        | 有条件要求    | 一        | 关于一个旅程的Realtime出发延迟的数据。  必须提供至少一个字段trip_update, vehicle, alert, 或 shape - 所有这些字段不能是空的.                                                                |
-| **车辆**         | [车辆位置](#message-vehicleposition)                                         | 有条件要求    | 一        | 关于车辆的Realtime位置的数据.必须提供至少一个字段trip_update, vehicle, alert, 或 shape - 所有这些字段不能为空.                                                                       |
-| **警报**         | [警报](#message-alert)                                                     | 有条件要求    | 一        | 关于Realtime警报的数据.必须提供至少一个字段 trip_update, vehicle, alert, 或 shape - 所有这些字段不能为空.                                                                         |
-| **形状**         | [形状](#message-shape)                                                     | 有条件要求    | 一        | 关于Realtime添加的形状的数据，例如绕道.至少必须提供一个字段trip_update, vehicle, alert, 或 shape - 所有这些字段不能为空. <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。 |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | Feed-unique identifier for this entity. The ids are used only to provide incrementality support. The actual entities referenced by the feed must be specified by explicit selectors (see EntitySelector below for more info). |
+| **is_deleted** | [bool](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Whether this entity is to be deleted. Should be provided only for feeds with Incrementality of DIFFERENTIAL - this field should NOT be provided for feeds with Incrementality of FULL_DATASET. |
+| **trip_update** | [TripUpdate](#message-tripupdate) | Conditionally required | One | Data about the realtime departure delays of a trip.  At least one of the fields trip_update, vehicle, alert, or shape must be provided - all these fields cannot be empty. |
+| **vehicle** | [VehiclePosition](#message-vehicleposition) | Conditionally required | One | Data about the realtime position of a vehicle. At least one of the fields trip_update, vehicle, alert, or shape must be provided - all these fields cannot be empty. |
+| **alert** | [Alert](#message-alert) | Conditionally required | One | Data about the realtime alert. At least one of the fields trip_update, vehicle, alert, or shape must be provided - all these fields cannot be empty. |
+| **shape** | [Shape](#message-shape) | Conditionally required | One | Data about the realtime added shapes, such as for a detour. At least one of the fields trip_update, vehicle, alert, or shape must be provided - all these fields cannot be empty. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-## _消息_TripUpdate
 
-Realtime更新车辆在行程中的进展。也请参考[Realtime/trip-updates">行程更新实体](</\<glossary variable=>)的一般讨论。
+## _message_ TripUpdate
 
-根据ScheduleRelationship的值，一个TripUpdate可以指定。
+Realtime update on the progress of a vehicle along a trip. Please also refer to the general discussion of the [trip updates entities](/realtime/trip-updates).
 
-*   一个沿着Schedule进行的旅程。
-*   一个沿着路线进行但没有固定Schedule的旅程。
-*   一个被添加或删除的行程，与Schedule有关。
-*   一个新的旅程，是静态GTFS中现有旅程的副本。它将在TripProperties中指定的服务日期和时间运行。
+Depending on the value of ScheduleRelationship, a TripUpdate can specify:
 
-更新可以是未来的，预测的到达/离开事件，或已经发生的过去的事件。在大多数情况下，关于过去事件的信息是一个测量值，因此它的不确定性值被推荐为0。如果一个更新的不确定性不是0，要么该更新是对一个尚未完成的行程的近似预测，要么测量不精确，要么该更新是对过去的预测，但在事件发生后没有得到验证。
+*   A trip that proceeds along the schedule.
+*   A trip that proceeds along a route but has no fixed schedule.
+*   A trip that has been added or removed with regard to schedule.
+*   A new trip that is a copy of an existing trip in static GTFS. It will run at the service date and time specified in TripProperties.
 
-如果一辆车在同一区块内提供多个行程（关于行程和区块的更多信息，请参考[Schedule/reference/#tripstxt">GTFS trips.txt](</\<glossary variable=>)）。
+The updates can be for future, predicted arrival/departure events, or for past events that already occurred. In most cases information about past events is a measured value thus its uncertainty value is recommended to be 0\. Although there could be cases when this does not hold so it is allowed to have uncertainty value different from 0 for past events. If an update's uncertainty is not 0, either the update is an approximate prediction for a trip that has not completed or the measurement is not precise or the update was a prediction for the past that has not been verified after the event occurred.
 
-*   馈送应该包括该车辆当前服务的行程的TripUpdate。如果生产者对这些未来行程的预测质量有信心，我们鼓励生产者在该车辆的区块中包括当前行程之后的一个或多个行程的TripUpdates。包括同一车辆的多个TripUpdates，可以避免车辆从一个行程过渡到另一个行程时对乘客的预测 "突然出现"，也可以让乘客提前知道影响下游行程的延误（例如，当已知的延误超过了行程之间的计划停留时间）。
-*   各自的TripUpdate实体不需要按照它们在区块中安排的相同顺序添加到馈送中。例如，如果有`行程编号`为1，2和3的行程都属于一个区块，并且车辆行驶了行程1，然后是行程2，然后是行程3，那么`行程_更新`实体可以以任何顺序出现 - 例如，允许添加行程2，然后是行程1，然后是行程3。
+If a vehicle is serving multiple trips within the same block (for more information about trips and blocks, please refer to [GTFS trips.txt](/schedule/reference/#tripstxt)):
 
-注意，更新可以描述一个已经完成的旅程.为此，只需提供一个旅程最后一站的更新即可。如果到达最后一站的时间是过去的，客户端将得出结论，整个行程是过去的（有可能，尽管不重要，也可以提供前面几站的更新）。这个选项对于一个已经提前完成Schedule行程来说是最有意义的，但是根据Schedule，这个行程在当前时间仍在进行中。移除这个行程的更新可能会使客户端认为这个行程仍在进行中。注意信息提供者允许，但不是必须，清除过去的更新 - 这是一个实际有用的情况。
+* the feed should include a TripUpdate for the trip currently being served by the vehicle. Producers are encouraged to include TripUpdates for one or more trips after the current trip in this vehicle's block if the producer is confident in the quality of the predictions for these future trip(s). Including multiple TripUpdates for the same vehicle avoids prediction "pop-in" for riders as the vehicle transitions from one trip to another and also gives riders advance notice of delays that impact downstream trips (e.g., when the known delay exceeds planned layover times between trips).
+* the respective TripUpdate entities are not required to be added to the feed in the same order that they are scheduled in the block. For example, if there are trips with `trip_ids` 1, 2, and 3 that all belong to one block, and the vehicle travels trip 1, then trip 2, and then trip 3, the `trip_update` entities may appear in any order - for example, adding trip 2, then trip 1, and then trip 3 is allowed.
 
-**领域**
+Note that the update can describe a trip that has already completed.To this end, it is enough to provide an update for the last stop of the trip. If the time of arrival at the last stop is in the past, the client will conclude that the whole trip is in the past (it is possible, although inconsequential, to also provide updates for preceding stops). This option is most relevant for a trip that has completed ahead of schedule, but according to the schedule, the trip is still proceeding at the current time. Removing the updates for this trip could make the client assume that the trip is still proceeding. Note that the feed provider is allowed, but not required, to purge past updates - this is one case where this would be practically useful.
 
-| _**字段名**_  | _**类型**_                                                                   | _**需要**_ | _**心数**_ | _**说明**_                                                                                                                                                                                                                                                                                                                               |
-| ---------- | -------------------------------------------------------------------------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **行程**     | [TripDescriptor](#message-tripdescriptor)                                  | 需要       | 一        | 这个消息所适用的行程。每个实际的行程实例最多可以有一个TripUpdate实体。如果没有，意味着没有可用的预测信息。这确实 _不是_意味着该行程正在按照Schedule进行。                                                                                                                                                                                                                                                |
-| **车辆**     | [车辆描述符](#message-vehicledescriptor)                                        | 可选的      | 一        | 关于为这个行程服务的车辆的额外信息。                                                                                                                                                                                                                                                                                                                     |
-| **停止时间更新** | [停止时间更新](#message-stoptimeupdate)                                          | 有条件要求    | 许多       | 对行程的停止时间的更新（包括未来的，即预测的，以及在某些情况下，过去的，即那些已经发生的）。这些更新必须按照stop_sequence排序，并且适用于旅行的所有后续站点，直到下一个指定的stop_time_update。  至少必须提供一个行程的stop_time_update，除非行程.schedule_relationship是CANCELED或DUPLICATED - 如果行程被取消，不需要提供stop_time_updates。如果行程是重复的，可以提供stop_time_updates来表示新行程的实时信息。                                                                 |
-| **时间戳**    | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的      | 一        | 测量车辆实时进展的最近时刻，以估计未来的StopTimes。当提供过去的StopTimes时，到达/离开的时间可能比这个值早。以POSIX时间（即从1970年1月1日00:00:00 UTC开始的秒数）。                                                                                                                                                                                                                                 |
-| **延迟**     | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 可选的      | 一        | 该行程的当前Schedule偏差。只有当预测是相对于GTFS中的一些现有Schedule给出时，才应指定延迟。<br/>延迟（以秒为单位）可以是正数（意味着车辆迟到）或负数（意味着车辆比Schedule提前）。延迟为0意味着车辆完全准时。<br/>StopTimeUpdates中的延迟信息优先于行程级别的延迟信息，这样，行程级别的延迟只传播到行程中的下一站，并指定StopTimeUpdate延迟值。<br/>强烈建议信息提供者提供TripUpdate.timestamp值，表明延迟值最后更新的时间，以评估数据的新鲜度。<br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。 |
-| **行程_属性**  | [旅程属性（TripProperties](#message-tripproperties)                             | 可选的      | 一        | 提供行程的最新属性。 <br/><br/>**注意事项。**这个消息仍然是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。                                                                                                                                                                                                                                                          |
+**Fields**
 
-## _消息_StopTimeEvent
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **trip** | [TripDescriptor](#message-tripdescriptor) | Required | One | The Trip that this message applies to. There can be at most one TripUpdate entity for each actual trip instance. If there is none, that means there is no prediction information available. It does *not* mean that the trip is progressing according to schedule. |
+| **vehicle** | [VehicleDescriptor](#message-vehicledescriptor) | Optional | One | Additional information on the vehicle that is serving this trip. |
+| **stop_time_update** | [StopTimeUpdate](#message-stoptimeupdate) | Conditionally required | Many | Updates to StopTimes for the trip (both future, i.e., predictions, and in some cases, past ones, i.e., those that already happened). The updates must be sorted by stop_sequence, and apply for all the following stops of the trip up to the next specified stop_time_update.  At least one stop_time_update must be provided for the trip unless the trip.schedule_relationship is CANCELED or DUPLICATED - if the trip is canceled, no stop_time_updates need to be provided. If the trip is duplicated, stop_time_updates may be provided to indicate real-time information for the new trip. |
+| **timestamp** | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | The most recent moment at which the vehicle's real-time progress was measured to estimate StopTimes in the future. When StopTimes in the past are provided, arrival/departure times may be earlier than this value. In POSIX time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC). |
+| **delay** | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | The current schedule deviation for the trip. Delay should only be specified when the prediction is given relative to some existing schedule in GTFS.<br>Delay (in seconds) can be positive (meaning that the vehicle is late) or negative (meaning that the vehicle is ahead of schedule). Delay of 0 means that the vehicle is exactly on time.<br>Delay information in StopTimeUpdates take precedent of trip-level delay information, such that trip-level delay is only propagated until the next stop along the trip with a StopTimeUpdate delay value specified.<br>Feed providers are strongly encouraged to provide a TripUpdate.timestamp value indicating when the delay value was last updated, in order to evaluate the freshness of the data.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.|
+| **trip_properties** | [TripProperties](#message-tripproperties) | Optional | One | Provides the updated properties for the trip. <br><br>**Caution:** this message is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-单个预测事件（到达或离开）的时间信息。时间由延迟和/或估计时间，以及不确定性组成。
+## _message_ StopTimeEvent
 
-*   当预测是相对于GTFS中的一些现有Schedule给出时，应该使用延迟。
-*   无论是否有一个预测的Schedule，都应该给出时间。如果时间和延迟都被指定，时间将被优先考虑（尽管通常情况下，时间，如果给定的行程，应该等于GTFS中的计划时间+延迟）。
+Timing information for a single predicted event (either arrival or departure). Timing consists of delay and/or estimated time, and uncertainty.
 
-不确定性同样适用于时间和延迟。不确定度大致规定了真实延迟的预期误差（但注意，我们还没有定义其精确的统计意义）。不确定度有可能为0，例如在计算机计时控制下驱动的列车。
+*   delay should be used when the prediction is given relative to some existing schedule in GTFS.
+*   time should be given whether there is a predicted schedule or not. If both time and delay are specified, time will take precedence (although normally, time, if given for a scheduled trip, should be equal to scheduled time in GTFS + delay).
 
-**领域**
+Uncertainty applies equally to both time and delay. The uncertainty roughly specifies the expected error in true delay (but note, we don't yet define its precise statistical meaning). It's possible for the uncertainty to be 0, for example for trains that are driven under computer timing control.
 
-| _**字段名**_ | _**类型**_                                                                  | _**需要**_ | _**心数**_ | _**说明**_                                                                                         |
-| --------- | ------------------------------------------------------------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------ |
-| **延迟**    | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求    | 一        | 延迟（以秒为单位）可以是正数（意味着车辆晚点）或负数（意味着车辆比Schedule提前）。延迟为0意味着车辆完全准时。  在StopTimeEvent中必须提供延迟或时间，这两个字段不能为空。 |
-| **时间**    | [int64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求    | 一        | 事件为绝对时间。以POSIX时间（即从1970年1月1日00:00:00 UTC开始的秒数）。在一个StopTimeEvent中必须提供延迟或时间，这两个字段不能为空。             |
-| **不确定度**  | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的      | 一        | 如果不确定性被省略，它将被解释为未知。要指定一个完全确定的预测，将其不确定性设置为0。                                                      |
+**Fields**
 
-## _消息_StopTimeUpdate
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **delay** | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | Delay (in seconds) can be positive (meaning that the vehicle is late) or negative (meaning that the vehicle is ahead of schedule). Delay of 0 means that the vehicle is exactly on time.  Either delay or time must be provided within a StopTimeEvent - both fields cannot be empty. |
+| **time** | [int64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | Event as absolute time. In POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). Either delay or time must be provided within a StopTimeEvent - both fields cannot be empty. |
+| **uncertainty** | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | If uncertainty is omitted, it is interpreted as unknown. To specify a completely certain prediction, set its uncertainty to 0. |
 
-对行程中某一站的到达和/或离开事件进行Realtime更新。也请参考[TripDescriptor](#message-tripdescriptor)和[Realtime/trip-updates">行程更新实体](</\<glossary variable=>)文件中关于站点时间更新的一般讨论。
+## _message_ StopTimeUpdate
 
-可以为过去和未来的事件提供更新。生产者被允许，尽管不是必须，放弃过去的事件。
+Realtime update for arrival and/or departure events for a given stop on a trip. Please also refer to the general discussion of stop time updates in the [TripDescriptor](#message-tripdescriptor) and [trip updates entities](/realtime/trip-updates) documentation.
 
-更新通过stop_sequence或stop_id与一个特定的站点相联系，因此这些字段中的一个必须被设置。 如果同一个stop_id在一个行程中被访问了多次，那么stop_sequence应该在该行程中的所有stop_id的StopTimeUpdates中提供。
+Updates can be supplied for both past and future events. The producer is allowed, although not required, to drop past events.
 
-**领域**
+The update is linked to a specific stop either through stop_sequence or stop_id, so one of these fields must necessarily be set.  If the same stop_id is visited more than once in a trip, then stop_sequence should be provided in all StopTimeUpdates for that stop_id on that trip.
 
-| _**字段名**_                | _**类型**_                                                                   | _**需要**_ | _**心数**_ | _**说明**_                                                                                                                                                                                                                                                |
-| ------------------------ | -------------------------------------------------------------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **stop_sequence**        | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求    | 一        | 必须与相应的GTFS饲料中的stop_times.txt相同。  stop_stop_sequence或stop_id必须在StopTimeUpdate中提供，这两个字段不能为空。stop_sequence对于多次访问同一个stop_id的旅行是必需的（例如，一个循环），以区分预测是针对哪一站。如果 `StopTimeProperties.assigned_stop_id`已被填入，那么 `stop_sequence`也必须被填入。                              |
-| **stop_id**              | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar)      | 有条件要求    | 一        | 必须与相应的GTFS饲料中的stops.txt相同。在StopTimeUpdate中必须提供stop_sequence或stop_id，这两个字段不能为空。如果 `StopTimeProperties.assigned_stop_id`被填入，最好省略 `stop_id`而只使用 `stop_sequence`.如果 `StopTimeProperties.assigned_stop_id`和 `stop_id`是弹出的。 `stop_id`必须匹配 `assigned_stop_id`. |
-| **到达**                   | [StopTimeEvent](#message-stoptimeevent)                                    | 有条件要求    | 一        | 如果schedule_relationship为空或SCHEDULED，则必须在StopTimeUpdate中提供到达或离开，这两个字段不能为空。  如果schedule_relationship是NO_DATA，到达和离开必须是空的。                                                                                                                                  |
-| **出发**                   | [StopTimeEvent](#message-stoptimeevent)                                    | 有条件要求    | 一        | 如果schedule_relationship为空或SCHEDULED，则必须在StopTimeUpdate中提供到达或离开，这两个字段不能为空。  如果schedule_relationship是NO_DATA，到达和离开必须是空的。                                                                                                                                  |
-| **出发_占用状态**              | [占用状态](#enum-occupancystatus)                                              | 可选的      | 一        | 车辆从给定的站点出发后，预测的乘客占用状态。如果提供，必须提供stop_sequence。要提供departure_occupancy_status而不提供任何实时到达或离开的预测，请填入这个字段并设置StopTimeUpdate.schedule_relationship = NO_DATA。 <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。                                   |
-| **计划关系**                 | [时间安排关系](#enum-schedulerelationship)                                       | 可选的      | 一        | 默认的关系是SCHEDULED。                                                                                                                                                                                                                                        |
-| **Stop_time_properties** | [停止时间属性](#message-stoptimeproperties)                                      | 可选的      | 一        | 对GTFS stop_times.txt内定义的某些属性进行Realtime更新 <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。                                                                                                                                               |
+**Fields**
 
-## _enum_ScheduleRelationship
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **stop_sequence** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | Must be the same as in stop_times.txt in the corresponding GTFS feed.  Either stop_sequence or stop_id must be provided within a StopTimeUpdate - both fields cannot be empty.  stop_sequence is required for trips that visit the same stop_id more than once (e.g., a loop) to disambiguate which stop the prediction is for. If `StopTimeProperties.assigned_stop_id` is populated, then `stop_sequence` must be populated. |
+| **stop_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | Must be the same as in stops.txt in the corresponding GTFS feed. Either stop_sequence or stop_id must be provided within a StopTimeUpdate - both fields cannot be empty. If `StopTimeProperties.assigned_stop_id` is populated, it is preferred to omit `stop_id` and use only `stop_sequence`. If `StopTimeProperties.assigned_stop_id` and `stop_id` are populated, `stop_id` must match `assigned_stop_id`. |
+| **arrival** | [StopTimeEvent](#message-stoptimeevent) | Conditionally required | One | If schedule_relationship is empty or SCHEDULED, either arrival or departure must be provided within a StopTimeUpdate - both fields cannot be empty. arrival and departure may both be empty when schedule_relationship is SKIPPED.  If schedule_relationship is NO_DATA, arrival and departure must be empty. |
+| **departure** | [StopTimeEvent](#message-stoptimeevent) | Conditionally required | One | If schedule_relationship is empty or SCHEDULED, either arrival or departure must be provided within a StopTimeUpdate - both fields cannot be empty. arrival and departure may both be empty when schedule_relationship is SKIPPED.  If schedule_relationship is NO_DATA, arrival and departure must be empty. |
+| **departure_occupancy_status** | [OccupancyStatus](#enum-occupancystatus) | Optional | One | The predicted state of passenger occupancy for the vehicle immediately after departure from the given stop. If provided, stop_sequence must be provided. To provide departure_occupancy_status without providing any real-time arrival or departure predictions, populate this field and set StopTimeUpdate.schedule_relationship = NO_DATA. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **schedule_relationship** | [ScheduleRelationship](#enum-schedulerelationship) | Optional | One | The default relationship is SCHEDULED. |
+| **stop_time_properties** | [StopTimeProperties](#message-stoptimeproperties) | Optional | One | Realtime updates for certain properties defined within GTFS stop_times.txt <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-该停止时间与静态Schedule之间的关系。
+## _enum_ ScheduleRelationship
 
-**价值**
+The relation between this StopTime and the static schedule.
 
-| _**价值**_    | _**评论**_                                                                                                                                                                                                                                                                                                                                                |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **已安排**     | 车辆正按照其静态停车Schedule行驶，尽管不一定是按照Schedule的时间行驶。这就是 **默认的**行为。必须提供至少一个到达和离开的时间。基于频率的行程GTFS frequencies.txt，精确时间=0）不应该有一个SCHEDULED值，而应该使用UNSCHEDULED。                                                                                                                                                                                                         |
-| **跳过**      | 该站被跳过，即车辆不会在这一站停车。到达和离开是可选的。当设置 `SKIPPED`不会传播到同一行程中的后续站点（即，车辆将在行程中的后续站点停车，除非这些站点也有一个 `stop_time_update`与 `schedule_relationship: SKIPPED`).旅程中前一站的延迟 _是否_传播到 `SKIPPED`辆。换句话说，如果一个 `stop_time_update`有一个 `arrival`或 `departure`预测没有为该站之后的一个站点设置 `SKIPPED`后没有设置预测值，那么在该站上游的预测值 `SKIPPED`的上游预测将被传播到该站之后的 `SKIPPED`和行程中的后续站点，直到 `stop_time_update`后面的站点被提供。 |
-| **NO_DATA** | 没有为这一站提供数据。它表示没有可用的Realtime时间信息。当设置NO_DATA时，会通过后续的站点传播，所以这是被推荐的指定哪一站没有Realtime时间信息的方式。当NO_DATA被设置时，到达和离开都不应该被提供。                                                                                                                                                                                                                                        |
-| **未安排**     | 车辆正在运行一个基于频率的行程GTFS frequencies.txt与exact_times = 0）。这个值不应该用于GTFS frequencies.txt中没有定义的行程，或者GTFS frequencies.txt中确切时间=1的行程。包含在 `stop_time_updates`与 `schedule_relationship: UNSCHEDULED`的旅行也必须设置TripDescriptor `schedule_relationship: UNSCHEDULED` <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。                                    |
+**Values**
 
-## _消息_StopTimeProperties
+| _**Value**_ | _**Comment**_ |
+|-------------|---------------|
+| **SCHEDULED** | The vehicle is proceeding in accordance with its static schedule of stops, although not necessarily according to the times of the schedule. This is the **default** behavior. At least one of arrival and departure must be provided. Frequency-based trips (GTFS frequencies.txt with exact_times = 0) should not have a SCHEDULED value and should use UNSCHEDULED instead. |
+| **SKIPPED** | The stop is skipped, i.e., the vehicle will not stop at this stop. Arrival and departure are optional. When set `SKIPPED` is not propagated to subsequent stops in the same trip (i.e., the vehicle will stop at subsequent stops in the trip unless those stops also have a `stop_time_update` with `schedule_relationship: SKIPPED`). Delay from a previous stop in the trip *does* propagate over the `SKIPPED` stop. In other words, if a `stop_time_update` with an `arrival` or `departure` prediction is not set for a stop after the `SKIPPED` stop, the prediction upstream of the `SKIPPED` stop will be propagated to the stop after the `SKIPPED` stop and subsequent stops in the trip until a `stop_time_update` for a subsequent stop is provided.  |
+| **NO_DATA** | No data is given for this stop. It indicates that there is no realtime timing information available. When set NO_DATA is propagated through subsequent stops so this is the recommended way of specifying from which stop you do not have realtime timing information. When NO_DATA is set neither arrival nor departure should be supplied. |
+| **UNSCHEDULED** | The vehicle is operating a frequency-based trip (GTFS frequencies.txt with exact_times = 0). This value should not be used for trips that are not defined in GTFS frequencies.txt, or trips in GTFS frequencies.txt with exact_times = 1. Trips containing `stop_time_updates` with `schedule_relationship: UNSCHEDULED` must also set the TripDescriptor `schedule_relationship: UNSCHEDULED` <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
 
-Realtime更新在GTFS stop_times.txt中定义的某些属性。
+## _message_ StopTimeProperties
 
-**注意：**这个消息仍然是**试验性的**，可能会有变化。它可能在未来被正式采用。<br/>
+Realtime update for certain properties defined within GTFS stop_times.txt.
 
-**领域**
+**Caution:** this message is still **experimental**, and subject to change. It may be formally adopted in the future.<br> 
 
-| _**字段名**_    | _**类型**_                                                              | _**需要**_ | _**心数**_ | _**说明**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| ------------ | --------------------------------------------------------------------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **指派的站点_id** | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的      | 一        | 支持实时停车分配。指的是一个 `stop_id`在GTFS中定义的 `stops.txt`. <br/>新的 `assigned_stop_id`不应导致终端用户的旅行体验与原来的大不相同。 `stop_id`GTFS车次必须设置行程描述符。 `stop_times.txt`.换句话说，终端用户不应该认为这个新的 `stop_id`如果新站是在没有任何额外背景的情况下出现在应用程序中，则被视为 "不寻常的变化"。例如，这个字段的目的是通过使用一个 `stop_id`属于与GTFS中最初定义的站点相同的站点。 `stop_times.txt`. <br/>要在不提供任何实时到达或离开预测的情况下分配一个站点，请填入这个字段并设置 `StopTimeUpdate.schedule_relationship = NO_DATA`. <br/>如果这个字段被填充。 `StopTimeUpdate.stop_sequence`必须填入，而 `StopTimeUpdate.stop_id`不应被填充。站点分配也应反映在其他GTFS字段中（例如。 `VehiclePosition.stop_id`). <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。 |
+**Fields**
 
-## _消息_TripProperties
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **assigned_stop_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Supports real-time stop assignments. Refers to a `stop_id` defined in the GTFS `stops.txt`. <br> The new `assigned_stop_id` should not result in a significantly different trip experience for the end user than the `stop_id` defined in GTFS `stop_times.txt`. In other words, the end user should not view this new `stop_id` as an "unusual change" if the new stop was presented within an app without any additional context. For example, this field is intended to be used for platform assignments by using a `stop_id` that belongs to the same station as the stop originally defined in GTFS `stop_times.txt`. <br> To assign a stop without providing any real-time arrival or departure predictions, populate this field and set `StopTimeUpdate.schedule_relationship = NO_DATA`. <br> If this field is populated, `StopTimeUpdate.stop_sequence` must be populated and `StopTimeUpdate.stop_id` should not be populated. Stop assignments should be reflected in other GTFS-realtime fields as well (e.g., `VehiclePosition.stop_id`). <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-定义更新的行程属性
+## _message_ TripProperties
 
-**注意：**这条消息仍然是**试验性的**，可能会有变化。它可能在未来被正式采用。<br/>。
+Defines updated properties of the trip
 
-**领域**
+**Caution:** this message is still **experimental**, and subject to change. It may be formally adopted in the future.<br>.
 
-| _**字段名**_      | _**类型**_                                                              | _**需要**_ | _**心数**_ | _**说明**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| -------------- | --------------------------------------------------------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **trip_id**    | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求    | 一        | 定义一个新旅程的标识符，它与(CSV)GTFS trips.txt中定义的现有旅程是重复的，但将在不同的服务日期和/或时间开始（用 `TripProperties.start_date`和 `TripProperties.start_time`).参见 `trips.trip_id`在(CSV)GTFS中的定义。它的值必须与（CSV）GTFS中使用的不同。这个字段是必须的，如果 `schedule_relationship`是 `DUPLICATED`, 否则这个字段必须不被填入，并被消费者忽略。 <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。                                                                                                                                                                                                                                                                                                         |
-| **start_date** | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求    | 一        | 重复行程的服务日期。必须以YYYMMDD格式提供。这个字段是必须的，如果 `schedule_relationship`是 `DUPLICATED`, 否则这个字段必须不被填入，并被消费者忽略。 <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **start_time** | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求    | 一        | 定义重复行程时的出发开始时间。见定义 `stop_times.departure_time`在(CSV)GTFS中。重复的行程的预定到达和离开时间是根据原始行程和这个字段之间的偏移来计算的. `departure_time`和这个字段的偏移来计算。例如，如果一个GTFS旅程的A站有一个 `departure_time`的 `10:00:00`和B站为 `departure_time`的 `10:01:00`而这个字段被填入的值是 `10:30:00`这个字段被填入的值是，重复的行程中的B站将有一个预定的 `departure_time`的 `10:31:00`.实时预测 `delay`值被应用到这个计算的Schedule时间，以确定预测的时间。例如，如果提供B站的出发时间 `delay`的 `30`提供了B站的出发时间，那么预测的出发时间是 `10:31:30`.实时预测 `time`值没有应用任何偏移，并表示所提供的预测时间。  例如，如果提供的出发时间是 `time`代表10:31:30，那么预测的出发时间是 `10:31:30`.这个字段是必需的，如果 `schedule_relationship`是 `DUPLICATED`, 否则这个字段必须不被填入，并被消费者忽略。 <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。 |
-| **shape_id**   | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的      | 一        | 指定此行程的车辆行驶路径的形状，当它与原来的不同时。指的是在(CSV)GTFS中定义的形状或在实时信息中的一个新形状实体。见定义 `trips.shape_id`in (CSV)GTFS. <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+**Fields**
 
-## _消息_VehiclePosition
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **trip_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One |  Defines the identifier of a new trip that is a duplicate of an existing trip defined in (CSV) GTFS trips.txt but will start at a different service date and/or time (defined using `TripProperties.start_date` and `TripProperties.start_time`). See definition of `trips.trip_id` in (CSV) GTFS. Its value must be different than the ones used in the (CSV) GTFS. This field is required if `schedule_relationship` is `DUPLICATED`, otherwise this field must not be populated and will be ignored by consumers. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **start_date** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | Service date on which the duplicated trip will be run. Must be provided in YYYYMMDD format. This field is required if `schedule_relationship` is `DUPLICATED`, otherwise this field must not be populated and will be ignored by consumers. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **start_time** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | Defines the departure start time of the trip when it’s duplicated. See definition of `stop_times.departure_time` in (CSV) GTFS. Scheduled arrival and departure times for the duplicated trip are calculated based on the offset between the original trip `departure_time` and this field. For example, if a GTFS trip has stop A with a `departure_time` of `10:00:00` and stop B with `departure_time` of `10:01:00`, and this field is populated with the value of `10:30:00`, stop B on the duplicated trip will have a scheduled `departure_time` of `10:31:00`. Real-time prediction `delay` values are applied to this calculated schedule time to determine the predicted time. For example, if a departure `delay` of `30` is provided for stop B, then the predicted departure time is `10:31:30`. Real-time prediction `time` values do not have any offset applied to them and indicate the predicted time as provided.  For example, if a departure `time` representing 10:31:30 is provided for stop B, then the predicted departure time is `10:31:30`.This field is required if `schedule_relationship` is `DUPLICATED`, otherwise this field must not be populated and will be ignored by consumers. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **shape_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Specifies the shape of the vehicle travel path for this trip when it differs from the original. Refers to a shape defined in the (CSV) GTFS or a new shape entity in a real-time feed. See definition of `trips.shape_id` in (CSV) GTFS. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-一个给定车辆的Realtime定位信息。
+## _message_ VehiclePosition
 
-**领域**
+Realtime positioning information for a given vehicle.
 
-| _**字段名**_                 | _**类型**_                                                                   | _**需要**_ | _**心数**_ | _**说明**_                                                                                                                                                                                                                                                          |
-| ------------------------- | -------------------------------------------------------------------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **行程**                    | [TripDescriptor](#message-tripdescriptor)                                  | 可选的      | 一        | 该车辆所服务的行程。如果车辆不能与给定的行程实例相识别，可以是空的或部分。                                                                                                                                                                                                                             |
-| **车辆**                    | [车辆描述符](#message-vehicledescriptor)                                        | 可选的      | 一        | 关于为这个行程服务的车辆的额外信息。每个条目都应该有一个 **唯一的**车辆ID。                                                                                                                                                                                                                         |
-| **位置**                    | [位置](#message-position)                                                    | 可选的      | 一        | 这个车辆的当前位置。                                                                                                                                                                                                                                                        |
-| **current_stop_sequence** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的      | 一        | 当前站点的停车顺序索引。current_stop_sequence的含义（即它所指向的站点）由current_status决定。如果current_status丢失，则假定为IN_TRANSIT_TO。                                                                                                                                                             |
-| **stop_id**               | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar)      | 可选的      | 一        | 识别当前的站点。该值必须与相应GTFS饲料中的stops.txt相同。如果 `StopTimeProperties.assigned_stop_id`用来指定一个 `stop_id`的变化，这个字段也应反映在 `stop_id`.                                                                                                                                               |
-| **current_status**        | [车辆停靠状态](#enum-vehiclestopstatus)                                          | 可选的      | 一        | 车辆相对于当前站点的确切状态。如果current_stop_sequence丢失，则忽略。                                                                                                                                                                                                                     |
-| **时间戳**                   | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的      | 一        | 测量车辆位置的时刻。以POSIX时间为单位（即从1970年1月1日00:00:00 UTC开始的秒数）。                                                                                                                                                                                                              |
-| **拥挤程度**                  | [拥堵程度](#enum-congestionlevel)                                              | 可选的      | 一        |                                                                                                                                                                                                                                                                   |
-| **占用状态**                  | [占用状态](#enum-occupancystatus)                                              | _可选的_    | 一        | 车辆或车厢的乘客占用状态。如果multi_carriage_details是用每节车厢的占用状态填充的，那么这个字段应该描述整个车辆，并考虑所有接受乘客的车厢。<br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。                                                                                                                  |
-| **占用率**                   | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的      | 一        | 一个百分比值，表示车辆中的乘客占用程度。100这个值应该代表车辆设计的最大乘员总数，包括座位和站立的能力，以及目前的操作规定所允许的。如果有更多的乘客超过最大设计容量，该值可能超过100。占用率的精度应该足够低，以至于无法追踪到个别乘客的上车或下车情况。如果multi_carriage_details是用每节车厢的占用率填写的，那么这个字段应该描述整个车辆，并考虑所有接受乘客的车厢。<br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。 |
-| **多节车厢细节**                | [车厢细节](#message-CarriageDetails)                                           | 可选的      | 许多       | 这个给定车辆的多个车厢的详细信息。第一次出现代表该车辆的第一节车厢。 **鉴于当前的旅行方向**.多车厢细节字段的出现次数代表该车辆的车厢数量。它还包括不可登机的车厢，如发动机、维修车厢等......因为它们为乘客提供了关于站台位置的宝贵信息。<br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。                                                                        |
+**Fields**
 
-## _enum_VehicleStopStatus
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **trip** | [TripDescriptor](#message-tripdescriptor) | Optional | One | The Trip that this vehicle is serving. Can be empty or partial if the vehicle can not be identified with a given trip instance. |
+| **vehicle** | [VehicleDescriptor](#message-vehicledescriptor) | Optional | One | Additional information on the vehicle that is serving this trip. Each entry should have a **unique** vehicle id. |
+| **position** | [Position](#message-position) | Optional | One | Current position of this vehicle. |
+| **current_stop_sequence** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | The stop sequence index of the current stop. The meaning of current_stop_sequence (i.e., the stop that it refers to) is determined by current_status. If current_status is missing IN_TRANSIT_TO is assumed. |
+| **stop_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Identifies the current stop. The value must be the same as in stops.txt in the corresponding GTFS feed. If `StopTimeProperties.assigned_stop_id` is used to assign a `stop_id`, this field should also reflect the change in `stop_id`. |
+| **current_status** | [VehicleStopStatus](#enum-vehiclestopstatus) | Optional | One | The exact status of the vehicle with respect to the current stop. Ignored if current_stop_sequence is missing. |
+| **timestamp** | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Moment at which the vehicle's position was measured. In POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). |
+| **congestion_level** | [CongestionLevel](#enum-congestionlevel) | Optional | One |
+| **occupancy_status** | [OccupancyStatus](#enum-occupancystatus) | _Optional_ | One | The state of passenger occupancy for the vehicle or carriage. If multi_carriage_details is populated with per-carriage OccupancyStatus, then this field should describe the entire vehicle with all carriages accepting passengers considered.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.|
+| **occupancy_percentage** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | A percentage value indicating the degree of passenger occupancy in the vehicle. The value 100 should represent the total maximum occupancy the vehicle was designed for, including both seating and standing capacity, and current operating regulations allow. The value may exceed 100 if there are more passengers than the maximum designed capacity. The precision of occupancy_percentage should be low enough that individual passengers cannot be tracked boarding or alighting the vehicle. If multi_carriage_details is populated with per-carriage occupancy_percentage, then this field should describe the entire vehicle with all carriages accepting passengers considered.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **multi_carriage_details** | [CarriageDetails](#message-CarriageDetails) | Optional | Many | Details of the multiple carriages of this given vehicle. The first occurrence represents the first carriage of the vehicle, **given the current direction of travel**. The number of occurrences of the multi_carriage_details field represents the number of carriages of the vehicle. It also includes non boardable carriages, like engines, maintenance carriages, etc… as they provide valuable information to passengers about where to stand on a platform.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-**价值**
 
-| _**价值**_          | _**评论**_                     |
-| ----------------- | ---------------------------- |
-| **即将到达**          | 车辆即将到达车站（在车站显示屏上，车辆符号通常会闪烁）。 |
-| **STOPPED_AT**    | 车辆正站在该站。                     |
-| **IN_TRANSIT_TO** | 车辆已经离开了前一站，正在运输中。            |
+## _enum_ VehicleStopStatus
 
-## 拥堵等级（_enum_CongestionLevel
+**Values**
 
-影响该车辆的拥堵级别。
+| _**Value**_ | _**Comment**_ |
+|-------------|---------------|
+| **INCOMING_AT** | The vehicle is just about to arrive at the stop (on a stop display, the vehicle symbol typically flashes). |
+| **STOPPED_AT** | The vehicle is standing at the stop. |
+| **IN_TRANSIT_TO** | The vehicle has departed the previous stop and is in transit. |
 
-**价值**
+## _enum_ CongestionLevel
 
-| _**价值**_                     |
-| ---------------------------- |
-| **unknown_congestion_level** |
-| **顺利运行**                     |
-| **停停走走**                     |
-| **拥堵**                       |
-| **严重拥堵**                     |
+Congestion level that is affecting this vehicle.
 
-## _枚举 OccupancyStatus_
+**Values**
 
-车辆或车厢的乘客占用状态。
+| _**Value**_ |
+|-------------|
+| **UNKNOWN_CONGESTION_LEVEL** |
+| **RUNNING_SMOOTHLY** |
+| **STOP_AND_GO** |
+| **CONGESTION** |
+| **SEVERE_CONGESTION** |
 
-个别生产者可能不会公布所有OccupancyStatus值。因此，消费者不能假设OccupancyStatus值遵循一个线性比例。消费者应该将OccupancyStatus值表示为生产者所指示和打算的状态。同样地，生产者必须使用与实际车辆占用状态相对应的OccupancyStatus值。
+## _enum OccupancyStatus_
 
-对于描述线性尺度上的乘客占有率水平，请参见`occupancy_percentage`。
+The state of passenger occupancy for the vehicle or carriage.
 
-**注意：**这个字段仍然是**试验性的**，可能会有变化。它可能会在未来被正式采用。
+Individual producers may not publish all OccupancyStatus values. Therefore, consumers must not assume that the OccupancyStatus values follow a linear scale. Consumers should represent OccupancyStatus values as the state indicated and intended by the producer. Likewise, producers must use OccupancyStatus values that correspond to actual vehicle occupancy states.
 
-_**价值**_
+For describing passenger occupancy levels on a linear scale, see `occupancy_percentage`.
 
-| _**价值**_      | _**评论**_                                               |
-| ------------- | ------------------------------------------------------ |
-| _**EMPTY**_   | _该车被认为是空车，车上没有或很少有乘客，但仍在接受乘客。_                         |
-| _**有许多座位**_   | _该车辆或车厢有大量的可用座位。在全部可用座位中，有多少空闲座位被认为大到可以归入这一类别，由生产者决定。_ |
-| _**可用座位少**_   | _该车辆或车厢有少量可用的座位。在总的座位中，被认为足够小而属于这一类的空闲座位的数量，由制作者酌情决定。_ |
-| _**仅有站立空间**_  | _该车辆或车厢目前只能容纳站立的乘客。_                                   |
-| _**挤压的站立空间**_ | _该车辆或车厢目前只能容纳站立的乘客，而且空间有限。_                            |
-| _**完整的**_     | _按照大多数的衡量标准，该车辆被认为是满的，但可能仍然允许乘客上车。_                    |
-| _**不接受乘客**_   | _该车辆或车厢不接受乘客。该车辆或车厢通常接受乘客上车。_                          |
-| _**没有数据**_    | _该车辆或车厢当时没有任何载客数据。_                                    |
-| _**不可以登车**_   | _该车辆或车厢不能登车，从不接受乘客。对特殊车辆或车厢（发动机、维修车厢等......）有用。_       |
+**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
 
-## _消息_CarriageDetails
+***Values***
 
-马车的具体细节，用于由几个马车组成的车辆。
+| _**Value**_ | _**Comment**_ |
+|-------------|---------------|
+| _**EMPTY**_ | _The vehicle is considered empty by most measures, and has few or no passengers onboard, but is still accepting passengers._ |
+| _**MANY_SEATS_AVAILABLE**_ | _The vehicle or carriage has a large number of seats available. The amount of free seats out of the total seats available to be considered large enough to fall into this category is determined at the discretion of the producer._ |
+| _**FEW_SEATS_AVAILABLE**_ | _The vehicle or carriage has a small number of seats available. The amount of free seats out of the total seats available to be considered small enough to fall into this category is determined at the discretion of the producer._ |
+| _**STANDING_ROOM_ONLY**_ | _The vehicle or carriage can currently accommodate only standing passengers._ |
+| _**CRUSHED_STANDING_ROOM_ONLY**_ | _The vehicle or carriage can currently accommodate only standing passengers and has limited space for them._ |
+| _**FULL**_ | _The vehicle is considered full by most measures, but may still be allowing passengers to board._ |
+| _**NOT_ACCEPTING_PASSENGERS**_ | _The vehicle or carriage is not accepting passengers. The vehicle or carriage usually accepts passengers for boarding._ |
+| _**NO_DATA_AVAILABLE**_ | _The vehicle or carriage doesn't have any occupancy data available at that time._ |
+| _**NOT_BOARDABLE**_ | _The vehicle or carriage is not boardable and never accepts passengers. Useful for special vehicles or carriages (engine, maintenance carriage, etc…)._ |
 
-**注意：**该信息仍处于**试验阶段**，可能会发生变化。它可能会在未来被正式采用。
 
-**领域**
+## _message_ CarriageDetails
 
-| _**字段名**_ | _**类型**_                                                                   | _**需要**_ | _**心数**_ | _**说明**_                                                                                                                                                                                                                                                                       |
-| --------- | -------------------------------------------------------------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **id**    | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar)      | 可选的      | 一        | 车厢的标识。每辆车应该是唯一的。 <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。                                                                                                                                                                                              |
-| **标签**    | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar)      | 可选的      | 一        | 用户可见的标签，可以显示给乘客，帮助识别车厢。例如。"7712"，"ABC-32车厢"，等等。 <br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。                                                                                                                                                                    |
-| **占用状态**  | [占用状态](#enum-occupancystatus)                                              | 可选的      | 一        | 在这个车辆中，这个给定的车厢的占用状态。默认设置为 `NO_DATA_AVAILABLE`.<br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。                                                                                                                                                                 |
-| **占用率**   | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 可选的      | 一        | 该车厢的占用率，在该车中的占用率。遵循与 "VehiclePosition.occupancy_percentage "相同的规则。如果没有这个车厢的数据，则使用-1。<br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。                                                                                                                           |
-| **车厢_序列** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 需要       | 一        | 确定该车厢相对于车辆的车厢状态列表中的其他车厢的顺序。行进方向上的第一个车厢必须有1的值，第二个值对应于行进方向上的第二个车厢，必须有2的值，以此类推。例如，行进方向的第一节车厢的值为1，如果行进方向的第二节车厢的值为3，消费者将放弃所有车厢的数据（即多节车厢的细节字段）。没有数据的车厢必须用一个有效的车厢序列号来表示，没有数据的字段应该被省略（另外，这些字段也可以包括在内，并设置为 "没有数据 "的值）。 <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。 |
+Carriage specific details, used for vehicles composed of several carriages.
 
-## _消息_警报
+**Caution:** this message is still **experimental**, and subject to change. It may be formally adopted in the future.
 
-一个警报，表明公共交通网络中的某种事件。
+**Fields**
 
-**领域**
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Identification of the carriage. Should be unique per vehicle. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **label** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | User visible label that may be shown to the passenger to help identify the carriage. Example: "7712", "Car ABC-32", etc... <br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **occupancy_status** | [OccupancyStatus](#enum-occupancystatus) | Optional | One | Occupancy status for this given carriage, in this vehicle. Default is set to `NO_DATA_AVAILABLE`.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.|
+| **occupancy_percentage** | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Occupancy percentage for this given carriage, in this vehicle. Follows the same rules as "VehiclePosition.occupancy_percentage". Use -1 in case data is not available for this given carriage.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **carriage_sequence** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | Identifies the order of this carriage with respect to the other carriages in the vehicle's list of CarriageStatus. The first carriage in the direction of travel must have a value of 1. The second value corresponds to the second carriage in the direction of travel and must have a value of 2, and so forth. For example, the first carriage in the direction of travel has a value of 1. If the second carriage in the direction of travel has a value of 3, consumers will discard data for all carriages (i.e., the multi_carriage_details field). Carriages without data must be represented with a valid carriage_sequence number and the fields without data should be omitted (alternately, those fields could also be included and set to the "no data" values). <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-| _**字段名**_                  | _**类型**_                                    | _**需要**_ | _**心数**_ | _**说明**_                                                                                                                                                                                                    |
-| -------------------------- | ------------------------------------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **活动时间**                   | [时间范围](#message-timerange)                  | 可选的      | 许多       | 警报应该显示给用户的时间。如果缺失，只要警报出现在feed中，就会显示。如果给出多个范围，警报将在所有范围内显示。                                                                                                                                                   |
-| **被通知的实体（informed_entity** | [EntitySelector](#message-entityselector)   | 需要       | 许多       | 我们应该通知其用户这个警报的实体。  必须提供至少一个informed_entity。                                                                                                                                                                 |
-| **原因**                     | [原因](#enum-cause)                           | 可选的      | 一        |                                                                                                                                                                                                             |
-| **效果**                     | [效果](#enum-effect)                          | 可选的      | 一        |                                                                                                                                                                                                             |
-| **编码**                     | [翻译的字符串](#message-translatedstring)         | 可选的      | 一        | 提供关于该警报的额外信息的URL。                                                                                                                                                                                           |
-| **header_text**            | [翻译的字符串](#message-translatedstring)         | 需要       | 一        | 警报的标题。这个纯文本字符串将被突出显示，例如用黑体字。                                                                                                                                                                                |
-| **description_text**       | [翻译的字符串](#message-translatedstring)         | 需要       | 一        | 警报的描述。这个纯文本的字符串将被格式化为警报的主体（或者在用户明确的 "展开 "请求中显示）。描述中的信息应该添加到标题的信息中。                                                                                                                                          |
-| **tts_header_text**        | [翻译的字符串](#message-translatedstring)         | 可选的      | 一        | 包含警报的标题的文本，用于文本到语音的实现。这个字段是header_text的文本到语音版本。它应该包含与header_text相同的信息，但格式化后可以作为文本到语音的读物（例如，去掉缩写，拼出数字，等等）。                                                                                                   |
-| **tts_description_text**   | [翻译的字符串](#message-translatedstring)         | 可选的      | 一        | 包含对警报的描述的文本，用于文本到语音的实现。这个字段是description_text的文本到语音的版本。它应该包含与description_text相同的信息，但是格式化后可以作为文本到语音的读物（例如，去掉缩写，拼出数字，等等）。                                                                                      |
-| **严重性_级别**                 | [严重程度等级（SeverityLevel](#enum-severitylevel) | 可选的      | 一        | 警报的严重程度。                                                                                                                                                                                                    |
-| **图像**                     | [翻译后的图像](#message-translatedimage)          | 可选的      | 一        | 沿着警报文本显示的翻译图像。用来直观地解释绕行、车站关闭等的警报效果。图片应该加强对警报的理解，不能成为基本信息的唯一位置。不鼓励以下类型的图片：主要包含文字的图片，没有增加额外信息的营销或品牌图片。 <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。                                       |
-| **图像_替代性文本**               | [翻译的字符串](#message-translatedstring)         | 可选的      | 一        | 描述链接的图像在该领域的外观的文本（例如，在该领域中）。 `image`字段中的链接图像的外观的文本（例如，在图像无法显示或用户因可访问性原因无法看到图像的情况下）。参见HTML [规范的alt图片文本](https://html.spec.whatwg.org/#alt). <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。 |
+## _message_ Alert
 
-## _enum_Cause
+An alert, indicating some sort of incident in the public transit network.
 
-该警报的原因。
+**Fields**
 
-**价值**
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **active_period** | [TimeRange](#message-timerange) | Optional | Many | Time when the alert should be shown to the user. If missing, the alert will be shown as long as it appears in the feed. If multiple ranges are given, the alert will be shown during all of them. |
+| **informed_entity** | [EntitySelector](#message-entityselector) | Required | Many | Entities whose users we should notify of this alert.  At least one informed_entity must be provided. |
+| **cause** | [Cause](#enum-cause) | Optional | One |
+| **effect** | [Effect](#enum-effect) | Optional | One |
+| **url** | [TranslatedString](#message-translatedstring) | Optional | One | The URL which provides additional information about the alert. |
+| **header_text** | [TranslatedString](#message-translatedstring) | Required | One | Header for the alert. This plain-text string will be highlighted, for example in boldface. |
+| **description_text** | [TranslatedString](#message-translatedstring) | Required | One | Description for the alert. This plain-text string will be formatted as the body of the alert (or shown on an explicit "expand" request by the user). The information in the description should add to the information of the header. |
+| **tts_header_text** | [TranslatedString](#message-translatedstring) | Optional | One | Text containing the alert's header to be used for text-to-speech implementations. This field is the text-to-speech version of header_text. It should contain the same information as header_text but formatted such that it can read as text-to-speech (for example, abbreviations removed, numbers spelled out, etc.) |
+| **tts_description_text** | [TranslatedString](#message-translatedstring) | Optional | One | Text containing a description for the alert to be used for text-to-speech implementations. This field is the text-to-speech version of description_text. It should contain the same information as description_text but formatted such that it can be read as text-to-speech (for example, abbreviations removed, numbers spelled out, etc.) |
+| **severity_level** | [SeverityLevel](#enum-severitylevel) | Optional | One | Severity of the alert. |
+| **image** | [TranslatedImage](#message-translatedimage) | Optional | One | TranslatedImage to be displayed along the alert text. Used to explain visually the alert effect of a detour, station closure, etc. The image should enhance the understanding of the alert and must not be the only location of essential information. The following types of images are discouraged : image containing mainly text, marketing or branded images that add no additional information. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **image_alternative_text** | [TranslatedString](#message-translatedstring) | Optional | One | Text describing the appearance of the linked image in the `image` field (e.g., in case the image can't be displayed or the user can't see the image for accessibility reasons). See the HTML [spec for alt image text](https://html.spec.whatwg.org/#alt). <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-| _**价值**_          |
-| ----------------- |
+
+## _enum_ Cause
+
+Cause of this alert.
+
+**Values**
+
+| _**Value**_ |
+|-------------|
 | **UNKNOWN_CAUSE** |
-| **其他原因**          |
-| **技术问题**          |
-| **罢工**            |
-| **示威**            |
-| **事故**            |
-| **假期**            |
-| **气候**            |
-| **维修**            |
-| **建筑工程**          |
-| **警务活动**          |
-| **医疗急救**          |
+| **OTHER_CAUSE** |
+| **TECHNICAL_PROBLEM** |
+| **STRIKE** |
+| **DEMONSTRATION** |
+| **ACCIDENT** |
+| **HOLIDAY** |
+| **WEATHER** |
+| **MAINTENANCE** |
+| **CONSTRUCTION** |
+| **POLICE_ACTIVITY** |
+| **MEDICAL_EMERGENCY** |
 
-## _枚举_效果
+## _enum_ Effect
 
-该问题对受影响实体的影响。
+The effect of this problem on the affected entity.
 
-**价值**
+**Values**
 
-| _**价值**_   |
-| ---------- |
-| **无服务**    |
-| **服务减少**   |
-| **重大延误**   |
-| **迂回**     |
-| **额外的服务**  |
-| **修改后的服务** |
-| **其他影响**   |
-| **未知的影响**  |
-| **停止移动**   |
-| **无影响**    |
-| **可访问性问题** |
+| _**Value**_ |
+|-------------|
+| **NO_SERVICE** |
+| **REDUCED_SERVICE** |
+| **SIGNIFICANT_DELAYS** |
+| **DETOUR** |
+| **ADDITIONAL_SERVICE** |
+| **MODIFIED_SERVICE** |
+| **OTHER_EFFECT** |
+| **UNKNOWN_EFFECT** |
+| **STOP_MOVED** |
+| **NO_EFFECT** |
+| **ACCESSIBILITY_ISSUE** |
 
-## _enum_SeverityLevel
+## _enum_ SeverityLevel
 
-警报的严重程度。
+The severity of the alert.
 
-**注意：**这个字段仍然是**试验性的**，可能会有变化。它可能会在未来被正式采用。
+**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
 
-**价值**
+**Values**
 
-| _**价值**_             |
-| -------------------- |
-| **unknown_severity** |
-| **INFO**             |
-| **警告**               |
-| **严重的**              |
+| _**Value**_ |
+|-------------|
+| **UNKNOWN_SEVERITY** |
+| **INFO** |
+| **WARNING** |
+| **SEVERE** |
 
-## _消息_时间范围
+## _message_ TimeRange
 
-一个时间区间。如果`时间t`大于或等于开始时间，小于结束时间，则认为该时间间隔在时间`t`处于活动状态。
+A time interval. The interval is considered active at time `t` if `t` is greater than or equal to the start time and less than the end time.
 
-**领域**
+**Fields**
 
-| _**字段名**_ | _**类型**_                                                                   | _**需要**_ | _**心数**_ | _**说明**_                                                                                             |
-| --------- | -------------------------------------------------------------------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------- |
-| **开始**    | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求    | 一        | 开始时间，以POSIX时间为单位（即从1970年1月1日00:00:00 UTC开始的秒数）。如果缺少，则间隔时间从负无穷开始。  如果提供了一个时间范围，必须提供开始或结束，两个字段都不能为空。   |
-| **结束**    | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求    | 一        | 结束时间，以POSIX时间为单位（即从1970年1月1日00:00:00 UTC起的秒数）。如果缺失，则时间间隔在正无穷大时结束。如果提供了一个时间范围，必须提供开始或结束时间--两个字段都不能为空。 |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **start** | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | Start time, in POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). If missing, the interval starts at minus infinity.  If a TimeRange is provided, either start or end must be provided - both fields cannot be empty. |
+| **end** | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | End time, in POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). If missing, the interval ends at plus infinity. If a TimeRange is provided, either start or end must be provided - both fields cannot be empty. |
 
-## _信息_位置
+## _message_ Position
 
-车辆的一个地理位置。
+A geographic position of a vehicle.
 
-**领域**
+**Fields**
 
-| _**字段名**_ | _**类型**_                                                               | _**需要**_ | _**心数**_ | _**说明**_                                                                                  |
-| --------- | ---------------------------------------------------------------------- | -------- | -------- | ----------------------------------------------------------------------------------------- |
-| **纬度**    | [浮动](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 需要       | 一        | 北纬度，在WGS-84坐标系中。                                                                          |
-| **经度**    | [浮动](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 需要       | 一        | 东经度数，在WGS-84坐标系中。                                                                         |
-| **方位**    | [浮动](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的      | 一        | 方位，单位为度，从真北顺时针方向，即0为北，90为东。这可以是罗盘的方位，也可以是通往下一站或中间位置的方向。这不应该从以前的位置序列中推断出来，客户可以从以前的数据中计算出来。 |
-| **路程表**   | [双重](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的      | 一        | 路程表值，以米为单位。                                                                               |
-| **速度**    | [浮动](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的      | 一        | 车辆测量的瞬时速度，单位是米/秒。                                                                         |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **latitude** | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | Degrees North, in the WGS-84 coordinate system. |
+| **longitude** | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | Degrees East, in the WGS-84 coordinate system. |
+| **bearing** | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Bearing, in degrees, clockwise from True North, i.e., 0 is North and 90 is East. This can be the compass bearing, or the direction towards the next stop or intermediate location. This should not be deduced from the sequence of previous positions, which clients can compute from previous data. |
+| **odometer** | [double](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Odometer value, in meters. |
+| **speed** | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Momentary speed measured by the vehicle, in meters per second. |
 
-## _消息_TripDescriptor
+## _message_ TripDescriptor
 
-一个描述符，用于识别GTFS旅程的单一实例。
+A descriptor that identifies a single instance of a GTFS trip.
 
-为了指定一个单独的行程实例，在许多情况下，一个`trip_id`本身就足够了。然而，下面的情况需要额外的信息来确定一个单独的旅程实例。
+To specify a single trip instance, in many cases a `trip_id` by itself is sufficient. However, the following cases require additional information to resolve to a single trip instance:
 
-*   对于在frequencies.txt中定义的旅程，除了`trip_id`，还需要start\_`date`和`start_time`.
-*   如果旅程持续超过24小时，或者延迟到与第二天的预定旅程相冲突，那么除了`trip_id`之外，还需要`start_date`。
-*   如果不能提供`trip_id`字段，那么`route_id`，`方向_id`，`start_date`，和`start_time`都必须提供。
+* For trips defined in frequencies.txt, `start_date` and `start_time` are required in addition to `trip_id`
+* If the trip lasts for more than 24 hours, or is delayed such that it would collide with a scheduled trip on the following day, then `start_date` is required in addition to `trip_id`
+* If the `trip_id` field can't be provided, then `route_id`, `direction_id`, `start_date`, and `start_time` must all be provided
 
-在所有的情况下，如果除了提供`trip_id`\_`route_id`之外，还提供route_id，那么`route_id`必须是GTFS trips.txt中分配给给定旅程的同一个`route_id`。
+In all cases, if `route_id` is provided in addition to `trip_id`, then the `route_id` must be the same `route_id` as assigned to the given trip in GTFS trips.txt.
 
-`trip_id`字段本身或与其他TripDescriptor字段结合，不能用来识别多个行程实例.例如，TripDescriptor不应该为GTFS frequencies.txtexact_times=0的旅程指定trip_id本身，因为start_time也需要解析为在一天中某个特定时间开始的单一旅程实例。如果TripDescriptor没有解析到一个行程实例（即，它解析到零个或多个行程实例），它被认为是一个错误，包含错误的TripDescriptor的实体可能被消费者丢弃。
+The `trip_id` field cannot, by itself or in combination with other TripDescriptor fields, be used to identify multiple trip instances. For example, a TripDescriptor should never specify trip_id by itself for GTFS frequencies.txt exact_times=0 trips because start_time is also required to resolve to a single trip instance starting at a specific time of the day. If the TripDescriptor does not resolve to a single trip instance (i.e., it resolves to zero or multiple trip instances), it is considered an error and the entity containing the erroneous TripDescriptor may be discarded by consumers.
 
-注意，如果ttrip_id不知道，那么TripUpdate中的车站序列id是不够的，还必须提供stop_id。此外，必须提供绝对的到达/离开时间。
+Note that if the trip_id is not known, then station sequence ids in TripUpdate are not sufficient, and stop_ids must be provided as well. In addition, absolute arrival/departure times must be provided.
 
-TripDescriptor.route_id不能在Alert EntitySelector中使用，以指定影响一条路线的所有车次的路线范围的警报--使用EntitySelector.route_id代替。
+TripDescriptor.route_id cannot be used within an Alert EntitySelector to specify a route-wide alert that affects all trips for a route - use EntitySelector.route_id instead.
 
-**领域**
+**Fields**
 
-| _**字段名**_      | _**类型**_                                                                   | _**需要**_ | _**心数**_ | _**说明**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| -------------- | -------------------------------------------------------------------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **trip_id**    | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar)      | 有条件要求    | 一        | 这个选择器所指的GTFS资料中的trip_id。对于非基于频率的旅程（未在GTFS frequencies.txt中定义的旅程），这个字段足以唯一地识别该旅程。对于在GTFS frequencies.txt中定义的基于频率的旅行，trip_id,start_time, 和 start_date都是必须的。对于基于计划的旅行（未在GTFS frequencies.txt中定义的旅行），只有当旅行可以由route_id，方向_id，start_time和开始日期的组合来唯一识别，并且所有这些字段都提供时，才可以省略行程trip_id。当TripUpdate中的schedule_relationship是duplicated时，trip_id标识了静态GTFS中要重复的旅程。当schedule_relationship在VehiclePosition中被DUPLICATED时，trip_id标识新的重复旅程，并且必须包含相应的TripUpdate.TripProperties.trip_id的值。                     |
-| **route_id**   | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar)      | 有条件要求    | 一        | 这个选择器指的是GTFS中的route_id。如果trip_idid被省略，route_id，方向_id，start_time和schedule_relationship=SCHEDULED都必须被设置来识别一个旅程实例。TripDescriptor.route_id不应该被用在Alert EntitySelector中，来指定一个影响所有行程的路线范围内的警报--使用EntitySelector.route_id代替。                                                                                                                                                                                                                                                                     |
-| **方向_id**      | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求    | 一        | GTFSfeedtrips.txt檔案中的direction_id，表示此選擇器所指的車程的方向。如果trip_id被省略，必须提供方向_id。 <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。<br/>                                                                                                                                                                                                                                                                                                                                           |
-| **start_time** | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar)      | 有条件要求    | 一        | 这个旅程实例的最初计划开始时间.当ttrip_id对应的是一个非基于频率的旅程时，这个字段应该被省略或者等于GTFS文件中的值。当trip_id对应于GTFS frequencies.txt中定义的基于频率的行程时，start_time是必需的，必须为行程更新和车辆位置指定。如果行程对应于exact_times=1条GTFS记录，那么start_time必须比frequencies.txt中相应时间段的start_time晚一些倍数(包括0)的headway_secs。如果行程对应exact_times=0，那么它的start_time可以是任意的，最初预计是该行程的第一个出发。一旦建立，这个基于频率的exact_times=0旅程的start_time应该被认为是不可改变的，即使第一次出发的时间改变了 -- 这个时间的改变可能会反映在StopTimeUpdate中。如果trip_id被省略，start_time必须被提供。这个字段的格式和语义与GTFSfrequencies.txt相同，例如，11:15:35或25:15:35。 |
-| **start_date** | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar)      | 有条件要求    | 一        | 这个旅程实例的开始日期，格式为YYYMMDD。对于预定行程（没有在GTFS frequencies.txt中定义的行程），这个字段必须被提供，以区分晚到与第二天预定行程相撞的行程。例如，对于每天8:00和20:00发车的列车，如果晚点12小时，就会有两个不同的班次在同一时间。这个字段可以提供，但对于不可能发生这种碰撞的时间表来说不是强制性的--例如，一个按小时运行的Schedule，车辆晚点一小时就不再被认为与Schedule有关。这个字段对于GTFS frequencies.txt中定义的基于频率的车次是必须的。如果trip_id被省略，必须提供start_date。                                                                                                                                                                                         |
-| **计划关系**       | [时间安排关系](#enum-schedulerelationship-1)                                     | 可选的      | 一        | 这个行程和静态Schedule之间的关系。如果TripDescriptor被提供在Alert `EntitySelector`，该 `schedule_relationship`字段会被消费者在识别匹配的旅程实例时忽略.                                                                                                                                                                                                                                                                                                                                                                           |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **trip_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The trip_id from the GTFS feed that this selector refers to. For non frequency-based trips (trips not defined in GTFS frequencies.txt), this field is enough to uniquely identify the trip. For frequency-based trips defined in GTFS frequencies.txt, trip_id, start_time, and start_date are all required. For scheduled-based trips (trips not defined in GTFS frequencies.txt), trip_id can only be omitted if the trip can be uniquely identified by a combination of route_id, direction_id, start_time, and start_date, and all those fields are provided. When schedule_relationship is DUPLICATED within a TripUpdate, the trip_id identifies the trip from static GTFS to be duplicated. When schedule_relationship is DUPLICATED within a VehiclePosition, the trip_id identifies the new duplicate trip and must contain the value for the corresponding TripUpdate.TripProperties.trip_id. |
+| **route_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The route_id from the GTFS that this selector refers to. If trip_id is omitted, route_id, direction_id, start_time, and schedule_relationship=SCHEDULED must all be set to identify a trip instance. TripDescriptor.route_id should not be used within an Alert EntitySelector to specify a route-wide alert that affects all trips for a route - use EntitySelector.route_id instead. |
+| **direction_id** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The direction_id from the GTFS feed trips.txt file, indicating the direction of travel for trips this selector refers to. If trip_id is omitted, direction_id must be provided. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.<br>|
+| **start_time** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The initially scheduled start time of this trip instance. When the trip_id corresponds to a non-frequency-based trip, this field should either be omitted or be equal to the value in the GTFS feed. When the trip_id correponds to a frequency-based trip defined in GTFS frequencies.txt, start_time is required and must be specified for trip updates and vehicle positions. If the trip corresponds to exact_times=1 GTFS record, then start_time must be some multiple (including zero) of headway_secs later than frequencies.txt start_time for the corresponding time period. If the trip corresponds to exact_times=0, then its start_time may be arbitrary, and is initially expected to be the first departure of the trip. Once established, the start_time of this frequency-based exact_times=0 trip should be considered immutable, even if the first departure time changes -- that time change may instead be reflected in a StopTimeUpdate. If trip_id is omitted, start_time must be provided. Format and semantics of the field is same as that of GTFS/frequencies.txt/start_time, e.g., 11:15:35 or 25:15:35. |
+| **start_date** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The start date of this trip instance in YYYYMMDD format. For scheduled trips (trips not defined in GTFS frequencies.txt), this field must be provided to disambiguate trips that are so late as to collide with a scheduled trip on a next day. For example, for a train that departs 8:00 and 20:00 every day, and is 12 hours late, there would be two distinct trips on the same time. This field can be provided but is not mandatory for schedules in which such collisions are impossible - for example, a service running on hourly schedule where a vehicle that is one hour late is not considered to be related to schedule anymore. This field is required for frequency-based trips defined in GTFS frequencies.txt. If trip_id is omitted, start_date must be provided. |
+| **schedule_relationship** | [ScheduleRelationship](#enum-schedulerelationship-1) | Optional | One | The relation between this trip and the static schedule. If TripDescriptor is provided in an Alert `EntitySelector`, the `schedule_relationship` field is ignored by consumers when identifying the matching trip instance.
 
-## _enum_ScheduleRelationship
+## _enum_ ScheduleRelationship
 
-这个行程和静态Schedule之间的关系。如果一个行程是按照临时Schedule完成的，没有反映在GTFS中，那么它不应该被标记为SCHEDULED，而是标记为ADDED。
+The relation between this trip and the static schedule. If a trip is done in accordance with temporary schedule, not reflected in GTFS, then it shouldn't be marked as SCHEDULED, but marked as ADDED.
 
-**价值**
+**Values**
 
-| _**价值**_ | _**评论**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **已安排**  | 正在按照其GTFS Schedule运行的行程，或者足够接近预定的行程而与之相关。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **增加**   | 一个额外的行程，是在运行Schedule之外增加的，例如，替换一个坏掉的车辆或应对突然的客运量。 _注意：目前，对于使用这种模式的馈送，行为是没有规定的。在GTFSGitHub上有一些讨论 [(1)](https://github.com/google/transit/issues/106) [(2)](https://github.com/google/transit/pull/221) [(3)](https://github.com/google/transit/pull/219)围绕着完全指定或废弃ADDED行程进行讨论，当这些讨论结束后，文档将被更新。_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| **未安排**  | 一个正在运行的旅程，没有与之相关的Schedule--这个值用来识别GTFS frequencies.txt中定义的确切时间=0的旅程。它不应该被用来描述GTFS frequencies.txtxt中没有定义的旅程，或者GTFS frequencies.txt中确切时间=1的旅程。带有 `schedule_relationship: UNSCHEDULED`的旅程也必须设置所有的StopTimeUpdates `schedule_relationship: UNSCHEDULED`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| **取消的**  | 一个在Schedule中存在但被删除的旅程。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| **重复的**  | 一个新的旅程，除了服务开始日期和时间外，与现有的计划旅程相同。使用时 `TripUpdate.TripProperties.trip_id`, `TripUpdate.TripProperties.start_date`, 和 `TripUpdate.TripProperties.start_time`一起使用，从静态GTFS中复制一个现有的行程，但是在不同的服务日期和/或时间开始。如果在(CSV)GTFS(在)中与原始旅程有关的服务，允许复制一个旅程。 `calendar.txt`或 `calendar_dates.txt`)在未来30天内运营。被复制的行程通过以下方式确定 `TripUpdate.TripDescriptor.trip_id`. <br/><br/>这个枚举并不修改现有的行程。 `TripUpdate.TripDescriptor.trip_id`- 如果生产者想取消原行程，它必须发布一个单独的 `TripUpdate`值为CANCELED。在GTFS中定义的旅行 `frequencies.txt`与 `exact_times`是空的或等于 `0`不能被重复。新行程的 `VehiclePosition.TripDescriptor.trip_id`中的值必须包含与之匹配的值. `TripUpdate.TripProperties.trip_id`和 `VehiclePosition.TripDescriptor.ScheduleRelationship`也必须被设置为 `DUPLICATED`.  <br/><br/>_现有的生产者和消费者使用ADDED枚举来表示重复的旅行，必须遵循 [迁移指南](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/examples/migration-duplicated.md)来过渡到DUPLICATED 枚举。_ |
+| _**Value**_ | _**Comment**_ |
+|-------------|---------------|
+| **SCHEDULED** | Trip that is running in accordance with its GTFS schedule, or is close enough to the scheduled trip to be associated with it. |
+| **ADDED** | An extra trip that was added in addition to a running schedule, for example, to replace a broken vehicle or to respond to sudden passenger load. *NOTE: Currently, behavior is unspecified for feeds that use this mode. There are discussions on the GTFS GitHub [(1)](https://github.com/google/transit/issues/106) [(2)](https://github.com/google/transit/pull/221) [(3)](https://github.com/google/transit/pull/219) around fully specifying or deprecating ADDED trips and the documentation will be updated when those discussions are finalized.* |
+| **UNSCHEDULED** | A trip that is running with no schedule associated to it - this value is used to identify trips defined in GTFS frequencies.txt with exact_times = 0. It should not be used to describe trips not defined in GTFS frequencies.txt, or trips in GTFS frequencies.txt with exact_times = 1. Trips with `schedule_relationship: UNSCHEDULED` must also set all StopTimeUpdates `schedule_relationship: UNSCHEDULED`|
+| **CANCELED** | A trip that existed in the schedule but was removed. |
+| **DUPLICATED** | A new trip that is the same as an existing scheduled trip except for service start date and time. Used with `TripUpdate.TripProperties.trip_id`, `TripUpdate.TripProperties.start_date`, and `TripUpdate.TripProperties.start_time` to copy an existing trip from static GTFS but start at a different service date and/or time. Duplicating a trip is allowed if the service related to the original trip in (CSV) GTFS (in `calendar.txt` or `calendar_dates.txt`) is operating within the next 30 days. The trip to be duplicated is identified via `TripUpdate.TripDescriptor.trip_id`. <br><br> This enumeration does not modify the existing trip referenced by `TripUpdate.TripDescriptor.trip_id` - if a producer wants to cancel the original trip, it must publish a separate `TripUpdate` with the value of CANCELED. Trips defined in GTFS `frequencies.txt` with `exact_times` that is empty or equal to `0` cannot be duplicated. The `VehiclePosition.TripDescriptor.trip_id` for the new trip must contain the matching value from `TripUpdate.TripProperties.trip_id` and `VehiclePosition.TripDescriptor.ScheduleRelationship` must also be set to `DUPLICATED`.  <br><br>*Existing producers and consumers that were using the ADDED enumeration to represent duplicated trips must follow the [migration guide](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/examples/migration-duplicated.md) to transition to the DUPLICATED enumeration.* |
 
-## _信息_VehicleDescriptor
+## _message_ VehicleDescriptor
 
-执行行程的车辆的识别信息。
+Identification information for the vehicle performing the trip.
 
-**领域**
+**Fields**
 
-| _**字段名**_ | _**类型**_                                                              | _**需要**_ | _**心数**_ | _**说明**_                                                               |
-| --------- | --------------------------------------------------------------------- | -------- | -------- | ---------------------------------------------------------------------- |
-| **id**    | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的      | 一        | 车辆的内部系统标识。应该是 **唯一的**每辆车，用于跟踪车辆在系统中的运行情况。这个标识不应该对终端用户可见；为此，使用 **标签**字段 |
-| **标签**    | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的      | 一        | 用户可见的标签，也就是说，必须向乘客展示的东西，以帮助识别正确的车辆。                                    |
-| **车牌**    | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的      | 一        | 车辆的车牌。                                                                 |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | Internal system identification of the vehicle. Should be **unique** per vehicle, and is used for tracking the vehicle as it proceeds through the system. This id should not be made visible to the end-user; for that purpose use the **label** field |
+| **label** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | User visible label, i.e., something that must be shown to the passenger to help identify the correct vehicle. |
+| **license_plate** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Optional | One | The license plate of the vehicle. |
 
-## _消息_EntitySelector
+## _message_ EntitySelector
 
-GTFS馈送中的一个实体的选择器。字段的值应该对应于GTFS馈送中的适当字段。必须至少给出一个指定器。如果给了几个，它们应该被解释为由逻辑`和`运算符连接。 此外，指定者的组合必须与GTFS馈送中的相应信息相匹配。 换句话说，为了使警报适用于GTFS中的一个实体，它必须匹配所有提供的EntitySelector字段。 例如，一个EntitySelector包括字段`route_id`:"5" 和`route_type:"3 "`只适用于`route_id`:"`5 "`的公交车--它不适用任何其他route`_type`:`"3".` 如果生产者想让一个警报适用于`route_id`:"5 "以及`route`\_type:"`3"`，它应该提供两个单独的EntitySelectors，一个引用`route_id`:"5 "和另一个参考`route_type。"3".`
+A selector for an entity in a GTFS feed. The values of the fields should correspond to the appropriate fields in the GTFS feed. At least one specifier must be given. If several are given, they should be interpreted as being joined by the logical `AND` operator.  Additionally, the combination of specifiers must match the corresponding information in the GTFS feed.  In other words, in order for an alert to apply to an entity in GTFS it must match all of the provided EntitySelector fields.  For example, an EntitySelector that includes the fields `route_id: "5"` and `route_type: "3"` applies only to the `route_id: "5"` bus - it does not apply to any other routes of `route_type: "3"`.  If a producer wants an alert to apply to `route_id: "5"` as well as `route_type: "3"`, it should provide two separate EntitySelectors, one referencing `route_id: "5"` and another referencing `route_type: "3"`.
 
-至少要给出一个指定项--EntitySelector中的所有字段不能为空。
+At least one specifier must be given - all fields in an EntitySelector cannot be empty.
 
-**领域**
+**Fields**
 
-| _**字段名**_     | _**类型**_                                                                   | _**需要**_ | _**心数**_ | _**说明**_                                                                                                                                                           |
-| ------------- | -------------------------------------------------------------------------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **agency_id** | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar)      | 有条件要求    | 一        | 该选择器所指的GTFS馈送中的agency_id。                                                                                                                                          |
-| **route_id**  | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar)      | 有条件要求    | 一        | 这个选择器所指的GTFS中的route_id。如果提供方向_id，也必须提供route_id。                                                                                                                    |
-| **路线_类型**     | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 有条件要求    | 一        | 这个选择器所指的GTFS中的路由_类型。                                                                                                                                               |
-| **方向_id**     | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求    | 一        | 来自GTFSfeedtrips.txt文件的方向_，用于选择路线的一个方向的所有车次，由route_id 指定。如果提供方向_id，route_id也必须提供。 <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。<br/>             |
-| **行程**        | [TripDescriptor](#message-tripdescriptor)                                  | 有条件要求    | 一        | 这个选择器指的是GTFS中的旅程实例。这个TripDescriptor必须解析为GTFS数据中的一个旅程实例(例如，生产者不能只为exact_times=0的旅程提供一个trip_id)。如果ScheduleRelationship字段在这个TripDescriptor中被填入，当消费者试图识别GTFS旅程时，它将被忽略。 |
-| **stop_id**   | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar)      | 有条件要求    | 一        | 这个选择器所指的GTFS馈送中的stop_id。                                                                                                                                           |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **agency_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The agency_id from the GTFS feed that this selector refers to.
+| **route_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The route_id from the GTFS that this selector refers to. If direction_id is provided, route_id must also be provided.
+| **route_type** | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The route_type from the GTFS that this selector refers to.
+| **direction_id** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The direction_id from the GTFS feed trips.txt file, used to select all trips in one direction for a route, specified by route_id. If direction_id is provided, route_id must also be provided. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.<br>|
+| **trip** | [TripDescriptor](#message-tripdescriptor) | Conditionally required | One | The trip instance from the GTFS that this selector refers to. This TripDescriptor must resolve to a single trip instance in the GTFS data (e.g., a producer cannot provide only a trip_id for exact_times=0 trips). If the ScheduleRelationship field is populated within this TripDescriptor it will be ignored by consumers when attempting to identify the GTFS trip.
+| **stop_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | The stop_id from the GTFS feed that this selector refers to.
 
-## _消息_翻译字符串
+## _message_ TranslatedString
 
-一个国际化的消息，包含每个语言版本的文本片段或一个URL。消息中的一个字符串将被拾取。解析过程如下。如果用户界面language与某一翻译的language代码相匹配，则挑选第一个匹配的翻译。如果默认的用户界面language（例如，英语）与翻译的language代码相匹配，则挑选第一个匹配的翻译。如果某个翻译有一个未指定的language代码，则该翻译被选中。
+An internationalized message containing per-language versions of a snippet of text or a URL. One of the strings from a message will be picked up. The resolution proceeds as follows: If the UI language matches the language code of a translation, the first matching translation is picked. If a default UI language (e.g., English) matches the language code of a translation, the first matching translation is picked. If some translation has an unspecified language code, that translation is picked.
 
-**领域**
+**Fields**
 
-| _**字段名**_ | _**类型**_                   | _**需要**_ | _**心数**_ | _**说明**_    |
-| --------- | -------------------------- | -------- | -------- | ----------- |
-| **翻译**    | [译文](#message-translation) | 需要       | 许多       | 必须提供至少一个翻译。 |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **translation** | [Translation](#message-translation) | Required | Many | At least one translation must be provided. |
 
-## _消息_翻译
+## _message_ Translation
 
-一个映射到language的本地化字符串。
+A localized string mapped to a language.
 
-| _**字段名**_    | _**类型**_                                                              | _**需要**_ | _**心数**_ | _**说明**_                                                                                             |
-| ------------ | --------------------------------------------------------------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------- |
-| **文本**       | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 需要       | 一        | 一个包含消息的UTF-8字符串。                                                                                     |
-| **language** | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求    | 一        | BCP-47language代码。如果language未知或对饲料完全不做国际化处理，则可以省略。最多允许一个翻译有一个未指定的language标签--如果有一个以上的翻译，必须提供language。 |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **text** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | A UTF-8 string containing the message. |
+| **language** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | BCP-47 language code. Can be omitted if the language is unknown or if no internationalization is done at all for the feed. At most one translation is allowed to have an unspecified language tag - if there is more than one translation, the language must be provided. |
 
-## _消息_TranslatedImage
+## _message_ TranslatedImage
 
-一个国际化的消息，包含一个图像的每个语言版本。消息中的一个图像将被拾取。解决的过程如下。如果用户界面language与某一翻译的language代码相匹配，则挑选第一个匹配的翻译。如果默认的用户界面language（例如，英语）与翻译的language代码相匹配，则挑选第一个匹配的翻译。如果某些翻译有一个未指定的language代码，则挑选该翻译。
+An internationalized message containing per-language versions of an image. One of the images from a message will be picked up. The resolution proceeds as follows: If the UI language matches the language code of a translation, the first matching translation is picked. If a default UI language (e.g., English) matches the language code of a translation, the first matching translation is picked. If some translation has an unspecified language code, that translation is picked.
 
-**注意：**该信息仍处于**试验阶段**，可能会发生变化。它可能会在未来被正式采用。
+**Caution:** this message is still **experimental**, and subject to change. It may be formally adopted in the future.
 
-**领域**
+**Fields**
 
-| _**字段名**_ | _**类型**_                         | _**需要**_ | _**心数**_ | _**说明**_        |
-| --------- | -------------------------------- | -------- | -------- | --------------- |
-| **本地化图像** | [本地化图像](#message-localizedimage) | 需要       | 许多       | 必须提供至少一个本地化的图像。 |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **localized_image** | [LocalizedImage](#message-localizedimage) | Required | Many | At least one localized image must be provided. |
 
-## _消息_本地化图像
+## _message_ LocalizedImage
 
-一个映射到某种language本地化图像URL。
+A localized image URL mapped to a language.
 
-| _**字段名**_      | _**类型**_                                                              | _**需要**_ | _**心数**_ | _**说明**_                                                                                                                                                                                                                                                                                                   |
-| -------------- | --------------------------------------------------------------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **编码**         | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 需要       | 一        | 包含链接到图像的URL的字符串。链接的图像必须小于2MB。如果一个图像发生了足够大的变化，需要在消费者方面进行更新，生产者必须将URL更新为一个新的URL。<br/><br/>URL应该是一个完全合格的URL，包括http:// 或https://，URL中的任何特殊字符必须被正确转义。参见以下内容 [https://www.w3.org/Addressing/URL/4_URI_Recommentations.html](https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for)关于如何创建完全合格的URL值的描述。 |
-| **media_type** | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 需要       | 一        | IANA媒体类型，以指定要显示的图像类型。该类型必须以 "image/"开头                                                                                                                                                                                                                                                                     |
-| **language**   | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求    | 一        | BCP-47language代码。如果language未知或对饲料完全不做国际化处理，则可以省略。最多允许一个翻译有一个未指定的language标签--如果有一个以上的翻译，必须提供language。                                                                                                                                                                                                       |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **url** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | String containing an URL linking to an image. The image linked must less than 2MB. If an image changes in a significant enough way that an update is required on the consumer side, the producer must update the URL to a new one.<br><br> The URL should be a fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See the following https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.  |
+| **media_type** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | IANA media type as to specify the type of image to be displayed. The type must start with "image/" |
+| **language** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | BCP-47 language code. Can be omitted if the language is unknown or if no internationalization is done at all for the feed. At most one translation is allowed to have an unspecified language tag - if there is more than one translation, the language must be provided. |
 
-## _消息_形状
+## _message_ Shape
 
-描述当形状不是(CSV)GTFS的一部分时，车辆所走的物理路径，例如临时绕行。形状属于Trips，由一个编码的折线组成，以便更有效地传输。 形状不需要准确地截取站点的位置，但是一个行程中的所有站点应该位于该行程形状的一小段距离内，即接近连接形状点的直线段。
+Describes the physical path that a vehicle takes when the shape is not part of the (CSV) GTFS, such as for an ad-hoc detour. Shapes belong to Trips and consist of an encoded polyline for more efficient transmission.  Shapes do not need to intercept the location of Stops exactly, but all Stops on a trip should lie within a small distance of the shape for that trip, i.e. close to straight line segments connecting the shape points
 
-**注意：**这条消息仍然是**试验性的**，可能会有变化。它可能在未来被正式采用。<br/>。
+**Caution:** this message is still **experimental**, and subject to change. It may be formally adopted in the future.<br>.
 
-**领域**
+**Fields**
 
-| _**字段名**_    | _**类型**_                                                              | _**需要**_ | _**心数**_ | _**说明**_                                                                                                                                                                               |
-| ------------ | --------------------------------------------------------------------- | -------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **shape_id** | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 需要       | 一        | 形状的标识符。必须不同于任何 `shape_id`在(CSV)GTFS中定义。 <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。                                                                               |
-| **编码的折线**    | [弦](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 需要       | 一        | 形状的编码折线表示。这条折线必须至少包含两个点。关于编码的折线的更多信息，见 <https://developers.google.com/maps/documentation/utilities/polylinealgorithm> <br/><br/>**注意事项。**此字段仍是 **实验性**它可能在未来被正式采用，并且会有变化。它可能会在未来被正式采用。 |
+| _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+| **shape_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One |  Identifier of the shape. Must be different than any `shape_id` defined in the (CSV) GTFS. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
+| **encoded_polyline** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | Encoded polyline representation of the shape. This polyline must contain at least two points. For more information about encoded polylines, see https://developers.google.com/maps/documentation/utilities/polylinealgorithm <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
