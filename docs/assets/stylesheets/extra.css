@@ -408,6 +408,10 @@ c {
     color: #4385FF;
 }
 
+.md-banner__inner.md-grid.md-typeset {
+    line-height: 200%;
+}
+
 .admonition.warning {
     margin-right: 55px;
 }
