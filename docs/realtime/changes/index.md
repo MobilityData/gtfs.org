@@ -23,13 +23,6 @@ Active proposals for new features in GTFS Realtime. Join the discussions on <a h
 
 <div class="row">
     <div class="active-container">
-        <h3 class="title"><a class="no-icon" href="https://github.com/google/transit/pull/340" target="_blank">GTFS-rt : wheelchair access update</a></h3>
-        <p class="maintainer">#340 opened on Jul 6, 2022 by <a class="no-icon" href="https://github.com/flaktack" target="_blank">flaktack</a></p>
-    </div>
-</div>
-
-<div class="row">
-    <div class="active-container">
         <h3 class="title"><a class="no-icon" href="https://github.com/google/transit/pull/332" target="_blank">Add cause_detail and effect_detail to Alerts</a></h3>
         <p class="maintainer">#332 opened on May 31, 2022 by <a class="no-icon" href="https://github.com/mckenzie-maidl-ibigroup" target="_blank">mckenzie-maidl-ibigroup</a></p>
     </div>
@@ -47,6 +40,19 @@ Active proposals for new features in GTFS Realtime. Join the discussions on <a h
 ## Recently Merged Proposals &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Recently merged proposals that are now features of the [official GTFS Realtime specification](../reference). See the complete [Revision History](../process#revision-history) for more.
+
+<div class="row">
+    <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/340" class="no-icon" target="_blank">GTFS-rt : wheelchair access update</a></h3>
+        <p class="maintainer">#340 by <a href="https://github.com/flaktack" class="no-icon" target="_blank">flaktack</a> was merged on Jul 25, 2022</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Adds realtime information on trip accessibility</li>
+            <li>If provided, overwrites <code>trips.wheelchair_accessible</code> in the GTFS Schedule dataset</li>
+        </ul>
+    </div>
+</div>
 
 <div class="row">
     <div class="leftcontainer">
@@ -94,19 +100,6 @@ Recently merged proposals that are now features of the [official GTFS Realtime s
     <div class="featurelist">
         <ul>
             <li>Provide the occupancy level of individual cars in transit vehicles (such as individual carriages in trains or subways)</li>
-        </ul>
-    </div>
-</div>
-
-<div class="row">
-    <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/230" class="no-icon" target="_blank">Label GTFS-RT ADDED trips as not fully specified</a></h3>
-        <p class="maintainer">#230 by <a href="https://github.com/barbeau" class="no-icon" target="_blank">barbeau</a> was merged on Jul 15, 2020</p>
-    </div>
-    <div class="featurelist">
-        <ul>
-            <li>Adds a label to the ADDED enumeration to clarify that the behavior of added trips is still being discussed and is not yet specified. The label also directs users to GitHub discussions regarding the ADDED enumeration 
-</li>
         </ul>
     </div>
 </div>
