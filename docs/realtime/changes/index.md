@@ -51,7 +51,7 @@ Recently merged proposals that are now features of the [official GTFS Realtime s
     </div>
     <div class="featurelist">
         <ul>
-            <li></li>
+            <li>Adds descriptions to cause and effects of Alerts</li>
         </ul>
     </div>
 </div>

@@ -49,7 +49,9 @@ Recently merged proposals that are now features of the [official GTFS Schedule s
     </div>
     <div class="featurelist">
         <ul>
-            <li></li>
+            <li>Adds new <code>transfer_type</code>`s for trip to trip transfers to define if a user can do an "in seat transfer" when the same vehicle is operating two consecutive trips and the user can stay onboard</li>
+            <li>Can define when in-seat transfers aren't allowed but can link together two different trips operationally
+            </li>
         </ul>
     </div>
 </div>
