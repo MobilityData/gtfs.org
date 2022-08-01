@@ -19,7 +19,7 @@ Recommended practices are organized into two primary sections
 
 * Feeds should be published at a public, permanent URL
 * The URL should be directly accessible without requiring a login to access the feed. If desired, API keys may be used but registration for API keys should be automated and available to all.
-* Maintain persistent identifiers (id fields) within a GTFS Realtime feed (e.g., `FeedEntity.id`, `VehicleDescriptor.id`, `CarriageDetails.id`) across feed iterations.
+* Maintain persistent identifiers (id fields) within a GTFS Realtime feed (e.g., FeedEntity.id, VehicleDescriptor.id, CarriageDetails.id) across feed iterations.
 * GTFS Realtime feeds should be refreshed at least once every 30 seconds, or whenever the information represented within the feed (position of a vehicle) changes, whichever is more frequent. VehiclePositions tend to change more frequently than other feed entities and should be updated as frequently as possible. If the content has not changed, the feed should be updated with a new `FeedHeader.timestamp` reflecting that the information is still relevant as of that timestamp.
 * Data within a GTFS Realtime feed should not be older than 90 seconds for Trip Updates and Vehicle Positions and not older than 10 minutes for Service Alerts. For example, even if a producer is continuously refreshing the `FeedHeader.timestamp` timestamp every 30 seconds, the age of VehiclePositions within that feed should not be older than 90 seconds.
 * The server hosting GTFS Realtime data should be reliable and consistently return validly-formatted protobuf-encoded responses. Fewer than 1% of responses should be invalid (protobuf errors or fetching errors).
