@@ -54,12 +54,16 @@ h1, h2, h3 {
 
 /* inline code style */
 code:not(.highlight code) {
-    color: #212121 !important;
+    color: #212121;
     /* background-color: rgba(255, 255, 255, 0); */
     /* font-weight: 500 !important; */
     /* color: var(--md-typesetcolor); */
     background-color: #EEF1F2;
     border-radius: 5px;
+}
+
+a > code {
+    color: #4386FF !important;
 }
 
 .md-content a {
@@ -402,4 +406,12 @@ c {
 }
 .md-banner > * > a {
     color: #4385FF;
+}
+
+.md-banner__inner.md-grid.md-typeset {
+    line-height: 200%;
+}
+
+.admonition.warning {
+    margin-right: 55px;
 }
