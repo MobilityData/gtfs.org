@@ -17,16 +17,18 @@ To contribute to GTFS, read the [Specification Amendment Process](../process) an
 	The official specification, reference and documentation are written in English. If a translation to a different language differs from the English original, the latter takes precedence. All communication is performed in English.
 
 ## Active Proposals &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
+<!-- 
+Active proposals for new features in GTFS Schedule.  -->
 
-Active proposals for new features in GTFS Schedule. Join the discussions on <a href="https://github.com/google/transit" target="_blank">Github</a> !
+Join the discussions on <a href="https://github.com/google/transit/pulls" target="_blank">Github</a> !
 
-<div class="row">
+<!-- <div class="row">
     <div class="active-container">
         <h3 class="title"><a class="no-icon" href="https://github.com/google/transit/pull/303" target="_blank">Add trip-to-trip transfers with in-seat option</a></h3>
         <p class="maintainer">#303 opened on Jan 26, 2022 by <a class="no-icon" href="https://github.com/gcamp" target="_blank">gcamp</a></p>
     </div>
 </div>
-<div class="row"></div>
+<div class="row"></div> -->
 
 <!-- <div class="row no-active">
     <div class="no-active-container">
@@ -39,6 +41,18 @@ Active proposals for new features in GTFS Schedule. Join the discussions on <a h
 ## Recently Merged Proposals &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Recently merged proposals that are now features of the [official GTFS Schedule specification](../reference). See the complete [Revision History](../process#revision-history) for more.
+
+<div class="row">
+    <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">Add trip-to-trip transfers with in-seat option</a></h3>
+        <p class="maintainer">#303 by <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> was merged on Jun 26, 2022</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+</div>
 
 <div class="row">
     <div class="leftcontainer">
@@ -87,18 +101,6 @@ Recently merged proposals that are now features of the [official GTFS Schedule s
     <div class="featurelist">
         <ul>
             <li>Translations for text fields, localized URLs, and contact information</li>
-        </ul>
-    </div>
-</div>
-
-<div class="row">
-    <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/192" class="no-icon" target="_blank">GTFS-Attributions (core only)</a></h3>
-        <p class="maintainer">#192 by <a href="https://github.com/timMillet" class="no-icon" target="_blank">timMillet</a> was merged on Dec 20, 2019</p>
-    </div>
-    <div class="featurelist">
-        <ul>
-            <li>Allows attributions by name of producers, operators, or authorities of a GTFS Schedule dataset per field, row, or value</li>
         </ul>
     </div>
 </div>

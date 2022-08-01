@@ -109,7 +109,7 @@ Metadata about a feed, included in feed messages.
 Determines whether the current fetch is incremental.
 
 *   **FULL_DATASET**: this feed update will overwrite all preceding realtime information for the feed. Thus this update is expected to provide a full snapshot of all known realtime information.
-*   **DIFFERENTIAL**: currently, this mode is **unsupported** and behavior is **unspecified** for feeds that use this mode. There are discussions on the [GTFS Realtime mailing list](https://groups.google.com/group/gtfs-realtime) around fully specifying the behavior of DIFFERENTIAL mode and the documentation will be updated when those discussions are finalized.
+*   **DIFFERENTIAL**: currently, this mode is **unsupported** and behavior is **unspecified** for feeds that use this mode. There are discussions on the [GTFS Realtime mailing list](http://groups.google.com/group/gtfs-realtime) around fully specifying the behavior of DIFFERENTIAL mode and the documentation will be updated when those discussions are finalized.
 
 **Values**
 
@@ -148,7 +148,6 @@ Depending on the value of ScheduleRelationship, a TripUpdate can specify:
 The updates can be for future, predicted arrival/departure events, or for past events that already occurred. In most cases information about past events is a measured value thus its uncertainty value is recommended to be 0\. Although there could be cases when this does not hold so it is allowed to have uncertainty value different from 0 for past events. If an update's uncertainty is not 0, either the update is an approximate prediction for a trip that has not completed or the measurement is not precise or the update was a prediction for the past that has not been verified after the event occurred.
 
 If a vehicle is serving multiple trips within the same block (for more information about trips and blocks, please refer to [GTFS trips.txt](/schedule/reference/#tripstxt)):
-
 * the feed should include a TripUpdate for the trip currently being served by the vehicle. Producers are encouraged to include TripUpdates for one or more trips after the current trip in this vehicle's block if the producer is confident in the quality of the predictions for these future trip(s). Including multiple TripUpdates for the same vehicle avoids prediction "pop-in" for riders as the vehicle transitions from one trip to another and also gives riders advance notice of delays that impact downstream trips (e.g., when the known delay exceeds planned layover times between trips).
 * the respective TripUpdate entities are not required to be added to the feed in the same order that they are scheduled in the block. For example, if there are trips with `trip_ids` 1, 2, and 3 that all belong to one block, and the vehicle travels trip 1, then trip 2, and then trip 3, the `trip_update` entities may appear in any order - for example, adding trip 2, then trip 1, and then trip 3 is allowed.
 
@@ -187,7 +186,6 @@ Uncertainty applies equally to both time and delay. The uncertainty roughly spec
 Realtime update for arrival and/or departure events for a given stop on a trip. Please also refer to the general discussion of stop time updates in the [TripDescriptor](#message-tripdescriptor) and [trip updates entities](/realtime/trip-updates) documentation.
 
 Updates can be supplied for both past and future events. The producer is allowed, although not required, to drop past events.
-
 The update is linked to a specific stop either through stop_sequence or stop_id, so one of these fields must necessarily be set.  If the same stop_id is visited more than once in a trip, then stop_sequence should be provided in all StopTimeUpdates for that stop_id on that trip.
 
 **Fields**
@@ -338,8 +336,10 @@ An alert, indicating some sort of incident in the public transit network.
 |------------------|------------|----------------|-------------------|-------------------|
 | **active_period** | [TimeRange](#message-timerange) | Optional | Many | Time when the alert should be shown to the user. If missing, the alert will be shown as long as it appears in the feed. If multiple ranges are given, the alert will be shown during all of them. |
 | **informed_entity** | [EntitySelector](#message-entityselector) | Required | Many | Entities whose users we should notify of this alert.  At least one informed_entity must be provided. |
-| **cause** | [Cause](#enum-cause) | Optional | One |
-| **effect** | [Effect](#enum-effect) | Optional | One |
+| **cause** | [Cause](#enum-cause) | Conditionally Required | One | If cause_detail is included, then Cause must also be included.
+| **cause_detail** | [TranslatedString](#message-translatedstring) | Optional | One | Description of the cause of the alert that allows for agency-specific language; more specific than the Cause. If cause_detail is included, then Cause must also be included. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
+| **effect** | [Effect](#enum-effect) | Conditionally Required | One | If effect_detail is included, then Effect must also be included.
+| **effect_detail** | [TranslatedString](#message-translatedstring) | Optional | One | Description of the effect of the alert that allows for agency-specific language; more specific than the Effect. If effect_detail is included, then Effect must also be included. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
 | **url** | [TranslatedString](#message-translatedstring) | Optional | One | The URL which provides additional information about the alert. |
 | **header_text** | [TranslatedString](#message-translatedstring) | Required | One | Header for the alert. This plain-text string will be highlighted, for example in boldface. |
 | **description_text** | [TranslatedString](#message-translatedstring) | Required | One | Description for the alert. This plain-text string will be formatted as the body of the alert (or shown on an explicit "expand" request by the user). The information in the description should add to the information of the header. |
@@ -436,7 +436,6 @@ A geographic position of a vehicle.
 A descriptor that identifies a single instance of a GTFS trip.
 
 To specify a single trip instance, in many cases a `trip_id` by itself is sufficient. However, the following cases require additional information to resolve to a single trip instance:
-
 * For trips defined in frequencies.txt, `start_date` and `start_time` are required in addition to `trip_id`
 * If the trip lasts for more than 24 hours, or is delayed such that it would collide with a scheduled trip on the following day, then `start_date` is required in addition to `trip_id`
 * If the `trip_id` field can't be provided, then `route_id`, `direction_id`, `start_date`, and `start_time` must all be provided
@@ -554,7 +553,7 @@ A localized image URL mapped to a language.
 
 | _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
 |------------------|------------|----------------|-------------------|-------------------|
-| **url** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | String containing an URL linking to an image. The image linked must less than 2MB. If an image changes in a significant enough way that an update is required on the consumer side, the producer must update the URL to a new one.<br><br> The URL should be a fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See the following https://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.  |
+| **url** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | String containing an URL linking to an image. The image linked must less than 2MB. If an image changes in a significant enough way that an update is required on the consumer side, the producer must update the URL to a new one.<br><br> The URL should be a fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See the following http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.  |
 | **media_type** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Required | One | IANA media type as to specify the type of image to be displayed. The type must start with "image/" |
 | **language** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | Conditionally required | One | BCP-47 language code. Can be omitted if the language is unknown or if no internationalization is done at all for the feed. At most one translation is allowed to have an unspecified language tag - if there is more than one translation, the language must be provided. |
 

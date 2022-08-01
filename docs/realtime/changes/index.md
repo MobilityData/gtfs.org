@@ -19,15 +19,17 @@ To contribute to GTFS Realtime, read the [Specification Amendment Process](../pr
 
 ## Active Proposals &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
 
-Active proposals for new features in GTFS Realtime. Join the discussions on <a href="https://github.com/google/transit" target="_blank">Github</a> !
+<!-- Active proposals for new features in GTFS Realtime.  -->
 
-<div class="row">
+Join the discussions on <a href="https://github.com/google/transit/pulls" target="_blank">Github</a> !
+
+<!-- <div class="row">
     <div class="active-container">
         <h3 class="title"><a class="no-icon" href="https://github.com/google/transit/pull/332" target="_blank">Add cause_detail and effect_detail to Alerts</a></h3>
         <p class="maintainer">#332 opened on May 31, 2022 by <a class="no-icon" href="https://github.com/mckenzie-maidl-ibigroup" target="_blank">mckenzie-maidl-ibigroup</a></p>
     </div>
 </div>
-<div class="row"></div>
+<div class="row"></div> -->
 
 <!-- <div class="row no-active">
     <div class="no-active-container">
@@ -40,6 +42,19 @@ Active proposals for new features in GTFS Realtime. Join the discussions on <a h
 ## Recently Merged Proposals &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Recently merged proposals that are now features of the [official GTFS Realtime specification](../reference). See the complete [Revision History](../process#revision-history) for more.
+
+
+<div class="row">
+    <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/332" class="no-icon" target="_blank">Add cause_detail and effect_detail to Alerts</a></h3>
+        <p class="maintainer">#332 by <a href="https://github.com/mckenzie-maidl-ibigroup" class="no-icon" target="_blank">mckenzie-maidl-ibigroup</a> was merged on Jun 26, 2022</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+</div>
 
 <div class="row">
     <div class="leftcontainer">
@@ -88,18 +103,6 @@ Recently merged proposals that are now features of the [official GTFS Realtime s
     <div class="featurelist">
         <ul>
             <li>Provide the predicted occupancy of transit vehicles at future stops based on current or historical data</li>
-        </ul>
-    </div>
-</div>
-
-<div class="row">
-    <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/237" class="no-icon" target="_blank">Support multi-car crowding</a></h3>
-        <p class="maintainer">#237 by <a href="https://github.com/lfontolliet" class="no-icon" target="_blank">lfontolliet</a> was merged on Sep 10, 2020</p>
-    </div>
-    <div class="featurelist">
-        <ul>
-            <li>Provide the occupancy level of individual cars in transit vehicles (such as individual carriages in trains or subways)</li>
         </ul>
     </div>
 </div>

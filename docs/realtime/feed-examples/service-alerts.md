@@ -61,7 +61,7 @@ entity {
       # multiple languages/translations supported
       translation {
         # page hosted outside of Google (at provider/agency, etc.)
-        text: "https://www.sometransitagency/alerts"
+        text: "http://www.sometransitagency/alerts"
         language: "en"
       }
     }

@@ -70,8 +70,7 @@ func main() {
         tripUpdate := entity.TripUpdate
         trip := tripUpdate.Trip
         tripId := trip.TripId
-        fmt.Printf("Trip ID: %s
-", *tripId)
+        fmt.Printf("Trip ID: %s\n", *tripId)
     }
 }
 ```
