@@ -20,7 +20,10 @@ theme:
      - navigation.top
      - toc.integrate
      - content.tabs.link
+     - search.suggest
   custom_dir: theme_overrides
+  language: en
+  locale: en
 extra_css:
   - assets/stylesheets/extra.css
 extra:
@@ -67,7 +70,8 @@ markdown_extensions:
       alternate_style: true 
 
 plugins:
-  - search
+  - search:
+      lang: en
   - redirects:
       redirect_maps:
         'gtfs-background.md': 'background.md'
@@ -105,19 +109,41 @@ plugins:
       hooks:
         on_config: "hooks.on_config:deploy_hooks"
   - i18n:
-      default_language: en
+      default_language: 'en'
       default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, false]
+      search_reconfigure: false
+      material_alternate: true
       languages:
-        en: English
-        id: Bahasa Indonesia
-        de: Deutsch
-        es: Español
-        fr: Français
-        pt_BR: Português - Brasil
-        ru: Русский
-        zh: 中文 - 简体
-        ja: 日本語
-        ko: 한국어
+        en: 
+          name: English
+          build: true
+        id: 
+          name: Bahasa Indonesia
+          build: true
+        de: 
+          name: Deutsch
+          build: true
+        es: 
+          name: Español
+          build: true
+        fr: 
+          name: Français
+          build: true
+        pt_BR: 
+          name: Português - Brasil
+          build: true
+        ru: 
+          name: Русский
+          build: true
+        zh: 
+          name: 中文 - 简体
+          build: true
+        ja: 
+          name: 日本語
+          build: true
+        ko: 
+          name: 한국어
+          build: true
       nav_translations:
         id:
           Home: Rumah
@@ -367,7 +393,7 @@ plugins:
           SIRI: SIRI
           Multimodal: 멀티모달
           Other: 다른
-        
+
 nav:
 - Home: index.md
 - GTFS Schedule:
