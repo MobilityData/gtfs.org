@@ -21,7 +21,6 @@ theme:
      - toc.integrate
      - content.tabs.link
      - search.suggest
-     - search.highlight
   custom_dir: theme_overrides
   language: en
   locale: en
