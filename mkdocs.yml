@@ -83,7 +83,7 @@ plugins:
         'examples.md': 'schedule/examples/index.md'
         'testing.md': 'resources/gtfs.md'
         'best-practices.md': 'schedule/best-practices.md'
-        'data-examples.md': 'schedule/data-examples.md'
+        'data-examples.md': 'schedule/examples.md'
         'changes.md': 'extensions.md'
         'reference/realtime/changes.md': 'realtime/changes/index.md'
         'reference/static/changes.md': 'schedule/changes/index.md'
@@ -403,7 +403,14 @@ nav:
   - Examples:
     - schedule/examples/index.md
     - Example GTFS Feed: schedule/example-feed.md
-    - Data Examples: schedule/data-examples.md
+    - Routes, stops, and trips: schedule/examples/routes-stops-trips.md
+    - Continuous stops: schedule/examples/continuous-stops.md
+    - Fares v1: schedule/examples/fares-v1.md
+    - Fares v2: schedule/examples/fares-v2.md
+    - Frequencies: schedule/examples/frequencies.md
+    - Translations: schedule/examples/translations.md
+    - Feed information: schedule/examples/feed-info.md
+    - Dataset attributions: schedule/examples/attributions.md
   - Changes:
     - schedule/changes/index.md
     - Specification Amendment Process: schedule/process.md
