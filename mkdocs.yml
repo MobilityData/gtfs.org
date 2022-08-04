@@ -110,7 +110,7 @@ plugins:
         on_config: "hooks.on_config:deploy_hooks"
   - i18n:
       default_language: 'en'
-      default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, true]
+      default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, false]
       search_reconfigure: false
       material_alternate: true
       languages:
