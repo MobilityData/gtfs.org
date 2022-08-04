@@ -110,7 +110,7 @@ plugins:
         on_config: "hooks.on_config:deploy_hooks"
   - i18n:
       default_language: 'en'
-      default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, false]
+      default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, true]
       search_reconfigure: false
       material_alternate: true
       languages:
@@ -403,7 +403,14 @@ nav:
   - Examples:
     - schedule/examples/index.md
     - Example GTFS Feed: schedule/example-feed.md
-    - Data Examples: schedule/data-examples.md
+    - Routes, stops, and trips: schedule/examples/routes-stops-trips.md
+    - Continuous stops: schedule/examples/continuous-stops.md
+    - Fares v1: schedule/examples/fares-v1.md
+    - Fares v2: schedule/examples/fares-v2.md
+    - Frequencies: schedule/examples/frequencies.md
+    - Translations: schedule/examples/translations.md
+    - Feed information: schedule/examples/feed-info.md
+    - Dataset attributions: schedule/examples/attributions.md
   - Changes:
     - schedule/changes/index.md
     - Specification Amendment Process: schedule/process.md
