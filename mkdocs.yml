@@ -105,9 +105,6 @@ plugins:
         'realtime/guiding-principles.md': 'realtime/process.md'
         'realtime/revision-history': 'realtime/process.md'
         'realtime/extensions': 'realtime/process.md'
-  - mkdocs-simple-hooks:
-      hooks:
-        on_config: "hooks.on_config:deploy_hooks"
   - i18n:
       default_language: 'en'
       default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, false]
