@@ -22,7 +22,7 @@ jobs:
       with:
         # Token for the repo
         # Can be passed in using $\{{ secrets.GITHUB_TOKEN }}
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.MY_GITHUB_TOKEN }}
         # Destination branch to push changes
         branch: gh-pages-test
         # Use force push to fully overwrite the destination branch
