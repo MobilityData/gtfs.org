@@ -2,20 +2,32 @@ name: build and deploy v2
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
         with:
-          python-version: 3.x
-      - run: pip install \
-               mkdocs \
-               mkdocs-material \
-               mkdocs-static-i18n \
-               mkdocs-redirects
-      - run: |
+          submodules: "recursive" 
+          fetch-depth: 0       # Fetch all history for .GitInfo and .Lastmod
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.10.5'
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip     # install pip
+          python3 -m pip install mkdocs            # install mkdocs 
+          python3 -m pip install mkdocs-material   # install material theme
+          python3 -m pip install mkdocs-static-i18n
+          python3 -m pip install mkdocs-redirects
+      - name: Build site
+        run: |
           mkdocs build
           swift scripts/fixSearchIndex.swift
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
