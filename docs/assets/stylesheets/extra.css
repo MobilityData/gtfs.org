@@ -415,3 +415,10 @@ c {
 .admonition.warning {
     margin-right: 55px;
 }
+
+.announce-link {
+    color: white !important;
+}
+.announce-link:hover {
+    text-decoration: underline !important;
+}
