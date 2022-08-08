@@ -16,6 +16,7 @@ jobs:
       run: |
         mkdocs build
         swift scripts/fixSearchIndex.swift
+        git config --global --add safe.directory /github/workspace
     - name: Force push to destination branch
       uses: ad-m/github-push-action@v0.5.0
       with:
