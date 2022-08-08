@@ -14,7 +14,6 @@ jobs:
         pip install -r requirements.txt
     - name: Build the website
       run: |
-        git config --global --add safe.directory /github/workspace
         mkdocs build
         swift scripts/fixSearchIndex.swift
     - name: Force push to destination branch
