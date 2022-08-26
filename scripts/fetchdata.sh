@@ -54,22 +54,6 @@ echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/mas
   
 `cat $PAGE`" > $PAGE
 
-### GTFS Schedule data examples (schedule/data-examples)
-curl https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/examples/data-examples.md -o docs/schedule/data-examples.md
-sed -i.bak "s,../reference.md#routestxt,../reference/#routestxt,g" docs/schedule/data-examples.md
-sed -i.bak "s,victor-valley-transit.svg,../assets/victor-valley-transit.svg,g" docs/schedule/data-examples.md
-sed -i.bak "s,../reference.md#stopstxt,../reference/#stopstxt,g" docs/schedule/data-examples.md
-sed -i.bak "s,../reference.md#stoptimestxt,../reference/#stop_timestxt,g" docs/schedule/data-examples.md
-sed -i.bak "s,../reference.md#stop_timestxt,../reference/#stop_timestxt,g" docs/schedule/data-examples.md
-
-#### edit this page
-PAGE=docs/schedule/data-examples.md
-echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs/spec/en/examples/data-examples.md\" title=\"Edit this page\" target=\"_blank\">
-    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
-  </a>
-  
-`cat $PAGE`" > $PAGE
-
 # GTFS REALTIME
 
 ## GTFS Realtime overview (realtime/)
