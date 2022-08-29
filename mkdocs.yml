@@ -1,4 +1,5 @@
 site_name: General Transit Feed Specification
+site_url: https://gtfs.org
 repo_url: https://github.com/google/transit
 
 theme:
