@@ -272,6 +272,26 @@ c {
     .md-footer {
         z-index: 1;
     }
+
+    .landing-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .usage {
+        display: flex;
+    }
+
+    .usage-list {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .usage-video { 
+        margin-right: 20px;
+        margin-left: 20px;
+    }
 }
 
 @media only screen and (max-width: 479px) {
@@ -421,4 +441,23 @@ c {
 }
 .announce-link:hover {
     text-decoration: underline !important;
+}
+
+.icon {
+    position: relative;
+    top: 0.15em;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+#gtfs-schedule-validator {
+    margin-bottom: 0;
+}
+
+.usage-list > ol > li:not(:last-child) {
+        margin-bottom: 0.7em !important;
 }
