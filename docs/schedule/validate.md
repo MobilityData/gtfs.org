@@ -6,8 +6,8 @@
 
 This free and open-source canonical GTFS Schedule validator is maintained by [MobilityData](https://mobilitydata.org) with the help of the GTFS community. Use it to evaluate your dataset against the official [GTFS Reference](reference.md) and [Best Practices](best-practices.md). It provides an easy-to-use validation report in an HTML format that can be opened in the browser and shared with other parties.
 
-
-<img class="center" src="../../assets/validator_animation.gif" width="150">
+<!-- <img class="center" src="../../assets/validator_animation.gif" width="150"> -->
+<br>
 
 <div class="landing-page">
     <a class="button" href="">Download for Mac &nbsp;&nbsp;<img class="icon" src="../../assets/apple.svg" width="20"/></a><a class="button" href="">Download for Windows &nbsp;&nbsp;<img class="icon" src="../../assets/windows.svg" width="20"/></a><a class="button" href="">Download for Ubuntu &nbsp;&nbsp;<img class="icon" src="../../assets/ubuntu.svg" width="20"/></a>
