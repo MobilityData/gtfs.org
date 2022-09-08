@@ -273,7 +273,7 @@ c {
         z-index: 1;
     }
 
-    .landing-page {
+    .usage-buttons {
         display: flex;
         justify-content: center;
         align-items: center;

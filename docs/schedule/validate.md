@@ -9,7 +9,7 @@ This free and open-source canonical GTFS Schedule validator is maintained by [Mo
 <!-- <img class="center" src="../../assets/validator_animation.gif" width="150"> -->
 <br>
 
-<div class="landing-page">
+<div class="usage-buttons">
     <a class="button" href="">Download for Mac &nbsp;&nbsp;<img class="icon" src="../../assets/apple.svg" width="20"/></a><a class="button" href="">Download for Windows &nbsp;&nbsp;<img class="icon" src="../../assets/windows.svg" width="20"/></a><a class="button" href="">Download for Ubuntu &nbsp;&nbsp;<img class="icon" src="../../assets/ubuntu.svg" width="20"/></a>
 </div>
 
