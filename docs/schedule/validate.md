@@ -10,7 +10,7 @@ This free and open-source canonical GTFS Schedule validator is maintained by [Mo
 <br>
 
 <div class="usage-buttons">
-    <a class="button" href="">Download for Mac &nbsp;&nbsp;<img class="icon" src="../../assets/apple.svg" width="20"/></a><a class="button" href="">Download for Windows &nbsp;&nbsp;<img class="icon" src="../../assets/windows.svg" width="20"/></a><a class="button" href="">Download for Ubuntu &nbsp;&nbsp;<img class="icon" src="../../assets/ubuntu.svg" width="20"/></a>
+    <a class="button" href="https://github.com/MobilityData/gtfs-validator/releases/latest/download/Installer.macos.zip">Download for Mac &nbsp;&nbsp;<img class="icon" src="../../assets/apple.svg" width="20"/></a><a class="button" href="https://github.com/MobilityData/gtfs-validator/releases/latest/download/Installer.windows.zip">Download for Windows &nbsp;&nbsp;<img class="icon" src="../../assets/windows.svg" width="20"/></a><a class="button" href="https://github.com/MobilityData/gtfs-validator/releases/latest/download/Installer.ubuntu.zip">Download for Ubuntu &nbsp;&nbsp;<img class="icon" src="../../assets/ubuntu.svg" width="20"/></a>
 </div>
 
 <hr>
@@ -36,7 +36,6 @@ This free and open-source canonical GTFS Schedule validator is maintained by [Mo
 </div>
 
 ## Use This Validator as Part of Your Data Pipeline
-
 
 To see more instructions on how to use this tool in your data pipeline, please visit the [GitHub repository](https://github.com/MobilityData/gtfs-validator).
 
