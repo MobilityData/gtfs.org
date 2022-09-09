@@ -28,5 +28,7 @@ Provide a clear and concise description of what actually happened.
 **Screenshots:** 
 Visual examples can help us better understand the issue.
 
-**Platform:** 
-What is the operating system your machine? What browser (Chrome, Internet Explorer, Firefox) did you use?
+**Environment** 
+
+- Browser version:
+- OS version:
