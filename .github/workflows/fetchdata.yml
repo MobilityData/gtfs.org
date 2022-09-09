@@ -18,4 +18,4 @@ jobs:
           title: 'Automated content update'
           branch-suffix: timestamp
           delete-branch: true
-          assignees: scmcca
+          reviewers: scmcca
