@@ -348,13 +348,13 @@ rm agency-tools.md apps.md community.md data.md getting-started.md gtfs-realtime
 cd ../..
 curl https://raw.githubusercontent.com/CUTR-at-USF/awesome-transit/master/README.md -o docs/resources/awesome.md
 
-## split awesome by heading level 2 (requires installation of gcsplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
-gcsplit --prefix='awesome' --suffix-format='%02d.md' docs/resources/awesome.md /^'## '/ "{*}"
+## split awesome by heading level 2 (requires installation of csplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
+csplit --prefix='awesome' --suffix-format='%02d.md' docs/resources/awesome.md /^'## '/ "{*}"
 mv awesome* docs/resources
 rm -r docs/resources/awesome.md
 
-## split resources by heading level 3 (requires installtion of gcsplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
-gcsplit --prefix='resources' --suffix-format='%02d.md' docs/resources/awesome00.md /^'### '/ "{*}"
+## split resources by heading level 3 (requires installtion of csplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
+csplit --prefix='resources' --suffix-format='%02d.md' docs/resources/awesome00.md /^'### '/ "{*}"
 mv resources* docs/resources
 rm -r docs/resources/awesome00.md
 
