@@ -411,6 +411,7 @@ nav:
   - Changes:
     - schedule/changes/index.md
     - Specification Amendment Process: schedule/process.md
+  - Validate: schedule/validate.md
 - GTFS Realtime: 
   - Getting Started: realtime/index.md
   - Reference: realtime/reference.md
