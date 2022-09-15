@@ -10,9 +10,6 @@ assignees: ''
 ## **Content request**
 
 **Is your content request related to editing existing documentation?**
-If you wish to propose edits directly to a piece of content, click on the pencil icon at the top right of the webpage you wish to edit. This icon will redirect you to the document's source of truth on GitHub for editing.
-
-**Is your content request related to a problem? Please describe.**
 Provide a clear and concise description of what the problem is. Ex. This section is unclear because [...]
 
 **Is your content request related to adding  documentation? Please describe what's missing.**
