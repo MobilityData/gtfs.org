@@ -13,6 +13,7 @@ To help in understanding the GTFS specification and in producing tools that read
     - [Fares v1](fares-v1)
     - [Fares v2](fares-v2)
     - [Frequencies](frequencies)
+    - [Pathways](pathways)
     - [Translations](translations)
     - [Feed information](feed-info)
     - [Dataset attributions](attributions)

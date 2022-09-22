@@ -405,6 +405,7 @@ nav:
     - Fares v1: schedule/examples/fares-v1.md
     - Fares v2: schedule/examples/fares-v2.md
     - Frequencies: schedule/examples/frequencies.md
+    - Pathways: schedule/examples/pathways.md
     - Translations: schedule/examples/translations.md
     - Feed information: schedule/examples/feed-info.md
     - Dataset attributions: schedule/examples/attributions.md
