@@ -163,6 +163,10 @@ c {
     min-width: 12em;
   }
 
+.usage-buttons > .button {
+    background-color: #172f50 !important;
+}
+
 /* space between feedback widget icons */
 .md-feedback__inner > * {
     display: flex;
@@ -183,7 +187,7 @@ c {
 }
 
 /* external link icon */
-.md-content a[href^="https://"]:not(.img, .pencil-link, .no-icon) {
+.md-content a[href^="https://"]:not(.img, .pencil-link, .no-icon, .usage-buttons > .button) {
     background: url(../external.svg) center right no-repeat;
     padding-right: 13px;
     background-size: 0.65em;
@@ -271,6 +275,26 @@ c {
     }
     .md-footer {
         z-index: 1;
+    }
+
+    .usage-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .usage {
+        display: flex;
+    }
+
+    .usage-list {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .usage-video { 
+        margin-right: 20px;
+        margin-left: 20px;
     }
 }
 
@@ -414,4 +438,30 @@ c {
 
 .admonition.warning {
     margin-right: 55px;
+}
+
+.announce-link {
+    color: white !important;
+}
+.announce-link:hover {
+    text-decoration: underline !important;
+}
+
+.icon {
+    position: relative;
+    top: 0.15em;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+#gtfs-schedule-validator {
+    margin-bottom: 0;
+}
+
+.usage-list > ol > li:not(:last-child) {
+        margin-bottom: 0.7em !important;
 }
