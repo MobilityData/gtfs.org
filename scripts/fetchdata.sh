@@ -54,22 +54,6 @@ echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/mas
   
 `cat $PAGE`" > $PAGE
 
-### GTFS Schedule data examples (schedule/data-examples)
-curl https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/examples/data-examples.md -o docs/schedule/data-examples.md
-sed -i.bak "s,../reference.md#routestxt,../reference/#routestxt,g" docs/schedule/data-examples.md
-sed -i.bak "s,victor-valley-transit.svg,../assets/victor-valley-transit.svg,g" docs/schedule/data-examples.md
-sed -i.bak "s,../reference.md#stopstxt,../reference/#stopstxt,g" docs/schedule/data-examples.md
-sed -i.bak "s,../reference.md#stoptimestxt,../reference/#stop_timestxt,g" docs/schedule/data-examples.md
-sed -i.bak "s,../reference.md#stop_timestxt,../reference/#stop_timestxt,g" docs/schedule/data-examples.md
-
-#### edit this page
-PAGE=docs/schedule/data-examples.md
-echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/master/gtfs/spec/en/examples/data-examples.md\" title=\"Edit this page\" target=\"_blank\">
-    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
-  </a>
-  
-`cat $PAGE`" > $PAGE
-
 # GTFS REALTIME
 
 ## GTFS Realtime overview (realtime/)
@@ -359,19 +343,18 @@ echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/gtfs-realt
 
 
 # AWESOME-TRANSIT RESOURCE LIST
-rm docs/resources/*
+cd docs/resources
+rm agency-tools.md apps.md community.md data.md getting-started.md gtfs-realtime.md gtfs.md hardware.md multimodal.md other.md sdk.md siri.md software-for-creating-apis.md visualizations.md
+cd ../..
 curl https://raw.githubusercontent.com/CUTR-at-USF/awesome-transit/master/README.md -o docs/resources/awesome.md
 
-## remove toc
-# sed -i.bak -e '9,39d' docs/resources/awesome.md
-
-## split awesome by heading level 2 (requires installation of gcsplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
-gcsplit --prefix='awesome' --suffix-format='%02d.md' docs/resources/awesome.md /^'## '/ "{*}"
+## split awesome by heading level 2 (requires installation of csplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
+csplit --prefix='awesome' --suffix-format='%02d.md' docs/resources/awesome.md /^'## '/ "{*}"
 mv awesome* docs/resources
 rm -r docs/resources/awesome.md
 
-## split resources by heading level 3 (requires installtion of gcsplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
-gcsplit --prefix='resources' --suffix-format='%02d.md' docs/resources/awesome00.md /^'### '/ "{*}"
+## split resources by heading level 3 (requires installtion of csplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
+csplit --prefix='resources' --suffix-format='%02d.md' docs/resources/awesome00.md /^'### '/ "{*}"
 mv resources* docs/resources
 rm -r docs/resources/awesome00.md
 
@@ -382,12 +365,26 @@ sed -i.bak 's/###/#/g' docs/resources/resources*
 ## remove all temporary .bak files
 find . -name "*.bak" -type f -delete
 
+cd docs/resources
+rm awesome01.md awesome02.md resources00.md resources01.md
+cd ../..
+
+### replace header
+new_header='# Other Resources'
+sed -i.bak "1 s/.*/$new_header/" docs/resources/resources15.md
+
+## edit this page buttons
+for file in docs/resources/resources*; do
+    PAGE=$file
+    echo "<a class=\"pencil-link\" href=\"https://github.com/CUTR-at-USF/awesome-transit/edit/master/README.md\" title=\"Edit this page\" target=\"_blank\">
+    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+  </a>
+  
+`cat $PAGE`" > $PAGE
+done
+
 ## rename split resources files
 strings=(
-    license
-    about
-    temp
-    toc
     getting-started
     community
     data
@@ -403,35 +400,11 @@ strings=(
     multimodal
     other
 )
-files=(docs/resources/*)
+files=(docs/resources/resources*)
 let "count=0"
 for newname in "${strings[@]}"; do
     mv "${files[$count]}" "docs/resources/$newname.md"
     let "count++" 
-done
-
-## replace headers
-new_header='# Resources'
-sed -i.bak "1 s/.*/$new_header/" docs/resources/temp.md
-new_header='# Other Resources'
-sed -i.bak "1 s/.*/$new_header/" docs/resources/other.md
-
-sed -i.bak 's/# Table of Contents/## Table of Contents/g' docs/resources/toc.md
-sed -i.bak 's/# About/## About/g' docs/resources/about.md
-sed -i.bak 's/# License/## License/g' docs/resources/license.md
-
-cat docs/resources/temp.md docs/resources/toc.md docs/resources/about.md docs/resources/license.md > docs/resources/index.md
-
-rm -r docs/resources/temp.md docs/resources/toc.md docs/resources/license.md docs/resources/about.md
-
-## edit this page buttons
-for file in docs/resources/*; do
-    PAGE=$file
-    echo "<a class=\"pencil-link\" href=\"https://github.com/CUTR-at-USF/awesome-transit/edit/master/README.md\" title=\"Edit this page\" target=\"_blank\">
-    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
-  </a>
-  
-`cat $PAGE`" > $PAGE
 done
 
 # ALL FILES
