@@ -1,0 +1,21 @@
+name: Fetch data and create pull request
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  fetchdata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Fetch data
+        run: bash ./scripts/fetchdata.sh
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v4.1.1
+        with:
+          title: 'Automated content update'
+          branch-suffix: timestamp
+          delete-branch: true
+          reviewers: scmcca
