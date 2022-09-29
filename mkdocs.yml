@@ -402,6 +402,7 @@ nav:
     - Example GTFS Feed: schedule/example-feed.md
     - Routes, stops, and trips: schedule/examples/routes-stops-trips.md
     - Continuous stops: schedule/examples/continuous-stops.md
+    - Text-to-speech: schedule/examples/text-to-speech.md
     - Fares v1: schedule/examples/fares-v1.md
     - Fares v2: schedule/examples/fares-v2.md
     - Frequencies: schedule/examples/frequencies.md
