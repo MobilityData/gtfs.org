@@ -135,6 +135,9 @@ plugins:
         zh: 
           name: 中文 - 简体
           build: true
+        zh_TW:
+          name: 中文 - 繁體
+          build: true
         ja: 
           name: 日本語
           build: true
@@ -333,6 +336,34 @@ plugins:
           Visualizations: 视觉化
           SIRI: シリーズ
           Multimodal: 多式联运
+          Other: 其他
+        zh_TW:
+          Home: 家
+          Resources: 資源
+          Extensions: 擴展
+          About: 關於
+          Reference: 參考
+          Best Practices: 最佳實踐
+          Examples: 例子
+          Example GTFS Feed: 示例 GTFS 提要
+          Data Examples: 數據示例
+          Changes: 變化
+          Specification Amendment Process: 規範修改過程
+          Feed Entities: 飼料實體
+          Feed Examples: 提要示例
+          Protobuf: 原型緩衝區
+          Language Bindings: 語言綁定
+          Getting Started: 入門
+          Community: 社區
+          Data: 數據
+          Software for Creating APIs: 用於創建 API 的軟件
+          Agency Tools: 代理工具
+          Hardware: 硬件
+          Apps: 應用
+          SDKs: SDK
+          Visualizations: 可視化
+          SIRI: 西里
+          Multimodal: 多式聯運
           Other: 其他
         ja:
           Home: ホーム
