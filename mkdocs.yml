@@ -101,10 +101,10 @@ plugins:
         'realtime/code-examples/ruby.md': 'realtime/language-bindings/ruby.md'
         'realtime/code-examples/php.md': 'realtime/language-bindings/php.md'
         'schedule/guiding-principles.md': 'schedule/process.md'
-        'schedule/revision-history': 'schedule/process.md'
+        'schedule/revision-history.md': 'schedule/process.md'
         'realtime/guiding-principles.md': 'realtime/process.md'
-        'realtime/revision-history': 'realtime/process.md'
-        'realtime/extensions': 'realtime/process.md'
+        'realtime/revision-history.md': 'realtime/process.md'
+        'realtime/extensions.md': 'realtime/process.md'
   - i18n:
       default_language: 'en'
       default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, false]
