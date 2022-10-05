@@ -15,6 +15,7 @@ To edit site content, click on the pencil icon on the top right corner of the we
 1. Clone this repository: `git clone https://github.com/MobilityData/gtfs.org`
 1. Ensure you have an up-to-date version of pip: `pip install pip`
 1. Have [`requirements.txt`](requirements.txt) installed: `pip install ~/mobilitydata/gtfs.org/requirements.txt`
+1. Have [Material for MkDocs Insiders](https://squidfunk.github.io/mkdocs-material/insiders/) installed. Substitute `${GH_TOKEN}` with MobilityData's personal access token: `pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git`
 1. In the terminal, navigate to the repository directory (`~/mobilitydata/gtfs.org`) and run this command to update the content for the specification references and best practices: `bash scripts/fetchdata.sh`
 1. To run the site locally: `mkdocs serve`
 1. To deploy the site to GitHub Pages: `mkdocs gh-deploy`
