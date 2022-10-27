@@ -91,7 +91,7 @@ The file above represents this in GTFS with the following fields:
 
 - A transfer is possible to and from legs that are paid for by a PRESTO card (`ttc_trip_presto`)
 - The `transfer_count` is set to `-1` since there is no limit on the number of transfers permitted
-- The `transfer_duration` is set to `7200` seconds, which is equivalent to 2 hours 
+- The `duration_limit` is set to `7200` seconds, which is equivalent to 2 hours 
 - The `duration_limit_type` is set to `3`, since riders have to tap their PRESTO card as soon as they enter the fare-paid zone or as soon as they board a bus or streetcar. This corresponds to the arrival fare validation of the current leg and the arrival fare validation of the next leg.
 - The `fare_transfer_type` is set to `0` since riders only pay for the first fare only. There is no transfer fee or a second fare for transferring within the 2 hour window. Hence, the cost can be modeled as the sum of the first fare and the sums of the transfer fees.
 - The transfer fee is set to zero as they are free within the TTC system. This is indicated by the `fare_product_id=free_transfer`.
