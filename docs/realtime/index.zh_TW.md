@@ -13,22 +13,22 @@ search:
 
 為用戶提供實時的公交數據更新，極大地提升了他們對您的公交服務的體驗。提供有關當前到達和離開時間的最新信息使用戶能夠順利地計劃他們的旅行。結果，萬一不幸延誤，騎手知道他們可以在家裡多呆一會兒會鬆一口氣。
 
-GTFS Realtime 是一种提要规范，允许公共交通机构向应用程序开发人员提供有关其车队的实时更新。它是[GTFS](../schedule/reference) （通用交通馈送规范）的扩展，是一种用于公共交通时刻表和相关地理信息的开放数据格式。 GTFS Realtime 是围绕易于实施、良好的 GTFS 互操作性和对乘客信息的关注而设计的。
+GTFS Realtime 是一種提要規範，允許公共交通機構向應用程序開發人員提供有關其車隊的實時更新。它是[GTFS](../schedule/reference) （通用交通饋送規範）的擴展，是一種用於公共交通時刻表和相關地理信息的開放數據格式。 GTFS Realtime 是圍繞易於實施、良好的 GTFS 互操作性和對乘客信息的關注而設計的。
 
-该规范是通过最初的[实时交通更新](https://developers.google.com/transit/google-transit#LiveTransitUpdates)合作伙伴机构、一些交通开发商和谷歌的合作设计的。该规范是在[Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)下发布的。
+該規範是通過最初的[實時交通更新](https://developers.google.com/transit/google-transit#LiveTransitUpdates)合作夥伴機構、一些交通開發商和谷歌的合作設計的。該規範是在[Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)下發布的。
 
 ## 我該如何開始？
 
-1.  继续阅读下面的概述。
-2.  决定您将提供哪些[提要实体](feed-entities)。
+1.  繼續閱讀下面的概述。
+2.  決定您將提供哪些[提要實體](feed-entities)。
 3.  看看[示例提要](feed-examples)。
 4.  使用[参考](reference)创建您自己的提要。
-5.  [发布您的提要](best-practices/#feed-publishing-general-practices)。
+5.  [發布您的提要](best-practices/#feed-publishing-general-practices)。
 
 
-## 的概述 GTFS Realtime 饲料
+## 的概述 GTFS Realtime 飼料
 
-该规范目前支持以下类型的信息：
+該規範目前支持以下類型的信息：
 
 *   **行程更新** - 延誤、取消、更改路線
 *   **服務警報** - 停止移動、影響車站、路線或整個網絡的不可預見事件
@@ -36,7 +36,7 @@ GTFS Realtime 是一种提要规范，允许公共交通机构向应用程序开
 
 一個提要可以（儘管不是必需的）組合不同類型的實體。提要通過 HTTP 提供並經常更新。該文件本身是一個常規的二進製文件，因此任何類型的網絡服務器都可以託管和提供該文件（也可以使用其他傳輸協議）。或者，也可以使用 Web 應用程序服務器，它作為對有效 HTTP GET 請求的響應將返回提要。對於更新或檢索提要的頻率和確切方法沒有限制。
 
-因为GTFSRealtime允许您展示车队的_实际_状态，需要定期更新提要 - 最好是每当新数据来自您的自动车辆定位系统时。
+因為GTFSRealtime允許您展示車隊的_實際_狀態，需要定期更新提要 - 最好是每當新數據來自您的自動車輛定位系統時。
 
 [有關提要實體的更多信息...](feed-entities)
 

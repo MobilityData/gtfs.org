@@ -2,46 +2,46 @@
 search:
   exclude: true
 ---
+  
+# GTFS Realtime 參考
 
-# GTFS Realtime 参考
+一個GTFS RealtimeFeed 讓公交機構可以向消費者提供有關其服務中斷（車站關閉、線路未運行、重要延誤等）車輛位置和預期的實時信息arrival次。
 
-一个GTFS RealtimeFeed 让公交机构可以向消费者提供有关其服务中断（车站关闭、线路未运行、重要延误等）车辆位置和预期的实时信息arrival次。
+提要規範的 2.0 版在此站點上進行了討論和記錄。有效版本為“2.0”、“1.0”。
 
-提要规范的 2.0 版在此站点上进行了讨论和记录。有效版本为“2.0”、“1.0”。
-
-### 术语定义
+### 術語定義
 
 #### 必需的
 
-在GTFS -realtime v2.0 及更高版本，*必填*列描述了生产者必须提供哪些字段才能使传输数据有效并对消费应用程序有意义。
+在GTFS -realtime v2.0 及更高版本，*必填*列描述了生產者必須提供哪些字段才能使傳輸數據有效並對消費應用程序有意義。
 
 在*必填*字段中使用以下值：
 
-*   **必填**：此字段必须由GTFS - 实时饲料生产者。
-*   **有条件要求**：此字段在某些条件下是必需的，在字段*Description*中进行了概述。在这些条件之外，该字段是可选的。
-*   **可选**：该字段是可选的，生产者不需要实现。但是，如果数据在基础自动vehicle定位系统（例如，VehiclePositiontimestamp ) 建议生产者尽可能提供这些可选字段。
+*   **必填**：此字段必須由GTFS - 實時飼料生產者。
+*   **有條件要求**：此字段在某些條件下是必需的，在字段*Description*中進行了概述。在這些條件之外，該字段是可選的。
+*   **可選**：該字段是可選的，生產者不需要實現。但是，如果數據在基礎自動vehicle定位系統（例如，VehiclePositiontimestamp ) 建議生產者盡可能提供這些可選字段。
 
-*请注意，语义要求未在*GTFS *-实时版本 1.0，因此提供*gtfs_realtime_version *of `1`可能不满足这些要求（详见[语义要求提案](https://github.com/google/transit/pull/64)）。*
+*請注意，語義要求未在*GTFS *-實時版本 1.0，因此提供*gtfs_realtime_version *of `1`可能不滿足這些要求（詳見[語義要求提案](https://github.com/google/transit/pull/64)）。 *
 
-#### 基数
+#### 基數
 
-*基数*表示可以为特定字段提供的元素数量，具有以下值：
+*基數*表示可以為特定字段提供的元素數量，具有以下值：
 
-* **One** - 可为该字段提供单个 one 元素。这映射到[Protocol Buffer *required*和*optional* cardinalities](https://developers.google.com/protocol-buffers/docs/proto#simple) 。
-* **许多**- 可以为此字段提供许多元素（0、1 或更多）。这映射到[Protocol Buffer 的*重复*基数](https://developers.google.com/protocol-buffers/docs/proto#simple)。
+* **One** - 可為該字段提供單個 one 元素。這映射到[Protocol Buffer *required*和*optional* cardinalities](https://developers.google.com/protocol-buffers/docs/proto#simple) 。
+* **許多**- 可以為此字段提供許多元素（0、1 或更多）。這映射到[Protocol Buffer 的*重複*基數](https://developers.google.com/protocol-buffers/docs/proto#simple)。
 
-始终参考*必填*字段和*说明*字段以查看字段何时为必填、有条件必填或可选。请参考[GTFS](<https://github.com/google/transit/blob/master/\<glossary variable=>) [-实时/原型/](<https://github.com/google/transit/blob/master/\<glossary variable=>)GTFS [-realtime.proto">](<https://github.com/google/transit/blob/master/\<glossary variable=>)GTFS [`GTFS -realtime.proto`](<https://github.com/google/transit/blob/master/\<glossary variable=>)用于协议缓冲区基数。
+始終參考*必填*字段和*說明*字段以查看字段何時為必填、有條件必填或可選。請參考[GTFS](<https://github.com/google/transit/blob/master/\<glossary variable=>) [-實時/原型/](<https://github.com/google/transit/blob/master/\<glossary variable=>)GTFS [-realtime.proto">](<https://github.com/google/transit/blob/master/\<glossary variable=>)GTFS [`GTFS -realtime.proto`](<https://github.com/google/transit/blob/master/\<glossary variable=>)用於協議緩衝區基數。
 
-#### 协议缓冲区数据类型
+#### 協議緩衝區數據類型
 
-以下协议缓冲区数据类型用于描述提要元素：
+以下協議緩衝區數據類型用於描述提要元素：
 
-*   message: 复合型
+*   message: 複合型
 *   enum: 固定值列表
 
-#### 实验领域
+#### 實驗領域
 
-标记为**实验性**的字段可能会发生变化，尚未正式纳入规范。未来可能会正式采用一个**实验**领域。
+標記為**實驗性**的字段可能會發生變化，尚未正式納入規範。未來可能會正式採用一個**實驗**領域。
 
 ## 元素索引
 
@@ -84,208 +84,208 @@ search:
 
 ## message FeedMessage
 
-提要的内容message .每个message 流中的内容是作为对适当 HTTP GET 请求的响应而获得的。实时馈送总是相对于现有的GTFS喂养。所有entityids 相对于GTFS喂养。
+提要的內容message .每個message 流中的內容是作為對適當 HTTP GET 請求的響應而獲得的。實時饋送總是相對於現有的GTFS餵養。所有entityids 相對於GTFS餵養。
 
 **字段**
 
-| _**字段名称**_ | _**类型**_                          | _**必需的**_ | _**基数**_ | _**描述**_                                                                |
+| _**字段名稱**_ | _**類型**_                          | _**必需的**_ | _**基數**_ | _**描述**_                                                                |
 | ---------- | --------------------------------- | --------- | -------- | ----------------------------------------------------------------------- |
-| **header** | [FeedHeader](#message-feedheader) | 必需的       | 一        | 关于此提要和提要的元数据message .                                                    |
-| **entity** | [FeedEntity](#message-feedentity) | 有条件要求     | 许多       | 提要的内容。如果有真-time公交系统可用的信息，必须提供此字段。如果这个字段是EMPTY，消费者应该假设没有真正的-time系统可用的信息。 |
+| **header** | [FeedHeader](#message-feedheader) | 必需的       | 一        | 關於此提要和提要的元數據message .                                                    |
+| **entity** | [FeedEntity](#message-feedentity) | 有條件要求     | 許多       | 提要的內容。如果有真-time公交系統可用的信息，必須提供此字段。如果這個字段是EMPTY，消費者應該假設沒有真正的-time系統可用的信息。 |
 
 
 ## message FeedHeader
 
-有关提要的元数据，包含在提要消息中。
+有關提要的元數據，包含在提要消息中。
 
 **字段**
 
-| _**字段名称**_                | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                                                                                            |
+| _**字段名稱**_                | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_                                                                                                                                                                                            |
 | ------------------------- | -------------------------------------------------------------------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **gtfs_realtime_version** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | 供稿规范的版本。当前版本是2.0。                                                                                                                                                                                   |
+| **gtfs_realtime_version** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | 供稿規範的版本。當前版本是2.0。 |
 | **Incrementality**        | [Incrementality](#enum-incrementality)                                     | 必需的       | 一        |                                                                                                                                                                                                     |
-| **timestamp**             | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | 这个timestamp标识创建此提要的内容的时刻（在服务器中time）。在 POSIX 中time（即自 1970 年 1 月 1 日 00:00:00 UTC 以来的秒数）。避免time强烈建议生成和使用实时信息的系统之间的偏差timestamp从一个time服务器。使用 Stratum 3 甚至更低的 Stratum 服务器是完全可以接受的，因为time最多几秒钟的差异是可以容忍的。 |
+| **timestamp**             | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | 這個timestamp標識創建此提要的內容的時刻（在服務器中time）。在 POSIX 中time（即自 1970 年 1 月 1 日 00:00:00 UTC 以來的秒數）。避免time強烈建議生成和使用實時信息的系統之間的偏差timestamp從一個time服務器。使用 Stratum 3 甚至更低的 Stratum 服務器是完全可以接受的，因為time最多幾秒鐘的差異是可以容忍的。 |
 
 ## enum Incrementality
 
-确定当前提取是否是增量的。
+確定當前提取是否是增量的。
 
-*   FULL_DATASET：此提要更新将覆盖提要的所有先前实时信息。因此，本次更新预计将提供一个FULL所有已知实时信息的快照。
-*   DIFFERENTIAL：目前，此模式**不受支持**，并且**未指定**使用此模式的提要的行为。有关于[GTFS](<http://groups.google.com/group/\<glossary variable=>)的讨论[-实时">](<http://groups.google.com/group/\<glossary variable=>)GTFS Realtime围绕完全指定行为的[邮件列表](<http://groups.google.com/group/\<glossary variable=>)DIFFERENTIAL模式和文档将在这些讨论完成后更新。
+*   FULL_DATASET：此提要更新將覆蓋提要的所有先前實時信息。因此，本次更新預計將提供一個FULL所有已知實時信息的快照。
+*   DIFFERENTIAL：目前，此模式**不受支持**，並且**未指定**使用此模式的提要的行為。有關於[GTFS](<http://groups.google.com/group/\<glossary variable=>)的討論[-實時">](<http://groups.google.com/group/\<glossary variable=>)GTFS Realtime圍繞完全指定行為的[郵件列表](<http://groups.google.com/group/\<glossary variable=>)DIFFERENTIAL模式和文檔將在這些討論完成後更新。
 
-**价值观**
+**價值觀**
 
-| _**价值**_         |
+| _**價值**_         |
 | ---------------- |
 | **FULL_DATASET** |
 | **DIFFERENTIAL** |
 
 ## message FeedEntity
 
-定义（或更新）entity在运输提要中。如果entity没有被删除，正好是 'trip_update ', 'vehicle', 'Alert' 和 'Shape' 字段应该被填充。
+定義（或更新）entity在運輸提要中。如果entity沒有被刪除，正好是 'trip_update ', 'vehicle', 'Alert' 和 'Shape' 字段應該被填充。
 
 **字段**
 
-| _**字段名称**_      | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                                   |
+| _**字段名稱**_      | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_                                                                                                                                   |
 | --------------- | -------------------------------------------------------------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| **id**          | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | 供稿唯一标识符entity. id 仅用于提供Incrementality支持。提要引用的实际实体必须由显式选择器指定（请参阅EntitySelector下面了解更多INFO）。                                                  |
-| **is_deleted**  | [bool](https://developers.google.com/protocol-buffers/docs/proto#scalar)   | 可选的       | 一        | 这是否entity将被删除。应该只为带有Incrementality的DIFFERENTIAL- 不应为包含以下内容的提要提供此字段Incrementality的FULL_DATASET.                                             |
-| **trip_update** | [TripUpdate](#message-tripupdate)                                          | 有条件要求     | 一        | 实时数据departure的延误trip.至少其中一个字段trip_update ,vehicle,Alert， 或者Shape必须提供 - 所有这些字段都不能EMPTY.                                                     |
-| **vehicle**     | [VehiclePosition](#message-vehicleposition)                                | 有条件要求     | 一        | 实时数据Position一个vehicle.至少其中一个字段trip_update ,vehicle,Alert， 或者Shape必须提供 - 所有这些字段都不能EMPTY.                                                    |
-| **Alert**       | [Alert](#message-alert)                                                    | 有条件要求     | 一        | 实时数据Alert.至少其中一个字段trip_update ,vehicle,Alert， 或者Shape必须提供 - 所有这些字段都不能EMPTY.                                                                |
-| **Shape**       | [Shape](#message-shape)                                                    | 有条件要求     | 一        | 实时数据ADDED形状，例如对于DETOUR.至少其中一个字段trip_update ,vehicle,Alert， 或者Shape必须提供 - 所有这些字段都不能EMPTY.<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。 |
+| **id**          | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | 供稿唯一標識符entity. id 僅用於提供Incrementality支持。提要引用的實際實體必須由顯式選擇器指定（請參閱EntitySelector下面了解更多INFO）。 |
+| **is_deleted**  | [bool](https://developers.google.com/protocol-buffers/docs/proto#scalar)   | 可選的       | 一        | 這是否entity將被刪除。應該只為帶有Incrementality的DIFFERENTIAL- 不應為包含以下內容的提要提供此字段Incrementality的FULL_DATASET.                                             |
+| **trip_update** | [TripUpdate](#message-tripupdate)                                          | 有條件要求     | 一        | 實時數據departure的延誤trip.至少其中一個字段trip_update ,vehicle,Alert， 或者Shape必須提供 - 所有這些字段都不能EMPTY.                                                     |
+| **vehicle**     | [VehiclePosition](#message-vehicleposition)                                | 有條件要求     | 一        | 實時數據Position一個vehicle.至少其中一個字段trip_update ,vehicle,Alert， 或者Shape必須提供 - 所有這些字段都不能EMPTY.                                                    |
+| **Alert**       | [Alert](#message-alert)                                                    | 有條件要求     | 一        | 實時數據Alert.至少其中一個字段trip_update ,vehicle,Alert， 或者Shape必須提供 - 所有這些字段都不能EMPTY.                                                                |
+| **Shape**       | [Shape](#message-shape)                                                    | 有條件要求     | 一        | 實時數據ADDED形狀，例如對於DETOUR.至少其中一個字段trip_update ,vehicle,Alert， 或者Shape必須提供 - 所有這些字段都不能EMPTY.<br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
 
 
 ## message TripUpdate
 
-实时更新进度vehicle沿着一个trip.另请参阅[行程](</realtime/\<glossary variable=>)的一般讨论[-更新">](</realtime/\<glossary variable=>)trip[更新实体](</realtime/\<glossary variable=>)。
+實時更新進度vehicle沿著一個trip.另請參閱[行程](</realtime/\<glossary variable=>)的一般討論[-更新">](</realtime/\<glossary variable=>)trip[更新實體](</realtime/\<glossary variable=>)。
 
-取决于价值ScheduleRelationship， 一个TripUpdate可以指定：
+取決於價值ScheduleRelationship， 一個TripUpdate可以指定：
 
-*   一个trip按照时间表进行。
-*   一个trip沿着一条路线前进，但没有固定的时间表。
-*   一个trip那是ADDED或删除关于时间表。
-*   一个新的trip这是现有的副本trip在静态GTFS .它将在服务日期运行，并且time中指定TripProperties .
+*   一個trip按照時間表進行。
+*   一個trip沿著一條路線前進，但沒有固定的時間表。
+*   一個trip那是ADDED或刪除關於時間表。
+*   一個新的trip這是現有的副本trip在靜態GTFS .它將在服務日期運行，並且time中指定TripProperties .
 
-更新可能是未来的，预测的arrival/departure事件，或已经发生的过去事件。在大多数情况下，关于过去事件的信息是一个测量值，因此它uncertainty建议值为 0。尽管可能存在不成立的情况，因此允许具有uncertainty过去事件的值不同于 0。如果有更新uncertainty不是 0，要么更新是一个近似预测trip尚未完成或测量不精确或更新是对过去的预测，在事件发生后尚未得到验证。
+更新可能是未來的，預測的arrival/departure事件，或已經發生的過去事件。在大多數情況下，關於過去事件的信息是一個測量值，因此它uncertainty建議值為 0。儘管可能存在不成立的情況，因此允許具有uncertainty過去事件的值不同於 0。如果有更新uncertainty不是 0，要么更新是一個近似預測trip尚未完成或測量不精確或更新是對過去的預測，在事件發生後尚未得到驗證。
 
-如果一个vehicle正在为同一个街区内的多个行程提供服务（有关行程和街区的更多信息，请参阅GTFStrips.txt ):
+如果一個vehicle正在為同一個街區內的多個行程提供服務（有關行程和街區的更多信息，請參閱GTFStrips.txt ):
 
-*   提要应包括TripUpdate为了trip目前由vehicle.鼓励生产者在当前行程之后包含一次或多次行程的 TripUpdatestrip在这vehicle的块，如果生产者对这些未来的预测质量有信心trip(s)。包括相同的多个 TripUpdatesvehicle避免对骑手的预测“弹出”作为vehicle从一个过渡trip到另一个人，并提前通知乘客影响下游行程的延误（例如，当已知delay超过计划的旅行之间的停留时间）。
-*   各自的TripUpdate实体不需要是ADDED以与它们相同的顺序添加到提要中SCHEDULED在块中。例如，如果存在`trip_ids` 1、2 和 3 的行程都属于一个街区，则vehicle旅行trip1，那么trip2，然后trip3、trip_update实体可以按任何顺序出现 - 例如，添加trip2、那么trip1，然后trip3 是允许的。
+*   提要應包括TripUpdate為了trip目前由vehicle.鼓勵生產者在當前行程之後包含一次或多次行程的 TripUpdatestrip在這vehicle的塊，如果生產者對這些未來的預測質量有信心trip(s)。包括相同的多個 TripUpdatesvehicle避免對騎手的預測“彈出”作為vehicle從一個過渡trip到另一個人，並提前通知乘客影響下游行程的延誤（例如，當已知delay超過計劃的旅行之間的停留時間）。
+*   各自的TripUpdate實體不需要是ADDED以與它們相同的順序添加到提要中SCHEDULED在塊中。例如，如果存在`trip_ids` 1、2 和 3 的行程都屬於一個街區，則vehicle旅行trip1，那麼trip2，然後trip3、trip_update實體可以按任何順序出現 - 例如，添加trip2、那麼trip1，然後trip3 是允許的。
 
-请注意，更新可以描述一个trip已经完成了。到此end, 提供最后一站的更新就足够了trip.如果time的arrival在最后一站是过去，客户会得出结论，整个trip是过去的（尽管无关紧要，也可以为之前的停靠点提供更新）。此选项与trip已提前完成，但按照计划，trip目前仍在进行中time.删除此更新trip可以让客户假设trip仍在进行中。请注意，允许但不是必须的提要提供者清除过去的更新 - 这是实际有用的一种情况。
+請注意，更新可以描述一個trip已經完成了。到此end, 提供最後一站的更新就足夠了trip.如果time的arrival在最後一站是過去，客戶會得出結論，整個trip是過去的（儘管無關緊要，也可以為之前的停靠點提供更新）。此選項與trip已提前完成，但按照計劃，trip目前仍在進行中time.刪除此更新trip可以讓客戶假設trip仍在進行中。請注意，允許但不是必須的提要提供者清除過去的更新 - 這是實際有用的一種情況。
 
 **字段**
 
-| _**字段名称**_           | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                                                                                                                                                                                                                                        |
+| _**字段名稱**_           | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_|
 | -------------------- | -------------------------------------------------------------------------- | --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **trip**             | [TripDescriptor](#message-tripdescriptor)                                  | 必需的       | 一        | 这trip这message 适用于。最多可以有一个TripUpdateentity对于每个实际trip实例。如果没有，则意味着没有可用的预测信息。它确实_不是_意味着trip正在按计划进行。                                                                                                                                                                                                                                                  |
-| **vehicle**          | [VehicleDescriptor](#message-vehicledescriptor)                            | 可选的       | 一        | 附加信息vehicle这是服务这个trip.                                                                                                                                                                                                                                                                                                                          |
-| **stop_time_update** | [StopTimeUpdate](#message-stoptimeupdate)                                  | 有条件要求     | 许多       | 对 StopTimes 的更新trip（未来，即预测，在某些情况下，过去的，即已经发生的）。更新必须按stop_sequence，并申请以下所有站点trip直到下一个指定stop_time_update.最后一个stop_time_update必须为trip除非trip.schedule_relationship是CANCELED或者DUPLICATED- 如果trip是CANCELED，不需要提供 stop_time_updates。如果trip是DUPLICATED，可以提供 stop_time_updates 来指示实时time新的信息trip.                                                         |
-| **timestamp**        | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 最近的时刻vehicle是真的——time测量进度以估计未来的停止时间。当提供过去的 StopTimes 时，arrival/departure次可能早于该值。在 POSIX 中time（即自 1970 年 1 月 1 日 00:00:00 UTC 以来的秒数）。                                                                                                                                                                                                            |
-| **delay**            | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 可选的       | 一        | 目前的进度偏差trip.delay仅应在相对于某些现有时间表给出预测时指定GTFS .<br/>delay（以秒为单位）可以是正数（意味着vehicle迟到）或否定（意味着vehicle提前了）。delay为 0 意味着vehicle正好在time.<br/>delayStopTimeUpdates 中的信息优先于trip-等级delay信息，这样trip-等级delay只传播到下一站trip与StopTimeUpdatedelay指定的值。<br/>强烈建议饲料供应商提供TripUpdate.timestamp值指示何时delay最后更新值，以评估数据的新鲜度。<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。 |
-| **trip_properties**  | [TripProperties](#message-tripproperties)                                  | 可选的       | 一        | 提供更新的属性trip.<br/><br/>**警告：**这个message 还是**实验**，并且可能会发生变化。将来可能会正式采用。                                                                                                                                                                                                                                                                             |
+| **trip**             | [TripDescriptor](#message-tripdescriptor)                                  | 必需的       | 一        | 這trip這message 適用於。最多可以有一個TripUpdateentity對於每個實際trip實例。如果沒有，則意味著沒有可用的預測信息。它確實_不是_意味著trip正在按計劃進行。 |
+| **vehicle**          | [VehicleDescriptor](#message-vehicledescriptor)                            | 可選的       | 一        | 附加信息vehicle這是服務這個trip.                                                                                                                                                                                                                                                                                                                          |
+| **stop_time_update** | [StopTimeUpdate](#message-stoptimeupdate)                                  | 有條件要求     | 許多       | 更新行程的 StopTimes（未來，即預測，在某些情況下，過去的，即已經發生的）。更新必須排序stop_sequence, 併申請到下一個指定的行程的所有以下停靠站stop_time_update.最後一個stop_time_update必須提供行程除非行程。schedule_relationship被取消、刪除或重複。如果行程被取消或刪除，則無需提供 stop_time_updates。如果為取消或刪除的行程提供了 stop_time_updates，則該行程。schedule_relationship優先於任何 stop_time_updates 及其關聯schedule_relationship .如果行程重複，可以提供stop_time_updates來指示新行程的實時信息。|
+| **timestamp**        | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可選的       | 一        | 最近的時刻vehicle是真的——time測量進度以估計未來的停止時間。當提供過去的 StopTimes 時，arrival/departure次可能早於該值。在 POSIX 中time（即自 1970 年 1 月 1 日 00:00:00 UTC 以來的秒數）。 |
+| **delay**            | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 可選的       | 一        | 目前的進度偏差trip.delay僅應在相對於某些現有時間表給出預測時指定GTFS .<br/>delay（以秒為單位）可以是正數（意味著vehicle遲到）或否定（意味著vehicle提前了）。 delay為 0 意味著vehicle正好在time.<br/>delayStopTimeUpdates 中的信息優先於trip-等級delay信息，這樣trip-等級delay只傳播到下一站trip與StopTimeUpdatedelay指定的值。 <br/>強烈建議飼料供應商提供TripUpdate.timestamp值指示何時delay最後更新值，以評估數據的新鮮度。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
+| **trip_properties**  | [TripProperties](#message-tripproperties)                                  | 可選的       | 一        | 提供更新的屬性trip.<br/><br/>**警告：**這個message 還是**實驗**，並且可能會發生變化。將來可能會正式採用。 |
 
 ## message StopTimeEvent
 
-单个预测事件的时间信息（arrival或者departure）。时序包括delay和/或估计time， 和uncertainty.
+單個預測事件的時間信息（arrival或者departure）。時序包括delay和/或估計time， 和uncertainty.
 
-*   delay当预测是相对于一些现有的时间表给出时，应该使用GTFS .
-*   time应该给出是否有预测的时间表。如果两者time和delay被指定，time将优先（虽然通常，time, 如果给定一个SCHEDULEDtrip, 应该等于SCHEDULEDtime在GTFS +delay）。
+*   delay當預測是相對於一些現有的時間表給出時，應該使用GTFS .
+*   time應該給出是否有預測的時間表。如果兩者time和delay被指定，time將優先（雖然通常，time, 如果給定一個SCHEDULEDtrip, 應該等於SCHEDULEDtime在GTFS +delay）。
 
-uncertainty同样适用于两者time和delay.这uncertainty粗略指定 true 中的预期误差delay（但请注意，我们尚未定义其精确的统计意义）。这是可能的uncertainty为 0，例如在计算机定时控制下行驶的火车。
+uncertainty同樣適用於兩者time和delay.這uncertainty粗略指定 true 中的預期誤差delay（但請注意，我們尚未定義其精確的統計意義）。這是可能的uncertainty為 0，例如在計算機定時控制下行駛的火車。
 
 
 **字段**
 
-| _**字段名称**_      | _**类型**_                                                                  | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                      |
+| _**字段名稱**_      | _**類型**_                                                                  | _**必需的**_ | _**基數**_ | _**描述**_                                                                                                                      |
 | --------------- | ------------------------------------------------------------------------- | --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| **delay**       | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | delay（以秒为单位）可以是正数（意味着vehicle迟到）或否定（意味着vehicle提前了）。delay为 0 意味着vehicle正好在time.任何一个delay或者time必须在一个StopTimeEvent- 两个字段都不能EMPTY. |
-| **time**        | [int64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | 绝对事件time.在 POSIX 中time（即自 1970 年 1 月 1 日 00:00:00 UTC 以来的秒数）。任何一个delay或者time必须在一个StopTimeEvent- 两个字段都不能EMPTY.                 |
-| **uncertainty** | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 如果uncertainty被省略，它被解释为未知。要指定完全确定的预测，请将其设置为uncertainty为 0。                                                                     |
+| **delay**       | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | delay（以秒為單位）可以是正數（意味著vehicle遲到）或否定（意味著vehicle提前了）。 delay為 0 意味著vehicle正好在time.任何一個delay或者time必須在一個StopTimeEvent- 兩個字段都不能EMPTY. |
+| **time**        | [int64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | 絕對事件time.在 POSIX 中time（即自 1970 年 1 月 1 日 00:00:00 UTC 以來的秒數）。任何一個delay或者time必須在一個StopTimeEvent- 兩個字段都不能EMPTY.                 |
+| **uncertainty** | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可選的       |一        | 如果uncertainty被省略，它被解釋為未知。要指定完全確定的預測，請將其設置為uncertainty為 0。 |
 
 ## message StopTimeUpdate
 
-实时更新arrival和/或departure给定停止的事件trip.另请参阅停止的一般讨论time[消息](<#\<glossary variable=>)中的更新[-tripdescriptor">](<#\<glossary variable=>)TripDescriptor和[旅行](</realtime/\<glossary variable=>)[-更新">](</realtime/\<glossary variable=>)trip[更新实体](</realtime/\<glossary variable=>)文档。
+實時更新arrival和/或departure給定停止的事件trip.另請參閱停止的一般討論time[消息](<#\<glossary variable=>)中的更新[-tripdescriptor">](<#\<glossary variable=>)TripDescriptor和[旅行](</realtime/\<glossary variable=>)[-更新">](</realtime/\<glossary variable=>)trip[更新實體](</realtime/\<glossary variable=>)文檔。
 
-可以为过去和未来的事件提供更新。尽管不是必需的，但允许生产者删除过去的事件。更新链接到特定的停止，或者通过stop_sequence或者stop_id ，因此必须设置这些字段之一。如果一样stop_id在一次访问中不止一次trip， 然后stop_sequence应在所有 StopTimeUpdates 中为此提供stop_id在那trip.
+可以為過去和未來的事件提供更新。儘管不是必需的，但允許生產者刪除過去的事件。更新鏈接到特定的停止，或者通過stop_sequence或者stop_id ，因此必須設置這些字段之一。如果一樣stop_id在一次訪問中不止一次trip， 然後stop_sequence應在所有 StopTimeUpdates 中為此提供stop_id在那trip.
 
 
 **字段**
 
-| _**字段名称**_                     | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                                                                                                                                                   |
+| _**字段名稱**_                     | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_                                                                                                                                                                                                                                                   |
 | ------------------------------ | -------------------------------------------------------------------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **stop_sequence**              | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | 必须与中相同stop_times.txt在相应的GTFS喂养。任何一个stop_sequence或者stop_id必须在一个StopTimeUpdate- 两个字段都不能EMPTY.stop_sequence访问相同的旅行需要stop_id不止一次（例如，一个循环）来消除预测是针对哪个停止的歧义。如果`StopTimeProperties.assigned_stop_id`被填充，那么`stop_sequence`必须填充。                                     |
-| **stop_id**                    | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | 必须与中相同stops.txt在相应的GTFS喂养。任何一个stop_sequence或者stop_id必须在一个StopTimeUpdate- 两个字段都不能EMPTY.如果`StopTimeProperties.assigned_stop_id`已填充，最好省略`stop_id`并且只使用`stop_sequence`.如果`StopTimeProperties.assigned_stop_id`和`stop_id`人口稠密，`stop_id`必须匹配`assigned_stop_id` . |
-| **arrival**                    | [StopTimeEvent](#message-stoptimeevent)                                    | 有条件要求     | 一        | 如果schedule_relationship是EMPTY或者SCHEDULED， 任何一个arrival或者departure必须在一个StopTimeUpdate- 两个字段都不能EMPTY.arrival和departure可能两者都是EMPTY什么时候schedule_relationship是SKIPPED.如果schedule_relationship是 NO_DATA，arrival和departure一定是EMPTY.                                |
-| **departure**                  | [StopTimeEvent](#message-stoptimeevent)                                    | 有条件要求     | 一        | 如果schedule_relationship是EMPTY或者SCHEDULED， 任何一个arrival或者departure必须在一个StopTimeUpdate- 两个字段都不能EMPTY.arrival和departure可能两者都是EMPTY什么时候schedule_relationship是SKIPPED.如果schedule_relationship是 NO_DATA，arrival和departure一定是EMPTY.                                |
-| **departure_occupancy_status** | [OccupancyStatus](#enum-occupancystatus)                                   | 可选的       | 一        | 预计客座率vehicle之后立马departure从给定的停止。如果提供，stop_sequence必须提供。提供departure_occupancy_status不提供任何真实的timearrival或者departure预测，填充此字段并设置StopTimeUpdate.schedule_relationship = NO_DATA。<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。                              |
-| **schedule_relationship**      | [ScheduleRelationship](#enum-schedulerelationship)                         | 可选的       | 一        | 默认关系是SCHEDULED.                                                                                                                                                                                                                                            |
-| **stop_time_properties**       | [StopTimeProperties](#message-stoptimeproperties)                          | 可选的       | 一        | 内定义的某些属性的实时更新GTFSstop_times.txt<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。                                                                                                                                                                          |
+| **stop_sequence**              | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | 必須與中相同stop_times.txt在相應的GTFS餵養。任何一個stop_sequence或者stop_id必須在一個StopTimeUpdate- 兩個字段都不能EMPTY.stop_sequence訪問相同的旅行需要stop_id不止一次（例如，一個循環）來消除預測是針對哪個停止的歧義。如果`StopTimeProperties.assigned_stop_id`被填充，那麼`stop_sequence`必須填充。 |
+| **stop_id**                    | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | 必須與中相同stops.txt在相應的GTFS餵養。任何一個stop_sequence或者stop_id必須在一個StopTimeUpdate- 兩個字段都不能EMPTY.如果`StopTimeProperties.assigned_stop_id`已填充，最好省略`stop_id`並且只使用`stop_sequence`.如果`StopTimeProperties.assigned_stop_id`和`stop_id`人口稠密，`stop_id`必須匹配`assigned_stop_id` . |
+| **arrival**                    | [StopTimeEvent](#message-stoptimeevent)                                    | 有條件要求     | 一        | 如果schedule_relationship是EMPTY或者SCHEDULED， 任何一個arrival或者departure必須在一個StopTimeUpdate- 兩個字段都不能EMPTY.arrival和departure可能兩者都是EMPTY什麼時候schedule_relationship是SKIPPED.如果schedule_relationship是 NO_DATA，arrival和departure一定是EMPTY.                                |
+| **departure**                  | [StopTimeEvent](#message-stoptimeevent)                                    | 有條件要求     | 一        | 如果schedule_relationship是EMPTY或者SCHEDULED， 任何一個arrival或者departure必須在一個StopTimeUpdate- 兩個字段都不能EMPTY.arrival和departure可能兩者都是EMPTY什麼時候schedule_relationship是SKIPPED.如果schedule_relationship是 NO_DATA，arrival和departure一定是EMPTY.                                |
+| **departure_occupancy_status** | [OccupancyStatus](#enum-occupancystatus)                                   | 可選的       | 一        | 預計客座率vehicle之後立馬departure從給定的停止。如果提供，stop_sequence必須提供。提供departure_occupancy_status不提供任何真實的timearrival或者departure預測，填充此字段並設置StopTimeUpdate.schedule_relationship = NO_DATA。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
+| **schedule_relationship**      | [ScheduleRelationship](#enum-schedulerelationship)                         | 可選的       | 一        | 默認關係是SCHEDULED.                                                                                                                                                                                                                                            |
+| **stop_time_properties**       | [StopTimeProperties](#message-stoptimeproperties)                          | 可選的       | 一        | 內定義的某些屬性的實時更新GTFSstop_times.txt<br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
 
 
 ## enum ScheduleRelationship
 
-此 StopTime 与静态计划之间的关系。
+此 StopTime 與靜態計劃之間的關係。
 
-**价值观**
+**價值觀**
 
-| _**价值**_        | _**评论**_                                                                                                                                                                                                                                                                                                                                             |
+| _**價值**_        | _**評論**_                                                                                                                                                                                                                                                                                                                                             |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **SCHEDULED**   | 这vehicle正在按照其静态的停靠时间表进行，尽管不一定按照时间表的时间。这是**默认**行为。至少其中之一arrival和departure必须提供。基于频率的旅行（GTFSfrequencies.txt与exact_times = 0) 不应该有SCHEDULED值并应该使用UNSCHEDULED反而。                                                                                                                                                                                          |
-| **SKIPPED**     | 停靠点是SKIPPED，即vehicle不会停在这一站。arrival和departure是可选的。设置时`SKIPPED`不会传播到相同的后续站点trip（即，vehicle将在随后的站点停止trip除非这些站点也有`stop_time_update`和`schedule_relationship: SKIPPED`）。delay从上一站trip_做_传播到`SKIPPED`停止。换句话说，如果一个`stop_time_update`带着`arrival`或者`departure`预测未设置为停止后`SKIPPED`停止，上游的预测`SKIPPED`停止后将传播到停止`SKIPPED`停止和随后的停止trip直到一个`stop_time_update`为随后的停止提供。 |
-| **NO_DATA**        | 没有给出此站点的数据。它表示没有可用的实时时间信息。当设置 NO_DATA 通过后续停靠点传播时，因此这是指定您没有实时时间信息的停靠点的推荐方式。当 NO_DATA 均未设置时arrival也不departure应提供。                                                                                                                                                                                                                                      |
-| **UNSCHEDULED** | 这vehicle正在运行基于频率的trip(GTFSfrequencies.txt精确时间 = 0)。此值不应用于未定义的行程GTFSfrequencies.txt , 或旅行GTFSfrequencies.txt精确时间 = 1。行程包含`stop_time_updates`和`schedule_relationship: UNSCHEDULED`还必须设置TripDescriptor`schedule_relationship: UNSCHEDULED` <br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。                                                           |
+| **SCHEDULED**   | 這vehicle正在按照其靜態的停靠時間表進行，儘管不一定按照時間表的時間。這是**默認**行為。至少其中之一arrival和departure必須提供。基於頻率的旅行（GTFSfrequencies.txt與exact_times = 0) 不應該有SCHEDULED值並應該使用UNSCHEDULED反而。 |
+| **SKIPPED**     | 停靠點是SKIPPED，即vehicle不會停在這一站。 arrival和departure是可選的。設置時`SKIPPED`不會傳播到相同的後續站點trip（即，vehicle將在隨後的站點停止trip除非這些站點也有`stop_time_update`和`schedule_relationship: SKIPPED`）。 delay從上一站trip_做_傳播到`SKIPPED`停止。換句話說，如果一個`stop_time_update`帶著`arrival`或者`departure`預測未設置為停止後`SKIPPED`停止，上游的預測`SKIPPED`停止後將傳播到停止`SKIPPED`停止和隨後的停止trip直到一個`stop_time_update`為隨後的停止提供。 |
+| **沒有數據**        | 沒有給出此站點的數據。它表示沒有可用的實時時間信息。當設置 NO_DATA 通過後續停靠點傳播時，因此這是指定您沒有實時時間信息的停靠點的推薦方式。當 NO_DATA 均未設置時arrival也不departure應提供。 |
+| **UNSCHEDULED** | 這vehicle正在運行基於頻率的trip(GTFSfrequencies.txt精確時間 = 0)。此值不應用於未定義的行程GTFSfrequencies.txt , 或旅行GTFSfrequencies.txt精確時間 = 1。行程包含`stop_time_updates`和`schedule_relationship: UNSCHEDULED`還必須設置TripDescriptor`schedule_relationship: UNSCHEDULED` <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
 
 
 ## message StopTimeProperties
 
-中定义的某些属性的实时更新GTFSstop_times.txt .
+中定義的某些屬性的實時更新GTFSstop_times.txt .
 
-**注意：**这个message 仍处于**试验阶段**，可能会发生变化。将来可能会正式采用。<br/>
+**注意：**這個message 仍處於**試驗階段**，可能會發生變化。將來可能會正式採用。 <br/>
 
 **字段**
 
-| _**字段名称**_           | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| _**字段名稱**_           | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | -------------------- | -------------------------------------------------------------------------- | --------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **assigned_stop_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 支持实time停止分配。指一个`stop_id`中定义的GTFS`stops.txt` .<br/>新的`assigned_stop_id`不应导致显着不同trip的经验end用户比`stop_id`定义在GTFS`stop_times.txt` .换句话说，end用户不应查看此新内容`stop_id`如果新站点在没有任何附加上下文的应用程序中呈现，则视为“不寻常的变化”。例如，此字段旨在通过使用`stop_id`与最初定义的停靠点属于同一站GTFS`stop_times.txt` .<br/>在不提供任何真实信息的情况下分配止损timearrival或者departure预测，填充此字段并设置`StopTimeUpdate.schedule_relationship = NO_DATA` .<br/>如果填写此字段，`StopTimeUpdate.stop_sequence`必须填充和`StopTimeUpdate.stop_id`不应填充。停止分配应反映在其他GTFS - 实时字段（例如，`VehiclePosition.stop_id`）。<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。 |
+| **assigned_stop_id** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可選的       | 一        | 支持實time停止分配。指一個`stop_id`中定義的GTFS`stops.txt` .<br/>新的`assigned_stop_id`不應導致顯著不同trip的經驗end用戶比`stop_id`定義在GTFS`stop_times.txt` .換句話說，end用戶不應查看此新內容`stop_id`如果新站點在沒有任何附加上下文的應用程序中呈現，則視為“不尋常的變化”。例如，此字段旨在通過使用`stop_id`與最初定義的停靠點屬於同一站GTFS`stop_times.txt` .<br/>在不提供任何真實信息的情況下分配止損timearrival或者departure預測，填充此字段並設置`StopTimeUpdate.schedule_relationship = NO_DATA` .<br/>如果填寫此字段，`StopTimeUpdate.stop_sequence`必須填充和`StopTimeUpdate.stop_id`不應填充。停止分配應反映在其他GTFS - 實時字段（例如，`VehiclePosition.stop_id`）。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
 
 ## message TripProperties
 
-定义更新的属性trip
+定義更新的屬性trip
 
-**注意：**这个message 仍处于**试验阶段**，可能会发生变化。将来可能会正式采用。<br/>.<br/>
+**注意：**這個message 仍處於**試驗階段**，可能會發生變化。將來可能會正式採用。 <br/>.<br/>
 
 
 **字段**
 
-| _**字段名称**_     | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| _**字段名稱**_     | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | -------------- | -------------------------------------------------------------------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **trip_id**    | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | 定义一个新的标识符trip这是现有的副本trip在 (CSV) 中定义GTFStrips.txt但会start在不同的服务日期和/或time（定义使用`TripProperties.start_date`和`TripProperties.start_time`）。见定义`trips.trip_id`在 (CSV)GTFS .它的值必须不同于 (CSV) 中使用的值GTFS .此字段是必需的，如果`schedule_relationship`是`DUPLICATED` , 否则这个字段不能被填充并且会被消费者忽略。<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。                                                                                                                                                                                                                                                                                                                                                                          |
-| **start_date** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | 服务日期DUPLICATEDtrip将运行。必须以 YYYYMMDD 格式提供。此字段是必需的，如果`schedule_relationship`是`DUPLICATED` , 否则这个字段不能被填充并且会被消费者忽略。<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| **start_time** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | 定义departurestarttime的trip什么时候DUPLICATED.见定义`stop_times.departure_time`在 (CSV)GTFS .SCHEDULEDarrival和departure次为DUPLICATEDtrip是根据原始之间的偏移量计算的trip`departure_time`和这个领域。例如，如果一个GTFStrip有一个停止 A`departure_time`的`10:00:00`并停止 B`departure_time`的`10:01:00` ，并且该字段的值填充为`10:30:00`, 停止 BDUPLICATEDtrip会有一个SCHEDULED`departure_time`的`10:31:00`.真实的-time预言`delay`值应用于此计算的计划time确定预测的time.例如，如果一个departure`delay`的`30`为停止 B 提供，则预测departuretime是`10:31:30`.真实的-time预言`time`值没有应用任何偏移量并指示预测的time如提供。例如，如果一个departure`time`为停止 B 提供代表 10:31:30 的时间，则预测departuretime是`10:31:30`. 此字段是必需的，如果`schedule_relationship`是`DUPLICATED` , 否则这个字段不能被填充并且会被消费者忽略。<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。 |
-| **shape_id**   | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 指定Shape的vehicle为此的旅行路线trip当它与原来的不同时。指一个Shape在 (CSV) 中定义GTFS或新的Shapeentity在一个真实的-time喂养。见定义`trips.shape_id`在 (CSV)GTFS .<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **trip_id**    | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | 定義一個新的標識符trip這是現有的副本trip在 (CSV) 中定義GTFStrips.txt但會start在不同的服務日期和/或time（定義使用`TripProperties.start_date`和`TripProperties.start_time`）。見定義`trips.trip_id`在 (CSV)GTFS .它的值必須不同於 (CSV) 中使用的值GTFS .此字段是必需的，如果`schedule_relationship`是`DUPLICATED` , 否則這個字段不能被填充並且會被消費者忽略。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
+| **start_date** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | 服務日期DUPLICATEDtrip將運行。必須以 YYYYMMDD 格式提供。此字段是必需的，如果`schedule_relationship`是`DUPLICATED` , 否則這個字段不能被填充並且會被消費者忽略。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
+| **start_time** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | 定義departurestarttime的trip什麼時候DUPLICATED.見定義`stop_times.departure_time`在 (CSV)GTFS .SCHEDULEDarrival和departure次為DUPLICATEDtrip是根據原始之間的偏移量計算的trip`departure_time`和這個領域。例如，如果一個GTFStrip有一個停止 A`departure_time`的`10:00:00`並停止 B`departure_time`的`10:01:00` ，並且該字段的值填充為`10:30:00`, 停止 BDUPLICATEDtrip會有一個SCHEDULED`departure_time`的`10:31:00`.真實的-time預言`delay`值應用於此計算的計劃time確定預測的time.例如，如果一個departure`delay`的`30`為停止 B 提供，則預測departuretime是`10:31:30`.真實的-time預言`time`值沒有應用任何偏移量並指示預測的time如提供。例如，如果一個departure`time`為停止 B 提供代表 10:31:30 的時間，則預測departuretime是`10:31:30`. 此字段是必需的，如果`schedule_relationship`是`DUPLICATED` , 否則這個字段不能被填充並且會被消費者忽略。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
+| **shape_id**   | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可選的       | 一        | 指定Shape的vehicle為此的旅行路線trip當它與原來的不同時。指一個Shape在 (CSV) 中定義GTFS或新的Shapeentity在一個真實的-time餵養。見定義`trips.shape_id`在 (CSV)GTFS .<br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
 
 
 ## message VehiclePosition
 
-给定的实时定位信息vehicle.
+給定的實時定位信息vehicle.
 
 **字段**
 
-| _**字段名称**_                 | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                                                                                                                                                                                      |
+| _**字段名稱**_                 | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_                                                                                                                                                                                                                                                                                      |
 | -------------------------- | -------------------------------------------------------------------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **trip**                   | [TripDescriptor](#message-tripdescriptor)                                  | 可选的       | 一        | 这trip这vehicle正在服务。可EMPTY或部分，如果vehicle无法识别给定的trip实例。                                                                                                                                                                                                                                           |
-| **vehicle**                | [VehicleDescriptor](#message-vehicledescriptor)                            | 可选的       | 一        | 附加信息vehicle这是服务这个trip.每个条目应该有一个**独特的**vehicleid .                                                                                                                                                                                                                                             |
-| **Position**               | [Position](#message-position)                                              | 可选的       | 一        | 当前的Position这个的vehicle.                                                                                                                                                                                                                                                                        |
-| **current_stop_sequence**  | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 当前停靠点的停靠顺序索引。的意思current_stop_sequence （即它所指的止损点）由下式确定current_status.如果current_status不见了IN_TRANSIT_TO假设。                                                                                                                                                                                       |
-| **stop_id**                | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 标识当前停靠点。该值必须与stops.txt在相应的GTFS喂养。如果`StopTimeProperties.assigned_stop_id`用于分配一个`stop_id`，这个字段也应该反映`stop_id` .                                                                                                                                                                                  |
-| **current_status**         | [VehicleStopStatus](#enum-vehiclestopstatus)                               | 可选的       | 一        | 的确切状态vehicle相对于当前停止。忽略如果current_stop_sequence不见了。                                                                                                                                                                                                                                             |
-| **timestamp**              | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 时刻vehicle的Position被测量了。在 POSIX 中time（即自 1970 年 1 月 1 日 00:00:00 UTC 以来的秒数）。                                                                                                                                                                                                                   |
-| **congestion_level**       | [CongestionLevel](#enum-congestionlevel)                                   | 可选的       | 一        |                                                                                                                                                                                                                                                                                               |
-| **occupancy_status**       | [OccupancyStatus](#enum-occupancystatus)                                   | _可选的_     | 一        | 客运量状况vehicle或马车。如果multi_carriage_details填充了每个车厢OccupancyStatus, 那么这个字段应该描述整个vehicle考虑所有接受乘客的车厢。<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。                                                                                                                                             |
-| **occupancy_percentage**   | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 一个百分比值，表示乘客的占用程度vehicle.值 100 应代表总最大占用率vehicle设计用于，包括座位和站立容量，以及当前的操作法规允许。如果乘客数量超过最大设计容量，该值可能会超过 100。精度occupancy_percentage应该足够低，以至于无法跟踪个别乘客的上下车vehicle.如果multi_carriage_details填充了每个车厢occupancy_percentage, 那么这个字段应该描述整个vehicle考虑所有接受乘客的车厢。<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。 |
-| **multi_carriage_details** | [CarriageDetails](#message-CarriageDetails)                                | 可选的       | 许多       | 这个给定的多个车厢的详细信息vehicle.第一次出现代表第一个车厢vehicle,**给定当前的行进方向**.的出现次数multi_carriage_details字段表示的车厢数量vehicle.它还包括不可登机的车厢，如发动机，MAINTENANCE车厢等……因为它们为乘客提供了有关站在平台上何处的宝贵信息。<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。                                                                              |
+| **trip**                   | [TripDescriptor](#message-tripdescriptor)                                  | 可選的       | 一        | 這trip這vehicle正在服務。可EMPTY或部分，如果vehicle無法識別給定的trip實例。 |
+| **vehicle**                | [VehicleDescriptor](#message-vehicledescriptor)                            | 可選的       | 一        | 附加信息vehicle這是服務這個trip.每個條目應該有一個**獨特的**vehicleid .|
+| **Position**               | [Position](#message-position)                                              | 可選的       | 一        | 當前的Position這個的vehicle.                                                                                                                                                                                                                                                                        |
+| **current_stop_sequence**  | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可選的       | 一        | 當前停靠點的停靠順序索引。的意思current_stop_sequence （即它所指的止損點）由下式確定current_status.如果current_status不見了IN_TRANSIT_TO假設。 |
+| **stop_id**                | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可選的       | 一        | 標識當前停靠點。該值必須與stops.txt在相應的GTFS餵養。如果`StopTimeProperties.assigned_stop_id`用於分配一個`stop_id`，這個字段也應該反映`stop_id` .                                                                                                                                                                                  |
+| **current_status**         | [VehicleStopStatus](#enum-vehiclestopstatus)                               | 可選的       | 一        | 的確切狀態vehicle相對於當前停止。忽略如果current_stop_sequence不見了。 |
+| **timestamp**              | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可選的       | 一        | 時刻vehicle的Position被測量了。在 POSIX 中time（即自 1970 年 1 月 1 日 00:00:00 UTC 以來的秒數）。 |
+| **congestion_level**       | [CongestionLevel](#enum-congestionlevel)                                   | 可選的       | 一        |                                                                                                                                                                                                                                                                                               |
+| **occupancy_status**       | [OccupancyStatus](#enum-occupancystatus)                                   | _可選的_     | 一        | 客運量狀況vehicle或馬車。如果multi_carriage_details填充了每個車廂OccupancyStatus, 那麼這個字段應該描述整個vehicle考慮所有接受乘客的車廂。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
+| **occupancy_percentage**   | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可選的       | 一        | 一個百分比值，表示乘客的佔用程度vehicle.值 100 應代表總最大佔用率vehicle設計用於，包括座位和站立容量，以及當前的操作法規允許。如果乘客數量超過最大設計容量，該值可能會超過 100。精度occupancy_percentage應該足夠低，以至於無法跟踪個別乘客的上下車vehicle.如果multi_carriage_details填充了每個車廂occupancy_percentage, 那麼這個字段應該描述整個vehicle考慮所有接受乘客的車廂。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
+| **multi_carriage_details** | [CarriageDetails](#message-CarriageDetails)                                | 可選的       | 許多       | 這個給定的多個車廂的詳細信息vehicle.第一次出現代表第一個車廂vehicle,**給定當前的行進方向**.的出現次數multi_carriage_details字段表示的車廂數量vehicle.它還包括不可登機的車廂，如發動機，MAINTENANCE車廂等……因為它們為乘客提供了有關站在平台上何處的寶貴信息。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
 
 
 ## enum VehicleStopStatus
 
-**价值观**
+**價值觀**
 
-| _**价值**_          | _**评论**_                                |
+| _**價值**_          | _**評論**_                                |
 | ----------------- | --------------------------------------- |
-| **INCOMING_AT**   | 这vehicle即将到达停靠点（在停靠点显示上，vehicle符号通常闪烁）。 |
-| **STOPPED_AT**    | 这vehicle站在车站。                           |
-| **IN_TRANSIT_TO** | 这vehicle已离开上一站并处于运输途中。                  |
+| **INCOMING_AT**   | 這vehicle即將到達停靠點（在停靠點顯示上，vehicle符號通常閃爍）。 |
+| **STOPPED_AT**    | 這vehicle站在車站。 |
+| **IN_TRANSIT_TO** | 這vehicle已離開上一站並處於運輸途中。 |
 
 ## enum CongestionLevel
 
-CONGESTION影响这一点的水平vehicle.
+CONGESTION影響這一點的水平vehicle.
 
-**价值观**
+**價值觀**
 
-| _**价值**_                     |
+| _**價值**_                     |
 | ---------------------------- |
 | **UNKNOWN_CONGESTION_LEVEL** |
 | **RUNNING_SMOOTHLY**         |
@@ -295,78 +295,77 @@ CONGESTION影响这一点的水平vehicle.
 
 ## enum OccupancyStatus
 
-客运量状况vehicle或马车。
+客運量狀況vehicle或馬車。
 
-个别制作人不得全部发布OccupancyStatus价值观。因此，消费者不能假设OccupancyStatus值遵循线性比例。消费者应代表OccupancyStatus值作为生产商指示和预期的状态。同样，生产者必须使用OccupancyStatus对应于实际的值vehicle占用状态。
+個別製作人不得全部發布OccupancyStatus價值觀。因此，消費者不能假設OccupancyStatus值遵循線性比例。消費者應代表OccupancyStatus值作為生產商指示和預期的狀態。同樣，生產者必須使用OccupancyStatus對應於實際的值vehicle佔用狀態。
 
-有关以线性比例描述乘客占用率的信息，请参阅occupancy_percentage .
+有關以線性比例描述乘客佔用率的信息，請參閱occupancy_percentage .
 
 
-**注意：**此字段仍处于**试验阶段**，可能会发生变化。将来可能会正式采用。
+**注意：**此字段仍處於**試驗階段**，可能會發生變化。將來可能會正式採用。
 
-_**价值观**_
+_**價值觀**_
 
-| _**价值**_                         | _**评论**_                                                   |
+| _**價值**_                         | _**評論**_                                                   |
 | -------------------------------- | ---------------------------------------------------------- |
-| _**EMPTY**_                      | _这vehicle被认为EMPTY大多数情况下，机上乘客很少或没有乘客，但仍在接受乘客。_              |
-| _**MANY_SEATS_AVAILABLE**_       | _这vehicle或车厢有大量可用座位。在可用的总座位中被认为足够大以属于该类别的空闲座位的数量由生产者自行决定。_ |
-| _**FEW_SEATS_AVAILABLE**_        | _这vehicle或车厢有少量可用座位。可被视为小到足以落入这一类别的总座位中的空闲座位数量由生产者自行决定。_   |
-| _**STANDING_ROOM_ONLY**_         | _这vehicle或车厢目前只能容纳站立的乘客。_                                  |
-| _**CRUSHED_STANDING_ROOM_ONLY**_ | _这vehicle或车厢目前只能容纳站立的乘客，并且空间有限。_                           |
-| _**FULL**_                       | _这vehicle被认为FULL通过大多数措施，但可能仍允许乘客登机。_                       |
-| _**NOT_ACCEPTING_PASSENGERS**_   | _这vehicle或运输不接受乘客。这vehicle或车厢通常接受乘客登机。_                    |
-| _**NO_DATA_AVAILABLE**_          | _这vehicle或运输没有任何可用的占用数据time._                              |
-| _**NOT_BOARDABLE**_              | _这vehicle或运输不可登机，从不接受乘客。适用于特殊车辆或车厢（发动机、MAINTENANCE马车等……）。_ |
+| _**EMPTY**_                      | _這vehicle被認為EMPTY大多數情況下，機上乘客很少或沒有乘客，但仍在接受乘客。 _              |
+| _**MANY_SEATS_AVAILABLE**_       | _這vehicle或車廂有大量可用座位。在可用的總座位中被認為足夠大以屬於該類別的空閒座位的數量由生產者自行決定。 _ |
+| _**FEW_SEATS_AVAILABLE**_        | _這vehicle或車廂有少量可用座位。可被視為小到足以落入這一類別的總座位中的空閒座位數量由生產者自行決定。 _   |
+| _**STANDING_ROOM_ONLY**_         | _這vehicle或車廂目前只能容納站立的乘客。 _                                  |
+| _**CRUSHED_STANDING_ROOM_ONLY**_ | _這vehicle或車廂目前只能容納站立的乘客，並且空間有限。 _                           |
+| _**FULL**_                       | _這vehicle被認為FULL通過大多數措施，但可能仍允許乘客登機。 _                       |
+| _**NOT_ACCEPTING_PASSENGERS**_   | _這vehicle或運輸不接受乘客。這vehicle或車廂通常接受乘客登機。 _                    |
+| _**NO_DATA_AVAILABLE**_          | _這vehicle或運輸沒有任何可用的佔用數據time._                              |
+| _**NOT_BOARDABLE**_              | _這vehicle或運輸不可登機，從不接受乘客。適用於特殊車輛或車廂（發動機、MAINTENANCE馬車等……）。 _ |
 
 
 ## message CarriageDetails
 
-车厢特定细节，用于由多个车厢组成的车辆。
+車廂特定細節，用於由多個車廂組成的車輛。
 
-**注意：**这个message 仍处于**试验阶段**，可能会发生变化。将来可能会正式采用。
+**注意：**這個message 仍處於**試驗階段**，可能會發生變化。將來可能會正式採用。
 
 **字段**
 
-| _**字段名称**_               | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                                                                                                                                                                                                    |
+| _**字段名稱**_               | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_                                                                                                                                                                                                                                                                                                    |
 | ------------------------ | -------------------------------------------------------------------------- | --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **id**                   | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 车厢的识别。每个应该是唯一的vehicle.<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。                                                                                                                                                                                                                                    |
-| **label**                | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 用户可见label可能会显示给乘客以帮助识别车厢。示例：“7712”、“汽车 ABC-32”等...<br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。                                                                                                                                                                                                             |
-| **occupancy_status**     | [OccupancyStatus](#enum-occupancystatus)                                   | 可选的       | 一        | 此给定车厢的占用状态，在此vehicle.默认设置为`NO_DATA_AVAILABLE` .<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。                                                                                                                                                                                                           |
-| **occupancy_percentage** | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 可选的       | 一        | 这个给定车厢的占用百分比，在这个vehicle.遵循与“VehiclePosition.occupancy_percentage”相同的规则。如果该给定托架的数据不可用，请使用 -1。<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。                                                                                                                                                              |
-| **carriage_sequence**    | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | 识别该车厢相对于其他车厢的顺序vehicle的 CarriageStatus 列表。行进方向上的第一个托架的值必须为 1。第二个值对应于行进方向上的第二个托架，值必须为 2，依此类推。例如，行驶方向的第一节车厢的值为 1。如果行驶方向的第二节车厢的值为 3，则消费者将丢弃所有车厢的数据（即multi_carriage_details场地）。没有数据的托架必须用有效的表示carriage_sequencenum ber 和没有数据的字段应该被省略（或者，这些字段也可以被包括并设置为“无数据”值）。<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。 |
+| **id**                   | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可選的       | 一        | 車廂的識別。每個應該是唯一的vehicle.<br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
+| **label**                | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可選的       | 一        | 用戶可見label可能會顯示給乘客以幫助識別車廂。示例：“7712”、“汽車 ABC-32”等...<br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
+| **occupancy_status**     | [OccupancyStatus](#enum-occupancystatus)                                   | 可選的       | 一        | 此給定車廂的佔用狀態，在此vehicle.默認設置為`NO_DATA_AVAILABLE` .<br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
+| **occupancy_percentage** | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 可選的       | 一        | 這個給定車廂的佔用百分比，在這個vehicle.遵循與“VehiclePosition.occupancy_percentage”相同的規則。如果該給定托架的數據不可用，請使用 -1。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
+| **carriage_sequence**    | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | 識別該車廂相對於其他車廂的順序vehicle的 CarriageStatus 列表。行進方向上的第一個托架的值必須為 1。第二個值對應於行進方向上的第二個托架，值必須為 2，依此類推。例如，行駛方向的第一節車廂的值為 1。如果行駛方向的第二節車廂的值為 3，則消費者將丟棄所有車廂的數據（即multi_carriage_details場地）。沒有數據的托架必須用有效的表示carriage_sequencenum ber 和沒有數據的字段應該被省略（或者，這些字段也可以被包括並設置為“無數據”值）。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
 
 ## message Alert
 
-一个Alert，表明公共交通网络中发生了某种事件。
+一個Alert，表示公共交通網絡中的某種事件。
 
 **字段**
 
-| _**字段名称**_                 | _**类型**_                                      | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                                                                                      |
-| -------------------------- | --------------------------------------------- | --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **active_period**          | [TimeRange](#message-timerange)               | 可选的       | 许多       | time当。。。的时候Alert应该显示给用户。如果丢失，则Alert只要它出现在提要中就会显示。如果给出多个范围，则Alert将在所有这些期间显示。                                                                                                                   |
-| **informed_entity**        | [EntitySelector](#message-entityselector)     | 必需的       | 许多       | 我们应该通知其用户的实体Alert.最后一个informed_entity必须提供。                                                                                                                                                    |
-| **Cause**                  | [Cause](#enum-cause)                          | 有条件地需要    | 一        | 如果cause_detail包含在内，那么Cause也必须包括在内。                                                                                                                                                            |
-| **cause_detail**           | [TranslatedString](#message-translatedstring) | 可选的       | 一        | 的说明Cause的Alert允许特定机构language;比Cause.如果cause_detail包含在内，那么Cause也必须包括在内。 <br/><br/>**警告：**这个领域还在**实验性的** , 并可能发生变化。它可能在未来被正式采用。                                                                 |
-| **Effect**                 | [Effect](#enum-effect)                        | 有条件地需要    | 一        | 如果effect_detail包含在内，那么Effect也必须包括在内。                                                                                                                                                          |
-| **effect_detail**          | [TranslatedString](#message-translatedstring) | 可选的       | 一        | 的说明Effect的Alert允许特定机构language;比Effect.如果effect_detail包含在内，那么Effect也必须包括在内。<br/><br/>**警告：**这个领域还在**实验性的** , 并可能发生变化。它可能在未来被正式采用。                                                              |
-| **url**                    | [TranslatedString](#message-translatedstring) | 可选的       | 一        | 这url它提供了有关的附加信息Alert.                                                                                                                                                                         |
-| **header_text**            | [TranslatedString](#message-translatedstring) | 必需的       | 一        | header为了Alert.这个平原-textstring将突出显示，例如以粗体显示。                                                                                                                                                   |
-| **description_text**       | [TranslatedString](#message-translatedstring) | 必需的       | 一        | 的说明Alert.这个平原-textstring将被格式化为Alert（或显示在用户明确的“扩展”请求上）。描述中的信息应添加到header.                                                                                                                       |
-| **tts_header_text**        | [TranslatedString](#message-translatedstring) | 可选的       | 一        | text包含Alert的header用于text到语音的实现。这个字段是text的语音版本header_text.它应该包含与以下相同的信息header_text但格式化后可以读作text-语音转换（例如，删除缩写、拼写数字等）                                                                            |
-| **tts_description_text**   | [TranslatedString](#message-translatedstring) | 可选的       | 一        | text包含对Alert用于text到语音的实现。这个字段是text的语音版本description_text.它应该包含与以下相同的信息description_text但格式化后可以读作text-语音转换（例如，删除缩写、拼写数字等）                                                                        |
-| **severity_level**         | [SeverityLevel](#enum-severitylevel)          | 可选的       | 一        | 的严重性Alert.                                                                                                                                                                                    |
-| **image**                  | [TranslatedImage](#message-translatedimage)   | 可选的       | 一        | TranslatedImage沿显示Alerttext.用于直观地解释AlertEffect的DETOUR、车站关闭等。image应该加强对Alert并且不能是基本信息的唯一位置。不鼓励使用以下类型的图像：image主要包含text、营销或品牌图像，不添加任何附加信息。<br/><br/>**警告：**这个领域还在**实验性的** , 并可能发生变化。它可能在未来被正式采用。 |
-| **image_alternative_text** | [TranslatedString](#message-translatedstring) | 可选的       | 一        | text描述链接的外观image在里面`image`字段（例如，如果image无法显示或用户看不到image出于可访问性原因）。查看 HTML[替代规格imagetext](https://html.spec.whatwg.org/#alt) .<br/><br/>**警告：**这个领域还在**实验性的** , 并可能发生变化。它可能在未来被正式采用。             |
-              |
+| _**字段名稱**_                 | _**類型**_                                      | _**必需的**_ | _**基數**_ | _**描述**_                                                                                                                                                                                    |
+| -------------------------- | --------------------------------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **active_period**          | [TimeRange](#message-timerange)               | 可選的       | 許多       | time當。 。 。的時候Alert應該顯示給用戶。如果丟失，則Alert只要它出現在提要中，就會顯示出來。如果給出多個範圍，則Alert將在所有期間顯示。 |
+| **informed_entity**        | [EntitySelector](#message-entityselector)     | 必需的       | 許多       |我們應該通知其用戶的實體Alert.最後一個informed_entity必須提供。 |
+| **Cause**                  | [Cause](#enum-cause)                          | 有條件要求     | 一        | 如果包含 cause_detail，則Cause也必須包括在內。 |
+| **原因詳細信息**                 | [TranslatedString](#message-translatedstring) | 可選的       | 一        | 描述Cause的Alert允許特定於機構的language;比Cause.如果包含 cause_detail，則Cause也必須包括在內。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
+| **Effect**                 | [Effect](#enum-effect)                        | 有條件要求     | 一        | 如果包含 effect_detail，則Effect也必須包括在內。 |
+| **效果細節**                   | [TranslatedString](#message-translatedstring) | 可選的       | 一        | 描述Effect的Alert允許特定於機構的language;比Effect.如果包含 effect_detail，則Effect也必須包括在內。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
+| **url**                    | [TranslatedString](#message-translatedstring) | 可選的       | 一        | 這url它提供了有關Alert.                                                                                                                                                                            |
+| **header_text**            | [TranslatedString](#message-translatedstring) | 必需的       | 一        | header為了Alert.這樸素——textstring將突出顯示，例如以粗體顯示。 |
+| **description_text**       | [TranslatedString](#message-translatedstring) | 必需的       | 一        | 說明Alert.這樸素——textstring將被格式化為Alert（或在用戶明確的“擴展”請求中顯示）。描述中的信息應添加到header.                                                                                                                      |
+| **tts_header_text**        | [TranslatedString](#message-translatedstring) | 可選的       | 一        | text包含Alert的header用於text到語音的實現。這個字段是text- 到語音版本header_text.它應該包含與header_text但格式化為可以讀取為text-to-speech（例如，刪除的縮寫、拼出的數字等）                                                                       |
+| **tts_description_text**   | [TranslatedString](#message-translatedstring) | 可選的       | 一        | text包含對Alert用於text到語音的實現。這個字段是text- 到語音版本description_text.它應該包含與description_text但格式化為可以讀取為text-to-speech（例如，刪除的縮寫、拼出的數字等）                                                                   |
+| **severity_level**         | [SeverityLevel](#enum-severitylevel)          | 可選的       | 一        | 的嚴重性Alert.                                                                                                                                                                                  |
+| **image**                  | [TranslatedImage](#message-translatedimage)   | 可選的       | 一        | TranslatedImage沿線顯示Alerttext.用於直觀地解釋AlertEffect一個DETOUR，車站關閉等。 image應該加強對Alert並且不能是重要信息的唯一位置。不鼓勵使用以下類型的圖像：image主要包含text、營銷或品牌圖像，不添加任何附加信息。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
+| **image_alternative_text** | [TranslatedString](#message-translatedstring) | 可選的       | 一        | text描述鏈接的外觀image在裡面`image`字段（例如，如果image無法顯示或用戶看不到image出於可訪問性的原因）。見 HTML[替代規範imagetext](https://html.spec.whatwg.org/#alt) .<br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
 
 
 ## enum Cause
 
-Cause这个的Alert.
+Cause這個的Alert.
 
-**价值观**
+**價值觀**
 
-| _**价值**_              |
+| _**價值**_              |
 | --------------------- |
 | **UNKNOWN_CAUSE**     |
 | **OTHER_CAUSE**       |
@@ -383,11 +382,11 @@ Cause这个的Alert.
 
 ## enum Effect
 
-这Effect这个问题对受影响的entity.
+這Effect這個問題對受影響的entity.
 
-**价值观**
+**價值觀**
 
-| _**价值**_                |
+| _**價值**_                |
 | ----------------------- |
 | **NO_SERVICE**          |
 | **REDUCED_SERVICE**     |
@@ -403,13 +402,13 @@ Cause这个的Alert.
 
 ## enum SeverityLevel
 
-的严重性Alert.
+的嚴重性Alert.
 
-**注意：**此字段仍处于**试验阶段**，可能会发生变化。将来可能会正式采用。
+**注意：**此字段仍處於**試驗階段**，可能會發生變化。將來可能會正式採用。
 
-**价值观**
+**價值觀**
 
-| _**价值**_             |
+| _**價值**_             |
 | -------------------- |
 | **UNKNOWN_SEVERITY** |
 | **INFO**             |
@@ -418,174 +417,173 @@ Cause这个的Alert.
 
 ## message TimeRange
 
-一个time间隔。间隔被认为是活跃的time`t`如果`t`大于或等于starttime并且小于endtime.
+一個time間隔。間隔被認為是活躍的time`t`如果`t`大於或等於starttime並且小於endtime.
 
 **字段**
 
-| _**字段名称**_ | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                        |
+| _**字段名稱**_ | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_|
 | ---------- | -------------------------------------------------------------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| **start**  | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | starttime, 在 POSIX 中time（即自 1970 年 1 月 1 日 00:00:00 UTC 以来的秒数）。如果缺失，则间隔从负无穷大开始。如果一个TimeRange提供，要么start或者end必须提供 - 两个字段都不能EMPTY. |
-| **end**    | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | endtime, 在 POSIX 中time（即自 1970 年 1 月 1 日 00:00:00 UTC 以来的秒数）。如果缺失，则间隔以正无穷大结束。如果一个TimeRange提供，要么start或者end必须提供 - 两个字段都不能EMPTY.   |
+| **start**  | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | starttime, 在 POSIX 中time（即自 1970 年 1 月 1 日 00:00:00 UTC 以來的秒數）。如果缺失，則間隔從負無窮大開始。如果一個TimeRange提供，要么start或者end必須提供 - 兩個字段都不能EMPTY. |
+| **end**    | [uint64](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | endtime, 在 POSIX 中time（即自 1970 年 1 月 1 日 00:00:00 UTC 以來的秒數）。如果缺失，則間隔以正無窮大結束。如果一個TimeRange提供，要么start或者end必須提供 - 兩個字段都不能EMPTY.   |
 
 ## message Position
 
-一个地理Position一个vehicle.
+一個地理Position一個vehicle.
 
 **字段**
 
-| _**字段名称**_    | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                             |
+| _**字段名稱**_    | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_                                                                                             |
 | ------------- | -------------------------------------------------------------------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------- |
-| **latitude**  | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 必需的       | 一        | 北度数，在 WGS-84 坐标系中。                                                                                   |
-| **longitude** | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 必需的       | 一        | 东度，在 WGS-84 坐标系中。                                                                                    |
-| **bearing**   | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 可选的       | 一        | bearing，以度为单位，从真北顺时针方向，即，0 是北，90 是东。这可以是指南针bearing，或朝向下一站或中间位置的方向。这不应该从先前位置的序列中推断出来，客户可以从先前的数据中计算出来。 |
-| **odometer**  | [double](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | odometer值，以米为单位。                                                                                     |
-| **speed**     | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 可选的       | 一        | 瞬间speed由测量vehicle，以米/秒为单位。                                                                           |
+| **latitude**  | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 必需的       | 一        | 北度數，在 WGS-84 坐標系中。 |
+| **longitude** | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 必需的       | 一        | 東度，在 WGS-84 坐標系中。 |
+| **bearing**   | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 可選的       | 一        | bearing，以度為單位，從真北順時針方向，即，0 是北，90 是東。這可以是指南針bearing，或朝向下一站或中間位置的方向。這不應該從先前位置的序列中推斷出來，客戶可以從先前的數據中計算出來。 |
+| **odometer**  | [double](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可選的       | 一        | odometer值，以米為單位。 |
+| **speed**     | [float](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 可選的       | 一        | 瞬間speed由測量vehicle，以米/秒為單位。 |
 
 
 ## message TripDescriptor
 
-标识单个实例的描述符GTFStrip.
+標識單個實例的描述符GTFStrip.
 
-指定单个trip例如，在许多情况下trip_id本身就足够了。但是，以下情况需要额外的信息才能解决单个trip实例：
+指定單個trip例如，在許多情況下trip_id本身就足夠了。但是，以下情況需要額外的信息才能解決單個trip實例：
 
-* 对于定义的行程frequencies.txt ,start_date和start_time除了需要trip_id
-* 如果trip持续超过 24 小时，或被延迟以致与SCHEDULEDtrip第二天，然后start_date除了需要trip_id
-* 如果trip_id无法提供字段，则route_id ,direction_id ,start_date ， 和start_time必须全部提供
+* 對於定義的行程frequencies.txt ,start_date和start_time除了需要trip_id
+* 如果trip持續超過 24 小時，或被延遲以致與SCHEDULEDtrip第二天，然後start_date除了需要trip_id
+* 如果trip_id無法提供字段，則route_id ,direction_id ,start_date ， 和start_time必須全部提供
 
-在所有情况下，如果route_id除了提供trip_id ，那么route_id必须相同route_id分配给给定的trip在GTFStrips.txt .
+在所有情況下，如果route_id除了提供trip_id ，那麼route_id必須相同route_id分配給給定的trip在GTFStrips.txt .
 
-这trip_id字段不能单独或与其他字段组合TripDescriptor字段，用于识别多个trip实例。例如，一个TripDescriptor永远不应该指定trip_id本身为GTFSfrequencies.txt exact_times=0 次因为start_time也需要解决一个单一的trip实例开始于特定time的一天。如果TripDescriptor不解决单个trip实例（即，它解析为零或多个trip实例），它被认为是一个错误和entity包含错误的TripDescriptor可能会被消费者丢弃。
+這trip_id字段不能單獨或與其他字段組合TripDescriptor字段，用於識別多個trip實例。例如，一個TripDescriptor永遠不應該指定trip_id本身為GTFSfrequencies.txt exact_times=0 次因為start_time也需要解決一個單一的trip實例開始於特定time的一天。如果TripDescriptor不解決單個trip實例（即，它解析為零或多個trip實例），它被認為是一個錯誤和entity包含錯誤的TripDescriptor可能會被消費者丟棄。
 
-请注意，如果trip_id未知，则站序列 id 在TripUpdate还不够，还必须提供 stop_ids。此外，绝对arrival/departure必须提供时间。
+請注意，如果trip_id未知，則站序列 id 在TripUpdate還不夠，還必須提供 stop_ids。此外，絕對arrival/departure必須提供時間。
 
-TripDescriptor.route_id不能在一个内使用AlertEntitySelector指定路由范围Alert影响路线的所有行程 - 使用EntitySelector.route_id反而。
+TripDescriptor.route_id不能在一個內使用AlertEntitySelector指定路由范圍Alert影響路線的所有行程 - 使用EntitySelector.route_id反而。
 
 
 **字段**
 
-| _**字段名称**_                | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| _**字段名稱**_                | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ------------------------- | -------------------------------------------------------------------------- | --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **trip_id**               | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | 这trip_id来自GTFS此选择器引用的提要。对于非基于频率的旅行（未在GTFSfrequencies.txt )，该字段足以唯一标识trip.对于定义的基于频率的行程GTFSfrequencies.txt ,trip_id ,start_time， 和start_date都是必需的。为了SCHEDULED-基于旅行（旅行未定义在GTFSfrequencies.txt ),trip_id仅当trip可以通过以下组合唯一标识route_id ,direction_id,start_time， 和start_date，并且提供了所有这些字段。什么时候schedule_relationship是DUPLICATED在一个TripUpdate， 这trip_id标识trip从静态GTFS成为DUPLICATED.什么时候schedule_relationship是DUPLICATED在一个VehiclePosition， 这trip_id标识新的副本trip并且必须包含对应的值TripUpdate.TripProperties .trip_id .                                                       |
-| **route_id**              | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | 这route_id来自GTFS这个选择器所指的。如果trip_id被省略，route_id ,direction_id,start_time, 和 schedule_relationship=SCHEDULED必须全部设置为识别一个trip实例。TripDescriptor.route_id不应该在一个内使用AlertEntitySelector指定路由范围Alert影响路线的所有行程 - 使用EntitySelector.route_id反而。                                                                                                                                                                                                                                                                                                                    |
-| **direction_id**          | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | 这direction_id来自GTFS喂养trips.txt文件，指示此选择器所指的行程的行进方向。如果trip_id被省略，direction_id必须提供。<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。<br/>                                                                                                                                                                                                                                                                                                                                                                                                              |
-| **start_time**            | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | 最初的SCHEDULEDstarttime这个的trip实例。当。。。的时候trip_id对应于非基于频率的trip，此字段应省略或等于GTFS喂养。当。。。的时候trip_id对应于基于频率的trip定义在GTFSfrequencies.txt ,start_time是必需的，必须指定为trip更新和vehicle职位。如果trip对应于exact_times=1GTFS记录，然后start_time必须是 headway_secs 的某个倍数（包括零）frequencies.txtstart_time对于相应的time时期。如果trip对应于exact_times=0，那么它的start_time可能是任意的，最初预计是第一个departure的trip.一经成立，start_time这个基于频率的exact_times=0trip应该被认为是不可变的，即使第一个departuretime变化——那time相反，变化可能会反映在StopTimeUpdate.如果trip_id被省略，start_time必须提供。该字段的格式和语义与GTFS /frequencies.txt /start_time，例如 11:15:35 或 25:15:35。 |
-| **start_date**            | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | 这start这个日期tripYYYYMMDD 格式的实例。为了SCHEDULED行程（行程未在GTFSfrequencies.txt )，必须提供此字段以消除迟到以至于与SCHEDULEDtrip第二天。例如，对于每天 8:00 和 20:00 出发且晚点 12 小时的火车，同一班次会有两个不同的行程time.可以提供此字段，但对于不可能发生此类冲突的计划（例如，按小时计划运行的服务，其中一个vehicle迟到一小时不再被认为与日程安排有关。此字段对于定义的基于频率的行程是必需的GTFSfrequencies.txt .如果trip_id被省略，start_date必须提供。                                                                                                                                                                                                                                                  |
-| **schedule_relationship** | [ScheduleRelationship](#enum-schedulerelationship-1)                       | 可选的       | 一        | 这之间的关系trip和静态时间表。如果TripDescriptor提供在一个Alert`EntitySelector`， 这`schedule_relationship`消费者在识别匹配时忽略该字段trip实例。                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **trip_id**               | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | 這trip_id來自GTFS此選擇器引用的提要。對於非基於頻率的旅行（未在GTFSfrequencies.txt )，該字段足以唯一標識trip.對於定義的基於頻率的行程GTFSfrequencies.txt ,trip_id ,start_time， 和start_date都是必需的。為了SCHEDULED-基於旅行（旅行未定義在GTFSfrequencies.txt ),trip_id僅當trip可以通過以下組合唯一標識route_id ,direction_id,start_time， 和start_date，並且提供了所有這些字段。什麼時候schedule_relationship是DUPLICATED在一個TripUpdate， 這trip_id標識trip從靜態GTFS成為DUPLICATED.什麼時候schedule_relationship是DUPLICATED在一個VehiclePosition， 這trip_id標識新的副本trip並且必須包含對應的值TripUpdate.TripProperties .trip_id .                                                       |
+| **route_id**              | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | 這route_id來自GTFS這個選擇器所指的。如果trip_id被省略，route_id ,direction_id,start_time, 和 schedule_relationship=SCHEDULED必須全部設置為識別一個trip實例。 TripDescriptor.route_id不應該在一個內使用AlertEntitySelector指定路由范圍Alert影響路線的所有行程 - 使用EntitySelector.route_id反而。 |
+| **direction_id**          | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | 這direction_id來自GTFS餵養trips.txt文件，指示此選擇器所指的行程的行進方向。如果trip_id被省略，direction_id必須提供。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 <br/>                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **start_time**            | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | 最初的SCHEDULEDstarttime這個的trip實例。當。 。 。的時候trip_id對應於非基於頻率的trip，此字段應省略或等於GTFS餵養。當。 。 。的時候trip_id對應於基於頻率的trip定義在GTFSfrequencies.txt ,start_time是必需的，必須指定為trip更新和vehicle職位。如果trip對應於exact_times=1GTFS記錄，然後start_time必須是 headway_secs 的某個倍數（包括零）frequencies.txtstart_time對於相應的time時期。如果trip對應於exact_times=0，那麼它的start_time可能是任意的，最初預計是第一個departure的trip.一經成立，start_time這個基於頻率的exact_times=0trip應該被認為是不可變的，即使第一個departuretime變化——那time相反，變化可能會反映在StopTimeUpdate.如果trip_id被省略，start_time必須提供。該字段的格式和語義與GTFS /frequencies.txt /start_time，例如 11:15:35 或 25:15:35。 |
+| **start_date**            | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | 這start這個日期tripYYYYMMDD 格式的實例。為了SCHEDULED行程（行程未在GTFSfrequencies.txt )，必須提供此字段以消除遲到以至於與SCHEDULEDtrip第二天。例如，對於每天 8:00 和 20:00 出發且晚點 12 小時的火車，同一班次會有兩個不同的行程time.可以提供此字段，但對於不可能發生此類衝突的計劃（例如，按小時計劃運行的服務，其中一個vehicle遲到一小時不再被認為與日程安排有關。此字段對於定義的基於頻率的行程是必需的GTFSfrequencies.txt .如果trip_id被省略，start_date必須提供。                                                                                                                                                                                                                                                  |
+| **schedule_relationship** | [ScheduleRelationship](#enum-schedulerelationship-1)                       | 可選的       | 一        | 這之間的關係trip和靜態時間表。如果TripDescriptor提供在一個Alert`EntitySelector`， 這`schedule_relationship`消費者在識別匹配時忽略該字段trip實例。 |
 
 
 ## enum ScheduleRelationship
 
-这之间的关系trip和静态时间表。如果一个trip是按照临时时间表完成的，没有反映在GTFS ，那么它不应该被标记为SCHEDULED, 但标记为ADDED.
+這之間的關係trip和靜態時間表。如果一個trip是按照臨時時間表完成的，沒有反映在GTFS ，那麼它不應該被標記為SCHEDULED, 但標記為ADDED.
 
-**价值观**
+**價值觀**
 
-| _**价值**_        | _**评论**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **SCHEDULED**   | trip即按照其运行GTFS Schedule，或者足够接近SCHEDULEDtrip与它相关联。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| **ADDED**       | 一个额外的trip那是ADDED除了运行计划之外，例如，替换损坏的vehicle或应对突然的载客量。_注意：目前，未指定使用此模式的提要的行为。有关于的讨论GTFS GitHub[ (1)](https://github.com/google/transit/issues/106) [ (2)](https://github.com/google/transit/pull/221) [ (3)](https://github.com/google/transit/pull/219)围绕完全指定或弃用ADDED旅行和文件将在这些讨论完成后更新。_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| **UNSCHEDULED** | 一个trip正在运行且没有与之关联的时间表 - 此值用于识别定义的行程GTFSfrequencies.txt精确时间 = 0。它不应用于描述未定义的行程GTFSfrequencies.txt , 或旅行GTFSfrequencies.txt精确时间 = 1。`schedule_relationship: UNSCHEDULED`还必须设置所有 StopTimeUpdates`schedule_relationship: UNSCHEDULED`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| **CANCELED**    | 一个trip存在于计划中但已被删除。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| **DUPLICATED**  | 一个新的trip这与现有的相同SCHEDULEDtrip除了服务start日期和time.与`TripUpdate.TripProperties.trip_id` ,`TripUpdate.TripProperties.start_date`， 和`TripUpdate.TripProperties.start_time`复制现有的trip从静态GTFS但start在不同的服务日期和/或time.复制一个trip如果与原始服务相关，则允许trip在 (CSV)GTFS （在`calendar.txt`或者`calendar_dates.txt`) 在接下来的 30 天内运营。这trip成为DUPLICATED通过识别`TripUpdate.TripDescriptor.trip_id` .<br/><br/>此枚举不修改现有的trip被引用`TripUpdate.TripDescriptor.trip_id`- 如果制片人想取消原作trip, 它必须单独发布`TripUpdate`与价值CANCELED.行程定义在GTFS`frequencies.txt`和`exact_times`那是EMPTY或等于`0`不可能是DUPLICATED.这`VehiclePosition.TripDescriptor.trip_id`对于新的trip必须包含来自的匹配值`TripUpdate.TripProperties.trip_id`和`VehiclePosition.TripDescriptor.ScheduleRelationship`还必须设置为`DUPLICATED`.<br/><br/>_现有的生产者和消费者正在使用ADDED枚举来表示DUPLICATED旅行必须遵循[迁移指南](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/examples/migration-duplicated.md)过渡到DUPLICATED枚举。_ |
-
+| _**價值**_        | _**評論**_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **SCHEDULED**   | trip即按照其運行GTFS Schedule，或者足夠接近SCHEDULEDtrip與它相關聯。 |
+| **ADDED**       | 一個額外的trip那是ADDED除了運行計劃之外，例如，替換損壞的vehicle或應對突然的載客量。 _注意：目前，未指定使用此模式的提要的行為。有關於的討論GTFS GitHub[ (1)](https://github.com/google/transit/issues/106) [ (2)](https://github.com/google/transit/pull/221) [ (3)](https://github.com/google/transit/pull/219)圍繞完全指定或棄用ADDED旅行和文件將在這些討論完成後更新。 _                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **UNSCHEDULED** | 一個trip正在運行且沒有與之關聯的時間表 - 此值用於識別定義的行程GTFSfrequencies.txt精確時間 = 0。它不應用於描述未定義的行程GTFSfrequencies.txt , 或旅行GTFSfrequencies.txt精確時間 = 1。 `schedule_relationship: UNSCHEDULED`還必須設置所有 StopTimeUpdates`schedule_relationship: UNSCHEDULED`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| **CANCELED**    | 一個trip存在於計劃中但已被刪除。 |
+| **DUPLICATED**  | 一個新的trip這與現有的相同SCHEDULEDtrip除了服務start日期和time.與`TripUpdate.TripProperties.trip_id` ,`TripUpdate.TripProperties.start_date`， 和`TripUpdate.TripProperties.start_time`複製現有的trip從靜態GTFS但start在不同的服務日期和/或time.複製一個trip如果與原始服務相關，則允許trip在 (CSV)GTFS （在`calendar.txt`或者`calendar_dates.txt`) 在接下來的 30 天內運營。這trip成為DUPLICATED通過識別`TripUpdate.TripDescriptor.trip_id` .<br/><br/>此枚舉不修改現有的trip被引用`TripUpdate.TripDescriptor.trip_id`- 如果製片人想取消原作trip, 它必須單獨發布`TripUpdate`與價值CANCELED.行程定義在GTFS`frequencies.txt`和`exact_times`那是EMPTY或等於`0`不可能是DUPLICATED.這`VehiclePosition.TripDescriptor.trip_id`對於新的trip必須包含來自的匹配值`TripUpdate.TripProperties.trip_id`和`VehiclePosition.TripDescriptor.ScheduleRelationship`還必須設置為`DUPLICATED`.<br/><br/>_現有的生產者和消費者正在使用ADDED枚舉來表示DUPLICATED旅行必須遵循[遷移指南](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/examples/migration-duplicated.md)過渡到DUPLICATED枚舉。 _ |
+| **DELETED** | 行程表中存在但已刪除且不得向用戶顯示的行程。<br/><br/>應該使用 DELETED 而不是 CANCELED 來表示交通提供商希望從消費應用程序中完全刪除有關相應行程的信息，因此該行程不會向乘客顯示為已取消，例如，一個行程完全被另一個行程取代。如果取消多次旅行並用替代服務代替，則此指定變得尤為重要。如果消費者要顯示有關取消的明確信息，則會分散對更重要的實時預測的注意力。<br/><br/>**注意：**該字段仍處於**實驗**階段，可能會發生變化。它可能在未來被正式採用。|
 
 ## message VehicleDescriptor
 
-身份识别信息vehicle执行trip.
+身份識別信息vehicle執行trip.
 
 **字段**
 
-| _**字段名称**_        | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                |
+| _**字段名稱**_        | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_                                                                                |
 | ----------------- | -------------------------------------------------------------------------- | --------- | -------- | --------------------------------------------------------------------------------------- |
-| **id**            | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 内部系统识别vehicle.应该**独特的**每vehicle, 并用于跟踪vehicle当它通过系统进行时。这个id不应该对end-用户;为此目的使用**label**场地 |
-| **label**         | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 用户可见label，即必须向乘客展示以帮助识别正确的东西vehicle.                                                    |
-| **license_plate** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 车牌号vehicle.                                                                             |
-| **wheelchair_accessible**         | [string](#enum-wheelchairaccessible)                                        | 可选的       | 一        | 如果提供，可以覆盖_无障碍通道_静态值GTFS .                                                               |
+| **id**            | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可選的       | 一        | 內部系統識別vehicle.應該**獨特的**每vehicle, 並用於跟踪vehicle當它通過系統進行時。這個id不應該對end-用戶;為此目的使用**label**場地 |
+| **label**         | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可選的       | 一        | 用戶可見label，即必須向乘客展示以幫助識別正確的東西vehicle.                                                    |
+| **license_plate** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可選的       | 一        | 車牌號vehicle.                                                                             |
+| **無障礙通道**         | [無障礙通道](#enum-wheelchairaccessible)                                        | 可選的       | 一        | 如果提供，可以覆蓋_無障礙通道_靜態值GTFS .                                                               |
 
-## enum WheelchairAccessible
+## enum 無障礙通道
 
-如果一个特定的trip可供轮椅进出。如果可用，该值应覆盖wheelchair_accessible静态值GTFS .
+如果一個特別的trip可供輪椅使用。如果可用，此值應覆蓋靜態中的_Wheelchair_accessible_值GTFS .
 
-**价值观**
+**價值觀**
 
-| _**价值**_                    | _**评论**_                                                                    |
-| --------------------------- | --------------------------------------------------------------------------- |
-| **NO_VALUE**                | 这trip没有关于轮椅无障碍设施的信息。这是**默认**行为。如果静电GTFS包含一个_wheelchair_accessible_值，它不会被覆盖。 |
-| **UNKNOWN**                 | 这trip没有可访问性值。该值将覆盖来自GTFS .                                                  |
-| **wheelchair_accessible**   | 这trip可供轮椅进出。该值将覆盖来自GTFS .                                                   |
-| **WHEELCHAIR_INACCESSIBLE** | 这trip是**不是**无障碍通道。该值将覆盖来自GTFS .                                             |
-
+| _**價值**_    | _**評論**_                                                  |
+| ----------- | --------------------------------------------------------- |
+| **沒有價值**    | 這trip沒有關於輪椅無障礙的信息。這是**默認**行為。如果靜電GTFS包含一個_無障礙通道_值，它不會被覆蓋。 |
+| **未知**      | 這trip不存在可訪問性值。此值將覆蓋從GTFS .                                |
+| **無障礙通道**   | 這trip輪椅可通行。此值將覆蓋從GTFS .                                   |
+| **輪椅_無法訪問** | 這trip是**不是**無障礙通道。此值將覆蓋從GTFS .                            |
 
 
 ## message EntitySelector
 
-一个选择器entity在一个GTFS喂养。字段的值应对应于相应的字段GTFS喂养。必须至少给出一个说明符。如果给出了几个，则应将它们解释为由逻辑`AND`运算符连接。此外，说明符的组合必须与GTFS喂养。换句话说，为了一个Alert适用于entity在GTFS它必须匹配所有提供的EntitySelector字段。例如，一个EntitySelector包括字段route_id `route_id : "5"`和route_type `route_type : "3"`仅适用于route_id `route_id : "5"` bus - 它不适用于任何其他路线route_type `route_type : "3"` 。如果生产者想要一个Alert申请route_id `route_id : "5"`以及route_type `route_type : "3"` ，它应该提供两个独立的EntitySelector，一个引用route_id `route_id : "5"`和另一个引用route_type `route_type : "3"` 。
+一個選擇器entity在一個GTFS餵養。字段的值應對應於相應的字段GTFS餵養。必須至少給出一個說明符。如果給出了幾個，則應將它們解釋為由邏輯`AND`運算符連接。此外，說明符的組合必須與GTFS餵養。換句話說，為了一個Alert適用於entity在GTFS它必須匹配所有提供的EntitySelector字段。例如，一個EntitySelector包括字段route_id `route_id : "5"`和route_type `route_type : "3"`僅適用於route_id `route_id : "5"` bus - 它不適用於任何其他路線route_type `route_type : "3"` 。如果生產者想要一個Alert申請route_id `route_id : "5"`以及route_type `route_type : "3"` ，它應該提供兩個獨立的EntitySelector，一個引用route_id `route_id : "5"`和另一個引用route_type `route_type : "3"` 。
 
-必须给出至少一个说明符 - 一个字段中的所有字段EntitySelector不可能是EMPTY.
+必須給出至少一個說明符 - 一個字段中的所有字段EntitySelector不可能是EMPTY.
 
 **字段**
 
-| _**字段名称**_       | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                                                     |
+| _**字段名稱**_       | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_                                                                                                                                                     |
 | ---------------- | -------------------------------------------------------------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **agency_id**    | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | 这agency_id来自GTFS此选择器引用的提要。                                                                                                                                   |
-| **route_id**     | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | 这route_id来自GTFS这个选择器所指的。如果direction_id提供，route_id也必须提供。                                                                                                      |
-| **route_type**   | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 有条件要求     | 一        | 这route_type来自GTFS这个选择器所指的。                                                                                                                                   |
-| **direction_id** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | 这direction_id来自GTFS喂养trips.txt文件，用于选择路线的一个方向上的所有行程，由指定route_id .如果direction_id提供，route_id也必须提供。<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。<br/>       |
-| **trip**         | [TripDescriptor](#message-tripdescriptor)                                  | 有条件要求     | 一        | 这trip实例来自GTFS这个选择器所指的。这个TripDescriptor必须解决单个trip中的实例GTFS数据（例如，生产者不能只提供trip_id对于exact_times=0 行程）。如果ScheduleRelationship字段填充在此TripDescriptor消费者在尝试识别GTFStrip. |
-| **stop_id**      | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        | 这stop_id来自GTFS此选择器引用的提要。                                                                                                                                     |
+| **agency_id**    | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | 這agency_id來自GTFS此選擇器引用的提要。 |
+| **route_id**     | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | 這route_id來自GTFS這個選擇器所指的。如果direction_id提供，route_id也必須提供。 |
+| **route_type**   | [int32](https://developers.google.com/protocol-buffers/docs/proto#scalar)  | 有條件要求     | 一        | 這route_type來自GTFS這個選擇器所指的。 |
+| **direction_id** | [uint32](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | 這direction_id來自GTFS餵養trips.txt文件，用於選擇路線的一個方向上的所有行程，由指定route_id .如果direction_id提供，route_id也必須提供。 <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 <br/>       |
+| **trip**         | [TripDescriptor](#message-tripdescriptor)                                  | 有條件要求     | 一        | 這trip實例來自GTFS這個選擇器所指的。這個TripDescriptor必須解決單個trip中的實例GTFS數據（例如，生產者不能只提供trip_id對於exact_times=0 行程）。如果ScheduleRelationship字段填充在此TripDescriptor消費者在嘗試識別GTFStrip. |
+| **stop_id**      | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        | 這stop_id來自GTFS此選擇器引用的提要。 |
 
 ## message TranslatedString
 
-国际化的message 包含每language片段的版本text或一个url.来自 a 的字符串之一message 将被捡起。解决方法如下： 如果 UIlanguage匹配languagea的代码Translation, 第一个匹配Translation被选中。如果默认 UIlanguage（例如，英语）匹配languagea的代码Translation, 第一个匹配Translation被选中。如果有些Translation有一个未指定的language代码，那个Translation被选中。
+國際化的message 包含每language片段的版本text或一個url.來自 a 的字符串之一message 將被撿起。解決方法如下： 如果 UIlanguage匹配languagea的代碼Translation, 第一個匹配Translation被選中。如果默認 UIlanguage（例如，英語）匹配languagea的代碼Translation, 第一個匹配Translation被選中。如果有些Translation有一個未指定的language代碼，那個Translation被選中。
 
 
 **字段**
 
-| _**字段名称**_      | _**类型**_                            | _**必需的**_ | _**基数**_ | _**描述**_             |
+| _**字段名稱**_      | _**類型**_                            | _**必需的**_ | _**基數**_ | _**描述**_             |
 | --------------- | ----------------------------------- | --------- | -------- | -------------------- |
-| **Translation** | [Translation](#message-translation) | 必需的       | 许多       | 最后一个Translation必须提供。 |
+| **Translation** | [Translation](#message-translation) | 必需的       | 許多       | 最後一個Translation必須提供。 |
 
 ## message Translation
 
-本地化的string映射到一个language.
+本地化的string映射到一個language.
 
-| _**字段名称**_   | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                      |
+| _**字段名稱**_   | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_                                                                                                                      |
 | ------------ | -------------------------------------------------------------------------- | --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| **text**     | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | 一个 UTF-8string包含message .                                                                                                      |
-| **language** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        |  BCP-47language代码。可以省略，如果language是未知的，或者是否根本没有对提要进行国际化。最多一个Translation允许有一个未指定的languagetag - 如果有多个Translation， 这language必须提供。 |
+| **text**     | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | 一個 UTF-8string包含message .                                                                                                      |
+| **language** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        |  BCP-47language代碼。可以省略，如果language是未知的，或者是否根本沒有對提要進行國際化。最多一個Translation允許有一個未指定的languagetag - 如果有多個Translation， 這language必須提供。 |
 
 ## message TranslatedImage
 
-国际化的message 包含每language的版本image.其中一张图片来自message 将被捡起。解决方法如下： 如果 UIlanguage匹配languagea的代码Translation, 第一个匹配Translation被选中。如果默认 UIlanguage（例如，英语）匹配languagea的代码Translation, 第一个匹配Translation被选中。如果有些Translation有一个未指定的language代码，那个Translation被选中。
+國際化的message 包含每language的版本image.其中一張圖片來自message 將被撿起。解決方法如下： 如果 UIlanguage匹配languagea的代碼Translation, 第一個匹配Translation被選中。如果默認 UIlanguage（例如，英語）匹配languagea的代碼Translation, 第一個匹配Translation被選中。如果有些Translation有一個未指定的language代碼，那個Translation被選中。
 
-**注意：**这个message 仍处于**试验阶段**，可能会发生变化。将来可能会正式采用。
+**注意：**這個message 仍處於**試驗階段**，可能會發生變化。將來可能會正式採用。
 
 **字段**
 
-| _**字段名称**_          | _**类型**_                                  | _**必需的**_ | _**基数**_ | _**描述**_          |
+| _**字段名稱**_          | _**類型**_                                  | _**必需的**_ | _**基數**_ | _**描述**_          |
 | ------------------- | ----------------------------------------- | --------- | -------- | ----------------- |
-| **localized_image** | [LocalizedImage](#message-localizedimage) | 必需的       | 许多       | 至少一个本地化image必须提供。 |
+| **localized_image** | [LocalizedImage](#message-localizedimage) | 必需的       | 許多       | 至少一個本地化image必須提供。 |
 
 
 ## message LocalizedImage
 
-本地化的imageurl映射到一个language.
+本地化的imageurl映射到一個language.
 
-| _**字段名称**_     | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                                                                                                                                                                                                    |
+| _**字段名稱**_     | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_                                                                                                                                                                                                                                                                                                    |
 | -------------- | -------------------------------------------------------------------------- | --------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **url**        | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | string包含一个url链接到image.这image链接必须小于 2MB。如果image以足够显着的方式发生变化，需要在消费者端进行更新，生产者必须更新url到一个新的。<br/><br/>这url应该是完全合格的url包括 http:// 或 https:// 以及url必须正确转义。请参阅以下内容[http://www.w3.org/Addressing/url/4_URI_Recommentations.html 为](http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for)描述如何创建完全合格的url价值观。 |
-| **media_type** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | IANA media type as 指定的类型image要显示。类型必须start与“图像/”                                                                                                                                                                                                                                                            |
-| **language**   | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有条件要求     | 一        |  BCP-47language代码。可以省略，如果language是未知的，或者是否根本没有对提要进行国际化。最多一个Translation允许有一个未指定的languagetag - 如果有多个Translation， 这language必须提供。                                                                                                                                                                               |
+| **url**        | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | string包含一個url鏈接到image.這image鏈接必須小於 2MB。如果image以足夠顯著的方式發生變化，需要在消費者端進行更新，生產者必須更新url到一個新的。 <br/><br/>這url應該是完全合格的url包括 http:// 或 https:// 以及url必須正確轉義。請參閱以下內容[http://www.w3.org/Addressing/url/4_URI_Recommentations.html 為](http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for)描述如何創建完全合格的url價值觀。 |
+| **media_type** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | IANA media type as 指定的類型image要顯示。類型必須start與“圖像/”                                                                                                                                                                                                                                                            |
+| **language**   | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 有條件要求     | 一        |  BCP-47language代碼。可以省略，如果language是未知的，或者是否根本沒有對提要進行國際化。最多一個Translation允許有一個未指定的languagetag - 如果有多個Translation， 這language必須提供。 |
 
 ## message Shape
 
-描述一个物理路径vehicle需要时Shape不属于 (CSV)GTFS ，例如对于临时DETOUR.形状属于 Trips，由编码的折线组成，以实现更有效的传输。 Shapes 不需要精确地截取 Stops 的位置，但所有 Stops 都在一个trip应该在一个小的距离内Shape为了那个原因trip，即接近连接的直线段Shape积分
+描述一個物理路徑vehicle需要時Shape不屬於 (CSV)GTFS ，例如對於臨時DETOUR.形狀屬於 Trips，由編碼的折線組成，以實現更有效的傳輸。 Shapes 不需要精確地截取 Stops 的位置，但所有 Stops 都在一個trip應該在一個小的距離內Shape為了那個原因trip，即接近連接的直線段Shape積分
 
-**注意：**这个message 仍处于**试验阶段**，可能会发生变化。将来可能会正式采用。<br/>.<br/>
+**注意：**這個message 仍處於**試驗階段**，可能會發生變化。將來可能會正式採用。 <br/>.<br/>
 
 
 **字段**
 
-| _**字段名称**_           | _**类型**_                                                                   | _**必需的**_ | _**基数**_ | _**描述**_                                                                                                                                                                   |
+| _**字段名稱**_           | _**類型**_                                                                   | _**必需的**_ | _**基數**_ | _**描述**_                                                                                                                                                                   |
 | -------------------- | -------------------------------------------------------------------------- | --------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **shape_id**         | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | 标识符Shape.必须不同于任何`shape_id`在 (CSV) 中定义GTFS .<br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。                                                                              |
-| **encoded_polyline** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | 的编码折线表示Shape.此折线必须至少包含两个点。有关编码折线的更多信息，请参阅<https://developers.google.com/maps/documentation/utilities/polylinealgorithm> <br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。 |
+| **shape_id**         | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | 標識符Shape.必須不同於任何`shape_id`在 (CSV) 中定義GTFS .<br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
+| **encoded_polyline** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 必需的       | 一        | 的編碼折線表示Shape.此折線必須至少包含兩個點。有關編碼折線的更多信息，請參閱<https://developers.google.com/maps/documentation/utilities/polylinealgorithm> <br/><br/>**警告：**這個領域仍然**實驗**，並且可能會發生變化。將來可能會正式採用。 |
