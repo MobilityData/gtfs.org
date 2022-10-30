@@ -3,61 +3,61 @@ search:
   exclude: true
 ---
   
-# GTFS Schedule 最佳实践
+# GTFS Schedule 最佳實踐
 
-这些是描述公共交通服务的推荐做法General Transit Feed Specification[(](../reference)GTFS [)](../reference) .这些实践都是从[GTFS](<#\<glossary variable=>)的经验中总结出来的[-最佳实践工作组">](<#\<glossary variable=>)GTFS [最佳实践工作组](<#\<glossary variable=>)成员和[PHP](<http://www.transitwiki.org/TransitWiki/index.\<glossary variable=>) [/Best_practices_for_creating_GTFS">应用程序特定](<http://www.transitwiki.org/TransitWiki/index.\<glossary variable=>)GTFS [实践建议](<http://www.transitwiki.org/TransitWiki/index.\<glossary variable=>)。
+這些是描述公共交通服務的推薦做法General Transit Feed Specification[(](../reference)GTFS [)](../reference) .這些實踐都是從[GTFS](<#\<glossary variable=>)的經驗中總結出來的[-最佳實踐工作組">](<#\<glossary variable=>)GTFS [最佳實踐工作組](<#\<glossary variable=>)成員和[PHP](<http://www.transitwiki.org/TransitWiki/index.\<glossary variable=>) [/Best_practices_for_creating_GTFS">應用程序特定](<http://www.transitwiki.org/TransitWiki/index.\<glossary variable=>)GTFS [實踐建議](<http://www.transitwiki.org/TransitWiki/index.\<glossary variable=>)。
 
-有关更多背景信息，请参阅[常见问题](#frequently-asked-questions-faq)。
+有關更多背景信息，請參閱[常見問題](#frequently-asked-questions-faq)。
 
-## 文件结构
+## 文件結構
 
-实践分为四个主要部分：
+實踐分為四個主要部分：
 
-* __[数据集发布和一般实践](#dataset-publishing-general-practices)：__这些实践与数据集的整体结构有关GTFS数据集和其中的方式GTFS数据集发布。
-* __[按文件组织的实践建议](#practice-recommendations-organized-by-file)：__建议按文件和字段组织GTFS便于将映射实践反馈给官方GTFS参考。
-* __[按案例组织的实践建议](#practice-recommendations-organized-by-case)：__对于特定案例，例如循环路线，可能需要在多个文件和字段中应用实践。此类建议合并在本节中。
+* __[數據集發布和一般實踐](#dataset-publishing-general-practices)：__這些實踐與數據集的整體結構有關GTFS數據集和其中的方式GTFS數據集發布。
+* __[按文件組織的實踐建議](#practice-recommendations-organized-by-file)：__建議按文件和字段組織GTFS便於將映射實踐反饋給官方GTFS參考。
+* __[按案例組織的實踐建議](#practice-recommendations-organized-by-case)：__對於特定案例，例如循環路線，可能需要在多個文件和字段中應用實踐。此類建議合併在本節中。
 
-## 数据集发布和一般实践
+## 數據集發布和一般實踐
 
-* 数据集应发布在公共的永久 URL 上，包括 zip 文件名。 （例如， [GTFS](<http://www.agency.org/\<glossary variable=>) [/](<http://www.agency.org/\<glossary variable=>)GTFS [.zip">www.agency.org/](<http://www.agency.org/\<glossary variable=>)GTFS [/](<http://www.agency.org/\<glossary variable=>)GTFS [.zip](<http://www.agency.org/\<glossary variable=>) )。理想情况下，URL 应该可以直接下载，无需登录即可访问文件，以方便使用软件应用程序进行下载。虽然建议（也是最常见的做法）GTFS数据集可公开下载，如果数据提供者确实需要控制对GTFS出于许可或其他原因，建议控制对GTFS使用 API 密钥的数据集，这将有助于自动下载。
-* GTFS数据以迭代形式发布，因此在稳定位置的单个文件始终包含运输机构（或多个机构）的最新官方服务描述。
-* 维护持久标识符（id 字段）stop_id ,route_id ， 和agency_id尽可能跨数据迭代。
-* 一GTFS数据集应包含当前和即将推出的服务（有时称为“合并”数据集）。 Google transitfeed 工具的[合并功能](https://github.com/google/transitfeed/wiki/Merge)可用于从两个不同的数据集创建合并数据集GTFS饲料。
-  * 随时发布GTFS数据集应至少在接下来的 7 天内有效，理想情况下，只要操作员确信Schedule将继续运营。
-  * 如果可能的话，GTFS数据集应至少涵盖接下来 30 天的服务。
-* 从提要中删除旧服务（过期日历）。
-* 如果服务修改将在 7 天或更短时间内生效，请通过[GTFS](<https://developers.google.com/transit/\<glossary variable=>)表达此服务更改[-](<https://developers.google.com/transit/\<glossary variable=>)Realtime[/">](<https://developers.google.com/transit/\<glossary variable=>)GTFS [-](<https://developers.google.com/transit/\<glossary variable=>)Realtime提要（服务建议或旅行更新）而不是静态的GTFS数据集。
-* 网络服务器托管GTFS数据应配置为正确报告文件修改日期（参见[HTTP/1.1 - Request for Comments 2616](https://tools.ietf.org/html/rfc2616#section-14.29) ，在第 14.29 节下）。
+* 數據集應發佈在公共的永久 URL 上，包括 zip 文件名。 （例如， [GTFS](<http://www.agency.org/\<glossary variable=>) [/](<http://www.agency.org/\<glossary variable=>)GTFS [.zip">www.agency.org/](<http://www.agency.org/\<glossary variable=>)GTFS [/](<http://www.agency.org/\<glossary variable=>)GTFS [.zip](<http://www.agency.org/\<glossary variable=>) )。理想情況下，URL 應該可以直接下載，無需登錄即可訪問文件，以方便使用軟件應用程序進行下載。雖然建議（也是最常見的做法）GTFS數據集可公開下載，如果數據提供者確實需要控制對GTFS出於許可或其他原因，建議控制對GTFS使用 API 密鑰的數據集，這將有助於自動下載。
+* GTFS數據以迭代形式發布，因此在穩定位置的單個文件始終包含運輸機構（或多個機構）的最新官方服務描述。
+* 維護持久標識符（id 字段）stop_id ,route_id ， 和agency_id盡可能跨數據迭代。
+* 一GTFS數據集應包含當前和即將推出的服務（有時稱為“合併”數據集）。 Google transitfeed 工具的[合併功能](https://github.com/google/transitfeed/wiki/Merge)可用於從兩個不同的數據集創建合併數據集GTFS飼料。
+  * 隨時發布GTFS數據集應至少在接下來的 7 天內有效，理想情況下，只要操作員確信Schedule將繼續運營。
+  * 如果可能的話，GTFS數據集應至少涵蓋接下來 30 天的服務。
+* 從提要中刪除舊服務（過期日曆）。
+* 如果服務修改將在 7 天或更短時間內生效，請通過[GTFS](<https://developers.google.com/transit/\<glossary variable=>)表達此服務更改[-](<https://developers.google.com/transit/\<glossary variable=>)Realtime[/">](<https://developers.google.com/transit/\<glossary variable=>)GTFS [-](<https://developers.google.com/transit/\<glossary variable=>)Realtime提要（服務建議或旅行更新）而不是靜態的GTFS數據集。
+* 網絡服務器託管GTFS數據應配置為正確報告文件修改日期（參見[HTTP/1.1 - Request for Comments 2616](https://tools.ietf.org/html/rfc2616#section-14.29) ，在第 14.29 節下）。
 
-## 按文件组织的练习建议
+## 按文件組織的練習建議
 
-本节显示按文件和字段组织的实践，与GTFS[参考](../reference)。
+本節顯示按文件和字段組織的實踐，與GTFS[參考](../reference)。
 
 ### 所有文件
 
-| 字段名称 | 推荐                                                                                                                                     |
+| 字段名稱 | 推薦                                                                                                                                     |
 | ---- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| 混合案例 | 所有面向客户的文本字符串（包括站点名称、路线名称和车头标志）都应使用混合大小写（而不是全部大写），遵循本地约定，以便在能够显示小写字符的显示器上将地名大写。                                                         |
+| 混合案例 | 所有面向客戶的文本字符串（包括站點名稱、路線名稱和車頭標誌）都應使用混合大小寫（而不是全部大寫），遵循本地約定，以便在能夠顯示小寫字符的顯示器上將地名大寫。 |
 |      | 例子：                                                                                                                                    |
-|      | 布莱顿丘吉尔广场                                                                                                                               |
-|      | 马恩河畔维利尔斯                                                                                                                               |
-|      | 市场街                                                                                                                                    |
-| 缩写   | 避免在整个提要中使用名称和其他文本的缩写（例如 St. 代表街道），除非使用其缩写名称（例如“JFK 机场”）来调用位置。缩写可能会影响屏幕阅读器软件和语音用户界面的可访问性。消费软件可以设计为可靠地将完整单词转换为缩写词以供显示，但从缩写词转换为完整单词更容易出错。 |
+|      | 布萊頓丘吉爾廣場                                                                                                                               |
+|      | 馬恩河畔維利爾斯                                                                                                                               |
+|      | 市場街                                                                                                                                    |
+| 縮寫   | 避免在整個提要中使用名稱和其他文本的縮寫（例如 St. 代表街道），除非使用其縮寫名稱（例如“JFK 機場”）來調用位置。縮寫可能會影響屏幕閱讀器軟件和語音用戶界面的可訪問性。消費軟件可以設計為可靠地將完整單詞轉換為縮寫詞以供顯示，但從縮寫詞轉換為完整單詞更容易出錯。 |
 
 ### agency.txt
 
-| 字段名称              | 推荐                                                                                                              |
+| 字段名稱              | 推薦                                                                                                              |
 | ----------------- | --------------------------------------------------------------------------------------------------------------- |
-| `agency_id`       | 应包括在内，即使提要中只有一个机构。 （另见建议包括`agency_id`在[`routes.txt`](#routestxt)和[`fare_attributes.txt`](#fare_attributestxt) ) |
-| `agency_phone`    | 除非不存在此类客户服务电话，否则应包括在内。                                                                                          |
-| `agency_email`    | 除非不存在此类客户服务电子邮件，否则应包括在内。                                                                                        |
-| `agency_fare_url` | 除非该机构完全免费，否则应包括在内。                                                                                              |
+| `agency_id`       | 應包括在內，即使提要中只有一個機構。 （另見建議包括`agency_id`在[`routes.txt`](#routestxt)和[`fare_attributes.txt`](#fare_attributestxt) ) |
+| `agency_phone`    | 除非不存在此類客戶服務電話，否則應包括在內。 |
+| `agency_email`    | 除非不存在此類客戶服務電子郵件，否則應包括在內。 |
+| `agency_fare_url` | 除非該機構完全免費，否則應包括在內。 |
 
 __例子：__
 
-* 巴士服务由几家小型巴士公司经营。但是有一个大机构负责调度和票务，并且从用户的角度负责公共汽车服务。一个大机构应该定义为提要中的机构。即使数据在内部由不同的小型公交运营商进行拆分，Feed 中也应该只定义一个机构。
+* 巴士服務由幾家小型巴士公司經營。但是有一個大機構負責調度和票務，並且從用戶的角度負責公共汽車服務。一個大機構應該定義為提要中的機構。即使數據在內部由不同的小型公交運營商進行拆分，Feed 中也應該只定義一個機構。
 
-* 提要提供商运行票务门户，但有不同的机构实际运营服务并且用户知道要负责。实际运营服务的机构应定义为提要中的机构。
+* 提要提供商運行票務門戶，但有不同的機構實際運營服務並且用戶知道要負責。實際運營服務的機構應定義為提要中的機構。
 
 
 ### stops.txt
@@ -65,35 +65,35 @@ __例子：__
 |字段名稱 |推薦 |
 | --- | --- |
 | `stop_name` |如果沒有發布的站點名稱，請在整個提要中遵循一致的站點命名約定。 | |
-| |默認情況下，`stop_name` 不應包含通用或冗餘詞，如“Station”或“Stop”，但允許一些極端情況。<ul><li>當它實際上是名稱的一部分時（聯合車站、中央車站<li>當`stop_name`過於籠統時（比如如果它是城市的名稱）。“車站”、“終點站”或其他詞使含義清晰。</ul> |
+| |默認情況下，`stop_name` 不應包含通用或冗餘詞，如“Station”或“Stop”，但允許一些極端情況。 <ul><li>當它實際上是名稱的一部分時（聯合車站、中央車站<li>當`stop_name`過於籠統時（比如如果它是城市的名稱）。“車站”、“終點站”或其他詞使含義清晰。</ul> |
 | `stop_lat` & `stop_lon` |停止位置應盡可能準確。與實際停止位置相比，停止位置的誤差應不超過 __4 米。 |
 | |停靠點應放置在非常靠近乘客上車的行人通行權處（即街道的正確一側）。 |
 | |如果在不同的數據饋送中共享停靠點位置（即兩個代理機構使用完全相同的停靠/登機設施），則通過對兩個停靠點使用完全相同的 `stop_lat` 和 `stop_lon` 來指示該停靠點是共享的。 |
-| `parent_station` & `location_type` |許多車站或航站樓有多個登機設施（根據模式，它們可能被稱為巴士站、站台、碼頭、登機口或其他術語）。在這種情況下，飼料生產者應描述車站、寄宿設施（也稱為兒童站）及其關係。 <ul><li>車站或終點站應定義為 `stops.txt` 中的記錄，`location_type = 1`。</li><li>每個登機設施應定義為停靠站，`location_type = 0 `。 `parent_station` 字段應引用登機設施所在車站的 `stop_id`。</li></ul> |
-| |在給車站和兒童站命名時，設置讓乘客容易識別的名稱，並能幫助乘客識別車站和上車設施（公交車站、站台、碼頭、登機口等）。<table class='example' ><thead><tr><th>母站名稱</th><th>子站名稱</th></tr></thead><tbody><tr><td>芝加哥聯合車站</td ><td>芝加哥聯合車站 19 號站台</td></tr><tr><td>舊金山渡輪大廈航站樓</td><td>舊金山渡輪大廈航站樓 E 門</td></tr> <tr><td>Downtown Transit Center</td><td>Downtown Transit Center Bay B</td></tr></tbody></table> |
+| `parent_station` & `location_type` |許多車站或航站樓有多個登機設施（根據模式，它們可能被稱為巴士站、站台、碼頭、登機口或其他術語）。在這種情況下，飼料生產者應描述車站、寄宿設施（也稱為兒童站）及其關係。 <ul><li>車站或終點站應定義為 `stops.txt` 中的記錄，`location_type = 1`。 </li><li>每個登機設施應定義為停靠站，`location_type = 0 `。 `parent_station` 字段應引用登機設施所在車站的 `stop_id`。 </li></ul> |
+| |在給車站和兒童站命名時，設置讓乘客容易識別的名稱，並能幫助乘客識別車站和上車設施（公交車站、站台、碼頭、登機口等）。 <table class='example' ><thead><tr><th>母站名稱</th><th>子站名稱</th></tr></thead><tbody><tr><td>芝加哥聯合車站</td ><td>芝加哥聯合車站 19 號站台</td></tr><tr><td>舊金山渡輪大廈航站樓</td><td>舊金山渡輪大廈航站樓 E 門</td></tr> <tr><td>Downtown Transit Center</td><td>Downtown Transit Center Bay B</td></tr></tbody></table> |
 
 ### routes.txt
 
 |字段名稱 |推薦 |
 | --- | --- |
 | `route_short_name` |如果有簡短的服務名稱，請包括 `route_short_name`。這應該是服務的常用乘客姓名，不超過 12 個字符。 |
-| `route_long_name` |來自規範參考的定義：<q>此名稱通常比 <code>route_short_name</code> 更具描述性，並且通常包括路線的目的地或停靠點。必須至少指定 <code>route_short_name</code> 或 <code>route_long_name</code> 之一，或者如果合適，可能同時指定兩者。如果路由沒有長名，請指定一個<code>route_short_name</code>並使用空字符串作為該字段的值。</q><br>長名類型示例如下：<table class='example'><thead><tr><th colspan='3'>主要行進路徑或走廊</th></tr><tr><th>路線名稱</th><th>表格</th><th>機構</th></tr></thead><tbody><tr><td><a href='https://www.sfmta.com/getting-around/transit/ routes-stops/n-judah'>“N”/“Judah”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td ><td><a href='https://www.sfmta.com/'>Muni</a>，舊金山</td></tr><tr><td><a href='https ://trimet.org/schedules/r006.htm'>“6”/“ML King Jr Blvd”</a></td><td><code>route_short_name</code>/<br><code> route_long_name</code></td><td><a href='https://trimet.org/'>TriMet</a>，俄勒岡州波特蘭市。</td></tr><tr><td><a href='http://www.ratp.fr/informer/pdf/orienter/f_plan.php?nompdf=m6'>“6”/“Nation - Étoile”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</c ode></td><td><a href='http://www.ratp.fr/'>RATP</a>，在法國巴黎。</td></tr><tr><td> <a href='http://www.bvg.de/images/content/linienverlaeufe/LinienverlaufU2.pdf'>“U2”-“Pankow – Ruhleben”</a></td><td><code>route_short_name </code>-<br><code>route_long_name</code></td><td><a href='http://www.bvg.de/'>BVG</a>，德國柏林</td></tr></tbody></table><table class='example'><thead><tr><th>服務說明</th></tr></thead><tbody><tr><td><a href='https://128bc.org/schedules/rev-bus-hartwell-area/'>“哈特韋爾地區班車”</a></td></tr> </tbody></table>   
+| `route_long_name` |來自規範參考的定義：<q>此名稱通常比 <code>route_short_name</code> 更具描述性，並且通常包括路線的目的地或停靠點。必須至少指定 <code>route_short_name</code> 或 <code>route_long_name</code> 之一，或者如果合適，可能同時指定兩者。如果路由沒有長名，請指定一個<code>route_short_name</code>並使用空字符串作為該字段的值。 </q><br>長名類型示例如下：<table class='example'><thead><tr><th colspan='3'>主要行進路徑或走廊</th></tr><tr><th>路線名稱</th><th>表格</th><th>機構</th></tr></thead><tbody><tr><td><a href='https://www.sfmta.com/getting-around/transit/ routes-stops/n-judah'>“N”/“Judah”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td ><td><a href='https://www.sfmta.com/'>Muni</a>，舊金山</td></tr><tr><td><a href='https ://trimet.org/schedules/r006.htm'>“6”/“ML King Jr Blvd”</a></td><td><code>route_short_name</code>/<br><code> route_long_name</code></td><td><a href='https://trimet.org/'>TriMet</a>，俄勒岡州波特蘭市。 </td></tr><tr><td><a href='http://www.ratp.fr/informer/pdf/orienter/f_plan.php?nompdf=m6'>“6”/“Nation - Étoile”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</c ode></td><td><a href='http://www.ratp.fr/'>RATP</a>，在法國巴黎。 </td></tr><tr><td> <a href='http://www.bvg.de/images/content/linienverlaeufe/LinienverlaufU2.pdf'>“U2”-“Pankow – Ruhleben”</a></td><td><code>route_short_name </code>-<br><code>route_long_name</code></td><td><a href='http://www.bvg.de/'>BVG</a>，德國柏林</td></tr></tbody></table><table class='example'><thead><tr><th>服務說明</th></tr></thead><tbody><tr><td><a href='https://128bc.org/schedules/rev-bus-hartwell-area/'>“哈特韋爾地區班車”</a></td></tr> </tbody></table>   
 | | `route_long_name` 不應包含 `route_short_name`。 |
 | |在填充 `route_long_name` 時包括完整的名稱，包括服務標識。示例：<table class='example'><thead><tr><th>服務標識</th><th>推薦</th><th>示例</th></tr></thead><tbody><tr><td>“MAX 輕軌”<br>俄勒岡州波特蘭市的 TriMet</td><td><code>route_long_name</code> 應包括品牌 (MAX) 和具體路線名稱</td><td>“MAX 紅線”“MAX 藍線”</td></tr><tr><td>“快速騎行”<br>新墨西哥州阿爾伯克基的 ABQ 騎行</td> <td><code>route_long_name</code> 應包含品牌（Rapid Ride）和具體路線名稱</td><td>“Rapid Ride Red Line”<br>“Rapid Ride Blue Line”</td ></tr></tbody></table>
-| `route_id` |給定命名路線上的所有行程都應引用相同的“route_id”。 <li>不應將路線的不同方向劃分為不同的 `route_id` 值。</li><li>不應將路線的不同運營跨度劃分為不同的 `route_id` 值。即不要在 `routes.txt` 中為“Downtown AM”和“Downtown PM”服務創建不同的記錄）。</li> |
+| `route_id` |給定命名路線上的所有行程都應引用相同的“route_id”。 <li>不應將路線的不同方向劃分為不同的 `route_id` 值。 </li><li>不應將路線的不同運營跨度劃分為不同的 `route_id` 值。即不要在 `routes.txt` 中為“Downtown AM”和“Downtown PM”服務創建不同的記錄）。 </li> |
 | |如果路由組包含明確命名的分支（例如 1A 和 1B），請按照路由 [branches](#branches) 案例中的建議來確定 `route_short_name` 和 `route_long_name`。 |
 | `route_color` & `route_text_color` |應與標牌、印刷和在線客戶信息一致（如果其他地方不存在，則不包括在內）。 |
 
 ### trips.txt
 
-* __參見循環路線的特殊情況：__ 循環路線是指行程在同一站點開始和結束的情況，而不是線性路線，後者有兩個不同的終點。環路路線必須按照具體做法進行描述。 [參見循環路線案例。](#loop-routes)
-* __請參閱套索路線的特殊情況：__ 套索路線是線性和循環幾何形狀的混合體，其中車輛僅在部分路線上循環行駛。套索路線必須按照具體做法進行描述。 [參見套索路線案例。](#lasso-routes)
+* __參見循環路線的特殊情況：__ 循環路線是指行程在同一站點開始和結束的情況，而不是線性路線，後者有兩個不同的終點。環路路線必須按照具體做法進行描述。 [參見循環路線案例。 ](#loop-routes)
+* __請參閱套索路線的特殊情況：__ 套索路線是線性和循環幾何形狀的混合體，其中車輛僅在部分路線上循環行駛。套索路線必須按照具體做法進行描述。 [參見套索路線案例。 ](#lasso-routes)
 
 |字段名稱 |推薦 |
 | --- | --- |
 | `trip_headsign` |不要在 `trip_headsign` 或 `stop_headsign` 字段中提供路線名稱（匹配 `route_short_name` 和 `route_long_name`）。 |
 | |應包含目的地、方向和/或車輛頭標上顯示的其他行程指定文本，可用於區分路線中的行程。與車輛上顯示的方向信息保持一致是確定 GTFS 數據集中提供的頭標的主要和壓倒一切的目標。只有在不損害這一主要目標的情況下，才應包括其他信息。如果頭標在旅途中發生變化，請用 `stop_times.stop_headsign` 覆蓋 `trip_headsign`。以下是針對一些可能情況的建議： |
-| | <table class="example"><thead><tr><th>路線說明</th><th>推薦</th></tr></thead><tbody><tr><td>2A. Destination-only</td><td>提供終點站目的地。例如“交通中心”、“波特蘭市中心”或“詹岑海灘”> </td></tr><tr><td>2B.帶航點的目的地</td><td>&lt;destination&gt;通過&lt;航點&gt; “通過查令十字街的海格特”。如果在車輛通過這些航點後航點從向乘客顯示的航標中刪除，請使用 <code>stop_times.stop_headsign</code> 設置更新的航標。> </td></tr><tr><td>2℃。帶有本地站點的區域地名</td><td>如果目的地城市或自治市內有多個站點，請在到達目的地城市後使用<code>stop_times.stop_headsign</code>。> </td></tr><tr><td>2D。僅方向</td><td>使用諸如“北行”、“入站”、“順時針”或類似方向等術語表示。></td></tr><tr><td>2E。方向與目的地</td><td>&lt;direction&gt;到&lt;終點站名稱&gt;例如“南行至聖何塞”></td></tr><tr><td>2F。帶有目的地和航路點的方向</td><td>&lt;direction&gt;通過&lt;航點&gt;到&lt;目的地&gt; （“北行經查令十字到海格特”）。></td></tr></tbody></table> |
+| | <table class="example"><thead><tr><th>路線說明</th><th>推薦</th></tr></thead><tbody><tr><td>2A. Destination-only</td><td>提供終點站目的地。例如“交通中心”、“波特蘭市中心”或“詹岑海灘”> </td></tr><tr><td>2B.帶航點的目的地</td><td>&lt;destination&gt;通過&lt;航點&gt; “通過查令十字街的海格特”。如果在車輛通過這些航點後航點從向乘客顯示的航標中刪除，請使用 <code>stop_times.stop_headsign</code> 設置更新的航標。 > </td></tr><tr><td>2℃。帶有本地站點的區域地名</td><td>如果目的地城市或自治市內有多個站點，請在到達目的地城市後使用<code>stop_times.stop_headsign</code>。 > </td></tr><tr><td>2D。僅方向</td><td>使用諸如“北行”、“入站”、“順時針”或類似方向等術語表示。 ></td></tr><tr><td>2E。方向與目的地</td><td>&lt;direction&gt;到&lt;終點站名稱&gt;例如“南行至聖何塞”></td></tr><tr><td>2F。帶有目的地和航路點的方向</td><td>&lt;direction&gt;通過&lt;航點&gt;到&lt;目的地&gt; （“北行經查令十字到海格特”）。 ></td></tr></tbody></table> |
 | |不要以“To”或“Towards”作為頭標的開頭。 |
 | `direction_id` |在整個數據集中始終使用值 0 和 1。即<ul><li>如果 1 = 紅色路線上的出站，那麼 1 = 綠色路線上的出站</li><li>如果 1 = 路線 X 上的北行，那麼 1 = 路線 Y 上的北行</li> <li>如果 1 = 路線 X 順時針，則 1 = 路線 Y 順時針</li></ul> |
 
@@ -106,7 +106,7 @@ __例子：__
 | `pickup_type` & `drop_off_type` |對於所有 `stop_times` 行，不提供客運服務的無收入（死角）旅行應標記為 `pickup_type` 和 `drop_off_type` 值為 `1`。
 | |在收費旅行中，用於監控運營績效的內部“時間點”以及乘客無法上車的其他地方（例如車庫）應標有“pickup_type = 1”（不提供接送服務）和“drop_off_type = 1”（不提供下車服務） . |
 | `arrival_time` & `departure_time` | `arrival_time` 和 `departure_time` 字段應盡可能指定時間值，包括時間點之間的非約束估計或插值時間。 |
-| `stop_headsign` |一般來說，headsign 的值也應該與車站的標誌相對應。<br><br>在以下情況下，“Southbound”會誤導客戶，因為它沒有用於車站標誌。
+| `stop_headsign` |一般來說，headsign 的值也應該與車站的標誌相對應。 <br><br>在以下情況下，“Southbound”會誤導客戶，因為它沒有用於車站標誌。
 | | <table class="example"><thead><tr><th colspan="2">在紐約，對於 2 南行：</th></tr><tr><th>對於 <code>stop_times .txt</code> 行：</th><th>使用 <code>stop_headsign</code> 值：</th></tr></thead><tbody><tr><td>直到曼哈頓到達</td><td><code>曼哈頓和布魯克林</code></td></tr><tr><td>直到到達市中心</td><td><code>市中心和布魯克林</code></td></tr><tr><td>直到到達布魯克林</td><td><code>布魯克林</code></td></tr><tr><td>一旦到達布魯克林</td><td><code>布魯克林（新地段大道）</code></td></tr></tbody></table> |
 | | <table class="example"><thead><tr><th colspan="2">在波士頓，紅線南行，Braintree 支線：</th></tr><tr><th >對於 <code>stop_times.txt</code> 行：</th><th>使用 <code>stop_headsign</code> 值：</th></tr></thead><tbody><tr> <td>直到到達市中心</td><td><code>進入布倫特里</code></td></tr><tr><td>一旦到達市中心</td><td><code>Braintree</code></td></tr><tr><td>市區後</td><td><code>出站到Braintree</code></td> </tr></tbody></table> |
 | `shape_dist_traveled` |必須為具有循環或內聯的路線提供“shape_dist_traveled”（車輛在一次行程中穿過或經過相同的路線部分）。請參閱 [`shapes.shape_dist_traveled`](#shapestxt) 建議。 |
@@ -121,7 +121,7 @@ __例子：__
 
 |字段名稱 |推薦 |
 | --- | --- |
-|所有領域 |包含一個 `calendar.service_name` 字段也可以增加 GTFS 的可讀性，儘管這在規範中沒有被採用。|
+|所有領域 |包含一個 `calendar.service_name` 字段也可以增加 GTFS 的可讀性，儘管這在規範中沒有被採用。 |
 
 ### fare_attributes.txt
 
@@ -145,7 +145,7 @@ __例子：__
 |所有領域 |理想情況下，對於共享的路線（即，在路線 1 和 2 在同一段道路或軌道上運行的情況下），路線的共享部分應該完全匹配。這有助於促進高質量的交通製圖。 <!-- (77) -->
 | |路線應遵循車輛行駛的通行權的中心線。如果沒有指定車道，這可能是街道的中心線，也可能是沿車輛移動方向行駛的道路一側的中心線。 <br><br>路線不應“鋸齒”到路邊停靠點、平台或登機位置。 |
 | `shape_dist_traveled` |如果路線包括循環或內聯（車輛在一次行程中穿越或經過同一路線部分），則必須在“shapes.txt”和“stop_times.txt”中提供。 <img src="https://raw.githubusercontent.com/MobilityData/GTFS_Schedule_Best-Practices/master/en/inlining.svg" width=200px style="display: block; margin-left: auto; margin-right: auto ;"><br>如果車輛在旅行過程中在點處回溯或穿過路線路線，<code>shape_dist_traveled</code> 很重要，以闡明 <code>shapes.txt 中的點部分</code> code> 與 <code>stop_times.txt</code> 中的記錄對應。 |
-| | `shape_dist_traveled` 字段允許機構準確指定 `stop_times.txt` 文件中的停靠點如何適合其各自的形狀。用於 `shape_dist_traveled` 字段的常用值是車輛行駛時到形狀起點的距離（想想類似於里程表讀數的東西）。 <li>路線路線（在 `shapes.txt` 中）應在行程服務的停靠點 100 米範圍內。</li><li>簡化路線，以便 <code>shapes.txt</code> 不包含多餘的點（即刪除直線段上的多餘點；請參閱線簡化問題的討論）。</li>
+| | `shape_dist_traveled` 字段允許機構準確指定 `stop_times.txt` 文件中的停靠點如何適合其各自的形狀。用於 `shape_dist_traveled` 字段的常用值是車輛行駛時到形狀起點的距離（想想類似於里程表讀數的東西）。 <li>路線路線（在 `shapes.txt` 中）應在行程服務的停靠點 100 米範圍內。 </li><li>簡化路線，以便 <code>shapes.txt</code> 不包含多餘的點（即刪除直線段上的多餘點；請參閱線簡化問題的討論）。 </li>
 
 ### frequencies.txt
 
@@ -160,10 +160,10 @@ __例子：__
 
 |字段名稱 |推薦 |
 | --- | --- |
-| `transfer_type` | <q>0 或（空）：這是路線之間的推薦換乘點。</q><br>如果有多個換乘機會，包括一個更好的選擇（即具有額外便利設施的中轉中心或具有相鄰或連接的登機設施/平台），指定推薦的換乘點。 |
-| | <q>1：這是兩條路線之間的定時換乘點。出發的車輛應該等待到達的車輛，有足夠的時間讓乘客在路線之間換乘。</q><br>這種換乘類型會覆蓋所需的間隔以可靠地進行換乘。例如，谷歌地圖假設乘客需要 3 分鐘才能安全換乘。其他應用程序可能會採用其他默認值。 |
-| | <q>2：此轉移需要在到達和離開之間的最短時間以確保連接。換乘所需時間由 <code>min_transfer_time</code> 指定。</q><br>如果有障礙物或其他因素會增加停靠站之間的行駛時間，請指定最短換乘時間。 |
-| | <q>3：在此位置的路線之間無法進行換乘。</q><br>如果由於物理障礙而無法進行換乘，或者由於難以穿越的道路或道路上的縫隙而使換乘變得不安全或複雜，請指定此值行人網絡。 |
+| `transfer_type` | <q>0 或（空）：這是路線之間的推薦換乘點。 </q><br>如果有多個換乘機會，包括一個更好的選擇（即具有額外便利設施的中轉中心或具有相鄰或連接的登機設施/平台），指定推薦的換乘點。 |
+| | <q>1：這是兩條路線之間的定時換乘點。出發的車輛應該等待到達的車輛，有足夠的時間讓乘客在路線之間換乘。 </q><br>這種換乘類型會覆蓋所需的間隔以可靠地進行換乘。例如，谷歌地圖假設乘客需要 3 分鐘才能安全換乘。其他應用程序可能會採用其他默認值。 |
+| | <q>2：此轉移需要在到達和離開之間的最短時間以確保連接。換乘所需時間由 <code>min_transfer_time</code> 指定。 </q><br>如果有障礙物或其他因素會增加停靠站之間的行駛時間，請指定最短換乘時間。 |
+| | <q>3：在此位置的路線之間無法進行換乘。 </q><br>如果由於物理障礙而無法進行換乘，或者由於難以穿越的道路或道路上的縫隙而使換乘變得不安全或複雜，請指定此值行人網絡。 |
 | |如果行程之間允許進行座位內（塊）換乘，則到達行程的最後一站必須與出發行程的第一站相同。 |
 
 
@@ -203,7 +203,7 @@ __循環行程建模示例：__
 | trip_1  | 06:15:00     | 06:15:00       | stop_B  | 2             | "C"           |
 | trip_1  | 06:20:00     | 06:20:00       | stop_C  | 3             | "D"           |
 | trip_1  | 06:25:00     | 06:25:00       | stop_D  | 4             | "E"           |
-| trip_1  | 06:30:00     | 06:30:00       | stop_E  | 5             | "A"           |
+| trip_1  | 06:30:00     | 06:30:00       | stop_E| 5             | "A"           |
 | trip_1  | 06:35:00     | 06:35:00       | stop_A  | 6             | ""            |
  
 - 帶有兩個頭標的循環旅行
@@ -239,8 +239,8 @@ __循環行程建模示例：__
 
 |字段名稱 |推薦 |
 | --- | --- |
-| `trips.trip_id` | “車輛往返”的全部範圍（參見插圖 [上圖](#lasso-route-fig)）包括從 A 到 B 再到 B 並返回 A。整個車輛往返可以表示為：<li>`trips.txt`中的__single__`trip_id`值/記錄</li><li>`trips.txt`中的__Multiple__`trip_id`值/記錄，連續旅行由`block_id`指示。</li>李> |
-| `stop_times.stop_headsign` |沿 A-B 段的停靠點將雙向通過。 `stop_headsign` 便於區分行進方向。因此，建議為這些行程提供 `stop_headsign`。example_table: <table class="example"><thead> <tr><th>Examples:</th></tr></thead><tbody><tr ><td>“A 通過 B”</td></tr><tr><td>“A”</td></tr></tbody></table><table class="example"> <thead><tr><th>芝加哥交通局的<a href="http://www.transitchicago.com/purpleline/">紫線</a></th></tr></thead>< tbody><tr><td>“南行至環路”</td></tr><tr><td>“北行經環路”</td></tr><tr><td>“北行至林登"</td></tr></tbody></table><table class="example"><thead><tr><th>埃德蒙頓公交服務線路，此處<a href="http:// webdocs.edmonton.ca/transit/route_schedules_and_maps/future/RT039.pdf">39</a></th></tr></thead><tbody><tr><td>“盧瑟福”</td ></tr><tr><td>《世紀公園》</td></tr></tbody></table>
+| `trips.trip_id` | “車輛往返”的全部範圍（參見插圖 [上圖](#lasso-route-fig)）包括從 A 到 B 再到 B 並返回 A。整個車輛往返可以表示為：<li>`trips.txt`中的__single__`trip_id`值/記錄</li><li>`trips.txt`中的__Multiple__`trip_id`值/記錄，連續旅行由`block_id`指示。 </li>李> |
+| `stop_times.stop_headsign` |沿 A-B 段的停靠點將雙向通過。 `stop_headsign` 便於區分行進方向。因此，建議為這些行程提供 `stop_headsign`。 example_table: <table class="example"><thead> <tr><th>Examples:</th></tr></thead><tbody><tr ><td>“A 通過 B”</td></tr><tr><td>“A”</td></tr></tbody></table><table class="example"> <thead><tr><th>芝加哥交通局的<a href="http://www.transitchicago.com/purpleline/">紫線</a></th></tr></thead>< tbody><tr><td>“南行至環路”</td></tr><tr><td>“北行經環路”</td></tr><tr><td>“北行至林登"</td></tr></tbody></table><table class="example"><thead><tr><th>埃德蒙頓公交服務線路，此處<a href="http:// webdocs.edmonton.ca/transit/route_schedules_and_maps/future/RT039.pdf">39</a></th></tr></thead><tbody><tr><td>“盧瑟福”</td ></tr><tr><td>《世紀公園》</td></tr></tbody></table>
 | `trip.trip_headsign` |旅行頭標應該是旅行的全局描述，如時間表中顯示的那樣。可以是“Linden to Linden via Loop”（芝加哥示例），或“A to A via B”（通用示例）。 |
 
 ### 分支
@@ -252,7 +252,7 @@ __循環行程建模示例：__
 |字段名稱 |推薦 |
 | --- | --- |
 |所有領域 |在命名支線時，建議遵循其他旅客信息資料。以下是兩種情況的描述和示例： |
-| |如果時間表和路標表示兩條明確命名的路線（例如 1A 和 1B），則使用“route_short_name”和/或“route_long_name”字段在 GTFS 中顯示。示例：GoDurham Transit [路線 2、2A 和 2B](https://gotriangle.org/sites/default/files/brochure/godurham-route2-2a-2b_1.pdf) 在大部分路線中共享一個共同路線，但它們在幾個不同的方面有所不同。 <ul><li>Route 2 是核心服務，大部分時間運行。</li><li>Route 2 包括 Main Street 晚上、週日和節假日的偏離。</li><li>Route 2A 和 2B 運營週一至週六的白天時間。</li><li>路線 2B 在偏離共享路線的路線提供額外停靠點。</li></ul> |
+| |如果時間表和路標表示兩條明確命名的路線（例如 1A 和 1B），則使用“route_short_name”和/或“route_long_name”字段在 GTFS 中顯示。示例：GoDurham Transit [路線 2、2A 和 2B](https://gotriangle.org/sites/default/files/brochure/godurham-route2-2a-2b_1.pdf) 在大部分路線中共享一個共同路線，但它們在幾個不同的方面有所不同。 <ul><li>Route 2 是核心服務，大部分時間運行。 </li><li>Route 2 包括 Main Street 晚上、週日和節假日的偏離。 </li><li>Route 2A 和 2B 運營週一至週六的白天時間。 </li><li>路線 2B 在偏離共享路線的路線提供額外停靠點。 </li></ul> |
 | |如果機構提供的信息將分支描述為同名路線，則使用“trips.trip_headsign”、“stop_times.stop_headsign”和/或“trips.trip_short_name”字段。示例：GoTriangle [route 300](https://gotriangle.org/sites/default/files/route_300_v.1.19.pdf) 根據一天中的時間前往不同的位置。在通勤高峰時段，標準路線上增加了額外的支路，以容納進出城市的工人。 |
 
 ## 常見問題 (FAQ)
