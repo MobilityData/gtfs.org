@@ -20,4 +20,4 @@ jobs:
         key: ${{ secrets.ACTION_MAIN_WEBSERVER_SSH_KEY }}
         port: ${{ secrets.ACTION_MAIN_WEBSERVER_SSH_PORT }}
         script: |
-                    ./root/gtfs_org_website_updater.sh
+                    ./gtfs_org_website_updater.sh
