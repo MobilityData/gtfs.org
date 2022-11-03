@@ -13,6 +13,8 @@ This free and open-source canonical GTFS Schedule validator is maintained by [Mo
     <a class="button" href="https://share.mobilitydata.org/validator-installer-mac">Download for Mac &nbsp;&nbsp;<img class="icon" src="../../assets/apple.svg" width="20"/></a><a class="button" href="https://share.mobilitydata.org/validator-installer-windows">Download for Windows &nbsp;&nbsp;<img class="icon" src="../../assets/windows.svg" width="20"/></a><a class="button" href="https://share.mobilitydata.org/validator-installer-ubuntu">Download for Ubuntu &nbsp;&nbsp;<img class="icon" src="../../assets/ubuntu.svg" width="20"/></a>
 </div>
 
+**VERSION v4.0.0** / [Read the release notes](https://github.com/MobilityData/gtfs-validator/releases/latest)
+
 <hr>
 
 ## Usage
