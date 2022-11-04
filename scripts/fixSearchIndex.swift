@@ -7,18 +7,19 @@ struct SearchIndex: Codable {
     var docs: [SearchIndexDocs]
 }
 
+//FIXME: Deactivated a few let vars as they were causing errors, they are not present in the JSON file
 struct SearchIndexConfig: Codable {
-    let indexing: String
+    // let indexing: String
     let lang: [String]
-    let minSearchLength: Int
-    let prebuildIndex: Bool
+    // let minSearchLength: Int
+    // let prebuildIndex: Bool
     let separator: String
 
     enum CodingKeys: String, CodingKey {
-        case indexing
+        // case indexing
         case lang
-        case minSearchLength = "min_search_length"
-        case prebuildIndex = "prebuild_index"
+        // case minSearchLength = "min_search_length"
+        // case prebuildIndex = "prebuild_index"
         case separator
     }
 }
@@ -29,10 +30,14 @@ struct SearchIndexDocs: Codable {
     let title: String
 }
 
-let searchIndexPath = "site/search/search_index.json"
+// The location of the JSON file relatively to the base folder of the git
+let searchIndexPath = "/site/search/search_index.json"
+// Figure out where the script is located in the system, and go to its parent directory
+var fileLocationURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath).deletingLastPathComponent()
+// Add the path to the JSON file
+fileLocationURL = fileLocationURL.appendingPathComponent(searchIndexPath, isDirectory:false)
 
-let fileURL = URL(fileURLWithPath: searchIndexPath)
-let indexData = try Data(contentsOf: fileURL)
+let indexData = try Data(contentsOf: fileLocationURL)
 let searchIndex = try JSONDecoder().decode(SearchIndex.self, from: indexData)
 var newSearchIndex = searchIndex
 var searchIndexDocs = [SearchIndexDocs]()
