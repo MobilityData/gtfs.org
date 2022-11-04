@@ -59,4 +59,4 @@ for doc in newSearchIndex.docs {
 
 newSearchIndex.docs = searchIndexDocs
 
-try JSONEncoder().encode(newSearchIndex).write(to: fileURL)
+try JSONEncoder().encode(newSearchIndex).write(to: fileLocationURL)
