@@ -6,7 +6,7 @@
 
 <hr>
 
-Composed of [fare_attributes.txt](../../reference/#fare_attributestxt) and [fare_rules.txt](../../reference/#fare_rulestxt), Fares v1 is the current official method for describing fare information in GTFS. However the two files are limited in the breadth of factors they can efficiently describe, and are ambiguous to implement. 
+Composed of [fare_attributes.txt](../../reference/#fare_attributestxt) and [fare_rules.txt](../../reference/#fare_rulestxt), Fares v1 has historically been the official method for describing fare information in GTFS. However the two files are limited in the breadth of factors they can efficiently describe, and are ambiguous to implement. 
 [Fares v2](../../examples/fares-v2/) is an extension project under active development, and it aims to address the limitations of Fares v1.
 
 ## Define an agency’s fare rules
