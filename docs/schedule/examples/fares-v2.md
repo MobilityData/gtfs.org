@@ -6,6 +6,11 @@
 
 <hr>
 
+Fares v2 is a GTFS extension project that aims to address the limitations of Fares v1. This extension project is being adopted in iterations, and the examples below show what can be modeled using the portion of Fares v2 that has been adopted in the official specification. See more information about the Fares v2 extension project in the [Extensions](../extensions) section.
+
+In the interim, producers may implement Fares v2 alongside implementation of Fares v1 in the same dataset as there exists no technical conflict between the two. Consumers will have the choice on which implementation to consume independently from the other. 
+With adoption and sufficient endorsement of Fares v2, Fares v1 may be deprecated in the future.
+
 ## Define a transit fare
 
 There are several ways to pay fares to use the TTC transit system in Toronto. The TTC provides two options of fare prices depending on the payment method. An adult fare is $3.20 CAD to travel if using a PRESTO card, while the same fare is $3.25 CAD to travel if paying by cash. 
