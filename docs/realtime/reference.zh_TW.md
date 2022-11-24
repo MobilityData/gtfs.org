@@ -215,7 +215,7 @@ uncertainty同样适用于两者time和delay.这uncertainty粗略指定 true 中
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **SCHEDULED**   | 这vehicle正在按照其静态的停靠时间表进行，尽管不一定按照时间表的时间。这是**默认**行为。至少其中之一arrival和departure必须提供。基于频率的旅行（GTFSfrequencies.txt与exact_times = 0) 不应该有SCHEDULED值并应该使用UNSCHEDULED反而。                                                                                                                                                                                          |
 | **SKIPPED**     | 停靠点是SKIPPED，即vehicle不会停在这一站。arrival和departure是可选的。设置时`SKIPPED`不会传播到相同的后续站点trip（即，vehicle将在随后的站点停止trip除非这些站点也有`stop_time_update`和`schedule_relationship: SKIPPED`）。delay从上一站trip_做_传播到`SKIPPED`停止。换句话说，如果一个`stop_time_update`带着`arrival`或者`departure`预测未设置为停止后`SKIPPED`停止，上游的预测`SKIPPED`停止后将传播到停止`SKIPPED`停止和随后的停止trip直到一个`stop_time_update`为随后的停止提供。 |
-| **没有数据**        | 没有给出此站点的数据。它表示没有可用的实时时间信息。当设置 NO_DATA 通过后续停靠点传播时，因此这是指定您没有实时时间信息的停靠点的推荐方式。当 NO_DATA 均未设置时arrival也不departure应提供。                                                                                                                                                                                                                                      |
+| **NO_DATA**        | 没有给出此站点的数据。它表示没有可用的实时时间信息。当设置 NO_DATA 通过后续停靠点传播时，因此这是指定您没有实时时间信息的停靠点的推荐方式。当 NO_DATA 均未设置时arrival也不departure应提供。                                                                                                                                                                                                                                      |
 | **UNSCHEDULED** | 这vehicle正在运行基于频率的trip(GTFSfrequencies.txt精确时间 = 0)。此值不应用于未定义的行程GTFSfrequencies.txt , 或旅行GTFSfrequencies.txt精确时间 = 1。行程包含`stop_time_updates`和`schedule_relationship: UNSCHEDULED`还必须设置TripDescriptor`schedule_relationship: UNSCHEDULED` <br/><br/>**警告：**这个领域仍然**实验**，并且可能会发生变化。将来可能会正式采用。                                                           |
 
 
@@ -499,7 +499,7 @@ TripDescriptor.route_id不能在一个内使用AlertEntitySelector指定路由�
 | **id**            | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 内部系统识别vehicle.应该**独特的**每vehicle, 并用于跟踪vehicle当它通过系统进行时。这个id不应该对end-用户;为此目的使用**label**场地 |
 | **label**         | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 用户可见label，即必须向乘客展示以帮助识别正确的东西vehicle.                                                    |
 | **license_plate** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) | 可选的       | 一        | 车牌号vehicle.                                                                             |
-| **无障碍通道**         | [无障碍通道](#enum-wheelchairaccessible)                                        | 可选的       | 一        | 如果提供，可以覆盖_无障碍通道_静态值GTFS .                                                               |
+| **wheelchair_accessible**         | [string](#enum-wheelchairaccessible)                                        | 可选的       | 一        | 如果提供，可以覆盖_无障碍通道_静态值GTFS .                                                               |
 
 ## enum WheelchairAccessible
 
