@@ -496,10 +496,10 @@ TripDescriptor .route_id 이내에 사용할 수 없습니다AlertEntitySelector
 | **id**            | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) |  선택 과목     |  하나          |  내부 시스템 식별vehicle . 해야한다** 독특한** 당vehicle , 추적에 사용됩니다.vehicle 시스템을 통해 진행됩니다. 이것id 에게 보여서는 안 된다.end -사용자; 그 목적을 위해 사용**label** 필드 |
 | **label**         | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) |  선택 과목     |  하나          |  사용자가 볼 수 있음label , 즉, 올바른 식별을 돕기 위해 승객에게 보여야 하는 것vehicle .                                                                      |
 | **license_plate** | [string](https://developers.google.com/protocol-buffers/docs/proto#scalar) |  선택 과목     |  하나          |  의 번호판vehicle .                                                                                                                  |
-| ** 휠체어 접근 가능**    | [ 휠체어 이용 가능](#enum-wheelchairaccessible)                                   |  선택 과목     |  하나          |  제공된 경우 덮어쓸 수 있음_ 휠체어 접근 가능_ 정적 값GTFS .                                                                                          |
+| **wheelchair_accessible**    | [ 휠체어 이용 가능](#enum-wheelchairaccessible)                                   |  선택 과목     |  하나          |  제공된 경우 덮어쓸 수 있음_ 휠체어 접근 가능_ 정적 값GTFS .                                                                                          |
 
 
-## enum 휠체어 이용 가능
+## enum WheelchairAccessible
 
 만약 특별한trip 휠체어 접근이 가능합니다. 사용 가능한 경우 이 값은 _static_GTFS .
 
@@ -508,7 +508,7 @@ TripDescriptor .route_id 이내에 사용할 수 없습니다AlertEntitySelector
 | _** 값**_                     | _** 논평**_                                                                            |
 | ---------------------------- | ------------------------------------------------------------------------------------ |
 | ** NO_VALUE**                |  그만큼trip 휠체어 접근성에 대한 정보가 없습니다. 이것이** 기본** 행동. 만약 정적GTFS 포함_ 휠체어 접근 가능_ 값을 덮어쓰지 않습니다. |
-| ** 알려지지 않은**                 |  그만큼trip 접근성 값이 없습니다. 이 값은 다음 값을 덮어씁니다.GTFS .                                        |
+| ** UNKNOWN **                 |  그만큼trip 접근성 값이 없습니다. 이 값은 다음 값을 덮어씁니다.GTFS .                                        |
 | ** WHEELCHAIR_ACCESSIBLE**   |  그만큼trip 휠체어 이용이 가능합니다. 이 값은 다음 값을 덮어씁니다.GTFS .                                      |
 | ** WHEELCHAIR_INACCESSIBLE** |  그만큼trip ~이다** ~ 아니다** 휠체어 접근 가능. 이 값은 다음 값을 덮어씁니다.GTFS .                            |
 
