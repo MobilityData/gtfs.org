@@ -7,7 +7,7 @@ search:
 
 Pour vous aider à comprendre la spécification GTFS et à produire des outils qui lisent et écrivent des données GTFS, jetez un coup d'œil aux exemples suivants de flux GTFS:
 
-- La [Schedule/example-feed">page Exemple de flux GTFS](</\<glossary variable=>) fournit un flux GTFS simple qui peut être utilisé comme modèle pour comprendre comment un flux GTFS est composé.
+- La [Exemple de flux GTFS](/schedule/example-feed) fournit un flux GTFS simple qui peut être utilisé comme modèle pour comprendre comment un flux GTFS est composé.
 - Exemples par cas d'utilisation :
   - [Itinéraires, arrêts et trajets](routes-stops-trips)
   - [Arrêts continus](continuous-stops)

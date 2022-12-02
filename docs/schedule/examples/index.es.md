@@ -3,11 +3,11 @@ search:
   exclude: true
 ---
 
-# Ejemplos deGTFS ScheduleGTFS ScheduleGTFS Schedule
+# Ejemplos de GTFS ScheduleGTFS ScheduleGTFS Schedule
 
 Para ayudar a entender la especificación GTFS y a producir herramientas que lean y escriban datos GTFS, eche un vistazo a los siguientes ejemplos de feeds GTFS:
 
-- La [Schedule/example-feed">página Ejemplo de alimentación GTFS](</\<glossary variable=>) [Schedule/example-feed"> GTFS](</\<glossary variable=>) [Schedule/example-feed"> GTFS](</\<glossary variable=>) proporciona una alimentación GTFS sencilla que puede utilizarse como modelo para entender cómo se compone una alimentación GTFS.
+- La [página Ejemplo de alimentación GTFS](/schedule/example-feed) proporciona una alimentación GTFS sencilla que puede utilizarse como modelo para entender cómo se compone una alimentación GTFS.
 - Ejemplos por caso de uso:
   - [Rutas, paradas y viajes](routes-stops-trips)
   - [Paradas continuas](continuous-stops)

@@ -7,7 +7,7 @@ search:
 
 Untuk membantu dalam memahamiGTFS spesifikasi dan dalam memproduksi alat yang membaca dan menulisGTFS data, lihat contoh berikutGTFS umpan:
 
-- [Contoh](/schedule/example-feed)GTFS [Halaman umpan](/schedule/example-feed) menyediakan sederhanaGTFS pakan yang dapat dijadikan model untuk memahami bagaimana aGTFS pakan disatukan.
+- [Contoh GTFS Halaman umpan](/schedule/example-feed) menyediakan sederhana GTFS pakan yang dapat dijadikan model untuk memahami bagaimana aGTFS pakan disatukan.
 - Contoh berdasarkan kasus penggunaan:
   - [Rute, pemberhentian, dan perjalanan](routes-stops-trips)
   - [Berhenti terus menerus](continuous-stops)
