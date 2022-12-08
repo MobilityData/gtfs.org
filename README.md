@@ -4,17 +4,19 @@ Source code for [GTFS.org](https://gtfs.org/).
 
 This site was built using [MkDocs](https://www.mkdocs.org/), a static site generator, and [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), a technical documentation theme for MkDocs.
 
-## Editing site
+## How can I contribute to gtfs.org?
 
-**Editing English content**
+**Submit an issue or a content addition idea**
 
-To propose edits to English content, navigate to the page you want to change on [GTFS.org]((https://gtfs.org/)) and click on the "Edit this page" icon on the top-right of the page. The "Edit this page" icon will direct you to an editable page on the appropriate Github repository. You can then submit your edits as a pull request. 📝
+The more ideas, the merrier! If you have an idea for how to improve GTFS.org's content or user experience design, open an [issue](https://github.com/MobilityData/gtfs.org/issues/new) on the GTFS.org repository.
 
-To propose a feature, content addition, or UI/UX improvement, open an [issue](https://github.com/MobilityData/gtfs.org/issues/new) on the GTFS.org repository.
+**Suggest a change with a Pull Request**
 
-**Editing translations**
+To propose edits to the content, navigate to the page you want to change on [GTFS.org](https://gtfs.org/) and click on the "Edit this page" icon on the top-right of the page. The "Edit this page" icon will direct you to an editable page on the appropriate Github repository. You can then submit your edits as a pull request. 📝
 
-GTFS.org uses [Simpleen](https://simpleen.io/), an automated machine learning translation tool, to ensure translations are kept up to date with repository changes. Since our priority is to keep translations up-to-date, we cannot accept one time rewrites.
+**Contributing translations**
+
+GTFS.org uses [Simpleen](https://simpleen.io/), an automated machine learning translation tool, to ensure translations are kept up to date with repository changes. Since our priority is to keep translations up-to-date, we do not accept one time rewrites.
 
 We do accept glossary changes. Simpleen uses a glossary for key terms that are commonly used across GTFS.org, like trip or station. If you want to suggest a translation for a key term that should be applied across the entire site, you can [create an issue on the GTFS.org repository](https://github.com/MobilityData/gtfs.org/issues/new/choose).
 

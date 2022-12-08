@@ -16,23 +16,23 @@ Thank you to [Andrew Byrd](https://www.linkedin.com/in/byrdandrew) for purchasin
 
 <br>
 
-##How can I edit content on gtfs.org?**
+## How can I contribute to gtfs.org?
 
-GTFS.org hosts open license content pulled from various Github repositories, including [google/transit](https://github.com/google/transit/), [MobilityData/GTFS_Realtime_Best-Practices](https://github.com/MobilityData/GTFS_Schedule_Best-Practices), and [/CUTR-at-USF/awesome-transit](https://github.com/CUTR-at-USF/awesome-transit).
+**Submit an issue or a content addition idea**
 
-**Editing English content**
+The more ideas, the merrier! If you have an idea for how to improve GTFS.org's content or user experience design, open an [issue](https://github.com/MobilityData/gtfs.org/issues/new) on the GTFS.org repository.
 
-To propose edits to English content, navigate to the page you want to change on GTFS.org and click on the "Edit this page" icon on the top-right of the page. The "Edit this page" icon will direct you to an editable page on the appropriate Github repository. You can then submit your edits as a pull request. 📝
+**Suggest a change with a Pull Request**
 
-To propose a feature, content addition, or UI/UX improvement, open an [issue](https://github.com/MobilityData/gtfs.org/issues/new) on the GTFS.org repository.
+To propose edits to the content, navigate to the page you want to change on [GTFS.org](https://gtfs.org/) and click on the "Edit this page" icon on the top-right of the page. The "Edit this page" icon will direct you to an editable page on the appropriate Github repository. You can then submit your edits as a pull request. 📝
 
-**Editing translations**
+**Contributing translations**
 
-GTFS.org uses [Simpleen](https://simpleen.io/), an automated machine learning translation tool, to ensure translations are kept up to date with repository changes. Since our priority is to keep translations up-to-date, we cannot accept one time rewrites.
+GTFS.org uses [Simpleen](https://simpleen.io/), an automated machine learning translation tool, to ensure translations are kept up to date with repository changes. Since our priority is to keep translations up-to-date, we do not accept one time rewrites.
 
 We do accept glossary changes. Simpleen uses a glossary for key terms that are commonly used across GTFS.org, like trip or station. If you want to suggest a translation for a key term that should be applied across the entire site, you can [create an issue on the GTFS.org repository](https://github.com/MobilityData/gtfs.org/issues/new/choose).
 
-##License**
+## License
 
 Except as otherwise noted, the content of this site is licensed under the [Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0/), and code samples are licensed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
 
