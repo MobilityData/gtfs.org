@@ -1,21 +1,31 @@
 # GTFS.org
 
-Source code for [gtfs.org](https://gtfs.org/). 
+Source code for [GTFS.org](https://gtfs.org/).
 
 This site was built using [MkDocs](https://www.mkdocs.org/), a static site generator, and [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/), a technical documentation theme for MkDocs.
 
-## Editing site
+## How can I contribute to gtfs.org?
 
-To propose a feature, content addition, or UI/UX improvement, open an [issue](https://github.com/MobilityData/gtfs.org/issues/new) or [pull request](https://github.com/MobilityData/gtfs.org/pulls) on this repository. 
+**Submit an issue or a content addition idea**
 
-To edit site content, click on the pencil icon on the top right corner of the webpage to find the source-of-truth document. 📝
+The more ideas, the merrier! If you have an idea for how to improve GTFS.org's content or user experience design, open an [issue](https://github.com/MobilityData/gtfs.org/issues/new) on the GTFS.org repository.
+
+**Suggest a change with a Pull Request**
+
+To propose edits to the content, navigate to the page you want to change on [GTFS.org](https://gtfs.org/) and click on the "Edit this page" icon on the top-right of the page. The "Edit this page" icon will direct you to an editable page on the appropriate Github repository. You can then submit your edits as a pull request. 📝
+
+**Contributing translations**
+
+GTFS.org uses [Simpleen](https://simpleen.io/), an automated machine learning translation tool, to ensure translations are kept up to date with repository changes. Since our priority is to keep translations up-to-date, we do not accept one time rewrites.
+
+We do accept glossary changes. Simpleen uses a glossary for key terms that are commonly used across GTFS.org, like trip or station. If you want to suggest a translation for a key term that should be applied across the entire site, you can [create an issue on the GTFS.org repository](https://github.com/MobilityData/gtfs.org/issues/new/choose).
 
 ## Building the site locally
 
 1. In Terminal, change the directory to one where you wish to build the site.
 1. Clone this repository:
    - `git clone https://github.com/MobilityData/gtfs.org`
-1. Ensure you have an up-to-date version of pip: 
+1. Ensure you have an up-to-date version of pip:
    - `pip install pip`
    - N.B.: on macOS, use `pip3 install pip` when using Python 3.
 1. Change the directory to the cloned repository, and have [`requirements.txt`](requirements.txt) installed:
@@ -32,5 +42,3 @@ To edit site content, click on the pencil icon on the top right corner of the we
 ## License
 
 Except as otherwise noted, the content of this site is licensed under the [Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0/), and code samples are licensed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
-
-
