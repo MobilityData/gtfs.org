@@ -3,15 +3,14 @@ search:
   exclude: true
 ---
 
-# GTFS: 使公共交通數據普遍可訪問
+# GTFS : 使公共交通數據普遍可用
 
 <div class="landing-page">
-    <a class="button" href="schedule">GTFS Schedule</a><a class="button" href="realtime">GTFS Realtime</a><a class="button" href="resources">資源</a><a class="button" href="extensions">擴展</a>
+    <a class="button" href="schedule">GTFS Schedule</a><a class="button" href="realtime">資源</a><a class="button" href="resources">資源</a><a class="button" href="extensions">擴展</a>
 </div>
 
-这General Transit Feed Specification (GTFS) 是一种数据规范，允许公共交通机构以[多种软件应用程序](resources/apps)可以使用的格式发布其交通数据。今天，GTFS数以千计的公共交通提供商使用数据格式。
+這General Transit Feed Specification(GTFS ) 是一種數據規範，允許公共交通機構以可被[各種軟件應用程序](resources/apps)使用的格式發布其交通數據。今天，GTFS數以千計的公共交通提供商使用數據格式。
 
+GTFS被分成一個包含時間表、票價和地理交通信息的[時間表組件](schedule)和一個[真實](realtime)的time包含的[組件](realtime)arrival預測，vehicle職位和服務諮詢。
 
-GTFS被分成一个Schedule包含的[组件](schedule)Schedule、票价和地理交通信息以及包含到达预测、车辆位置和服务建议[的实时组件](realtime)。
-
-[更多的GTFS背景](background.md)
+[更多的](background.md)GTFS[背景](background.md)
