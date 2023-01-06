@@ -18,4 +18,5 @@ jobs:
           title: 'Automated content update'
           branch-suffix: timestamp
           delete-branch: true
-          reviewers: scmcca
+          reviewers: isabelle-dr, fredericsimard, emmambd
+
