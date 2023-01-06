@@ -35,7 +35,7 @@ published as packages to facilitate their use in other projects.
 
 * [.NET](dotnet.md)
 * [Java](java.md)
-* [JavaScript / Node.js](nodejs.md)
+* [JavaScript / TypeScript / Node.js](nodejs.md)
 * [Python](python.md)
 * [Golang](golang.md)
 * ~~[Ruby](ruby.md)~~ *(Deprecated as of early 2019)*

@@ -6,7 +6,7 @@
 
 [![npm version](https://badge.fury.io/js/gtfs-realtime-bindings.svg)](http://badge.fury.io/js/gtfs-realtime-bindings)
 
-Provides JavaScript classes generated from the
+Provides JavaScript classes and their associated types generated from the
 [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) Protocol
 Buffer specification.  These classes will allow you to parse a binary Protocol
 Buffer GTFS-realtime data feed into JavaScript objects.
@@ -73,6 +73,7 @@ import fetch from "node-fetch";
     process.exit(1);
   }
 })();
+```
 
 For more details on the naming conventions for the JavaScript classes generated
 from the
