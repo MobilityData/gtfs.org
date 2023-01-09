@@ -35,8 +35,6 @@ echo "<a class=\"pencil-link\" href=\"https://github.com/MobilityData/GTFS_Sched
   
 `cat $PAGE`" > $PAGE
 
-
-
 ## GTFS Schedule examples 
 
 ### GTFS Schedule example feed (schedule/example-feed)
@@ -184,6 +182,11 @@ echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/mas
 curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/trip-updates.md -o docs/realtime/feed-entities/trip-updates.md
 new_header='# Trip Updates'
 sed -i.bak "1s/^/$new_header\n\n/" docs/realtime/feed-entities/trip-updates.md
+sed -i.bak "s,https://developers.google.com/transit/gtfs/,../../schedule/reference.md,g" docs/realtime/feed-entities/trip-updates.md
+sed -i.bak "s,https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#tripstxt,../../schedule/reference.md#tripstxt,g" docs/realtime/feed-entities/trip-updates.md
+sed -i.bak "s,reference.md#message-stoptimeupdate,../reference.md#message-stoptimeupdate,g" docs/realtime/feed-entities/trip-updates.md
+sed -i.bak "s,reference.md#message-stoptimeevent,../reference.md#message-stoptimeevent,g" docs/realtime/feed-entities/trip-updates.md
+sed -i.bak "s,/gtfs-realtime/spec/en/reference.md/#enum-schedulerelationship,../reference.md#enum-schedulerelationship,g" docs/realtime/feed-entities/trip-updates.md
 
 #### edit this page button
 PAGE=docs/realtime/feed-entities/trip-updates.md
@@ -210,6 +213,8 @@ echo "<a class=\"pencil-link\" href=\"https://github.com/google/transit/edit/mas
 curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/vehicle-positions.md -o docs/realtime/feed-entities/vehicle-positions.md
 new_header='# Vehicle Positions'
 sed -i.bak "1s/^/$new_header\n\n/" docs/realtime/feed-entities/vehicle-positions.md
+sed -i.bak "s,reference.md#message-tripdescriptor,../reference.md#message-tripdescriptor,g" docs/realtime/feed-entities/vehicle-positions.md
+sed -i.bak "s,reference.md#message-vehicledescriptor,../reference.md#message-vehicledescriptor,g" docs/realtime/feed-entities/vehicle-positions.md
 
 #### edit this page button
 PAGE=docs/realtime/feed-entities/vehicle-positions.md
@@ -348,12 +353,12 @@ rm agency-tools.md apps.md community.md data.md getting-started.md gtfs-realtime
 cd ../..
 curl https://raw.githubusercontent.com/CUTR-at-USF/awesome-transit/master/README.md -o docs/resources/awesome.md
 
-## split awesome by heading level 2 (requires installation of csplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
+## split awesome by heading level 2 (MacOS requires installation and substitution of gcsplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
 csplit --prefix='awesome' --suffix-format='%02d.md' docs/resources/awesome.md /^'## '/ "{*}"
 mv awesome* docs/resources
 rm -r docs/resources/awesome.md
 
-## split resources by heading level 3 (requires installtion of csplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
+## split resources by heading level 3 (MacOS requires installtion and substitution of gcsplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
 csplit --prefix='resources' --suffix-format='%02d.md' docs/resources/awesome00.md /^'### '/ "{*}"
 mv resources* docs/resources
 rm -r docs/resources/awesome00.md
