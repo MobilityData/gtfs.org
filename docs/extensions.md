@@ -122,7 +122,33 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
         </ul>
     </div>
     </div>
-
+    <div class="row">
+        <div class="leftcontainer">
+                <h3 class="title"><a href="https://github.com/ODOT-PTS/gtfs-eligibilities" class="no-icon" target="_blank">GTFS-Eligibilities</a></h3>
+                <p class="maintainer">Maintained by <a href="https://github.com/ODOT-PTS/gtfs-eligibilities" class="no-icon" target="_blank">the Oregon Department of Transportation</a></p>
+        </div>
+        <div class="featurelist">
+            <p>GTFS-eligibilities is formed around the concept that it should provide a manner for systems operating based on user accounts to understand whether a trip is eligible based on user account information. This means the fields proposed provide:</p>
+            <ul>
+                <li>Common attributes associated with user accounts such as age, gender, company affiliation, trip purposes, and assistance levels provided.</li>
+                <li>Customizable authentications of locally-defined attributes and statuses. Custom eligibilities are provided, as well as a way to understand how the custom eligibility can be authenticated.</li>
+            </ul>
+        </div>
+    </div>
+     <div class="row">
+        <div class="leftcontainer">
+                <h3 class="title"><a href="https://github.com/ODOT-PTS/gtfs-capabilities" class="no-icon" target="_blank">GTFS-Capabilities</a></h3>
+                <p class="maintainer">Maintained by <a href="https://github.com/ODOT-PTS/gtfs-capabilities" class="no-icon" target="_blank">the Oregon Department of Transportation</a></p>
+        </div>
+        <div class="featurelist">
+            <p>Describes the additional capabilities that a service may be able to provide to serve people with disabilities and those who have mobility devices.</p>
+            <ul>
+                <li>Information about services available to a rider from a person, such as a driver or other agency-provided human resource.</li>
+                <li>Vehicle information, described by the (further extended) <a href="https://docs.google.com/document/d/156RiBjI6FnWJvO8_XWX11Q9nLdOiBdS_rilA-oamlv8/edit#heading=h.tosuo6e9e0z7">GTFS-VehicleCategories</a> specification. See also the <a href="https://docs.google.com/document/d/1mcQ-oEaP5WiGh46DmUQqmeS-rQ5W96L-c3TRKinGS0g/edit#heading=h.oxdoxruczgni">GTFS-seats</a> draft extension.</li>
+                <li>A focus on describing vehicle amenities related to mobility devices, and how boarding with those devices affects capacity for other riders and devices.</li>
+            </ul>
+        </div>
+    </div>
     <div class="row"></div>
 
 === "GTFS Realtime"
