@@ -50,7 +50,7 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
 
     <div class="row">
     <div class="leftcontainer">
-            <h3 class="title"><a href="http://bit.ly/gtfs-fares" class="no-icon" target="_blank">GTFS-Fares v2</a></h3>
+            <a href="fares-v2" class="no-icon" target="_blank"><h3 class="title">GTFS-Fares v2</h3></a>
             <p class="maintainer">Maintained by <a href="https://mobilitydata.org/" class="no-icon" target="_blank">MobilityData</a></p>
     </div>
     <div class="featurelist">
