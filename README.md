@@ -32,7 +32,7 @@ We do accept glossary changes. Simpleen uses a glossary for key terms that are c
    - `pip install -r requirements.txt`
    - N.B.: on macOS, use `pip3 install -r requirements.txt` when using Python 3.
 1. Have [Material for MkDocs Insiders](https://squidfunk.github.io/mkdocs-material/insiders/`) installed. Substitute `${GH_TOKEN}` with MobilityData's access token:
-   - `pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git`
+   - `pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material.git`
 1. Assuming you are still in the cloned repository, run this command to update the content for the specification references and best practices:
    - `bash scripts/fetchdata.sh`
 1. To run the site locally: `mkdocs serve`
