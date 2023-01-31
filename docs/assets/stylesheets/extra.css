@@ -163,6 +163,10 @@ c {
     min-width: 12em;
   }
 
+a:first-child  {
+    margin-left: 0;
+}
+
 .usage-buttons > .button {
     background-color: #172f50 !important;
 }
