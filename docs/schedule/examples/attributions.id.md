@@ -7,11 +7,11 @@ search:
 
 <hr/>
 
-## Mengatribusikan data ke penghasil data secara agregatGTFS Himpunan data
+## Mengatribusikan data ke penghasil data secara agregat GTFS Himpunan data
 
-BeberapaGTFS kumpulan data berisi data yang dikumpulkan dari berbagai sumber seperti penyedia layanan berbeda yang melayani yurisdiksi yang sama. Dalam beberapa kasus, perlu untuk mengklasifikasikan lembaga yang terdaftar [agency.txt](../../reference/#agencytxt) sebagai produsen, operator, atau otoritas.
+Beberapa GTFS kumpulan data berisi data yang dikumpulkan dari berbagai sumber seperti penyedia layanan berbeda yang melayani yurisdiksi yang sama. Dalam beberapa kasus, perlu untuk mengklasifikasikan lembaga yang terdaftar [agency.txt](../../reference/#agencytxt) sebagai produsen, operator, atau otoritas.
 
-Misalnya, Rejseplanen adalah mesin pencari untuk layanan kereta api dan bus di Denmark. Perusahaan menerbitkan aGTFS kumpulan data yang berisi data dari beberapa agensi dan penyedia seperti yang ditunjukkan di bawah ini [agency.txt](../../reference/#agencytxt).
+Misalnya, Rejseplanen adalah mesin pencari untuk layanan kereta api dan bus di Denmark. Perusahaan menerbitkan a GTFS kumpulan data yang berisi data dari beberapa agensi dan penyedia seperti yang ditunjukkan di bawah ini [agency.txt](../../reference/#agencytxt).
 
 [**agency.txt**](../../reference/#agencytxt)
 

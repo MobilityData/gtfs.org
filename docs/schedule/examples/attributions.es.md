@@ -21,7 +21,7 @@ Por ejemplo, Rejseplanen es un motor de búsqueda de servicios ferroviarios y de
     206,NT,https://www.nordjyllandstrafikselskab.dk,Europe/Berlin,
     276,Rejseplanen,https://www.rejseplanen.dk,Europe/Berlin,
 
-Para atribuir a Rejseplanen como productor de datos, se utiliza el archivo [attributions.txt](../../reference/#attributionstxt).txt, donde se define un id atribución junto con el nombre y la url de la organización. Los campos `is_producer`, `is_operator` y `is_authority` se utilizan para categorizar a Rejseplanen como se muestra a continuación:
+Para atribuir a Rejseplanen como productor de datos, se utiliza el archivo [attributions.txt](../../reference/#attributionstxt), donde se define un id atribución junto con el nombre y la url de la organización. Los campos `is_producer`, `is_operator` y `is_authority` se utilizan para categorizar a Rejseplanen como se muestra a continuación:
 
 [**attributions.txt**](../../reference/#attributionstxt)
 

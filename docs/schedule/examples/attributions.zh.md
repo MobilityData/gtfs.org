@@ -11,7 +11,7 @@ search:
 
 一些GTFS数据集包含从多个来源汇总的数据，如服务于同一管辖区的不同服务提供商。在某些情况下，有必要将[agency.txt](../../reference/#agencytxt)中列出的机构分类为生产者、经营者或当局。
 
-例如，Rejseplanen是丹麦的一个铁路和公共汽车服务搜索引擎。该公司发布了一个GTFS数据集，其中包含来自多个机构和供应商的数据，如下图[agency.txt](../../reference/#agencytxt)txt所示。
+例如，Rejseplanen是丹麦的一个铁路和公共汽车服务搜索引擎。该公司发布了一个GTFS数据集，其中包含来自多个机构和供应商的数据，如下图[agency.txt](../../reference/#agencytxt)所示。
 
 [**agency.txt**](../../reference/#agencytxt)
 
