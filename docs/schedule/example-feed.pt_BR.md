@@ -78,7 +78,7 @@ Este exemplo de alimentação GTFS mostra amostras de dados delimitados por vír
 
 ## calendar_dates.txt
 
-Este exemplo mostra exceções de serviço para o feriado do Dia da Independência em 2006. Na segunda-feira 3 de julho de 2006, o serviço regular do dia da semana`(service_id=WD`) é interrompido`(exception_type=2`). Em vez disso, o serviço de fim de semana`(service_id=WE`) é interrompido nessa data`(exception_type=1`). A mesma mudança se aplica também na terça-feira 4 de julho.
+Este exemplo mostra exceções de serviço para o feriado do Dia da Independência em 2006. Na segunda-feira 3 de julho de 2006, o serviço regular do dia da semana (`service_id=WD`) é interrompido (`exception_type=2`). Em vez disso, o serviço de fim de semana (`service_id=WE`) é interrompido nessa data (`exception_type=1`). A mesma mudança se aplica também na terça-feira 4 de julho.
 
     service_id,date,exception_type
     WD,20060703,2

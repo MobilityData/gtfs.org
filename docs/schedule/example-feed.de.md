@@ -9,7 +9,7 @@ search:
 
 # Beispiel GTFS-Feed
 
-Dieses GTFS-Beispiel zeigt kommagetrennte Datenbeispiele für jede Datei in einem Transit-Feed. Die hier gezeigten Beispieldateien sind nicht alle miteinander verbunden. Sie können auch [einen vollständigen GTFS-Feed](https://github.com/google/transit/blob/master/gtfs/spec/en/examples/sample-feed-1.zip?raw=true) in der endgültigen Form [herunterladen](https://github.com/google/transit/blob/master/gtfs/spec/en/examples/sample-feed-1.zip?raw=true), um damit zu arbeiten, oder die einzelnen Dateien desselben Feeds [hier](https://github.com/google/transit/tree/master/gtfs/spec/en/examples/sample-feed-1) online durchsuchen.
+Dieses GTFS-Beispiel zeigt kommagetrennte Datenbeispiele für jede Datei in einem Transit-Feed. Die hier gezeigten Beispieldateien sind nicht alle miteinander verbunden. Sie können auch [einen vollständigen GTFS-Feed in der endgültigen Form herunterladen](https://github.com/google/transit/blob/master/gtfs/spec/en/examples/sample-feed-1.zip?raw=true), um damit zu arbeiten, oder die einzelnen Dateien desselben Feeds [hier](https://github.com/google/transit/tree/master/gtfs/spec/en/examples/sample-feed-1) online durchsuchen.
 
 ## agency.txt
 

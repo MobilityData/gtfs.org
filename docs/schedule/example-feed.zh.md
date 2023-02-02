@@ -78,7 +78,7 @@ search:
 
 ## calendar_dates.txt
 
-这个例子显示了2006年独立日假期的服务例外情况。在2006年7月3日星期一，正常的工作日服务`（service_id=WD`）被中断`（exception_type=2`）。相反，周末服务`（service_id=WE`）在该日运行`（exception_type=1`）。同样的变化也适用于7月4日星期二。
+这个例子显示了2006年独立日假期的服务例外情况。在2006年7月3日星期一，正常的工作日服务（`service_id=WD`）被中断（`exception_type=2`）。相反，周末服务（`service_id=WE`）在该日运行（`exception_type=1`）。同样的变化也适用于7月4日星期二。
 
     service_id,date,exception_type
     WD,20060703,2

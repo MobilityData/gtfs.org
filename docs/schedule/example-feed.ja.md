@@ -9,7 +9,7 @@ search:
 
 # GTFSフィードの例
 
-このGTFSフィードの例では、トランジットフィード内の各ファイルについて、カンマ区切りでデータサンプルを示しています。ここに示されたサンプルデータファイルは、すべてが互いに関連しているわけではありません。また、最終形式の[完全なGTFSフィードを](https://github.com/google/transit/blob/master/gtfs/spec/en/examples/sample-feed-1.zip?raw=true)ダウンロードして作業することもできますし、同じフィードの個々のファイルをオンラインで閲覧することもできます[。](https://github.com/google/transit/tree/master/gtfs/spec/en/examples/sample-feed-1)
+このGTFSフィードの例では、トランジットフィード内の各ファイルについて、カンマ区切りでデータサンプルを示しています。ここに示されたサンプルデータファイルは、すべてが互いに関連しているわけではありません。また、最終形式の[完全なGTFSフィードを](https://github.com/google/transit/blob/master/gtfs/spec/en/examples/sample-feed-1.zip?raw=true)[ダウンロードし]((https://github.com/google/transit/tree/master/gtfs/spec/en/examples/sample-feed-1))て作業することもできますし、同じフィードの個々のファイルをオンラインで閲覧することもできます。
 
 ## agency.txt
 
@@ -78,7 +78,7 @@ search:
 
 ## calendar_dates.txt
 
-この例では、2006年の独立記念日の祝日におけるサービスの例外を示します。2006年7月3日(月)は、平日の通常運行`(service_id=WD`)が中断されます`(exception_type=2`)。代わりに、週末サービス`(service_id=WE`)がその日に運行されます`(exception_type=1`)。7月4日（火）も同様に変更となります。
+この例では、2006年の独立記念日の祝日におけるサービスの例外を示します。2006年7月3日(月)は、平日の通常運行(`service_id=WD`)が中断されます(`exception_type=2`)。代わりに、週末サービス(`service_id=WE`)がその日に運行されます(`exception_type=1`)。7月4日（火）も同様に変更となります。
 
     service_id,date,exception_type
     WD,20060703,2

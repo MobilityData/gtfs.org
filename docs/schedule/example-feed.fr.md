@@ -78,7 +78,7 @@ Cet exemple de flux GTFS montre des échantillons de données délimités par de
 
 ## calendar_dates.txt
 
-Cet exemple montre les exceptions de service pour le jour férié de l'Independence Day en 2006. Le lundi 3 juillet 2006, le service régulier en semaine`(service_id=WD`) est interrompu`(exception_type=2`). À la place, le service de week-end`(service_id=WE`) fonctionne à cette date`(exception_type=1`). Le même changement s'applique également le mardi 4 juillet.
+Cet exemple montre les exceptions de service pour le jour férié de l'Independence Day en 2006. Le lundi 3 juillet 2006, le service régulier en semaine (`service_id=WD`) est interrompu (`exception_type=2`). À la place, le service de week-end (`service_id=WE`) fonctionne à cette date (`exception_type=1`). Le même changement s'applique également le mardi 4 juillet.
 
     service_id,date,exception_type
     WD,20060703,2
