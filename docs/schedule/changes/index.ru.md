@@ -48,7 +48,8 @@ Active proposals for new features in <glossary variable="GTFS Schedule"><glossar
 <div class="row">
     <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">Добавить пересадку с trip с возможностью пересадки на сиденье</a></h3>
-        <p class="maintainer">#303 by <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> was merged on Jun 26, 2022</p>
+        <p class="maintainer">#303 автор <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> было добавлено 26 июня 2022 г.
+</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -61,8 +62,9 @@ Active proposals for new features in <glossary variable="GTFS Schedule"><glossar
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank">Базовая реализация GTFSFares V2</a></h3>
-        <p class="maintainer">#286 by <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> was merged on May 17, 2022</p>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank">Базовая реализация GTFS-Fares V2</a></h3>
+        <p class="maintainer">#286 автор <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> была объединена 17 мая 2022 года
+</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -76,7 +78,7 @@ Active proposals for new features in <glossary variable="GTFS Schedule"><glossar
 <div class="row">
     <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/284" class="no-icon" target="_blank">пересадки отtrip и от маршрута к маршруту</a></h3>
-        <p class="maintainer">#284 by <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> was merged on Oct 5, 2021</p>
+        <p class="maintainer">#284 автор <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> была объединена 5 октября 2021 года</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -89,7 +91,7 @@ Active proposals for new features in <glossary variable="GTFS Schedule"><glossar
 <div class="row">
     <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/208" class="no-icon" target="_blank">GTFS-ContinuousStops</a></h3>
-        <p class="maintainer">#208 by <a href="https://github.com/timMillet" class="no-icon" target="_blank">timMillet</a> was merged on May 13, 2020</p>
+        <p class="maintainer">#208 автор <a href="https://github.com/timMillet" class="no-icon" target="_blank">timMillet</a> была объединена 13 мая 2020 года</p>
     </div>
     <div class="featurelist">
         <ul>

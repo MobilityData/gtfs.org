@@ -3,7 +3,7 @@ search:
   exclude: true
 ---
 
-# Modifications duGTFS Schedule
+# Modifications du GTFS Schedule
 
 <!-- <div class=landing-page>
     <a class=button href=../process>Specification Amendment Process</a><a class=button href=../guiding-principles>Guiding Principles</a><a class=button href=../revision-history>Revision History</a>
@@ -13,7 +13,7 @@ La spécification GTFS n'est pas gravée dans la pierre. Il s'agit plutôt d'une
 
 Pour contribuer à GTFS, lisez le [processus de modification des spécifications](../process) et suivez les discussions dans les [questions](https://github.com/google/transit/issues) ouvertes et les [demandes de retrait](https://github.com/google/transit/pulls) sur le dépôt Github Transit de Google[(google/transit](https://github.com/google/transit)). ![](../../assets/mark-github.svg)
 
-! !! note ""
+!!! note ""
 
     La spécification, la référence et la documentation officielles sont rédigées en anglais. Si une Translation dans une autre langue diffère de l'original anglais, c'est ce dernier qui prévaut. Toute communication est effectuée en anglais.
 
@@ -43,7 +43,7 @@ Rejoignez les discussions sur [Github](https://github.com/google/transit/pulls)!
 
 ## Propositions récemment fusionnées![](../../assets/pr-merged.svg)
 
-Propositions récemment fusionnées qui sont maintenant des caractéristiques de la [spécification officielle](../reference) du [GTFS Schedule](../reference). Consultez l'[historique](../process#revision-history) complet [des révisions](../process#revision-history) pour en savoir plus.
+Propositions récemment fusionnées qui sont maintenant des caractéristiques de la [spécification officielle du GTFS Schedule](../reference). Consultez l'[historique complet des révisions](../process#revision-history) pour en savoir plus.
 
 <div class="row">
     <div class="leftcontainer">
@@ -61,8 +61,8 @@ Propositions récemment fusionnées qui sont maintenant des caractéristiques de
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank">Implémentation de la baseGTFSFares V2</a></h3>
-        <p class="maintainer">#Le numéro 286 de <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> a été fusionné le Peut 17, 2022</p>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank">Implémentation de la base GTFS-Fares V2</a></h3>
+        <p class="maintainer">#Le numéro 286 de <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> a été fusionné le mai 17, 2022</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -75,7 +75,7 @@ Propositions récemment fusionnées qui sont maintenant des caractéristiques de
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/284" class="no-icon" target="_blank">Transferts detrip et d'itinéraire à itinéraire</a></h3>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/284" class="no-icon" target="_blank">Transferts de trip et d'itinéraire à itinéraire</a></h3>
         <p class="maintainer">#284 par <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> a été fusionné le 5 oct. 2021</p>
     </div>
     <div class="featurelist">
@@ -89,7 +89,7 @@ Propositions récemment fusionnées qui sont maintenant des caractéristiques de
 <div class="row">
     <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/208" class="no-icon" target="_blank">GTFS-ContinuousStops</a></h3>
-        <p class="maintainer">#208 par <a href="https://github.com/timMillet" class="no-icon" target="_blank">timMillet</a> a été fusionné le Peut 13, 2020</p>
+        <p class="maintainer">#208 par <a href="https://github.com/timMillet" class="no-icon" target="_blank">timMillet</a> a été fusionné le mai 13, 2020</p>
     </div>
     <div class="featurelist">
         <ul>

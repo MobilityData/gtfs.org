@@ -13,9 +13,7 @@ search:
 
 기여하다GTFS , [사양 수정 프로세스](../process) 를 읽고 Google의 Transit Github 저장소( [google/transit](https://github.com/google/transit) )에서 열린 [문제](https://github.com/google/transit/issues) 및 [풀 요청](https://github.com/google/transit/pulls) 의 토론을 따르십시오.![](../../assets/mark-github.svg)
 
-!!! 노트 ""
-
-  공식 사양, 참조 및 문서는 영어로 작성됩니다. 만약 Translation 다른 언어로 영어 원본과 다른 경우 후자가 우선합니다. 모든 의사소통은 영어로 이루어집니다.
+<div class="admonition note"><p>공식 사양, 참조 및 문서는 영어로 작성됩니다. 만약 Translation 다른 언어로 영어 원본과 다른 경우 후자가 우선합니다. 모든 의사소통은 영어로 이루어집니다.</p></div>
 
 
 ## 활성 제안 ![](../../assets/pr-active.svg)
@@ -43,11 +41,11 @@ Active proposals for new features in <glossary variable="GTFS Schedule"><glossar
 
 ## 최근 병합된 제안서![](../../assets/pr-merged.svg)
 
-이제 [공식](../reference) 의 기능이 된 최근에 병합된 제안GTFS Schedule [사양](../reference) . 자세한 내용은 전체 [개정 내역](../process#revision-history) 을 참조하십시오.
+이제 [공식의 기능이 된 최근에 병합된 제안GTFS Schedule사양](../reference) . 자세한 내용은 전체 [개정 내역](../process#revision-history) 을 참조하십시오.
 
 <div class="row"><div class="leftcontainer"><h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">추가하다trip -에게-trip 좌석 옵션이 있는 환승</a></h3><p class="maintainer"> #303 by <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> 는 2022년 6월 26일에 합병되었습니다.</p></div><div class="featurelist"><ul><li> 다음에 대한 새로운 <code>transfer_type</code> 을 추가합니다.trip 에게trip 동일한 경우 사용자가 &quot;좌석 이동&quot;을 수행할 수 있는지 정의하기 위한 이동vehicle 2회 연속 운행 중이며 사용자는 선상에 머무를 수 있습니다.</li><li> 좌석 내 환승이 허용되지 않는 경우를 정의할 수 있지만 운영상 서로 다른 두 여행을 함께 연결할 수 있습니다. </li></ul></div></div>
 
-<div class="row"><div class="leftcontainer"><h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank"> GTFS Fares V2 기본 구현</a></h3><p class="maintainer"> #286 by <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> 가 2022년 5월 17일에 합병되었습니다.</p></div><div class="featurelist"><ul><li> 대중교통 요금 및 티켓</li><li> 복잡한 운임 및 환승 비용 모델링(다중 네트워크,time -기반 및 카운트 기반 전송)</li><li> 정류장을 요금 구역에 연결하는 모델 </li></ul></div></div>
+<div class="row"><div class="leftcontainer"><h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank"> GTFS-Fares V2 기본 구현</a></h3><p class="maintainer"> #286 by <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> 가 2022년 5월 17일에 합병되었습니다.</p></div><div class="featurelist"><ul><li> 대중교통 요금 및 티켓</li><li> 복잡한 운임 및 환승 비용 모델링(다중 네트워크,time -기반 및 카운트 기반 전송)</li><li> 정류장을 요금 구역에 연결하는 모델 </li></ul></div></div>
 
 <div class="row"><div class="leftcontainer"><h3 class="title"><a href="https://github.com/google/transit/pull/284" class="no-icon" target="_blank">추가하다trip-에게-trip 좌석 옵션이 있는 환승</a></h3><p class="maintainer"> #284 by <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> 가 2021년 10월 5일에 합병되었습니다.</p></div><div class="featurelist"><ul><li> 정류장 간 환승 규칙 지정,trip 또는 경로 쌍transfers.txt</li><li> 서로 다른 쌍 배열에 기반한 전송 규칙의 순위 지정 특이성 </li></ul></div></div>
 

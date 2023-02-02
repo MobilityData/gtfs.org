@@ -11,11 +11,9 @@ search:
 
 A Especificação GTFS não é definida em pedra. Ao invés disso, é uma especificação aberta desenvolvida e mantida pela comunidade de agências de trânsito, desenvolvedores e outras partes interessadas que utilizam GTFS. Espera-se que esta comunidade de produtores e consumidores de dados GTFS tenha propostas para ampliar as especificações a fim de permitir novas capacidades.
 
-Para contribuir com o GTFS, leia o [Processo de Emenda de Especificações](../process) e siga as discussões nas [questões](https://github.com/google/transit/issues) em aberto e [faça solicitações](https://github.com/google/transit/pulls) no repositório Transit Github do Google[(google/transit](https://github.com/google/transit)). ![](../../assets/mark-github.svg)
+Para contribuir com o GTFS, leia o [Processo de Emenda de Especificações](../process) e siga as discussões nas [questões](https://github.com/google/transit/issues) em aberto e [faça solicitações](https://github.com/google/transit/pulls) no repositório Transit Github do Google [(google/transit](https://github.com/google/transit)). ![](../../assets/mark-github.svg)
 
-!!! nota "".
-
-    A especificação oficial, referência e documentação são escritas em inglês. Se uma Translation para um idioma diferente do original em inglês, esta última tem precedência. Toda a comunicação é feita em inglês.
+<div class="admonition note"> <p> A especificação oficial, referência e documentação são escritas em inglês. Se uma Translation para um idioma diferente do original em inglês, esta última tem precedência. Toda a comunicação é feita em inglês.</p> </div>
 
 
 ## Propostas ativas![](../../assets/pr-active.svg)
@@ -43,7 +41,7 @@ Participe das discussões sobre [o Github](https://github.com/google/transit/pul
 
 ## Propostas fundidas recentemente![](../../assets/pr-merged.svg)
 
-Recentemente foram fundidas propostas que agora são características da [especificação oficial](../reference) da [GTFS Schedule](../reference). Veja o [Histórico de Revisões](../process#revision-history) completo para mais informações.
+Recentemente foram fundidas propostas que agora são características da [especificação oficial da GTFS Schedule](../reference). Veja o [Histórico de Revisões](../process#revision-history) completo para mais informações.
 
 <div class="row">
     <div class="leftcontainer">
@@ -61,7 +59,7 @@ Recentemente foram fundidas propostas que agora são características da [especi
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank">Implementação da base GTFS Fares V2</a></h3>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank">Implementação da base GTFS-Fares V2</a></h3>
         <p class="maintainer">#286 por <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> foi fundido em 17 de maio de 2022</p>
     </div>
     <div class="featurelist">
@@ -75,8 +73,8 @@ Recentemente foram fundidas propostas que agora são características da [especi
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/284" class="no-icon" target="_blank">Transferências detrip e de rota para rota</a></h3>
-        <p class="maintainer">#284 by <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> foi fundido em 5 de outubro de 2021</p>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/284" class="no-icon" target="_blank">Transferências de trip e de rota para rota</a></h3>
+        <p class="maintainer">#284 por <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> foi fundido em 5 de outubro de 2021</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -101,7 +99,7 @@ Recentemente foram fundidas propostas que agora são características da [especi
 <div class="row">
     <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/180" class="no-icon" target="_blank">GTFS-Translations</a></h3>
-        <p class="maintainer">#180 pela <a href="https://github.com/LeoFrachet" class="no-icon" target="_blank">LeoFrachet</a> foi fundida em 9 de janeiro de 2020</p>
+        <p class="maintainer">#180 por <a href="https://github.com/LeoFrachet" class="no-icon" target="_blank">LeoFrachet</a> foi fundida em 9 de janeiro de 2020</p>
     </div>
     <div class="featurelist">
         <ul>

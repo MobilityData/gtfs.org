@@ -13,9 +13,7 @@ GTFS规范并不是一成不变的。相反，它是一个开放的规范，由�
 
 要对GTFS做出贡献，请阅读[规范修订过程](../process)，并关注谷歌Transit Github仓库[（google/transit](https://github.com/google/transit)）上的公开[问题](https://github.com/google/transit/issues)和[拉动请求](https://github.com/google/transit/pulls)中的讨论。![](../../assets/mark-github.svg)
 
-!!!注意 ""
-
-  官方规范、参考资料和文件都是用英文写的。如果Translation不同的语言与英文原文不同，则以后者为准。所有的交流都用英语进行。
+<div class="admonition note"><p> 官方规范、参考资料和文件都是用英文写的。如果Translation不同的语言与英文原文不同，则以后者为准。所有的交流都用英语进行。</p></div>
 
 
 ## 活跃的提案![](../../assets/pr-active.svg)
@@ -48,7 +46,7 @@ Active proposals for new features in <glossary variable="GTFS Schedule"><glossar
 <div class="row">
     <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">增加trip转接，带座位选项</a></h3>
-        <p class="maintainer">#303 by<a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a>was merged on Jun 26, 2022</p>
+        <p class="maintainer">#303 由<a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a>已于2022年6月26日合并</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -61,7 +59,7 @@ Active proposals for new features in <glossary variable="GTFS Schedule"><glossar
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank">GTFS Fares V2基础实现</a></h3>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank">GTFS-Fares V2基础实现</a></h3>
         <p class="maintainer">#286由<a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a>于2022年5月17日进行了合并</p>
     </div>
     <div class="featurelist">

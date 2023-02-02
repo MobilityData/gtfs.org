@@ -12,7 +12,7 @@ La especificación GTFS no está grabada en piedra. Por el contrario, es una esp
 
 Para contribuir GTFS, lea el [proceso de modificación de la especificación](../process) y siga los debates en las [cuestiones](https://github.com/google/transit/issues) abiertas y las [solicitudes de extracción](https://github.com/google/transit/pulls) en el repositorio Github de Google Transit[(google/transit](https://github.com/google/transit)). ![](../../assets/mark-github.svg)
 
-Nota ""
+!!!note ""
 
     La especificación oficial, la referencia y la documentación están escritas en inglés. Si la Translation a otro idioma difiere del original en inglés, este último tiene preferencia. Toda la comunicación se realiza en inglés.
 
@@ -46,7 +46,7 @@ Propuestas recientemente fusionadas que ahora son características de la [especi
 <div class="row">
     <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">Añadir transferencias trip con opción de asiento</a></h3>
-        <p class="maintainer">#303 by <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> was merged on Jun 26, 2022</p>
+        <p class="maintainer">#303 por <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> se fusionó el 26 de Jun de 2022</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -59,8 +59,8 @@ Propuestas recientemente fusionadas que ahora son características de la [especi
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank">Implementación base deGTFSFares V2</a></h3>
-        <p class="maintainer">#286 by <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> was merged on Puede 17, 2022</p>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank">Implementación base de GTFS-Fares V2</a></h3>
+        <p class="maintainer">#286 por <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> se fusionó el 17 de mayo 2022</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -73,8 +73,8 @@ Propuestas recientemente fusionadas que ahora son características de la [especi
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/284" class="no-icon" target="_blank">Transferencias detrip y de ruta a ruta</a></h3>
-        <p class="maintainer">#284 by <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> was merged on Oct 5, 2021</p>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/284" class="no-icon" target="_blank">Transferencias de trip y de ruta a ruta</a></h3>
+        <p class="maintainer">#284 por <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> se fusionó el 5 de octubre de 2021</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -87,7 +87,7 @@ Propuestas recientemente fusionadas que ahora son características de la [especi
 <div class="row">
     <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/208" class="no-icon" target="_blank">GTFS-ContinuousStops</a></h3>
-        <p class="maintainer">#208 by <a href="https://github.com/timMillet" class="no-icon" target="_blank">timMillet</a> was merged on Puede 13, 2020</p>
+        <p class="maintainer">#208 por <a href="https://github.com/timMillet" class="no-icon" target="_blank">timMillet</a> se fusionó el 13 de mayo de 2020</p>
     </div>
     <div class="featurelist">
         <ul>

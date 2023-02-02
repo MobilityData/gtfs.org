@@ -13,7 +13,7 @@ GTFSの仕様は確定しているわけではありません。むしろ、GTFS
 
 GTFSに貢献するには、[仕様修正](../process)プロセスを読み、GoogleのTransit Githubリポジトリ[（google/transit](https://github.com/google/transit)）の[オープンイシューや](https://github.com/google/transit/issues) [プルリクエストで](https://github.com/google/transit/pulls)議論に従ってください。![](../../assets/mark-github.svg)
 
-!!!注意 ""
+!!!note ""
 
     本仕様書、参考資料、ドキュメント類は英語で書かれています。他言語へのTranslation英語の原文と異なる場合は、後者が優先されます。すべてのコミュニケーションは英語で行われます。
 
@@ -88,8 +88,9 @@ Active proposals for new features in GTFS Schedule.  -->
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/208" class="no-icon" target="_blank">GTFS-ContinuousStops（連続停車駅</a></h3>
-        <p class="maintainer">#208 by<a href="https://github.com/timMillet" class="no-icon" target="_blank">timMillet</a>は2020年5月13日にマージされました。</p>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/208" class="no-icon" target="_blank">GTFS-ContinuousStops</a></h3>
+        <p class="maintainer"><a href="https://github.com/timMillet" class="no-icon" target="_blank">timMillet</a>の#208は2020年5月13日にマージされました。
+</p>
     </div>
     <div class="featurelist">
         <ul>

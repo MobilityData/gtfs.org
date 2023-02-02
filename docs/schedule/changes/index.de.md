@@ -10,7 +10,7 @@ search:
 
 Die GTFS ist nicht in Stein gemeißelt. Vielmehr handelt es sich um eine offene Spezifikation, die von der Gemeinschaft der Verkehrsunternehmen, Entwickler und anderen Beteiligten, die GTFS verwenden, entwickelt und gepflegt wird. Es wird erwartet, dass diese Gemeinschaft von Produzenten und Nutzern von GTFS Vorschläge zur Erweiterung der Spezifikation unterbreiten wird, um neue Funktionen zu ermöglichen.
 
-Um zu GTFS beizutragen, lesen Sie den [Specification Amendment Process](../process) und verfolgen Sie die Diskussionen in den offenen [Fragen](https://github.com/google/transit/issues) und [Pull Requests](https://github.com/google/transit/pulls) auf Googles Transit Github Repository[(google/transit](https://github.com/google/transit)). ![](../../assets/mark-github.svg)
+Um zu GTFS beizutragen, lesen Sie den [Specification Amendment Process](../process) und verfolgen Sie die Diskussionen in den offenen [Fragen](https://github.com/google/transit/issues) und [Pull-Anforderungen](https://github.com/google/transit/pulls) auf Googles Transit Github Repository[(google/transit](https://github.com/google/transit)). ![](../../assets/mark-github.svg)
 
 !!!note ""
 
@@ -35,7 +35,7 @@ Beteiligen Sie sich an den Diskussionen auf [Github](https://github.com/google/t
 <!-- <div class="row no-active">
     <div class="no-active-container">
         <h3 class="title">There are currently no active proposals for <glossary variable="GTFS Schedule"><glossary variable="GTFS">GTFS</glossary> Schedule</glossary>.</h3>
-        <p class="prompt">Have a proposal? &ensp;➜&ensp; Open a <a href="https://github.com/google/transit/pulls" target="_blank">pull request</a>.</p>
+        <p class="prompt">Have a proposal? &ensp;➜&ensp; Open a <a href="https://github.com/google/transit/pulls" target="_blank">pull-anfrage</a>.</p>
     </div>
 </div>
 <div class="row"></div> -->
@@ -51,7 +51,7 @@ Kürzlich zusammengeführte Vorschläge, die nun Bestandteil der [offiziellen GT
     </div>
     <div class="featurelist">
         <ul>
-            <li>Fügt neue <code>transfer_type</code>'s für trip hinzu, um zu definieren, ob ein Benutzer einen "In-Seat-Transfer" durchführen kann, wenn dasselbe vehicle zwei aufeinanderfolgende Fahrten durchführt und der Benutzer an Bord bleiben kann</li>
+            <li>Fügt neue <code>transfer_type</code>'s für trip hinzu, um zu definieren, ob ein Benutzer einen "Übertragung im Sitz" durchführen kann, wenn dasselbe vehicle zwei aufeinanderfolgende Fahrten durchführt und der Benutzer an Bord bleiben kann</li>
             <li>Es kann definiert werden, wann Transfers auf dem Sitzplatz nicht erlaubt sind, aber zwei verschiedene Fahrten betrieblich miteinander verbunden werden können.
             </li>
         </ul>
