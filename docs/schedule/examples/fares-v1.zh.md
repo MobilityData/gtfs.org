@@ -23,7 +23,7 @@ search:
 - 车费的价格列在价格和`currency_type`下
 - 乘客必须在上车前在车站检票口支付车费。这由`payment_method=1`表示。
 - 转乘字段留空，代表无限制的转乘。
-- `Transfer_duration`字段对应于2小时的换乘窗口（以秒为单位）。
+- `transfer_duration`字段对应于2小时的换乘窗口（以秒为单位）。
 
 第二个文件，[fare_rules.txt](../../reference/#fare_rulestxt)通过将票价与路线以及该路线的起点/终点联系起来，为旅程分配票价。
 
@@ -45,7 +45,7 @@ search:
 
 在[fare_rules.txt](../../reference/#fare_rulestxt) 中，PRESTO 票价与地铁线路和车站的关系如下。
 
-- 对于`票价_id=presto_fare`，乘客可以在1号线的任何两个车站之间旅行`（routine_id=line1`），并且`origin_id=ttc_subway_stations`和`destination_id=ttc_subway_stations`。
+- 对于`fare_id=presto_fare`，乘客可以在1号线的任何两个车站之间旅行（`route_id=line1`），并且`origin_id=ttc_subway_stations`和`destination_id=ttc_subway_stations`。
 
 [**fare_rules.txt**](../../reference/#fare_rulestxt)
 

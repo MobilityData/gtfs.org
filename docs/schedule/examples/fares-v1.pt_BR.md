@@ -7,11 +7,11 @@ search:
 
 <hr/>
 
-Composto de [fare_attributes.txt](../../reference/#fare_attributestxt) e [fare_rules.txt](../../reference/#fare_rulestxt), Fares V1 tem sido historicamente o método oficial para descrever informações tarifárias no GTFS. Entretanto, os dois arquivos são limitados na amplitude de fatores que eles podem descrever eficientemente, e são ambíguos para implementar. O[Fares V2](../../examples/fares-v2/) é um projeto de extensão em desenvolvimento ativo, e tem como objetivo abordar as limitações do Fares V1.
+Composto de [fare_attributes.txt](../../reference/#fare_attributestxt) e [fare_rules.txt](../../reference/#fare_rulestxt), Fares V1 tem sido historicamente o método oficial para descrever informações tarifárias no GTFS. Entretanto, os dois arquivos são limitados na amplitude de fatores que eles podem descrever eficientemente, e são ambíguos para implementar. O [Fares V2](../../examples/fares-v2/) é um projeto de extensão em desenvolvimento ativo, e tem como objetivo abordar as limitações do Fares V1.
 
 ## Definir as regras tarifárias de uma agência
 
-Uma trip na rede de metrô da Comissão de Trânsito de Toronto custa \$3,20 CAD se os cavaleiros pagarem usando o cartão PRESTO. Os cavaleiros também podem transferir para outras linhas de metrô, bonde ou ônibus operados pelo TTC dentro de uma janela de duas horas.
+Uma trip na rede de metrô da Toronto Transit Commission custa \$3,20 CAD se os cavaleiros pagarem usando o cartão PRESTO. Os cavaleiros também podem transferir para outras linhas de metrô, bonde ou ônibus operados pelo TTC dentro de uma janela de duas horas.
 
 Este serviço pode ser representado usando os arquivos [fare_attributes.txt](../../reference/#fare_attributestxt), [fare_rules.txt](../../reference/#fare_rulestxt), e [transfers.txt](../../reference/#transferstxt). O primeiro arquivo, [fare_attributes.txt](../../reference/#fare_attributestxt), descreve as tarifas da agência, abaixo é um exemplo para a tarifa presto:
 
@@ -45,7 +45,7 @@ Neste exemplo, as transferências na estação Bloor-Yonge são modeladas. Para 
 
 Em [fare_rules.txt](../../reference/#fare_rulestxt), a tarifa PRESTO é associada tanto às linhas de metrô quanto às estações, usando as seguintes relações:
 
-- Para o `fare_id=presto_fare`, os passageiros podem viajar entre quaisquer duas estações na Linha 1`(route_id=line1`) e `origin_id=ttc_subway_stations` e `destination_id=ttc_subway_stations`.
+- Para o `fare_id=presto_fare`, os passageiros podem viajar entre quaisquer duas estações na Linha 1 (`route_id=line1`) e `origin_id=ttc_subway_stations` e `destination_id=ttc_subway_stations`.
 
 [**fare_rules.txt**](../../reference/#fare_rulestxt)
 

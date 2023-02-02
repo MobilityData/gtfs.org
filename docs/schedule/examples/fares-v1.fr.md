@@ -7,7 +7,7 @@ search:
 
 <hr/>
 
-Composé de [fare_attributes.txt](../../reference/#fare_attributestxt) et [fare_rules.txt](../../reference/#fare_rulestxt), Fares V1 a historiquement été la méthode officielle pour décrire les informations tarifaires dans GTFS. Cependant, les deux fichiers sont limités dans l'étendue des facteurs qu'ils peuvent décrire efficacement, et sont ambigus à mettre en œuvre.[Fares V2](../../examples/fares-v2/) est un projet d'extension en cours de développement actif, et il vise à aborder les limitations de Fares V1.
+Composé de [fare_attributes.txt](../../reference/#fare_attributestxt) et [fare_rules.txt](../../reference/#fare_rulestxt), Fares V1 a historiquement été la méthode officielle pour décrire les informations tarifaires dans GTFS. Cependant, les deux fichiers sont limités dans l'étendue des facteurs qu'ils peuvent décrire efficacement, et sont ambigus à mettre en œuvre. [Fares V2](../../examples/fares-v2/) est un projet d'extension en cours de développement actif, et il vise à aborder les limitations de Fares V1.
 
 ## Définir les règles tarifaires d'une agence
 
@@ -45,7 +45,7 @@ Dans cet exemple, les transferts à la station Bloor-Yonge sont modélisés. Pou
 
 Dans [fare_rules.txt](../../reference/#fare_rulestxt), le tarif PRESTO est associé aux deux lignes de métro et aux stations en utilisant les relations suivantes :
 
-- Pour `fare_id=presto_fare`, les usagers peuvent voyager entre deux stations quelconques de la ligne 1`(route_id=line1`) et `origin_id=ttc_subway_stations` et `destination_id=ttc_subway_stations`.
+- Pour `fare_id=presto_fare`, les usagers peuvent voyager entre deux stations quelconques de la ligne 1 (`route_id=line1`) et `origin_id=ttc_subway_stations` et `destination_id=ttc_subway_stations`.
 
 [**fare_rules.txt**](../../reference/#fare_rulestxt)
 

@@ -7,11 +7,11 @@ search:
 
 <hr/>
 
-Состоящий из [fare_attributes.txt](../../reference/#fare_attributestxt) и [fare_rules.txt](../../reference/#fare_rulestxt), Fares V1 исторически был официальным методом описания информации о тарифах в GTFS. Однако эти два файла ограничены в широте факторов, которые они могут эффективно описать, и неоднозначны в реализации.[Fares V2](../../examples/fares-v2/) - это проект расширения, находящийся в стадии активной разработки, и он направлен на устранение ограничений Fares V1.
+Состоящий из [fare_attributes.txt](../../reference/#fare_attributestxt) и [fare_rules.txt](../../reference/#fare_rulestxt), Fares V1 исторически был официальным методом описания информации о тарифах в GTFS. Однако эти два файла ограничены в широте факторов, которые они могут эффективно описать, и неоднозначны в реализации. [Fares V2](../../examples/fares-v2/) - это проект расширения, находящийся в стадии активной разработки, и он направлен на устранение ограничений Fares V1.
 
 ## Определите правила оплаты проезда агентства
 
-trip в метро Торонто стоит \$3,20 CAD, если пассажиры оплачивают проезд картой PRESTO. Всадники также могут пересаживаться на другие маршруты метро, трамваи или автобусы, обслуживаемые TTC, в течение двухчасового окна.
+trip в Toronto Transit Commission стоит \$3,20 CAD, если пассажиры оплачивают проезд картой PRESTO. Всадники также могут пересаживаться на другие маршруты метро, трамваи или автобусы, обслуживаемые TTC, в течение двухчасового окна.
 
 Этот сервис может быть представлен с помощью файлов [fare_attributes.txt](../../reference/#fare_attributestxt), [fare_rules.txt](../../reference/#fare_rulestxt) и [transfers.txt](../../reference/#transferstxt). Первый файл, [fare_attributes.txt](../../reference/#fare_attributestxt), описывает тарифы агентства, ниже приведен пример тарифа presto:
 
@@ -45,7 +45,7 @@ trip в метро Торонто стоит \$3,20 CAD, если пассажи
 
 В [fare_rules.txt](../../reference/#fare_rulestxt) тариф PRESTO связан с обеими линиями метро и станциями с помощью следующих отношений:
 
-- При `тарифе fare_id=presto_fare` пассажиры могут перемещаться между любыми двумя станциями линии 1`(route_id=line1`) с `origin_id=ttc_subway_stations` и `destination_id=ttc_subway_stations`.
+- При `тарифе fare_id=presto_fare` пассажиры могут перемещаться между любыми двумя станциями линии 1 (`route_id=line1`) с `origin_id=ttc_subway_stations` и `destination_id=ttc_subway_stations`.
 
 [**fare_rules.txt**](../../reference/#fare_rulestxt)
 

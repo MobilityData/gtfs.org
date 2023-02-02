@@ -11,7 +11,7 @@ search:
 
 ## 定義機構的票價規則
 
-一個trip如果乘客使用 PRESTO 卡付款，在多倫多交通委員會的地鐵網絡上的票價為 3.20 加元。乘客還可以在兩小時內轉乘 TTC 運營的其他地鐵、有軌電車或公交線路。
+一個trip如果乘客使用 PRESTO 卡付款，在多Toronto Transit Commission的地鐵網絡上的票價為 3.20 加元。乘客還可以在兩小時內轉乘 TTC 運營的其他地鐵、有軌電車或公交線路。
 
 該服務可以使用文件表示[fare_attributes.txt](../../reference/#fare_attributestxt) ,[fare_rules.txt](../../reference/#fare_rulestxt) ， 和[transfers.txt](../../reference/#transferstxt) .第一個文件，[fare_attributes.txt](../../reference/#fare_attributestxt)描述代理機構的票價，以下是 presto 票價的示例：
 

@@ -13,7 +13,7 @@ Fares v1 は、[fare_attributes.txt](../../reference/#fare_attributestxt)と[far
 
 トロント交通委員会の地下鉄ネットワークの旅は、ライダーがPRESTOカードで支払う場合、\$3.20 CADです。また、2時間以内であれば、TTCが運営する他の地下鉄、路面電車、バス路線に乗り換えることができます。
 
-このサービスは[fare_attributes.txt](../../reference/#fare_attributestxt),[fare_rules.txt](../../reference/#fare_rulestxt),[transfers.txt](../../reference/#transferstxt) というファイルを使って表現することができる．最初のファイル、[fare_attributes.txtは](../../reference/#fare_attributestxt)代理店の運賃を記述し、以下はpresto運賃の例である。
+このサービスは[fare_attributes.txt](../../reference/#fare_attributestxt), [fare_rules.txt](../../reference/#fare_rulestxt), [transfers.txt](../../reference/#transferstxt) というファイルを使って表現することができる．最初のファイル、[fare_attributes.txtは](../../reference/#fare_attributestxt)代理店の運賃を記述し、以下はpresto運賃の例である。
 
 [**fare_attributes.txt**](../../reference/#fare_attributestxt)
 
@@ -43,9 +43,9 @@ Fares v1 は、[fare_attributes.txt](../../reference/#fare_attributestxt)と[far
     Bloor,Bloor Station,,43.670049,-79.385389,ttc_subway_stations
     Yonge,Yonge Station,,43.671049,-79.386789,ttc_subway_stations
 
-[fare_rules](../../reference/#fare_rulestxt).txtでは、さきがけの運賃は地下鉄の路線と駅に以下のような関係で関連づけられています。
+[fare_rules.txt](../../reference/#fare_rulestxt)では、さきがけの運賃は地下鉄の路線と駅に以下のような関係で関連づけられています。
 
-- `fare_id=presto_fareの`場合，ライダーはLine 1の任意の2駅間`（route_id=line1`）を移動でき，`origin_id=ttc_subway_stations`と`destination_id=ttc_subway_stations` である．
+- `fare_id=presto_fareの`場合，ライダーはLine 1の任意の2駅間（`route_id=line1`）を移動でき，`origin_id=ttc_subway_stations`と`destination_id=ttc_subway_stations` である．
 
 [**fare_rules.txt**](../../reference/#fare_rulestxt)
 
@@ -53,7 +53,7 @@ Fares v1 は、[fare_attributes.txt](../../reference/#fare_attributestxt)と[far
     presto_fare,line1,ttc_subway_stations,ttc_subway_stations
     presto_fare,line2,ttc_subway_stations,ttc_subway_stations
 
-3番目のファイル[transfers.txtは](../../reference/#transferstxt)、異なるルート間の乗り換えポイントを定義しています。Bloor-Yonge駅での乗り換えをモデル化するには、2つのエントリーが必要です。
+3番目のファイル[transfers.txt](../../reference/#transferstxt)、は異なるルート間の乗り換えポイントを定義しています。Bloor-Yonge駅での乗り換えをモデル化するには、2つのエントリーが必要です。
 
 [**transfers.txt**](../../reference/#transferstxt)
 
