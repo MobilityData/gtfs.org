@@ -15,7 +15,7 @@ Fares v2 は Fares v1 の制限を解決することを目的とした GTFS 拡�
 
 トロントの交通機関であるTTCを利用するには、運賃を支払う方法がいくつかあります。TTC は、支払い方法によって、運賃の価格を 2 種類用意しています。PRESTO カードで支払うと大人3.20CAD、 現金で支払うと同3 .25CADとなります。
 
-乗り換えのチケットや運賃は、[fare_products.txtという](../../reference/#fare_productstxt)ファイルに記述することができます。各項目は、特定の運賃に対応しています。
+乗り換えのチケットや運賃は、[fare_products.txt](../../reference/#fare_productstxt)というファイルに記述することができます。各項目は、特定の運賃に対応しています。
 
 [fare_products.txt](../../reference/#fare_productstxt)
 
@@ -31,7 +31,7 @@ Fares v2 は Fares v1 の制限を解決することを目的とした GTFS 拡�
 
 一部の交通機関では、ゾーンベースの運賃体系を採用しています。運賃ゾーンは、異なる運賃価格に関連する地理的な領域を分割したものです。1つのゾーン内を移動する場合でも、あるゾーンから別のゾーンへ移動する場合でも、乗り換え客は正しい運賃を知る必要があります。トロントのTTCでは、運賃ゾーンは1つだけです。トロント市内の移動であれば、どの交通機関を利用しても、同じ運賃を支払えばよいのです。
 
-運賃ゾーンは[stops_areas.txt](../../reference/#stops_areastxt)ファイルを使って記述することができます。[stops.txtから](../../reference/#stopstxt) [areas.txtに](../../reference/#areastxt)停留所を割り当てることで、運賃ゾーンを表現することができます。
+運賃ゾーンは[stops_areas.txt](../../reference/#stops_areastxt)ファイルを使って記述することができます。[stops.txt](../../reference/#stopstxt) から [areas.txt](../../reference/#areastxt)に停留所を割り当てることで、運賃ゾーンを表現することができます。
 
 まず、エリア（運賃ゾーン）を特定する。
 
@@ -40,7 +40,7 @@ Fares v2 は Fares v1 の制限を解決することを目的とした GTFS 拡�
     area_id,area_name
     ttc_service_area,TTC Fare Zone
 
-その後、[stops.txt](../../reference/#stopstxt)ファイルから`stop_idを`使用して、特定されたエリア（運賃ゾーン）ごとに停留所をまとめます。
+その後、[stops.txt](../../reference/#stopstxt)ファイルから`stop_id`を使用して、特定されたエリア（運賃ゾーン）ごとに停留所をまとめます。
 
 [**stops_areas.txt**](../../reference/#stops_areastxt)
 

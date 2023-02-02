@@ -7,7 +7,7 @@ search:
 
 <hr/>
 
-FaresFares V2 es un proyecto de extensión de GTFS que pretende solucionar las limitaciones de Fares V1. Este proyecto de extensión se está adoptando en iteraciones, y los ejemplos que aparecen a continuación muestran lo que se puede modelar utilizando la parte de Fares Fares V2 que se ha adoptado en la especificación oficial. Consulte más información sobre el proyecto de extensión de Fares Fares V2 en la sección de [Extensiones](../../../extensions).
+Fares V2 es un proyecto de extensión de GTFS que pretende solucionar las limitaciones de Fares V1. Este proyecto de extensión se está adoptando en iteraciones, y los ejemplos que aparecen a continuación muestran lo que se puede modelar utilizando la parte de Fares Fares V2 que se ha adoptado en la especificación oficial. Consulte más información sobre el proyecto de extensión de Fares Fares V2 en la sección de [Extensiones](../../../extensions).
 
 Entretanto, los productores pueden aplicar Fares V2 junto con Fares V1 en el mismo conjunto de datos, ya que no existe ningún conflicto técnico entre ambas. Los consumidores podrán elegir qué implementación consumir independientemente de la otra. Con la adopción y el respaldo suficiente de Fares Fares V2, Fares V1 puede quedar obsoleta en el futuro.
 
@@ -31,7 +31,7 @@ Los billetes de transporte o las tarifas pueden describirse mediante el archivo 
 
 Algunas agencias de transporte utilizan una estructura tarifaria basada en zonas. Las zonas tarifarias son áreas geográficas divididas asociadas a diferentes precios de tarifas. Tanto si viajan dentro de una misma zona como si lo hacen de una zona a otra, los usuarios deberán conocer la tarifa correcta. En el sistema TTC de Toronto, sólo hay una zona tarifaria. Los usuarios del transporte público simplemente tienen que pagar la misma tarifa de billete único para cualquier distancia de trip dentro de los límites de la ciudad de Toronto, independientemente de la forma de transporte que utilicen.
 
-Las zonas tarifarias pueden describirse mediante el archivo [stops_areas](../../reference/#stops_areastxt).txt, que asigna las paradas de [stops.txt](../../reference/#stopstxt) a [areas.txt](../../reference/#areastxt).
+Las zonas tarifarias pueden describirse mediante el archivo [stops_areas.txt](../../reference/#stops_areastxt), que asigna las paradas de [stops.txt](../../reference/#stopstxt) a [areas.txt](../../reference/#areastxt).
 
 En primer lugar, identifique la zona (zona tarifaria).
 
@@ -40,7 +40,7 @@ En primer lugar, identifique la zona (zona tarifaria).
     area_id,area_name
     ttc_service_area,TTC Fare Zone
 
-Después, utilizando `stop_id` del archivo [stops.txt](../../reference/#stopstxt).txt, agrupa las paradas a su respectiva área identificada (zona tarifaria).
+Después, utilizando `stop_id` del archivo [stops.txt](../../reference/#stopstxt), agrupa las paradas a su respectiva área identificada (zona tarifaria).
 
 [**stops_areas.txt**](../../reference/#stops_areastxt)
 
@@ -83,7 +83,7 @@ Los usuarios que utilizan su tarjeta PRESTO para viajar en el TTC disponen de un
 
 El archivo anterior representa esto en GTFS con los siguientes campos:
 
-- Es posible realizar una transferencia desde y hacia tramos pagados con una tarjeta PRESTO`(ttc_trip_presto`)
+- Es posible realizar una transferencia desde y hacia tramos pagados con una tarjeta PRESTO (`ttc_trip_presto`)
 - El `transfer_count` se establece en `-1` ya que no hay límite en el número de transferencias permitidas
 - El `duration_limit` se establece en `7200` segundos, lo que equivale a 2 horas
 - El `duration_limit_type` se establece en `3`, ya que los usuarios tienen que tocar su tarjeta PRESTO en cuanto entran en la zona de pago o en cuanto suben a un autobús o tranvía. Esto corresponde a la validación de la tarifa de arrival del tramo actual y a la validación de la tarifa de arrival del tramo siguiente.

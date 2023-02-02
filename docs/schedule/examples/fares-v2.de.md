@@ -83,7 +83,7 @@ Fahrgäste, die ihre PRESTO-Karte für die Fahrt mit der TTC verwenden, haben ei
 
 Die obige Datei stellt dies in GTFS mit den folgenden Feldern dar:
 
-- Ein Transfer ist möglich von und zu Strecken, die mit einer PRESTO-Karte bezahlt werden`(ttc_trip_presto`)
+- Ein Transfer ist möglich von und zu Strecken, die mit einer PRESTO-Karte bezahlt werden (`ttc_trip_presto`)
 - `transfer_count` ist auf `-1` gesetzt, da es keine Begrenzung für die Anzahl der zulässigen Überweisungen gibt
 - Das `duration_limit` wird auf `7200` Sekunden gesetzt, was 2 Stunden entspricht.
 - `duration_limit_type` ist auf `3` gesetzt, da die Fahrgäste ihre PRESTO-Karte abziehen müssen, sobald sie den Tarifbereich betreten oder in einen Bus oder eine Straßenbahn einsteigen. Dies entspricht der arrival für die aktuelle Strecke und der arrival für die nächste Strecke.

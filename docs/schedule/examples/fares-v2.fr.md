@@ -84,7 +84,7 @@ Les usagers qui utilisent leur carte PRESTO pour voyager dans la TTC disposent d
 
 Le fichier ci-dessus représente cela en GTFS avec les champs suivants :
 
-- Un transfert est possible vers et depuis des trajets payés par une carte PRESTO`(ttc_trip_presto`).
+- Un transfert est possible vers et depuis des trajets payés par une carte PRESTO (`ttc_trip_presto`).
 - Le `transfer_count` est fixé à `-1` car il n'y a pas de limite au nombre de transferts autorisés.
 - La `duration_limit` est fixée à `7200` secondes, ce qui équivaut à 2 heures.
 - La `duration_limit_type` est fixée à `3`, car les usagers doivent utiliser leur carte PRESTO dès qu'ils entrent dans la zone tarifaire ou dès qu'ils montent dans un bus ou un tramway. Cela correspond à la validation du tarif d'arrival du trajet en cours et à la validation du tarif d'arrival du trajet suivant.
