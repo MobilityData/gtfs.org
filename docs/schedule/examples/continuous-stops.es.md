@@ -48,7 +48,7 @@ Este servicio se describe mediante los archivos stop [stops.txt](../../reference
     E,Oro Grande Post Office,34.599292,-117.334452
     F,Silver Lakes Market,34.744662,-117.335407
 
-En [stop_times.txt](../../reference/#stoptimestxt).txt, para un trip determinado:
+En [stop_times.txt](../../reference/#stoptimestxt), para un trip determinado:
 
 - Un registro con `continuous_pickup=0` indica que se permiten recogidas continuas desde esa parada hasta la siguiente
 - Un registro con `continuous_pickup=1` indica que las recogidas continuas están prohibidas desde esa parada hasta la siguiente

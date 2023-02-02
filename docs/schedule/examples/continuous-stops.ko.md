@@ -9,7 +9,7 @@ search:
 
 ## 모든 곳에서 픽업 및 하차
 
-대중교통 기관인 The Current(미국 버몬트주 로킹엄)는 2번, 53번, 55번 노선에 연속 정차 정책을 적용합니다.scheduled 버스가 정차하기에 안전한 장소가 있는 한 경로를 따라 정차합니다.
+대중교통 기관인 The Current(미국 버몬트주 로킹엄)는 2번, 53번, 55번 노선에 연속 정차 정책을 적용합니다.예정버스가 정차하기에 안전한 장소가 있는 한 경로를 따라 정차합니다.
 
 파일[routes.txt](../../reference/#routestxt) 이 서비스를 설명하기 위해 `continuous_pickup` 및 `continuous_drop_off` 필드를 사용합니다. 필드는 연속 승하차가 허용됨을 나타내기 위해 `0` 으로 설정됩니다.
 
@@ -26,7 +26,7 @@ search:
 
 ## 경로의 한 구간에서 픽업 및 하차
 
-대중교통 기관인 Victor Valley Transit(US-CA 빅터빌)은 22번 노선의 일부에만 연속 정차 정책을 적용합니다. 탑승자는 카운티 요금 구역 내의 안전한 장소에서만 버스에 탑승하고 하차할 수 있습니다. Local Fare 구역 내에서는 연속 승차 및 하차가 불가능합니다.
+대중교통 기관인 Victor Valley Transit(Victorville, US-CA)은 22번 노선의 일부에만 연속 정차 정책을 적용합니다. 탑승자는 카운티 요금 구역 내의 안전한 장소에서만 버스에 탑승하고 하차할 수 있습니다. Local Fare 구역 내에서는 연속 승차 및 하차가 불가능합니다.
 
 Local Fare zone과 County Fare zone은 아래 그림과 같이 Air Expressway로 구분되어 있습니다. 그만큼scheduled stop National Trails Highway - Air Expressway는 이 경계의 약간 북쪽에 있습니다. 정확히 말하면, 대중교통 기관은 버스 노선과 경계가 있는 실제 교차로에 정류장을 추가할 수 있으며 여기서 연속 승하차가 가능합니다. 이 정류장은 남아있을 수 있습니다unscheduled .
 

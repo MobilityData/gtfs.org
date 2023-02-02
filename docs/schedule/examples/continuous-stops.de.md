@@ -48,7 +48,7 @@ Dieser Dienst wird durch die Dateien [stops.txt](../../reference/#stopstxt) und 
     E,Oro Grande Post Office,34.599292,-117.334452
     F,Silver Lakes Market,34.744662,-117.335407
 
-In [stop_times.txt](../../reference/#stoptimestxt)xt, für eine bestimmte trip:
+In [stop_times.txt](../../reference/#stoptimestxt), für eine bestimmte trip:
 
 - Ein Datensatz mit `continuous_pickup=0` bedeutet, dass kontinuierliche Abholungen von dieser Haltestelle bis zur nächsten Haltestelle erlaubt sind
 - Ein Datensatz mit `continuous_pickup=1` bedeutet, dass kontinuierliche Abholungen ab dieser Haltestelle bis zur nächsten Haltestelle verboten sind.

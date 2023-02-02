@@ -11,7 +11,7 @@ search:
 
 交通機関The Current (Rockingham, US-VT) は、ルート2、53、55で、連続停車ポリシーを適用しています。バスが安全に停車できる場所がある限り、乗客はルート上のすべての予定された停留所で送迎を受けることができます。
 
-[routes.txt](../../reference/#routestxt)は、`continuous_pickup`と`continuous_drop_off` というフィールドを使用して、このサービスを記述するためのファイルである。このフィールドは、連続的なピックアップとドロップオフが許可されていることを示すために`0に`設定されています。
+[routes.txt](../../reference/#routestxt)は、`continuous_pickup`と`continuous_drop_off` というフィールドを使用して、このサービスを記述するためのファイルである。このフィールドは、連続的なピックアップとドロップオフが許可されていることを示すために`0`に設定されています。
 
 [**routes.txt**](../../reference/#routestxt)
 
@@ -26,7 +26,7 @@ search:
 
 ## 路線の一部区間でのピックアップとドロップオフ
 
-ビクターバレー・トランジット（米国カリフォルニア州ビクタービル）は、22号線の一部区間に限り、連続停車制度を適用しています。乗客は、County Fareゾーン内の安全な場所でのみバスに乗り降りすることができます。Local Fareゾーンでは、連続したピックアップとドロップオフはできません。
+Victor Valley Transit (Victorville, CA, USA)）は、22号線の一部区間に限り、連続停車制度を適用しています。乗客は、County Fareゾーン内の安全な場所でのみバスに乗り降りすることができます。Local Fareゾーンでは、連続したピックアップとドロップオフはできません。
 
 ローカル料金ゾーンとカウンティ料金ゾーンは、下図のようにエア・エクスプレス・ウェイで区切られています。予定停車駅のNational Trails Highway - Air Expresswayは、この境界のやや北側に位置しています。正確には、交通機関は、バスルートと境界線との実際の交差点に停留所を追加し、そこから連続した送迎を行うことができます。この停留所は予定外のままでもよい。
 
@@ -48,7 +48,7 @@ search:
     E,Oro Grande Post Office,34.599292,-117.334452
     F,Silver Lakes Market,34.744662,-117.335407
 
-[stop_times.txt](../../reference/#stoptimestxt)xtでは、指定されたトリップについて。
+[stop_times.txt](../../reference/#stoptimestxt)では、指定されたトリップについて。
 
 - `continuous_pickup=`0のレコードは、その停留所から次の停留所まで連続的なピックアップが許可されていることを示す。
 - `continuous_pickup=`1のレコードは、その停留所から次の停留所まで連続的なピックアップが禁止されていることを示す。
@@ -66,6 +66,6 @@ search:
 
 同じロジックが`continuous_drop_off`フィールドにも適用されるが、ドロップオフの場合である。
 
-上記の例では、停留所A、B、Cはcontinuous_pickupと`continuous_drop_offが` `1に`設定されており、その間の連続したピックアップとドロップオフを禁止している。一方、停留所`X`,`D`,`E`,`F`のフィールド`continuous_pickup`,`continuous_drop_off`は`0` に設定されており、停留所間の連続したピックアップとドロップオフを許可している。
+上記の例では、停留所A、B、Cはcontinuous_pickupと`continuous_drop_offが` `1`に設定されており、その間の連続したピックアップとドロップオフを禁止している。一方、停留所`X`,`D`,`E`,`F`のフィールド`continuous_pickup`,`continuous_drop_off`は`0` に設定されており、停留所間の連続したピックアップとドロップオフを許可している。
 
 [ソース例](https://vvta.org/routes/route-22/)
