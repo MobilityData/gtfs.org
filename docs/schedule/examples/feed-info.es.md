@@ -12,11 +12,11 @@ search:
 Además de proporcionar información sobre las agencias y sus servicios, es posible proporcionar información sobre el conjunto de datos GTFS utilizando el archivo [feed_info.txt](../../reference/#feed_infotxt). Esto incluye
 
 - Detalles del editor
-- language del feed
+- lengua del feed
 - Validez de la fuente
 - Versión
 
-A continuación se muestra un ejemplo de Transporte para Cairio:
+A continuación se muestra un ejemplo de Transport for Cairo:
 
 [**feed_info.txt**](../../reference/#feed_infotxt)
 

@@ -12,7 +12,7 @@ search:
 En plus de fournir des informations sur les agences et leurs services, il est possible de fournir des informations sur le jeu de données GTFS en utilisant le fichier [feed_info.txt](../../reference/#feed_infotxt). Cela comprend :
 
 - Détails de l'éditeur
-- language flux
+- langue du flux
 - Validité du flux
 - Version
 

@@ -12,7 +12,7 @@ search:
 Zusätzlich zu den Informationen über die Agenturen und ihre Dienstleistungen ist es möglich, Informationen über den GTFS in der Datei [feed_info.txt](../../reference/#feed_infotxt) bereitzustellen. Dies beinhaltet:
 
 - Angaben zum Herausgeber
-- language des Feeds
+- Feed-Sprache
 - Gültigkeit des Feeds
 - Version
 

@@ -12,7 +12,7 @@ search:
 Além de fornecer informações sobre agências e seus serviços, é possível fornecer informações sobre o conjunto de dados GTFS usando o arquivo [feed_info.txt](../../reference/#feed_infotxt). Isto inclui:
 
 - Detalhes da editora
-- language alimentação
+- linguagem de alimentação
 - Validade das rações
 - Versão
 

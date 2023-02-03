@@ -12,11 +12,11 @@ search:
 除了提供有關機構及其服務的信息外，還可以提供有關GTFS使用文件的數據集[feed_info.txt](../../reference/#feed_infotxt).這包括：
 
 - 出版商詳情
-- 餵養language
+- 提要語言
 - 飼料有效性
 - 版本
 
-以下是開里奧交通局的一個例子：
+以下Transport for Cairo局的一個例子：
 
 [**feed_info.txt**](../../reference/#feed_infotxt)
 

@@ -12,7 +12,7 @@ search:
 Selain memberikan informasi tentang agensi dan layanannya, Anda juga dapat memberikan informasi tentangGTFS kumpulan data menggunakan file [feed_info.txt](../../reference/#feed_infotxt). Ini termasuk:
 
 - Detail penerbit
-- Memberi makanlanguage
+- Bahasa umpan
 - Validitas pakan
 - Versi: kapan
 
