@@ -18,4 +18,4 @@ GTFSの仕様を理解し、GTFSデータを読み書きするツールを作成
   - [翻訳](translations)
   - [フィード情報](feed-info)
   - [データセットの帰属](attributions)
-- 実際の交通機関が公開しているフィードについては、[OpenMobilityDataを](https://openmobilitydata.org/)参照してください。
+- 実際の交通機関が公開しているフィードについては、[OpenMobilityData](https://openmobilitydata.org/)を参照してください。

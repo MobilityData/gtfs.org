@@ -3,7 +3,7 @@ search:
   exclude: true
 ---
 
-# Exemplos deGTFS Schedule
+# Exemplos de GTFS Schedule
 
 Para ajudar na compreensão da especificação GTFS e na produção de ferramentas que leiam e escrevam dados GTFS, dê uma olhada nos seguintes exemplos de alimentações GTFS:
 
