@@ -83,7 +83,7 @@ Os cavaleiros que usam seu cartão PRESTO para montar o TTC têm uma janela de t
 
 O arquivo acima representa isto em GTFS com os seguintes campos:
 
-- É possível uma transferência de e para as pernas que são pagas por um cartão PRESTO`(ttc_trip_presto`)
+- É possível uma transferência de e para as pernas que são pagas por um cartão PRESTO (`ttc_trip_presto`)
 - A `transfer_count` é fixada em `-1`, já que não há limite para o número de transferências permitidas
 - O `duration_limit` é fixado em `7200` segundos, o que equivale a 2 horas
 - O `duration_limit_type` é definido como `3`, já que os cavaleiros têm que bater seu cartão PRESTO assim que entrarem na zona de distancia paga ou assim que entrarem em um ônibus ou bonde. Isto corresponde à validação da tarifa de arrival do percurso atual e à validação da tarifa de arrival do percurso seguinte.

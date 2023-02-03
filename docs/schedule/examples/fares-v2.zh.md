@@ -31,7 +31,7 @@ Fares V2是一个GTFS扩展项目，旨在解决Fares V1的限制。这个扩展
 
 一些公交机构实行基于区域的票价结构。票价区是划分的地理区域，与不同的票价相关。无论他们是在一个区域内旅行还是从一个区域到另一个区域，公交乘客都需要知道正确的票价。在多伦多的TTC系统中，只有一个票价区。公交乘客只需为多伦多市范围内的任何trip距离支付相同的单程票价，无论使用哪种交通形式。
 
-票价区可以用[stops_areas.txt](../../reference/#stops_areastxt)文件来描述，该文件将[stops.txt](../../reference/#stopstxt)txt中的站点分配给[areas.txt](../../reference/#areastxt)。
+票价区可以用[stops_areas.txt](../../reference/#stops_areastxt)文件来描述，该文件将[stops.txt](../../reference/#stopstxt)中的站点分配给[areas.txt](../../reference/#areastxt)。
 
 首先，确定区域（票价区）。
 
@@ -83,7 +83,7 @@ Fares V2是一个GTFS扩展项目，旨在解决Fares V1的限制。这个扩展
 
 上面的文件在GTFS中用以下字段表示。
 
-- 可以在用PRESTO卡支付的路段之间转车`（ttc_trip_presto`）。
+- 可以在用PRESTO卡支付的路段之间转车（`ttc_trip_presto`）。
 - `transfer_count`被设置为`-1`，因为对允许的转账次数没有限制。
 - `duration_limit`被设置为`7200`秒，相当于2小时。
 - `duration_limit_type`被设定为`3`，因为乘客在进入付费区或登上公共汽车或有轨电车时，必须立即拍下他们的PRESTO卡。这相当于当前行程的arrival票价验证和下一行程的arrival票价验证。

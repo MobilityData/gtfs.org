@@ -40,7 +40,7 @@ Fares V2是一個GTFS旨在解決以下局限性的擴展項目Fares V1 .這個�
     area_id,area_name
     ttc_service_area,TTC Fare Zone
 
-之後，使用`stop_id`來自[stops.txt](../../reference/#stopstxt) file, group stops 一起到各自的標識區域（fare zone）。
+之後，使用`stop_id`來自[stops.txt](../../reference/#stopstxt) 文件，組一起停在各自的識別區域（收費區）。
 
 [**stops_areas.txt**](../../reference/#stops_areastxt)
 

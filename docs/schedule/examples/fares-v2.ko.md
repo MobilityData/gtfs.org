@@ -15,9 +15,9 @@ Fares V2 이다GTFS 의 한계를 해결하는 것을 목표로 하는 확장 �
 
 토론토에서 TTC 교통 시스템을 사용하기 위해 요금을 지불하는 방법에는 여러 가지가 있습니다. TTC는 지불 방법에 따라 두 가지 운임 가격 옵션을 제공합니다. PRESTO 카드를 사용하는 경우 성인 요금은 CAD 3.20이며, 현금으로 지불하는 경우 동일한 요금은 CAD 3.25입니다.
 
-대중교통 티켓 또는 운임은 다음을 사용하여 설명할 수 있습니다.[fare_products.txtという](../../reference/#fare_productstxt) 파일. 각 항목은 특정 운임에 해당합니다.
+대중교통 티켓 또는 운임은 다음을 사용하여 설명할 수 있습니다.[fare_products.txt](../../reference/#fare_productstxt) という파일. 각 항목은 특정 운임에 해당합니다.
 
-[fare_products.txtという](../../reference/#fare_productstxt)
+[fare_products.txt](../../reference/#fare_productstxt)
 
     fare_product_id,fare_product_name,amount,currency
     presto_fare,PRESTO Card Fare,3.2,CAD
