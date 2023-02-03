@@ -29,7 +29,7 @@ Além disso, o `stop_id` da estação Waterfront está listado em `parent_statio
 
 ## Descreva as escadas e escadas rolantes
 
-A entrada da estação Waterfront na rua Granville tem um elevador, uma escada rolante e escadas, as entradas são definidas como nós acima em [stops.txt](../../reference/#stopstxt). Para conectar as entradas às seções internas da estação, nós adicionais têm de ser criados em [stops.txt](../../reference/#stopstxt) sob a `parent_station` estação Waterfront. No arquivo [stops.txt](../../reference/#stopstxt) abaixo, são definidos nós genéricos`(location_type 3`) que correspondem ao fundo da escadaria e escada rolante.
+A entrada da estação Waterfront na rua Granville tem um elevador, uma escada rolante e escadas, as entradas são definidas como nós acima em [stops.txt](../../reference/#stopstxt). Para conectar as entradas às seções internas da estação, nós adicionais têm de ser criados em [stops.txt](../../reference/#stopstxt) sob a `parent_station` estação Waterfront. No arquivo [stops.txt](../../reference/#stopstxt) abaixo, são definidos nós genéricos (`location_type 3`) que correspondem ao fundo da escadaria e escada rolante.
 
 [**stops.txt**](../../reference/#stopstxt)
 
@@ -42,7 +42,7 @@ A entrada da estação Waterfront na rua Granville tem um elevador, uma escada r
 
 Em seguida, o arquivo [pathways.txt](../../reference/#pathwaystxt) é usado para ligar os nós para criar caminhos, onde o primeiro registro liga os nós pertencentes à parte superior e inferior das escadas. O `pathway_mode` é definido como `2` para indicar escadas, e o último campo descreve que os passageiros podem ir para ambos os lados (para cima e para baixo) das escadas.
 
-Da mesma forma, o segundo registro descreve a escada rolante`(pathway_mode` definido como `4`). Como as escadas rolantes só podem se mover em uma direção, o campo `is_bidirecional` é ajustado para `0`, portanto a escada rolante se move em uma direção, do nó `96` para `91` (para cima).
+Da mesma forma, o segundo registro descreve a escada rolante (`pathway_mode` definido como `4`). Como as escadas rolantes só podem se mover em uma direção, o campo `is_bidirecional` é ajustado para `0`, portanto a escada rolante se move em uma direção, do nó `96` para `91` (para cima).
 
 [**pathways.txt**](../../reference/#pathwaystxt)
 

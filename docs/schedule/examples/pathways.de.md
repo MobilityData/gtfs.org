@@ -29,7 +29,7 @@ Außerdem wird die `stop_id` für Waterfront Station unter `parent_station` für
 
 ## Beschreibung der Treppen und Rolltreppen
 
-Der Eingang der Waterfront Station in der Granville Street verfügt über einen Aufzug, eine Rolltreppe und eine Treppe; die Eingänge sind als Knoten oben in [stops.txt](../../reference/#stopstxt) definiert. Um die Eingänge mit den inneren Bereichen des Bahnhofs zu verbinden, müssen zusätzliche Knoten in [stops.txt](../../reference/#stopstxt) unter der `parent_station` von Waterfront Station erstellt werden. In der folgenden Datei [stops.txt](../../reference/#stopstxt) werden generische Knoten`(location_type 3`) definiert, die dem unteren Ende der Treppe und der Rolltreppe entsprechen.
+Der Eingang der Waterfront Station in der Granville Street verfügt über einen Aufzug, eine Rolltreppe und eine Treppe; die Eingänge sind als Knoten oben in [stops.txt](../../reference/#stopstxt) definiert. Um die Eingänge mit den inneren Bereichen des Bahnhofs zu verbinden, müssen zusätzliche Knoten in [stops.txt](../../reference/#stopstxt) unter der `parent_station` von Waterfront Station erstellt werden. In der folgenden Datei [stops.txt](../../reference/#stopstxt) werden generische Knoten (`location_type 3`) definiert, die dem unteren Ende der Treppe und der Rolltreppe entsprechen.
 
 [**stops.txt**](../../reference/#stopstxt)
 
@@ -52,7 +52,7 @@ In ähnlicher Weise beschreibt der zweite Datensatz die Rolltreppe`(pathway_mode
 
 ## Beschreiben Sie Aufzüge und Fahrwege
 
-Der Aufzug in der Granville Street bringt die Fahrgäste zu einem Weg auf der Ebene der Bahnhofshalle, wo die Rolltreppe und die Treppe end. Der Aufzug auf der oberirdischen Ebene ist bereits als Bahnhofseingang oben definiert`stop_id` `92`). Daher muss auch die Aufzugstür in der Bahnhofshalle definiert werden.
+Der Aufzug in der Granville Street bringt die Fahrgäste zu einem Weg auf der Ebene der Bahnhofshalle, wo die Rolltreppe und die Treppe end. Der Aufzug auf der oberirdischen Ebene ist bereits als Bahnhofseingang oben definiert (`stop_id` `92`). Daher muss auch die Aufzugstür in der Bahnhofshalle definiert werden.
 
 Außerdem gibt es, wie in der Abbildung unten gezeigt, einen unterirdischen Gang, der das untere Ende der Treppe, der Rolltreppe und des Aufzugs in der Granville Street mit dem Hauptbahnhofsgebäude verbindet. Daher werden zwei zusätzliche Knotenpunkte erstellt, um die Gehwegabschnitte zu definieren.
 

@@ -11,7 +11,7 @@ search:
 
 Con GTFS, es posible describir con precisión las estaciones utilizando información sobre las entradas y el interior de las mismas. Este ejemplo describe secciones de la estación de Waterfront en el centro de Vancouver. La estación forma parte de la red de Skytrain de la ciudad y a ella llegan la Canada Line, la Expo Line, el SeaBus y el West Coast Express. Hay tres entradas a nivel de calle que permiten a los viajeros entrar y salir de la estación. El resto de la estación es subterránea, con un nivel de vestíbulo para la validación de billetes y un nivel inferior con andenes.
 
-En primer lugar, la ubicación de la estación y sus entradas se definen en stops [stops.txt](../../reference/#pathwaystxt)txt:
+En primer lugar, la ubicación de la estación y sus entradas se definen en stops [stops.txt](../../reference/#pathwaystxt):
 
 [**stops.txt**](../../reference/#stopstxt)
 
@@ -29,7 +29,7 @@ Además, el `stop_id` de la estación de Waterfront aparece en `parent_station` 
 
 ## Describir las escaleras y escaleras mecánicas
 
-La entrada de la estación Waterfront en la calle Granville tiene un ascensor, una escalera mecánica y escaleras, las entradas se definen como nodos arriba en stops. [stops.txt](../../reference/#stopstxt). Para conectar las entradas a las secciones interiores de la estación, hay que crear nodos adicionales en stops [stops.txt](../../reference/#stopstxt) txt bajo el `parent_station` de Waterfront Station. En el archivo [stops.txt](../../reference/#stopstxt).txt de abajo, se definen los nodos genéricos`(location_type 3`) que corresponden a la parte inferior de la escalera y la escalera mecánica.
+La entrada de la estación Waterfront en la calle Granville tiene un ascensor, una escalera mecánica y escaleras, las entradas se definen como nodos arriba en stops. [stops.txt](../../reference/#stopstxt). Para conectar las entradas a las secciones interiores de la estación, hay que crear nodos adicionales en stops [stops.txt](../../reference/#stopstxt) bajo el `parent_station` de Waterfront Station. En el archivo [stops.txt](../../reference/#stopstxt).txt de abajo, se definen los nodos genéricos (`location_type 3`) que corresponden a la parte inferior de la escalera y la escalera mecánica.
 
 [**stops.txt**](../../reference/#stopstxt)
 
@@ -40,9 +40,9 @@ La entrada de la estación Waterfront en la calle Granville tiene un ascensor, u
 
 <img class="center" src="../../../assets/pathways.png" width="700px"/>
 
-A continuación, se utiliza el archivo [pathways.txt](../../reference/#pathwaystxt).txt para enlazar los nodos y crear caminos, donde el primer registro enlaza los nodos correspondientes a la parte superior e inferior de las escaleras. El `pathway_mode` se establece en `2` para indicar las escaleras, y el último campo describe que los pasajeros pueden ir en ambos sentidos (arriba y abajo) en las escaleras.
+A continuación, se utiliza el archivo [pathways.txt](../../reference/#pathwaystxt) para enlazar los nodos y crear caminos, donde el primer registro enlaza los nodos correspondientes a la parte superior e inferior de las escaleras. El `pathway_mode` se establece en `2` para indicar las escaleras, y el último campo describe que los pasajeros pueden ir en ambos sentidos (arriba y abajo) en las escaleras.
 
-Del mismo modo, el segundo registro describe las escaleras mecánicas`(pathway_mode` fijado en `4`). Dado que las escaleras mecánicas sólo pueden moverse en una dirección, el campo `is_bidirectional` se establece en `0`, por lo que la escalera mecánica se mueve en un solo sentido, del nodo `96` al `91` (hacia arriba).
+Del mismo modo, el segundo registro describe las escaleras mecánicas (`pathway_mode` fijado en `4`). Dado que las escaleras mecánicas sólo pueden moverse en una dirección, el campo `is_bidirectional` se establece en `0`, por lo que la escalera mecánica se mueve en un solo sentido, del nodo `96` al `91` (hacia arriba).
 
 [**pathways.txt**](../../reference/#pathwaystxt)
 
@@ -68,7 +68,7 @@ Además, como se muestra en la figura siguiente, hay un pasillo subterráneo que
 
 <img class="center" src="../../../assets/pathways-3.png" width="500px"/>
 
-Por último, los nodos se conectan entre sí para definir el trayecto subterráneo, como se muestra en el archivo [pathways.txt](../../reference/#pathwaystxt) txt que aparece a continuación:
+Por último, los nodos se conectan entre sí para definir el trayecto subterráneo, como se muestra en el archivo [pathways.txt](../../reference/#pathwaystxt) que aparece a continuación:
 
 [**pathways.txt**](../../reference/#pathwaystxt)
 

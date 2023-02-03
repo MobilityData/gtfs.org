@@ -52,7 +52,7 @@ Demikian pula, catatan kedua menjelaskan eskalator ( `pathway_mode` diatur ke `4
 
 ## Jelaskan lift dan jalur
 
-Lift di jalan Granville membawa penumpang ke jalur di tingkat concourse tempat eskalator dan tangga beradaend . Lift di tingkat permukaan sudah didefinisikan sebagai pintu masuk stasiun di atas (stop_id `92` ). Oleh karena itu, pintu lift di tingkat concourse juga perlu ditentukan.
+Lift di jalan Granville membawa penumpang ke jalur di tingkat concourse tempat eskalator dan tangga beradaend . Lift di tingkat permukaan sudah didefinisikan sebagai pintu masuk stasiun di atas (`stop_id 92` ). Oleh karena itu, pintu lift di tingkat concourse juga perlu ditentukan.
 
 Selain itu, seperti yang ditunjukkan pada gambar di bawah, terdapat jalan bawah tanah yang menghubungkan bagian bawah tangga, eskalator, dan elevator di jalan Granville ke gedung stasiun utama. Oleh karena itu, dua node tambahan dibuat untuk menentukan bagian jalan.
 

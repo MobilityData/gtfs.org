@@ -29,7 +29,7 @@ En outre, le `stop_id` de la station Waterfront est indiqué sous `parent_statio
 
 ## Décrire les escaliers et les escalators
 
-L'entrée de la station Waterfront à Granville street a un ascenseur, un escalator et des escaliers, les entrées sont définies comme des noeuds ci-dessus dans [stops.txt](../../reference/#stopstxt). Pour connecter les entrées aux sections intérieures de la station, des noeuds supplémentaires doivent être créés dans le fichier [stops.txt](../../reference/#stopstxt) sous le `parent_station` de Waterfront Station. Dans le fichier [stops.txt](../../reference/#stopstxt) ci-dessous, des noeuds génériques`(location_type 3`) qui correspondent au bas de l'escalier et de l'escalator sont définis.
+L'entrée de la station Waterfront à Granville street a un ascenseur, un escalator et des escaliers, les entrées sont définies comme des noeuds ci-dessus dans [stops.txt](../../reference/#stopstxt). Pour connecter les entrées aux sections intérieures de la station, des noeuds supplémentaires doivent être créés dans le fichier [stops.txt](../../reference/#stopstxt) sous le `parent_station` de Waterfront Station. Dans le fichier [stops.txt](../../reference/#stopstxt) ci-dessous, des noeuds génériques (`location_type 3`) qui correspondent au bas de l'escalier et de l'escalator sont définis.
 
 [**stops.txt**](../../reference/#stopstxt)
 
@@ -42,7 +42,7 @@ L'entrée de la station Waterfront à Granville street a un ascenseur, un escala
 
 Ensuite, le fichier [pathways.txt](../../reference/#pathwaystxt) est utilisé pour relier les nœuds afin de créer des chemins, où le premier enregistrement relie les nœuds correspondant au haut et au bas de l'escalier. Le `pathway_mode` est défini sur `2` pour indiquer les escaliers, et le dernier champ décrit que les passagers peuvent aller dans les deux sens (vers le haut et vers le bas) sur les escaliers.
 
-De même, le deuxième enregistrement décrit l'escalier mécanique`(pathway_mode` défini sur `4`). Comme les escaliers mécaniques ne peuvent se déplacer que dans une seule direction, le champ `is_bidirectional` est défini à `0`, et l'escalier mécanique se déplace donc dans un seul sens, du nœud `96` au `91` (vers le haut).
+De même, le deuxième enregistrement décrit l'escalier mécanique (`pathway_mode` défini sur `4`). Comme les escaliers mécaniques ne peuvent se déplacer que dans une seule direction, le champ `is_bidirectional` est défini à `0`, et l'escalier mécanique se déplace donc dans un seul sens, du nœud `96` au `91` (vers le haut).
 
 [**pathways.txt**](../../reference/#pathwaystxt)
 
