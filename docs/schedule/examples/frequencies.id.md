@@ -9,7 +9,7 @@ search:
 
 ## Jelaskan layanan berbasis frekuensi
 
-Société de Transport de Montréal mengoperasikan layanan transit di Montréal dan menjalankan layanan berbasis frekuensi untuk jalur métronya. Oleh karena itu, alih-alih memberikan jadwal denganarrival dandeparture kali dalam aGTFS kumpulan data, file[frequencies.txt](../../reference/#frequenciestxt) digunakan untuk menggambarkan frekuensi layanan di seluruh rentang layanan.
+Société de Transport de Montréal mengoperasikan layanan transit di Montréal dan menjalankan layanan berbasis frekuensi untuk jalur métronya. Oleh karena itu, alih-alih memberikan jadwal denganarrival dandeparture kali dalam a GTFS kumpulan data, file [frequencies.txt](../../reference/#frequenciestxt) digunakan untuk menggambarkan frekuensi layanan di seluruh rentang layanan.
 
 [**frequencies.txt**](../../reference/#frequenciestxt)
 

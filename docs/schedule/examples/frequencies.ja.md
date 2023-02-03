@@ -10,7 +10,7 @@ search:
 
 ## 頻度ベースのサービスを記述する
 
-モントリオール交通局（Société de Transport de Montréal）は、モントリオールの交通サービスを運営しており、そのメトロー路線では頻度ベースのサービスを実施しています。そのため，GTFSデータセットでは発着時刻を記載したスケジュールを提供する代わりに，[frequencies.txtという](../../reference/#frequenciestxt)ファイルを用いて，運行期間中のサービス頻度を記載している．
+モントリオール交通局（Société de Transport de Montréal）は、モントリオールの交通サービスを運営しており、そのメトロー路線では頻度ベースのサービスを実施しています。そのため，GTFSデータセットでは発着時刻を記載したスケジュールを提供する代わりに，[frequencies.txt](../../reference/#frequenciestxt)というファイルを用いて，運行期間中のサービス頻度を記載している．
 
 [**frequencies.txt**](../../reference/#frequenciestxt)
 

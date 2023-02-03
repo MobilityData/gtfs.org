@@ -9,7 +9,7 @@ search:
 
 ## Describir un servicio basado en la frecuencia
 
-La Société de Transport de Montréal explota los servicios de tránsito de Montreal y gestiona un servicio basado en la frecuencia de sus líneas de metro. Por ello, en lugar de proporcionar un Schedule con las horas de arrival y departure en un conjunto de datos GTFS, se utiliza el archivo frequencies [frequencies.txt](../../reference/#frequenciestxt) txt para describir la frecuencia del servicio a lo largo de su duración.
+La Société de Transport de Montréal explota los servicios de tránsito de Montreal y gestiona un servicio basado en la frecuencia de sus líneas de metro. Por ello, en lugar de proporcionar un Schedule con las horas de arrival y departure en un conjunto de datos GTFS, se utiliza el archivo frequencies [frequencies.txt](../../reference/#frequenciestxt) para describir la frecuencia del servicio a lo largo de su duración.
 
 [**frequencies.txt**](../../reference/#frequenciestxt)
 
