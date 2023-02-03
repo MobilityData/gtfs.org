@@ -9,7 +9,7 @@ search:
 
 ## 隨處接送
 
-公交機構 The Current（羅金厄姆，美國佛蒙特州）對 2、53 和 55 號路線實施連續停車政策。scheduled只要公共汽車有安全的地方停靠，沿途都會停靠。
+公交機構 The Current（Rockingham, US-VT）對 2、53 和 55 號路線實施連續停車政策。只要公交車有安全的停靠點，就可以在沿途的預定站點之間接送乘客。
 
 文件[routes.txt](../../reference/#routestxt)用於使用字段`continuous_pickup`和`continuous_drop_off`來描述此服務。這些字段設置為`0` ，表示允許連續上車和下車。
 
@@ -28,7 +28,7 @@ search:
 
 運輸機構 Victor Valley Transit（美國加利福尼亞州維克多維爾）僅對 22 號路線的一部分實施連續停車政策。乘客只能在縣票價區內的任何安全位置上下車。本地票價區內無法連續上車和下車。
 
-Local Fare zone 和 County Fare zone 被 Air Expressway 分開，如下圖所示。這scheduled停止 National Trails Highway - Air Expressway 位於該邊界的稍北處。準確地說，公交機構可以在公交路線與邊界的實際交匯處增加一個停靠站，從那裡可以連續上下車。這個站可能會保留unscheduled.
+Local Fare zone 和 County Fare zone 被 Air Expressway 分開，如下圖所示。預定的停止 National Trails Highway - Air Expressway 位於該邊界的稍北處。準確地說，公交機構可以在公交路線與邊界的實際交匯處增加一個停靠站，從那裡可以連續上下車。此站點可能未安排.
 
 ![](../../assets/victor-valley-transit.svg)
 

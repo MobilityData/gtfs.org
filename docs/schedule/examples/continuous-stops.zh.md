@@ -9,7 +9,7 @@ search:
 
 ## 随处可见的上下车
 
-交通机构The Current (Rockingham, US-VT)在2、53和55号线路上实行连续停靠政策。只要有安全的地方可以停车，乘客就可以在沿途的scheduled站点之间上、下车。
+交通机构The Current (Rockingham, US-VT)在2、53和55号线路上实行连续停靠政策。只要有安全的地方可供公交车停靠，乘客可在沿线各预定站点之间上下车。
 
 文件[routes.txt](../../reference/#routestxt)使用`continuous_pickup`和`continuous_drop_off`字段来描述这项服务。这些字段被设置为`0`，表示允许连续接送。
 
@@ -26,9 +26,9 @@ search:
 
 ## 在路线的某一区段上落车
 
-维克多谷公交公司（Victorville, US-CA）只在22路的一部分实行连续停靠政策。乘客只能在县城收费区的任何安全地点上车和下车。在本地票价区域内，不可能有连续的上下车。
+Victor Valley Transit（Victorville, US-CA）只在22路的一部分实行连续停靠政策。乘客只能在县城收费区的任何安全地点上车和下车。在本地票价区域内，不可能有连续的上下车。
 
-如下图所示，本地票价区和县城票价区被空中高速路隔开。scheduled站点National Trails Highway - Air Expressway位于该边界的稍北处。为了准确起见，公交机构可以在公交线路与边界的实际交汇处增加一个站点，从这里可以连续接送乘客。这个站点可以保持unscheduled。
+如下图所示，本地票价区和县城票价区被空中高速路隔开。预定停靠的 National Trails Highway -  Air Expressway 公路位于该边界的稍北部。为了准确起见，公交机构可以在公交线路与边界的实际交汇处增加一个站点，从这里可以连续接送乘客。这一站可能仍然没有安排。
 
 ![](../../assets/victor-valley-transit.svg)
 
