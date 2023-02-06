@@ -15,14 +15,14 @@ The main concepts that Fares v2 plans to represent are
 
 These concepts will allow data producers to model zone-based, time-dependent, and inter-agency fares. This extension project is being adopted in iterations. 
 
-Currently, the officially adopted base implementation of Fares v2 works for the following use cases:
+Currently, the adopted base implementation of Fares v2 works for the following use cases:
 
 - Defining a transit fare
 - Describing service locations in the same fare zone
 - Creating rules for single leg journeys
 - Creating rules for transfers
 
-You can see <a href="/schedule/examples/fares-v2" target="_blank">examples here</a> that show what can be modelled using the official Fares v2 base implementation.
+You can see <a href="/schedule/examples/fares-v2" target="_blank">examples here</a> that show what can be modelled using the adopted Fares v2 base implementation.
 
 Producers may implement Fares v2 in the same dataset with Fares v1, since there is no technical conflict between the two. Consumers can choose which version to use independent of the other. With adoption and sufficient endorsement of Fares v2, Fares v1 may be deprecated in the future.
 
