@@ -12,7 +12,7 @@
 
 <!-- GTFS is a community driven data format. Users can propose and vote on changes. For detailed information see the [GTFS Schedule](../schedule/process) and [GTFS Realtime](../realtime/process) amendment process.
 
-Extensions that are currently in development can be found on MobilityData's [roadmap](https://portal.productboard.com/y3dqmkhjlmyst65bap8sx9kd/tabs/9-in-progress).
+Extensions that are currently in development can be found on MobilityData's [roadmap](https://mobilitydata.org/roadmaps/#transit).
 
 Extension proposals can be found in the following places:
 
