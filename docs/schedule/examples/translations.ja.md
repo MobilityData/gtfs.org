@@ -18,7 +18,7 @@ NMBS/SNCBは、以下のファイルのようにフランス語でGTFSデータ�
     agency_id,agency_name,agency_url,agency_timezone,agency_lang
     NMBS/SNCB,NMBS/SNCB,http://www.belgiantrain.be/,Europe/Brussels,fr
 
-代理店言語がフランス語に設定されているので、[stops.txtには](../../reference/#stopstxt)駅名がフランス語でリストアップされています。
+代理店言語がフランス語に設定されているので、[stops.txt](../../reference/#stopstxt)には駅名がフランス語でリストアップされています。
 
 [**stops.txt**](../../reference/#stopstxt)
 
@@ -34,13 +34,13 @@ NMBS/SNCBは、以下のファイルのようにフランス語でGTFSデータ�
     stops,stop_name,S8815040,nl,Brussel-West
 
 - この例では、[stops.txt](../../reference/#stopstxt)の駅名が翻訳され、[stops.txt](../../reference/#stopstxt)のレコードが`stop_id` で識別されます。そのため
-  - `stopsは`テーブル名の下に記載されています（[stops.txtを](../../reference/#stopstxt)参照）。
-  - `stop_nameは` `field_nameの`下に記載される（駅名が翻訳されるため）。
-  - フランス語から翻訳される駅名の`stop_idは` `record_idの`下に記載されている（この場合、Bruxelles-Ouestの`stop_id`）。
+  - `stops`はテーブル名の下に記載されています（[stops.txt](../../reference/#stopstxt)を参照）。
+  - `stop_name` `field_name`はの下に記載される（駅名が翻訳されるため）。
+  - フランス語から翻訳される駅名の`stop_id` `record_id`はの下に記載されている（この場合、Bruxelles-Ouestの`stop_id`）。
 - 名称はオランダ語（nl）に翻訳されています。
 - 最後に翻訳された名称を翻訳に記載
 
-GTFSで名前を翻訳するには、[translations.txtという](../../reference/#translationstxt)ファイルを使う方法もあり、ここでは`record_idの`代わりに`field_valueという`フィールドが使われる。この場合、[stops.txt](../../reference/#stopstxt)xtから翻訳するレコードを探すのに駅名が使われる。
+GTFSで名前を翻訳するには、[translations.txt](../../reference/#translationstxt)というファイルを使う方法もあり、ここでは`record_id`の代わりに`field_value`というフィールドが使われる。この場合、[stops.txt](../../reference/#stopstxt)から翻訳するレコードを探すのに駅名が使われる。
 
 [**translations.txt**](../../reference/#translationstxt)
 

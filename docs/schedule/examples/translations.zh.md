@@ -33,8 +33,8 @@ NMBS/SNCB公布的GTFS数据为法语，如下图文件所示。
     table_name,field_name,record_id,language,translation
     stops,stop_name,S8815040,nl,Brussel-West
 
-- 在这个例子中，[stops.txt](../../reference/#stopstxt)txt中的车站名称被翻译，[stops.txt](../../reference/#stopstxt)中的记录由一个`stop_id`来识别。因此。
-  - `站`名列在表名下（参照[stops.txt](../../reference/#stopstxt)）。
+- 在这个例子中，[stops.txt](../../reference/#stopstxt)中的车站名称被翻译，[stops.txt](../../reference/#stopstxt)中的记录由一个`stop_id`来识别。因此。
+  - `stops`名列在表名下（参照[stops.txt](../../reference/#stopstxt)）。
   - `stop_name`列在`field_name`下（因为站名将被翻译）。
   - 将被翻译成法语的站名的`stop_id`被列在`record_id`下（在这个例子中，Bruxelles-Ouest的`stop_id`）。
 - 该名称被翻译成荷兰语（nl）。

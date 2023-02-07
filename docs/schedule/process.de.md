@@ -142,7 +142,7 @@ Um die ursprüngliche Vision von GTFS zu bewahren, wurde eine Reihe von Leitprin
 
 **14. September 2018**<br/>
 
-* Konzept "Bedingt erforderlich" hinzugefügt. Siehe [Diskussion](https://github.com/google/transit/pull/100).
+* Konzept "Conditionally required" hinzugefügt. Siehe [Diskussion](https://github.com/google/transit/pull/100).
 
 **4. September 2018**<br/>
 

@@ -7,7 +7,7 @@ search:
 
   ItuGTFS Spesifikasi tidak diatur dalam batu. Sebaliknya, ini adalah spesifikasi terbuka yang dikembangkan dan dikelola oleh komunitas agen transit, pengembang, dan pemangku kepentingan lain yang menggunakannyaGTFS . Diharapkan komunitas produsen dan konsumen iniGTFS data akan memiliki proposal untuk memperluas spesifikasi guna mengaktifkan kemampuan baru. Untuk membantu mengelola proses tersebut, prosedur dan pedoman berikut telah ditetapkan.
 
-  !!! catatan ""
+  !!!note ""
 
       Spesifikasi resmi, referensi dan dokumentasi ditulis dalam bahasa Inggris. Jika sebuahTranslation ke bahasa yang berbeda berbeda dari aslinya bahasa Inggris, yang terakhir diutamakan. Semua komunikasi dilakukan dalam bahasa Inggris.
 

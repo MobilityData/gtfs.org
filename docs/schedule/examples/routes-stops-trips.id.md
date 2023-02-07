@@ -26,11 +26,11 @@ Calgary Transit mengoperasikan LRT, BRT, layanan bus reguler, paratransit, dan t
     CT,303-20670,303,MAX Orange Brentwood/Saddletowne,3,www.calgarytransit.com/content/transit/en/home/rider-information/max.html,#ff8000,#ffffff
     CT,202-20666,202,Blue Line - Saddletowne/69 Street CTrain,0,www.calgarytransit.com/content/transit/en/home/rider-information/lrt-and-bus-station-maps.html,#ff0000,#ffffff
 
-Bidang kelima (route_type ) digunakan untuk membedakan jenis rute:
+Bidang kelima (`route_type` ) digunakan untuk membedakan jenis rute:
 
 - Yang pertama adalah bus, maka `route_type=3`
 - Yang kedua adalah LRT, maka `route_type=0`
-- Daftar lengkap nilai untukroute_type dapat ditemukan [di sini](../../reference/#routestxt)
+- Daftar lengkap nilai untuk `route_type` dapat ditemukan [di sini](../../reference/#routestxt)
 
 Bidang yang tersisa berisi informasi tambahan seperti aurl khusus untuk rute serta warna khusus agensi untuk mewakili layanan di peta.
 
@@ -80,12 +80,10 @@ Dalam contoh ini, file [trips.txt](../../reference/#tripstxt) menggambarkan 3 pe
 
 - Itu `route_id` dari [routes.txt](../../reference/#routestxt) yang sesuai dengan MAX Orange terdaftar
 - Itu `service_id` dari [calendar.txt](../../reference/#calendartxt) yang sesuai dengan akhir pekan terdaftar
-- Setiap catatan berisi unikid untuk setiaptrip
-
-Tanda kepalatext disediakan, yang biasanya ditampilkan pada tanda di dalam dan di luar bus
+- Setiap catatan berisi unikid untuk setiaptrip Tanda kepalatext disediakan, yang biasanya ditampilkan pada tanda di dalam dan di luar bus
 
 - Lapangan `direction_id` memungkinkan perbedaan antara perjalanan dari rute yang sama menuju arah yang berbeda. Misalnya, membedakan antara perjalanan masuk dan perjalanan keluar - atau perjalanan ke selatan dan perjalanan ke utara.
-  - Dalam hal ini, perjalanan menuju Saddletowne memiliki `direction_id=0` dan perjalanan menuju Brentwood memiliki `direction_id=1` . Nilai-nilai didirection_id tidak memiliki arti yang melekat, mereka hanya digunakan untuk menetapkan satu arah perjalanan versus yang lain
+- Dalam hal ini, perjalanan menuju Saddletowne memiliki `direction_id=0` dan perjalanan menuju Brentwood memiliki `direction_id=1` . Nilai-nilai didirection_id tidak memiliki arti yang melekat, mereka hanya digunakan untuk menetapkan satu arah perjalanan versus yang lain
 - Itu `shape_id` dari [shapes.txt](../../reference/#shapestxt) yang sesuai dengan rute MAX Orange menuju Saddletowne terdaftar untuk rekor pertama dan satu untuk rute MAX Orange menuju Brentwood terdaftar untuk rekor kedua dan ketiga
 
 `shape_id=3030026` sesuai dengan MAX Orange menuju Saddletowne. File di bawah berisi informasi tentang titik-titik yang menguraikan rute serta jarak antara titik-titik tersebut. Dengan informasi ini, dimungkinkan untuk memplot rute di petatrip tujuan perencanaan atau analitik.

@@ -26,7 +26,7 @@ Calgary Transit 在艾伯塔省卡爾加里經營 LRT、BRT、定期巴士服務
     CT,303-20670,303,MAX Orange Brentwood/Saddletowne,3,www.calgarytransit.com/content/transit/en/home/rider-information/max.html,#ff8000,#ffffff
     CT,202-20666,202,Blue Line - Saddletowne/69 Street CTrain,0,www.calgarytransit.com/content/transit/en/home/rider-information/lrt-and-bus-station-maps.html,#ff0000,#ffffff
 
-第五個字段（route_type ) 用於區分路由類型：
+第五個字段（`route_type`) 用於區分路由類型：
 
 - 第一個是公共汽車，因此`route_type=3`
 - 第二個是輕軌，因此`route_type=0`
@@ -38,7 +38,7 @@ Calgary Transit 在艾伯塔省卡爾加里經營 LRT、BRT、定期巴士服務
 
 ## 停止
 
-在GTFS , 停靠站和車站使用文件進行描述stops.txt ，下面，第一個記錄中定義了一個公共汽車站，第二個記錄中定義了一個輕軌站。
+在GTFS , 停靠站和車站使用文件進行描述[stops.txt](../../reference/#stopstxt)，下面，第一個記錄中定義了一個公共汽車站，第二個記錄中定義了一個輕軌站。
 
 [**stops.txt**](../../reference/#stopstxt)
 
@@ -69,7 +69,7 @@ Calgary Transit 在艾伯塔省卡爾加里經營 LRT、BRT、定期巴士服務
 
 此處描述了僅在周六和周日運行的服務，因此這些天的字段填充為 1，其余天的字段填充為零。該服務從 2022 年 6 月 23 日到 2022 年 9 月 3 日運行，如字段下方所示`start_date`和`end_date` 。
 
-在這個例子中，文件trips.txt描述了由上述 MAX Orange 路線提供服務的 3 次週末旅行。
+在這個例子中，文件[trips.txt](../../reference/#tripstxt)描述了由上述 MAX Orange 路線提供服務的 3 次週末旅行。
 
 [**trips.txt**](../../reference/#tripstxt)
 
@@ -80,9 +80,7 @@ Calgary Transit 在艾伯塔省卡爾加里經營 LRT、BRT、定期巴士服務
 
 - 這`route_id`從[routes.txt](../../reference/#routestxt)列出對應於 MAX Orange 的
 - 這`service_id`從[calendar.txt](../../reference/#calendartxt)列出對應於週末的
-- 每條記錄都包含一個唯一的id每個trip
-
-頭標text提供，這通常顯示在巴士內外的標誌上
+- 每條記錄都包含一個唯一的id每個trip 頭標text提供，這通常顯示在巴士內外的標誌上
 
 - 場`direction_id`允許區分同一路線的不同方向的行程。例如，區分入境旅行和出境旅行 - 或南行旅行和北行旅行。
   - 在這種情況下，前往 Saddletowne 的行程的`direction_id=0`和前往 Brentwood 的行程的`direction_id=1` 。中的值direction_id沒有內在含義，它們僅用於指定一個行進方向與另一個行進方向

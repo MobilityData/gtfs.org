@@ -26,7 +26,7 @@ Calgary Transit opera LRT, BRT, serviço regular de ônibus, paratransit, e trâ
     CT,303-20670,303,MAX Orange Brentwood/Saddletowne,3,www.calgarytransit.com/content/transit/en/home/rider-information/max.html,#ff8000,#ffffff
     CT,202-20666,202,Blue Line - Saddletowne/69 Street CTrain,0,www.calgarytransit.com/content/transit/en/home/rider-information/lrt-and-bus-station-maps.html,#ff0000,#ffffff
 
-O quinto campo`route_type`) é usado para diferenciar os tipos de rotas:
+O quinto campo (`route_type`) é usado para diferenciar os tipos de rotas:
 
 - O primeiro é um ônibus, daí `route_type=3`
 - O segundo é um LRT, portanto `route_type=0`
@@ -48,11 +48,11 @@ Em GTFS, as paradas e estações são descritas usando o arquivo [stops.txt](../
 
 - `stop_id` é um identificador único
 - `stop_code` e `stop_name` normalmente contêm informações voltadas para o cavaleiro
-- A localização exata é fornecida usando coordenadas`(stop_lat` e `stop_lon`)
-- O sexto campo`(location_type`) é usado para diferenciar as paradas das estações
+- A localização exata é fornecida usando coordenadas (`stop_lat` e `stop_lon`)
+- O sexto campo (`location_type`) é usado para diferenciar as paradas das estações
 - O primeiro registro corresponde a uma parada de ônibus, portanto `local_type=0`
 - O segundo registro corresponde à estação, portanto `local_type=1`
-- Uma lista completa de valores para o ` location_type  `pode ser encontrada [aqui](../../reference/stopstxt)
+- Uma lista completa de valores para o `location_type` pode ser encontrada [aqui](../../reference/stopstxt)
 
 <hr/>
 
@@ -80,15 +80,13 @@ Neste exemplo, o arquivo [trips.txt](../../reference/#tripstxt) descreve 3 viage
 
 - A `route_id` de [routes.txt](../../reference/#routestxt) que corresponde a MAX Orange é listada
 - O `service_id` do [calendar.txt](../../reference/#calendartxt) que corresponde aos fins de semana é listado
-- Cada registro contém uma id única para cada trip.
-
-É fornecido o text do sinal principal, que é o que normalmente é exibido nas placas dentro e fora do ônibus
+- Cada registro contém uma id única para cada trip. É fornecido o text do sinal principal, que é o que normalmente é exibido nas placas dentro e fora do ônibus
 
 - O campo `direction_id` permite uma distinção entre viagens da mesma rota que vão em direções diferentes. Por exemplo, distinguindo entre viagens de ida e volta - ou viagens de ida e volta ao sul e viagens de ida e volta ao norte.
-  - Neste caso, as viagens em direção a Saddletowne têm uma `direction_id=0` e as viagens em direção a Brentwood têm uma `direction_id=1`. Os valores em direction_id não têm significado inerente, eles são usados apenas para atribuir uma direção de viagem em relação a outra
+- Neste caso, as viagens em direção a Saddletowne têm uma `direction_id=0` e as viagens em direção a Brentwood têm uma `direction_id=1`. Os valores em direction_id não têm significado inerente, eles são usados apenas para atribuir uma direção de viagem em relação a outra
 - O `shape_id` de [shapes.txt](../../reference/#shapestxt) que corresponde à rota MAX Orange em direção a Saddletowne é listado para o primeiro registro e o da rota MAX Orange em direção a Brentwood é listado para o segundo e terceiro registros
 
-A `forma_id=3030026` corresponde ao MAX Orange towards Saddletowne. O arquivo abaixo inclui informações sobre os pontos que traçam o percurso, assim como a distância entre esses pontos. Com estas informações, é possível traçar a rota em um mapa para fins de planejamento ou análise da trip.
+A `shape_id=3030026` corresponde ao MAX Orange towards Saddletowne. O arquivo abaixo inclui informações sobre os pontos que traçam o percurso, assim como a distância entre esses pontos. Com estas informações, é possível traçar a rota em um mapa para fins de planejamento ou análise da trip.
 
 [**shapes.txt**](../../reference/#shapestxt)
 
@@ -113,7 +111,7 @@ A `forma_id=3030026` corresponde ao MAX Orange towards Saddletowne. O arquivo ab
 
 É possível definir exceções ao serviço como os dias de serviço adicionados (dias especiais) ou dias de serviço removidos (como nenhum serviço em feriados).
 
-Por exemplo, se não houver um serviço agendados no domingo 17 de julho de 2022 - então essa data pode ser removida do `serviço de fim de semana` no [calendar.txt](../../reference/#calendartxt), quebrando o serviço em dois:
+Por exemplo, se não houver um serviço agendados no domingo 17 de julho de 2022 - então essa data pode ser removida do `weekend_service` no [calendar.txt](../../reference/#calendartxt), quebrando o serviço em dois:
 
 | Serviço            | start      | end        |
 | ------------------ | ---------- | ---------- |

@@ -33,14 +33,14 @@ Berkas [translations.txt](../../reference/#translationstxt) kemudian digunakan u
     table_name,field_name,record_id,language,translation
     stops,stop_name,S8815040,nl,Brussel-West
 
-- Dalam contoh ini, nama stasiun dari[stops.txt](../../reference/#stopstxt) diterjemahkan, dan dicatat dalamstops.txt diidentifikasi oleh a `stop_id` . Karena itu:
+- Dalam contoh ini, nama stasiun dari [stops.txt](../../reference/#stopstxt) diterjemahkan, dan dicatat dalam [stops.txt](../../reference/#stopstxt) diidentifikasi oleh a `stop_id` . Karena itu:
   - `stops` terdaftar di bawah nama tabel (mengacu pada [stops.txt](../../reference/#stopstxt) )
   - `stop_name` terdaftar di bawah`field_name` (karena nama stasiun akan diterjemahkan)
   - Itu`stop_id` untuk nama stasiun yang akan diterjemahkan dari bahasa Prancis tercantum di bawah`record_id` (dalam hal ini,`stop_id` untuk Bruxelles-Ouest)
 - Nama diterjemahkan ke dalam bahasa Belanda (nl)
 - Terakhir, nama yang diterjemahkan tercantum di bawahTranslation
 
-Ada cara lain untuk menerjemahkan namaGTFS menggunakan berkas[translations.txt](../../reference/#translationstxt) , lapangan mana`field_value` digunakan sebagai gantinya`record_id` . Dalam hal ini, nama stasiun digunakan untuk menemukan rekaman yang akan diterjemahkan[stops.txt](../../reference/#stopstxt) .
+Ada cara lain untuk menerjemahkan namaGTFS menggunakan berkas [translations.txt](../../reference/#translationstxt) , lapangan mana`field_value` digunakan sebagai gantinya`record_id` . Dalam hal ini, nama stasiun digunakan untuk menemukan rekaman yang akan diterjemahkan [stops.txt](../../reference/#stopstxt) .
 
 [**translations.txt**](../../reference/#translationstxt)
 

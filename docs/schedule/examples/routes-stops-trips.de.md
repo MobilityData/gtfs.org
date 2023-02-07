@@ -26,7 +26,7 @@ Calgary Transit betreibt LRT, BRT, regulären Busverkehr, Paratransit und Transi
     CT,303-20670,303,MAX Orange Brentwood/Saddletowne,3,www.calgarytransit.com/content/transit/en/home/rider-information/max.html,#ff8000,#ffffff
     CT,202-20666,202,Blue Line - Saddletowne/69 Street CTrain,0,www.calgarytransit.com/content/transit/en/home/rider-information/lrt-and-bus-station-maps.html,#ff0000,#ffffff
 
-Das fünfte Feld`route_type`) wird verwendet, um die verschiedenen Arten von Linien zu unterscheiden:
+Das fünfte Feld (`route_type`) wird verwendet, um die verschiedenen Arten von Linien zu unterscheiden:
 
 - Die erste ist ein Bus, daher `route_type=3`
 - Die zweite ist eine Stadtbahn, daher `route_type=0`
@@ -48,11 +48,11 @@ In GTFS werden Haltestellen und Bahnhöfe mit Hilfe der Datei [stops.txt](../../
 
 - `stop_id` ist ein eindeutiger Bezeichner
 - `stop_code` und `stop_name` enthalten in der Regel fahrerbezogene Informationen
-- Der genaue Standort wird anhand von Koordinaten`(stop_lat` und `stop_lon`) angegeben.
-- Das sechste Feld`(location_type`) dient der Unterscheidung zwischen Haltestellen und Bahnhöfen
+- Der genaue Standort wird anhand von Koordinaten (`stop_lat` und `stop_lon`) angegeben.
+- Das sechste Feld (`location_type`) dient der Unterscheidung zwischen Haltestellen und Bahnhöfen
 - Der erste Datensatz entspricht einer Bushaltestelle, also `location_type=0`
 - Der zweite Datensatz entspricht einer Haltestelle, also `location_type=1`
-- Eine vollständige Liste der Werte für ` location_type  `finden Sie [hier](../../reference/stopstxt)
+- Eine vollständige Liste der Werte für `location_type` finden Sie [hier](../../reference/stopstxt)
 
 <hr/>
 
@@ -69,7 +69,7 @@ Zunächst muss die Bedienungszeit mit [calendar.txt](../../reference/#calendartx
 
 Hier wird ein Dienst beschrieben, der nur samstags und sonntags verkehrt. Daher werden die Felder für diese Tage mit 1 und die Felder für die übrigen Tage mit Null gefüllt. Dieser Dienst läuft vom 23. Juni 2022 bis zum 3. September 2022, wie in den Feldern `start_date` und `end_date` angegeben.
 
-In diesem Beispiel beschreibt die Datei [trips.txt](../../reference/#tripstxt) xt 3 Wochenendfahrten, die von der oben beschriebenen MAX Orange Route bedient werden.
+In diesem Beispiel beschreibt die Datei [trips.txt](../../reference/#tripstxt) 3 Wochenendfahrten, die von der oben beschriebenen MAX Orange Route bedient werden.
 
 [**trips.txt**](../../reference/#tripstxt)
 
@@ -80,12 +80,10 @@ In diesem Beispiel beschreibt die Datei [trips.txt](../../reference/#tripstxt) x
 
 - Die `route_id` aus [routes.txt](../../reference/#routestxt), die MAX Orange entspricht, wird aufgeführt
 - Die `service_id` aus [calendar.txt](../../reference/#calendartxt), die den Wochenenden entspricht, wird aufgelistet
-- Jeder Datensatz enthält eine eindeutige id für jede trip
-
-Der text des Fahrtziels wird angegeben, der normalerweise auf Schildern innerhalb und außerhalb des Busses angezeigt wird.
+- Jeder Datensatz enthält eine eindeutige id für jede trip Der text des Fahrtziels wird angegeben, der normalerweise auf Schildern innerhalb und außerhalb des Busses angezeigt wird.
 
 - Das Feld `direction_id` ermöglicht eine Unterscheidung zwischen Fahrten auf derselben Strecke in unterschiedliche Richtungen. So kann z. B. zwischen Fahrten in Richtung Hinfahrt und in Richtung Rückfahrt unterschieden werden - oder zwischen Fahrten in Richtung Süden und in Richtung Norden.
-  - In diesem Fall haben Fahrten in Richtung Saddletowne eine `direction_id=0` und Fahrten in Richtung Brentwood eine `direction_id=1`. Die Werte in direction_id haben keine inhärente Bedeutung, sie werden nur verwendet, um eine Fahrtrichtung einer anderen zuzuordnen.
+- In diesem Fall haben Fahrten in Richtung Saddletowne eine `direction_id=0` und Fahrten in Richtung Brentwood eine `direction_id=1`. Die Werte in direction_id haben keine inhärente Bedeutung, sie werden nur verwendet, um eine Fahrtrichtung einer anderen zuzuordnen.
 - Die `shape_id` aus [shapes.txt](../../reference/#shapestxt), die der MAX Orange-Strecke in Richtung Saddletowne entspricht, wird für den ersten Datensatz aufgelistet und diejenige für die MAX Orange-Strecke in Richtung Brentwood für den zweiten und dritten Datensatz
 
 Die `shape_id=3030026` entspricht dem MAX Orange in Richtung Saddletowne. Die nachstehende Datei enthält Informationen zu den Punkten, die die Route umreißen, sowie die Entfernung zwischen diesen Punkten. Mit diesen Informationen ist es möglich, die Route auf einer Karte für die trip oder zu Analysezwecken darzustellen.
@@ -128,7 +126,7 @@ Dies macht die Datei jedoch komplizierter, da `service_id` in zwei Teile zerlegt
     weekend_service,20220623,2
 
 - Die `service_id` `weekend_service` wird aufgelistet
-- Das Datum des gestrichenen oder zusätzlicher Dienst ist unter `Datum` aufgeführt (17. Juli 2022)
+- Das Datum des gestrichenen oder zusätzlicher Dienst ist unter `date` aufgeführt (17. Juli 2022)
 - Das Feld `exception_type` ist auf 2 gesetzt, was bedeutet, dass der Dienst für diesen Tag aufgehoben ist.
 
 [Beispiel Quelle](https://data.calgary.ca/download/npk7-z3bj/application%2Fzip)

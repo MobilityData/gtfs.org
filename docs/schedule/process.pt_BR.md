@@ -7,7 +7,7 @@ search:
 
 A Especificação GTFS não é definida em pedra. Ao invés disso, é uma especificação aberta desenvolvida e mantida pela comunidade de agências de trânsito, desenvolvedores e outras partes interessadas que utilizam GTFS. Espera-se que esta comunidade de produtores e consumidores de dados GTFS tenha propostas para ampliar as especificações a fim de permitir novas capacidades. Para ajudar a gerenciar esse processo, foram estabelecidos os seguintes procedimentos e diretrizes.
 
-!!! nota "".
+!!!note ""
 
     A especificação oficial, referência e documentação são escritas em inglês. Se uma Translation para um idioma diferente do original em inglês, esta última tem precedência. Toda a comunicação é feita em inglês.
 

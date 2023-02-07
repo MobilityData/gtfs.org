@@ -18,7 +18,7 @@ search:
     agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone
     CT,Calgary Transit,http://www.calgarytransit.com,America/Edmonton,,403-262-1000
 
-Calgary Transit은 AB 캘거리에서 LRT, BRT, 일반 버스 서비스, 보조 대중 교통 및 주문형 대중 교통을 운영합니다. 이 예에서는 두 개의 경로가 정의됩니다. 첫 번째는 버스이고 두 번째는 LRT입니다. 파일 사용[routes.txtという](../../reference/#routestxt) , 각 경로에는 고유한id , 사람이 쉽게 읽을 수 있도록 짧은 이름과 긴 이름이 있습니다.
+Calgary Transit은 AB 캘거리에서 LRT, BRT, 일반 버스 서비스, 보조 대중 교통 및 주문형 대중 교통을 운영합니다. 이 예에서는 두 개의 경로가 정의됩니다. 첫 번째는 버스이고 두 번째는 LRT입니다. 파일 사용[routes.txt](../../reference/#routestxt) , という각 경로에는 고유한id , 사람이 쉽게 읽을 수 있도록 짧은 이름과 긴 이름이 있습니다.
 
 [**routes.txt**](../../reference/#routestxt)
 
@@ -80,12 +80,10 @@ Calgary Transit은 AB 캘거리에서 LRT, BRT, 일반 버스 서비스, 보조 
 
 - 그만큼`route_id` \~에서[routes.txt](../../reference/#routestxt) MAX Orange에 해당하는 항목이 나열됩니다.
 - 그만큼`service_id` \~에서[calendar.txt](../../reference/#calendartxt) 주말에 해당하는
-- 각 레코드에는 고유한id 각각trip
+- 각 레코드에는 고유한id 각각trip 헤드 사인text 버스 안팎의 표지판에 일반적으로 표시되는 것입니다.
 
-헤드 사인text 버스 안팎의 표지판에 일반적으로 표시되는 것입니다.
-
-- 필드direction_id 서로 다른 방향으로 가는 동일한 경로의 여행을 구분할 수 있습니다. 예를 들어, 인바운드 여행과 아웃바운드 여행 또는 남쪽 여행과 북쪽 여행을 구별합니다.
-  - 이 경우 Saddletowne 방향의 여행은 `direction_id=0` 이고 Brentwood 방향의 여행은 `direction_id=1` 입니다. 의 값direction_id 고유한 의미가 없으며 한 방향과 다른 방향을 할당하는 데만 사용됩니다.
+- 필드`direction_id` 서로 다른 방향으로 가는 동일한 경로의 여행을 구분할 수 있습니다. 예를 들어, 인바운드 여행과 아웃바운드 여행 또는 남쪽 여행과 북쪽 여행을 구별합니다.
+- 이 경우 Saddletowne 방향의 여행은 `direction_id=0` 이고 Brentwood 방향의 여행은 `direction_id=1` 입니다. 의 값direction_id 고유한 의미가 없으며 한 방향과 다른 방향을 할당하는 데만 사용됩니다.
 - 그만큼shape_id \~에서shapes.txt Saddletowne 방향의 MAX Orange 경로에 해당하는 경로가 첫 번째 레코드에 나열되고 Brentwood 방향의 MAX Orange 경로에 해당하는 경로가 두 번째 및 세 번째 레코드에 나열됩니다.
 
 `shape_id=3030026` 은 Saddletowne 방향의 MAX 주황색에 해당합니다. 아래 파일에는 경로를 설명하는 지점과 해당 지점 사이의 거리에 대한 정보가 포함되어 있습니다. 이 정보를 통해 지도에 경로를 표시할 수 있습니다.trip 계획 또는 분석 목적.
@@ -113,14 +111,14 @@ Calgary Transit은 AB 캘거리에서 LRT, BRT, 일반 버스 서비스, 보조 
 
 다음과 같은 서비스에 대한 예외를 정의할 수 있습니다.added 휴무일(특정일) 또는 휴무일(예: 공휴일 휴무)
 
-예를 들어,scheduled 2022년 7월 17일 일요일 서비스 - 그러면 해당 날짜는 다음의 `weekend_service` 에서 제거될 수 있습니다.[calendar.txtの](../../reference/#calendartxt) 서비스를 둘로 나누면:
+예를 들어,scheduled 2022년 7월 17일 일요일 서비스 - 그러면 해당 날짜는 다음의 `weekend_service` 에서 제거될 수 있습니다.[calendar.txt](../../reference/#calendartxt) の서비스를 둘로 나누면:
 
 |  서비스               | start      | end        |
 | ------------------ | ---------- | ---------- |
 | `weekend_service1` | `20220623` | `20220716` |
 | `weekend_service2` | `20220718` | `20220903` |
 
-그러나 이로 인해 파일이 복잡해집니다.`service_id` 두 개로 나뉘며 이 나누기는[trips.txtに](../../reference/#tripstxt) . 대신 다음을 사용하여 더 쉽게 수행할 수 있습니다.[calendar_dates.txtを](../../reference/#calendar_datestxt) 아래 그림과 같이:
+그러나 이로 인해 파일이 복잡해집니다.`service_id` 두 개로 나뉘며 이 나누기는[trips.txt](../../reference/#tripstxt) . に대신 다음을 사용하여 더 쉽게 수행할 수 있습니다.[calendar_dates.txt](../../reference/#calendar_datestxt) を아래 그림과 같이:
 
 [**calendar_dates.txt**](../../reference/#calendar_datestxt)
 

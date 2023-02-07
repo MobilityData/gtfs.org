@@ -18,7 +18,7 @@ El primer paso es añadir la información de la agencia, tal y como se muestra e
     agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone
     CT,Calgary Transit,http://www.calgarytransit.com,America/Edmonton,,403-262-1000
 
-Calgary Transit opera LRT, BRT, servicio regular de autobús, paratránsito y tránsito a demanda en Calgary, AB. En este ejemplo, se definen dos rutas, la primera es un autobús y la segunda es un LRT. Utilizando el archivo [routes.txt](../../reference/#routestxt)txt, se asigna a cada ruta un id único y un nombre corto y otro largo para facilitar la lectura.
+Calgary Transit opera LRT, BRT, servicio regular de autobús, paratránsito y tránsito a demanda en Calgary, AB. En este ejemplo, se definen dos rutas, la primera es un autobús y la segunda es un LRT. Utilizando el archivo [routes.txt](../../reference/#routestxt), se asigna a cada ruta un id único y un nombre corto y otro largo para facilitar la lectura.
 
 [**routes.txt**](../../reference/#routestxt)
 
@@ -26,7 +26,7 @@ Calgary Transit opera LRT, BRT, servicio regular de autobús, paratránsito y tr
     CT,303-20670,303,MAX Orange Brentwood/Saddletowne,3,www.calgarytransit.com/content/transit/en/home/rider-information/max.html,#ff8000,#ffffff
     CT,202-20666,202,Blue Line - Saddletowne/69 Street CTrain,0,www.calgarytransit.com/content/transit/en/home/rider-information/lrt-and-bus-station-maps.html,#ff0000,#ffffff
 
-El quinto campo`route_type`) se utiliza para diferenciar los tipos de rutas:
+El quinto campo (`route_type`) se utiliza para diferenciar los tipos de rutas:
 
 - La primera es un autobús, por lo que `route_type=3`
 - El segundo es un LRT, por lo que `route_type=0`
@@ -38,7 +38,7 @@ Los campos restantes contienen información adicional, como una url específica 
 
 ## Paradas
 
-En GTFS, las paradas y las estaciones se describen utilizando el archivo [stops.txt](../../reference/#stopstxt)txt, a continuación, una parada de autobús se define en el primer registro y una estación de LRT se define en el segundo registro.
+En GTFS, las paradas y las estaciones se describen utilizando el archivo [stops.txt](../../reference/#stopstxt), a continuación, una parada de autobús se define en el primer registro y una estación de LRT se define en el segundo registro.
 
 [**stops.txt**](../../reference/#stopstxt)
 
@@ -48,11 +48,11 @@ En GTFS, las paradas y las estaciones se describen utilizando el archivo [stops.
 
 - `stop_id` es un identificador único
 - `stop_code` y `stop_name` suelen contener información orientada al usuario
-- La ubicación exacta se proporciona mediante coordenadas`(stop_lat` y `stop_lon`)
-- El sexto campo`(location_type`) se utiliza para diferenciar las paradas de las estaciones
+- La ubicación exacta se proporciona mediante coordenadas (`stop_lat` y `stop_lon`)
+- El sexto campo (`location_type`) se utiliza para diferenciar las paradas de las estaciones
 - El primer registro corresponde a una parada de autobús, por lo que `location_type=0`
 - El segundo registro corresponde a una estación, por lo que `location_type=1`
-- La lista completa de valores para ` location_type  `se encuentra [aquí](../../reference/stopstxt)
+- La lista completa de valores para `location_type` se encuentra [aquí](../../reference/stopstxt)
 
 <hr/>
 
@@ -60,7 +60,7 @@ En GTFS, las paradas y las estaciones se describen utilizando el archivo [stops.
 
 Una vez descritas las rutas de la agencia, es posible describir los viajes a los que da servicio cada ruta.
 
-En primer lugar, es necesario definir el intervalo de servicio mediante calendar [calendar.txt](../../reference/#calendartxt)txt.
+En primer lugar, es necesario definir el intervalo de servicio mediante calendar [calendar.txt](../../reference/#calendartxt).
 
 [**calendar.txt**](../../reference/#calendartxt)
 
@@ -69,7 +69,7 @@ En primer lugar, es necesario definir el intervalo de servicio mediante calendar
 
 En este caso, se describe un servicio que sólo funciona los sábados y domingos, por lo que los campos de esos días se rellenan con 1, y los del resto de días se rellenan con cero. Este servicio funciona desde el 23 de junio de 2022 hasta el 3 de septiembre de 2022, como se muestra en los campos `start_date` y `end_date`.
 
-En este ejemplo, el archivo [trips.txt](../../reference/#tripstxt).txt describe 3 viajes de fin de semana que son servidos por la ruta MAX Naranja que fue descrita anteriormente.
+En este ejemplo, el archivo [trips.txt](../../reference/#tripstxt) describe 3 viajes de fin de semana que son servidos por la ruta MAX Naranja que fue descrita anteriormente.
 
 [**trips.txt**](../../reference/#tripstxt)
 
@@ -80,12 +80,10 @@ En este ejemplo, el archivo [trips.txt](../../reference/#tripstxt).txt describe 
 
 - El `route_id` de [routes.txt](../../reference/#routestxt).txt que corresponde a MAX Orange está listado
 - El `service_id` de calendar. [calendar.txt](../../reference/#calendartxt) que corresponde a los fines de semana está listado
-- Cada registro contiene un id único para cada trip
-
-Se proporciona el text de la señal de cabeza, que es lo que suele aparecer en las señales dentro y fuera del autobús
+- Cada registro contiene un id único para cada trip Se proporciona el text de la señal de cabeza, que es lo que suele aparecer en las señales dentro y fuera del autobús
 
 - El campo `direction_id` permite distinguir entre los viajes de la misma ruta que van en diferentes direcciones. Por ejemplo, distinguir entre los viajes de entrada y los de salida, o los viajes en dirección sur y los viajes en dirección norte.
-  - En este caso, los viajes hacia Saddletowne tienen un `direction_id=0` y los viajes hacia Brentwood tienen un `direction_id=1`. Los valores de direction_id no tienen ningún significado inherente, sólo se utilizan para asignar un sentido de la marcha frente a otro
+- En este caso, los viajes hacia Saddletowne tienen un `direction_id=0` y los viajes hacia Brentwood tienen un `direction_id=1`. Los valores de direction_id no tienen ningún significado inherente, sólo se utilizan para asignar un sentido de la marcha frente a otro
 - El `shape_id` de shapes. [shapes.txt](../../reference/#shapestxt) que corresponde a la ruta MAX Orange hacia Saddletowne aparece en el primer registro y el de la ruta MAX Orange hacia Brentwood aparece en el segundo y tercer registro
 
 El `shape_id=3030026` corresponde al MAX Naranja hacia Saddletowne. El archivo que se muestra a continuación incluye información sobre los puntos que delinean la ruta, así como la distancia entre esos puntos. Con esta información, es posible trazar la ruta en un mapa con fines de planificación de trip o de análisis.
@@ -113,14 +111,14 @@ El `shape_id=3030026` corresponde al MAX Naranja hacia Saddletowne. El archivo q
 
 Es posible definir excepciones al servicio como los días de servicio agregado (días especiales) o los días de servicio eliminados (como el no servicio en días festivos).
 
-Por ejemplo, si no hay servicio programado el domingo 17 de julio de 2022 - entonces esa fecha se puede eliminar de `weekend_service` en [calendar.txt](../../reference/#calendartxt) txt dividiendo el servicio en dos:
+Por ejemplo, si no hay servicio programado el domingo 17 de julio de 2022 - entonces esa fecha se puede eliminar de `weekend_service` en [calendar.txt](../../reference/#calendartxt) dividiendo el servicio en dos:
 
 | Servicio           | start      | end        |
 | ------------------ | ---------- | ---------- |
 | `weekend_service1` | `20220623` | `20220716` |
 | `weekend_service2` | `20220718` | `20220903` |
 
-Sin embargo, esto complica el archivo, ya que `service_id` se rompe en dos y esta ruptura se trasladará en cascada a [trips.txt](../../reference/#tripstxt).txt. En su lugar, esto se puede hacer de una manera más fácil utilizando [calendar_dates.txt](../../reference/#calendar_datestxt).txt como se muestra a continuación:
+Sin embargo, esto complica el archivo, ya que `service_id` se rompe en dos y esta ruptura se trasladará en cascada a [trips.txt](../../reference/#tripstxt). En su lugar, esto se puede hacer de una manera más fácil utilizando [calendar_dates.txt](../../reference/#calendar_datestxt) como se muestra a continuación:
 
 [**calendar_dates.txt**](../../reference/#calendar_datestxt)
 
@@ -128,7 +126,7 @@ Sin embargo, esto complica el archivo, ya que `service_id` se rompe en dos y est
     weekend_service,20220623,2
 
 - El `service_id` `weekend_service` aparece en la lista
-- La fecha del servicio eliminado o adicional aparece en la `fecha` (17 de julio de 2022)
+- La fecha del servicio eliminado o adicional aparece en la `date` (17 de julio de 2022)
 - El campo `exception_type` se establece en 2, lo que significa que el servicio se elimina para este día
 
 [Ejemplo de fuente](https://data.calgary.ca/download/npk7-z3bj/application%2Fzip)

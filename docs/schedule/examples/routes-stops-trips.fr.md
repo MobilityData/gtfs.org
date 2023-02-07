@@ -26,7 +26,7 @@ Calgary Transit exploite le TLR, le BRT, le service de bus régulier, le transpo
     CT,303-20670,303,MAX Orange Brentwood/Saddletowne,3,www.calgarytransit.com/content/transit/en/home/rider-information/max.html,#ff8000,#ffffff
     CT,202-20666,202,Blue Line - Saddletowne/69 Street CTrain,0,www.calgarytransit.com/content/transit/en/home/rider-information/lrt-and-bus-station-maps.html,#ff0000,#ffffff
 
-Le cinquième champ`route_type`) est utilisé pour différencier les types d'itinéraires :
+Le cinquième champ (`route_type`) est utilisé pour différencier les types d'itinéraires :
 
 - Le premier est un bus, donc `route_type=3`.
 - Le second est un LRT, donc `route_type=0`.
@@ -47,12 +47,12 @@ Dans GTFS, les arrêts et les stations sont décrits à l'aide du fichier [stops
     6810,6810,NB Marlborough CTrain Station,51.058990,-113.981582,0
 
 - `stop_id` est un identifiant unique
-- Les champs`stop_code` et `stop_name` contiennent généralement des informations destinées aux usagers.
-- L'emplacement exact est fourni à l'aide de coordonnées`(stop_lat` et `stop_lon`)
-- Le sixième champ`(location_type`) est utilisé pour différencier les arrêts des stations.
+- Les champs `stop_code` et `stop_name` contiennent généralement des informations destinées aux usagers.
+- L'emplacement exact est fourni à l'aide de coordonnées (`stop_lat` et `stop_lon`)
+- Le sixième champ (`location_type`) est utilisé pour différencier les arrêts des stations.
 - Le premier enregistrement correspond à un arrêt de bus, donc `location_type=0`.
 - Le deuxième enregistrement correspond à une station, donc `location_type=1`.
-- Une liste complète des valeurs de ` location_type  `peut être trouvée [ici](../../reference/stopstxt).
+- Une liste complète des valeurs de `location_type` peut être trouvée [ici](../../reference/stopstxt).
 
 <hr/>
 
@@ -80,9 +80,7 @@ Dans cet exemple, le fichier [trips.txt](../../reference/#tripstxt) décrit 3 tr
 
 - Le `route_id` [routes.txt](../../reference/#routestxt) qui correspond à MAX Orange est listé.
 - Le `service_id` du fichier [calendar.txt](../../reference/#calendartxt) qui correspond aux week-ends est listé.
-- Chaque enregistrement contient un id unique pour chaque trip
-
-Le text l'indicatif est fourni, ce qui correspond à ce qui est généralement affiché sur les panneaux à l'intérieur et à l'extérieur du bus.
+- Chaque enregistrement contient un id unique pour chaque trip Le text l'indicatif est fourni, ce qui correspond à ce qui est généralement affiché sur les panneaux à l'intérieur et à l'extérieur du bus.
 
 - Le champ `direction_id` permet de distinguer les trajets d'un même itinéraire allant dans des directions différentes. Par exemple, la distinction entre les trajets entrants et les trajets sortants - ou les trajets vers le sud et les trajets vers le nord.
   - Dans ce cas, les trajets vers Saddletowne ont une `direction_id=0` et les trajets vers Brentwood ont une `direction_id=1`. Les valeurs de direction_id n'ont pas de signification intrinsèque, elles sont uniquement utilisées pour attribuer une direction de déplacement par rapport à une autre.

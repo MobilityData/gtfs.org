@@ -18,7 +18,7 @@ search:
     agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone
     CT,Calgary Transit,http://www.calgarytransit.com,America/Edmonton,,403-262-1000
 
-Calgary Transitは、AB州カルガリーでLRT、BRT、通常のバスサービス、パラトランジット、オンデマンド輸送を運営しています。この例では、2つのルートが定義されています。1つ目はバスで、2つ目はLRTです。[routes.txtという](../../reference/#routestxt)ファイルを使って、各ルートに一意のID、短い名前、そして人間が読みやすいように長い名前を割り当てています。
+Calgary Transitは、AB州カルガリーでLRT、BRT、通常のバスサービス、パラトランジット、オンデマンド輸送を運営しています。この例では、2つのルートが定義されています。1つ目はバスで、2つ目はLRTです。[routes.txt](../../reference/#routestxt)というファイルを使って、各ルートに一意のID、短い名前、そして人間が読みやすいように長い名前を割り当てています。
 
 [**routes.txt**](../../reference/#routestxt)
 
@@ -26,11 +26,11 @@ Calgary Transitは、AB州カルガリーでLRT、BRT、通常のバスサービ
     CT,303-20670,303,MAX Orange Brentwood/Saddletowne,3,www.calgarytransit.com/content/transit/en/home/rider-information/max.html,#ff8000,#ffffff
     CT,202-20666,202,Blue Line - Saddletowne/69 Street CTrain,0,www.calgarytransit.com/content/transit/en/home/rider-information/lrt-and-bus-station-maps.html,#ff0000,#ffffff
 
-5番目のフィールド`（route_type`）は、路線の種類を区別するために使用される。
+5番目のフィールド（`route_type`）は、路線の種類を区別するために使用される。
 
 - 1番目はバスなので、`route_type=3`
-- 2つ目はLRTであるため、rout`e_type=0と`なる。
-- `route_typeの`値の完全なリストは、[routes.txt](../../reference/#routestxt)あります。
+- 2つ目はLRTであるため、`route_type=0`となる。
+- `route_type`の値の完全なリストは、[routes.txt](../../reference/#routestxt)あります。
 
 残りのフィールドには、路線に固有のURLや、地図上でサービスを表現するための機関固有の色などの追加情報が含まれる。
 
@@ -46,13 +46,13 @@ GTFSでは、[stops.txt](../../reference/#stopstxt)というファイルを使�
     8157,8157,44th Avenue NE (SB),51.091106,-113.958565,0
     6810,6810,NB Marlborough CTrain Station,51.058990,-113.981582,0
 
-- `stop_idは`一意な識別子である．
-- `stop_codeと` `stop_nameは`、通常、ライダー向けの情報を含みます。
-- 正確な位置は、座標`(stop_lat`と`stop_lon`) を使用して提供されます。
-- 6番目のフィールド`(location_type`)は、停留所と駅を区別するために使用される。
-- 最初のレコードはバス停に対応するため、`location_type=0と`なる。
+- `stop_id`は一意な識別子である．
+- `stop_code` `stop_name`、とは通常、ライダー向けの情報を含みます。
+- 正確な位置は、座標 (`stop_lat`と`stop_lon`) を使用して提供されます。
+- 6番目のフィールド (`location_type`)は、停留所と駅を区別するために使用される。
+- 最初のレコードはバス停に対応するため、`location_type=0`となる。
 - 2番目のレコードは駅に対応し、`location_type=1`である。
-- ` location_typeの  `値の完全なリストは、[stops.txt](../../reference/stopstxt)見つけることができる。
+- `location_type` の値の完全なリストは、[stops.txt](../../reference/stopstxt)見つけることができる。
 
 <hr>
 
@@ -60,14 +60,14 @@ GTFSでは、[stops.txt](../../reference/#stopstxt)というファイルを使�
 
 経路を記述した後、各経路が提供するトリップを記述することができる。
 
-まず、[calendar.txt](../../reference/#calendartxt)xtを使用して、サービスのスパンを定義する必要があります。
+まず、[calendar.txt](../../reference/#calendartxt)を使用して、サービスのスパンを定義する必要があります。
 
 [**calendar.txt**](../../reference/#calendartxt)
 
     service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
     weekend_service,0,0,0,0,0,1,1,20220623,20220903
 
-ここでは、土日のみ運行するサービスを記述しているので、これらの日のフィールドには1が、残りの日のフィールドには0が入力されています。このサービスは、`start_dateと` `end_dateの`フィールドにあるように、2022年6月23日から2022年9月3日まで運行されます。
+ここでは、土日のみ運行するサービスを記述しているので、これらの日のフィールドには1が、残りの日のフィールドには0が入力されています。このサービスは、`start_date` `end_date`とのフィールドにあるように、2022年6月23日から2022年9月3日まで運行されます。
 
 この例では、[trips.txt](../../reference/#tripstxt)ファイルに、上記で説明した MAX Orange ルートが提供する 3 つの週末トリップが記述されています。
 
@@ -79,14 +79,12 @@ GTFSでは、[stops.txt](../../reference/#stopstxt)というファイルを使�
     303-20670,weekend_service,60270566,"MAX ORANGE BRENTWOOD",1,3030027
 
 - [routes.txt](../../reference/#routestxt)のうち、MAX Orange に対応する`route_id`が記載されています。
-- [calendar.txt](../../reference/#calendartxt)xt のうち、週末に該当する`service_id`が記載されています。
-- 各レコードには、各旅行に対して一意のID
-
-ヘッドサインのテキストは、バスの内部と外部の標識に通常表示されるもので、提供されます。
+- [calendar.txt](../../reference/#calendartxt) のうち、週末に該当する`service_id`が記載されています。
+- 各レコードには、各旅行に対して一意のID ヘッドサインのテキストは、バスの内部と外部の標識に通常表示されるもので、提供されます。
 
 - `direction_id`フィールドは、同じルートで異なる方向に向かうトリップを区別することができます。例えば、インバウンドのトリップとアウトバウンドのトリップ、あるいは南行きのトリップと北行きのトリップを区別することができます。
-  - この場合、Saddletowne方面のトリップは`direction_id=0`、Brentwood方面のトリップは`direction_id=1`です。direction_id の値には固有の意味はなく、ある進行方向と別の進行方向を指定するために使用されるだけである。
-- [shapes.txt](../../reference/#shapestxt)xtから、Saddletowne方面のMAX Orangeルートに対応する`shape_idが`1レコード目に、Brentwood方面のMAX Orangeルートに対応するものが2レコード目と3レコード目に記載されている
+- この場合、Saddletowne方面のトリップは`direction_id=0`、Brentwood方面のトリップは`direction_id=1`です。direction_id の値には固有の意味はなく、ある進行方向と別の進行方向を指定するために使用されるだけである。
+- [shapes.txt](../../reference/#shapestxt)から、Saddletowne方面のMAX Orangeルートに対応する`shape_id`が1レコード目に、Brentwood方面のMAX Orangeルートに対応するものが2レコード目と3レコード目に記載されている
 
 `shape_id=3030026`は、Saddletowne 方面の MAX Orange に対応する。以下のファイルには、ルートの輪郭となる点と、その点間の距離の情報が含まれています。この情報を使って、旅行計画や分析のために地図上にルートをプロットすることが可能です。
 
@@ -113,21 +111,21 @@ GTFSでは、[stops.txt](../../reference/#stopstxt)というファイルを使�
 
 運行日の追加（特別日）や運行日の削除（休日運休など）を設定することができます。
 
-例えば、2022年7月17日（日）に予定されているサービスがない場合、サービスを2つに分けることで、[calendar.txtの](../../reference/#calendartxt) `weekend_serviceから`その日付を削除することができます。
+例えば、2022年7月17日（日）に予定されているサービスがない場合、サービスを2つに分けることで、[calendar.txt](../../reference/#calendartxt) `weekend_service`のからその日付を削除することができます。
 
 | サービス               | 開始         | 終了         |
 | ------------------ | ---------- | ---------- |
 | `weekend_service1` | `20220623` | `20220716` |
 | `weekend_service2` | `20220718` | `20220903` |
 
-しかし、`service_idが`2つに分割され、この分割が[trips.txtに](../../reference/#tripstxt)連鎖してしまうため、ファイルが複雑になってしまいます。代わりに、以下のように[calendar_dates.txtを](../../reference/#calendar_datestxt)使用することで、より簡単な方法でこれを行うことができます。
+しかし、`service_id`が2つに分割され、この分割が[trips.txt](../../reference/#tripstxt)に連鎖してしまうため、ファイルが複雑になってしまいます。代わりに、以下のように[calendar_dates.txt](../../reference/#calendar_datestxt)を使用することで、より簡単な方法でこれを行うことができます。
 
 [**calendar_dates.txt**](../../reference/#calendar_datestxt)
 
     service_id,date,exception_type
     weekend_service,20220623,2
 
-- `service_id` `weekend_serviceと`なる。
+- `service_id` `weekend_service`となる。
 - `date`下に削除または追加されたサービスの日付が表示されます（2022年7月17日）。
 - `exception_type`フィールドが2に設定されており、この日のサービスが削除されたことを意味します。
 

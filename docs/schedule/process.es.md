@@ -7,7 +7,7 @@ search:
 
 La especificación GTFS no está grabada en piedra. Se trata de una especificación abierta desarrollada y mantenida por la comunidad de agencias de transporte, desarrolladores y otras partes interesadas que utilizan GTFS. Se espera que esta comunidad de productores y consumidores de datos GTFS presente propuestas de ampliación de la especificación para habilitar nuevas capacidades. Para ayudar a gestionar ese proceso, se han establecido los siguientes procedimientos y directrices.
 
-Nota ""
+!!!note ""
 
     La especificación oficial, la referencia y la documentación están escritas en inglés. Si la Translation a otro idioma difiere del original en inglés, este último tiene preferencia. Toda la comunicación se realiza en inglés.
 
@@ -47,15 +47,15 @@ Nota ""
 
 Con el fin de preservar la visión original de GTFS, se han establecido una serie de principios rectores a tener en cuenta a la hora de ampliar la especificación:
 
-**Los feeds deberían ser fáciles de crear y**<br/>editarElegimos CSV como base para la especificación porque es fácil de ver y editar utilizando programas de hojas de cálculo y editores de text, lo que resulta útil para las agencias más pequeñas. También es fácil de generar a partir de la mayoría de lenguajes de programación y bases de datos, lo que es bueno para los editores de feeds más grandes.<br/>
+**Los feeds deberían ser fáciles de crear y editar**<br/>Elegimos CSV como base para la especificación porque es fácil de ver y editar utilizando programas de hojas de cálculo y editores de text, lo que resulta útil para las agencias más pequeñas. También es fácil de generar a partir de la mayoría de lenguajes de programación y bases de datos, lo que es bueno para los editores de feeds más grandes.<br/>
 
-**Los feeds deberían ser fáciles** de<br/>analizarLos lectores de feeds deberían poder extraer la información que buscan con el menor trabajo posible. Los cambios y adiciones al feed deberían ser lo más útiles posible, para minimizar el número de rutas de código que los lectores del feed tienen que implementar. (Sin embargo, debería darse prioridad a facilitar la creación, ya que al final habrá más editores de feeds que lectores de feeds).<br/>
+**Los feeds deberían ser fáciles de analizar**<br/>analizarLos lectores de feeds deberían poder extraer la información que buscan con el menor trabajo posible. Los cambios y adiciones al feed deberían ser lo más útiles posible, para minimizar el número de rutas de código que los lectores del feed tienen que implementar. (Sin embargo, debería darse prioridad a facilitar la creación, ya que al final habrá más editores de feeds que lectores de feeds).<br/>
 
-La especificación**trata sobre la información a los pasajeros GTFS**<br/>se ocupa principalmente de la información a los pasajeros. Es decir, la especificación debería incluir información que pueda ayudar a potenciar las herramientas para los pasajeros, en primer lugar. Existe potencialmente una gran cantidad de información orientada a las operaciones que las agencias de transporte pueden querer transmitir internamente entre sistemas. GTFS no está pensado para ese fin y existen potencialmente otros estándares de datos orientados a las operaciones que pueden ser más apropiados.<br/>
+**La especificación trata sobre la información a los pasajeros**<br/>GTFS se ocupa principalmente de la información a los pasajeros. Es decir, la especificación debería incluir información que pueda ayudar a potenciar las herramientas para los pasajeros, en primer lugar. Existe potencialmente una gran cantidad de información orientada a las operaciones que las agencias de transporte pueden querer transmitir internamente entre sistemas. GTFS no está pensado para ese fin y existen potencialmente otros estándares de datos orientados a las operaciones que pueden ser más apropiados.<br/>
 
-**Al**<br/>añadir funciones a la especificación, queremos evitar cambios que invaliden los feeds existentes. No queremos crear más trabajo para los editores de feeds existentes hasta que quieran añadir capacidades a sus feeds. Además, siempre que sea posible, queremos que los analizadores existentes puedan seguir leyendo las partes antiguas de los nuevos feeds.<br/>
+**Los cambios en las especificaciones deberían ser compatibles con las versiones anteriores**<br/>Al añadir funciones a la especificación, queremos evitar cambios que invaliden los feeds existentes. No queremos crear más trabajo para los editores de feeds existentes hasta que quieran añadir capacidades a sus feeds. Además, siempre que sea posible, queremos que los analizadores existentes puedan seguir leyendo las partes antiguas de los nuevos feeds.<br/>
 
-**Se desaconsejan las funciones especulativasCada**<br/>nueva función añade complejidad a la creación y lectura de feeds. Por ello, queremos tener cuidado de añadir sólo funciones que sepamos que son útiles. Lo ideal es que cualquier propuesta se haya probado generando datos para un sistema de tránsito real que utilice la nueva función y escribiendo software para leerlos y mostrarlos. Tenga en cuenta que el GTFS permite fácilmente extensiones al formato mediante la adición de columnas y archivos adicionales que son ignorados por los analizadores y validadores oficiales, por lo que las propuestas pueden ser fácilmente prototipadas y probadas en los feeds existentes.<br/>
+**Se desaconsejan las funciones especulativas**<br/>Cada nueva función añade complejidad a la creación y lectura de feeds. Por ello, queremos tener cuidado de añadir sólo funciones que sepamos que son útiles. Lo ideal es que cualquier propuesta se haya probado generando datos para un sistema de tránsito real que utilice la nueva función y escribiendo software para leerlos y mostrarlos. Tenga en cuenta que el GTFS permite fácilmente extensiones al formato mediante la adición de columnas y archivos adicionales que son ignorados por los analizadores y validadores oficiales, por lo que las propuestas pueden ser fácilmente prototipadas y probadas en los feeds existentes.<br/>
 
 <hr/>
 
@@ -75,7 +75,7 @@ La especificación**trata sobre la información a los pasajeros GTFS**<br/>se oc
 
 **4 de enero de 2021**<br/>
 
-* Aclarada la descripción de `stop_id.stop_id`. Ver [discusión](https://github.com/google/transit/pull/258).
+* Aclarada la descripción de `stop_times.stop_id`. Ver [discusión](https://github.com/google/transit/pull/258).
 * Definidos los signos de campo positivo y distinto de cero. Ver [discusión](https://github.com/google/transit/pull/251).
 
 **2 de octubre de 2020**<br/>
@@ -96,7 +96,7 @@ La especificación**trata sobre la información a los pasajeros GTFS**<br/>se oc
 
 **5 de febrero de 2020**<br/>
 
-* Añadidos `route_types de` trolebús y monorraíl. Véase [discusión](https://github.com/google/transit/pull/174).
+* Añadidos `route_types` de trolebús y monorraíl. Véase [discusión](https://github.com/google/transit/pull/174).
 
 **9 de enero de 2020**<br/>
 
@@ -142,7 +142,7 @@ La especificación**trata sobre la información a los pasajeros GTFS**<br/>se oc
 
 **14 de septiembre de 2018**<br/>
 
-* Añadido el concepto "Condicionalmente obligatorio". Véase [discusión](https://github.com/google/transit/pull/100).
+* Añadido el concepto "Conditionally required". Véase [discusión](https://github.com/google/transit/pull/100).
 
 **4 de septiembre de 2018**<br/>
 
@@ -193,15 +193,15 @@ La especificación**trata sobre la información a los pasajeros GTFS**<br/>se oc
 
 **2 de febrero de 2015**<br/>
 
-* Añadida la propuesta stop_times.txt.txt 'timepoint' a las especificaciones: [discusión](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/Ah-J9JP2rJY)
+* Añadida la propuesta stop_times.txt 'timepoint' a las especificaciones: [discusión](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/Ah-J9JP2rJY)
 
 **17 de febrero de 2014**<br/>
 
-* Añadida la propuesta trips.txt.txt 'bikes_allowed' a la especificación: [discusión](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/rEiSeKNc4cs)
+* Añadida la propuesta trips.txt 'bikes_allowed' a la especificación: [discusión](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/rEiSeKNc4cs)
 
 **15 de octubre de 2012**<br/>
 
-Añadida la propuesta trips.txt.txt 'wheelchair_accessible' a la especificación: [discusión](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
+Añadida la propuesta trips.txt 'wheelchair_accessible' a la especificación: [discusión](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
 
 **20 de junio de 2012**<br/>
 
@@ -227,7 +227,7 @@ Añadida la propuesta trips.txt.txt 'wheelchair_accessible' a la especificación
 **30 de marzo de 2009**<br/>
 
 * Una nueva sección sobre cómo hacer público un feed de tránsito. Esto no se discutió previamente en el grupo, porque no era estrictamente un cambio en cómo se interpretan o escriben los datos. Sin embargo, algunos de los miembros de Google pensaron que sería informativo incluir un debate sobre los usos de GTFS ajenos a Google, ya que cada vez hay más aplicaciones que pueden utilizar datos GTFS.
-* [Aclaraciones](https://groups.google.com/forum/#!topic/gtfs-changes/03qz5aTA2mk) sobre el formato CSV: discusión
+* Aclaraciones sobre el formato CSV: [discusión](https://groups.google.com/forum/#!topic/gtfs-changes/03qz5aTA2mk)
 * Orientación adicional sobre cómo elegir colores contrastados en las descripciones de los campos route_color y route_text_color.
 * trip_short_name, según lo propuesto y probado en estos hilos: a y b.
 * Corrección de un error menor en los datos de ejemplo incluidos al end del documento (dando a la parada S7 la parent_station S8).
@@ -249,7 +249,7 @@ Añadida la propuesta trips.txt.txt 'wheelchair_accessible' a la especificación
 **6 de agosto de 2008**<br/>
 
 * Añadido el archivo transfers.txt, que permite a los editores de feeds proporcionar pistas sobre el comportamiento de transferencia preferido ([propuesta original](https://groups.google.com/forum/#!topic/gtfs-changes/cL1E4oKKpKw)) .
-* Se han añadido los campos location_type y parent_station a stops.txt.txt, lo que permite agrupar las paradas en estaciones ([propuesta original](https://groups.google.com/forum/#!topic/gtfs-changes/ScGAyZ9a_yw)).
+* Se han añadido los campos location_type y parent_station a stops.txt, lo que permite agrupar las paradas en estaciones ([propuesta original](https://groups.google.com/forum/#!topic/gtfs-changes/ScGAyZ9a_yw)).
 * Añadido el campo agency_phone para proporcionar el número de teléfono de voz de una agencia ([propuesta original](https://groups.google.com/forum/#!topic/gtfs-changes/8Itt58ueyqA))
 * Se ha añadido la sección "Pruebe sus feeds", en la que se mencionan las herramientas de prueba de código abierto.
 * Se han añadido aclaraciones sobre el formato CSV, agency_timezone, agency_lang, route_color, route_text_color, arrival_time, departure_time, calendar.txt frente a calendar_dates.txt, tablas de tarifas y frequencies.txt.
@@ -260,7 +260,7 @@ Añadida la propuesta trips.txt.txt 'wheelchair_accessible' a la especificación
 **29 de febrero de 2008**<br/>
 
 * Se ha añadido el campo stop_code en stops.txt para permitir la especificación de códigos de parada orientados al usuario ([propuesta original](https://groups.google.com/forum/#!topic/gtfs-changes/k9A95fYZexc)).
-* Aclaradas las descripciones de route_short_name y route_long_name en routes.txtxt
+* Aclaradas las descripciones de route_short_name y route_long_name en routes.txt
 * Se han aclarado las descripciones de arrival_time y departure_time en stop_times.txt.
 * Corrección de erratas en la sección Datos de muestra
 
@@ -302,19 +302,19 @@ Añadida la propuesta trips.txt.txt 'wheelchair_accessible' a la especificación
 
 **28 de febrero de 2007**<br/>
 
-* Adición de frequencies.txt.txt para soporte de Schedule basados en headway.
+* Adición de frequencies.txt para soporte de Schedule basados en headway.
 * Ahora se permiten múltiples agencias en el mismo feed. También se ha añadido un nuevo campo agency_id en agencies.txt y routes.txt que permite especificar qué ruta es operada por qué agencia.
 * Adición de URL por ruta y por parada.
-* Adición del campo direction_id en trips.txtxt.
-* Posibilidad de cambiar las cabeceras a mitad de trayecto añadiendo el campo stop_headsign en stop_times.txt.txt.
-* Soporte para colores de ruta con la adición de route_color opcional y route_text_color en routes.txt.txt.
+* Adición del campo direction_id en trips.txt.
+* Posibilidad de cambiar las cabeceras a mitad de trayecto añadiendo el campo stop_headsign en stop_times.txt.
+* Soporte para colores de ruta con la adición de route_color opcional y route_text_color en routes.txt.
 * Se ha eliminado la posibilidad de especificar paradas utilizando direcciones de calles. La versión anterior de la especificación permitía indicar la ubicación de una parada mediante una dirección en los campos stop_street, stop_city, stop_region, stop_postcode y stop_country. Ahora la ubicación de las paradas debe indicarse utilizando stop_lat para latitude y stop_lon para longitude, que son más útiles para la mayoría de las aplicaciones.
 * Adición del tipo de vehicle de teleférico al campo route_type en routes.txt.
 * Véase el resumen de los cambios en la [entrada original del blog Headway](https://headwayblog.com/2007/03/02/google-feed-spec-update-2007-02/).
 
 **29 de noviembre de 2006**<br/>
 
-* Añadida la compatibilidad con la información de Shape trip a través de shapes.txt.txt
+* Añadida la compatibilidad con la información de Shape trip a través de shapes.txt
 * Aclarada la definición de stop_sequence
 * Marcados pickup_type y drop_off_type opcionales
 

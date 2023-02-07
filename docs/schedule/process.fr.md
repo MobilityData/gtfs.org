@@ -7,7 +7,7 @@ search:
 
 La spécification GTFS n'est pas gravée dans le marbre. Il s'agit plutôt d'une spécification ouverte développée et maintenue par la communauté des agences de transport, des développeurs et des autres parties prenantes qui utilisent GTFS. On s'attend à ce que cette communauté de producteurs et de consommateurs de données GTFS ait des propositions pour étendre la spécification afin de permettre de nouvelles capacités. Pour aider à gérer ce processus, les procédures et directives suivantes ont été établies.
 
-! !! note ""
+!!! note ""
 
     La spécification, la référence et la documentation officielles sont rédigées en anglais. Si une Translation dans une autre langue diffère de l'original anglais, c'est ce dernier qui prévaut. Toute communication est effectuée en anglais.
 

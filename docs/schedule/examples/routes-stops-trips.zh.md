@@ -18,7 +18,7 @@ search:
     agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone
     CT,Calgary Transit,http://www.calgarytransit.com,America/Edmonton,,403-262-1000
 
-卡尔加里公交公司在AB省卡尔加里市经营轻轨、快速公交、普通公交、准公交和按需公交。在这个例子中，定义了两条线路，第一条是公共汽车，第二条是轻轨。使用[routes.txt](../../reference/#routestxt)文件，每条路线都被分配了一个唯一的id，以及一个短名称和一个长名称，以便于人阅读。
+Calgary Transit 在AB省卡尔加里市经营轻轨、快速公交、普通公交、准公交和按需公交。在这个例子中，定义了两条线路，第一条是公共汽车，第二条是轻轨。使用[routes.txt](../../reference/#routestxt)文件，每条路线都被分配了一个唯一的id，以及一个短名称和一个长名称，以便于人阅读。
 
 [**routes.txt**](../../reference/#routestxt)
 
@@ -26,10 +26,10 @@ search:
     CT,303-20670,303,MAX Orange Brentwood/Saddletowne,3,www.calgarytransit.com/content/transit/en/home/rider-information/max.html,#ff8000,#ffffff
     CT,202-20666,202,Blue Line - Saddletowne/69 Street CTrain,0,www.calgarytransit.com/content/transit/en/home/rider-information/lrt-and-bus-station-maps.html,#ff0000,#ffffff
 
-第五个字段`route_type`）是用来区分路线的类型。
+第五个字段 (`route_type`）是用来区分路线的类型。
 
-- 第一条是公共汽车，因此`路线_类型=3`
-- 第二条是轻轨，因此`路线_类型=0`
+- 第一条是公共汽车，因此`route_type=3`
+- 第二条是轻轨，因此`route_type=0`
 - `route_type`的完整列表可以[在这里](../../reference/#routestxt)找到。
 
 其余的字段包含额外的信息，如路线的特定url，以及机构特定的颜色，在地图上表示服务。
@@ -48,11 +48,11 @@ search:
 
 - `stop_id`是一个唯一的标识符
 - `stop_code`和`stop_name`通常包含面向乘客的信息
-- 使用坐标`（stop_lat`和`stop_lon`）提供确切的位置。
-- 第六个字段`（location_type`）用于区分站点和车站。
+- 使用坐标（`stop_lat`和`stop_lon`）提供确切的位置。
+- 第六个字段（`location_type`）用于区分站点和车站。
 - 第一条记录对应的是一个公交车站，因此`location_type=0`
 - 第二条记录对应的是车站，因此`location_type=1`。
-- 关于` location_type  `值的完整列表可以[在这里](../../reference/stopstxt)找到。
+- 关于`location_type`值的完整列表可以[在这里](../../reference/stopstxt)找到。
 
 <hr/>
 
@@ -78,15 +78,13 @@ search:
     303-20670,weekend_service,60270565,"MAX ORANGE BRENTWOOD",1,3030027
     303-20670,weekend_service,60270566,"MAX ORANGE BRENTWOOD",1,3030027
 
-- 从[routes.txt](../../reference/#routestxt)txt中列出了与MAX Orange对应的`route_id`。
-- 列出了[calendar.txt](../../reference/#calendartxt)txt中与周末相对应的`service_id`。
-- 每条记录包含每个trip的唯一id
-
-提供了车头标志text，这就是通常显示在巴士内部和外部的标志上的内容。
+- 从[routes.txt](../../reference/#routestxt)中列出了与MAX Orange对应的`route_id`。
+- 列出了[calendar.txt](../../reference/#calendartxt)中与周末相对应的`service_id`。
+- 每条记录包含每个trip的唯一id 提供了车头标志text，这就是通常显示在巴士内部和外部的标志上的内容。
 
 - `direction_id`字段允许区分同一路线上不同方向的车次。例如，区分进站和出站的车次，或南行和北行的车次。
-  - 在这种情况下，往Saddletowne方向的车次，方向`_id=0`，往Brentwood方向的车次，`方向_id=1`。direction_id中的值没有内在的意义，它们只是用来指定一个旅行方向与另一个旅行方向。
-- shape[shapes.txt](../../reference/#shapestxt)中的`shape_id`，对应于往Saddletowne方向的MAX Orange路线，被列在第一条记录中，MAX Orange往Brentwood方向的路线被列在第二和第三条记录中。
+  - 在这种情况下，往Saddletowne方向的车次，`direction_id=0`，往Brentwood方向的车次，`direction_id=1`。direction_id中的值没有内在的意义，它们只是用来指定一个旅行方向与另一个旅行方向。
+- [shapes.txt](../../reference/#shapestxt)中的`shape_id`，对应于往Saddletowne方向的MAX Orange路线，被列在第一条记录中，MAX Orange往Brentwood方向的路线被列在第二和第三条记录中。
 
 `shape_id=3030026`对应于朝向Saddletowne的MAX Orange。下面的文件包括勾勒路线的点的信息以及这些点之间的距离。有了这些信息，就有可能在地图上绘制路线，用于trip规划或分析目的。
 
@@ -113,7 +111,7 @@ search:
 
 可以定义服务的例外情况，如ADDED服务日（特殊日子）或取消的服务日（如节假日不提供服务）。
 
-例如，如果2022年7月17日星期日没有SCHEDULED服务--那么该日期可以通过将服务一分为二从[calendar.txt](../../reference/#calendartxt)txt的`周末服务`中删除。
+例如，如果2022年7月17日星期日没有SCHEDULED服务--那么该日期可以通过将服务一分为二从[calendar.txt](../../reference/#calendartxt)的`weekend_service`中删除。
 
 | 服务                 | start      | end        |
 | ------------------ | ---------- | ---------- |
@@ -127,8 +125,8 @@ search:
     service_id,date,exception_type
     weekend_service,20220623,2
 
-- `service_id` `周末服务`被列出。
-- 移除或ADDED服务的日期列在`日期`下（2022年7月17日）。
+- `service_id` `weekend_service`被列出。
+- 移除或ADDED服务的日期列在`date`下（2022年7月17日）。
 - 字段`exception_type`被设置为2，这意味着这一天的服务被取消。
 
 [例子来源](https://data.calgary.ca/download/npk7-z3bj/application%2Fzip)

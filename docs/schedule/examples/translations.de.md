@@ -34,7 +34,7 @@ Die Datei [translations.txt](../../reference/#translationstxt) wird dann verwend
     stops,stop_name,S8815040,nl,Brussel-West
 
 - In diesem Beispiel werden die Haltestellennamen aus [stops.txt](../../reference/#stopstxt) übersetzt, und die Datensätze in [stops.txt](../../reference/#stopstxt) werden durch eine `stop_id` identifiziert. Daher werden
-  - `Haltestellen` werden unter Tabellennamen aufgeführt (mit Bezug auf [stops.txt](../../reference/#stopstxt))
+  - `stops` werden unter Tabellennamen aufgeführt (mit Bezug auf [stops.txt](../../reference/#stopstxt))
   - `stop_name` wird unter `field_name` aufgeführt (da die Namen der Haltestellen übersetzt werden)
   - Die `stop_id` für den aus dem Französischen zu übersetzenden Haltestellennamen wird unter `record_id` aufgeführt (in diesem Fall die `stop_id` für Bruxelles-Ouest)
 - Der Name wird ins Niederländische (nl) übersetzt.
