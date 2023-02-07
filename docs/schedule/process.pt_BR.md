@@ -13,7 +13,7 @@ A Especificação GTFS não é definida em pedra. Ao invés disso, é uma especi
 
 1. Criar uma filial de git com atualização de todas as partes relevantes da definição do protocolo, especificação e arquivos de documentação (exceto para traduções).
 1. Criar solicitação de puxar em <https://github.com/google/transit>. A solicitação de puxar deve conter uma descrição estendida do remendo. O criador do pedido de puxar torna-se o _defensor_.
-1. Uma vez registrada a solicitação pull, ela deve ser anunciada por seu defensor na [lista de discussãoGTFS Changes](https://groups.google.com/forum/#!forum/gtfs-changes), incluindo um link para a solicitação pull. Uma vez anunciada, a solicitação pull é considerada uma proposta. A solicitação pull também deve ser editada para conter um link para o anúncio do Google Groups para que possam ser facilmente referenciados.
+1. Uma vez registrada a solicitação pull, ela deve ser anunciada por seu defensor na [lista de discussão GTFS Changes](https://groups.google.com/forum/#!forum/gtfs-changes), incluindo um link para a solicitação pull. Uma vez anunciada, a solicitação pull é considerada uma proposta. A solicitação pull também deve ser editada para conter um link para o anúncio do Google Groups para que possam ser facilmente referenciados.
    * Como o defensor é um contribuinte, eles devem assinar o [Acordo de Licença de Contribuinte](../CONTRIBUTING.md) antes que a solicitação pull possa ser aceita.
 1. A discussão da proposta é a seguinte. Os comentários de solicitação devem ser usados como o único fórum de discussão.
    * A discussão dura o tempo que o defensor julgar necessário, mas deve ser de pelo menos 7 dias corridos.
@@ -36,7 +36,7 @@ A Especificação GTFS não é definida em pedra. Ao invés disso, é uma especi
    * Se o defensor continuar o trabalho sobre a proposta, então uma nova votação pode ser convocada a qualquer time.
 1. Qualquer solicitação pull que permaneça inativa por 30 dias corridos será encerrada. Quando uma solicitação pull é fechada, a proposta correspondente é considerada abandonada. O defensor pode reabrir o pedido de puxar a qualquer time se desejar continuar ou manter a conversa.
 1. Se a proposta for aceita:
-   * O Google se compromete a fundir a versão votada da solicitação pull (desde que os colaboradores tenham assinado o [CLA](../CONTRIBUTING.md)), e realizar a solicitação pull dentro de 5 dias úteis.
+   * O Google se compromete a fundir a versão votada da solicitação pull (desde que os colaboradores tenham assinado o [ALC](../CONTRIBUTING.md)), e realizar a solicitação pull dentro de 5 dias úteis.
    * As traduções não devem ser incluídas na solicitação original de pull.
    O Google é responsável por eventualmente atualizar as traduções relevantes para os idiomas suportados, mas os pedidos de Translation pura da comunidade são bem-vindos e serão aceitos assim que todos os comentários editoriais forem endereçados.
 1. O resultado final da solicitação de retirada (aceita ou abandonada) deve ser anunciado no mesmo tópico do Google Groups onde a solicitação de retirada foi originalmente anunciada.
@@ -49,13 +49,13 @@ A fim de preservar a visão original do GTFS, alguns princípios orientadores fo
 
 **Feeds devem ser fáceis de criar e editar**<br/>Escolhemos o CSV como base para a especificação porque é fácil de visualizar e editar usando programas de planilhas e editores de text, o que é útil para agências menores. Também é simples de gerar a partir da maioria das linguagens de programação e bancos de dados, o que é bom para editores de feeds maiores.<br/>
 
-**Os feeds devem ser fáceis de analisar**,<br/>os leitores devem ser capazes de extrair as informações que estão procurando com o mínimo de trabalho possível. As mudanças e adições ao feed devem ser o mais amplamente útil possível, para minimizar o número de caminhos de código que os leitores do feed precisam implementar. (Entretanto, deve ser dada precedência à criação, uma vez que no final haverá mais editores de rações do que leitores de rações).<br/>
+**Os feeds devem ser fáceis de analisar**<br/>os leitores devem ser capazes de extrair as informações que estão procurando com o mínimo de trabalho possível. As mudanças e adições ao feed devem ser o mais amplamente útil possível, para minimizar o número de caminhos de código que os leitores do feed precisam implementar. (Entretanto, deve ser dada precedência à criação, uma vez que no final haverá mais editores de rações do que leitores de rações).<br/>
 
-**A especificação é sobre informação aos passageirosGTFS** se<br/>preocupa principalmente com a informação aos passageiros. Ou seja, as especificações devem incluir informações que possam ajudar a impulsionar ferramentas para os cavaleiros, em primeiro lugar e acima de tudo. Há potencialmente uma grande quantidade de informações orientadas a operações que as agências de trânsito podem querer transmitir internamente entre sistemas. GTFS não se destina a essa finalidade e há outras normas de dados potencialmente mais apropriadas para as operações.<br/>
+**A especificação é sobre informação aos passageiros**<br/>GTFS sepreocupa principalmente com a informação aos passageiros. Ou seja, as especificações devem incluir informações que possam ajudar a impulsionar ferramentas para os cavaleiros, em primeiro lugar e acima de tudo. Há potencialmente uma grande quantidade de informações orientadas a operações que as agências de trânsito podem querer transmitir internamente entre sistemas. GTFS não se destina a essa finalidade e há outras normas de dados potencialmente mais apropriadas para as operações.<br/>
 
-**Ao**<br/>acrescentar características à especificação, queremos evitar fazer alterações que tornem inválidas as alimentações existentes. Não queremos criar mais trabalho para os editores de feeds existentes até que eles queiram adicionar capacidades a seus feeds. Além disso, sempre que possível, queremos que os analisadores existentes possam continuar a ler as partes mais antigas dos feeds mais recentes.<br/>
+**As mudanças nas especificações devem ser compatíveis com o passado**<br/>Ao acrescentar características à especificação queremos evitar fazer alterações que tornem inválidas as alimentações existentes. Não queremos criar mais trabalho para os editores de feeds existentes até que eles queiram adicionar capacidades a seus feeds. Além disso, sempre que possível, queremos que os analisadores existentes possam continuar a ler as partes mais antigas dos feeds mais recentes.<br/>
 
-As**características especulativas são desencorajadasTudo o**<br/>novo recurso adiciona complexidade à criação e leitura dos feeds. Portanto, queremos ter o cuidado de acrescentar apenas recursos que sabemos serem úteis. Idealmente, qualquer proposta terá sido testada através da geração de dados para um sistema de trânsito real que usa o novo recurso e software de escrita para lê-lo e exibi-lo. Note que o GTFS permite prontamente extensões para o formato através da adição de colunas e arquivos extras que são ignorados pelos analisadores e validadores oficiais, de modo que as propostas podem ser facilmente prototipadas e testadas em feeds existentes.<br/>
+**As características especulativas são desencorajadas**<br/>Tudo o novo recurso adiciona complexidade à criação e leitura dos feeds. Portanto, queremos ter o cuidado de acrescentar apenas recursos que sabemos serem úteis. Idealmente, qualquer proposta terá sido testada através da geração de dados para um sistema de trânsito real que usa o novo recurso e software de escrita para lê-lo e exibi-lo. Note que o GTFS permite prontamente extensões para o formato através da adição de colunas e arquivos extras que são ignorados pelos analisadores e validadores oficiais, de modo que as propostas podem ser facilmente prototipadas e testadas em feeds existentes.<br/>
 
 <hr/>
 
@@ -84,11 +84,11 @@ As**características especulativas são desencorajadasTudo o**<br/>novo recurso 
 
 **25 de maio de 2020**<br/>
 
-* Definidos `pathways.txt`, `levels.txt` e `attributions.txt` como tabelas traduzíveis. Acrescentadas recomendações para a tradução de `valores_como valores_sigalizados` multilíngues. Ver [discussão](https://github.com/google/transit/pull/220).
+* Definidos `pathways.txt`, `levels.txt` e `attributions.txt` como tabelas traduzíveis. Acrescentadas recomendações para a tradução de `signposted_as` multilíngues. Ver [discussão](https://github.com/google/transit/pull/220).
 
 **13 de maio de 2020**<br/>
 
-* Acrescentadas `a_pickup_pickup_continua` e `drop_off_off_continua` às `routes.txt` e `stop_times.txt`. Mudado o `shape_id` de "Opcional" para "Requerido_condicionalmente". Veja a [discussão](https://github.com/google/transit/pull/208).
+* Acrescentadas `continuous_pickup` e `continuous_drop_off` às `routes.txt` e `stop_times.txt`. Mudado o `shape_id` de "Optional" para "Conditionally required". Veja a [discussão](https://github.com/google/transit/pull/208).
 
 **24 de março de 2020**<br/>
 
@@ -96,7 +96,7 @@ As**características especulativas são desencorajadasTudo o**<br/>novo recurso 
 
 **5 de fevereiro de 2020**<br/>
 
-* Acrescentado `tts_stop_name` para stops.txt. Ver discussão. Veja a [discussão](https://github.com/google/transit/pull/174).
+* Adicionados os `route_types` de tróleis e monotrilho. Veja a [discussão](https://github.com/google/transit/pull/174).
 
 **9 de janeiro de 2020**<br/>
 
@@ -142,7 +142,7 @@ As**características especulativas são desencorajadasTudo o**<br/>novo recurso 
 
 **14 de setembro de 2018**<br/>
 
-* Adicionado o conceito "Condicionalmente necessário". Ver [discussão](https://github.com/google/transit/pull/100).
+* Adicionado o conceito "Conditionally required". Ver [discussão](https://github.com/google/transit/pull/100).
 
 **4 de setembro de 2018**<br/>
 
@@ -177,7 +177,7 @@ As**características especulativas são desencorajadasTudo o**<br/>novo recurso 
 
 **27 de novembro de 2016**<br/>
 
-* Acrescentado entrada da estação como um `tipo_stop.location_type`. Veja a [discussão](https://github.com/google/transit/pull/30).
+* Acrescentado entrada da estação como um `stop.location_type`. Veja a [discussão](https://github.com/google/transit/pull/30).
 
 **2 de setembro de 2016**<br/>
 
@@ -201,11 +201,11 @@ As**características especulativas são desencorajadasTudo o**<br/>novo recurso 
 
 **15 de outubro de 2012**<br/>
 
-Acrescentou trips.txtwheelchair_accessible' proposta para spec: [discussão](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
+* Acrescentou trips.txtwheelchair_accessible' proposta para spec: [discussão](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
 
 **20 de junho de 2012**<br/>
 
-* Adicionada proposta 'cadeira de rodas_boarding' à especificação: [discussão](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
+* Adicionada proposta 'wheelchair_boarding' à especificação: [discussão](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
 
 **2 de fevereiro de 2012**<br/>
 
@@ -222,7 +222,7 @@ Acrescentou trips.txtwheelchair_accessible' proposta para spec: [discussão](htt
 **6 de setembro de 2011**<br/>
 
 * Adicionada a proposta 'agency_fare_url' à especificação: [discussão](https://groups.google.com/forum/#!topic/gtfs-changes/Zp9rPG07CgE)
-* Adicionada proposta de 'tempos_exatos' à especificação: [discussão](https://groups.google.com/forum/#!topic/gtfs-changes/nZF9lbQ7TQs)
+* Adicionada proposta de 'exact_times' à especificação: [discussão](https://groups.google.com/forum/#!topic/gtfs-changes/nZF9lbQ7TQs)
 
 **30 de março de 2009**<br/>
 
@@ -230,7 +230,7 @@ Acrescentou trips.txtwheelchair_accessible' proposta para spec: [discussão](htt
 * Esclarecimentos sobre o formato CSV: [discussão](https://groups.google.com/forum/#!topic/gtfs-changes/03qz5aTA2mk).
 * Orientação adicional sobre como escolher cores contrastantes nas descrições dos campos route_color e route_text_color.
 * trip_short_name, como proposto e testado nestes tópicos: a e b.
-* Uma correção para um erro menor nos dados da amostra incluídos no end do documento (dando à parada S7 a estação_mãe S8).
+* Uma correção para um erro menor nos dados da amostra incluídos no end do documento (dando à parada S7 a parent_station S8).
 * Acrescentou informações "agency_lang" aos dados da amostra no end do documento, como sugerido por Marcy durante o período de comentários: [discussão](https://groups.google.com/forum/#!topic/gtfs-changes/5qP1kDUFqx0).
 * Atualizado o link para a alimentação GTFS da OCTA na barra lateral
 * Ver [resumo original](https://groups.google.com/forum/#!topic/gtfs-changes/cL1E4oKKpKw).
@@ -252,7 +252,7 @@ Acrescentou trips.txtwheelchair_accessible' proposta para spec: [discussão](htt
 * Adicionados campos do tipo location_type e parent_station aos stops.txt, permitindo que os pontos de parada sejam agrupados em estações[(proposta original](https://groups.google.com/forum/#!topic/gtfs-changes/ScGAyZ9a_yw))
 * Adicionado campo agency_phone para fornecer número de telefone de voz para uma agência[(proposta original](https://groups.google.com/forum/#!topic/gtfs-changes/8Itt58ueyqA))
 * Acrescentada a seção "Testando seus Feeds", mencionando ferramentas de teste de código aberto
-* Esclarecimentos adicionais sobre o formato CSV, zona_horário_da_agência, zona_horário_da_agência, cor_da_hora_da_via_texto, cor_hora_de_chegada, hora_de_partida, calendar.txt vs. calendar_dates.txt, tabelas de tarifas e frequencies.txt
+* Esclarecimentos adicionais sobre o formato CSV, agency_timezone, agency_lang, route_color, route_text_color, arrival_time, departure_time, calendar.txt vs. calendar_dates.txt, tabelas de tarifas e frequencies.txt
 * Adicionado link para documento de histórico de alimentação, e corrigido alguns links de alimentação pública
 * Imagens de exemplo atualizadas para retratar a atual interface de usuário do Google Maps
 * Dados de amostra atualizados/fixados no documento
@@ -261,12 +261,12 @@ Acrescentou trips.txtwheelchair_accessible' proposta para spec: [discussão](htt
 
 * Adicionado o campo stop_code em stops.txt para permitir a especificação de códigos de parada virados para o cavaleiro[(proposta original](https://groups.google.com/forum/#!topic/gtfs-changes/k9A95fYZexc))
 * Esclareceu as descrições de route_short_name e route_long_name em routes.txt
-* Esclareceu as descrições de hora_de\_ chegada e hora_de_partida em stop_times.txt
+* Esclareceu as descrições de arrival_time e departure_time em stop_times.txt
 * Digitação fixa na seção Amostra de dados
 
 **20 de novembro de 2007**<br/>
 
-* Descrição esclarecida do bloco_id
+* Descrição esclarecida do block_id
 * Mudou a linguagem para desfatizar o Google Transit (já que aplicações não-Google estão usando GTFS, e o roteamento de trânsito é agora uma característica integrada do Google Maps), e para corrigir diversos erros tipográficos
 * Telas de exemplo atualizadas para refletir a apresentação dos campos GTFS na atual UI do Google Maps
 * Atualizado o endereço de e-mail de contato do Google para provedores de dados de trânsito
@@ -307,10 +307,10 @@ Acrescentou trips.txtwheelchair_accessible' proposta para spec: [discussão](htt
 * Adição de URLs por rota e por parada.
 * Adição de campo direction_id em trips.txt
 * Suporte para mudanças de sinal de cabeçalho de viagem com adição de campo stop_headsign em stop_times.txt.
-* Suporte para cores de rota com adição de cor_de_caminho opcional e cor_de_caminho_texto_em routes.txt.
+* Suporte para cores de rota com adição de route_color opcional e route_text_color em routes.txt.
 * Removida a capacidade de especificar paradas usando endereços de rua. A versão anterior da especificação permitia dar a localização de uma parada de trânsito usando um endereço de rua nos campos stop_street, stop_city, stop_region, stop_postcode, e stop_country. Agora os locais de parada devem ser dados usando stop_lat para latitude e stop_lon para longitude, que são mais úteis para a maioria das aplicações.
 * Adição do tipo de vehicle de teleférico para o campo route_type em routes.txt
-* Veja o resumo das mudanças no [blog](https://headwayblog.com/2007/03/02/google-feed-spec-update-2007-02/) original do [Headway](https://headwayblog.com/2007/03/02/google-feed-spec-update-2007-02/).
+* Veja o resumo das mudanças no [blog original do Headway](https://headwayblog.com/2007/03/02/google-feed-spec-update-2007-02/).
 
 **29 de novembro de 2006**<br/>
 

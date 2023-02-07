@@ -74,7 +74,7 @@ search:
 
   **2021년 1월 4일**<br/>
 
-  * `stop_times. stop_id`stop_id . [토론](https://github.com/google/transit/pull/258) 을 참조하십시오.
+  * `stop_times.stop_id` . [토론](https://github.com/google/transit/pull/258) 을 참조하십시오.
   * 정의된 양수 및 0이 아닌 필드 기호. [토론](https://github.com/google/transit/pull/251) 을 참조하십시오.
 
   **2020년 10월 2일**<br/>
@@ -83,15 +83,15 @@ search:
 
   **2020년 5월 25일**<br/>
 
-  * 한정된pathways.txt ,levels.txt 그리고attributions.txt 번역 가능한 테이블로. 다국어 `signposted_as` 값 번역에 대한 권장 사항이 추가되었습니다. [토론](https://github.com/google/transit/pull/220) 을 참조하십시오.
+  * 한정된 `pathways.txt` ,`levels.txt` 그리고 `attributions.txt` 번역 가능한 테이블로. 다국어 `signposted_as` 값 번역에 대한 권장 사항이 추가되었습니다. [토론](https://github.com/google/transit/pull/220) 을 참조하십시오.
 
   **2020년 5월 13일**<br/>
 
-  * 에 `continuous_pickup` 및 `continuous_drop_off` 를 추가했습니다.routes.txt 그리고stop_times.txt . 변경됨shape_id "선택사항"에서 "조건부 필수"로. [토론](https://github.com/google/transit/pull/208) 을 참조하십시오.
+  * 에 `continuous_pickup` 및 `continuous_drop_off` 를 추가했습니다. `routes.txt` 그리고 `stop_times.txt` . 변경됨 `shape_id` "선택사항"에서 "조건부 필수"로. [토론](https://github.com/google/transit/pull/208) 을 참조하십시오.
 
   **2020년 3월 24일**<br/>
 
-  * 한정된text -to-speech 필드에 `tts_stop_name` 을 추가했습니다.stops.txt . [토론](https://github.com/google/transit/pull/49) 을 참조하십시오.
+  * 한정된`text-to-speech` 필드에 `tts_stop_name` 을 추가했습니다.`stops.txt` . [토론](https://github.com/google/transit/pull/49) 을 참조하십시오.
 
   **2020년 2월 5일**<br/>
 
@@ -99,25 +99,25 @@ search:
 
   **2020년 1월 9일**<br/>
 
-  * 추가됨translations.txt . [토론](https://github.com/google/transit/pull/180) 을 참조하십시오.
+  * 추가됨 `translations.txt`. [토론](https://github.com/google/transit/pull/180) 을 참조하십시오.
 
   **2019년 12월 26일**<br/>
 
-  * 케이블 트램 및 공중 리프트에 대한 업데이트된 정의route_type . [토론](https://github.com/google/transit/pull/186) 을 참조하십시오.
+  * 케이블 트램 및 공중 리프트에 대한 업데이트된 정의 `route_type`. [토론](https://github.com/google/transit/pull/186) 을 참조하십시오.
 
   **2019년 12월 20일**<br/>
 
-  * 추가됨attributions.txt . [토론](https://github.com/google/transit/pull/192) 을 참조하십시오.
+  * 추가됨 `attributions.txt`. [토론](https://github.com/google/transit/pull/192) 을 참조하십시오.
 
   **2019년 8월 26일**<br/>
 
-  * 승객이 탑승을 기다리는 곳에 `stop_lat` 및 `stop_lon` 이 위치하도록 지정vehicle . [토론](https://github.com/google/transit/pull/179) 을 참조하십시오.
+  * 승객이 탑승을 기다리는 곳에 `stop_lat` 및 `stop_lon` 이 위치하도록 지정vehicle. [토론](https://github.com/google/transit/pull/179) 을 참조하십시오.
 
   **2019년 7월 9일**<br/>
 
   * 추가됨arrival 그리고departuretime 모범 사례. [토론](https://github.com/google/transit/pull/165) 을 참조하십시오.
   * 헤드 사인 모범 사례를 추가했습니다. [토론](https://github.com/google/transit/pull/167) 을 참조하십시오.
-  * 추가됨stop_id 모범 사례. [토론](https://github.com/google/transit/pull/169) 을 참조하십시오.
+  * 추가됨`stop_id` 모범 사례. [토론](https://github.com/google/transit/pull/169) 을 참조하십시오.
 
   **2019년 6월 25일**<br/>
 
@@ -125,11 +125,11 @@ search:
 
   **2019년 4월 4일**<br/>
 
-  * 에 추가된 `platform_code` 필드stops.txt . [토론](https://github.com/google/transit/pull/146) 을 참조하십시오.
+  * 에 추가된 `platform_code` 필드 `stops.txt` . [토론](https://github.com/google/transit/pull/146) 을 참조하십시오.
 
   **2019년 3월 27일**<br/>
 
-  * 추가됨pathways.txt 그리고levels.txt . [토론](https://github.com/google/transit/pull/143) 을 참조하십시오.
+  * 추가됨 `pathways.txt` 그리고 `levels.txt` . [토론](https://github.com/google/transit/pull/143) 을 참조하십시오.
 
   **2019년 2월 6일**<br/>
 
@@ -141,7 +141,7 @@ search:
 
   **2018년 9월 14일**<br/>
 
-  * "조건부 필수" 개념이 추가되었습니다. [토론](https://github.com/google/transit/pull/100) 을 참조하십시오.
+  * "Conditionally required" 개념이 추가되었습니다. [토론](https://github.com/google/transit/pull/100) 을 참조하십시오.
 
   **2018년 9월 4일**<br/>
 
@@ -153,11 +153,11 @@ search:
 
   **2018년 8월 22일**<br/>
 
-  * `feed_contact_email` 및 `feed_contact_url` 필드를feed_info.txt 파일. [토론](https://github.com/google/transit/pull/31) 을 참조하십시오.
+  * `feed_contact_email` 및 `feed_contact_url` 필드를 `feed_info.txt` 파일. [토론](https://github.com/google/transit/pull/31) 을 참조하십시오.
 
   **2017년 12월 11일**<br/>
 
-  * `route_sort_order` 를 다음에 추가했습니다.routes.txt . [토론](https://github.com/google/transit/pull/83) 을 참조하십시오.
+  * `route_sort_order` 를 다음에 추가했습니다. `routes.txt` . [토론](https://github.com/google/transit/pull/83) 을 참조하십시오.
 
   **2017년 3월 15일**<br/>
 
@@ -166,13 +166,13 @@ search:
 
   **2017년 2월 7일**<br/>
 
-  * `block_id` 와 명확한 관계service_id . [토론](https://github.com/google/transit/pull/44) 을 참조하십시오.
+  * `block_id` 와 명확한 관계`service_id` . [토론](https://github.com/google/transit/pull/44) 을 참조하십시오.
   * 빈도 기반 서비스가 다음에서 시작됨을 명확히 함vehicledeparture . [토론](https://github.com/google/transit/pull/42) 을 참조하십시오.
   * 에 대한 명확한 설명stop_id 및 `stop_code` . [토론](https://github.com/google/transit/pull/40) 을 참조하십시오.
 
   **2017년 12월 11일**<br/>
 
-  * `route_sort_order` 필드를 추가했습니다.routes.txt 파일. [토론](https://github.com/google/transit/pull/83) 을 참조하십시오.
+  * `route_sort_order` 필드를 추가했습니다. `routes.txt` 파일. [토론](https://github.com/google/transit/pull/83) 을 참조하십시오.
 
   **2016년 11월 27일**<br/>
 
@@ -180,7 +180,7 @@ search:
 
   **2016년 9월 2일**<br/>
 
-  * 추가할 업데이트된 설명서agency_id 아래에fare_attributes.txt . [토론](https://github.com/google/transit/pull/27) 을 참조하십시오.
+  * 추가할 업데이트된 설명서`agency_id` 아래에 `fare_attributes.txt` . [토론](https://github.com/google/transit/pull/27) 을 참조하십시오.
 
   **2016년 3월 16일**<br/>
 
@@ -188,19 +188,19 @@ search:
 
   **2016년 2월 3일**<br/>
 
-  * 다음에 `agency_email` 을 추가했습니다.agency.txt 사양에 대한 제안: [토론](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/aezjQsriLYA)
+  * 다음에 `agency_email` 을 추가했습니다.`agency.txt` 사양에 대한 제안: [토론](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/aezjQsriLYA)
 
   **2015년 2월 2일**<br/>
 
-  * 추가됨stop_times.txt 사양에 대한 'timepoint' 제안: [토론](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/Ah-J9JP2rJY)
+  * 추가됨`stop_times.txt` 사양에 대한 'timepoint' 제안: [토론](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/Ah-J9JP2rJY)
 
   **2014년 2월 17일**<br/>
 
-  * 추가됨trips.txt 사양에 대한 'bikes_allowed' 제안: [토론](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/rEiSeKNc4cs)
+  * 추가됨`trips.txt` 사양에 대한 'bikes_allowed' 제안: [토론](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/rEiSeKNc4cs)
 
   **2012년 10월 15일**<br/>
 
-  추가됨trips.txt 'wheelchair_accessible ' 사양에 대한 제안: [토론](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
+  * 추가됨`trips.txt` 'wheelchair_accessible ' 사양에 대한 제안: [토론](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
 
   **2012년 6월 20일**<br/>
 
@@ -227,9 +227,9 @@ search:
 
   * 대중교통 피드 공개에 대한 새로운 섹션입니다. 이것은 데이터가 해석되거나 기록되는 방식에 대한 엄격한 변경이 아니었기 때문에 이전에 그룹에서 논의되지 않았습니다. 그러나 Google 직원 중 일부는GTFS 를 사용할 수 있는 응용 프로그램의 수가 증가하고 있기 때문입니다.GTFS -포맷된 데이터.
   * CSV 형식 설명: [토론](https://groups.google.com/forum/#!topic/gtfs-changes/03qz5aTA2mk) .
-  * route_color 및 route_text_color 필드의 설명에서 대비되는 색상을 선택하는 방법에 대한 추가 지침입니다.
+  * `route_color` 및 `route_text_color` 필드의 설명에서 대비되는 색상을 선택하는 방법에 대한 추가 지침입니다.
   * a 및 b 스레드에서 제안되고 테스트된 trip_short_name.
-  * 에 포함된 샘플 데이터의 사소한 오류에 대한 수정end 문서의 (정류장 S7에 parent_station S8 제공).
+  * 에 포함된 샘플 데이터의 사소한 오류에 대한 수정end 문서의 (정류장 S7에 `parent_station` S8 제공).
   * 샘플 데이터에 "agency_lang" 정보를 추가했습니다.end 의견 기간 동안 Marcy가 제안한 문서: [토론](https://groups.google.com/forum/#!topic/gtfs-changes/5qP1kDUFqx0) .
   * OCTA의 링크를 업데이트했습니다.GTFS 사이드바에서 피드
   * [원본 요약](https://groups.google.com/forum/#!topic/gtfs-changes/cL1E4oKKpKw) .
@@ -242,13 +242,13 @@ search:
   **2008년 8월 7일**<br/>
 
   * 8월 6일 버전에서 실수로 생략된 stop_url 필드 복원
-  * 샘플 데이터에 agency_phone 추가
+  * 샘플 데이터에 `agency_phone` 추가
   * Google에 피드를 제출할 때 데이터 사용 계약에 대한 언급을 추가했습니다.
 
   **2008년 8월 6일**<br/>
 
   * 추가됨transfers.txt 파일, 피드 게시자가 선호하는 전송 동작( [원래 제안](https://groups.google.com/forum/#!topic/gtfs-changes/cL1E4oKKpKw) )
-  * location_type 및 parent_station 필드를 다음에 추가했습니다.stops.txt , 정지 지점을 역으로 그룹화할 수 있습니다( [원래 제안](https://groups.google.com/forum/#!topic/gtfs-changes/ScGAyZ9a_yw) )
+  * location_type 및 parent_station 필드를 다음에 추가했습니다.`stops.txt` , 정지 지점을 역으로 그룹화할 수 있습니다( [원래 제안](https://groups.google.com/forum/#!topic/gtfs-changes/ScGAyZ9a_yw) )
   * 에이전시의 음성 전화번호를 제공하기 위해 agency_phone 필드를 추가했습니다( [원래 제안](https://groups.google.com/forum/#!topic/gtfs-changes/8Itt58ueyqA) )
   * 오픈 소스 테스트 도구를 언급하는 "피드 테스트" 섹션 추가
   * CSV 형식, agency_timezone, agency_lang, route_color, route_text_color, arrival_time, 출발\_시간,calendar.txt 대calendar_dates.txt , 요금표 및frequencies.txt
@@ -258,8 +258,8 @@ search:
 
   **2008년 2월 29일**<br/>
 
-  * 에 stop_code 필드를 추가했습니다.stops.txt 탑승자 쪽 정지 코드( [원래 제안](https://groups.google.com/forum/#!topic/gtfs-changes/k9A95fYZexc) )
-  * route_short_name 및 route_long_name에 대한 설명을 명확히 했습니다.routes.txt
+  * 에 stop_code 필드를 추가했습니다.`stops.txt` 탑승자 쪽 정지 코드( [원래 제안](https://groups.google.com/forum/#!topic/gtfs-changes/k9A95fYZexc) )
+  * route_short_name 및 route_long_name에 대한 설명을 명확히 했습니다.`routes.txt`
   * 에서 arrival_time 및 출발 시간에 대한 설명을 명확히 했습니다.stop_times.txt
   * 샘플 데이터 섹션의 오타 수정
 
@@ -286,14 +286,14 @@ search:
 
   * [피드 제출](https://developers.google.com/transit/google-transit#SubmitFeedToGoogle) 섹션이 추가되었습니다.
   * [데모 대중 교통 기관 피드의 예](https://developers.google.com/transit/gtfs/examples/gtfs-feed) .
-  * 메모 추가calendar.txt 모든 서비스 날짜가 다음에 정의된 경우 생략할 수 있습니다.calendar_dates.txt .
-  * 만든agency_id 에이전시가 하나만 포함된 피드에서는 선택사항입니다. 이렇게 하면 기존 피드가agency_id 유효하게 유지합니다.
-  * Agency_url, stop_url 및 route_url의 전체 사양과 해당 필드에 대한 추가 예제 값을 추가했습니다.
-  * 유효한 것으로 6(곤돌라) 및 7(푸니쿨라) 추가route_type 가치.
+  * 메모 추가`calendar.txt` 모든 서비스 날짜가 다음에 정의된 경우 생략할 수 있습니다.calendar_dates.txt .
+  * 만든`agency_id` 에이전시가 하나만 포함된 피드에서는 선택사항입니다. 이렇게 하면 기존 피드가`agency_id` 유효하게 유지합니다.
+  * `agency_url`, `stop_url` 및 `route_url`의 전체 사양과 해당 필드에 대한 추가 예제 값을 추가했습니다.
+  * 유효한 것으로 6(곤돌라) 및 7(푸니쿨라) 추가`route_type` 가치.
 
   **2007년 3월 8일**<br/>
 
-  * stop_url 필드를 이동하기 위한 사소한 편집stop_times.txt 2월 28일 업데이트에서 잘못 지정된 경우stops.txt , 그것이 속한 곳.
+  * `stop_url` 필드를 이동하기 위한 사소한 편집`stop_times.txt` 2월 28일 업데이트에서 잘못 지정된 경우`stops.txt` , 그것이 속한 곳.
 
   **2007년 3월 5일**<br/>
 
@@ -302,11 +302,11 @@ search:
   **2007년 2월 28일**<br/>
 
   * 의 추가frequencies.txt 헤드 웨이 기반 일정 지원을 위해.
-  * 이제 동일한 피드에서 여러 대행사가 허용됩니다. 또한 새로운 추가agency_id agency.txt 및routes.txt 어떤 기관에서 어떤 경로를 운영하는지 지정할 수 있습니다.
+  * 이제 동일한 피드에서 여러 대행사가 허용됩니다. 또한 새로운 추가`agency_id` `agency.txt` 및`routes.txt` 어떤 기관에서 어떤 경로를 운영하는지 지정할 수 있습니다.
   * 경로별 및 정류장별 URL 추가.
   * 의 추가direction_id 필드trips.txt .
-  * 중후반 지원trip stop_headsign 필드가 추가되어 행선지가 변경됩니다.stop_times.txt .
-  * 선택적 route_color 및 route_text_color를 추가하여 경로 색상 지원routes.txt .
+  * 중후반 지원trip stop_headsign 필드가 추가되어 행선지가 변경됩니다.`stop_times.txt` .
+  * 선택적 route_color 및 route_text_color를 추가하여 경로 색상 지원`routes.txt` .
   * 거리 주소를 사용하여 정류장을 지정하는 기능을 제거했습니다. 사양의 이전 버전에서는 stop_street, stop_city, stop_region, stop_postcode 및 stop_country 필드의 거리 주소를 사용하여 대중교통 정류장의 위치를 제공할 수 있었습니다. 이제 stop_lat을 사용하여 정류장 위치를 지정해야 합니다.latitude 및 stop_lon에 대한longitude , 대부분의 응용 프로그램에 더 유용합니다.
   * 케이블카 추가vehicle 입력route_type 필드routes.txt .
   * 변경 사항에 대한 원본 [Headway 블로그 게시물](https://headwayblog.com/2007/03/02/google-feed-spec-update-2007-02/) 요약을 참조하십시오.

@@ -36,7 +36,7 @@ La spécification GTFS n'est pas gravée dans le marbre. Il s'agit plutôt d'une
    * Si l'avocat continue à travailler sur la proposition, un nouveau vote peut être demandé à tout time.
 1. Toute demande tirée qui reste inactive pendant 30 jours civils sera fermée. Lorsqu'une demande de retrait est fermée, la proposition correspondante est considérée comme abandonnée. Le défenseur peut rouvrir la demande à tout time s'il souhaite poursuivre ou maintenir la conversation.
 1. Si la proposition est acceptée :
-   * Google s'engage à fusionner la version votée de la demande de modification (à condition que les contributeurs aient signé la [CCT](../CONTRIBUTING.md)), et à exécuter la demande de modification dans les 5 jours ouvrables.
+   * Google s'engage à fusionner la version votée de la demande de modification (à condition que les contributeurs aient signé la [ALC](../CONTRIBUTING.md)), et à exécuter la demande de modification dans les 5 jours ouvrables.
    * Les traductions ne doivent pas être incluses dans la demande originale.
    Google est responsable de la mise à jour éventuelle des traductions pertinentes dans les langues prises en charge, mais les demandes de Translation pure émanant de la communauté sont les bienvenues et seront acceptées dès que tous les commentaires éditoriaux auront été traités.
 1. Le résultat final de la demande de retrait (acceptée ou abandonnée) devrait être annoncé sur le même fil de discussion Google Groups que celui où la demande de retrait a été initialement annoncée.
@@ -51,7 +51,7 @@ Afin de préserver la vision originale de GTFS, un certain nombre de principes d
 
 **Les flux devraient être faciles à analyser**<br/>Les lecteurs de flux devraient être en mesure d'extraire les informations qu'ils recherchent avec le moins de travail possible. Les modifications et les ajouts au flux devraient être aussi largement utiles que possible, afin de minimiser le nombre de chemins de code que les lecteurs du flux doivent mettre en œuvre. (Toutefois, la facilité de création devrait être privilégiée, car il y aura finalement plus d'éditeurs de flux que de lecteurs de flux).<br/>
 
-La**spécification concerne l'information des passagers**<br/> GTFS est principalement concerné par l'information des passagers. C'est-à-dire que la spécification devrait inclure des informations qui peuvent aider les outils électriques pour les coureurs, d'abord et avant tout. Il y a potentiellement une grande quantité d'informations orientées vers les opérations que les agences de transport peuvent vouloir transmettre en interne entre les systèmes. GTFS n'est pas destiné à cette fin et il existe potentiellement d'autres normes de données orientées opérations qui pourraient être plus appropriées.<br/>
+**La spécification concerne l'information des passagers**<br/> GTFS est principalement concerné par l'information des passagers. C'est-à-dire que la spécification devrait inclure des informations qui peuvent aider les outils électriques pour les coureurs, d'abord et avant tout. Il y a potentiellement une grande quantité d'informations orientées vers les opérations que les agences de transport peuvent vouloir transmettre en interne entre les systèmes. GTFS n'est pas destiné à cette fin et il existe potentiellement d'autres normes de données orientées opérations qui pourraient être plus appropriées.<br/>
 
 **Les changements apportés à la spécification doivent être compatibles avec le passé.**<br/> Lorsque nous ajoutons des fonctionnalités à la spécification, nous voulons éviter d'apporter des changements qui rendraient les flux existants invalides. Nous ne voulons pas créer plus de travail pour les éditeurs de flux existants jusqu'à ce qu'ils souhaitent ajouter des fonctionnalités à leurs flux. De plus, dans la mesure du possible, nous voulons que les analyseurs existants puissent continuer à lire les anciennes parties des nouveaux flux.<br/>
 
@@ -67,7 +67,7 @@ La**spécification concerne l'information des passagers**<br/> GTFS est principa
 
 **13 septembre 2021**<br/>
 
-* Mise à jour des meilleures pratiques concernant `les noms d'arrêt`. Voir la [discussion](https://github.com/google/transit/pull/282).
+* Mise à jour des meilleures pratiques concernant `stop_name`. Voir la [discussion](https://github.com/google/transit/pull/282).
 
 **27 août 2021**<br/>
 
@@ -142,7 +142,7 @@ La**spécification concerne l'information des passagers**<br/> GTFS est principa
 
 **14 septembre 2018**<br/>
 
-* Ajout du concept de "Conditionnellement requis". Voir la [discussion](https://github.com/google/transit/pull/100).
+* Ajout du concept de "Conditionally required". Voir la [discussion](https://github.com/google/transit/pull/100).
 
 **4 septembre 2018**<br/>
 
@@ -201,7 +201,7 @@ La**spécification concerne l'information des passagers**<br/> GTFS est principa
 
 **15 octobre 2012**<br/>
 
-Ajouté trips.txt.txtwheelchair_accessible' proposition vers spec : [discussion](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
+* Ajouté trips.txt wheelchair_accessible' proposition vers spec : [discussion](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
 
 **20 juin 2012**<br/>
 

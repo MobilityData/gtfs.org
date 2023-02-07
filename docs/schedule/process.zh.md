@@ -47,13 +47,13 @@ GTFS规范不是一成不变的。相反，它是一个开放的规范，由公�
 
 为了保持GTFS的最初愿景，我们制定了一些指导原则，以便在扩展该规范时加以考虑。
 
-**我们**<br/>选择CSV作为规范的基础，因为它易于使用电子表格程序和text器查看和编辑，这对小型机构很有帮助。它也可以直接从大多数编程语言和数据库中生成，这对大型信息源的发布者很有帮助。<br/>
+**饲料应易于创建和编辑****<br/>我们选择CSV作为规范的基础，因为它易于使用电子表格程序和text器查看和编辑，这对小型机构很有帮助。它也可以直接从大多数编程语言和数据库中生成，这对大型信息源的发布者很有帮助。<br/>
 
 **馈送应该容易解析馈送**<br/>读者应该能够以尽可能少的工作提取他们正在寻找的信息。对Feed的修改和添加应该尽可能广泛有用，以尽量减少Feed的读者需要实现的代码路径的数量。(然而，应该优先考虑使创建更容易，因为最终会有更多的馈送发布者而不是馈送读者）。<br/>
 
-**该规范是关于乘客信息的，GTFS**<br/>主要关注的是乘客信息。也就是说，该规范应该包括能够帮助乘客使用电动工具的信息，这一点是首要的。交通机构可能希望在系统之间内部传输大量的面向运营的信息。GTFS不是为了这个目的，可能有其他面向运营的数据标准可能更合适。<br/>
+**该规范是关于乘客信息的**<br/>GTFS主要关注的是乘客信息。也就是说，该规范应该包括能够帮助乘客使用电动工具的信息，这一点是首要的。交通机构可能希望在系统之间内部传输大量的面向运营的信息。GTFS不是为了这个目的，可能有其他面向运营的数据标准可能更合适。<br/>
 
-**对规范的修改应该是向后兼容的当**<br/>向规范添加功能<br/>**时**<br/>，我们希望避免做出会使现有馈送无效的修改。我们不希望为现有的信息源发布者创造更多的工作，直到他们想为他们的信息源增加功能。此外，只要有可能，我们希望现有的分析器能够继续阅读新的饲料的旧部分。<br/>
+**对规范的修改应该是向后兼容的当向规范添加功能时**<br/>，我们希望避免做出会使现有馈送无效的修改。我们不希望为现有的信息源发布者创造更多的工作，直到他们想为他们的信息源增加功能。此外，只要有可能，我们希望现有的分析器能够继续阅读新的饲料的旧部分。<br/>
 
 **不鼓励投机性的功能每一个**<br/>新的功能都会增加创建和阅读饲料的复杂性。因此，我们要注意只添加我们知道是有用的功能。理想情况下，任何建议都会通过为使用新功能的真实交通系统生成数据，并编写软件来读取和显示数据来进行测试。请注意，GTFS允许通过增加官方解析器和验证器所忽略的额外的列和文件来扩展格式，所以建议可以很容易地在现有的feeds上进行原型化和测试。<br/>
 
@@ -67,7 +67,7 @@ GTFS规范不是一成不变的。相反，它是一个开放的规范，由公�
 
 **2021年9月13日**<br/>
 
-* 更新了`stop_name的`最佳做法。见[讨论](https://github.com/google/transit/pull/282)。
+* 更新了`stop_name`的最佳做法。见[讨论](https://github.com/google/transit/pull/282)。
 
 **2021年8月27日**<br/>
 
@@ -75,7 +75,7 @@ GTFS规范不是一成不变的。相反，它是一个开放的规范，由公�
 
 **2021年1月4日**<br/>
 
-* 澄清了`stop_times`的描述`。stop_id`。参见[讨论](https://github.com/google/transit/pull/258)。
+* 澄清了`stop_times`的描述。`stop_id`。参见[讨论](https://github.com/google/transit/pull/258)。
 * 定义了正数和非零的字段符号。参见[讨论](https://github.com/google/transit/pull/251)。
 
 **2020年10月2日**<br/>
@@ -88,15 +88,15 @@ GTFS规范不是一成不变的。相反，它是一个开放的规范，由公�
 
 **2020年5月13日**<br/>
 
-* 在`routes.txt`txt和`stop_times.txt`中增加了`continuous_pickup`和`continuous_drop_off`。将`shape_id`从 "可选 "改为 "有条件要求"。见[讨论](https://github.com/google/transit/pull/208)。
+* 在`routes.txt`和`stop_times.txt`中增加了`continuous_pickup`和`continuous_drop_off`。将`shape_id`从 "Optional"改为 "Conditionally required"。见[讨论](https://github.com/google/transit/pull/208)。
 
 **2020年3月24日**<br/>
 
-* 定义了text字段，并在`stops.txt` `txt`中添加了`tts_stop_name`。参见[讨论](https://github.com/google/transit/pull/49)。
+* 定义了text字段，并在`stops.txt` 中添加了`tts_stop_name`。参见[讨论](https://github.com/google/transit/pull/49)。
 
 **2020年2月5日**<br/>
 
-* 增加了无轨电车和单轨电车`的路线类型`。参见[讨论](https://github.com/google/transit/pull/174)。
+* 增加了无轨电车和单轨电车`route_types`。参见[讨论](https://github.com/google/transit/pull/174)。
 
 **2020年1月9日**<br/>
 
@@ -142,7 +142,7 @@ GTFS规范不是一成不变的。相反，它是一个开放的规范，由公�
 
 **2018年9月14日**<br/>
 
-* 增加了 "有条件要求 "的概念。参见[讨论](https://github.com/google/transit/pull/100)。
+* 增加了 "Conditionally required"的概念。参见[讨论](https://github.com/google/transit/pull/100)。
 
 **2018年9月4日**<br/>
 
@@ -154,11 +154,11 @@ GTFS规范不是一成不变的。相反，它是一个开放的规范，由公�
 
 **2018年8月22日**<br/>
 
-* 在`feed_info.txt`文件中增加了feed\_`contact_email`和`feed_contact_url`字段。参见[讨论](https://github.com/google/transit/pull/31)。
+* 在`feed_info.txt`文件中增加了`feed_contact_email`和`feed_contact_url`字段。参见[讨论](https://github.com/google/transit/pull/31)。
 
 **2017年12月11日**<br/>
 
-* 在`routes.txt`txt中添加了route`_sort_order`。请参见[讨论](https://github.com/google/transit/pull/83)。
+* 在`routes.txt`中添加了`route_sort_order`。请参见[讨论](https://github.com/google/transit/pull/83)。
 
 **2017年3月15日**<br/>
 
@@ -201,7 +201,7 @@ GTFS规范不是一成不变的。相反，它是一个开放的规范，由公�
 
 **2012年10月15日**<br/>
 
-添加trips.txtwheelchair_accessible' 提案到规范：[讨论](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
+* 添加trips.txt wheelchair_accessible' 提案到规范：[讨论](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
 
 **2012年6月20日**<br/>
 
@@ -243,7 +243,7 @@ GTFS规范不是一成不变的。相反，它是一个开放的规范，由公�
 **2008年8月7日**<br/>
 
 * 恢复了stop_url字段，该字段在8月6日的版本中被意外地省略了。
-* 在样本数据中增加了机构电话
+* 在样本数据中增agency_phone_number
 * 在向Google提交feed时，增加了对数据使用协议的提及。
 
 **2008年8月6日**<br/>

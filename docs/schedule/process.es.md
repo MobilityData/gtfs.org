@@ -201,7 +201,7 @@ Con el fin de preservar la visión original de GTFS, se han establecido una seri
 
 **15 de octubre de 2012**<br/>
 
-Añadida la propuesta trips.txt 'wheelchair_accessible' a la especificación: [discusión](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
+* Añadida la propuesta trips.txt 'wheelchair_accessible' a la especificación: [discusión](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
 
 **20 de junio de 2012**<br/>
 

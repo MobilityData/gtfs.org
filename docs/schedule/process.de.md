@@ -201,7 +201,7 @@ Um die ursprüngliche Vision von GTFS zu bewahren, wurde eine Reihe von Leitprin
 
 **Oktober 15, 2012**<br/>
 
-trips.txt wheelchair_accessible' Vorschlag zur Spezifikation hinzugefügt: [Diskussion](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
+* trips.txt wheelchair_accessible' Vorschlag zur Spezifikation hinzugefügt: [Diskussion](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
 
 **Juni 20, 2012**<br/>
 

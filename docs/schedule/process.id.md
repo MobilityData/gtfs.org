@@ -36,7 +36,7 @@ search:
      - Jika advokat melanjutkan pengerjaan proposal, maka pemungutan suara baru dapat dilakukan kapan sajatime .
   1. Setiap pull request yang tidak aktif selama 30 hari kalender akan ditutup. Saat pull request ditutup, proposal terkait dianggap ditinggalkan. Advokat dapat membuka kembali pull request kapan sajatime jika mereka ingin melanjutkan atau mempertahankan percakapan.
   1. Jika proposal diterima:
-     - Google berkomitmen untuk menggabungkan versi pull request yang telah dipilih (asalkan kontributor telah menandatangani [PKB](../CONTRIBUTING.md) ), dan melakukan pull request dalam waktu 5 hari kerja.
+     - Google berkomitmen untuk menggabungkan versi pull request yang telah dipilih (asalkan kontributor telah menandatangani [PLK](../CONTRIBUTING.md) ), dan melakukan pull request dalam waktu 5 hari kerja.
      - Terjemahan tidak boleh dimasukkan ke dalam pull request asli.
      Google bertanggung jawab untuk memperbarui terjemahan yang relevan ke dalam bahasa yang didukung, tetapi murniTranslation tarik permintaan dari komunitas diterima dan akan diterima segera setelah semua komentar editorial ditangani.
   1. Hasil akhir dari pull request (diterima atau diabaikan) harus diumumkan di utas Google Grup yang sama tempat permintaan pull awalnya diumumkan.
@@ -84,15 +84,15 @@ search:
 
   **25 Mei 2020**<br/>
 
-  * Ditetapkan pathways.txt ,levels.txt dan attributions.txt sebagai tabel yang dapat diterjemahkan. Menambahkan rekomendasi untuk menerjemahkan nilai `signposted_as` multibahasa. Lihat [diskusi](https://github.com/google/transit/pull/220) .
+  * Ditetapkan `pathways.txt` ,`levels.txt` dan `attributions.txt` sebagai tabel yang dapat diterjemahkan. Menambahkan rekomendasi untuk menerjemahkan nilai `signposted_as` multibahasa. Lihat [diskusi](https://github.com/google/transit/pull/220) .
 
   **13 Mei 2020**<br/>
 
-  * Menambahkan `continuous_pickup` dan `continuous_drop_off` keroutes.txt danstop_times.txt . Berubahshape_id dari "Optional" ke "Conditionally required". Lihat [diskusi](https://github.com/google/transit/pull/208) .
+  * Menambahkan `continuous_pickup` dan `continuous_drop_off` ke `routes.txt` dan `stop_times.txt` . Berubah `shape_id` dari "Optional" ke "Conditionally required". Lihat [diskusi](https://github.com/google/transit/pull/208) .
 
   **24 Maret 2020**<br/>
 
-  * Ditetapkantext -to-speech dan menambahkan `tts_stop_name` kestops.txt . Lihat [diskusi](https://github.com/google/transit/pull/49) .
+  * Ditetapkantext -to-speech dan menambahkan `tts_stop_name` ke `stops.txt`. Lihat [diskusi](https://github.com/google/transit/pull/49) .
 
   **5 Februari 2020**<br/>
 
@@ -100,15 +100,15 @@ search:
 
   **9 Januari 2020**<br/>
 
-  * Ditambahkantranslations.txt . Lihat [diskusi](https://github.com/google/transit/pull/180) .
+  * Ditambahkan `translations.txt`. Lihat [diskusi](https://github.com/google/transit/pull/180) .
 
   **26 Desember 2019**<br/>
 
-  * Definisi yang diperbarui untuk trem kabel dan lift udara masukroute_type . Lihat [diskusi](https://github.com/google/transit/pull/186) .
+  * Definisi yang diperbarui untuk trem kabel dan lift udara masuk `route_type`. Lihat [diskusi](https://github.com/google/transit/pull/186) .
 
   **20 Desember 2019**<br/>
 
-  * Ditambahkan attributions.txt . Lihat [diskusi](https://github.com/google/transit/pull/192) .
+  * Ditambahkan `attributions.txt`. Lihat [diskusi](https://github.com/google/transit/pull/192) .
 
   **26 Agustus 2019**<br/>
 
@@ -118,7 +118,7 @@ search:
 
   * Ditambahkanarrival dandeparturetime praktik terbaik. Lihat [diskusi](https://github.com/google/transit/pull/165) .
   * Menambahkan praktik terbaik headsign. Lihat [diskusi](https://github.com/google/transit/pull/167) .
-  * Ditambahkanstop_id praktik terbaik. Lihat [diskusi](https://github.com/google/transit/pull/169) .
+  * Ditambahkan `stop_id` praktik terbaik. Lihat [diskusi](https://github.com/google/transit/pull/169) .
 
   **25 Juni 2019**<br/>
 
@@ -126,11 +126,11 @@ search:
 
   **4 April 2019**<br/>
 
-  * Menambahkan kolom `platform_code` di stops.txt . Lihat [diskusi](https://github.com/google/transit/pull/146) .
+  * Menambahkan kolom `platform_code` di `stops.txt`. Lihat [diskusi](https://github.com/google/transit/pull/146) .
 
   **27 Maret 2019**<br/>
 
-  * Ditambahkan pathways.txt dan levels.txt . Lihat [diskusi](https://github.com/google/transit/pull/143) .
+  * Ditambahkan `pathways.txt` dan `levels.txt` . Lihat [diskusi](https://github.com/google/transit/pull/143) .
 
   **6 Februari 2019**<br/>
 
@@ -142,7 +142,7 @@ search:
 
   **14 September 2018**<br/>
 
-  * Menambahkan konsep "Diperlukan bersyarat". Lihat [diskusi](https://github.com/google/transit/pull/100) .
+  * Menambahkan konsep "Conditionally required". Lihat [diskusi](https://github.com/google/transit/pull/100) .
 
   **4 September 2018**<br/>
 
@@ -154,11 +154,11 @@ search:
 
   **22 Agustus 2018**<br/>
 
-  * Menambahkan bidang `feed_contact_email` dan `feed_contact_url` difeed_info.txt mengajukan. Lihat [diskusi](https://github.com/google/transit/pull/31) .
+  * Menambahkan bidang `feed_contact_email` dan `feed_contact_url` di `feed_info.txt` mengajukan. Lihat [diskusi](https://github.com/google/transit/pull/31) .
 
   **11 Desember 2017**<br/>
 
-  * Menambahkan `route_sort_order` keroutes.txt . Lihat [diskusi](https://github.com/google/transit/pull/83) .
+  * Menambahkan `route_sort_order` ke `routes.txt`. Lihat [diskusi](https://github.com/google/transit/pull/83) .
 
   **15 Maret 2017**<br/>
 
@@ -167,13 +167,13 @@ search:
 
   **7 Februari 2017**<br/>
 
-  * Hubungan yang diklarifikasi dari `block_id` danservice_id . Lihat [diskusi](https://github.com/google/transit/pull/44) .
+  * Hubungan yang diklarifikasi dari `block_id` dan `service_id`. Lihat [diskusi](https://github.com/google/transit/pull/44) .
   * Diklarifikasi bahwa layanan berbasis frekuensi dimulai padavehicledeparture . Lihat [diskusi](https://github.com/google/transit/pull/42) .
-  * Deskripsi yang diklarifikasi daristop_id dan `stop_code` . Lihat [diskusi](https://github.com/google/transit/pull/40) .
+  * Deskripsi yang diklarifikasi dari `stop_id` dan `stop_code` . Lihat [diskusi](https://github.com/google/transit/pull/40) .
 
   **11 Desember 2017**<br/>
 
-  * Menambahkan bidang `route_sort_order` diroutes.txt mengajukan. Lihat [diskusi](https://github.com/google/transit/pull/83) .
+  * Menambahkan bidang `route_sort_order` di `routes.txt` mengajukan. Lihat [diskusi](https://github.com/google/transit/pull/83) .
 
   **27 November 2016**<br/>
 
@@ -189,19 +189,19 @@ search:
 
   **3 Februari 2016**<br/>
 
-  * Menambahkan `agency_email` keagency.txt proposal untuk spesifikasi: [diskusi](<https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/aezjQsriLYA)
+  * Menambahkan `agency_email` ke `agency.txt` proposal untuk spesifikasi: [diskusi](<https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/aezjQsriLYA)
 
   **2 Februari 2015**<br/>
 
-  * Ditambahkanstop_times.txt proposal 'titik waktu' untuk spesifikasi: [diskusi](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/Ah-J9JP2rJY>)
+  * Ditambahkan `stop_times.txt` proposal 'titik waktu' untuk spesifikasi: [diskusi](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/Ah-J9JP2rJY>)
 
   **17 Februari 2014**<br/>
 
-  * Ditambahkantrips.txt Proposal 'bikes_allowed' untuk spek: [diskusi](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/rEiSeKNc4cs)
+  * Ditambahkan `trips.txt` Proposal 'bikes_allowed' untuk spek: [diskusi](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/rEiSeKNc4cs)
 
   **15 Oktober 2012**<br/>
 
-  Ditambahkantrips.txt 'wheelchair_accessible ' proposal untuk spesifikasi: [diskusi](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
+  * Ditambahkan `trips.txt` 'wheelchair_accessible' proposal untuk spesifikasi: [diskusi](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
 
   **20 Juni 2012**<br/>
 
@@ -249,7 +249,7 @@ search:
   **6 Agustus 2008**<br/>
 
   * Ditambahkantransfers.txt file, memungkinkan penayang feed memberikan petunjuk tentang perilaku transfer yang disukai ( [proposal asli](https://groups.google.com/forum/#!topic/gtfs-changes/cL1E4oKKpKw) )
-  * Menambahkan kolom location_type dan parent_station kestops.txt , memungkinkan titik perhentian dikelompokkan ke dalam stasiun ( [proposal asli](https://groups.google.com/forum/#!topic/gtfs-changes/ScGAyZ9a_yw) )
+  * Menambahkan kolom location_type dan parent_station ke `stops.txt` , memungkinkan titik perhentian dikelompokkan ke dalam stasiun ( [proposal asli](https://groups.google.com/forum/#!topic/gtfs-changes/ScGAyZ9a_yw) )
   * Menambahkan kolom agency_phone untuk memberikan nomor telepon suara untuk agensi ( [proposal asli](https://groups.google.com/forum/#!topic/gtfs-changes/8Itt58ueyqA) )
   * Menambahkan bagian "Menguji Umpan Anda" yang menyebutkan alat pengujian sumber terbuka
   * Menambahkan klarifikasi tentang format CSV, agency_timezone, agency_lang, route_color, route_text_color, waktu_kedatangan, waktu_keberangkatan,calendar.txt vs.calendar_dates.txt , tabel tarif, danfrequencies.txt
@@ -259,9 +259,9 @@ search:
 
   **29 Februari 2008**<br/>
 
-  * Menambahkan bidang stop_code distops.txt untuk memungkinkan spesifikasi kode berhenti yang menghadap pengendara ( [proposal asli](https://groups.google.com/forum/#!topic/gtfs-changes/k9A95fYZexc) )
-  * Klarifikasi deskripsi route_short_name dan route_long_name diroutes.txt
-  * Memperjelas deskripsi waktu_kedatangan dan waktu_keberangkatan distop_times.txt
+  * Menambahkan bidang `stop_code` di `stops.txt` untuk memungkinkan spesifikasi kode berhenti yang menghadap pengendara ( [proposal asli](https://groups.google.com/forum/#!topic/gtfs-changes/k9A95fYZexc) )
+  * Klarifikasi deskripsi `route_short_name` dan `route_long_name` di `routes.txt`
+  * Memperjelas deskripsi waktu_kedatangan dan waktu_keberangkatan di `stop_times.txt`
   * Memperbaiki kesalahan ketik di bagian Data Sampel
 
   **20 Nopember 2007**<br/>
@@ -290,41 +290,41 @@ search:
   * Ditambahkan catatan itucalendar.txt dapat dihilangkan jika semua tanggal layanan ditentukancalendar_dates.txt .
   * Terbuatagency_id kolom opsional di feed yang hanya berisi satu agensi. Hal ini memungkinkan feed yang ada tanpaagency_id untuk tetap berlaku.
   * Menambahkan spesifikasi yang lebih lengkap untuk agency_url, stop_url, dan route_url, serta nilai contoh tambahan untuk kolom tersebut.
-  * Ditambahkan 6 (Gondola) dan 7 (Funicular) sebagai validroute_type nilai-nilai.
+  * Ditambahkan 6 (Gondola) dan 7 (Funicular) sebagai valid `route_type` nilai-nilai.
 
   **8 Maret 2007**<br/>
 
-  * Edit kecil untuk memindahkan bidang stop_url daristop_times.txt , yang salah ditentukan dalam pembaruan 28 Februari, kestops.txt , tempatnya.
+  * Edit kecil untuk memindahkan bidang `stop_url` dari `stop_times.txt` , yang salah ditentukan dalam pembaruan 28 Februari, ke `stops.txt` , tempatnya.
 
   **5 Maret 2007**<br/>
 
-  * Edit kecil untuk mengklarifikasi deskripsi bidang route_long_name.
+  * Edit kecil untuk mengklarifikasi deskripsi bidang `route_long_name`.
 
   **28 Februari 2007**<br/>
 
-  * Penambahan darifrequencies.txt untuk dukungan jadwal berbasis headway.
-  * Beberapa agensi sekarang diizinkan di feed yang sama. Juga ditambahkan baruagency_id di kedua agency.txt danroutes.txt yang memungkinkan Anda menentukan rute mana yang dioperasikan oleh agen mana.
+  * Penambahan dari `frequencies.txt` untuk dukungan jadwal berbasis headway.
+  * Beberapa agensi sekarang diizinkan di feed yang sama. Juga ditambahkan baru `agency_id` di kedua `agency.txt` dan `routes.txt` yang memungkinkan Anda menentukan rute mana yang dioperasikan oleh agen mana.
   * Penambahan URL per-rute dan per-stop.
-  * Penambahan daridirection_id lapangan ditrips.txt .
-  * Dukungan untuk pertengahantrip perubahan headsign dengan penambahan bidang stop_headsign distop_times.txt .
-  * Dukungan untuk warna rute dengan tambahan route_color dan route_text_color opsionalroutes.txt .
+  * Penambahan dari `direction_id` lapangan di `trips.txt` .
+  * Dukungan untuk pertengahantrip perubahan headsign dengan penambahan bidang stop_headsign di `stop_times.txt` .
+  * Dukungan untuk warna rute dengan tambahan route_color dan route_text_color opsional `routes.txt` .
   * Menghapus kemampuan untuk menentukan perhentian menggunakan alamat jalan. Versi spesifikasi sebelumnya memungkinkan Anda memberikan lokasi perhentian transit menggunakan alamat jalan di bidang stop_street, stop_city, stop_region, stop_postcode, dan stop_country. Sekarang lokasi perhentian harus diberikan menggunakan stop_lat untuklatitude dan stop_lon untuklongitude , yang lebih berguna untuk sebagian besar aplikasi.
-  * Penambahan kereta gantungvehicle ketik untukroute_type lapangan diroutes.txt .
+  * Penambahan kereta gantungvehicle ketik untuk `route_type` lapangan di `routes.txt` .
   * Lihat ringkasan [posting blog Headway](https://headwayblog.com/2007/03/02/google-feed-spec-update-2007-02/) asli dari perubahan tersebut.
 
   **29 Nopember 2006**<br/>
 
-  * Ditambahkan dukungan untuktripShape informasi melaluishapes.txt
-  * Memperjelas definisi daristop_sequence
-  * Ditandai pickup_type dan drop_off_type opsional
+  * Ditambahkan dukungan untuktrip Shape informasi melalui `shapes.txt`
+  * Memperjelas definisi dari `stop_sequence`
+  * Ditandai `pickup_type` dan `drop_off_type` opsional
 
   **31 Oktober 2006**<br/>
 
   * Menambahkan dukungan untuk informasi tarif
   * Tanggal yang dihapus dari nama file individual
-  * Mengubahroute_type definisi nilai
+  * Mengubah `route_type`  definisi nilai
   * Diizinkan untuk memposting beberapa file feed secara bersamaantime , selama periode layanan mereka tidak tumpang tindih
-  * Memperbaiki block_id ditrips.txt sehingga ditandai dengan benar Opsional
+  * Memperbaiki `block_id` di `trips.txt` sehingga ditandai dengan benar Opsional
   * Perhatikan bahwa tajuk kolom harus disertakan
 
   **29 September 2006**<br/>
