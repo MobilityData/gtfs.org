@@ -11,8 +11,8 @@ search:
 - 사용 사례별 예:
   - [경로, 정류장 및 여행](routes-stops-trips)
   - [연속 정지](continuous-stops)
-  - [운임 v1](fares-v1)
-  - [운임 v2](fares-v2)
+  - [Fares v1](fares-v1)
+  - [Fares v2](fares-v2)
   - [주파수](frequencies)
   - [통로](pathways)
   - [번역](translations)

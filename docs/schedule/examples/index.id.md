@@ -11,8 +11,8 @@ Untuk membantu dalam memahamiGTFS spesifikasi dan dalam memproduksi alat yang me
 - Contoh berdasarkan kasus penggunaan:
   - [Rute, pemberhentian, dan perjalanan](routes-stops-trips)
   - [Berhenti terus menerus](continuous-stops)
-  - [Tarif v1](fares-v1)
-  - [Tarif v2](fares-v2)
+  - [Fares v1](fares-v1)
+  - [Fares v2](fares-v2)
   - [Frekuensi](frequencies)
   - [Jalur](pathways)
   - [Terjemahan](translations)

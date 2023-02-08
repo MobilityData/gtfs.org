@@ -11,8 +11,8 @@ search:
 - 按使用情况举例。
   - [路线、站点和行程](routes-stops-trips)
   - [连续站点](continuous-stops)
-  - [票价v1](fares-v1)
-  - [票价v2](fares-v2)
+  - [Fares v1](fares-v1)
+  - [Fares v2](fares-v2)
   - [频次](frequencies)
   - [路径](pathways)
   - [翻译](translations)

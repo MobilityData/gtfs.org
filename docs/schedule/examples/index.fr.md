@@ -11,8 +11,8 @@ Pour vous aider à comprendre la spécification GTFS et à produire des outils q
 - Exemples par cas d'utilisation :
   - [Itinéraires, arrêts et trajets](routes-stops-trips)
   - [Arrêts continus](continuous-stops)
-  - [Tarifs v1](fares-v1)
-  - [Tarifs v2](fares-v2)
+  - [Fares v1](fares-v1)
+  - [Fares v2](fares-v2)
   - [Fréquences](frequencies)
   - [Trajets](pathways)
   - [Traductions](translations)

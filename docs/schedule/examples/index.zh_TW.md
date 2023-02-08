@@ -11,8 +11,8 @@ search:
 - 用例示例：
   - [路線、站點和行程](routes-stops-trips)
   - [連續停止](continuous-stops)
-  - [票價 v1](fares-v1)
-  - [票價 v2](fares-v2)
+  - [Fares v1](fares-v1)
+  - [Fares v2](fares-v2)
   - [頻率](frequencies)
   - [途徑](pathways)
   - [翻譯](translations)

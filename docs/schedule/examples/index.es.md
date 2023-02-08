@@ -11,8 +11,8 @@ Para ayudar a entender la especificación GTFS y a producir herramientas que lea
 - Ejemplos por caso de uso:
   - [Rutas, paradas y viajes](routes-stops-trips)
   - [Paradas continuas](continuous-stops)
-  - [Tarifas v1](fares-v1)
-  - [Tarifas v2](fares-v2)
+  - [Fares v1](fares-v1)
+  - [Fares v2](fares-v2)
   - [Frecuencias](frequencies)
   - [Rutas](pathways)
   - [Traducciones](translations)
