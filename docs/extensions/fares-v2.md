@@ -56,11 +56,9 @@ For the fare containers feature currently under discussion, first adopters are
 
 <a class="button no-icon" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing" target="_blank">See who’s using Fares v2 files and fields</a>
 
-## Proposals Currently Under Discussion
+## Fares v2 Features Under Discussion
 
-Proposals are only available in English.
-
-<iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:600px;"></iframe>
+<iframe src="https://portal.productboard.com/xcpvceqebovhprgzprgr2ryb" frameborder="0" width="100%", style="min-height:1060px;"></iframe>
 
 ## History
 
