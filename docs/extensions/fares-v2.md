@@ -30,12 +30,12 @@ Producers may implement Fares v2 in the same dataset with Fares v1, since there 
 
 ## In Progress Fares v2 Work
 
-The GTFS community is currently working on finalizing the <a href="https://share.mobilitydata.org/fare-containers-to-fare-payment-types-proposal" target="_blank">fare_payment_options.txt (formerly fare_containers.txt)</a> proposal. 
+The GTFS community is currently working on finalizing the <a href="https://share.mobilitydata.org/fare-containers-to-fare-payment-types-proposal" target="_blank">fare containers</a> proposal. 
     
 Items currently in discussion include:
 
-- Creating a fare_payment_options_groups.txt file
-- Aligning on what types should be included in the enumeration for `fare_payment_option_type`
+- Creating a fare containers file
+- Aligning on what types should be included in the enumeration for fare container options
 
 <a class="button no-icon" href=https://share.mobilitydata.org/slack>Join #gtfs-fares on Slack</a><a class="button no-icon" href=https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057>See the meeting schedule</a><a class="button no-icon" href=https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit>See meeting notes</a>
 
@@ -49,14 +49,16 @@ For the adopted base implementation, first adopters were
 - Producers: <a href="https://www.interline.io/" target="_blank">Interline</a>, <a href="https://www.mta.maryland.gov/developer-resources" target="_blank">Maryland Department of Transportation</a>, <a href="https://dot.ca.gov/cal-itp/cal-itp-gtfs" target="_blank">Cal-ITP</a>
 - Consumer: <a href="https://transitapp.com/" target="_blank">Transit</a>
 
-For the fare payment options feature currently under discussion, first adopters are
+For the fare containers feature currently under discussion, first adopters are
 
 - Producer: <a href="https://www.interline.io/" target="_blank">Interline</a>
 - Consumer: <a href="https://www.apple.com/">Apple</a>, <a href="https://transitapp.com/" target="_blank">Transit</a>
 
-<a class="button no-icon" href="https://share.mobilitydata.org/gtfs-fares-v2" target="_blank">See who’s using Fares v2 files and fields</a>
+<a class="button no-icon" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing" target="_blank">See who’s using Fares v2 files and fields</a>
 
 ## Proposals Currently Under Discussion
+
+Proposals are only available in English.
 
 <iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:600px;"></iframe>
 
