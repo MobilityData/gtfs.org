@@ -1,6 +1,6 @@
 # Valideur de GTFS Schedule
 
-Ce validateur d'GTFS Schedule canonique gratuit et open-source est maintenu par [MobilityData](https://mobilitydata.org) avec l'aide de la communauté GTFS. Utilisez-le pour évaluer votre jeu de données par rapport à la [référence](reference.md) officielle [GTFS](reference.md) et aux [meilleures pratiques](best-practices.md). Il fournit un rapport de validation facile à utiliser au format HTML qui peut être ouvert dans le navigateur et partagé avec d'autres parties.
+Ce validateur d'GTFS Schedule canonique gratuit et open-source est maintenu par [MobilityData](https://mobilitydata.org) avec l'aide de la communauté GTFS. Utilisez-le pour évaluer votre jeu de données par rapport à la [référence officielle GTFS](reference.md) et aux [meilleures pratiques](best-practices.md). Il fournit un rapport de validation facile à utiliser au format HTML qui peut être ouvert dans le navigateur et partagé avec d'autres parties.
 
 <!-- <img class="center" src="../../assets/validator_animation.gif" width="150"> -->
 

@@ -1,6 +1,6 @@
 # GTFSスケジュール検証ツール
 
-このフリーでオープンソースの正規のGTFSスケジュール検証ツールは、GTFSコミュニティの協力を得て、[MobilityDataによって](https://mobilitydata.org)メンテナンスされています。このツールを使って、あなたのデータセットを公式の[GTFSリファレンスと](reference.md) [ベストプラクティスに照らして](best-practices.md)評価することができます。使いやすい検証レポートをHTML形式で提供し、ブラウザで開いて他の関係者と共有することができます。
+このフリーでオープンソースの正規のGTFSスケジュール検証ツールは、GTFSコミュニティの協力を得て、[MobilityData](https://mobilitydata.org)によってメンテナンスされています。このツールを使って、あなたのデータセットを公式の[GTFSリファレンスと](reference.md) [ベストプラクティスに照らして](best-practices.md)評価することができます。使いやすい検証レポートをHTML形式で提供し、ブラウザで開いて他の関係者と共有することができます。
 
 <!-- <img class="center" src="../../assets/validator_animation.gif" width="150"> -->
 

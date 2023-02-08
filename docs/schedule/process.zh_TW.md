@@ -76,7 +76,7 @@ search:
 
 **2021 年 1 月 4 日**<br/>
 
-* 澄清了`stop_times. stop_id`stop_id .見[討論](https://github.com/google/transit/pull/258)。
+* 澄清了`stop_times. stop_id` .見[討論](https://github.com/google/transit/pull/258)。
 * 定義的正和非零字段符號。見[討論](https://github.com/google/transit/pull/251)。
 
 **2020 年 10 月 2 日**<br/>
@@ -85,15 +85,15 @@ search:
 
 **2020 年 5 月 25 日**<br/>
 
-* 定義pathways.txt ,levels.txt和attributions.txt作為可翻譯的表格。添加了翻譯多語言`signposted_as`值的建議。見[討論](https://github.com/google/transit/pull/220)。
+* 定義`pathways.txt` ,`levels.txt`和`attributions.txt`作為可翻譯的表格。添加了翻譯多語言`signposted_as`值的建議。見[討論](https://github.com/google/transit/pull/220)。
 
 **2020 年 5 月 13 日**<br/>
 
-* 添加了`continuous_pickup`和`continuous_drop_off`到routes.txt和stop_times.txt .改變了shape_id從“可選”到“有條件地需要”。見[討論](https://github.com/google/transit/pull/208)。
+* 添加了`continuous_pickup`和`continuous_drop_off`到routes.txt和stop_times.txt .改變了shape_id從“Optional”到“Conditionally required”。見[討論](https://github.com/google/transit/pull/208)。
 
 **2020 年 3 月 24 日**<br/>
 
-* 定義text-to-speech 字段並將`tts_stop_name`添加到stops.txt .見[討論](https://github.com/google/transit/pull/49)。
+* 定義text-to-speech 字段並將`tts_stop_name`添加到`stops.txt` .見[討論](https://github.com/google/transit/pull/49)。
 
 **2020 年 2 月 5 日**<br/>
 
@@ -101,15 +101,15 @@ search:
 
 **2020 年 1 月 9 日**<br/>
 
-* 添加translations.txt .見[討論](https://github.com/google/transit/pull/180)。
+* 添加`translations.txt` .見[討論](https://github.com/google/transit/pull/180)。
 
 **2019 年 12 月 26 日**<br/>
 
-* 更新了纜車和空中升降機的定義route_type .見[討論](https://github.com/google/transit/pull/186)。
+* 更新了纜車和空中升降機的定義`route_type` .見[討論](https://github.com/google/transit/pull/186)。
 
 **2019 年 12 月 20 日**<br/>
 
-* 添加attributions.txt .見[討論](https://github.com/google/transit/pull/192)。
+* 添加`attributions.txt` .見[討論](https://github.com/google/transit/pull/192)。
 
 **2019 年 8 月 26 日**<br/>
 
@@ -119,7 +119,7 @@ search:
 
 * 添加arrival和departuretime最佳實踐。見[討論](https://github.com/google/transit/pull/165)。
 * 添加了 headsign 最佳實踐。見[討論](https://github.com/google/transit/pull/167)。
-* 添加stop_id最佳實踐。見[討論](https://github.com/google/transit/pull/169)。
+* 添加`stop_id`最佳實踐。見[討論](https://github.com/google/transit/pull/169)。
 
 **2019 年 6 月 25 日**<br/>
 
@@ -127,11 +127,11 @@ search:
 
 **2019 年 4 月 4 日**<br/>
 
-* 在中添加了`platform_code`字段stops.txt .見[討論](https://github.com/google/transit/pull/146)。
+* 在中添加了`platform_code`字段`stops.txt` .見[討論](https://github.com/google/transit/pull/146)。
 
 **2019 年 3 月 27 日**<br/>
 
-* 添加pathways.txt和levels.txt .見[討論](https://github.com/google/transit/pull/143)。
+* 添加`pathways.txt`和`levels.txt` .見[討論](https://github.com/google/transit/pull/143)。
 
 **2019 年 2 月 6 日**<br/>
 
@@ -143,7 +143,7 @@ search:
 
 **2018 年 9 月 14 日**<br/>
 
-* 添加了“有條件地要求”的概念。見[討論](https://github.com/google/transit/pull/100)。
+* 添加了“Conditionally required”的概念。見[討論](https://github.com/google/transit/pull/100)。
 
 **2018 年 9 月 4 日**<br/>
 
@@ -155,11 +155,11 @@ search:
 
 **2018 年 8 月 22 日**<br/>
 
-* 添加`feed_contact_email`和`feed_contact_url`字段feed_info.txt文件。見[討論](https://github.com/google/transit/pull/31)。
+* 添加`feed_contact_email`和`feed_contact_url`字段`feed_info.txt`文件。見[討論](https://github.com/google/transit/pull/31)。
 
 **2017 年 12 月 11 日**<br/>
 
-* `route_sort_order`添加到routes.txt .見[討論](https://github.com/google/transit/pull/83)。
+* `route_sort_order`添加到`routes.txt` .見[討論](https://github.com/google/transit/pull/83)。
 
 **2017 年 3 月 15 日**<br/>
 
@@ -170,11 +170,11 @@ search:
 
 * 澄清了`block_id`和service_id .見[討論](https://github.com/google/transit/pull/44)。
 * 澄清基於頻率的服務開始於vehicledeparture.見[討論](https://github.com/google/transit/pull/42)。
-* 澄清說明stop_id和`stop_code` 。見[討論](https://github.com/google/transit/pull/40)。
+* 澄清說明`stop_id`和`stop_code` 。見[討論](https://github.com/google/transit/pull/40)。
 
 **2017 年 12 月 11 日**<br/>
 
-* 在中添加`route_sort_order`字段routes.txt文件。見[討論](https://github.com/google/transit/pull/83)。
+* 在中添加`route_sort_order`字段`routes.txt`文件。見[討論](https://github.com/google/transit/pull/83)。
 
 **2016 年 11 月 27 日**<br/>
 
@@ -182,7 +182,7 @@ search:
 
 **2016 年 9 月 2 日**<br/>
 
-* 更新文檔以添加agency_id在下面fare_attributes.txt .見[討論](https://github.com/google/transit/pull/27)。
+* 更新文檔以添加`agency_id`在下面`fare_attributes.txt` .見[討論](https://github.com/google/transit/pull/27)。
 
 **2016 年 3 月 16 日**<br/>
 
@@ -202,7 +202,7 @@ search:
 
 **2012 年 10 月 15 日**<br/>
 
-添加trips.txt 'wheelchair_accessible' 規範提案： [討論](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
+* 添加trips.txt 'wheelchair_accessible' 規範提案： [討論](https://groups.google.com/forum/?fromgroups#!topic/gtfs-changes/ASxItgsQlh4)
 
 **2012 年 6 月 20 日**<br/>
 
@@ -261,7 +261,7 @@ search:
 **2008 年 2 月 29 日**<br/>
 
 * 在中添加了 stop_code 字段stops.txt允許規範面向騎手的停止代碼（ [原始提案](https://groups.google.com/forum/#!topic/gtfs-changes/k9A95fYZexc)）
-* 澄清了 route_short_name 和 route_long_name 的描述routes.txt
+* 澄清了 route_short_name 和 route_long_name 的描述`routes.txt`
 * 澄清了arrival_time和departure_time的描述stop_times.txt
 * 修復了示例數據部分中的拼寫錯誤
 

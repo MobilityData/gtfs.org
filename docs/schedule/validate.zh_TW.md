@@ -1,6 +1,6 @@
 # GTFS Schedule驗證器
 
-這個免費和開源的規範GTFS Schedule驗證器由[MobilityData](https://mobilitydata.org)在GTFS社區。用它來根據官方評估你的數據集GTFS[參考](reference.md)和[最佳實踐](best-practices.md)。它以 HTML 格式提供易於使用的驗證報告，可以在瀏覽器中打開並與其他方共享。
+這個免費和開源的規範GTFS Schedule驗證器由[MobilityData](https://mobilitydata.org)在GTFS社區。用它來根據官方評估你的數據集[GTFS](reference.md)和[最佳實踐](best-practices.md)。它以 HTML 格式提供易於使用的驗證報告，可以在瀏覽器中打開並與其他方共享。
 
 <!-- <img class="center" src="../../assets/validator_animation.gif" width="150"> -->
 
@@ -18,7 +18,7 @@
 
 ## 使用此驗證器作為數據管道的一部分
 
-要查看有關如何在數據管道中使用此工具的更多說明，請訪問[存儲庫](https://github.com/MobilityData/gtfs-validator)。
+要查看有關如何在數據管道中使用此工具的更多說明，[請訪問存儲庫](https://github.com/MobilityData/gtfs-validator)。
 
 ## 貢獻
 

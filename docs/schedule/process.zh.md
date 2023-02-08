@@ -252,7 +252,7 @@ GTFS规范不是一成不变的。相反，它是一个开放的规范，由公�
 * 在stops.txt中增加了location_type和parent_station字段，允许将停车点归入车站[原始提议](https://groups.google.com/forum/#!topic/gtfs-changes/ScGAyZ9a_yw)）。
 * 增加了agency_phone字段，用于提供一个机构的语音电话号码[原始提案](https://groups.google.com/forum/#!topic/gtfs-changes/8Itt58ueyqA)）。
 * 增加了 "测试你的报文 "一节，提到了开源的测试工具
-* 增加了对CSV格式、机构时区、机构语言、路线颜色、路线文本颜色、到达时间、出发时间、calendar.txt与calendar_dates.txt、票价表和frequencies.txt的说明。
+* 增加了对CSV格式、agency_timezone、agency_lang、route_color、route_text_color、arrival_time、departure_time、calendar.txt与calendar_dates.txt、票价表和frequencies.txt的说明。
 * 增加了链接到馈送历史文件，并更正了一些公共馈送链接
 * 更新了示例图片以描述当前的谷歌地图用户界面
 * 更新/修正了文件中的样本数据
@@ -260,7 +260,7 @@ GTFS规范不是一成不变的。相反，它是一个开放的规范，由公�
 **2008年2月29日**<br/>
 
 * 在stops.txt中增加了 stop_code 字段，允许指定面向乘客的车站代码[原始提案](https://groups.google.com/forum/#!topic/gtfs-changes/k9A95fYZexc)）。
-* 澄清了routesroutes.txttxt中的route_short_name和route_long_name的描述。
+* 澄清了routes.txt中的route_short_name和route_long_name的描述。
 * 澄清了stop_times.txt中的 arrival_time 和 departure_time 的描述。
 * 修正了样本数据部分的错别字
 
@@ -287,12 +287,12 @@ GTFS规范不是一成不变的。相反，它是一个开放的规范，由公�
 
 * 增加了关于[提交信息源](https://developers.google.com/transit/google-transit#SubmitFeedToGoogle)的部分。
 * 增加了[示范交通机构馈送的例子](https://developers.google.com/transit/gtfs/examples/gtfs-feed)。
-* 增加了注意，如果所有的服务日期都在calendar_dates.txt中定义，可以省略calendar.txttxt。
+* 增加了注意，如果所有的服务日期都在calendar_dates.txt中定义，可以省略calendar.txt。
 * 在只包含一个机构的馈送中，使agency_id字段成为可选项。这允许现有的feeds没有agency_id而保持有效。
 * 增加了agency_url、stop_url和route_url的更全面规范，以及这些字段的额外示例值。
 * 增加了6（Gondola）和7（Funicular）作为有效的route_type值。
 
-**2007年3月8日**<br/>
+**2007年3月8日**<br/> 
 
 * 稍作编辑，将stop_url字段从stop_times.txt（在2月28日的更新中，该字段被错误地指定为stop_times.stops.txt）移至stops.txt，即它所属的位置。
 
