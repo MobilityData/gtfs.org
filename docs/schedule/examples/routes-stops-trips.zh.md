@@ -32,7 +32,7 @@ Calgary Transit 在AB省卡尔加里市经营轻轨、快速公交、普通公�
 - 第二条是轻轨，因此`route_type=0`
 - `route_type`的完整列表可以[在这里](../../reference/#routestxt)找到。
 
-其余的字段包含额外的信息，如路线的特定url，以及机构特定的颜色，在地图上表示服务。
+其余的字段包含额外的信息，如路线的特定URL，以及机构特定的颜色，在地图上表示服务。
 
 <hr/>
 
@@ -80,10 +80,9 @@ Calgary Transit 在AB省卡尔加里市经营轻轨、快速公交、普通公�
 
 - 从[routes.txt](../../reference/#routestxt)中列出了与MAX Orange对应的`route_id`。
 - 列出了[calendar.txt](../../reference/#calendartxt)中与周末相对应的`service_id`。
-- 每条记录包含每个trip的唯一id 提供了车头标志text，这就是通常显示在巴士内部和外部的标志上的内容。
-
+- 每条记录都包含每个行程的唯一id提供车头标志文本，这就是通常显示在巴士内部和外部的标志上的内容。
 - `direction_id`字段允许区分同一路线上不同方向的车次。例如，区分进站和出站的车次，或南行和北行的车次。
-  - 在这种情况下，往Saddletowne方向的车次，`direction_id=0`，往Brentwood方向的车次，`direction_id=1`。direction_id中的值没有内在的意义，它们只是用来指定一个旅行方向与另一个旅行方向。
+- 在这种情况下，往Saddletowne方向的车次，`direction_id=0`，往Brentwood方向的车次，`direction_id=1`。direction_id中的值没有内在的意义，它们只是用来指定一个旅行方向与另一个旅行方向。
 - [shapes.txt](../../reference/#shapestxt)中的`shape_id`，对应于往Saddletowne方向的MAX Orange路线，被列在第一条记录中，MAX Orange往Brentwood方向的路线被列在第二和第三条记录中。
 
 `shape_id=3030026`对应于朝向Saddletowne的MAX Orange。下面的文件包括勾勒路线的点的信息以及这些点之间的距离。有了这些信息，就有可能在地图上绘制路线，用于trip规划或分析目的。

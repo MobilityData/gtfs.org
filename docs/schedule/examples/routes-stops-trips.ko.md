@@ -80,8 +80,7 @@ Calgary Transit은 AB 캘거리에서 LRT, BRT, 일반 버스 서비스, 보조 
 
 - 그만큼`route_id` \~에서[routes.txt](../../reference/#routestxt) MAX Orange에 해당하는 항목이 나열됩니다.
 - 그만큼`service_id` \~에서[calendar.txt](../../reference/#calendartxt) 주말에 해당하는
-- 각 레코드에는 고유한id 각각trip 헤드 사인text 버스 안팎의 표지판에 일반적으로 표시되는 것입니다.
-
+- 각 레코드에는 고유한id 각 여행에 대한 헤드 사인text 버스 안팎의 표지판에 일반적으로 표시되는 것입니다.
 - 필드`direction_id` 서로 다른 방향으로 가는 동일한 경로의 여행을 구분할 수 있습니다. 예를 들어, 인바운드 여행과 아웃바운드 여행 또는 남쪽 여행과 북쪽 여행을 구별합니다.
 - 이 경우 Saddletowne 방향의 여행은 `direction_id=0` 이고 Brentwood 방향의 여행은 `direction_id=1` 입니다. 의 값direction_id 고유한 의미가 없으며 한 방향과 다른 방향을 할당하는 데만 사용됩니다.
 - 그만큼shape_id \~에서shapes.txt Saddletowne 방향의 MAX Orange 경로에 해당하는 경로가 첫 번째 레코드에 나열되고 Brentwood 방향의 MAX Orange 경로에 해당하는 경로가 두 번째 및 세 번째 레코드에 나열됩니다.
@@ -113,7 +112,7 @@ Calgary Transit은 AB 캘거리에서 LRT, BRT, 일반 버스 서비스, 보조 
 
 예를 들어,scheduled 2022년 7월 17일 일요일 서비스 - 그러면 해당 날짜는 다음의 `weekend_service` 에서 제거될 수 있습니다.[calendar.txt](../../reference/#calendartxt) の서비스를 둘로 나누면:
 
-|  서비스               | start      | end        |
+|  서비스               | 시작     | 끝     |
 | ------------------ | ---------- | ---------- |
 | `weekend_service1` | `20220623` | `20220716` |
 | `weekend_service2` | `20220718` | `20220903` |

@@ -38,7 +38,7 @@ NMBS/SNCB는 다음을 게시합니다.GTFS 아래 파일과 같이 프랑스어
   - `stop_name` 이 아래에 나열됩니다.`field_name` (역 이름이 번역되기 때문에)
   - 그만큼`stop_id` 프랑스어에서 번역할 역 이름은 아래에 나열되어 있습니다.`record_id` (이 경우,`stop_id` Bruxelles-Ouest의 경우)
 - 이름은 네덜란드어로 번역됩니다(nl).
-- 마지막으로 번역된 이름이 아래에 나열됩니다.Translation
+- 마지막으로 번역된 이름이 아래에 나열됩니다 번역.
 
 이름을 번역하는 또 다른 방법이 있습니다.GTFS 파일을 사용하여[translations.txt](../../reference/#translationstxt) , という여기서 필드`field_value` 대신 사용됩니다`record_id` . 이 경우 스테이션 이름은 번역할 레코드를 찾는 데 사용됩니다.[stops.txt](../../reference/#stopstxt) .
 

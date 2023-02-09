@@ -113,8 +113,8 @@ Dimungkinkan untuk menentukan pengecualian untuk layanan seperti hari layanan ta
 
 Misalnya, jika tidak ada layanan terjadwal pada hari Minggu 17 Juli 2022 - maka tanggal tersebut dapat dihapus dari `weekend_service` di [calendar.txt](../../reference/#calendartxt)  dengan memecah layanan menjadi dua:
 
-|  Melayani          | start      | end        |
-| ------------------ | ---------- | ---------- |
+|  Melayani          | Awal       | Akhir      |
+| ------------------ |------------|------------|
 | `weekend_service1` | `20220623` | `20220716` |
 | `weekend_service2` | `20220718` | `20220903` |
 

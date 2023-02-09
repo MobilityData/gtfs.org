@@ -115,13 +115,13 @@ search:
 
   **2019년 7월 9일**<br/>
 
-  * 추가됨arrival 그리고departuretime 모범 사례. [토론](https://github.com/google/transit/pull/165) 을 참조하십시오.
+  * 도착 및 출발 시간 모범 사례 추가 . [토론](https://github.com/google/transit/pull/165) 을 참조하십시오.
   * 헤드 사인 모범 사례를 추가했습니다. [토론](https://github.com/google/transit/pull/167) 을 참조하십시오.
   * 추가됨`stop_id` 모범 사례. [토론](https://github.com/google/transit/pull/169) 을 참조하십시오.
 
   **2019년 6월 25일**<br/>
 
-  * 명확한 관계Shape 포인트와 스톱. [토론](https://github.com/google/transit/pull/39) 을 참조하십시오.
+  * 셰이프 포인트와 스톱의 명확한 관계. [토론](https://github.com/google/transit/pull/39) 을 참조하십시오.
 
   **2019년 4월 4일**<br/>
 

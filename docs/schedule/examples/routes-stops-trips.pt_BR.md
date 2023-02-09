@@ -50,8 +50,8 @@ Em GTFS, as paradas e estações são descritas usando o arquivo [stops.txt](../
 - `stop_code` e `stop_name` normalmente contêm informações voltadas para o cavaleiro
 - A localização exata é fornecida usando coordenadas (`stop_lat` e `stop_lon`)
 - O sexto campo (`location_type`) é usado para diferenciar as paradas das estações
-- O primeiro registro corresponde a uma parada de ônibus, portanto `local_type=0`
-- O segundo registro corresponde à estação, portanto `local_type=1`
+- O primeiro registro corresponde a uma parada de ônibus, portanto `location_type=0`
+- O segundo registro corresponde à estação, portanto `location_type=1`
 - Uma lista completa de valores para o `location_type` pode ser encontrada [aqui](../../reference/stopstxt)
 
 <hr/>
@@ -113,8 +113,8 @@ A `shape_id=3030026` corresponde ao MAX Orange towards Saddletowne. O arquivo ab
 
 Por exemplo, se não houver um serviço agendados no domingo 17 de julho de 2022 - então essa data pode ser removida do `weekend_service` no [calendar.txt](../../reference/#calendartxt), quebrando o serviço em dois:
 
-| Serviço            | start      | end        |
-| ------------------ | ---------- | ---------- |
+| Serviço            | Começar    | Fim        |
+| ------------------ |------------|------------|
 | `weekend_service1` | `20220623` | `20220716` |
 | `weekend_service2` | `20220718` | `20220903` |
 

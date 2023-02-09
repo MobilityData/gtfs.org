@@ -116,7 +116,7 @@ A fim de preservar a visão original do GTFS, alguns princípios orientadores fo
 
 **9 de julho de 2019**<br/>
 
-* Adicionadas as melhores práticas de time arrival e departure. Ver [discussão](https://github.com/google/transit/pull/165).
+* Adicionadas as melhores práticas de chegada e partida. Ver [discussão](https://github.com/google/transit/pull/165).
 * Acrescentadas as melhores práticas de sinalização. Ver [discussão](https://github.com/google/transit/pull/167).
 * Adicionadas as melhores práticas de `stop_id`. Ver [discussão](https://github.com/google/transit/pull/169).
 

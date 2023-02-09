@@ -113,8 +113,8 @@ Es ist möglich, Ausnahmen für den Service zu definieren, wie z.B. zusätzliche
 
 Wenn zum Beispiel am Sonntag, dem 17. Juli 2022, kein planmäßiger Dienst stattfindet, kann dieses Datum aus `weekend_service` in [calendar.txt](../../reference/#calendartxt) entfernt werden, indem der Service in zwei Datensätze aufgeteilt wird:
 
-| Dienst             | start      | end        |
-| ------------------ | ---------- | ---------- |
+| Dienst             | Start      | Ende       |
+| ------------------ |------------|------------|
 | `weekend_service1` | `20220623` | `20220716` |
 | `weekend_service2` | `20220718` | `20220903` |
 

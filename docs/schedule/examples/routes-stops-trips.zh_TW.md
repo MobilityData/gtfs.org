@@ -80,10 +80,10 @@ Calgary Transit 在艾伯塔省卡爾加里經營 LRT、BRT、定期巴士服務
 
 - 這`route_id`從[routes.txt](../../reference/#routestxt)列出對應於 MAX Orange 的
 - 這`service_id`從[calendar.txt](../../reference/#calendartxt)列出對應於週末的
-- 每條記錄都包含一個唯一的id每個trip 頭標text提供，這通常顯示在巴士內外的標誌上
+- 每條記錄都包含一個唯一的id為每次旅行提供車頭標誌文字，通常顯示在巴士內外的標誌上
 
 - 場`direction_id`允許區分同一路線的不同方向的行程。例如，區分入境旅行和出境旅行 - 或南行旅行和北行旅行。
-  - 在這種情況下，前往 Saddletowne 的行程的`direction_id=0`和前往 Brentwood 的行程的`direction_id=1` 。中的值direction_id沒有內在含義，它們僅用於指定一個行進方向與另一個行進方向
+- 在這種情況下，前往 Saddletowne 的行程的`direction_id=0`和前往 Brentwood 的行程的`direction_id=1` 。中的值direction_id沒有內在含義，它們僅用於指定一個行進方向與另一個行進方向
 - 這`shape_id`從[shapes.txt](../../reference/#shapestxt)對應於通往 Saddletowne 的 MAX Orange 路線的路線被列為第一條記錄，而對應於通往 Brentwood 的 MAX Orange 路線的路線被列為第二和第三條記錄
 
 `shape_id=3030026`對應於 Saddletowne 的 MAX Orange。下面的文件包含有關勾勒路線的點以及這些點之間的距離的信息。有了這些信息，就可以在地圖上繪製路線trip規劃或分析目的。
@@ -111,7 +111,7 @@ Calgary Transit 在艾伯塔省卡爾加里經營 LRT、BRT、定期巴士服務
 
 可以定義服務的例外情況，例如added服務日（特殊日）或取消服務日（如節假日不提供服務）。
 
-例如，如果沒有scheduled 2022 年 7 月 17 日星期日的服務 - 然後可以從`weekend_service`中刪除該日期[calendar.txt](../../reference/#calendartxt)通過將服務一分為二：
+例如，如果沒有預定的 2022 年 7 月 17 日星期日的服務 - 然後可以從`weekend_service`中刪除該日期[calendar.txt](../../reference/#calendartxt)通過將服務一分為二：
 
 | 服務                 | start      | end        |
 | ------------------ | ---------- | ---------- |

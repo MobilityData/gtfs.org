@@ -69,7 +69,7 @@ En primer lugar, es necesario definir el intervalo de servicio mediante calendar
 
 En este caso, se describe un servicio que sólo funciona los sábados y domingos, por lo que los campos de esos días se rellenan con 1, y los del resto de días se rellenan con cero. Este servicio funciona desde el 23 de junio de 2022 hasta el 3 de septiembre de 2022, como se muestra en los campos `start_date` y `end_date`.
 
-En este ejemplo, el archivo [trips.txt](../../reference/#tripstxt) describe 3 viajes de fin de semana que son servidos por la ruta MAX Naranja que fue descrita anteriormente.
+En este ejemplo, el archivo [trips.txt](../../reference/#tripstxt) describe 3 viajes de fin de semana que son servidos por la ruta MAX Orange que fue descrita anteriormente.
 
 [**trips.txt**](../../reference/#tripstxt)
 
@@ -84,9 +84,9 @@ En este ejemplo, el archivo [trips.txt](../../reference/#tripstxt) describe 3 vi
 
 - El campo `direction_id` permite distinguir entre los viajes de la misma ruta que van en diferentes direcciones. Por ejemplo, distinguir entre los viajes de entrada y los de salida, o los viajes en dirección sur y los viajes en dirección norte.
 - En este caso, los viajes hacia Saddletowne tienen un `direction_id=0` y los viajes hacia Brentwood tienen un `direction_id=1`. Los valores de direction_id no tienen ningún significado inherente, sólo se utilizan para asignar un sentido de la marcha frente a otro
-- El `shape_id` de shapes. [shapes.txt](../../reference/#shapestxt) que corresponde a la ruta MAX Orange hacia Saddletowne aparece en el primer registro y el de la ruta MAX Orange hacia Brentwood aparece en el segundo y tercer registro
+- El `shape_id` de [shapes.txt](../../reference/#shapestxt) que corresponde a la ruta MAX Orange hacia Saddletowne aparece en el primer registro y el de la ruta MAX Orange hacia Brentwood aparece en el segundo y tercer registro
 
-El `shape_id=3030026` corresponde al MAX Naranja hacia Saddletowne. El archivo que se muestra a continuación incluye información sobre los puntos que delinean la ruta, así como la distancia entre esos puntos. Con esta información, es posible trazar la ruta en un mapa con fines de planificación de trip o de análisis.
+El `shape_id=3030026` corresponde al MAX Orange hacia Saddletowne. El archivo que se muestra a continuación incluye información sobre los puntos que delinean la ruta, así como la distancia entre esos puntos. Con esta información, es posible trazar la ruta en un mapa con fines de planificación de trip o de análisis.
 
 [**shapes.txt**](../../reference/#shapestxt)
 
@@ -113,8 +113,8 @@ Es posible definir excepciones al servicio como los días de servicio agregado (
 
 Por ejemplo, si no hay servicio programado el domingo 17 de julio de 2022 - entonces esa fecha se puede eliminar de `weekend_service` en [calendar.txt](../../reference/#calendartxt) dividiendo el servicio en dos:
 
-| Servicio           | start      | end        |
-| ------------------ | ---------- | ---------- |
+| Servicio           | Comenzar   | Fin        |
+| ------------------ |------------|------------|
 | `weekend_service1` | `20220623` | `20220716` |
 | `weekend_service2` | `20220718` | `20220903` |
 
