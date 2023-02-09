@@ -24,7 +24,7 @@ Fares v2 計劃表達的主要概念是
 
 生產者可以在與 Fares v1 相同的數據集中實施 Fares v2，因為兩者之間沒有技術衝突。消費者可以選擇獨立使用哪個版本。隨著 Fares v2 的採用和充分認可，Fares v1 將來可能會被棄用。
 
-[查看完整提案](https://share.mobilitydata.org/gtfs-fares-v2)
+<a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/gtfs-fares-v2">查看完整提案</a>
 
 ## 進行中的票價 v2 工作
 
@@ -35,7 +35,7 @@ GTFS 社區目前正在努力完成[票價容器](https://share.mobilitydata.org
 - 創建票價容器文件
 - 調整哪些類型應包含在票價容器選項的枚舉中
 
-[在 Slack 上加入#gtfs-fares](https://share.mobilitydata.org/slack) [查看會議日程](https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057)[查看會議記錄](https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit)
+<a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">在 Slack 上加入#gtfs-fares</a> <a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">查看會議日程</a><a class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">查看會議記錄</a>
 
 ## 首批採用者
 
@@ -43,19 +43,19 @@ GTFS 社區目前正在努力完成[票價容器](https://share.mobilitydata.org
 
 對於採用的基礎實現，第一批採用者是
 
-- 生產商： [Interline](https://www.interline.io/) 、[馬里蘭州交通部](https://www.mta.maryland.gov/developer-resources)、 [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
-- 消費者：[公交](https://transitapp.com/)
+- 生產商： [Interline](https://www.interline.io/) 、[Maryland Department of Transportation](https://www.mta.maryland.gov/developer-resources)、 [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
+- 消費者：[Transit](https://transitapp.com/)
 
 對於目前正在討論的票價容器功能，第一批採用者是
 
-- 生產商：[聯運](https://www.interline.io/)
-- 消費者：[蘋果](https://www.apple.com/)、[全順](https://transitapp.com/)
+- 生產商：[Interline](https://www.interline.io/)
+- 消費者：[Apple](https://www.apple.com/)、[Transit](https://transitapp.com/)
 
-[查看誰在使用 Fares v2 文件和字段](https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing)
+<a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">查看誰在使用 Fares v2 文件和字段</a>
 
-## 正在討論的票價特點
+## 正在討論Fares v2特點
 
-<iframe src="https://portal.productboard.com/xcpvceqebovhprgzprgr2ryb" frameborder="0" width="100%", style="min-height:1060px"></iframe>
+<iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:1060px"></iframe>
 
 ## 歷史
 

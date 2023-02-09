@@ -26,7 +26,7 @@ Fares v2计划体现的主要概念是
 
 生产者可以在同一数据集中实施Fares v2和Fares v1，因为两者之间没有技术冲突。消费者可以选择使用哪个版本，不受其他版本的影响。随着Fares v2的采用和充分认可，Fares v1可能在未来被废弃。
 
-[查看完整提案](https://share.mobilitydata.org/gtfs-fares-v2)
+<a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/gtfs-fares-v2">查看完整提案</a>
 
 ## 正在进行的Fares v2工作
 
@@ -37,7 +37,7 @@ GTFS社区目前正致力于最终确定[票价容器](https://share.mobilitydat
 - 创建一个票价容器文件
 - 就票价容器选项的列举中应包括哪些类型达成一致
 
-[在Slack上加入#gtfs-fares查看](https://share.mobilitydata.org/slack)[会议时间表查看](https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057)[会议记录](https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit)
+<a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">在Slack上加入#gtfs-fares查看</a><a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">会议时间表查看</a><a class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">会议记录</a>
 
 ## 首批采用者
 
@@ -45,26 +45,26 @@ GTFS社区目前正致力于最终确定[票价容器](https://share.mobilitydat
 
 对于所采用的基本实现，第一个采用者是
 
-- 生产者。[Interline](https://www.interline.io/)、[马里兰交通部](https://www.mta.maryland.gov/developer-resources)、[Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
-- 消费者。[运输公司](https://transitapp.com/)
+- 生产者。[Interline](https://www.interline.io/)、[Maryland Department of Transportation](https://www.mta.maryland.gov/developer-resources)、[Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
+- 消费者。[Transit](https://transitapp.com/)
 
 对于目前正在讨论的票价容器功能，首先采用者是
 
 - 生产者。[Interline](https://www.interline.io/)
-- 消费者。[苹果公司](https://www.apple.com/)、[公交公司](https://transitapp.com/)
+- 消费者。[Apple](https://www.apple.com/)、[Transit](https://transitapp.com/)
 
-[查看谁在使用Fares v2文件和字段](https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing)
+<a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">查看谁在使用Fares v2文件和字段</a>
 
-## 讨论中的票价功能
+## 讨论中Fares v2功能
 
-<iframe src="https://portal.productboard.com/xcpvceqebovhprgzprgr2ryb" frameborder="0" width="100%", style="min-height:1060px"></iframe>
+<iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:1060px"></iframe>
 
 ## 历史
 
 - **2017:**行业研究和数据建模
 - **2021年10月**。[起草并分享基本实施方案](https://github.com/google/transit/pull/286#issue-1026848880)
 - **2021年12月**。[公开投票 #1 → 没有通过](https://github.com/google/transit/pull/286#issuecomment-990258396)
-- **2022年3月**：[公开投票2号→](https://github.com/google/transit/pull/286#issuecomment-1080716109)未通过
+- **2022年3月**：[公开投票2号→未通过](https://github.com/google/transit/pull/286#issuecomment-1080716109)
 - **2022年5月**：[公开投票#3→通过](https://github.com/google/transit/pull/286#issuecomment-1121392932)
 - **2022年8月**：[社区开始讨论Fares v2的下一个阶段](https://github.com/google/transit/issues/341)
 - **2022年12月**：[社区确定功能的堆栈排名顺序，以确定迭代的优先次序](https://github.com/google/transit/issues/341#issuecomment-1339947915)

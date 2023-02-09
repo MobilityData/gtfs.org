@@ -55,9 +55,9 @@ Fares v2 - это проект расширения расписания GTFS, �
 
 <a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">Посмотрите, кто использует файлы и поля Fares v2</a>
 
-## Обсуждаемые функции тарифов
+## Обсуждаемые функции Fares v2
 
-<iframe src="https://portal.productboard.com/xcpvceqebovhprgzprgr2ryb" frameborder="0" width="100%", style="min-height:1060px"></iframe>
+<iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:1060px"></iframe>
 
 ## История
 

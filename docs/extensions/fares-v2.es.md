@@ -45,19 +45,19 @@ Entre los puntos actualmente en discusión figuran
 
 En el caso de la implementación básica adoptada, los primeros en adoptarla fueron
 
-- Productores: [Interline](https://www.interline.io/), [Departamento de Transporte de Maryland](https://www.mta.maryland.gov/developer-resources), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
-- Consumidores: [Tránsito](https://transitapp.com/)
+- Productores: [Interline](https://www.interline.io/), [Maryland Department of Transportation](https://www.mta.maryland.gov/developer-resources), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
+- Consumidores: [Transit](https://transitapp.com/)
 
 Para la función de contenedores de tarifas actualmente en discusión, los primeros en adoptarla son
 
 - Productores: [Interline](https://www.interline.io/)
-- Consumidores: [Apple](https://www.apple.com/), [Tránsito](https://transitapp.com/)
+- Consumidores: [Apple](https://www.apple.com/), [Transit](https://transitapp.com/)
 
 <a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">Vea quién utiliza los archivos y campos de Fares v2</a>
 
 ## Características de las Fares v2 en discusión
 
-<iframe src="https://portal.productboard.com/xcpvceqebovhprgzprgr2ryb" frameborder="0" width="100%", style="min-height:1060px"></iframe>
+<iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:1060px"></iframe>
 
 ## Historia
 

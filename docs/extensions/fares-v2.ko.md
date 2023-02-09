@@ -24,7 +24,7 @@ Fares v2가 나타낼 주요 개념은 다음과 같습니다.
 
 생산자는 Fares v1과 동일한 데이터 세트에서 Fares v2를 구현할 수 있습니다. 둘 사이에 기술적인 충돌이 없기 때문입니다. 소비자는 서로 독립적으로 사용할 버전을 선택할 수 있습니다. Fares v2가 채택되고 충분히 보증됨에 따라 향후에는 Fares v1이 더 이상 사용되지 않을 수 있습니다.
 
-[전체 제안서 보기](https://share.mobilitydata.org/gtfs-fares-v2)
+<a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/gtfs-fares-v2">전체 제안서 보기</a>
 
 ## 진행 중인 운임 v2 작업
 
@@ -35,7 +35,7 @@ GTFS 커뮤니티는 현재 [운임 컨테이너](https://share.mobilitydata.org
 - 운임 컨테이너 파일 생성
 - 운임 컨테이너 옵션의 목록에 포함되어야 하는 유형 조정
 
-[Slack에서 #gtfs-fares 가입](https://share.mobilitydata.org/slack) [회의 일정](https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057) [보기 회의 메모 보기](https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit)
+<a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">Slack에서 #gtfs-fares 가입</a> <a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">회의 일정</a><a class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">보기 회의 메모 보기</a>
 
 ## 최초 채택자
 
@@ -44,18 +44,18 @@ GTFS 커뮤니티는 현재 [운임 컨테이너](https://share.mobilitydata.org
 채택된 기본 구현을 위해 최초 채택자는 다음과 같습니다.
 
 - 생산자: [Interline](https://www.interline.io/) , [Maryland Department of Transportation](https://www.mta.maryland.gov/developer-resources) , [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
-- 소비자: [대중교통](https://transitapp.com/)
+- 소비자: [Transit](https://transitapp.com/)
 
 현재 논의 중인 운임 컨테이너 기능의 경우 최초 채택자는 다음과 같습니다.
 
-- 제작사 : [인터라인](https://www.interline.io/)
+- 제작사 : [Interline](https://www.interline.io/)
 - 소비자: [Apple](https://www.apple.com/) , [Transit](https://transitapp.com/)
 
-[누가 Fares v2 파일 및 필드를 사용하는지 확인](https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing)
+<a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">누가 Fares v2 파일 및 필드를 사용하는지 확인</a>
 
 ## 논의 중인 요금 기능
 
-<iframe src="https://portal.productboard.com/xcpvceqebovhprgzprgr2ryb" frameborder="0" width="100%", style="min-height:1060px"></iframe>
+<iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:1060px"></iframe>
 
 ## 역사
 

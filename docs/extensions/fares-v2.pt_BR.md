@@ -55,9 +55,9 @@ Para os contêineres tarifários atualmente em discussão, os primeiros adotante
 
 <a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">Veja quem está usando os arquivos e campos do Fares v2</a>
 
-## Características tarifárias em discussão
+## Características Fares v2 em discussão
 
-<iframe src="https://portal.productboard.com/xcpvceqebovhprgzprgr2ryb" frameborder="0" width="100%", style="min-height:1060px"></iframe>
+<iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:1060px"></iframe>
 
 ## História
 

@@ -45,19 +45,19 @@ Folgende Punkte werden derzeit diskutiert:
 
 Bei der angenommenen Basisimplementierung waren die Erstanwender
 
-- Produzenten: [Interline](https://www.interline.io/), [Verkehrsministerium von Maryland](https://www.mta.maryland.gov/developer-resources), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
+- Produzenten: [Interline](https://www.interline.io/), [Maryland Department of Transportation](https://www.mta.maryland.gov/developer-resources), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - Verbraucher: [Transit](https://transitapp.com/)
 
 Für die derzeit diskutierte Funktion der Fahrpreiscontainer sind die Erstanwender
 
 - Produzent: [Interline](https://www.interline.io/)
-- Verbraucher: [Apple](https://www.apple.com/), [Durchgangsverkehr](https://transitapp.com/)
+- Verbraucher: [Apple](https://www.apple.com/), [Transit](https://transitapp.com/)
 
 <a class="button no-icon" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing" target="_blank">Sehen Sie, wer die Dateien und Felder von Fares v2 verwendet</a>
 
 ## In der Diskussion befindliche Fares v2 Merkmale
 
-<iframe src="https://portal.productboard.com/xcpvceqebovhprgzprgr2ryb" frameborder="0" width="100%", style="min-height:1060px"></iframe>
+<iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:1060px"></iframe>
 
 ## Geschichte
 

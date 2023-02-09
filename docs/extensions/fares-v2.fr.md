@@ -57,9 +57,9 @@ Pour la fonctionnalité de conteneurs tarifaires actuellement en discussion, les
 
 <a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">Voir qui utilise les fichiers et les champs de Fares v2</a>
 
-## Fonctionnalités tarifaires en cours de discussion
+## Fonctionnalités Fares v2 en cours de discussion
 
-<iframe src="https://portal.productboard.com/xcpvceqebovhprgzprgr2ryb" frameborder="0" width="100%", style="min-height:1060px"></iframe>
+<iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:1060px"></iframe>
 
 ## Historique
 

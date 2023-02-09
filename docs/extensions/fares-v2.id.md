@@ -55,7 +55,7 @@ Untuk fitur kontainer tarif yang saat ini sedang dibahas, pengadopsi pertama ada
 
 ## Fitur Fares v2 Dalam Diskusi
 
-<iframe src="https://portal.productboard.com/xcpvceqebovhprgzprgr2ryb" frameborder="0" width="100%", style="min-height:1060px;"></iframe>
+<iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:1060px;"></iframe>
 
 ## Sejarah
 

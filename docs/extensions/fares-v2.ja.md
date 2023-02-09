@@ -45,19 +45,19 @@ GTFSコミュニティは、現在、[運賃コンテナ](https://share.mobility
 
 採用された基本実装の場合、ファーストアダプターは以下の通りです。
 
-- プロデューサーの皆さん[インターライン](https://www.interline.io/)、[メリーランド州運輸省](https://www.mta.maryland.gov/developer-resources)、[Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
-- 消費者[トランジット](https://transitapp.com/)
+- プロデューサーの皆さん[Interline](https://www.interline.io/)、[Maryland Department of Transportation](https://www.mta.maryland.gov/developer-resources)、[Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
+- 消費者[Transit](https://transitapp.com/)
 
 現在議論されている運賃コンテナ機能については、ファーストアダプターは以下の通りです。
 
-- 生産者[インターライン](https://www.interline.io/)
-- 消費者[アップル](https://www.apple.com/)、[トランジット](https://transitapp.com/)
+- 生産者[Interline](https://www.interline.io/)
+- 消費者[Apple](https://www.apple.com/)、[Transit](https://transitapp.com/)
 
-[Fares v2ファイルおよびフィールドの使用者を見る](https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing)
+<a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">Fares v2ファイルおよびフィールドの使用者を見る</a>
 
 ## 議論されている運賃の機能
 
-<iframe src="https://portal.productboard.com/xcpvceqebovhprgzprgr2ryb" frameborder="0" width="100%", style="min-height:1060px"></iframe>
+<iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:1060px"></iframe>
 
 ## 歴史
 
@@ -67,4 +67,4 @@ GTFSコミュニティは、現在、[運賃コンテナ](https://share.mobility
 - **2022**年3月：[公開投票#2 → 通過せず](https://github.com/google/transit/pull/286#issuecomment-1080716109)
 - **2022**年5月：[公開投票#3→ 可決された](https://github.com/google/transit/pull/286#issuecomment-1121392932)
 - **2022年8**月：[Fares v2の次のフェーズについてコミュニティで議論開始](https://github.com/google/transit/issues/341)
-- **2022**年12月：コミュニティは、[イテレーションの優先順位を決めるために、機能のスタック順位を特定](https://github.com/google/transit/issues/341#issuecomment-1339947915)する
+- **2022**年12月：[コミュニティは、イテレーションの優先順位を決めるために、機能のスタック順位を特定する](https://github.com/google/transit/issues/341#issuecomment-1339947915)

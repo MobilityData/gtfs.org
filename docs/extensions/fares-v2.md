@@ -58,7 +58,7 @@ For the fare containers feature currently under discussion, first adopters are
 
 ## Fares v2 Features Under Discussion
 
-<iframe src="https://portal.productboard.com/xcpvceqebovhprgzprgr2ryb" frameborder="0" width="100%", style="min-height:1060px;"></iframe>
+<iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:1060px;"></iframe>
 
 ## History
 
