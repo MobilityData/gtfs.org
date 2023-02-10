@@ -487,5 +487,7 @@ nav:
   - SIRI: resources/siri.md
   - Multimodal: resources/multimodal.md
   - Other: resources/other.md
-- Extensions: extensions.md
+- Extensions:
+  - extensions/index.md
+  - Fares v2: extensions/fares-v2.md
 - About: about.md
