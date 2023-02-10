@@ -108,11 +108,11 @@ Calgary Transit 在AB省卡尔加里市经营轻轨、快速公交、普通公�
 
 ## 服务例外
 
-可以定义服务的例外情况，如ADDED服务日（特殊日子）或取消的服务日（如节假日不提供服务）。
+可以定义服务的例外情况，如额外服务日（特殊日子）或取消的服务日（如节假日不提供服务）。
 
-例如，如果2022年7月17日星期日没有SCHEDULED服务--那么该日期可以通过将服务一分为二从[calendar.txt](../../reference/#calendartxt)的`weekend_service`中删除。
+例如，如果2022年7月17日星期日没有预定的服务--那么该日期可以通过将服务一分为二从[calendar.txt](../../reference/#calendartxt)的`weekend_service`中删除。
 
-| 服务                 | start      | end        |
+| 服务                 | 开始      | 结尾        |
 | ------------------ | ---------- | ---------- |
 | `weekend_service1` | `20220623` | `20220716` |
 | `weekend_service2` | `20220718` | `20220903` |
@@ -125,7 +125,7 @@ Calgary Transit 在AB省卡尔加里市经营轻轨、快速公交、普通公�
     weekend_service,20220623,2
 
 - `service_id` `weekend_service`被列出。
-- 移除或ADDED服务的日期列在`date`下（2022年7月17日）。
+- 移除或额外服务的日期列在`date`下（2022年7月17日）。
 - 字段`exception_type`被设置为2，这意味着这一天的服务被取消。
 
 [例子来源](https://data.calgary.ca/download/npk7-z3bj/application%2Fzip)

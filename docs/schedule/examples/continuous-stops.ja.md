@@ -50,8 +50,8 @@ Victor Valley Transit (Victorville, CA, USA)）は、22号線の一部区間に�
 
 [stop_times.txt](../../reference/#stoptimestxt)では、指定されたトリップについて。
 
-- `continuous_pickup=`0のレコードは、その停留所から次の停留所まで連続的なピックアップが許可されていることを示す。
-- `continuous_pickup=`1のレコードは、その停留所から次の停留所まで連続的なピックアップが禁止されていることを示す。
+- `continuous_pickup=0`のレコードは、その停留所から次の停留所まで連続的なピックアップが許可されていることを示す。
+- `continuous_pickup=1`のレコードは、その停留所から次の停留所まで連続的なピックアップが禁止されていることを示す。
 
 [**stop_times.txt**](../../reference/#stoptimestxt)
 

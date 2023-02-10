@@ -23,7 +23,7 @@ Fares v1 は、[fare_attributes.txt](../../reference/#fare_attributestxt)と[far
 - 運賃の価格は、価格と`currency_type`に記載されています。
 - ライダーは、地下鉄に乗る前に駅の運賃ゲートで運賃を支払わなければならない。これは、`payment_method=1`で表される。
 - transfersは無制限の乗り換えを表すため、空欄になっています。
-- `transfer_durationは`、2時間の乗り換え時間（秒）です。
+- `transfer_duration`は、2時間の乗り換え時間（秒）です。
 
 2つ目のファイル、[fare_rules.txtは](../../reference/#fare_rulestxt)、運賃を路線とその路線の出発地/目的地に関連付けることで、旅に運賃を割り当てるものです。
 
@@ -35,7 +35,7 @@ Fares v1 は、[fare_attributes.txt](../../reference/#fare_attributestxt)と[far
     TTC,Line1,1
     TTC,Line2,1
 
-この例では、Bloor-Yonge駅での乗り換えがモデル化されています。そのために、この駅は2つの別々の駅としてモデル化されています。1つ目はBloor駅、これは1号線が通っており、2つ目はYonge駅、これは2号線が通っている駅です。地下鉄の駅を1つの運賃ゾーンにまとめるために、どちらも`zone_id=ttc_subway_stationsとして`います。
+この例では、Bloor-Yonge駅での乗り換えがモデル化されています。そのために、この駅は2つの別々の駅としてモデル化されています。1つ目はBloor駅、これは1号線が通っており、2つ目はYonge駅、これは2号線が通っている駅です。地下鉄の駅を1つの運賃ゾーンにまとめるために、どちらも`zone_id=ttc_subway_stations`としています。
 
 [**stops.txt**](../../reference/#stopstxt)
 
@@ -45,7 +45,7 @@ Fares v1 は、[fare_attributes.txt](../../reference/#fare_attributestxt)と[far
 
 [fare_rules.txt](../../reference/#fare_rulestxt)では、さきがけの運賃は地下鉄の路線と駅に以下のような関係で関連づけられています。
 
-- `fare_id=presto_fareの`場合，ライダーはLine 1の任意の2駅間（`route_id=line1`）を移動でき，`origin_id=ttc_subway_stations`と`destination_id=ttc_subway_stations` である．
+- `fare_id=presto_fare`の場合，ライダーはLine 1の任意の2駅間（`route_id=line1`）を移動でき，`origin_id=ttc_subway_stations`と`destination_id=ttc_subway_stations` である．
 
 [**fare_rules.txt**](../../reference/#fare_rulestxt)
 
@@ -61,7 +61,7 @@ Fares v1 は、[fare_attributes.txt](../../reference/#fare_attributestxt)と[far
     Bloor,Yonge,line1,line2,0
     Yonge,Bloor,line2,line1,0
 
-- 最初のモデルは、Bloor駅からYonge駅までの`from_route_idと` `to_route_idを使って`、Line 1からLine 2への乗り換えを行うものです。
+- 最初のモデルは、Bloor駅からYonge駅までのと`from_route_id` `to_route_id`、を使ってLine 1からLine 2への乗り換えを行うものです。
 - 2つ目は、Yonge駅からBloor駅までの`from_route_id`と`to_route_`idを使って、2号線から1号線への乗り換えをモデル化したものです。
 - 乗り換えに関する特別な要件や考慮事項がないため、`transfer_type`の値は`0`になっています。
 

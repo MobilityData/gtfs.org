@@ -113,10 +113,10 @@ Calgary Transit 在艾伯塔省卡爾加里經營 LRT、BRT、定期巴士服務
 
 例如，如果沒有預定的 2022 年 7 月 17 日星期日的服務 - 然後可以從`weekend_service`中刪除該日期[calendar.txt](../../reference/#calendartxt)通過將服務一分為二：
 
-| 服務                 | start      | end        |
-| ------------------ | ---------- | ---------- |
-| `weekend_service1` | `20220623` | `20220716` |
-| `weekend_service2` | `20220718` | `20220903` |
+| 服務                 | 開始          | 結尾         |
+| ------------------ |-------------|------------|
+| `weekend_service1` | `20220623`  | `20220716` |
+| `weekend_service2` | `20220718`  | `20220903` |
 
 但是，這會使文件複雜化，因為`service_id`被分成兩半，這個休息將級聯到[trips.txt](../../reference/#tripstxt) .相反，這可以使用更簡單的方式完成[calendar_dates.txt](../../reference/#calendar_datestxt)如下所示：
 
@@ -126,7 +126,7 @@ Calgary Transit 在艾伯塔省卡爾加里經營 LRT、BRT、定期巴士服務
     weekend_service,20220623,2
 
 - 這`service_id` `weekend_service`已列出
-- 刪除日期或added服務列在`date` （2022 年 7 月 17 日）下
+- 刪除日期或開始服務列在`date` （2022 年 7 月 17 日）下
 - 字段`exception_type`設置為 2，表示這一天移除服務
 
 [示例來源](https://data.calgary.ca/download/npk7-z3bj/application%2Fzip)

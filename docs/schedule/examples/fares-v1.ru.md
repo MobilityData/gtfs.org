@@ -45,7 +45,7 @@ trip в Toronto Transit Commission стоит \$3,20 CAD, если пассаж�
 
 В [fare_rules.txt](../../reference/#fare_rulestxt) тариф PRESTO связан с обеими линиями метро и станциями с помощью следующих отношений:
 
-- При `тарифе fare_id=presto_fare` пассажиры могут перемещаться между любыми двумя станциями линии 1 (`route_id=line1`) с `origin_id=ttc_subway_stations` и `destination_id=ttc_subway_stations`.
+- При тарифе `fare_id=presto_fare` пассажиры могут перемещаться между любыми двумя станциями линии 1 (`route_id=line1`) с `origin_id=ttc_subway_stations` и `destination_id=ttc_subway_stations`.
 
 [**fare_rules.txt**](../../reference/#fare_rulestxt)
 

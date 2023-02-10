@@ -26,7 +26,7 @@ search:
 
 ## 在路線的一部分上接送
 
-運輸機構 Victor Valley Transit（美國加利福尼亞州維克多維爾）僅對 22 號路線的一部分實施連續停車政策。乘客只能在縣票價區內的任何安全位置上下車。本地票價區內無法連續上車和下車。
+運輸機構 Victor Valley Transit（Victorville, US-CA）僅對 22 號路線的一部分實施連續停車政策。乘客只能在縣票價區內的任何安全位置上下車。本地票價區內無法連續上車和下車。
 
 Local Fare zone 和 County Fare zone 被 Air Expressway 分開，如下圖所示。預定的停止 National Trails Highway - Air Expressway 位於該邊界的稍北處。準確地說，公交機構可以在公交路線與邊界的實際交匯處增加一個停靠站，從那裡可以連續上下車。此站點可能未安排.
 
