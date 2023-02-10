@@ -163,6 +163,12 @@ c {
     min-width: 12em;
   }
 
+@media only screen and (min-width: 1219px) {
+    a:first-child  {
+        margin-left: 0;
+    }
+}
+
 .usage-buttons > .button {
     background-color: #172f50 !important;
 }

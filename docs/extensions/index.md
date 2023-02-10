@@ -12,7 +12,7 @@
 
 <!-- GTFS is a community driven data format. Users can propose and vote on changes. For detailed information see the [GTFS Schedule](../schedule/process) and [GTFS Realtime](../realtime/process) amendment process.
 
-Extensions that are currently in development can be found on MobilityData's [roadmap](https://portal.productboard.com/y3dqmkhjlmyst65bap8sx9kd/tabs/9-in-progress).
+Extensions that are currently in development can be found on MobilityData's [roadmap](https://mobilitydata.org/roadmaps/#transit).
 
 Extension proposals can be found in the following places:
 
@@ -50,7 +50,7 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
 
     <div class="row">
     <div class="leftcontainer">
-            <h3 class="title"><a href="http://bit.ly/gtfs-fares" class="no-icon" target="_blank">GTFS-Fares v2</a></h3>
+            <a href="fares-v2" class="no-icon" target="_blank"><h3 class="title">GTFS-Fares v2</h3></a>
             <p class="maintainer">Maintained by <a href="https://mobilitydata.org/" class="no-icon" target="_blank">MobilityData</a></p>
     </div>
     <div class="featurelist">
