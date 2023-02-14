@@ -11,7 +11,7 @@ Composé de [fare_attributes.txt](../../reference/#fare_attributestxt) et [fare_
 
 ## Définir les règles tarifaires d'une agence
 
-Un trip sur le réseau de métro de la Toronto Transit Commission coûte 3,20 dollars canadiens si l'usager paie avec la carte PRESTO. Les usagers peuvent également effectuer des transferts vers d'autres lignes de métro, de tramway ou de bus exploitées par la TTC dans un délai de deux heures.
+Un trajet dans le réseau de métro de la Toronto Transit Commission coûte 3,20 dollars canadiens si l'usager paie avec la carte PRESTO. Les usagers peuvent également effectuer des transferts vers d'autres lignes de métro, de tramway ou de bus exploitées par la TTC dans un délai de deux heures.
 
 Ce service peut être représenté à l'aide des fichiers [fare_attributes.txt](../../reference/#fare_attributestxt), [fare_rules.txt](../../reference/#fare_rulestxt) et [transfers.txt](../../reference/#transferstxt). Le premier fichier, [fare_attributes.txt](../../reference/#fare_attributestxt) décrit les tarifs de l'agence, ci-dessous un exemple pour le tarif presto :
 

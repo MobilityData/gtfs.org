@@ -62,7 +62,7 @@ GTFSでは、運賃のレッグとは、異なる交通手段、ルート、ネ�
 
 脚グループは、出発地から目的地（またはエリアIDがグループ化された停止に対応している場合は、目的地のセットに起点のセット）までのネットワーク内の旅行を定義します。以下のファイルでは、TTCのネットワーク内のどこにでも移動できる2つのルールを説明しています。最初のルールはさきがけ運賃での移動に対応し、2つ目のルールは現金運賃での移動に対応します。
 
-[**(fare_leg_rules.txt)**](../../reference/#fare_leg_rulestxt)
+[**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
 
     leg_group_id,network_id,from_area_id,to_area_id,fare_product_id
     ttc_trip_presto,ttc_network,ttc_service_area,ttc_service_area,presto_fare

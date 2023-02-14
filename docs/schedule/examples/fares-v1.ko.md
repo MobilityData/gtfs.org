@@ -11,7 +11,7 @@ search:
 
 ## 여행사의 운임 규정 정의
 
-ㅏtrip Toronto Transit Commission의 지하철 네트워크에서 승객이 PRESTO 카드를 사용하여 지불하는 경우 \$3.20 CAD입니다. 승객은 2시간 이내에 TTC에서 운영하는 다른 지하철, 전차 또는 버스 노선으로 환승할 수도 있습니다.
+승객이 PRESTO 카드를 사용하여 지불하는 경우 Toronto Transit Commission의 지하철 네트워크 이용 요금은 $3.20 CAD입니다. 승객은 2시간 이내에 TTC에서 운영하는 다른 지하철, 전차 또는 버스 노선으로 환승할 수도 있습니다.
 
 이 서비스는 파일을 사용하여 나타낼 수 있습니다.[fare_attributes.txt](../../reference/#fare_attributestxt) ,[fare_rules.txt](../../reference/#fare_rulestxt) , 그리고[transfers.txt](../../reference/#transferstxt). 첫 번째 파일,[fare_attributes.txt](../../reference/#fare_attributestxt) 여행사의 요금을 설명합니다. 아래는 프레스토 요금의 예입니다.
 

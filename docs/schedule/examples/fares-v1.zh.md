@@ -11,7 +11,7 @@ search:
 
 ## 定义一个机构的票价规则
 
-如果乘客使用PRESTO卡支付，在多伦多交通委员会的地铁网络上的trip费用为3.20加元。乘客还可以在两小时内转乘TTC运营的其他地铁、有轨电车或公交线路。
+如果乘客使用PRESTO卡支付，在Toronto Transit Commission员会的地铁网络上的旅行费用为3.20加元。乘客还可以在两小时内转乘TTC运营的其他地铁、有轨电车或公交线路。
 
 这项服务可以用文件[fare_attributes.txt](../../reference/#fare_attributestxt)、[fare_rules.txt](../../reference/#fare_rulestxt) 和[transfers.txt](../../reference/#transferstxt) 来表示。第一个文件，[fare_attributes.txt](../../reference/#fare_attributestxt)描述了该机构的票价，下面是presto票价的例子。
 

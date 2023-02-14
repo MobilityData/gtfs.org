@@ -7,11 +7,11 @@ search:
 
 <hr/>
 
-Fares V1, bestehend aus [fare_attributes.txt](../../reference/#fare_attributestxt) und [fare_rules.txt](../../reference/#fare_rulestxt), ist seit jeher die offizielle Methode zur Beschreibung von Tarifinformationen in GTFS. Die beiden Dateien sind jedoch in der Breite der Faktoren, die sie effizient beschreiben können, begrenzt, und ihre Implementierung ist nicht eindeutig.[Fares V2](../../examples/fares-v2/) ist ein Erweiterungsprojekt, das sich in aktiver Entwicklung befindet und darauf abzielt, die Einschränkungen von Fares V1 zu beseitigen.
+Fares V1, bestehend aus [fare_attributes.txt](../../reference/#fare_attributestxt) und [fare_rules.txt](../../reference/#fare_rulestxt), ist seit jeher die offizielle Methode zur Beschreibung von Tarifinformationen in GTFS. Die beiden Dateien sind jedoch in der Breite der Faktoren, die sie effizient beschreiben können, begrenzt, und ihre Implementierung ist nicht eindeutig. [Fares V2](../../examples/fares-v2/) ist ein Erweiterungsprojekt, das sich in aktiver Entwicklung befindet und darauf abzielt, die Einschränkungen von Fares V1 zu beseitigen.
 
 ## Definieren Sie die Tarifregeln einer Agentur
 
-Eine trip im U-Bahn-Netz der Toronto Transit Commission kostet 3,20 CAD, wenn die Fahrgäste mit der PRESTO-Karte bezahlen. Die Fahrgäste können innerhalb eines Zeitfensters von zwei Stunden auch auf andere U-Bahn-, Straßenbahn- oder Buslinien der TTC umsteigen.
+Eine Fahrt im U-Bahn-Netz der Toronto Transit Commission kostet 3,20 CAD, wenn die Fahrgäste mit der PRESTO-Karte bezahlen. Die Fahrgäste können innerhalb eines Zeitfensters von zwei Stunden auch auf andere U-Bahn-, Straßenbahn- oder Buslinien der TTC umsteigen.
 
 Dieser Dienst kann durch die Dateien [fare_attributes.txt](../../reference/#fare_attributestxt), [fare_rules.txt](../../reference/#fare_rulestxt) und [transfers.txt](../../reference/#transferstxt) dargestellt werden. Die erste Datei, [fare_attributes.txt](../../reference/#fare_attributestxt), beschreibt die Tarife der Agentur, unten ist ein Beispiel für den presto-Tarif:
 

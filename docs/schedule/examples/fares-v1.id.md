@@ -7,11 +7,11 @@ search:
 
 <hr/>
 
-Terdiri dari [fare_attributes.txt](../../reference/#fare_attributestxt) dan [fare_rules.txt](../../reference/#fare_rulestxt) ,Fares V1 secara historis menjadi metode resmi untuk menggambarkan informasi tarif masukGTFS . Namun kedua file tersebut terbatas pada luasnya faktor yang dapat mereka gambarkan secara efisien, dan tidak jelas untuk diterapkan.[Fares V2](../../examples/fares-v2/) adalah proyek ekstensi dalam pengembangan aktif, dan bertujuan untuk mengatasi keterbatasanFares V1 .
+Terdiri dari [fare_attributes.txt](../../reference/#fare_attributestxt) dan [fare_rules.txt](../../reference/#fare_rulestxt) , Fares V1 secara historis menjadi metode resmi untuk menggambarkan informasi tarif masuk GTFS . Namun kedua file tersebut terbatas pada luasnya faktor yang dapat mereka gambarkan secara efisien, dan tidak jelas untuk diterapkan. [Fares V2](../../examples/fares-v2/) adalah proyek ekstensi dalam pengembangan aktif, dan bertujuan untuk mengatasi keterbatasan Fares V1 .
 
 ## Tentukan aturan tarif agen
 
-SEBUAHtrip di jaringan kereta bawah tanah Toronto Transit Commission dikenai biaya \$3,20 CAD jika pengendara membayar menggunakan kartu PRESTO. Pengendara juga dapat berpindah ke rute kereta bawah tanah, trem, atau bus lain yang dioperasikan oleh TTC dalam waktu dua jam.
+Perjalanan di jaringan kereta bawah tanah Toronto Transit Commission dikenai biaya $3,20 CAD jika pengendara membayar menggunakan kartu PRESTO. Pengendara juga dapat berpindah ke rute kereta bawah tanah, trem, atau bus lain yang dioperasikan oleh TTC dalam waktu dua jam.
 
 Layanan ini dapat direpresentasikan menggunakan file [fare_attributes.txt](../../reference/#fare_attributestxt) ,[fare_rules.txt](../../reference/#fare_rulestxt) , dan [transfers.txt](../../reference/#transferstxt). Berkas pertama, [fare_attributes.txt](../../reference/#fare_attributestxt) menggambarkan tarif agen, di bawah ini adalah contoh tarif presto:
 
@@ -25,7 +25,7 @@ Layanan ini dapat direpresentasikan menggunakan file [fare_attributes.txt](../..
 - Transfer bidang dibiarkan kosong untuk mewakili transfer tak terbatas
 - Bidang `transfer_duration` sesuai dengan jendela transfer 2 jam (dalam detik)
 
-Berkas kedua,[fare_rules.txt](../../reference/#fare_rulestxt) menetapkan tarif untuk perjalanan melalui mengikat tarif ke rute serta asal/tujuan pada rute tersebut.
+Berkas kedua, [fare_rules.txt](../../reference/#fare_rulestxt) menetapkan tarif untuk perjalanan melalui mengikat tarif ke rute serta asal/tujuan pada rute tersebut.
 
 Untuk itu, dua jalur kereta bawah tanah ditentukan di bawah ini [routes.txt](../../reference/#routestxt) :
 
@@ -53,7 +53,7 @@ Di [fare_rules.txt](../../reference/#fare_rulestxt), tarif PRESTO dikaitkan deng
     presto_fare,line1,ttc_subway_stations,ttc_subway_stations
     presto_fare,line2,ttc_subway_stations,ttc_subway_stations
 
-Arsip ketiga,[transfers.txt](../../reference/#transferstxt) menentukan titik transfer antara rute yang berbeda. Untuk memodelkan transfer di stasiun Bloor-Yonge, diperlukan dua entri:
+Arsip ketiga, [transfers.txt](../../reference/#transferstxt) menentukan titik transfer antara rute yang berbeda. Untuk memodelkan transfer di stasiun Bloor-Yonge, diperlukan dua entri:
 
 [**transfers.txt**](../../reference/#transferstxt)
 

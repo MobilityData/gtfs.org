@@ -11,7 +11,7 @@ search:
 
 ## Определите правила оплаты проезда агентства
 
-trip в Toronto Transit Commission стоит \$3,20 CAD, если пассажиры оплачивают проезд картой PRESTO. Всадники также могут пересаживаться на другие маршруты метро, трамваи или автобусы, обслуживаемые TTC, в течение двухчасового окна.
+Поездка в Toronto Transit Commission стоит $3,20 CAD, если пассажиры оплачивают проезд картой PRESTO. Всадники также могут пересаживаться на другие маршруты метро, трамваи или автобусы, обслуживаемые TTC, в течение двухчасового окна.
 
 Этот сервис может быть представлен с помощью файлов [fare_attributes.txt](../../reference/#fare_attributestxt), [fare_rules.txt](../../reference/#fare_rulestxt) и [transfers.txt](../../reference/#transferstxt). Первый файл, [fare_attributes.txt](../../reference/#fare_attributestxt), описывает тарифы агентства, ниже приведен пример тарифа presto:
 

@@ -11,7 +11,7 @@ search:
 
 ## 定義機構的票價規則
 
-一個trip如果乘客使用 PRESTO 卡付款，在多Toronto Transit Commission的地鐵網絡上的票價為 3.20 加元。乘客還可以在兩小時內轉乘 TTC 運營的其他地鐵、有軌電車或公交線路。
+如果乘客使用 PRESTO 卡付款，乘坐Toronto Transit Commission地鐵網絡的費用為 3.20 加元。乘客还可以在两小时内转乘TTC运营的其他地铁、有轨电车或公交线路。乘客還可以在兩小時內轉乘 TTC 運營的其他地鐵、有軌電車或公交線路。
 
 該服務可以使用文件表示[fare_attributes.txt](../../reference/#fare_attributestxt) ,[fare_rules.txt](../../reference/#fare_rulestxt) ， 和[transfers.txt](../../reference/#transferstxt) .第一個文件，[fare_attributes.txt](../../reference/#fare_attributestxt)描述代理機構的票價，以下是 presto 票價的示例：
 
@@ -20,7 +20,7 @@ search:
     fare_id,price,currency_type,payment_method,transfers,transfer_duration
     presto_fare,3.2,CAD,1,,7200
 
-- 票價列在 price 和`currency_type`下
+- 票價列在價格和`currency_type`下
 - 乘坐地鐵前，乘客必須在車站檢票口繳費。這由`payment_method=1`表示
 - transfers字段留空代表無限次轉賬
 - 字段`transfer_duration`對應 2 小時的傳輸窗口（以秒為單位）

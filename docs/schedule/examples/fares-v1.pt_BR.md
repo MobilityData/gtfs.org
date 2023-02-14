@@ -11,7 +11,7 @@ Composto de [fare_attributes.txt](../../reference/#fare_attributestxt) e [fare_r
 
 ## Definir as regras tarifárias de uma agência
 
-Uma trip na rede de metrô da Toronto Transit Commission custa \$3,20 CAD se os cavaleiros pagarem usando o cartão PRESTO. Os cavaleiros também podem transferir para outras linhas de metrô, bonde ou ônibus operados pelo TTC dentro de uma janela de duas horas.
+Uma viagem na rede de metrô da Toronto Transit Commission custa $3,20 CAD se os cavaleiros pagarem usando o cartão PRESTO. Os cavaleiros também podem transferir para outras linhas de metrô, bonde ou ônibus operados pelo TTC dentro de uma janela de duas horas.
 
 Este serviço pode ser representado usando os arquivos [fare_attributes.txt](../../reference/#fare_attributestxt), [fare_rules.txt](../../reference/#fare_rulestxt), e [transfers.txt](../../reference/#transferstxt). O primeiro arquivo, [fare_attributes.txt](../../reference/#fare_attributestxt), descreve as tarifas da agência, abaixo é um exemplo para a tarifa presto:
 
@@ -61,7 +61,7 @@ O terceiro arquivo, [transfers.txt](../../reference/#transferstxt), define os po
     Bloor,Yonge,line1,line2,0
     Yonge,Bloor,line2,line1,0
 
-- Os primeiros modelos transferem da Linha 1 para a Linha 2 usando a estação de `from_route_id` e `to_route_id` estação de `to_route_id` da Bloor para a estação Yonge.
+- Os primeiros modelos transferem da Linha 1 para a Linha 2 usando a estação de `from_route_id` e `to_route_id` estação da Bloor para a estação Yonge.
 - O segundo modelo transfere da Linha 2 para a Linha 1, usando o `from_route_id` e o `to_route_id` da estação Yonge para a estação Bloor.
 - O valor para `transfer_type` é `0`, já que não há requisitos ou considerações específicas para transferências
 

@@ -7,9 +7,9 @@ search:
 
 <hr/>
 
-Fares V2 adalahGTFS proyek ekstensi yang bertujuan untuk mengatasi keterbatasanFares V1 . Proyek perluasan ini diadopsi dalam iterasi, dan contoh di bawah menunjukkan apa yang dapat dimodelkan menggunakan porsi dariFares V2 yang telah diadopsi dalam spesifikasi resmi. Lihat informasi lebih lanjut tentangFares V2 proyek ekstensi di bagian [Ekstensi](../../../extensions) .
+Fares V2 adalah GTFS proyek ekstensi yang bertujuan untuk mengatasi keterbatasan Fares V1 . Proyek perluasan ini diadopsi dalam iterasi, dan contoh di bawah menunjukkan apa yang dapat dimodelkan menggunakan porsi dari Fares V2 yang telah diadopsi dalam spesifikasi resmi. Lihat informasi lebih lanjut tentangFares V2 proyek ekstensi di bagian [Ekstensi](../../../extensions) .
 
-Untuk sementara, produsen dapat menerapkanFares V2 di samping implementasi dariFares V1 dalam kumpulan data yang sama karena tidak ada konflik teknis antara keduanya. Konsumen akan memiliki pilihan implementasi mana yang akan dikonsumsi secara independen dari yang lain. Dengan adopsi dan dukungan yang memadaiFares V2 ,Fares V1 mungkin akan ditinggalkan di masa mendatang.
+Untuk sementara, produsen dapat menerapkan Fares V2 di samping implementasi dari Fares V1 dalam kumpulan data yang sama karena tidak ada konflik teknis antara keduanya. Konsumen akan memiliki pilihan implementasi mana yang akan dikonsumsi secara independen dari yang lain. Dengan adopsi dan dukungan yang memadai Fares V2 ,Fares V1 mungkin akan ditinggalkan di masa mendatang.
 
 ## Tentukan tarif transit
 
@@ -31,7 +31,7 @@ Tiket atau tarif transit dapat dijelaskan menggunakan [fare_products.txt](../../
 
 Beberapa agen transit mengoperasikan struktur tarif berbasis zona. Zona tarif dibagi wilayah geografis yang terkait dengan harga tarif yang berbeda. Apakah mereka bepergian dalam satu zona atau dari satu zona ke zona lainnya, penumpang transit perlu mengetahui tarif yang tepat. Dalam sistem TTC Toronto, hanya ada satu zona tarif. Pengendara transit hanya perlu membayar tarif tiket tunggal yang sama untuk semuatrip jarak dalam batas Kota Toronto, apa pun bentuk transit yang digunakan.
 
-Zona tarif dapat dideskripsikan menggunakan file [stops_areas.txt](../../reference/#stops_areastxt) , yang menentukan asal perhentianstops.txt keareas.txt .
+Zona tarif dapat dideskripsikan menggunakan file [stops_areas.txt](../../reference/#stops_areastxt) , yang menentukan asal perhentian [stops.txt](../../reference/#stopstxt) ke [areas.txt](../../reference/#areastxt).
 
 Pertama, identifikasi area (zona tarif).
 

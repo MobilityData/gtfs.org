@@ -11,7 +11,7 @@ Fares v1 は、[fare_attributes.txt](../../reference/#fare_attributestxt)と[far
 
 ## ある機関の運賃規則を定義する
 
-トロント交通委員会の地下鉄ネットワークの旅は、ライダーがPRESTOカードで支払う場合、\$3.20 CADです。また、2時間以内であれば、TTCが運営する他の地下鉄、路面電車、バス路線に乗り換えることができます。
+Toronto Transit Commissionの地下鉄ネットワークの旅は、ライダーがPRESTOカードで支払う場合、$3.20 CADです。また、2時間以内であれば、TTCが運営する他の地下鉄、路面電車、バス路線に乗り換えることができます。
 
 このサービスは[fare_attributes.txt](../../reference/#fare_attributestxt), [fare_rules.txt](../../reference/#fare_rulestxt), [transfers.txt](../../reference/#transferstxt) というファイルを使って表現することができる．最初のファイル、[fare_attributes.txtは](../../reference/#fare_attributestxt)代理店の運賃を記述し、以下はpresto運賃の例である。
 
