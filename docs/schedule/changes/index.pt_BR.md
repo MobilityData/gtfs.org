@@ -13,10 +13,10 @@ A Especificação GTFS não é definida em pedra. Ao invés disso, é uma especi
 
 Para contribuir com o GTFS, leia o [Processo de Emenda de Especificações](../process) e siga as discussões nas [questões](https://github.com/google/transit/issues) em aberto e [faça solicitações](https://github.com/google/transit/pulls) no repositório Transit Github do Google [(google/transit](https://github.com/google/transit)). ![](../../assets/mark-github.svg)
 
-<div class="admonition note"> <p> A especificação oficial, referência e documentação são escritas em inglês. Se uma Translation para um idioma diferente do original em inglês, esta última tem precedência. Toda a comunicação é feita em inglês.</p> </div>
+<div class="admonition note"> <p> A especificação oficial, referência e documentação são escritas em inglês. Se uma tradução para um idioma diferente do original em inglês, esta última tem precedência. Toda a comunicação é feita em inglês.</p> </div>
 
 
-## Propostas ativas![](../../assets/pr-active.svg)
+## Propostas ativas &ensp; <img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!--
 Active proposals for new features in <glossary variable="GTFS Schedule"><glossary variable="GTFS">GTFS</glossary> Schedule</glossary>.  -->
@@ -39,7 +39,7 @@ Participe das discussões sobre [o Github](https://github.com/google/transit/pul
 </div>
 <div class="row"></div> -->
 
-## Propostas fundidas recentemente![](../../assets/pr-merged.svg)
+## Propostas fundidas recentemente &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Recentemente foram fundidas propostas que agora são características da [especificação oficial da GTFS Schedule](../reference). Veja o [Histórico de Revisões](../process#revision-history) completo para mais informações.
 

@@ -15,10 +15,10 @@ GTFSに貢献するには、[仕様修正](../process)プロセスを読み、Go
 
 !!!note ""
 
-    本仕様書、参考資料、ドキュメント類は英語で書かれています。他言語へのTranslation英語の原文と異なる場合は、後者が優先されます。すべてのコミュニケーションは英語で行われます。
+    本仕様書、参考資料、ドキュメント類は英語で書かれています。他言語への翻訳英語の原文と異なる場合は、後者が優先されます。すべてのコミュニケーションは英語で行われます。
 
 
-## アクティブなプロポーザル![](../../assets/pr-active.svg)
+## アクティブなプロポーザル &ensp; <img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!--
 Active proposals for new features in GTFS Schedule.  -->
@@ -41,7 +41,7 @@ Active proposals for new features in GTFS Schedule.  -->
 </div>
 <div class="row"></div> -->
 
-## 最近マージされたプロポーザル![](../../assets/pr-merged.svg)
+## 最近マージされたプロポーザル &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 最近マージされたプロポーザルで、現在では[公式のGTFSスケジュール仕様](../reference)の機能になっています。詳しくは[リビジョンヒストリーを](../process#revision-history)ご覧ください。
 
@@ -52,7 +52,7 @@ Active proposals for new features in GTFS Schedule.  -->
     </div>
     <div class="featurelist">
         <ul>
-            <li>同じ車両が2回連続で運行し、ユーザーが乗車したまま移動できる場合に、ユーザーが「座席内移動」を行えるかどうかを定義するために、トリップ間移動のための新しい<code>transfer_type`sを</code>追加しました。</li>
+            <li>同じ車両が2回連続で運行し、ユーザーが乗車したまま移動できる場合に、ユーザーが「座席内移動」を行えるかどうかを定義するために、トリップ間移動のための新しい<code>transfer_type</code>`sを追加しました。</li>
             <li>座席間移動はできないが、異なる2つのトリップを操作上リンクさせることができる場合を定義できる。
             </li>
         </ul>

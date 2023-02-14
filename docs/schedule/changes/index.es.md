@@ -14,9 +14,9 @@ Para contribuir GTFS, lea el [proceso de modificación de la especificación](..
 
 !!!note ""
 
-    La especificación oficial, la referencia y la documentación están escritas en inglés. Si la Translation a otro idioma difiere del original en inglés, este último tiene preferencia. Toda la comunicación se realiza en inglés.
+    La especificación oficial, la referencia y la documentación están escritas en inglés. Si la Traducción a otro idioma difiere del original en inglés, este último tiene preferencia. Toda la comunicación se realiza en inglés.
 
-## Propuestas activas![](../../assets/pr-active.svg)
+## Propuestas activas &ensp; <img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!--
 Active proposals for new features in <glossary variable="GTFS Schedule"><glossary variable="GTFS">GTFS</glossary> <glossary variable="Schedule">Schedule</glossary></glossary>.  -->
@@ -39,7 +39,7 @@ Active proposals for new features in <glossary variable="GTFS Schedule"><glossar
 </div>
 <div class="row"></div> -->
 
-## Propuestas recientemente fusionadas![](../../assets/pr-merged.svg)
+## Propuestas recientemente fusionadas &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Propuestas recientemente fusionadas que ahora son características de la [especificación oficial GTFS Schedule](../reference). Consulte el [historial de revisiones](../process#revision-history) completo para obtener más información.
 

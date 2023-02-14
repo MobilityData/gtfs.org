@@ -13,10 +13,10 @@ GTFS规范并不是一成不变的。相反，它是一个开放的规范，由�
 
 要对GTFS做出贡献，请阅读[规范修订过程](../process)，并关注谷歌Transit Github仓库[（google/transit](https://github.com/google/transit)）上的公开[问题](https://github.com/google/transit/issues)和[拉动请求](https://github.com/google/transit/pulls)中的讨论。![](../../assets/mark-github.svg)
 
-<div class="admonition note"><p> 官方规范、参考资料和文件都是用英文写的。如果Translation不同的语言与英文原文不同，则以后者为准。所有的交流都用英语进行。</p></div>
+<div class="admonition note"><p> 官方规范、参考资料和文件都是用英文写的。如果翻译不同的语言与英文原文不同，则以后者为准。所有的交流都用英语进行。</p></div>
 
 
-## 活跃的提案![](../../assets/pr-active.svg)
+## 活跃的提案 &ensp; <img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!--
 Active proposals for new features in <glossary variable="GTFS Schedule"><glossary variable="GTFS">GTFS</glossary> Schedule</glossary>.  -->
@@ -39,13 +39,13 @@ Active proposals for new features in <glossary variable="GTFS Schedule"><glossar
 </div>
 <div class="row"></div> -->
 
-## 最近合并的提案![](../../assets/pr-merged.svg)
+## 最近合并的提案 &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 最近合并的提案，现在是[官方GTFS Schedule规范](../reference)的特征。请参阅完整的[修订历史](../process#revision-history)以了解更多。
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">增加trip转接，带座位选项</a></h3>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">增加旅行转接，带座位选项</a></h3>
         <p class="maintainer">#303 由<a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a>已于2022年6月26日合并</p>
     </div>
     <div class="featurelist">
@@ -73,12 +73,12 @@ Active proposals for new features in <glossary variable="GTFS Schedule"><glossar
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/284" class="no-icon" target="_blank">trip以及线路与线路之间的换乘</a></h3>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/284" class="no-icon" target="_blank">旅程与旅程之间和路线与路线之间的转移</a></h3>
         <p class="maintainer">#284由<a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a>于2021年10月5日合并而成</p>
     </div>
     <div class="featurelist">
         <ul>
-            <li>在transfers.txt中指定站点、trip或路线对之间的换乘规则</li>
+            <li>在transfers.txt中指定站点、旅行或路线对之间的换乘规则</li>
              <li>根据不同的配对安排，对转移规则的特殊性进行排序</li>
         </ul>
     </div>

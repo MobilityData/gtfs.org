@@ -15,9 +15,9 @@ Untuk berkontribusi pada GTFS , baca [Proses Amendemen Spesifikasi](../process) 
 
 !!! catatan ""
 
-    Spesifikasi resmi, referensi dan dokumentasi ditulis dalam bahasa Inggris. Jika sebuahTranslation ke bahasa yang berbeda berbeda dari aslinya bahasa Inggris, yang terakhir diutamakan. Semua komunikasi dilakukan dalam bahasa Inggris.
+    Spesifikasi resmi, referensi dan dokumentasi ditulis dalam bahasa Inggris. Jika sebuah terjemahan ke bahasa yang berbeda berbeda dari aslinya bahasa Inggris, yang terakhir diutamakan. Semua komunikasi dilakukan dalam bahasa Inggris.
 
-## Proposal Aktif ![](../../assets/pr-active.svg)
+## Proposal Aktif &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!--
 Active proposals for new features in <glossary variable="GTFS Schedule"><glossary variable="GTFS">GTFS</glossary> Schedule</glossary>.  -->
@@ -40,7 +40,7 @@ Bergabunglah dengan diskusi di [Github](https://github.com/google/transit/pulls)
 </div>
 <div class="row"></div> -->
 
-## Proposal yang Baru Digabung![](../../assets/pr-merged.svg)
+## Proposal yang Baru Digabung &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Baru-baru ini menggabungkan proposal yang sekarang menjadi fitur [resmi GTFS Schedule spesifikasi](../reference) . Lihat [Riwayat Revisi](../process#revision-history) lengkap untuk lebih lanjut.
 

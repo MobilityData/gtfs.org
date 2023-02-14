@@ -15,10 +15,10 @@ Pour contribuer à GTFS, lisez le [processus de modification des spécifications
 
 !!! note ""
 
-    La spécification, la référence et la documentation officielles sont rédigées en anglais. Si une Translation dans une autre langue diffère de l'original anglais, c'est ce dernier qui prévaut. Toute communication est effectuée en anglais.
+    La spécification, la référence et la documentation officielles sont rédigées en anglais. Si une traduction dans une autre langue diffère de l'original anglais, c'est ce dernier qui prévaut. Toute communication est effectuée en anglais.
 
 
-## Propositions actives![](../../assets/pr-active.svg)
+## Propositions actives &ensp; <img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!--
 Active proposals for new features in <glossary variable="GTFS Schedule"><glossary variable="GTFS">GTFS</glossary> <glossary variable="Schedule">Schedule</glossary></glossary>.  -->
@@ -41,7 +41,7 @@ Rejoignez les discussions sur [Github](https://github.com/google/transit/pulls)!
 </div>
 <div class="row"></div> -->
 
-## Propositions récemment fusionnées![](../../assets/pr-merged.svg)
+## Propositions récemment fusionnées &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Propositions récemment fusionnées qui sont maintenant des caractéristiques de la [spécification officielle du GTFS Schedule](../reference). Consultez l'[historique complet des révisions](../process#revision-history) pour en savoir plus.
 

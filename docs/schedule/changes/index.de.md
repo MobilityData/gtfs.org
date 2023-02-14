@@ -14,10 +14,10 @@ Um zu GTFS beizutragen, lesen Sie den [Specification Amendment Process](../proce
 
 !!!note ""
 
-    Die offizielle Spezifikation, Referenz und Dokumentation sind in englischer Sprache verfasst. Weicht eine Translation in eine andere Sprache vom englischen Original ab, hat letztere Vorrang. Die gesamte Kommunikation erfolgt in englischer Sprache.
+    Die offizielle Spezifikation, Referenz und Dokumentation sind in englischer Sprache verfasst. Weicht eine Übersetzung in eine andere Sprache vom englischen Original ab, hat letztere Vorrang. Die gesamte Kommunikation erfolgt in englischer Sprache.
 
 
-## Aktive Proposals![](../../assets/pr-active.svg)
+## Aktive Proposals &ensp; <img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!--
 Active proposals for new features in <glossary variable="GTFS Schedule"><glossary variable="GTFS">GTFS</glossary> Schedule</glossary>.  -->
@@ -40,7 +40,7 @@ Beteiligen Sie sich an den Diskussionen auf [Github](https://github.com/google/t
 </div>
 <div class="row"></div> -->
 
-## Kürzlich zusammengefasste Vorschläge![](../../assets/pr-merged.svg)
+## Kürzlich zusammengefasste Vorschläge &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Kürzlich zusammengeführte Vorschläge, die nun Bestandteil der [offiziellen GTFS Schedule](../reference) sind. Siehe die vollständige [Revisionshistorie](../process#revision-history) für weitere Informationen.
 
