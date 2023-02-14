@@ -9,7 +9,7 @@ search:
 
 ## 描述一个基于频率的服务
 
-蒙特利尔运输公司在蒙特利尔经营运输服务，为其地铁线路提供基于频率的服务。因此，因此，在GTFS数据集中不提供带有到达和离开时间的时间表，而是提供，而是用[frequencies.txt](../../reference/#frequenciestxt)文件来描述整个服务期间的服务频率。
+Société de Transport de Montréal在蒙特利尔经营运输服务，为其地铁线路提供基于频率的服务。因此，因此，在GTFS数据集中不提供带有到达和离开时间的时间表，而是提供，而是用[frequencies.txt](../../reference/#frequenciestxt)文件来描述整个服务期间的服务频率。
 
 [**frequencies.txt**](../../reference/#frequenciestxt)
 
