@@ -9,7 +9,7 @@ search:
 
 ## Jelaskan lokasi pintu masuk dan keluar stasiun
 
-DenganGTFS , stasiun dapat dideskripsikan secara akurat menggunakan informasi tentang pintu masuk dan interior stasiun. Contoh ini menggambarkan bagian stasiun Waterfront di pusat kota Vancouver. Stasiun ini merupakan bagian dari jaringan Skytrain kota dan dilayani oleh Canada Line, Expo Line, SeaBus, dan West Coast Express. Tiga pintu masuk tingkat jalan memungkinkan pengendara masuk dan keluar stasiun. Stasiun lainnya berada di bawah tanah dengan tingkat concourse untuk validasi tarif dan tingkat yang lebih rendah dengan platform.
+Dengan GTFS, stasiun dapat dideskripsikan secara akurat menggunakan informasi tentang pintu masuk dan interior stasiun. Contoh ini menggambarkan bagian stasiun Waterfront di pusat kota Vancouver. Stasiun ini merupakan bagian dari jaringan Skytrain kota dan dilayani oleh Canada Line, Expo Line, SeaBus, dan West Coast Express. Tiga pintu masuk tingkat jalan memungkinkan pengendara masuk dan keluar stasiun. Stasiun lainnya berada di bawah tanah dengan tingkat concourse untuk validasi tarif dan tingkat yang lebih rendah dengan platform.
 
 Pertama, lokasi stasiun dan pintu masuknya ditentukan [stops.txt](../../reference/#pathwaystxt) :
 
@@ -29,7 +29,7 @@ Selain itu,stop_id untuk Stasiun Waterfront terdaftar di bawah `parent_station` 
 
 ## Jelaskan tangga dan eskalator
 
-Pintu masuk ke Stasiun Waterfront di jalan Granville memiliki lift, eskalator, dan tangga, pintu masuk didefinisikan sebagai node di atas[stops.txt](../../reference/#stopstxt) . Untuk menghubungkan pintu masuk ke bagian dalam stasiun, node tambahan harus dibuat [stops.txt](../../reference/#stopstxt) di bawah `parent_station` dari Waterfront Station. Dalam [stops.txt](../../reference/#stopstxt) file di bawah, node generik ( `location_type 3` ) yang sesuai dengan bagian bawah tangga dan eskalator ditentukan.
+Pintu masuk ke Stasiun Waterfront di jalan Granville memiliki lift, eskalator, dan tangga, pintu masuk didefinisikan sebagai node di atas [stops.txt](../../reference/#stopstxt) . Untuk menghubungkan pintu masuk ke bagian dalam stasiun, node tambahan harus dibuat [stops.txt](../../reference/#stopstxt) di bawah `parent_station` dari Waterfront Station. Dalam [stops.txt](../../reference/#stopstxt) file di bawah, node generik ( `location_type 3` ) yang sesuai dengan bagian bawah tangga dan eskalator ditentukan.
 
 [**stops.txt**](../../reference/#stopstxt)
 

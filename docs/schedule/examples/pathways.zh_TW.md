@@ -29,7 +29,7 @@ search:
 
 ## 描述樓梯和自動扶梯
 
-Granville street 的 Waterfront Station 入口有電梯、自動扶梯和樓梯，入口定義為上面的節點stops.txt .為了將入口連接到車站的內部部分，必須在[stops.txt](../../reference/#pathwaystxt)在 Waterfront Station 的`parent_station`下。在裡面stops.txt在下面的文件中，定義了對應於樓梯和自動扶梯底部的通用節點 ( `location_type 3` )。
+Granville street 的 Waterfront Station 入口有電梯、自動扶梯和樓梯，入口定義為上面的節點[stops.txt](../../reference/#stopstxt).為了將入口連接到車站的內部部分，必須在[stops.txt](../../reference/#pathwaystxt)在 Waterfront Station 的`parent_station`下。在裡面[stops.txt](../../reference/#stopstxt)在下面的文件中，定義了對應於樓梯和自動扶梯底部的通用節點 ( `location_type 3` )。
 
 [**stops.txt**](../../reference/#stopstxt)
 
