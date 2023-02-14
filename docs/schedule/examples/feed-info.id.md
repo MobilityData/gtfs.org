@@ -7,9 +7,9 @@ search:
 
 <hr/>
 
-## Memberikan informasi tentangGTFS Himpunan data
+## Memberikan informasi tentang GTFS Himpunan data
 
-Selain memberikan informasi tentang agensi dan layanannya, Anda juga dapat memberikan informasi tentangGTFS kumpulan data menggunakan file [feed_info.txt](../../reference/#feed_infotxt). Ini termasuk:
+Selain memberikan informasi tentang agensi dan layanannya, Anda juga dapat memberikan informasi tentang GTFS kumpulan data menggunakan file [feed_info.txt](../../reference/#feed_infotxt). Ini termasuk:
 
 - Detail penerbit
 - Bahasa umpan
