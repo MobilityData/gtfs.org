@@ -21,7 +21,7 @@ GTFSのデータセットには、同じ管轄区域にサービスを提供す�
     206,NT,https://www.nordjyllandstrafikselskab.dk,Europe/Berlin,
     276,Rejseplanen,https://www.rejseplanen.dk,Europe/Berlin,
 
-Rejseplanenをデータ作成者として特定するために、[attributions.txt](../../reference/#attributionstxt)というファイルを使用します。このファイルには、組織の名前とURLとともに、attribution IDが定義されています。`is_producer`、`is_operator`、`is_authority`の各フィールドは、以下のようにRejseplanenを分類するために使用されます。
+Rejseplanenをデータ作成者として特定するために、[attributions.txt](../../reference/#attributionstxt)というファイルを使用します。このファイルには、組織の名前とURLとともに、帰属識別子 が定義されています。`is_producer`、`is_operator`、`is_authority`の各フィールドは、以下のようにRejseplanenを分類するために使用されます。
 
 [**attributions.txt**](../../reference/#attributionstxt)
 

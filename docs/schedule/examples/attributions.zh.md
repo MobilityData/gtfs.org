@@ -21,7 +21,7 @@ search:
     206,NT,https://www.nordjyllandstrafikselskab.dk,Europe/Berlin,
     276,Rejseplanen,https://www.rejseplanen.dk,Europe/Berlin,
 
-为了将Rejseplanen归为数据生产者，使用了[attributions.txt](../../reference/#attributionstxt)文件，其中定义了一个归属id，以及该组织的名称和url。`is_producer`、`is_operator`和`is_authority`等字段被用来对Rejseplanen进行分类，如下图所示。
+为了将Rejseplanen归为数据生产者，使用了[attributions.txt](../../reference/#attributionstxt)文件，其中定义了一个归属识别器，以及该组织的名称和url。`is_producer`、`is_operator`和`is_authority`等字段被用来对Rejseplanen进行分类，如下图所示。
 
 [**attributions.txt**](../../reference/#attributionstxt)
 

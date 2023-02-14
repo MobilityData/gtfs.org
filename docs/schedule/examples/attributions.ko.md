@@ -21,9 +21,9 @@ search:
     206,NT,https://www.nordjyllandstrafikselskab.dk,Europe/Berlin,
     276,Rejseplanen,https://www.rejseplanen.dk,Europe/Berlin,
 
-Rejseplanen을 데이터 생산자로 지정하기 위해 파일 [attributions.txt](../../reference/#attributionstxt) 속성이 사용되는 경우id 이름과 함께 정의됩니다.url 조직의. `is_producer` , `is_operator` 및 `is_authority` 필드는 아래와 같이 Rejseplanen을 분류하는 데 사용됩니다.
+Rejseplanen을 데이터 생산자로 지정하기 위해 파일 [attributions.txt](../../reference/#attributionstxt) 속성이 사용되는 경우식별자 이름과 함께 정의됩니다 url 조직의. `is_producer` , `is_operator` 및 `is_authority` 필드는 아래와 같이 Rejseplanen을 분류하는 데 사용됩니다.
 
-attributions.txt
+[**attributions.txt**](../../reference/#attributionstxt)
 
     attribution_id,organization_name,attribution_url,is_producer,is_operator,is_authority
     rp,Rejseplanen,https://www.rejseplanen.dk,1,,
