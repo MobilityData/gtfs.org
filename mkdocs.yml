@@ -154,8 +154,17 @@ plugins:
           Best Practices: Praktik Terbaik
           Examples: Contoh
           Example GTFS Feed: Contoh Dataset GTFS
+          Routes, stops, and trips: Rute, pemberhentian, dan perjalanan
+          Continuous stops: Berhenti terus menerus
+          Text-to-speech: Teks pidato
+          Frequencies: Frekuensi
+          Pathways: Jalur
+          Translations: Terjemahan
+          Feed information: Informasi umpan
+          Dataset attributions: Atribusi set data
           Data Examples: Contoh Data
           Changes: Perubahan
+          Validate: Mengesahkan
           Specification Amendment Process: Proses Amandemen Spesifikasi
           Feed Entities: Entitas data
           Feed Examples: Contoh Data
@@ -181,9 +190,18 @@ plugins:
           Reference: Referenz
           Best Practices: Bewährte Praktiken
           Examples: Beispiele
+          Routes, stops, and trips: Routen, Haltestellen und Fahrten
+          Continuous stops: Kontinuierliche Haltestellen
+          Text-to-speech: Text-in-Sprache
+          Frequencies: Frequenzen
+          Pathways: Fahrwege
+          Translations: Übersetzungen
+          Feed information: Informationen zur Einspeisung
+          Dataset attributions: Datensatz-Attribute
           Example GTFS Feed: Beispiel GTFS-Feed
           Data Examples: Daten Beispiele
           Changes: Änderungen
+          Validate: Validieren Sie
           Specification Amendment Process: Prozess zur Änderung der Spezifikation
           Feed Entities: Daten-Entitäten
           Feed Examples: Daten Beispiele
@@ -211,7 +229,16 @@ plugins:
           Examples: Ejemplos
           Example GTFS Feed: Ejemplo de conjunto de datos GTFS
           Data Examples: Ejemplos de datos
+          Routes, stops, and trips: Rutas, paradas y viajes
+          Continuous stops: Paradas continuas
+          Text-to-speech: Texto a voz
+          Frequencies: Frecuencias
+          Pathways: Rutas
+          Translations: Traducciones
+          Feed information: Información sobre la alimentación
+          Dataset attributions: Atribuciones del conjunto de datos
           Changes: Cambios
+          Validate: Validar
           Specification Amendment Process: Proceso de modificación del pliego de condiciones
           Feed Entities: Entidades de datos
           Feed Examples: Ejemplos de datos
@@ -236,7 +263,16 @@ plugins:
           Examples: Exemples
           Example GTFS Feed: Exemple de flux GTFS
           Data Examples: Exemples de données
+          Routes, stops, and trips: Itinéraires, arrêts et trajets
+          Continuous stops: Arrêts continus
+          Text-to-speech: Synthèse vocale
+          Frequencies: Fréquences
+          Pathways: Trajets
+          Translations: Traductions
+          Feed information: Informations sur les flux
+          Dataset attributions: Attribution des données
           Changes: Changements
+          Validate: Valider
           Specification Amendment Process: Processus de modification de la spécification
           Feed Entities: Entités de flux de données
           Feed Examples: Exemples de flux de données 
@@ -262,8 +298,17 @@ plugins:
           Best Practices: Melhores Práticas
           Examples: Exemplos
           Example GTFS Feed: Exemplo GTFS Dataset
+          Routes, stops, and trips: Rotas, paradas e viagens
+          Continuous stops: Paradas contínuas
+          Text-to-speech: Texto para o discurso
+          Frequencies: Freqüências
+          Pathways: Caminhos
+          Translations: Traduções
+          Feed information: Informações sobre alimentação
+          Dataset attributions: Atribuições do conjunto de dados
           Data Examples: Exemplos de dados
           Changes: Mudanças
+          Validate: Validar
           Specification Amendment Process: Processo de Alteração de Especificações
           Feed Entities: Entidades de dados
           Feed Examples: Exemplos de dados
@@ -291,7 +336,16 @@ plugins:
           Examples: Примеры
           Example GTFS Feed: Пример набора данных GTFS
           Data Examples: Примеры данных
+          Routes, stops, and trips: Маршруты, остановки и поездки
+          Continuous stops: Непрерывные остановки
+          Text-to-speech: преобразование текста в речь
+          Frequencies: Частоты
+          Pathways: Маршруты
+          Translations: Переводы
+          Feed information: Информация о фиде
+          Dataset attributions: Атрибуты набора данных
           Changes: Изменения
+          Validate: Проверить
           Specification Amendment Process: Процесс внесения изменений в спецификацию
           Feed Entities: Сущности данных
           Feed Examples: Примеры данных
@@ -318,8 +372,17 @@ plugins:
           Best Practices: 最佳实践
           Examples: 实例
           Example GTFS Feed: GTFS数据集示例
+          Routes, stops, and trips: 路线、站点和行程
+          Continuous stops: 连续站点
+          Text-to-speech: 文字转语音
+          Frequencies: 频次
+          Pathways: 路径
+          Translations: 翻译
+          Feed information: 饲料信息
+          Dataset attributions: 数据集属性
           Data Examples: 数据实例
           Changes: 变化
+          Validate: 验证
           Specification Amendment Process: 规范修订过程
           Feed Entities: 数据实体
           Feed Examples: 数据实例
@@ -346,8 +409,17 @@ plugins:
           Best Practices: 最佳實踐
           Examples: 例子
           Example GTFS Feed: 示例 GTFS 提要
+          Routes, stops, and trips: 路線、站點和行程
+          Continuous stops: 連續停止
+          Text-to-speech: 文字轉語音
+          Frequencies: 頻率
+          Pathways: 途徑
+          Translations: 翻譯
+          Feed information: 飼料信息
+          Dataset attributions: 數據集屬性
           Data Examples: 數據示例
           Changes: 變化
+          Validate: 證實
           Specification Amendment Process: 規範修改過程
           Feed Entities: 飼料實體
           Feed Examples: 提要示例
@@ -374,8 +446,17 @@ plugins:
           Best Practices: ベストプラクティス
           Examples: 事例紹介
           Example GTFS Feed: GTFSデータセットの例
+          Routes, stops, and trips: ルート、ストップ、トリップ
+          Continuous stops: 連続した停留所
+          Text-to-speech: 音声合成
+          Frequencies: フリークエンシー
+          Pathways: 経路
+          Translations: 翻訳
+          Feed information: フィード情報
+          Dataset attributions: データセットの帰属
           Data Examples: データ例
           Changes: 変更点
+          Validate: バリデート
           Specification Amendment Process: 仕様変更プロセス
           Feed Entities: データエンティティ
           Feed Examples: データ例
@@ -402,8 +483,17 @@ plugins:
           Best Practices: 모범 사례
           Examples: 예
           Example GTFS Feed: GTFS 데이터세트 예시
+          Routes, stops, and trips: 경로, 정류장 및 여행
+          Continuous stops: 연속 정지
+          Text-to-speech: 텍스트 음성 변환
+          Frequencies: 주파수
+          Pathways: 통로
+          Translations: 翻訳
+          Feed information: フィード情報
+          Dataset attributions: データセットの帰属
           Data Examples: 데이터 예
           Changes: 변경 사항
+          Validate: 확인
           Specification Amendment Process: 사양 수정 프로세스
           Feed Entities: 데이터 개체
           Feed Examples: 데이터 예
