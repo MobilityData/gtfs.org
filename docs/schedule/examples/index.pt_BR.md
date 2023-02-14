@@ -11,6 +11,7 @@ Para ajudar na compreensão da especificação GTFS e na produção de ferrament
 - Exemplos por caso de uso:
     - [Rotas, paradas e viagens](routes-stops-trips)
     - [Paradas contínuas](continuous-stops)
+    - [Texto para o discurso](text-to-speech)
     - [Fares v1](fares-v1)
     - [Fares v2](fares-v2)
     - [Freqüências](frequencies)

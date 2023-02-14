@@ -11,6 +11,7 @@ search:
 - 用例示例：
     - [路線、站點和行程](routes-stops-trips)
     - [連續停止](continuous-stops)
+    - [文字轉語音](text-to-speech)
     - [Fares v1](fares-v1)
     - [Fares v2](fares-v2)
     - [頻率](frequencies)

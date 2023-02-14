@@ -11,6 +11,7 @@ Untuk membantu dalam memahami GTFS spesifikasi dan dalam memproduksi alat yang m
 - Contoh berdasarkan kasus penggunaan:
     - [Rute, pemberhentian, dan perjalanan](routes-stops-trips)
     - [Berhenti terus menerus](continuous-stops)
+    - [Teks pidato](text-to-speech)
     - [Fares v1](fares-v1)
     - [Fares v2](fares-v2)
     - [Frekuensi](frequencies)

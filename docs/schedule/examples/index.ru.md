@@ -11,6 +11,7 @@ search:
 - Примеры по вариантам использования:
     - [Маршруты, остановки и поездки](routes-stops-trips)
     - [Непрерывные остановки](continuous-stops)
+    - [преобразование текста в речь](text-to-speech)
     - [Fares v1](fares-v1)
     - [Fares v2](fares-v2)
     - [Частоты](frequencies)

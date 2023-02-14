@@ -11,6 +11,7 @@ GTFSの仕様を理解し、GTFSデータを読み書きするツールを作成
 - ユースケース別の例
     - [ルート、ストップ、トリップ](routes-stops-trips)
     - [連続した停留所](continuous-stops)
+    - [音声合成](text-to-speech)
     - [Fares v1](fares-v1)
     - [Fares v2](fares-v2)
     - [フリークエンシー](frequencies)

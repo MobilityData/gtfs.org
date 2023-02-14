@@ -156,6 +156,7 @@ plugins:
           Example GTFS Feed: Contoh Dataset GTFS
           Routes, stops, and trips: Rute, pemberhentian, dan perjalanan
           Continuous stops: Berhenti terus menerus
+          Text-to-speech: Teks pidato
           Frequencies: Frekuensi
           Pathways: Jalur
           Translations: Terjemahan
@@ -191,6 +192,7 @@ plugins:
           Examples: Beispiele
           Routes, stops, and trips: Routen, Haltestellen und Fahrten
           Continuous stops: Kontinuierliche Haltestellen
+          Text-to-speech: Text-in-Sprache
           Frequencies: Frequenzen
           Pathways: Fahrwege
           Translations: Übersetzungen
@@ -229,6 +231,7 @@ plugins:
           Data Examples: Ejemplos de datos
           Routes, stops, and trips: Rutas, paradas y viajes
           Continuous stops: Paradas continuas
+          Text-to-speech: Texto a voz
           Frequencies: Frecuencias
           Pathways: Rutas
           Translations: Traducciones
@@ -262,6 +265,7 @@ plugins:
           Data Examples: Exemples de données
           Routes, stops, and trips: Itinéraires, arrêts et trajets
           Continuous stops: Arrêts continus
+          Text-to-speech: Synthèse vocale
           Frequencies: Fréquences
           Pathways: Trajets
           Translations: Traductions
@@ -296,6 +300,7 @@ plugins:
           Example GTFS Feed: Exemplo GTFS Dataset
           Routes, stops, and trips: Rotas, paradas e viagens
           Continuous stops: Paradas contínuas
+          Text-to-speech: Texto para o discurso
           Frequencies: Freqüências
           Pathways: Caminhos
           Translations: Traduções
@@ -333,6 +338,7 @@ plugins:
           Data Examples: Примеры данных
           Routes, stops, and trips: Маршруты, остановки и поездки
           Continuous stops: Непрерывные остановки
+          Text-to-speech: преобразование текста в речь
           Frequencies: Частоты
           Pathways: Маршруты
           Translations: Переводы
@@ -368,6 +374,7 @@ plugins:
           Example GTFS Feed: GTFS数据集示例
           Routes, stops, and trips: 路线、站点和行程
           Continuous stops: 连续站点
+          Text-to-speech: 文字转语音
           Frequencies: 频次
           Pathways: 路径
           Translations: 翻译
@@ -404,6 +411,7 @@ plugins:
           Example GTFS Feed: 示例 GTFS 提要
           Routes, stops, and trips: 路線、站點和行程
           Continuous stops: 連續停止
+          Text-to-speech: 文字轉語音
           Frequencies: 頻率
           Pathways: 途徑
           Translations: 翻譯
@@ -440,6 +448,7 @@ plugins:
           Example GTFS Feed: GTFSデータセットの例
           Routes, stops, and trips: ルート、ストップ、トリップ
           Continuous stops: 連続した停留所
+          Text-to-speech: 音声合成
           Frequencies: フリークエンシー
           Pathways: 経路
           Translations: 翻訳
@@ -476,6 +485,7 @@ plugins:
           Example GTFS Feed: GTFS 데이터세트 예시
           Routes, stops, and trips: 경로, 정류장 및 여행
           Continuous stops: 연속 정지
+          Text-to-speech: 텍스트 음성 변환
           Frequencies: 주파수
           Pathways: 통로
           Translations: 翻訳

@@ -11,6 +11,7 @@ Zum besseren Verständnis der GTFS und zur Erstellung von Tools, die GTFS lesen 
 - Beispiele nach Anwendungsfall:
     - [Routen, Haltestellen und Fahrten](routes-stops-trips)
     - [Kontinuierliche Haltestellen](continuous-stops)
+    - [Text-in-Sprache](text-to-speech)
     - [Fares v1](fares-v1)
     - [Fares v2](fares-v2)
     - [Frequenzen](frequencies)
