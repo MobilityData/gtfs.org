@@ -1,6 +1,6 @@
 # GTFS Schedule Validator
 
-Kanonis sumber terbuka dan gratis iniGTFS Schedule validator dikelola oleh [MobilityData](https://mobilitydata.org) dengan bantuanGTFS masyarakat. Gunakan itu untuk mengevaluasi kumpulan data Anda terhadap yang resmiGTFS [Referensi](reference.md) dan [Praktik Terbaik](best-practices.md) . Ini memberikan laporan validasi yang mudah digunakan dalam format HTML yang dapat dibuka di browser dan dibagikan dengan pihak lain.
+Kanonis sumber terbuka dan gratis ini GTFS Schedule validator dikelola oleh [MobilityData](https://mobilitydata.org) dengan bantuan GTFS masyarakat. Gunakan itu untuk mengevaluasi kumpulan data Anda terhadap yang resmi GTFS [Referensi](reference.md) dan [Praktik Terbaik](best-practices.md) . Ini memberikan laporan validasi yang mudah digunakan dalam format HTML yang dapat dibuka di browser dan dibagikan dengan pihak lain.
 
 <!-- <img class="center" src="../../assets/validator_animation.gif" width="150"> -->
 

@@ -6,7 +6,7 @@
 
 <br/>
 
-<div class="usage-buttons"> <a class="button" href="https://share.mobilitydata.org/validator-installer-mac">Mac용 다운로드<img class="icon" src="../../assets/apple.svg" width="20"/></a> <a class="button" href="https://share.mobilitydata.org/validator-installer-windows">Windows용 다운로드<img class="icon" src="../../assets/windows.svg" width="20"/></a> <a class="button" href="https://share.mobilitydata.org/validator-installer-ubuntu">우분투용 다운로드<img class="icon" src="../../assets/ubuntu.svg" width="20"/></a></div>
+<div class="usage-buttons"> <a class="button" href="https://share.mobilitydata.org/validator-installer-mac">Mac용 다운로드<img class="icon" src="../../assets/apple.svg" width="20"/></a> <a class="button" href="https://share.mobilitydata.org/validator-installer-windows">Windows용 다운로드<img class="icon" src="../../assets/windows.svg" width="20"/></a> <a class="button" href="https://share.mobilitydata.org/validator-installer-ubuntu">Ubuntu용 다운로드<img class="icon" src="../../assets/ubuntu.svg" width="20"/></a></div>
 
 **버전 v4.0.0** / [릴리스 노트 읽기](https://github.com/MobilityData/gtfs-validator/releases/latest)
 

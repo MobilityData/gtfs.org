@@ -7,7 +7,7 @@
 <br/>
 
 <div class="usage-buttons">
-   <a class="button" href="https://share.mobilitydata.org/validator-installer-mac">Mac 用ダウンロード<img class="icon" src="../../assets/apple.svg" width="20"/></a><a class="button" href="https://share.mobilitydata.org/validator-installer-windows">Windows 用ダウンロード<img class="icon" src="../../assets/windows.svg" width="20"/></a><a class="button" href="https://share.mobilitydata.org/validator-installer-ubuntu">Ubuntu 用ダウンロード</a><a class="button" href="https://share.mobilitydata.org/validator-installer-ubuntu"> <img class="icon" src="../../assets/ubuntu.svg" width="20"/>
+   <a class="button" href="https://share.mobilitydata.org/validator-installer-mac">Mac 用ダウンロード<img class="icon" src="../../assets/apple.svg" width="20"/></a><a class="button" href="https://share.mobilitydata.org/validator-installer-windows">Windows 用ダウンロード<img class="icon" src="../../assets/windows.svg" width="20"/></a><a class="button" href="https://share.mobilitydata.org/validator-installer-ubuntu">Ubuntu 用ダウンロード<img class="icon" src="../../assets/ubuntu.svg" width="20"/></a>
 </a></div>
 
 **VERSION v4.0.0**/[リリースノートを](https://github.com/MobilityData/gtfs-validator/releases/latest)読む

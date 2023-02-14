@@ -7,7 +7,7 @@ Ce validateur d'GTFS Schedule canonique gratuit et open-source est maintenu par 
 <br>
 
 <div class="usage-buttons">
-   <a class="button" href="https://share.mobilitydata.org/validator-installer-mac">Télécharger pour Mac <img class="icon" src="../../assets/apple.svg" width="20"/></a><a class="button" href="https://share.mobilitydata.org/validator-installer-windows">Télécharger pour Windows <img class="icon" src="../../assets/windows.svg" width="20"/></a><a class="button" href="https://share.mobilitydata.org/validator-installer-ubuntu">Télécharger pour Ubuntu</a><a class="button" href="https://share.mobilitydata.org/validator-installer-ubuntu"> <img class="icon" src="../../assets/ubuntu.svg" width="20"/>
+   <a class="button" href="https://share.mobilitydata.org/validator-installer-mac">Télécharger pour Mac <img class="icon" src="../../assets/apple.svg" width="20"/></a><a class="button" href="https://share.mobilitydata.org/validator-installer-windows">Télécharger pour Windows <img class="icon" src="../../assets/windows.svg" width="20"/></a><a class="button" href="https://share.mobilitydata.org/validator-installer-ubuntu">Télécharger pour Ubuntu <img class="icon" src="../../assets/ubuntu.svg" width="20"/></a>
 </a></div>
 
 **VERSION v4.0.0** / [Lire les notes de version](https://github.com/MobilityData/gtfs-validator/releases/latest)
