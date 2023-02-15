@@ -28,12 +28,9 @@ Fares v2가 나타낼 주요 개념은 다음과 같습니다.
 
 ## 진행 중인 운임 v2 작업
 
-GTFS 커뮤니티는 현재 [운임 컨테이너](https://share.mobilitydata.org/fare-containers-to-fare-payment-types-proposal) 제안을 마무리하기 위해 노력하고 있습니다.
+운임 매체(이전 운임 컨테이너) 제안이 투표에 부름 받았습니다!
 
-현재 논의 중인 항목은 다음과 같습니다.
-
-- 운임 컨테이너 파일 생성
-- 운임 컨테이너 옵션의 목록에 포함되어야 하는 유형 조정
+[2월 23일 오후 11시(UTC) 이전에 GitHub 풀 리퀘스트에 투표하세요.](https://github.com/google/transit/pull/355#issuecomment-1430617967)
 
 <a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">Slack에서 #gtfs-fares 가입</a> <a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">회의 일정</a><a class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">보기 회의 메모 보기</a>
 

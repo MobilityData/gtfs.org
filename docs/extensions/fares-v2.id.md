@@ -28,12 +28,9 @@ Produsen dapat mengimplementasikan Fares v2 dalam kumpulan data yang sama dengan
 
 ## Sedang Berlangsung Fares v2 Kerja
 
-Komunitas GTFS saat ini sedang menyelesaikan proposal [kontainer tarif](https://share.mobilitydata.org/fare-containers-to-fare-payment-types-proposal) .
+Proposal media tarif (sebelumnya wadah tarif) telah dipanggil untuk pemungutan suara!
 
-Hal-hal yang sedang didiskusikan antara lain:
-
-- Membuat file wadah ongkos
-- Menyelaraskan pada jenis apa yang harus dimasukkan dalam pencacahan opsi peti kemas tarif
+[Berikan suara pada pull request GitHub sebelum 23 Februari pukul 23:00 UTC.](https://github.com/google/transit/pull/355#issuecomment-1430617967)
 
 <a class="button no-icon" href="https://share.mobilitydata.org/slack" target="_blank">Bergabunglah dengan #gtfs-fares di Slack</a> <a class="button no-icon" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057" target="_blank">Lihat jadwal</a> <a class="button no-icon" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit" target="_blank">rapat Lihat catatan rapat</a>
 

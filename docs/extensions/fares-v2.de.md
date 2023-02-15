@@ -30,12 +30,9 @@ Hersteller können Tarif v2 im gleichen Datensatz wie Tarif v1 implementieren, d
 
 ## Laufende Arbeiten zu Fares v2
 
-Die GTFS-Gemeinschaft arbeitet derzeit an der Fertigstellung des Vorschlags für [Tarifcontainer](https://share.mobilitydata.org/fare-containers-to-fare-payment-types-proposal).
+Der Vorschlag für Tarifmedien (früher Tarifcontainer) wurde zur Abstimmung aufgerufen!
 
-Folgende Punkte werden derzeit diskutiert:
-
-- Erstellung einer Tarif-Container-Datei
-- Abstimmung darüber, welche Typen in die Aufzählung der Tarifcontainer-Optionen aufgenommen werden sollen
+[Stimmt im GitHub Pull Request vor dem 23. Februar 11:00pm UTC ab.](https://github.com/google/transit/pull/355#issuecomment-1430617967)
 
 <a class="button no-icon" href="https://share.mobilitydata.org/slack" target="_blank">Treten Sie #gtfs-fares auf Slack bei</a><a class="button no-icon" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057" target="_blank">Siehe den Sitzungsplan</a><a class="button no-icon" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit" target="_blank">Siehe Sitzungsnotizen</a>
 

@@ -30,12 +30,9 @@ Fares v2 - это проект расширения расписания GTFS, �
 
 ## Текущая работа над Fares v2
 
-В настоящее время сообщество GTFS работает над окончательной доработкой предложения по [тарифным контейнерам](https://share.mobilitydata.org/fare-containers-to-fare-payment-types-proposal).
+Предложение по fare media (ранее fare containers) было вынесено на голосование!
 
-В настоящее время обсуждаются следующие вопросы:
-
-- Создание файла контейнеров тарифов
-- Согласование того, какие типы должны быть включены в перечисление вариантов контейнеров для оплаты проезда.
+[Проголосуйте в GitHub pull request до 23 февраля 11:00 UTC.](https://github.com/google/transit/pull/355#issuecomment-1430617967)
 
 <a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">Присоединяйтесь к #gtfs-fares на Slack</a><a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">Смотрите расписание встречСмотрите</a><a class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">записи встреч</a>
 

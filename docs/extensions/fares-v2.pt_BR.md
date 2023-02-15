@@ -30,12 +30,9 @@ Os produtores podem implementar Fares v2 no mesmo conjunto de dados com Fares v1
 
 ## Fares em andamento v2 Trabalho
 
-A comunidade GTFS está atualmente trabalhando na finalização da proposta de [contêineres tarifários](https://share.mobilitydata.org/fare-containers-to-fare-payment-types-proposal).
+A proposta da mídia de tarifas (anteriormente contêineres tarifários) foi chamada para votação!
 
-Os itens atualmente em discussão incluem:
-
-- Criação de um arquivo de contêineres tarifários
-- Alinhamento sobre que tipos devem ser incluídos na enumeração de opções de contêineres tarifários
+[Votar no pedido de retirada do GitHub antes de 23 de fevereiro 23:00 UTC.](https://github.com/google/transit/pull/355#issuecomment-1430617967)
 
 <a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">Junte-se à #gtfs-fares no Slack</a><a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">See a programação da reunião</a><a class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">Veja as notas da reunião</a>
 

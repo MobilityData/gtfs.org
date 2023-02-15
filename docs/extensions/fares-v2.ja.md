@@ -30,12 +30,9 @@ Fares v1と技術的な矛盾がないため、制作者はFares v1と同じデ�
 
 ## 進行中のFares v2作業
 
-GTFSコミュニティは、現在、[運賃コンテナ](https://share.mobilitydata.org/fare-containers-to-fare-payment-types-proposal)提案の最終化に取り組んでいます。
+運賃メディア(旧運賃コンテナ)の提案が投票にかけられました!
 
-現在議論されている項目は以下の通りです。
-
-- 運賃コンテナファイルの作成
-- 運賃コンテナオプションの列挙にどのようなタイプを含めるべきかの整合性
+[2月23日23:00UTCまでにGitHubのプルリクエストで投票をお願いします。](https://github.com/google/transit/pull/355#issuecomment-1430617967)
 
 <a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">Slack の #gtfs-fares に参加する</a><a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">ミーティングスケジュールを</a><a class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">見るミーティングノートを見る</a>
 
