@@ -2,19 +2,19 @@
 
 O GTFS Realtime suporta três tipos distintos de dados em tempo real, que podem ser combinados com uma única alimentação em tempo real. Os resumos são apresentados abaixo, com a documentação completa na seção correspondente.
 
-## Atualizações de viagem
+## Trip Updates
 
 #### "Ônibus X é atrasado em 5 minutos"
 
-As atualizações de viagem representam flutuações no horário. Esperamos receber atualizações de viagem para todas as viagens que você programou e que sejam possíveis em tempo real. Estas atualizações dariam uma previsão de chegada ou partida para paradas ao longo da rota. As atualizações de viagem também podem fornecer cenários mais complexos onde as viagens são canceladas, acrescentadas ao cronograma ou mesmo redirecionadas.
+As trip updates representam flutuações no horário. Esperamos receber trip updates para todas as viagens que você programou e que sejam possíveis em tempo real. Estas atualizações dariam uma previsão de chegada ou partida para paradas ao longo da rota. As trip updates também podem fornecer cenários mais complexos onde as viagens são canceladas, acrescentadas ao cronograma ou mesmo redirecionadas.
 
 [Mais sobre Trip Updates...](trip-updates.md)
 
-## Alertas de serviço
+## Service Alerts
 
 #### "Estação Y está fechada devido à construção"
 
-Os alertas de serviço representam problemas de nível superior com uma determinada entidade e são gerais na forma de uma descrição textual da interrupção.
+Os service alerts representam problemas de nível superior com uma determinada entidade e são gerais na forma de uma descrição textual da interrupção.
 
 Eles podem representar problemas com:
 
@@ -23,19 +23,19 @@ Eles podem representar problemas com:
 *   Toda a rede
 *   etc.
 
-Um alerta de serviço consistirá geralmente em algum texto que descreverá o problema, e também permitimos URLs para mais informações, bem como informações mais estruturadas para nos ajudar a entender quem este alerta de serviço afeta.
+Um service alert consistirá geralmente em algum texto que descreverá o problema, e também permitimos URLs para mais informações, bem como informações mais estruturadas para nos ajudar a entender quem este service alert afeta.
 
-[Mais sobre Alertas de Serviço...](service-alerts.md)
+[Mais sobre Service Alerts...](service-alerts.md)
 
-## Posições do veículo
+## Vehicle Positions
 
 #### "Este ônibus está na posição X no horário Y"
 
-A posição do veículo representa algumas informações básicas sobre um veículo em particular na rede.
+A vehicle position representa algumas informações básicas sobre um veículo em particular na rede.
 
 O mais importante é a latitude e longitude em que o veículo se encontra, mas também podemos armazenar dados sobre a velocidade atual e as leituras do odômetro do veículo.
 
-[Mais sobre Atualizações de Posição de Veículos...](vehicle-positions.md)
+[Mais sobre Vehicle Positions...](vehicle-positions.md)
 
 ## Observação histórica sobre os tipos de alimentação
 
