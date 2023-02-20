@@ -24,7 +24,7 @@ Misalnya, jika data berikut muncul di feed GTFS-rt:
 
 Setiap [StopTimeUpdate](../reference.md#message-stoptimeupdate) ditautkan ke perhentian. Biasanya hal ini dapat dilakukan menggunakan stop_sequence GTFS atau stop_id GTFS. Namun, jika Anda memberikan pembaruan untuk perjalanan tanpa trip_id GTFS, Anda harus menentukan stop_id karena stop_sequence tidak memiliki nilai. stop_id masih harus mereferensikan stop_id di GTFS. Jika stop_id yang sama dikunjungi lebih dari sekali dalam satu perjalanan, maka stop_sequence harus disediakan di semua StopTimeUpdates untuk stop_id tersebut pada perjalanan tersebut.
 
-Pembaruan dapat memberikan waktu yang tepat untuk **arrival** dan/atau **departure** di perhentian di [StopTimeUpdates](../reference.md#message-stoptimeupdate) menggunakan [StopTimeEvent](../reference.md#message-stoptimeevent) . Ini harus berisi **time** absolut atau **delay** (yaitu, offset dari waktu yang dijadwalkan dalam detik). Penundaan hanya dapat digunakan jika trip updates mengacu pada perjalanan GTFS terjadwal, bukan perjalanan berbasis frekuensi. Dalam hal ini, waktu harus sama dengan waktu yang dijadwalkan + penundaan. Anda juga dapat menentukan **uncertainty** prediksi bersama dengan [StopTimeEvent](../reference.md#message-stoptimeevent) , yang dibahas lebih detail di bagian [Ketakpastian](#ketakpastian) di bagian bawah halaman.
+Pembaruan dapat memberikan waktu yang tepat untuk **arrival** dan/atau **departure** di perhentian di [StopTimeUpdates](../reference.md#message-stoptimeupdate) menggunakan [StopTimeEvent](../reference.md#message-stoptimeevent) . Ini harus berisi **time** absolut atau **delay** (yaitu, offset dari waktu yang dijadwalkan dalam detik). Penundaan hanya dapat digunakan jika trip updates mengacu pada perjalanan GTFS terjadwal, bukan perjalanan berbasis frekuensi. Dalam hal ini, waktu harus sama dengan waktu yang dijadwalkan + penundaan. Anda juga dapat menentukan **uncertainty** prediksi bersama dengan [StopTimeEvent](../reference.md#message-stoptimeevent) , yang dibahas lebih detail di bagian [uncertainty](#uncertainty) di bagian bawah halaman.
 
 Untuk setiap [StopTimeUpdate](../reference.md#message-stoptimeupdate) , hubungan jadwal default **scheduled** . (Perhatikan bahwa ini berbeda dari hubungan jadwal perjalanan). Anda dapat mengubahnya menjadi **skipped** jika perhentian tidak akan dihentikan, atau **no data** jika Anda hanya memiliki data waktu nyata untuk beberapa perjalanan.
 
@@ -88,8 +88,8 @@ Perjalanan yang bukan berdasarkan frekuensi juga dapat diidentifikasi secara uni
 
 di mana start_time adalah waktu mulai terjadwal seperti yang ditentukan dalam jadwal statis, selama kombinasi id yang diberikan menghasilkan perjalanan unik.
 
-## Ketakpastian
+## Uncertainty
 
-Ketidakpastian berlaku untuk waktu dan nilai penundaan dari [StopTimeUpdate](../reference.md#message-stoptimeupdate) . Ketidakpastian secara kasar menentukan kesalahan yang diharapkan dalam penundaan yang sebenarnya sebagai bilangan bulat dalam hitungan detik (tetapi perhatikan, arti statistik yang tepat belum ditentukan). Ketidakpastian bisa menjadi 0, misalnya untuk kereta api yang digerakkan di bawah kontrol waktu komputer.
+Uncertainty berlaku untuk waktu dan nilai penundaan dari [StopTimeUpdate](../reference.md#message-stoptimeupdate) . Uncertainty secara kasar menentukan kesalahan yang diharapkan dalam penundaan yang sebenarnya sebagai bilangan bulat dalam hitungan detik (tetapi perhatikan, arti statistik yang tepat belum ditentukan). Uncertainty bisa menjadi 0, misalnya untuk kereta api yang digerakkan di bawah kontrol waktu komputer.
 
-Sebagai contoh sebuah bus jarak jauh yang memiliki perkiraan keterlambatan 15 menit tiba di halte berikutnya dalam jendela kesalahan 4 menit (yaitu +2 / -2 menit) akan memiliki nilai Ketidakpastian 240.
+Sebagai contoh sebuah bus jarak jauh yang memiliki perkiraan keterlambatan 15 menit tiba di halte berikutnya dalam jendela kesalahan 4 menit (yaitu +2 / -2 menit) akan memiliki nilai uncertainty 240.

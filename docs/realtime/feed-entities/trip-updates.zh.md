@@ -24,7 +24,7 @@
 
 每个[StopTimeUpdate](../reference.md#message-stoptimeupdate)都与一个站点相关联。通常这可以用GTFS stop_sequence或GTFS stop_id来完成。然而，在你为一个没有GTFS行程号的旅程提供更新的情况下，你必须指定stop_id，因为stop_sequence没有价值。stop_id必须仍然引用GTFS中的一个stop_id。如果同一个站名在一个行程中被访问多次，那么stop_sequence应该在该行程中的所有stop_id的StopTimeUpdates中提供。
 
-更新可以使用[StopTimeEvent](../reference.md#message-stoptimeevent)在[StopTimeUpdates](../reference.md#message-stoptimeupdate)中提供**arrival**和/或**departure**某站的确切时间。这应该包含一个绝对的**time**或一个**delay**（即从预定时间的一个偏移，以秒为单位）。延迟只能在行程更新是指预定的GTFS行程，而不是基于频率的行程的情况下使用。在这种情况下，时间应该等于计划时间+延迟。你也可以和[StopTimeEvent](../reference.md#message-stoptimeevent)一起指定预测的**uncertainty**，这在下面的[不确定性](#不确定性)部分有更详细的讨论。
+更新可以使用[StopTimeEvent](../reference.md#message-stoptimeevent)在[StopTimeUpdates](../reference.md#message-stoptimeupdate)中提供**arrival**和/或**departure**某站的确切时间。这应该包含一个绝对的**time**或一个**delay**（即从预定时间的一个偏移，以秒为单位）。延迟只能在行程更新是指预定的GTFS行程，而不是基于频率的行程的情况下使用。在这种情况下，时间应该等于计划时间+延迟。你也可以和[StopTimeEvent](../reference.md#message-stoptimeevent)一起指定预测的**uncertainty**，这在下面的[Uncertainty](#uncertainty)部分有更详细的讨论。
 
 对于每个[StopTimeUpdate](../reference.md#message-stoptimeupdate)，默认的计划关系是**scheduled**。(注意，这与行程的计划关系不同）。你可以把它改成**skipped**，如果这一站不会被停，或者**no data**，如果你只有部分行程的实时数据。
 
@@ -88,8 +88,8 @@ start_time应该是第一次发布，任何后续的信息更新在提到同一�
 
 其中start_time是在静态时间表中定义的预定开始时间，只要提供的id组合能解决一个唯一的行程。
 
-## 不确定性
+## Uncertainty
 
-不确定性同时适用于[StopTimeUpdate](../reference.md#message-stoptimeupdate)的时间和延迟值。不确定度大致指定了真实延迟的预期误差，以秒为单位的整数（但是注意，精确的统计意义还没有定义）。不确定度有可能为0，例如在计算机定时控制下的列车。
+Uncertainty同时适用于[StopTimeUpdate](../reference.md#message-stoptimeupdate)的时间和延迟值。不确定度大致指定了真实延迟的预期误差，以秒为单位的整数（但是注意，精确的统计意义还没有定义）。不确定度有可能为0，例如在计算机定时控制下的列车。
 
-例如，一辆长途巴士估计延迟15分钟，在4分钟的误差范围内（即+2/-2分钟）到达下一站，其不确定性值为240。
+例如，一辆长途巴士估计延迟15分钟，在4分钟的误差范围内（即+2/-2分钟）到达下一站，其uncertainty值为240。

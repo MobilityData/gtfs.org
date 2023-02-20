@@ -9,7 +9,7 @@ Deve haver **, no máximo,** uma atualização de viagem para cada viagem progra
 Se um veículo estiver servindo várias viagens dentro do mesmo bloco (para mais informações sobre viagens e blocos, consulte o [GTFS trips.txt](../../schedule/reference.md#tripstxt)):
 
 *   a alimentação deve incluir uma TripUpdate para a trip que está sendo servida atualmente pelo vehicle. Os produtores são encorajados a incluir TripUpdate para uma ou mais viagens após a trip atual no bloco deste vehicle se o produtor estiver confiante na qualidade das previsões para estas trip futuras. A inclusão de várias TripUpdates para o mesmo vehicle evita a previsão "pop-in" para os motociclistas quando o vehicle transita de uma trip para outra e também dá aos motociclistas um aviso prévio de atrasos que impactam as viagens posteriores (por exemplo, quando o delay conhecido excede os tempos de parada planejados entre as viagens).
-*   as respectivas entidades TripUpdate não precisam ser ADDED à alimentação na mesma ordem em que são SCHEDULED no bloco. Por exemplo, se houver viagens com `trip_ids` 1, 2, e 3 que pertençam todas a um bloco, e o vehicle viajar trip 1, então trip 2, e então trip 3, as entidades `trip_update` podem aparecer em qualquer ordem - por exemplo, adicionando trip 2, então trip 1, e então trip 3 é permitida.
+*   as respectivas entidades TripUpdate não precisam ser adicionado à alimentação na mesma ordem em que são agendado no bloco. Por exemplo, se houver viagens com `trip_ids` 1, 2, e 3 que pertençam todas a um bloco, e o vehicle viajar trip 1, então trip 2, e então trip 3, as entidades `trip_update` podem aparecer em qualquer ordem - por exemplo, adicionando trip 2, então trip 1, e então trip 3 é permitida.
 
 ## StopTimeUpdate
 
@@ -24,7 +24,7 @@ Por exemplo, se os seguintes dados aparecerem na alimentação do GTFS-rt:
 
 Cada [StopTimeUpdate](../reference.md#message-stoptimeupdate) está ligada a uma parada. Normalmente, isto pode ser feito usando tanto uma stop_sequence GTFS ou um stop_id GTFS. Entretanto, caso você esteja fornecendo uma atualização para uma viagem sem um GTFS trip_id, você deve especificar o stop_id como stop_sequence não tem valor. O stop_id ainda deve fazer referência a um stop_id em GTFS. Se o mesmo stop_id for visitado mais de uma vez em uma viagem, então o stop_sequence deve ser fornecido em todas as StopTimeUpdates para aquele stop_id naquela viagem.
 
-A atualização pode fornecer um tempo exato para a **arrival** e/ou **departure** em uma parada no [StopTimeUpdates](../reference.md#message-stoptimeupdate) usando o [StopTimeEvent](../reference.md#message-stoptimeevent). Isto deve conter ou um **time** absoluto ou um **delay** (ou seja, uma compensação do tempo programado em segundos). O atraso só pode ser usado caso a atualização da viagem se refira a uma viagem GTFS programada, em oposição a uma viagem baseada em freqüência. Neste caso, o tempo deve ser igual ao tempo programado + atraso. Você também pode especificar a **uncertainty** da previsão junto com o [StopTimeEvent](../reference.md#message-stoptimeevent), que é discutido com mais detalhes na seção [Incerteza](#incerteza) mais abaixo na página.
+A atualização pode fornecer um tempo exato para a **arrival** e/ou **departure** em uma parada no [StopTimeUpdates](../reference.md#message-stoptimeupdate) usando o [StopTimeEvent](../reference.md#message-stoptimeevent). Isto deve conter ou um **time** absoluto ou um **delay** (ou seja, uma compensação do tempo programado em segundos). O atraso só pode ser usado caso a atualização da viagem se refira a uma viagem GTFS programada, em oposição a uma viagem baseada em freqüência. Neste caso, o tempo deve ser igual ao tempo programado + atraso. Você também pode especificar a **uncertainty** da previsão junto com o [StopTimeEvent](../reference.md#message-stoptimeevent), que é discutido com mais detalhes na seção [Uncertainty](#uncertainty) mais abaixo na página.
 
 Para cada [StopTimeUpdate](../reference.md#message-stoptimeupdate), a relação de programação padrão é **scheduled**. (Note que isto é diferente da relação de horário para a viagem). Você pode alterar isso para **skipped** se a parada não for interrompida ou se **no data** se você só tiver dados em tempo real para parte da viagem.
 
@@ -88,8 +88,8 @@ As viagens que não são baseadas em freqüência também podem ser identificada
 
 onde a start_time é a hora de início programada, conforme definido no cronograma estático, desde que a combinação de ids fornecidas resolva uma viagem única.
 
-## Incerteza
+## Uncertainty
 
-A incerteza se aplica tanto ao tempo quanto ao valor de atraso de um [StopTimeUpdate](../reference.md#message-stoptimeupdate). A incerteza especifica aproximadamente o erro esperado no atraso real como um número inteiro em segundos (mas note que o significado estatístico preciso ainda não está definido). É possível que a incerteza seja 0, por exemplo, para trens que são dirigidos sob controle de tempo computadorizado.
+A uncertainty se aplica tanto ao tempo quanto ao valor de atraso de um [StopTimeUpdate](../reference.md#message-stoptimeupdate). A uncertainty especifica aproximadamente o erro esperado no atraso real como um número inteiro em segundos (mas note que o significado estatístico preciso ainda não está definido). É possível que a uncertainty seja 0, por exemplo, para trens que são dirigidos sob controle de tempo computadorizado.
 
-Como exemplo, um ônibus de longa distância que tem um atraso estimado de 15 minutos chegando a sua próxima parada dentro de uma janela de erro de 4 minutos (ou seja, +2 / -2 minutos) terá um valor de Incerteza de 240.
+Como exemplo, um ônibus de longa distância que tem um atraso estimado de 15 minutos chegando a sua próxima parada dentro de uma janela de erro de 4 minutos (ou seja, +2 / -2 minutos) terá um valor de Uncertainty de 240.

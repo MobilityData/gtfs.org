@@ -24,7 +24,7 @@
 
 각 [StopTimeUpdate](../reference.md#message-stoptimeupdate) 는 정류장에 연결됩니다. 일반적으로 이것은 GTFS stop_sequence 또는 GTFS stop_id를 사용하여 수행할 수 있습니다. 그러나 GTFS trip_id 없이 여행에 대한 업데이트를 제공하는 경우 stop_sequence에 값이 없으므로 stop_id를 지정해야 합니다. stop_id는 여전히 GTFS에서 stop_id를 참조해야 합니다. 여행에서 동일한 stop_id를 두 번 이상 방문한 경우 해당 여행에서 해당 stop_id에 대한 모든 StopTimeUpdates에 stop_sequence를 제공해야 합니다.
 
-업데이트는 [StopTimeEvent](../reference.md#message-stoptimeupdate) 를 사용하여 [StopTimeUpdates](../reference.md#message-stoptimeevent) 의 정류장 **도착** 및/또는 **출발** 에 대한 정확한 시간을 제공할 수 있습니다. 여기에는 절대 **시간** 또는 **지연** (예: 초 단위로 예정된 시간의 오프셋)이 포함되어야 합니다. 지연은 여행 업데이트가 빈도 기반 여행과 달리 예정된 GTFS 여행을 참조하는 경우에만 사용할 수 있습니다. 이 경우 시간은 예약된 시간 + 지연 시간과 같아야 합니다. [StopTimeEvent](../reference.md#message-stoptimeevent) 와 함께 예측의 **불확실성** 을 지정할 수도 있습니다. 이에 대해서는 페이지 아래의 [불확실성](#uncertainty) 섹션에서 자세히 설명합니다.
+업데이트는 [StopTimeEvent](../reference.md#message-stoptimeupdate) 를 사용하여 [StopTimeUpdates](../reference.md#message-stoptimeevent) 의 정류장 **도착** 및/또는 **출발** 에 대한 정확한 시간을 제공할 수 있습니다. 여기에는 절대 **시간** 또는 **지연** (예: 초 단위로 예정된 시간의 오프셋)이 포함되어야 합니다. 지연은 여행 업데이트가 빈도 기반 여행과 달리 예정된 GTFS 여행을 참조하는 경우에만 사용할 수 있습니다. 이 경우 시간은 예약된 시간 + 지연 시간과 같아야 합니다. [StopTimeEvent](../reference.md#message-stoptimeevent) 와 함께 예측의 **uncertainty** 을 지정할 수도 있습니다. 이에 대해서는 페이지 아래의 [Uncertainty](#uncertainty) 섹션에서 자세히 설명합니다.
 
 각 [StopTimeUpdate](../reference.md#message-stoptimeupdate) 에 대해 기본 일정 관계는 **예약** 됩니다. (이는 여행 일정 관계와 다릅니다). 정류장이 정차하지 않는 경우 **건너뛰기** 로 변경하거나 일부 여행에 대한 실시간 데이터만 있는 경우 **데이터 없음** 으로 변경할 수 있습니다.
 
@@ -88,8 +88,8 @@ start_time은 먼저 게시되어야 하며 후속 피드 업데이트는 동일
 
 여기서 start_time은 제공된 ID 조합이 고유한 이동으로 확인되는 한 정적 일정에 정의된 예정된 시작 시간입니다.
 
-## 불확실성
+## Uncertainty
 
-불확실성은 [StopTimeUpdate](../reference.md#message-stoptimeupdate) 의 시간과 지연 값 모두에 적용됩니다. 불확실성은 실제 지연의 예상 오류를 초 단위의 정수로 대략적으로 지정합니다(그러나 정확한 통계적 의미는 아직 정의되지 않음). 예를 들어 컴퓨터 타이밍 제어 하에 운행되는 열차의 경우 불확실성이 0이 될 수 있습니다.
+Uncertainty은 [StopTimeUpdate](../reference.md#message-stoptimeupdate) 의 시간과 지연 값 모두에 적용됩니다. Uncertainty은 실제 지연의 예상 오류를 초 단위의 정수로 대략적으로 지정합니다(그러나 정확한 통계적 의미는 아직 정의되지 않음). 예를 들어 컴퓨터 타이밍 제어 하에 운행되는 열차의 경우 uncertainty이 0이 될 수 있습니다.
 
-예를 들어 4분의 오류 창(즉, +2/-2분) 내에 다음 정류장에 도착하는 데 15분의 지연이 예상되는 장거리 버스의 불확실성 값은 240입니다.
+예를 들어 4분의 오류 창(즉, +2/-2분) 내에 다음 정류장에 도착하는 데 15분의 지연이 예상되는 장거리 버스의 uncertainty 값은 240입니다.

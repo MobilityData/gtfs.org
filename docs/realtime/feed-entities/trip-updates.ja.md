@@ -24,7 +24,7 @@
 
 それぞれの[StopTimeUpdateは](../reference.md#message-stoptimeupdate)、停留所にリンクされている。通常、これは GTFS stop_sequence または GTFS stop_id のいずれかを使用して行うことができます。しかし、GTFS trip_id を持たないトリップの更新を行う場合、stop_sequence には値がないため、stop_id を指定する必要があります。その場合でも、stop_id は GTFS の stop_id を参照していなければならない。同じ stop_id を 1 つのトリップで複数回訪れる場合は、そのトリップのその stop_id のすべての StopTimeUpdate で stop_sequence を提供する必要があります。
 
-更新では、[StopTimeEvent を](../reference.md#message-stoptimeevent)使用して、[StopTimeUpdates](../reference.md#message-stoptimeupdate)に停留所への**arrival**よび／または**departure**正確な タイミングを提供することができます。これには、絶対**time**または**delay**（つまり、予定時間からのオフセット（秒単位））が含まれ るべきです。遅延は、トリップの更新が、頻度ベースのトリップとは対照的に、スケジュールされたGTFSトリップを参照する場合にのみ使用することができます。この場合、時間は予定時刻 + 遅延に等しくなければなりません。また、[StopTimeEventと](../reference.md#message-stoptimeevent)一緒に予測の**uncertainty**指定することもできます。これについては、このページの下の方にある[不確実](#不確実)性のセクションで詳しく説明します。
+更新では、[StopTimeEvent を](../reference.md#message-stoptimeevent)使用して、[StopTimeUpdates](../reference.md#message-stoptimeupdate)に停留所への**arrival**よび／または**departure**正確な タイミングを提供することができます。これには、絶対**time**または**delay**（つまり、予定時間からのオフセット（秒単位））が含まれ るべきです。遅延は、トリップの更新が、頻度ベースのトリップとは対照的に、スケジュールされたGTFSトリップを参照する場合にのみ使用することができます。この場合、時間は予定時刻 + 遅延に等しくなければなりません。また、[StopTimeEventと](../reference.md#message-stoptimeevent)一緒に予測の**uncertainty**指定することもできます。これについては、このページの下の方にある[Uncertainty](#uncertainty)性のセクションで詳しく説明します。
 
 それぞれの[StopTimeUpdateに対して](../reference.md#message-stoptimeupdate)、デフォルトのスケジュール関係が**scheduled**されます。(これは旅行のスケジュール関係とは異なることに注意してください)。停留所に停車しない場合は**skipped**、トリップの一部のリアルタイムのデータしかない場合はデー**no data**に変更することができます。
 
@@ -88,8 +88,8 @@ start_time は最初に公開されるべきもので、それ以降のフィー
 
 ここで、start_timeは静的スケジュールで定義されたスケジュールされた開始時刻であり、提供されたidの組み合わせが一意のトリップに解決する限り、次の組み合わせを含むTripDescriptorによって一意に識別されます。
 
-## 不確実性
+## Uncertainty
 
-不確実性は、[StopTimeUpdateの](../reference.md#message-stoptimeupdate)時刻と遅延値の両方に適用されます。不確実性は、秒単位の整数として、真の遅延の予想誤差をおおまかに指定します（ただし、正確な統計的意味はまだ定義されていないことに注意してください）。コンピュータのタイミング制御で運転される列車などでは、不確実性が0になることもあり得ます。
+Uncertaintyは、[StopTimeUpdateの](../reference.md#message-stoptimeupdate)時刻と遅延値の両方に適用されます。Uncertaintyは、秒単位の整数として、真の遅延の予想誤差をおおまかに指定します（ただし、正確な統計的意味はまだ定義されていないことに注意してください）。コンピュータのタイミング制御で運転される列車などでは、uncertaintyが0になることもあり得ます。
 
-例として、長距離バスの遅延が15分で、4分の誤差（つまり+2分/-2分）以内に次の停留所に到着すると予測される場合、不確実性の値は240となります。
+例として、長距離バスの遅延が15分で、4分の誤差（つまり+2分/-2分）以内に次の停留所に到着すると予測される場合、uncertaintyの値は240となります。
