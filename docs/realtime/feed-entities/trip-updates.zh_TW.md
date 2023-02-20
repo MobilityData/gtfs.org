@@ -1,4 +1,4 @@
-# 行程更新
+# Trip Updates
 
 行程更新代表時間表的波動。我們希望收到您安排的所有實時旅行的旅行更新。這些更新會給出沿途停靠點的預計到達或離開時間。行程更新還可以提供更複雜的場景，其中行程被取消或添加到日程表中，甚至重新安排行程。
 
@@ -24,9 +24,9 @@
 
 每個[StopTimeUpdate](../reference.md#message-stoptimeupdate)都鏈接到一個停止點。通常這可以使用 GTFS stop_sequence 或 GTFS stop_id 來完成。但是，如果您為沒有 GTFS trip_id 的行程提供更新，則必須指定 stop_id，因為 stop_sequence 沒有值。 stop_id 仍必須引用 GTFS 中的 stop_id。如果同一 stop_id 在一次行程中被多次訪問，則應在該行程中為該 stop_id 的所有 StopTimeUpdates 中提供 stop_sequence。
 
-更新可以使用[StopTimeEvent](../reference.md#message-stoptimeevent)在[StopTimeUpdates](../reference.md#message-stoptimeupdate)中的停靠站提供**到達**和/或**離開**的準確時間。這應該包含絕對**時間**或**延遲**（即與計劃時間的偏移量，以秒為單位）。延遲只能在行程更新指的是計劃的 GTFS 行程而不是基於頻率的行程的情況下使用。在這種情況下，時間應該等於預定時間+延遲。您還可以指定預測的**不確定性**以及[StopTimeEvent](../reference.md#message-stoptimeevent) ，這在頁面下方的[不確定性](#uncertainty)部分中有更詳細的討論。
+更新可以使用[StopTimeEvent](../reference.md#message-stoptimeevent)在[StopTimeUpdates](../reference.md#message-stoptimeupdate)中的停靠站提供**arrival**和/或**departure**的準確時間。這應該包含絕對**time**或**delay**（即與計劃時間的偏移量，以秒為單位）。延遲只能在行程更新指的是計劃的 GTFS 行程而不是基於頻率的行程的情況下使用。在這種情況下，時間應該等於預定時間+延遲。您還可以指定預測的**uncertainty**以及[StopTimeEvent](../reference.md#message-stoptimeevent) ，這在頁面下方的[不確定性](#uncertainty)部分中有更詳細的討論。
 
-對於每個[StopTimeUpdate](../reference.md#message-stoptimeupdate) ，默認的調度關係是已**調度**的。 （請注意，這與行程的日程安排關係不同）。如果停靠點不會停止，您可以將其更改為**跳過**，或者如果您只有部分行程的實時數據，則可以將其更改為**無數據**。
+對於每個[StopTimeUpdate](../reference.md#message-stoptimeupdate) ，默認的調度關係是已**scheduled**的。 （請注意，這與行程的日程安排關係不同）。如果停靠點不會停止，您可以將其更改為**skipped**，或者如果您只有部分行程的實時數據，則可以將其更改為**no data**。
 
 **更新應按 stop_sequence** （或按它們在行程中出現的順序的 stop_ids）排序。
 
@@ -34,7 +34,7 @@
 
 **示例 1**
 
-對於有 20 個停靠點的行程，對於當前停靠點的[stop_sequence](../reference.md#message-stoptimeupdate) ，到達延遲和出發延遲為 0 ( [StopTimeEvents](../reference.md#message-stoptimeevent) ) 的 StopTimeUpdate 意味著行程準時。
+對於有 20 個停靠點的行程，對於當前停靠點的[stop_sequence](../reference.md#message-stoptimeupdate) ，到達延遲和出發延遲為 0 ( [StopTimeEvents](../reference.md#message-stoptimeevent) ) 的 [StopTimeUpdate](../reference.md#message-stoptimeupdate) 意味著行程準時。
 
 **示例 2**
 
@@ -67,7 +67,7 @@ TripDescriptor 提供的信息取決於您正在更新的行程的日程安排�
 
 #### 具有重複 trip_id 的系統
 
-對於使用重複 trip_id 的系統，例如使用 frequency.txt 建模的行程，即基於頻率的行程，trip_id 本身並不是單一行程的唯一標識符，因為它缺少特定的時間組件。為了在 TripDescriptor 中唯一標識此類行程，必須提供三重標識符：
+對於使用重複 trip_id 的系統，例如使用 frequencies.txt 建模的行程，即基於頻率的行程，trip_id 本身並不是單一行程的唯一標識符，因為它缺少特定的時間組件。為了在 TripDescriptor 中唯一標識此類行程，必須提供三重標識符：
 
 *   **trip_id**
 *   **start_time**

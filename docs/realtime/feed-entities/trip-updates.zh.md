@@ -1,4 +1,4 @@
-# 行程更新
+# Trip Updates
 
 行程更新代表时间表的波动。我们希望收到所有你安排的、可以实时运行的行程的行程更新。这些更新会给出沿途各站的预测到达或出发时间。行程更新也可以提供更复杂的情况，即行程被取消或被添加到时间表中，甚至被重新安排路线。
 
@@ -8,8 +8,8 @@
 
 如果一辆车在同一区块内提供多个行程（关于行程和区块的更多信息，请参考[GTFS trips.txt](../../schedule/reference.md#tripstxt)）。
 
-*   馈送应该包括该vehicle当前服务的trip的TripUpdate。如果生产者对这些未来trip的预测质量有信心，我们鼓励生产者在该vehicle的区块中包括当前trip之后的一个或多个行程的TripUpdates。包括同一vehicle的多个TripUpdates，可以避免vehicle从一个trip过渡到另一个行程时对乘客的预测 "突然出现"，也可以让乘客提前知道影响下游行程的延误（例如，当已知的delay超过了行程之间的计划停留时间）。
-*   各个TripUpdate实体不需要按照它们在区块中被SCHEDULED相同顺序被ADDED到馈送中。例如，如果有`trip_ids`为1，2，和3的行程都属于一个区块，并且vehicle行驶了trip1，然后是trip2，然后是trip3，那么`trip_update`实体可以以任何顺序出现 - 例如，允许添加trip2，然后是trip1，然后是trip3。
+*   馈送应该包括该车辆当前服务的旅行的TripUpdate。如果生产者对这些未来trip的预测质量有信心，我们鼓励生产者在该车辆的区块中包括当前旅行之后的一个或多个行程的TripUpdates。包括同一车辆的多个TripUpdates，可以避免车辆从一个旅行过渡到另一个行程时对乘客的预测 "突然出现"，也可以让乘客提前知道影响下游行程的延误（例如，当已知的delay超过了行程之间的计划停留时间）。
+*   各个TripUpdate实体不需要按照它们在区块中被预定的相同顺序被添加到馈送中。例如，如果有`trip_ids`为1，2，和3的行程都属于一个区块，并且车辆行驶了旅行1，然后是旅行2，然后是旅行3，那么`trip_update`实体可以以任何顺序出现 - 例如，允许添加旅行2，然后是旅行1，然后是旅行3。
 
 ## StopTimeUpdate
 
@@ -24,11 +24,11 @@
 
 每个[StopTimeUpdate](../reference.md#message-stoptimeupdate)都与一个站点相关联。通常这可以用GTFS stop_sequence或GTFS stop_id来完成。然而，在你为一个没有GTFS行程号的旅程提供更新的情况下，你必须指定stop_id，因为stop_sequence没有价值。stop_id必须仍然引用GTFS中的一个stop_id。如果同一个站名在一个行程中被访问多次，那么stop_sequence应该在该行程中的所有stop_id的StopTimeUpdates中提供。
 
-更新可以使用[StopTimeEvent](../reference.md#message-stoptimeevent)在[StopTimeUpdates](../reference.md#message-stoptimeupdate)中提供**到达**和/或**离开**某站的确切时间。这应该包含一个绝对的**时间**或一个**延迟**（即从预定时间的一个偏移，以秒为单位）。延迟只能在行程更新是指预定的GTFS行程，而不是基于频率的行程的情况下使用。在这种情况下，时间应该等于计划时间+延迟。你也可以和[StopTimeEvent](../reference.md#message-stoptimeevent)一起指定预测的**不确定性**，这在下面的[不确定性](#uncertainty)部分有更详细的讨论。
+更新可以使用[StopTimeEvent](../reference.md#message-stoptimeevent)在[StopTimeUpdates](../reference.md#message-stoptimeupdate)中提供**arrival**和/或**departure**某站的确切时间。这应该包含一个绝对的**time**或一个**delay**（即从预定时间的一个偏移，以秒为单位）。延迟只能在行程更新是指预定的GTFS行程，而不是基于频率的行程的情况下使用。在这种情况下，时间应该等于计划时间+延迟。你也可以和[StopTimeEvent](../reference.md#message-stoptimeevent)一起指定预测的**uncertainty**，这在下面的[不确定性](#不确定性)部分有更详细的讨论。
 
-对于每个[StopTimeUpdate](../reference.md#message-stoptimeupdate)，默认的计划关系是**计划**。(注意，这与行程的计划关系不同）。你可以把它改成**跳过**，如果这一站不会被停，或者**没有数据**，如果你只有部分行程的实时数据。
+对于每个[StopTimeUpdate](../reference.md#message-stoptimeupdate)，默认的计划关系是**scheduled**。(注意，这与行程的计划关系不同）。你可以把它改成**skipped**，如果这一站不会被停，或者**no data**，如果你只有部分行程的实时数据。
 
-**更新应该按车站顺序**（或按行程中出现的顺序）**进行排序**。
+**更新应该按进行排序stop_sequence**（或stop_ids按行程中出现的顺序)。
 
 如果行程中缺少一个或多个站点，更新的`delay`（或者，如果更新中只提供`time`，通过比较`time`和GTFS计划时间计算的延迟）会传播到所有后续的站点。这意味着，在没有任何其他信息的情况下，更新某一站的停靠时间将改变所有的后续站点。请注意，日程关系为`SKIPPED`的更新不会停止延迟传播，但日程关系为`SCHEDULED`（如果没有提供日程关系，也是默认值）或`NO_DATA`的更新会停止。
 
@@ -63,11 +63,11 @@ TripDescriptor所提供的信息取决于你正在更新的行程的计划关系
 | **Canceled**  | 这个行程曾经安排过，但是现在被取消了。                                                |
 | **Duplicated**  | 这个新行程是静态GTFS中现有行程的副本，除了服务开始日期和时间。新行程将在TripProperties中指定的服务日期和时间运行。 |
 
-在大多数情况下，你应该提供这个更新所涉及的GTFS中计划行程的行程编号。
+在大多数情况下，你应该提供这个更新所涉及的GTFS中计划行程的trip_id。
 
 #### 使用重复的行程编号的系统
 
-对于使用重复的行程编号的系统，例如使用frequencies.txt建模的行程，即基于频率的行程，行程编号本身并不是一个单一行程的唯一标识，因为它缺乏具体的时间成分。为了在TripDescriptor中唯一地识别这些行程，必须提供三重标识符。
+对于使用重复的trip_ids的系统，例如使用frequencies.txt建模的行程，即基于频率的行程，trip_id本身并不是一个单一行程的唯一标识，因为它缺乏具体的时间成分。为了在TripDescriptor中唯一地识别这些行程，必须提供三重标识符。
 
 *   **trip_id**
 *   **start_time**
@@ -75,7 +75,7 @@ TripDescriptor所提供的信息取决于你正在更新的行程的计划关系
 
 start_time应该是第一次发布，任何后续的信息更新在提到同一旅程时应该使用相同的start_time。StopTimeUpdates应该被用来表示调整；start_time不一定要精确到从第一站出发的时间，尽管它应该非常接近这个时间。
 
-例如，假设我们在2015年5月25日10:00决定一个行程的id=T将在start_time=10:10:00开始，并在10:01通过realtime feed提供这个信息。到了10:05，我们突然知道旅行将不是在10:10开始，而是在10:13开始。在我们新的实时反馈中，我们仍然可以识别这个行程为(T, 2015-05-25, 10:10:00)，但是提供一个StopTimeUpdate，在10:13:00从第一站出发。
+例如，假设我们在2015年5月25日10:00决定一个行程的id=T将在start_time=10:10:00开始，并在10:01通过实时反馈 提供这个信息。到了10:05，我们突然知道旅行将不是在10:10开始，而是在10:13开始。在我们新的实时反馈中，我们仍然可以识别这个行程为(T, 2015-05-25, 10:10:00)，但是提供一个StopTimeUpdate，在10:13:00从第一站出发。
 
 #### 替代的行程匹配
 

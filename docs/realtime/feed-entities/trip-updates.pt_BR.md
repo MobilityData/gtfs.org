@@ -1,6 +1,6 @@
-# Atualizações de viagem
+# Trip Updates
 
-As atualizações de viagem representam flutuações no horário. Esperamos receber atualizações de viagem para todas as viagens que você programou e que são programáveis em tempo real. Essas atualizações dariam um horário previsto de chegada ou partida para as paradas ao longo da rota. As atualizações de viagem também podem prever cenários mais complexos onde as viagens são canceladas ou acrescentadas ao horário, ou mesmo redirecionadas.
+As trip updates representam flutuações no horário. Esperamos receber trip updates para todas as viagens que você programou e que são programáveis em tempo real. Essas atualizações dariam um horário previsto de chegada ou partida para as paradas ao longo da rota. As trip updates também podem prever cenários mais complexos onde as viagens são canceladas ou acrescentadas ao horário, ou mesmo redirecionadas.
 
 **Lembrete:** Em [GTFS](../../schedule/reference.md), uma viagem é uma seqüência de duas ou mais paradas que ocorrem em um momento específico.
 
@@ -13,7 +13,7 @@ Se um veículo estiver servindo várias viagens dentro do mesmo bloco (para mais
 
 ## StopTimeUpdate
 
-Uma atualização de viagem consiste em uma ou mais atualizações dos horários de parada do veículo, que são chamadas de [StopTimeUpdates](../reference.md#message-stoptimeupdate). Estas podem ser fornecidas para tempos de parada passados e futuros. Você tem permissão, mas não é obrigado, a deixar cair os tempos de parada passados. Os produtores não devem deixar cair um `StopTimeUpdate` passado se ele se referir a uma parada com uma hora de chegada programada no futuro para a viagem em questão (ou seja, o veículo passou a parada antes do programado), caso contrário se concluirá que não há atualização para esta parada.
+Uma trip updates consiste em uma ou mais atualizações dos horários de parada do veículo, que são chamadas de [StopTimeUpdates](../reference.md#message-stoptimeupdate). Estas podem ser fornecidas para tempos de parada passados e futuros. Você tem permissão, mas não é obrigado, a deixar cair os tempos de parada passados. Os produtores não devem deixar cair um `StopTimeUpdate` passado se ele se referir a uma parada com uma hora de chegada programada no futuro para a viagem em questão (ou seja, o veículo passou a parada antes do programado), caso contrário se concluirá que não há atualização para esta parada.
 
 Por exemplo, se os seguintes dados aparecerem na alimentação do GTFS-rt:
 
@@ -22,11 +22,11 @@ Por exemplo, se os seguintes dados aparecerem na alimentação do GTFS-rt:
 
 ...a previsão para a Parada 4 não pode ser descartada da alimentação até 10:21h, mesmo que o ônibus realmente passe a parada às 10:18h. Se o `StopTimeUpdate` para a Parada 4 foi descartado da alimentação às 10:18h ou 10:19h, e o horário de chegada programado é 10:20h, então o consumidor deve assumir que não existe informação em tempo real para a Parada 4 naquele horário, e os dados de programação do GTFS devem ser usados.
 
-Cada [StopTimeUpdate](../reference.md#message-stoptimeupdate) está ligada a uma parada. Normalmente, isto pode ser feito usando tanto uma parada_seqüência GTFS ou um stop_id GTFS. Entretanto, caso você esteja fornecendo uma atualização para uma viagem sem um GTFS trip_id, você deve especificar o stop_id como stop_sequence não tem valor. O stop_id ainda deve fazer referência a um stop_id em GTFS. Se o mesmo stop_id for visitado mais de uma vez em uma viagem, então o stop_id deve ser fornecido em todas as StopTimeUpdates para aquele stop_id naquela viagem.
+Cada [StopTimeUpdate](../reference.md#message-stoptimeupdate) está ligada a uma parada. Normalmente, isto pode ser feito usando tanto uma stop_sequence GTFS ou um stop_id GTFS. Entretanto, caso você esteja fornecendo uma atualização para uma viagem sem um GTFS trip_id, você deve especificar o stop_id como stop_sequence não tem valor. O stop_id ainda deve fazer referência a um stop_id em GTFS. Se o mesmo stop_id for visitado mais de uma vez em uma viagem, então o stop_sequence deve ser fornecido em todas as StopTimeUpdates para aquele stop_id naquela viagem.
 
-A atualização pode fornecer um tempo exato para a **chegada** e/ou **partida** em uma parada no [StopTimeUpdates](../reference.md#message-stoptimeupdate) usando o [StopTimeEvent](../reference.md#message-stoptimeevent). Isto deve conter ou um **tempo** absoluto ou um **atraso** (ou seja, uma compensação do tempo programado em segundos). O atraso só pode ser usado caso a atualização da viagem se refira a uma viagem GTFS programada, em oposição a uma viagem baseada em freqüência. Neste caso, o tempo deve ser igual ao tempo programado + atraso. Você também pode especificar a **incerteza** da previsão junto com o [StopTimeEvent](../reference.md#message-stoptimeevent), que é discutido com mais detalhes na seção [Incerteza](#uncertainty) mais abaixo na página.
+A atualização pode fornecer um tempo exato para a **arrival** e/ou **departure** em uma parada no [StopTimeUpdates](../reference.md#message-stoptimeupdate) usando o [StopTimeEvent](../reference.md#message-stoptimeevent). Isto deve conter ou um **time** absoluto ou um **delay** (ou seja, uma compensação do tempo programado em segundos). O atraso só pode ser usado caso a atualização da viagem se refira a uma viagem GTFS programada, em oposição a uma viagem baseada em freqüência. Neste caso, o tempo deve ser igual ao tempo programado + atraso. Você também pode especificar a **uncertainty** da previsão junto com o [StopTimeEvent](../reference.md#message-stoptimeevent), que é discutido com mais detalhes na seção [Incerteza](#incerteza) mais abaixo na página.
 
-Para cada [StopTimeUpdate](../reference.md#message-stoptimeupdate), a relação de programação padrão é **agendada**. (Note que isto é diferente da relação de horário para a viagem). Você pode alterar isso para **pular** se a parada não for interrompida ou se **não houver dados** se você só tiver dados em tempo real para parte da viagem.
+Para cada [StopTimeUpdate](../reference.md#message-stoptimeupdate), a relação de programação padrão é **scheduled**. (Note que isto é diferente da relação de horário para a viagem). Você pode alterar isso para **skipped** se a parada não for interrompida ou se **no data** se você só tiver dados em tempo real para parte da viagem.
 
 **As atualizações devem ser ordenadas por stop_sequence** (ou stop_ids na ordem em que ocorrem na viagem).
 
@@ -42,7 +42,7 @@ Para a mesma instância de viagem, são fornecidas três [StopTimeUpdate](../ref
 
 *   atraso de 300 segundos para stop_sequence 3
 *   atraso de 60 segundos para stop_sequence 8
-*   [ProgramaçãoRelação](../reference.md#enum-schedulerelationship) de `NO_DATA` para stop_sequence 10
+*   [ScheduleRelationship](../reference.md#enum-schedulerelationship) de `NO_DATA` para stop_sequence 10
 
 Isto será interpretado como:
 
@@ -67,26 +67,26 @@ Na maioria dos casos, você deve fornecer o trip_id da viagem programada no GTFS
 
 #### Sistemas com trip_ids repetidos
 
-Para sistemas que utilizam trip_ids repetidos, por exemplo, viagens modeladas usando freqüências.txt, ou seja, viagens baseadas em freqüência, o trip_id não é em si mesmo um identificador único de uma única viagem, pois carece de um componente de tempo específico. A fim de identificar tais viagens de forma única dentro do aTripDescriptor, um triplo de identificadores deve ser fornecido:
+Para sistemas que utilizam trip_ids repetidos, por exemplo, viagens modeladas usando frequencies.txt, ou seja, viagens baseadas em freqüência, o trip_id não é em si mesmo um identificador único de uma única viagem, pois carece de um componente de tempo específico. A fim de identificar tais viagens de forma única dentro do a TripDescriptor, um triplo de identificadores deve ser fornecido:
 
 *   **trip_id**
 *   **start_time**
 *   **start_date**
 
-start_time deve ser publicado primeiro, e qualquer atualização de alimentação subseqüente deve usar o mesmo start_time ao se referir à mesma viagem. StopTimeUpdates devem ser usados para indicar ajustes; a hora_de_início não tem que ser precisamente a hora de partida da primeira estação, embora deva ser bastante próxima da hora.
+start_time deve ser publicado primeiro, e qualquer atualização de alimentação subseqüente deve usar o mesmo start_time ao se referir à mesma viagem. StopTimeUpdates devem ser usados para indicar ajustes; a start_time não tem que ser precisamente a hora de partida da primeira estação, embora deva ser bastante próxima da hora.
 
 Por exemplo, digamos que decidimos às 10:00, 25 de maio de 2015, que uma viagem com o id=T começará no start_time=10:10:00, e forneceremos esta informação no viarealtime feed às 10:01. Às 10:05 sabemos de repente que a viagem começará não às 10:10, mas às 10:13. Em nossa nova alimentação em tempo real ainda podemos identificar estas tripas (T, 2015-05-25, 10:10:00), mas fornecemos um StopTimeUpdate com partida da primeira parada às 10:13:00.
 
 #### Combinação de viagem alternativa
 
-As viagens que não são baseadas em freqüência também podem ser identificadas de forma única pelo aTripDescriptor, incluindo a combinação de:
+As viagens que não são baseadas em freqüência também podem ser identificadas de forma única pelo a TripDescriptor, incluindo a combinação de:
 
 *   **route_id**
 *   **direction_id**
 *   **start_time**
 *   **start_date**
 
-onde a hora_de_início é a hora de início programada, conforme definido no cronograma estático, desde que a combinação de ids fornecidas resolva uma viagem única.
+onde a start_time é a hora de início programada, conforme definido no cronograma estático, desde que a combinação de ids fornecidas resolva uma viagem única.
 
 ## Incerteza
 
