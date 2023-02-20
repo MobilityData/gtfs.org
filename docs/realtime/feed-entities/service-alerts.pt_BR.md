@@ -1,6 +1,6 @@
-# Alertas de serviço
+# Service Alerts
 
-Os alertas de serviço permitem que você forneça atualizações sempre que houver interrupção na rede. Atrasos e cancelamentos de viagens individuais geralmente devem ser comunicados usando [Atualizações de viagem](trip-updates.md).
+Os service alerts permitem que você forneça atualizações sempre que houver interrupção na rede. Atrasos e cancelamentos de viagens individuais geralmente devem ser comunicados usando [trip updates](trip-updates.md).
 
 Você tem a opção de fornecer o seguinte:
 
@@ -20,11 +20,11 @@ O seletor de entidades permite especificar exatamente quais partes da rede este 
 
 As entidades são selecionadas usando seus identificadores GTFS, e você pode selecionar qualquer uma das seguintes opções:
 
-*   Agência - afeta toda a rede
-*   Rota - afeta toda a rota
-*   Tipo de rota - afeta qualquer rota deste tipo. por exemplo, todos os metrôs.
-*   Viagem - afeta uma viagem em particular
-*   Parada - afeta uma parada específica
+*   Agency - afeta toda a rede
+*   Route - afeta toda a rota
+*   Route type - afeta qualquer rota deste tipo. por exemplo, todos os metrôs.
+*   Trip - afeta uma viagem em particular
+*   Stop - afeta uma parada específica
 
 Você pode incluir mais de um dos campos listados acima em uma `informed_entity`. Quando múltiplos campos são incluídos em `informed_entity`, eles devem ser interpretados como sendo unidos pelo operador lógico `AND`. Em outras palavras, o alerta só deve ser aplicado em um contexto que atenda a todos os campos fornecidos em `informed_entity`. Por exemplo, se `route_id: "1` " e `stop_id:` " `5` " estiverem ambos incluídos em `informed_entity`, então o alerta deve ser aplicado somente ao itinerário 1 na parada 5. NÃO deve ser aplicado a qualquer outra parada na rota 1, e NÃO deve ser aplicado a qualquer outra rota na parada 5.
 
@@ -34,31 +34,31 @@ Se você gostaria de representar um alerta que afeta mais de uma entidade (por e
 
 Qual é a causa deste alerta? Você pode especificar uma das seguintes:
 
-*   Causa desconhecida
-*   Outra causa (não representada por nenhuma destas opções)
-*   Problema técnico
-*   Greve
-*   Demonstração
-*   Acidente
-*   Férias
-*   Clima
-*   Manutenção
-*   Construção
-*   Atividade policial
-*   Emergência médica
+*   Unknown cause
+*   Other cause (não representada por nenhuma destas opções)
+*   Technical problem
+*   Strike
+*   Demonstration
+*   Accident
+*   Holiday
+*   Weather
+*   Maintenance
+*   Construction
+*   Police activity
+*   Medical emergency
 
 ## Effect
 
 Que efeito este problema tem sobre a entidade especificada? Você pode especificar um dos seguintes:
 
-*   Nenhum serviço
+*   No service
 *   Serviço reduzido
-*   Atrasos significativos (atrasos insignificantes só devem ser fornecidos através de [atualizações da Trip](trip-updates.md)).
-*   Desvio
-*   Serviço adicional
-*   Serviço modificado: As operações são diferentes do que o cavaleiro normalmente esperaria. Um exemplo é um alerta que lembra aos cavaleiros um horário de férias que é diferente do serviço normal naquele dia da semana.
-*   Parada movida
-*   Outros efeitos (não representados por nenhuma destas opções)
-*   Efeito desconhecido
-*   Sem efeito: O alerta fornece informações para os cavaleiros, mas não afeta as operações. Exemplos incluem a publicidade de reuniões públicas e a solicitação de feedback através de pesquisas.
-*   Problema de acessibilidade: O alerta fornece informações sobre questões de acessibilidade que afetam o acesso sem etapas. Exemplos incluem um elevador fora de serviço ou rampas móveis.
+*   Reduced service (atrasos insignificantes só devem ser fornecidos através de [trip updates](trip-updates.md)).
+*   Detour
+*   Additional service
+*   Modified service: As operações são diferentes do que o cavaleiro normalmente esperaria. Um exemplo é um alerta que lembra aos cavaleiros um horário de férias que é diferente do serviço normal naquele dia da semana.
+*   Stop moved
+*   Other effect (não representados por nenhuma destas opções)
+*   Unknown effect
+*   No effect: O alerta fornece informações para os cavaleiros, mas não afeta as operações. Exemplos incluem a publicidade de reuniões públicas e a solicitação de feedback através de pesquisas.
+*   Accessibility issue: O alerta fornece informações sobre questões de acessibilidade que afetam o acesso sem etapas. Exemplos incluem um elevador fora de serviço ou rampas móveis.

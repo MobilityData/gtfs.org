@@ -1,6 +1,6 @@
-# Service-Warnungen
+# Service Alerts
 
-Mit Service-Warnungen können Sie Aktualisierungen bereitstellen, wenn es zu Störungen im Netz kommt. Verspätungen und Stornierungen einzelner Fahrten sollten in der Regel über [Fahrten-Updates](trip-updates.md) mitgeteilt werden.
+Mit Service Alerts können Sie Aktualisierungen bereitstellen, wenn es zu Störungen im Netz kommt. Verspätungen und Stornierungen einzelner Fahrten sollten in der Regel über [Trip Updates](trip-updates.md) mitgeteilt werden.
 
 Sie haben die Möglichkeit, Folgendes anzugeben:
 
@@ -20,11 +20,11 @@ Mit dem Entitätsselektor können Sie genau angeben, welche Teile des Netzes von
 
 Die Entitäten werden anhand ihrer GTFS-Kennungen ausgewählt, und Sie können eine der folgenden Optionen wählen:
 
-*   Agentur - betrifft das gesamte Netz
-*   Strecke - betrifft die gesamte Strecke
-*   Streckentyp - betrifft jede Strecke dieses Typs, z. B. alle U-Bahnen.
-*   Fahrt - betrifft eine bestimmte Fahrt
-*   Haltestelle - betrifft eine bestimmte Haltestelle
+*   Agency - betrifft das gesamte Netz
+*   Route - betrifft die gesamte Strecke
+*   Route type - betrifft jede Strecke dieses Typs, z. B. alle U-Bahnen.
+*   Trip - betrifft eine bestimmte Fahrt
+*   Stop - betrifft eine bestimmte Haltestelle
 
 Sie können mehr als eines der oben aufgeführten Felder in eine `informed_entity` aufnehmen. Wenn mehrere Felder in einer `informed_entity` enthalten sind, sollten sie so interpretiert werden, als seien sie durch den logischen Operator `AND` verbunden. Mit anderen Worten, die Ausschreibung sollte nur in einem Kontext angewandt werden, der alle in einer `informed_entity` angegebenen Felder erfüllt. Zum Beispiel, wenn `route_id: "1"` und `stop_id: "5"` beide in einer `informed_entity` enthalten sind, sollte die Warnmeldung nur für die Linie 1 an der Haltestelle 5 gelten. Sie sollte NICHT für eine andere Haltestelle der Linie 1 und NICHT für eine andere Linie an der Haltestelle 5 gelten.
 
@@ -34,31 +34,31 @@ Wenn Sie eine Ausschreibung darstellen möchten, die mehr als eine Einheit betri
 
 Was ist die Ursache für diese Meldung? Sie können eine der folgenden Angaben machen:
 
-*   Unbekannte Ursache
-*   Andere Ursache (nicht durch eine dieser Optionen repräsentiert)
-*   Technisches Problem
-*   Streik
-*   Vorführung
-*   Unfall
-*   Feiertag
-*   Wetter
-*   Wartung
-*   Bauarbeiten
-*   Polizeiliche Tätigkeit
-*   Medizinischer Notfall
+*   Unknown cause
+*   Other cause (nicht durch eine dieser Optionen repräsentiert)
+*   Technical problem
+*   Strike
+*   Demonstration
+*   Accident
+*   Holiday
+*   Weather
+*   Maintenance
+*   Construction
+*   Police activity
+*   Medical emergency
 
 ## Effect
 
 Welche Auswirkungen hat dieses Problem auf die angegebene Einrichtung? Sie können eine der folgenden Angaben machen:
 
-*   Kein Dienst
-*   Eingeschränkter Verkehr
-*   Erhebliche Verspätungen (unbedeutende Verspätungen sollten nur durch [Reiseaktualisierungen](trip-updates.md) gemeldet werden).
-*   Umleitung
-*   Zusätzlicher Dienst
-*   Geänderter Betrieb: Der Betrieb weicht von dem ab, was der Fahrgast normalerweise erwarten würde. Ein Beispiel dafür ist eine Warnung, die die Fahrgäste an einen bevorstehenden Feiertag erinnert, der an diesem Wochentag anders ist als der normale Betrieb.
-*   Haltestelle verlegt
-*   Andere Auswirkung (nicht durch eine dieser Optionen repräsentiert)
-*   Unbekannte Auswirkung
-*   Keine Auswirkung: Die Warnung dient der Information der Fahrgäste, hat aber keine Auswirkungen auf den Betrieb. Beispiele hierfür sind die Ankündigung öffentlicher Versammlungen und die Einholung von Feedback über Umfragen.
-*   Problem der Zugänglichkeit: Die Warnung informiert über Zugänglichkeitsprobleme, die den stufenlosen Zugang beeinträchtigen. Beispiele hierfür sind ein außer Betrieb befindlicher Aufzug oder bewegliche Rampen.
+*   No service
+*   Reduced service
+*   Significant delays (unbedeutende Verspätungen sollten nur durch [Trip updates](trip-updates.md) gemeldet werden).
+*   Detour
+*   Additional service
+*   Modified service: Der Betrieb weicht von dem ab, was der Fahrgast normalerweise erwarten würde. Ein Beispiel dafür ist eine Warnung, die die Fahrgäste an einen bevorstehenden Feiertag erinnert, der an diesem Wochentag anders ist als der normale Betrieb.
+*   Stop moved
+*   Other effect (nicht durch eine dieser Optionen repräsentiert)
+*   Unknown effect
+*   No effect: Die Warnung dient der Information der Fahrgäste, hat aber keine Auswirkungen auf den Betrieb. Beispiele hierfür sind die Ankündigung öffentlicher Versammlungen und die Einholung von Feedback über Umfragen.
+*   Accessibility issue: Die Warnung informiert über Zugänglichkeitsprobleme, die den stufenlosen Zugang beeinträchtigen. Beispiele hierfür sind ein außer Betrieb befindlicher Aufzug oder bewegliche Rampen.

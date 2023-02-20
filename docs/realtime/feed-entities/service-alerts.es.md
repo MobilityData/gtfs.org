@@ -1,6 +1,6 @@
-# Alertas de servicio
+# Service Alerts
 
-Las alertas de servicio le permiten proporcionar actualizaciones siempre que haya interrupciones en la red. Por lo general, los retrasos y cancelaciones de viajes individuales deben comunicarse mediante [actualizaciones de viajes](trip-updates.md).
+Las service alerts le permiten proporcionar actualizaciones siempre que haya interrupciones en la red. Por lo general, los retrasos y cancelaciones de viajes individuales deben comunicarse mediante [trip updates](trip-updates.md).
 
 Tiene la opción de proporcionar lo siguiente
 
@@ -20,11 +20,11 @@ El selector de entidad le permite especificar exactamente a qué partes de la re
 
 Las entidades se seleccionan utilizando sus identificadores GTFS, y puede seleccionar cualquiera de las siguientes:
 
-*   Agencia - afecta a toda la red
-*   Ruta - afecta a toda la ruta
-*   Tipo de ruta - afecta a cualquier ruta de este tipo. Por ejemplo, todos los metros.
-*   Viaje - afecta a un viaje concreto
-*   Parada - afecta a una parada concreta
+*   Agency - afecta a toda la red
+*   Route - afecta a toda la ruta
+*   Route type - afecta a cualquier ruta de este tipo. Por ejemplo, todos los metros.
+*   Trip - afecta a un viaje concreto
+*   Stop - afecta a una parada concreta
 
 Puede incluir más de uno de los campos enumerados anteriormente en una `informed_entity`. Cuando se incluyen varios campos en una `informed_entity`, debe interpretarse que están unidos por el operador lógico `AND`. En otras palabras, la alerta sólo debe aplicarse en un contexto que reúna todos los campos proporcionados en una `informed_entity`. Por ejemplo, si `route_id:` " `1"` y `stop_id:` " `5"` están ambos incluidos en una `informed_entity`, entonces la alerta debe aplicarse sólo a la ruta 1 en la parada 5. NO debe aplicarse a ninguna otra parada de la ruta 1, y NO debe aplicarse a ninguna otra ruta en la parada 5.
 
@@ -34,31 +34,31 @@ Si desea representar una alerta que afecta a más de una entidad (por ejemplo, u
 
 ¿Cuál es la causa de esta alerta? Puede especificar una de las siguientes:
 
-*   Causa desconocida
-*   Otra causa (no representada por ninguna de estas opciones)
-*   Problema técnico
-*   Huelga
-*   Manifestación
-*   Accidente
-*   Vacaciones
-*   Tiempo
-*   Mantenimiento
-*   Construcción
-*   Actividad policial
-*   Emergencia médica
+*   Unknown cause
+*   Other cause (no representada por ninguna de estas opciones)
+*   Technical problem
+*   Strike
+*   Demonstration
+*   Accident
+*   Holiday
+*   Weather
+*   Maintenance
+*   Construction
+*   Police activity
+*   Medical emergency
 
 ## Effect
 
 ¿Qué efecto tiene este problema en la entidad especificada? Puede especificar uno de los siguientes:
 
-*   Sin servicio
-*   Servicio reducido
-*   Retrasos significativos (los retrasos insignificantes sólo deben proporcionarse a través de [actualizaciones de Viaje](trip-updates.md)).
-*   Desvío
-*   Servicio adicional
-*   Servicio modificado: Las operaciones son diferentes de lo que el viajero esperaría normalmente. Un ejemplo es una alerta que recuerda a los usuarios que el horario de un próximo día festivo es diferente del servicio normal de ese día de la semana.
-*   Parada desplazada
-*   Otro efecto (no representado por ninguna de estas opciones)
-*   Efecto desconocido
-*   Sin efecto: La alerta proporciona información a los usuarios, pero no afecta a las operaciones. Por ejemplo, anunciando reuniones públicas o solicitando opiniones mediante encuestas.
-*   Problema de accesibilidad: La alerta proporciona información sobre problemas de accesibilidad que afectan al acceso sin escalones. Por ejemplo, un ascensor fuera de servicio o rampas móviles.
+*   No service
+*   Reduced service
+*   Significant delays (los retrasos insignificantes sólo deben proporcionarse a través de [Trip updates](trip-updates.md)).
+*   Detour
+*   Additional service
+*   Modified service: Las operaciones son diferentes de lo que el viajero esperaría normalmente. Un ejemplo es una alerta que recuerda a los usuarios que el horario de un próximo día festivo es diferente del servicio normal de ese día de la semana.
+*   Stop moved
+*   Other effect (no representado por ninguna de estas opciones)
+*   Unknown effect
+*   No effect: La alerta proporciona información a los usuarios, pero no afecta a las operaciones. Por ejemplo, anunciando reuniones públicas o solicitando opiniones mediante encuestas.
+*   Accessibility issue: La alerta proporciona información sobre problemas de accesibilidad que afectan al acceso sin escalones. Por ejemplo, un ascensor fuera de servicio o rampas móviles.
