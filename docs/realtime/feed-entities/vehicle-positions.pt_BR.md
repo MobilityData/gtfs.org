@@ -1,16 +1,16 @@
-# Posições do veículo
+# Vehicle Positions
 
-A posição do veículo é usada para fornecer informações geradas automaticamente sobre a localização de um veículo, tal como a partir de um dispositivo GPS a bordo. Uma única posição do veículo deve ser fornecida para cada veículo que seja capaz de fornecê-la.
+A vehicle position é usada para fornecer informações geradas automaticamente sobre a localização de um veículo, tal como a partir de um dispositivo GPS a bordo. Uma única vehicle position deve ser fornecida para cada veículo que seja capaz de fornecê-la.
 
-A viagem que o veículo está servindo atualmente deve ser dada através de um [TripDescriptor](../reference.md#message-tripdescriptor). Você também pode fornecer um [Descrição do veículo](../reference.md#message-vehicledescriptor), que especifica um veículo físico preciso sobre o qual você está fornecendo atualizações. A documentação é fornecida abaixo.
+A viagem que o veículo está servindo atualmente deve ser dada através de um [TripDescriptor](../reference.md#message-tripdescriptor). Você também pode fornecer um [VehicleDescriptor](../reference.md#message-vehicledescriptor), que especifica um veículo físico preciso sobre o qual você está fornecendo atualizações. A documentação é fornecida abaixo.
 
-Um **carimbo de tempo** indicando a hora em que a leitura da posição foi feita pode ser fornecido. Note que isto é diferente do carimbo de tempo no cabeçalho de alimentação, que é a hora em que esta mensagem foi gerada pelo servidor.
+Um **timestamp** indicando a hora em que a leitura da posição foi feita pode ser fornecido. Note que isto é diferente do carimbo de tempo no cabeçalho de alimentação, que é a hora em que esta mensagem foi gerada pelo servidor.
 
-**A passagem atual** também pode ser fornecida (seja como um `stop_sequence` ou `stop_id`). Esta é uma referência à parada para a qual o veículo está a caminho, ou já parou.
+**Current passage** também pode ser fornecida (seja como um `stop_sequence` ou `stop_id`). Esta é uma referência à parada para a qual o veículo está a caminho, ou já parou.
 
 ## Position
 
-A posição contém os dados de localização dentro da posição do veículo. Latitude e longitude são obrigatórias, os outros campos são opcionais. Estes tipos de dados são:
+A posição contém os dados de localização dentro da vehicle position. Latitude e longitude são obrigatórias, os outros campos são opcionais. Estes tipos de dados são:
 
 *   **Latitude** - graus Norte, no sistema de coordenadas WGS-84
 *   **Longitude** - graus Leste, no sistema de coordenadas WGS-84
@@ -20,27 +20,27 @@ A posição contém os dados de localização dentro da posição do veículo. L
 
 ## CongestionLevel
 
-A posição do veículo também permite à agência especificar o nível de congestionamento que o veículo está passando atualmente. O congestionamento pode ser classificado sob as seguintes categorias:
+A vehicle position também permite à agência especificar o nível de congestionamento que o veículo está passando atualmente. O congestionamento pode ser classificado sob as seguintes categorias:
 
-*   Nível de congestionamento desconhecido
-*   Correndo bem
-*   Parar e ir
-*   Congestionamento
-*   Congestionamento severo
+*   Unknown congestion level
+*   Running smoothly
+*   Stop and go
+*   Congestion
+*   Severe congestion
 
 Cabe à agência classificar o que você classifica como cada tipo de congestionamento. Nossa orientação é que o congestionamento severo só é usado em situações em que o tráfego está tão congestionado que as pessoas estão deixando seus carros.
 
 ## OccupancyStatus
 
-A posição do veículo também permite que a agência especifique o grau de ocupação dos passageiros para o veículo. O grau de ocupação pode ser classificado sob as seguintes categorias:
+A vehicle position também permite que a agência especifique o grau de ocupação dos passageiros para o veículo. O grau de ocupação pode ser classificado sob as seguintes categorias:
 
-*   Vazio
-*   Muitos assentos disponíveis
-*   Poucos assentos disponíveis
-*   Apenas espaço em pé
-*   Apenas sala de repouso esmagada
-*   Completo
-*   Não aceitar passageiros
+*   Empty
+*   Many seats available
+*   Few seats available
+*   Standing room only
+*   Crushed standing room only
+*   Full
+*   Not accepting passengers
 
 Este campo ainda é **experimental**, e está sujeito a mudanças. Ele pode ser adotado formalmente no futuro.
 
@@ -50,7 +50,7 @@ O status de parada do veículo dá mais significado ao status de um veículo em 
 
 *   **Incoming at** - o veículo está prestes a chegar à parada referenciada
 *   **Stopped at** - o veículo é parado na parada referenciada
-*   **In transit to** - a parada referenciada é a próxima parada para o veículo - **default**
+*   **In transit to** - a parada referenciada é a próxima parada para o veículo - **padrão**
 
 ## VehicleDescriptor
 

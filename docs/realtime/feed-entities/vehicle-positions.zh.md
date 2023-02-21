@@ -1,16 +1,16 @@
-# 车辆位置
+# Vehicle Positions
 
-车辆位置用于提供自动生成的车辆位置信息，例如来自车上的GPS设备。应该为每个能够提供位置的车辆提供一个单一的车辆位置。
+Vehicle position用于提供自动生成的车辆位置信息，例如来自车上的GPS设备。应该为每个能够提供位置的车辆提供一个单一的车辆位置。
 
 车辆目前所服务的行程应该通过[TripDescriptor](../reference.md#message-tripdescriptor)给出。你也可以提供一个[VehicleDescriptor](../reference.md#message-vehicledescriptor)，它指定了一个精确的物理车辆，你正在提供有关的更新。文件在下面提供。
 
-可以提供一个**时间戳**，表示读取位置的时间。请注意，这与报文头中的时间戳不同，后者是该消息由服务器生成的时间。
+可以提供一个**timestamp**，表示读取位置的时间。请注意，这与报文头中的时间戳不同，后者是该消息由服务器生成的时间。
 
-也可以提供**当前的通道**（作为`stop_sequence`或`stop_id`）。这是对车辆正在前往或已经停在的站点的引用。
+也可以提供**Current passage**（作为`stop_sequence`或`stop_id`）。这是对车辆正在前往或已经停在的站点的引用。
 
 ## Position
 
-位置包含车辆位置内的位置数据。纬度和经度是必须的，其他字段是可选的。这些类型的数据是。
+位置包含vehicle position内的位置数据。纬度和经度是必须的，其他字段是可选的。这些类型的数据是。
 
 *   **Latitude**--北纬度，在WGS-84坐标系中
 *   **Longitude**--东经度，在WGS-84坐标系中
@@ -20,27 +20,27 @@
 
 ## CongestionLevel
 
-车辆位置还允许机构指定车辆目前正在经历的拥堵程度。拥堵可以分为以下几类。
+Vehicle position还允许机构指定车辆目前正在经历的拥堵程度。拥堵可以分为以下几类。
 
-*   未知的拥堵等级
-*   平稳运行
-*   停停走走
-*   拥堵情况
-*   严重拥堵
+*   Unknown congestion level
+*   Running smoothly
+*   Stop and go
+*   Congestion
+*   Severe congestion
 
 由机构来划分你所归类的每种拥堵类型。我们的指导意见是，严重拥堵只用于交通拥堵到人们离开汽车的情况。
 
 ## OccupancyStatus
 
-车辆位置也允许机构指定车辆的乘客占用程度。占用状态可分为以下几类。
+Vehicle position也允许机构指定车辆的乘客占用程度。占用状态可分为以下几类。
 
-*   空车
-*   许多座位可用
-*   少数可用座位
-*   只有站立空间
-*   仅有压迫性站立空间
-*   满座
-*   不接受乘客
+*   Empty
+*   Many seats available
+*   Few seats available
+*   Standing room only
+*   Crushed standing room only
+*   Full
+*   Not accepting passengers
 
 这个领域仍然是**实验性的**，可能会有变化。它可能在将来被正式采用。
 
@@ -50,7 +50,7 @@
 
 *   **Incoming at**到达--车辆即将到达所指的站点
 *   **Stopped at**在--车辆停在参考站。
-*   **In transit to**--参考站是车辆的下一站--**default**
+*   **In transit to**--参考站是车辆的下一站--**默认的**
 
 ## VehicleDescriptor
 
