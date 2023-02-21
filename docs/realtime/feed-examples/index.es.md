@@ -7,5 +7,5 @@
 Los siguientes ejemplos muestran una representación textual de los feeds. Durante el desarrollo es más conveniente producir una salida de búfer de protocolo ASCII para facilitar la depuración. Puede comparar su salida de texto con estos ejemplos para comprobar la validez de los datos.
 
 <div class="landing-page">
-   <a class="button" href="trip-updates">Actualizaciones de viajes</a><a class="button" href="service-alerts">Alertas de servicio</a>
+   <a class="button" href="trip-updates">Trip Updates</a><a class="button" href="service-alerts">Service Alerts</a>
 </div>

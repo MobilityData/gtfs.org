@@ -7,5 +7,5 @@
 Os exemplos a seguir mostram uma representação textual das rações. Durante o desenvolvimento é mais conveniente produzir uma saída de buffer do protocolo ASCII para facilitar a depuração. Você pode comparar sua saída de texto com estes exemplos para verificar a validade dos dados.
 
 <div class="landing-page">
-   <a class="button" href="trip-updates">Atualizações de viagem</a><a class="button" href="service-alerts">Alertas de serviço</a>
+   <a class="button" href="trip-updates">Trip Updates</a><a class="button" href="service-alerts">Service Alerts</a>
 </div>

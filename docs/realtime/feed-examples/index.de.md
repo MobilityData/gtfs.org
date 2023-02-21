@@ -7,7 +7,7 @@
 Die folgenden Beispiele zeigen eine textuelle Darstellung von Feeds. Während der Entwicklung ist es bequemer, ASCII-Protokollpufferausgaben zu erzeugen, um die Fehlersuche zu erleichtern. Sie können Ihre Textausgabe mit diesen Beispielen vergleichen, um die Gültigkeit der Daten zu überprüfen.
 
 <div class="landing-page">
-   <a class="button" href="trip-updates">Reise-Updates</a><a class="button" href="service-alerts">Service-Warnungen</a>
+   <a class="button" href="trip-updates">Trip Updates</a><a class="button" href="service-alerts">Service Alerts</a>
 </div>
 
 

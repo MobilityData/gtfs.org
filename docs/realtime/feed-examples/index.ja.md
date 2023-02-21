@@ -7,5 +7,5 @@
 以下の例は、フィードをテキストで表現したものです。開発時には、ASCII プロトコルバッファの出力を作成するとデバッグがしやすくなります。これらの例とテキスト出力を比較することで、データの妥当性を確認することができます。
 
 <div class="landing-page">
-  <a class="button" href="trip-updates">トリップ・アップデート</a> <a class="button" href="service-alerts">サービスアラート</a>
+  <a class="button" href="trip-updates">Trip Updates</a> <a class="button" href="service-alerts">Service Alerts</a>
 </div>

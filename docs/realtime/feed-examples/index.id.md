@@ -5,5 +5,5 @@
 Contoh berikut menunjukkan representasi tekstual feed. Selama pengembangan akan lebih nyaman untuk menghasilkan output buffer protokol ASCII untuk debugging yang lebih mudah. Anda dapat membandingkan keluaran teks Anda dengan contoh-contoh ini untuk memeriksa validitas data.
 
 <div class="landing-page"> 
-    <a class="button" href="service-alerts">Peringatan Layanan</a> <a class="button" href="trip-updates">Pembaruan Perjalanan</a>
+    <a class="button" href="service-alerts">Service Alerts</a> <a class="button" href="trip-updates">Trip Updates</a>
 </div>

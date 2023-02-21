@@ -7,5 +7,5 @@
 下面的例子显示了feeds的文本表示。在开发过程中，产生ASCII协议缓冲区输出是比较方便的，以便于调试。你可以将你的文本输出与这些例子进行比较，以检查数据的有效性。
 
 <div class="landing-page">
-   <a class="button" href="trip-updates">旅程更新服务</a><a class="button" href="service-alerts">提示</a>
+   <a class="button" href="trip-updates">Trip Updates</a><a class="button" href="service-alerts">Service Alerts</a>
 </div>

@@ -5,5 +5,5 @@
 以下示例顯示了提要的文本表示。在開發過程中，更方便地生成 ASCII 協議緩衝區輸出以便於調試。您可以將您的文本輸出與這些示例進行比較，以檢查數據的有效性。
 
 <div class="landing-page">
-    <a class="button" href="trip-updates">行程更新</a><a class="button" href="service-alerts">服務提醒</a>
+    <a class="button" href="trip-updates">Trip Updates</a><a class="button" href="service-alerts">Service Alerts</a>
 </div>

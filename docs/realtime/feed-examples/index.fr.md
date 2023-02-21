@@ -7,5 +7,5 @@
 Les exemples suivants montrent une représentation textuelle des flux. Pendant le développement, il est plus pratique de produire une sortie de tampon de protocole ASCII pour faciliter le débogage. Vous pouvez comparer votre sortie texte avec ces exemples pour vérifier la validité des données.
 
 <div class="landing-page">
-   <a class="button" href="trip-updates">Mises à jour des trajets</a><a class="button" href="service-alerts">Alertes de service</a>
+   <a class="button" href="trip-updates">Trip Updates</a><a class="button" href="service-alerts">Service Alerts</a>
 </div>

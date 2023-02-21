@@ -7,5 +7,5 @@
 В следующих примерах показано текстовое представление фидов. Во время разработки удобнее производить вывод буфера протокола ASCII для облегчения отладки. Вы можете сравнить свой текстовый вывод с этими примерами, чтобы проверить достоверность данных.
 
 <div class="landing-page">
-   <a class="button" href="trip-updates"> поездках Обновление информации</a> о<a class="button" href="service-alerts">Оповещения об услугах</a>
+   <a class="button" href="trip-updates">Trip Updates</a> <a class="button" href="service-alerts">Service Alerts</a>
 </div>
