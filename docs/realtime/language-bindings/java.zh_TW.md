@@ -18,7 +18,7 @@
 </dependency>
 ```
 
-對於[Gradle](https://www.gradle.org/) ，將以下內容添加到您的`build.gradle` dependecies 部分：
+對於[Gradle](https://www.gradle.org/) ，將以下內容添加到您的`build.gradle` 依賴關係部分：
 
     compile group: 'org.mobilitydata', name: 'gtfs-realtime-bindings', version: '0.0.8'
 
@@ -26,7 +26,7 @@
 
 ## 示例代碼
 
-以下代碼片段演示了從特定 URL 下載 GTFS 實時數據提要，將其解析為 FeedMessage（GTFS 實時架構的根類型），並迭代結果。
+以下代碼片段演示了從特定 URL 下載 GTFS Realtime數據提要，將其解析為 FeedMessage（GTFS Realtime架構的根類型），並迭代結果。
 
 ```java
 import java.net.URL;

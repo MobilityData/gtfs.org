@@ -2,7 +2,7 @@
 
 ![Maven 중앙 버전](https://img.shields.io/maven-central/v/org.mobilitydata/gtfs-realtime-bindings.svg)
 
-[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) 프로토콜 버퍼 사양에서 생성된 Java 클래스를 제공합니다. 이러한 클래스를 사용하면 이진 프로토콜 BufferGTFS-실시간 데이터 피드를 Java 개체로 구문 분석할 수 있습니다.
+[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) 프로토콜 버퍼 사양에서 생성된 Java 클래스를 제공합니다. 이러한 클래스를 사용하면 이진 Protocol Buffer GTFS-Realtime 데이터 피드를 Java 개체로 구문 분석할 수 있습니다.
 
 ## 종속성 추가
 
@@ -26,7 +26,7 @@
 
 ## 예제 코드
 
-다음 코드 스니펫은 특정 URL에서 GTFS 실시간 데이터 피드를 다운로드하여 FeedMessage(GTFS 실시간 스키마의 루트 유형)로 파싱하고 결과를 반복하는 방법을 보여줍니다.
+다음 코드 스니펫은 특정 URL에서 GTFS Realtime 데이터 피드를 다운로드하여 FeedMessage(GTFS Realtime 스키마의 루트 유형)로 파싱하고 결과를 반복하는 방법을 보여줍니다.
 
 ```java
 import java.net.URL;

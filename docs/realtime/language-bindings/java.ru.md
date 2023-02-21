@@ -2,13 +2,13 @@
 
 ![Центральная версия Maven](https://img.shields.io/maven-central/v/org.mobilitydata/gtfs-realtime-bindings.svg)
 
-Предоставляет классы Java, созданные на основе спецификации [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime)Protocol Buffer. Эти классы позволят вам разобрать двоичный поток данных Protocol BufferGTFS-realtime в объекты Java.
+Предоставляет классы Java, созданные на основе спецификации [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime)Protocol Buffer. Эти классы позволят вам разобрать двоичный поток данных Protocol Buffer GTFS-realtime в объекты Java.
 
 ## Добавьте зависимость
 
 Чтобы использовать классы `gtfs-realtime-bindings` в своем проекте, необходимо добавить соответствующую зависимость. Мы публикуем наш модуль в [центральном репозитории Maven,](http://search.maven.org/)чтобы на него могли легко ссылаться такие инструменты сборки Java, как Maven, Ivy и Gradle.
 
-Для [Maven](http://maven.apache.org/) добавьте следующее в раздел `pom.xmldependencies`:
+Для [Maven](http://maven.apache.org/) добавьте следующее в раздел зависимости `pom.xml`:
 
 ```xml
 <dependency>
@@ -18,7 +18,7 @@
 </dependency>
 ```
 
-Для [Gradle](https://www.gradle.org/) добавьте следующее в раздел `build.gradledependecies`:
+Для [Gradle](https://www.gradle.org/) добавьте следующее в раздел зависимости `build.gradle`:
 
     compile group: 'org.mobilitydata', name: 'gtfs-realtime-bindings', version: '0.0.8'
 

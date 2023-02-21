@@ -8,7 +8,7 @@ Fornece classes Java geradas a partir da especificação do [GTFS-realtime](http
 
 Para usar as classes `gtfs-realtime-bindings` em seu próprio projeto, você precisa adicionar uma dependência apropriada. Nós publicamos nosso módulo no [Maven Central Repositorysoso](http://search.maven.org/)que pode ser facilmente referenciado por ferramentas de construção Java como Maven, Ivy, e Gradle.
 
-Para [Maven](http://maven.apache.org/), adicione o seguinte à sua seção `de dependências pom.xml`:
+Para [Maven](http://maven.apache.org/), adicione o seguinte à sua seção de dependências `pom.xml`:
 
 ```xml
 <dependency>
@@ -18,7 +18,7 @@ Para [Maven](http://maven.apache.org/), adicione o seguinte à sua seção `de d
 </dependency>
 ```
 
-Para [Gradle](https://www.gradle.org/), adicione o seguinte à sua seção `build.gradledependependecies:`
+Para [Gradle](https://www.gradle.org/), adicione o seguinte à sua seção de dependências `build.gradle`:
 
     compile group: 'org.mobilitydata', name: 'gtfs-realtime-bindings', version: '0.0.8'
 
@@ -61,7 +61,7 @@ MobilityData começou a manter o projeto no início de 2019 e inicialmente publi
 
 ### `0.0.6` e `0.0.7`
 
-O JCenter [foi desativado](https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/) em 2021. Antes do desligamento, um problema de sincronização impediu que as versões `0.0.6` e `0.0.7` fossem sincronizadas do JCenter para a Maven Central, portanto o download direto dos artefatos não está disponível atualmente para estas versões. Entretanto, você mesmo pode compilá-los a partir das [tags](https://github.com/MobilityData/gtfs-realtime-bindings/tags) usando o `pacote de` comando `mvn`.
+O JCenter [foi desativado](https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/) em 2021. Antes do desligamento, um problema de sincronização impediu que as versões `0.0.6` e `0.0.7` fossem sincronizadas do JCenter para a Maven Central, portanto o download direto dos artefatos não está disponível atualmente para estas versões. Entretanto, você mesmo pode compilá-los a partir das [tags](https://github.com/MobilityData/gtfs-realtime-bindings/tags) usando o `mvn package` comando.
 
 ### `0.0.8` e superiores
 

@@ -8,7 +8,7 @@ Fournit des classes Java générées à partir de la spécification [GTFS-realti
 
 Pour utiliser les classes `gtfs-realtime-bindings` dans votre propre projet, vous devez ajouter une dépendance appropriée. Nous publions notre module dans le [dépôt central Maven afin](http://search.maven.org/)qu'il puisse être facilement référencé par les outils de construction Java comme Maven, Ivy et Gradle.
 
-Pour [Maven](http://maven.apache.org/), ajoutez ce qui suit à votre section `pom.xmldependencies`:
+Pour [Maven](http://maven.apache.org/), ajoutez ce qui suit à votre section `pom.xml` dépendances:
 
 ```xml
 <dependency>
@@ -18,7 +18,7 @@ Pour [Maven](http://maven.apache.org/), ajoutez ce qui suit à votre section `po
 </dependency>
 ```
 
-Pour [Gradle](https://www.gradle.org/), ajoutez ce qui suit à votre section `build.gradledependecies`:
+Pour [Gradle](https://www.gradle.org/), ajoutez ce qui suit à votre section `build.gradle` dépendances:
 
     compile group: 'org.mobilitydata', name: 'gtfs-realtime-bindings', version: '0.0.8'
 

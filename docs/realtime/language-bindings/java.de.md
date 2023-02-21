@@ -6,9 +6,9 @@ Stellt Java-Klassen zur Verfügung, die aus der [GTFS-realtime](https://github.c
 
 ## Hinzufügen der Abhängigkeit
 
-Um die `gtfs-realtime-bindings` Klassen in Ihrem eigenen Projekt zu verwenden, müssen Sie eine entsprechende Abhängigkeit hinzufügen. Wir veröffentlichen unser Modul im [Maven Central Repository, so](http://search.maven.org/)dass es leicht von Java-Build-Tools wie Maven, Ivy und Gradle referenziert werden kann.
+Um die `gtfs-realtime-bindings` Klassen in Ihrem eigenen Projekt zu verwenden, müssen Sie eine entsprechende Abhängigkeit hinzufügen. Wir veröffentlichen unser Modul im [Maven Central Repository](http://search.maven.org/), so dass es leicht von Java-Build-Tools wie Maven, Ivy und Gradle referenziert werden kann.
 
-Für [Maven](http://maven.apache.org/), fügen Sie das Folgende zu Ihrem `pom.xmldependencies`Abschnitt hinzu:
+Für [Maven](http://maven.apache.org/), fügen Sie das Folgende zu Ihrem `pom.xml` Abhängigkeit Abschnitt hinzu:
 
 ```xml
 <dependency>
@@ -18,7 +18,7 @@ Für [Maven](http://maven.apache.org/), fügen Sie das Folgende zu Ihrem `pom.xm
 </dependency>
 ```
 
-Für [Gradle](https://www.gradle.org/), fügen Sie das Folgende zu Ihrem `build.gradledependecies`Abschnitt hinzu:
+Für [Gradle](https://www.gradle.org/), fügen Sie das Folgende zu Ihrem `build.gradle` Abhängigkeit Abschnitt hinzu:
 
     compile group: 'org.mobilitydata', name: 'gtfs-realtime-bindings', version: '0.0.8'
 
@@ -57,7 +57,7 @@ Dieses Projekt wurde ursprünglich von Google erstellt. Sie können Versionen `0
 
 ### `0.0.5`
 
-MobilityData hat Anfang 2019 begonnen, das Projekt zu pflegen und hat zunächst Release-Artefakte über JCenter veröffentlicht. Sie können Version `0.0.5` unter der Group ID `io.mobilitydata.transit` hier auf Maven [Central](https://search.maven.org/artifact/io.mobilitydata.transit/gtfs-realtime-bindings) herunterladen.
+MobilityData hat Anfang 2019 begonnen, das Projekt zu pflegen und hat zunächst Release-Artefakte über JCenter veröffentlicht. Sie können Version `0.0.5` unter der Group ID `io.mobilitydata.transit` hier auf [Maven Central](https://search.maven.org/artifact/io.mobilitydata.transit/gtfs-realtime-bindings) herunterladen.
 
 ### `0.0.6` und `0.0.7`
 

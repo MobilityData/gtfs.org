@@ -2,13 +2,13 @@
 
 ![Maven中心版本](https://img.shields.io/maven-central/v/org.mobilitydata/gtfs-realtime-bindings.svg)
 
-提供从[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime)Protocol Buffer规范生成的Java类。 这些类将允许你将二进制的Protocol BufferGTFS-realtime数据源解析为Java对象。
+提供从[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime)Protocol Buffer规范生成的Java类。 这些类将允许你将二进制的Protocol Buffer GTFS-realtime数据源解析为Java对象。
 
 ## 添加依赖关系
 
 要在自己的项目中使用`gtfs-realtime-bindings`类，需要添加一个适当的依赖。 我们将模块发布到[Maven Central Repositor，以便](http://search.maven.org/)Maven、Ivy和Gradle等Java构建工具可以轻松引用。
 
-对于[Maven](http://maven.apache.org/)来说，在`pom.xmldependencies`部分添加以下内容。
+对于[Maven](http://maven.apache.org/)来说，在`pom.xml`依赖性部分添加以下内容。
 
 ```xml
 <dependency>
@@ -18,7 +18,7 @@
 </dependency>
 ```
 
-对于[Gradle](https://www.gradle.org/)，在`build.gradledependecies`部分添加以下内容。
+对于[Gradle](https://www.gradle.org/)，在`build.gradle`依赖性部分添加以下内容。
 
     compile group: 'org.mobilitydata', name: 'gtfs-realtime-bindings', version: '0.0.8'
 
