@@ -6,7 +6,7 @@ Proporciona clases .NET generadas a partir de la especificación ProtocolBuffer 
 
 ## Añadir la dependencia
 
-Para utilizar las clases `gtfs-realtime-bindings` en su propio proyecto, primero debe instalar el módulo desde el[repositorio](https://www.nuget.org/packages/GtfsRealtimeBindings/) NuGet.
+Para utilizar las clases `gtfs-realtime-bindings` en su propio proyecto, primero debe instalar el módulo desde el [repositorio NuGet](https://www.nuget.org/packages/GtfsRealtimeBindings/).
 
     Install-Package GtfsRealtimeBindings
 

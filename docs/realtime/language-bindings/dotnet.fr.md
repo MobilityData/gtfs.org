@@ -6,7 +6,7 @@ Fournit des classes .NET générées à partir de la spécification ProtocolBuff
 
 ## Ajouter la dépendance
 
-Pour utiliser les classes `gtfs-realtime-bindings` dans votre propre projet, vous devez d'abord installer le module à partir du[dépôt](https://www.nuget.org/packages/GtfsRealtimeBindings/) NuGet.
+Pour utiliser les classes `gtfs-realtime-bindings` dans votre propre projet, vous devez d'abord installer le module à partir du [dépôt](https://www.nuget.org/packages/GtfsRealtimeBindings/) NuGet.
 
     Install-Package GtfsRealtimeBindings
 

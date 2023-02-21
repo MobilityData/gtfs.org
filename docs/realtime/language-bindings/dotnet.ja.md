@@ -6,7 +6,7 @@ GTFS-realtimeのProtocolBuffer仕様から生成された.NETクラスを提供�
 
 ## 依存関係の追加
 
-`gtfs-realtime-bindings`クラスを自分のプロジェクトで使用するには、まず、NuGet[リポジトリから](https://www.nuget.org/packages/GtfsRealtimeBindings/)モジュールをインストールする必要があります。
+`gtfs-realtime-bindings`クラスを自分のプロジェクトで使用するには、まず、[NuGetリポジトリから](https://www.nuget.org/packages/GtfsRealtimeBindings/)モジュールをインストールする必要があります。
 
     Install-Package GtfsRealtimeBindings
 
