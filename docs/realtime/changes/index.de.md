@@ -6,13 +6,13 @@ Wenn Sie einen Beitrag zu GTFS Realtime leisten möchten, lesen Sie den [Prozess
 
 !!! note ""
 
-    Die offizielle Spezifikation, Referenz und Dokumentation sind in englischer Sprache verfasst. Weicht eine Translation in eine andere Sprache vom englischen Original ab, hat letztere Vorrang. Die gesamte Kommunikation erfolgt in englischer Sprache.
+    Die offizielle Spezifikation, Referenz und Dokumentation sind in englischer Sprache verfasst. Weicht eine Übersetzung in eine andere Sprache vom englischen Original ab, hat letztere Vorrang. Die gesamte Kommunikation erfolgt in englischer Sprache.
 
 <!-- <br><div class="landing-page">
     <a class="button" href="../process">Prozess zur Änderung der Spezifikation</a><a class="button" href="../guiding-principles">Leitprinzipien</a><a class="button" href="../revision-history">Historie der Revision</a><a class="button" href="../extensions">Echtzeit-Erweiterungen</a>
 </div> -->
 
-## Aktive Proposals![](../../assets/pr-active.svg)
+## Aktive Proposals &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!-- Aktive Vorschläge für neue Funktionen in GTFS Realtime.  -->
 
@@ -34,7 +34,7 @@ Beteiligen Sie sich an den Diskussionen auf [Github](https://github.com/google/t
 </div>
 <div class="row"></div> -->
 
-## Kürzlich zusammengefasste Vorschläge![](../../assets/pr-merged.svg)
+## Kürzlich zusammengefasste Vorschläge &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Kürzlich zusammengeführte Vorschläge, die nun Bestandteil der [offiziellen GTFS Realtime-Spezifikation](../reference) sind. Weitere Informationen finden Sie in der vollständigen [Revisionshistorie](../process#revision-history).
 

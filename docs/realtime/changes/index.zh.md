@@ -6,13 +6,13 @@ GTFS实时规范并不是一成不变的。相反，它是一个开放的规范�
 
 !!! note ""
 
-    官方规范、参考资料和文件都是用英文写的。如果Translation不同的语言与英文原文不同，则以后者为准。所有的交流都用英语进行。
+    官方规范、参考资料和文件都是用英文写的。如果翻译不同的语言与英文原文不同，则以后者为准。所有的交流都用英语进行。
 
 <!-- <br><div class="landing-page">
     <a class="button" href="../process">规范修订过程</a><a class="button" href="../guiding-principles">指导原则</a><a class="button" href="../revision-history">修订历史</a><a class="button" href="../extensions">实时扩展</a>
 </div> -->
 
-## 活跃的提案![](../../assets/pr-active.svg)
+## 活跃的提案 &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!-- 对GTFS Realtime中的新功能提出积极建议。  -->
 
@@ -34,18 +34,18 @@ GTFS实时规范并不是一成不变的。相反，它是一个开放的规范�
 </div>
 <div class="row"></div> -->
 
-## 最近合并的提案![](../../assets/pr-merged.svg)
+## 最近合并的提案 &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
-最近合并的提案，现在是[官方GTFS实时规范](../reference)的特征。参见完整的[修订历史](../process#revision-history)以了解更多。
+最近合并的提案，现在是[官方GTFS Realtime规范](../reference)的特征。参见完整的[修订历史](../process#revision-history)以了解更多。
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/332" class="no-icon" target="_blank">在 "警报 "中添加 "原因 "和 "结果"。</a></h3>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/332" class="no-icon" target="_blank">在 "Alerts"中添加 "cause_detail"和 "effect_detail"。</a></h3>
         <p class="maintainer">#332由<a href="https://github.com/mckenzie-maidl-ibigroup" class="no-icon" target="_blank">mckenzie-maidl-ibigroup</a>于2022年6月26日合并而成</p>
     </div>
     <div class="featurelist">
         <ul>
-            <li>为警报的原因和影响添加描述</li>
+            <li>为alert原因和影响添加描述</li>
         </ul>
     </div>
 </div>
@@ -91,7 +91,7 @@ GTFS实时规范并不是一成不变的。相反，它是一个开放的规范�
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/260" class="no-icon" target="_blank">在TripUpdate中添加出发_占用_状态</a></h3>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/260" class="no-icon" target="_blank">在TripUpdate中添加departure_occupancy_status</a></h3>
         <p class="maintainer">#260由<a href="https://github.com/jakehoare" class="no-icon" target="_blank">jakehoare</a>于2021年4月14日被合并</p>
     </div>
     <div class="featurelist">

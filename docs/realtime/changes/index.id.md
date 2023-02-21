@@ -6,13 +6,13 @@ Untuk berkontribusi pada GTFS Realtime, baca [Proses Amendemen Spesifikasi](../p
 
 !!! note ""
 
-    Spesifikasi resmi, referensi dan dokumentasi ditulis dalam bahasa Inggris. Jika sebuahTranslation ke bahasa yang berbeda berbeda dari aslinya bahasa Inggris, yang terakhir diutamakan. Semua komunikasi dilakukan dalam bahasa Inggris.
+    Spesifikasi resmi, referensi dan dokumentasi ditulis dalam bahasa Inggris. Jika sebuah terjemahan ke bahasa yang berbeda berbeda dari aslinya bahasa Inggris, yang terakhir diutamakan. Semua komunikasi dilakukan dalam bahasa Inggris.
 
 <!-- <br><div class="landing-page">
     <a class="button" href="../process">Proses Perubahan Spesifikasi</a><a class="button" href="../guiding-principles">Prinsip Panduan</a><a class="button" href="../revision-history">Riwayat Revisi</a><a class="button" href="../extensions">Ekstensi Waktu Nyata</a>
 </div> -->
 
-## Proposal Aktif ![](../../assets/pr-active.svg)
+## Proposal Aktif &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!-- Proposal aktif untuk fitur baru diGTFS Realtime .  -->
 
@@ -34,11 +34,11 @@ Bergabunglah dengan diskusi di [Github](https://github.com/google/transit/pulls)
 </div>
 <div class="row"></div> -->
 
-## Proposal yang Baru Digabung![](../../assets/pr-merged.svg)
+## Proposal yang Baru Digabung &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Proposal yang baru saja digabungkan yang kini menjadi fitur [spesifikasi GTFS-realtime resmi](../reference) . Lihat [Riwayat Revisi](../process#revision-history) lengkap untuk lebih lanjut.
 
-<div class="row"><div class="leftcontainer"><h3 class="title"> <a href="https://github.com/google/transit/pull/332" class="no-icon" target="_blank">Tambahkan cause_detail dan effect_detail ke Alerts</a></h3><p class="maintainer"> #332 oleh <a href="https://github.com/mckenzie-maidl-ibigroup" class="no-icon" target="_blank">mckenzie-maidl-ibigroup</a> telah digabungkan pada 26 Jun 2022</p></div><div class="featurelist"><ul><li> Menambahkan deskripsi ke sebab dan akibat Peringatan </li></ul></div></div>
+<div class="row"><div class="leftcontainer"><h3 class="title"> <a href="https://github.com/google/transit/pull/332" class="no-icon" target="_blank">Tambahkan cause_detail dan effect_detail ke Alerts</a></h3><p class="maintainer"> #332 oleh <a href="https://github.com/mckenzie-maidl-ibigroup" class="no-icon" target="_blank">mckenzie-maidl-ibigroup</a> telah digabungkan pada 26 Jun 2022</p></div><div class="featurelist"><ul><li> Menambahkan deskripsi ke sebab dan akibat Alerts </li></ul></div></div>
 
 <div class="row"><div class="leftcontainer"><h3 class="title"> <a href="https://github.com/google/transit/pull/340" class="no-icon" target="_blank">GTFS-rt : pembaruan akses kursi roda</a></h3><p class="maintainer"> #340 oleh <a href="https://github.com/flaktack" class="no-icon" target="_blank">flaktack</a> digabungkan pada 25 Juli 2022</p></div><div class="featurelist"><ul><li> Menambahkan informasi waktu nyata tentang aksesibilitas perjalanan</li><li> Jika tersedia, timpa <code>trips.wheelchair_accessible</code> di set data Jadwal GTFS </li></ul></div></div>
 

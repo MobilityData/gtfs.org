@@ -6,13 +6,13 @@ Para contribuir a GTFS Realtime, lea el [Proceso de modificación de la especifi
 
 !!!note ""
 
-    La especificación oficial, la referencia y la documentación están escritas en inglés. Si la Translation a otro idioma difiere del original en inglés, este último tiene preferencia. Toda la comunicación se realiza en inglés.
+    La especificación oficial, la referencia y la documentación están escritas en inglés. Si la traducción a otro idioma difiere del original en inglés, este último tiene preferencia. Toda la comunicación se realiza en inglés.
 
 <!-- <br><div class="landing-page">
     <a class="button" href="../process">Proceso de modificación del pliego de condiciones</a><a class="button" href="../guiding-principles">Principios rectores</a><a class="button" href="../revision-history">Historial de revisiones</a><a class="button" href="../extensions">ExtensionesRealtime</a>
 </div> -->
 
-## Propuestas activas![](../../assets/pr-active.svg)
+## Propuestas activas &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!-- Propuestas activas de nuevas funciones en GTFS Realtime.  -->
 
@@ -34,7 +34,7 @@ Para contribuir a GTFS Realtime, lea el [Proceso de modificación de la especifi
 </div>
 <div class="row"></div> -->
 
-## Propuestas recientemente fusionadas![](../../assets/pr-merged.svg)
+## Propuestas recientemente fusionadas &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Propuestas recientemente fusionadas que ahora forman parte de la [especificación oficial GTFS Real](../reference)time. Consulte el [historial de revisiones](../process#revision-history) completo para obtener más información.
 
@@ -66,7 +66,7 @@ Propuestas recientemente fusionadas que ahora forman parte de la [especificació
 <div class="row">
     <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/283" class="no-icon" target="_blank">Función/imagen en alertas</a></h3>
-        <p class="maintainer">#283 von <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> wurde am 26. November 2021 zusammengelegt.</p>
+        <p class="maintainer">#283 por <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> se fusionó el 26 de November de 2021.</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -79,7 +79,7 @@ Propuestas recientemente fusionadas que ahora forman parte de la [especificació
 <div class="row">
     <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/272" class="no-icon" target="_blank">Añadir GTFS-NewShapes como experimental</a></h3>
-        <p class="maintainer">#272 por <a href="https://github.com/ericouyang" class="no-icon" target="_blank">ericouyang</a> se fusionó el 30 ago, 2021</p>
+        <p class="maintainer">#272 por <a href="https://github.com/ericouyang" class="no-icon" target="_blank">ericouyang</a> se fusionó el 30 de ago de 2021</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -92,7 +92,7 @@ Propuestas recientemente fusionadas que ahora forman parte de la [especificació
 <div class="row">
     <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/260" class="no-icon" target="_blank">Añadir departure_occupancy_status a TripUpdate</a></h3>
-        <p class="maintainer">#260 von <a href="https://github.com/jakehoare" class="no-icon" target="_blank">jakehoare</a> wurde am 14. Abr. 2021 fusioniert</p>
+        <p class="maintainer">#260 por <a href="https://github.com/jakehoare" class="no-icon" target="_blank">jakehoare</a> se fusionó el 14 de Abr de 2021</p>
     </div>
     <div class="featurelist">
         <ul>

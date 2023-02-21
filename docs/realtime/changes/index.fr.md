@@ -6,13 +6,13 @@ Pour contribuer à la [spécification](../process) GTFS Realtime, lisez le [proc
 
 !!! note ""
 
-    La spécification, la référence et la documentation officielles sont rédigées en anglais. Si une Translation dans une autre langue diffère de l'original anglais, c'est ce dernier qui prévaut. Toute communication est effectuée en anglais.
+    La spécification, la référence et la documentation officielles sont rédigées en anglais. Si une traduction dans une autre langue diffère de l'original anglais, c'est ce dernier qui prévaut. Toute communication est effectuée en anglais.
 
 <!-- <br><div class="landing-page">
     <a class="button" href="../process">Processus de modification des spécifications</a><a class="button" href="../guiding-principles">Principes directeurs</a><a class="button" href="../revision-history">Historique des révisions</a><a class="button" href="../extensions">Extensions enRealtime</a>
 </div> -->
 
-## Propositions actives![](../../assets/pr-active.svg)
+## Propositions actives &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!-- Propositions actives pour de nouvelles fonctionnalités dans GTFS Realtime.  -->
 
@@ -34,7 +34,7 @@ Rejoignez les discussions sur [Github](https://github.com/google/transit/pulls)!
 </div>
 <div class="row"></div> -->
 
-## Propositions récemment fusionnées![](../../assets/pr-merged.svg)
+## Propositions récemment fusionnées &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Propositions récemment fusionnées qui sont désormais des caractéristiques de la [spécification officielle GTFS Realtime](../reference). Voir l'[historique](../process#revision-history) complet [des révisions](../process#revision-history) pour en savoir plus.
 
@@ -91,7 +91,7 @@ Propositions récemment fusionnées qui sont désormais des caractéristiques de
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/260" class="no-icon" target="_blank">Ajout de l'état d'occupation des départs à TripUpdate.</a></h3>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/260" class="no-icon" target="_blank">Ajout de departure_ocupancy_status à TripUpdate.</a></h3>
         <p class="maintainer">#260 par <a href="https://github.com/jakehoare" class="no-icon" target="_blank">jakehoare</a> a été fusionné le 14 avr. 2021</p>
     </div>
     <div class="featurelist">

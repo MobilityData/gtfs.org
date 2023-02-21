@@ -6,13 +6,13 @@
 
 !!! note ""
 
-    Официальная спецификация, справочник и документация написаны на английском языке. Если Translation на другой язык отличается от английского оригинала, последний имеет приоритет. Все коммуникации осуществляются на английском языке.
+    Официальная спецификация, справочник и документация написаны на английском языке. Если перевод на другой язык отличается от английского оригинала, последний имеет приоритет. Все коммуникации осуществляются на английском языке.
 
 <!-- <br><div class="landing-page">
     <a class="button" href="../process">Процесс внесения изменений в спецификацию</a><a class="button" href="../guiding-principles">Руководящие принципы</a><a class="button" href="../revision-history">История пересмотра</a><a class="button" href="../extensions">Расширения реального времени</a>
 </div> -->
 
-## Активные предложения![](../../assets/pr-active.svg)
+## Активные предложения &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!-- Активные предложения по новым функциям в GTFS Realtime.  -->
 
@@ -34,7 +34,7 @@
 </div>
 <div class="row"></div> -->
 
-## Недавно объединенные предложения![](../../assets/pr-merged.svg)
+## Недавно объединенные предложения &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Недавно объединенные предложения, которые теперь являются функциями [официальной спецификации GTFS Realtime](../reference). Подробнее см. в полной [истории изменений](../process#revision-history).
 
@@ -91,7 +91,7 @@
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/260" class="no-icon" target="_blank">Добавить статус отправления_занятости_статуса в TripUpdate</a></h3>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/260" class="no-icon" target="_blank">Добавить статус departure_occupancy status в TripUpdate</a></h3>
         <p class="maintainer">#260 by <a href="https://github.com/jakehoare" class="no-icon" target="_blank">jakehoare</a> была объединена 14 апреля 2021 г.</p>
     </div>
     <div class="featurelist">

@@ -6,13 +6,13 @@ GTFS Realtime に貢献するには、[仕様変更](../process)プロセスを�
 
 !!! note ""
 
-    本仕様書、参考資料、ドキュメント類は英語で書かれています。他言語へのTranslation英語の原文と異なる場合は、後者が優先されます。すべてのコミュニケーションは英語で行われます。
+    本仕様書、参考資料、ドキュメント類は英語で書かれています。他言語への翻訳英語の原文と異なる場合は、後者が優先されます。すべてのコミュニケーションは英語で行われます。
 
 <!-- <br><div class="landing-page">
     <a class="button" href="../process">仕様変更プロセス</a><a class="button" href="../guiding-principles">指導方針</a><a class="button" href="../revision-history">改訂履歴</a><a class="button" href="../extensions">リアルタイム拡張機能</a>
 </div> -->
 
-## アクティブなプロポーザル![](../../assets/pr-active.svg)
+## アクティブなプロポーザル &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!-- GTFS Realtime新機能の提案を積極的に行っています。  -->
 
@@ -34,7 +34,7 @@ GTFS Realtime に貢献するには、[仕様変更](../process)プロセスを�
 </div>
 <div class="row"></div> -->
 
-## 最近マージされたプロポーザル![](../../assets/pr-merged.svg)
+## 最近マージされたプロポーザル &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 最近マージされたプロポーザルは、[公式のGTFS Realtime 仕様](../reference)として機能するようになりました。詳しくは[リビジョンヒストリーを](../process#revision-history)ご覧ください。
 

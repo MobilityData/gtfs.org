@@ -4,15 +4,15 @@ A Especificação GTFS em Tempo Real não é definida em pedra. Ao invés disso,
 
 Para contribuir com o GTFS em tempo real, leia o [Processo de Emenda de Especificações](../process) e siga as discussões nas [questões](https://github.com/google/transit/issues) em aberto e [faça solicitações](https://github.com/google/transit/pulls) no repositório Transit Github do Google[(google/transit](https://github.com/google/transit)). ![](../../assets/mark-github.svg)
 
-!!! note "".
+!!! note ""
 
-    A especificação oficial, referência e documentação são escritas em inglês. Se uma Translation para um idioma diferente do original em inglês, esta última tem precedência. Toda a comunicação é feita em inglês.
+    A especificação oficial, referência e documentação são escritas em inglês. Se uma tradução para um idioma diferente do original em inglês, esta última tem precedência. Toda a comunicação é feita em inglês.
 
 <!-- <br><div class="landing-page">
     <a class="button" href="../process">Processo de Alteração de Especificações</a><a class="button" href="../guiding-principles">Princípios Orientadores</a><a class="button" href="../revision-history">Histórico de revisão</a><a class="button" href="../extensions">Extensões em tempo real</a>
 </div> -->
 
-## Propostas ativas![](../../assets/pr-active.svg)
+## Propostas ativas &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!-- Propostas ativas para novas funcionalidades no GTFS Realtime.  -->
 
@@ -34,7 +34,7 @@ Participe das discussões sobre [o Github](https://github.com/google/transit/pul
 </div>
 <div class="row"></div> -->
 
-## Propostas fundidas recentemente![](../../assets/pr-merged.svg)
+## Propostas fundidas recentemente &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Recentemente foram fundidas propostas que agora são características da [especificação oficial do GTFS Realtime](../reference). Veja o [Histórico de Revisões](../process#revision-history) completo para mais informações.
 
@@ -58,7 +58,7 @@ Recentemente foram fundidas propostas que agora são características da [especi
     <div class="featurelist">
         <ul>
             <li>Adiciona informações em tempo real sobre a acessibilidade da viagem</li>
-            <li>Se fornecido, sobrescreve <code>viagens.cadeira de rodas_acessível</code> no conjunto de dados da Programação GTFS</li>
+            <li>Se fornecido, sobrescreve <code>trips.wheelchair_accessible</code> no conjunto de dados da GTFS Schedule</li>
         </ul>
     </div>
 </div>
@@ -84,14 +84,14 @@ Recentemente foram fundidas propostas que agora são características da [especi
     <div class="featurelist">
         <ul>
             <li>Capacidade de atualizar formas de rotas em tempo real para refletir desvios</li>
-            <li>As atualizações de rota são refletidas referenciando uma <code>forma_id</code> existente ou definindo em tempo real uma nova forma como uma polilinha codificada</li>
+            <li>As atualizações de rota são refletidas referenciando uma <code>shape_id</code> existente ou definindo em tempo real uma nova forma como uma polilinha codificada</li>
         </ul>
     </div>
 </div>
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/260" class="no-icon" target="_blank">Adicionar status de_ocupação_de_partida ao TripUpdate</a></h3>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/260" class="no-icon" target="_blank">Adicionar departure_occupancy_status ao TripUpdate</a></h3>
         <p class="maintainer">#260 por <a href="https://github.com/jakehoare" class="no-icon" target="_blank">jakehoare</a> foi fundido em 14 de abril de 2021</p>
     </div>
     <div class="featurelist">
