@@ -1,4 +1,4 @@
-# gtfs-실시간 바인딩 [![MobilityData 채팅에 참여](https://img.shields.io/badge/chat-on%20slack-red)](https://bit.ly/mobilitydata-slack)
+# gtfs-realtime-bindings [![MobilityData 채팅에 참여](https://img.shields.io/badge/chat-on%20slack-red)](https://bit.ly/mobilitydata-slack)
 
 널리 사용되는 언어에 대한 [GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) 프로토콜 버퍼 사양에서 생성된 언어 바인딩입니다.
 
@@ -12,12 +12,12 @@ GTFS Realtime 데이터로 작업하기 위해 개발자는 일반적으로 `gtf
 
 ## 지원되는 언어
 
-* [.그물](dotnet.md)
-* [자바](java.md)
-* [자바스크립트/타입스크립트/Node.js](nodejs.md)
-* [파이썬](python.md)
-* [골랑](golang.md)
-* ~~[루비](ruby.md)~~ *(2019년 초부터 지원 중단됨)*
+* [.NET](dotnet.md)
+* [Java](java.md)
+* [JavaScript/TypeScript/Node.js](nodejs.md)
+* [Python](python.md)
+* [Golang](golang.md)
+* ~~[Ruby](ruby.md)~~ *(2019년 초부터 지원 중단됨)*
 * ~~[PHP](php.md)~~ *(2019년 초부터 지원 중단됨)*
 
 ## 다른 언어

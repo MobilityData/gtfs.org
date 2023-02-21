@@ -4,7 +4,7 @@ Binding bahasa dihasilkan dari spesifikasi buffering protokol [GTFS Realtime](ht
 
 ## pengantar
 
-[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) adalah format data untuk mengomunikasikan informasi real-time tentang sistem angkutan umum. Data GTFS Realtime dikodekan dan didekodekan menggunakan [ProtocolBuffers](https://developers.google.com/protocol-buffers/) , representasi biner ringkas yang dirancang untuk pemrosesan yang cepat dan efisien. Skema datanya sendiri ditentukan dalam [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto) .
+[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) adalah format data untuk mengomunikasikan informasi real-time tentang sistem angkutan umum. Data GTFS Realtime dikodekan dan didekodekan menggunakan [Protocol Buffers](https://developers.google.com/protocol-buffers/) , representasi biner ringkas yang dirancang untuk pemrosesan yang cepat dan efisien. Skema datanya sendiri ditentukan dalam [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto) .
 
 Untuk menggunakan data GTFS-realtime, developer biasanya akan menggunakan skema `gtfs-realtime.proto` untuk membuat kelas dalam bahasa pemrograman pilihan mereka. Class ini kemudian dapat digunakan untuk membuat objek model data GTFS-realtime dan membuat serialisasinya sebagai data biner atau, dalam arah sebaliknya, mengurai data biner menjadi objek model data.
 
@@ -12,12 +12,12 @@ Karena membuat class model data `gtfs-realtime.proto` skema gtfs-realtime.proto 
 
 ## Bahasa yang Didukung
 
-* [.BERSIH](dotnet.md)
-* [Jawa](java.md)
+* [.NET](dotnet.md)
+* [Java](java.md)
 * [JavaScript / TypeScript / Node.js](nodejs.md)
-* [Piton](python.md)
+* [Python](python.md)
 * [Golang](golang.md)
-* ~~[Rubi](ruby.md)~~ *(Tidak digunakan lagi mulai awal 2019)*
+* ~~[Ruby](ruby.md)~~ *(Tidak digunakan lagi mulai awal 2019)*
 * ~~[PHP](php.md)~~ *(Tidak digunakan lagi mulai awal 2019)*
 
 ## Bahasa lainnya
@@ -26,7 +26,7 @@ Kami tidak menyediakan kode yang dihasilkan untuk C++, gunakan kompiler protoc r
 
 Apakah kami kehilangan bahasa favorit Anda? Pertimbangkan untuk berkontribusi:
 
-1. Baca [KONTRIBUSI.md](https://github.com/MobilityData/gtfs-realtime-bindings/blob/master/CONTRIBUTING.md) .
+1. Baca [CONTRIBUTING.md](https://github.com/MobilityData/gtfs-realtime-bindings/blob/master/CONTRIBUTING.md) .
 2. Buka permintaan tarik dengan bahasa pilihan Anda. Harap sertakan instruksi pembaruan (idealnya, skrip). Sediakan juga kemasan yang sesuai dengan ekosistem bahasa.
 
 ## Sejarah Proyek

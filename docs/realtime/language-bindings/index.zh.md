@@ -1,10 +1,10 @@
-# gtfs-real time-bindings [![Join the MobilityData chat](https://img.shields.io/badge/chat-on%20slack-red)](https://bit.ly/mobilitydata-slack)
+# gtfs-realtime-bindings [![Join the MobilityData chat](https://img.shields.io/badge/chat-on%20slack-red)](https://bit.ly/mobilitydata-slack)
 
 从[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime)协议缓冲区规格生成的语言绑定，适用于流行语言。
 
 ## 简介
 
-[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime)是一种数据格式，用于交流有关公共交通系统的实时信息。GTFS Realtime数据使用[ProtocolBuffers](https://developers.google.com/protocol-buffers/)进行编码和解码，这是一种紧凑的二进制表示法，旨在快速有效地处理。 数据模式本身是在[gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto)中定义的。
+[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime)是一种数据格式，用于交流有关公共交通系统的实时信息。GTFS Realtime数据使用[Protocol Buffers](https://developers.google.com/protocol-buffers/)进行编码和解码，这是一种紧凑的二进制表示法，旨在快速有效地处理。 数据模式本身是在[gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto)中定义的。
 
 为了处理GTFS实时数据，开发人员通常会使用`gtfs-realtime.proto`模式，用他们选择的编程语言生成类。 然后，这些类可以用来构建GTFS-实时数据模型对象，并将其序列化为二进制数据，或者在相反的方向，将二进制数据解析为数据模型对象。
 
@@ -13,11 +13,11 @@
 ## 支持的语言
 
 * [.NET](dotnet.md)
-* [爪哇](java.md)
+* [Java](java.md)
 * [JavaScript / TypeScript / Node.js](nodejs.md)
 * [Python](python.md)
 * [Golang](golang.md)
-* ~~[红宝石](ruby.md)~~ *（从2019年初起被废弃）*
+* ~~[Ruby](ruby.md)~~ *（从2019年初起被废弃）*
 * ~~[PHP](php.md)~~ *(从2019年初起已废弃)*
 
 ## 其他语言

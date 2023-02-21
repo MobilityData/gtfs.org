@@ -1,6 +1,6 @@
 # gtfs-realtime-bindings [![Join the MobilityData chat](https://img.shields.io/badge/chat-on%20slack-red)](https://bit.ly/mobilitydata-slack)
 
-Aus der [GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) Protokollpufferspezifikation generierte Sprachbindungen für gängige Sprachen.
+Aus der [GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) Protokollpuffer spezifikation generierte Sprachbindungen für gängige Sprachen.
 
 ## Einführung
 

@@ -1,10 +1,10 @@
 # gtfs-realtime-bindings [![Join the MobilityData chat](https://img.shields.io/badge/chat-on%20slack-red)](https://bit.ly/mobilitydata-slack)
 
-Языковые привязки, созданные на основе спецификации протокольных буферов GTFS[Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) для популярных языков.
+Языковые привязки, созданные на основе спецификации протокольных буферов [GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) для популярных языков.
 
 ## Введение
 
-[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) - это формат данных для передачи информации о системах общественного транспорта в реальном времени. Данные GTFS Realtime кодируются и декодируются с помощью [ProtocolBuffers](https://developers.google.com/protocol-buffers/), компактного двоичного представления, разработанного для быстрой и эффективной обработки. Сама схема данных определена[в файле GTFS-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto).
+[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) - это формат данных для передачи информации о системах общественного транспорта в реальном времени. Данные GTFS Realtime кодируются и декодируются с помощью [Protocol Buffers](https://developers.google.com/protocol-buffers/), компактного двоичного представления, разработанного для быстрой и эффективной обработки. Сама схема данных определена в файле [GTFS-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto).
 
 Для работы с данными GTFS Realtime разработчик обычно использует схему `gtfs-realtime.proto` для создания классов на выбранном им языке программирования. Затем эти классы могут быть использованы для создания объектов модели данных GTFS-realtimedata и их сериализации в виде двоичных данных или, в обратном направлении, для разбора двоичных данных в объекты модели данных.
 

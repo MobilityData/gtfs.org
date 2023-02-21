@@ -1,16 +1,16 @@
-# gtfs-リアルタイムバインディング [![Join the MobilityData chat](https://img.shields.io/badge/chat-on%20slack-red)](https://bit.ly/mobilitydata-slack)
+# gtfs-realtime-bindings [![Join the MobilityData chat](https://img.shields.io/badge/chat-on%20slack-red)](https://bit.ly/mobilitydata-slack)
 
 [GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime)プロトコルバッファ仕様から生成された言語バインディングです。
 
 ## はじめに
 
-[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime)は、公共交通機関の情報をリアルタイムに伝えるためのデータフォーマットです。GTFS Realtime データは[ProtocolBuffer を](https://developers.google.com/protocol-buffers/)使ってエンコード、デコードされ、高速で効率的に処理するためにコンパクトなバイナリ表現になっています。 データスキーマは、[gtfs-realtime.protoで](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto)定義されています。
+[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime)は、公共交通機関の情報をリアルタイムに伝えるためのデータフォーマットです。GTFS Realtime データは[Protocol Buffers](https://developers.google.com/protocol-buffers/)使ってエンコード、デコードされ、高速で効率的に処理するためにコンパクトなバイナリ表現になっています。 データスキーマは、[gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto)で定義されています。
 
-GTFS Realtime データを扱うには、`gtfs-realtime.proto`スキーマを使い、好きなプログラミング言語でクラスを生成するのが一般的でしょう。 これらのクラスは、GTFS-realtimedata モデルオブジェクトを構築し、バイナリデータとしてシリアライズしたり、逆にバイナリデータをデータモデルオブジェクトにパースするために使用されます。
+GTFS Realtime データを扱うには、`gtfs-realtime.proto`スキーマを使い、好きなプログラミング言語でクラスを生成するのが一般的でしょう。 これらのクラスは、GTFS-realtime データモデルオブジェクトを構築し、バイナリデータとしてシリアライズしたり、逆にバイナリデータをデータモデルオブジェクトにパースするために使用されます。
 
 GTFS Realtime データモデルクラスを生成するために the `gtfs-realtime.proto`スキーマは一般的なタスクですが、初めての開発者は混乱することもあるので、このプロジェクトでは、最も人気のあるプログラミング言語である GTFS Realtime の言語バインディングをあらかじめ生成して提供することを目標としています。 可能であれば、これらの言語バインディングは、他のプロジェクトで使用しやすいようにパッケージとして公開される予定です。
 
-## サポートされている言語
+## サポートされている言語 
 
 * [.NET](dotnet.md)
 * [Java](java.md)
