@@ -1,6 +1,6 @@
 # Liaisons de langage Golang GTFS-realtime
 
-Fournit des structs Golang générés à partir de la spécification ProtocolBuffer GTFS-realtime. Ces structs vous permettront d'analyser un flux de données ProtocolBuffer GTFS-realtime binaire en objets Golang.
+Fournit des structs Golang générés à partir de la spécification ProtocolBuffer [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime). Ces structs vous permettront d'analyser un flux de données ProtocolBuffer GTFS-realtime binaire en objets Golang.
 
 ## Ajouter la dépendance
 
@@ -62,4 +62,4 @@ func main() {
 }
 ```
 
-Pour plus de détails sur les conventions de nommage des structs Golang générés à partir du [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), consultez la section [Golang Generated](https://developers.google.com/protocol-buffers/docs/reference/go-generated)du site du développeur Protocol Buffers.
+Pour plus de détails sur les conventions de nommage des structs Golang générés à partir du [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), consultez [la section Golang Généré](https://developers.google.com/protocol-buffers/docs/reference/go-generated) du site du développeur Protocol Buffers.

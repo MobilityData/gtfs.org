@@ -1,6 +1,6 @@
 # Enlaces de lenguaje Golang GTFS-realtime
 
-Proporciona structs Golang generados a partir de la especificación ProtocolBuffer GTFS-realtime. Estos structs te permitirán parsear un binario ProtocolBuffer GTFS-realtime data feed en objetos Golang.
+Proporciona structs Golang generados a partir de la especificación ProtocolBuffer [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime). Estos structs te permitirán parsear un binario ProtocolBuffer GTFS-realtime data feed en objetos Golang.
 
 ## Añadir la dependencia
 
@@ -62,4 +62,4 @@ func main() {
 }
 ```
 
-Para obtener más información sobre las convenciones de nomenclatura de los structs Golang generados a partir de the [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), consulte la[sección Códigos generados](https://developers.google.com/protocol-buffers/docs/reference/go-generated)Golang del sitio para desarrolladores Protocol Buffers.
+Para obtener más información sobre las convenciones de nomenclatura de los structs Golang generados a partir de the [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), consulte la [sección Códigos generados](https://developers.google.com/protocol-buffers/docs/reference/go-generated) Golang del sitio para desarrolladores Protocol Buffers.

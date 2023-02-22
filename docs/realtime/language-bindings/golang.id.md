@@ -1,6 +1,6 @@
 # Golang GTFS-realtime Language Bindings
 
-Menyediakan struktur Golang yang dihasilkan dari spesifikasi ProtocolBuffer [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) . Struktur ini akan memungkinkan Anda mengurai feed data GTFS-realtime biner ProtocolBuffer ke objek Golang.
+Menyediakan struktur Golang yang dihasilkan dari spesifikasi ProtocolBuffer [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) . Struktur ini akan memungkinkan Anda mengurai umpan data GTFS-realtime biner ProtocolBuffer ke objek Golang.
 
 ## Tambahkan Ketergantungan
 
@@ -14,7 +14,7 @@ Dan instal dependensi perpustakaan golang protobuf dengan:
 
 ## Kode Contoh
 
-Cuplikan kode berikut menunjukkan pengunduhan feed data GTFS-realtime dari URL tertentu, menguraikannya sebagai FeedMessage (jenis root dari skema GTFS-realtime), dan mengulangi hasilnya.
+Cuplikan kode berikut menunjukkan pengunduhan umpan data GTFS-realtime dari URL tertentu, menguraikannya sebagai FeedMessage (jenis root dari skema GTFS-realtime), dan mengulangi hasilnya.
 
 ```golang
 package main

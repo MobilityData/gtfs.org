@@ -1,6 +1,6 @@
 # Связки языка Golang GTFS-realtime
 
-Предоставляет структуры Golang, созданные на основе спецификацииGTFS-realtime ProtocolBuffer. Эти структуры позволят вам разобрать двоичный поток данных ProtocolBuffer GTFS-realtime в объекты Golang.
+Предоставляет структуры Golang, созданные на основе спецификации [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) ProtocolBuffer. Эти структуры позволят вам разобрать двоичный поток данных ProtocolBuffer GTFS-realtime в объекты Golang.
 
 ## Добавьте зависимость
 
@@ -62,4 +62,4 @@ func main() {
 }
 ```
 
-Более подробную информацию о соглашениях об именах для структур Golang, сгенерированных из the [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), можно найти в[разделеGolang Generated Codes](https://developers.google.com/protocol-buffers/docs/reference/go-generated)на сайте разработчика Protocol Buffers.
+Более подробную информацию о соглашениях об именах для структур Golang, сгенерированных из the [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), можно найти в [Golang Сгенерированный код разделе](https://developers.google.com/protocol-buffers/docs/reference/go-generated)на сайте разработчика Protocol Buffers.

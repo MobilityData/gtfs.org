@@ -1,6 +1,6 @@
 # Golang GTFS-realtime言語バインディング
 
-GTFS-realtimeのProtocolBuffer仕様から生成されたGolang構造体を提供します。 これらの構造体によって、バイナリのProtocolBuffer GTFS-realtimeデータフィードをパースしてGolangオブジェクトにすることができます。
+[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime)のProtocolBuffer仕様から生成されたGolang構造体を提供します。 これらの構造体によって、バイナリのProtocolBuffer GTFS-realtimeデータフィードをパースしてGolangオブジェクトにすることができます。
 
 ## 依存関係の追加
 
@@ -62,4 +62,4 @@ func main() {
 }
 ```
 
-[gtfs-realtime.protoから](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto)生成されるGolang構造体の命名規則の詳細については、Protocol Buffers開発者サイトのGolang[Generated Codesセクションを](https://developers.google.com/protocol-buffers/docs/reference/go-generated)参照してください。
+[gtfs-realtime.protoから](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto)生成されるGolang構造体の命名規則の詳細については、Protocol Buffers開発者サイトの[Golang生成されたコード部分](https://developers.google.com/protocol-buffers/docs/reference/go-generated)参照してください。

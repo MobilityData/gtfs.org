@@ -1,10 +1,10 @@
 # Golang GTFS-realtime Sprachbindungen
 
-Stellt Golang-Strukturen zur Verfügung, die aus der GTFS-Realtime ProtocolBuffer-Spezifikation generiert wurden. Diese Strukturen ermöglichen es Ihnen, einen binären ProtocolBuffer GTFS-Realtime-Datenfeed in Golang-Objekte zu parsen.
+Stellt Golang-Strukturen zur Verfügung, die aus der [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) ProtocolBuffer-Spezifikation generiert wurden. Diese Strukturen ermöglichen es Ihnen, einen binären ProtocolBuffer GTFS-Realtime-Datenfeed in Golang-Objekte zu parsen.
 
 ## Hinzufügen der Abhängigkeit
 
-Um die `gtfs-realtime-bindings-Strukturen` in Ihrem eigenen Projekt zu verwenden, müssen Sie zuerst diese Bibliothek mit installieren:
+Um die `gtfs-realtime-bindings` Strukturen in Ihrem eigenen Projekt zu verwenden, müssen Sie zuerst diese Bibliothek mit installieren:
 
     go get github.com/MobilityData/gtfs-realtime-bindings/golang/gtfs
 
@@ -14,7 +14,7 @@ Und installieren Sie die Golang-Protobuf-Bibliothek-Abhängigkeit mit:
 
 ## Beispielcode
 
-Der folgende Codeausschnitt veranschaulicht das Herunterladen eines GTFS-Realtime datenfeeds von einer bestimmten URL, das Parsen als FeedMessage (der Stammtyp des GTFS-Realtime schemas) und die Iteration der Ergebnisse.
+Der folgende Codeausschnitt veranschaulicht das Herunterladen eines GTFS-Realtime datenfeeds von einer bestimmten URL, das Parsen als FeedMessage (der Stammtyp des GTFS-Realtime Schemata) und die Iteration der Ergebnisse.
 
 ```golang
 package main
@@ -62,4 +62,4 @@ func main() {
 }
 ```
 
-Weitere Details zu den Namenskonventionen für die Golang-Strukturen, die aus dem [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto) generiert werden finden Sie im Abschnitt [Golang Generated Codesection](https://developers.google.com/protocol-buffers/docs/reference/go-generated)auf der Protocol Buffers Developer Site.
+Weitere Details zu den Namenskonventionen für die Golang-Strukturen, die aus dem [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto) generiert werden finden Sie im [Abschnitt Golang Code](https://developers.google.com/protocol-buffers/docs/reference/go-generated) auf der Protocol Buffers Entwickler-Website.

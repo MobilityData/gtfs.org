@@ -1,6 +1,6 @@
-# Golang GTFS-realtime Language Bindings
+# Encadernação de idiomas Golang GTFS-realtime
 
-Fornece estruturas Golang geradas a partir da especificação do  Buffer de  Protocolo GTFS-realtime. Estas estruturas permitirão analisar uma alimentação de dados binários do Protocol Buffer GTFS-realtime em objetos Golang.
+Fornece estruturas Golang geradas a partir da especificação do  Buffer de  Protocolo [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime). Estas estruturas permitirão analisar uma alimentação de dados binários do Protocol Buffer GTFS-realtime em objetos Golang.
 
 ## Adicionar a Dependência
 
@@ -62,4 +62,4 @@ func main() {
 }
 ```
 
-Para mais detalhes sobre as convenções de nomenclatura para os structs Golang gerados a partir de the [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), consulte a[seção Golang Generated Codesection](https://developers.google.com/protocol-buffers/docs/reference/go-generated)do site do desenvolvedor do Protocol Buffers.
+Para mais detalhes sobre as convenções de nomenclatura para os structs Golang gerados a partir de the [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), consulte a [seção Código Gerado Golang](https://developers.google.com/protocol-buffers/docs/reference/go-generated) do site do desenvolvedor do Protocol Buffers.

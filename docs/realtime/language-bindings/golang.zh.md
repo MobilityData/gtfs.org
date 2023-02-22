@@ -1,6 +1,6 @@
 # Golang GTFS-realtime 语言绑定
 
-提供从 GTFS-realtime ProtocolBuffer 规范中生成的 Golang 结构。 这些结构可以让你解析二进制的 ProtocolBuffer GTFS-realtime 数据馈送到 Golang 对象。
+提供从 [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) ProtocolBuffer 规范中生成的 Golang 结构。 这些结构可以让你解析二进制的 ProtocolBuffer GTFS-realtime 数据馈送到 Golang 对象。
 
 ## 添加依赖关系
 
@@ -62,4 +62,4 @@ func main() {
 }
 ```
 
-关于从[gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto)生成的Golang结构的命名规则的更多细节，请查看协议缓冲区开发者网站的Golang[生成的代码部分](https://developers.google.com/protocol-buffers/docs/reference/go-generated)。
+关于从[gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto)生成的Golang结构的命名规则的更多细节，请查看协议缓冲区开发者网站的[Golang生成的代码部分](https://developers.google.com/protocol-buffers/docs/reference/go-generated)。
