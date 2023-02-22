@@ -1,8 +1,8 @@
-# JavaScript GTFS-實時語言綁定
+# JavaScript GTFS-Realtime語言綁定
 
 [![npm 版本](https://badge.fury.io/js/gtfs-realtime-bindings.svg)](http://badge.fury.io/js/gtfs-realtime-bindings)
 
-提供從[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime)ProtocolBuffer 規範生成的 JavaScript 類及其關聯類型。這些類將允許您將二進制 ProtocolBuffer GTFS 實時數據饋送解析為 JavaScript 對象。
+提供從[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) ProtocolBuffer 規範生成的 JavaScript 類及其關聯類型。這些類將允許您將二進制 ProtocolBuffer GTFS-realtime 數據饋送解析為 JavaScript 對象。
 
 這些綁定旨在用於[Node.js](http://nodejs.org/)環境，但通過一些努力，它們也可能用於其他 JavaScript 環境。
 
@@ -16,7 +16,7 @@
 
 ## 示例代碼
 
-以下 Node.js 代碼片段演示了從特定 URL 下載 GTFS 實時數據提要，將其解析為 FeedMessage（GTFS 實時架構的根類型），並迭代結果。
+以下 Node.js 代碼片段演示了從特定 URL 下載 GTFS-realtime 數據提要，將其解析為 FeedMessage（GTFS-realtime 架構的根類型），並迭代結果。
 
 為了使這個示例工作，您必須首先使用 NPM 安裝`node-fetch` 。
 

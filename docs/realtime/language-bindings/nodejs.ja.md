@@ -2,9 +2,9 @@
 
 [![npmバージョン](https://badge.fury.io/js/gtfs-realtime-bindings.svg)](http://badge.fury.io/js/gtfs-realtime-bindings)
 
-GTFS-realtimeのProtocolBuffer仕様から生成されたJavaScriptクラスとその関連型を提供します。 これらのクラスにより、バイナリ ProtocolBuffer GTFS-realtime データフィードをパースして JavaScript オブジェクトに変換することができます。
+[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime)のProtocolBuffer仕様から生成されたJavaScriptクラスとその関連型を提供します。 これらのクラスにより、バイナリ ProtocolBuffer GTFS-realtime データフィードをパースして JavaScript オブジェクトに変換することができます。
 
-これらのバインディングは[Node.jsen環境で](http://nodejs.org/)使用するように設計されていますが、工夫次第で他のJavaScript環境でも使用できるかもしれません。
+これらのバインディングは[Node.js環境で](http://nodejs.org/)使用するように設計されていますが、工夫次第で他のJavaScript環境でも使用できるかもしれません。
 
 JavaScriptのProtocol Bufferのサポートには、[ProtoBuf.js](https://github.com/dcodeIO/ProtoBuf.js)ライブラリを使用しています。
 
@@ -20,7 +20,7 @@ JavaScriptのProtocol Bufferのサポートには、[ProtoBuf.js](https://github
 
 このサンプルを動作させるためには、まず NPM で`node-fetch`をインストールする必要があります。
 
-_注：この例は、ESモジュール（`import/export`構文）を使用しており、CommonJS（`require`構文）と互換性がありません。CommonJSを使用するには、`importを` `requireに`変換して、`node-fetch@2を`インストールします。 ESモジュールについては、[こちらを](https://nodejs.org/api/esm.html)ご覧ください。_
+_注：この例は、ESモジュール（`import/export`構文）を使用しており、CommonJS（`require`構文）と互換性がありません。CommonJSを使用するには、`import` を `require`に変換して、`node-fetch@2`をインストールします。 ESモジュールについては、[こちらを](https://nodejs.org/api/esm.html)ご覧ください。_
 
 ```javascript
 import GtfsRealtimeBindings from "gtfs-realtime-bindings";
@@ -58,4 +58,4 @@ import fetch from "node-fetch";
 })();
 ```
 
-[gtfs-realtime.protoから](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto)生成されるJavaScriptクラスの命名規則の詳細については、[ProtoBuf.jsプロジェクトをご覧ください。このプロジェクトは](https://github.com/dcodeIO/ProtoBuf.js/wiki)、プロトコルバッファのシリアライズを処理するために使用されます。
+[gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto)から生成されるJavaScriptクラスの命名規則の詳細については、[ProtoBuf.js](https://github.com/dcodeIO/ProtoBuf.js/wiki)プロジェクトをご覧ください。このプロジェクトは、プロトコルバッファのシリアライズを処理するために使用されます。

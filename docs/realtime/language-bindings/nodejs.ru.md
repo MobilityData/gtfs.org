@@ -2,9 +2,9 @@
 
 [![npm версия](https://badge.fury.io/js/gtfs-realtime-bindings.svg)](http://badge.fury.io/js/gtfs-realtime-bindings)
 
-Предоставляет классы JavaScript и связанные с ними типы, созданные на основе спецификацииGTFS-realtime ProtocolBuffer. Эти классы позволят вам разобрать двоичный поток данных ProtocolBuffer GTFS-realtime в объекты JavaScript.
+Предоставляет классы JavaScript и связанные с ними типы, созданные на основе спецификации [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) ProtocolBuffer. Эти классы позволят вам разобрать двоичный поток данных ProtocolBuffer GTFS-realtime в объекты JavaScript.
 
-Эти связки предназначены для использования в [среде Node.jsenvironment](http://nodejs.org/), но при определенных усилиях их, вероятно, можно использовать и в других средах JavaScript.
+Эти связки предназначены для использования в [среде Node.js](http://nodejs.org/), но при определенных усилиях их, вероятно, можно использовать и в других средах JavaScript.
 
 Мы используем библиотеку [ProtoBuf.js](https://github.com/dcodeIO/ProtoBuf.js) для поддержки протокольных буферов JavaScript.
 
@@ -16,11 +16,11 @@
 
 ## Пример кода
 
-Следующий фрагмент кода Node.js демонстрирует загрузку фида GTFS-realtimedata с определенного URL, его разбор как FeedMessage (корневой тип схемы GTFS-realtime) и итерацию результатов.
+Следующий фрагмент кода Node.js демонстрирует загрузку фида GTFS-realtime с определенного URL, его разбор как FeedMessage (корневой тип схемы GTFS-realtime) и итерацию результатов.
 
 Для того чтобы этот пример заработал, необходимо сначала установить `node-fetch` с помощью NPM.
 
-_Примечание: этот пример использует модули ES (синтаксис`импорта/экспорта`) и не совместим с CommonJS (синтаксис`require` ). Вы можете использовать CommonJS, преобразовав `импорт` в `require и`установив `node-fetch@2`. Подробнее о ES-модулях [здесь](https://nodejs.org/api/esm.html)._
+_Примечание: этот пример использует модули ES (синтаксис`import/export`) и не совместим с CommonJS (синтаксис `require` ). Вы можете использовать CommonJS, преобразовав `import` в `require` и установив `node-fetch@2`. Подробнее о ES-модулях [здесь](https://nodejs.org/api/esm.html)._
 
 ```javascript
 import GtfsRealtimeBindings from "gtfs-realtime-bindings";
@@ -58,4 +58,4 @@ import fetch from "node-fetch";
 })();
 ```
 
-Для получения более подробной информации о соглашениях об именах для классов JavaScript, созданных на основе the [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), ознакомьтесь с [проектом ProtoBuf.js, который](https://github.com/dcodeIO/ProtoBuf.js/wiki)мы используем для сериализации буфера протокола.
+Для получения более подробной информации о соглашениях об именах для классов JavaScript, созданных на основе the [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), ознакомьтесь с [проектом ProtoBuf.js](https://github.com/dcodeIO/ProtoBuf.js/wiki), который мы используем для сериализации буфера протокола.

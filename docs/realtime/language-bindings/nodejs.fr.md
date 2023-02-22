@@ -2,9 +2,9 @@
 
 [![Version npm](https://badge.fury.io/js/gtfs-realtime-bindings.svg)](http://badge.fury.io/js/gtfs-realtime-bindings)
 
-Fournit des classes JavaScript et leurs types associés générés à partir de la spécification ProtocolBuffer GTFS-realtime. Ces classes vous permettront d'analyser un flux de données ProtocolBuffer GTFS-realtime binaire en objets JavaScript.
+Fournit des classes JavaScript et leurs types associés générés à partir de la spécification ProtocolBuffer [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime). Ces classes vous permettront d'analyser un flux de données ProtocolBuffer GTFS-realtime binaire en objets JavaScript.
 
-Ces liaisons sont conçues pour être utilisées dans l'[environnement Node.jsen](http://nodejs.org/), mais avec un peu d'effort, elles peuvent probablement être utilisées dans d'autres environnements JavaScript également.
+Ces liaisons sont conçues pour être utilisées dans l'[environnement Node.js](http://nodejs.org/), mais avec un peu d'effort, elles peuvent probablement être utilisées dans d'autres environnements JavaScript également.
 
 Nous utilisons la bibliothèque [ProtoBuf.js](https://github.com/dcodeIO/ProtoBuf.js) pour la prise en charge des tampons de protocole JavaScript.
 
@@ -58,4 +58,4 @@ import fetch from "node-fetch";
 })();
 ```
 
-Pour plus de détails sur les conventions de dénomination des classes JavaScript générées à partir de [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), consultez le [projet ProtoBuf.js que](https://github.com/dcodeIO/ProtoBuf.js/wiki)nous utilisons pour gérer la sérialisation de notre Protocol Buffer.
+Pour plus de détails sur les conventions de dénomination des classes JavaScript générées à partir de [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), consultez le [projet ProtoBuf.js](https://github.com/dcodeIO/ProtoBuf.js/wiki) que nous utilisons pour gérer la sérialisation de notre Protocol Buffer.

@@ -1,10 +1,10 @@
-# JavaScript GTFS-realtime Language Bindings
+# Encadernação de idiomas JavaScript GTFS-realtime 
 
 [![versão npm](https://badge.fury.io/js/gtfs-realtime-bindings.svg)](http://badge.fury.io/js/gtfs-realtime-bindings)
 
-Fornece classes JavaScript e seus tipos associados gerados a partir da especificação do GTFS-realtime ProtocolBuffer. Estas classes permitirão que você analise um binário ProtocolBuffer GTFS-realtime feed de dados em objetos JavaScript.
+Fornece classes JavaScript e seus tipos associados gerados a partir da especificação do [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) ProtocolBuffer. Estas classes permitirão que você analise um binário ProtocolBuffer GTFS-realtime feed de dados em objetos JavaScript.
 
-Estes bindings são projetados para serem usados no [Node.jsenvironment](http://nodejs.org/), mas com algum esforço, eles provavelmente também podem ser usados em outros ambientes JavaScript.
+Estes bindings são projetados para serem usados no [Node.js ambiente](http://nodejs.org/), mas com algum esforço, eles provavelmente também podem ser usados em outros ambientes JavaScript.
 
 Usamos a biblioteca do [ProtoBuf.js](https://github.com/dcodeIO/ProtoBuf.js) para suporte a Buffer de Protocolo JavaScript.
 
@@ -16,11 +16,11 @@ Para usar as classes `gtfs-realtime-bindings` em seu próprio projeto, você pre
 
 ## Código de exemplo
 
-O seguinte trecho de código do Node.js demonstra o download de um feed de dados GTFS-realtimedata de uma URL específica, analisando-o como um FeedMessage (o tipo raiz do esquema GTFS-realtime), e iterando sobre os resultados.
+O seguinte trecho de código do Node.js demonstra o download de um feed de dados GTFS-realtime de uma URL específica, analisando-o como um FeedMessage (o tipo raiz do esquema GTFS-realtime), e iterando sobre os resultados.
 
 A fim de fazer este exemplo funcionar, é necessário primeiro instalar o `"node-fetch"` com NPM.
 
-_Nota: este exemplo está usando módulos ES (sintaxe de`importação/exportação`) e não é compatível com o CommonJS (sintaxe`necessária` ). Você pode usar o CommonJS convertendo a `importação` para `requerer e`instalando `node-fetch@2`. Saiba mais sobre os módulos ES [aqui](https://nodejs.org/api/esm.html)._
+_Nota: este exemplo está usando módulos ES (sintaxe de `import/export`) e não é compatível com o CommonJS (sintaxe `require` ). Você pode usar o CommonJS convertendo a `import` para `require` instalando `node-fetch@2`. Saiba mais sobre os módulos ES [aqui](https://nodejs.org/api/esm.html)._
 
 ```javascript
 import GtfsRealtimeBindings from "gtfs-realtime-bindings";
@@ -58,4 +58,4 @@ import fetch from "node-fetch";
 })();
 ```
 
-Para mais detalhes sobre as convenções de nomenclatura para as classes JavaScript geradas a partir de the [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto),confira o [projeto ProtoBuf.js, que](https://github.com/dcodeIO/ProtoBuf.js/wiki)usamos para lidar com nossa seriação do Protocolo Buffer.
+Para mais detalhes sobre as convenções de nomenclatura para as classes JavaScript geradas a partir de the [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto),confira o [projeto ProtoBuf.js](https://github.com/dcodeIO/ProtoBuf.js/wiki), que usamos para lidar com nossa seriação do Protocolo Buffer.

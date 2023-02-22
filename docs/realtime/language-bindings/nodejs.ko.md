@@ -1,4 +1,4 @@
-# 자바스크립트 GTFS-realtime 언어 바인딩
+# JavaScript GTFS-realtime 언어 바인딩
 
 [![npm 버전](https://badge.fury.io/js/gtfs-realtime-bindings.svg)](http://badge.fury.io/js/gtfs-realtime-bindings)
 
