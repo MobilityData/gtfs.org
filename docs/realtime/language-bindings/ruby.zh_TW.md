@@ -1,12 +1,12 @@
-# Ruby GTFS-實時語言綁定
+# Ruby GTFS-Realtime語言綁定
 
 [![寶石版](https://badge.fury.io/rb/gtfs-realtime-bindings.svg)](https://badge.fury.io/rb/gtfs-realtime-bindings)
 
-提供從[GTFS 實時](https://github.com/google/transit/tree/master/gtfs-realtime)ProtocolBuffer 規範生成的 Ruby 類。這些類將允許您將二進制 ProtocolBuffer GTFS 實時數據饋送解析為 Ruby 對象。
+提供從[GTFS-Realtime](https://github.com/google/transit/tree/master/gtfs-realtime)ProtocolBuffer 規範生成的 Ruby 類。這些類將允許您將二進制 ProtocolBuffer GTFS-Realtime數據饋送解析為 Ruby 對象。
 
-!!！fail “棄用”
+!!! fail "棄用"
 
-    *截至 2019 年 2 月，官方`google-protobuf` Google protoc 工具[不支持 proto2 文件中的擴展](https://github.com/protocolbuffers/protobuf/issues/1198)。第 3 方工具， [ruby-protocol-buffers](https://github.com/codekitchen/ruby-protocol-buffers)，但似乎與現有的結構不匹配Ruby GTFS-rt 綁定，因為單元測試失敗。因此，我們棄用了Ruby綁定，直到在 Google 協議緩衝區工具中實現對 proto2 文件的正式支持。*
+    *截至 2019 年 2 月，官方`google-protobuf` Google protoc 工具[不支持 proto2 文件中的擴展](https://github.com/protocolbuffers/protobuf/issues/1198)。第 3 方工具， [ruby-protocol-buffers](https://github.com/codekitchen/ruby-protocol-buffers)，可以使用安裝 `gem install ruby-protocol-buffers` 但似乎與現有的結構不匹配Ruby GTFS-rt 綁定，因為單元測試失敗。因此，我們棄用了Ruby綁定，直到在 Google 協議緩衝區工具中實現對 proto2 文件的正式支持。*
 
 ## 添加依賴項
 
@@ -16,7 +16,7 @@
 
 ## 示例代碼
 
-以下代碼片段演示了從特定 URL 下載 GTFS 實時數據提要，將其解析為 FeedMessage（GTFS-realtime 架構的根類型），並迭代結果。
+以下代碼片段演示了從特定 URL 下載 GTFS-realtime數據提要，將其解析為 FeedMessage（GTFS-realtime 架構的根類型），並迭代結果。
 
 ```ruby
 require 'protobuf'

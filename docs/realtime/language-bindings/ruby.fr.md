@@ -2,11 +2,11 @@
 
 [![Version Gem](https://badge.fury.io/rb/gtfs-realtime-bindings.svg)](https://badge.fury.io/rb/gtfs-realtime-bindings)
 
-Fournit des classes Ruby générées à partir de la spécification ProtocolBuffer GTFS-realtime. Ces classes vous permettront d'analyser un flux de données ProtocolBuffer GTFS-realtime binaire en objets Ruby.
+Fournit des classes Ruby générées à partir de la spécification ProtocolBuffer [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime). Ces classes vous permettront d'analyser un flux de données ProtocolBuffer GTFS-realtime binaire en objets Ruby.
 
-!!! fail "Déprécié
+!!! fail "Déprécié"
 
-    *En février 2019, l'outil officiel `google-protobuf` Google protoc ne [prend pas en charge les extensions](https://github.com/protocolbuffers/protobuf/issues/1198) dans les fichiers proto2. Un outil tiers, [ruby-protocol-buffers](https://github.com/codekitchen/ruby-protocol-buffers), peut être installé en utilisant `gem install ruby-protocol-buffers`, mais ne semble pas correspondre à la structure existante des liaisons Ruby GTFS, car les tests unitaires échouent. En conséquence, nous déprécions les liaisons Ruby jusqu'à ce que le support officiel des fichiers proto2 soit implémenté dans les outils de tampon de protocole de Google.*
+    *En février 2019, l'outil officiel `google-protobuf` Google protoc [ne prend pas en charge les extensions](https://github.com/protocolbuffers/protobuf/issues/1198) dans les fichiers proto2. Un outil tiers, [ruby-protocol-buffers](https://github.com/codekitchen/ruby-protocol-buffers), peut être installé en utilisant `gem install ruby-protocol-buffers`, mais ne semble pas correspondre à la structure existante des liaisons Ruby GTFS, car les tests unitaires échouent. En conséquence, nous déprécions les liaisons Ruby jusqu'à ce que le support officiel des fichiers proto2 soit implémenté dans les outils de tampon de protocole de Google.*
 
 ## Ajouter la dépendance
 

@@ -2,7 +2,7 @@
 
 [![Versión Gem](https://badge.fury.io/rb/gtfs-realtime-bindings.svg)](https://badge.fury.io/rb/gtfs-realtime-bindings)
 
-Proporciona clases Ruby generadas a partir de la especificación ProtocolBuffer GTFS-realtime. Estas clases te permitirán parsear un binario ProtocolBuffer GTFS-realtime data feed en objetos Ruby.
+Proporciona clases Ruby generadas a partir de la especificación ProtocolBuffer [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime). Estas clases te permitirán parsear un binario ProtocolBuffer GTFS-realtime data feed en objetos Ruby.
 
 !!! fail "Obsoleto"
 

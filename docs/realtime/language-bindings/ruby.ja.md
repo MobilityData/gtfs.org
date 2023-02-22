@@ -2,7 +2,7 @@
 
 [![Gemバージョン](https://badge.fury.io/rb/gtfs-realtime-bindings.svg)](https://badge.fury.io/rb/gtfs-realtime-bindings)
 
-GTFS-realtimeのProtocolBuffer仕様から生成されたRubyクラスを提供します。 これらのクラスは、バイナリ ProtocolBuffer GTFS-realtime データフィードを Ruby オブジェクトにパースすることを可能にします。
+[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime)のProtocolBuffer仕様から生成されたRubyクラスを提供します。 これらのクラスは、バイナリ ProtocolBuffer GTFS-realtime データフィードを Ruby オブジェクトにパースすることを可能にします。
 
 !!! fail "非推奨"
 

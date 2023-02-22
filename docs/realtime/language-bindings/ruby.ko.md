@@ -6,7 +6,7 @@
 
 !!! fail "더 이상 사용되지 않음"
 
-    **2019년 2월부터 공식 `google-protobuf` Google protoc 도구는 proto2 파일의 [확장 프로그램을 지원하지 않습니다](https://github.com/protocolbuffers/protobuf/issues/1198) . 타사 도구인 [ruby-protocol-buffers](https://github.com/codekitchen/ruby-protocol-buffers), 을 사용하여 설치할 수 있습니다.Ruby `gem install ruby-protocol-buffers` 의 기존 구조와 일치하지 않는 것 같습니다.Ruby GTFS-rt 바인딩, 단위 테스트 실패. 결과적으로 우리는Ruby Google 프로토콜 버퍼 도구에서 proto2 파일에 대한 공식 지원이 구현될 때까지 바인딩합니다.**
+    *2019년 2월부터 공식 `google-protobuf` Google protoc 도구는 proto2 파일의 [확장 프로그램을 지원하지 않습니다](https://github.com/protocolbuffers/protobuf/issues/1198) . 타사 도구인 [ruby-protocol-buffers](https://github.com/codekitchen/ruby-protocol-buffers), 을 사용하여 설치할 수 있습니다.Ruby `gem install ruby-protocol-buffers` 의 기존 구조와 일치하지 않는 것 같습니다.Ruby GTFS-rt 바인딩, 단위 테스트 실패. 결과적으로 우리는Ruby Google 프로토콜 버퍼 도구에서 proto2 파일에 대한 공식 지원이 구현될 때까지 바인딩합니다.*
 
 ## 종속성 추가
 

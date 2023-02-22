@@ -2,7 +2,7 @@
 
 [![宝石版本](https://badge.fury.io/rb/gtfs-realtime-bindings.svg)](https://badge.fury.io/rb/gtfs-realtime-bindings)
 
-提供从GTFS-realtime ProtocolBuffer规范中生成的Ruby类。 这些类将允许你解析一个二进制的ProtocolBuffer GTFS-realtime数据馈送到Ruby对象。
+提供从[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) ProtocolBuffer规范中生成的Ruby类。 这些类将允许你解析一个二进制的ProtocolBuffer GTFS-realtime数据馈送到Ruby对象。
 
 !!! fail "废弃的"
 

@@ -6,7 +6,7 @@ Memberikan kelas Ruby yang dihasilkan dari [spesifikasi GTFS-realtime](https://g
 
 !!! fail "Usang"
 
-    *Mulai Februari 2019, alat protoc Google resmi `google-protobuf` [tidak mendukung ekstensi](https://github.com/protocolbuffers/protobuf/issues/1198) dalam file proto2. Alat pihak ke-3, [ruby-protocol-buffers](https://github.com/codekitchen/ruby-protocol-buffers), dapat diinstal menggunakan `gem install ruby-protocol-buffers`, tetapi tampaknya tidak cocok dengan struktur yang adaRuby GTFS-rt binding, karena unit test gagal. Akibatnya, kami tidak lagi menggunakan Ruby binding hingga dukungan resmi untuk file proto2 diterapkan di alat penyangga protokol Google.*
+    *Mulai Februari 2019, alat protoc Google resmi `google-protobuf` [tidak mendukung ekstensi](https://github.com/protocolbuffers/protobuf/issues/1198) dalam file proto2. Alat pihak ke-3, [ruby-protocol-buffers](https://github.com/codekitchen/ruby-protocol-buffers), dapat diinstal menggunakan `gem install ruby-protocol-buffers`, tetapi tampaknya tidak cocok dengan struktur yang ada Ruby GTFS-rt binding, karena unit test gagal. Akibatnya, kami tidak lagi menggunakan Ruby binding hingga dukungan resmi untuk file proto2 diterapkan di alat penyangga protokol Google.*
 
 ## Tambahkan Ketergantungan
 
@@ -16,7 +16,7 @@ Untuk menggunakan kelas `gtfs-realtime-bindings` di proyek Anda sendiri, Anda ha
 
 ## Kode Contoh
 
-Cuplikan kode berikut menunjukkan pengunduhan feed data GTFS-realtime dari URL tertentu, menguraikannya sebagai FeedMessage (jenis root dari skema GTFS-realtime), dan mengulangi hasilnya.
+Cuplikan kode berikut menunjukkan pengunduhan umpan data GTFS-realtime dari URL tertentu, menguraikannya sebagai FeedMessage (jenis root dari skema GTFS-realtime), dan mengulangi hasilnya.
 
 ```ruby
 require 'protobuf'

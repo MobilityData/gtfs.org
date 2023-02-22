@@ -2,7 +2,7 @@
 
 [![Версия Gem](https://badge.fury.io/rb/gtfs-realtime-bindings.svg)](https://badge.fury.io/rb/gtfs-realtime-bindings)
 
-Предоставляет классы Ruby, созданные на основе спецификацииGTFS-realtime ProtocolBuffer. Эти классы позволят вам разобрать двоичный поток данных ProtocolBuffer GTFS-realtime в объекты Ruby.
+Предоставляет классы Ruby, созданные на основе спецификации [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) ProtocolBuffer. Эти классы позволят вам разобрать двоичный поток данных ProtocolBuffer GTFS-realtime в объекты Ruby.
 
 !!! fail "Утративший силу"
 

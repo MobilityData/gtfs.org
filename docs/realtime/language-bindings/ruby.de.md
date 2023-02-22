@@ -2,7 +2,7 @@
 
 [![Gem-Version](https://badge.fury.io/rb/gtfs-realtime-bindings.svg)](https://badge.fury.io/rb/gtfs-realtime-bindings)
 
-Stellt Ruby-Klassen zur Verfügung, die aus der GTFS-Realtime ProtocolBuffer-Spezifikation generiert wurden. Mit diesen Klassen können Sie einen binären ProtocolBuffer GTFS-Realtime Datenfeed in Ruby-Objekte parsen.
+Stellt Ruby-Klassen zur Verfügung, die aus der [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) ProtocolBuffer-Spezifikation generiert wurden. Mit diesen Klassen können Sie einen binären ProtocolBuffer GTFS-Realtime Datenfeed in Ruby-Objekte parsen.
 
 !!! fail "Abgelehnt"
 
