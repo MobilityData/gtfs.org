@@ -2,11 +2,11 @@
 
 [![Версия PyPI](https://badge.fury.io/py/gtfs-realtime-bindings.svg)](http://badge.fury.io/py/gtfs-realtime-bindings)
 
-Предоставляет классы Python, созданные на основе спецификацииGTFS-realtime ProtocolBuffer. Эти классы позволят вам разобрать двоичный поток данных ProtocolBuffer GTFS-realtime в объекты Python.
+Предоставляет классы Python, созданные на основе спецификации [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) ProtocolBuffer. Эти классы позволят вам разобрать двоичный поток данных ProtocolBuffer GTFS-realtime в объекты Python.
 
 ## Добавьте зависимость
 
-Чтобы использовать классы `gtfs-realtime-bindings` в своем проекте, необходимо сначала установить модуль из[репозиторияPyPI](https://pypi.python.org/pypi/gtfs-realtime-bindings).
+Чтобы использовать классы `gtfs-realtime-bindings` в своем проекте, необходимо сначала установить модуль из [репозиторияPyPI](https://pypi.python.org/pypi/gtfs-realtime-bindings).
 
     # Using easy_install
     easy_install --upgrade gtfs-realtime-bindings
@@ -30,4 +30,4 @@ for entity in feed.entity:
     print(entity.trip_update)
 ```
 
-Для получения более подробной информации о соглашениях об именовании классов Python, сгенерированных из [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), обратитесь к[разделуPython Generated Codes](https://developers.google.com/protocol-buffers/docs/reference/python-generated)на сайте разработчика Protocol Buffers.
+Для получения более подробной информации о соглашениях об именовании классов Python, сгенерированных из [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), обратитесь к [разделу Сгенерированный код Python](https://developers.google.com/protocol-buffers/docs/reference/python-generated) на сайте разработчика Protocol Buffers.

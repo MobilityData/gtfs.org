@@ -2,7 +2,7 @@
 
 [![版本](https://badge.fury.io/py/gtfs-realtime-bindings.svg)](http://badge.fury.io/py/gtfs-realtime-bindings)
 
-提供從[GTFS 實時](https://github.com/google/transit/tree/master/gtfs-realtime)ProtocolBuffer 規範生成的 Python 類。這些類將允許您將二進制 ProtocolBuffer GTFS 實時數據饋送解析為 Python 對象。
+提供從[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) ProtocolBuffer 規範生成的 Python 類。這些類將允許您將二進制 ProtocolBuffer GTFS-realtime數據饋送解析為 Python 對象。
 
 ## 添加依賴項
 
@@ -16,7 +16,7 @@
 
 ## 示例代碼
 
-以下代碼片段演示了從特定 URL 下載 GTFS 實時數據提要，將其解析為 FeedMessage（GTFS 實時架構的根類型），並迭代結果。
+以下代碼片段演示了從特定 URL 下載 GTFS-realtime數據提要，將其解析為 FeedMessage（GTFS-realtime架構的根類型），並迭代結果。
 
 ```python
 from google.transit import gtfs_realtime_pb2

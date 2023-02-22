@@ -30,4 +30,4 @@ for entity in feed.entity:
     print(entity.trip_update)
 ```
 
-[gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto) 에서 생성된 Python 클래스의 명명 규칙에 대한 자세한 내용은 Protocol Buffers 개발자 사이트의 [Python Generated Code](https://developers.google.com/protocol-buffers/docs/reference/python-generated) 섹션을 확인하십시오.
+[gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto) 에서 생성된 Python 클래스의 명명 규칙에 대한 자세한 내용은 Protocol Buffers 개발자 사이트의 [Python 생성된 코드](https://developers.google.com/protocol-buffers/docs/reference/python-generated) 섹션을 확인하십시오.

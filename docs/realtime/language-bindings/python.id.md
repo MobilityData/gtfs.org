@@ -16,7 +16,7 @@ Untuk menggunakan kelas `gtfs-realtime-bindings` di proyek Anda sendiri, Anda ha
 
 ## Kode Contoh
 
-Cuplikan kode berikut menunjukkan pengunduhan feed data GTFS-realtime dari URL tertentu, menguraikannya sebagai FeedMessage (jenis root dari skema GTFS-realtime), dan mengulangi hasilnya.
+Cuplikan kode berikut menunjukkan pengunduhan umpan data GTFS-realtime dari URL tertentu, menguraikannya sebagai FeedMessage (jenis root dari skema GTFS-realtime), dan mengulangi hasilnya.
 
 ```python
 from google.transit import gtfs_realtime_pb2
