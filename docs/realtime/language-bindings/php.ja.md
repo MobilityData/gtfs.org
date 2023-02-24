@@ -2,7 +2,7 @@
 
 [![PHPバージョン](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings.svg)](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings)
 
-GTFS-realtime ProtocolBuffer 仕様から生成された PHP クラスを提供します。 これらのクラスを使用すると、バイナリの ProtocolBuffer [GTFS-realtime](https://developers.google.com/transit/gtfs-realtime/) データフィードをパースして PHP オブジェクトに変換することができます。
+[GTFS-realtime](https://developers.google.com/transit/gtfs-realtime/) ProtocolBuffer 仕様から生成された PHP クラスを提供します。 これらのクラスを使用すると、バイナリの ProtocolBuffer [GTFS-realtime](https://developers.google.com/transit/gtfs-realtime/) データフィードをパースして PHP オブジェクトに変換することができます。
 
 他の言語でのバインディングについては、the [gtfs-realtime-bindings](https://github.com/google/gtfs-realtime-bindings) project を参照してください。
 

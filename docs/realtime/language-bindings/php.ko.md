@@ -1,8 +1,8 @@
-# PHP GTFS-실시간 언어 바인딩
+# PHP GTFS-Realtime 언어 바인딩
 
 [![PHP 버전](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings.svg)](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings)
 
-[GTFS-realtime](https://developers.google.com/transit/gtfs-realtime/) ProtocolBuffer 사양에서 생성된 PHP 클래스를 제공합니다. 이러한 클래스를 사용하면 바이너리 ProtocolBuffer GTFS-실시간 데이터 피드를 PHP 개체로 파싱할 수 있습니다.
+[GTFS-realtime](https://developers.google.com/transit/gtfs-realtime/) ProtocolBuffer 사양에서 생성된 PHP 클래스를 제공합니다. 이러한 클래스를 사용하면 바이너리 ProtocolBuffer GTFS-realtime 데이터 피드를 PHP 개체로 파싱할 수 있습니다.
 
 다른 언어로 된 바인딩은 [gtfs-realtime-bindings](https://github.com/google/gtfs-realtime-bindings) 프로젝트를 참조하세요.
 
@@ -18,7 +18,7 @@
       "google/gtfs-realtime-bindings": "x.y.z"
     }
 
-여기서 `xyz` 는 최신 릴리스 버전입니다.
+여기서 `x.y.z` 는 최신 릴리스 버전입니다.
 
 [![PHP 버전](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings.svg)](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings)
 
@@ -28,7 +28,7 @@
 
 ## 예제 코드
 
-다음 코드 스니펫은 특정 URL에서 GTFS 실시간 데이터 피드를 다운로드하여 FeedMessage(GTFS 실시간 스키마의 루트 유형)로 파싱하고 결과를 반복하는 방법을 보여줍니다.
+다음 코드 스니펫은 특정 URL에서 GTFS-realtime 데이터 피드를 다운로드하여 FeedMessage(GTFS-realtime 스키마의 루트 유형)로 파싱하고 결과를 반복하는 방법을 보여줍니다.
 
 ```php
 require_once 'vendor/autoload.php';

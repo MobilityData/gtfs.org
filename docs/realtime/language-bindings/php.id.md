@@ -2,7 +2,7 @@
 
 [![versi PHP](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings.svg)](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings)
 
-Menyediakan kelas PHP yang dihasilkan dari spesifikasi ProtocolBuffer [GTFS-realtime](https://developers.google.com/transit/gtfs-realtime/) . Kelas ini akan memungkinkan Anda mengurai feed data GTFS-realtime biner ProtocolBuffer ke dalam objek PHP.
+Menyediakan kelas PHP yang dihasilkan dari spesifikasi ProtocolBuffer [GTFS-realtime](https://developers.google.com/transit/gtfs-realtime/) . Kelas ini akan memungkinkan Anda mengurai umpan data GTFS-realtime biner ProtocolBuffer ke dalam objek PHP.
 
 Untuk binding dalam bahasa lain, lihat [project gtfs-realtime-bindings](https://github.com/google/gtfs-realtime-bindings) .
 
@@ -28,7 +28,7 @@ Kemudian perbarui dependensi Composer Anda:
 
 ## Kode Contoh
 
-Cuplikan kode berikut menunjukkan pengunduhan feed data GTFS-realtime dari URL tertentu, menguraikannya sebagai FeedMessage (jenis root dari skema GTFS-realtime), dan mengulangi hasilnya.
+Cuplikan kode berikut menunjukkan pengunduhan umpan data GTFS-realtime dari URL tertentu, menguraikannya sebagai FeedMessage (jenis root dari skema GTFS-realtime), dan mengulangi hasilnya.
 
 ```php
 require_once 'vendor/autoload.php';

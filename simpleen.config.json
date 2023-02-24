@@ -1,19 +1,10 @@
 {
     "source_language": "EN",
     "target_languages": [
-        "ZH",
-        "zh-TW",
-        "FR",
-        "DE",
-        "id",
-        "JA",
-        "ko",
-        "PT-BR",
-        "RU",
-        "ES"
+        "zh-TW"
     ],
     "interpolation": "default",
-    "input_path": "docs/resources/apps.md",
-    "output_path": "docs/resources/$FILE.$LOCALE.md",
+    "input_path": "docs/realtime/language-bindings/php.md",
+    "output_path": "docs/realtime/language-bindings/$FILE.$LOCALE.md",
     "auth_key": "ecd184cd-ffbc-4191-bbc2-82f74079a3af"
 }

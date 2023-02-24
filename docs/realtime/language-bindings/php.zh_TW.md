@@ -1,12 +1,12 @@
-# PHP GTFS-實時語言綁定
+# PHP GTFS-realtime語言綁定
 
 [![PHP版本](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings.svg)](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings)
 
-提供從[GTFS-realtime](https://developers.google.com/transit/gtfs-realtime/)ProtocolBuffer 規範生成的 PHP 類。這些類將允許您將二進制 ProtocolBuffer GTFS 實時數據饋送解析為 PHP 對象。
+提供從[GTFS-realtime](https://developers.google.com/transit/gtfs-realtime/)ProtocolBuffer 規範生成的 PHP 類。這些類將允許您將二進制 ProtocolBuffer GTFS-realtime數據饋送解析為 PHP 對象。
 
 對於其他語言的綁定，請參閱[gtfs-realtime-bindings](https://github.com/google/gtfs-realtime-bindings)項目。
 
-!!! fail “棄用”
+!!! fail "棄用"
 
     *截至 2019 年 2 月，官方`google-protobuf`谷歌協議工具[不支持 proto2 文件](https://github.com/protocolbuffers/protobuf/issues/3623)。因此，我們棄用了PHP綁定，直到在 Google 協議緩衝區工具中實現對 proto2 文件的正式支持。*
 
@@ -18,7 +18,7 @@
       "google/gtfs-realtime-bindings": "x.y.z"
     }
 
-其中`xyz`是最新發布版本：
+其中`x.y.z`是最新發布版本：
 
 [![PHP版本](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings.svg)](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings)
 
@@ -28,7 +28,7 @@
 
 ## 示例代碼
 
-以下代碼片段演示了從特定 URL 下載 GTFS 實時數據提要，將其解析為 FeedMessage（GTFS-realtime 架構的根類型），並迭代結果。
+以下代碼片段演示了從特定 URL 下載 GTFS-realtime數據提要，將其解析為 FeedMessage（GTFS-realtime 架構的根類型），並迭代結果。
 
 ```php
 require_once 'vendor/autoload.php';

@@ -8,7 +8,7 @@ Para enlaces en otros lenguajes, vea the [gtfs-realtime-bindings](https://github
 
 !!! fail "Obsoleto"
 
-    *A partir de febrero de 2019, la herramienta oficial `google-protobuf` Google protoc [no soporta](https://github.com/protocolbuffers/protobuf/issues/3623) archivos proto2. Como resultado, estamos obviando los enlaces PHP hasta que se implemente el soporte oficial para archivos proto2 en las herramientas de búfer de protocolo de Google.*
+    *A partir de febrero de 2019, la herramienta oficial `google-protobuf` Google protoc [no soporta archivos proto2](https://github.com/protocolbuffers/protobuf/issues/3623). Como resultado, estamos obviando los enlaces PHP hasta que se implemente el soporte oficial para archivos proto2 en las herramientas de búfer de protocolo de Google.*
 
 ## Añadir la dependencia
 

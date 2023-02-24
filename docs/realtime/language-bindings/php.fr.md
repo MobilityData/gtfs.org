@@ -6,13 +6,13 @@ Fournit des classes PHP générées à partir de la spécification ProtocolBuffe
 
 Pour les liaisons dans d'autres langues, voir le projet [gtfs-realtime-bindings](https://github.com/google/gtfs-realtime-bindings).
 
-!!! fail "Déprécié
+!!! fail "Déprécié"
 
-    *À partir de février 2019, l'outil officiel de protocole `google-protobuf` ne [prend pas en charge les fichiers proto2](https://github.com/protocolbuffers/protobuf/issues/3623). Par conséquent, nous déprécions les liaisons PHP jusqu'à ce que le support officiel des fichiers proto2 soit mis en œuvre dans les outils de tampon de protocole de Google.*
+    *À partir de février 2019, l'outil officiel de protocole `google-protobuf` [ne prend pas en charge les fichiers proto2](https://github.com/protocolbuffers/protobuf/issues/3623). Par conséquent, nous déprécions les liaisons PHP jusqu'à ce que le support officiel des fichiers proto2 soit mis en œuvre dans les outils de tampon de protocole de Google.*
 
 ## Ajouter la dépendance
 
-Pour utiliser les classes `gtfs-realtime-bindings-php` dans votre propre projet, vous devez d'abord installer le [Packagist Composerpackage](https://packagist.org/packages/google/gtfs-realtime-bindings). Pour ce faire, ajoutez une dépendance dans votre fichier `composer.json`:
+Pour utiliser les classes `gtfs-realtime-bindings-php` dans votre propre projet, vous devez d'abord installer le [Packagist Composer package](https://packagist.org/packages/google/gtfs-realtime-bindings). Pour ce faire, ajoutez une dépendance dans votre fichier `composer.json`:
 
     "require": {
       "google/gtfs-realtime-bindings": "x.y.z"

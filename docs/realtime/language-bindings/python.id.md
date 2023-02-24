@@ -2,7 +2,7 @@
 
 [![versi PyPI](https://badge.fury.io/py/gtfs-realtime-bindings.svg)](http://badge.fury.io/py/gtfs-realtime-bindings)
 
-Menyediakan class Python yang dihasilkan dari [spesifikasi GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) ProtocolBuffer. Kelas-kelas ini akan memungkinkan Anda mengurai feed data GTFS-realtime biner ProtocolBuffer ke dalam objek Python.
+Menyediakan class Python yang dihasilkan dari [spesifikasi GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) ProtocolBuffer. Kelas-kelas ini akan memungkinkan Anda mengurai umpan data GTFS-realtime biner ProtocolBuffer ke dalam objek Python.
 
 ## Tambahkan Ketergantungan
 

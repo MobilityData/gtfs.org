@@ -12,7 +12,7 @@ Für Bindungen in anderen Sprachen, siehe das [gtfs-realtime-bindings](https://g
 
 ## Hinzufügen der Abhängigkeit
 
-Um die `gtfs-realtime-bindings-php` Klassen in Ihrem eigenen Projekt zu verwenden, müssen Sie zuerst das [Packagist Composerpackage](https://packagist.org/packages/google/gtfs-realtime-bindings) installieren. Fügen Sie dazu eine Abhängigkeit in Ihrer `composer.json` Datei hinzu:
+Um die `gtfs-realtime-bindings-php` Klassen in Ihrem eigenen Projekt zu verwenden, müssen Sie zuerst das [Packagist Composer package](https://packagist.org/packages/google/gtfs-realtime-bindings) installieren. Fügen Sie dazu eine Abhängigkeit in Ihrer `composer.json` Datei hinzu:
 
     "require": {
       "google/gtfs-realtime-bindings": "x.y.z"
