@@ -1,4 +1,4 @@
-# GTFS-Realtime Protobuf
+# GTFS Realtime Protobuf
 
 Laden Sie die Datei [gtfs-realtime.proto](gtfs-realtime.proto) herunter und verwenden Sie sie, um Ihren GTFS-Realtime Feed zu kompilieren. Weitere Informationen über die Verwendung von Protobufs finden Sie im [Protocol Buffers Developer Guide](https://developers.google.com/protocol-buffers/docs/overview).
 

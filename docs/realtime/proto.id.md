@@ -1,4 +1,4 @@
-# Protobuf GTFS-Realtime
+# Protobuf GTFS Realtime
 
 Download file [gtfs-realtime.proto](gtfs-realtime.proto) dan gunakan untuk mengompilasi feed GTFS-realtime Anda. Isi file ditampilkan sebaris di bawah ini. Untuk informasi lebih lanjut tentang penggunaan protobuf, lihat [Panduan Pengembang Protocol Buffers](https://developers.google.com/protocol-buffers/docs/overview) .
 

@@ -1,4 +1,4 @@
-# GTFS-Realtime Protobuf
+# GTFS Realtime Protobuf
 
 Faça o download do arquivo [gtfs-realtime.proto](gtfs-realtime.proto) e use-o para compilar sua alimentação em tempo real GTFS. O conteúdo do arquivo é mostrado em linha abaixo. Para mais informações sobre o uso de protobufs, veja o [Guia do Desenvolvedor de Buffers de Protocolo](https://developers.google.com/protocol-buffers/docs/overview).
 

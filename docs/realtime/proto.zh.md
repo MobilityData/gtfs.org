@@ -1,6 +1,6 @@
 # GTFS-Realtime Protobuf
 
-下载[gtfs-realtime.proto](gtfs-realtime.proto)文件并使用它来编译你的GTFS-realtime feed。该文件的内容显示在下面的直线上。关于使用protobufs的更多信息，请参见[《协议缓冲区开发指南](https://developers.google.com/protocol-buffers/docs/overview)》。
+下载[gtfs-realtime.proto](gtfs-realtime.proto)文件并使用它来编译你的GTFS-realtime 订阅。该文件的内容显示在下面的直线上。关于使用protobufs的更多信息，请参见[《协议缓冲区开发指南](https://developers.google.com/protocol-buffers/docs/overview)》。
 
 ```protobuf
 // Copyright 2015 The GTFS Specifications Authors.

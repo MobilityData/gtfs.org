@@ -1,6 +1,6 @@
 # GTFS-Realtime Protobuf
 
-下載[gtfs-realtime.proto](gtfs-realtime.proto)文件並使用它來編譯您的 GTFS 實時提要。該文件的內容顯示在下面。有關使用 protobufs 的更多信息，請參閱[Protocol Buffers Developer Guide](https://developers.google.com/protocol-buffers/docs/overview) 。
+下載[gtfs-realtime.proto](gtfs-realtime.proto)文件並使用它來編譯您的 GTFS-realtime提要。該文件的內容顯示在下面。有關使用 protobufs 的更多信息，請參閱[Protocol Buffers Developer Guide](https://developers.google.com/protocol-buffers/docs/overview) 。
 
 ```protobuf
 // Copyright 2015 The GTFS Specifications Authors.

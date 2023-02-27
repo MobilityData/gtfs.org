@@ -1,4 +1,4 @@
-# Protobuf GTFS-Realtime
+# Protobuf GTFS Realtime
 
 Téléchargez le fichier [gtfs-realtime.proto](gtfs-realtime.proto) et utilisez-le pour compiler votre flux GTFS-realtime. Pour plus d'informations sur l'utilisation des protobufs, consultez le [Protocol Buffers Developer Guide](https://developers.google.com/protocol-buffers/docs/overview).
 
