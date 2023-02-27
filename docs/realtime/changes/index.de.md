@@ -12,7 +12,7 @@ Wenn Sie einen Beitrag zu GTFS Realtime leisten möchten, lesen Sie den [Prozess
     <a class="button" href="../process">Prozess zur Änderung der Spezifikation</a><a class="button" href="../guiding-principles">Leitprinzipien</a><a class="button" href="../revision-history">Historie der Revision</a><a class="button" href="../extensions">Echtzeit-Erweiterungen</a>
 </div> -->
 
-## Aktive Proposals &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
+## Laufende Änderungsvorschläge &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
 
 <!-- Aktive Vorschläge für neue Funktionen in GTFS Realtime.  -->
 
@@ -34,14 +34,14 @@ Beteiligen Sie sich an den Diskussionen auf [Github](https://github.com/google/t
 </div>
 <div class="row"></div> -->
 
-## Kürzlich zusammengefasste Vorschläge &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
+## Kürzlich angenommene Vorschläge &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
-Kürzlich zusammengeführte Vorschläge, die nun Bestandteil der [offiziellen GTFS Realtime-Spezifikation](../reference) sind. Weitere Informationen finden Sie in der vollständigen [Revisionshistorie](../process#revision-history).
+Kürzlich angenommene Vorschläge, die nun Bestandteil der [offiziellen GTFS Realtime-Spezifikation](../reference) sind. Weitere Informationen finden Sie in der vollständigen [Revisionshistorie](../process#revision-history).
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/332" class="no-icon" target="_blank">Hinzufügen von cause_detail und effect_detail zu Alerts</a></h3>
-        <p class="maintainer">#332 von <a href="https://github.com/mckenzie-maidl-ibigroup" class="no-icon" target="_blank">mckenzie-maidl-ibigroup</a> wurde zusammengeführt am 26. Juni 2022</p>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/332" class="no-icon" target="_blank">Hinzufügen von cause_detail und effect_detail zu Alerts (#332)</a></h3>
+        <p class="maintainer">Die Änderungen von #332 aus <a href="https://github.com/mckenzie-maidl-ibigroup" class="no-icon" target="_blank">mckenzie-maidl-ibigroup</a> wurden am 26. Juni 2022 übernommen.</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -53,7 +53,7 @@ Kürzlich zusammengeführte Vorschläge, die nun Bestandteil der [offiziellen GT
 <div class="row">
     <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/340" class="no-icon" target="_blank">GTFS-rt : Aktualisierung des Rollstuhlzugangs</a></h3>
-        <p class="maintainer">#340 von <a href="https://github.com/flaktack" class="no-icon" target="_blank">flaktack</a> wurde am 25. Juli 2022 zusammengeführt.</p>
+        <p class="maintainer">Die Änderungen von #340 aus <a href="https://github.com/flaktack" class="no-icon" target="_blank">flaktack</a> wurden am 25. Juli 2022 übernommen.</p>
     </div>
     <div class="featurelist">
         <ul>
@@ -92,7 +92,7 @@ Kürzlich zusammengeführte Vorschläge, die nun Bestandteil der [offiziellen GT
 <div class="row">
     <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/260" class="no-icon" target="_blank">Hinzufügen von departure_occupancy_status zu TripUpdate</a></h3>
-        <p class="maintainer">#260 von <a href="https://github.com/jakehoare" class="no-icon" target="_blank">jakehoare</a> wurde zusammengeführt am 14. April 2021</p>
+        <p class="maintainer">Die Änderungen von #260 aus <a href="https://github.com/jakehoare" class="no-icon" target="_blank">jakehoare</a> wurden am 14. April 2021 übernommen.</p>
     </div>
     <div class="featurelist">
         <ul>
