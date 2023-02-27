@@ -24,7 +24,7 @@ stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boar
 94,Waterfront Station Entrance on Howe,49.286898,-123.113367,2,12034,2
 ```
 
-In the file above, the first record pertains to the station location, hence, the `location_type` is set to `1`. The other five pertain to the three station entrances (five records are needed since the Granville entrance actually has three separate entrances, a stairway, an escalator, and an elevator). These five records are defined as entrances since the `location_type` is set to `3`.
+In the file above, the first record pertains to the station location, hence, the `location_type` is set to `1`. The other five pertain to the three station entrances (five records are needed since the Granville entrance actually has three separate entrances, a stairway, an escalator, and an elevator). These five records are defined as entrances since the `location_type` is set to `2`.
 
 Additionally, the `stop_id` for Waterfront Station is listed under `parent_station` for the entrances to associate them with the station. The accessible entrances have `wheelchair_boarding` set to `1` and the non-accessible ones are set to `2`. 
 
