@@ -5,44 +5,44 @@ Wenn ein Produzent oder Konsument daran interessiert ist, ein neues Feld zur GTF
 ## Prozess zur Änderung der Spezifikation
 
 1. Erstellen Sie einen Git-Zweig mit der Aktualisierung aller relevanten Teile der Protokolldefinition, der Spezifikation und der Dokumentationsdateien (mit Ausnahme der Übersetzungen).
-1. Erstellen Sie einen Pull-Request auf [https://github.com/google/transit.](https://github.com/google/transit) Der Pull Request muss eine ausführliche Beschreibung des Patches enthalten. Der Ersteller des Pull Requests wird zum *Advocate*.
-1. Sobald der Pull Request registriert ist, muss er von seinem Befürworter in der [GTFS Realtime Mailingliste](https://groups.google.com/forum/#!forum/gtfs-realtime) angekündigt werden. Nach der Ankündigung wird der Pull Request als Vorschlag betrachtet.
-   - Da der Befürworter ein Mitwirkender ist, muss er die [Lizenzvereinbarung für Mitwirkende](https://github.com/google/transit/blob/master/CONTRIBUTING.md) unterzeichnen, bevor der Pull Request angenommen werden kann.
-1. Die Diskussion des Vorschlags folgt. Als einziges Diskussionsforum sollten Pull-Request-Kommentare verwendet werden.
-   - Die Diskussion dauert so lange, wie der Befürworter es für notwendig hält, mindestens jedoch 7 Kalendertage.
-   - Der Befürworter ist für die rechtzeitige Aktualisierung des Vorschlags (d. h. des Pull Request) auf der Grundlage der Kommentare verantwortlich, denen er zustimmt.
-   - Der Befürworter kann zu jedem time behaupten, dass der Vorschlag aufgegeben wurde.
-1. Der Befürworter kann zu jedem beliebigen Zeitpunkt nach dem anfänglichen 7-Tage-Intervall, das für die Diskussion erforderlich ist, zur Abstimmung über eine Version des Vorschlags aufrufen.
-   - Bevor er zur Abstimmung aufruft, sollten mindestens ein GTFS-Echtzeitproduzent und ein GTFS-Echtzeitkonsument die vorgeschlagene Änderung umsetzen. Es wird erwartet, dass der/die GTFS-Echtzeitproduzent(en) die Änderung in einen öffentlich zugänglichen GTFS-Echtzeit-Feed einbindet/einbinden und einen Link zu diesen Daten in den Pull-Request-Kommentaren bereitstellt/bereitstellen, und dass der/die GTFS-Echtzeitkonsument(en) einen Link in den Pull-Request-Kommentaren zu einer Anwendung bereitstellt/bereitstellen, die die Änderung in einer nicht-trivialen Weise nutzt (d.h. sie unterstützt neue oder verbesserte Funktionalität).
-   - Wenn der Befürworter zu einer Abstimmung aufruft, sollte er klar angeben, ob die Abstimmung für die offizielle Aufnahme des Feldes in die Spezifikation oder für ein experimentelles Feld ist.
-1. Die Abstimmung dauert mindestens 7 volle Kalendertage und 5 volle Schweizer Arbeitstage. Die Abstimmung endet um 23:59:59 UTC.
-   - Der Befürworter sollte die genaue Endzeit zu Beginn der Abstimmung bekannt geben.
-   - Während des Abstimmungszeitraums sind nur redaktionelle Änderungen am Vorschlag erlaubt (Tippfehler, Formulierungen dürfen geändert werden, solange sie den Sinn nicht verändern).
-   - Jeder darf in Form eines Kommentars zum Pull-Request mit ja/nein stimmen, und Stimmen können bis zum Ende des Abstimmungszeitraums geändert werden.
+2. Erstellen Sie einen Pull-Request auf [https://github.com/google/transit.](https://github.com/google/transit) Der Pull Request muss eine ausführliche Beschreibung des Patches enthalten. Der Ersteller des Pull Requests wird zum *Advocate*.
+3. Sobald der Pull Request registriert ist, muss er von seinem Befürworter in der [GTFS Realtime Mailingliste](https://groups.google.com/forum/#!forum/gtfs-realtime) angekündigt werden. Nach der Ankündigung wird der Pull Request als Vorschlag betrachtet.
+     - Da der Befürworter ein Mitwirkender ist, muss er die [Lizenzvereinbarung für Mitwirkende](https://github.com/google/transit/blob/master/CONTRIBUTING.md) unterzeichnen, bevor der Pull Request angenommen werden kann.
+4. Die Diskussion des Vorschlags folgt. Als einziges Diskussionsforum sollten Pull-Request-Kommentare verwendet werden.
+     - Die Diskussion dauert so lange, wie der Befürworter es für notwendig hält, mindestens jedoch 7 Kalendertage.
+     - Der Befürworter ist für die rechtzeitige Aktualisierung des Vorschlags (d. h. des Pull Request) auf der Grundlage der Kommentare verantwortlich, denen er zustimmt.
+     - Der Befürworter kann zu jedem time behaupten, dass der Vorschlag aufgegeben wurde.
+5. Der Befürworter kann zu jedem beliebigen Zeitpunkt nach dem anfänglichen 7-Tage-Intervall, das für die Diskussion erforderlich ist, zur Abstimmung über eine Version des Vorschlags aufrufen.
+     - Bevor er zur Abstimmung aufruft, sollten mindestens ein GTFS-Realtime produzent und ein GTFS-Realtime konsument die vorgeschlagene Änderung umsetzen. Es wird erwartet, dass der/die GTFS-Realtime produzent(en) die Änderung in einen öffentlich zugänglichen GTFS-Realtime-Feed einbindet/einbinden und einen Link zu diesen Daten in den Pull-Request-Kommentaren bereitstellt/bereitstellen, und dass der/die GTFS-Realtimekonsument(en) einen Link in den Pull-Request-Kommentaren zu einer Anwendung bereitstellt/bereitstellen, die die Änderung in einer nicht-trivialen Weise nutzt (d.h. sie unterstützt neue oder verbesserte Funktionalität).
+     - Wenn der Befürworter zu einer Abstimmung aufruft, sollte er klar angeben, ob die Abstimmung für die offizielle Aufnahme des Feldes in die Spezifikation oder für ein experimentelles Feld ist.
+6. Die Abstimmung dauert mindestens 7 volle Kalendertage und 5 volle Schweizer Arbeitstage. Die Abstimmung endet um 23:59:59 UTC.
+     - Der Befürworter sollte die genaue Endzeit zu Beginn der Abstimmung bekannt geben.
+     - Während des Abstimmungszeitraums sind nur redaktionelle Änderungen am Vorschlag erlaubt (Tippfehler, Formulierungen dürfen geändert werden, solange sie den Sinn nicht verändern).
+     - Jeder darf in Form eines Kommentars zum Pull-Request mit ja/nein stimmen, und Stimmen können bis zum Ende des Abstimmungszeitraums geändert werden.
    Wenn ein Wähler sein Votum ändert, wird empfohlen, den ursprünglichen Kommentar zu aktualisieren, indem man das Votum durchstreicht und das neue Votum schreibt.
-   - Abstimmungen vor Beginn des Abstimmungszeitraums werden nicht berücksichtigt.
-1. Der Vorschlag ist angenommen, wenn ein einstimmiger Konsens mit mindestens 3 Stimmen vorliegt.
-   - Die Stimme des Vorschlagsgebers zählt nicht für die Gesamtzahl von 3 Stimmen. Wenn z.B. Antragsteller X einen Pull Request erstellt und mit "Ja" stimmt, und Benutzer Y und Z mit "Ja" stimmen, wird dies als 2 Ja-Stimmen gezählt.
-   - Gegenstimmen müssen motiviert sein und idealerweise verwertbares Feedback liefern.
-   - Wenn die Abstimmung gescheitert ist, kann der Befürworter entscheiden, ob er die Arbeit an dem Vorschlag fortsetzen oder den Vorschlag aufgeben möchte.
+     - Abstimmungen vor Beginn des Abstimmungszeitraums werden nicht berücksichtigt.
+7. Der Vorschlag ist angenommen, wenn ein einstimmiger Konsens mit mindestens 3 Stimmen vorliegt.
+     - Die Stimme des Vorschlagsgebers zählt nicht für die Gesamtzahl von 3 Stimmen. Wenn z.B. Antragsteller X einen Pull Request erstellt und mit "Ja" stimmt, und Benutzer Y und Z mit "Ja" stimmen, wird dies als 2 Ja-Stimmen gezählt.
+     - Gegenstimmen müssen motiviert sein und idealerweise verwertbares Feedback liefern.
+     - Wenn die Abstimmung gescheitert ist, kann der Befürworter entscheiden, ob er die Arbeit an dem Vorschlag fortsetzen oder den Vorschlag aufgeben möchte.
    Beide Entscheidungen des Befürworters müssen in der Mailingliste bekannt gegeben werden.
-   - Wenn der Befürworter die Arbeit an dem Vorschlag fortsetzt, kann jederzeit eine neue Abstimmung angesetzt werden.
-1. Jede Pull-Anfrage, die 30 Kalendertage lang inaktiv bleibt, wird geschlossen. Wenn eine Pull-Anfrage geschlossen wird, gilt der entsprechende Vorschlag als aufgegeben. Der Befürworter kann den Pull Request jederzeit wieder öffnen, wenn er die Konversation fortsetzen oder aufrechterhalten möchte.
-   - Beachten Sie, dass der Befürworter sich dafür entscheiden kann, die Funktion als [benutzerdefinierte Erweiterung](#extensions) zu implementieren, anstatt sie in die offizielle Spezifikation aufzunehmen.
-1. Wenn der Vorschlag angenommen wird:
-   - Google verpflichtet sich, die abgestimmte Version des Pull-Requests zusammenzuführen (vorausgesetzt, die Mitwirkenden haben den [CLA](https://github.com/google/transit/blob/master/CONTRIBUTING.md) unterzeichnet) und den Pull-Request innerhalb von 5 Werktagen auszuführen.
-   - Google verpflichtet sich, das Repository <https://github.com/google/gtfs-realtime-bindings> zeitnah zu aktualisieren. Commits zu gtfs-realtime-bindigs, die auf einen Vorschlag zurückgehen, sollten auf den Pull Request des Vorschlags verweisen.
-   - Übersetzungen dürfen nicht in die ursprüngliche Pull-Anfrage aufgenommen werden.
+     - Wenn der Befürworter die Arbeit an dem Vorschlag fortsetzt, kann jederzeit eine neue Abstimmung angesetzt werden.
+8. Jede Pull-Anfrage, die 30 Kalendertage lang inaktiv bleibt, wird geschlossen. Wenn eine Pull-Anfrage geschlossen wird, gilt der entsprechende Vorschlag als aufgegeben. Der Befürworter kann den Pull Request jederzeit wieder öffnen, wenn er die Konversation fortsetzen oder aufrechterhalten möchte.
+     - Beachten Sie, dass der Befürworter sich dafür entscheiden kann, die Funktion als [benutzerdefinierte Erweiterung](#extensions) zu implementieren, anstatt sie in die offizielle Spezifikation aufzunehmen.
+9. Wenn der Vorschlag angenommen wird:
+     - Google verpflichtet sich, die abgestimmte Version des Pull-Requests zusammenzuführen (vorausgesetzt, die Mitwirkenden haben den [CLA](https://github.com/google/transit/blob/master/CONTRIBUTING.md) unterzeichnet) und den Pull-Request innerhalb von 5 Werktagen auszuführen.
+     - Google verpflichtet sich, das Repository <https://github.com/google/gtfs-realtime-bindings> zeitnah zu aktualisieren. Commits zu gtfs-realtime-bindigs, die auf einen Vorschlag zurückgehen, sollten auf den Pull Request des Vorschlags verweisen.
+     - Übersetzungen dürfen nicht in die ursprüngliche Pull-Anfrage aufgenommen werden.
    Google ist dafür verantwortlich, relevante Übersetzungen in unterstützte Sprachen zu aktualisieren, aber reine Übersetzungs-Pull-Requests aus der Community sind willkommen und werden akzeptiert, sobald alle redaktionellen Kommentare berücksichtigt wurden.
 
 ## *Experimentelle* Felder
 
 1. Wenn sich die Community darauf einigen kann, dass (a) das vorgeschlagene Feld nützlich erscheint und (b) der Typ des Feldes`(optional` vs. `repeated`, `string` vs. `int` vs. `bool`), dann wird eine Feldnummer in der GTFS Realtime-Nachricht vergeben und ein Hinweis in der [.proto-Datei](../proto) und der Dokumentation aufgenommen, dass es sich um ein *experimentelles* Feld handelt, das sich in Zukunft ändern kann.
-   - Der Konsens wird durch ein Diskussions- und Abstimmungsverfahren erreicht, das dem unten beschriebenen [Verfahren zur Änderung der Spezifikation](#specification-amendment-process) entspricht, wobei jedoch anstelle einer einstimmigen Zustimmung nur 80 % Ja-Stimmen für die Genehmigung erforderlich sind.
-   - GTFS-Echtzeitproduzenten und -konsumenten, die das neue *experimentelle* Feld verwenden möchten, werden ihre Bibliothek unter Verwendung der .proto-Datei mit dem neuen Feld neu generieren (z. B. wird Google die [gtfs-realtime-bindings Bibliothek](https://github.com/google/gtfs-realtime-bindings) aktualisieren) und damit beginnen, das Feld mit Live-Daten zu füllen und zu analysieren.
-   - Sobald wir uns davon überzeugt haben, dass das *experimentelle* Feld sinnvoll ist und sowohl Produzenten als auch Konsumenten das Feld nutzen, werden wir den unten beschriebenen [Prozess zur Änderung der Spezifikation](#specification-amendment-process) befolgen, um das Feld offiziell in die Spezifikation aufzunehmen.
-   - Wenn das *experimentelle* Feld nicht innerhalb von zwei Jahren nach seiner Genehmigung als *experimentelles* Feld über den [Prozess zur Änderung der Spezifikation](#specification-amendment-process) angenommen wird, wird es durch Hinzufügen von `[deprecated=true]` neben dem Feldwert in der [.proto-Datei](../proto) als veraltet eingestuft. Durch die Verwendung von `[deprecated=true]` (anstelle von `RESERVED`) müssen Hersteller und Verbraucher, die das Feld bereits übernommen haben, es nicht aus dem Gebrauch nehmen. Darüber hinaus kann das Feld in der Zukunft "nicht mehr veraltet" sein, wenn es in einer nachfolgenden Abstimmung nach dem [Spezifikationsänderungsprozess](#specification-amendment-process) genehmigt wird (z. B. wenn zusätzliche Hersteller und/oder Verbraucher das Feld verwenden).
-1. Wenn das neue Feld als spezifisch für einen einzelnen Produzenten angesehen wird oder es Streit über den Datentyp gibt, dann werden wir dem Produzenten eine [benutzerdefinierte Erweiterung](../extensions) zuweisen, damit er das Feld in seinem eigenen Feed verwenden kann. Wenn möglich, sollten wir Erweiterungen vermeiden und Felder, die für viele Agenturen nützlich sind, in die Hauptspezifikation aufnehmen, um eine Fragmentierung und zusätzliche Arbeit für die Verbraucher zur Unterstützung verschiedener Erweiterungen der Spezifikation zu vermeiden.
+     - Der Konsens wird durch ein Diskussions- und Abstimmungsverfahren erreicht, das dem unten beschriebenen [Verfahren zur Änderung der Spezifikation](#specification-amendment-process) entspricht, wobei jedoch anstelle einer einstimmigen Zustimmung nur 80 % Ja-Stimmen für die Genehmigung erforderlich sind.
+     - GTFS-Realtime produzenten und -konsumenten, die das neue *experimentelle* Feld verwenden möchten, werden ihre Bibliothek unter Verwendung der .proto-Datei mit dem neuen Feld neu generieren (z. B. wird Google die [gtfs-realtime-bindings Bibliothek](https://github.com/google/gtfs-realtime-bindings) aktualisieren) und damit beginnen, das Feld mit Live-Daten zu füllen und zu analysieren.
+     - Sobald wir uns davon überzeugt haben, dass das *experimentelle* Feld sinnvoll ist und sowohl Produzenten als auch Konsumenten das Feld nutzen, werden wir den unten beschriebenen [Prozess zur Änderung der Spezifikation](#specification-amendment-process) befolgen, um das Feld offiziell in die Spezifikation aufzunehmen.
+     - Wenn das *experimentelle* Feld nicht innerhalb von zwei Jahren nach seiner Genehmigung als *experimentelles* Feld über den [Prozess zur Änderung der Spezifikation](#specification-amendment-process) angenommen wird, wird es durch Hinzufügen von `[deprecated=true]` neben dem Feldwert in der [.proto-Datei](../proto) als veraltet eingestuft. Durch die Verwendung von `[deprecated=true]` (anstelle von `RESERVED`) müssen Hersteller und Verbraucher, die das Feld bereits übernommen haben, es nicht aus dem Gebrauch nehmen. Darüber hinaus kann das Feld in der Zukunft "nicht mehr veraltet" sein, wenn es in einer nachfolgenden Abstimmung nach dem [Spezifikationsänderungsprozess](#specification-amendment-process) genehmigt wird (z. B. wenn zusätzliche Hersteller und/oder Verbraucher das Feld verwenden).
+2. Wenn das neue Feld als spezifisch für einen einzelnen Produzenten angesehen wird oder es Streit über den Datentyp gibt, dann werden wir dem Produzenten eine [benutzerdefinierte Erweiterung](../extensions) zuweisen, damit er das Feld in seinem eigenen Feed verwenden kann. Wenn möglich, sollten wir Erweiterungen vermeiden und Felder, die für viele Agenturen nützlich sind, in die Hauptspezifikation aufnehmen, um eine Fragmentierung und zusätzliche Arbeit für die Verbraucher zur Unterstützung verschiedener Erweiterungen der Spezifikation zu vermeiden.
 
 ## Leitprinzipien
 
@@ -68,7 +68,7 @@ Jede neue Funktion erhöht die Komplexität beim Erstellen und Lesen von Feeds. 
 
 **12. März 2020**
 
-- Aktualisierung der `TripDescriptor-Beschreibung` auf der GTFS Realtime-Referenzseite.
+- Aktualisierung der `TripDescriptor` Beschreibung auf der GTFS Realtime-Referenzseite.
 
 **Februar 26, 2015**
 
@@ -76,7 +76,7 @@ Jede neue Funktion erhöht die Komplexität beim Erstellen und Lesen von Feeds. 
 
 **30. Januar 2015**
 
-- Protokollpuffer-Erweiterungsnamensraum zu allen verbleibenden GTFS-Echtzeitnachrichten hinzugefügt, die noch keinen hatten (wie `FeedMessage` und `FeedEntity`).
+- Protokollpuffer-Erweiterungsnamensraum zu allen verbleibenden GTFS-Realtime nachrichten hinzugefügt, die noch keinen hatten (wie `FeedMessage` und `FeedEntity`).
 
 **28. Januar 2015**
 
@@ -98,7 +98,7 @@ Jede neue Funktion erhöht die Komplexität beim Erstellen und Lesen von Feeds. 
 
 **Okt 12, 2012**
 
-- Zeitstempel-Feld zu `TripUpdate-Nachricht` hinzugefügt.
+- Zeitstempel-Feld zu `TripUpdate` Nachricht hinzugefügt.
 
 **May 30, 2012**
 
@@ -106,7 +106,7 @@ Jede neue Funktion erhöht die Komplexität beim Erstellen und Lesen von Feeds. 
 
 **November 30, 2011**
 
-- Protokollpuffer-Erweiterungsnamensraum zu den wichtigsten GTFS-Echtzeitnachrichten hinzugefügt, um das Schreiben von Erweiterungen in die Spezifikation zu erleichtern.
+- Protokollpuffer-Erweiterungsnamensraum zu den wichtigsten GTFS-Realtime nachrichten hinzugefügt, um das Schreiben von Erweiterungen in die Spezifikation zu erleichtern.
 
 **Oktober 25, 2011**
 
@@ -114,7 +114,7 @@ Jede neue Funktion erhöht die Komplexität beim Erstellen und Lesen von Feeds. 
 
 **August 20, 2011**
 
-- Die Dokumentation wurde aktualisiert, um die Semantik der `TimeRange-Meldung` zu klären.
+- Die Dokumentation wurde aktualisiert, um die Semantik der `TimeRange` Meldung zu klären.
 
 **August 22, 2011**
 

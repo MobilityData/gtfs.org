@@ -1,48 +1,48 @@
-# Menambahkan kolom baru ke GTFS-realtime
+# Menambahkan kolom baru ke GTFS Realtime
 
-Saat produsen atau konsumen tertarik untuk menambahkan kolom baru ke spesifikasi GTFS Realtime, mereka harus membuka masalah baru di [repositori GitHub GTFS Realtime](https://github.com/google/transit) yang menjelaskan kolom yang diusulkan dan mengumumkan kolom baru ini (termasuk link ke masalah) di [GTFS Milis waktu nyata](https://groups.google.com/forum/#!forum/gtfs-realtime) .
+Saat produsen atau konsumen tertarik untuk menambahkan kolom baru ke spesifikasi GTFS Realtime, mereka harus membuka masalah baru di [repositori GitHub GTFS Realtime](https://github.com/google/transit) yang menjelaskan kolom yang diusulkan dan mengumumkan kolom baru ini (termasuk link ke masalah) di [GTFS Milis Realtime](https://groups.google.com/forum/#!forum/gtfs-realtime) .
 
 ## Proses amandemen spesifikasi
 
 1. Buat cabang git dengan memperbarui semua bagian definisi protokol, spesifikasi, dan file dokumentasi yang relevan (kecuali untuk terjemahan).
-1. Buat permintaan tarik di <https://github.com/google/transit> . Permintaan penarikan harus berisi deskripsi tambalan yang diperluas. Pencipta pull request menjadi *advokat* .
-1. Setelah permintaan tarik didaftarkan, permintaan tarik harus diumumkan oleh advokatnya di [milis GTFS Realtime](https://groups.google.com/forum/#!forum/gtfs-realtime) . Setelah diumumkan, pull request dianggap sebagai proposal.
-   - Karena advokat adalah kontributor, mereka harus menandatangani [Perjanjian Lisensi Kontributor](https://github.com/google/transit/blob/master/CONTRIBUTING.md) sebelum pull request dapat diterima.
-1. Pembahasan proposal berikut. Komentar pull request harus digunakan sebagai satu-satunya forum diskusi.
-   - Pembahasan berlangsung selama advokat merasa perlu, tetapi harus sekurang-kurangnya 7 hari kalender.
-   - Advokat bertanggung jawab untuk memperbarui proposal secara tepat waktu (yaitu pull request) berdasarkan komentar yang mereka setujui.
-   - Pada setiap titik ditime advokat dapat mengklaim proposal diabaikan.
-1. Advokat dapat meminta pemungutan suara pada versi proposal kapan saja setelah interval 7 hari awal yang diperlukan untuk diskusi.
-   - Sebelum meminta pemungutan suara, setidaknya satu produsen GTFS-realtime dan satu konsumen GTFS-realtime harus menerapkan perubahan yang diusulkan. Produsen GTFS-realtime diharapkan menyertakan perubahan dalam feed GTFS-realtime yang ditampilkan ke publik dan menyediakan link ke data tersebut dalam komentar pull request, dan konsumen GTFS-realtime menyediakan link dalam komentar permintaan tarik ke aplikasi yang memanfaatkan perubahan dengan cara yang tidak sepele (yaitu, mendukung fungsionalitas baru atau yang lebih baik).
-   - Saat meminta pemungutan suara, advokat harus menyatakan dengan jelas apakah pemungutan suara tersebut untuk adopsi resmi lapangan ke dalam spesifikasi atau untuk bidang percobaan.
-1. Pemungutan suara berlangsung selama periode minimum yang cukup untuk mencakup 7 hari kalender penuh dan 5 hari kerja Swiss penuh. Vote berakhir pada 23:59:59 UTC.
-   - Advokat harus mengumumkan waktu akhir yang spesifik pada awal pemungutan suara.
-   - Selama masa voting hanya diperbolehkan perubahan redaksional proposal (salah ketik, susunan kata boleh berubah asalkan tidak mengubah arti).
-   - Siapapun diperbolehkan untuk memberikan suara ya/tidak dalam bentuk komentar pada pull request, dan suara dapat diubah hingga akhir periode pemungutan suara.
+2. Buat permintaan tarik di <https://github.com/google/transit> . Permintaan penarikan harus berisi deskripsi tambalan yang diperluas. Pencipta pull request menjadi *advokat* .
+3. Setelah permintaan tarik didaftarkan, permintaan tarik harus diumumkan oleh advokatnya di [milis GTFS Realtime](https://groups.google.com/forum/#!forum/gtfs-realtime) . Setelah diumumkan, pull request dianggap sebagai proposal.
+      - Karena advokat adalah kontributor, mereka harus menandatangani [Perjanjian Lisensi Kontributor](https://github.com/google/transit/blob/master/CONTRIBUTING.md) sebelum pull request dapat diterima.
+4. Pembahasan proposal berikut. Komentar pull request harus digunakan sebagai satu-satunya forum diskusi.
+      - Pembahasan berlangsung selama advokat merasa perlu, tetapi harus sekurang-kurangnya 7 hari kalender.
+      - Advokat bertanggung jawab untuk memperbarui proposal secara tepat waktu (yaitu pull request) berdasarkan komentar yang mereka setujui.
+      - Pada setiap titik ditime advokat dapat mengklaim proposal diabaikan.
+5. Advokat dapat meminta pemungutan suara pada versi proposal kapan saja setelah interval 7 hari awal yang diperlukan untuk diskusi.
+      - Sebelum meminta pemungutan suara, setidaknya satu produsen GTFS-realtime dan satu konsumen GTFS-realtime harus menerapkan perubahan yang diusulkan. Produsen GTFS-realtime diharapkan menyertakan perubahan dalam feed GTFS-realtime yang ditampilkan ke publik dan menyediakan link ke data tersebut dalam komentar pull request, dan konsumen GTFS-realtime menyediakan link dalam komentar permintaan tarik ke aplikasi yang memanfaatkan perubahan dengan cara yang tidak sepele (yaitu, mendukung fungsionalitas baru atau yang lebih baik).
+      - Saat meminta pemungutan suara, advokat harus menyatakan dengan jelas apakah pemungutan suara tersebut untuk adopsi resmi lapangan ke dalam spesifikasi atau untuk bidang percobaan.
+6. Pemungutan suara berlangsung selama periode minimum yang cukup untuk mencakup 7 hari kalender penuh dan 5 hari kerja Swiss penuh. Vote berakhir pada 23:59:59 UTC.
+      - Advokat harus mengumumkan waktu akhir yang spesifik pada awal pemungutan suara.
+      - Selama masa voting hanya diperbolehkan perubahan redaksional proposal (salah ketik, susunan kata boleh berubah asalkan tidak mengubah arti).
+      - Siapapun diperbolehkan untuk memberikan suara ya/tidak dalam bentuk komentar pada pull request, dan suara dapat diubah hingga akhir periode pemungutan suara.
    Jika pemilih mengubah suaranya, disarankan untuk melakukannya dengan memperbarui komentar suara asli dengan mencoret suara dan menulis suara baru.
-   - Suara sebelum dimulainya periode pemungutan suara tidak dipertimbangkan.
-1. Usul diterima jika sudah ada kesepakatan bulat ya dengan minimal 3 suara.
-   - Suara pengusul tidak dihitung terhadap total 3 suara. Misalnya, jika Pengusul X membuat pull request dan memilih ya, dan Pengguna Y dan Z memilih ya, ini dihitung sebagai total 2 suara ya.
-   - Suara menentang harus dimotivasi, dan idealnya memberikan umpan balik yang dapat ditindaklanjuti.
-   - Jika pemungutan suara gagal, maka advokat dapat memilih untuk melanjutkan pengerjaan proposal, atau meninggalkan proposal.
+      - Suara sebelum dimulainya periode pemungutan suara tidak dipertimbangkan.
+7. Usul diterima jika sudah ada kesepakatan bulat ya dengan minimal 3 suara.
+      - Suara pengusul tidak dihitung terhadap total 3 suara. Misalnya, jika Pengusul X membuat pull request dan memilih ya, dan Pengguna Y dan Z memilih ya, ini dihitung sebagai total 2 suara ya.
+      - Suara menentang harus dimotivasi, dan idealnya memberikan umpan balik yang dapat ditindaklanjuti.
+      - Jika pemungutan suara gagal, maka advokat dapat memilih untuk melanjutkan pengerjaan proposal, atau meninggalkan proposal.
    Salah satu keputusan advokat harus diumumkan di milis.
-   - Jika advokat melanjutkan pengerjaan proposal, maka pemungutan suara baru dapat dilakukan kapan saja.
-1. Setiap pull request yang tidak aktif selama 30 hari kalender akan ditutup. Saat pull request ditutup, proposal terkait dianggap ditinggalkan. Advokat dapat membuka kembali pull request kapan saja jika mereka ingin melanjutkan atau mempertahankan percakapan.
-   - Perhatikan bahwa advokat dapat memilih untuk mengimplementasikan fitur tersebut sebagai [ekstensi khusus](#extensions) , bukan sebagai bagian dari spesifikasi resmi.
-1. Jika proposal diterima:
-   - Google berkomitmen untuk menggabungkan versi pull request yang telah dipilih (asalkan kontributor telah menandatangani [CLA](https://github.com/google/transit/blob/master/CONTRIBUTING.md) , dan melakukan pull request dalam waktu 5 hari kerja.
-   - Google berkomitmen untuk memperbarui repositori <https://github.com/google/gtfs-realtime-bindings> secara tepat waktu. Komitmen pada gtfs-realtime-bindigs yang merupakan hasil dari proposal, harus mengacu pada pull request dari proposal tersebut.
-   - Terjemahan tidak boleh dimasukkan ke dalam pull request asli.
+      - Jika advokat melanjutkan pengerjaan proposal, maka pemungutan suara baru dapat dilakukan kapan saja.
+8. Setiap pull request yang tidak aktif selama 30 hari kalender akan ditutup. Saat pull request ditutup, proposal terkait dianggap ditinggalkan. Advokat dapat membuka kembali pull request kapan saja jika mereka ingin melanjutkan atau mempertahankan percakapan.
+      - Perhatikan bahwa advokat dapat memilih untuk mengimplementasikan fitur tersebut sebagai [ekstensi khusus](#extensions) , bukan sebagai bagian dari spesifikasi resmi.
+9. Jika proposal diterima:
+      - Google berkomitmen untuk menggabungkan versi pull request yang telah dipilih (asalkan kontributor telah menandatangani [CLA](https://github.com/google/transit/blob/master/CONTRIBUTING.md) , dan melakukan pull request dalam waktu 5 hari kerja.
+      - Google berkomitmen untuk memperbarui repositori <https://github.com/google/gtfs-realtime-bindings> secara tepat waktu. Komitmen pada gtfs-realtime-bindigs yang merupakan hasil dari proposal, harus mengacu pada pull request dari proposal tersebut.
+      - Terjemahan tidak boleh dimasukkan ke dalam pull request asli.
    Google bertanggung jawab untuk akhirnya memperbarui terjemahan yang relevan ke dalam bahasa yang didukung, tetapi permintaan penarikan terjemahan murni dari komunitas diterima dan akan diterima segera setelah semua komentar editorial ditangani.
 
 ## Bidang *percobaan*
 
 1. Jika komunitas dapat mencapai konsensus (a) bahwa kolom yang diusulkan tampaknya berguna dan (b) pada jenis kolom ( `optional` vs `repeated` , `string` vs `int` vs `bool` ), maka nomor kolom akan dialokasikan dalam pesan GTFS Realtime dan catatan akan dibuat di [file .proto](../proto) dan dokumentasi bahwa ini adalah bidang *percobaan* yang dapat berubah di masa mendatang.
-   - Konsensus dicapai melalui proses diskusi dan pemungutan suara yang sama dengan [proses amandemen Spesifikasi](#specification-amendment-process) di bawah ini, tetapi alih-alih persetujuan dengan suara bulat, hanya 80% suara ya yang diperlukan untuk persetujuan.
-   - Produsen dan konsumen GTFS-realtime yang ingin menggunakan kolom *eksperimental* baru akan membuat ulang pustaka mereka menggunakan file .proto dengan kolom baru (misalnya, Google akan memperbarui [pustaka gtfs-realtime-bindings](https://github.com/google/gtfs-realtime-bindings) ), dan mulai mengisi dan mengurai kolom dengan data hidup.
-   - Setelah kami yakin bahwa bidang *eksperimen* bermanfaat dan baik produsen maupun konsumen menggunakan bidang tersebut, maka kami akan mengikuti [proses amandemen Spesifikasi](#specification-amendment-process) di bawah untuk menambahkan bidang tersebut secara resmi ke spesifikasi.
-   - Jika bidang *percobaan* tidak diadopsi melalui [proses amandemen Spesifikasi](#specification-amendment-process) dalam waktu 2 tahun setelah disetujui sebagai bidang *percobaan* , bidang tersebut akan ditinggalkan dengan menambahkan `[deprecated=true]` di samping nilai bidang dalam [file .proto](../proto) . Dengan menggunakan `[deprecated=true]` (bukan `RESERVED` ), produsen dan konsumen yang telah mengadopsi bidang tersebut tidak harus menghapusnya dari penggunaan. Selain itu, bidang tersebut mungkin "tidak digunakan lagi" di masa mendatang jika disetujui dalam pemungutan suara berikutnya setelah [proses amandemen Spesifikasi](#specification-amendment-process) (misalnya, ketika produsen dan/atau konsumen tambahan mulai menggunakan bidang tersebut).
-1. Jika kolom baru dianggap khusus untuk satu produsen atau ada perselisihan tentang jenis datanya, kami akan menetapkan [ekstensi khusus](../extensions) untuk produsen tersebut sehingga mereka dapat menggunakan kolom tersebut di feed mereka sendiri. Jika memungkinkan, kita harus menghindari ekstensi dan menambahkan kolom yang berguna bagi banyak agensi ke spesifikasi utama untuk menghindari fragmentasi dan kerja ekstra bagi konsumen untuk mendukung berbagai ekstensi pada spesifikasi.
+      - Konsensus dicapai melalui proses diskusi dan pemungutan suara yang sama dengan [proses amandemen Spesifikasi](#specification-amendment-process) di bawah ini, tetapi alih-alih persetujuan dengan suara bulat, hanya 80% suara ya yang diperlukan untuk persetujuan.
+      - Produsen dan konsumen GTFS-realtime yang ingin menggunakan kolom *eksperimental* baru akan membuat ulang pustaka mereka menggunakan file .proto dengan kolom baru (misalnya, Google akan memperbarui [pustaka gtfs-realtime-bindings](https://github.com/google/gtfs-realtime-bindings) ), dan mulai mengisi dan mengurai kolom dengan data hidup.
+      - Setelah kami yakin bahwa bidang *eksperimen* bermanfaat dan baik produsen maupun konsumen menggunakan bidang tersebut, maka kami akan mengikuti [proses amandemen Spesifikasi](#specification-amendment-process) di bawah untuk menambahkan bidang tersebut secara resmi ke spesifikasi.
+      - Jika bidang *percobaan* tidak diadopsi melalui [proses amandemen Spesifikasi](#specification-amendment-process) dalam waktu 2 tahun setelah disetujui sebagai bidang *percobaan* , bidang tersebut akan ditinggalkan dengan menambahkan `[deprecated=true]` di samping nilai bidang dalam [file .proto](../proto) . Dengan menggunakan `[deprecated=true]` (bukan `RESERVED` ), produsen dan konsumen yang telah mengadopsi bidang tersebut tidak harus menghapusnya dari penggunaan. Selain itu, bidang tersebut mungkin "tidak digunakan lagi" di masa mendatang jika disetujui dalam pemungutan suara berikutnya setelah [proses amandemen Spesifikasi](#specification-amendment-process) (misalnya, ketika produsen dan/atau konsumen tambahan mulai menggunakan bidang tersebut).
+2. Jika kolom baru dianggap khusus untuk satu produsen atau ada perselisihan tentang jenis datanya, kami akan menetapkan [ekstensi khusus](../extensions) untuk produsen tersebut sehingga mereka dapat menggunakan kolom tersebut di feed mereka sendiri. Jika memungkinkan, kita harus menghindari ekstensi dan menambahkan kolom yang berguna bagi banyak agensi ke spesifikasi utama untuk menghindari fragmentasi dan kerja ekstra bagi konsumen untuk mendukung berbagai ekstensi pada spesifikasi.
 
 ## Prinsip Panduan
 
