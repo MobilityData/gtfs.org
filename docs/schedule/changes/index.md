@@ -16,7 +16,7 @@ To contribute to GTFS, read the [Specification Amendment Process](../process) an
 
 	The official specification, reference and documentation are written in English. If a translation to a different language differs from the English original, the latter takes precedence. All communication is performed in English.
 
-## Active Proposals &ensp;<img src="../../assets/pr-active.svg" style="height:1em;"/>
+## Active Proposals &ensp; <img src="../../assets/pr-active.svg" style="height:1em;"/>
 <!-- 
 Active proposals for new features in GTFS Schedule.  -->
 

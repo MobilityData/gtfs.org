@@ -10,6 +10,7 @@ To help in understanding the GTFS specification and in producing tools that read
 - Examples by use case:
     - [Routes, stops, and trips](routes-stops-trips)
     - [Continuous stops](continuous-stops)
+    - [Text-to-speech](text-to-speech)
     - [Fares v1](fares-v1)
     - [Fares v2](fares-v2)
     - [Frequencies](frequencies)

@@ -8,7 +8,7 @@
 
 ## Translate station names
 
-Some transit providers offer services in multiple languages - one of which is the National Railway Company of Belgium (locally known as NMBS/SNCB, for Nationale Maatschappij der Belgische Spoorwegen in Dutch or Société nationale des chemins de fer belges in French). The company provides station names in multiple languages and are displayed depending on the user’s language and location settings. 
+Some transit providers offer services in multiple languages - one of which is the National Railway Company of Belgium (locally known as NMBS/SNCB, for Nationale Maatschappij der Belgische Spoorwegen in Dutch or Société nationale des chemins de fer belges in French). The company provides station names in multiple languages and are displayed depending on the user’s language and location settings.
 
 The NMBS/SNCB publishes GTFS data in French as shown in the file below:
 
@@ -20,7 +20,7 @@ NMBS/SNCB,NMBS/SNCB,http://www.belgiantrain.be/,Europe/Brussels,fr
 ```
 
 
-Since the agency language is set to French, the station names are listed in French in [stops.txt](../../reference/#stopstxt). 
+Since the agency language is set to French, the station names are listed in French in [stops.txt](../../reference/#stopstxt).
 
 [**stops.txt**](../../reference/#stopstxt)
 
@@ -31,9 +31,9 @@ S8821006,,Anvers-Central,,51.2172000,4.42109800,,,1,,
 ```
 
 
-The file [translations.txt](../../reference/#translationstxt) is then used to translate the station names from the default agency language (French in this case) to Dutch. 
+The file [translations.txt](../../reference/#translationstxt) is then used to translate the station names from the default agency language (French in this case) to Dutch.
 
-[**translations.txt**](../../reference/#translationstxt) 
+[**translations.txt**](../../reference/#translationstxt)
 
 ```
 table_name,field_name,record_id,language,translation
@@ -49,7 +49,7 @@ stops,stop_name,S8815040,nl,Brussel-West
 
 There is another way to translate names in GTFS using the file [translations.txt](../../reference/#translationstxt), where the field `field_value` is used instead of `record_id`. In this case, the station name is used to find the record to be translated from [stops.txt](../../reference/#stopstxt).
 
-[**translations.txt**](../../reference/#translationstxt) 
+[**translations.txt**](../../reference/#translationstxt)
 
 ```
 table_name,field_name,field_value,language,translation`

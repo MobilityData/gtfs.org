@@ -16,28 +16,28 @@ To propose edits to the content, navigate to the page you want to change on [GTF
 
 **Contributing translations**
 
-GTFS.org uses [Simpleen](https://simpleen.io/), an automated machine learning translation tool, to ensure translations are kept up to date with repository changes. Since our priority is to keep translations up-to-date, we do not accept one time rewrites.
+GTFS.org uses [Simpleen](https://simpleen.io/), an automated machine learning translation tool, to ensure translations are kept up to date with repository changes. Since our priority is to keep translations up-to-date, any one-time translation contributions will be overwritten by Simpleen in the future. 
 
 We do accept glossary changes. Simpleen uses a glossary for key terms that are commonly used across GTFS.org, like trip or station. If you want to suggest a translation for a key term that should be applied across the entire site, you can [create an issue on the GTFS.org repository](https://github.com/MobilityData/gtfs.org/issues/new/choose).
 
 ## Building the site locally
 
 1. In Terminal, change the directory to one where you wish to build the site.
-1. Clone this repository:
+2. Clone this repository:
    - `git clone https://github.com/MobilityData/gtfs.org`
-1. Ensure you have an up-to-date version of pip:
+3. Ensure you have an up-to-date version of pip:
    - `pip install pip`
    - N.B.: on macOS, use `pip3 install pip` when using Python 3.
-1. Change the directory to the cloned repository, and have [`requirements.txt`](requirements.txt) installed:
+4. Change the directory to the cloned repository, and have [`requirements.txt`](requirements.txt) installed:
    - `pip install -r requirements.txt`
    - N.B.: on macOS, use `pip3 install -r requirements.txt` when using Python 3.
-1. Have [Material for MkDocs Insiders](https://squidfunk.github.io/mkdocs-material/insiders/`) installed. Substitute `${GH_TOKEN}` with MobilityData's access token:
+5. Have [Material for MkDocs Insiders](https://squidfunk.github.io/mkdocs-material/insiders/`) installed. Substitute `${GH_TOKEN}` with MobilityData's access token:
    - `pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git`
-1. Assuming you are still in the cloned repository, run this command to update the content for the specification references and best practices:
+6. Assuming you are still in the cloned repository, run this command to update the content for the specification references and best practices:
    - `bash scripts/fetchdata.sh`
-1. To run the site locally: `mkdocs serve`
-1. To build the site locally only: `mkdocs build --clean`
-1. To deploy the site to GitHub Pages: `mkdocs gh-deploy`
+7. To run the site locally: `mkdocs serve`
+8. To build the site locally only: `mkdocs build --clean`
+9. To deploy the site to GitHub Pages: `mkdocs gh-deploy`
 
 ## License
 
