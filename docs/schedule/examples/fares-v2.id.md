@@ -7,7 +7,7 @@ search:
 
 <hr/>
 
-Fares V2 adalah GTFS proyek ekstensi yang bertujuan untuk mengatasi keterbatasan Fares V1 . Proyek perluasan ini diadopsi dalam iterasi, dan contoh di bawah menunjukkan apa yang dapat dimodelkan menggunakan porsi dari Fares V2 yang telah diadopsi dalam spesifikasi resmi. Lihat informasi lebih lanjut tentangFares V2 proyek ekstensi di bagian [Ekstensi](../../../extensions) .
+Fares V2 adalah GTFS proyek ekstensi yang bertujuan untuk mengatasi keterbatasan Fares V1 . Proyek perluasan ini diadopsi dalam iterasi, dan contoh di bawah menunjukkan apa yang dapat dimodelkan menggunakan porsi dari Fares V2 yang telah diadopsi dalam spesifikasi resmi. Lihat informasi lebih lanjut tentang [Fares V2 proyek ekstensi](../../../extensions/fares-v2) .
 
 Untuk sementara, produsen dapat menerapkan Fares V2 di samping implementasi dari Fares V1 dalam kumpulan data yang sama karena tidak ada konflik teknis antara keduanya. Konsumen akan memiliki pilihan implementasi mana yang akan dikonsumsi secara independen dari yang lain. Dengan adopsi dan dukungan yang memadai Fares V2 ,Fares V1 mungkin akan ditinggalkan di masa mendatang.
 
