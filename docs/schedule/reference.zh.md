@@ -341,7 +341,7 @@ search:
 - 票价取决于行程中经过的区域。
 - 票价取决于行程中使用的路线。
 
-关于演示如何用[fare_rules.txt](#farerulestxt)和[fare_attributes.txt](#fareattributestxt) 指定票价结构的例子，见 GoogleTransitDataFeed 开源项目 wiki 中的<https://code.google.com/p/googletransitdatafeed/wiki/FareExamples>。
+关于演示如何用[fare_rules.txt](#farerulestxt)和[fare_attributes.txt](#fareattributestxt) 指定票价结构的例子，见 GoogleTransitDataFeed 开源项目 wiki 中的[FareExamples](https://web.archive.org/web/20111207224351/https://code.google.com/p/googletransitdatafeed/wiki/FareExamples)。
 
 | 字段名              | 类型                               | 存在     | 描述                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ---------------- | -------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
