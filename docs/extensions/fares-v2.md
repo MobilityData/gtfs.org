@@ -10,7 +10,7 @@ The main concepts that Fares v2 plans to represent are
 
 - Fare products (e.g tickets and passes)
 - Rider categories (e.g seniors and children)
-- Fare payment options (e.g bank card and credit card)
+- Fare media (e.g transit pass, paper tickets, contactless bank cards)
 - Fare capping
 
 These concepts will allow data producers to model zone-based, time-dependent, and inter-agency fares. This extension project is being adopted in iterations. 
