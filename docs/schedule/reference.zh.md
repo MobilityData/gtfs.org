@@ -5,7 +5,7 @@ search:
 
 # GTFS Schedule参考
 
-**2022年5月9日修订。更多细节见[修订历史](../revision-history)。**
+**2022年12月8日修订。更多细节见[修订历史](../revision-history)。**
 
 本文件定义了构成GTFS数据集的文件的格式和结构。
 

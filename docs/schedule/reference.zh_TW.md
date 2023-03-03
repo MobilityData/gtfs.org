@@ -5,7 +5,7 @@ search:
   
 # GTFS Schedule 參考
 
-**2022 年 5 月 9 日修訂。有關詳細信息，請參閱 [Revision History](../revision-history)。**
+**2022 年 12 月 8 日修訂。有關詳細信息，請參閱 [Revision History](../revision-history)。**
 
 本文檔定義了構成 GTFS 數據集的文件的格式和結構。
 

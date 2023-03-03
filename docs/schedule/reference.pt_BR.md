@@ -5,7 +5,7 @@ search:
 
 # Referência de GTFS Schedule
 
-**Revisado em 9 de maio de 2022. Veja o [Histórico de Revisões](../revision-history)** para mais detalhes.
+**Revisado em 8 de dezembro de 2022. Veja o [Histórico de Revisões](../revision-history)** para mais detalhes.
 
 Este documento define o formato e a estrutura dos arquivos que compõem um conjunto de dados GTFS.
 

@@ -5,7 +5,7 @@ search:
 
 # Schedule
 
-**Überarbeitet am 9. Mai 2022. Siehe [historie](../revision-history)** für weitere Details.
+**Überarbeitet am 8. Dezember 2022. Siehe [historie](../revision-history)** für weitere Details.
 
 Dieses Dokument definiert das Format und die Struktur der Dateien, aus denen ein GTFS besteht.
 

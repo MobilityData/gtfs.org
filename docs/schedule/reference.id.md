@@ -3,9 +3,9 @@ search:
   exclude: true
 ---
 
-# GTFSSchedule Referensi
+# GTFS Schedule Referensi
 
-**Direvisi 9 Mei 2022. Lihat [Riwayat Revisi](../revision-history) untuk lebih jelasnya.**
+**Direvisi 8 Desember 2022. Lihat [Riwayat Revisi](../revision-history) untuk lebih jelasnya.**
 
 Dokumen ini mendefinisikan format dan struktur file yang terdiri dari:GTFS Himpunan data.
 
