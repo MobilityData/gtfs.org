@@ -23,7 +23,7 @@ Tout d'abord, l'emplacement de la station et ses entrées sont définis dans [st
     93,Waterfront Station Entrance on Cordova,49.285607,-123.111993,2,12034,1
     94,Waterfront Station Entrance on Howe,49.286898,-123.113367,2,12034,2
 
-Dans le fichier ci-dessus, le premier enregistrement concerne l'emplacement de la station, d'où la valeur `1` dans le paramètre `location_type`. Les cinq autres enregistrements concernent les trois entrées de la station (cinq enregistrements sont nécessaires car l'entrée Granville comporte en fait trois entrées distinctes, un escalier, un escalier mécanique et un ascenseur). Ces cinq enregistrements sont définis comme des entrées puisque le `location_type` est défini sur `3`.
+Dans le fichier ci-dessus, le premier enregistrement concerne l'emplacement de la station, d'où la valeur `1` dans le paramètre `location_type`. Les cinq autres enregistrements concernent les trois entrées de la station (cinq enregistrements sont nécessaires car l'entrée Granville comporte en fait trois entrées distinctes, un escalier, un escalier mécanique et un ascenseur). Ces cinq enregistrements sont définis comme des entrées puisque le `location_type` est défini sur `2`.
 
 En outre, le `stop_id` de la station Waterfront est indiqué sous `parent_station` pour les entrées afin de les associer à la station. Les entrées accessibles ont la valeur `1` pour le paramètre `wheelchair_boarding` et la valeur `2` pour les entrées non accessibles.
 

@@ -23,7 +23,7 @@ Pertama, lokasi stasiun dan pintu masuknya ditentukan [stops.txt](../../referenc
     93,Waterfront Station Entrance on Cordova,49.285607,-123.111993,2,12034,1
     94,Waterfront Station Entrance on Howe,49.286898,-123.113367,2,12034,2
 
-Pada file di atas, record pertama berkaitan dengan lokasi stasiun, oleh karena itu, `location_type` diatur ke `1` . Lima lainnya berkaitan dengan tiga pintu masuk stasiun (lima catatan diperlukan karena pintu masuk Granville sebenarnya memiliki tiga pintu masuk terpisah, tangga, eskalator, dan lift). Kelima catatan ini didefinisikan sebagai pintu masuk karena `location_type` diatur ke `3` .
+Pada file di atas, record pertama berkaitan dengan lokasi stasiun, oleh karena itu, `location_type` diatur ke `1` . Lima lainnya berkaitan dengan tiga pintu masuk stasiun (lima catatan diperlukan karena pintu masuk Granville sebenarnya memiliki tiga pintu masuk terpisah, tangga, eskalator, dan lift). Kelima catatan ini didefinisikan sebagai pintu masuk karena `location_type` diatur ke `2` .
 
 Selain itu,stop_id untuk Stasiun Waterfront terdaftar di bawah `parent_station` untuk pintu masuk yang menghubungkannya dengan stasiun. Pintu masuk yang dapat diakses memiliki `wheelchair_boarding` yang disetel ke `1` dan yang tidak dapat diakses disetel ke `2` .
 

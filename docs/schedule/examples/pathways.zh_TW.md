@@ -23,7 +23,7 @@ search:
     93,Waterfront Station Entrance on Cordova,49.285607,-123.111993,2,12034,1
     94,Waterfront Station Entrance on Howe,49.286898,-123.113367,2,12034,2
 
-在上面的文件中，第一條記錄與站點位置有關，因此`location_type`設置為`1` 。其他五個與三個車站入口有關（需要五個記錄，因為 Granville 入口實際上有三個獨立的入口、一個樓梯、一個自動扶梯和一個電梯）。這五個記錄被定義為入口，因為`location_type`設置為`3` 。
+在上面的文件中，第一條記錄與站點位置有關，因此`location_type`設置為`1` 。其他五個與三個車站入口有關（需要五個記錄，因為 Granville 入口實際上有三個獨立的入口、一個樓梯、一個自動扶梯和一個電梯）。這五個記錄被定義為入口，因為`location_type`設置為`2` 。
 
 此外，`stop_id` Waterfront Station 的入口列在`parent_station`下，以便將它們與車站相關聯。無障礙入口的`wheelchair_boarding`設置為`1` ，不可訪問的入口設置為`2` 。
 
