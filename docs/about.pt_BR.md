@@ -33,7 +33,7 @@ Para propor edições ao conteúdo, navegue até a página que você deseja alte
 
 **Contribuição de traduções**
 
-GTFS.org utiliza [o Simpleen](https://simpleen.io/), uma ferramenta de tradução automática de aprendizagem automática, para assegurar que as traduções sejam mantidas atualizadas com as mudanças de repositório. Uma vez que nossa prioridade é manter as traduções atualizadas, não aceitamos reescrever uma única vez.
+GTFS.org utiliza [o Simpleen](https://simpleen.io/), uma ferramenta de tradução automática de aprendizagem automática, para assegurar que as traduções sejam mantidas atualizadas com as mudanças de repositório. Uma vez que nossa prioridade é manter as traduções atualizadas, qualquer contribuição de tradução única será sobregravada pela Simpleen no futuro.
 
 Aceitamos mudanças no glossário. Simpleen utiliza um glossário para termos chave que são comumente utilizados em todo o GTFS.org, como viagem ou estação. Se você quiser sugerir uma tradução para um termo-chave que deve ser aplicado em todo o site, você pode [criar um problema no repositório do GTFS.](https://github.com/MobilityData/gtfs.org/issues/new/choose)org.
 

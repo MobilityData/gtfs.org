@@ -33,7 +33,7 @@ GTFS .org는 다음을 위한 중앙 문서 플랫폼입니다.General Transit F
 
 **번역 기여**
 
-GTFS.org는 자동화된 기계 학습 번역 도구인 [Simpleen을](https://simpleen.io/) 사용하여 저장소 변경 사항에 따라 번역이 최신 상태로 유지되도록 합니다. 우리의 우선 순위는 번역을 최신 상태로 유지하는 것이므로 일회성 재작성은 허용하지 않습니다.
+GTFS.org는 자동화된 기계 학습 번역 도구인 [Simpleen을](https://simpleen.io/) 사용하여 저장소 변경 사항에 따라 번역이 최신 상태로 유지되도록 합니다. 우리의 우선 순위는 번역을 최신 상태로 유지하는 것이므로 앞으로 Simpleen이 일회성 번역 기여를 덮어씁니다.
 
 우리는 용어집 변경을 허용합니다. Simpleen은 여행이나 역과 같이 GTFS.org에서 일반적으로 사용되는 주요 용어에 대해 용어집을 사용합니다. 전체 사이트에 적용해야 하는 핵심 용어에 대한 번역을 제안하려는 경우 [GTFS.org 저장소에서 문제를 생성](https://github.com/MobilityData/gtfs.org/issues/new/choose) 할 수 있습니다.
 

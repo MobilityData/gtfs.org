@@ -33,7 +33,7 @@ Um Änderungen am Inhalt vorzuschlagen, navigieren Sie zu der Seite, die Sie auf
 
 **Übersetzungen beisteuern**
 
-GTFS.org verwendet [Simpleen](https://simpleen.io/), ein automatisches Übersetzungsprogramm mit maschinellem Lernen, um sicherzustellen, dass die Übersetzungen mit den Änderungen im Repository Schritt halten. Da es unsere Priorität ist, die Übersetzungen auf dem neuesten Stand zu halten, akzeptieren wir keine einmaligen Umschreibungen.
+GTFS.org verwendet [Simpleen](https://simpleen.io/), ein automatisches Übersetzungsprogramm mit maschinellem Lernen, um sicherzustellen, dass die Übersetzungen mit den Änderungen im Repository Schritt halten. Da unsere Priorität darin besteht, die Übersetzungen auf dem neuesten Stand zu halten, werden alle einmaligen Übersetzungsbeiträge in Zukunft von Simpleen überschrieben.
 
 Wir akzeptieren jedoch Änderungen am Glossar. Simpleen verwendet ein Glossar für Schlüsselbegriffe, die in GTFS.org häufig verwendet werden, wie z.B. Reise oder Bahnhof. Wenn Sie eine Übersetzung für einen Schlüsselbegriff vorschlagen möchten, die für die gesamte Website gelten soll, können Sie [einen Eintrag im GTFS.org-Repository erstellen](https://github.com/MobilityData/gtfs.org/issues/new/choose).
 

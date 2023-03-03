@@ -33,7 +33,7 @@ Untuk mengusulkan pengeditan konten, buka halaman yang ingin Anda ubah di [GTFS.
 
 **Menyumbangkan terjemahan**
 
-GTFS.org menggunakan [Simpleen](https://simpleen.io/) , alat terjemahan pembelajaran mesin otomatis, untuk memastikan terjemahan selalu diperbarui dengan perubahan repositori. Karena prioritas kami adalah menjaga terjemahan tetap mutakhir, kami tidak menerima satu kali penulisan ulang.
+GTFS.org menggunakan [Simpleen](https://simpleen.io/) , alat terjemahan pembelajaran mesin otomatis, untuk memastikan terjemahan selalu diperbarui dengan perubahan repositori. Karena prioritas kami adalah menjaga terjemahan tetap mutakhir, setiap kontribusi terjemahan satu kali akan ditimpa oleh Simpleen di masa mendatang.
 
 Kami menerima perubahan glosarium. Simpleen menggunakan glosarium untuk istilah kunci yang umum digunakan di GTFS.org, seperti perjalanan atau stasiun. Jika ingin menyarankan terjemahan untuk istilah kunci yang harus diterapkan di seluruh situs, Anda dapat [membuat masalah di repositori GTFS.org](https://github.com/MobilityData/gtfs.org/issues/new/choose) .
 
