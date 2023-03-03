@@ -44,7 +44,7 @@ Calgary Transit 在AB省卡尔加里市经营轻轨、快速公交、普通公�
 
     stop_id,stop_code,stop_name,stop_lat,stop_lon,location_type
     8157,8157,44th Avenue NE (SB),51.091106,-113.958565,0
-    6810,6810,NB Marlborough CTrain Station,51.058990,-113.981582,0
+    6810,6810,NB Marlborough CTrain Station,51.058990,-113.981582,1
 
 - `stop_id`是一个唯一的标识符
 - `stop_code`和`stop_name`通常包含面向乘客的信息

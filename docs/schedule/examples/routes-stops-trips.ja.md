@@ -44,7 +44,7 @@ GTFSでは、[stops.txt](../../reference/#stopstxt)というファイルを使�
 
     stop_id,stop_code,stop_name,stop_lat,stop_lon,location_type
     8157,8157,44th Avenue NE (SB),51.091106,-113.958565,0
-    6810,6810,NB Marlborough CTrain Station,51.058990,-113.981582,0
+    6810,6810,NB Marlborough CTrain Station,51.058990,-113.981582,1
 
 - `stop_id`は一意な識別子である．
 - `stop_code` `stop_name`、とは通常、ライダー向けの情報を含みます。

@@ -44,7 +44,7 @@ Calgary Transit 在艾伯塔省卡爾加里經營 LRT、BRT、定期巴士服務
 
     stop_id,stop_code,stop_name,stop_lat,stop_lon,location_type
     8157,8157,44th Avenue NE (SB),51.091106,-113.958565,0
-    6810,6810,NB Marlborough CTrain Station,51.058990,-113.981582,0
+    6810,6810,NB Marlborough CTrain Station,51.058990,-113.981582,1
 
 - `stop_id`是唯一標識符
 - `stop_code`和`stop_name`通常包含面向騎手的信息
