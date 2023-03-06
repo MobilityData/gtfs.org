@@ -32,7 +32,7 @@ Los productores pueden implementar Fares v2 en el mismo conjunto de datos que Fa
 
 La propuesta de fare media (antes fare containers) ha sido sometida a votación.
 
-[Vota en el pull request de GitHub antes del 23 de febrero a las 23:00 UTC.](https://github.com/google/transit/pull/355#issuecomment-1430617967)
+[Vota en el pull request de GitHub antes del 13 de marzo a las 23:59:59 UTC.](https://github.com/google/transit/pull/355#issuecomment-1456392466)
 
 <a class="button no-icon" href="https://share.mobilitydata.org/slack" target="_blank">Únase a #gtfs-fares en Slack</a><a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">Vea el calendario de reuniones</a><a  class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">Vea las notas de la reunión</a>.
 
@@ -45,10 +45,10 @@ En el caso de la implementación básica adoptada, los primeros en adoptarla fue
 - Productores: [Interline](https://www.interline.io/), [Maryland Department of Transportation](https://www.mta.maryland.gov/developer-resources), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - Consumidores: [Transit](https://transitapp.com/)
 
-Para la función de contenedores de tarifas actualmente en discusión, los primeros en adoptarla son
+Para la función de fare media actualmente en discusión, los primeros en adoptarla son
 
-- Productores: [Interline](https://www.interline.io/)
-- Consumidores: [Apple](https://www.apple.com/), [Transit](https://transitapp.com/)
+- Productores: [Interline](https://www.interline.io/), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
+- Consumidores: [Apple](https://www.apple.com/)
 
 <a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">Vea quién utiliza los archivos y campos de Fares v2</a>
 

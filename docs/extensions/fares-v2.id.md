@@ -30,7 +30,7 @@ Produsen dapat mengimplementasikan Fares v2 dalam kumpulan data yang sama dengan
 
 Proposal media tarif (sebelumnya wadah tarif) telah dipanggil untuk pemungutan suara!
 
-[Berikan suara pada pull request GitHub sebelum 23 Februari pukul 23:00 UTC.](https://github.com/google/transit/pull/355#issuecomment-1430617967)
+[Berikan suara pada pull request GitHub sebelum 13 Berbaris pukul 23:59:59 UTC.](https://github.com/google/transit/pull/355#issuecomment-1456392466)
 
 <a class="button no-icon" href="https://share.mobilitydata.org/slack" target="_blank">Bergabunglah dengan #gtfs-fares di Slack</a> <a class="button no-icon" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057" target="_blank">Lihat jadwal</a> <a class="button no-icon" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit" target="_blank">rapat Lihat catatan rapat</a>
 
@@ -43,10 +43,10 @@ Untuk implementasi dasar yang diadopsi, pengadopsi pertama adalah
 - Produser: [Interline](https://www.interline.io/) , [Maryland Department of Transportation](https://www.mta.maryland.gov/developer-resources) , [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - Konsumen: [Transit](https://transitapp.com/)
 
-Untuk fitur kontainer tarif yang saat ini sedang dibahas, pengadopsi pertama adalah
+Untuk fitur fare media yang saat ini sedang dibahas, pengadopsi pertama adalah
 
-- Produser: [Interline](https://www.interline.io/)
-- Konsumen: [Apple](https://www.apple.com/) , [Transit](https://transitapp.com/)
+- Produser: [Interline](https://www.interline.io/), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
+- Konsumen: [Apple](https://www.apple.com/)
 
 <a class="button no-icon" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing" target="_blank">Lihat siapa yang menggunakan file dan bidang Fares v2</a>
 

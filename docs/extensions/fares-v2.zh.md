@@ -32,7 +32,7 @@ Fares v2计划体现的主要概念是
 
 票价媒体（以前的票价容器）提案已被要求进行表决
 
-[在2月23日11:00 UTC之前，请在GitHub拉动请求中投票。](https://github.com/google/transit/pull/355#issuecomment-1430617967)
+[在3月13日23:59:59 UTC之前，请在GitHub拉动请求中投票。](https://github.com/google/transit/pull/355#issuecomment-1456392466)
 
 <a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">在Slack上加入#gtfs-fares查看</a><a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">会议时间表查看</a><a class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">会议记录</a>
 
@@ -45,10 +45,10 @@ Fares v2计划体现的主要概念是
 - 生产者。[Interline](https://www.interline.io/)、[Maryland Department of Transportation](https://www.mta.maryland.gov/developer-resources)、[Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - 消费者。[Transit](https://transitapp.com/)
 
-对于目前正在讨论的票价容器功能，首先采用者是
+对于目前正在讨论fare media功能，首先采用者是
 
-- 生产者。[Interline](https://www.interline.io/)
-- 消费者。[Apple](https://www.apple.com/)、[Transit](https://transitapp.com/)
+- 生产者。[Interline](https://www.interline.io/), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
+- 消费者。[Apple](https://www.apple.com/)
 
 <a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">查看谁在使用Fares v2文件和字段</a>
 
