@@ -30,12 +30,9 @@ Os produtores podem implementar Fares v2 no mesmo conjunto de dados com Fares v1
 
 ## Fares em andamento v2 Trabalho
 
-A comunidade GTFS está atualmente trabalhando na finalização da proposta de [contêineres tarifários](https://share.mobilitydata.org/fare-containers-to-fare-payment-types-proposal).
+A proposta da mídia de tarifas (anteriormente contêineres tarifários) foi chamada para votação!
 
-Os itens atualmente em discussão incluem:
-
-- Criação de um arquivo de contêineres tarifários
-- Alinhamento sobre que tipos devem ser incluídos na enumeração de opções de contêineres tarifários
+[Votar no pedido de retirada do GitHub antes de 13 de março 23:59:59 UTC.](https://github.com/google/transit/pull/355#issuecomment-1456392466)
 
 <a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">Junte-se à #gtfs-fares no Slack</a><a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">See a programação da reunião</a><a class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">Veja as notas da reunião</a>
 
@@ -48,10 +45,10 @@ Para a implementação da base adotada, os primeiros adotantes foram
 - Produtores: [Interline](https://www.interline.io/), [Maryland Department of Transportation](https://www.mta.maryland.gov/developer-resources), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - Consumidor: [Transit](https://transitapp.com/)
 
-Para os contêineres tarifários atualmente em discussão, os primeiros adotantes são
+Para os fare media atualmente em discussão, os primeiros adotantes são
 
-- Produtor: [Interline](https://www.interline.io/)
-- Consumidor: [Apple](https://www.apple.com/), [Transit](https://transitapp.com/)
+- Produtor: [Interline](https://www.interline.io/), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
+- Consumidor: [Apple](https://www.apple.com/)
 
 <a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">Veja quem está usando os arquivos e campos do Fares v2</a>
 

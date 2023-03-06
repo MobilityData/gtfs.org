@@ -30,12 +30,9 @@ Les producteurs peuvent mettre en œuvre Fares v2 dans le même ensemble de donn
 
 ## Travail en cours sur Fares v2
 
-La communauté GTFS travaille actuellement à la finalisation de la proposition de [conteneurs tarifaires](https://share.mobilitydata.org/fare-containers-to-fare-payment-types-proposal).
+La proposition fare media (anciennement fare containers) a été appelée à un vote !
 
-Les points actuellement en discussion incluent :
-
-- La création d'un fichier de conteneurs tarifaires
-- Alignement sur les types qui devraient être inclus dans l'énumération des options de conteneurs tarifaires.
+[Votez dans la demande de retrait GitHub avant le 13 mars 23:59:59 UTC.](https://github.com/google/transit/pull/355#issuecomment-1456392466)
 
 <a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">Rejoignez #gtfs-fares sur Slack</a> 
 <a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">Voir le programme des réunions</a>
@@ -50,10 +47,10 @@ Pour l'implémentation de base adoptée, les premiers adoptants étaient
 - Producteurs : [Interline](https://www.interline.io/), [Maryland Department of Transportation](https://www.mta.maryland.gov/developer-resources), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - Consommateur : [Transit](https://transitapp.com/)
 
-Pour la fonctionnalité de conteneurs tarifaires actuellement en discussion, les premiers adoptants sont
+Pour la fonctionnalité de fare media actuellement en discussion, les premiers adoptants sont
 
-- Producteur : [Interline](https://www.interline.io/)
-- Consommateur : [Apple](https://www.apple.com/), [Transit](https://transitapp.com/)
+- Producteur : [Interline](https://www.interline.io/), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
+- Consommateur : [Apple](https://www.apple.com/)
 
 <a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">Voir qui utilise les fichiers et les champs de Fares v2</a>
 

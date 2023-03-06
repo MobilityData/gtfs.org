@@ -30,12 +30,9 @@ Fares v2 - это проект расширения расписания GTFS, �
 
 ## Текущая работа над Fares v2
 
-В настоящее время сообщество GTFS работает над окончательной доработкой предложения по [тарифным контейнерам](https://share.mobilitydata.org/fare-containers-to-fare-payment-types-proposal).
+Предложение по fare media (ранее fare containers) было вынесено на голосование!
 
-В настоящее время обсуждаются следующие вопросы:
-
-- Создание файла контейнеров тарифов
-- Согласование того, какие типы должны быть включены в перечисление вариантов контейнеров для оплаты проезда.
+[Проголосуйте в GitHub pull request до 13 март 23:59:59 UTC.](https://github.com/google/transit/pull/355#issuecomment-1456392466)
 
 <a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">Присоединяйтесь к #gtfs-fares на Slack</a><a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">Смотрите расписание встречСмотрите</a><a class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">записи встреч</a>
 
@@ -48,10 +45,10 @@ Fares v2 - это проект расширения расписания GTFS, �
 - Продюсеры: [Interline](https://www.interline.io/), [Maryland Department of Transportation](https://www.mta.maryland.gov/developer-resources), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - Потребители: [Тransit](https://transitapp.com/)
 
-Для функции контейнеров для оплаты проезда, которая в настоящее время обсуждается, первыми последователями были
+Для функции fare media, которая в настоящее время обсуждается, первыми последователями были
 
-- Производитель: [Interline](https://www.interline.io/)
-- Потребитель: [Apple](https://www.apple.com/), [Transit](https://transitapp.com/)
+- Производитель: [Interline](https://www.interline.io/), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
+- Потребитель: [Apple](https://www.apple.com/)
 
 <a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">Посмотрите, кто использует файлы и поля Fares v2</a>
 

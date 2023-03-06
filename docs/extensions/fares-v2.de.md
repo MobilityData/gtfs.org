@@ -30,12 +30,9 @@ Hersteller können Tarif v2 im gleichen Datensatz wie Tarif v1 implementieren, d
 
 ## Laufende Arbeiten zu Fares v2
 
-Die GTFS-Gemeinschaft arbeitet derzeit an der Fertigstellung des Vorschlags für [Tarifcontainer](https://share.mobilitydata.org/fare-containers-to-fare-payment-types-proposal).
+Der Vorschlag für Tarifmedien (früher Tarifcontainer) wurde zur Abstimmung aufgerufen!
 
-Folgende Punkte werden derzeit diskutiert:
-
-- Erstellung einer Tarif-Container-Datei
-- Abstimmung darüber, welche Typen in die Aufzählung der Tarifcontainer-Optionen aufgenommen werden sollen
+[Stimmt im GitHub Pull Request vor dem 13. März 23:59:59 UTC ab.](https://github.com/google/transit/pull/355#issuecomment-1456392466)
 
 <a class="button no-icon" href="https://share.mobilitydata.org/slack" target="_blank">Treten Sie #gtfs-fares auf Slack bei</a><a class="button no-icon" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057" target="_blank">Siehe den Sitzungsplan</a><a class="button no-icon" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit" target="_blank">Siehe Sitzungsnotizen</a>
 
@@ -48,7 +45,7 @@ Bei der angenommenen Basisimplementierung waren die Erstanwender
 - Produzenten: [Interline](https://www.interline.io/), [Maryland Department of Transportation](https://www.mta.maryland.gov/developer-resources), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - Verbraucher: [Transit](https://transitapp.com/)
 
-Für die derzeit diskutierte Funktion der Fahrpreiscontainer sind die Erstanwender
+Für die derzeit diskutierte Funktion der fare media sind die Erstanwender
 
 - Produzent: [Interline](https://www.interline.io/)
 - Verbraucher: [Apple](https://www.apple.com/), [Transit](https://transitapp.com/)
