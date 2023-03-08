@@ -7,7 +7,7 @@ search:
 
 <hr/>
 
-Fares V2 é um projeto de extensão GTFS que tem como objetivo abordar as limitações dos Fares V1. Este projeto de extensão está sendo adotado em iterações, e os exemplos abaixo mostram o que pode ser modelado usando a parte das Fares V2 que foi adotada na especificação oficial. Veja mais informações sobre o projeto de extensão das Fares V2 na seção [Extensões](../../../extensions).
+Fares V2 é um projeto de extensão GTFS que tem como objetivo abordar as limitações dos Fares V1. Este projeto de extensão está sendo adotado em iterações, e os exemplos abaixo mostram o que pode ser modelado usando a parte das Fares V2 que foi adotada na especificação oficial. Veja mais informações sobre o projeto de [extensão das Fares V2](../../../extensions/fares-v2).
 
 Entretanto, os produtores podem implementar Fares V2 juntamente com a implementação das Fares V1 no mesmo conjunto de dados, pois não existe nenhum conflito técnico entre os dois. Com a adoção e aprovação suficiente das Fares V2, Fares V1 poderão ser depreciadas no futuro.
 

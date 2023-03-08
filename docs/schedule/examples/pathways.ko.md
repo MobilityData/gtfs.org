@@ -23,7 +23,7 @@ search:
     93,Waterfront Station Entrance on Cordova,49.285607,-123.111993,2,12034,1
     94,Waterfront Station Entrance on Howe,49.286898,-123.113367,2,12034,2
 
-위의 파일에서 첫 번째 레코드는 스테이션 위치와 관련되므로 `location_type` 이 `1` 로 설정됩니다. 나머지 5개는 3개의 역 입구와 관련이 있습니다(Granville 입구에는 실제로 3개의 개별 입구, 계단, 에스컬레이터 및 엘리베이터가 있으므로 5개의 레코드가 필요함). 이 5개의 레코드는 `location_type` 이 `3` 으로 설정되어 있으므로 입구로 정의됩니다.
+위의 파일에서 첫 번째 레코드는 스테이션 위치와 관련되므로 `location_type` 이 `1` 로 설정됩니다. 나머지 5개는 3개의 역 입구와 관련이 있습니다(Granville 입구에는 실제로 3개의 개별 입구, 계단, 에스컬레이터 및 엘리베이터가 있으므로 5개의 레코드가 필요함). 이 5개의 레코드는 `location_type` 이 `2` 으로 설정되어 있으므로 입구로 정의됩니다.
 
 또한,`stop_id` for Waterfront Station은 역과 연결하기 위한 입구의 `parent_station` 아래에 나열됩니다. 접근 가능한 입구는 `wheelchair_boarding` 이 `1` 로 설정되어 있고 접근 불가능한 입구는 `2` 로 설정되어 있습니다.
 

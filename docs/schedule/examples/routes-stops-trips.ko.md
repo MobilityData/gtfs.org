@@ -44,7 +44,7 @@ Calgary Transit은 AB 캘거리에서 LRT, BRT, 일반 버스 서비스, 보조 
 
     stop_id,stop_code,stop_name,stop_lat,stop_lon,location_type
     8157,8157,44th Avenue NE (SB),51.091106,-113.958565,0
-    6810,6810,NB Marlborough CTrain Station,51.058990,-113.981582,0
+    6810,6810,NB Marlborough CTrain Station,51.058990,-113.981582,1
 
 - `stop_id` 고유 식별자입니다.
 - `stop_code` 및 `stop_name` 은 일반적으로 라이더 쪽 정보를 포함합니다.

@@ -7,7 +7,7 @@ search:
 
 <hr/>
 
-Fares V2 ist ein GTFS, das darauf abzielt, die Einschränkungen von Fares V1 zu beseitigen. Dieses Erweiterungsprojekt wird in Iterationen angenommen, und die folgenden Beispiele zeigen, was mit dem Teil von Fares V2, der in die offizielle Spezifikation aufgenommen wurde, modelliert werden kann. Weitere Informationen über das Fares V2 Erweiterungsprojekt finden Sie im Abschnitt [Erweiterungen](../../../extensions).
+Fares V2 ist ein GTFS, das darauf abzielt, die Einschränkungen von Fares V1 zu beseitigen. Dieses Erweiterungsprojekt wird in Iterationen angenommen, und die folgenden Beispiele zeigen, was mit dem Teil von Fares V2, der in die offizielle Spezifikation aufgenommen wurde, modelliert werden kann. Weitere Informationen über das [Fares V2 Erweiterungsprojekt](../../../extensions/fares-v2).
 
 In der Zwischenzeit können die Hersteller Fares V2 neben Fares V1 im selben Datensatz implementieren, da es keinen technischen Konflikt zwischen den beiden gibt. Die Verbraucher haben die Wahl, welche Implementierung sie unabhängig von der anderen konsumieren möchten. Wenn Fares V2 angenommen und ausreichend unterstützt wird, kann Fares V1 in Zukunft veraltet sein.
 

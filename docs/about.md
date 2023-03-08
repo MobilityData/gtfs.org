@@ -28,7 +28,7 @@ To propose edits to the content, navigate to the page you want to change on [GTF
 
 **Contributing translations**
 
-GTFS.org uses [Simpleen](https://simpleen.io/), an automated machine learning translation tool, to ensure translations are kept up to date with repository changes. Since our priority is to keep translations up-to-date, we do not accept one time rewrites.
+GTFS.org uses [Simpleen](https://simpleen.io/), an automated machine learning translation tool, to ensure translations are kept up to date with repository changes. Since our priority is to keep translations up-to-date, any one-time translation contributions will be overwritten by Simpleen in the future.
 
 We do accept glossary changes. Simpleen uses a glossary for key terms that are commonly used across GTFS.org, like trip or station. If you want to suggest a translation for a key term that should be applied across the entire site, you can [create an issue on the GTFS.org repository](https://github.com/MobilityData/gtfs.org/issues/new/choose).
 

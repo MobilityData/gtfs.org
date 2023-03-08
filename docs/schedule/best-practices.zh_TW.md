@@ -46,12 +46,12 @@ search:
 
 ### agency.txt
 
-| 字段名称              | 推荐                                                                                                              |
-| ----------------- | --------------------------------------------------------------------------------------------------------------- |
-| `agency_id`       | 应包括在内，即使提要中只有一个机构。 （另见建议包括`agency_id`在[`routes.txt`](#routestxt)和[`fare_attributes.txt`](#fare_attributestxt) ) |
-| `agency_phone`    | 除非不存在此类客户服务电话，否则应包括在内。                                                                                          |
-| `agency_email`    | 除非不存在此类客户服务电子邮件，否则应包括在内。                                                                                        |
-| `agency_fare_url` | 除非该机构完全免费，否则应包括在内。                                                                                              |
+| 字段名称              | 推荐                                                                                                             |
+| ----------------- | -------------------------------------------------------------------------------------------------------------- |
+| `agency_id`       | 应包括在内，即使提要中只有一个机构。 （另见建议包括`agency_id`在[`routes.txt`](#routestxt)和[`fare_attributes.txt`](#fare_attributestxt)) |
+| `agency_phone`    | 除非不存在此类客户服务电话，否则应包括在内。                                                                                         |
+| `agency_email`    | 除非不存在此类客户服务电子邮件，否则应包括在内。                                                                                       |
+| `agency_fare_url` | 除非该机构完全免费，否则应包括在内。                                                                                             |
 
 __例子：__
 
@@ -74,10 +74,11 @@ __例子：__
 
 ### routes.txt
 
-|字段名稱 |推薦 |
-| --- | --- |
+|字段名稱 | 推薦                                                                                                             |
+| --- |----------------------------------------------------------------------------------------------------------------|
+|`agency_id` | 應該包括在內，即使 Feed 中只有一家機構。 （另見建議包括`agency_id`在[`agency.txt`](#agencytxt)和[`fare_attributes.txt`](#fare_attributes.txt)) |
 | `route_short_name` |如果有簡短的服務名稱，請包括 `route_short_name`。這應該是服務的常用乘客姓名，不超過 12 個字符。 |
-| `route_long_name` |來自規範參考的定義：<q>此名稱通常比 <code>route_short_name</code> 更具描述性，並且通常包括路線的目的地或停靠點。必須至少指定 <code>route_short_name</code> 或 <code>route_long_name</code> 之一，或者如果合適，可能同時指定兩者。如果路由沒有長名，請指定一個<code>route_short_name</code>並使用空字符串作為該字段的值。</q><br>長名類型示例如下：<table class='example'><thead><tr><th colspan='3'>主要行進路徑或走廊</th></tr><tr><th>路線名稱</th><th>表格</th><th>機構</th></tr></thead><tbody><tr><td><a href='https://www.sfmta.com/getting-around/transit/ routes-stops/n-judah'>“N”/“Judah”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td ><td><a href='https://www.sfmta.com/'>Muni</a>，舊金山</td></tr><tr><td><a href='https ://trimet.org/schedules/r006.htm'>“6”/“ML King Jr Blvd”</a></td><td><code>route_short_name</code>/<br><code> route_long_name</code></td><td><a href='https://trimet.org/'>TriMet</a>，俄勒岡州波特蘭市。</td></tr><tr><td><a href='http://www.ratp.fr/informer/pdf/orienter/f_plan.php?nompdf=m6'>“6”/“Nation - Étoile”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</c ode></td><td><a href='http://www.ratp.fr/'>RATP</a>，在法國巴黎。</td></tr><tr><td> <a href='http://www.bvg.de/images/content/linienverlaeufe/LinienverlaufU2.pdf'>“U2”-“Pankow – Ruhleben”</a></td><td><code>route_short_name </code>-<br><code>route_long_name</code></td><td><a href='http://www.bvg.de/'>BVG</a>，德國柏林</td></tr></tbody></table><table class='example'><thead><tr><th>服務說明</th></tr></thead><tbody><tr><td><a href='https://128bc.org/schedules/rev-bus-hartwell-area/'>“哈特韋爾地區班車”</a></td></tr> </tbody></table>   
+| `route_long_name` |來自規範參考的定義：<q>此名稱通常比 <code>route_short_name</code> 更具描述性，並且通常包括路線的目的地或停靠點。必須至少指定 <code>route_short_name</code> 或 <code>route_long_name</code> 之一，或者如果合適，可能同時指定兩者。如果路由沒有長名，請指定一個<code>route_short_name</code>並使用空字符串作為該字段的值。</q><br>長名類型示例如下：<table class='example'><thead><tr><th colspan='3'>主要行進路徑或走廊</th></tr><tr><th>路線名稱</th><th>表格</th><th>機構</th></tr></thead><tbody><tr><td><a href='https://www.sfmta.com/getting-around/transit/ routes-stops/n-judah'>“N”/“Judah”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</code></td ><td><a href='https://www.sfmta.com/'>Muni</a>，舊金山</td></tr><tr><td><a href='https ://trimet.org/schedules/r006.htm'>“6”/“ML King Jr Blvd”</a></td><td><code>route_short_name</code>/<br><code> route_long_name</code></td><td><a href='https://trimet.org/'>TriMet</a>，俄勒岡州波特蘭市。</td></tr><tr><td><a href='http://www.ratp.fr/informer/pdf/orienter/f_plan.php?nompdf=m6'>“6”/“Nation - Étoile”</a></td><td><code>route_short_name</code>/<br><code>route_long_name</c ode></td><td><a href='http://www.ratp.fr/'>RATP</a>，在法國巴黎。</td></tr><tr><td> <a href='http://www.bvg.de/images/content/linienverlaeufe/LinienverlaufU2.pdf'>“U2”-“Pankow – Ruhleben”</a></td><td><code>route_short_name </code>-<br><code>route_long_name</code></td><td><a href='http://www.bvg.de/'>BVG</a>，德國柏林</td></tr></tbody></table><table class='example'><thead><tr><th>服務說明</th></tr></thead><tbody><tr><td><a href='https://128bc.org/schedules/rev-bus-hartwell-area/'>“哈特韋爾地區班車”</a></td></tr> </tbody></table>  
 | | `route_long_name` 不應包含 `route_short_name`。 |
 | |在填充 `route_long_name` 時包括完整的名稱，包括服務標識。示例：<table class='example'><thead><tr><th>服務標識</th><th>推薦</th><th>示例</th></tr></thead><tbody><tr><td>“MAX 輕軌”<br>俄勒岡州波特蘭市的 TriMet</td><td><code>route_long_name</code> 應包括品牌 (MAX) 和具體路線名稱</td><td>“MAX 紅線”“MAX 藍線”</td></tr><tr><td>“快速騎行”<br>新墨西哥州阿爾伯克基的 ABQ 騎行</td> <td><code>route_long_name</code> 應包含品牌（Rapid Ride）和具體路線名稱</td><td>“Rapid Ride Red Line”<br>“Rapid Ride Blue Line”</td ></tr></tbody></table>
 | `route_id` |給定命名路線上的所有行程都應引用相同的“route_id”。 <li>不應將路線的不同方向劃分為不同的 `route_id` 值。</li><li>不應將路線的不同運營跨度劃分為不同的 `route_id` 值。即不要在 `routes.txt` 中為“Downtown AM”和“Downtown PM”服務創建不同的記錄）。</li> |
@@ -125,11 +126,11 @@ __例子：__
 
 ### fare_attributes.txt
 
-|字段名稱 |推薦 |
-| --- | --- |
-|所有領域 |如果該字段包含在 `agency.txt` 中，則 `agency_id` 應包含在 `fare_attributes.txt` 中。 |
-| |如果票價系統無法準確建模，請避免進一步混淆並將其留空。 |
-| |包括票價（`fare_attributes.txt` 和 `fare_rules.txt`）並儘可能準確地對其建模。在票價無法準確建模的極端情況下，票價應表示為更貴而不是更便宜，這樣客戶就不會試圖以不足的票價登機。如果絕大多數票價無法正確建模，請不要在提要中包含票價信息。 |
+|字段名稱 | 推薦                                                                                                                                      |
+| --- |-----------------------------------------------------------------------------------------------------------------------------------------|
+|`agency_id` | 應該包括在內，即使 Feed 中只有一家機構。 （另見建議包括`agency_id`在[`agency.txt`](#agencytxt)和[`routes.txt`](#routestxt))                                            |
+| | 如果票價系統無法準確建模，請避免進一步混淆並將其留空。                                                                                                             |
+| | 包括票價（`fare_attributes.txt` 和 `fare_rules.txt`）並儘可能準確地對其建模。在票價無法準確建模的極端情況下，票價應表示為更貴而不是更便宜，這樣客戶就不會試圖以不足的票價登機。如果絕大多數票價無法正確建模，請不要在提要中包含票價信息。 |
 
 ### fare_rules.txt
 

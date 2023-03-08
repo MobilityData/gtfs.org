@@ -33,7 +33,7 @@ GTFS.org是General Transit Feed Specification的中央文件平台。该网站�
 
 **贡献翻译**
 
-GTFS.org使用[Simpleen](https://simpleen.io/)，一个自动机器学习的翻译工具，以确保译文保持与版本库变化同步。由于我们的首要任务是保持翻译的最新性，我们不接受一次性的重写。
+GTFS.org使用[Simpleen](https://simpleen.io/)，一个自动机器学习的翻译工具，以确保译文保持与版本库变化同步。由于我们的首要任务是保持翻译的及时性，任何一次性的翻译贡献都会在将来被Simpleen所覆盖。
 
 我们接受词汇表的修改。Simpleen对GTFS.org上常用的关键术语使用词汇表，如行程或车站。如果您想为某个关键术语提出翻译建议，并在整个网站上应用，您可以[在GTFS.org资源库中创建一个问题](https://github.com/MobilityData/gtfs.org/issues/new/choose)。
 

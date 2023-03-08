@@ -44,7 +44,7 @@ En GTFS, las paradas y las estaciones se describen utilizando el archivo [stops.
 
     stop_id,stop_code,stop_name,stop_lat,stop_lon,location_type
     8157,8157,44th Avenue NE (SB),51.091106,-113.958565,0
-    6810,6810,NB Marlborough CTrain Station,51.058990,-113.981582,0
+    6810,6810,NB Marlborough CTrain Station,51.058990,-113.981582,1
 
 - `stop_id` es un identificador único
 - `stop_code` y `stop_name` suelen contener información orientada al usuario

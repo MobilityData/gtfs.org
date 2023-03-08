@@ -23,7 +23,7 @@ Zunächst werden die Lage des Bahnhofs und seine Eingänge in [stops.txt](../../
     93,Waterfront Station Entrance on Cordova,49.285607,-123.111993,2,12034,1
     94,Waterfront Station Entrance on Howe,49.286898,-123.113367,2,12034,2
 
-In der obigen Datei bezieht sich der erste Datensatz auf den Standort des Bahnhofs, daher ist der `location_type` auf `1` gesetzt. Die anderen fünf Datensätze beziehen sich auf die drei Eingänge des Bahnhofs (fünf Datensätze sind erforderlich, da der Granville-Eingang eigentlich drei separate Eingänge hat, eine Treppe, eine Rolltreppe und einen Aufzug). Diese fünf Datensätze sind als Eingänge definiert, da der `location_type` auf `3` gesetzt ist.
+In der obigen Datei bezieht sich der erste Datensatz auf den Standort des Bahnhofs, daher ist der `location_type` auf `1` gesetzt. Die anderen fünf Datensätze beziehen sich auf die drei Eingänge des Bahnhofs (fünf Datensätze sind erforderlich, da der Granville-Eingang eigentlich drei separate Eingänge hat, eine Treppe, eine Rolltreppe und einen Aufzug). Diese fünf Datensätze sind als Eingänge definiert, da der `location_type` auf `2` gesetzt ist.
 
 Außerdem wird die `stop_id` für Waterfront Station unter `parent_station` für die Eingänge aufgeführt, um sie mit der Station zu verknüpfen. Für die zugänglichen Eingänge ist `wheelchair_boarding` auf `1` und für die nicht zugänglichen auf `2` gesetzt.
 

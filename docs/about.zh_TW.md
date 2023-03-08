@@ -33,7 +33,7 @@ GTFS.org 是通用交通提要規範的中央文檔平台。本網站及其內�
 
 **貢獻翻譯**
 
-GTFS.org 使用自動機器學習翻譯工具[Simpleen](https://simpleen.io/)來確保翻譯與存儲庫更改保持同步。由於我們的首要任務是使翻譯保持最新狀態，因此我們不接受一次性重寫。
+GTFS.org 使用自動機器學習翻譯工具[Simpleen](https://simpleen.io/)來確保翻譯與存儲庫更改保持同步。由於我們的首要任務是使翻譯保持最新，因此任何一次性的翻譯貢獻將來都會被 Simpleen 覆蓋。
 
 我們確實接受詞彙表更改。 Simpleen 使用詞彙表來表示 GTFS.org 中常用的關鍵術語，例如旅行或車站。如果您想為應該應用於整個站點的關鍵術語建議翻譯，您可以[在 GTFS.org 存儲庫上創建一個問題](https://github.com/MobilityData/gtfs.org/issues/new/choose)。
 
