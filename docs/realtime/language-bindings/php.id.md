@@ -18,7 +18,7 @@ Untuk menggunakan kelas `gtfs-realtime-bindings-php` di proyek Anda sendiri, And
       "google/gtfs-realtime-bindings": "x.y.z"
     }
 
-Di mana `xyz` adalah versi rilis terbaru:
+Di mana `x.y.z` adalah versi rilis terbaru:
 
 [![versi PHP](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings.svg)](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings)
 

@@ -6,7 +6,7 @@ Fornece classes PHP geradas a partir da especificação do [GTFS-realtime](https
 
 Para ver os bindings em outras linguagens, veja the [gtfs-realtime-bindings](https://github.com/google/gtfs-realtime-bindings) project.
 
-!!! fail "Deprecated (Depreciado)"
+!!! fail "Depreciado"
 
     *Desde fevereiro de 2019, a ferramenta oficial `google-protobuf` Google protoc [não suporta arquivos proto2](https://github.com/protocolbuffers/protobuf/issues/3623). Como resultado, estamos depreciando os bindings PHP até que o suporte oficial aos arquivos de proto2 seja implementado nas ferramentas de buffer do protocolo Google.*
 

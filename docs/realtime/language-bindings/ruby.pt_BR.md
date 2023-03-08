@@ -4,7 +4,7 @@
 
 Fornece classes de Ruby geradas a partir da especificação do [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) ProtocolBuffer. Estas classes permitirão a análise de um protocolo binário ProtocolBuffer GTFS-realtime feed em objetos Ruby.
 
-!!! fail "Deprecated (Depreciado)"
+!!! fail "Depreciado"
 
     *Desde fevereiro de 2019, a ferramenta oficial `google-protobuf` Google protoc [não suporta extensões](https://github.com/protocolbuffers/protobuf/issues/1198) em arquivos proto2. Uma ferramenta de terceiros, [ruby-protocol-buffers](https://github.com/codekitchen/ruby-protocol-buffers), pode ser instalada usando `gem install ruby-protocol-buffers`, mas não parece combinar com a estrutura existente do Ruby GTFS bindings, pois os testes da unidade falham. Como resultado, estamos depreciando os bindings Ruby até que o suporte oficial para arquivos proto2 seja implementado nas ferramentas de buffer do protocolo Google.*
 

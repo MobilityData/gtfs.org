@@ -2,7 +2,7 @@
 
 ![Versi Pusat Maven](https://img.shields.io/maven-central/v/org.mobilitydata/gtfs-realtime-bindings.svg)
 
-Menyediakan kelas Java yang dihasilkan dari spesifikasi Buffer Protokol [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) . Kelas-kelas ini akan memungkinkan Anda mengurai umpan data waktu-nyata Protokol Buffer GTFS biner ke objek Java.
+Menyediakan kelas Java yang dihasilkan dari spesifikasi Buffer Protokol [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) . Kelas-kelas ini akan memungkinkan Anda mengurai umpan data  Protokol Buffer real-time GTFS biner ke objek Java.
 
 ## Tambahkan Ketergantungan
 

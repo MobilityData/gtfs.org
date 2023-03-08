@@ -6,7 +6,7 @@ Fornece classes Java geradas a partir da especificação do [GTFS-realtime](http
 
 ## Adicionar a Dependência
 
-Para usar as classes `gtfs-realtime-bindings` em seu próprio projeto, você precisa adicionar uma dependência apropriada. Nós publicamos nosso módulo no [Maven Central Repositorysoso](http://search.maven.org/)que pode ser facilmente referenciado por ferramentas de construção Java como Maven, Ivy, e Gradle.
+Para usar as classes `gtfs-realtime-bindings` em seu próprio projeto, você precisa adicionar uma dependência apropriada. Nós publicamos nosso módulo no [Maven Central Repository](http://search.maven.org/)que pode ser facilmente referenciado por ferramentas de construção Java como Maven, Ivy, e Gradle.
 
 Para [Maven](http://maven.apache.org/), adicione o seguinte à sua seção de dependências `pom.xml`:
 

@@ -20,7 +20,7 @@
 
 Для того чтобы этот пример заработал, необходимо сначала установить `node-fetch` с помощью NPM.
 
-_Примечание: этот пример использует модули ES (синтаксис`import/export`) и не совместим с CommonJS (синтаксис `require` ). Вы можете использовать CommonJS, преобразовав `import` в `require` и установив `node-fetch@2`. Подробнее о ES-модулях [здесь](https://nodejs.org/api/esm.html)._
+_Примечание: этот пример использует модули ES (синтаксис`import`/`export`) и не совместим с CommonJS (синтаксис `require` ). Вы можете использовать CommonJS, преобразовав `import` в `require` и установив `node-fetch@2`. Подробнее о ES-модулях [здесь](https://nodejs.org/api/esm.html)._
 
 ```javascript
 import GtfsRealtimeBindings from "gtfs-realtime-bindings";

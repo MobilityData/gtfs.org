@@ -2,11 +2,11 @@
 
 [![NuGet版本](https://badge.fury.io/nu/GtfsRealtimeBindings.svg)](http://badge.fury.io/nu/GtfsRealtimeBindings)
 
-提供从GTFS-realtime ProtocolBuffer规范中生成的.NET类。 这些类将允许你解析一个二进制的ProtocolBuffer GTFS-realtime数据源到C#对象。
+提供从[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime). ProtocolBuffer规范中生成的.NET类。 这些类将允许你解析一个二进制的ProtocolBuffer GTFS-realtime数据源到C#对象。
 
 ## 添加依赖关系
 
-要在自己的项目中使用`gtfs-realtime-bindings`类，你需要先从NuGet[仓库](https://www.nuget.org/packages/GtfsRealtimeBindings/)中安装该模块。
+要在自己的项目中使用`gtfs-realtime-bindings`类，你需要先从[NuGet仓库](https://www.nuget.org/packages/GtfsRealtimeBindings/)中安装该模块。
 
     Install-Package GtfsRealtimeBindings
 

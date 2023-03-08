@@ -20,7 +20,7 @@ El siguiente fragmento de código Node.js muestra la descarga de una fuente de d
 
 Para que este ejemplo funcione, primero debes instalar `node-fetch` con NPM.
 
-_Nota: este ejemplo utiliza módulos ES (sintaxis`import/export`) y no es compatible con CommonJS (sintaxis`require` ). Puede utilizar CommonJS convirtiendo `import` en `require` e instalando `node-fetch@2`. Obtenga más información sobre los módulos ES [aquí](https://nodejs.org/api/esm.html)._
+_Nota: este ejemplo utiliza módulos ES (sintaxis`import`/`export`) y no es compatible con CommonJS (sintaxis`require` ). Puede utilizar CommonJS convirtiendo `import` en `require` e instalando `node-fetch@2`. Obtenga más información sobre los módulos ES [aquí](https://nodejs.org/api/esm.html)._
 
 ```javascript
 import GtfsRealtimeBindings from "gtfs-realtime-bindings";

@@ -20,7 +20,7 @@ Der folgende Node.js-Codeausschnitt demonstriert das Herunterladen eines GTFS-Re
 
 Damit dieses Beispiel funktioniert, müssen Sie zunächst `node-fetch` mit NPM installieren.
 
-_Hinweis: Dieses Beispiel verwendet ES-Module (`Import/Export-Syntax`) und ist nicht mit CommonJS (`require-Syntax` ) kompatibel. Sie können CommonJS verwenden, indem Sie `import` in `require`umwandeln und `node-fetch@2` installieren. Mehr über ES-Module erfahren Sie [hier](https://nodejs.org/api/esm.html)._
+_Hinweis: Dieses Beispiel verwendet ES-Module (`Import/Export`) Syntax und ist nicht mit CommonJS (`require` ) Syntax kompatibel. Sie können CommonJS verwenden, indem Sie `import` in `require`umwandeln und `node-fetch@2` installieren. Mehr über ES-Module erfahren Sie [hier](https://nodejs.org/api/esm.html)._
 
 ```javascript
 import GtfsRealtimeBindings from "gtfs-realtime-bindings";

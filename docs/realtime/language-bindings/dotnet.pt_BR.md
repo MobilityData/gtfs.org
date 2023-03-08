@@ -2,7 +2,7 @@
 
 [![Versão NuGet](https://badge.fury.io/nu/GtfsRealtimeBindings.svg)](http://badge.fury.io/nu/GtfsRealtimeBindings)
 
-Fornece classes .NET geradas a partir da especificação do ProtocolBuffer em GTFS realtime. Estas classes permitirão a análise de um protocolo binário ProtocolBuffer GTFS-realtime feed em objetos C#.
+Fornece classes .NET geradas a partir da especificação do ProtocolBuffer em [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime). Estas classes permitirão a análise de um protocolo binário ProtocolBuffer GTFS-realtime feed em objetos C#.
 
 ## Adicionar a Dependência
 

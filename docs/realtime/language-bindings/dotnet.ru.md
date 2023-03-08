@@ -2,7 +2,7 @@
 
 [![Версия NuGet](https://badge.fury.io/nu/GtfsRealtimeBindings.svg)](http://badge.fury.io/nu/GtfsRealtimeBindings)
 
-Предоставляет классы .NET, созданные на основе спецификации ProtocolBuffer протоколаGTFS-realtime. Эти классы позволят вам разобрать двоичный поток данных ProtocolBuffer GTFS-realtime в объекты C#.
+Предоставляет классы .NET, созданные на основе спецификации ProtocolBuffer протокола [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime). Эти классы позволят вам разобрать двоичный поток данных ProtocolBuffer GTFS-realtime в объекты C#.
 
 ## Добавьте зависимость
 

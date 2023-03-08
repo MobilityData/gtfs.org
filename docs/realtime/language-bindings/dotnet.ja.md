@@ -2,7 +2,7 @@
 
 [![NuGetバージョン](https://badge.fury.io/nu/GtfsRealtimeBindings.svg)](http://badge.fury.io/nu/GtfsRealtimeBindings)
 
-GTFS-realtimeのProtocolBuffer仕様から生成された.NETクラスを提供します。 これらのクラスを使用すると、バイナリ ProtocolBuffer GTFS リアルタイム データ フィードを C# オブジェクトにパースできます。
+[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime).のProtocolBuffer仕様から生成された.NETクラスを提供します。 これらのクラスを使用すると、バイナリ ProtocolBuffer GTFS リアルタイム データ フィードを C# オブジェクトにパースできます。
 
 ## 依存関係の追加
 

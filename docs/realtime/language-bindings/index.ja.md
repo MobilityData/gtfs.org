@@ -26,7 +26,7 @@ C++の生成コードは提供していませんので、公式のprotocコン�
 
 あなたの好きな言語はありますか？貢献することを検討してください。
 
-1. [CONTRIBUTING.mdを](https://github.com/MobilityData/gtfs-realtime-bindings/blob/master/CONTRIBUTING.md)お読みください。
+1. [CONTRIBUTING.md](https://github.com/MobilityData/gtfs-realtime-bindings/blob/master/CONTRIBUTING.md)をお読みください。
 2. あなたの好きな言語で pull request を開いてください。アップデートの手順（理想的にはスクリプト）を含めてください。また、その言語のエコシステムに適したパッケージングを提供してください。
 
 ## プロジェクト履歴

@@ -53,11 +53,11 @@ public class GtfsRealtimeExample {
 
 ### `0.0.4`及以下版本
 
-这个项目最初是由谷歌创建的。你可以在[Maven中心](https://search.maven.org/search?q=g:com.google.transit%20AND%20a:gtfs-realtime-bindings)下载`0.0.4`及以前的版本，群组ID为`com.google. transit`。
+这个项目最初是由谷歌创建的。你可以在[Maven中心](https://search.maven.org/search?q=g:com.google.transit%20AND%20a:gtfs-realtime-bindings)下载`0.0.4`及以前的版本，群组ID为`com.google.transit`。
 
 ### `0.0.5`
 
-MobilityData于2019年初开始维护该项目，最初通过JCenter发布了发布工件。您可以在[Maven中心](https://search.maven.org/artifact/io.mobilitydata.transit/gtfs-realtime-bindings)的群组ID`io.mobilitydata. transit`下下载`0.0.5`版本。
+MobilityData于2019年初开始维护该项目，最初通过JCenter发布了发布工件。您可以在[Maven中心](https://search.maven.org/artifact/io.mobilitydata.transit/gtfs-realtime-bindings)的群组ID`io.mobilitydata.transit`下下载`0.0.5`版本。
 
 ### `0.0.6`和`0.0.7`
 

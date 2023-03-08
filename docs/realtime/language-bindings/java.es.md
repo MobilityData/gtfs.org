@@ -61,7 +61,7 @@ MobilityData comenzó a mantener el proyecto a principios de 2019 e inicialmente
 
 ### `0.0.6` y `0.0.7`
 
-JCenter [cerró](https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/) en 2021. Antes del cierre, un problema de sincronización impidió que las versiones `0.0.6` y `0.0.` 7 se sincronizaran desde JCenter a Maven Central, por lo que la descarga directa de artefactos no está disponible actualmente para estas versiones. Sin embargo, puede compilarlas usted mismo desde las [etiquetas](https://github.com/MobilityData/gtfs-realtime-bindings/tags) utilizando el comando `mvn package`.
+JCenter [cerró](https://jfrog.com/blog/into-the-sunset-bintray-jcenter-gocenter-and-chartcenter/) en 2021. Antes del cierre, un problema de sincronización impidió que las versiones `0.0.6` y `0.0.7` se sincronizaran desde JCenter a Maven Central, por lo que la descarga directa de artefactos no está disponible actualmente para estas versiones. Sin embargo, puede compilarlas usted mismo desde las [etiquetas](https://github.com/MobilityData/gtfs-realtime-bindings/tags) utilizando el comando `mvn package`.
 
 ### `0.0.8` y superiores
 

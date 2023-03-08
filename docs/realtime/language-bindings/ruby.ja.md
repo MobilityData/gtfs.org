@@ -6,11 +6,11 @@
 
 !!! fail "非推奨"
 
-    *2019年2月現在、公式のGoogle protocツール`google-protobufは`proto2ファイル内の[拡張子をサポートして](https://github.com/protocolbuffers/protobuf/issues/1198)いません。 サードパーティのツールである[ruby-protocol-buffers](https://github.com/codekitchen/ruby-protocol-buffers) `gem install ruby-protocol-buffers`インストールできますが、ユニットテストが失敗するため、Ruby GTFSバインディングの既存の構造とは一致しないようです。 そのため、Googleプロトコルバッファツールでproto2ファイルの公式サポートが実装されるまで、このRubyバインディングは非推奨とします。*
+    *2019年2月現在、公式のGoogle protocツール`google-protobuf`はproto2ファイル内の[拡張子をサポートして](https://github.com/protocolbuffers/protobuf/issues/1198)いません。 サードパーティのツールである[ruby-protocol-buffers](https://github.com/codekitchen/ruby-protocol-buffers) `gem install ruby-protocol-buffers`インストールできますが、ユニットテストが失敗するため、Ruby GTFSバインディングの既存の構造とは一致しないようです。 そのため、Googleプロトコルバッファツールでproto2ファイルの公式サポートが実装されるまで、このRubyバインディングは非推奨とします。*
 
 ## 依存関係の追加
 
-`gtfs-realtime-bindings`クラスを自分のプロジェクトで使用するには、まず[Ruby gemを](https://rubygems.org/gems/gtfs-realtime-bindings)インストールする必要があります。
+`gtfs-realtime-bindings`クラスを自分のプロジェクトで使用するには、まず[Ruby gem](https://rubygems.org/gems/gtfs-realtime-bindings)をインストールする必要があります。
 
     gem install gtfs-realtime-bindings
 

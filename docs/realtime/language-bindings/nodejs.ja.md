@@ -20,7 +20,7 @@ JavaScriptのProtocol Bufferのサポートには、[ProtoBuf.js](https://github
 
 このサンプルを動作させるためには、まず NPM で`node-fetch`をインストールする必要があります。
 
-_注：この例は、ESモジュール（`import/export`構文）を使用しており、CommonJS（`require`構文）と互換性がありません。CommonJSを使用するには、`import` を `require`に変換して、`node-fetch@2`をインストールします。 ESモジュールについては、[こちらを](https://nodejs.org/api/esm.html)ご覧ください。_
+_注：この例は、ESモジュール（`import`/`export`構文）を使用しており、CommonJS（`require`構文）と互換性がありません。CommonJSを使用するには、`import` を `require`に変換して、`node-fetch@2`をインストールします。 ESモジュールについては、[こちらを](https://nodejs.org/api/esm.html)ご覧ください。_
 
 ```javascript
 import GtfsRealtimeBindings from "gtfs-realtime-bindings";

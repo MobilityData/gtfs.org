@@ -20,7 +20,7 @@ L'extrait de code Node.js suivant montre le téléchargement d'un flux de donné
 
 Afin de faire fonctionner cet exemple, vous devez d'abord installer `node-fetch` avec NPM.
 
-_Note : cet exemple utilise les modules ES (syntaxe`import/export`) et n'est pas compatible avec CommonJS (syntaxe`require` ). Vous pouvez utiliser CommonJS en convertissant `import` en `require et en`installant `node-fetch@2`. Apprenez-en plus sur les modules ES [ici](https://nodejs.org/api/esm.html)._
+_Note : cet exemple utilise les modules ES (syntaxe`import`/`export`) et n'est pas compatible avec CommonJS (syntaxe`require` ). Vous pouvez utiliser CommonJS en convertissant `import` en `require` et en installant `node-fetch@2`. Apprenez-en plus sur les modules ES [ici](https://nodejs.org/api/esm.html)._
 
 ```javascript
 import GtfsRealtimeBindings from "gtfs-realtime-bindings";

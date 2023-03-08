@@ -57,7 +57,7 @@ public class GtfsRealtimeExample {
 
 ### `0.0.5`
 
-MobilityDataは2019年初頭にこのプロジェクトのメンテナンスを開始し、当初はJCenter経由でリリースアーティファクトを公開していました。バージョン`0.0.`5は、[Maven Central](https://search.maven.org/artifact/io.mobilitydata.transit/gtfs-realtime-bindings)のここでグループID`io.mobilitydata.transit`の下でダウンロードすることができます。
+MobilityDataは2019年初頭にこのプロジェクトのメンテナンスを開始し、当初はJCenter経由でリリースアーティファクトを公開していました。バージョン`0.0.5`は、[Maven Central](https://search.maven.org/artifact/io.mobilitydata.transit/gtfs-realtime-bindings)のここでグループID`io.mobilitydata.transit`の下でダウンロードすることができます。
 
 ### `0.0.6`および`0.0.7`
 

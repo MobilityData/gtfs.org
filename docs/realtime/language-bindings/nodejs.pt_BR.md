@@ -20,7 +20,7 @@ O seguinte trecho de código do Node.js demonstra o download de um feed de dados
 
 A fim de fazer este exemplo funcionar, é necessário primeiro instalar o `"node-fetch"` com NPM.
 
-_Nota: este exemplo está usando módulos ES (sintaxe de `import/export`) e não é compatível com o CommonJS (sintaxe `require` ). Você pode usar o CommonJS convertendo a `import` para `require` instalando `node-fetch@2`. Saiba mais sobre os módulos ES [aqui](https://nodejs.org/api/esm.html)._
+_Nota: este exemplo está usando módulos ES (sintaxe de `import`/`export`) e não é compatível com o CommonJS (sintaxe `require` ). Você pode usar o CommonJS convertendo a `import` para `require` instalando `node-fetch@2`. Saiba mais sobre os módulos ES [aqui](https://nodejs.org/api/esm.html)._
 
 ```javascript
 import GtfsRealtimeBindings from "gtfs-realtime-bindings";

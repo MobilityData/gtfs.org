@@ -2,11 +2,11 @@
 
 [![Version NuGet](https://badge.fury.io/nu/GtfsRealtimeBindings.svg)](http://badge.fury.io/nu/GtfsRealtimeBindings)
 
-Fournit des classes .NET générées à partir de la spécification ProtocolBuffer GTFS-realtime. Ces classes vous permettront d'analyser un flux de données ProtocolBuffer GTFS-realtime binaire en objets C#.
+Fournit des classes .NET générées à partir de la spécification ProtocolBuffer [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime).. Ces classes vous permettront d'analyser un flux de données ProtocolBuffer GTFS-realtime binaire en objets C#.
 
 ## Ajouter la dépendance
 
-Pour utiliser les classes `gtfs-realtime-bindings` dans votre propre projet, vous devez d'abord installer le module à partir du [dépôt](https://www.nuget.org/packages/GtfsRealtimeBindings/) NuGet.
+Pour utiliser les classes `gtfs-realtime-bindings` dans votre propre projet, vous devez d'abord installer le module à partir du [dépôt NuGet](https://www.nuget.org/packages/GtfsRealtimeBindings/).
 
     Install-Package GtfsRealtimeBindings
 

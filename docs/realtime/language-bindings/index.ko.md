@@ -22,7 +22,7 @@ GTFS Realtime 데이터로 작업하기 위해 개발자는 일반적으로 `gtf
 
 ## 다른 언어
 
-우리는 C++용으로 생성된 코드를 제공하지 않습니다. 공식 protoc 컴파일러를 사용하세요(from [here](https://developers.google.com/protocol-buffers/docs/downloads) 또는 [here](https://github.com/google/protobuf) ).
+우리는 C++용으로 생성된 코드를 제공하지 않습니다. 공식 protoc 컴파일러를 사용하세요(\~에서 [여기](https://developers.google.com/protocol-buffers/docs/downloads) 또는 [여기](https://github.com/google/protobuf) ).
 
 좋아하는 언어가 누락되었나요? 기여 고려:
 

@@ -16,7 +16,7 @@ Untuk menggunakan kelas `gtfs-realtime-bindings` di proyek Anda sendiri, Anda ha
 
 ## Kode Contoh
 
-Cuplikan kode Node.js berikut menunjukkan pengunduhan feed data GTFS-realtime dari URL tertentu, menguraikannya sebagai FeedMessage (jenis root dari skema GTFS-realtime), dan mengulangi hasilnya.
+Cuplikan kode Node.js berikut menunjukkan pengunduhan umpan data GTFS-realtime dari URL tertentu, menguraikannya sebagai FeedMessage (jenis root dari skema GTFS-realtime), dan mengulangi hasilnya.
 
 Agar contoh ini berfungsi, Anda harus terlebih dahulu menginstal `node-fetch` dengan NPM.
 

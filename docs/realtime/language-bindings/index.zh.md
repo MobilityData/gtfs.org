@@ -6,9 +6,9 @@
 
 [GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime)是一种数据格式，用于交流有关公共交通系统的实时信息。GTFS Realtime数据使用[Protocol Buffers](https://developers.google.com/protocol-buffers/)进行编码和解码，这是一种紧凑的二进制表示法，旨在快速有效地处理。 数据模式本身是在[gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto)中定义的。
 
-为了处理GTFS实时数据，开发人员通常会使用`gtfs-realtime.proto`模式，用他们选择的编程语言生成类。 然后，这些类可以用来构建GTFS-实时数据模型对象，并将其序列化为二进制数据，或者在相反的方向，将二进制数据解析为数据模型对象。
+为了处理GTFS-realtime数据，开发人员通常会使用`gtfs-realtime.proto`模式，用他们选择的编程语言生成类。 然后，这些类可以用来构建GTFS-realtime数据模型对象，并将其序列化为二进制数据，或者在相反的方向，将二进制数据解析为数据模型对象。
 
-由于从`gtfs-realtime.proto`模式生成GTFS实时数据模型类是一项常见的任务，但有时也会给第一次开发的人带来困惑，因此本项目旨在为一些最流行的编程语言提供预先生成的GTFS实时语言绑定。 在可能的情况下，这些语言绑定将以包的形式发布，以方便它们在其他项目中使用。
+由于从`gtfs-realtime.proto`模式生成GTFS-realtime数据模型类是一项常见的任务，但有时也会给第一次开发的人带来困惑，因此本项目旨在为一些最流行的编程语言提供预先生成的GTFS-realtime语言绑定。 在可能的情况下，这些语言绑定将以包的形式发布，以方便它们在其他项目中使用。
 
 ## 支持的语言
 
