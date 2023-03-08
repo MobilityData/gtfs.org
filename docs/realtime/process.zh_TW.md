@@ -31,7 +31,7 @@
      - 請注意，倡導者可以選擇將該功能作為[自定義擴展](#extensions)而不是官方規範的一部分來實現。
 9. 如果提案被接受：
      - 谷歌承諾合併拉取請求的投票版本（前提是貢獻者已簽署[CLA](https://github.com/google/transit/blob/master/CONTRIBUTING.md) ，並在 5 個工作日內執行拉取請求。
-     - Google 致力於及時更新<https://github.com/google/gtfs-realtime-bindings>存儲庫。提交作為提案結果的 gtfs-realtime-bindigs，應參考提案的拉取請求。
+     - Google 致力於及時更新<https://github.com/google/gtfs-realtime-bindings>存儲庫。提交作為提案結果的 gtfs-realtime-bindings，應參考提案的拉取請求。
      - 翻譯不得包含在原始拉取請求中。
    谷歌負責最終將相關翻譯更新為支持的語言，但歡迎來自社區的純翻譯拉取請求，並在所有編輯評論得到解決後立即接受。
 

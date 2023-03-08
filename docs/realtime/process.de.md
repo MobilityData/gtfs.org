@@ -31,17 +31,17 @@ Wenn ein Produzent oder Konsument daran interessiert ist, ein neues Feld zur GTF
      - Beachten Sie, dass der Befürworter sich dafür entscheiden kann, die Funktion als [benutzerdefinierte Erweiterung](#extensions) zu implementieren, anstatt sie in die offizielle Spezifikation aufzunehmen.
 9. Wenn der Vorschlag angenommen wird:
      - Google verpflichtet sich, die abgestimmte Version des Pull-Requests zusammenzuführen (vorausgesetzt, die Mitwirkenden haben den [CLA](https://github.com/google/transit/blob/master/CONTRIBUTING.md) unterzeichnet) und den Pull-Request innerhalb von 5 Werktagen auszuführen.
-     - Google verpflichtet sich, das Repository <https://github.com/google/gtfs-realtime-bindings> zeitnah zu aktualisieren. Commits zu gtfs-realtime-bindigs, die auf einen Vorschlag zurückgehen, sollten auf den Pull Request des Vorschlags verweisen.
+     - Google verpflichtet sich, das Repository <https://github.com/google/gtfs-realtime-bindings> zeitnah zu aktualisieren. Commits zu gtfs-realtime-bindings, die auf einen Vorschlag zurückgehen, sollten auf den Pull Request des Vorschlags verweisen.
      - Übersetzungen dürfen nicht in die ursprüngliche Pull-Anfrage aufgenommen werden.
    Google ist dafür verantwortlich, relevante Übersetzungen in unterstützte Sprachen zu aktualisieren, aber reine Übersetzungs-Pull-Requests aus der Community sind willkommen und werden akzeptiert, sobald alle redaktionellen Kommentare berücksichtigt wurden.
 
 ## *Experimentelle* Felder
 
-1. Wenn sich die Community darauf einigen kann, dass (a) das vorgeschlagene Feld nützlich erscheint und (b) der Typ des Feldes`(optional` vs. `repeated`, `string` vs. `int` vs. `bool`), dann wird eine Feldnummer in der GTFS Realtime-Nachricht vergeben und ein Hinweis in der [.proto-Datei](../proto) und der Dokumentation aufgenommen, dass es sich um ein *experimentelles* Feld handelt, das sich in Zukunft ändern kann.
+1. Wenn sich die Community darauf einigen kann, dass (a) das vorgeschlagene Feld nützlich erscheint und (b) der Typ des Feldes (`optional` vs. `repeated`, `string` vs. `int` vs. `bool`), dann wird eine Feldnummer in der GTFS Realtime-Nachricht vergeben und ein Hinweis in der [.proto-Datei](../proto) und der Dokumentation aufgenommen, dass es sich um ein *experimentelles* Feld handelt, das sich in Zukunft ändern kann.
      - Der Konsens wird durch ein Diskussions- und Abstimmungsverfahren erreicht, das dem unten beschriebenen [Verfahren zur Änderung der Spezifikation](#specification-amendment-process) entspricht, wobei jedoch anstelle einer einstimmigen Zustimmung nur 80 % Ja-Stimmen für die Genehmigung erforderlich sind.
      - GTFS-Realtime produzenten und -konsumenten, die das neue *experimentelle* Feld verwenden möchten, werden ihre Bibliothek unter Verwendung der .proto-Datei mit dem neuen Feld neu generieren (z. B. wird Google die [gtfs-realtime-bindings Bibliothek](https://github.com/google/gtfs-realtime-bindings) aktualisieren) und damit beginnen, das Feld mit Live-Daten zu füllen und zu analysieren.
      - Sobald wir uns davon überzeugt haben, dass das *experimentelle* Feld sinnvoll ist und sowohl Produzenten als auch Konsumenten das Feld nutzen, werden wir den unten beschriebenen [Prozess zur Änderung der Spezifikation](#specification-amendment-process) befolgen, um das Feld offiziell in die Spezifikation aufzunehmen.
-     - Wenn das *experimentelle* Feld nicht innerhalb von zwei Jahren nach seiner Genehmigung als *experimentelles* Feld über den [Prozess zur Änderung der Spezifikation](#specification-amendment-process) angenommen wird, wird es durch Hinzufügen von `[deprecated=true]` neben dem Feldwert in der [.proto-Datei](../proto) als veraltet eingestuft. Durch die Verwendung von `[deprecated=true]` (anstelle von `RESERVED`) müssen Hersteller und Verbraucher, die das Feld bereits übernommen haben, es nicht aus dem Gebrauch nehmen. Darüber hinaus kann das Feld in der Zukunft "nicht mehr veraltet" sein, wenn es in einer nachfolgenden Abstimmung nach dem [Spezifikationsänderungsprozess](#specification-amendment-process) genehmigt wird (z. B. wenn zusätzliche Hersteller und/oder Verbraucher das Feld verwenden).
+     - Wenn das *experimentelle* Feld nicht innerhalb von zwei Jahren nach seiner Genehmigung als *experimentelles* Feld über den [Prozess zur Änderung der Spezifikation](#specification-amendment-process) angenommen wird, wird es durch Hinzufügen von `[deprecated=true]` neben dem Feldwert in der [.proto-Datei](../proto) als veraltet eingestuft. Durch die Verwendung von `[deprecated=true]` (anstelle von `RESERVED`) müssen Hersteller und Verbraucher, die das Feld bereits übernommen haben, es nicht aus dem Gebrauch nehmen. Darüber hinaus kann das Feld in der Zukunft "nicht mehr veraltet" sein, wenn es in einer nachfolgenden Abstimmung nach dem [Prozess zur Änderung der Spezifikation](#specification-amendment-process) genehmigt wird (z. B. wenn zusätzliche Hersteller und/oder Verbraucher das Feld verwenden).
 2. Wenn das neue Feld als spezifisch für einen einzelnen Produzenten angesehen wird oder es Streit über den Datentyp gibt, dann werden wir dem Produzenten eine [benutzerdefinierte Erweiterung](../extensions) zuweisen, damit er das Feld in seinem eigenen Feed verwenden kann. Wenn möglich, sollten wir Erweiterungen vermeiden und Felder, die für viele Agenturen nützlich sind, in die Hauptspezifikation aufnehmen, um eine Fragmentierung und zusätzliche Arbeit für die Verbraucher zur Unterstützung verschiedener Erweiterungen der Spezifikation zu vermeiden.
 
 ## Leitprinzipien
@@ -80,7 +80,7 @@ Jede neue Funktion erhöht die Komplexität beim Erstellen und Lesen von Feeds. 
 
 **28. Januar 2015**
 
-- Experimentelles Feld `delay` zu `TripUpdate` hinzugefügt[(](https://groups.google.com/forum/#!topic/gtfs-realtime/NsTIRQdMNN8)Diskussion).
+- Experimentelles Feld `delay` zu `TripUpdate` hinzugefügt[(Diskussion)](https://groups.google.com/forum/#!topic/gtfs-realtime/NsTIRQdMNN8).
 
 **16. Januar 2015**
 
@@ -89,12 +89,12 @@ Jede neue Funktion erhöht die Komplexität beim Erstellen und Lesen von Feeds. 
 **Januar 8, 2015**
 
 - Experimentelles enum `OccupancyStatus` definiert.
-- Das experimentelle Feld `occupancy_status` wurde zu `VehiclePosition` hinzugefügt[(](https://groups.google.com/forum/#!topic/gtfs-realtime/\_HtNTGp5LxM)Diskussion).
+- Das experimentelle Feld `occupancy_status` wurde zu `VehiclePosition` hinzugefügt[(Diskussion)](https://groups.google.com/forum/#!topic/gtfs-realtime/\_HtNTGp5LxM).
 
 **Mai 22, 2014**
 
-- Aktualisierte Beschreibung von `ScheduleRelationship` enum in `StopTimeUpdate` Nachricht[(](https://groups.google.com/forum/#!topic/gtfs-realtime/77c3WZrGBnI)Diskussion).
-- REPLACEMENT aus den `ScheduleRelationship` enum Werten in der `TripDescriptor` Nachricht entfernt[(](https://groups.google.com/forum/#!topic/gtfs-realtime/77c3WZrGBnI)Diskussion).
+- Aktualisierte Beschreibung von `ScheduleRelationship` enum in `StopTimeUpdate` Nachricht[(Diskussion)](https://groups.google.com/forum/#!topic/gtfs-realtime/77c3WZrGBnI).
+- REPLACEMENT aus den `ScheduleRelationship` enum Werten in der `TripDescriptor` Nachricht entfernt[(Diskussion)](https://groups.google.com/forum/#!topic/gtfs-realtime/77c3WZrGBnI).
 
 **Okt 12, 2012**
 

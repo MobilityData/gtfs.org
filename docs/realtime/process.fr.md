@@ -31,12 +31,12 @@ Lorsqu'un producteur ou un consommateur souhaite ajouter un nouveau champ à la 
      - Notez que le défenseur peut choisir d'implémenter la fonctionnalité en tant qu'[extension personnalisée](#extensions) au lieu de faire partie de la spécification officielle.
 9. Si la proposition est acceptée :
      - Google s'engage à fusionner la version votée de la demande de retrait (à condition que les contributeurs aient signé la [CLA](https://github.com/google/transit/blob/master/CONTRIBUTING.md)) et à exécuter la demande de retrait dans les 5 jours ouvrables.
-     - Google s'engage à mettre à jour le dépôt <https://github.com/google/gtfs-realtime-bindings> en temps voulu. Les commits vers gtfs-realtime-bindigs qui sont le résultat d'une proposition, doivent faire référence à la pull request de la proposition.
+     - Google s'engage à mettre à jour le dépôt <https://github.com/google/gtfs-realtime-bindings> en temps voulu. Les commits vers gtfs-realtime-bindings qui sont le résultat d'une proposition, doivent faire référence à la pull request de la proposition.
      - Les traductions ne doivent pas être incluses dans la pull request originale. Google est responsable de la mise à jour éventuelle des traductions pertinentes dans les langues prises en charge, mais les demandes de traduction pure de la communauté sont les bienvenues et seront acceptées dès que tous les commentaires éditoriaux auront été traités.
 
 ## Domaines *expérimentaux*
 
-1. Si la communauté parvient à un consensus (a) sur le fait que le champ proposé semble utile et (b) sur le type de champ`(optional` ou `repeated`, `string` ou `int` ou `bool`), un numéro de champ sera attribué dans le message GTFS Realtime et il sera indiqué dans le [fichier .proto](../proto) et dans la documentation qu'il s'agit d'un champ *expérimental* susceptible de changer à l'avenir.
+1. Si la communauté parvient à un consensus (a) sur le fait que le champ proposé semble utile et (b) sur le type de champ (`optional` ou `repeated`, `string` ou `int` ou `bool`), un numéro de champ sera attribué dans le message GTFS Realtime et il sera indiqué dans le [fichier .proto](../proto) et dans la documentation qu'il s'agit d'un champ *expérimental* susceptible de changer à l'avenir.
      - Le consensus est atteint par le biais d'un processus de discussion et de vote qui est le même que le [processus de modification des spécifications](#specification-amendment-process) ci-dessous, mais au lieu d'un consentement unanime, seuls 80 % de votes positifs sont requis pour l'approbation.
      - Les producteurs et les consommateurs GTFS Realtime qui souhaitent utiliser le nouveau champ *expérimental* devront générer à nouveau leur bibliothèque en utilisant le fichier .proto avec le nouveau champ (par exemple, Google mettra à jour la [bibliothèque gtfs-realtime-bindings](https://github.com/google/gtfs-realtime-bindings)), et commencer à remplir et à analyser le champ avec des données réelles.
      - Une fois que nous sommes convaincus que le champ *expérimental* est valable et que les producteurs et les consommateurs l'utilisent, nous suivrons le [processus de modification de la spécification](#specification-amendment-process) ci-dessous pour ajouter officiellement le champ à la spécification.
@@ -88,12 +88,12 @@ Chaque nouvelle fonctionnalité ajoute de la complexité à la création et à l
 **8 Janvier 2015**
 
 - Définition de l'enum expérimental `OccupancyStatus`.
-- Ajout du champ expérimental `occupancy_status` à `VehiclePosition (`[discussion](https://groups.google.com/forum/#!topic/gtfs-realtime/\_HtNTGp5LxM)).
+- Ajout du champ expérimental `occupancy_status` à `VehiclePosition` [discussion](https://groups.google.com/forum/#!topic/gtfs-realtime/\_HtNTGp5LxM)).
 
 **22 mai 2014**
 
 - Mise à jour de la description de l'enum `ScheduleRelationship` dans le message `StopTimeUpdate` ([discussion](https://groups.google.com/forum/#!topic/gtfs-realtime/77c3WZrGBnI)).
-- Suppression de REPLACEMENT des valeurs de l'enum `ScheduleRelationship` dans le message `TripDescriptor (`[discussion](https://groups.google.com/forum/#!topic/gtfs-realtime/77c3WZrGBnI)).
+- Suppression de REPLACEMENT des valeurs de l'enum `ScheduleRelationship` dans le message `TripDescriptor` ([discussion](https://groups.google.com/forum/#!topic/gtfs-realtime/77c3WZrGBnI)).
 
 **12 oct. 2012**
 
@@ -109,7 +109,7 @@ Chaque nouvelle fonctionnalité ajoute de la complexité à la création et à l
 
 **25 octobre 2011**
 
-- Mise à jour de la documentation pour préciser que l'`alerte`, le `header_text` et le `description_text` sont tous deux des valeurs en texte brut.
+- Mise à jour de la documentation pour préciser que l'`alert`, le `header_text` et le `description_text` sont tous deux des valeurs en texte brut.
 
 **20 août 2011**
 

@@ -31,13 +31,13 @@ Quando um produtor ou consumidor estiver interessado em adicionar um novo campo 
      - Note que o defensor pode optar por implementar o recurso como uma [extensão personalizada](#extensions) em vez de parte da especificação oficial.
 9. Se a proposta for aceita:
      - O Google se compromete a fundir a versão votada da solicitação pull (desde que os colaboradores tenham assinado o [CLA](https://github.com/google/transit/blob/master/CONTRIBUTING.md), e realizem a solicitação pull dentro de 5 dias úteis.
-     - O Google está comprometido com a atualização oportuna do repositório <https://github.com/google/gtfs-realtime-bindings>. Compromissos com gtfs-realtime-bindigs que são resultado de uma proposta, devem fazer referência à solicitação pull da proposta.
+     - O Google está comprometido com a atualização oportuna do repositório <https://github.com/google/gtfs-realtime-bindings>. Compromissos com gtfs-realtime-bindings que são resultado de uma proposta, devem fazer referência à solicitação pull da proposta.
      - Traduções não devem ser incluídas na solicitação original de puxar.
    O Google é responsável por eventualmente atualizar as traduções relevantes nos idiomas suportados, mas os pedidos de tradução pura da comunidade são bem-vindos e serão aceitos assim que todos os comentários editoriais forem abordados.
 
 ## Campos *experimentais*
 
-1. Se a comunidade puder chegar a um consenso (a) que o campo proposto parece útil e (b) sobre o tipo do campo`(optional` vs `repeated`, `string` vs `int` vs `bool`), então um número de campo será alocado na mensagem GTFS Realtime e uma nota será feita no [arquivo .proto](../proto) e documentação de que este é um campo *experimental* que pode mudar no futuro.
+1. Se a comunidade puder chegar a um consenso (a) que o campo proposto parece útil e (b) sobre o tipo do campo (`optional` vs `repeated`, `string` vs `int` vs `bool`), então um número de campo será alocado na mensagem GTFS Realtime e uma nota será feita no [arquivo .proto](../proto) e documentação de que este é um campo *experimental* que pode mudar no futuro.
      - O consenso é alcançado através de um processo de discussão e votação que é o mesmo que o [processo de emenda de especificações](#specification-amendment-process) abaixo, mas ao invés de consentimento unânime, apenas 80% dos votos sim são necessários para aprovação.
      - Os produtores e consumidores do GTFS Realtime que desejarem usar o novo campo *experimental* irão regenerar sua biblioteca usando o arquivo .proto com o novo campo (por exemplo, o Google irá atualizar a [biblioteca gtfs-realtime-bindings](https://github.com/google/gtfs-realtime-bindings)), e começar a preencher e analisar o campo com dados ao vivo.
      - Quando estivermos satisfeitos que o campo *experimental* vale a pena e tanto produtores quanto consumidores estiverem usando o campo, então seguiremos o [processo de emenda das especificações](#specification-amendment-process) abaixo para adicionar oficialmente o campo à especificação.
@@ -110,7 +110,7 @@ Cada nova característica adiciona complexidade à criação e leitura de feeds.
 
 **25 de outubro de 2011**
 
-- Documentação atualizada para esclarecer que `alerta`, `header_text` e `description_text` são ambos valores de texto simples.
+- Documentação atualizada para esclarecer que `alert`, `header_text` e `description_text` são ambos valores de texto simples.
 
 **20 de agosto de 2011**
 

@@ -34,7 +34,7 @@ When a producer or consumer is interested in adding a new field to the GTFS Real
  	- Note that the advocate may choose to implement the feature as an [custom extension](#extensions) instead of part of the official spec.
 1. If the proposal is accepted:
   	- Google is committed to merging the voted upon version of the pull request (provided that the contributors have signed the [CLA](https://github.com/google/transit/blob/master/CONTRIBUTING.md), and performing the pull request within 5 business days.
-  	- Google is committed to timely updating https://github.com/google/gtfs-realtime-bindings repository. Commits to gtfs-realtime-bindigs that are a result of a proposal, should reference the pull request of the proposal.
+  	- Google is committed to timely updating https://github.com/google/gtfs-realtime-bindings repository. Commits to gtfs-realtime-bindings that are a result of a proposal, should reference the pull request of the proposal.
   	- Translations must not be included into the original pull request.
     Google is responsible for eventually updating relevant translations into supported languages, but pure translation pull requests from the community are welcome and will be accepted as soon as all editorial comments are addressed.
 

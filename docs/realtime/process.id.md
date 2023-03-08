@@ -31,7 +31,7 @@ Saat produsen atau konsumen tertarik untuk menambahkan kolom baru ke spesifikasi
       - Perhatikan bahwa advokat dapat memilih untuk mengimplementasikan fitur tersebut sebagai [ekstensi khusus](#extensions) , bukan sebagai bagian dari spesifikasi resmi.
 9. Jika proposal diterima:
       - Google berkomitmen untuk menggabungkan versi pull request yang telah dipilih (asalkan kontributor telah menandatangani [CLA](https://github.com/google/transit/blob/master/CONTRIBUTING.md) , dan melakukan pull request dalam waktu 5 hari kerja.
-      - Google berkomitmen untuk memperbarui repositori <https://github.com/google/gtfs-realtime-bindings> secara tepat waktu. Komitmen pada gtfs-realtime-bindigs yang merupakan hasil dari proposal, harus mengacu pada pull request dari proposal tersebut.
+      - Google berkomitmen untuk memperbarui repositori <https://github.com/google/gtfs-realtime-bindings> secara tepat waktu. Komitmen pada gtfs-realtime-bindings yang merupakan hasil dari proposal, harus mengacu pada pull request dari proposal tersebut.
       - Terjemahan tidak boleh dimasukkan ke dalam pull request asli.
    Google bertanggung jawab untuk akhirnya memperbarui terjemahan yang relevan ke dalam bahasa yang didukung, tetapi permintaan penarikan terjemahan murni dari komunitas diterima dan akan diterima segera setelah semua komentar editorial ditangani.
 

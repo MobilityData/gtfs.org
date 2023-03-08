@@ -31,13 +31,13 @@
      - 请注意，倡导者可以选择将该功能作为一个[自定义扩展](#extensions)来实现，而不是作为官方规范的一部分。
 9. 如果提案被接受。
      - 谷歌承诺合并拉动请求的投票版本（前提是贡献者已经签署了[CLA](https://github.com/google/transit/blob/master/CONTRIBUTING.md)，并在5个工作日内执行拉动请求。
-     - 谷歌承诺及时更新<https://github.com/google/gtfs-realtime-bindings>仓库。对gtfs-realime-bindigs的提交，如果是提案的结果，应该参考该提案的拉动请求。
+     - 谷歌承诺及时更新<https://github.com/google/gtfs-realtime-bindings>仓库。对gtfs-realime-bindings的提交，如果是提案的结果，应该参考该提案的拉动请求。
      - 翻译不得包含在原始拉动请求中。
    谷歌负责将相关翻译最终更新为支持的语言，但我们欢迎社区的纯翻译拉动请求，一旦所有的编辑意见得到解决，我们就会接受。
 
 ## *实验性*领域
 
-1. 如果社区能够达成共识，(a)提议的字段似乎是有用的，(b)关于字段的类型`（optional`与`repeated`，`string`与`int`与`bool`），那么将在GTFS-realtime消息中分配一个字段号，并在[.proto文件](../proto)和文档中说明这是一个*实验性*字段，将来可能会改变。
+1. 如果社区能够达成共识，(a)提议的字段似乎是有用的，(b)关于字段的类型 (`optional`与`repeated`，`string`与`int`与`bool`），那么将在GTFS-realtime消息中分配一个字段号，并在[.proto文件](../proto)和文档中说明这是一个*实验性*字段，将来可能会改变。
      - 共识是通过讨论和投票过程达成的，该过程与下面的[规范修正过程](#specification-amendment-process)相同，但不需要一致同意，只需要80%的同意票即可批准。
      - 希望使用新的*实验*字段的GTFS Realtime生产者和消费者将使用带有新字段的.proto文件重新生成他们的库（例如，谷歌将更新[gtfs-realime-bindings库](https://github.com/google/gtfs-realtime-bindings)），并开始用实时数据填充和解析该字段。
      - 一旦我们对*实验性*字段的价值感到满意，并且生产者和消费者都在使用该字段，那么我们将按照下面的[规范修正过程](#specification-amendment-process)将该字段正式添加到规范中。
@@ -110,7 +110,7 @@
 
 **2011年10月25日**
 
-- 更新了文档，澄清了`警报`、`header_text`和`description_text`都是纯文本值。
+- 更新了文档，澄清了`alert`、`header_text`和`description_text`都是纯文本值。
 
 **2011年8月20日**
 

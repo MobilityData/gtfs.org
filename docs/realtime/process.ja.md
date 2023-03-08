@@ -31,13 +31,13 @@ GTFS Realtime 仕様に新しいフィールドを追加したい場合、[GTFS 
      - なお、提唱者は、その機能を公式仕様の一部ではなく、[カスタム拡張](#extensions)機能として実装することを選択することができます。
 9. 提案が受け入れられたら
      - Google は、投票されたバージョンのプルリクエストをマージし、5 営業日以内に実行することを約束します (ただし、貢献者が[CLA](https://github.com/google/transit/blob/master/CONTRIBUTING.md) に署名していることが条件です)。
-     - Googleは、<https://github.com/google/gtfs-realtime-bindings>リポジトリを適時に更新することを約束します。提案の結果である gtfs-realtime-bindigs へのコミットは、提案のプルリクエストを参照する必要があります。
+     - Googleは、<https://github.com/google/gtfs-realtime-bindings>リポジトリを適時に更新することを約束します。提案の結果である gtfs-realtime-bindings へのコミットは、提案のプルリクエストを参照する必要があります。
      - 翻訳を元のプルリクエストに含めてはいけません。
    Google は最終的に関連する翻訳をサポート言語に更新する責任がありますが、コミュニティからの純粋な翻訳プルリクエストは歓迎され、すべての編集コメントが対処され次第、受理されるでしょう。
 
 ## *実験的*分野
 
-1. コミュニティが (a) 提案されたフィールドは有用であると判断し、(b) フィールドのタイプ`(optional` `repeated`、`string` `int`か`bool` か) について合意できれば、GTFS Realtime メッセージでフィールド番号を割り当て、[.proto ファイルと](../proto)ドキュメントに、これは将来的に変わるかもしれない*実験的*フィールドである旨を記述します。
+1. コミュニティが (a) 提案されたフィールドは有用であると判断し、(b) フィールドのタイプ (`optional` `repeated`、`string` `int`か`bool` か) について合意できれば、GTFS Realtime メッセージでフィールド番号を割り当て、[.proto ファイルと](../proto)ドキュメントに、これは将来的に変わるかもしれない*実験的*フィールドである旨を記述します。
      - 合意形成は、以下の[仕様書修正](#specification-amendment-process)プロセスと同じように、議論と投票によって行われます。ただし、全会一致ではなく、80%の賛成票のみで承認されます。
      - 新しい*実験的*フィールドを使用したいGTFS Realtime プロデューサーとコンシューマーは、新しいフィールドを含む .proto ファイルを使用してライブラリを再作成し（例えば、Google は[gtfs-realtime-bindings ライブラリを](https://github.com/google/gtfs-realtime-bindings)更新します）、ライブデータでフィールドの入力とパージングを開始します。
      - 実験的*な*フィールドに価値があり、生産者と消費者の両方がそのフィールドを使用していることが確認されたら、以下の[仕様修正](#specification-amendment-process)プロセスに従って、そのフィールドを仕様に正式に追加する予定です。
@@ -68,11 +68,11 @@ GTFSのように、GTFS Realtime は乗客の情報を扱うものです。つ�
 
 **2020年3月12日**
 
-- GTFS Realtimeのリファレンスページの`TripDescriptorの`説明を更新しました。
+- GTFS Realtimeのリファレンスページの`TripDescriptor`の説明を更新しました。
 
 **2015年2月26日（木**
 
-- `TripDescriptorに`実験的なフィールド`direction_idを`追加した[(議論)](https://groups.google.com/d/msg/gtfs-realtime/b8N2GGd2TBs/0fJ1IOMTjJ0J）。
+- `TripDescriptor`に実験的なフィールド`direction_id`を追加した[(議論)](https://groups.google.com/d/msg/gtfs-realtime/b8N2GGd2TBs/0fJ1IOMTjJ0J）。
 
 **2015年1月30日（木**
 
@@ -93,7 +93,7 @@ GTFSのように、GTFS Realtime は乗客の情報を扱うものです。つ�
 
 **2014年5月22日（木**
 
-- `StopTimeUpdate`メッセージの`ScheduleRelationship`enumの記述を更新しました[（ディスカッション)](https://groups.google.com/forum/#!topic/gtfs-realtime/77c3WZrGBnI)。
+- `StopTimeUpdate`メッセージの`ScheduleRelationship`enumの記述を更新しました[(審議)](https://groups.google.com/forum/#!topic/gtfs-realtime/77c3WZrGBnI)。
 - `TripDescriptor`メッセージの`ScheduleRelationship`enum値からREPLACEMENTを削除しました[（審議）](https://groups.google.com/forum/#!topic/gtfs-realtime/77c3WZrGBnI)。
 
 **2012年10月12日**
