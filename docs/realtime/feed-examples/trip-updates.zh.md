@@ -28,19 +28,19 @@ entity {
     stop_time_update {
       # 选择哪一站受到影响
       stop_sequence: 3
-      # 为vehicle的arrival time
+      # 为车辆到达时间
       arrival {
         # 将被延迟5秒
         delay: 5
       }
     }
-    # ...这vehicle的delay会传播到它的后续站点。
+    # ...这车辆的delay会传播到它的后续站点。
 
-    # vehicle的下一次信息更新时间表
+    # 车辆的下一次信息更新时间表
     stop_time_update {
       # 由stop_sequence选择。它将更新
       stop_sequence: 8
-      # vehicle的原定（预定）arrival time与
+      # 车辆的原定（预定）到达时间与
       arrival {
         # 1秒delay。
         delay: 1
@@ -48,12 +48,12 @@ entity {
     }
     # ...同样地，delay也会传播到后续站点。
 
-    # vehicle的下一次信息更新时间表
+    # 车辆的下一次信息更新时间表
     stop_time_update {
-      # 由stop_sequence选择。它将更新vehicle的arrival time
+      # 由stop_sequence选择。它将更新车辆到达时间
       stop_sequence: 10
-      # 的默认delay为0（time上），并传播这一更新。
-      # 为vehicle的其余站点。
+      # 的默认delay为0（时间上），并传播这一更新。
+      # 为车辆的其余站点。
     }
   }
 }
@@ -72,7 +72,7 @@ entity {
     stop_time_update {
       stop_sequence: 1
       arrival {
-        # 负delay意味着vehicle比计划提前2秒
+        # 负delay意味着车辆比计划提前2秒
         delay: -2
       }
     }

@@ -5,9 +5,9 @@
 ```python
 # header信息
 header {
-  # 的版本speed規格。當前為“2.0”。有效版本為“2.0”、“1.0”。
+  # 的版本速度規格。當前為“2.0”。有效版本為“2.0”、“1.0”。
   gtfs_realtime_version: "2.0"
-  # 確定數據集是增量的還是full
+  # 確定數據集是增量的還是滿的
   incrementality: FULL_DATASET
   # 在服務器上生成此數據集的時刻
   timestamp: 1284457468
@@ -28,19 +28,19 @@ entity {
     stop_time_update {
       # 選擇受影響的站點
       stop_sequence: 3
-      # 為了vehicle的arrivaltime
+      # 為了車輛到達時間
       arrival {
         # 延遲5秒
         delay: 5
       }
     }
-    # ...這個vehicle的delay傳播到其後續站點。
+    # ...這個車輛的delay傳播到其後續站點。
 
-    # 下次信息更新vehicle的日
+    # 下次信息更新車輛的日
     stop_time_update {
       # 被選擇stop_sequence.它會更新
       stop_sequence: 8
-      # 這vehicle的原創（預定）arrivaltime與
+      # 這車輛的原創（預定）到達時間與
       arrival {
         # 1秒delay.
         delay: 1
@@ -48,12 +48,12 @@ entity {
     }
     # ...同樣的delay傳播到後續站點。
 
-    # 下次信息更新vehicle的日程
+    # 下次信息更新車輛的日程
     stop_time_update {
-      # 被選擇stop_sequence.它將更新vehicle的arrivaltime
+      # 被選擇stop_sequence.它將更新車輛的到達時間
       stop_sequence: 10
-      # 與默認delay的 0（在time) 並傳播此更新
-      # 對於其餘的vehicle的停止。
+      # 與默認delay的 0（在時間) 並傳播此更新
+      # 對於其餘的車輛的停止。
     }
   }
 }
@@ -72,7 +72,7 @@ entity {
     stop_time_update {
       stop_sequence: 1
       arrival {
-        # 消極的delay方法vehicle提前2秒
+        # 消極的delay方法車輛提前2秒
         delay: -2
       }
     }
