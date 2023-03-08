@@ -5,10 +5,10 @@
 ```python
 # header 정보
 header {
-  # 의 버전speed 사양. 현재 "2.0". 유효한 버전은 "2.0", "1.0"입니다.
+  # 의 버전속도 사양. 현재 "2.0". 유효한 버전은 "2.0", "1.0"입니다.
   gtfs_realtime_version: "2.0"
 
-  # 데이터 세트가 증분인지 또는full
+  # 데이터 세트가 증분인지 또는가득한
   incrementality: FULL_DATASET
 
   # 그만큼time 이 데이터 세트가 서버에서 생성된 위치
@@ -24,9 +24,9 @@ entity {
   alert {
     # 다음과 같은 경우 여러 기간을 정의할 수 있습니다.Alert 활성
     active_period {
-      # starttime POSIX 시대 형식
+      # 시작 시간 POSIX 시대 형식
         start: 1284457468
-      # endtime POSIX 시대 형식
+      # 종료 시간 POSIX 시대 형식
       end: 1284468072
     }
     # 선택합니다GTFS 엔터티가 영향을 받음
@@ -71,8 +71,8 @@ entity {
       }
     }
 
-    # Alert 설명. 추가의info \~로headertext
-    description_text {
+    # Alert 설명. 추가의정보 \~로header 텍스트
+description_text {
       # 여러 언어/번역 지원
       translation {
         text: "Due to construction at Elm street the stop is closed. The temporary stop can be found 300 meters north at Oak street"

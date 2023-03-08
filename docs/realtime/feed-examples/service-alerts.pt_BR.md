@@ -5,10 +5,10 @@ O exemplo a seguir é uma representação ASCII de um Alert Feed.
 ```python
 # informações deheader
 header {
-  # versão da especificação de speed. Atualmente "2.0". As versões válidas são "2.0", "1.0".
+  # versão da especificação de velocidade. Atualmente "2.0". As versões válidas são "2.0", "1.0".
   gtfs_realtime_version: "2.0"
 
-  # determina se o conjunto de dados é incremental ou full
+  # determina se o conjunto de dados é incremental ou completo
   incrementality: FULL_DATASET
 
   # o time em que este conjunto de dados foi gerado no servidor
@@ -24,9 +24,9 @@ entity {
   alert {
     # múltiplos períodos podem ser definidos quando o Alert está ativo
     active_period {
-      # timestart no formato POSIX epoch
+      # hora de início no formato POSIX epoch
       start: 1284457468
-      # timeend no formato POSIX epoch
+      # tempo final no formato POSIX epoch
       end: 1284468072
     }
     # seleciona quais entidades GTFS serão afetadas
@@ -71,7 +71,7 @@ entity {
       }
     }
 
-    # descrição doAlert. Info adicional ao text do header
+    # descrição doAlert. Info adicional ao texto do header
     description_text {
       # suporte a múltiplos idiomas/traduções
       translation {

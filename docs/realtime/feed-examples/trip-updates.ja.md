@@ -5,7 +5,7 @@
 ```python
 # header情報
 header {
-  # speed仕様のバージョン。現在は "2.0"。有効なバージョンは "2.0", "1.0 "です。
+  # スピード仕様のバージョン。現在は "2.0"。有効なバージョンは "2.0", "1.0 "です。
   gtfs_realtime_version: "2.0"
   # データセットが増分か完全かを判断します
   incrementality: FULL_DATASET
@@ -28,19 +28,19 @@ entity {
     stop_time_update {
       # どの停留所を対象とするかを選択する
       stop_sequence: 3
-      # は、vehicle arrival time
-      arrival {
+      # は、車両到着時刻
+        arrival {
         # を5秒遅らせる
         delay: 5
       }
     }
-    # ...このvehicle delay、後続の停車駅に伝搬される。
+    # ...この車両 delay、後続の停車駅に伝搬される。
 
-    # vehicleスケジュールに関する次の情報の更新
+    # 車両スケジュールに関する次の情報の更新
         stop_time_update {
       # stop_sequence選択された。を更新します。
       stop_sequence: 8
-      # vehicle arrival予定time表示します。
+      # 車両到着予定時間表示します。
       arrival {
         # 1秒間のdelay
         delay: 1
@@ -48,12 +48,12 @@ entity {
     }
     # ...同様に、delay後続の停車駅に伝搬される。
 
-    # vehicleスケジュールに関する次の情報の更新
+    # 車両スケジュールに関する次の情報の更新
     stop_time_update {
-      # stop_sequence で選択された。vehicle arrival time更新される
+      # stop_sequence で選択された。車両到着時間更新される
       stop_sequence: 10
-      # をデフォルトのdelay0（time）に設定し、この更新を伝搬させます。
-      # を、残りのvehicle時間に使用します。
+      # をデフォルトのdelay0（時間）に設定し、この更新を伝搬させます。
+      # を、残りの車両時間に使用します。
     }
   }
 }
@@ -72,7 +72,7 @@ entity {
     stop_time_update {
       stop_sequence: 1
       arrival {
-        # 負のdelay、vehicle予定より2秒進んでいることを意味します。
+        # 負のdelay、車両予定より2秒進んでいることを意味します。
         delay: -2
       }
     }

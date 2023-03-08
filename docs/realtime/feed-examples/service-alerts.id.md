@@ -1,6 +1,6 @@
 # Peringatan layanan
 
-Contoh berikut adalah representasi ASCII dari feed Peringatan.
+Contoh berikut adalah representasi ASCII dari Umpan Peringatan.
 
 ```python
 # header informasi
@@ -8,14 +8,14 @@ header {
   # versi darispeed spesifikasi. Saat ini "2.0". Versi yang valid adalah "2.0", "1.0".
   gtfs_realtime_version: "2.0"
 
-  # menentukan apakah dataset inkremental atau full
+  # menentukan apakah Himpunan data inkremental atau penuh
   incrementality: FULL_DATASET
 
   # itutime tempat dataset ini dibuat di server
-  # untuk menentukan urutan dari Alert feed
+  # untuk menentukan urutan dari Alert Umpan
   timestamp: 1284457468
 }
-# beberapa entitas dapat disertakan dalam feed
+# beberapa entitas dapat disertakan dalam Umpan
 entity {
   # pengidentifikasi unik untukentity
   id: "0"
@@ -24,9 +24,9 @@ entity {
   alert {
     # beberapa periode dapat ditentukan kapanAlert aktif
     active_period {
-      # starttime dalam format zaman POSIX
+      # waktu mulai dalam format zaman POSIX
       start: 1284457468
-      # endtime dalam format zaman POSIX
+      # akhir waktu dalam format zaman POSIX
       end: 1284468072
     }
     # memilih yang manaGTFS entitas akan terpengaruh
@@ -71,7 +71,7 @@ entity {
       }
     }
 
-    # Alert keterangan. Tambahan info keheadertext
+    # Alert keterangan. Tambahan info keheaderteks
     description_text {
       # beberapa bahasa/terjemahan didukung
     translation {

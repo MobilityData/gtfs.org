@@ -5,7 +5,7 @@ El siguiente ejemplo es una representación ASCII de un conjunto completo de dat
 ```python
 # informaciónheader
 header {
-  # versión de la especificación de speed. Actualmente es "2.0". Las versiones válidas son "2.0", "1.0".
+  # versión de la especificación de velocidad. Actualmente es "2.0". Las versiones válidas son "2.0", "1.0".
   gtfs_realtime_version: "2.0"
   # determina si el conjunto de datos es incremental o completo
   incrementality: FULL_DATASET
@@ -13,7 +13,7 @@ header {
   timestamp: 1284457468
 }
 
-# se pueden incluir múltiples entidades en el feed
+# se pueden incluir múltiples entidades en el alimentación
 entity {
   # identificador único de la entity
   id: "simple-trip"
@@ -24,23 +24,23 @@ entity {
       # selecciona qué entity GTFS (trip) se verá afectada
       trip_id: "trip-1"
     }
-    # Actualización de la información Schedule
+    # Actualización de la información cronograma
         stop_time_update {
       # seleccionar la parada afectada
       stop_sequence: 3
-      # para la time de arrival del vehicle
+      # para la tiempo de llegada del vehículo
       arrival {
         # a retrasar con 5 segundos
         delay: 5
       }
     }
-    # ...el delay de este vehicle se propaga a sus paradas siguientes.
+    # ...el delay de este vehículo se propaga a sus paradas siguientes.
 
-    # Próxima actualización de la información sobre el Schedule del vehicle
+    # Próxima actualización de la información sobre el cronograma del vehículo
     stop_time_update {
       # seleccionado por stop_sequence. Actualizará
       stop_sequence: 8
-      # la time arrival original (programada) del vehicle con un
+      # la tiempo llegada original (programada) del vehículo con un
       arrival {
         # 1 segundo de delay.
         delay: 1
@@ -48,12 +48,12 @@ entity {
     }
     # ...Del mismo modo, el delay se propaga a las paradas siguientes.
 
-    # Próxima actualización de la información sobre el Schedule del vehicle
+    # Próxima actualización de la información sobre el cronograma del vehículo
     stop_time_update {
-      # seleccionado por stop_sequence. Actualizará la time arrival del vehicle
+      # seleccionado por stop_sequence. Actualizará la tiempo llegada del vehículo
       stop_sequence: 10
-      # con el delay predeterminado de 0 (a time) y propagar esta actualización
-      # para el resto de paradas del vehicle.
+      # con el delay predeterminado de 0 (a tiempo) y propagar esta actualización
+      # para el resto de paradas del vehículo.
     }
   }
 }
@@ -72,7 +72,7 @@ entity {
     stop_time_update {
       stop_sequence: 1
       arrival {
-        # un delay negativo significa que el vehicle va 2 segundos por delante de lo Schedule
+        # un delay negativo significa que el vehículo va 2 segundos por delante de lo cronograma
         delay: -2
       }
     }

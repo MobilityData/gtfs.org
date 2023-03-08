@@ -5,10 +5,10 @@ El siguiente ejemplo es una representación ASCII de una alerta de servicio.
 ```python
 # informaciónheader
 header {
-  # versión de la especificación de speed. Actualmente es "2.0". Las versiones válidas son "2.0", "1.0".
+  # versión de la especificación de velocidad. Actualmente es "2.0". Las versiones válidas son "2.0", "1.0".
   gtfs_realtime_version: "2.0"
 
-  # determina si el conjunto de datos es incremental o full
+  # determina si el conjunto de datos es incremental o lleno
   incrementality: FULL_DATASET
 
   # la time a la que se generó este conjunto de datos en el servidor
@@ -24,9 +24,9 @@ entity {
   alert {
     # se pueden definir varios periodos en los que Alert está activa
     active_period {
-      # timestart en formato POSIX epoch
+      # hora de inicio en formato POSIX epoch
       start: 1284457468
-      # timeend en formato POSIX epoch
+      # hora final en formato POSIX epoch
       end: 1284468072
     }
     # selecciona las entidades GTFS que se verán afectadas
@@ -35,7 +35,7 @@ entity {
       # agency_id, route_id, route_type, stop_id, trip (véase TripDescriptor)
       route_id: "219"
     }
-    # se pueden incluir varios selectoresinformed_entity) en una entity Alert
+    # se pueden incluir varios selectores (informed_entity) en una entidad Alert
     informed_entity {
       stop_id: "16230"
     }
@@ -71,7 +71,7 @@ entity {
       }
     }
 
-    # descripción de laAlert. INFO adicional al text header
+    # descripción de laAlert. información adicional al text header
     description_text {
       # compatibilidad con varios idiomas/traducciones
       translation {

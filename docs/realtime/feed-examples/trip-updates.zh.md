@@ -5,7 +5,7 @@
 ```python
 # header信息
 header {
-  # speed规范的版本。目前是 "2.0"。有效版本是 "2.0"、"1.0"。
+  # 速度规范的版本。目前是 "2.0"。有效版本是 "2.0"、"1.0"。
   gtfs_realtime_version: "2.0"
   # 确定数据集是增量的还是完整的
   incrementality: FULL_DATASET

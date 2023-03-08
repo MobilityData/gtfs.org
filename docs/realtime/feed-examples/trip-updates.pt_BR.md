@@ -5,7 +5,7 @@ O exemplo a seguir é uma representação ASCII de um feed de Atualização de V
 ```python
 # informações deheader
 header {
-  # versão da especificação de speed. Atualmente "2.0". As versões válidas são "2.0", "1.0".
+  # versão da especificação de velocidade. Atualmente "2.0". As versões válidas são "2.0", "1.0".
   gtfs_realtime_version: "2.0"
   # determina se o conjunto de dados é incremental ou completo
   incrementality: FULL_DATASET
@@ -28,19 +28,19 @@ entity {
     stop_time_update {
       # selecionando qual parada é afetada
       stop_sequence: 3
-      # para a time arrival do vehicle
+      # para a hora de chegada do veículo
       arrival {
         # a ser adiado com 5 segundos
         delay: 5
       }
     }
-    # ...o delay deste vehicle é propagado até suas paradas subseqüentes.
+    # ...o delay deste veículo é propagado até suas paradas subseqüentes.
 
-    # Próxima atualização de informações sobre a programação do vehicle
+    # Próxima atualização de informações sobre a programação do veículo
     stop_time_update {
       # selecionado por stop_sequence. Ele irá atualizar
       stop_sequence: 8
-      # o time original (programado) time arrival do vehicle com um
+      # o tempo original (programado) tempo de chegada do veículo com um
       arrival {
         # 1 segundo de delay.
         delay: 1
@@ -48,12 +48,12 @@ entity {
     }
     # ...Da mesma forma, o delay é propagado para as paradas subseqüentes.
 
-    # Próxima atualização de informações sobre a programação do vehicle
+    # Próxima atualização de informações sobre a programação do veículo
     stop_time_update {
-      # selecionado por stop_sequence. Ele atualizará a time arrival do vehicle
+      # selecionado por stop_sequence. Ele atualizará a tempo de chegada do veículo
       stop_sequence: 10
-      # com o delay padrão de 0 (dentro do time) e propagar esta atualização
-      # para o resto das paradas do vehicle.
+      # com o delay padrão de 0 (dentro do tempo) e propagar esta atualização
+      # para o resto das paradas do veículo.
     }
   }
 }
@@ -72,7 +72,7 @@ entity {
     stop_time_update {
       stop_sequence: 1
       arrival {
-        # delay negativo significa que vehicle está 2 segundos antes do previsto
+        # delay negativo significa que veículo está 2 segundos antes do previsto
         delay: -2
       }
     }

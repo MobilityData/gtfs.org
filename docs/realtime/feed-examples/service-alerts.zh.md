@@ -1,17 +1,17 @@
 # 服务警报
 
-下面的例子是一个Alert feed的ASCII表示。
+下面的例子是一个Alert 订阅的ASCII表示。
 
 ```python
 # header信息
 header {
-  # speed规范的版本。目前是 "2.0"。有效版本是 "2.0"、"1.0"。
+  # 速度规范的版本。目前是 "2.0"。有效版本是 "2.0"、"1.0"。
   gtfs_realtime_version: "2.0"
 
-  # 确定数据集是增量的还是full
+  # 确定数据集是增量的还是满的
   incrementality: FULL_DATASET
 
-  # 该数据集在服务器上生成的time
+  # 该数据集在服务器上生成的时间
   # 用于确定Alert信息的顺序
   timestamp: 1284457468
 }
@@ -24,9 +24,9 @@ entity {
     alert {
     # 当Alert激活时，可以定义多个时段
     active_period {
-      # 以POSIX纪元格式的start time
+      # 以POSIX纪元格式的开始时间
       start: 1284457468
-      # 以POSIX纪元格式的end time
+      # 以POSIX纪元格式的时间结束
       end: 1284468072
     }
     # 选择哪些GTFS实体将受到影响
@@ -35,7 +35,7 @@ entity {
       # agency_id, route_id, route_type, stop_id, trip (见TripDescriptor)
       route_id: "219"
     }
-    # 多个选择器informed_entity）可以被包含在一个Alert entity中
+    # 多个选择器(informed_entity）可以被包含在一个Alert entity中
     informed_entity {
       stop_id: "16230"
     }
@@ -71,7 +71,7 @@ entity {
       }
     }
 
-    # Alert描述。对header text添加info
+    # Alert描述。对header 文本添加信息
     description_text {
       # 支持多种语言/翻译
       translation {

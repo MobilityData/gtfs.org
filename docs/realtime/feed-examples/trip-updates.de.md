@@ -9,7 +9,7 @@ Das folgende Beispiel ist eine ASCII-Darstellung eines vollständigen Datensatze
 ```python
 # header
 header {
-  # Version der speed. Derzeit "2.0". Gültige Versionen sind "2.0", "1.0".
+  # Version der Geschwindigkeitsangabe. Derzeit "2.0". Gültige Versionen sind "2.0", "1.0".
   gtfs_realtime_version: "2.0"
   # bestimmt, ob der Datensatz inkrementell oder voll ist
   incrementality: FULL_DATASET
@@ -32,19 +32,19 @@ entity {
     stop_time_update {
       # Auswahl der betroffenen Haltestelle
       stop_sequence: 3
-      # für die time des vehicle
+      # für die Zeit des Fahrzeug
       arrival {
         # um 5 Sekunden verzögert werden
         delay: 5
       }
     }
-    # ...Die delay dieses vehicle wird auf die nachfolgenden Haltestellen übertragen.
+    # ...Die delay dieses Fahrzeug wird auf die nachfolgenden Haltestellen übertragen.
 
-    # Nächste Informationsaktualisierung zum Fahrplan des vehicle
+    # Nächste Informationsaktualisierung zum Fahrplan des Fahrzeug
     stop_time_update {
       # ausgewählt durch stop_sequence. Es wird aktualisiert
       stop_sequence: 8
-      # die ursprüngliche (geplante) time des vehicle mit einem
+      # die ursprüngliche (geplante) Zeit des Fahrzeug mit einem
       arrival {
         # 1 Sekunde delay.
         delay: 1
@@ -52,12 +52,12 @@ entity {
     }
     # ...Ebenso wird die delay auf die nachfolgenden Haltestellen übertragen.
 
-    # Nächste Informationsaktualisierung zum Fahrplan des vehicle
+    # Nächste Informationsaktualisierung zum Fahrplan des Fahrzeug
     stop_time_update {
-      # ausgewählt durch stop_sequence. Sie aktualisiert die time des vehicle
+      # ausgewählt durch stop_sequence. Sie aktualisiert die zeit des Fahrzeug
       stop_sequence: 10
-      # mit der delay von 0 (on time) und diese Aktualisierung weitergeben
-      # für die restlichen Haltestellen des vehicle.
+      # mit der delay von 0 (pünktlich) und diese Aktualisierung weitergeben
+      # für die restlichen Haltestellen des Fahrzeug.
     }
   }
 }
@@ -76,7 +76,7 @@ entity {
     stop_time_update {
       stop_sequence: 1
       arrival {
-        # Negative delay bedeutet, dass das vehicle dem Zeitplan um 2 Sekunden voraus ist.
+        # Negative delay bedeutet, dass das Fahrzeug dem Zeitplan um 2 Sekunden voraus ist.
         delay: -2
       }
     }

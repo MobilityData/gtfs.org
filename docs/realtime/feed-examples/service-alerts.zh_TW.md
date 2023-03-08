@@ -5,13 +5,13 @@
 ```python
 # header信息
 header {
-  # 的版本speed規格。當前為“2.0”。有效版本為“2.0”、“1.0”。
+  # 的版本速度規格。當前為“2.0”。有效版本為“2.0”、“1.0”。
   gtfs_realtime_version: "2.0"
 
-  # 確定數據集是增量的還是full
+  # 確定數據集是增量的還是滿的
   incrementality: FULL_DATASET
 
-  # 這time在服務器上生成此數據集的位置
+  # 這時間在服務器上生成此數據集的位置
   # 用於確定順序Alert提要
   timestamp: 1284457468
 }
@@ -24,9 +24,9 @@ entity {
   alert {
     # 可以定義多個期間Alert活躍
     active_period {
-      # starttime採用 POSIX 紀元格式
+      # 開始時間採用 POSIX 紀元格式
       start: 1284457468
-      # endtime採用 POSIX 紀元格式
+      # 時間結束採用 POSIX 紀元格式
       end: 1284468072
     }
     # 選擇哪個GTFS實體將受到影響
@@ -71,7 +71,7 @@ entity {
       }
     }
 
-    # Alert描述。額外的info到headertext
+    # Alert描述。額外的信息到header文本
     description_text {
       # 支持多種語言/翻譯
       translation {

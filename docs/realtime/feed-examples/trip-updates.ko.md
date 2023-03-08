@@ -5,7 +5,7 @@
 ```python
 # header 정보
 header {
-  # 의 버전speed 사양. 현재 "2.0". 유효한 버전은 "2.0", "1.0"입니다.
+  # 의 버전속도 사양. 현재 "2.0". 유효한 버전은 "2.0", "1.0"입니다.
   gtfs_realtime_version: "2.0"
   # 데이터 세트가 증분인지 전체인지 결정
   incrementality: FULL_DATASET
@@ -28,19 +28,19 @@ entity {
     stop_time_update {
       # 영향을 받는 정류장 선택
       stop_sequence: 3
-      # \~을 위해vehicle '에스arrivaltime
+      # \~을 위해차량 '에스도착 시간
       arrival {
         # 5초 지연
           delay: 5
       }
     }
-    # ...이것vehicle '에스delay 후속 중지로 전파됩니다.
+    # ...이것차량 '에스delay 후속 중지로 전파됩니다.
 
-    # 다음 정보 업데이트에 대한vehicle 님의 일정
+    # 다음 정보 업데이트에 대한차량 님의 일정
     stop_time_update {
       # 에 의해 선택됨stop_sequence . 업데이트 됩니다
       stop_sequence: 8
-      # 그만큼vehicle 님의 원본(예정)arrivaltime 와 함께
+      # 그만큼차량 님의 원본(예정)도착 시간 와 함께
       arrival {
         # 1 초delay .
           delay: 1
@@ -48,12 +48,12 @@ entity {
     }
     # ...마찬가지로delay 후속 중지로 전파됩니다.
 
-    # 다음 정보 업데이트에 대한vehicle 님의 일정
+    # 다음 정보 업데이트에 대한차량 님의 일정
     stop_time_update {
-      # 에 의해 선택됨stop_sequence . 그것은 업데이트 할 것입니다vehicle '에스arrivaltime
+      # 에 의해 선택됨stop_sequence . 그것은 업데이트 할 것입니다차량 '에스도착 시간
       stop_sequence: 10
-      # 기본값으로delay 0의 (에time ) 이 업데이트를 전파합니다.
-      # 나머지vehicle 가 멈춥니다.
+      # 기본값으로delay 0의 (에시간 ) 이 업데이트를 전파합니다.
+      # 나머지차량 가 멈춥니다.
     }
   }
 }
@@ -72,7 +72,7 @@ entity {
     stop_time_update {
       stop_sequence: 1
       arrival {
-        # 부정적인delay 수단vehicle 예정보다 2초 빠름
+        # 부정적인delay 수단차량 예정보다 2초 빠름
         delay: -2
       }
     }

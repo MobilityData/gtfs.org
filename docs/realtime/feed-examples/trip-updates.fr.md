@@ -5,7 +5,7 @@ L'exemple suivant est une représentation ASCII d'un flux Trip Update complet.
 ```python
 # informations sur l'header
 header {
-  # # version de la spécification de speed. Actuellement "2.0". Les versions valides sont "2.0", "1.0".
+  # # version de la spécification de vitesse. Actuellement "2.0". Les versions valides sont "2.0", "1.0".
   gtfs_realtime_version: "2.0"
   # détermine si le jeu de données est incrémental ou complet
   incrementality: FULL_DATASET
@@ -24,23 +24,23 @@ entity {
       # sélectionne quelle entity GTFS (trip) sera affectée
         trip_id: "trip-1"
       }
-      # Mise à jour des informations sur les Schedule
+      # Mise à jour des informations sur les horaires
       stop_time_update {
       # sélection de l'arrêt concerné
       stop_sequence: 3
-      # pour l'time arrival vehicle
+      # pour l'heure d'arrivée véhicule
       arrival {
         # pour être retardé de 5 secondes
       delay: 5
       }
     }
-    # ...le delay de ce vehicle est propagé à ses arrêts suivants.
+    # ...le delay de ce véhicule est propagé à ses arrêts suivants.
 
-    # Prochaine mise à jour des informations sur l'Schedule du vehicle
+    # Prochaine mise à jour des informations sur l'horaire du véhicule
     stop_time_update {
       # sélectionné par stop_sequence. Il mettra à jour
       stop_sequence: 8
-      # l'time arrival initiale (prévue) du vehicle avec un numéro d'urgence.
+      # heure d'arrivée initiale (prévue) du véhicule avec un numéro d'urgence.
       arrival {
         # delay 1 seconde.
         delay: 1
@@ -48,12 +48,12 @@ entity {
     }
     # ...de même, le delay se propage aux arrêts suivants.
 
-    # Prochaine mise à jour des informations sur l'Schedule du vehicle
+    # Prochaine mise à jour des informations sur l'horaire du véhicule
     stop_time_update {
-      # sélectionné par stop_sequence. Elle mettra à jour l'time arrival du vehicle
+      # sélectionné par stop_sequence. Elle mettra à jour l'heure d'arrivée du véhicule du véhicule
       stop_sequence: 10
-      # avec le delay par défaut de 0 (sur le time) et propager cette mise à jour
-      # pour le reste des arrêts du vehicle.
+      # avec le delay par défaut de 0 (sur le temps) et propager cette mise à jour
+      # pour le reste des arrêts du véhicule.
     }
   }
 }
@@ -72,7 +72,7 @@ entity {
     stop_time_update {
       stop_sequence: 1
       arrival {
-        # Un delay négatif signifie que le vehicle a 2 secondes d'avance sur le Schedule.
+        # Un delay négatif signifie que le véhicule a 2 secondes d'avance sur l'horaire 
         delay: -2
       }
     }

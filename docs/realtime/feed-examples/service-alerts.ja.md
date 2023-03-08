@@ -5,13 +5,13 @@
 ```python
 # header情報
 header {
-  # speed仕様のバージョン。現在は "2.0"。有効なバージョンは "2.0", "1.0 "です。
+  # スピード仕様のバージョン。現在は "2.0"。有効なバージョンは "2.0", "1.0 "です。
   gtfs_realtime_version: "2.0"
 
-  # データセットがインクリメンタルかfull判断します。
+  # データセットがインクリメンタルか満杯判断します。
   incrementality: FULL_DATASET
 
-  # このデータセットがサーバで生成されたtime
+  # このデータセットがサーバで生成された時間
   # Alertフィードの順序を決定するための
   timestamp: 1284457468
 }
@@ -24,10 +24,10 @@ entity {
   alert {
     # Alertアクティブになる期間を複数設定することが可能
     active_period {
-      # POSIXエポック形式によるstart time
+      # POSIXエポック形式による開始時刻
         start: 1284457468
-      # POSIXエポック形式によるend time
-      end: 1284468072
+      # POSIXエポック形式による終了時間
+        end: 1284468072
     }
     # どのGTFSエンティティが影響を受けるかを選択します。
     informed_entity {
@@ -35,7 +35,7 @@ entity {
       # agency_id, route_id, route_type, stop_id, trip (TripDescriptor参照)
       route_id: "219"
     }
-    # 1つのentity複数のセレクタinformed_entity)を含めることができる。
+    # 1つのentity複数のセレクタ(informed_entity)を含めることができる。
     informed_entity {
       stop_id: "16230"
     }
@@ -71,7 +71,7 @@ entity {
       }
     }
 
-    # Alertdescription.text info追加
+    # Alert 説明。 ヘッダー テキストへの追加情報追加
     description_text {
       # 多言語/翻訳対応
     translation {

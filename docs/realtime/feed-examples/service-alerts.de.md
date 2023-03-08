@@ -1,21 +1,21 @@
 # Dienst-Alarm
 
-Das folgende Beispiel ist eine ASCII-Darstellung eines Alert Feeds.
+Das folgende Beispiel ist eine ASCII-Darstellung eines Alert Einspeisungen.
 
 ```python
 # header
 header {
-  # Version der speed. Derzeit "2.0". Gültige Versionen sind "2.0", "1.0".
+  # version der Geschwindigkeitsangabe. Derzeit "2.0". Gültige Versionen sind "2.0", "1.0".
   gtfs_realtime_version: "2.0"
 
-  # bestimmt, ob der Datensatz inkrementell oder full ist
+  # bestimmt, ob der Datensatz inkrementell oder voll ist
   incrementality: FULL_DATASET
 
-  # die time, zu der dieser Datensatz auf dem Server erzeugt wurde
-  # zur Bestimmung der Reihenfolge der Alert Feeds
+  # die Zeit, zu der dieser Datensatz auf dem Server erzeugt wurde
+  # zur Bestimmung der Reihenfolge der Alert Einspeisungen
   timestamp: 1284457468
 }
-# mehrere Entitäten können in den Feed aufgenommen werden
+# mehrere Entitäten können in den Einspeisungen aufgenommen werden
 entity {
   # eindeutiger Bezeichner für die entity
   id: "0"
@@ -24,9 +24,9 @@ entity {
   alert {
     # Es können mehrere Zeiträume definiert werden, in denen der Alert aktiv ist.
       active_period {
-      # time im POSIX-Epochenformat
+      # Zeit im POSIX-Epochenformat
       start: 1284457468
-      # time im POSIX-Epochenformat
+      # Zeit im POSIX-Epochenformat
       end: 1284468072
     }
     # wählt aus, welche GTFS betroffen sein werden
@@ -35,7 +35,7 @@ entity {
       # agency_id, route_id, route_type, stop_id, trip (siehe TripDescriptor)
       route_id: "219"
     }
-    # mehrere Selektoreninformed_entity) können in einer entity enthalten sein
+    # mehrere Selektoren (informed_entity) können in einer entity enthalten sein
     informed_entity {
       stop_id: "16230"
     }
@@ -71,7 +71,7 @@ entity {
       }
     }
 
-    # Beschreibung desAlert. Zusätzliche info zum text
+    # Beschreibung desAlert. Zusätzliche die Info zum text
 
 description_text {
       # Unterstützung mehrerer Sprachen/Übersetzungen

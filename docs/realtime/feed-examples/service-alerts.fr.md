@@ -5,13 +5,13 @@ L'exemple suivant est une représentation ASCII d'un flux d'alerte.
 ```python
 # informations sur l'header
 header {
-  # version de la spécification de speed. Actuellement "2.0". Les versions valides sont "2.0", "1.0".
+  # version de la spécification de vitesse. Actuellement "2.0". Les versions valides sont "2.0", "1.0".
   gtfs_realtime_version: "2.0"
 
-  # détermine si le jeu de données est incrémental ou full
+  # détermine si le jeu de données est incrémental ou complet
   incrementality: FULL_DATASET
 
-  # l'time à laquelle cet ensemble de données a été généré sur le serveur
+  # temps à laquelle cet ensemble de données a été généré sur le serveur
   # pour déterminer la séquence des flux d'Alert
   timestamp: 1284457468
 }
@@ -24,9 +24,9 @@ entity {
   alert {
     # plusieurs périodes peuvent être définies lorsque l'Alert est active
     active_period {
-      # timestart au format POSIX epoch
+      # heure de début au format POSIX epoch
       start: 1284457468
-      # timeend au format POSIX epoch
+      # heure de fin au format POSIX epoch
       end: 1284468072
     }
     # sélectionne les entités GTFS qui seront affectées
@@ -35,7 +35,7 @@ entity {
       # agency_id, route_id, route_type, stop_id, trip (voir TripDescriptor)
       route_id: "219"
     }
-    # plusieurs sélecteurs informed_entity) peuvent être inclus dans une entity Alert
+    # plusieurs sélecteurs (informed_entity) peuvent être inclus dans une entity Alert
     informed_entity {
       stop_id: "16230"
     }
@@ -71,7 +71,7 @@ entity {
       }
     }
 
-    # description de l'Alert. Info supplémentaire au text header
+    # description de l'Alert. Info supplémentaire au texte header
     description_text {
       # Prise en charge de plusieurs langues/traductions
       translation {
