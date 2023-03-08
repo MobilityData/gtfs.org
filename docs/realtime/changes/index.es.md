@@ -36,7 +36,7 @@ Para contribuir a GTFS Realtime, lea el [Proceso de modificación de la especifi
 
 ## Propuestas recientemente fusionadas &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
-Propuestas recientemente fusionadas que ahora forman parte de la [especificación oficial GTFS Real](../reference)time. Consulte el [historial de revisiones](../process#revision-history) completo para obtener más información.
+Propuestas recientemente fusionadas que ahora forman parte de la [especificación oficial GTFS Realtime](../reference). Consulte el [historial de revisiones](../process#revision-history) completo para obtener más información.
 
 <div class="row">
     <div class="leftcontainer">

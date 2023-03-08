@@ -36,7 +36,7 @@ Rejoignez les discussions sur [Github](https://github.com/google/transit/pulls)!
 
 ## Propositions récemment fusionnées &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
-Propositions récemment fusionnées qui sont désormais des caractéristiques de la [spécification officielle GTFS Realtime](../reference). Voir l'[historique](../process#revision-history) complet [des révisions](../process#revision-history) pour en savoir plus.
+Propositions récemment fusionnées qui sont désormais des caractéristiques de la [spécification officielle GTFS Realtime](../reference). Voir [l'historique complet des révisions](../process#revision-history) pour en savoir plus.
 
 <div class="row">
     <div class="leftcontainer">

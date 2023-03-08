@@ -58,7 +58,7 @@ GTFS Realtime に貢献するには、[仕様変更](../process)プロセスを�
     <div class="featurelist">
         <ul>
             <li>トリップのアクセシビリティに関する情報をリアルタイムで追加</li>
-            <li>提供された場合、GTFSスケジュールデータセットの<code>trips.wheelchair_accessibleに</code>上書きされます。</li>
+            <li>提供された場合、GTFSスケジュールデータセットの<code>trips.wheelchair_accessible</code>に上書きされます。</li>
         </ul>
     </div>
 </div>
@@ -84,7 +84,7 @@ GTFS Realtime に貢献するには、[仕様変更](../process)プロセスを�
     <div class="featurelist">
         <ul>
             <li>ルート形状をリアルタイムに更新して迂回路を反映する機能</li>
-            <li>ルートの更新は、既存の<code>shape_idを</code>参照するか、エンコードされたポリラインとして新しいシェイプをリアルタイムで定義することで反映される</li>
+            <li>ルートの更新は、既存の<code>shape_id</code>を参照するか、エンコードされたポリラインとして新しいシェイプをリアルタイムで定義することで反映される</li>
         </ul>
     </div>
 </div>

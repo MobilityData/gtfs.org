@@ -1,6 +1,6 @@
 # GTFS Realtime 变化
 
-GTFS实时规范并不是一成不变的。相反，它是一个开放的规范，由公交机构、开发商和其他使用GTFS实时系统的利益相关者社区开发和维护。预计这个由GTFS实时数据的生产者和消费者组成的社区将提出扩展该规范以实现新功能的建议。
+GTFS Realtime规范并不是一成不变的。相反，它是一个开放的规范，由公交机构、开发商和其他使用GTFS Realtime系统的利益相关者社区开发和维护。预计这个由GTFS Realtime数据的生产者和消费者组成的社区将提出扩展该规范以实现新功能的建议。
 
 要为GTFS Realtime做出贡献，请阅读[规范修订过程](../process)，并关注谷歌Transit Github仓库[（google/transit](https://github.com/google/transit)）上的公开[问题](https://github.com/google/transit/issues)和[拉动请求](https://github.com/google/transit/pulls)中的讨论。![](../../assets/mark-github.svg)
 

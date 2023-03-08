@@ -1,8 +1,8 @@
 # GTFS Realtime Mudanças 
 
-A Especificação GTFS em Tempo Real não é definida em pedra. Ao invés disso, é uma especificação aberta desenvolvida e mantida pela comunidade de agências de trânsito, desenvolvedores e outras partes interessadas que utilizam o GTFS Realtime. Espera-se que esta comunidade de produtores e consumidores de dados do GTFS Realtime tenha propostas para ampliar as especificações de modo a permitir novas capacidades.
+A Especificação GTFS Realtime não é definida em pedra. Ao invés disso, é uma especificação aberta desenvolvida e mantida pela comunidade de agências de trânsito, desenvolvedores e outras partes interessadas que utilizam o GTFS Realtime. Espera-se que esta comunidade de produtores e consumidores de dados do GTFS Realtime tenha propostas para ampliar as especificações de modo a permitir novas capacidades.
 
-Para contribuir com o GTFS em tempo real, leia o [Processo de Emenda de Especificações](../process) e siga as discussões nas [questões](https://github.com/google/transit/issues) em aberto e [faça solicitações](https://github.com/google/transit/pulls) no repositório Transit Github do Google[(google/transit](https://github.com/google/transit)). ![](../../assets/mark-github.svg)
+Para contribuir com o GTFS realtime, leia o [Processo de Emenda de Especificações](../process) e siga as discussões nas [questões](https://github.com/google/transit/issues) em aberto e [faça solicitações](https://github.com/google/transit/pulls) no repositório Transit Github do Google[(google/transit](https://github.com/google/transit)). ![](../../assets/mark-github.svg)
 
 !!! note ""
 

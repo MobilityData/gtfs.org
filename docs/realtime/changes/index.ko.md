@@ -38,7 +38,7 @@ GTFS Realtime에 기여하려면 [사양 수정 프로세스](../process) 를 �
 
 이제 [공식 GTFS Realtime 사양](../reference) 의 기능이 된 최근에 병합된 제안입니다. 자세한 내용은 전체 [개정 내역](../process#revision-history) 을 참조하십시오.
 
-<div class="row"><div class="leftcontainer"><h3 class="title"> <a href="https://github.com/google/transit/pull/332" class="no-icon" target="_blank">Alerts에 cause_detail 및 effect_detail 추가</a></h3><p class="maintainer"> #332 by <a href="https://github.com/mckenzie-maidl-ibigroup" class="no-icon" target="_blank">mckenzie-maidl-ibigroup</a> 은 2022년 6월 26일에 합병되었습니다.</p></div><div class="featurelist"><ul><li> 경고의 원인과 결과에 대한 설명 추가 </li></ul></div></div>
+<div class="row"><div class="leftcontainer"><h3 class="title"> <a href="https://github.com/google/transit/pull/332" class="no-icon" target="_blank">Alerts에 cause_detail 및 effect_detail 추가</a></h3><p class="maintainer"> #332 by <a href="https://github.com/mckenzie-maidl-ibigroup" class="no-icon" target="_blank">mckenzie-maidl-ibigroup</a> 은 2022년 6월 26일에 합병되었습니다.</p></div><div class="featurelist"><ul><li> Alerts 원인과 결과에 대한 설명 추가 </li></ul></div></div>
 
 <div class="row"><div class="leftcontainer"><h3 class="title"> <a href="https://github.com/google/transit/pull/340" class="no-icon" target="_blank">GTFS-rt : 휠체어 액세스 업데이트</a></h3><p class="maintainer"> #340 by <a href="https://github.com/flaktack" class="no-icon" target="_blank">flaktack</a> 이 2022년 7월 25일에 합병되었습니다.</p></div><div class="featurelist"><ul><li> 여행 접근성에 대한 실시간 정보 추가</li><li> 제공된 경우 GTFS 일정 데이터세트에서 <code>trips.wheelchair_accessible</code> 을 덮어씁니다. </li></ul></div></div>
 

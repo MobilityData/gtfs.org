@@ -16,7 +16,7 @@ Untuk berkontribusi pada GTFS Realtime, baca [Proses Amendemen Spesifikasi](../p
 
 <!-- Proposal aktif untuk fitur baru diGTFS Realtime .  -->
 
-Bergabunglah dengan diskusi di [Github](https://github.com/google/transit/pulls) !
+Bergabunglah dengan diskusi di [Github](https://github.com/google/transit/pulls)!
 
 <!-- <div class="row">
     <div class="active-container">
@@ -36,7 +36,7 @@ Bergabunglah dengan diskusi di [Github](https://github.com/google/transit/pulls)
 
 ## Proposal yang Baru Digabung &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
-Proposal yang baru saja digabungkan yang kini menjadi fitur [spesifikasi GTFS-realtime resmi](../reference) . Lihat [Riwayat Revisi](../process#revision-history) lengkap untuk lebih lanjut.
+Proposal yang baru saja digabungkan yang kini menjadi fitur [spesifikasi GTFS-realtime resmi](../reference). Lihat [Riwayat Revisi](../process#revision-history) lengkap untuk lebih lanjut.
 
 <div class="row"><div class="leftcontainer"><h3 class="title"> <a href="https://github.com/google/transit/pull/332" class="no-icon" target="_blank">Tambahkan cause_detail dan effect_detail ke Alerts</a></h3><p class="maintainer"> #332 oleh <a href="https://github.com/mckenzie-maidl-ibigroup" class="no-icon" target="_blank">mckenzie-maidl-ibigroup</a> telah digabungkan pada 26 Jun 2022</p></div><div class="featurelist"><ul><li> Menambahkan deskripsi ke sebab dan akibat Alerts </li></ul></div></div>
 
