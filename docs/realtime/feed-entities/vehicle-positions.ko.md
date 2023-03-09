@@ -1,4 +1,4 @@
-# Vehicle Positio
+# Vehicle Positions
 
 Vehicle position는 차량에 탑재된 GPS 장치와 같이 자동으로 생성된 차량 위치 정보를 제공하는 데 사용됩니다. 단일 차vehicle position는 제공할 수 있는 모든 차량에 대해 제공되어야 합니다.
 

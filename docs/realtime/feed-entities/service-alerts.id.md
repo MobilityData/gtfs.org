@@ -5,8 +5,8 @@ Service alerts memungkinkan Anda memberikan pembaruan setiap kali ada gangguan p
 Anda memiliki opsi untuk memberikan yang berikut ini:
 
 *   URL - tautan ke situs Anda yang menjelaskan lebih lanjut tentang lansiran
-*   Teks tajuk - ringkasan lansiran
-*   Deskripsi - deskripsi lengkap peringatan, yang akan selalu ditampilkan di samping tajuk (jadi jangan ulangi informasi ini).
+*   Header text - ringkasan lansiran
+*   Description - deskripsi lengkap peringatan, yang akan selalu ditampilkan di samping tajuk (jadi jangan ulangi informasi ini).
 
 ## TimeRange
 

@@ -42,7 +42,7 @@
 
 *   stop_sequence 3에 대한 300초 지연
 *   stop_sequence 8에 대한 60초 지연
-*   stop_sequence 10에 대한 `NO_DATA` 의 [일정](../reference.md#enum-schedulerelationship) 관계
+*   stop_sequence 10에 대한 `NO_DATA` 의 [ScheduleRelationship](../reference.md#enum-schedulerelationship) 관계
 
 이는 다음과 같이 해석됩니다.
 

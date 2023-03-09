@@ -5,8 +5,8 @@ Mit Service Alerts können Sie Aktualisierungen bereitstellen, wenn es zu Störu
 Sie haben die Möglichkeit, Folgendes anzugeben:
 
 *   URL - Link zu Ihrer Website, auf der Sie mehr über die Warnung erfahren
-*   Kopfzeilentext - eine Zusammenfassung der Meldung
-*   Beschreibung - eine ausführliche Beschreibung der Warnung, die immer neben der Kopfzeile angezeigt wird (diese Informationen sollten also nicht wiederholt werden).
+*   Header text - eine Zusammenfassung der Meldung
+*   Description - eine ausführliche Beschreibung der Warnung, die immer neben der Kopfzeile angezeigt wird (diese Informationen sollten also nicht wiederholt werden).
 
 ## TimeRange
 

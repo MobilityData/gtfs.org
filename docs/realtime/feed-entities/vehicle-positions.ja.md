@@ -2,7 +2,7 @@
 
 Vehicle positionは、車載の GPS 装置などから自動的に生成される車両の位置情報を提供するために使用される。Vehicle positionは、それを提供することができるすべての車両について、1つだけ提供されるべきである。
 
-車両が現在提供している旅行は、[TripDescriptor](../reference.md#message-tripdescriptor) を通して与えられるべきである。また、更新を提供する正確な物理的車両を指定する[VehicleDescriptorを](../reference.md#message-vehicledescriptor)提供することができます。ドキュメントは以下で提供されます。
+車両が現在提供している旅行は、[TripDescriptor](../reference.md#message-tripdescriptor) を通して与えられるべきである。また、更新を提供する正確な物理的車両を指定する[VehicleDescriptor](../reference.md#message-vehicledescriptor)を提供することができます。ドキュメントは以下で提供されます。
 
 位置の読み取りを行った時刻を示す**timestamp**提供することができる。これはフィードヘッダのタイムスタンプとは異なり、このメッセージがサーバーによって生成された時間であることに注意すること。
 

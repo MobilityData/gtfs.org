@@ -30,11 +30,11 @@ Pour chaque [StopTimeUpdate](../reference.md#message-stoptimeupdate), la relatio
 
 **Les mises à jour doivent être triées par stop_sequence** (ou par stop_ids dans l'ordre où ils apparaissent dans le trajet).
 
-Si un ou plusieurs arrêts manquent sur le trajet, le `delay` de la mise à jour (ou, si seule l'`time` est fournie dans la mise à jour, un retard calculé en comparant l'`time` à l'heure de l'horaire GTFS) est propagé à tous les arrêts suivants. Cela signifie que la mise à jour d'une heure d'arrêt pour un certain arrêt modifiera tous les arrêts suivants en l'absence de toute autre information. Notez que les mises à jour avec une relation d'horaire `SKIPPED` n'arrêteront pas la propagation du retard, mais les mises à jour avec des relations d'horaire `SCHEDULED` (également la valeur par défaut si la relation d'horaire n'est pas fournie) ou `NO_DATA` le feront.
+Si un ou plusieurs arrêts manquent sur le trajet, le `delay` de la mise à jour (ou, si seule `time` est fournie dans la mise à jour, un retard calculé en comparant `time` à l'heure de l'horaire GTFS) est propagé à tous les arrêts suivants. Cela signifie que la mise à jour d'une heure d'arrêt pour un certain arrêt modifiera tous les arrêts suivants en l'absence de toute autre information. Notez que les mises à jour avec une relation d'horaire `SKIPPED` n'arrêteront pas la propagation du retard, mais les mises à jour avec des relations d'horaire `SCHEDULED` (également la valeur par défaut si la relation d'horaire n'est pas fournie) ou `NO_DATA` le feront.
 
 **Exemple 1**
 
-Pour un trajet comportant 20 arrêts, un [StopTimeUpdate](../reference.md#message-stoptimeupdate) avec un délai d'arrivée et un délai de départ de 0[(StopTimeEvents](../reference.md#message-stoptimeevent)) pour la séquence d'arrêts de l'arrêt actuel signifie que le trajet est exactement à l'heure.
+Pour un trajet comportant 20 arrêts, un [StopTimeUpdate](../reference.md#message-stoptimeupdate) avec un délai d'arrivée et un délai de départ de 0[(StopTimeEvents](../reference.md#message-stoptimeevent)) pour la stop_sequence de l'arrêt actuel signifie que le trajet est exactement à l'heure.
 
 **Exemple 2**
 

@@ -39,4 +39,4 @@ Yang paling penting adalah garis lintang dan garis bujur tempat kendaraan berada
 
 ## Catatan historis tentang jenis umpan
 
-Spesifikasi GTFS Realtime versi awal mengharuskan setiap feed hanya berisi satu jenis entitas. Contoh alat untuk mengonversi dari skema gabungan ke skema feed-per-type terletak di repositori GitHub [gtfsrt-examples Bliksem](https://github.com/bliksemlabs/gtfsrt-examples/blob/master/split_by_entitytype.py) Labs.
+Spesifikasi GTFS Realtime versi awal mengharuskan setiap feed hanya berisi satu jenis entitas. Contoh alat untuk mengonversi dari skema gabungan ke skema feed-per-type terletak di repositori GitHub [gtfsrt-examples](https://github.com/bliksemlabs/gtfsrt-examples/blob/master/split_by_entitytype.py) Bliksem Labs.

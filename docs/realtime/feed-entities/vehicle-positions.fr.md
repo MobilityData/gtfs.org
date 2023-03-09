@@ -4,7 +4,7 @@ Vehicle position est utilisée pour fournir des informations générées automat
 
 Le trajet que le véhicule effectue actuellement doit être indiqué par un [TripDescriptor](../reference.md#message-tripdescriptor). Vous pouvez également fournir un [VehicleDescriptor](../reference.md#message-vehicledescriptor), qui spécifie un véhicule physique précis pour lequel vous fournissez des mises à jour. La documentation est fournie ci-dessous.
 
-Un **timestamp ** indiquant l'heure à laquelle la position a été relevée peut être fourni. Notez que cet horodatage est différent de celui de l'en-tête du flux, qui correspond à l'heure à laquelle ce message a été généré par le serveur.
+Un **timestamp** indiquant l'heure à laquelle la position a été relevée peut être fourni. Notez que cet horodatage est différent de celui de l'en-tête du flux, qui correspond à l'heure à laquelle ce message a été généré par le serveur.
 
 **Current passage** peut également être fourni (sous forme de `stop_sequence` ou de `stop_id`). Il s'agit d'une référence à l'arrêt vers lequel le véhicule est soit en route, soit déjà arrêté.
 

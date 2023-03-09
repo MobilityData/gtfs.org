@@ -5,7 +5,7 @@ Les service alerts vous permettent de fournir des mises à jour lorsqu'il y a un
 Vous avez la possibilité de fournir les éléments suivants :
 
 *   URL - lien vers votre site expliquant plus en détail l'alerte.
-*   Texte d'en-tête - résumé de l'alerte
+*   Header text - résumé de l'alerte
 *   Description - description complète de l'alerte, qui sera toujours affichée à côté de l'en-tête (il ne faut donc pas répéter ces informations).
 
 ## TimeRange

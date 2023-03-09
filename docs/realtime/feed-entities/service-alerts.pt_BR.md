@@ -5,8 +5,8 @@ Os service alerts permitem que você forneça atualizações sempre que houver i
 Você tem a opção de fornecer o seguinte:
 
 *   URL - link para seu site, explicando mais sobre o alerta
-*   Texto de cabeçalho - um resumo do alerta
-*   Descrição - uma descrição completa do alerta, que será sempre mostrada ao lado do cabeçalho (portanto, não deve repetir esta informação).
+*   Header text - um resumo do alerta
+*   Description - uma descrição completa do alerta, que será sempre mostrada ao lado do cabeçalho (portanto, não deve repetir esta informação).
 
 ## TimeRange
 
@@ -26,7 +26,7 @@ As entidades são selecionadas usando seus identificadores GTFS, e você pode se
 *   Trip - afeta uma viagem em particular
 *   Stop - afeta uma parada específica
 
-Você pode incluir mais de um dos campos listados acima em uma `informed_entity`. Quando múltiplos campos são incluídos em `informed_entity`, eles devem ser interpretados como sendo unidos pelo operador lógico `AND`. Em outras palavras, o alerta só deve ser aplicado em um contexto que atenda a todos os campos fornecidos em `informed_entity`. Por exemplo, se `route_id: "1` " e `stop_id:` " `5` " estiverem ambos incluídos em `informed_entity`, então o alerta deve ser aplicado somente ao itinerário 1 na parada 5. NÃO deve ser aplicado a qualquer outra parada na rota 1, e NÃO deve ser aplicado a qualquer outra rota na parada 5.
+Você pode incluir mais de um dos campos listados acima em uma `informed_entity`. Quando múltiplos campos são incluídos em `informed_entity`, eles devem ser interpretados como sendo unidos pelo operador lógico `AND`. Em outras palavras, o alerta só deve ser aplicado em um contexto que atenda a todos os campos fornecidos em `informed_entity`. Por exemplo, se `route_id: "1"` e `stop_id: "5"` estiverem ambos incluídos em `informed_entity`, então o alerta deve ser aplicado somente ao itinerário 1 na parada 5. NÃO deve ser aplicado a qualquer outra parada na rota 1, e NÃO deve ser aplicado a qualquer outra rota na parada 5.
 
 Se você gostaria de representar um alerta que afeta mais de uma entidade (por exemplo, um alerta tanto para a rota 1 quanto para a parada 5) , você deve adicionar várias `informed_entity` ao seu `alert`, sendo que cada uma delas se aplica à entidade afetada (por exemplo, uma `informed_entity` que inclui a rota 1 e outra `informed_entity` que inclui a parada 5).
 
