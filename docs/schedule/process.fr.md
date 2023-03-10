@@ -61,6 +61,22 @@ Afin de préserver la vision originale de GTFS, un certain nombre de principes d
 
 ## Historique des révisions
 
+**26 juillet 2022**<br/>
+
+* Ajout de transferts d'un voyage à l'autre avec l'option "siège". Voir la [discussion](https://github.com/google/transit/pull/303)
+
+**17 mai 2022**<br/>
+
+* Mise en œuvre de la base GTFS-Fares V2. Voir la [discussion](https://github.com/google/transit/pull/286)
+
+**22 octobre 2021**<br/>
+
+* Ajout de champs d'id primaires et étrangers. Voir la [discussion](https://github.com/google/transit/pull/278)
+
+**05 octobre 2021**<br/>
+
+* Ajout des transferts de voyage à voyage et d'itinéraire à itinéraire. Voir la [discussion](https://github.com/google/transit/pull/284)
+
 **15 septembre 2021**<br/>
 
 * Permet aux portes de tarifs (pathway_mode=6) d'être bidirectionnelles. Voir la [discussion](https://github.com/google/transit/pull/276).

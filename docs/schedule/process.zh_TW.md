@@ -62,6 +62,22 @@ search:
 
 ## 修訂記錄
 
+**2022 年 7 月 26 日**
+
+* 添加了帶座位選項的行程到行程的接送服務。 見[討論](https://github.com/google/transit/pull/303)
+
+**2022 年 5 月 17 日**
+
+* GTFS-Fares V2基礎實施。 見[討論](https://github.com/google/transit/pull/286)
+
+**2021 年 10 月 22 日**
+
+* 添加小學和外國id領域。 見[討論](https://github.com/google/transit/pull/278)
+
+**2021 年 10 月 5 日**
+
+* 添加了 旅行到旅行 和 路由到路由 轉移。 見[討論](https://github.com/google/transit/pull/284)
+
 **2021 年 9 月 15 日**<br/>
 
 * 允許收費站 (pathway_mode=6) 是雙向的。見[討論](https://github.com/google/transit/pull/276)。

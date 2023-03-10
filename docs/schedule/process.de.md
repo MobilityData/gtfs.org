@@ -61,6 +61,22 @@ Um die ursprüngliche Vision von GTFS zu bewahren, wurde eine Reihe von Leitprin
 
 ## Historie der Revision
 
+**26. Juli, 2022**<br/>
+
+* Hinzufügen eines Transfers von Fahrt zu Fahrt mit der Option "In-Seat". Siehe [Diskussion](https://github.com/google/transit/pull/303)
+
+**17. Mai 2022**<br/>
+
+* GTFS-Fares V2 Basisimplementierung. Siehe [Diskussion](https://github.com/google/transit/pull/286)
+
+**22. Oktober 2021**<br/>
+
+* Primäre und fremde id hinzugefügt. Siehe [Diskussion](https://github.com/google/transit/pull/278)
+
+**05. Oktober 2021**<br/>
+
+* Übertragungen von Reise zu Reise und von Route zu Route wurden hinzugefügt. Siehe [Diskussion](https://github.com/google/transit/pull/284)
+
 **15. September 2021**<br/>
 
 * Erlaubt, dass fare gates (pathway_mode=6) bidirektional sind. Siehe [Diskussion](https://github.com/google/transit/pull/276).
