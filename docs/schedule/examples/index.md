@@ -18,4 +18,4 @@ To help in understanding the GTFS specification and in producing tools that read
     - [Translations](translations)
     - [Feed information](feed-info)
     - [Dataset attributions](attributions)
-- See [OpenMobilityData](https://openmobilitydata.org/) for public feeds from real transit agencies.
+- See the [Mobility Database](https://database.mobilitydata.org/) for public feeds from real transit agencies.
