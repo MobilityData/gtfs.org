@@ -19,4 +19,4 @@ Zum besseren Verständnis der GTFS und zur Erstellung von Tools, die GTFS lesen 
     - [Übersetzungen](translations)
     - [Informationen zur Einspeisung](feed-info)
     - [Datensatz-Attribute](attributions)
-- Siehe [OpenMobilityData](https://openmobilitydata.org/) für öffentliche Feeds von echten Verkehrsbetrieben.
+- Siehe [Mobility Database](https://database.mobilitydata.org/) für öffentliche Feeds von echten Verkehrsbetrieben.
