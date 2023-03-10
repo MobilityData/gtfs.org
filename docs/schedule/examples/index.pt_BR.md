@@ -19,4 +19,4 @@ Para ajudar na compreensão da especificação GTFS e na produção de ferrament
     - [Traduções](translations)
     - [Informações sobre alimentação](feed-info)
     - [Atribuições do conjunto de dados](attributions)
-- Consulte [OpenMobilityData](https://openmobilitydata.org/) para obter informações públicas de agências de trânsito reais.
+- Consulte [Mobility Database](https://database.mobilitydata.org/) para obter informações públicas de agências de trânsito reais.

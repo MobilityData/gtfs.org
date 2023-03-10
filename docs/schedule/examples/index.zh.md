@@ -19,4 +19,4 @@ search:
     - [翻译](translations)
     - [饲料信息](feed-info)
     - [数据集属性](attributions)
-- 请参阅[OpenMobilityData](https://openmobilitydata.org/)，了解来自真实交通机构的公开信息。
+- 请参阅[Mobility Database](https://database.mobilitydata.org/)，了解来自真实交通机构的公开信息。
