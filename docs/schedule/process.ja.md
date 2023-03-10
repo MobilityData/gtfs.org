@@ -61,6 +61,22 @@ GTFSの当初のビジョンを維持するために、仕様を拡張する際�
 
 ## 改訂履歴
 
+**2022年7月26日**<br/>
+
+* 座席内オプションでトリップ間移動ができるようになりました。 [ディスカッションを](https://github.com/google/transit/pull/303)参照。
+
+**2022年5月17日**<br/>
+
+* GTFS-Fares V2ベースの実装。 [ディスカッションを](https://github.com/google/transit/pull/286)参照。
+
+**2021年10月22日**<br/>
+
+* プライマリおよびフォーリンidフィールドを追加しました。 [ディスカッションを](https://github.com/google/transit/pull/278)参照。
+
+**2021年10月05日**<br/>
+
+* トリップ間、ルート間の転送を追加しました。 [ディスカッションを](https://github.com/google/transit/pull/284)参照。
+
 **2021年9月15日**<br/>
 
 * 運賃ゲート（pathway_mode=6）が双方向であることを許可しました。[ディスカッションを](https://github.com/google/transit/pull/276)参照してください。

@@ -4,7 +4,7 @@
   
 # Agency Tools
 
-Tools for transit agencies.  See also [GTFS Data Collection and Maintenance Tools](#gtfs-data-collection-and-maintenance-tools) for tools specific to GTFS.
+Tools for transit agencies.  See also [GTFS Data Collection and Maintenance Tools](/resources/gtfs/#gtfs-data-collection-and-maintenance-tools) for tools specific to GTFS.
 
 - [Remix](http://getremix.com/) - A webapp that lets transit agencies easily plan routes.
 - [AC Transit RestroomFinder](https://github.com/actransitorg/ACTransit.RestroomFinder) - Pinpoints the nearest authorized restroom for bus operator and field staff, using GPS and on-screen map.

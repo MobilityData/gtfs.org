@@ -58,7 +58,23 @@ search:
 
   <hr/>
 
-  ## 개정 내역
+## 개정 내역
+
+  **2022년 7월 26일**
+
+  * 좌석 내 옵션이 있는 여행 간 환승이 추가되었습니다. [토론](https://github.com/google/transit/pull/303) 을 참조하십시오.
+
+  **2022년 5월 17일**
+
+  * GTFS-Fares V2 기본 구현. [토론](https://github.com/google/transit/pull/286) 을 참조하십시오.
+
+  **2021년 10월 22일**
+
+  * 기본 및 외국 추가id 필드. [토론](https://github.com/google/transit/pull/278) 을 참조하십시오.
+
+  **2021년 10월 05일**
+
+  * 여행 간 및 경로 간 환승을 추가했습니다. [토론](https://github.com/google/transit/pull/284) 을 참조하십시오.
 
   **2021년 9월 15일**<br/>
 
