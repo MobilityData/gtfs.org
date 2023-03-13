@@ -1,16 +1,7 @@
 {
     "source_language": "EN",
     "target_languages": [
-        "ZH",
-        "zh-TW",
-        "FR",
-        "DE",
-        "id",
-        "JA",
-        "ko",
-        "PT-BR",
-        "RU",
-        "ES"
+        "zh-TW"
     ],
     "interpolation": "default",
     "input_path": "docs/schedule/example-feed.md",
