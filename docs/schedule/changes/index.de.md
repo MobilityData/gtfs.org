@@ -46,6 +46,20 @@ Kürzlich zusammengeführte Vorschläge, die nun Bestandteil der [offiziellen GT
 
 <div class="row">
     <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/355" class="no-icon" target="_blank">Tarifmedien hinzufügen</a></h3>
+        <p class="maintainer">#355 von <a href="https://github.com/isabelle-dr" class="no-icon" target="_blank">isabelle-dr</a> wurde am 14. März 2023 eingefügt.</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Tarife Medien ist ein Schlüsselelement des <a href="../../extensions/fares-v2">GTFS Fares-v2 Erweiterungsvorschlags</a></li>
+            <li>Sie steht für das, was ein Fahrgast zur Validierung seiner Fahrt verwenden kann (z. B. eine Transitkarte, eine mobile App oder Tap-to-Pay mit einer kontaktlosen Bankkarte)</li>
+            <li>Ein Tarifprodukt kann mit einem bestimmten Tarifmedium verknüpft werden (z. B. ist eine Monatskarte nur mit einer Transitkarte erhältlich).</li>
+            <li>Der Preis eines Tarifprodukts kann auf der Grundlage der Tarifmedien definiert werden (z. B. ist das Ticket günstiger, wenn es über eine mobile App gekauft wird).</li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">Hinzufügen von trip mit Sitzplatzoption</a></h3>
         <p class="maintainer">#303 von <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> wurde zusammengeführt am 26. Juni 2022</p>
     </div>

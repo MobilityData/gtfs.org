@@ -43,6 +43,21 @@ Active proposals for new features in <glossary variable="GTFS Schedule"><glossar
 
 이제 [공식의 기능이 된 최근에 병합된 제안GTFS Schedule사양](../reference) . 자세한 내용은 전체 [개정 내역](../process#revision-history) 을 참조하십시오.
 
+<div class="row">
+    <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/355" class="no-icon" target="_blank">요금 매체 추가</a></h3>
+        <p class="maintainer"><a href="https://github.com/isabelle-dr" class="no-icon" target="_blank">isabelle-dr</a> 의 #355가 2023년 3월 14일에 합병되었습니다.</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>요금 미디어는GTFS <a href="../../extensions/fares-v2">Fares-v2 확장 제안</a></li>
+            <li>승객이 탑승을 확인하는 데 사용할 수 있는 것을 나타냅니다(예: 대중교통 카드, 모바일 앱 또는 비접촉식 은행 카드를 사용한 탭하여 결제).</li>
+            <li>요금 제품은 특정 요금 미디어와 연결될 수 있습니다(예: 월간 이용권은 대중교통 카드에서만 사용 가능).</li>
+            <li>요금 상품의 가격은 요금 미디어를 기반으로 정의할 수 있습니다(예: 모바일 앱을 통해 구매하면 티켓이 더 저렴함).</li>
+        </ul>
+    </div>
+</div>
+
 <div class="row"><div class="leftcontainer"><h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">추가하다여행 -에게-여행 좌석 옵션이 있는 환승</a></h3><p class="maintainer"> #303 by <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> 는 2022년 6월 26일에 합병되었습니다.</p></div><div class="featurelist"><ul><li> 다음에 대한 새로운 <code>transfer_type</code> 을 추가합니다.trip 에게trip 동일한 경우 사용자가 &quot;좌석 이동&quot;을 수행할 수 있는지 정의하기 위한 이동vehicle 2회 연속 운행 중이며 사용자는 선상에 머무를 수 있습니다.</li><li> 좌석 내 환승이 허용되지 않는 경우를 정의할 수 있지만 운영상 서로 다른 두 여행을 함께 연결할 수 있습니다. </li></ul></div></div>
 
 <div class="row"><div class="leftcontainer"><h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank"> GTFS-Fares V2 기본 구현</a></h3><p class="maintainer"> #286 by <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> 가 2022년 5월 17일에 합병되었습니다.</p></div><div class="featurelist"><ul><li> 대중교통 요금 및 티켓</li><li> 복잡한 운임 및 환승 비용 모델링(다중 네트워크,time -기반 및 카운트 기반 전송)</li><li> 정류장을 요금 구역에 연결하는 모델 </li></ul></div></div>

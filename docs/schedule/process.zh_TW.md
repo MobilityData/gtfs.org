@@ -62,6 +62,10 @@ search:
 
 ## 修訂記錄
 
+**2023年3月14日**<br/>
+
+* 增加了票价媒体。见[讨论](https://github.com/google/transit/pull/355)。
+
 **2022 年 7 月 26 日**
 
 * 添加了帶座位選項的行程到行程的接送服務。 見[討論](https://github.com/google/transit/pull/303)

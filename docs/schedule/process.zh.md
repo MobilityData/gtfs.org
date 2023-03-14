@@ -60,6 +60,10 @@ GTFS规范不是一成不变的。相反，它是一个开放的规范，由公�
 
 ## 修订历史
 
+**2023年3月14日**<br/>
+
+* 增加了票价媒体。见[讨论](https://github.com/google/transit/pull/355)。
+
 **2022年7月26日**<br/>
 
 * 增加了行程与行程之间的转车，有座位选择。 见[讨论](https://github.com/google/transit/pull/303)

@@ -61,6 +61,10 @@ A fim de preservar a visão original do GTFS, alguns princípios orientadores fo
 
 ## Histórico de revisão
 
+**14 de março de 2023**<br/>
+
+* Acrescentou a mídia tarifária. Ver [discussão](https://github.com/google/transit/pull/355).
+
 **26 de julho de 2022**<br/>
 
 * Transferências de ida e volta adicionais com opção no assento. Veja a [discussão](https://github.com/google/transit/pull/303)

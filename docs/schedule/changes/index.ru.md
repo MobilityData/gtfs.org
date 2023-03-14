@@ -47,6 +47,22 @@ Active proposals for new features in <glossary variable="GTFS Schedule"><glossar
 
 <div class="row">
     <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/355" class="no-icon" target="_blank">Добавить средства оплаты проезда</a></h3>
+        <p class="maintainer">#355 от <a href="https://github.com/isabelle-dr" class="no-icon" target="_blank">isabelle-dr</a> был объединен 14 марта 2023 г.</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Средства оплаты проезда - это ключевой элемент <a href="../../extensions/fares-v2">предложения расширения GTFS Fares-v2</a>.</li>
+            <li>Он представляет собой то, что пассажир может использовать для подтверждения своей поездки (например, транзитная карта, мобильное приложение или оплата с помощью бесконтактной банковской карты).</li>
+            <li>Тарифный продукт может быть связан с определенным носителем тарифа (например, месячный проездной билет доступен только на транзитной карте).</li>
+            <li>Цена тарифного продукта может быть определена в зависимости от носителя информации (например, билет стоит дешевле, если он куплен через мобильное приложение).</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">Добавить пересадку с trip с возможностью пересадки на сиденье</a></h3>
         <p class="maintainer">#303 автор <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> было добавлено 26 июня 2022 г.
 </p>

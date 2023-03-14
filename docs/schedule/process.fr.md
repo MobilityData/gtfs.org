@@ -61,6 +61,10 @@ Afin de préserver la vision originale de GTFS, un certain nombre de principes d
 
 ## Historique des révisions
 
+**14 mars 2023**<br/>
+
+* Ajout d'un support de tarif. Voir la [discussion](https://github.com/google/transit/pull/355).
+
 **26 juillet 2022**<br/>
 
 * Ajout de transferts d'un voyage à l'autre avec l'option "siège". Voir la [discussion](https://github.com/google/transit/pull/303)

@@ -45,6 +45,21 @@ Active proposals for new features in <glossary variable="GTFS Schedule"><glossar
 
 <div class="row">
     <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/355" class="no-icon" target="_blank">添加票价媒体</a></h3>
+        <p class="maintainer">#355由<a href="https://github.com/isabelle-dr" class="no-icon" target="_blank">isabelle-dr</a>于2023年3月14日合并而成</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>票价媒体是<a href="../../extensions/fares-v2">GTFSFares-v2扩展提案</a>中的一个关键元素。</li>
+            <li>它代表了乘客可以用什么来验证他们的乘坐（例如交通卡、移动应用程序或使用非接触式银行卡的点对点支付）。</li>
+            <li>一个票价产品可以与一个特定的票价媒体相关联（例如，月票只能在交通卡上使用）。</li>
+            <li>票价产品的价格可以根据票价媒体来定义（例如，如果通过移动应用程序购买，票价会更便宜）</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">增加旅行转接，带座位选项</a></h3>
         <p class="maintainer">#303 由<a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a>已于2022年6月26日合并</p>
     </div>

@@ -45,6 +45,22 @@ Recentemente foram fundidas propostas que agora são características da [especi
 
 <div class="row">
     <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/355" class="no-icon" target="_blank">Acrescentar mídia tarifária</a></h3>
+        <p class="maintainer">#355 por <a href="https://github.com/isabelle-dr" class="no-icon" target="_blank">isabelle-dr</a> foi fundida em 14 de março de 2023</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>O Mídia Tarifária é um elemento chave na <a href="../../extensions/fares-v2">proposta de extensão do GTFS Fares-v2</a></li>
+            <li>Representa o que um cavaleiro pode usar para validar sua viagem (por exemplo, um cartão de trânsito, um aplicativo móvel ou um cartão bancário "tap-to-pay" usando um cartão bancário sem contato)</li>
+            <li>Um produto tarifário pode ser associado a uma mídia tarifária específica (por exemplo, um passe mensal só está disponível em um cartão de trânsito)</li>
+            <li>O preço de um produto tarifário pode ser definido com base na Mídia Tarifária (por exemplo, o bilhete é mais barato se comprado através de um aplicativo móvel)</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">Adicionar transferências de trip com opção in-seat</a></h3>
         <p class="maintainer">#303 por <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> foi fundido em 26 de junho de 2022</p>
     </div>
