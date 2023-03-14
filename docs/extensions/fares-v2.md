@@ -51,7 +51,17 @@ For the fare media feature currently under discussion, first adopters are
 - Producer: <a href="https://www.interline.io/" target="_blank">Interline</a>, [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - Consumer: <a href="https://www.apple.com/">Apple</a>
 
-<a class="button no-icon" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing" target="_blank">See who’s using Fares v2 files and fields</a>
+## Adoption tracker
+### Current
+
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrZzYzPYao7iExlW?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shr8aT0K9bpncmy0V" target="_blank">Request a change</a><a class="button no-icon" href="https://airtable.com/shr5B6Pl1r9KH9qMX" target="_blank">Add you organisation (consumers)</a><a class="button no-icon" href="https://airtable.com/shrn0Afa3TPNkOAEh" target="_blank">Add your organisation (producers)</a>
+
+### Future
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrUrgZTO1noUF66R?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shrvnI40zuFXmDsQI" target="_blank">Add your future plans</a>
 
 ## Fares v2 Features Under Discussion
 
