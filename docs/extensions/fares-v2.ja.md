@@ -30,9 +30,9 @@ Fares v1と技術的な矛盾がないため、制作者はFares v1と同じデ�
 
 ## 進行中のFares v2作業
 
-運賃メディア(旧運賃コンテナ)の提案が投票にかけられました!
+[運賃メディア（旧運賃コンテナ）の提案が通り](https://github.com/google/transit/pull/355#issuecomment-1468326858)、正式に仕様に採用されました
 
-[3月13日23:59:59UTCまでにGitHubのプルリクエストで投票をお願いします。](https://github.com/google/transit/pull/355#issuecomment-1456392466)
+Fares V2ワーキングミーティングでは、今後、[時間変動運賃のモデリングと](https://github.com/google/transit/pull/357)採用に焦点を当てます。
 
 <a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">Slack の #gtfs-fares に参加する</a><a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">ミーティングスケジュールを</a><a class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">見るミーティングノートを見る</a>
 

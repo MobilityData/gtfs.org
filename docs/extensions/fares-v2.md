@@ -30,9 +30,9 @@ Producers may implement Fares v2 in the same dataset with Fares v1, since there 
 
 ## In Progress Fares v2 Work
 
-The fare media (formerly fare containers) proposal has been called to a vote! 
+<a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">The fare media (formerly fare containers) proposal has passed</a> and been officially adopted in the spec!
 
-<a href="https://github.com/google/transit/pull/355#issuecomment-1456392466" target="_blank">Vote in the GitHub pull request before 2023-03-13 at 23:59:59 UTC.</a>
+The Fares v2 working meetings will now focus on <a href="https://github.com/google/transit/pull/357">modelling and adopting time variable fares.</a>
 
 <a class="button no-icon" href=https://share.mobilitydata.org/slack>Join #gtfs-fares on Slack</a><a class="button no-icon" href=https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057>See the meeting schedule</a><a class="button no-icon" href=https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit>See meeting notes</a>
 

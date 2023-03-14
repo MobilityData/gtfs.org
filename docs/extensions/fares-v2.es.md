@@ -30,9 +30,9 @@ Los productores pueden implementar Fares v2 en el mismo conjunto de datos que Fa
 
 ## Trabajo en curso sobre Fares v2
 
-La propuesta de fare media (antes fare containers) ha sido sometida a votación.
+[La propuesta de medios tarifarios (antes contenedores tarifarios) ha sido aprobada](https://github.com/google/transit/pull/355#issuecomment-1468326858) y adoptada oficialmente en la especificación.
 
-[Vota en el pull request de GitHub antes del 13 de marzo a las 23:59:59 UTC.](https://github.com/google/transit/pull/355#issuecomment-1456392466)
+Las reuniones de trabajo Fares V2 se centrarán ahora en la [modelización y adopción de tarifas variables en el tiempo.](https://github.com/google/transit/pull/357)
 
 <a class="button no-icon" href="https://share.mobilitydata.org/slack" target="_blank">Únase a #gtfs-fares en Slack</a><a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">Vea el calendario de reuniones</a><a  class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">Vea las notas de la reunión</a>.
 

@@ -28,9 +28,9 @@ Fares v2가 나타낼 주요 개념은 다음과 같습니다.
 
 ## 진행 중인 운임 v2 작업
 
-운임 매체(이전 운임 컨테이너) 제안이 투표에 부름 받았습니다!
+[운임 매체(이전 운임 컨테이너) 제안이 통과되어](https://github.com/google/transit/pull/355#issuecomment-1468326858) 공식적으로 사양에 채택되었습니다!
 
-[3월 13일 23:59:59 UTC 이전에 GitHub 풀 요청에 투표하세요.](https://github.com/google/transit/pull/355#issuecomment-1456392466)
+그만큼Fares V2 작업 회의는 이제 [시간 변동 요금을 모델링하고 채택하는 데 중점을 둘 것입니다.](https://github.com/google/transit/pull/357)
 
 <a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">Slack에서 #gtfs-fares 가입</a> <a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">회의 일정</a><a class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">보기 회의 메모 보기</a>
 

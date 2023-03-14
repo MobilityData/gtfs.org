@@ -28,9 +28,9 @@ Fares v2 計劃表達的主要概念是
 
 ## 進行中的票價 v2 工作
 
-票價媒體（以前的票價容器）提案已被要求投票！
+[票价媒体（以前的票价容器）提案已经通过](https://github.com/google/transit/pull/355#issuecomment-1468326858)，并在规范中被正式采用
 
-[在 UTC 時間 3 月 13 日晚上 23:59:59 之前在 GitHub 拉取請求中投票。](https://github.com/google/transit/pull/355#issuecomment-1456392466)
+Fares V2工作会议现在将专注于[建模和采用时间变量票价。](https://github.com/google/transit/pull/357)
 
 <a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">在 Slack 上加入#gtfs-fares</a> <a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">查看會議日程</a><a class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">查看會議記錄</a>
 

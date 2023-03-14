@@ -28,9 +28,9 @@ Produsen dapat mengimplementasikan Fares v2 dalam kumpulan data yang sama dengan
 
 ## Sedang Berlangsung Fares v2 Kerja
 
-Proposal media tarif (sebelumnya wadah tarif) telah dipanggil untuk pemungutan suara!
+[Proposal media tarif (sebelumnya wadah tarif) telah disahkan](https://github.com/google/transit/pull/355#issuecomment-1468326858) dan secara resmi diadopsi dalam spesifikasi!
 
-[Berikan suara pada pull request GitHub sebelum 13 Berbaris pukul 23:59:59 UTC.](https://github.com/google/transit/pull/355#issuecomment-1456392466)
+ItuFares V2 rapat kerja sekarang akan fokus pada [pemodelan dan penerapan tarif variabel waktu.](https://github.com/google/transit/pull/357)
 
 <a class="button no-icon" href="https://share.mobilitydata.org/slack" target="_blank">Bergabunglah dengan #gtfs-fares di Slack</a> <a class="button no-icon" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057" target="_blank">Lihat jadwal</a> <a class="button no-icon" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit" target="_blank">rapat Lihat catatan rapat</a>
 
