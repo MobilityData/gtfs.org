@@ -41,9 +41,10 @@ This free and open-source canonical GTFS Schedule validator is maintained by [Mo
 
 To see more instructions on how to use this tool in your data pipeline, please visit the [GitHub repository](https://github.com/MobilityData/gtfs-validator).
 
-## Contributing
+## Community
 
 This project is a community effort, and anyone interested in this project can join the community, participate in decision-making and help advance it in different ways. There are many different ways to contribute: sharing your idea for a new feature, reporting a problem, improving the documentation, teaching others how to use it, etc.
 
-
-Interested in contributing to this project? Please visit the [GitHub repository](https://github.com/MobilityData/gtfs-validator) and read our [contribution guidelines](https://github.com/MobilityData/gtfs-validator/blob/master/docs/CONTRIBUTING.md).
+👀 [See who is using this validator](https://github.com/MobilityData/gtfs-validator/wiki/Organizations-using-this-GTFS-Validator).
+💬 Help us improve this tool by [sharing your feedback](https://forms.gle/bWrXGDCUqrGfRYCs8).
+🤝 Interested in contributing to this project? Please visit the [GitHub repository](https://github.com/MobilityData/gtfs-validator) and read our [contribution guidelines](https://github.com/MobilityData/gtfs-validator/blob/master/docs/CONTRIBUTING.md).
