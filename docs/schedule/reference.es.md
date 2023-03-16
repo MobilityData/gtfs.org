@@ -24,6 +24,7 @@ Este documento define el formato y la estructura de los archivos que componen un
       - [calendar_dates.txt](#calendar_datestxt)
       - [fare_attributes.txt](#fare_attributestxt)
       - [fare_rules.txt](#fare_rulestxt)
+      - [fare_media.txt](#fare_mediatxt)
       - [fare_products.txt](#fare_productstxt)
       - [fare_leg_rules.txt](#fare_leg_rulestxt)
       - [fare_transfer_rules.txt](#fare_transfer_rulestxt)
@@ -117,6 +118,7 @@ Esta especificación define los siguientes archivos:
 | [calendar_dates.txt](#calendar_datestxt)           | **Condicionalmente obligatorio** | Las excepciones para los servicios definidos en el [calendar.txt](#calendartxt). <br /><br />Condicionalmente Obligatorio:<br /> - **Exigida** si [calendar.txt](#calendartxt) se omite. En cuyo caso [calendar_dates.txt](#calendar_datestxt) debe contener todas las fechas de servicio. <br /> - Opcional en caso contrario.                                                                                                                                                                |
 | [fare_attributes.txt](#fare_attributestxt)         | Opcional                         | Información sobre las tarifas de los itinerarios de una agencia de transporte.                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | [fare_rules.txt](#fare_rulestxt)                   | Opcional    | Normas de aplicación de las tarifas para los itinerarios.                                                                                                                                                                                                                                                                           |
+| [fare_media.txt](#fare_mediatxt) | Opcional | Describir los medios tarifarios que pueden emplearse para utilizar productos tarifarios.<br/><br/>El archivo [fare_media](#fare_mediatxt).txt describe conceptos que no están representados en [fare_attributes.txt](#fare_attributestxt) xt y fare_rules [fare_rules.txt](#fare_rulestxt)txt. Como tal, el uso de [fare_media](#fare_mediatxt).txt es totalmente independiente de los archivos [fare_attributes.txt](#fare_attributestxt) xt y fare_rules. [fare_rules.txt](#fare_rulestxt). |
 | [fare_products.txt](#fare_productstxt)             | Opcional                         | Describir los diferentes tipos de billetes o tarifas que pueden ser adquiridos por los usuarios.<br /><br />Archivo [fare_products.txt](fare_productstxt) describe los productos tarifarios que no están representados en [fare_attributes.txt](#fare_attributestxt) y [fare_rules.txt](#fare_rulestxt). Como tal, el uso de [fare_products.txt](#fare_productstxt) es totalmente independiente de los archivos [fare_attributes.txt](#fare_attributestxt) y [fare_rules.txt](#fare_rulestxt). |
 | [fare_leg_rules.txt](#fare_leg_rulestxt)           | Opcional                         | Normas tarifarias para tramos individuales de viaje.<br /><br />Archivo [fare_leg_rules.txt](#fare_leg_rulestxt) proporciona un método más detallado para modelar las estructuras tarifarias. Así, el uso de [fare_leg_rules.txt](#fare_leg_rulestxt) es totalmente independiente de los archivos [fare_attributes.txt](#fare_attributestxt) y [fare_rules.txt](#fare_rulestxt).                                                                                                               |
 | [fare_transfer_rules.txt](#fare_transfer_rulestxt) | Opcional                         | Reglas tarifarias para las transferencias entre tramos de viaje.<br /><br />Junto con [fare_leg_rules.txt](#fare_leg_rulestxt)archivo [fare_transfer_rules.txt](#fare_transfer_rulestxt) proporciona un método más detallado para modelar las estructuras tarifarias. Como tal, el uso de [fare_transfer_rules.txt](#fare_transfer_rulestxt) es totalmente independiente de los archivos [fare_attributes.txt](#fare_attributestxt) y [fare_rules.txt](#fare_rulestxt).                        |
@@ -313,7 +315,7 @@ Fichero: **Opcional**
 
 Clave primaria (`fare_id`)
 
-**Versiones**<br/>Hay dos opciones de modelización para describir las tarifas. GTFS V1 es la opción heredada para describir la información mínima de las tarifas. GTFS V2 es un método actualizado que permite una descripción más detallada de la estructura tarifaria de una agencia. Se permite la presencia de ambos métodos en un conjunto de datos, pero un consumidor de datos sólo debe utilizar uno de ellos para un determinado conjunto de datos. Se recomienda que GTFS GTFS-Fares V2 tenga prioridad sobre GTFS V1.<br/><br/>Los archivos asociados a GTFS V1 son<br/>- [fare_attributes.txt](#fare_attributestxt)<br/>- [fare_rules.txt](#fare_rulestxt)<br/><br/>Los archivos asociados a GTFS V2 son:<br/>- [fare_products.txt](#fare_productstxt)<br/>- [fare_leg_rules.txt](#fare_leg_rulestxt)<br/>- [fare_transfer_rules.txt](#fare_transfer_rulestxt)
+**Versiones**<br/>Hay dos opciones de modelización para describir las tarifas. GTFS V1 es la opción heredada para describir la información mínima de las tarifas. GTFS V2 es un método actualizado que permite una descripción más detallada de la estructura tarifaria de una agencia. Se permite la presencia de ambos métodos en un conjunto de datos, pero un consumidor de datos sólo debe utilizar uno de ellos para un determinado conjunto de datos. Se recomienda que GTFS-Fares V2 tenga prioridad sobre GTFS V1.<br/><br/>Los archivos asociados a GTFS V1 son<br/>- [fare_attributes.txt](#fare_attributestxt)<br/>- [fare_rules.txt](#fare_rulestxt)<br/><br/>Los archivos asociados a GTFS V2 son:<br/>- [fare_media.txt](#fare_mediatxt)<br>-[fare_products.txt](#fare_productstxt)<br/>- [fare_leg_rules.txt](#fare_leg_rulestxt)<br/>- [fare_transfer_rules.txt](#fare_transfer_rulestxt)
 
 <br />
 
@@ -349,20 +351,35 @@ Para ver ejemplos que demuestran cómo especificar una estructura de tarifas con
 | `destination_id` | Referencia al ID extranjero `stops.zone_id`           | Opcional    | Identifica una zona de destino. Si una clase de tarifa tiene varias zonas de destino, cree un registro en [fare_rules.txt](#fare_rules.txt) para cada uno `destination_id`.<hr/>*Ejemplo: El `origin_id` y `destination_id` podrían utilizarse juntos para especificar que la clase de tarifa "b" es válida para los viajes entre las zonas 3 y 4, y para los viajes entre las zonas 3 y 5, el campo [fare_rules.txt](#fare_rules.txt) El archivo contendría estos registros para la clase de tarifa:* <br />`fare_id,...,origin_id,destination_id` <br />`b,...,3,4`<br /> `b,...,3,5`                                                                                                                                                                                                                                         |
 | `contains_id`    | Referencia al ID extranjero `stops.zone_id`           | Opcional    | Identifica las zonas en las que entrará un pasajero cuando utilice una clase de tarifa determinada. Se utiliza en algunos sistemas para calcular la clase de tarifa correcta. <hr/>*Ejemplo: Si la clase de tarifa "c" está asociada a todos los viajes de la ruta GRT que pasan por las zonas 5, 6 y 7, las [fare_rules.txt](#fare_rules.txt) contendría estos registros:* <br /> `fare_id,route_id,...,contains_id` <br />  `c,GRT,...,5` <br />`c,GRT,...,6` <br />`c,GRT,...,7` <br /> *Porque todos `contains_id` zonas deben coincidir para que se aplique la tarifa, un itinerario que pase por las zonas 5 y 6 pero no por la zona 7 no tendría la clase de tarifa "c". Para más detalles, consulte <https://code.google.com/p/googletransitdatafeed/wiki/FareExamples> en la wiki del proyecto GoogleTransitDataFeed.* |
 
+### fare_media.txt
+
+Archivo: **Opcional**
+
+Clave primaria (`fare_media_id`)
+
+Describir los diferentes soportes de tarifas que pueden emplearse para utilizar productos tarifarios. Los medios tarifarios son soportes físicos o virtuales utilizados para la representación y/o validación de un producto tarifario.
+
+|  Nombre del campo | Tipo | Presencia | Descripción|
+|  ------ | ------ | ------ | ------ |
+|  `fare_media_id` | ID único  | **Exigida** | Identifica un soporte tarifario.|
+|  `fare_media_name` | Texto  | Opcional   | Name of the fare media.<br><br>For fare media which are transit cards (`fare_media_type =2`) or mobile apps (`fare_media_type =4`), the `fare_media_name` should be included and should match the rider-facing name used by the organizations delivering them. |
+|  `fare_media_type` | Enum | **Exigida** | El tipo de medio de tarifa. Las opciones válidas son:<br/><br/>0 - Ninguno. Se utiliza cuando no hay ningún medio de pago implicado en la compra o validación de un producto tarifario, como el pago en efectivo a un conductor o revisor sin billete físico.<br/>2 - Tarjeta de transporte física que ha almacenado billetes, pases o valor monetario.<br/>3 - cEMV (Europay, Mastercard y Visa sin contacto) como contenedor de tokens de bucle abierto para la emisión de billetes basada en cuentas.<br/>4 - Aplicación móvil que ha almacenado tarjetas de transporte virtuales, billetes, pases o valor monetario.<br/><br/><br/><br/><br/>|
+
 ### fare_products.txt
 
 Archivo: **Opcional**
 
-Clave primaria (`fare_product_id`)
+Clave primaria (`fare_product_id`, `fare_media_id`)
 
 Describir los diferentes tipos de billetes o tarifas que pueden ser adquiridos por los usuarios.
 
-| Nombre del campo    | Tipo                 | Presencia   | Descripción                                                                                                                                                                    |
-| ------------------- | -------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `fare_product_id`   | ID                   | **Exigida** | Identifica un producto tarifario.                                                                                                                                              |
-| `fare_product_name` | Texto                | Opcional    | El nombre del producto tarifario que se muestra a los pasajeros.                                                                                                               |
-| `amount`            | Importe de la moneda | **Exigida** | El coste del producto tarifario. Puede ser negativo para representar los descuentos en los transbordos. Puede ser cero para representar un producto tarifario que es gratuito. |
-| `currency`          | Código de moneda     | **Exigida** | La moneda del coste del producto tarifario.                                                                                                                                    |
+| Nombre del campo    | Tipo                                                   | Presencia   | Descripción                                                                                                                                                                    |
+| ------------------- |--------------------------------------------------------| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `fare_product_id`   | ID                                                     | **Exigida** | Identifica un producto tarifario.                                                                                                                                              |
+| `fare_product_name` | Texto                                                  | Opcional    | El nombre del producto tarifario que se muestra a los pasajeros.                                                                                                               |
+| `fare_media_id` | Referencia al ID extranjero `fare_media.fare_media_id` | Opcional  | Identifica un medio de tarifa que puede emplearse para utilizar el producto de tarifa durante el viaje. Cuando `fare_media_id` es vacío, se considera que el medio de tarifa es desconocido.|
+| `amount`            | Importe de la moneda                                   | **Exigida** | El coste del producto tarifario. Puede ser negativo para representar los descuentos en los transbordos. Puede ser cero para representar un producto tarifario que es gratuito. |
+| `currency`          | Código de moneda                                       | **Exigida** | La moneda del coste del producto tarifario.                                                                                                                                    |
 
 ### fare_leg_rules.txt
 

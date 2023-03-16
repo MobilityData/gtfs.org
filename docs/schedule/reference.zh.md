@@ -24,6 +24,7 @@ search:
       - [calendar_dates.txt](#calendar_datestxt)
       - [fare_attributes.txt](#fare_attributestxt)
       - [fare_rules.txt](#fare_rulestxt)
+      - [fare_media.txt](#fare_mediatxt)
       - [fare_products.txt](#fare_productstxt)
       - [fare_leg_rules.txt](#fare_leg_rulestxt)
       - [fare_transfer_rules.txt](#fare_transfer_rulestxt)
@@ -117,6 +118,7 @@ search:
 | [calendar_dates.txt](#calendar_datestxt)           | **有条件地要求** | 中定义的服务的例外情况。 [calendar.txt](#calendartxt). <br/><br/>有条件要求：有条件要求。<br/>- **需要**如果 [calendar.txt](#calendartxt)被省略。在这种情况下 [calendar_dates.txt](#calendar_datestxt)必须包含所有的服务日期。 <br/>- 可选的，否则。                                                                                                                 |
 | [fare_attributes.txt](#fare_attributestxt)         | 可选的   | 一个交通机构的路线的票价信息。                                                                                                                                                                                                                                                                                             |
 | [fare_rules.txt](#fare_rulestxt)                   | 可选的 | 适用于行程的票价规则。                                                                                                                                                                                             |
+| [fare_media.txt](#fare_mediatxt) | 可选的 | 描述可以采用的票价媒体，以使用票价产品。<br/><br/>文件[fare_media.txt](#fare_mediatxt)描述了[fare_attributes.txt](#fare_attributestxt)和[fare_rules.txt](#fare_rulestxt) 中没有体现的概念。因此，[fare_media.txt](#fare_mediatxt)的使用与文件[fare_attributes.txt](#fare_attributestxt)和[fare_rules.txt](#fare_rulestxt)完全分开。|
 | [fare_products.txt](#fare_productstxt)             | 可选的   | 描述乘客可以购买的不同类型的车票或票价。<br/><br/>文件 [fare_products.txt](fare_productstxt)描述了在 "票价 "中没有体现的票价产品。 [fare_attributes.txt](#fare_attributestxt)和 [fare_rules.txt](#fare_rulestxt).因此，使用 [fare_products.txt](#fare_productstxt)是完全独立于文件 [fare_attributes.txt](#fare_attributestxt)和 [fare_rules.txt](#fare_rulestxt). |
 | [fare_leg_rules.txt](#fare_leg_rulestxt)           | 可选的   | 单个旅行段的票价规则。<br/><br/>文件 [fare_leg_rules.txt](#fare_leg_rulestxt)为建立票价结构模型提供了一个更详细的方法。因此，使用 [fare_leg_rules.txt](#fare_leg_rulestxt)与文件完全分开 [fare_attributes.txt](#fare_attributestxt)和 [fare_rules.txt](#fare_rulestxt).                                                                                    |
 | [fare_transfer_rules.txt](#fare_transfer_rulestxt) | 可选的   | 旅行段之间转换的票价规则。<br/><br/>随之而来的是 [fare_leg_rules.txt](#fare_leg_rulestxt)，文件 [fare_transfer_rules.txt](#fare_transfer_rulestxt)提供了一个更详细的方法来模拟票价结构。因此，使用 [fare_transfer_rules.txt](#fare_transfer_rulestxt)与文件完全分开 [fare_attributes.txt](#fare_attributestxt)和 [fare_rules.txt](#fare_rulestxt).                |
@@ -315,7 +317,7 @@ search:
 
 主键`fare_id`)
 
-**版本**<br/>有两种描述票价的建模选项。GTFS V1是用于描述最小票价信息的传统选项。GTFS V2是一种更新的方法，允许对机构的票价结构进行更详细的描述。两种方法都允许出现在一个数据集中，但对于一个给定的数据集，数据消费者只应使用一种方法。建议GTFS V2 优先于GTFS V1。<br/><br/>与GTFS V1相关的文件是。<br/>-[fare_attributes.txt](#fare_attributestxt)<br/>-[fare_rules.txt](#fare_rulestxt)<br/><br/>与GTFS V2相关的文件有：<br/>- fare[fare_products.txt](#fare_productstxt)<br/>-[fare_leg_rules.txt](#fare_leg_rulestxt)<br/>-[fare_transfer_rules.txt](#fare_transfer_rulestxt)
+**版本**<br/>有两种描述票价的建模选项。GTFS V1是用于描述最小票价信息的传统选项。GTFS V2是一种更新的方法，允许对机构的票价结构进行更详细的描述。两种方法都允许出现在一个数据集中，但对于一个给定的数据集，数据消费者只应使用一种方法。建议GTFS V2 优先于GTFS V1。<br/><br/>与GTFS V1相关的文件是。<br/>-[fare_attributes.txt](#fare_attributestxt)<br/>-[fare_rules.txt](#fare_rulestxt)<br/><br/>与GTFS V2相关的文件有：<br/>- [fare_media.txt](#fare_mediatxt)<br>-[fare_products.txt](#fare_productstxt)<br/>-[fare_leg_rules.txt](#fare_leg_rulestxt)<br/>-[fare_transfer_rules.txt](#fare_transfer_rulestxt)
 
 <br/>
 
@@ -351,11 +353,26 @@ search:
 | `destination_id` | 国外ID参考 `stops.zone_id`           | 可选     | 确定一个目的地区域。如果一个票价类别有多个目的地区域，则在 "目的地区域 "中创建一条记录。 [fare_rules.txt](#fare_rules.txt)每一个 `destination_id`.<hr/>*例子。的 `origin_id`和 `destination_id`字段可以一起用于指定票价等级 "b "对3区和4区之间的旅行有效，而对3区和5区之间的旅行有效。 [fare_rules.txt](#fare_rules.txt)文件将包含这些票价等级的记录。* <br/>`fare_id,...,origin_id,destination_id` <br/>`b,...,3,4`<br/> `b,...,3,5`                                                                                                 |
 | `contains_id`    | 国外ID参考 `stops.zone_id`           | 可选     | 识别乘客在使用特定票价等级时将进入的区域。在一些系统中用于计算正确的票价等级。 <hr/>*例子。如果票价等级 "c "与经过5区、6区和7区的GRT线路上的所有旅行相关联，则 [fare_rules.txt](#fare_rules.txt)将包含这些记录。* <br/> `fare_id,route_id,...,contains_id` <br/>  `c,GRT,...,5` <br/>`c,GRT,...,6` <br/>`c,GRT,...,7` <br/> *因为所有的 `contains_id`如果一个行程经过5区和6区，但没有经过7区，就不会有 "c "类票价，必须与区间相匹配，才能适用该票价。更多细节，见 <https://code.google.com/p/googletransitdatafeed/wiki/FareExamples>在GoogleTransitDataFeed项目维基中。* |
 
+### fare_media.txt
+
+文件：**可选的**
+
+主键 (`fare_media_id`)
+
+描述可用于使用票价产品的不同票价媒介。票价媒体是用于表示和/或验证票价产品的物理或虚拟载体。
+
+| 字段名               | 类型    | 存在性    | 描述                                                                                                                                                                                                                   |
+| ----------------- | ----- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fare_media_id`   | 唯一的id | **需要** | 识别一个票价媒体。                                                                                                                                                                                                            |
+| `fare_media_name` | 文本    | 可选     | 票价媒介的名称。<br/><br/>对于交通卡(`fare_media_type =2`)或移动应用程序(`fare_media_type =4`)，应包括 `fare_media_name`应包括在内，并应与提供这些媒体的组织所使用的面向乘客的名称一致。                                                                                     |
+| `fare_media_type` | enum  | **需要** | 票价媒体的类型。有效的选项是。<br/><br/>`0`- 无。  当在购买或验证票价产品时没有涉及票价媒介时使用，例如向司机或售票员支付现金，没有提供实体票。<br/>`2`- 有存储车票、通行证或货币价值的实体交通卡。<br/>`3`- cEMV（非接触式Europay、Mastercard和Visa），作为基于账户的票务的开放环路代币容器。<br/>`4`- 储存有虚拟交通卡、车票、通行证或货币价值的移动应用程序。 |
+
+
 ### fare_products.txt
 
 文件：**可选**
 
-主键`fare_product_id`)
+主键(`fare_product_id`, `fare_media_id`)
 
 描述乘客可以购买的不同类型的车票或票价。
 
@@ -363,6 +380,7 @@ search:
 | ------------------- | ---- | ------ | ------------------------------------- |
 | `fare_product_id`   | 身份证  | **需要** | 识别一个票价产品。                             |
 | `fare_product_name` | 文本   | 可选     | 显示给乘客的票价产品的名称。                        |
+| `fare_media_id` | 国外ID参考 `fare_media.fare_media_id` | 文本  | 标识一个票价媒体，可以用来在旅行中使用票价产品。当`fare_media_id`为空的 时，认为该票价媒体是未知。|
 | `amount`            | 货币金额 | **需要** | 票价产品的成本。可以是负数，代表换乘折扣。可以是零，代表票价产品是免费的。 |
 | `currency`          | 货币代码 | **需要** | 票价产品成本的货币。                            |
 
