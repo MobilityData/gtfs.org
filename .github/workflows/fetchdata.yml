@@ -1,8 +1,7 @@
 name: Fetch data and create pull request
 on:
-  push
-#  schedule:
-#    - cron: "0 0 * * *"
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   fetchdata:
