@@ -118,7 +118,7 @@ search:
 | [calendar_dates.txt](#calendar_datestxt)           | **有条件要求** | 中定义的服务的例外情况[calendar.txt](#calendartxt) .<br/><br/>有条件要求：<br/> -**必需的**如果[calendar.txt](#calendartxt)被省略。在这种情况下[calendar_dates.txt](#calendar_datestxt)必须包含所有服务日期。<br/> - 否则可选。                                                                                                      |
 | [fare_attributes.txt](#fare_attributestxt)         | 可选的   | 公交公司路线的票价信息。                                                                                                                                                                                                                                                                         |
 | [fare_rules.txt](#fare_rulestxt)                   | 可选的  | 为行程应用票价的规则。                                                                                                                                                                                                                                                                          |
-| [fare_media.txt](#fare_mediatxt) | 可选的 | 描述可用於使用票價產品的票價媒體。<br/><br/>文件[fare_media.txt](#fare_mediatxt)描述了未在fare_attributes.txt和fare_rules.txt .因此， [fare_media.txt](#fare_mediatxt)的使用與文件完全分開[fare_attributes.txt](#fare_attributestxt)和[fare_rules.txt](#fare_rulestxt).                                                     |
+| [fare_media.txt](#fare_mediatxt) | 可选的 | 描述可用於使用票價產品的票價媒體。<br/><br/>文件[fare_media.txt](#fare_mediatxt)描述了未在[fare_attributes.txt](#fare_attributestxt)和[fare_rules.txt](fare_rulestxt) .因此， [fare_media.txt](#fare_mediatxt)的使用與文件完全分開[fare_attributes.txt](#fare_attributestxt)和[fare_rules.txt](#fare_rulestxt).                         |
 | [fare_products.txt](#fare_productstxt)             | 可选的   | 描述乘客可以购买的不同类型的车票或票价。<br/><br/>文件[fare_products.txt](fare_productstxt)描述未在[fare_attributes.txt](#fare_attributestxt)和[fare_rules.txt](#fare_rulestxt).因此，使用[fare_products.txt](#fare_productstxt)与文件完全分开[fare_attributes.txt](#fare_attributestxt)和[fare_rules.txt](#fare_rulestxt) . |
 | [fare_leg_rules.txt](#fare_leg_rulestxt)           | 可选的   | 单程旅行的票价规则。<br/><br/>文件[fare_leg_rules.txt](#fare_leg_rulestxt)为票价结构建模提供了更详细的方法。因此，使用[fare_leg_rules.txt](#fare_leg_rulestxt)与文件完全分开[fare_attributes.txt](#fare_attributestxt)和[fare_rules.txt](#fare_rulestxt) .                                                                     |
 | [fare_transfer_rules.txt](#fare_transfer_rulestxt) | 可选的   | 旅行航段之间换乘的票价规则。<br/><br/>随着[fare_leg_rules.txt](#fare_leg_rulestxt)， 文件[fare_transfer_rules.txt](#fare_transfer_rulestxt)为票价结构建模提供了更详细的方法。因此，使用[fare_transfer_rules.txt](#fare_transfer_rulestxt)与文件完全分开[fare_attributes.txt](#fare_attributestxt)和[fare_rules.txt](#fare_rulestxt) . |
@@ -380,13 +380,13 @@ search:
 
 描述乘客可以购买的不同类型的车票或票价。
 
-| 字段名称                | 类型   | 在场      | 描述                                 |
-| ------------------- | ---- | ------- | ---------------------------------- |
-| `fare_product_id`   |  ID  | **必需的** | 标识票价产品。                            |
-| `fare_product_name` | 文本   | 可选的     | 向乘客显示的票价产品的名称。                     |
-| `fare_media_id` | 国外身份证参考 `fare_media.fare_media_id` |  標識可用於在旅行期間使用票價產品的票價媒體。當`fare_media_id`是空的，認為票價媒體是未知.|
-| `amount`            | 货币金额 | **必需的** | 票价产品的成本。可能为负数表示转让折扣。可能为零表示免费的票价产品。 |
-| `currency`          | 货币代码 | **必需的** | 票价产品成本的货币。                         |
+| 字段名称                | 类型   | 在场      | 描述                                                   |
+| ------------------- | ---- | ------- |------------------------------------------------------|
+| `fare_product_id`   |  ID  | **必需的** | 标识票价产品。                                              |
+| `fare_product_name` | 文本   | 可选的     | 向乘客显示的票价产品的名称。                                       |
+| `fare_media_id` | 国外身份证参考 `fare_media.fare_media_id` | 可选的 | 標識可用於在旅行期間使用票價產品的票價媒體。當`fare_media_id`是空的，認為票價媒體是未知. |
+| `amount`            | 货币金额 | **必需的** | 票价产品的成本。可能为负数表示转让折扣。可能为零表示免费的票价产品。                   |
+| `currency`          | 货币代码 | **必需的** | 票价产品成本的货币。                                           |
 
 
 ### fare_leg_rules.txt
