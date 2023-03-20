@@ -48,7 +48,17 @@ Fares v2가 나타낼 주요 개념은 다음과 같습니다.
 - 제작사 : [Interline](https://www.interline.io/), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - 소비자: [Apple](https://www.apple.com/)
 
-<a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">누가 Fares v2 파일 및 필드를 사용하는지 확인</a>
+## 채택 추적기
+### 현재의
+
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrZzYzPYao7iExlW?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shr8aT0K9bpncmy0V" target="_blank">변경 요청</a><a class="button no-icon" href="https://airtable.com/shr5B6Pl1r9KH9qMX" target="_blank">조직(소비자) 추가</a><a class="button no-icon" href="https://airtable.com/shrn0Afa3TPNkOAEh" target="_blank">조직(프로듀서) 추가</a>
+
+### 미래
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrUrgZTO1noUF66R?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shrvnI40zuFXmDsQI" target="_blank">미래 계획 추가</a>
 
 ## 논의 중인 요금 기능
 
@@ -62,4 +72,6 @@ Fares v2가 나타낼 주요 개념은 다음과 같습니다.
 - **2022년 3월** : [공개 투표 #2 → 통과하지 못함](https://github.com/google/transit/pull/286#issuecomment-1080716109)
 - **2022년 5월** : [공개 투표 #3 → 통과](https://github.com/google/transit/pull/286#issuecomment-1121392932)
 - **2022년 8월** : [Fares v2의 다음 단계에 대한 커뮤니티 논의 시작](https://github.com/google/transit/issues/341)
+- **2022년 11월**: <a href="https://github.com/google/transit/pull/355" target="_blank">피드백을 위해 운임 미디어 초안 풀 요청이 열렸습니다.</a>
 - **2022년 12월** : [커뮤니티에서 기능의 스택 순위 순서를 식별하여 반복의 우선순위를 지정합니다.](https://github.com/google/transit/issues/341#issuecomment-1339947915)
+- **2023년 3월**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">운임 미디어 투표 통과</a>

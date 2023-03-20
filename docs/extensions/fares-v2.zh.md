@@ -50,7 +50,17 @@ Fares V2工作会议现在将专注于[建模和采用时间变量票价。](htt
 - 生产者。[Interline](https://www.interline.io/), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - 消费者。[Apple](https://www.apple.com/)
 
-<a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">查看谁在使用Fares v2文件和字段</a>
+## 采用跟踪器
+### 目前
+
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrZzYzPYao7iExlW?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shr8aT0K9bpncmy0V" target="_blank">Request a change</a><a class="button no-icon" href="https://airtable.com/shr5B6Pl1r9KH9qMX" target="_blank">添加您的组织（消费者）。</a><a class="button no-icon" href="https://airtable.com/shrn0Afa3TPNkOAEh" target="_blank">添加您的组织（生产商）。</a>
+
+### 未来
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrUrgZTO1noUF66R?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shrvnI40zuFXmDsQI" target="_blank">添加您的未来计划</a>
 
 ## 讨论中Fares v2功能
 
@@ -64,4 +74,6 @@ Fares V2工作会议现在将专注于[建模和采用时间变量票价。](htt
 - **2022年3月**：[公开投票2号→未通过](https://github.com/google/transit/pull/286#issuecomment-1080716109)
 - **2022年5月**：[公开投票#3→通过](https://github.com/google/transit/pull/286#issuecomment-1121392932)
 - **2022年8月**：[社区开始讨论Fares v2的下一个阶段](https://github.com/google/transit/issues/341)
+- **2022年11月**: <a href="https://github.com/google/transit/pull/355" target="_blank">票价媒体的拉动请求草案已开始征求反馈意见</a>
 - **2022年12月**：[社区确定功能的堆栈排名顺序，以确定迭代的优先次序](https://github.com/google/transit/issues/341#issuecomment-1339947915)
+- **2023年3月**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">票价媒体投票通过</a>

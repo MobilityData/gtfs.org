@@ -50,7 +50,17 @@ Fares v2 - это проект расширения расписания GTFS, �
 - Производитель: [Interline](https://www.interline.io/), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - Потребитель: [Apple](https://www.apple.com/)
 
-<a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">Посмотрите, кто использует файлы и поля Fares v2</a>
+## Система отслеживания усыновления
+### Текущий
+
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrZzYzPYao7iExlW?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shr8aT0K9bpncmy0V" target="_blank">Запросить изменение</a><a class="button no-icon" href="https://airtable.com/shr5B6Pl1r9KH9qMX" target="_blank">Добавьте свою организацию (потребителей)</a><a class="button no-icon" href="https://airtable.com/shrn0Afa3TPNkOAEh" target="_blank">Добавьте свою организацию (производителей)</a>
+
+### Будущее
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrUrgZTO1noUF66R?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shrvnI40zuFXmDsQI" target="_blank">Добавьте свои планы на будущее</a>
 
 ## Обсуждаемые функции Fares v2
 
@@ -64,4 +74,6 @@ Fares v2 - это проект расширения расписания GTFS, �
 - **Март 2022**: [Открытое голосование #2 → не прошло](https://github.com/google/transit/pull/286#issuecomment-1080716109) 
 - **Май 2022**: [Открытое голосование #3 → принято](https://github.com/google/transit/pull/286#issuecomment-1121392932)
 - **Август 2022**: [Начинается обсуждение сообществом следующей фазы Fares v2](https://github.com/google/transit/issues/341)
+- **Ноябрь 2022**: <a href="https://github.com/google/transit/pull/355" target="_blank">Проект запроса на поставку средств оплаты проезда открыт для отзывов</a>
 - **Декабрь 2022**: [Сообщество определяет порядок ранжирования функций в стеке для определения приоритетности итераций](https://github.com/google/transit/issues/341#issuecomment-1339947915)
+- **March 2023**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">Голосование за средства оплаты проезда прошло</a>

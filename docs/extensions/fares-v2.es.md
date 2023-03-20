@@ -52,6 +52,22 @@ Para la función de fare media actualmente en discusión, los primeros en adopta
 
 <a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">Vea quién utiliza los archivos y campos de Fares v2</a>
 
+## Seguimiento de la adopción
+### Actual
+
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrZzYzPYao7iExlW?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shr8aT0K9bpncmy0V" target="_blank">Solicitar un cambio</a><a class="button no-icon" href="https://airtable.com/shr5B6Pl1r9KH9qMX" target="_blank">Añada su organización (consumidores)</a><a class="button no-icon" href="https://airtable.com/shrn0Afa3TPNkOAEh" target="_blank">Añada su organización (productores)</a>
+
+### Futuro
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrUrgZTO1noUF66R?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shrvnI40zuFXmDsQI" target="_blank">Añade tus planes de futuro</a>
+
+## Fares v2 Funciones a debate
+
+<iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:1060px;"></iframe>
+
 ## Características de las Fares v2 en discusión
 
 <iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:1060px"></iframe>
@@ -64,4 +80,6 @@ Para la función de fare media actualmente en discusión, los primeros en adopta
 - **Marzo de 2022**: [Votación abierta nº 2 → no aprobada](https://github.com/google/transit/pull/286#issuecomment-1080716109) 
 - **Mayo de 2022**: [Votación abierta nº 3 → aprobada](https://github.com/google/transit/pull/286#issuecomment-1121392932) 
 - **Agosto de 2022**: [Comienza el debate comunitario sobre la siguiente fase de Fares v2](https://github.com/google/transit/issues/341)
+- **Noviembre de 2022**: <a href="https://github.com/google/transit/pull/355" target="_blank">Se ha abierto el pull request del borrador de Fare media para recibir comentarios</a>
 - **Diciembre de 2022**: [La comunidad identifica el orden de clasificación de las características para priorizar las iteraciones](https://github.com/google/transit/issues/341#issuecomment-1339947915)
+- **Marzo de 2023**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">Aprobada la votación sobre las tarifas de los medios de comunicación</a>

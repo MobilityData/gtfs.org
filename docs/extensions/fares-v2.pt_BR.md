@@ -50,7 +50,17 @@ Para os fare media atualmente em discussão, os primeiros adotantes são
 - Produtor: [Interline](https://www.interline.io/), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - Consumidor: [Apple](https://www.apple.com/)
 
-<a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">Veja quem está usando os arquivos e campos do Fares v2</a>
+## Rastreador de adoção
+### Atual
+
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrZzYzPYao7iExlW?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shr8aT0K9bpncmy0V" target="_blank">Solicite uma mudança</a><a class="button no-icon" href="https://airtable.com/shr5B6Pl1r9KH9qMX" target="_blank">Adicione sua organização (consumidores)</a><a class="button no-icon" href="https://airtable.com/shrn0Afa3TPNkOAEh" target="_blank">Adicione sua organização (produtores)</a>
+
+### Futuro
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrUrgZTO1noUF66R?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shrvnI40zuFXmDsQI" target="_blank">Adicione seus planos futuros</a>
 
 ## Características Fares v2 em discussão
 
@@ -61,7 +71,9 @@ Para os fare media atualmente em discussão, os primeiros adotantes são
 - **2017**: Pesquisa da indústria e modelagem de dados
 - **Outubro de 2021**: [Implementação básica esboçada e compartilhada](https://github.com/google/transit/pull/286#issue-1026848880)
 - **Dezembro de 2021**: [Votação aberta #1 → não passou](https://github.com/google/transit/pull/286#issuecomment-990258396)
-- **Março 2022**: [votação aberta #2 → não passou](https://github.com/google/transit/pull/286#issuecomment-1080716109)
-- **Maio 2022**: [Votação aberta #3 → aprovado](https://github.com/google/transit/pull/286#issuecomment-1121392932)
-- **Agosto 2022**: [começa a discussão comunitária sobre a próxima fase das Fares v2](https://github.com/google/transit/issues/341)
+- **Março de 2022**: [votação aberta #2 → não passou](https://github.com/google/transit/pull/286#issuecomment-1080716109)
+- **Maio de 2022**: [Votação aberta #3 → aprovado](https://github.com/google/transit/pull/286#issuecomment-1121392932)
+- **Agosto de 2022**: [começa a discussão comunitária sobre a próxima fase das Fares v2](https://github.com/google/transit/issues/341)
+- **Novembro de 2022**: <a href="https://github.com/google/transit/pull/355" target="_blank">Abertura de solicitação de retorno para a mídia de tarifas</a>
 - **Dezembro de 2022**: [Comunidade identifica a ordem de classificação das pilhas de características para priorizar iterações](https://github.com/google/transit/issues/341#issuecomment-1339947915)
+- **Março de 2023**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">Passes de voto para a mídia de tarifas</a>
