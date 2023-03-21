@@ -61,6 +61,10 @@ Itu GTFS Spesifikasi tidak diatur dalam batu. Sebaliknya, ini adalah spesifikasi
 
 ## Riwayat Revisi
 
+**14 Maret 2023**<br/>
+
+* Menambahkan media tarif. Lihat [diskusi](https://github.com/google/transit/pull/355) .
+
 **26 Juli 2022**<br>
 
 * Menambahkan transfer perjalanan-ke-perjalanan dengan opsi di kursi. Lihat [diskusi](https://github.com/google/transit/pull/303)

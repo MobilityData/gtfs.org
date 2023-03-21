@@ -47,6 +47,21 @@ Propositions récemment fusionnées qui sont maintenant des caractéristiques de
 
 <div class="row">
     <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/355" class="no-icon" target="_blank">Ajouter un média tarifaire</a></h3>
+        <p class="maintainer">#355 par <a href="https://github.com/isabelle-dr" class="no-icon" target="_blank">isabelle-dr</a> a été fusionné le 14 Mar 2023</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Tarif média est un élément clé de la <a href="../../extensions/fares-v2">proposition d'extension GTFS Fares-v2</a>.</li>
+            <li>Il représente ce qu'un passager peut utiliser pour valider son trajet (par exemple, une carte de transport en commun, une application mobile ou un paiement par tapotement à l'aide d'une carte bancaire sans contact)</li>
+            <li>Un produit tarifaire peut être associé à un support tarifaire spécifique (par exemple, un abonnement mensuel n'est disponible que sur une carte de transport en commun).</li>
+            <li>Le prix d'un produit tarifaire peut être défini en fonction du support tarifaire (par exemple, le billet est moins cher s'il est acheté via une application mobile).</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">Ajouter les transferts de trip avec l'option "in-seat".</a></h3>
         <p class="maintainer">#303 par <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> a été fusionné le 26 juin 2022</p>
     </div>

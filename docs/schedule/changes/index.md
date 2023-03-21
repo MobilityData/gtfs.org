@@ -44,6 +44,21 @@ Recently merged proposals that are now features of the [official GTFS Schedule s
 
 <div class="row">
     <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/355" class="no-icon" target="_blank">Add fare media</a></h3>
+        <p class="maintainer">#355 by <a href="https://github.com/isabelle-dr" class="no-icon" target="_blank">isabelle-dr</a> was merged on Mar 14, 2023</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Fare Media is a key element on the <a href="../../extensions/fares-v2">GTFS Fares-v2 extension proposal</a></li>
+            <li>It represents what a rider can use to validate their ride (e.g. a transit card, mobile app, or tap-to-pay using a contactless bank card)</li>
+            <li>A fare product can be associated to a specific Fare Media (e.g. a monthly pass is only available on a transit card)</li>
+            <li>The price of a fare product can be defined based on the Fare Media (e.g. the ticket is cheaper if bought via a mobile app)</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">Add trip-to-trip transfers with in-seat option</a></h3>
         <p class="maintainer">#303 by <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> was merged on Jun 26, 2022</p>
     </div>

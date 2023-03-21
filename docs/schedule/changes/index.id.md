@@ -44,6 +44,21 @@ Bergabunglah dengan diskusi di [Github](https://github.com/google/transit/pulls)
 
 Baru-baru ini menggabungkan proposal yang sekarang menjadi fitur [resmi GTFS Schedule spesifikasi](../reference) . Lihat [Riwayat Revisi](../process#revision-history) lengkap untuk lebih lanjut.
 
+<div class="row">
+    <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/355" class="no-icon" target="_blank">Tambahkan media tarif</a></h3>
+        <p class="maintainer">#355 oleh <a href="https://github.com/isabelle-dr" class="no-icon" target="_blank">isabelle-dr</a> pada 14 Maret 2023</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Tarif Media adalah elemen kunci pada GTFS <a href="../../extensions/fares-v2">Proposal perpanjangan Fares-v2</a></li>
+            <li>Ini mewakili apa yang dapat digunakan pengendara untuk memvalidasi perjalanan mereka (mis. kartu transit, aplikasi seluler, atau tap-to-pay menggunakan kartu bank nirsentuh)</li>
+            <li>Produk tarif dapat dikaitkan dengan Media Tarif tertentu (misalnya tiket bulanan hanya tersedia di kartu transit)</li>
+            <li>Harga produk tarif dapat ditentukan berdasarkan Media Tarif (misalnya tiket lebih murah jika dibeli melalui aplikasi seluler)</li>
+        </ul>
+    </div>
+</div>
+
 <div class="row"><div class="leftcontainer"><h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank"> Menambahkan-trip-ke-trip transfer dengan opsi di kursi</a></h3><p class="maintainer"> #303 oleh <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> digabungkan pada 26 Juni 2022</p></div><div class="featurelist"><ul><li> Menambahkan <code>transfer_type</code> `s baru untuktrip ketrip transfer untuk menentukan apakah pengguna dapat melakukan &quot;transfer di kursi&quot; pada saat yang samavehicle mengoperasikan dua perjalanan berturut-turut dan pengguna dapat tetap berada di pesawat</li><li> Dapat menentukan kapan transfer di kursi tidak diizinkan tetapi dapat menghubungkan dua perjalanan berbeda secara operasional </li></ul></div></div>
 
 <div class="row"><div class="leftcontainer"><h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank"> GTFS-Fares V2 implementasi basis</a></h3><p class="maintainer"> #286 oleh <a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a> digabungkan pada 17 Mei 2022</p></div><div class="featurelist"><ul><li> Tarif transit dan tiket</li><li> Pemodelan biaya untuk tarif dan transfer yang kompleks (multi-jaringan,time -berbasis, dan transfer berbasis hitungan)</li><li> Model untuk mengaitkan perhentian ke area tarif </li></ul></div></div>

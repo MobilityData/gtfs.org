@@ -28,9 +28,9 @@ Produsen dapat mengimplementasikan Fares v2 dalam kumpulan data yang sama dengan
 
 ## Sedang Berlangsung Fares v2 Kerja
 
-Proposal media tarif (sebelumnya wadah tarif) telah dipanggil untuk pemungutan suara!
+[Proposal media tarif (sebelumnya wadah tarif) telah disahkan](https://github.com/google/transit/pull/355#issuecomment-1468326858) dan secara resmi diadopsi dalam spesifikasi!
 
-[Berikan suara pada pull request GitHub sebelum 13 Berbaris pukul 23:59:59 UTC.](https://github.com/google/transit/pull/355#issuecomment-1456392466)
+ItuFares V2 rapat kerja sekarang akan fokus pada [pemodelan dan penerapan tarif variabel waktu.](https://github.com/google/transit/pull/357)
 
 <a class="button no-icon" href="https://share.mobilitydata.org/slack" target="_blank">Bergabunglah dengan #gtfs-fares di Slack</a> <a class="button no-icon" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057" target="_blank">Lihat jadwal</a> <a class="button no-icon" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit" target="_blank">rapat Lihat catatan rapat</a>
 
@@ -48,7 +48,17 @@ Untuk fitur fare media yang saat ini sedang dibahas, pengadopsi pertama adalah
 - Produser: [Interline](https://www.interline.io/), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - Konsumen: [Apple](https://www.apple.com/)
 
-<a class="button no-icon" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing" target="_blank">Lihat siapa yang menggunakan file dan bidang Fares v2</a>
+## Pelacak adopsi
+### Saat ini
+
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrZzYzPYao7iExlW?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shr8aT0K9bpncmy0V" target="_blank">Minta perubahan</a><a class="button no-icon" href="https://airtable.com/shr5B6Pl1r9KH9qMX" target="_blank">Tambahkan organisasi Anda (konsumen)</a><a class="button no-icon" href="https://airtable.com/shrn0Afa3TPNkOAEh" target="_blank">Tambahkan organisasi Anda (produsen)</a>
+
+### Masa depan
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrUrgZTO1noUF66R?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shrvnI40zuFXmDsQI" target="_blank">Tambahkan rencana masa depan Anda</a>
 
 ## Fitur Fares v2 Dalam Diskusi
 
@@ -62,4 +72,6 @@ Untuk fitur fare media yang saat ini sedang dibahas, pengadopsi pertama adalah
 - **Maret 2022** : [Pemungutan suara terbuka #2 → tidak lolos](https://github.com/google/transit/pull/286#issuecomment-1080716109)
 - **Mei 2022** : [Open voting #3 → lolos](https://github.com/google/transit/pull/286#issuecomment-1121392932)
 - **Agustus 2022** : [Diskusi komunitas tentang fase selanjutnya dari Fares v2 dimulai](https://github.com/google/transit/issues/341)
+- **November 2022**: <a href="https://github.com/google/transit/pull/355" target="_blank">Permintaan tarik draf media tarif dibuka untuk umpan balik</a>
 - **Desember 2022** : [Komunitas mengidentifikasi urutan tumpukan fitur untuk memprioritaskan iterasi](https://github.com/google/transit/issues/341#issuecomment-1339947915)
+- **Maret 2023**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">Tarif suara media berlalu</a>

@@ -30,9 +30,9 @@ Producers may implement Fares v2 in the same dataset with Fares v1, since there 
 
 ## In Progress Fares v2 Work
 
-The fare media (formerly fare containers) proposal has been called to a vote! 
+<a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">The fare media (formerly fare containers) proposal has passed</a> and been officially adopted in the spec!
 
-<a href="https://github.com/google/transit/pull/355#issuecomment-1456392466" target="_blank">Vote in the GitHub pull request before 2023-03-13 at 23:59:59 UTC.</a>
+The Fares v2 working meetings will now focus on <a href="https://github.com/google/transit/pull/357">modelling and adopting time variable fares.</a>
 
 <a class="button no-icon" href=https://share.mobilitydata.org/slack>Join #gtfs-fares on Slack</a><a class="button no-icon" href=https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057>See the meeting schedule</a><a class="button no-icon" href=https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit>See meeting notes</a>
 
@@ -56,7 +56,7 @@ For the fare media feature currently under discussion, first adopters are
 
 <iframe class="airtable-embed" src="https://airtable.com/embed/shrZzYzPYao7iExlW?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-<a class="button no-icon" href="https://airtable.com/shr8aT0K9bpncmy0V" target="_blank">Request a change</a><a class="button no-icon" href="https://airtable.com/shr5B6Pl1r9KH9qMX" target="_blank">Add you organisation (consumers)</a><a class="button no-icon" href="https://airtable.com/shrn0Afa3TPNkOAEh" target="_blank">Add your organisation (producers)</a>
+<a class="button no-icon" href="https://airtable.com/shr8aT0K9bpncmy0V" target="_blank">Request a change</a><a class="button no-icon" href="https://airtable.com/shr5B6Pl1r9KH9qMX" target="_blank">Add your organization (consumers)</a><a class="button no-icon" href="https://airtable.com/shrn0Afa3TPNkOAEh" target="_blank">Add your organization (producers)</a>
 
 ### Future
 <iframe class="airtable-embed" src="https://airtable.com/embed/shrUrgZTO1noUF66R?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
@@ -75,4 +75,6 @@ For the fare media feature currently under discussion, first adopters are
 - **March 2022**: <a href="https://github.com/google/transit/pull/286#issuecomment-1080716109" target="_blank">Open vote #2 → did not pass</a>
 - **May 2022**: <a href="https://github.com/google/transit/pull/286#issuecomment-1121392932" target="_blank">Open vote #3 → passed</a>
 - **August 2022**: <a href="https://github.com/google/transit/issues/341" target="_blank">Community discussion on next phase of Fares v2 begins</a>
+- **November 2022**: <a href="https://github.com/google/transit/pull/355" target="_blank">Fare media draft pull request opened for feedback</a>
 - **December 2022**: <a href="https://github.com/google/transit/issues/341#issuecomment-1339947915" target="_blank">Community identifies stack ranked order of features to prioritize iterations</a>
+- **March 2023**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">Fare media vote passes</a>

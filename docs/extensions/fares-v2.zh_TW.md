@@ -1,6 +1,6 @@
 <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
 
-# GTFS-票價 v2
+# GTFS-Fares v2
 
 Fares v2 是一個 GTFS 計劃擴展項目，旨在解決[Fares v1](/schedule/examples/fares-v1)的局限性。
 
@@ -28,9 +28,9 @@ Fares v2 計劃表達的主要概念是
 
 ## 進行中的票價 v2 工作
 
-票價媒體（以前的票價容器）提案已被要求投票！
+[票价媒体（以前的票价容器）提案已经通过](https://github.com/google/transit/pull/355#issuecomment-1468326858)，并在规范中被正式采用
 
-[在 UTC 時間 3 月 13 日晚上 23:59:59 之前在 GitHub 拉取請求中投票。](https://github.com/google/transit/pull/355#issuecomment-1456392466)
+Fares V2工作会议现在将专注于[建模和采用时间变量票价。](https://github.com/google/transit/pull/357)
 
 <a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">在 Slack 上加入#gtfs-fares</a> <a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">查看會議日程</a><a class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">查看會議記錄</a>
 
@@ -48,7 +48,17 @@ Fares v2 計劃表達的主要概念是
 - 生產商：[Interline](https://www.interline.io/), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - 消費者：[Apple](https://www.apple.com/)
 
-<a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">查看誰在使用 Fares v2 文件和字段</a>
+## 採用追踪器
+### 當前的
+
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrZzYzPYao7iExlW?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shr8aT0K9bpncmy0V" target="_blank">請求更改</a><a class="button no-icon" href="https://airtable.com/shr5B6Pl1r9KH9qMX" target="_blank">添加您的組織（消費者）</a><a class="button no-icon" href="https://airtable.com/shrn0Afa3TPNkOAEh" target="_blank">添加您的組織（生產者）</a>
+
+### 未來
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrUrgZTO1noUF66R?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shrvnI40zuFXmDsQI" target="_blank">添加您的未來計劃</a>
 
 ## 正在討論Fares v2特點
 
@@ -62,4 +72,6 @@ Fares v2 計劃表達的主要概念是
 - **2022 年 3 月**：[公開投票 #2 → 未通過](https://github.com/google/transit/pull/286#issuecomment-1080716109)
 - **2022 年 5 月**：[公開投票 #3 → 通過](https://github.com/google/transit/pull/286#issuecomment-1121392932)
 - **2022 年 8 月**：[關於 Fares v2 下一階段的社區討論開始](https://github.com/google/transit/issues/341)
+- **2022 年 11 月**: <a href="https://github.com/google/transit/pull/355" target="_blank">票價媒體草案拉取請求已打開以供反饋</a>
 - **2022 年 12 月**：[社區確定功能的堆棧排名順序以確定迭代的優先級](https://github.com/google/transit/issues/341#issuecomment-1339947915)
+- **2023 年 3 月**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">票價媒體投票通過</a>

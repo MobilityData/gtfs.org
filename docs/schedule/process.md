@@ -63,6 +63,10 @@ Every new feature adds complexity to the creation and reading of feeds. Therefor
 
 ## Revision History
 
+**March 14, 2023**<br> 
+
+* Added fare media. See [discussion](https://github.com/google/transit/pull/355).
+
 **July 26, 2022**<br>
 
 * Added trip-to-trip transfers with in-seat option. See [discussion](https://github.com/google/transit/pull/303)

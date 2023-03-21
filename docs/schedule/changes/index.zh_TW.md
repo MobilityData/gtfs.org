@@ -45,6 +45,8 @@ Active proposals for new features in <glossary variable="GTFS Schedule"><glossar
 
 最近合併的提案現在是[官方的功能GTFS Schedule規範](../reference)。有關更多信息，請參閱完整的[修訂歷史](../process#revision-history)。
 
+<div class="row"><div class="leftcontainer"><h3 class="title"><a href="https://github.com/google/transit/pull/355" class="no-icon" target="_blank">添加票價媒體</a></h3><p class="maintainer">#355 by <a href="https://github.com/isabelle-dr" class="no-icon" target="_blank">isabelle-dr</a>於 2023 年 3 月 14 日合併</p></div><div class="featurelist"><ul><li>票價媒體 是GTFS <a href="../../extensions/fares-v2">Fares-v2 擴展提案</a></li><li>它表示騎手可以使用什麼來驗證他們的乘車（例如交通卡、移動應用程序或使用非接觸式銀行卡的點擊支付）</li><li>票價產品可以關聯到特定的票價媒體（例如，月票只能在交通卡上使用）</li><li>可以根據票價媒體定義票價產品的價格（例如，如果通過移動應用程序購買，票價會更便宜）</li></ul></div></div>
+
 <div class="row"><div class="leftcontainer"><h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">添加旅行-至-旅行帶座位選項的接送服務</a></h3><p class="maintainer">#303 由 <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a>於 2022 年 6 月 26 日合併</p></div><div class="featurelist"><ul><li>添加新的<code>transfer_type</code> `s 旅行至旅行轉移定義用戶是否可以在相同的情況下進行“座位轉移”vehicle正在經營兩個連續的行程，用戶可以留在船上</li><li>可以定義何時不允許在座位上轉機，但可以在操作上將兩個不同的行程聯繫在一起</li></ul></div></div>
 
 <div class="row"><div class="leftcontainer"><h3 class="title"><a href="https://github.com/google/transit/pull/286" class="no-icon" target="_blank">GTFS-Fares V2基礎實施</a></h3><p class="maintainer">#286 由<a href="https://github.com/scmcca" class="no-icon" target="_blank">scmcca</a>於 2022 年 5 月 17 日合併</p></div><div class="featurelist"><ul><li>過境票價和車票</li><li>複雜票價和轉賬的成本建模（多網絡，time基於和基於計數的傳輸）</li><li>將停靠點與收費區域相關聯的模型</li></ul></div></div>

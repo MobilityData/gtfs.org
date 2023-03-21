@@ -60,6 +60,10 @@ search:
 
 ## 개정 내역
 
+  **2023년 3월 14일**<br/>
+
+  * 운임 매체를 추가했습니다. [토론을](https://github.com/google/transit/pull/355) 참조하십시오.
+
   **2022년 7월 26일**
 
   * 좌석 내 옵션이 있는 여행 간 환승이 추가되었습니다. [토론](https://github.com/google/transit/pull/303) 을 참조하십시오.

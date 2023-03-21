@@ -61,6 +61,10 @@ Um die ursprüngliche Vision von GTFS zu bewahren, wurde eine Reihe von Leitprin
 
 ## Historie der Revision
 
+**März 14, 2023**<br/>
+
+* Tarifmedien hinzugefügt. Siehe [Diskussion](https://github.com/google/transit/pull/355).
+
 **26. Juli, 2022**<br/>
 
 * Hinzufügen eines Transfers von Fahrt zu Fahrt mit der Option "In-Seat". Siehe [Diskussion](https://github.com/google/transit/pull/303)

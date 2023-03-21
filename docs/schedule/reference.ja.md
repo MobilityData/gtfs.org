@@ -24,6 +24,7 @@ search:
       - [calendar_dates.txt](#calendar_datestxt)
       - [fare_attributes.txt](#fare_attributestxt)
       - [fare_rules.txt](#fare_rulestxt)
+      - [fare_media.txt](#fare_mediatxt)
       - [fare_products.txt](#fare_productstxt)
       - [fare_leg_rules.txt](#fare_leg_rulestxt)
       - [fare_transfer_rules.txt](#fare_transfer_rulestxt)
@@ -117,6 +118,7 @@ Float または Integer フィールドタイプに適用される記号。
 | [calendar_dates.txt](#calendar_datestxt)           | **条件付きで必要** | で定義されたサービスに対する例外 [calendar.txt](#calendartxt). <br/><br/>条件付きで必要です。<br/> - **必須**もし [calendar.txt](#calendartxt)は省略される。この場合 [calendar_dates.txt](#calendar_datestxt)は、すべての運行日を含む必要がある。 <br/>- それ以外は任意。                                                                                                                               |
 | [fare_attributes.txt](#fare_attributestxt)         | オプション      | 交通機関の路線の運賃情報。                                                                                                                                                                                                                                                                                                                        |
 | [fare_rules.txt](#fare_rulestxt)                   | オプション | 旅程に応じた運賃を適用するためのルール。                                                                                                                                                                                                   |
+| [fare_media.txt](#fare_mediatxt) | オプション| 運賃製品を利用するために採用できる運賃メディアを記述する。<br/><br/>ファイル[fare_media.txt](#fare_mediatxt)は、[fare_attributes.txt](#fare_attributestxt)および[fare_rules.txt](#fare_rulestxt) に表現されていない概念を記述しています。そのため、[fare_media.txtの](#fare_mediatxt)使用は、[fare_attributes.txt](#fare_attributestxt)および[fare_rules.txt](#fare_rulestxt)全く別のものです。
 | [fare_products.txt](#fare_productstxt)             | 任意         | ライダーが購入できる様々な種類のチケットや運賃を説明する。<br/><br/>ファイル名 [fare_products.txt](fare_productstxt)で表現されていない運賃商品について説明する。 [fare_attributes.txt](#fare_attributestxt)そして [fare_rules.txt](#fare_rulestxt).そのため [fare_products.txt](#fare_productstxt)は、ファイルとは全く別のものです。 [fare_attributes.txt](#fare_attributestxt)そして [fare_rules.txt](#fare_rulestxt). |
 | [fare_leg_rules.txt](#fare_leg_rulestxt)           | 任意         | 各旅行区間の運賃ルール。<br/><br/>ファイル [fare_leg_rules.txt](#fare_leg_rulestxt)は、運賃体系をモデル化するための、より詳細な方法を提供します。そのため [fare_leg_rules.txt](#fare_leg_rulestxt)は、ファイルとは全く別のものです。 [fare_attributes.txt](#fare_attributestxt)そして [fare_rules.txt](#fare_rulestxt).                                                                                     |
 | [fare_transfer_rules.txt](#fare_transfer_rulestxt) | 任意         | レッグ間の移動のための運賃規則。<br/><br/>とともに [fare_leg_rules.txt](#fare_leg_rulestxt)、ファイル [fare_transfer_rules.txt](#fare_transfer_rulestxt)は、運賃体系をモデル化するための、より詳細な方法を提供します。そのため、以下を使用する。 [fare_transfer_rules.txt](#fare_transfer_rulestxt)は、ファイルとは全く別のものです。 [fare_attributes.txt](#fare_attributestxt)そして [fare_rules.txt](#fare_rulestxt).      |
@@ -315,7 +317,7 @@ File:**Conditionally Required**（ファイル：条件付きで必要
 
 主キー`fare_id`)
 
-**バージョン**<br/>運賃を記述するためのモデリングオプションは2つあります。GTFS V1 は、最小限の運賃情報を記述するためのレガシーオプションです。GTFS V2 は、代理店の運賃体系をより詳細に記述できるように更新された方法です。1つのデータセットには両方の方式が存在してもよいが、データ利用者は1つのデータセットに対して1つの方式のみを使用する必要がある。GTFS V2はGTFS V1よりも優先されることが推奨されています。<br/><br/>GTFS V1に関連するファイルは以下のとおりです。<br/>-[fare_attributes.txt](#fare_attributestxt)<br/>-[fare_rules.txt](#fare_rulestxt)<br/><br/>GTFS V2 に関連するファイルは、以下のとおりです。<br/>-[fare_products.txt](#fare_productstxt)<br/>-[fare_leg_rules.txt](#fare_leg_rulestxt)<br/>-[fare_transfer_rules.txt](#fare_transfer_rulestxt)
+**バージョン**<br/>運賃を記述するためのモデリングオプションは2つあります。GTFS V1 は、最小限の運賃情報を記述するためのレガシーオプションです。GTFS V2 は、代理店の運賃体系をより詳細に記述できるように更新された方法です。1つのデータセットには両方の方式が存在してもよいが、データ利用者は1つのデータセットに対して1つの方式のみを使用する必要がある。GTFS V2はGTFS V1よりも優先されることが推奨されています。<br/><br/>GTFS V1に関連するファイルは以下のとおりです。<br/>-[fare_attributes.txt](#fare_attributestxt)<br/>-[fare_rules.txt](#fare_rulestxt)<br/><br/>GTFS V2 に関連するファイルは、以下のとおりです。<br/>-[fare_media.txt](#fare_mediatxt)<br>-[fare_products.txt](#fare_productstxt)<br/>-[fare_leg_rules.txt](#fare_leg_rulestxt)<br/>-[fare_transfer_rules.txt](#fare_transfer_rulestxt)
 
 <br/>
 
@@ -351,11 +353,26 @@ File:**Conditionally Required**（ファイル：条件付きで必要
 | `destination_id` | 外部ID参照 `stops.zone_id`           | オプション  | 目的地ゾーンを特定します。運賃クラスに複数の目的地ゾーンがある場合、「目的地ゾーンの特定」にレコードを作成する。 [fare_rules.txt](#fare_rules.txt)それぞれについて `destination_id`.<hr/>*例の `origin_id`そして `destination_id`フィールドを併用することで、ゾーン3と4の間の移動には運賃クラス "b "が有効であること、ゾーン3と5の間の移動には [fare_rules.txt](#fare_rules.txt)ファイルには、運賃クラスに関するこれらのレコードが含まれる。* <br/>`fare_id,...,origin_id,destination_id` <br/>`b,...,3,4`<br/> `b,...,3,5`                                                                                                                            |
 | `contains_id`    | 外部ID参照 `stops.zone_id`           | オプション  | 特定された運賃クラスを使用している間、ライダーが進入するゾーンを識別する。正しい運賃クラスを計算するために、一部のシステムで使用されます。 <hr/>*例例：ゾーン 5、6、7 を通過する GRT ルートのすべての移動に運賃クラス「c」が関連する場合、ゾー [fare_rules.txt](#fare_rules.txt)には、これらのレコードが含まれます。* <br/> `fare_id,route_id,...,contains_id` <br/>  `c,GRT,...,5` <br/>`c,GRT,...,6` <br/>`c,GRT,...,7` <br/> *なぜなら、すべての `contains_id`ゾーン5と6を通過し、ゾーン7を通過しない旅程は、運賃クラス「c」が適用されません。詳細は以下をご参照ください。 <https://code.google.com/p/googletransitdatafeed/wiki/FareExamples>は、GoogleTransitDataFeedプロジェクトのwikiに記載されています。* |
 
+### fare_media.txt
+
+ファイル: **オプション**
+
+主キー (`fare_media_id`)
+
+運賃商品を使用するために採用できるさまざまな運賃メディアを説明する。運賃メディアとは、運賃商品の表現及び／又は検証に使用される物理的又は仮想的なホルダーのことです。
+
+| フィールド名            | タイプ   | プレゼンス  | 説明                                                                                                                                                                                                                                                                                         |
+| ----------------- | ----- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `fare_media_id`   | 一意のid | **必須** | 運賃メディアを特定する。                                                                                                                                                                                                                                                                               |
+| `fare_media_name` | テキスト  | オプション  | 運賃媒体の名称。<br/><br/>交通系カードである運賃媒体の場合(`fare_media_type =2`)やモバイルアプリ(`fare_media_type =4`)、その `fare_media_name`を含める必要があり、配信する組織が使用するライダー向けの名称と一致する必要があります。                                                                                                                                     |
+| `fare_media_type` | enum  | **必須** | 運賃メディアの種類。有効なオプションは以下の通りです。<br/><br/>`0`- なし。  運転手や車掌に現金を支払い、物理的なチケットを提供しないなど、運賃商品の購入や検証に関わる運賃媒体がない場合に使用します。<br/>`2`- チケット、パス、または金銭的価値が保存されている物理的な交通カード。<br/>`3`- アカウントベースのチケットのためのオープンループのトークンコンテナとしてのcEMV（非接触型Europay、Mastercard、Visa）。<br/>`4`- 仮想交通カード、チケット、パス、または金銭的価値を保存しているモバイルアプリ。 |
+
+
 ### fare_products.txt
 
 ファイル：**オプション**
 
-主キー`fare_product_id`)
+主キー(`fare_product_id`, `fare_media_id`)
 
 ライダーが購入できる様々なタイプのチケットや運賃を説明する。
 
@@ -363,6 +380,7 @@ File:**Conditionally Required**（ファイル：条件付きで必要
 | ------------------- | ----- | ------ | -------------------------------------------------- |
 | `fare_product_id`   | ID    | **必須** | 運賃商品を識別します。                                        |
 | `fare_product_name` | テキスト  | オプション  | ライダーに表示される運賃商品の名称です。                               |
+| `fare_media_id` | 外部ID参照 `fare_media.fare_media_id` | Optional | Identifies a fare media that can be employed to use the fare product during the trip. When `fare_media_id` is empty, it is considered that the fare media is unknown.|
 | `amount`            | 通貨量   | **必須** | 運賃商品の価格。乗り換え割引を表すため、負にすることができます。無料運賃商品の場合は、0となります。 |
 | `currency`          | 通貨コード | **必須** | 運賃商品のコストを表す通貨。                                     |
 

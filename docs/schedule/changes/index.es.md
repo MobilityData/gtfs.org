@@ -45,6 +45,20 @@ Propuestas recientemente fusionadas que ahora son características de la [especi
 
 <div class="row">
     <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/355" class="no-icon" target="_blank">Añadir medios de pago</a></h3>
+        <p class="maintainer">#355 por <a href="https://github.com/isabelle-dr" class="no-icon" target="_blank">isabelle-dr</a> se fusionó el 14 de Mar de 2023</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Medios de comunicación es un elemento clave de la <a href="../../extensions/fares-v2">propuesta de ampliación GTFS Fares-v2</a></li>
+            <li>Representa lo que un usuario puede utilizar para validar su viaje (por ejemplo, una tarjeta de transporte, una aplicación móvil o una tarjeta bancaria sin contacto).</li>
+            <li>Un producto tarifario puede asociarse a un medio tarifario específico (por ejemplo, un abono mensual sólo está disponible en una tarjeta de transporte).</li>
+            <li>El precio de un producto tarifario puede definirse en función del Medio Tarifario (por ejemplo, el billete es más barato si se compra a través de una aplicación móvil).</li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">Añadir transferencias trip con opción de asiento</a></h3>
         <p class="maintainer">#303 por <a href="https://github.com/gcamp" class="no-icon" target="_blank">gcamp</a> se fusionó el 26 de Jun de 2022</p>
     </div>

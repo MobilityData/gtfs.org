@@ -47,6 +47,21 @@ Active proposals for new features in GTFS Schedule.  -->
 
 <div class="row">
     <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/355" class="no-icon" target="_blank">運賃メディアを追加する</a></h3>
+        <p class="maintainer">#355 by <a href="https://github.com/isabelle-dr" class="no-icon" target="_blank">isabelle-dr</a> がマージされました 2023年3月14日</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>運賃メディアは<a href="../../extensions/fares-v2">GTFSFares-v2拡張提案の</a>重要な要素である</li>
+            <li>ライダーが自分のライドを検証するために使用できるものを表す（例：トランジットカード、モバイルアプリ、非接触型バンクカードを使ったタップトゥペイなど）</li>
+            <li>運賃商品は、特定の運賃メディアに関連付けることができます（例：マンスリーパスはトランジットカードでのみ利用可能）。</li>
+            <li>運賃商品の価格は、運賃メディアに基づいて定義できる（例：モバイルアプリで購入するとチケットが安くなるなど）</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/303" class="no-icon" target="_blank">座席指定オプションでトリップ間転送を追加する</a></h3>
         <p class="maintainer"><a href="https://github.com/gcamp" class="no-icon" target="_blank">gcampによる</a>#303は2022年6月26日にマージされました。</p>
     </div>

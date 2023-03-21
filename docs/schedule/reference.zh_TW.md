@@ -24,6 +24,7 @@ search:
     -   [calendar\_dates.txt](#calendar_datestxt)
     -   [fare\_attributes.txt](#fare_attributestxt)
     -   [fare\_rules.txt](#fare_rulestxt)
+    -   [fare_media.txt](#fare_mediatxt)
     -   [fare\_products.txt](#fare_productstxt) 
     -   [fare\_leg\_rules.txt](#fare_leg_rulestxt)
     -   [fare\_transfer\_rules.txt](#fare_transfer_rulestxt)
@@ -107,7 +108,7 @@ search:
 本规范定义了以下文件：
 
 | 文件名                                                | 在场    | 描述                                                                                                                                                                                                                                                                                   |
-| -------------------------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| -------------------------------------------------- | ----- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [agency.txt](#agencytxt)                           | **必需的** | 在此数据集中提供服务的交通机构。                                                                                                                                                                                                                                                                     |
 | [stops.txt](#stopstxt)                             | **必需的** | 在车辆接送乘客的地方停靠。还定义了车站和车站入口。                                                                                                                                                                                                                                                            |
 | [routes.txt](#routestxt)                           | **必需的** | 过境路线。路线是作为单一服务向乘客显示的一组行程。                                                                                                                                                                                                                                                            |
@@ -116,7 +117,8 @@ search:
 | [calendar.txt](#calendartxt)                       | **有条件要求** | 使用每周指定的服务日期Schedule带有开始和结束日期。<br/><br/>有条件要求：<br/>-**必需的**除非所有服务日期都在[calendar_dates.txt](#calendar_datestxt) .<br/> - 否则可选。                                                                                                                                                          |
 | [calendar_dates.txt](#calendar_datestxt)           | **有条件要求** | 中定义的服务的例外情况[calendar.txt](#calendartxt) .<br/><br/>有条件要求：<br/> -**必需的**如果[calendar.txt](#calendartxt)被省略。在这种情况下[calendar_dates.txt](#calendar_datestxt)必须包含所有服务日期。<br/> - 否则可选。                                                                                                      |
 | [fare_attributes.txt](#fare_attributestxt)         | 可选的   | 公交公司路线的票价信息。                                                                                                                                                                                                                                                                         |
-| [fare_rules.txt](#fare_rulestxt)                   | 可选的  | 为行程应用票价的规则。                                                                                                                                                                        |
+| [fare_rules.txt](#fare_rulestxt)                   | 可选的  | 为行程应用票价的规则。                                                                                                                                                                                                                                                                          |
+| [fare_media.txt](#fare_mediatxt) | 可选的 | 描述可用於使用票價產品的票價媒體。<br/><br/>文件[fare_media.txt](#fare_mediatxt)描述了未在[fare_attributes.txt](#fare_attributestxt)和[fare_rules.txt](fare_rulestxt) .因此， [fare_media.txt](#fare_mediatxt)的使用與文件完全分開[fare_attributes.txt](#fare_attributestxt)和[fare_rules.txt](#fare_rulestxt).                         |
 | [fare_products.txt](#fare_productstxt)             | 可选的   | 描述乘客可以购买的不同类型的车票或票价。<br/><br/>文件[fare_products.txt](fare_productstxt)描述未在[fare_attributes.txt](#fare_attributestxt)和[fare_rules.txt](#fare_rulestxt).因此，使用[fare_products.txt](#fare_productstxt)与文件完全分开[fare_attributes.txt](#fare_attributestxt)和[fare_rules.txt](#fare_rulestxt) . |
 | [fare_leg_rules.txt](#fare_leg_rulestxt)           | 可选的   | 单程旅行的票价规则。<br/><br/>文件[fare_leg_rules.txt](#fare_leg_rulestxt)为票价结构建模提供了更详细的方法。因此，使用[fare_leg_rules.txt](#fare_leg_rulestxt)与文件完全分开[fare_attributes.txt](#fare_attributestxt)和[fare_rules.txt](#fare_rulestxt) .                                                                     |
 | [fare_transfer_rules.txt](#fare_transfer_rulestxt) | 可选的   | 旅行航段之间换乘的票价规则。<br/><br/>随着[fare_leg_rules.txt](#fare_leg_rulestxt)， 文件[fare_transfer_rules.txt](#fare_transfer_rulestxt)为票价结构建模提供了更详细的方法。因此，使用[fare_transfer_rules.txt](#fare_transfer_rulestxt)与文件完全分开[fare_attributes.txt](#fare_attributestxt)和[fare_rules.txt](#fare_rulestxt) . |
@@ -320,7 +322,7 @@ search:
 
 首要的关键 （fare_id )
 
-**版本**<br/>有两种用于描述票价的建模选项。GTFS -Fares V1 是用于描述最低票价信息的传统选项。GTFS -Fares V2 是一种更新的方法，可以更详细地说明代理商的票价结构。两者都允许出现在数据集中，但数据消费者对于给定的数据集只能使用一种方法。建议GTFS -Fares V2 优先于GTFS -票价 V1。<br/><br/>相关的文件GTFS -票价 V1 是：<br/>-fare_attributes.txt<br/>-fare_rules.txt<br/><br/>相关的文件GTFS -票价 V2 是：<br/>-fare_products.txt<br/>-fare_leg_rules.txt<br/>-fare_transfer_rules.txt
+**版本**<br/>有两种用于描述票价的建模选项。GTFS -Fares V1 是用于描述最低票价信息的传统选项。GTFS -Fares V2 是一种更新的方法，可以更详细地说明代理商的票价结构。两者都允许出现在数据集中，但数据消费者对于给定的数据集只能使用一种方法。建议GTFS -Fares V2 优先于GTFS -票价 V1。<br/><br/>相关的文件GTFS -票价 V1 是：<br/>-fare_attributes.txt<br/>-fare_rules.txt<br/><br/>相关的文件GTFS -票价 V2 是：<br/>- [fare_media.txt](#fare_mediatxt)<br>-fare_products.txt<br/>-fare_leg_rules.txt<br/>-fare_transfer_rules.txt
 
 <br/>
 
@@ -356,21 +358,35 @@ search:
 | `destination_id` | 国外身份证参考`stops.zone_id`           | 可选的     | 标识目标区域。如果票价等级有多个目的地区域，请在[fare_rules.txt](#fare_rules.txt)对于每个`destination_id` .<hr/>*示例：`origin_id`和`destination_id`可以一起使用字段来指定票价等级“b”对于区域 3 和 4 之间的旅行有效，对于区域 3 和 5 之间的旅行，[fare_rules.txt](#fare_rules.txt)文件将包含票价等级的这些记录：* <br/>`fare_id,...,origin_id,destination_id` <br/>`b,...,3,4`<br/> `b,...,3,5`                                                                                                                                                                                            |
 | `contains_id`    | 国外身份证参考`stops.zone_id`           | 可选的     | 识别乘客在使用给定票价等级时将进入的区域。在某些系统中用于计算正确的票价等级。<hr/>*示例：如果票价等级“c”与经过 5、6 和 7 区的 GRT 路线上的所有旅行相关联，则[fare_rules.txt](#fare_rules.txt)将包含这些记录：* <br/> `fare_id,route_id,...,contains_id` <br/>  `c,GRT,...,5` <br/>`c,GRT,...,6` <br/>`c,GRT,...,7` <br/> *因为所有`contains_id`必须匹配区域才能应用票价，经过 5 区和 6 区但不经过 7 区的行程将没有票价等级“c”。有关更多详细信息，请参阅[ https://code.google.com/p/googletransitdatafeed/wiki/FareExamples](https://code.google.com/p/googletransitdatafeed/wiki/FareExamples)在 GoogleTransitDataFeed 项目 wiki 中。* |
 
+### fare_media.txt
+
+文件：**可選**
+
+主鍵 ( `fare_media_id` )
+
+描述可用於使用票價產品的不同票價媒體。票價媒體是用於表示和/或驗證票價產品的物理或虛擬載體。
+
+| 字段名稱              | 類型    | 在場      | 描述                                                                                                                                                                                                                     |
+| ----------------- | ----- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fare_media_id`   | 獨特的id | **必需的** | 標識票價媒體。                                                                                                                                                                                                                |
+| `fare_media_name` | 文本    | 選修的     | 票價媒體名稱。<br/><br/>對於作為交通卡的票價媒體 (`fare_media_type =2` ) 或移動應用程序 (`fare_media_type =4` ）， 這`fare_media_name`應該包括在內，並且應該與提供它們的組織使用的面向騎手的名稱相匹配。                                                                             |
+| `fare_media_type` | enum  | **必需的** | 票價媒體的類型。有效選項是：<br/><br/>`0` - 沒有任何。在購買或驗證票價產品時不涉及票價媒體時使用，例如向未提供實體車票的司機或售票員支付現金。<br/>`2` - 已存儲車票、通行證或貨幣價值的實體交通卡。<br/>`3` - cEMV（非接觸式 Europay、Mastercard 和 Visa）作為基於賬戶的票務的開環令牌容器。<br/>`4` - 已存儲虛擬交通卡、車票、通行證或貨幣價值的移動應用程序。 |
 
 ### fare_products.txt
 
 文件：**可选**
 
-首要的关键 （fare_product_id )
+首要的关键 （`fare_product_id`, `fare_media_id`)
 
 描述乘客可以购买的不同类型的车票或票价。
 
-| 字段名称                | 类型   | 在场      | 描述                                 |
-| ------------------- | ---- | ------- | ---------------------------------- |
-| `fare_product_id`   |  ID  | **必需的** | 标识票价产品。                            |
-| `fare_product_name` | 文本   | 可选的     | 向乘客显示的票价产品的名称。                     |
-| `amount`            | 货币金额 | **必需的** | 票价产品的成本。可能为负数表示转让折扣。可能为零表示免费的票价产品。 |
-| `currency`          | 货币代码 | **必需的** | 票价产品成本的货币。                         |
+| 字段名称                | 类型   | 在场      | 描述                                                   |
+| ------------------- | ---- | ------- |------------------------------------------------------|
+| `fare_product_id`   |  ID  | **必需的** | 标识票价产品。                                              |
+| `fare_product_name` | 文本   | 可选的     | 向乘客显示的票价产品的名称。                                       |
+| `fare_media_id` | 国外身份证参考 `fare_media.fare_media_id` | 可选的 | 標識可用於在旅行期間使用票價產品的票價媒體。當`fare_media_id`是空的，認為票價媒體是未知. |
+| `amount`            | 货币金额 | **必需的** | 票价产品的成本。可能为负数表示转让折扣。可能为零表示免费的票价产品。                   |
+| `currency`          | 货币代码 | **必需的** | 票价产品成本的货币。                                           |
 
 
 ### fare_leg_rules.txt

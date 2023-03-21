@@ -30,9 +30,9 @@ Fares v1と技術的な矛盾がないため、制作者はFares v1と同じデ�
 
 ## 進行中のFares v2作業
 
-運賃メディア(旧運賃コンテナ)の提案が投票にかけられました!
+[運賃メディア（旧運賃コンテナ）の提案が通り](https://github.com/google/transit/pull/355#issuecomment-1468326858)、正式に仕様に採用されました
 
-[3月13日23:59:59UTCまでにGitHubのプルリクエストで投票をお願いします。](https://github.com/google/transit/pull/355#issuecomment-1456392466)
+Fares V2ワーキングミーティングでは、今後、[時間変動運賃のモデリングと](https://github.com/google/transit/pull/357)採用に焦点を当てます。
 
 <a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">Slack の #gtfs-fares に参加する</a><a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">ミーティングスケジュールを</a><a class="button no-icon" target="_blank" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit">見るミーティングノートを見る</a>
 
@@ -50,7 +50,17 @@ Fares v1と技術的な矛盾がないため、制作者はFares v1と同じデ�
 - 生産者[Interline](https://www.interline.io/)、 [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - 消費者[Apple](https://www.apple.com/)
 
-<a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">Fares v2ファイルおよびフィールドの使用者を見る</a>
+## アドプション・トラッカー
+### カレント
+
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrZzYzPYao7iExlW?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shr8aT0K9bpncmy0V" target="_blank">変更依頼</a><a class="button no-icon" href="https://airtable.com/shr5B6Pl1r9KH9qMX" target="_blank">所属団体（消費者）を追加する</a><a class="button no-icon" href="https://airtable.com/shrn0Afa3TPNkOAEh" target="_blank">所属団体（プロデューサー）を追加する</a>
+
+### 未来
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrUrgZTO1noUF66R?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shrvnI40zuFXmDsQI" target="_blank">今後の予定を追加する</a>
 
 ## 議論されている運賃の機能
 
@@ -60,8 +70,10 @@ Fares v1と技術的な矛盾がないため、制作者はFares v1と同じデ�
 
 - **2017:**業界調査、データモデリング
 - **2021年10月** [ベースとなる実装を起案し、共有](https://github.com/google/transit/pull/286#issue-1026848880)
-- **2021年**12月[公開投票 #1 → 通過せず](https://github.com/google/transit/pull/286#issuecomment-990258396)
-- **2022**年3月：[公開投票#2 → 通過せず](https://github.com/google/transit/pull/286#issuecomment-1080716109)
-- **2022**年5月：[公開投票#3→ 可決された](https://github.com/google/transit/pull/286#issuecomment-1121392932)
-- **2022年8**月：[Fares v2の次のフェーズについてコミュニティで議論開始](https://github.com/google/transit/issues/341)
-- **2022**年12月：[コミュニティは、イテレーションの優先順位を決めるために、機能のスタック順位を特定する](https://github.com/google/transit/issues/341#issuecomment-1339947915)
+- **2021年12月**[公開投票 #1 → 通過せず](https://github.com/google/transit/pull/286#issuecomment-990258396)
+- **2022年3月**：[公開投票#2 → 通過せず](https://github.com/google/transit/pull/286#issuecomment-1080716109)
+- **2022年5月**：[公開投票#3→ 可決された](https://github.com/google/transit/pull/286#issuecomment-1121392932)
+- **2022年8月**：[Fares v2の次のフェーズについてコミュニティで議論開始](https://github.com/google/transit/issues/341)
+- **2022年11月**: <a href="https://github.com/google/transit/pull/355" target="_blank">運賃メディアのドラフトプル・リクエストを公開し、フィードバックを求める</a>
+- **2022年12月**：[コミュニティは、イテレーションの優先順位を決めるために、機能のスタック順位を特定する](https://github.com/google/transit/issues/341#issuecomment-1339947915)
+- **2023年3月**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">運賃メディア投票が通過</a>

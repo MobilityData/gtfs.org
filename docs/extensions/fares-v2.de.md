@@ -30,9 +30,9 @@ Hersteller können Tarif v2 im gleichen Datensatz wie Tarif v1 implementieren, d
 
 ## Laufende Arbeiten zu Fares v2
 
-Der Vorschlag für Tarifmedien (früher Tarifcontainer) wurde zur Abstimmung aufgerufen!
+[Der Vorschlag zu den Tarifmedien (ehemals Tarifcontainer) wurde verabschiedet](https://github.com/google/transit/pull/355#issuecomment-1468326858) und offiziell in die Spezifikation aufgenommen!
 
-[Stimmt im GitHub Pull Request vor dem 13. März 23:59:59 UTC ab.](https://github.com/google/transit/pull/355#issuecomment-1456392466)
+Die Arbeitstreffen zu Fares V2 werden sich nun auf die [Modellierung und Verabschiedung zeitvariabler Tarife](https://github.com/google/transit/pull/357) konzentrieren.
 
 <a class="button no-icon" href="https://share.mobilitydata.org/slack" target="_blank">Treten Sie #gtfs-fares auf Slack bei</a><a class="button no-icon" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057" target="_blank">Siehe den Sitzungsplan</a><a class="button no-icon" href="https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit" target="_blank">Siehe Sitzungsnotizen</a>
 
@@ -50,7 +50,17 @@ Für die derzeit diskutierte Funktion der fare media sind die Erstanwender
 - Produzent: [Interline](https://www.interline.io/)
 - Verbraucher: [Apple](https://www.apple.com/), [Transit](https://transitapp.com/)
 
-<a class="button no-icon" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing" target="_blank">Sehen Sie, wer die Dateien und Felder von Fares v2 verwendet</a>
+## Adoptions-Tracker
+### Aktuell
+
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrZzYzPYao7iExlW?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shr8aT0K9bpncmy0V" target="_blank">Eine Änderung beantragen</a><a class="button no-icon" href="https://airtable.com/shr5B6Pl1r9KH9qMX" target="_blank">Ihre Organisation hinzufügen (Verbraucher)</a><a class="button no-icon" href="https://airtable.com/shrn0Afa3TPNkOAEh" target="_blank">Ihre Organisation hinzufügen (Erzeuger)</a>
+
+### Zukunft
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrUrgZTO1noUF66R?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shrvnI40zuFXmDsQI" target="_blank">Ihre Zukunftspläne hinzufügen</a>
 
 ## In der Diskussion befindliche Fares v2 Merkmale
 
@@ -61,7 +71,9 @@ Für die derzeit diskutierte Funktion der fare media sind die Erstanwender
 - **2017**: Branchenforschung und Datenmodellierung
 - **Oktober 2021**: [Entwurf der Basisimplementierung und gemeinsame Nutzung](https://github.com/google/transit/pull/286#issue-1026848880)
 - **Dezember 2021**: [Offene Abstimmung #1 → nicht angenommen](https://github.com/google/transit/pull/286#issuecomment-990258396)
-- **März 2022**: Offene [Abstimmung #2 → nicht angenommen](https://github.com/google/transit/pull/286#issuecomment-1080716109)
-- **Mai 2022**: Offene [Abstimmung #3 → angenommen](https://github.com/google/transit/pull/286#issuecomment-1121392932)
+- **März 2022**: [Offene Abstimmung #2 → nicht angenommen](https://github.com/google/transit/pull/286#issuecomment-1080716109)
+- **Mai 2022**: [Offene Abstimmung #3 → angenommen](https://github.com/google/transit/pull/286#issuecomment-1121392932)
 - **August 2022**: [Diskussion der Gemeinschaft über die nächste Phase von Fares v2 beginnt](https://github.com/google/transit/issues/341)
-- **Dezember 2022**: Die [Gemeinschaft legt eine Rangfolge der Funktionen fest, um die Iterationen zu priorisieren](https://github.com/google/transit/issues/341#issuecomment-1339947915)
+- **November 2022**: <a href="https://github.com/google/transit/pull/355" target="_blank">PR-Entwurf von Fare Media für Feedback geöffnet</a>
+- **Dezember 2022**: [Die Gemeinschaft legt eine Rangfolge der Funktionen fest, um die Iterationen zu priorisieren](https://github.com/google/transit/issues/341#issuecomment-1339947915)
+- **März 2023**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">Abstimmung über Tarife für Medien verabschiedet</a>

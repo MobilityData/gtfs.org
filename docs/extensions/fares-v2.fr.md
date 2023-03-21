@@ -30,9 +30,9 @@ Les producteurs peuvent mettre en œuvre Fares v2 dans le même ensemble de donn
 
 ## Travail en cours sur Fares v2
 
-La proposition fare media (anciennement fare containers) a été appelée à un vote !
+[La proposition relative aux supports tarifaires (anciennement conteneurs tarifaires)](https://github.com/google/transit/pull/355#issuecomment-1468326858) a été adoptée officiellement dans la spécification !
 
-[Votez dans la demande de retrait GitHub avant le 13 mars 23:59:59 UTC.](https://github.com/google/transit/pull/355#issuecomment-1456392466)
+Les réunions de travail de la Fares V2 vont maintenant se concentrer sur la [modélisation et l'adoption de tarifs variables dans le temps](https://github.com/google/transit/pull/357).
 
 <a class="button no-icon" target="_blank" href="https://share.mobilitydata.org/slack">Rejoignez #gtfs-fares sur Slack</a> 
 <a class="button no-icon" target="_blank" href="https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057">Voir le programme des réunions</a>
@@ -52,7 +52,17 @@ Pour la fonctionnalité de fare media actuellement en discussion, les premiers a
 - Producteur : [Interline](https://www.interline.io/), [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
 - Consommateur : [Apple](https://www.apple.com/)
 
-<a class="button no-icon" target="_blank" href="https://docs.google.com/spreadsheets/d/1jpKjz6MbCD2XPhmIP11EDi-P2jMh7x2k-oHS-pLf2vI/edit?usp=sharing">Voir qui utilise les fichiers et les champs de Fares v2</a>
+## Suivi des adoptions
+### Actuel
+
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrZzYzPYao7iExlW?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shr8aT0K9bpncmy0V" target="_blank">Demande de modification</a><a class="button no-icon" href="https://airtable.com/shr5B6Pl1r9KH9qMX" target="_blank">Ajoutez votre organisation (consommateurs)</a><a class="button no-icon" href="https://airtable.com/shrn0Afa3TPNkOAEh" target="_blank">Ajouter votre organisation (producteurs)</a>
+
+### L'avenir
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrUrgZTO1noUF66R?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+
+<a class="button no-icon" href="https://airtable.com/shrvnI40zuFXmDsQI" target="_blank">Ajoutez vos projets d'avenir</a>
 
 ## Fonctionnalités Fares v2 en cours de discussion
 
@@ -66,4 +76,6 @@ Pour la fonctionnalité de fare media actuellement en discussion, les premiers a
 - **Mars 2022**: [Vote ouvert #2 → n'a pas été adopté](https://github.com/google/transit/pull/286#issuecomment-1080716109) 
 - **Mai 2022**: [Vote ouvert #3 → adopté](https://github.com/google/transit/pull/286#issuecomment-1121392932)
 - **Août 2022**: [Début de la discussion communautaire sur la prochaine phase de Fares v2](https://github.com/google/transit/issues/341).
-- **Décembre 2022**: [la communauté identifie l'ordre de classement des fonctionnalités de la pile pour prioriser les itérations](https://github.com/google/transit/issues/341#issuecomment-1339947915).
+- **Novembre 2022**: <a href="https://github.com/google/transit/pull/355" target="_blank">Ouverture d'une demande de pull request pour le projet Fare media</a>
+- **Décembre 2022**: [La communauté identifie l'ordre de classement des fonctionnalités de la pile pour prioriser les itérations](https://github.com/google/transit/issues/341#issuecomment-1339947915).
+- **Mars 2023**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">Le vote sur les médias tarifaires est adopté</a>
