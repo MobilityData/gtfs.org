@@ -37,6 +37,35 @@ Producers who want to describe a physical ticket as a fare media type can use th
 
 <sup><a href="https://511.org/open-data/transit" target="_blank">See the San Francisco Bay Area Regional feed</a></sup>
 
+## Define price differences based on fare media
+
+Muni's fare price is different based on the fare media the rider uses. This example will cover how the adult local fare price changes when using cash or Clipper card. An adult local fare paid for with cash costs $3 USD and the same fare paid for with the Clipper card costs $2.50, 50 cents less.
+
+Each entry below describes a fare media.
+
+[**fare_media.txt**](../../../reference/#fare_mediatxt)
+
+| fare_media_id | fare_media_name  | fare_media_type |
+|---------------|------------------|-----------------|
+| clipper       | Clipper          | 2               |
+| cash           | Cash             | 0               |
+
+The `fare_products.txt` file snippet below shows how the amount of the `Muni single local fare` product varies depending on the fare media that the rider uses.
+
+[**fare_products.txt**](../../../reference/#fare_productstxt)
+
+| fare_product_id | fare_product_name  | amount | currency | fare_media_id |
+|---------------|------------------|-------|--- |---------------|
+| SF:local:single | Muni single local fare | 3     | USD | cash |
+| SF:local:single | Muni single local fare  | 2.5   |USD | clipper |
+
+In Apple Maps, riders can see how their fare price changes: 
+
+@TODO Add screenshots, side by side on desktop, 1 column on mobile
+
+<sup><a href="https://511.org/open-data/transit" target="_blank">See the San Francisco Bay Area Regional feed</a></sup>
+
+
 ## Describe a contactless fare media option
 
 <a href="https://vimeo.com/539436401" target="_blank">The Clean Air Express in Northern Santa Barbara County accepts contactless payment</a> by credit card, Google Pay and Apple Pay.
@@ -58,32 +87,6 @@ The single ride fare product shown below has both `cash` and `tap-to-ride` fare 
 
 <sup><a href="https://gtfs.calitp.org/production/CleanAirExpressFaresv2.zip" target="_blank">Download the Clean Air Express feed</a></sup>
 
-
-## Define price differences based on fare media 
-
-The Alameda-Contra Costa Transit District (AC Transit)’s fare price is different based on the fare media the rider uses: cash or Clipper card. A local fare paid for with cash costs $2.50 USD and the same fare paid for with the Clipper card costs $2.25, 25 cents less.
-
-Each entry below describes a fare media.   
-
-[**fare_media.txt**](../../../reference/#fare_mediatxt)
-
-| fare_media_id | fare_media_name  | fare_media_type |
-|---------------|------------------|-----------------|
-| clipper       | Clipper          | 2               |
-| cash           | Cash             | 0               |
-
-The `fare_products.txt` file snippet below shows how the amount of the `AC Transit local fare` product varies depending on the fare media that the rider uses. 
-
-[**fare_products.txt**](../../../reference/#fare_productstxt)
-
-| fare_product_id | fare_product_name  | amount | currency | fare_media_id |
-|---------------|------------------|-----------------|--- |---------------|
-| AC:local:single | AC Transit local fare | 2.5 | USD | cash |
-| AC:local:single | AC Transit local fare  | 2.25  |USD | clipper |
-
-<sup><a href="https://511.org/open-data/transit" target="_blank">See the San Francisco Bay Area Regional feed</a></sup>
-
-@TODO: Add Apple Maps screenshots
 
 
 
