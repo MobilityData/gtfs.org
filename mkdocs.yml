@@ -526,9 +526,7 @@ nav:
     - Continuous stops: schedule/examples/continuous-stops.md
     - Text-to-speech: schedule/examples/text-to-speech.md
     - Fares v1: schedule/examples/fares-v1.md
-    - Fares v2:
-         - Base implementation: schedule/examples/fares-v2/base-implementation.md
-         - Fare media: schedule/examples/fares-v2/fare-media.md
+    - Fares v2: schedule/examples/fares-v2.md
     - Frequencies: schedule/examples/frequencies.md
     - Pathways: schedule/examples/pathways.md
     - Translations: schedule/examples/translations.md

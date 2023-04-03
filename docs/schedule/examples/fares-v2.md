@@ -2,7 +2,7 @@
     <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
   </a>
 
-# Base implementation
+# Fares v2
 
 <hr>
 
@@ -62,9 +62,9 @@ There is a 90 minute transfer for riders who purchase a one-way fare to ride Bal
 
 [**fare_transfer_rules.txt**](../../../reference/#fare_transfer_rulestxt)
 
-| from_leg_group_id  | to_leg_group_id  |  transfer_count | duration_limit | duration_limit_type | fare_transfer_type |
-|---|---|---|----------------|---------------------|--------------------|
-| Core_local_one_way_trip  | core_local_one_way_trip  | 5400  | 1              | 0                   | -1                 |
+| from_leg_group_id  | to_leg_group_id  | duration_limit | duration_limit_type | fare_transfer_type | transfer_count |
+|---|---|----------------|-------------------|---------------------|----------------|
+| Core_local_one_way_trip  | core_local_one_way_trip  | 5400           | 1                 | 0                   | -1             |
 
 
 The file above represents this in GTFS with the following fields:
@@ -72,7 +72,7 @@ The file above represents this in GTFS with the following fields:
 - A transfer is possible to and from legs that are a one way trip (`core_local_one_way_trip`)
 - The `transfer_count` is set to `-1` since there is no limit on the number of transfers permitted
 - The `duration_limit` is set to `5400` seconds,  which is equivalent to 90 minutes
-@TODO: - Define `duration_limit_type` based on Omar discussion to clarify confusion
+- The `duration_limit_type` is set to `1` since the transfer starts when the rider departs on any route in the `Core_local_one_way_trip` fare leg and ends when they depart on a different fare leg. 
 - The `fare_transfer_type` is set to `0` since riders only pay for the first fare only. There is no transfer fee or a second fare for transferring within the 90 minute window. Hence, the cost can be modeled as the sum of the first fare and the sums of the transfer fees.
 - The `transfer_count` is set to `-1` as the rider can transfer an unlimited number of times within the 90 minute `duration_limit` window.
 
@@ -134,6 +134,83 @@ The fare is identified in `fare_products.txt`.
 <sup><a href="https://511.org/open-data/transit" target="_blank">See the San Francisco Bay Area Regional feed</a></sup>
 
 <hr>
+
+## Describe what fare media is accepted
+
+San Francisco Muni riders can use several different types of fare media to pay for their trip and validate their fare:
+
+- Use a <a href="https://www.clippercard.com/ClipperWeb/" target="_blank">Clipper card,</a> the Bay Area’s transit card
+- Use the <a href="https://www.sfmta.com/getting-around/muni/fares/munimobile" target="_blank">Munimobile app</a>
+- Pay for the fare in cash
+
+These validation methods are referred to as `fare_media` in GTFS-Fares v2 and can be described using `fare_media.txt`.
+
+Below is an example snippet from the <a href="https://511.org/open-data/transit" target="_blank">San Francisco Bay Area Regional Feed</a> that can be accessed with the 511 SF Bay API.
+
+`Clipper` is described as a physical transit card with `fare_media_type=2`. `SFMTA Munimobile` is described as a mobile app with `fare_media_type=2`. `Cash` has no fare media, since it is given directly to the driver without a ticket. As a result, `Cash` is `fare_media_type=0`.
+
+Producers who want to describe a physical ticket as a fare media type can use the experimental `fare_media_type=1` option that is in the <a href="https://docs.google.com/document/d/19j-f-wZ5C_kYXmkLBye1g42U-kvfSVgYLkkG5oyBauY/edit#heading=h.za3q5ta4cnyd" target="_blank">full Fares v2 proposal</a>.
+
+[**fare_media.txt**](../../../reference/#fare_mediatxt)
+
+| fare_media_id | fare_media_name  | fare_media_type |
+|---------------|------------------|-----------------|
+| clipper       | Clipper          | 2               |
+| munimobile    | SFMTA MuniMobile | 4               |
+| cash           | Cash             | 0               |
+
+<sup><a href="https://511.org/open-data/transit" target="_blank">See the San Francisco Bay Area Regional feed</a></sup>
+
+## Define price differences based on fare media
+
+Muni's fare price is different based on the fare media the rider uses. This example will cover how the adult local fare price changes when using cash or Clipper card. An adult local fare paid for with cash costs $3 USD and the same fare paid for with the Clipper card costs $2.50, 50 cents less.
+
+Each entry below describes a fare media.
+
+[**fare_media.txt**](../../../reference/#fare_mediatxt)
+
+| fare_media_id | fare_media_name  | fare_media_type |
+|---------------|------------------|-----------------|
+| clipper       | Clipper          | 2               |
+| cash           | Cash             | 0               |
+
+The `fare_products.txt` file snippet below shows how the amount of the `Muni single local fare` product varies depending on the fare media that the rider uses.
+
+[**fare_products.txt**](../../../reference/#fare_productstxt)
+
+| fare_product_id | fare_product_name  | amount | currency | fare_media_id |
+|---------------|------------------|-------|--- |---------------|
+| SF:local:single | Muni single local fare | 3     | USD | cash |
+| SF:local:single | Muni single local fare  | 2.5   |USD | clipper |
+
+In Apple Maps, riders can see how their fare price changes:
+
+@TODO Add screenshots, side by side on desktop, 1 column on mobile
+
+<sup><a href="https://511.org/open-data/transit" target="_blank">See the San Francisco Bay Area Regional feed</a></sup>
+
+
+## Describe a contactless fare media option
+
+<a href="https://vimeo.com/539436401" target="_blank">The Clean Air Express in Northern Santa Barbara County accepts contactless payment</a> by credit card, Google Pay and Apple Pay.
+
+In the Clean Air Express feed, there is a `tap_to_ride` fare media with a  `fare_media_type=3`, since it’s a cEMV (contactless Europay, Mastercard and Visa) option.
+
+| fare_media_id | fare_media_name | fare_media_type |
+|---------------|-----------------|-----------------|
+| tap_to_ride   | Tap to Ride   | 3  |
+
+The single ride fare product shown below has both `cash` and `tap-to-ride` fare media options. When the single ride is paid for with the `tap-to-ride` fare media, it is one USD dollar cheaper.
+
+[**fare_products.txt**](../../../reference/#fare_productstxt)
+
+| fare_product_id | fare_product_name  | fare_media_id | amount | currency |
+|---------------|------------------|---------------|--------|----------|
+| single-ride | Single Ride | tap_to_ride       | 6      | USD      |
+| single-ride | Single Ride |       | 7      | USD      |
+
+<sup><a href="https://gtfs.calitp.org/production/CleanAirExpressFaresv2.zip" target="_blank">Download the Clean Air Express feed</a></sup>
+
 
 
 
