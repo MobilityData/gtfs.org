@@ -20,9 +20,9 @@ There are several ways to pay fares to use the Maryland Transit Administration s
 - Weekly pass that costs $22 USD
 - A monthly pass that costs $77 USD
 
-Transit tickets or fares are referred to as fare products in GTFS. They can be described using the [fare_products.txt](../../../reference/#fare_productstxt) file. Each entry corresponds to a specific fare.
+Transit tickets or fares are referred to as fare products in GTFS. They can be described using the [fare_products.txt](../../reference/#fare_productstxt) file. Each entry corresponds to a specific fare.
 
-[**fare_products.txt**](../../../reference/#fare_productstxt) 
+[**fare_products.txt**](../../reference/#fare_productstxt) 
 
 
 | fare_product_id  | fare_product_name  | amount  | currency  |
@@ -43,7 +43,7 @@ In GTFS, a fare leg corresponds to a trip that a rider makes without transferrin
 
 Leg groups define trips within a network from an origin to a destination (or a set of origins to a set of destinations if the area IDs correspond to grouped stops). The file below describes rules to travel anywhere within the Maryland Transit Administration’s core network. Each rule corresponds to one of the regular fare products in the [Define a transit fare example](#define-a-transit-fare).
 
-[**fare_leg_rules.txt**](../../../reference/#fare_leg_rulestxt)
+[**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
 
 |  leg_group_id |  network_id | fare_product_id  |
 |---|---|---|
@@ -60,11 +60,11 @@ Leg groups define trips within a network from an origin to a destination (or a s
 
 There is a 90 minute transfer for riders who purchase a one-way fare to ride BaltimoreLink local buses, Metro SubwayLink, or Light RailLink. This means that they can transfer an unlimited number of times between the local buses, subway, and light rail within the 90 minute timeframe.
 
-[**fare_transfer_rules.txt**](../../../reference/#fare_transfer_rulestxt)
+[**fare_transfer_rules.txt**](../../reference/#fare_transfer_rulestxt)
 
-| from_leg_group_id  | to_leg_group_id  | duration_limit | duration_limit_type | fare_transfer_type | transfer_count |
-|---|---|----------------|-------------------|---------------------|----------------|
-| Core_local_one_way_trip  | core_local_one_way_trip  | 5400           | 1                 | 0                   | -1             |
+| from_leg_group_id       | to_leg_group_id  | duration_limit | duration_limit_type | fare_transfer_type | transfer_count |
+|-------------------------|---|----------------|-------------------|---------------------|----------------|
+| core_local_one_way_trip | core_local_one_way_trip  | 5400           | 1                 | 0                   | -1             |
 
 
 The file above represents this in GTFS with the following fields:
@@ -76,9 +76,11 @@ The file above represents this in GTFS with the following fields:
 - The `fare_transfer_type` is set to `0` since riders only pay for the first fare only. There is no transfer fee or a second fare for transferring within the 90 minute window. Hence, the cost can be modeled as the sum of the first fare and the sums of the transfer fees.
 - The `transfer_count` is set to `-1` as the rider can transfer an unlimited number of times within the 90 minute `duration_limit` window.
 
-After defining the fare, creating the appropriate `fare_leg_rule`, and defining the `fare_transfer_rule`,  you can see the $2.00 USD `core_local_oneway_fare` appear in trip planners. Here is an example from [Transit](https://transitapp.com/):
+After defining the fare, creating the appropriate `fare_leg_rule`, and defining the `fare_transfer_rule`,  you can see the $2.00 USD `core_local_oneway_fare` appear in trip planners. Here is an example from Transit:
 
-@TODO: Add photo 
+<div class="flex-photos">
+    <img src="../../../assets/transit-fares-mdot.png" alt="fare of $2 USD">
+</div>
 
 <sup>[Download the Maryland Transit Administration local bus GTFS feed](https://feeds.mta.maryland.gov/gtfs/local-bus)</sup>
 
@@ -86,9 +88,9 @@ After defining the fare, creating the appropriate `fare_leg_rule`, and defining 
 
 Some transit agencies operate a zone-based fare structure. Fare zones are divided geographic areas associated with different fare prices. In Bay Area’s BART system, fares are different depending on the origin and destination <a href="https://www.bart.gov/sites/default/files/docs/BART%20Clipper%20Fares%20Triangle%20Chart%20July%202022.pdf" target="_blank">(BART fare differences)</a>, and transit riders will need to know the right fare. Fare areas can be described using the [stops_areas.txt](../../reference/#stops_areastxt) file, which assigns stops from [stops.txt](../../reference/#stopstxt) to [areas.txt](../../reference/#areastxt).
 
-First, identify the area in [areas.txt](../../../reference/#areastxt) . It is acceptable to leave `area_name` blank if there is no area name. In the table below, there are three `area_id` - `ASHB`, `GLEN`, and `OAKL`.
+First, identify the area in [areas.txt](../../reference/#areastxt) . It is acceptable to leave `area_name` blank if there is no area name. In the table below, there are three `area_id` - `ASHB`, `GLEN`, and `OAKL`.
 
-[**areas.txt**](../../../reference/#areastxt) 
+[**areas.txt**](../../reference/#areastxt) 
 
 | area_id | area_name |
 |---------|-----------|
@@ -96,11 +98,11 @@ First, identify the area in [areas.txt](../../../reference/#areastxt) . It is ac
 | GLEN    |           | 
 | OAKL    |           | 
 
-Afterwards, using `stop_id` from the [stops.txt](../../../reference/#stopstxt) file, group stops together to its respective identified area (fare zone). 
+Afterwards, using `stop_id` from the [stops.txt](../../reference/#stopstxt) file, group stops together to its respective identified area (fare zone). 
 
 Next, group `stop_id` to each `area_id`. In the BART example, each area contains only 1 `stop_id`. For instance, only stop `ASHB` (Ashby Station) is included in the area `ASHB` However, if an area includes multiple stops, multiple `stop_id` should be listed.
 
-[**stops_areas.txt**](../../../reference/#stops_areastxt)
+[**stops_areas.txt**](../../reference/#stops_areastxt)
 
 | area_id | stop_id |
 |---------|---------|
@@ -114,7 +116,7 @@ In `fare_leg_rules.txt`, different fare products can be identified based on diff
 * Arrival area is `GLEN`
 * The fare product for the departure/arrival area is `BA:matrix:ASHB-GLEN`
 
-[**fare_leg_rules.txt**](../../../reference/#fare_leg_rulestxt)
+[**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
 
 | leg_group_id | from_area_id|to_area_id|fare_product_id|
 |--------------|-----------|------------|---------------|
@@ -123,7 +125,7 @@ In `fare_leg_rules.txt`, different fare products can be identified based on diff
 
 The fare is identified in `fare_products.txt`. 
 
-[**fare_products.txt**](../../../reference/#fare_productstxt)
+[**fare_products.txt**](../../reference/#fare_productstxt)
 
 | fare_product_id     | fare_product_name| amount | currency |
 |---------------------|-----------|--------|----------|
@@ -139,7 +141,7 @@ The fare is identified in `fare_products.txt`.
 
 San Francisco Muni riders can use several different types of fare media to pay for their trip and validate their fare:
 
-- Use a <a href="https://www.clippercard.com/ClipperWeb/" target="_blank">Clipper card,</a> the Bay Area’s transit card
+- Use a <a href="https://www.clippercard.com/ClipperWeb/" target="_blank">Clipper card</a>, the Bay Area’s transit card
 - Use the <a href="https://www.sfmta.com/getting-around/muni/fares/munimobile" target="_blank">Munimobile app</a>
 - Pay for the fare in cash
 
@@ -151,7 +153,7 @@ Below is an example snippet from the <a href="https://511.org/open-data/transit"
 
 Producers who want to describe a physical ticket as a fare media type can use the experimental `fare_media_type=1` option that is in the <a href="https://docs.google.com/document/d/19j-f-wZ5C_kYXmkLBye1g42U-kvfSVgYLkkG5oyBauY/edit#heading=h.za3q5ta4cnyd" target="_blank">full Fares v2 proposal</a>.
 
-[**fare_media.txt**](../../../reference/#fare_mediatxt)
+[**fare_media.txt**](../../reference/#fare_mediatxt)
 
 | fare_media_id | fare_media_name  | fare_media_type |
 |---------------|------------------|-----------------|
@@ -167,7 +169,7 @@ Muni's fare price is different based on the fare media the rider uses. This exam
 
 Each entry below describes a fare media.
 
-[**fare_media.txt**](../../../reference/#fare_mediatxt)
+[**fare_media.txt**](../../reference/#fare_mediatxt)
 
 | fare_media_id | fare_media_name  | fare_media_type |
 |---------------|------------------|-----------------|
@@ -176,16 +178,19 @@ Each entry below describes a fare media.
 
 The `fare_products.txt` file snippet below shows how the amount of the `Muni single local fare` product varies depending on the fare media that the rider uses.
 
-[**fare_products.txt**](../../../reference/#fare_productstxt)
+[**fare_products.txt**](../../reference/#fare_productstxt)
 
 | fare_product_id | fare_product_name  | amount | currency | fare_media_id |
 |---------------|------------------|-------|--- |---------------|
 | SF:local:single | Muni single local fare | 3     | USD | cash |
 | SF:local:single | Muni single local fare  | 2.5   |USD | clipper |
 
-In Apple Maps, riders can see how their fare price changes:
+In Apple Maps, riders can see how their fare price changes. You can compare fare prices under the "Board the Muni J Church train" instruction:
 
-@TODO Add screenshots, side by side on desktop, 1 column on mobile
+<div class="flex-photos">
+    <img src="../../../assets/apple-muni-cash.jpg" alt="cash fare of $3 USD">
+    <img src="../../../assets/apple-muni-clipper.jpg" alt="Clipper card fare of $2.50 USD">
+</div>
 
 <sup><a href="https://511.org/open-data/transit" target="_blank">See the San Francisco Bay Area Regional feed</a></sup>
 
@@ -202,7 +207,7 @@ In the Clean Air Express feed, there is a `tap_to_ride` fare media with a  `fare
 
 The single ride fare product shown below has both `cash` and `tap-to-ride` fare media options. When the single ride is paid for with the `tap-to-ride` fare media, it is one USD dollar cheaper.
 
-[**fare_products.txt**](../../../reference/#fare_productstxt)
+[**fare_products.txt**](../../reference/#fare_productstxt)
 
 | fare_product_id | fare_product_name  | fare_media_id | amount | currency |
 |---------------|------------------|---------------|--------|----------|

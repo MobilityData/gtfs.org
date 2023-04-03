@@ -471,3 +471,18 @@ c {
 .usage-list > ol > li:not(:last-child) {
         margin-bottom: 0.7em !important;
 }
+
+/*Fare examples*/
+
+ .flex-photos img {
+        max-width:300px;
+ }
+
+@media only screen and (min-width: 760px) {
+
+    .flex-photos {
+        display: flex;
+        max-width:650px;
+        justify-content: space-between;
+    }
+}
