@@ -72,7 +72,7 @@ The file above represents this in GTFS with the following fields:
 - A transfer is possible to and from legs that are a one way trip (`core_local_one_way_trip`)
 - The `transfer_count` is set to `-1` since there is no limit on the number of transfers permitted
 - The `duration_limit` is set to `5400` seconds,  which is equivalent to 90 minutes
-- The `duration_limit_type` is set to `1` since the transfer starts when the rider departs on any route in the `Core_local_one_way_trip` fare leg and ends when they depart on a different fare leg. 
+- The `duration_limit_type` is set to `1` since the transfer time starts when the rider departs on any route in the `core_local_one_way_trip` fare leg and ends when they depart on a different fare leg. 
 - The `fare_transfer_type` is set to `0` since riders only pay for the first fare only. There is no transfer fee or a second fare for transferring within the 90 minute window. Hence, the cost can be modeled as the sum of the first fare and the sums of the transfer fees.
 - The `transfer_count` is set to `-1` as the rider can transfer an unlimited number of times within the 90 minute `duration_limit` window.
 
