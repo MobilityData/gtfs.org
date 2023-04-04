@@ -22,8 +22,7 @@ There are several ways to pay fares to use the Maryland Transit Administration s
 
 Transit tickets or fares are referred to as fare products in GTFS. They can be described using the [fare_products.txt](../../reference/#fare_productstxt) file. Each entry corresponds to a specific fare.
 
-[**fare_products.txt**](../../reference/#fare_productstxt) 
-
+[**fare_products.txt**](../../reference/#fare_productstxt)
 
 | fare_product_id  | fare_product_name  | amount  | currency  |
 |------------------------|--------------------|---|---|
