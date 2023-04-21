@@ -1,4 +1,4 @@
-# gtfs-realtime-bindings [![Join the MobilityData chat](https://img.shields.io/badge/chat-on%20slack-red)](https://bit.ly/mobilitydata-slack)
+# gtfs-realtime-bindings [![Join the MobilityData chat](https://img.shields.io/badge/chat-on%20slack-red)](https://share.mobilitydata.org/slack)
 
 Liaisons linguistiques générées à partir de la spécification du tampon de protocole [GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) pour les langues les plus courantes.
 

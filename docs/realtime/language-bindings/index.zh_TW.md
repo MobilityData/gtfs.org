@@ -1,4 +1,4 @@
-# gtfs-realtime-bindings [![加入 MobilityData 聊天](https://img.shields.io/badge/chat-on%20slack-red)](https://bit.ly/mobilitydata-slack)
+# gtfs-realtime-bindings [![加入 MobilityData 聊天](https://img.shields.io/badge/chat-on%20slack-red)](https://share.mobilitydata.org/slack)
 
 從適用於流行語言的[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) protocolbuffer 規範生成的語言綁定。
 

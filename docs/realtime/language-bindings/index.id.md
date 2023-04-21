@@ -1,4 +1,4 @@
-# gtfs-realtime-bindings [![Bergabunglah dengan obrolan MobilityData](https://img.shields.io/badge/chat-on%20slack-red)](https://bit.ly/mobilitydata-slack)
+# gtfs-realtime-bindings [![Bergabunglah dengan obrolan MobilityData](https://img.shields.io/badge/chat-on%20slack-red)](https://share.mobilitydata.org/slack)
 
 Binding bahasa dihasilkan dari spesifikasi buffering protokol [GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) untuk bahasa populer.
 

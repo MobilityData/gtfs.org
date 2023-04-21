@@ -51,7 +51,7 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/mobilitydata
     - icon: fontawesome/brands/slack
-      link: https://bit.ly/mobilitydata-slack
+      link: https://share.mobilitydata.org/slack
 
 markdown_extensions:
   - attr_list
