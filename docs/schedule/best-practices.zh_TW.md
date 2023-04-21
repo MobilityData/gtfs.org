@@ -106,6 +106,7 @@ __例子：__
 | --- | --- |
 | `pickup_type` & `drop_off_type` |對於所有 `stop_times` 行，不提供客運服務的無收入（死角）旅行應標記為 `pickup_type` 和 `drop_off_type` 值為 `1`。
 | |在收費旅行中，用於監控運營績效的內部“時間點”以及乘客無法上車的其他地方（例如車庫）應標有“pickup_type = 1”（不提供接送服務）和“drop_off_type = 1”（不提供下車服務） . |
+| timepoint | 應提供`timepoint`字段。它指定操作員將嘗試嚴格遵守哪些`stop_times` ( `timepoint=1` )，而其他停止時間是估計值 ( `timepoint=0` )。|
 | `arrival_time` & `departure_time` | `arrival_time` 和 `departure_time` 字段應盡可能指定時間值，包括時間點之間的非約束估計或插值時間。 |
 | `stop_headsign` |一般來說，headsign 的值也應該與車站的標誌相對應。<br><br>在以下情況下，“Southbound”會誤導客戶，因為它沒有用於車站標誌。
 | | <table class="example"><thead><tr><th colspan="2">在紐約，對於 2 南行：</th></tr><tr><th>對於 <code>stop_times .txt</code> 行：</th><th>使用 <code>stop_headsign</code> 值：</th></tr></thead><tbody><tr><td>直到曼哈頓到達</td><td><code>曼哈頓和布魯克林</code></td></tr><tr><td>直到到達市中心</td><td><code>市中心和布魯克林</code></td></tr><tr><td>直到到達布魯克林</td><td><code>布魯克林</code></td></tr><tr><td>一旦到達布魯克林</td><td><code>布魯克林（新地段大道）</code></td></tr></tbody></table> |
