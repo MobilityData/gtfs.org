@@ -1,4 +1,4 @@
-# gtfs-realtime-bindings [![MobilityData 채팅에 참여](https://img.shields.io/badge/chat-on%20slack-red)](https://bit.ly/mobilitydata-slack)
+# gtfs-realtime-bindings [![MobilityData 채팅에 참여](https://img.shields.io/badge/chat-on%20slack-red)](https://share.mobilitydata.org/slack)
 
 널리 사용되는 언어에 대한 [GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) 프로토콜 버퍼 사양에서 생성된 언어 바인딩입니다.
 
