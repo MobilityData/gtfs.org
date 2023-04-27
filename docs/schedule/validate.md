@@ -18,7 +18,7 @@ This free and open-source canonical GTFS Schedule validator is maintained by [Mo
 <div class="usage">
     <div class="usage-list">
         <ol>
-            <li>Go to https://gtfs-validator.mobilitydata.org/.</li>
+            <li>Go to <a href="https://gtfs-validator.mobilitydata.org/">gtfs-validator.mobilitydata.org</a>. </li>
             <li>Load your GTFS dataset: you can select or drag & drop a ZIP file, or copy/paste a URL.</li>
             <li>When the validation is finished, an option to open the report will be provided.</li>
             <li>You will see if the validator found issues with the data, and links to our documentation for how to fix them. The URL of the validation report will work for 30 days and can be shared with others.</li>
