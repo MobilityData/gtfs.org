@@ -9,11 +9,7 @@ This free and open-source canonical GTFS Schedule validator is maintained by [Mo
 <!-- <img class="center" src="../../assets/validator_animation.gif" width="150"> -->
 <br>
 
-<div class="usage-buttons">
-    <a class="button" href="https://share.mobilitydata.org/validator-installer-mac">Download for Mac &nbsp;&nbsp;<img class="icon" src="../../assets/apple.svg" width="20"/></a><a class="button" href="https://share.mobilitydata.org/validator-installer-windows">Download for Windows &nbsp;&nbsp;<img class="icon" src="../../assets/windows.svg" width="20"/></a><a class="button" href="https://share.mobilitydata.org/validator-installer-ubuntu">Download for Ubuntu &nbsp;&nbsp;<img class="icon" src="../../assets/ubuntu.svg" width="20"/></a>
-</div>
-
-**VERSION v4.0.0** / [Read the release notes](https://github.com/MobilityData/gtfs-validator/releases/latest)
+**VERSION v4.1.0** / [Read the release notes](https://github.com/MobilityData/gtfs-validator/releases/latest)
 
 <hr>
 
@@ -22,12 +18,10 @@ This free and open-source canonical GTFS Schedule validator is maintained by [Mo
 <div class="usage">
     <div class="usage-list">
         <ol>
-            <li>Download the latest version of the project based on our operating system.</li>
-            <li>Once installed, run the application and a window will appear.</li>
-            <li>Load your GTFS dataset: you can specify a URL, ZIP file, or directory containing the individual .txt files of a feed.</li>
-            <li>Choose an output directory: This is the directory where the validation reports will be written.</li>
-            <li>When the validation is finished, the results will automatically open in your browser. If you can’t see them, just open the report.html file that got created in the output path.</li>
-            <li>You will see if the validator found issues with the data, and links to our documentation for how to fix them. The validation report will be saved as an HTML file, so it can easily be saved and shared with others.</li>
+            <li>Go to https://gtfs-validator.mobilitydata.org/.</li>
+            <li>Load your GTFS dataset: you can select or drag & drop a ZIP file, or copy/paste a URL.</li>
+            <li>When the validation is finished, an option to open the report will be provided.</li>
+            <li>You will see if the validator found issues with the data, and links to our documentation for how to fix them. The URL of the validation report will work for 30 days and can be shared with others.</li>
         </ol>
     </div>
     <div class="usage-video">
