@@ -5,6 +5,8 @@ search:
 
 # 経路
 
+<img class="center" src="../../../assets/pathways-visual.jpg">
+
 <hr>
 
 ## 駅の出入り口の位置を記述する

@@ -5,6 +5,8 @@ search:
 
 # Jalur
 
+<img class="center" src="../../../assets/pathways-visual.jpg">
+
 <hr/>
 
 ## Jelaskan lokasi pintu masuk dan keluar stasiun

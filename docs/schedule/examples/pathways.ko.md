@@ -5,6 +5,8 @@ search:
 
 # 통로
 
+<img class="center" src="../../../assets/pathways-visual.jpg">
+
 <hr/>
 
 ## 역 입구 및 출구 위치 설명

@@ -17,14 +17,14 @@ Dieser kostenlose und quelloffene kanonische GTFS Schedule Validator wird von [M
 
 <div class="usage">
     <div class="usage-list">
+          <div class="usage-list">
         <ol>
-            <li>Laden Sie die neueste Version des Projekts auf der Grundlage unseres Betriebssystems herunter.</li>
-            <li>Nach der Installation führen Sie die Anwendung aus und es erscheint ein Fenster.</li>
-            <li>Laden Sie Ihren GTFS: Sie können eine url, eine ZIP-Datei oder ein Verzeichnis mit den einzelnen .txt-Dateien eines Feeds angeben.</li>
-            <li>Wählen Sie ein Ausgabeverzeichnis: Dies ist das Verzeichnis, in das die Validierungsberichte geschrieben werden.</li>
-            <li>Wenn die Validierung abgeschlossen ist, werden die Ergebnisse automatisch in Ihrem Browser geöffnet. Wenn Sie sie nicht sehen können, öffnen Sie einfach die Datei report.html, die im Ausgabepfad erstellt wurde.</li>
-            <li>Sie werden sehen, ob der Validator Probleme mit den Daten gefunden hat, und Links zu unserer Dokumentation, wie diese behoben werden können. Der Validierungsbericht wird als HTML-Datei gespeichert, so dass er leicht gespeichert und mit anderen geteilt werden kann.</li>
+            <li>Gehen Sie zu <a href="https://gtfs-validator.mobilitydata.org/">gtfs-validator.mobilitydata.org</a>. </li>
+            <li>Laden Sie Ihren GTFS: Sie können eine ZIP-Datei auswählen, ziehen und ablegen oder eine URL kopieren und einfügen.</li>
+            <li>Wenn die Validierung abgeschlossen ist, wird eine Option zum Öffnen des Berichts angezeigt.</li>
+            <li>Sie sehen, ob der Validator Probleme mit den Daten gefunden hat, und erhalten Links zu unserer Dokumentation, um diese zu beheben. Die URL des Validierungsberichts ist 30 Tage lang gültig und kann mit anderen geteilt werden.</li>
         </ol>
+    </div>
     </div>
     <div class="usage-video">
         <video class="center" width="560" height="315" controls="">

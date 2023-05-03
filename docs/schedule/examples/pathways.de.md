@@ -5,6 +5,8 @@ search:
 
 # Laufwege
 
+<img class="center" src="../../../assets/pathways-visual.jpg">
+
 <hr/>
 
 ## Beschreiben Sie die Lage der Ein- und Ausgänge von Bahnhöfen

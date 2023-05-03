@@ -5,6 +5,8 @@ search:
 
 # 路径
 
+<img class="center" src="../../../assets/pathways-visual.jpg">
+
 <hr/>
 
 ## 描述车站入口和出口的位置

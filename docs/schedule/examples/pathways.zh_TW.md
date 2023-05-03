@@ -5,6 +5,8 @@ search:
 
 # 途徑
 
+<img class="center" src="../../../assets/pathways-visual.jpg">
+
 <hr/>
 
 ## 描述車站出入口的位置

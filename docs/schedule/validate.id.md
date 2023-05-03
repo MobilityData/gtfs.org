@@ -14,7 +14,11 @@ Kanonis sumber terbuka dan gratis ini GTFS Schedule validator dikelola oleh [Mob
 
 ## Penggunaan
 
-<div class="usage"><div class="usage-list"><ol><li> Unduh versi terbaru proyek berdasarkan sistem operasi kami.</li><li> Setelah diinstal, jalankan aplikasi dan sebuah jendela akan muncul.</li><li> Muat AndaGTFS dataset: Anda dapat menentukan aurl , file ZIP, atau direktori yang berisi file .txt individual dari feed.</li><li> Pilih direktori keluaran: Ini adalah direktori tempat laporan validasi akan ditulis.</li><li> Ketika validasi selesai, hasilnya akan terbuka secara otomatis di browser Anda. Jika Anda tidak dapat melihatnya, buka saja file report.html yang dibuat di jalur keluaran.</li><li> Anda akan melihat apakah validator menemukan masalah dengan data, dan tautan ke dokumentasi kami untuk cara memperbaikinya. Laporan validasi akan disimpan sebagai file HTML, sehingga dapat dengan mudah disimpan dan dibagikan dengan orang lain. </li></ol></div><div class="usage-video"><video class="center" width="560" height="315" controls=""><source src="../../assets/validator_demo_large.mp4" type="video/mp4"/></video></div></div>
+<div class="usage"> <div class="usage-list">
+        <ol><li>Buka <a href="https://gtfs-validator.mobilitydata.org">gtfs-validator.mobilitydata.org</a> .</li><li> Muat Anda GTFS kumpulan data: Anda dapat memilih atau menarik &amp; melepas file ZIP, atau menyalin/menempel URL.</li><li> Saat validasi selesai, opsi untuk membuka laporan akan diberikan.</li><li> Anda akan melihat apakah validator menemukan masalah dengan data, dan tautan ke dokumentasi kami untuk cara memperbaikinya. URL laporan validasi akan berfungsi selama 30 hari dan dapat dibagikan dengan orang lain.</li></ol>
+
+    </div>
+<div class="usage-video"><video class="center" width="560" height="315" controls=""><source src="../../assets/validator_demo_large.mp4" type="video/mp4"/></video></div></div>
 
 ## Gunakan Validator Ini sebagai Bagian dari Pipa Data Anda
 

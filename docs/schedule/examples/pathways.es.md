@@ -5,6 +5,8 @@ search:
 
 # Vías de acceso
 
+<img class="center" src="../../../assets/pathways-visual.jpg">
+
 <hr/>
 
 ## Describir la ubicación de las entradas y salidas de la estación
