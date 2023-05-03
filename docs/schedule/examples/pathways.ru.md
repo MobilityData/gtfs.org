@@ -5,6 +5,8 @@ search:
 
 # Пути
 
+<img class="center" src="../../../assets/pathways-visual.jpg">
+
 <hr/>
 
 ## Опишите расположение входов и выходов станции

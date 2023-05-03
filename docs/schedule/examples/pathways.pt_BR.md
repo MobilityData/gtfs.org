@@ -5,6 +5,8 @@ search:
 
 # Caminhos
 
+<img class="center" src="../../../assets/pathways-visual.jpg">
+
 <hr/>
 
 ## Descrever a localização das entradas e saídas da estação

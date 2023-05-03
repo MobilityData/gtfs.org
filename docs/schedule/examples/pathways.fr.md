@@ -5,6 +5,8 @@ search:
 
 # Chemins d'accès
 
+<img class="center" src="../../../assets/pathways-visual.jpg">
+
 <hr/>
 
 ## Décrire l'emplacement des entrées et sorties de la station

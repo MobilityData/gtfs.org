@@ -4,6 +4,8 @@
 
 # Pathways
 
+<img class="center" src="../../../assets/pathways-visual.jpg">
+
 <hr>
 
 ## Describe the location of station entrances and exits
