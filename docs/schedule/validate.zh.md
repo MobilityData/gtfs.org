@@ -17,14 +17,12 @@
 ## 使用方法
 
 <div class="usage">
-    <div class="usage-list">
+     <div class="usage-list">
         <ol>
-            <li>下载基于我们操作系统的项目的最新版本。</li>
-            <li>安装完毕后，运行该程序，会出现一个窗口。</li>
-            <li>加载你的GTFS数据集：你可以指定一个url、ZIP文件或包含一个饲料的单个.txt文件的目录。</li>
-            <li>选择一个输出目录。这是将写入验证报告的目录。</li>
-            <li>当验证完成后，结果将自动在你的浏览器中打开。如果你看不到它们，只要打开在输出路径中创建的report.html文件就可以了。</li>
-            <li>你会看到验证器是否发现了数据的问题，以及如何解决这些问题的文档链接。验证报告将被保存为一个HTML文件，所以它可以很容易地被保存并与他人分享。</li>
+            <li>转到<a href="https://gtfs-validator.mobilitydata.org/">gtfs-validator.mobilitydata.org</a>。 </li>
+            <li>加载你的GTFS数据集：你可以选择或拖放一个ZIP文件，或复制/粘贴一个URL。</li>
+            <li>当验证完成后，将提供一个打开报告的选项。</li>
+            <li>你会看到验证器是否发现了数据的问题，以及如何解决这些问题的我们的文档的链接。验证报告的URL将在30天内有效，并可以与其他人分享。</li>
         </ol>
     </div>
     <div class="usage-video">

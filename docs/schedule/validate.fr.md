@@ -17,14 +17,12 @@ Ce validateur d'GTFS Schedule canonique gratuit et open-source est maintenu par 
 ## Utilisation
 
 <div class="usage">
-    <div class="usage-list">
+     <div class="usage-list">
         <ol>
-            <li>Téléchargez la dernière version du projet basée sur notre système d'exploitation.</li>
-            <li>Une fois installé, lancez l'application et une fenêtre apparaîtra.</li>
-            <li>Chargez votre jeu de données GTFS: vous pouvez spécifier une url, un fichier ZIP ou un répertoire contenant les fichiers .txt individuels d'un flux.</li>
-            <li>Choisissez un répertoire de sortie : Il s'agit du répertoire dans lequel les rapports de validation seront écrits.</li>
-            <li>Lorsque la validation est terminée, les résultats s'ouvrent automatiquement dans votre navigateur. Si vous ne pouvez pas les voir, ouvrez simplement le fichier report.html qui a été créé dans le répertoire de sortie.</li>
-            <li>Vous verrez si le validateur a trouvé des problèmes avec les données, et des liens vers notre documentation pour savoir comment les résoudre. Le rapport de validation sera enregistré sous forme de fichier HTML, de sorte qu'il peut facilement être sauvegardé et partagé avec d'autres.</li>
+            <li>Allez sur <a href="https://gtfs-validator.mobilitydata.org/">gtfs-validator.mobilitydata.org</a>. </li>
+            <li>Chargez votre ensemble de données GTFS: vous pouvez sélectionner ou glisser-déposer un fichier ZIP, ou copier-coller une URL.</li>
+            <li>Lorsque la validation est terminée, une option permettant d'ouvrir le rapport est proposée.</li>
+            <li>Vous verrez si le validateur a trouvé des problèmes avec les données, et des liens vers notre documentation pour les résoudre. L'URL du rapport de validation est valable pendant 30 jours et peut être partagée avec d'autres personnes.</li>
         </ol>
     </div>
     <div class="usage-video">

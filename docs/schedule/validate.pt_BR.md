@@ -17,16 +17,15 @@ Este validador de GTFS Schedule gratuito e de código aberto é mantido pela [Mo
 ## Utilização
 
 <div class="usage">
-    <div class="usage-list">
+     <div class="usage-list">
         <ol>
-            <li>Baixe a versão mais recente do projeto com base em nosso sistema operacional.</li>
-            <li>Uma vez instalado, execute o aplicativo e aparecerá uma janela.</li>
-            <li>Carregue seu conjunto de dados GTFS: você pode especificar uma url, arquivo ZIP ou diretório contendo os arquivos .txt individuais de um feed.</li>
-            <li>Escolha um diretório de saída: Este é o diretório onde os relatórios de validação serão escritos.</li>
-            <li>Quando a validação for concluída, os resultados serão automaticamente abertos em seu navegador. Se você não conseguir vê-los, basta abrir o arquivo report.html que foi criado no caminho de saída.</li>
-            <li>Você verá se o validador encontrou problemas com os dados, e links para nossa documentação sobre como corrigi-los. O relatório de validação será salvo como um arquivo HTML, para que possa ser facilmente salvo e compartilhado com outras pessoas.</li>
+            <li>Acesse <a href="https://gtfs-validator.mobilitydata.org/">gtfs-validator.mobilitydata.org</a>. </li>
+            <li>Carregue seu conjunto de dados GTFS: você pode selecionar ou arrastar e soltar um arquivo ZIP ou copiar/colar um URL.</li>
+            <li>Quando a validação for concluída, será fornecida uma opção para abrir o relatório.</li>
+            <li>Você verá se o validador encontrou problemas com os dados e links para a nossa documentação sobre como corrigi-los. O URL do relatório de validação funcionará por 30 dias e poderá ser compartilhado com outras pessoas.</li>
         </ol>
     </div>
+
     <div class="usage-video">
         <video class="center" width="560" height="315" controls="">
             <source src="../../assets/validator_demo_large.mp4" type="video/mp4">

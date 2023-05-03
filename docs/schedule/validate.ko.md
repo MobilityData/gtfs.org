@@ -14,7 +14,21 @@
 
 ## 용법
 
-<div class="usage"><div class="usage-list"><ol><li> 운영 체제에 따라 최신 버전의 프로젝트를 다운로드하십시오.</li><li> 설치가 완료되면 응용 프로그램을 실행하면 창이 나타납니다.</li><li> 로드GTFS 데이터 세트: 다음을 지정할 수 있습니다.url , ZIP 파일 또는 피드의 개별 .txt 파일이 포함된 디렉토리입니다.</li><li> 출력 디렉터리 선택: 유효성 검사 보고서가 작성될 디렉터리입니다.</li><li> 유효성 검사가 완료되면 결과가 브라우저에서 자동으로 열립니다. 표시되지 않으면 출력 경로에 생성된 report.html 파일을 열면 됩니다.</li><li> 유효성 검사기가 데이터에서 문제를 발견했는지 확인하고 문제를 해결하는 방법에 대한 설명서 링크를 확인할 수 있습니다. 유효성 검사 보고서는 HTML 파일로 저장되므로 쉽게 저장하고 다른 사람과 공유할 수 있습니다. </li></ol></div><div class="usage-video"><video class="center" width="560" height="315" controls=""><source src="../../assets/validator_demo_large.mp4" type="video/mp4"/></video></div></div>
+<div class="usage"> 
+    <div class="usage-list">
+        <ol>
+            <li><a href="https://gtfs-validator.mobilitydata.org">gtfs-validator.mobilitydata.org</a>.</li>
+            <li> 로드GTFS 데이터 세트: ZIP 파일을 선택 또는 드래그 앤 드롭하거나 URL을 복사/붙여넣기할 수 있습니다.</li>
+            <li> 유효성 검사가 완료되면 보고서를 여는 옵션이 제공됩니다.</li>
+            <li> 유효성 검사기가 데이터에서 문제를 발견했는지 확인하고 문제를 해결하는 방법에 대한 설명서 링크를 확인할 수 있습니다. 검증 보고서의 URL은 30일 동안 작동하며 다른 사람과 공유할 수 있습니다.</li>
+        </ol>
+    </div>
+    <div class="usage-video">
+        <video class="center" width="560" height="315" controls="">
+            <source src="../../assets/validator_demo_large.mp4" type="video/mp4"></source>
+        </video>
+    </div>
+</div>
 
 ## 이 유효성 검사기를 데이터 파이프라인의 일부로 사용
 

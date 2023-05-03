@@ -17,14 +17,12 @@ Este validador canónico GTFS Schedule gratuito y de código abierto es mantenid
 ## Uso
 
 <div class="usage">
-    <div class="usage-list">
+     <div class="usage-list">
         <ol>
-            <li>Descargue la última versión del proyecto basada en nuestro sistema operativo.</li>
-            <li>Una vez instalada, ejecute la aplicación y aparecerá una ventana.</li>
-            <li>Cargue su conjunto de datos GTFS: puede especificar una url, un archivo ZIP o un directorio que contenga los archivos .txt individuales de un feed.</li>
-            <li>Elija un directorio de salida: Este es el directorio donde se escribirán los informes de validación.</li>
-            <li>Cuando finalice la validación, los resultados se abrirán automáticamente en su navegador. Si no puedes verlos, abre el archivo report.html que se creó en la ruta de salida.</li>
-            <li>Verás si el validador encontró problemas con los datos, y enlaces a nuestra documentación para saber cómo solucionarlos. El informe de validación se guardará como un archivo HTML, por lo que puede ser fácilmente guardado y compartido con otros.</li>
+            <li>Vaya a <a href="https://GTFS-validator.mobilitydata.org/">gtfs-validator.mobilitydata.org</a>. </li>
+            <li>Cargue su conjunto de datos GTFS: puede seleccionar o arrastrar y soltar un archivo ZIP, o copiar/pegar una URL.</li>
+            <li>Cuando finalice la validación, aparecerá una opción para abrir el informe.</li>
+            <li>Verá si el validador ha encontrado problemas con los datos y enlaces a nuestra documentación para solucionarlos. La URL del informe de validación funcionará durante 30 días y puede compartirse con otras personas.</li>
         </ol>
     </div>
     <div class="usage-video">

@@ -14,7 +14,22 @@
 
 ## 用法
 
-<div class="usage"><div class="usage-list"><ol><li>下載基於我們操作系統的最新版本的項目。</li><li>安裝後，運行該應用程序，將出現一個窗口。</li><li>載入你的GTFS數據集：你可以指定一個url、ZIP 文件或包含提要的各個 .txt 文件的目錄。</li><li>選擇輸出目錄：這是將寫入驗證報告的目錄。</li><li>驗證完成後，結果將自動在您的瀏覽器中打開。如果看不到它們，只需打開在輸出路徑中創建的 report.html 文件。</li><li>您將看到驗證器是否發現了數據問題，並鏈接到我們的文檔以了解如何解決這些問題。驗證報告將保存為 HTML 文件，因此可以輕鬆保存並與他人共享。 </li></ol></div><div class="usage-video"><video class="center" width="560" height="315" controls=""><source src="../../assets/validator_demo_large.mp4" type="video/mp4"/></video></div></div>
+<div class="usage"> 
+    <div class="usage-list">
+        <ol>
+            <li>轉到<a href="https://gtfs-validator.mobilitydata.org">gtfs-validator.mobilitydata.org</a>。</li>
+            <li>載入你的GTFS數據集：您可以選擇或拖放 ZIP 文件，或複制/粘貼 URL。</li>
+            <li>驗證完成後，將提供打開報告的選項。</li>
+            <li>您將看到驗證器是否發現了數據問題，並鏈接到我們的文檔以了解如何解決這些問題。驗證報告的 URL 有效期為 30 天，可以與他人共享。</li>
+        </ol>
+    </div>
+      <div class="usage-video">
+        <video class="center" width="560" height="315" controls="">
+            <source src="../../assets/validator_demo_large.mp4" type="video/mp4"></source>
+        </video>
+    </div>
+  
+</div>
 
 ## 使用此驗證器作為數據管道的一部分
 
