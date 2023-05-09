@@ -34,7 +34,7 @@ GTFS is most widely known for trip planning information, particularly in metro a
 
 GTFS data is now being used by a variety of software applications for many different purposes, including data visualization and analysis tools for planning. Having up-to-date and high quality data provides accurate transit information not just to riders, but to planners and policymakers who are able to better understand how transit is being used in their communities. Beginning in 2023, the Federal Transit Administration finalized its reporting changes to use GTFS as the mechanism to report geographic service area coverage to the National Transit Database (NTD). This means that [transit agencies must submit valid GTFS data](https://www.federalregister.gov/documents/2023/03/03/2023-04379/national-transit-database-reporting-changes-and-clarifications) with their annual NTD report along with their other reporting submissions.
 
-## What is High Quality GTFS
+## What is High Quality GTFS?
 
 High quality GTFS is complete, accurate, and up-to-date. This means that it represents how services are currently operating and provides as much information as possible.
 
