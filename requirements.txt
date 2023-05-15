@@ -12,7 +12,7 @@ mkdocs-redirects==1.0.4
 mkdocs-static-i18n==0.45
 packaging==21.3
 Pygments==2.13.0
-pymdown-extensions==9.7
+pymdown-extensions==10.0
 pyparsing==3.0.9
 python-dateutil==2.8.2
 PyYAML==6.0
