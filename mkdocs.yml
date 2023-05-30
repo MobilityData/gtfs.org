@@ -159,6 +159,7 @@ plugins:
           Text-to-speech: Teks pidato
           Frequencies: Frekuensi
           Pathways: Jalur
+          Transfers: Transfer
           Translations: Terjemahan
           Feed information: Informasi umpan
           Dataset attributions: Atribusi set data
@@ -195,6 +196,7 @@ plugins:
           Text-to-speech: Text-in-Sprache
           Frequencies: Frequenzen
           Pathways: Fahrwege
+          Transfers: Übertragungen
           Translations: Übersetzungen
           Feed information: Informationen zur Einspeisung
           Dataset attributions: Datensatz-Attribute
@@ -234,6 +236,7 @@ plugins:
           Text-to-speech: Texto a voz
           Frequencies: Frecuencias
           Pathways: Rutas
+          Transfers: Traslados
           Translations: Traducciones
           Feed information: Información sobre la alimentación
           Dataset attributions: Atribuciones del conjunto de datos
@@ -268,6 +271,7 @@ plugins:
           Text-to-speech: Synthèse vocale
           Frequencies: Fréquences
           Pathways: Trajets
+          Transfers: Transferts
           Translations: Traductions
           Feed information: Informations sur les flux
           Dataset attributions: Attribution des données
@@ -304,6 +308,7 @@ plugins:
           Text-to-speech: Texto para o discurso
           Frequencies: Freqüências
           Pathways: Caminhos
+          Transfers: Transferências
           Translations: Traduções
           Feed information: Informações sobre alimentação
           Dataset attributions: Atribuições do conjunto de dados
@@ -342,6 +347,7 @@ plugins:
           Text-to-speech: преобразование текста в речь
           Frequencies: Частоты
           Pathways: Маршруты
+          Transfers: Трансферы
           Translations: Переводы
           Feed information: Информация о фиде
           Dataset attributions: Атрибуты набора данных
@@ -378,6 +384,7 @@ plugins:
           Text-to-speech: 文字转语音
           Frequencies: 频次
           Pathways: 路径
+          Transfers: 转移
           Translations: 翻译
           Feed information: 饲料信息
           Dataset attributions: 数据集属性
@@ -415,6 +422,7 @@ plugins:
           Text-to-speech: 文字轉語音
           Frequencies: 頻率
           Pathways: 途徑
+          Transfers: 接送服務
           Translations: 翻譯
           Feed information: 飼料信息
           Dataset attributions: 數據集屬性
@@ -452,6 +460,7 @@ plugins:
           Text-to-speech: 音声合成
           Frequencies: フリークエンシー
           Pathways: 経路
+          Transfers: トランスファー
           Translations: 翻訳
           Feed information: フィード情報
           Dataset attributions: データセットの帰属
@@ -489,6 +498,7 @@ plugins:
           Text-to-speech: 텍스트 음성 변환
           Frequencies: 주파수
           Pathways: 통로
+          Transfers: 환승
           Translations: 翻訳
           Feed information: フィード情報
           Dataset attributions: データセットの帰属

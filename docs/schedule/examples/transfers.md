@@ -12,13 +12,13 @@ Block transfer, also called in-seat transfer, is available when a set of trips m
 
 1. The trips are consecutive.
 2. The same vehicle operates both trips.
-3. The trips are provisioned with the same `block_id` value in the [**trips.txt**](../../reference/#tripstxt) file in the transit feed.
+3. The trips are provisioned with the same `block_id` value in the [trips.txt](../../reference/#tripstxt) file in the transit feed.
 
 ### Use `block_id` to enable block transfers
 
 Block transfers can be made between consecutive trips on different routes or on the same route if the route is a loop line. Use the `block_id` field to specify which trips are in one block and where in-seat transfers are an available option.
 
-For example, consider the following [**trips.txt**](../../reference/#tripstxt) and [**stop_times.txt**](../../reference/#stoptimestxt) values:
+For example, consider the following [trips.txt](../../reference/#tripstxt) and [stop_times.txt](../../reference/#stoptimestxt) values:
 
 [**trips.txt**](../../reference/#tripstxt)
 
@@ -30,7 +30,7 @@ For example, consider the following [**trips.txt**](../../reference/#tripstxt) a
 [**stop_times.txt**](../../reference/#stoptimestxt)
 
 | trip_id | arrival_time     | departure_time | stop_id | stop_sequence |
-|----------|-------------|---|
+|----------|-------------|---|----|-----|
 | RouteATrip1  | 12:00:00|  12:01:00 | A | 1 |
 | RouteATrip1  | 12:05:00|  12:06:00 | B | 2 | 
 | RouteATrip1 | 12:15:00 | | C | 3|
