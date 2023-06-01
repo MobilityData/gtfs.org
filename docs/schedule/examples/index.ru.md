@@ -19,4 +19,4 @@ search:
     - [Переводы](translations)
     - [Информация о фиде](feed-info)
     - [Атрибуты набора данных](attributions)
-- Смотрите [Mobility Database](https://database.mobilitydata.org/) для публичных каналов от реальных транзитных агентств.
+- См. [базы данных Mobility Database](https://database.mobilitydata.org/) и [Transitland](https://www.transit.land/) для получения публичной информации от реальных транзитных агентств.
