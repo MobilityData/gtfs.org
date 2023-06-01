@@ -19,4 +19,4 @@ Pour vous aider à comprendre la spécification GTFS et à produire des outils q
     - [Traductions](translations)
     - [Informations sur les flux](feed-info)
     - [Attribution des données](attributions)
-- Voir [Mobility Database](https://database.mobilitydata.org/) pour les flux publics provenant d'agences de transport réelles.
+- Voir la [base de données sur la mobilité](https://database.mobilitydata.org/) et [Transitland](https://www.transit.land/) pour les flux publics provenant d'agences de transport réelles.
