@@ -19,4 +19,4 @@ search:
     - [번역](translations)
     - [피드 정보](feed-info)
     - [데이터세트 속성](attributions)
-- 실제 대중교통 기관의 공개 피드는 [Mobility Database](https://database.mobilitydata.org/) 를 참조하십시오.
+- 실제 교통 기관의 공개 피드는 [Mobility Database](https://database.mobilitydata.org/) 및 [Transitland를](https://www.transit.land/) 참조하십시오.

@@ -19,4 +19,4 @@ search:
     - [翻譯](translations)
     - [飼料信息](feed-info)
     - [數據集屬性](attributions)
-- 請參閱[Mobility Database](https://database.mobilitydata.org/)，了解來自真實交通機構的公共信息。
+- 請參閱[Mobility Database](https://database.mobilitydata.org/)和[Transitland](https://www.transit.land/)以獲取來自真實交通機構的公共信息。

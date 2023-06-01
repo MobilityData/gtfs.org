@@ -19,4 +19,4 @@ Untuk membantu dalam memahami GTFS spesifikasi dan dalam memproduksi alat yang m
     - [Terjemahan](translations)
     - [Informasi umpan](feed-info)
     - [Atribusi set data](attributions)
-- Lihat [Mobility Database](https://database.mobilitydata.org/) untuk umpan publik dari agen angkutan nyata.
+- Lihat [Database Mobilitas](https://database.mobilitydata.org/) dan [Transitland](https://www.transit.land/) untuk umpan publik dari agen transit nyata.

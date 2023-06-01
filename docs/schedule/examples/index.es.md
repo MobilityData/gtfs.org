@@ -19,4 +19,4 @@ Para ayudar a entender la especificación GTFS y a producir herramientas que lea
     - [Traducciones](translations)
     - [Información sobre la alimentación](feed-info)
     - [Atribuciones del conjunto de datos](attributions)
-- Consulte [Mobility Database](https://database.mobilitydata.org/) para ver los feeds públicos de las agencias de transporte reales.
+- Consulte la [base de datos Mobility Database](https://database.mobilitydata.org/) y [Transitland](https://www.transit.land/) para obtener información pública de agencias de transporte reales.
