@@ -20,7 +20,7 @@
 
 對於[Gradle](https://www.gradle.org/) ，將以下內容添加到您的`build.gradle` 依賴關係部分：
 
-    compile group: 'org.mobilitydata', name: 'gtfs-realtime-bindings', version: '0.0.8'
+    implementation group: 'org.mobilitydata', name: 'gtfs-realtime-bindings', version: '0.0.8'
 
 確保您的項目引用了 Maven 中央存儲庫。
 
