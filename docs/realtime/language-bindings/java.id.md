@@ -20,7 +20,7 @@ Untuk [Maven](http://maven.apache.org/) , tambahkan kode berikut ke bagian depen
 
 Untuk [Gradle](https://www.gradle.org/) , tambahkan kode berikut ke bagian dependensi `build.gradle` Anda:
 
-    compile group: 'org.mobilitydata', name: 'gtfs-realtime-bindings', version: '0.0.8'
+    implementation group: 'org.mobilitydata', name: 'gtfs-realtime-bindings', version: '0.0.8'
 
 Pastikan repositori pusat Maven direferensikan oleh proyek Anda.
 

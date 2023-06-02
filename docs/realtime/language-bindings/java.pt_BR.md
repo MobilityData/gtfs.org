@@ -20,7 +20,7 @@ Para [Maven](http://maven.apache.org/), adicione o seguinte à sua seção de de
 
 Para [Gradle](https://www.gradle.org/), adicione o seguinte à sua seção de dependências `build.gradle`:
 
-    compile group: 'org.mobilitydata', name: 'gtfs-realtime-bindings', version: '0.0.8'
+    implementation group: 'org.mobilitydata', name: 'gtfs-realtime-bindings', version: '0.0.8'
 
 Certifique-se de que o repositório central Maven seja referenciado por seu projeto.
 

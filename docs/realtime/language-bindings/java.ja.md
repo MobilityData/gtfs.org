@@ -20,7 +20,7 @@
 
 [Gradle](https://www.gradle.org/)の場合は、`build.gradle`依存関係 セクションに以下を追加してください。
 
-    compile group: 'org.mobilitydata', name: 'gtfs-realtime-bindings', version: '0.0.8'
+    implementation group: 'org.mobilitydata', name: 'gtfs-realtime-bindings', version: '0.0.8'
 
 Maven Central リポジトリがプロジェクトで参照されていることを確認してください。
 
