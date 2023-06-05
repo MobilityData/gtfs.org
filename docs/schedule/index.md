@@ -32,20 +32,24 @@ See “[Best Practices: Dataset Publishing](best-practices/#dataset-publishing-g
 <hr>
 
 **Technical details about GTFS, what it is, and how to create and maintain data:**
+
 - [GTFS Schedule Overview](https://gtfs.org/schedule/) 
 - [World Bank "Intro to GTFS" online course](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)
 - [MBTA GTFS Onboarding](https://mybinder.org/v2/gh/mbta/gtfs_onboarding/main?urlpath=lab/tree/GTFS_Onboarding.ipynb)
 
 **View example feeds with various features:**
+
 - [GTFS Mobility Database](https://database.mobilitydata.org/) 
 - [Transitland](https://www.transit.land/)
 
 **For free tools and instructional materials:**
+
 - [MobilityData GTFS Schedule Validator](https://gtfs-validator.mobilitydata.org/) 
 - [NRTAP lessons and GTFS Builder](https://www.nationalrtap.org/Technology-Tools/GTFS-Builder/Support)
 - [Arcadis IBI Data Tools](https://www.ibigroup.com/ibi-products/transit-data-tools/)
 
 **For ideas on vendors who offer GTFS services:**
+
 - [Center for Urban Transportation Research, University of South Florida List of GTFS Vendors](https://docs.google.com/spreadsheets/u/1/d/1Gc9mu4BIYC8ORpv2IbbVnT3q8VQ3xkeY7Hz068vT_GQ/pubhtml) 
 
 See more [online courses](../resources/other/#on-line-courses).
