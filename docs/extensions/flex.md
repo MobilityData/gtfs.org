@@ -11,7 +11,7 @@ Flex is a GTFS Schedule extension project that aims to facilitate discoverabilit
 
 <a class="button no-icon" href="https://share.mobilitydata.org/gtfs-fares-v2" target="_blank">See the full proposal</a>
 
-## In Progress Fares v2 Work
+## In Progress Fares v2 Work2
 
 <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">The fare media (formerly fare containers) proposal has passed</a> and been officially adopted in the spec!
 
