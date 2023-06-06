@@ -592,5 +592,4 @@ nav:
 - Extensions:
   - extensions/index.md
   - Fares v2: extensions/fares-v2.md
-  - Flex: extensions/flex.md
 - About: about.md
