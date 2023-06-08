@@ -18,6 +18,7 @@ Flex is a GTFS Schedule extension project that aims to facilitate discoverabilit
 We have opened an issue to cover the base implementation of GTFS-Flex. Using this incremental approach should allow us to better establish a strong base for consensus.
 
 🔭 Scope of GTFS-Flex: Base Implementation
+
 Based on what has already been tested in the field, we see GTFS-Flex solving the following key use cases:
 
 - Display available demand responsive transportation services for rider discovery
@@ -33,6 +34,9 @@ Based on what has already been tested in the field, we see GTFS-Flex solving the
 - [Open Trip Planner](https://www.opentripplanner.org/)
 - [Mobility on Demand Sandbox in Vermont](https://www.connectingcommuters.org/)
 - [Tulare County Area Transit](https://ridetcat.org/)
+- [Northwest Oregon Transit Alliance (NW Connector)](https://www.nworegontransit.org/)
+- [Vamos Mobility App](https://vamosmobileapp.com/)
+- [RTD Denver Flexride](https://www.rtd-denver.com/services/flexride)
 
 Contact us to add your GTFS-Flex implementation to this page
 
@@ -41,21 +45,22 @@ Contact us to add your GTFS-Flex implementation to this page
 ## Adoption tracker
 ### Current
 
-WIP
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrUPyCZWOWrvO2mX?backgroundColor=purple&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-<a class="button no-icon" href="https://airtable.com/shr8aT0K9bpncmy0V" target="_blank">Request a change</a><a class="button no-icon" href="https://airtable.com/shr5B6Pl1r9KH9qMX" target="_blank">Add your organization (consumers)</a><a class="button no-icon" href="https://airtable.com/shrn0Afa3TPNkOAEh" target="_blank">Add your organization (producers)</a>
+<a class="button no-icon" href="https://airtable.com/shrcac1fXUrMxfoDV" target="_blank">Request a change</a><a class="button no-icon" href="https://airtable.com/shrgnVR5Su9tkHvUv" target="_blank">Add your organization (consumers)</a><a class="button no-icon" href="https://airtable.com/shrsU4idBtcLuRuwZ" target="_blank">Add your organization (producers)</a>
 
 ### Future
-WIP
 
-<a class="button no-icon" href="https://airtable.com/shrvnI40zuFXmDsQI" target="_blank">Add your future plans</a>
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrMOvBrQCCyWPcAS?backgroundColor=purple" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-## Fares v2 Features Under Discussion
+<a class="button no-icon" href="https://airtable.com/shrr4FVw46i1vsOz7" target="_blank">Add your future plans</a>
+
+## Flex Features Under Discussion
 
 Section pending initial discussion
 
 ## History
 
-- **2016**: <a href="https://github.com/MobilityData/gtfs-flex/tree/master" target="_blank">GTFS-Flex GitHub discussions begin/a>
+- **2016**: <a href="https://github.com/MobilityData/gtfs-flex/tree/master" target="_blank">GTFS-Flex GitHub discussions begin</a>
 - **November 2020**: <a href="https://github.com/MobilityData/gtfs-flex/tree/master" target="_blank">Repository up-to-date version of GTFS-Flex</a>
 - **May 2023**: <a href="https://github.com/google/transit/issues/382" target="_blank">Work on GTFS-Flex: Base Implementation Begins</a>
