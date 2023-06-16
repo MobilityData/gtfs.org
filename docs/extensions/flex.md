@@ -6,7 +6,7 @@
 
 Flex is a GTFS Schedule extension project that aims to facilitate discoverability of Demand Responsive Transportation Services.
 
-🤔 As many of you know, services like paratransit and on-demand rides are often brushed over by riders, who sometimes have no clue they even exist. This lack of accessibility is an issue for producers, consumers, and riders. Imagine a group of tourists arriving at your local airport and would like to reach a rural area that does not offer scheduled bus routes but only an on-demand bus service. The tourists check their preferred trip planner app and do not find a viable public transportation option; they end up renting a car. Being tourists, they missed all of your paper flyers posted along the hallway announcing the on-demand service. Not only is your service underutilized, but it lacks the discoverability to meet current and future rider demand. This is where GTFS-Flex comes in by providing that information to the rider allowing them to enjoy the services you worked hard to promote.
+🤔 As many of you know, services like dial-a-ride are often brushed over by riders, who sometimes have no clue they even exist. This lack of accessibility is an issue for producers, consumers, and riders. Imagine a group of tourists arriving at your local airport and would like to reach a rural area that does not offer scheduled bus routes but only an on-demand bus service. The tourists check their preferred trip planner app and do not find a viable public transportation option; they end up renting a car. Being tourists, they missed all of your paper flyers posted along the hallway announcing the on-demand service. Not only is your service underutilized, but it lacks the discoverability to meet current and future rider demand. This is where GTFS-Flex comes in by providing that information to the rider allowing them to enjoy the services you worked hard to promote.
 
 <img src="../assets/flex-userjourney-resize.jpg" alt="GTFS-Flex User Journey">
 
@@ -23,7 +23,7 @@ Based on what has already been tested in the field, we see GTFS-Flex solving the
 
 - Display available demand responsive transportation services for rider discovery
 - Deviated bus routes
-- Dial-a-ride (e.g paratransit, Rufbus, On-call bus)
+- Dial-a-ride (e.g Rufbus, On-call bus)
 - Displaying contact information (phone number and/or website URL) for booking
 
 <a class="button no-icon" href=https://share.mobilitydata.org/slack>Join #gtfs-flex on Slack</a><a class="button no-icon" href=https://groups.google.com/g/gtfs-changes>Join GTFS-Changes Google Group</a>
