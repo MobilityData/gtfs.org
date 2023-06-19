@@ -40,7 +40,7 @@ Based on what has already been tested in the field, we see GTFS-Flex solving the
 
 Contact us to add your GTFS-Flex implementation to this page
 
-<a class="button no-icon" href=https://share.mobilitydata.org/slack>Contact us</a>
+<a class="button no-icon" href=specification@mobilitydata.org >Contact us</a>
 
 ## Adoption tracker
 ### Current
