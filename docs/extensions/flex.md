@@ -6,11 +6,11 @@
 
 Flex is a GTFS Schedule extension project that aims to facilitate discoverability of Demand Responsive Transportation Services.
 
-🤔 As many of you know, services like dial-a-ride are often brushed over by riders, who sometimes have no clue they even exist. This lack of accessibility is an issue for producers, consumers, and riders. Imagine a group of tourists arriving at your local airport and would like to reach a rural area that does not offer scheduled bus routes but only an on-demand bus service. The tourists check their preferred trip planner app and do not find a viable public transportation option; they end up renting a car. Being tourists, they missed all of your paper flyers posted along the hallway announcing the on-demand service. Not only is your service underutilized, but it lacks the discoverability to meet current and future rider demand. This is where GTFS-Flex comes in by providing that information to the rider allowing them to enjoy the services you worked hard to promote.
+🤔 Services like dial-a-ride are often brushed over by riders, who sometimes have no clue they even exist. This lack of accessibility is an issue for transit agencies, trip planners, and riders. Imagine a group of tourists arriving at your local airport who would like to reach a rural area that only offers an on-demand bus service. The tourists check their preferred trip planner app and do not find a viable public transportation option. They end up renting a car. Being tourists, they miss all of your paper flyers posted along the hallway announcing the on-demand service. Not only is your service underused, but it lacks the discoverability to meet current and future rider demand. This is where GTFS-Flex comes in. GTFS-Flex helps riders discover your service, so they enjoy the services you worked hard to promote.
 
 <img src="../../assets/flex-userjourney-resize.jpg" alt="GTFS-Flex User Journey">
 
-🔮 MobilityData expects GTFS-Flex to open the door to deeper standardization of demand responsive transportation including expansion into transactional and real-time components using GTFS-OnDemand. We are preparing a suggested strategy to best handle the growing number of modes of transportation and complexity of concepts engaging in this area.
+🔮 MobilityData expects GTFS-Flex to open the door to deeper standardization of demand responsive transportation, including expansion into transactional and real-time components using GTFS-OnDemand. We are preparing a suggested strategy to best handle the growing number of modes of transportation and complexity of concepts in this area.
 
 <a class="button no-icon" href="https://github.com/google/transit/issues/382" target="_blank">See the full proposal</a>
 
