@@ -12,7 +12,7 @@ Flex is a GTFS Schedule extension project that aims to facilitate discoverabilit
 
 🔮 MobilityData expects GTFS-Flex to open the door to deeper standardization of demand responsive transportation, including expansion into transactional and real-time components using GTFS-OnDemand. We are preparing a suggested strategy to best handle the growing number of modes of transportation and complexity of concepts in this area.
 
-<a class="button no-icon" href="https://github.com/google/transit/issues/382" target="_blank">See the full proposal</a>
+<a class="button no-icon" href="https://github.com/google/transit/issues/382" target="_blank">See the latest issue</a><a class="button no-icon" href="https://github.com/MobilityData/gtfs-flex" target="_blank">See the full proposal</a>
 
 ## GTFS-Flex: Service Discovery
 MobilityData has opened an issue to cover the service discovery of GTFS-Flex. Using this incremental approach should allow us to better establish a strong base for consensus.
@@ -49,7 +49,7 @@ Contact us to add your GTFS-Flex implementation to this page
 
 <a class="button no-icon" href="https://airtable.com/shrcac1fXUrMxfoDV" target="_blank">Request a change</a><a class="button no-icon" href="https://airtable.com/shrgnVR5Su9tkHvUv" target="_blank">Add your organization (consumers)</a><a class="button no-icon" href="https://airtable.com/shrsU4idBtcLuRuwZ" target="_blank">Add your organization (producers)</a>
 
-## Ideas parking lot
+### Ideas parking lot
 
 This area is intended as a community "parking lot". Share something you would like to add to the next increment of GTFS-Flex.  
 <iframe class="airtable-embed" src="https://airtable.com/embed/shrMOvBrQCCyWPcAS?backgroundColor=purple" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
