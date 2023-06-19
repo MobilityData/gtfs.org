@@ -63,7 +63,7 @@ Section pending initial discussion
 ## History
 
 - **2016**: <a href="https://github.com/MobilityData/gtfs-flex/tree/master" target="_blank">GTFS-Flex GitHub discussions begin</a>
-- **November 2020**: <a href="https://github.com/MobilityData/gtfs-flex/tree/master" target="_blank">Repository up-to-date version of GTFS-Flex</a>
+- **November 2020**: Repository up-to-date version of GTFS-Flex
 - **May 2023**: <a href="https://github.com/google/transit/issues/382" target="_blank">Work on GTFS-Flex: Base Implementation Begins</a>
 
 ## Glossary
