@@ -63,7 +63,7 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
 
     <div class="row">
     <div class="leftcontainer">
-            <h3 class="title"><a href="https://github.com/MobilityData/gtfs-flex" class="no-icon" target="_blank">GTFS-Flex v2</a></h3>
+            <a href="flex" class="no-icon" target="_blank"><h3 class="title">GTFS-Flex</h3></a>
             <p class="maintainer">Maintained by <a href="https://mobilitydata.org/" class="no-icon" target="_blank">MobilityData</a></p>
     </div>
     <div class="featurelist">
