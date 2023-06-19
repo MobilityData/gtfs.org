@@ -14,10 +14,10 @@ Flex is a GTFS Schedule extension project that aims to facilitate discoverabilit
 
 <a class="button no-icon" href="https://github.com/google/transit/issues/382" target="_blank">See the full proposal</a>
 
-## WIP: Base Implementation
-We have opened an issue to cover the base implementation of GTFS-Flex. Using this incremental approach should allow us to better establish a strong base for consensus.
+## GTFS-Flex: Service Discovery
+We have opened an issue to cover the service discovery of GTFS-Flex. Using this incremental approach should allow us to better establish a strong base for consensus.
 
-🔭 Scope of GTFS-Flex: Base Implementation
+🔭 Scope of GTFS-Flex: Service Discovery
 
 Based on what has already been tested in the field, we see GTFS-Flex solving the following key use cases:
 
