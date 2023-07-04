@@ -65,7 +65,7 @@ Section pending initial discussion
 - **2013**: Original proposal written by Brian Ferris (Google)
 - **2016**: <a href="https://github.com/MobilityData/gtfs-flex/tree/master" target="_blank">GTFS-Flex GitHub discussions begin</a>
 - **2017**: <a href="https://www.oregon.gov/odot/RPTD/RPTD%20Document%20Library/GTFS-Flex-N-CATT.pdf" target="_blank">Mobility on Demand (MOD) sandbox program (FTA, Vermont DOT, OTP)</a>
-- **2018**: MobilityData becomes GTFS-Flex stewart and proposes GTFS-Flex v2
+- **2018**: MobilityData becomes GTFS-Flex steward and proposes GTFS-Flex v2
 - **November 2020**: Repository up-to-date version of GTFS-Flex and OTP2 ingests GTFS-Flex v2 data
 - **May 2022**: Start of MnDoT pilot (Cambridge Systematics, MNDoT, Token Transit, Transit, Trillium (OptiBus).  
 - **May 2023**: <a href="https://github.com/google/transit/issues/382" target="_blank">Work on GTFS-Flex: Service Discovery Begins</a>
