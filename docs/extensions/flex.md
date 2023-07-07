@@ -56,10 +56,6 @@ This area is intended as a community "parking lot". Share something you would li
 
 <a class="button no-icon" href="https://airtable.com/shrr4FVw46i1vsOz7" target="_blank">Add your future plans</a>
 
-## Flex Features Under Discussion
-
-Section pending initial discussion
-
 ## History
 
 - **2013**: Original proposal written by Brian Ferris (Google)
@@ -69,6 +65,7 @@ Section pending initial discussion
 - **November 2020**: Repository up-to-date version of GTFS-Flex and OTP2 ingests GTFS-Flex v2 data
 - **May 2022**: Start of MnDoT pilot (Cambridge Systematics, MNDoT, Token Transit, Transit, Trillium (OptiBus).  
 - **May 2023**: <a href="https://github.com/google/transit/issues/382" target="_blank">Work on GTFS-Flex: Service Discovery Begins</a>
+- **June 2023**:  <a href="https://mobilitydata.org/recap-mobilitydata-working-meeting-gtfs-flex-service-discovery/" target="_blank">Held Conceptual Working Meeting on GTFS-Flex</a>
 
 ## Glossary
 
