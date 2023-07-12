@@ -15,13 +15,6 @@ The main concepts that Fares v2 plans to represent are
 
 These concepts will allow data producers to model zone-based, time-dependent, and inter-agency fares. This extension project is being adopted in iterations. 
 
-Currently, the adopted base implementation of Fares v2 works for the following use cases:
-
-- Defining a transit fare
-- Describing service locations in the same fare zone
-- Creating rules for single leg journeys
-- Creating rules for transfers
-
 You can see <a href="/schedule/examples/fares-v2" target="_blank">examples here</a> that show what can be modelled using the adopted Fares v2 base implementation.
 
 Producers may implement Fares v2 in the same dataset with Fares v1, since there is no technical conflict between the two. Consumers can choose which version to use independent of the other. With adoption and sufficient endorsement of Fares v2, Fares v1 may be deprecated in the future.
@@ -41,15 +34,8 @@ The Fares v2 working meetings will now focus on <a href="https://github.com/goog
 
 🎉 Shoutout to Fares v2 first adopters! At least 1 data producer and 1 consumer must commit to implementing an experimental feature before a public vote is opened to add it to the official specification. These organizations invest a large amount of time and energy into experimental changes to make sure that GTFS continues to evolve.
 
-For the adopted base implementation, first adopters were
-
-- Producers: <a href="https://www.interline.io/" target="_blank">Interline</a>, <a href="https://www.mta.maryland.gov/developer-resources" target="_blank">Maryland Department of Transportation</a>, <a href="https://dot.ca.gov/cal-itp/cal-itp-gtfs" target="_blank">Cal-ITP</a>
-- Consumer: <a href="https://transitapp.com/" target="_blank">Transit</a>
-
-For the fare media feature currently under discussion, first adopters are
-
-- Producer: <a href="https://www.interline.io/" target="_blank">Interline</a>, [Cal-ITP](https://dot.ca.gov/cal-itp/cal-itp-gtfs)
-- Consumer: <a href="https://www.apple.com/">Apple</a>
+- Producers: <a href="https://www.interline.io/" target="_blank">Interline</a>, <a href="https://www.mta.maryland.gov/developer-resources" target="_blank">Maryland Department of Transportation</a>, <a href="https://dot.ca.gov/cal-itp/cal-itp-gtfs" target="_blank">Cal-ITP</a>, <a href="https://trilliumtransit.com/" target="_blank">Trillium Solutions</a>
+- Consumers: <a href="https://transitapp.com/" target="_blank">Transit</a>, <a href="https://www.apple.com/">Apple</a>
 
 ## Adoption tracker
 ### Current
