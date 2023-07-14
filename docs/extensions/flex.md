@@ -12,7 +12,7 @@ Flex is a GTFS Schedule extension project that aims to facilitate discoverabilit
 
 🔮 MobilityData expects GTFS-Flex to open the door to deeper standardization of demand responsive transportation, including expansion into transactional and real-time components using GTFS-OnDemand. We are preparing a suggested strategy to best handle the growing number of modes of transportation and complexity of concepts in this area.
 
-<a class="button no-icon" href="https://github.com/google/transit/issues/382" target="_blank">See the latest issue</a><a class="button no-icon" href="https://github.com/MobilityData/gtfs-flex" target="_blank">See the full proposal</a>
+<a class="button no-icon" href="https://github.com/google/transit/pull/388" target="_blank">See the Pull Request</a><a class="button no-icon" href="https://github.com/MobilityData/gtfs-flex" target="_blank">See the full proposal</a>
 
 ## GTFS-Flex: Service Discovery
 MobilityData has opened an issue to cover the service discovery of GTFS-Flex. Using this incremental approach should allow us to better establish a strong base for consensus.
@@ -66,6 +66,7 @@ This area is intended as a community "parking lot". Share something you would li
 - **May 2022**: Start of MnDoT pilot (Cambridge Systematics, MNDoT, Token Transit, Transit, Trillium (OptiBus).  
 - **May 2023**: <a href="https://github.com/google/transit/issues/382" target="_blank">Work on GTFS-Flex: Service Discovery Begins</a>
 - **June 2023**:  <a href="https://mobilitydata.org/recap-mobilitydata-working-meeting-gtfs-flex-service-discovery/" target="_blank">Held Conceptual Working Meeting on GTFS-Flex</a>
+- **july 2023**: <a href="https://github.com/google/transit/pull/388" target="_blank">Published Pull Request #388</a>
 
 ## Glossary
 
