@@ -16,6 +16,7 @@ Flex is a GTFS Schedule extension project that aims to facilitate discoverabilit
 
 ## Latest Pull Request
 This extension describes services that operate according to a schedule, but also include one or more flexible features, such as:
+
 - **Dial-a-ride service**: the vehicle serves a zone where pickups and drop offs are allowed during certain service hours.
 - **Route deviation services**: the vehicle serves a fixed route and ordered set of stops, and may detour to pick up or drop off a passenger between stops.
 - **Point-to-zone service**: the rider can board at a fixed stop such as a train station, and then alight anywhere within an area, or vice versa. Departures from some locations are scheduled or timed with other services.
@@ -28,14 +29,14 @@ In the working meeting on June 28th, there was an agreement among the group comm
 The changes in this PR are:
 
 - Modify file:
-  - Modify `stop_areas.txt` to allow grouping of GeoJSON locations and/or stops which allow predetermined groups of these features to be specified on individual rows of `stop_times.txt`.
-  - Modify `stop_times.txt` to clarify elements of the current specification necessary to inform data consumers of how to interpret the added and extended files and fields 
+-- Modify `stop_areas.txt` to allow grouping of GeoJSON locations and/or stops which allow predetermined groups of these features to be specified on individual rows of `stop_times.txt`.
+-- Modify `stop_times.txt` to clarify elements of the current specification necessary to inform data consumers of how to interpret the added and extended files and fields 
 - Extend file:
-  - Extend `stop_times.txt` with `start_pickup_drop_off_window` and `end_pickup_drop_off_window` to define the time that demand responsive transportation service becomes available/ends in a GeoJSON location, stop area or stop.
-  - Extend `stop_times.txt` with `pickup_booking_rule_id` and `drop_off_booking_rule_id` to define links to booking rules
+-- Extend `stop_times.txt` with `start_pickup_drop_off_window` and `end_pickup_drop_off_window` to define the time that demand responsive transportation service becomes available/ends in a GeoJSON location, stop area or stop.
+-- Extend `stop_times.txt` with `pickup_booking_rule_id` and `drop_off_booking_rule_id` to define links to booking rules
 - Add new file:
-  - `locations.geojson`, to define zones (`Polygon` or `Multipolygon`) where riders can request either pickup or drop off.
-  - `booking_rules.txt`, to define the booking rules that provide riders information about how to request service.
+-- `locations.geojson`, to define zones (`Polygon` or `Multipolygon`) where riders can request either pickup or drop off.
+-- `booking_rules.txt`, to define the booking rules that provide riders information about how to request service.
 
 Here is a [data example](https://docs.google.com/spreadsheets/d/1w5EHuHfxvejqApJFHA1Z0K2KytD9zahwbf8zyRlP_Ls/edit#gid=1451132209) for [RufBus](https://uvg-online.com/rufbus-angermuende/) in Angermünde and Gartzer, Germany. The image below is an example illustrating how the data could be presented in a trip planner:
 
