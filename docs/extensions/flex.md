@@ -12,20 +12,36 @@ Flex is a GTFS Schedule extension project that aims to facilitate discoverabilit
 
 🔮 MobilityData expects GTFS-Flex to open the door to deeper standardization of demand responsive transportation, including expansion into transactional and real-time components using GTFS-OnDemand. We are preparing a suggested strategy to best handle the growing number of modes of transportation and complexity of concepts in this area.
 
-<a class="button no-icon" href="https://github.com/google/transit/pull/388" target="_blank">See the Pull Request</a><a class="button no-icon" href="https://github.com/MobilityData/gtfs-flex" target="_blank">See the full proposal</a>
+<a class="button no-icon" href="https://github.com/MobilityData/gtfs-flex" target="_blank">See the full proposal</a>
 
-## GTFS-Flex: Service Discovery
-MobilityData has opened an issue to cover the service discovery of GTFS-Flex. Using this incremental approach should allow us to better establish a strong base for consensus.
+## Latest Pull Request
+This extension describes services that operate according to a schedule, but also include one or more flexible features, such as:
+- **Dial-a-ride service**: the vehicle serves a zone where pickups and drop offs are allowed during certain service hours.
+- **Route deviation services**: the vehicle serves a fixed route and ordered set of stops, and may detour to pick up or drop off a passenger between stops.
+- **Point-to-zone service**: the rider can board at a fixed stop such as a train station, and then alight anywhere within an area, or vice versa. Departures from some locations are scheduled or timed with other services.
+- **Point deviation or checkpoint service**: the rider can board at a fixed stop, and then alight anywhere among an unordered list of stops, or the opposite. The driver only serves stops at which a request is made.
 
-🔭 Scope of GTFS-Flex: Service Discovery
+For more information please see [original proposal](https://github.com/MobilityData/gtfs-flex/blob/master/spec/reference.md) and [issue#382](https://github.com/google/transit/issues/382)(closed since we changed the scope).
 
-Based on what has already been tested in the field, we see GTFS-Flex solving the following key use cases:
+In the working meeting on June 28th, there was an agreement among the group community to pursue an iteration that covers all fields currently produced and consumed. Therefore, all fields that appear as “**in discussion**” in the [adoption tracker](https://gtfs.org/extensions/flex/#current) are included in this PR.
 
-- Display available demand responsive transportation services for rider discovery
-- Deviated bus routes
-- Dial-a-ride (e.g Rufbus, On-call bus)
-- Displaying contact information (phone number and/or website URL) for booking
+The changes in this PR are:
 
+- Modify file:
+  - Modify `stop_areas.txt` to allow grouping of GeoJSON locations and/or stops which allow predetermined groups of these features to be specified on individual rows of `stop_times.txt`.
+  - Modify `stop_times.txt` to clarify elements of the current specification necessary to inform data consumers of how to interpret the added and extended files and fields 
+- Extend file:
+  - Extend `stop_times.txt` with `start_pickup_drop_off_window` and `end_pickup_drop_off_window` to define the time that demand responsive transportation service becomes available/ends in a GeoJSON location, stop area or stop.
+  - Extend `stop_times.txt` with `pickup_booking_rule_id` and `drop_off_booking_rule_id` to define links to booking rules
+- Add new file:
+  - `locations.geojson`, to define zones (`Polygon` or `Multipolygon`) where riders can request either pickup or drop off.
+  - `booking_rules.txt`, to define the booking rules that provide riders information about how to request service.
+
+Here is a [data example](https://docs.google.com/spreadsheets/d/1w5EHuHfxvejqApJFHA1Z0K2KytD9zahwbf8zyRlP_Ls/edit#gid=1451132209) for [RufBus](https://uvg-online.com/rufbus-angermuende/) in Angermünde and Gartzer, Germany. The image below is an example illustrating how the data could be presented in a trip planner:
+<img src="https://github.com/google/transit/assets/126435471/c986f79a-0164-4e38-a552-7e37405fe133" width="180" height="400">
+
+Visit the Pull Request page to read the full post and contribute to the conversation. 
+<a class="button no-icon" href="https://github.com/google/transit/pull/388" target="_blank">See the Pull Request</a>
 <a class="button no-icon" href=https://share.mobilitydata.org/slack>Join #gtfs-flex on Slack</a><a class="button no-icon" href=https://groups.google.com/g/gtfs-changes>Join GTFS-Changes Google Group</a>
 
 ## Early Implementations
