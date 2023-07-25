@@ -38,10 +38,13 @@ The changes in this PR are:
   - `booking_rules.txt`, to define the booking rules that provide riders information about how to request service.
 
 Here is a [data example](https://docs.google.com/spreadsheets/d/1w5EHuHfxvejqApJFHA1Z0K2KytD9zahwbf8zyRlP_Ls/edit#gid=1451132209) for [RufBus](https://uvg-online.com/rufbus-angermuende/) in Angermünde and Gartzer, Germany. The image below is an example illustrating how the data could be presented in a trip planner:
+
 <img src="https://github.com/google/transit/assets/126435471/c986f79a-0164-4e38-a552-7e37405fe133" width="180" height="400">
 
 Visit the Pull Request page to read the full post and contribute to the conversation. 
+
 <a class="button no-icon" href="https://github.com/google/transit/pull/388" target="_blank">See the Pull Request</a>
+
 <a class="button no-icon" href=https://share.mobilitydata.org/slack>Join #gtfs-flex on Slack</a><a class="button no-icon" href=https://groups.google.com/g/gtfs-changes>Join GTFS-Changes Google Group</a>
 
 ## Early Implementations
