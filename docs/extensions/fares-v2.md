@@ -22,6 +22,8 @@ Producers may implement Fares v2 in the same dataset with Fares v1, since there 
 <a class="button no-icon" href="https://share.mobilitydata.org/gtfs-fares-v2" target="_blank">See the full proposal</a>
 
 ## Participate in the conversation
+You can stay up to date and join the discussions around Fares v2 by joining our Slack Chanel and the recurring working group meetings.
+
 <a class="button no-icon" href=https://share.mobilitydata.org/slack>Join #gtfs-fares on Slack</a><a class="button no-icon" href=https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057>See the meeting schedule</a><a class="button no-icon" href=https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit>See meeting notes</a>
 
 
