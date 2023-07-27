@@ -150,8 +150,6 @@ Below is an example snippet from the <a href="https://511.org/open-data/transit"
 
 `Clipper` is described as a physical transit card with `fare_media_type=2`. `SFMTA Munimobile` is described as a mobile app with `fare_media_type=2`. `Cash` has no fare media, since it is given directly to the driver without a ticket. As a result, `Cash` is `fare_media_type=0`.
 
-Producers who want to describe a physical ticket as a fare media type can use the experimental `fare_media_type=1` option that is in the <a href="https://docs.google.com/document/d/19j-f-wZ5C_kYXmkLBye1g42U-kvfSVgYLkkG5oyBauY/edit#heading=h.za3q5ta4cnyd" target="_blank">full Fares v2 proposal</a>.
-
 [**fare_media.txt**](../../reference/#fare_mediatxt)
 
 | fare_media_id | fare_media_name  | fare_media_type |
@@ -161,6 +159,20 @@ Producers who want to describe a physical ticket as a fare media type can use th
 | cash           | Cash             | 0               |
 
 <sup><a href="https://511.org/open-data/transit" target="_blank">See the San Francisco Bay Area Regional feed</a></sup>
+
+Additionally, producers who want to describe a physical ticket as a fare media can use `fare_media_type=1`.
+
+The Massachusetts Bay Transportation Authority (MBTA) allows users to pay for trips and passes using a physical paper ticket called CharlieTicket. To reflect this, there is a `charlieticket` fare media in MBTA’s feed with a `fare_media_type=1`.
+
+[**fare_media.txt**](../../reference/#fare_mediatxt)
+
+| fare_media_id | fare_media_name  | fare_media_type |
+|---------------|------------------|-----------------|
+|cash           |Cash              |0                |
+|charlieticket  |CharlieTicket     |1                |
+|mticket        |m Ticket app      |4                |
+
+<sup><a href="https://www.mbta.com/developers/gtfs" target="_blank">See the Massachusetts Bay Transportation Authority feed</a></sup>
 
 ## Define price differences based on fare media
 
