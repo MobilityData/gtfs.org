@@ -21,12 +21,7 @@ Producers may implement Fares v2 in the same dataset with Fares v1, since there 
 
 <a class="button no-icon" href="https://share.mobilitydata.org/gtfs-fares-v2" target="_blank">See the full proposal</a>
 
-## In Progress Fares v2 Work
-
-<a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">The fare media (formerly fare containers) proposal has passed</a> and been officially adopted in the spec!
-
-The Fares v2 working meetings will now focus on <a href="https://github.com/google/transit/pull/357">modelling and adopting time variable fares.</a>
-
+## Participate in the conversation
 <a class="button no-icon" href=https://share.mobilitydata.org/slack>Join #gtfs-fares on Slack</a><a class="button no-icon" href=https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057>See the meeting schedule</a><a class="button no-icon" href=https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit>See meeting notes</a>
 
 
@@ -34,8 +29,8 @@ The Fares v2 working meetings will now focus on <a href="https://github.com/goog
 
 🎉 Shoutout to Fares v2 first adopters! At least 1 data producer and 1 consumer must commit to implementing an experimental feature before a public vote is opened to add it to the official specification. These organizations invest a large amount of time and energy into experimental changes to make sure that GTFS continues to evolve.
 
-- Producers: <a href="https://www.interline.io/" target="_blank">Interline</a>, <a href="https://www.mta.maryland.gov/developer-resources" target="_blank">Maryland Department of Transportation</a>, <a href="https://dot.ca.gov/cal-itp/cal-itp-gtfs" target="_blank">Cal-ITP</a>, <a href="https://trilliumtransit.com/" target="_blank">Trillium Solutions</a>
-- Consumers: <a href="https://transitapp.com/" target="_blank">Transit</a>, <a href="https://www.apple.com/">Apple</a>
+- Producers: <a href="https://www.interline.io/" target="_blank">Interline</a>, <a href="https://www.mta.maryland.gov/developer-resources" target="_blank">Maryland Department of Transportation</a>, <a href="https://dot.ca.gov/cal-itp/cal-itp-gtfs" target="_blank">Cal-ITP</a>, <a href="https://trilliumtransit.com/" target="_blank">Trillium Solutions</a>, <a href="https://www.itoworld.com/" target="_blank">ITO World</a>
+- Consumers: <a href="https://transitapp.com/" target="_blank">Transit</a>, <a href="https://www.apple.com/">Apple Maps</a>
 
 ## Adoption tracker
 ### Current
@@ -63,4 +58,5 @@ The Fares v2 working meetings will now focus on <a href="https://github.com/goog
 - **August 2022**: <a href="https://github.com/google/transit/issues/341" target="_blank">Community discussion on next phase of Fares v2 begins</a>
 - **November 2022**: <a href="https://github.com/google/transit/pull/355" target="_blank">Fare media draft pull request opened for feedback</a>
 - **December 2022**: <a href="https://github.com/google/transit/issues/341#issuecomment-1339947915" target="_blank">Community identifies stack ranked order of features to prioritize iterations</a>
-- **March 2023**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">Fare media vote passes</a>
+- **March 2023**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">Fare media passes</a>
+- **July 2023**: <a href="https://github.com/google/transit/pull/357#issuecomment-1653561813" target="_blank">Fares that vary by time/day passes</a>
