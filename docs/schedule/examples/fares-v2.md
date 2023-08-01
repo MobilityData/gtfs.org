@@ -216,7 +216,61 @@ The single ride fare product shown below has both `cash` and `tap-to-ride` fare 
 <sup><a href="https://gtfs.calitp.org/production/CleanAirExpressFaresv2.zip" target="_blank">Download the Clean Air Express feed</a></sup>
 
 
+## Define price differences based on time of trip
+
+Some transit agencies differentiate fares depending on the time and/or day of the week, where fares can be associated with specific time periods such as a peak, off-peak and/or weekends. 
+
+Washington DC’s <a href="https://www.wmata.com/fares/basic.cfm" target="_blank">Metrorail fares</a> vary based on multiple factors, including day and time of trip. Variable time fares in GTFS can be defined using `timeframes.txt`, in which it is possible to designate specific time periods that then can be associated in `fare_leg_rules.txt` to assign the applicable fare product that corresponds to the time when the trip is made. 
+
+First, service days are defined using `calendar.txt`.
+
+[**calendar.txt**](../../reference/#calendartxt)
+
+| service_id       | monday | tuesday | wednesday | thursday | friday | saturday | sunday | start_date | end_date |
+|------------------|--------|---------|-----------|----------|--------|----------|--------|------------|----------|
+| weekday_service  | 1      | 1       | 1         | 1        | 1      | 0        | 0      | 20220708   | 20221231 |
+| saturday_service | 0      | 0       | 0         | 0        | 0      | 1        | 0      | 20220708   | 20221231 |
+| sunday_service   | 0      | 0       | 0         | 0        | 0      | 0        | 1      | 20220708   | 20221231 |
 
 
+Afterwards, the desired timeframes are defined, providing an id, start time and end time for each time period, and associating each one of them with an entry from the field `calendar.service_id`.
+
+[**timeframes.txt**](../../reference/#timeframestxt)
+
+| timeframe_group_id | start_time | end_time | service_id       |
+|--------------------|------------|----------|------------------|
+| weekday_peak       | 5:00:00    | 9:30:00  | weekday_service  |
+| weekday_offpeak    | 9:30:00    | 15:00:00 | weekday_service  |
+| weekday_peak       | 15:00:00   | 19:00:00 | weekday_service  |
+| weekday_offpeak    | 19:00:00   | 21:30:00 | weekday_service  |
+| weekday_late_night | 21:30:00   | 29:00:00 | weekday_service  |
+| weekend            |            |          | saturday_service |
+| weekend            |            |          | sunday_service   |
+
+Next, the corresponding time specific fares in fare_products.txt are created (e.g. Peak fare)
+
+[**fare_products.txt**](../../reference/#fare_productstxt)
+
+| fare_product_id | fare_product_name                             | amount | currency |
+|-----------------|-----------------------------------------------|--------|----------|
+| peak_fare       | Peak fare                                     | 5      | USD      |
+| regular_fare    | Off-peak fare                                 | 3      | USD      |
+| weekend_fare    | Weekend Metrorail one-way fare                | 2      | USD      |
+| late_night_fare | Late Night flat fare (Mon - Fri after 9:30pm) | 2      | USD      |
+
+Finally both of these datasets are associated in `fare_leg_rules.txt` using the fields `from_timeframe_group_id` and `to_timeframe_group_id` to assign a `fare_product_id` to each specific combination of timeframes, or in this case, only using `from_timeframe_group_id` as the fare product depends only on the departure timeframe, leaving `to_timeframe_group_id` blank. 
+
+[**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
+
+| network_id | fare_product_id | from_timeframe_group_id | to_timeframe_group_id | timeframe_type |
+|------------|-----------------|-------------------------|-----------------------|----------------|
+| 1          | weekend_fare    | weekend                 |                       | (fare gate)    |
+| 1          | late_night_fare | weekday_late_night      |                       | (fare gate)    |
+| 1          | peak_fare       | weekday_peak            |                       | (fare gate)    |
+| 1          | regular_fare    | weekday_offpeak         |                       | (fare gate)    |
+
+Note that `network_id references` the foreign ID: `routes.network_id`, and that arrival and departure information on `stop_times.txt` along with `timeframes.txt` will inform the selection of the correct fare_product for each specific trip. 
+
+In this case, a user paying for a trip that departs at  7:30 AM would have to pay 5.00 USD (Peak fare) while another user departing at 11:30 AM would only have to pay a 3.00 USD fare (Off-peak fare).
 
 
