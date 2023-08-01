@@ -274,3 +274,109 @@ Note that `network_id references` the foreign ID: `routes.network_id`, and that 
 In this case, a user paying for a trip that departs at  7:30 AM would have to pay 5.00 USD (Peak fare) while another user departing at 11:30 AM would only have to pay a 3.00 USD fare (Off-peak fare).
 
 
+## Define time-variable fares along with zone based fares
+
+In New York's MTA Metro-North railroad network, fares vary based on both the time of the day and the areas of the trips’s origin and destination. The following example illustrates the fare rules applicable to a trip from Grand Central Station to Poughkeepsie (NY, USA).
+
+This example based on a <a href="https://docs.google.com/spreadsheets/d/1-cD-R2OH5xAQAbNWNlrXD7WOw594lVdW-bomuLo6bI8/edit?usp=sharing" target="_blank">dataset</a> produced by <a href="https://www.itoworld.com/" target="_blank">ITO World</a>, features a trip that uses ten stops distributed in six different areas.
+
+[**stops.txt**](../../reference/#stopstxt)
+
+| stop_id | stop_name           | stop_lat  | stop_lon   |
+|---------|---------------------|-----------|------------|
+| ITO1669 | Peekskill           | 41.285103 | -73.930916 |
+| ITO1777 | Beacon              | 41.505814 | -73.984474 |
+| ITO1789 | New Hamburg         |  41.58691 | -73.947624 |
+| ITO1804 | Croton-Harmon       | 41.190002 | -73.882393 |
+| ITO1824 | Cortlandt           | 41.246258 | -73.921783 |
+| ITO1856 | Garrison            | 41.381126 | -73.947334 |
+| ITO1887 | Harlem-125th Street | 40.805256 | -73.939148 |
+| ITO1897 | Cold Spring         | 41.415382 | -73.958092 |
+| ITO2096 | Poughkeepsie        | 41.707058 |  -73.93792 |
+| ITO2383 | Grand Central       | 40.752823 | -73.977196 |
+
+
+[**stops_areas.txt**](../../reference/#stops_areastxt)
+
+| area_id   | stop_id |
+|-----------|---------|
+| mnr_1     | ITO1887 |
+| mnr_1     | ITO2383 |
+| mnr_HUD-5 | ITO1804 |
+| mnr_HUD-6 | ITO1669 |
+| mnr_HUD-6 | ITO1824 |
+| mnr_HUD-7 | ITO1856 |
+| mnr_HUD-7 | ITO1897 |
+| mnr_HUD-8 | ITO1777 |
+| mnr_HUD-8 | ITO1789 |
+| mnr_HUD-9 | ITO2096 |
+
+
+Service days for train services 3 and 13 are defined using calendar.txt. Notably, general service days (i.e. weekdays, weekends and anyday) are also defined, as these will be associated with specific timeframes in order to model `time-variable fares`.
+
+[**calendar.txt**](../../reference/#calendartxt)
+
+| service_id | monday | tuesday | wednesday | thursday | friday | saturday | sunday | start_date | end_date |
+|------------|--------|---------|-----------|----------|--------|----------|--------|------------|----------|
+| 13         | 1      | 1       | 1         | 1        | 1      | 0        | 0      | 20230612   | 20231006 |
+| 3          | 1      | 1       | 1         | 1        | 1      | 0        | 0      | 20230609   | 20231006 |
+| weekdays   | 1      | 1       | 1         | 1        | 1      | 0        | 0      | 20220101   | 20240101 |
+| weekends   | 0      | 0       | 0         | 0        | 0      | 1        | 1      | 20220101   | 20240101 |
+| anyday     | 1      | 1       | 1         | 1        | 1      | 1        | 1      | 20220101   | 20240101 |
+
+
+Specific time frames are created in `timeframes.txt`, including general service days (anytime, weekdays and weekends), and peak and off peak periods:
+
+* AM Peak: from 6 am to 10 am on weekdays
+* AM2PM Peak: from 6 AM to 9 AM and from 4 pm to 8 pm on weekdays
+* Not AM Peak: weekday time not included in AM Peak
+* Not AM2PM Peak: weekday time not included in AM2PM Peak
+
+[**timeframes.txt**](../../reference/#timeframestxt)
+
+| timeframe_group_id | start_time | end_time | service_id |
+|:------------------:|:----------:|:--------:|:----------:|
+|       anytime      |  00:00:00  | 24:00:00 |   anyday   |
+|      weekdays      |  00:00:00  | 24:00:00 |  weekdays  |
+|      weekends      |  00:00:00  | 24:00:00 |  weekends  |
+|     mnr_ampeak     |  06:00:00  | 10:00:00 |  weekdays  |
+|    mnr_notampeak   |  00:00:00  | 06:00:00 |  weekdays  |
+|    mnr_notampeak   |  10:00:00  | 24:00:00 |  weekdays  |
+|    mnr_am2pmpeak   |  06:00:00  | 09:00:00 |  weekdays  |
+|    mnr_am2pmpeak   |  16:00:00  | 20:00:00 |  weekdays  |
+|  mnr_notam2pmpeak  |  00:00:00  | 06:00:00 |  weekdays  |
+| mnr_notam2pmpeak   | 09:00:00   | 16:00:00 | weekdays   |
+| mnr_notam2pmpeak   | 20:00:00   | 24:00:00 | weekdays   |
+
+
+Each individual fare product is defined in `fare_products.txt`, in this example, only trips between zone 1 and 9 are listed. The full dataset would include a record for each  price defined by a time and zone combination. Additionally, the example only uses one fare media (i.e. paper ticket) but additional combinations could be created if prices would also vary depending on fare media.
+
+[**fare_products.txt**](../../reference/#fare_productstxt)
+
+| fare_product_id        | fare_product_name                  | fare_media_id | amount | currency |
+|------------------------|------------------------------------|---------------|--------|----------|
+| mnr_1:HUD-9_adult_peak | Outbound Adult Peak Zonal Fare     | paper         | 25.75  | USD      |
+| mnr_1:HUD-9_adult      | Outbound Adult Off Peak Zonal Fare | paper         | 19.25  | USD      |
+| mnr_HUD-9:1_adult_peak | Inbound Adult Peak Zonal Fare      | paper         | 25.75  | USD      |
+| mnr_HUD-9:1_adult      | Inbound Adult Off Peak Zonal Fare  | paper         | 19.25  | USD      |
+
+
+Finally, origin and destination areas and timeframes combinations are associated with the corresponding fare product in `fare_leg_rules.txt`. Here, trips starting or arriving in Zone 1 (i.e. `area_id=mnr_1`) during peak times are subject to a specific peak fare corresponding to the arrival and departure zones of the trip (i.e. `fare_product_id=mnr_1:HUD-9_adult_peak`).
+
+[**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
+
+| network_id | from_area_id | to_area_id | fare_product_id        | from_timeframe_group_id | to_timeframe_group_id |
+|------------|--------------|------------|------------------------|-------------------------|-----------------------|
+| mnr_hudson | mnr_1        | mnr_HUD-9  | mnr_1:HUD-9_adult      | mnr_notam2pmpeak        | anytime               |
+| mnr_hudson | mnr_1        | mnr_HUD-9  | mnr_1:HUD-9_adult      | weekends                | anytime               |
+| mnr_hudson | mnr_1        | mnr_HUD-9  | mnr_1:HUD-9_adult_peak | mnr_am2pmpeak           | anytime               |
+| mnr_hudson | mnr_HUD-9    | mnr_1      | mnr_HUD-9:1_adult      | weekdays                | mnr_notampeak         |
+| mnr_hudson | mnr_HUD-9    | mnr_1      | mnr_HUD-9:1_adult      | weekends                | anytime               |
+| mnr_hudson | mnr_HUD-9    | mnr_1      | mnr_HUD-9:1_adult_peak | weekdays                | mnr_ampeak            |
+
+
+Using this dataset, a user boarding train #869 (`service_id=3`) scheduled to depart from Grand Central (zone `mnr_1`) at 6:45 pm would have to pay an Outbound Adult Peak Zonal Fare of 25.75 USD, since the trip is originated in the `mnr_am2pmpeak` period and from `zone mnr_1`.
+
+Alternatively, a user traveling in train #883 (`service_id=13`) would pay an Outbound Adult Off Peak Zonal Fare of only 19.25 USD, as this train is scheduled to depart Grand Central (zone `mnr_1`) at 9:04 pm.
+
+
