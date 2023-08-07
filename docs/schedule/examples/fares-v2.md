@@ -216,11 +216,11 @@ The single ride fare product shown below has both `cash` and `tap-to-ride` fare 
 <sup><a href="https://gtfs.calitp.org/production/CleanAirExpressFaresv2.zip" target="_blank">Download the Clean Air Express feed</a></sup>
 
 
-## Define price differences based on time of trip
+## Define price differences based on time and day of trip
 
-Some transit agencies differentiate fares depending on the time and/or day of the week, where fares can be associated with specific time periods such as a peak, off-peak and/or weekends. 
+Certain transit agencies vary their fares based on the time and/or day of the week. This means that fares are associated with a time period where the trip is made, such as peak, off-peak hours, or weekends. 
 
-Washington DC’s <a href="https://www.wmata.com/fares/basic.cfm" target="_blank">Metrorail fares</a> vary based on multiple factors, including day and time of trip. Variable time fares in GTFS can be defined using `timeframes.txt`, in which it is possible to designate specific time periods that then can be associated in `fare_leg_rules.txt` to assign the applicable fare product that corresponds to the time when the trip is made. 
+Washington DC’s <a href="https://www.wmata.com/fares/basic.cfm" target="_blank">Metrorail fares</a> vary based on multiple factors, including the day and time of the trip. Variable time fares in GTFS can be defined using `timeframes.txt`, in which it is possible to designate specific time periods that then can be associated in `fare_leg_rules.txt` to assign the applicable fare product that corresponds to the time when the trip is made. The following is a fictional example, based on WMATA's fares. 
 
 First, service days are defined using `calendar.txt`.
 
@@ -233,7 +233,7 @@ First, service days are defined using `calendar.txt`.
 | sunday_service   | 0      | 0       | 0         | 0        | 0      | 0        | 1      | 20220708   | 20221231 |
 
 
-Afterwards, the desired timeframes are defined, providing an id, start time and end time for each time period, and associating each one of them with an entry from the field `calendar.service_id`.
+Afterwards, the desired timeframes are defined in `timeframes.txt`, providing an id, the applicable days via a reference to `calendar.service_id`, and if applicable, the start time and end time for each time period.
 
 [**timeframes.txt**](../../reference/#timeframestxt)
 
@@ -247,7 +247,7 @@ Afterwards, the desired timeframes are defined, providing an id, start time and 
 | weekend            |            |          | saturday_service |
 | weekend            |            |          | sunday_service   |
 
-Next, the corresponding time specific fares in fare_products.txt are created (e.g. Peak fare)
+Next, the corresponding time specific fares in `fare_products.txt` are created (e.g. Peak fare)
 
 [**fare_products.txt**](../../reference/#fare_productstxt)
 
@@ -258,7 +258,8 @@ Next, the corresponding time specific fares in fare_products.txt are created (e.
 | weekend_fare    | Weekend Metrorail one-way fare                | 2      | USD      |
 | late_night_fare | Late Night flat fare (Mon - Fri after 9:30pm) | 2      | USD      |
 
-Finally both of these datasets are associated in `fare_leg_rules.txt` using the fields `from_timeframe_group_id` and `to_timeframe_group_id` to assign a `fare_product_id` to each specific combination of timeframes, or in this case, only using `from_timeframe_group_id` as the fare product depends only on the departure timeframe, leaving `to_timeframe_group_id` blank. 
+Lastly, timeframes are associated with fare products in `fare_leg_rules.txt` using the fields `from_timeframe_group_id` and `to_timeframe_group_id`. These fields determine whether a fare applies solely to the start of the leg or both the start and end of the leg.
+For this example, based on WMATA fares, the fare depends only on the leg's departure timeframe, so `to_timeframe_group_id` is left blank. 
 
 [**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
 
@@ -269,16 +270,16 @@ Finally both of these datasets are associated in `fare_leg_rules.txt` using the 
 | 1          | peak_fare       | weekday_peak            |                       | (fare gate)    |
 | 1          | regular_fare    | weekday_offpeak         |                       | (fare gate)    |
 
-Note that `network_id references` the foreign ID: `routes.network_id`, and that arrival and departure information on `stop_times.txt` along with `timeframes.txt` will inform the selection of the correct fare_product for each specific trip. 
+Note that `network_id` references the foreign ID `routes.network_id`, and that the selection of the correct fare product for each trip will be a combination of arrival and departure times from `stop_times.txt` along with the times defined in `timeframes.txt`. 
 
 In this case, a user paying for a trip that departs at  7:30 AM would have to pay 5.00 USD (Peak fare) while another user departing at 11:30 AM would only have to pay a 3.00 USD fare (Off-peak fare).
 
 
 ## Define time-variable fares along with zone based fares
 
-In New York's MTA Metro-North railroad network, fares vary based on both the time of the day and the areas of the trips’s origin and destination. The following example illustrates the fare rules applicable to a trip from Grand Central Station to Poughkeepsie (NY, USA).
+In New York's MTA Metro-North railroad network, fares vary based on both the time of the day of the trip, as well as the trip’s origin and destination areas. The following example illustrates the fare rules applicable to a trip from Grand Central Station to Poughkeepsie (NY, USA).
 
-This example based on a <a href="https://docs.google.com/spreadsheets/d/1-cD-R2OH5xAQAbNWNlrXD7WOw594lVdW-bomuLo6bI8/edit?usp=sharing" target="_blank">dataset</a> produced by <a href="https://www.itoworld.com/" target="_blank">ITO World</a>, features a trip that uses ten stops distributed in six different areas.
+This example is based on a <a href="https://docs.google.com/spreadsheets/d/1-cD-R2OH5xAQAbNWNlrXD7WOw594lVdW-bomuLo6bI8/edit?usp=sharing" target="_blank">dataset</a> produced by <a href="https://www.itoworld.com/" target="_blank">ITO World</a>, featuring a trip that uses ten stops distributed in six different areas.
 
 [**stops.txt**](../../reference/#stopstxt)
 
@@ -312,7 +313,7 @@ This example based on a <a href="https://docs.google.com/spreadsheets/d/1-cD-R2O
 | mnr_HUD-9 | ITO2096 |
 
 
-Service days for train services 3 and 13 are defined using calendar.txt. Notably, general service days (i.e. weekdays, weekends and anyday) are also defined, as these will be associated with specific timeframes in order to model `time-variable fares`.
+Service days for train services 3 and 13 are defined using `calendar.txt`. Notably, other records with generic days (i.e. weekdays, weekends, and anyday) that aren't associated with any trips are defined, and these will be associated with timeframes in order to model `time-variable fares`.
 
 [**calendar.txt**](../../reference/#calendartxt)
 
@@ -325,7 +326,7 @@ Service days for train services 3 and 13 are defined using calendar.txt. Notably
 | anyday     | 1      | 1       | 1         | 1        | 1      | 1        | 1      | 20220101   | 20240101 |
 
 
-Specific time frames are created in `timeframes.txt`, including general service days (anytime, weekdays and weekends), and peak and off peak periods:
+Records are created in `timeframes.txt`, including cases where the time covers the 24-hour range period (`anytime`, `weekdays` and `weekends`), and peak and off-peak periods:
 
 * AM Peak: from 6 am to 10 am on weekdays
 * AM2PM Peak: from 6 AM to 9 AM and from 4 pm to 8 pm on weekdays
@@ -349,7 +350,7 @@ Specific time frames are created in `timeframes.txt`, including general service 
 | mnr_notam2pmpeak   | 20:00:00   | 24:00:00 | weekdays   |
 
 
-Each individual fare product is defined in `fare_products.txt`, in this example, only trips between zone 1 and 9 are listed. The full dataset would include a record for each  price defined by a time and zone combination. Additionally, the example only uses one fare media (i.e. paper ticket) but additional combinations could be created if prices would also vary depending on fare media.
+Each individual fare product is defined in `fare_products.txt`. In this example, only trips between zone 1 and 9 are listed. The full dataset would include a record for each price defined by a time and zone combination. Additionally, the example only displays one fare media (`paper`) but additional combinations could be created if prices would also vary based on the fare media.
 
 [**fare_products.txt**](../../reference/#fare_productstxt)
 
@@ -361,7 +362,7 @@ Each individual fare product is defined in `fare_products.txt`, in this example,
 | mnr_HUD-9:1_adult      | Inbound Adult Off Peak Zonal Fare  | paper         | 19.25  | USD      |
 
 
-Finally, origin and destination areas and timeframes combinations are associated with the corresponding fare product in `fare_leg_rules.txt`. Here, trips starting or arriving in Zone 1 (i.e. `area_id=mnr_1`) during peak times are subject to a specific peak fare corresponding to the arrival and departure zones of the trip (i.e. `fare_product_id=mnr_1:HUD-9_adult_peak`).
+Lastly, the combinations of origin and destination areas, along with their respective timeframes are associated with the corresponding fare product in `fare_leg_rules.txt`. Here, trips starting or arriving in Zone 1 (i.e. `area_id=mnr_1`) during peak times are subject to a specific peak fare corresponding to the arrival and departure zones of the trip (i.e. `fare_product_id=mnr_1:HUD-9_adult_peak`).
 
 [**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
 
