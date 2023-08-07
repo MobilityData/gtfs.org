@@ -162,7 +162,7 @@ Below is an example snippet from the <a href="https://511.org/open-data/transit"
 
 Additionally, producers who want to describe a physical ticket as a fare media can use `fare_media_type=1`.
 
-The Massachusetts Bay Transportation Authority (MBTA) allows users to pay for trips and passes using a physical paper ticket called CharlieTicket. To reflect this, there is a `charlieticket` fare media in MBTA’s feed with a `fare_media_type=1`.
+The <a href="https://www.mbta.com" target="_blank">Massachusetts Bay Transportation Authority (MBTA)</a> allows users to pay for trips and passes using a physical paper ticket called CharlieTicket. To reflect this, there is a `charlieticket` fare media in MBTA’s feed with a `fare_media_type=1`.
 
 [**fare_media.txt**](../../reference/#fare_mediatxt)
 
