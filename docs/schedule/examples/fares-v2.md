@@ -382,5 +382,7 @@ Alternatively, a user traveling in train #883 (`service_id=13`) would pay an Out
 
 In <a href="https://apple.com/maps" target="_blank">Apple Maps</a>, riders can see how their fare price changes and compare fare prices next to the train scheduled departure:
 
-<img width="200" alt="TimeVariableFares_Peak" src="https://github.com/MobilityData/gtfs.org/assets/104692200/ab0b3850-1cd4-4278-bbbd-420140195d19">    <img width="200" alt="TimeVariableFares_OffPeak" src="https://github.com/MobilityData/gtfs.org/assets/104692200/fc4df491-7601-4274-b3eb-9e271c06327e">
-
+<div class="time-variable_fare_photos">
+    <img src="../../../assets/TimeVariableFares_Peak.png" alt="Outbound Adult Peak Zonal Fare of 20.00 USD">
+    <img src="../../../assets/TimeVariableFares_OffPeak.png" alt="Outbound Adult Off Peak Zonal Fare of 15.00 USD">
+</div>
