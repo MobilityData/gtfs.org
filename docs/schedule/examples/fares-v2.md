@@ -277,7 +277,7 @@ In this case, a user paying for a trip that departs at  7:30 AM would have to pa
 
 ## Define time-variable fares along with zone based fares
 
-In New York's MTA Metro-North railroad network, fares vary based on both the time of the day of the trip, as well as the trip’s origin and destination areas. The following example illustrates the fare rules applicable to a trip from Grand Central Station to Poughkeepsie (NY, USA).
+In New York's MTA Metro-North railroad network, fares vary based on both the time of the day of the trip, as well as the trip’s origin and destination areas. The following example illustrates the fare rules applicable to a trip from Grand Central Station to Cold Spring (NY, USA).
 
 This example is based on a <a href="https://docs.google.com/spreadsheets/d/1-cD-R2OH5xAQAbNWNlrXD7WOw594lVdW-bomuLo6bI8/edit?usp=sharing" target="_blank">dataset</a> produced by <a href="https://www.itoworld.com/" target="_blank">ITO World</a>, featuring a trip that uses ten stops distributed in six different areas.
 
@@ -350,34 +350,37 @@ Records are created in `timeframes.txt`, including cases where the time covers t
 | mnr_notam2pmpeak   | 20:00:00   | 24:00:00 | weekdays   |
 
 
-Each individual fare product is defined in `fare_products.txt`. In this example, only trips between zone 1 and 9 are listed. The full dataset would include a record for each price defined by a time and zone combination. Additionally, the example only displays one fare media (`paper`) but additional combinations could be created if prices would also vary based on the fare media.
+Each individual fare product is defined in `fare_products.txt`. Since Cold Spring is located in zone 7, this example only lists trips between zone 1 and 7. The full dataset would include a record for each price defined by a time and zone combination. Additionally, the example only displays one fare media (`paper`), but additional combinations could be created if prices would also vary based on the fare media.
 
 [**fare_products.txt**](../../reference/#fare_productstxt)
 
 | fare_product_id        | fare_product_name                  | fare_media_id | amount | currency |
 |------------------------|------------------------------------|---------------|--------|----------|
-| mnr_1:HUD-9_adult_peak | Outbound Adult Peak Zonal Fare     | paper         | 25.75  | USD      |
-| mnr_1:HUD-9_adult      | Outbound Adult Off Peak Zonal Fare | paper         | 19.25  | USD      |
-| mnr_HUD-9:1_adult_peak | Inbound Adult Peak Zonal Fare      | paper         | 25.75  | USD      |
-| mnr_HUD-9:1_adult      | Inbound Adult Off Peak Zonal Fare  | paper         | 19.25  | USD      |
+| mnr_1:HUD-7_adult_peak | Outbound Adult Peak Zonal Fare     | paper         | 20.00  | USD      |
+| mnr_1:HUD-7_adult      | Outbound Adult Off Peak Zonal Fare | paper         | 15.00  | USD      |
+| mnr_HUD-7:1_adult_peak | Inbound Adult Peak Zonal Fare      | paper         | 20.00  | USD      |
+| mnr_HUD-7:1_adult      | Inbound Adult Off Peak Zonal Fare  | paper         | 15.00  | USD      |
 
 
-Lastly, the combinations of origin and destination areas, along with their respective timeframes are associated with the corresponding fare product in `fare_leg_rules.txt`. Here, trips starting or arriving in Zone 1 (i.e. `area_id=mnr_1`) during peak times are subject to a specific peak fare corresponding to the arrival and departure zones of the trip (i.e. `fare_product_id=mnr_1:HUD-9_adult_peak`).
+Lastly, the combinations of origin and destination areas, along with their respective timeframes are associated with the corresponding fare product in `fare_leg_rules.txt`. Here, trips starting or arriving in Zone 1 (i.e. `area_id=mnr_1`) during peak times are subject to a specific peak fare corresponding to the arrival and departure zones of the trip (i.e. `fare_product_id=mnr_1:HUD-7_adult_peak`).
 
 [**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
 
 | network_id | from_area_id | to_area_id | fare_product_id        | from_timeframe_group_id | to_timeframe_group_id |
 |------------|--------------|------------|------------------------|-------------------------|-----------------------|
-| mnr_hudson | mnr_1        | mnr_HUD-9  | mnr_1:HUD-9_adult      | mnr_notam2pmpeak        | anytime               |
-| mnr_hudson | mnr_1        | mnr_HUD-9  | mnr_1:HUD-9_adult      | weekends                | anytime               |
-| mnr_hudson | mnr_1        | mnr_HUD-9  | mnr_1:HUD-9_adult_peak | mnr_am2pmpeak           | anytime               |
-| mnr_hudson | mnr_HUD-9    | mnr_1      | mnr_HUD-9:1_adult      | weekdays                | mnr_notampeak         |
-| mnr_hudson | mnr_HUD-9    | mnr_1      | mnr_HUD-9:1_adult      | weekends                | anytime               |
-| mnr_hudson | mnr_HUD-9    | mnr_1      | mnr_HUD-9:1_adult_peak | weekdays                | mnr_ampeak            |
+| mnr_hudson | mnr_1        | mnr_HUD-7  | mnr_1:HUD-7_adult      | mnr_notam2pmpeak        | anytime               |
+| mnr_hudson | mnr_1        | mnr_HUD-7  | mnr_1:HUD-7_adult      | weekends                | anytime               |
+| mnr_hudson | mnr_1        | mnr_HUD-7  | mnr_1:HUD-7_adult_peak | mnr_am2pmpeak           | anytime               |
+| mnr_hudson | mnr_HUD-7    | mnr_1      | mnr_HUD-7:1_adult      | weekdays                | mnr_notampeak         |
+| mnr_hudson | mnr_HUD-7    | mnr_1      | mnr_HUD-7:1_adult      | weekends                | anytime               |
+| mnr_hudson | mnr_HUD-7    | mnr_1      | mnr_HUD-7:1_adult_peak | weekdays                | mnr_ampeak            |
 
 
-Using this dataset, a user boarding train #869 (`service_id=3`) scheduled to depart from Grand Central (zone `mnr_1`) at 6:45 pm would have to pay an Outbound Adult Peak Zonal Fare of 25.75 USD, since the trip is originated in the `mnr_am2pmpeak` period and from `zone mnr_1`.
+Using this dataset, a user boarding train #869 (`service_id=3`) scheduled to depart from Grand Central (zone `mnr_1`) at 6:45 pm would have to pay an Outbound Adult Peak Zonal Fare of 20.00 USD, since the trip is originated in the `mnr_am2pmpeak` period and from `zone mnr_1`.
 
-Alternatively, a user traveling in train #883 (`service_id=13`) would pay an Outbound Adult Off Peak Zonal Fare of only 19.25 USD, as this train is scheduled to depart Grand Central (zone `mnr_1`) at 9:04 pm.
+Alternatively, a user traveling in train #883 (`service_id=13`) would pay an Outbound Adult Off Peak Zonal Fare of only 15.00 USD, as this train is scheduled to depart Grand Central (zone `mnr_1`) at 9:04 pm.
 
+In <a href="https://apple.com/maps" target="_blank">Apple Maps</a>, riders can see how their fare price changes and compare fare prices next to the train scheduled departure:
+
+<img width="200" alt="TimeVariableFares_Peak" src="https://github.com/MobilityData/gtfs.org/assets/104692200/ab0b3850-1cd4-4278-bbbd-420140195d19">    <img width="200" alt="TimeVariableFares_OffPeak" src="https://github.com/MobilityData/gtfs.org/assets/104692200/fc4df491-7601-4274-b3eb-9e271c06327e">
 
