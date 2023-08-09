@@ -216,7 +216,173 @@ The single ride fare product shown below has both `cash` and `tap-to-ride` fare 
 <sup><a href="https://gtfs.calitp.org/production/CleanAirExpressFaresv2.zip" target="_blank">Download the Clean Air Express feed</a></sup>
 
 
+## Define price differences based on time and day of trip
+
+Certain transit agencies vary their fares based on the time and/or day of the week. This means that fares are associated with a time period where the trip is made, such as peak, off-peak hours, or weekends. 
+
+Washington DC’s <a href="https://www.wmata.com/fares/basic.cfm" target="_blank">Metrorail fares</a> vary based on multiple factors, including the day and time of the trip. Variable time fares in GTFS can be defined using `timeframes.txt`, in which it is possible to designate specific time periods that then can be associated in `fare_leg_rules.txt` to assign the applicable fare product that corresponds to the time when the trip is made. The following is a fictional example, based on WMATA's fares. 
+
+First, service days are defined using `calendar.txt`.
+
+[**calendar.txt**](../../reference/#calendartxt)
+
+| service_id       | monday | tuesday | wednesday | thursday | friday | saturday | sunday | start_date | end_date |
+|------------------|--------|---------|-----------|----------|--------|----------|--------|------------|----------|
+| weekday_service  | 1      | 1       | 1         | 1        | 1      | 0        | 0      | 20220708   | 20221231 |
+| saturday_service | 0      | 0       | 0         | 0        | 0      | 1        | 0      | 20220708   | 20221231 |
+| sunday_service   | 0      | 0       | 0         | 0        | 0      | 0        | 1      | 20220708   | 20221231 |
 
 
+Afterwards, the desired timeframes are defined in `timeframes.txt`, providing an id, the applicable days via a reference to `calendar.service_id`, and if applicable, the start time and end time for each time period.
+
+[**timeframes.txt**](../../reference/#timeframestxt)
+
+| timeframe_group_id | start_time | end_time | service_id       |
+|--------------------|------------|----------|------------------|
+| weekday_peak       | 5:00:00    | 9:30:00  | weekday_service  |
+| weekday_offpeak    | 9:30:00    | 15:00:00 | weekday_service  |
+| weekday_peak       | 15:00:00   | 19:00:00 | weekday_service  |
+| weekday_offpeak    | 19:00:00   | 21:30:00 | weekday_service  |
+| weekday_late_night | 21:30:00   | 29:00:00 | weekday_service  |
+| weekend            |            |          | saturday_service |
+| weekend            |            |          | sunday_service   |
+
+Next, the corresponding time specific fares in `fare_products.txt` are created (e.g. Peak fare)
+
+[**fare_products.txt**](../../reference/#fare_productstxt)
+
+| fare_product_id | fare_product_name                             | amount | currency |
+|-----------------|-----------------------------------------------|--------|----------|
+| peak_fare       | Peak fare                                     | 5      | USD      |
+| regular_fare    | Off-peak fare                                 | 3      | USD      |
+| weekend_fare    | Weekend Metrorail one-way fare                | 2      | USD      |
+| late_night_fare | Late Night flat fare (Mon - Fri after 9:30pm) | 2      | USD      |
+
+Lastly, timeframes are associated with fare products in `fare_leg_rules.txt` using the fields `from_timeframe_group_id` and `to_timeframe_group_id`. These fields determine whether a fare applies solely to the start of the leg or both the start and end of the leg.
+For this example, based on WMATA fares, the fare depends only on the leg's departure timeframe, so `to_timeframe_group_id` is left blank. 
+
+[**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
+
+| network_id | fare_product_id | from_timeframe_group_id | to_timeframe_group_id | timeframe_type |
+|------------|-----------------|-------------------------|-----------------------|----------------|
+| 1          | weekend_fare    | weekend                 |                       | (fare gate)    |
+| 1          | late_night_fare | weekday_late_night      |                       | (fare gate)    |
+| 1          | peak_fare       | weekday_peak            |                       | (fare gate)    |
+| 1          | regular_fare    | weekday_offpeak         |                       | (fare gate)    |
+
+Note that `network_id` references the foreign ID `routes.network_id`, and that the selection of the correct fare product for each trip will be a combination of arrival and departure times from `stop_times.txt` along with the times defined in `timeframes.txt`. 
+
+In this case, a user paying for a trip that departs at  7:30 AM would have to pay 5.00 USD (Peak fare) while another user departing at 11:30 AM would only have to pay a 3.00 USD fare (Off-peak fare).
 
 
+## Define time-variable fares along with zone based fares
+
+In New York's MTA Metro-North railroad network, fares vary based on both the time of the day of the trip, as well as the trip’s origin and destination areas. The following example illustrates the fare rules applicable to a trip from Grand Central Station to Cold Spring (NY, USA).
+
+This example is based on a <a href="https://docs.google.com/spreadsheets/d/1-cD-R2OH5xAQAbNWNlrXD7WOw594lVdW-bomuLo6bI8/edit?usp=sharing" target="_blank">dataset</a> produced by <a href="https://www.itoworld.com/" target="_blank">ITO World</a>, featuring a trip that uses ten stops distributed in six different areas.
+
+[**stops.txt**](../../reference/#stopstxt)
+
+| stop_id | stop_name           | stop_lat  | stop_lon   |
+|---------|---------------------|-----------|------------|
+| ITO1669 | Peekskill           | 41.285103 | -73.930916 |
+| ITO1777 | Beacon              | 41.505814 | -73.984474 |
+| ITO1789 | New Hamburg         |  41.58691 | -73.947624 |
+| ITO1804 | Croton-Harmon       | 41.190002 | -73.882393 |
+| ITO1824 | Cortlandt           | 41.246258 | -73.921783 |
+| ITO1856 | Garrison            | 41.381126 | -73.947334 |
+| ITO1887 | Harlem-125th Street | 40.805256 | -73.939148 |
+| ITO1897 | Cold Spring         | 41.415382 | -73.958092 |
+| ITO2096 | Poughkeepsie        | 41.707058 |  -73.93792 |
+| ITO2383 | Grand Central       | 40.752823 | -73.977196 |
+
+
+[**stops_areas.txt**](../../reference/#stops_areastxt)
+
+| area_id   | stop_id |
+|-----------|---------|
+| mnr_1     | ITO1887 |
+| mnr_1     | ITO2383 |
+| mnr_HUD-5 | ITO1804 |
+| mnr_HUD-6 | ITO1669 |
+| mnr_HUD-6 | ITO1824 |
+| mnr_HUD-7 | ITO1856 |
+| mnr_HUD-7 | ITO1897 |
+| mnr_HUD-8 | ITO1777 |
+| mnr_HUD-8 | ITO1789 |
+| mnr_HUD-9 | ITO2096 |
+
+
+Service days for train services 3 and 13 are defined using `calendar.txt`. Notably, other records with generic days (i.e. weekdays, weekends, and anyday) that aren't associated with any trips are defined, and these will be associated with timeframes in order to model `time-variable fares`.
+
+[**calendar.txt**](../../reference/#calendartxt)
+
+| service_id | monday | tuesday | wednesday | thursday | friday | saturday | sunday | start_date | end_date |
+|------------|--------|---------|-----------|----------|--------|----------|--------|------------|----------|
+| 13         | 1      | 1       | 1         | 1        | 1      | 0        | 0      | 20230612   | 20231006 |
+| 3          | 1      | 1       | 1         | 1        | 1      | 0        | 0      | 20230609   | 20231006 |
+| weekdays   | 1      | 1       | 1         | 1        | 1      | 0        | 0      | 20220101   | 20240101 |
+| weekends   | 0      | 0       | 0         | 0        | 0      | 1        | 1      | 20220101   | 20240101 |
+| anyday     | 1      | 1       | 1         | 1        | 1      | 1        | 1      | 20220101   | 20240101 |
+
+
+Records are created in `timeframes.txt`, including cases where the time covers the 24-hour range period (`anytime`, `weekdays` and `weekends`), and peak and off-peak periods:
+
+* AM Peak: from 6 am to 10 am on weekdays
+* AM2PM Peak: from 6 AM to 9 AM and from 4 pm to 8 pm on weekdays
+* Not AM Peak: weekday time not included in AM Peak
+* Not AM2PM Peak: weekday time not included in AM2PM Peak
+
+[**timeframes.txt**](../../reference/#timeframestxt)
+
+| timeframe_group_id | start_time | end_time | service_id |
+|:------------------:|:----------:|:--------:|:----------:|
+|       anytime      |  00:00:00  | 24:00:00 |   anyday   |
+|      weekdays      |  00:00:00  | 24:00:00 |  weekdays  |
+|      weekends      |  00:00:00  | 24:00:00 |  weekends  |
+|     mnr_ampeak     |  06:00:00  | 10:00:00 |  weekdays  |
+|    mnr_notampeak   |  00:00:00  | 06:00:00 |  weekdays  |
+|    mnr_notampeak   |  10:00:00  | 24:00:00 |  weekdays  |
+|    mnr_am2pmpeak   |  06:00:00  | 09:00:00 |  weekdays  |
+|    mnr_am2pmpeak   |  16:00:00  | 20:00:00 |  weekdays  |
+|  mnr_notam2pmpeak  |  00:00:00  | 06:00:00 |  weekdays  |
+| mnr_notam2pmpeak   | 09:00:00   | 16:00:00 | weekdays   |
+| mnr_notam2pmpeak   | 20:00:00   | 24:00:00 | weekdays   |
+
+
+Each individual fare product is defined in `fare_products.txt`. Since Cold Spring is located in zone 7, this example only lists trips between zone 1 and 7. The full dataset would include a record for each price defined by a time and zone combination. Additionally, the example only displays one fare media (`paper`), but additional combinations could be created if prices would also vary based on the fare media.
+
+[**fare_products.txt**](../../reference/#fare_productstxt)
+
+| fare_product_id        | fare_product_name                  | fare_media_id | amount | currency |
+|------------------------|------------------------------------|---------------|--------|----------|
+| mnr_1:HUD-7_adult_peak | Outbound Adult Peak Zonal Fare     | paper         | 20.00  | USD      |
+| mnr_1:HUD-7_adult      | Outbound Adult Off Peak Zonal Fare | paper         | 15.00  | USD      |
+| mnr_HUD-7:1_adult_peak | Inbound Adult Peak Zonal Fare      | paper         | 20.00  | USD      |
+| mnr_HUD-7:1_adult      | Inbound Adult Off Peak Zonal Fare  | paper         | 15.00  | USD      |
+
+
+Lastly, the combinations of origin and destination areas, along with their respective timeframes are associated with the corresponding fare product in `fare_leg_rules.txt`. Here, trips starting or arriving in Zone 1 (i.e. `area_id=mnr_1`) during peak times are subject to a specific peak fare corresponding to the arrival and departure zones of the trip (i.e. `fare_product_id=mnr_1:HUD-7_adult_peak`).
+
+[**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
+
+| network_id | from_area_id | to_area_id | fare_product_id        | from_timeframe_group_id | to_timeframe_group_id |
+|------------|--------------|------------|------------------------|-------------------------|-----------------------|
+| mnr_hudson | mnr_1        | mnr_HUD-7  | mnr_1:HUD-7_adult      | mnr_notam2pmpeak        | anytime               |
+| mnr_hudson | mnr_1        | mnr_HUD-7  | mnr_1:HUD-7_adult      | weekends                | anytime               |
+| mnr_hudson | mnr_1        | mnr_HUD-7  | mnr_1:HUD-7_adult_peak | mnr_am2pmpeak           | anytime               |
+| mnr_hudson | mnr_HUD-7    | mnr_1      | mnr_HUD-7:1_adult      | weekdays                | mnr_notampeak         |
+| mnr_hudson | mnr_HUD-7    | mnr_1      | mnr_HUD-7:1_adult      | weekends                | anytime               |
+| mnr_hudson | mnr_HUD-7    | mnr_1      | mnr_HUD-7:1_adult_peak | weekdays                | mnr_ampeak            |
+
+
+Using this dataset, a user boarding train #869 (`service_id=3`) scheduled to depart from Grand Central (zone `mnr_1`) at 6:45 pm would have to pay an Outbound Adult Peak Zonal Fare of 20.00 USD, since the trip is originated in the `mnr_am2pmpeak` period and from `zone mnr_1`.
+
+Alternatively, a user traveling in train #883 (`service_id=13`) would pay an Outbound Adult Off Peak Zonal Fare of only 15.00 USD, as this train is scheduled to depart Grand Central (zone `mnr_1`) at 9:04 pm.
+
+In <a href="https://apple.com/maps" target="_blank">Apple Maps</a>, riders can see how their fare price changes and compare fare prices next to the train scheduled departure:
+
+<div class="time-variable_fare_photos">
+    <img src="../../../assets/TimeVariableFares_Peak.png" alt="Outbound Adult Peak Zonal Fare of 20.00 USD">
+    <img src="../../../assets/TimeVariableFares_OffPeak.png" alt="Outbound Adult Off Peak Zonal Fare of 15.00 USD">
+</div>
