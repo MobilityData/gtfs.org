@@ -255,8 +255,8 @@ Afterwards, the desired timeframes are defined in `timeframes.txt`, providing an
 | weekday_offpeak    | 9:30:00    | 15:00:00 | weekday_service  |
 | weekday_peak       | 15:00:00   | 19:00:00 | weekday_service  |
 | weekday_offpeak    | 19:00:00   | 21:30:00 | weekday_service  |
-| weekday_late_night | 21:30:00   |          | weekday_service  |
-| weekday_late_night |            | 5:00:00  | weekday_service  |
+| weekday_late_night | 21:30:00   | 24:00:00 | weekday_service  |
+| weekday_late_night | 00:00:00   | 5:00:00  | weekday_service  |
 | weekend            |            |          | saturday_service |
 | weekend            |            |          | sunday_service   |
 
