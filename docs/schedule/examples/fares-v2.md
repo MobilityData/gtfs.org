@@ -232,7 +232,7 @@ The single ride fare product shown below has both `cash` and `tap-to-ride` fare 
 
 Certain transit agencies vary their fares based on the time and/or day of the week. This means that fares are associated with a time period where the trip is made, such as peak, off-peak hours, or weekends. 
 
-Washington DC’s <a href="https://www.wmata.com/fares/basic.cfm" target="_blank">Metrorail fares</a> vary based on multiple factors, including the day and time of the trip. Variable time fares in GTFS can be defined using `timeframes.txt`, in which it is possible to designate specific time periods that then can be associated in `fare_leg_rules.txt` to assign the applicable fare product that corresponds to the time when the trip is made. The following is a fictional example, based on WMATA's fares. 
+Washington DC’s Metrorail fares vary based on multiple factors, including the day and time of the trip. Variable time fares in GTFS can be defined using `timeframes.txt`, in which it is possible to designate specific time periods that then can be associated in `fare_leg_rules.txt` to assign the applicable fare product that corresponds to the time when the trip is made. The following is a fictional example, based on WMATA's fares as of spring 2023. 
 
 First, service days are defined using `calendar.txt`.
 
@@ -255,7 +255,8 @@ Afterwards, the desired timeframes are defined in `timeframes.txt`, providing an
 | weekday_offpeak    | 9:30:00    | 15:00:00 | weekday_service  |
 | weekday_peak       | 15:00:00   | 19:00:00 | weekday_service  |
 | weekday_offpeak    | 19:00:00   | 21:30:00 | weekday_service  |
-| weekday_late_night | 21:30:00   | 29:00:00 | weekday_service  |
+| weekday_late_night | 21:30:00   |          | weekday_service  |
+| weekday_late_night |            | 5:00:00  | weekday_service  |
 | weekend            |            |          | saturday_service |
 | weekend            |            |          | sunday_service   |
 
@@ -275,12 +276,12 @@ For this example, based on WMATA fares, the fare depends only on the leg's depar
 
 [**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
 
-| network_id | fare_product_id | from_timeframe_group_id | to_timeframe_group_id | timeframe_type |
-|------------|-----------------|-------------------------|-----------------------|----------------|
-| 1          | weekend_fare    | weekend                 |                       | (fare gate)    |
-| 1          | late_night_fare | weekday_late_night      |                       | (fare gate)    |
-| 1          | peak_fare       | weekday_peak            |                       | (fare gate)    |
-| 1          | regular_fare    | weekday_offpeak         |                       | (fare gate)    |
+| network_id | fare_product_id | from_timeframe_group_id | to_timeframe_group_id |
+|------------|-----------------|-------------------------|-----------------------|
+| 1          | weekend_fare    | weekend                 |                       |
+| 1          | late_night_fare | weekday_late_night      |                       |
+| 1          | peak_fare       | weekday_peak            |                       |
+| 1          | regular_fare    | weekday_offpeak         |                       |
 
 Note that `network_id` references the foreign ID `routes.network_id`, and that the selection of the correct fare product for each trip will be a combination of arrival and departure times from `stop_times.txt` along with the times defined in `timeframes.txt`. 
 
