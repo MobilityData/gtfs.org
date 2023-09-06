@@ -106,7 +106,7 @@ This area is intended as a community "parking lot". Share something you would li
 - flextur (english: flex trip)
 - formerly flextrafik (english: flex transit)
 
-🇫🇷 ⚠️ In France “Paratransit” is used to describe “informal” transit (instead of on-demand transit for people with disabilities)
+🇫🇷 ⚠️ In France the terms TDA (Transport à la Demande) and PMR (Personnes à Mobilité Réduite) for Paratransit services
 
 - [Reseau Mistral](https://www.reseaumistral.com/services/service-appel-bus) 
 - Appel bus (english: call bus)
