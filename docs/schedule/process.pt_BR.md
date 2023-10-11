@@ -14,7 +14,7 @@ A Especificação GTFS não é definida em pedra. Ao invés disso, é uma especi
 1. Criar uma filial de git com atualização de todas as partes relevantes da definição do protocolo, especificação e arquivos de documentação (exceto para traduções).
 1. Criar solicitação de puxar em <https://github.com/google/transit>. A solicitação de puxar deve conter uma descrição estendida do remendo. O criador do pedido de puxar torna-se o _defensor_.
 1. Uma vez registrada a solicitação pull, ela deve ser anunciada por seu defensor na [lista de discussão GTFS Changes](https://groups.google.com/forum/#!forum/gtfs-changes), incluindo um link para a solicitação pull. Uma vez anunciada, a solicitação pull é considerada uma proposta. A solicitação pull também deve ser editada para conter um link para o anúncio do Google Groups para que possam ser facilmente referenciados.
-   * Como o defensor é um contribuinte, eles devem assinar o [Acordo de Licença de Contribuinte](../CONTRIBUTING.md) antes que a solicitação pull possa ser aceita.
+   * Como o defensor é um contribuinte, eles devem assinar o [Acordo de Licença de Contribuinte](https://github.com/google/transit/blob/master/CONTRIBUTING.md) antes que a solicitação pull possa ser aceita.
 1. A discussão da proposta é a seguinte. Os comentários de solicitação devem ser usados como o único fórum de discussão.
    * A discussão dura o tempo que o defensor julgar necessário, mas deve ser de pelo menos 7 dias corridos.
    * O defensor é responsável pela atualização oportuna da proposta (ou seja, solicitação de retirada) com base nos comentários com os quais concorda.
@@ -36,7 +36,7 @@ A Especificação GTFS não é definida em pedra. Ao invés disso, é uma especi
    * Se o defensor continuar o trabalho sobre a proposta, então uma nova votação pode ser convocada a qualquer time.
 1. Qualquer solicitação pull que permaneça inativa por 30 dias corridos será encerrada. Quando uma solicitação pull é fechada, a proposta correspondente é considerada abandonada. O defensor pode reabrir o pedido de puxar a qualquer time se desejar continuar ou manter a conversa.
 1. Se a proposta for aceita:
-   * O Google se compromete a fundir a versão votada da solicitação pull (desde que os colaboradores tenham assinado o [ALC](../CONTRIBUTING.md)), e realizar a solicitação pull dentro de 5 dias úteis.
+   * O Google se compromete a fundir a versão votada da solicitação pull (desde que os colaboradores tenham assinado o [ALC](https://github.com/google/transit/blob/master/CONTRIBUTING.md)), e realizar a solicitação pull dentro de 5 dias úteis.
    * As traduções não devem ser incluídas na solicitação original de pull.
    O Google é responsável por eventualmente atualizar as traduções relevantes para os idiomas suportados, mas os pedidos de Translation pura da comunidade são bem-vindos e serão aceitos assim que todos os comentários editoriais forem endereçados.
 1. O resultado final da solicitação de retirada (aceita ou abandonada) deve ser anunciado no mesmo tópico do Google Groups onde a solicitação de retirada foi originalmente anunciada.

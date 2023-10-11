@@ -14,7 +14,7 @@ Itu GTFS Spesifikasi tidak diatur dalam batu. Sebaliknya, ini adalah spesifikasi
   1. Buat cabang git dengan memperbarui semua bagian definisi protokol, spesifikasi, dan file dokumentasi yang relevan (kecuali untuk terjemahan).
   1. Buat permintaan tarik di <https://github.com/google/transit> . Permintaan penarikan harus berisi deskripsi tambalan yang diperluas. Pencipta pull request menjadi _advokat_ .
   1. Setelah permintaan tarik didaftarkan, permintaan tersebut harus diumumkan oleh advokatnya di [GTFS perubahan Mengubah milis](https://groups.google.com/forum/#!forum/gtfs-changes) , termasuk tautan ke permintaan penarikan. Setelah diumumkan, pull request dianggap sebagai proposal. Permintaan penarikan juga harus diedit untuk memuat tautan ke pengumuman Google Grup sehingga dapat dengan mudah dirujuk silang.
-     - Karena advokat adalah kontributor, mereka harus menandatangani [Perjanjian Lisensi Kontributor](../CONTRIBUTING.md) sebelum pull request dapat diterima.
+     - Karena advokat adalah kontributor, mereka harus menandatangani [Perjanjian Lisensi Kontributor](https://github.com/google/transit/blob/master/CONTRIBUTING.md) sebelum pull request dapat diterima.
   1. Pembahasan proposal berikut. Komentar pull request harus digunakan sebagai satu-satunya forum diskusi.
      - Pembahasan berlangsung selama advokat merasa perlu, tetapi harus sekurang-kurangnya 7 hari kalender.
      - Advokat bertanggung jawab untuk memperbarui proposal secara tepat waktu (yaitu pull request) berdasarkan komentar yang mereka setujui.
@@ -36,7 +36,7 @@ Itu GTFS Spesifikasi tidak diatur dalam batu. Sebaliknya, ini adalah spesifikasi
      - Jika advokat melanjutkan pengerjaan proposal, maka pemungutan suara baru dapat dilakukan kapan sajatime .
   1. Setiap pull request yang tidak aktif selama 30 hari kalender akan ditutup. Saat pull request ditutup, proposal terkait dianggap ditinggalkan. Advokat dapat membuka kembali pull request kapan sajatime jika mereka ingin melanjutkan atau mempertahankan percakapan.
   1. Jika proposal diterima:
-     - Google berkomitmen untuk menggabungkan versi pull request yang telah dipilih (asalkan kontributor telah menandatangani [PLK](../CONTRIBUTING.md) ), dan melakukan pull request dalam waktu 5 hari kerja.
+     - Google berkomitmen untuk menggabungkan versi pull request yang telah dipilih (asalkan kontributor telah menandatangani [PLK](https://github.com/google/transit/blob/master/CONTRIBUTING.md ), dan melakukan pull request dalam waktu 5 hari kerja.
      - Terjemahan tidak boleh dimasukkan ke dalam pull request asli.
      Google bertanggung jawab untuk memperbarui terjemahan yang relevan ke dalam bahasa yang didukung, tetapi murniTranslation tarik permintaan dari komunitas diterima dan akan diterima segera setelah semua komentar editorial ditangani.
   1. Hasil akhir dari pull request (diterima atau diabaikan) harus diumumkan di utas Google Grup yang sama tempat permintaan pull awalnya diumumkan.
