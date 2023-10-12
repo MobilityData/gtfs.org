@@ -297,7 +297,7 @@ Envoyez un courriel à [specifications@mobilitydata.org](mailto:specifications@m
 
 ### Comment puis-je m'impliquer ?
 
-Envoyez un courriel [à specifications@mobilitydata.org.](mailto:specifications@mobilitydata.org)
+Envoyez un courriel à [specifications@mobilitydata.org](mailto:specifications@mobilitydata.org).
 
 ## A propos de ce document
 

@@ -5,7 +5,7 @@ search:
 
 # GTFS Schedule Bewährte Praktiken
 
-Dies sind empfohlene Praktiken für die Beschreibung von öffentlichen Verkehrsdiensten in der [General Transit Feed Specification (GTFS](../reference)). Diese Praktiken wurden aus den Erfahrungen der Mitglieder der [GTFS Best Practices working group](#gtfs-best-practices-working-group) und [anwendungsspezifischen GTFS zusammengeführt](https://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS).
+Dies sind empfohlene Praktiken für die Beschreibung von öffentlichen Verkehrsdiensten in der [General Transit Feed Specification (GTFS](../reference). Diese Praktiken wurden aus den Erfahrungen der Mitglieder der [GTFS Best Practices working group](#gtfs-best-practices-working-group) und [anwendungsspezifischen GTFS zusammengeführt](https://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS).
 
 Weitere Hintergrundinformationen finden Sie in den [Häufig gestellten Fragen](#frequently-asked-questions-faq).
 
@@ -293,7 +293,7 @@ Identifizieren Sie den Kontakt für den Feed, indem Sie die [vorgeschlagenen](ht
 
 ### Ich möchte eine Änderung/Ergänzung zu den Best Practices vorschlagen. Wie kann ich das tun?
 
-Schicken Sie eine E-Mail an [specifications@mobilitydata.org](mailto:specifications@mobilitydata.org) oder öffnen Sie eine Anfrage oder einen Pull Request im GitHub GTFS Best Practices repo](https://github.com/rocky-mountain-institute/gtfs-best-practices).
+Schicken Sie eine E-Mail an [specifications@mobilitydata.org](mailto:specifications@mobilitydata.org) oder öffnen Sie eine Anfrage oder einen Pull Request im [GitHub GTFS Best Practices repo](https://github.com/rocky-mountain-institute/gtfs-best-practices).
 
 ### Wie kann ich mich einbringen?
 
@@ -312,7 +312,7 @@ Die Ziele der Beibehaltung der GTFS Best Practices sind:
 
 ### Wie man veröffentlichte GTFS vorschlägt oder ändert
 
-GTFS und -Praktiken entwickeln sich weiter, so dass dieses Dokument möglicherweise von Zeit zu Zeit geändert werden muss. Um eine Änderung dieses Dokuments vorzuschlagen, öffnen Sie eine Pull-Anfrage im [GitHub-Repository GTFS Best Practices](https://github.com/MobilityData/gtfs-best-practices) und befürworten Sie die Änderung. Sie können Kommentare auch per E-Mail an [specifications@mobilitydata.org senden.](mailto:specifications@mobilitydata.org)
+GTFS und -Praktiken entwickeln sich weiter, so dass dieses Dokument möglicherweise von Zeit zu Zeit geändert werden muss. Um eine Änderung dieses Dokuments vorzuschlagen, öffnen Sie eine Pull-Anfrage im [GitHub-Repository GTFS Best Practices](https://github.com/MobilityData/gtfs-best-practices) und befürworten Sie die Änderung. Sie können Kommentare auch per E-Mail an [specifications@mobilitydata.org](mailto:specifications@mobilitydata.org) senden.
 
 ### Verlinkung auf dieses Dokument
 

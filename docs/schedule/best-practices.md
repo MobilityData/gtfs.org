@@ -296,7 +296,7 @@ The objectives of maintaining GTFS Best Practices is to:
 
 ### How to propose or amend published GTFS Best Practices
 
-GTFS applications and practice evolve, and so this document may need to be amended from time to time. To propose an amendment to this document, open a pull request [in the GTFS Best Practices GitHub repository](https://github.com/MobilityData/gtfs-best-practices) and advocate for the change. You can slo email any comments to [specifications@mobilitydata.org](mailto:specifications@mobilitydata.org).
+GTFS applications and practice evolve, and so this document may need to be amended from time to time. To propose an amendment to this document, open a pull request in the [GTFS Best Practices GitHub repository](https://github.com/MobilityData/gtfs-best-practices) and advocate for the change. You can slo email any comments to [specifications@mobilitydata.org](mailto:specifications@mobilitydata.org).
 
 ### Linking to This Document
 

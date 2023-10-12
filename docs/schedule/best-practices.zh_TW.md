@@ -5,7 +5,7 @@ search:
   
 # GTFS Schedule 最佳实践
 
-这些是描述公共交通服务的推荐做法General Transit Feed Specification[(](../reference)GTFS [)](../reference) .这些实践都是从[GTFS](<#\<glossary variable=>)的经验中总结出来的[-最佳实践工作组">](<#\<glossary variable=>)GTFS [最佳实践工作组](<#\<glossary variable=>)成员和[PHP](<http://www.transitwiki.org/TransitWiki/index.\<glossary variable=>) [/Best_practices_for_creating_GTFS">应用程序特定](<http://www.transitwiki.org/TransitWiki/index.\<glossary variable=>)GTFS [实践建议](<http://www.transitwiki.org/TransitWiki/index.\<glossary variable=>)。
+這些是 [一般運輸供給規範 (GTFS)](../reference) 中描述公共運輸服務的建議做法。 這些實踐是根據 [GTFS 最佳實踐工作小組](#gtfs-best-practices-working-group) 成員的經驗和[特定於應用程式的 GTFS 實踐建議](http://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS)。
 
 有关更多背景信息，请参阅[常见问题](#frequently-asked-questions-faq)。
 
@@ -19,14 +19,14 @@ search:
 
 ## 数据集发布和一般实践
 
-* 数据集应发布在公共的永久 URL 上，包括 zip 文件名。 （例如， [GTFS](<http://www.agency.org/\<glossary variable=>) [/](<http://www.agency.org/\<glossary variable=>)GTFS [.zip">www.agency.org/](<http://www.agency.org/\<glossary variable=>)GTFS [/](<http://www.agency.org/\<glossary variable=>)GTFS [.zip](<http://www.agency.org/\<glossary variable=>) )。理想情况下，URL 应该可以直接下载，无需登录即可访问文件，以方便使用软件应用程序进行下载。虽然建议（也是最常见的做法）GTFS数据集可公开下载，如果数据提供者确实需要控制对GTFS出于许可或其他原因，建议控制对GTFS使用 API 密钥的数据集，这将有助于自动下载。
+* 資料集應發佈在公共的永久 URL 上，包括 zip 檔案名稱。 （例如，www.agency.org/gtfs/gtfs.zip）。 理想情況下，URL 應可直接下載，無需登入即可存取文件，以便於透過使用軟體應用程式進行下載。 雖然建議（也是最常見的做法）公開下載 GTFS 資料集，但如果資料提供者確實需要出於許可或其他原因控制對 GTFS 的訪問，則建議使用 API 金鑰控制對 GTFS 資料集的訪問，這將有助於自動下載。
 * GTFS数据以迭代形式发布，因此在稳定位置的单个文件始终包含运输机构（或多个机构）的最新官方服务描述。
 * 维护持久标识符（id 字段）stop_id ,route_id ， 和agency_id尽可能跨数据迭代。
 * 一GTFS数据集应包含当前和即将推出的服务（有时称为“合并”数据集）。 Google transitfeed 工具的[合并功能](https://github.com/google/transitfeed/wiki/Merge)可用于从两个不同的数据集创建合并数据集GTFS饲料。
   * 随时发布GTFS数据集应至少在接下来的 7 天内有效，理想情况下，只要操作员确信Schedule将继续运营。
   * 如果可能的话，GTFS数据集应至少涵盖接下来 30 天的服务。
 * 从提要中删除旧服务（过期日历）。
-* 如果服务修改将在 7 天或更短时间内生效，请通过[GTFS](<https://developers.google.com/transit/\<glossary variable=>)表达此服务更改[-](<https://developers.google.com/transit/\<glossary variable=>)Realtime[/">](<https://developers.google.com/transit/\<glossary variable=>)GTFS [-](<https://developers.google.com/transit/\<glossary variable=>)Realtime提要（服务建议或旅行更新）而不是静态的GTFS数据集。
+* 如果服務修改將在7 天或更短的時間內生效，請透過[GTFS-realtime](https://developers.google.com/transit/gtfs-realtime/) Feed（服務建議或行程更新）表達此服務更改）而不是靜態 GTFS 資料集。
 * 网络服务器托管GTFS数据应配置为正确报告文件修改日期（参见[HTTP/1.1 - Request for Comments 2616](https://tools.ietf.org/html/rfc2616#section-14.29) ，在第 14.29 节下）。
 
 ## 按文件组织的练习建议
