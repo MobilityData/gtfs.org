@@ -90,7 +90,7 @@ plugins:
         'testing.md': 'resources/gtfs.md'
         'best-practices.md': 'schedule/best-practices.md'
         'data-examples.md': 'schedule/examples/index.md'
-        'changes.md': 'extensions.md'
+        'changes.md': 'extensions/index.md'
         'reference/realtime/changes.md': 'realtime/changes/index.md'
         'reference/static/changes.md': 'schedule/changes/index.md'
         'applications.md': 'resources/apps.md'
