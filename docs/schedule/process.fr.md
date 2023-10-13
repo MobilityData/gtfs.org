@@ -14,7 +14,7 @@ La spécification GTFS n'est pas gravée dans le marbre. Il s'agit plutôt d'une
 1. Créer une branche git avec la mise à jour de toutes les parties pertinentes des fichiers de définition, de spécification et de documentation du protocole (à l'exception des traductions).
 1. Créer une demande de retrait sur [https://github.com/google/transit.](https://github.com/google/transit) La demande de retrait ne doit pas contenir une description détaillée du correctif. Le créateur de la demande de retrait devient l'_avocat_.
 1. Une fois que la demande de retrait est enregistrée, elle doit être annoncée par son défenseur dans la [liste de diffusion GTFS Changes](https://groups.google.com/forum/#!forum/gtfs-changes), avec un lien vers la demande de retrait. Une fois annoncée, la pull request est considérée comme une proposition. La demande de retrait devrait également être modifiée pour contenir un lien vers l'annonce dans Google Groups afin de pouvoir facilement les recouper.
-   * Étant donné que le défenseur est un contributeur, il doit signer l'[accord de licence du contributeur](../CONTRIBUTING.md) avant que la demande de retrait puisse être acceptée.
+   * Étant donné que le défenseur est un contributeur, il doit signer l'[accord de licence du contributeur](https://github.com/google/transit/blob/master/CONTRIBUTING.md) avant que la demande de retrait puisse être acceptée.
 1. La discussion de la proposition suit. Les commentaires de la demande de tirage devraient être utilisés comme seul forum de discussion.
    * La discussion dure aussi longtemps que le défenseur le juge nécessaire, mais doit être au moins de 7 jours civils.
    * L'avocat est responsable de la mise à jour en temps voulu de la proposition (c'est-à-dire de la pull request) sur la base des commentaires qu'il accepte.
@@ -36,7 +36,7 @@ La spécification GTFS n'est pas gravée dans le marbre. Il s'agit plutôt d'une
    * Si l'avocat continue à travailler sur la proposition, un nouveau vote peut être demandé à tout time.
 1. Toute demande tirée qui reste inactive pendant 30 jours civils sera fermée. Lorsqu'une demande de retrait est fermée, la proposition correspondante est considérée comme abandonnée. Le défenseur peut rouvrir la demande à tout time s'il souhaite poursuivre ou maintenir la conversation.
 1. Si la proposition est acceptée :
-   * Google s'engage à fusionner la version votée de la demande de modification (à condition que les contributeurs aient signé la [ALC](../CONTRIBUTING.md)), et à exécuter la demande de modification dans les 5 jours ouvrables.
+   * Google s'engage à fusionner la version votée de la demande de modification (à condition que les contributeurs aient signé la [ALC](https://github.com/google/transit/blob/master/CONTRIBUTING.md)), et à exécuter la demande de modification dans les 5 jours ouvrables.
    * Les traductions ne doivent pas être incluses dans la demande originale.
    Google est responsable de la mise à jour éventuelle des traductions pertinentes dans les langues prises en charge, mais les demandes de Translation pure émanant de la communauté sont les bienvenues et seront acceptées dès que tous les commentaires éditoriaux auront été traités.
 1. Le résultat final de la demande de retrait (acceptée ou abandonnée) devrait être annoncé sur le même fil de discussion Google Groups que celui où la demande de retrait a été initialement annoncée.

@@ -354,12 +354,22 @@ cd ../..
 curl https://raw.githubusercontent.com/CUTR-at-USF/awesome-transit/master/README.md -o docs/resources/awesome.md
 
 ## split awesome by heading level 2 (MacOS requires installation and substitution of gcsplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
-csplit --prefix='awesome' --suffix-format='%02d.md' docs/resources/awesome.md /^'## '/ "{*}"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    gcsplit --prefix='awesome' --suffix-format='%02d.md' docs/resources/awesome.md /^'## '/ "{*}"
+elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+    csplit --prefix='awesome' --suffix-format='%02d.md' docs/resources/awesome.md /^'## '/ "{*}"
+fi
+
 mv awesome* docs/resources
 rm -r docs/resources/awesome.md
 
 ## split resources by heading level 3 (MacOS requires installtion and substitution of gcsplit: https://christiantietze.de/posts/2019/12/markdown-split-by-chapter/)
-csplit --prefix='resources' --suffix-format='%02d.md' docs/resources/awesome00.md /^'### '/ "{*}"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    gcsplit --prefix='resources' --suffix-format='%02d.md' docs/resources/awesome00.md /^'### '/ "{*}"
+elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+    csplit --prefix='resources' --suffix-format='%02d.md' docs/resources/awesome00.md /^'### '/ "{*}"
+fi
+
 mv resources* docs/resources
 rm -r docs/resources/awesome00.md
 
@@ -379,16 +389,17 @@ new_header='# Other Resources'
 sed -i.bak "1 s/.*/$new_header/" docs/resources/resources15.md
 
 ## edit this page buttons
-for file in docs/resources/resources*; do
-    PAGE=$file
+FILES=$(find docs/resources -type f -name "resources*")
+for file in $FILES; do
+    echo "Processing file: $file"
+    CONTENT=$(cat $file)
     echo "<a class=\"pencil-link\" href=\"https://github.com/CUTR-at-USF/awesome-transit/edit/master/README.md\" title=\"Edit this page\" target=\"_blank\">
-    <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
-  </a>
-  
-`cat $PAGE`" > $PAGE
+        <svg class=\"pencil\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z\"></path></svg>
+    </a>
+    ${CONTENT}" > $file
 done
 
-## rename split resources files
+# rename split resources files
 strings=(
     getting-started
     community
@@ -405,10 +416,11 @@ strings=(
     multimodal
     other
 )
-files=(docs/resources/resources*)
+FILES=($(find docs/resources -type f -name "resources*" | sort))
 let "count=0"
 for newname in "${strings[@]}"; do
-    mv "${files[$count]}" "docs/resources/$newname.md"
+    echo "Rename file: ${FILES[${count}]} to $newname"
+    mv "${FILES[$count]}" "docs/resources/$newname.md"
     let "count++" 
 done
 

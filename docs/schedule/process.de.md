@@ -14,7 +14,7 @@ Die GTFS ist nicht in Stein gemeißelt. Es handelt sich vielmehr um eine offene 
 1. Erstellen Sie einen Git-Zweig mit der Aktualisierung aller relevanten Teile der Protokolldefinition, der Spezifikation und der Dokumentationsdateien (mit Ausnahme der Übersetzungen).
 1. Erstellen Sie einen Pull-Request auf [https://github.com/google/transit.](https://github.com/google/transit) Der Pull Request muss eine ausführliche Beschreibung des Patches enthalten. Der Ersteller des Pull Requests wird zum _Advocate_.
 1. Sobald der Pull Request registriert ist, muss er von seinem Befürworter in der [GTFS Changes Mailingliste](https://groups.google.com/forum/#!forum/gtfs-changes) angekündigt werden, einschließlich eines Links zum Pull Request. Nach der Ankündigung wird der Pull Request als Vorschlag betrachtet. Die Pull-Anfrage sollte auch so bearbeitet werden, dass sie einen Link zu der Google Groups-Ankündigung enthält, so dass beide leicht miteinander verglichen werden können.
-   * Da der Befürworter ein Mitwirkender ist, muss er die [Lizenzvereinbarung für Mitwirkende](../CONTRIBUTING.md) unterzeichnen, bevor die Pull-Anfrage angenommen werden kann.
+   * Da der Befürworter ein Mitwirkender ist, muss er die [Lizenzvereinbarung für Mitwirkende](https://github.com/google/transit/blob/master/CONTRIBUTING.md) unterzeichnen, bevor die Pull-Anfrage angenommen werden kann.
 1. Die Diskussion des Vorschlags folgt. Als einziges Diskussionsforum sollten Pull-Request-Kommentare verwendet werden.
    * Die Diskussion dauert so lange, wie der Befürworter es für notwendig hält, mindestens jedoch 7 Kalendertage.
    * Der Befürworter ist für die rechtzeitige Aktualisierung des Vorschlags (d. h. des Pull Request) auf der Grundlage der Kommentare verantwortlich, denen er zustimmt.
@@ -36,7 +36,7 @@ Die GTFS ist nicht in Stein gemeißelt. Es handelt sich vielmehr um eine offene 
    * Wenn der Befürworter die Arbeit an dem Vorschlag fortsetzt, kann zu jedem time eine neue Abstimmung angesetzt werden.
 1. Jeder Pull Request, der 30 Kalendertage lang inaktiv bleibt, wird geschlossen. Wenn ein Pull Request geschlossen wird, wird der entsprechende Vorschlag als aufgegeben betrachtet. Der Befürworter kann den Pull Request time wieder öffnen, wenn er die Konversation fortsetzen oder aufrechterhalten möchte.
 1. Wenn der Vorschlag angenommen wird:
-   * Google verpflichtet sich, die abgestimmte Version des Pull-Requests zusammenzuführen (vorausgesetzt, die Mitwirkenden haben den [CLA](../CONTRIBUTING.md) unterzeichnet) und den Pull-Request innerhalb von 5 Werktagen auszuführen.
+   * Google verpflichtet sich, die abgestimmte Version des Pull-Requests zusammenzuführen (vorausgesetzt, die Mitwirkenden haben den [CLA](https://github.com/google/transit/blob/master/CONTRIBUTING.md) unterzeichnet) und den Pull-Request innerhalb von 5 Werktagen auszuführen.
    * Übersetzungen dürfen nicht in die ursprüngliche Pull-Anfrage aufgenommen werden.
    Google ist für die Aktualisierung der relevanten Übersetzungen in den unterstützten Sprachen verantwortlich, aber reine Translation aus der Community sind willkommen und werden akzeptiert, sobald alle redaktionellen Kommentare berücksichtigt wurden.
 1. Das Endergebnis der Pull-Anfrage (angenommen oder aufgegeben) sollte in demselben Google Groups-Thread bekannt gegeben werden, in dem die Pull-Anfrage ursprünglich angekündigt wurde.

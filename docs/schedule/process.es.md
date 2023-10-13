@@ -14,7 +14,7 @@ La especificación GTFS no está grabada en piedra. Se trata de una especificaci
 1. Crear una rama git con la actualización de todas las partes relevantes de los archivos de definición de protocolo, especificación y documentación (excepto las traducciones).
 1. Crear pull request en [https://github.com/google/transit.](https://github.com/google/transit) El pull request debe contener una descripción ampliada del parche. El creador de la pull request se convierte en el _defensor_.
 1. Una vez registrada la pull request, debe ser anunciada por su promotor en la [lista de correo de Cambios GTFS](https://groups.google.com/forum/#!forum/gtfs-changes), incluyendo un enlace a la pull request. Una vez anunciado, el pull request se considera una propuesta. El pull request también debería editarse para que contenga un enlace al anuncio en Grupos de Google, de modo que puedan cruzarse fácilmente.
-   * Dado que el promotor es un colaborador, debe firmar el [Acuerdo de Licencia de Colaborador](../CONTRIBUTING.md) antes de que se acepte el pull request.
+   * Dado que el promotor es un colaborador, debe firmar el [Acuerdo de Licencia de Colaborador](https://github.com/google/transit/blob/master/CONTRIBUTING.md) antes de que se acepte el pull request.
 1. A continuación se presenta la discusión de la propuesta. Los comentarios del pull request deberían utilizarse como único foro de discusión.
    * La discusión dura el tiempo que el promotor considere necesario, pero debe ser de al menos 7 días naturales.
    * El promotor es responsable de la actualización oportuna de la propuesta (es decir, pull request) en función de los comentarios con los que esté de acuerdo.
@@ -36,7 +36,7 @@ La especificación GTFS no está grabada en piedra. Se trata de una especificaci
    * Si el promotor continúa trabajando en la propuesta, se puede convocar una nueva votación en cualquier time.
 1. Cualquier pull request que permanezca inactiva durante 30 días naturales se cerrará. Cuando se cierra una pull request, la propuesta correspondiente se considera abandonada. El promotor puede reabrir la pull request en cualquier time si desea continuar o mantener la conversación.
 1. Si se acepta la propuesta:
-   * Google se compromete a fusionar la versión votada de la pull request (siempre que los colaboradores hayan firmado el [CLA](../CONTRIBUTING.md)) y a realizar la pull request en un plazo de 5 días laborables.
+   * Google se compromete a fusionar la versión votada de la pull request (siempre que los colaboradores hayan firmado el [CLA](https://github.com/google/transit/blob/master/CONTRIBUTING.md)) y a realizar la pull request en un plazo de 5 días laborables.
    * Las traducciones no deben incluirse en la pull request original.
    Google es responsable de actualizar eventualmente las traducciones pertinentes en los idiomas admitidos, pero las solicitudes de pull request de Translation puras de la comunidad son bienvenidas y se aceptarán tan pronto como se aborden todos los comentarios editoriales.
 1. El resultado final de la pull request (aceptada o abandonada) debería anunciarse en el mismo hilo de Grupos de Google en el que se anunció originalmente la pull request.
