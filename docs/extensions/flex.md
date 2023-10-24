@@ -57,6 +57,7 @@ Visit the Pull Request page to read the full post and contribute to the conversa
 - [Northwest Oregon Transit Alliance (NW Connector)](https://www.nworegontransit.org/)
 - [Vamos Mobility App](https://vamosmobileapp.com/)
 - [RTD Denver Flexride](https://www.rtd-denver.com/services/flexride)
+- [Nebraska Public Transit DRT OTP Project: Trillium, Olsson, Cambridge Systematics, and TransitPlus](https://trips.nebraskatransit.com/#/)
 
 Contact us to add your GTFS-Flex implementation to this page
 
