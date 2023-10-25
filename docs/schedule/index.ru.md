@@ -37,17 +37,26 @@ search:
 
 <hr/>
 
-Кампус открытого обучения Всемирного банка (OLC) предлагает самостоятельный онлайн-курс под названием “[Introduction to the General Transit Feed Specification (GTFS) and Informal Transit System Mapping](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)”. Этот курс включает следующие разделы:
+**Технические подробности о GTFS, что это такое, как создавать и поддерживать данные:**
 
-* Что такое GTFS? История и структура файла
-* Что такое GTFS? Визуализация и сообщество
-* Настройка GTFS Feed
-* Введение в GitHub и инструменты с открытым исходным кодом
-* Истории из практики
-* Как составить карту транзитных данных
-* Как собрать данные для первого городского фида
-* Обзор приложений
-* GTFS Realtime
+- [Обзор GTFS Schedule](schedule/)
+- ["Онлайн-курс Всемирного банка "Введение в GTFS"](<https://olc.worldbank.org/content/introduction-general-transit-feed-specification-GTFS-and-informal-transit-system-mapping)
+- [MBTA GTFS Onboarding](https://mybinder.org/v2/gh/mbta/gtfs_onboarding/main?urlpath=lab/tree/GTFS_Onboarding.ipynb)
+
+**Просмотр примеров фидов с различными функциями:**
+
+- [База данных GTFS Mobility Database](https://database.mobilitydata.org/)
+- [Transitland](https://www.transit.land/)
+
+**Бесплатные инструменты и учебные материалы:**
+
+- [MobilityData GTFS Schedule Validator](<https://GTFS-validator.mobilitydata.org/)
+- [Уроки NRTAP и GTFS Builder](<https://www.nationalrtap.org/Technology-Tools/GTFS-Builder/Support)
+- [Arcadis IBI Data Tools](https://www.ibigroup.com/ibi-products/transit-data-tools/)
+
+**Для получения информации о поставщиках, предлагающих услуги GTFS:**
+
+- [Центр исследований городского транспорта, Университет Южной Флориды Список поставщиков GTFS](https://docs.google.com/spreadsheets/u/1/d/1Gc9mu4BIYC8ORpv2IbbVnT3q8VQ3xkeY7Hz068vT_GQ/pubhtml)
 
 Смотрите другие [онлайн-курсы](../resources/other/#on-line-courses).
 

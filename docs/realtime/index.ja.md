@@ -3,7 +3,7 @@ search:
   exclude: true
 ---
 
-# GTFS Realtime概要
+# GTFS リアルタイム概要
 
 <div class="landing-page">
    <a class="button" href="reference">参考資料</a>
@@ -14,31 +14,33 @@ search:
 
 ## はじめに
 
-交通機関のデータをリアルタイムで提供することで、利用者の交通機関へのアクセスを向上させることができます。最新の発着時刻を提供することで、利用者はスムーズに移動の計画を立てることができます。その結果、不幸にも遅延が発生した場合、ライダーはもう少し家にいられると知って安心することでしょう。
+交通機関に関するリアルタイムの情報を利用者に提供することで、乗換案内サービスの利便性を向上させることができます。 利用者は、最新の発着時刻を参考にして、移動計画をよりスムーズに立てることができます。 万一、遅延が発生した場合でも、出かける時刻を遅らせるなどして対応できます。
 
-GTFS Realtimeは、公共交通機関がアプリケーション開発者に車両情報をRealtime提供できるようにするためのフィード仕様です。 [GTFS](../schedule/reference) (General Transit Feed Specification) の拡張仕様で、公共交通機関の時刻表や関連する地理情報のオープンデータ形式です。GTFS Realtimeは、実装のしやすさ、GTFS相互運用性、乗客情報に重点を置いて設計されています。
+GTFS リアルタイムは、公共交通機関が運行車両に関するリアルタイムの最新情報をアプリケーション開発者に提供できるようにするためのフィードの仕様です。
 
-この仕様は、[Live Transit Updatesの](https://developers.google.com/transit/google-transit#LiveTransitUpdates)最初のパートナー機関、多くの交通機関開発者、Googleとのパートナーシップにより設計されました。この仕様は、[Apache 2.0 Licenseの](https://www.apache.org/licenses/LICENSE-2.0.html)下で公開されています。
+この仕様は、公共交通機関の時刻表や地理的情報に使用されるオープンなデータ形式である [GTFS](../schedule/reference)（General Transit Feed Specification）の拡張版です。 GTFS リアルタイムは、実装のしやすさ、GTFS との相互運用性、乗客情報に重点を置いて設計されています
 
-## どのように始めればいいですか？
+この仕様は、当初 [Live Transit Updates](https://developers.google.com/transit/google-transit#LiveTransitUpdates) の提携交通機関や多くの乗換案内デベロッパーと Google との間で協力して行われました。 現在は、[Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0.html) の下で公開されています。
 
-1.  以下の概要をお読みください。
-2.  提供する[フィードのエンティティを](feed-entities)決定します。
-3.  [フィードの例を見て](feed-examples)みましょう。
-4.  [リファレンスを](reference)使用して独自のフィードを作成します。
-5.  [作成したフィードを公開](best-practices/#feed-publishing-general-practices)する
+## 利用方法
 
-## GTFS Realtimeフィードの概要
+1. 以下の概要をお読みください。
+2. 提供する[フィードエンティティ](feed-entities)を決定します。
+3. [フィードの例](feed-examples)に目を通します
+4. [リファレンス](reference)を参考にして独自のフィードを作成します。
+5. [フィード](best-practices/#feed-publishing-general-practices)を公開します。
 
-この仕様では、現在、以下の種類の情報をサポートしています。
+## GTFS リアルタイム フィードの概要
 
-*   **トリップアップデート**- 遅延、キャンセル、ルート変更
-*   **サービスアラート**- 停止、駅、ルート、ネットワーク全体に影響する不測の事態。
-*   **車両位置**- 位置と混雑度を含む車両に関する情報
+この仕様では現在、以下の種類の情報をサポートしています。
 
-フィードは、異なるタイプのエンティティを組み合わせることができますが、必須ではありません。フィードはHTTPで提供され、頻繁に更新される。ファイル自体は通常のバイナリファイルなので、どのような種類のウェブサーバーでもファイルをホストして提供することができる（他の転送プロトコルも使用できるかもしれない）。また、Webアプリケーションサーバーを使用して、有効なHTTP GETリクエストに対する応答としてフィードを返すこともできます。フィードの更新頻度や取得方法については、特に制約はありません。
+*   ルート更新情報 - 遅延、中止、ルートの変更
+*   運行情報 - 停車地の変更や、駅、ルート、またはネットワーク全体に影響する不測の事態
+*   車両位置 - 位置と混雑度を含む車両に関する情報
 
-GTFS Realtimeは、車両の_実際の_状態を表示することができるため、フィードは定期的に更新する必要があります - できれば、新しいデータは自動車両位置情報システムから入ってくることが望ましいです。
+フィードは異なるタイプのエンティティを組み合わせることもできますが、必須ではありません。 フィードは HTTP 経由で提供され、更新頻度は高いものとなります。ファイル自体は通常のバイナリ ファイルなので、どの種類のウェブサーバーでもファイルのホストと配信することができます（他の転送プロトコルも使用できます）。 また、Web アプリケーション サーバーを使用した場合は、有効な HTTP GET リクエストに対するレスポンスとしてフィードを返すこともできます。 フィードの更新頻度や取得方法については、特に制約はありません。
+
+GTFS リアルタイムは、車両の「現在の」状態を表示することができるため、フィードは定期的に更新する必要があります。 できれば自動車両位置特定システムから新しいデータが受信されるたびに更新されることが望ましいです。
 
 [フィードエンティティについて](feed-entities)
 
@@ -52,16 +54,18 @@ GTFS Realtimeデータ交換フォーマットは、[プロトコルバッファ
 
 ## データ構造
 
-要素の階層とその型定義は、[gtfs-realtime.proto](proto)ファイルで指定されています。
+要素の階層と各要素のタイプの定義は、[gtfs-realtime.proto](proto) ファイルで指定します。
 
-このテキストファイルは、プログラミングlanguage必要なライブラリを生成するために使用されます。これらのライブラリは、有効なGTFS Realtimeフィードを生成するために必要なクラスや関数を提供します。ライブラリは、フィードの作成を容易にするだけでなく、有効なフィードのみが生成されることを保証します。
+このテキスト ファイルは、選択したプログラミング言語で必要なライブラリを生成するために使用されます。これらのライブラリは、有効な GTFS リアルタイム フィードを生成するために必要なクラスや関数を提供します。 ライブラリを利用することで、フィードの作成が簡単になるだけでなく、有効なフィードだけを確実に生成することができます。
 
-[データ構造の詳細...](reference)
+[データ構造に関する詳細をご覧ください。](reference)
 
-## ヘルプを見る
+## 参考情報
 
-GTFS Realtimeに関する議論に参加し、仕様の変更や追加を提案するには、[GTFS Realtime mailing list](https://groups.google.com/group/gtfs-realtime)メーリングリストに参加し、[google/transit GitHub リポジトリの](https://github.com/google/transit)会話をフォローしましょう。
+GTFS リアルタイムに関するディスカッションに参加して、仕様に対する変更や追加を提案するには、[GTFS Realtime mailing list](https://groups.google.com/group/gtfs-realtime)に参加し、[google/transit GitHub リポジトリ](https://github.com/google/transit)の会話をフォローしてください。
 
-## Google MapsとLive Transit Updates
+## Google マップと Live Transit Updates
 
-GTFS Realtimeを使ったアプリケーションとして、Google Mapsの機能である[Live Transit Updatesが](https://developers.google.com/transit/google-transit#LiveTransitUpdates)あります。これは、Realtime交通情報をユーザーに提供する機能です。もし、公共交通機関の方で、Google MapsのRealtime更新に興味があれば、[Google Transit Partner Pageを](https://maps.google.com/help/maps/transit/partners/live-updates.html)参照してください。
+[Live Transit Updates](https://developers.google.com/transit/google-transit#LiveTransitUpdates) は交通機関の運行状況をリアルタイムにユーザーに伝える Google マップの機能です。
+
+Google マップにリアルタイムの交通情報を提供することに興味をお持ちの公共交通機関の方は、[Google 乗換案内パートナー ヘルプ](https://developers.google.com/transit/google-transit#LiveTransitUpdates)をご覧ください。
