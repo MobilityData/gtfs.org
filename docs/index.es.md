@@ -10,13 +10,13 @@ search:
    <a class="button" href="schedule">GTFS Schedule</a><a class="button" href="realtime">GTFS Realtime</a><a class="button" href="resources">Recursos</a><a class="button" href="extensions">Extensiones</a>
 </div>
 
-El General Transit Feed SpecificationGTFS) es un [estándar abierto](https://www.interoperablemobility.org/definitions/#open_standard) utilizado para distribuir información relevante sobre los sistemas de tránsito a los usuarios. Permite a las agencias de transporte público publicar sus datos de tránsito en un formato que puede ser consumido por una amplia variedad de aplicaciones de software. En la actualidad, miles de proveedores de transporte público utilizan el formato de datos GTFS.
+El General Transit Feed Specification (GTFS) es un [estándar abierto](https://www.interoperablemobility.org/definitions/#open_standard) utilizado para distribuir información relevante sobre los sistemas de transporte público a los usuarios. Permite a las agencias de transporte público publicar sus datos de tránsito en un formato que puede ser consumido por una amplia variedad de aplicaciones de software. En la actualidad, miles de proveedores de transporte público utilizan el formato de datos GTFS.
 
-GTFS consta de dos partes principales: GTFS Schedule GTFS Schedule y GTFS Realtime. GTFS Schedule GTFS Schedule contiene información sobre rutas, horarios, tarifas y detalles geográficos del tránsito, y se presenta en sencillos archivos de texto. Este sencillo formato permite una fácil creación y MAINTENANCE sin depender de software complejo o propietario.
+GTFS consta de dos partes principales: GTFS Schedule y GTFS Realtime. GTFS Schedule contiene información sobre rutas, horarios, tarifas y detalles geográficos del tránsito, y se presenta en sencillos archivos de texto. Este sencillo formato permite una fácil creación y mantenimiento sin depender de software complejo o propietario.
 
 GTFS Realtime contiene actualizaciones de viajes, posiciones de vehículos y alertas de servicio. Se basa en búferes de protocolo, que son un mecanismo de lenguaje (y plataforma) neutro para serializar datos estructurados.
 
-GTFS es compatible en todo el mundo y su uso, importancia y alcance han ido en aumento. Es probable que algún organismo que conozca ya utilice GTFS para representar rutas, Schedule, ubicaciones de paradas y otra información, y que los usuarios ya lo estén consumiendo a través de diversas aplicaciones.
+GTFS es compatible en todo el mundo y su uso, importancia y alcance han ido en aumento. Es probable que algún organismo que conozca ya utilice GTFS para representar rutas, horarios, ubicaciones de paradas y otra información, y que los usuarios ya lo estén consumiendo a través de diversas aplicaciones.
 
 [Más información sobre la historia de GTFS](background.md)
 
@@ -36,7 +36,7 @@ GTFS es más conocido por la información de planificación de viajes, sobre tod
 
 ### GTFS es más que planificación de viajes
 
-En la actualidad, los datosGTFS son utilizados por una gran variedad de aplicaciones de software con fines muy diversos, entre los que se incluyen herramientas de visualización y análisis de datos para la planificación. Disponer de datos actualizados y de alta calidad proporciona información precisa sobre el tránsito no sólo a los usuarios, sino también a los planificadores y responsables políticos, que pueden comprender mejor cómo se utiliza el tránsito en sus comunidades. A partir de 2023, la Administración Federal de Tránsito de Estados Unidos exigirá [a las agencias de tránsito de ese país que presenten datos válidos GTFS](https://www.federalregister.gov/documents/2023/03/03/2023-04379/national-transit-database-reporting-changes-and-clarifications) con su informe anual de la Base de Datos Nacional de Tránsito.
+En la actualidad, los datos GTFS son utilizados por una gran variedad de aplicaciones de software con fines muy diversos, entre los que se incluyen herramientas de visualización y análisis de datos para la planificación. Disponer de datos actualizados y de alta calidad proporciona información precisa sobre el tránsito no sólo a los usuarios, sino también a los planificadores y responsables políticos, que pueden comprender mejor cómo se utiliza el tránsito en sus comunidades. A partir de 2023, la Administración Federal de Tránsito de Estados Unidos exigirá [a las agencias de tránsito de ese país que presenten datos válidos GTFS](https://www.federalregister.gov/documents/2023/03/03/2023-04379/national-transit-database-reporting-changes-and-clarifications) con su informe anual de la Base de Datos Nacional de Tránsito.
 
 ## ¿Qué es GTFS de alta calidad?
 
@@ -44,7 +44,7 @@ GTFS de alta calidad es completo, preciso y actualizado. Esto significa que repr
 
 ### Datos completos
 
-Un GTFS de calidad incluye detalles importantes del servicio, como los cambios de Schedule día festivo y verano, la ubicación exacta de las paradas y los nombres de las rutas y las señales de cabeza que coinciden con otros materiales dirigidos a los usuarios. Incluso si una agencia trabaja con un proveedor para producir GTFS, en última instancia depende de la agencia garantizar que la información presentada en forma impresa, a bordo y en línea sea coherente.
+Un GTFS de calidad incluye detalles importantes del servicio, como los cambios de horarios en días festivos y verano, la ubicación exacta de las paradas y los nombres de las rutas y los letreros que coinciden con otros materiales dirigidos a los usuarios. Incluso si una agencia trabaja con un proveedor para producir GTFS, en última instancia depende de la agencia garantizar que la información presentada en forma impresa, a bordo y en línea sea coherente.
 
 Para obtener información sobre la creación de datos de alta calidad, consulte las [Directrices sobre datos de tránsito de California](https://dot.ca.gov/cal-itp/california-transit-data-guidelines) y las [Buenas prácticas GTFS](schedule/best-practices).
 
