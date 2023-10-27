@@ -36,7 +36,7 @@ GTFS リアルタイムに貢献するには、仕様変更プロセスを確認
 
 ## 最近追加された提案 &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
-最近追加された提案は、[公式のGTFS Realtime 仕様](../reference)として機能するようになりました。詳しくは[リビジョンヒストリーを](../process#revision-history)ご覧ください。
+最近追加された提案は、[公式のGTFS Realtime 仕様](../reference)として機能するようになりました。詳しくは[リビジョンヒストリー](../process#revision-history)をご覧ください。
 
 <div class="row">
     <div class="leftcontainer">
