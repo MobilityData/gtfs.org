@@ -18,7 +18,7 @@ search:
 
 GTFS リアルタイムは、公共交通機関が運行車両に関するリアルタイムの最新情報をアプリケーション開発者に提供できるようにするためのフィードの仕様です。
 
-この仕様は、公共交通機関の時刻表や地理的情報に使用されるオープンなデータ形式である [GTFS](../schedule/reference)（General Transit Feed Specification）の拡張版です。 GTFS リアルタイムは、実装のしやすさ、GTFS との相互運用性、乗客情報に重点を置いて設計されています
+この仕様は、公共交通機関の時刻表や地理的情報に使用されるオープンなデータ形式である [GTFS](../schedule/reference)（General Transit Feed Specification）の拡張版です。 GTFS リアルタイムは、実装のしやすさ、GTFS との相互運用性、乗客情報に重点を置いて設計されています。
 
 この仕様は、当初 [Live Transit Updates](https://developers.google.com/transit/google-transit#LiveTransitUpdates) の提携交通機関や多くの乗換案内デベロッパーと Google との間で協力して行われました。 現在は、[Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0.html) の下で公開されています。
 
