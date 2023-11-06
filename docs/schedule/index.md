@@ -50,7 +50,11 @@ See “[Best Practices: Dataset Publishing](best-practices/#dataset-publishing-g
 
 **For ideas on vendors who offer GTFS services:**
 
-- [Center for Urban Transportation Research, University of South Florida List of GTFS Vendors](https://docs.google.com/spreadsheets/u/1/d/1Gc9mu4BIYC8ORpv2IbbVnT3q8VQ3xkeY7Hz068vT_GQ/pubhtml) 
+- [Center for Urban Transportation Research, University of South Florida List of GTFS Vendors](https://docs.google.com/spreadsheets/u/1/d/1Gc9mu4BIYC8ORpv2IbbVnT3q8VQ3xkeY7Hz068vT_GQ/pubhtml)
+
+**Publishing and sharing your GTFS:**
+
+- [Cal-ITP Data Playbook](https://docs.google.com/document/d/1Yk-XWwseAwGArG_tuUXs4Nd3GO26Uw0q9RTIjGJ4rF4/edit#heading=h.98wc2jmgag54)
 
 See more [online courses](../resources/other/#on-line-courses).
 
