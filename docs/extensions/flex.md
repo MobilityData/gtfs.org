@@ -87,7 +87,8 @@ This area is intended as a community "parking lot". Share something you would li
 - **May 2022**: Start of MnDoT pilot (Cambridge Systematics, MNDoT, Token Transit, Transit, Trillium (OptiBus).  
 - **May 2023**: <a href="https://github.com/google/transit/issues/382" target="_blank">Work on GTFS-Flex: Service Discovery Begins</a>
 - **June 2023**:  <a href="https://mobilitydata.org/recap-mobilitydata-working-meeting-gtfs-flex-service-discovery/" target="_blank">Held Conceptual Working Meeting on GTFS-Flex</a>
-- **july 2023**: <a href="https://github.com/google/transit/pull/388" target="_blank">Published Pull Request #388</a>
+- **July 2023**: <a href="https://github.com/google/transit/pull/388" target="_blank">Published Pull Request #388</a>
+- **August and September 2023**: <a href="https://github.com/google/transit/pull/388" target="_blank">Held "GeoJSON in GTFS?" discussions</a>
 
 ## Glossary
 
