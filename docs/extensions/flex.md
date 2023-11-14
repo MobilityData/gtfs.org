@@ -54,7 +54,7 @@ Visit the Pull Request page to read the full post and contribute to the conversa
 - [Open Trip Planner](https://www.opentripplanner.org/)
 - [Mobility on Demand Sandbox in Vermont](https://www.connectingcommuters.org/)
 - [Tulare County Area Transit](https://ridetcat.org/)
-- [Northwest Oregon Transit Alliance (NW Connector)](https://www.nworegontransit.org/)
+- [Northwest Oregon Transit Alliance (NW Connector)](https://nwconnector.org/other-services/)
 - [Vamos Mobility App](https://vamosmobileapp.com/)
 - [RTD Denver Flexride](https://www.rtd-denver.com/services/flexride)
 - [Nebraska Public Transit DRT OTP Project: Trillium, Olsson, Cambridge Systematics, and TransitPlus](https://trips.nebraskatransit.com/#/)
