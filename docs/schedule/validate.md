@@ -9,7 +9,7 @@ This free and open-source canonical GTFS Schedule validator is maintained by [Mo
 <!-- <img class="center" src="../../assets/validator_animation.gif" width="150"> -->
 <br>
 
-[**Read the release notes for the latest version**](https://github.com/MobilityData/gtfs-validator/releases/latest)
+**Current version: 4.2** [(see the release notes)](https://github.com/MobilityData/gtfs-validator/releases/latest)
 
 <hr>
 
