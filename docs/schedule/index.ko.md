@@ -32,19 +32,28 @@ search:
 
 <hr/>
 
-World Bank Open Learning Campus(OLC)는 "[Introduction to the General Transit Feed Specification (GTFS) and Informal Transit System Mapping](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)”. 이 과정에는 다음 섹션이 포함됩니다.
+**기술적인 세부 사항**GTFS **, 그것이 무엇인지, 데이터를 생성하고 유지하는 방법:**
 
-* 무엇인가요GTFS ? 기록 및 파일 구조
-* 무엇인가요GTFS ? 시각화 및 커뮤니티
-* 설정GTFS 밥을 먹이다
-* GitHub 및 오픈 소스 도구 소개
-* 현장의 이야기
-* 대중교통 데이터를 매핑하는 방법
-* 도시의 첫 번째 피드에 대한 데이터를 수집하는 방법
-* 앱 설문조사
-* GTFS-Realtime
+- GTFS Schedule [개요](schedule/)
+- [GTFS](<https://olc.worldbank.org/content/introduction-general-transit-feed-specification-\<glossary variable=>) [-and-informal-transit-system-mapping">세계은행 'GTFS 소개' 온라인 과정](<https://olc.worldbank.org/content/introduction-general-transit-feed-specification-\<glossary variable=>)
+- [MBTA](https://mybinder.org/v2/gh/mbta/gtfs_onboarding/main?urlpath=lab/tree/GTFS_Onboarding.ipynb)GTFS [온보딩](https://mybinder.org/v2/gh/mbta/gtfs_onboarding/main?urlpath=lab/tree/GTFS_Onboarding.ipynb)
 
-더 많은 [온라인 과정을](../resources/other/#on-line-courses) 참조하십시오.
+**다양한 기능이 포함된 예시 피드를 확인하세요.**
+
+- GTFS [모빌리티 데이터베이스](https://database.mobilitydata.org/)
+- [트랜짓랜드](https://www.transit.land/)
+
+**무료 도구 및 교육 자료:**
+
+- [이동성데이터 GTFS Schedule 검증인](https://GTFS-validator.mobilitydata.org/)
+- [NRTAP 수업 및GTFS빌더](https://www.nationalrtap.org/Technology-Tools-Builder/Support)
+- [Arcadis IBI 데이터 도구](https://www.ibigroup.com/ibi-products/transit-data-tools/)
+
+**제공하는 공급업체에 대한 아이디어 GTFS 서비스:**
+
+- [사우스플로리다대학교 도시교통연구센터 GTFS 공급업체](https://docs.google.com/spreadsheets/u/1/d/1Gc9mu4BIYC8ORpv2IbbVnT3q8VQ3xkeY7Hz068vT_GQ/pubhtml)
+
+더 많은 [온라인 강좌를 확인하세요(../resources/other/#on-line-courses).
 
 ## 도움말 및 커뮤니티 얻기
 
