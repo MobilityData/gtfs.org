@@ -32,28 +32,19 @@ Lihat “ [Praktik Terbaik: Penerbitan Kumpulan Data](best-practices/#dataset-pu
 
 <hr/>
 
-**Detail teknis tentang GTFS, apa itu, dan cara membuat dan memelihara data:**
+Open Learning Campus (OLC) Bank Dunia menawarkan kursus online berbasis mandiri yang disebut “[Introduction to the General Transit Feed Specification (GTFS) and Informal Transit System Mapping](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)”. Kursus ini mencakup bagian berikut:
 
-- [GTFS Schedule Ringkasan](schedule/)
-- [GTFS Kursus online "Pengantar GTFS" Bank Dunia](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-and-informal-transit-system-mapping")
-- [MBTA GTFS Orientasi](https://mybinder.org/v2/gh/mbta/gtfs_onboarding/main?urlpath=lab/tree/GTFS_Onboarding.ipynb)
+* Apa GTFS ? Sejarah & Struktur File
+* Apa GTFS ? Visualisasi & Komunitas
+* Menyiapkan GTFS Memberi makan
+* Pengantar GitHub & Alat Sumber Terbuka
+* Cerita dari Lapangan
+* Cara Memetakan Data Transit
+* Cara Mengumpulkan Data untuk Umpan Pertama Kota
+* Survei Aplikasi
+* GTFS-Realtime
 
-**Lihat contoh feed dengan berbagai fitur:**
-
-- [GTFS Basis Data Mobilitas](https://database.mobilitydata.org/)
-- [Transitland](https://www.transit.land/)
-
-**Untuk alat dan materi instruksi gratis:**
-
-- [Data MobilitasGTFS Schedule Validator](https://gtfs-validator.mobilitydata.org/)
-- [Pelajaran NRTAP dan GTFS Pembangun](https://www.nationalrtap.org/Technology-Tools/GTFS-Builder/Support)
-- [Alat Data Arcadis IBI](https://www.ibigroup.com/ibi-products/transit-data-tools/)
-
-**Untuk ide vendor yang menawarkan GTFS jasa:**
-
-- [Pusat Penelitian Transportasi Perkotaan, Daftar Universitas South Florida GTFS Vendor](https://docs.google.com/spreadsheets/u/1/d/1Gc9mu4BIYC8ORpv2IbbVnT3q8VQ3xkeY7Hz068vT_GQ/pubhtml)
-
-Lihat [kursus online lainnya](../resources/other/#on-line-courses).
+Lihat [kursus online](../resources/other/#on-line-courses) lainnya.
 
 ## Mendapatkan Bantuan & Komunitas
 

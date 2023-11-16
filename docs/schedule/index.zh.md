@@ -37,27 +37,17 @@ search:
 
 <hr/>
 
-**有关GTFS 的技术细节、它是什么以及如何创建和维护数据：**
+世界银行开放学习校园（OLC）提供了一门自学的在线课程，名为 "[Introduction to the General Transit Feed Specification (GTFS) and Informal Transit System Mapping](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)"。该课程包括以下部分。
 
-- [GTFS Schedule概览](schedule/)
-- [世界银行 "GTFS 入门 "在线课程](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-GTFS-and-informal-transit-system-mapping")
-- [MBTAGTFS上岗培训](https://mybinder.org/v2/gh/mbta/gtfs_onboarding/main?urlpath=lab/tree/GTFS_Onboarding.ipynb)
-
-**查看具有各种功能的馈送示例：**
-
-- [GTFS移动数据库](https://database.mobilitydata.org/)
-- [交通地](https://www.transit.land/)
-
-**免费工具和教学材料：**
-
-- [MobilityDataGTFS Schedule验证器](https://GTFS-validator.mobilitydata.org/)
-- [NRTAP 课程和GTFS生成器](https://www.nationalrtap.org/Technology-Tools/GTFS-Builder/Support)
-- [Arcadis IBI 数据工具](https://www.ibigroup.com/ibi-products/transit-data-tools/)
-
-**了解提供GTFS服务的供应商：**
-
-- [南佛罗里达大学城市交通研究中心GTFS供应商列表](https://docs.google.com/spreadsheets/u/1/d/1Gc9mu4BIYC8ORpv2IbbVnT3q8VQ3xkeY7Hz068vT_GQ/pubhtml)
-
+* 什么是GTFS？历史和文件结构
+* 什么是GTFS？视觉化和社区
+* 设置GTFS饲料
+* GitHub和开源工具介绍
+* 来自实地的故事
+* 如何绘制交通数据图
+* 如何为一个城市的第一个反馈收集数据
+* 应用程序调查
+* GTFS-Realtime
 
 查看更多[在线课程](../resources/other/#on-line-courses)。
 

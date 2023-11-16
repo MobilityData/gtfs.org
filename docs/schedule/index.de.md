@@ -37,29 +37,19 @@ Siehe "[Bewährte Praktiken: Dataset Publishing](best-practices/#dataset-publish
 
 <hr/>
 
-**Technische Details über GTFS, was es ist und wie man Daten erstellt und pflegt:**
+Der Open Learning Campus (OLC) der Weltbank bietet einen Online-Kurs zum Selbststudium mit dem Titel “[Introduction to the General Transit Feed Specification (GTFS) and Informal Transit System Mapping](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)”. Dieser Kurs umfasst die folgenden Abschnitte:
 
-- [GTFS Schedule Übersicht](schedule/)
-- [Online-Kurs "Einführung in GTFS" der Weltbank](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)
-- [MBTA GTFS](https://mybinder.org/v2/gh/mbta/gtfs_onboarding/main?urlpath=lab/tree/GTFS_Onboarding.ipynb)
-
-**Sehen Sie sich Beispiel-Feeds mit verschiedenen Funktionen an:**
-
-- [GTFS](https://database.mobilitydata.org/)
-- [Transitland](https://www.transit.land/)
-
-**Kostenlose Tools und Lehrmaterial:**
-
-- [MobilityData GTFS Schedule Validator](https://gtfs-validator.mobilitydata.org)
-- [NRTAP-Lektionen und GTFS Builder](https://www.nationalrtap.org/Technology-Tools/GTFS-Builder/Support)
-- [Arcadis IBI-Datenwerkzeuge](https://www.ibigroup.com/ibi-products/transit-data-tools/)
-
-**Ideen zu Anbietern von GTFS:**
-
-- [Zentrum für Stadtverkehrsforschung, Universität von Südflorida Liste der GTFS](https://docs.google.com/spreadsheets/u/1/d/1Gc9mu4BIYC8ORpv2IbbVnT3q8VQ3xkeY7Hz068vT_GQ/pubhtml)
+* Was ist GTFS? Geschichte und Dateistruktur
+* Was ist GTFS? Visualisierung & Gemeinschaft
+* Einrichten eines GTFS
+* Einführung in GitHub & Open Source Tools
+* Geschichten aus der Praxis
+* Wie man Transitdaten abbildet
+* Wie man Daten für den ersten Feed einer Stadt sammelt
+* App-Übersicht
+* GTFS-Realtime
 
 Siehe weitere [Online-Kurse](../resources/other/#on-line-courses).
-
 
 ## Hilfe & Gemeinschaft
 

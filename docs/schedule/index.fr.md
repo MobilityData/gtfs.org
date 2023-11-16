@@ -37,28 +37,19 @@ Voir "[Meilleures pratiques : Publication de jeux de données](best-practices/#d
 
 <hr/>
 
-**Détails techniques sur GTFS, ce que c'est, et comment créer et maintenir les données :**
+L'Open Learning Campus (OLC) de la Banque mondiale propose un cours en ligne autodidacte intitulé “[Introduction to the General Transit Feed Specification (GTFS) and Informal Transit System Mapping](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)”. Ce cours comprend les sections suivantes :
 
-- [Vue d'ensemble du GTFS Schedule](schedule/)
-- [Cours en ligne de la Banque mondiale "Intro to GTFS" (en anglais)](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)
-- [MBTA GTFS Onboarding](https://mybinder.org/v2/gh/mbta/gtfs_onboarding/main?urlpath=lab/tree/GTFS_Onboarding.ipynb)
+* Qu'est-ce que GTFS? Historique et structure du fichier
+* Qu'est-ce que le GTFS? Visualisation et communauté
+* Configuration d'un flux GTFS
+* Introduction à GitHub et aux outils Open Source
+* Histoires du terrain
+* Comment cartographier les données sur les transports en commun
+* Comment collecter des données pour le premier flux d'une ville ?
+* Enquête sur les applications
+* GTFS-Realtime
 
-**Voir des exemples de flux avec diverses fonctionnalités :**
-
-- [Base de données de mobilitéGTFS](https://database.mobilitydata.org/)
-- [Transitland](https://www.transit.land/)
-
-**Pour des outils gratuits et du matériel pédagogique :**
-
-- [Validateur d'GTFS Schedule MobilityData](https://gtfs-validator.mobilitydata.org/)
-- [Leçons NRTAP et GTFS Builder](https://www.nationalrtap.org/Technology-Tools/GTFS-Builder/Support)
-- [Outils de données IBI d'Arcadis](https://www.ibigroup.com/ibi-products/transit-data-tools/)
-
-**Pour des idées sur les fournisseurs qui offrent des services GTFS:**
-
-- [Center for Urban Transportation Research, University of South Florida Liste des fournisseurs de GTFS](https://docs.google.com/spreadsheets/u/1/d/1Gc9mu4BIYC8ORpv2IbbVnT3q8VQ3xkeY7Hz068vT_GQ/pubhtml)
-
-Voir d'autres [cours en ligne](../resources/other/#on-line-courses).
+Voir plus de [cours en ligne](../resources/other/#on-line-courses).
 
 ## Obtenir de l'aide et la communauté
 

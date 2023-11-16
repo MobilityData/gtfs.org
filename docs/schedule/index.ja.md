@@ -27,38 +27,29 @@ GTFSフィードを作成するには、以下のステップに従います。
 
 <hr/>
 
-データセットは、ZIPファイル名を含む公開された恒久的なURLで公開されるべきである。(例:www.agency.org/gtfs/gtfs.zip)。理想的には、ソフトウェア・アプリケーションによるダウンロードを容易にするため、ファイルにアクセスするためにログインを必要とせず、直接ダウンロードできるURLであるべきである。GTFSデータセットはオープンにダウンロードできるようにすることが推奨されるが（最も一般的な方法）、データ提供者がライセンスその他の理由でGTFSアクセスを制御する必要がある場合は、APIキーを用いてGTFSデータセットへのアクセスを制御し、自動ダウンロードを容易にすることが推奨される。
+データセットは、ZIPファイル名を含む公開された恒久的なURLで公開されるべきである。(例:www.agency.org/gtfs/gtfs.zip)。理想的には，消費するソフトウェア・アプリケーションによるダウンロードを容易にするため，ファイルにアクセスするためにログインを必要とせず，直接ダウンロードできるURLであるべきである．GTFSデータセットはオープンにダウンロードできるようにすることが推奨されるが（最も一般的な方法）、データ提供者がライセンスその他の理由でGTFSアクセスを制御する必要がある場合は、APIキーを用いてGTFSデータセットへのアクセスを制御し、自動ダウンロードを容易にすることが推奨される。
 
 GTFSデータをホストするWebサーバーは、ファイルの更新日を正しく報告するように設定する必要があります（14.29項の「HTTP/1.1 - Request for Comments 2616」を参照）。
 
-「[ベストプラクティス](best-practices/#dataset-publishing-general-practices)」を参照してください。「[データセットの公開](best-practices/#dataset-publishing-general-practices)」を参照してください。
+[ベストプラクティス](best-practices/#dataset-publishing-general-practices)"を参照してください。[データセットの公開](best-practices/#dataset-publishing-general-practices)」を参照してください。
 
 ## トレーニング
 
 <hr/>
 
-**GTFS技術的な詳細、GTFS何か、データの作成と保守の方法：**
+世界銀行オープンラーニングキャンパス（OLC）は、「[Introduction to the General Transit Feed Specification (GTFS) and Informal Transit System Mapping](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)」というセルフベースのオンラインコースを提供しています。このコースには、以下のセクションがあります。
 
-- [GTFS Schedule概要](schedule/)
-- [世界銀行「GTFS入門」オンラインコース](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-GTFS-and-informal-transit-system-mapping")
-- [MBTAGTFSオンボーディング](https://mybinder.org/v2/gh/mbta/gtfs_onboarding/main?urlpath=lab/tree/GTFS_Onboarding.ipynb)
+* GTFS？歴史とファイル構造
+* GTFS？可視化およびコミュニティ
+* GTFSフィードのセットアップ
+* GitHubとオープンソースツールの紹介
+* 現場からの話
+* トランジットデータをマッピングする方法
+* 都市初のフィードのためのデータを収集する方法
+* アプリ調査
+* GTFS-Realtime
 
-**様々な機能を持つフィードの例を見る：**
-
-- [GTFSモビリティ・データベース](https://database.mobilitydata.org/)
-- [トランジットランド](https://www.transit.land/)
-
-**無料のツールや教材**
-
-- [MobilityDataGTFS Schedule検証ツール](https://GTFS-validator.mobilitydata.org/)
-- [NRTAPレッスンとGTFSビルダー](https://www.nationalrtap.org/Technology-Tools/GTFS-Builder/Support")
-- [Arcadis IBIデータツール](https://www.ibigroup.com/ibi-products/transit-data-tools/)
-
-**GTFSサービスを提供するベンダーのアイデア：**
-
-- [南フロリダ大学都市交通研究センターGTFSベンダーリスト](https://docs.google.com/spreadsheets/u/1/d/1Gc9mu4BIYC8ORpv2IbbVnT3q8VQ3xkeY7Hz068vT_GQ/pubhtml)
-
-[オンラインコースをもっと見る](../resources/other/#on-line-courses)
+他の[オンラインコースも](../resources/other/#on-line-courses)ご覧ください。
 
 ## ヘルプとコミュニティ
 
@@ -66,7 +57,7 @@ GTFSデータをホストするWebサーバーは、ファイルの更新日を�
 
 ### メーリングリスト
 
-公共交通機関のデータ、ソフトウェア、GTFS リアルタイムやGTFSのようなフォーマット、その他の問題について質問がある場合、良いリソースとなるメーリングリストが数多く存在します。
+公共交通機関のデータ、ソフトウェア、GTFS GTFSようなフォーマット、その他の問題について質問がある場合、良いリソースとなるメーリングリストが数多く存在します。
 
 * GTFS Changes](https://groups.google.com/group/gtfs-changes): [GTFS Changes 文書](https://github.com/google/transit/blob/master/gtfs/CHANGES.md)に記載された GTFS 仕様の拡張案について議論します。
 * GTFS Realtime](https://groups.google.com/group/gtfs-realtime): [GTFS-realtime specification](https://github.com/google/transit/tree/master/gtfs-realtime) について議論しました。

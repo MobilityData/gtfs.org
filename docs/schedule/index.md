@@ -33,7 +33,7 @@ See “[Best Practices: Dataset Publishing](best-practices/#dataset-publishing-g
 
 **Technical details about GTFS, what it is, and how to create and maintain data:**
 
-- [GTFS Schedule Overview](schedule/) 
+- [GTFS Schedule Overview](https://gtfs.org/schedule/) 
 - [World Bank "Intro to GTFS" online course](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)
 - [MBTA GTFS Onboarding](https://mybinder.org/v2/gh/mbta/gtfs_onboarding/main?urlpath=lab/tree/GTFS_Onboarding.ipynb)
 

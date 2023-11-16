@@ -37,26 +37,17 @@ Ver "[Melhores Práticas](best-practices/#dataset-publishing-general-practices)"
 
 <hr/>
 
-**Detalhes técnicos sobre o GTFS, o que ele é e como criar e manter dados:**
+O Open Learning Campus (OLC) do Banco Mundial oferece um curso online auto-instrutivo chamado “[Introduction to the General Transit Feed Specification (GTFS) and Informal Transit System Mapping](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)”. Este curso inclui as seguintes seções:
 
-- [Visão geral Schedule do GTFS](schedule/)
-- [Curso on-line "Introdução à GTFS" do Banco Mundial](<https://olc.worldbank.org/content/introduction-general-transit-feed-specification-GTFS-and-informal-transit-system-mapping)
-- [MBTA GTFS Onboarding](https://mybinder.org/v2/gh/mbta/gtfs_onboarding/main?urlpath=lab/tree/GTFS_Onboarding.ipynb)
-
-**Veja exemplos de feeds com vários recursos:**
-
-- [Banco de dados de mobilidadeGTFS](https://database.mobilitydata.org/)
-- [Transitland](https://www.transit.land/)
-
-**Para ferramentas gratuitas e materiais de instrução:**
-
-- [Validador de GTFS Schedule MobilityData](https://gtfs-validator.mobilitydata.org/)
-- [Lições do NRTAP e GTFS Builder](https://www.nationalrtap.org/Technology-Tools/GTFS-Builder/Support)
-- [Ferramentas de dados IBI da Arcadis](https://www.ibigroup.com/ibi-products/transit-data-tools/)
-
-**Para obter ideias sobre fornecedores que oferecem serviços de GTFS:**
-
-- [Center for Urban Transportation Research, University of South Florida Lista de fornecedores de GTFS](https://docs.google.com/spreadsheets/u/1/d/1Gc9mu4BIYC8ORpv2IbbVnT3q8VQ3xkeY7Hz068vT_GQ/pubhtml)
+* O que é GTFS? História & Estrutura do arquivo
+* O que é GTFS? Visualização & Comunidade
+* Configurando uma alimentação GTFS
+* Introdução às ferramentas GitHub & Open Source
+* Histórias do campo
+* Como mapear dados de trânsito
+* Como coletar dados para a primeira alimentação de uma cidade
+* Pesquisa de aplicação
+* GTFS-Realtime
 
 Veja mais [cursos on-line](../resources/other/#on-line-courses).
 

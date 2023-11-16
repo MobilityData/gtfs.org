@@ -33,30 +33,21 @@ search:
 ## 訓練
 <hr>
 
-**技術細節有關GTFS，它是什麼，以及如何建立和維護資料：**
-
-- [GTFS Schedule概述](schedule/)
-- [世界銀行「GTFS 簡介」線上課程](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-and-informal-transit-system-mapping)
-- [MBTA GTFS 入職](https://mybinder.org/v2/gh/mbta/gtfs_onboarding/main?urlpath=lab/tree/GTFS_Onboarding.ipynb)
-
-**查看具有各種功能的範例提要：**
-
-- [GTFS行動資料庫](https://database.mobilitydata.org/)
-- [運輸國](https://www.transit.land/)
-
-**如需免費工具及教材：**
-
-- [MobilityData GTFS Schedule驗證器](GTFS-validator.mobilitydata.org/)
-- [GTFS NRTAP 課程和 建設者](https://www.nationalrtap.org/Technology-Tools-Builder/Support)
-- [凱諦 IBI 資料工具](https://www.ibigroup.com/ibi-products/transit-data-tools/)
-
-**有關提供服務的供應商的想法**GTFS**服務：**
-
-- [南佛羅裡達大學城市交通研究中心 GTFS 供應商](https://docs.google.com/spreadsheets/u/1/d/1Gc9mu4BIYC8ORpv2IbbVnT3q8VQ3xkeY7Hz068vT_GQ/pubhtml)
-
-[查看更多線上課程](../resources/other/#on-line-courses)。
+世界银行开放学习园区 (OLC) 提供名为“ [GTFS](<https://olc.worldbank.org/content/introduction-general-transit-feed-specification-\<glossary variable=>) ”的基于自我的在线课程[-and-informal-transit-system-mapping">介绍](<https://olc.worldbank.org/content/introduction-general-transit-feed-specification-\<glossary variable=>)General Transit Feed Specification[(](<https://olc.worldbank.org/content/introduction-general-transit-feed-specification-\<glossary variable=>)GTFS [) 和非正式交通系统映射](<https://olc.worldbank.org/content/introduction-general-transit-feed-specification-\<glossary variable=>)”。本课程包括以下部分：
 
 
+- 什么是GTFS ?历史和文件结构
+- 什么是GTFS ?可视化与社区
+- 设置一个GTFS喂养
+- GitHub 和开源工具简介
+- 田野故事
+- 如何映射公交数据
+- 如何为城市的第一个 Feed 收集数据
+- 应用调查
+- GTFS -Realtime
+
+
+查看更多 [在線課程](../resources/other/#on-line-courses).
 
 ## 獲得幫助和社區
 <hr>

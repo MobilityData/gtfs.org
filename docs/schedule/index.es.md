@@ -37,28 +37,19 @@ Véase "[Mejores prácticas: Publicación de conjuntos de datos](best-practices/
 
 <hr/>
 
-**Detalles técnicos sobre GTFS, qué es y cómo crear y mantener los datos:**
+El Open Learning Campus (OLC) del Banco Mundial ofrece un curso en línea autodidáctico llamado “[Introduction to the General Transit Feed Specification (GTFS) and Informal Transit System Mapping](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)”. Este curso incluye las siguientes secciones:
 
-- [Visión general GTFS Schedule](schedule/)
-- [Curso en línea del Banco Mundial "Introducción a los GTFS](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)
-- [MBTA GTFS Onboarding](https://mybinder.org/v2/gh/mbta/gtfs_onboarding/main?urlpath=lab/tree/GTFS_Onboarding.ipynb)
+* ¿Qué es el GTFS? Historia y estructura de los archivos
+* ¿Qué es el GTFS? Visualización y comunidad
+* Configuración de una fuente GTFS
+* Introducción a GitHub y a las herramientas de código abierto
+* Historias de campo
+* Cómo mapear los datos de tránsito
+* Cómo recopilar datos para el primer feed de una ciudad
+* Encuesta sobre la aplicación
+* GTFS-Realtime
 
-**Ver ejemplos de feeds con diversas características:**
-
-- [Base de datos de movilidadGTFS](https://database.mobilitydata.org/)
-- [Transitland](https://www.transit.land/)
-
-**Para herramientas gratuitas y material didáctico:**
-
-- [Validador de horarios GTFS Schedule MobilityData](https://gtfs-validator.mobilitydata.org/)
-- [Lecciones NRTAP y GTFS Builder](https://www.nationalrtap.org/Technology-Tools/GTFS-Builder/Support)
-- [Herramientas de datos Arcadis IBI](https://www.ibigroup.com/ibi-products/transit-data-tools/)
-
-**Para obtener ideas sobre proveedores que ofrecen servicios GTFS:**
-
-- [Center for Urban Transportation Research, University of South Florida Lista de proveedores GTFS](https://docs.google.com/spreadsheets/u/1/d/1Gc9mu4BIYC8ORpv2IbbVnT3q8VQ3xkeY7Hz068vT_GQ/pubhtml)
-
-Ver más [cursos en línea](../resources/other/#on-line-courses).
+Ver más [cursos en](../resources/other/#on-line-courses) línea.
 
 ## Conseguir ayuda y comunidad
 
