@@ -62,6 +62,4 @@ Every new feature adds complexity to the creation and reading of feeds. Therefor
 <hr>
 
 ## Revision History
-```markdown
 {{ external_markdown('https://raw.githubusercontent.com/google/transit/master/gtfs/CHANGES.md', '### Revision History') }}
-```
