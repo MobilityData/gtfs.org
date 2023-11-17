@@ -44,6 +44,98 @@ Recently merged proposals that are now features of the [official GTFS Schedule s
 
 <div class="row">
     <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/406" class="no-icon" target="_blank">Best Practices: Add Dataset Publishing guidelines and Practice Recommendations for all files</a></h3>
+        <p class="maintainer">#406 by <a href="https://github.com/Sergiodero" class="no-icon" target="_blank">Sergiodero</a> was merged on Nov 16, 2023</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Adds two sections of the GTFS Best Practices to the specification: Dataset Publishing guidelines and Practice Recommendations for all files</li>
+            <li>Updates a reference to Google’s transitfeed tool merge function, so it references a list of merge tools instead</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/385" class="no-icon" target="_blank">Add fare_media_type = 1</a></h3>
+        <p class="maintainer">#385 by <a href="https://github.com/tzujenchanmbd" class="no-icon" target="_blank">tzujenchanmbd</a> was merged on Aug 2, 2023</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Add <code>fare_media_type=1</code> description in <code>fare_media.txt</code></li>
+            <li>Allows to show the price for fares that are purchased on a paper ticket and to specify that a paper ticket needs to be used to validate the ride</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/386" class="no-icon" target="_blank">Best practices: add recommended presence</a></h3>
+        <p class="maintainer">#386 by <a href="https://github.com/emmambd" class="no-icon" target="_blank">emmambd</a> was merged on Aug 1, 2023</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Adds a new Recommended presence in the specification that conforms to RFC conventions</li>
+            <li>Allows to clearly state that a field or file is not required, but adding it is a best practice that should be considered</li>
+            <li>Updates information for multiple files and fields to reflect their recommended presence based on GTFS Best Practices</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/378" class="no-icon" target="_blank">Clarify implied timezone in stop_times</a></h3>
+        <p class="maintainer">#378 by <a href="https://github.com/tzujenchanmbd" class="no-icon" target="_blank">tzujenchanmbd</a> was merged on Aug 1, 2023</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Extends descriptions to clarify the usage of time zone for <code>stop_times.arrival_time</code> and <code>stop_times.departure_time</code></li>
+            <li>Intended to avoid producers providing time based on incorrect time zone and to prevent potential confusion that may arise after introduction of time-variable fares</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/380" class="no-icon" target="_blank">Specify shape_dist_traveled must not exceed the trip shape's maximum distance</a></h3>
+        <p class="maintainer">#380 by <a href="https://github.com/stevenmwhite" class="no-icon" target="_blank">stevenmwhite</a> was merged on Jul 28, 2023</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Adds clarification in <code>stop_times.shape_dist_traveled</code> description to specify that the value used in this field must not be greater than the trip shape's maximum distance</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/357" class="no-icon" target="_blank">Add variable fares by time or day</a></h3>
+        <p class="maintainer">#357 by <a href="https://github.com/isabelle-dr" class="no-icon" target="_blank">isabelle-dr</a> was merged on Jul 27, 2023</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Time-variable fares is an important functionality developed as part of the <a href="../../extensions/fares-v2">GTFS Fares-v2 extension proposal</a></li>
+            <li>Allows to represent fares differentiated based on the time of the day or the day of the week, such as peak and off-peak fares</li>
+            <li>Adds a new file: <code>timeframes.txt</code>, to define moments in time where the fare applies</li>
+            <li>Extends <code>fare_leg_rules.txt</code> with <code>from_timeframe_id</code>, and <code>to_timeframe_id</code> to specify that a fare leg rule applies only if the beginning or end of the leg is in a specified timeframe</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/379" class="no-icon" target="_blank">Forbid subfolders in GTFS files</a></h3>
+        <p class="maintainer">#379 by <a href="https://github.com/thbar" class="no-icon" target="_blank">thbar</a> was merged on Jul 18, 2023</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Expanded an existing file requirement to clarify that the files must reside at the root level of a zip file, not in a subfolder.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="leftcontainer">
         <h3 class="title"><a href="https://github.com/google/transit/pull/355" class="no-icon" target="_blank">Add fare media</a></h3>
         <p class="maintainer">#355 by <a href="https://github.com/isabelle-dr" class="no-icon" target="_blank">isabelle-dr</a> was merged on Mar 14, 2023</p>
     </div>
