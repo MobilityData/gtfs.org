@@ -62,3 +62,4 @@ You can stay up to date and join the discussions around Fares v2 by joining our 
 - **December 2022**: <a href="https://github.com/google/transit/issues/341#issuecomment-1339947915" target="_blank">Community identifies stack ranked order of features to prioritize iterations</a>
 - **March 2023**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">Fare media passes</a>
 - **July 2023**: <a href="https://github.com/google/transit/pull/357#issuecomment-1653561813" target="_blank">Fares that vary by time/day passes</a>
+- **November 2023**: <a href="https://github.com/google/transit/pull/405#issuecomment-1830665141" target="_blank">Dedicated files to define networks passes</a>
