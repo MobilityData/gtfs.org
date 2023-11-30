@@ -20,7 +20,7 @@ GTFS is supported around the world and its use, importance, and scope has been i
 
 ## Why Use GTFS?
 
-GTFS is used by over 10,000 transit agencies in over 100 countries. Most transit agencies have heard of GTFS, and it has quickly become an industry standard. Some agencies produce this data themselves, while others employ a vendor to create and maintain data for them. And because it is a simple, text-based Open Standard, many transit technology vendors can already read and write to GTFS files. By better understanding GTFS, agencies can make better choices when it comes to data. The choices agencies make in how to maintain and distribute GTFS can have a huge impact on service quality.
+GTFS is used by over 10,000 transit agencies in over 100 countries. Most transit agencies have heard of GTFS, and it has quickly become an industry standard. Some agencies produce this data themselves, while others employ a vendor to create and maintain data for them. And because it is a simple, text-based Open Standard, many transit technology vendors can already read and write to GTFS files. By better understanding GTFS, agencies can make better choices when it comes to data. The choices agencies make in how to maintain and distribute GTFS can have a huge impact on service quality. 
 
 ### Open Data means more opportunity and choices
 
@@ -39,12 +39,16 @@ GTFS data is now being used by a variety of software applications for many diffe
 ## What is High Quality GTFS?
 
 High quality GTFS is complete, accurate, and up-to-date. This means that it represents how services are currently operating and provides as much information as possible.
+For information on creating high quality data, see the [California Transit Data Guidelines](https://dot.ca.gov/cal-itp/california-transit-data-guidelines), the [GTFS Schedule Best Practices](https://gtfs.org/schedule/best-practices/) and the [GTFS Realtime Best Practices](https://gtfs.org/realtime/best-practices/).
+For evaluating the quality of a dataset, see [Validate](https://gtfs.org/schedule/validate/) page.
 
 ### Complete Data
 
 Quality GTFS includes important service details such as holiday and summer schedule changes, accurate stop locations, and names for routes and headsigns that match other rider-facing materials. Even if an agency works with a vendor to produce GTFS, it’s ultimately up to the agency to ensure that the information presented in print, on board, and online is consistent.
 
-For information on creating high quality data, see the [California Transit Data Guidelines](https://dot.ca.gov/cal-itp/california-transit-data-guidelines) and the [GTFS Best Practices](https://gtfs.org/schedule/best-practices/)
+### Accurate
+
+Accurate data is essential for providing transit riders with a reliable and user-friendly transportation experience. Errors in the data can block a portion or the totality of a dataset from being used. 
 
 ### Up to Date
 
