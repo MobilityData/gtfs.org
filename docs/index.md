@@ -46,7 +46,7 @@ For evaluating the quality of a dataset, see [Validate](https://gtfs.org/schedul
 
 Quality GTFS includes important service details such as holiday and summer schedule changes, accurate stop locations, and names for routes and headsigns that match other rider-facing materials. Even if an agency works with a vendor to produce GTFS, it’s ultimately up to the agency to ensure that the information presented in print, on board, and online is consistent.
 
-### Accurate
+### Accurate Data
 
 Accurate data is essential for providing transit riders with a reliable and user-friendly transportation experience. Errors in the data can block a portion or the totality of a dataset from being used. 
 
