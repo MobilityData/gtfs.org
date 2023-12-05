@@ -283,7 +283,7 @@ For this example, based on WMATA fares, the fare depends only on the leg's depar
 | 1          | peak_fare       | weekday_peak            |                       |
 | 1          | regular_fare    | weekday_offpeak         |                       |
 
-Note that `network_id` references the foreign ID `routes.network_id`, and that the selection of the correct fare product for each trip will be a combination of arrival and departure times from `stop_times.txt` along with the times defined in `timeframes.txt`. 
+Note that `network_id` references the foreign ID `networks.network_id` or `routes.network_id`, and that the selection of the correct fare product for each trip will be a combination of arrival and departure times from `stop_times.txt` along with the times defined in `timeframes.txt`. 
 
 In this case, a user paying for a trip that departs at  7:30 AM would have to pay 5.00 USD (Peak fare) while another user departing at 11:30 AM would only have to pay a 3.00 USD fare (Off-peak fare).
 
