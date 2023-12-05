@@ -310,7 +310,7 @@ This example is based on a <a href="https://docs.google.com/spreadsheets/d/1-cD-
 | ITO2383 | Grand Central       | 40.752823 | -73.977196 |
 
 
-[**stops_areas.txt**](../../reference/#stops_areastxt)
+[**stop_areas.txt**](../../reference/#stop_areastxt)
 
 | area_id   | stop_id |
 |-----------|---------|
@@ -325,6 +325,19 @@ This example is based on a <a href="https://docs.google.com/spreadsheets/d/1-cD-
 | mnr_HUD-8 | ITO1789 |
 | mnr_HUD-9 | ITO2096 |
 
+
+[**route_networks.txt**](../../reference/#route_networkstxt)
+
+| network_id | route_id |
+|------------|----------|
+| mnr_hudson | 669      |
+
+
+[**networks.txt**](../../reference/#networkstxt)
+
+| network_id | network_name    |
+|------------|-----------------|
+| mnr_hudson | MNR Hudson Line |
 
 Service days for train services 3 and 13 are defined using `calendar.txt`. Notably, other records with generic days (i.e. weekdays, weekends, and anyday) that aren't associated with any trips are defined, and these will be associated with timeframes in order to model `time-variable fares`.
 
