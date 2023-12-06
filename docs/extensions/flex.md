@@ -54,7 +54,7 @@ Visit the Pull Request page to read the full post and contribute to the conversa
 - [Open Trip Planner](https://www.opentripplanner.org/)
 - [Mobility on Demand Sandbox in Vermont](https://www.connectingcommuters.org/)
 - [Tulare County Area Transit](https://ridetcat.org/)
-- [Northwest Oregon Transit Alliance (NW Connector)](https://www.nworegontransit.org/)
+- [Northwest Oregon Transit Alliance (NW Connector)](https://nwconnector.org/other-services/)
 - [Vamos Mobility App](https://vamosmobileapp.com/)
 - [RTD Denver Flexride](https://www.rtd-denver.com/services/flexride)
 - [Nebraska Public Transit DRT OTP Project: Trillium, Olsson, Cambridge Systematics, and TransitPlus](https://trips.nebraskatransit.com/#/)
@@ -87,7 +87,8 @@ This area is intended as a community "parking lot". Share something you would li
 - **May 2022**: Start of MnDoT pilot (Cambridge Systematics, MNDoT, Token Transit, Transit, Trillium (OptiBus).  
 - **May 2023**: <a href="https://github.com/google/transit/issues/382" target="_blank">Work on GTFS-Flex: Service Discovery Begins</a>
 - **June 2023**:  <a href="https://mobilitydata.org/recap-mobilitydata-working-meeting-gtfs-flex-service-discovery/" target="_blank">Held Conceptual Working Meeting on GTFS-Flex</a>
-- **july 2023**: <a href="https://github.com/google/transit/pull/388" target="_blank">Published Pull Request #388</a>
+- **July 2023**: <a href="https://github.com/google/transit/pull/388" target="_blank">Published Pull Request #388</a>
+- **August and September 2023**: <a href="https://github.com/google/transit/pull/388" target="_blank">Held "GeoJSON in GTFS?" discussions</a>
 
 ## Glossary
 
