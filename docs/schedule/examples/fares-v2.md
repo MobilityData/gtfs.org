@@ -283,7 +283,7 @@ For this example, based on WMATA fares, the fare depends only on the leg's depar
 | 1          | peak_fare       | weekday_peak            |                       |
 | 1          | regular_fare    | weekday_offpeak         |                       |
 
-Note that `network_id` references the foreign ID `routes.network_id`, and that the selection of the correct fare product for each trip will be a combination of arrival and departure times from `stop_times.txt` along with the times defined in `timeframes.txt`. 
+Note that `network_id` references the foreign ID `networks.network_id` or `routes.network_id`, and that the selection of the correct fare product for each trip will be a combination of arrival and departure times from `stop_times.txt` along with the times defined in `timeframes.txt`. 
 
 In this case, a user paying for a trip that departs at  7:30 AM would have to pay 5.00 USD (Peak fare) while another user departing at 11:30 AM would only have to pay a 3.00 USD fare (Off-peak fare).
 
@@ -310,7 +310,7 @@ This example is based on a <a href="https://docs.google.com/spreadsheets/d/1-cD-
 | ITO2383 | Grand Central       | 40.752823 | -73.977196 |
 
 
-[**stops_areas.txt**](../../reference/#stops_areastxt)
+[**stop_areas.txt**](../../reference/#stop_areastxt)
 
 | area_id   | stop_id |
 |-----------|---------|
@@ -325,6 +325,19 @@ This example is based on a <a href="https://docs.google.com/spreadsheets/d/1-cD-
 | mnr_HUD-8 | ITO1789 |
 | mnr_HUD-9 | ITO2096 |
 
+
+[**route_networks.txt**](../../reference/#route_networkstxt)
+
+| network_id | route_id |
+|------------|----------|
+| mnr_hudson | 669      |
+
+
+[**networks.txt**](../../reference/#networkstxt)
+
+| network_id | network_name    |
+|------------|-----------------|
+| mnr_hudson | MNR Hudson Line |
 
 Service days for train services 3 and 13 are defined using `calendar.txt`. Notably, other records with generic days (i.e. weekdays, weekends, and anyday) that aren't associated with any trips are defined, and these will be associated with timeframes in order to model `time-variable fares`.
 
