@@ -1,0 +1,28 @@
+name: Update staging website on server
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI or API.
+on:
+  push:
+    branches:
+      - staging
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+      - '.gitignore'
+      - '.github/**'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.ACTION_MAIN_WEBSERVER_SSH_HOST }}
+        username: ${{ secrets.ACTION_MAIN_WEBSERVER_SSH_USER }}
+        key: ${{ secrets.ACTION_MAIN_WEBSERVER_SSH_KEY }}
+        port: ${{ secrets.ACTION_MAIN_WEBSERVER_SSH_PORT }}
+        script: |
+                    ./staging_gtfs_org_website_updater.sh
