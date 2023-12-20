@@ -61,6 +61,7 @@ See more [online courses](../resources/other/#on-line-courses).
 
 There are a number of mailing lists that can be good resources when you have questions about public transit data, software, formats like GTFS and GTFS-realtime, and other issues:
 
+* [GTFS Digest](https://groups.google.com/g/gtfs-digest): generated monthly providing an overview of developments on GTFS.
 * [GTFS Changes](https://groups.google.com/group/gtfs-changes): discussion of proposal for extending the GTFS specification, as outlined in the [GTFS Changes document](https://github.com/google/transit/blob/master/gtfs/CHANGES.md).
 * [GTFS Realtime](https://groups.google.com/group/gtfs-realtime): discussion of the [GTFS-realtime specification](https://github.com/google/transit/tree/master/gtfs-realtime).
 * [MobilityData Slack](https://mobilitydata-io.slack.com/): Slack "organization" at with channels devoted to GTFS topics. [Request an invite to mobilitydata-io.slack.com here](https://share.mobilitydata.org/slack).
