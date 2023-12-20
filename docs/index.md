@@ -18,14 +18,6 @@ GTFS is supported around the world and its use, importance, and scope has been i
 
 [Learn more about the history of GTFS](background.md)
 
-## Get Monhtly Updates - GTFS Digest
-The GTFS Digest is a resource generated monthly by [MobilityData](https://mobilitydata.org/) providing an overview of developments on GTFS. 
-
-### **🔔 [Subscribe to the GTFS Digest](https://groups.google.com/g/gtfs-digest)**
-
-GTFS relies on community contributions. Please help us capture GTFS developments by sharing your updates for our next digest to: [specifications@mobiltydata.org](mailto:specifications@mobiltydata.org)
-
-
 ## Why Use GTFS?
 
 GTFS is used by over 10,000 transit agencies in over 100 countries. Most transit agencies have heard of GTFS, and it has quickly become an industry standard. Some agencies produce this data themselves, while others employ a vendor to create and maintain data for them. And because it is a simple, text-based Open Standard, many transit technology vendors can already read and write to GTFS files. By better understanding GTFS, agencies can make better choices when it comes to data. The choices agencies make in how to maintain and distribute GTFS can have a huge impact on service quality. 
