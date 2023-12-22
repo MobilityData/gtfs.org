@@ -2,9 +2,7 @@
     <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
   </a>
 
-# Pathways
-
-<img class="center" src="../../../assets/pathways-visual.jpg">
+# Pathways and Accessibility
 
 <hr>
 
@@ -69,6 +67,8 @@ Riders will need to use an app that supports text-to-speech functionality, in or
 GTFS-Pathways is a component of GTFS that has the goal of providing more accurate information for riders about transit stations. GTFS-Pathways allows a rider to view a possible trip and understand whether they will be able to make a required transfer at a transit station. This information is currently considered recommended but not required within the GTFS spec, but this could change in the future.
 
 GTFS-Pathways adds the files `pathways.txt` and `levels.txt` as well as adding the `location_type` field in `stops.txt` to link together information described in pathways.txt 
+
+<img class="center" src="../../../assets/pathways-visual.jpg">
  
 ## Adding Physical Accessibility Information about a Station
 
