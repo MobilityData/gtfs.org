@@ -8,7 +8,71 @@
 
 <hr>
 
-## Describe the location of station entrances and exits
+**Content**
+1. [Why Display Accessibility Information?](#why-display-accessibility-information)
+2. [Accessibility Checklist](#accessibility-checklist)
+    - [Adding Wheelchair Accessibility Information](#adding-wheelchair-accessibility-in-gtfs)
+    - [Adding Audio Navigation Aids](#adding-audio-navigation-aids)
+    - [Adding Physical Accessibility Information about a Stop](#adding-physical-accessibility-information-about-a-stop)
+4. [Adding Physical Accessibility Information about a Station \(examples\)](#adding-physical-accessibility-information-about-a-station)
+
+## Why Display Accessibility Information?
+
+**Impacts a large percent of the population:** The World Health Organization estimates that [16% of people worldwide have a disability](https://www.who.int/news-room/fact-sheets/detail/disability-and-health) and that people with disabilities “find inaccessible and unaffordable transportation 15 times more difficult than for those without disabilities”. Persons with disabilities also have [higher rates of acquiring new health conditions](https://www.who.int/publications/i/item/9789240063600), partially due to reduced access to care and services.
+
+**It's important to them:** Riders need up to date and accurate information about their transit options. Many agencies already use the General Transit Feed Specification (GTFS) to represent route, schedule, and stop location information that is critical to riders in planning their trips and understanding their options. For riders with accessibility needs, knowing the accessibility of a stop or vehicle is just as important as knowing the location. These riders need to know about every part of their trip to ensure they don’t get stranded somewhere or realize too late that they won’t be able to make it to their final stop.
+
+**It may be the law:** Depending on your location, local or national law may require that you provide equal access and opportunity to people with disabilities. The following are some sources you may want to consider:
+
+* **United States:** The [Americans and Disabilities Act (ADA)](https://www.ada.gov/topics/intro-to-ada/#public-transit) and [Section 504](https://www.dol.gov/agencies/oasam/centers-offices/civil-rights-center/statutes/section-504-rehabilitation-act-of-1973) of the Rehabilitation Act of 1973
+* **Japan:** The Japan Ministry of Land, Infrastructure, Transport and Tourism Law for Promoting Easy Mobility and Accessibility for the Aged and Disabled (“[Barrier-Free Law](https://www.mlit.go.jp/sogoseisaku/barrierfree/index.html)”)
+* **European Union:** [Employment, Social Affairs & Inclusion](https://ec.europa.eu/social/main.jsp?catId=1485&langId=en)
+
+## Accessibility Checklist
+
+The following are the steps needed to add accessibility information to your data. The next sections provide more detailed information on  each step. 
+- [ ] Add wheelchair accessibility information to stops.txt
+- [ ] Add wheelchair accessibility information to trips.txt
+- [ ] Add audio navigation information to stops.txt
+- [ ] Add physical accessibility information about stops and stations with GTFS-Pathways
+
+### Adding Wheelchair Accessibility in GTFS
+
+You may already be familiar with the structure of GTFS as a series of .txt files. Wheelchair accessibility can be displayed by updating two fields: `wheelchair_boarding` in `stops.txt` and `wheelchair_accessible` in `trips.txt`.
+
+**Wheelchair accessibility in stops.txt**   
+The field `wheelchair_boarding` in `stops.txt` allows you to indicate whether wheelchair boarding is possible from the specified location.
+
+[Reference: stops.txt](https://gtfs.org/schedule/reference/#stopstxt)
+
+When this field is left empty, no accessibility information is displayed. This leaves riders unsure about accessibility and not able to tell if wheelchair boarding is actually not possible or if the information is just missing. Even if wheelchair boarding is not available, it is best to fill in that information to make it clear to riders and allow them to plan their trip with accurate information.
+
+**Wheelchair accessibility in trips.txt**   
+The field `wheelchair_accessible` in `trips.txt` allows you to indicate whether the vehicle being used for a specific trip can accommodate a wheelchair.
+
+[Reference: trips.txt](https://gtfs.org/schedule/reference/#tripstxt)
+
+Like `wheelchair_boarding`, when this field is left empty, no accessibility information is displayed. Even if the vehicle is not wheelchair accessible, it is still best to fill in that information to make it clear to riders and allow them to plan their trip with accurate information.
+
+### Adding Audio Navigation Aids
+
+Text-to-speech is another way to increase the accessibility of your GTFS. Accurate text-to-speech information ensures that riders using assistive technology to read text aloud are getting the right information. This information can be included in your GTFS by updating `tts_stop_name` in `stops.txt` to correspond to each `stop_name`. Each stop within your GTFS should have a text-to-speech disambiguation that spells out the stop phonetically so it can be pronounced correctly. 
+
+[Examples: Text-to-Speech](https://gtfs.org/schedule/examples/text-to-speech/)
+
+While `tts_stop_name` is currently the only text-to-speech field officially adopted within the GTFS spec, other fields have been discussed and may be added. These include `tts_agency_name`, `tts_route_short_name`, `tts_route_long_name`, `tts_trip_headsign`, `tts_trip_short_name`, and `tts_stop_headsign`.
+
+Riders will need to use an app that supports text-to-speech functionality, in order to benefit from this information. Some apps, such as [NaviLensGo]((https://www.navilens.com/en/)), are designed specifically to assist riders with vision impairments to navigate stations and find the right vehicle. 
+
+### Adding Physical Accessibility Information about a Stop
+
+GTFS-Pathways is a component of GTFS that has the goal of providing more accurate information for riders about transit stations. GTFS-Pathways allows a rider to view a possible trip and understand whether they will be able to make a required transfer at a transit station. This information is currently considered recommended but not required within the GTFS spec, but this could change in the future.
+
+GTFS-Pathways adds the files `pathways.txt` and `levels.txt` as well as adding the `location_type` field in `stops.txt` to link together information described in pathways.txt 
+ 
+## Adding Physical Accessibility Information about a Station
+
+### Describe the location of station entrances and exits
 
 With GTFS, it is possible to accurately describe stations using information on entrances and station interiors. This example describes sections of Waterfront station in downtown Vancouver. The station is part of the city’s Skytrain network and is served by the Canada Line, the Expo Line, the SeaBus, and the West Coast Express. Three street level entrances allow riders to enter and exit the station. The rest of the station is underground with a concourse level for fare validation and a lower level with platforms. 
 
@@ -30,7 +94,7 @@ In the file above, the first record pertains to the station location, hence, the
 
 Additionally, the `stop_id` for Waterfront Station is listed under `parent_station` for the entrances to associate them with the station. The accessible entrances have `wheelchair_boarding` set to `1` and the non-accessible ones are set to `2`. 
 
-## Describe stairs and escalators
+### Describe stairs and escalators
 
 The entrance to Waterfront Station at Granville street has an elevator, an escalator, and stairs, the entrances are defined as nodes above in [stops.txt](../../reference/#stopstxt). To connect the entrances to inner sections of the station, additional nodes have to be created in [stops.txt](../../reference/#stopstxt) under the `parent_station` of Waterfront Station. In the [stops.txt](../../reference/#stopstxt) file below, generic nodes (`location_type 3`) that correspond to the bottom of the staircase and escalator are defined.
 
@@ -57,7 +121,7 @@ stairsA,90,95,2,1
 escalatorA,96,91,4,0
 ```
 
-## Describe elevators and pathways
+### Describe elevators and pathways
 
 The elevator at Granville street brings passengers to a pathway at the concourse level where the escalator and the stairs end. The elevator at the surface level is already defined as a station entrance above (`stop_id` `92`). Hence, the elevator door at the concourse level also needs to be defined. 
 
@@ -88,3 +152,7 @@ underground_walkway2,96,95,1,1
 underground_walkway3,95,97,1,1
 underground_walkway4,97,98,1,1
 ```
+
+## Future Additions to GTFS-Pathways
+
+While the core specification of GTFS-Pathways has been completely integrated into GTFS, there is recognition that additional accessibility information could be modeled and would be useful to riders. This includes information such as text-to-speech instructions, wheelchair assistance information, equipment-failure reporting, planned or scheduled entrance or exit closures, and elevator and escalator outages.
