@@ -17,18 +17,7 @@ In order to create a GTFS feed follow the steps below.
 1. Create all the required files described in the [GTFS Schedule](reference) reference. Create the optional files if their functionality is desired. 
 1. Save all files in the .txt format. Field values should be comma delimited and each line should end with a line break. See the GTFS reference for detailed information on the file contents.
 1. Zip all the text files together. The zipped file comprises a version of the feed.
-1. Publish the feed by using one of the options below. 
-
-## Making a Transit Feed Publicly Available
-<hr>
-
-Datasets should be published at a public, permanent URL, including the zip file name. (e.g., www.agency.org/gtfs/gtfs.zip). Ideally, the URL should be directly downloadable without requiring login to access the file, to facilitate download by consuming software applications. While it is recommended (and the most common practice) to make a GTFS dataset openly downloadable, if a data provider does need to control access to GTFS for licensing or other reasons, it is recommended to control access to the GTFS dataset using API keys, which will facilitate automatic downloads.
-
-The web-server hosting GTFS data should be configured to correctly report the file modification date (see HTTP/1.1 - Request for Comments 2616, under Section 14.29).
-
-Learn more:
-* [Publishing and Sharing your GTFS](publishing/)
-* [Best Practices: Dataset Publishing](best-practices/#dataset-publishing-general-practices)
+1. Make the feed publicly available. See [Publishing and Sharing your GTFS](publishing/) for more info.
 
 ## Training & Resources
 <hr>
