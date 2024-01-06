@@ -2,19 +2,9 @@
     <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
   </a>
 
-# Pathways
-
-<img class="center" src="../../../assets/pathways-visual.jpg">
+# Pathways and Accessibility
 
 <hr>
-
-**Content**
-1. [Why Display Accessibility Information?](#why-display-accessibility-information)
-2. [Accessibility Checklist](#accessibility-checklist)
-    - [Adding Wheelchair Accessibility Information](#adding-wheelchair-accessibility-in-gtfs)
-    - [Adding Audio Navigation Aids](#adding-audio-navigation-aids)
-    - [Adding Physical Accessibility Information about a Stop](#adding-physical-accessibility-information-about-a-stop)
-4. [Adding Physical Accessibility Information about a Station \(examples\)](#adding-physical-accessibility-information-about-a-station)
 
 ## Why Display Accessibility Information?
 
@@ -31,10 +21,10 @@
 ## Accessibility Checklist
 
 The following are the steps needed to add accessibility information to your data. The next sections provide more detailed information on  each step. 
-- [ ] Add wheelchair accessibility information to stops.txt
-- [ ] Add wheelchair accessibility information to trips.txt
-- [ ] Add audio navigation information to stops.txt
-- [ ] Add physical accessibility information about stops and stations with GTFS-Pathways
+- Step 1: Add wheelchair accessibility information to stops.txt
+- Step 2: Add wheelchair accessibility information to trips.txt
+- Step 3: Add audio navigation information to stops.txt
+- Step 4: Add physical accessibility information about stops and stations with GTFS-Pathways
 
 ### Adding Wheelchair Accessibility in GTFS
 
@@ -69,6 +59,8 @@ Riders will need to use an app that supports text-to-speech functionality, in or
 GTFS-Pathways is a component of GTFS that has the goal of providing more accurate information for riders about transit stations. GTFS-Pathways allows a rider to view a possible trip and understand whether they will be able to make a required transfer at a transit station. This information is currently considered recommended but not required within the GTFS spec, but this could change in the future.
 
 GTFS-Pathways adds the files `pathways.txt` and `levels.txt` as well as adding the `location_type` field in `stops.txt` to link together information described in pathways.txt 
+
+<img class="center" src="../../../assets/pathways-visual.jpg">
  
 ## Adding Physical Accessibility Information about a Station
 
