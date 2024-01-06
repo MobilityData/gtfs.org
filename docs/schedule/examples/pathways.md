@@ -21,10 +21,10 @@
 ## Accessibility Checklist
 
 The following are the steps needed to add accessibility information to your data. The next sections provide more detailed information on  each step. 
-- [ ] Add wheelchair accessibility information to stops.txt
-- [ ] Add wheelchair accessibility information to trips.txt
-- [ ] Add audio navigation information to stops.txt
-- [ ] Add physical accessibility information about stops and stations with GTFS-Pathways
+- Step 1: Add wheelchair accessibility information to stops.txt
+- Step 2: Add wheelchair accessibility information to trips.txt
+- Step 3: Add audio navigation information to stops.txt
+- Step 4: Add physical accessibility information about stops and stations with GTFS-Pathways
 
 ### Adding Wheelchair Accessibility in GTFS
 
