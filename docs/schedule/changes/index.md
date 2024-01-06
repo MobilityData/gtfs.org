@@ -22,25 +22,22 @@ Active proposals for new features in GTFS Schedule.  -->
 
 Join the discussions on <a href="https://github.com/google/transit/pulls" target="_blank">Github</a> !
 
-<!-- <div class="row">
-    <div class="active-container">
-        <h3 class="title"><a class="no-icon" href="https://github.com/google/transit/pull/303" target="_blank">Add trip-to-trip transfers with in-seat option</a></h3>
-        <p class="maintainer">#303 opened on Jan 26, 2022 by <a class="no-icon" href="https://github.com/gcamp" target="_blank">gcamp</a></p>
-    </div>
-</div>
-<div class="row"></div> -->
-
-<!-- <div class="row no-active">
-    <div class="no-active-container">
-        <h3 class="title">There are currently no active proposals for GTFS Schedule.</h3>
-        <p class="prompt">Have a proposal? &ensp;➜&ensp; Open a <a href="https://github.com/google/transit/pulls" target="_blank">pull request</a>.</p>
-    </div>
-</div>
-<div class="row"></div> -->
-
 ## Recently Merged Proposals &ensp;<img src="../../assets/pr-merged.svg" style="height:1em;"/>
 
 Recently merged proposals that are now features of the [official GTFS Schedule specification](../reference). See the complete [Revision History](../process#revision-history) for more.
+
+<div class="row">
+    <div class="leftcontainer">
+        <h3 class="title"><a href="https://github.com/google/transit/pull/405" class="no-icon" target="_blank">Add networks.txt & route_networks.txt</a></h3>
+        <p class="maintainer">#406 by <a href="https://github.com/tzujenchanmbd" class="no-icon" target="_blank">tzujenchanmbd</a> was merged on Nov 28, 2023</p>
+    </div>
+    <div class="featurelist">
+        <ul>
+            <li>Adds two new files: <code>networks.txt</code> and <code>route_networks.txt</code> to build networks of routes that are associated to fares.</li>
+	    <li>Provides an alternative to <code>routes.network_id</code> so that schedule and fare files can be distinct.</li>
+        </ul>
+    </div>
+</div>
 
 <div class="row">
     <div class="leftcontainer">
