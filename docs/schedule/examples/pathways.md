@@ -6,14 +6,6 @@
 
 <hr>
 
-**Content**
-1. [Why Display Accessibility Information?](#why-display-accessibility-information)
-2. [Accessibility Checklist](#accessibility-checklist)
-    - [Adding Wheelchair Accessibility Information](#adding-wheelchair-accessibility-in-gtfs)
-    - [Adding Audio Navigation Aids](#adding-audio-navigation-aids)
-    - [Adding Physical Accessibility Information about a Stop](#adding-physical-accessibility-information-about-a-stop)
-4. [Adding Physical Accessibility Information about a Station \(examples\)](#adding-physical-accessibility-information-about-a-station)
-
 ## Why Display Accessibility Information?
 
 **Impacts a large percent of the population:** The World Health Organization estimates that [16% of people worldwide have a disability](https://www.who.int/news-room/fact-sheets/detail/disability-and-health) and that people with disabilities “find inaccessible and unaffordable transportation 15 times more difficult than for those without disabilities”. Persons with disabilities also have [higher rates of acquiring new health conditions](https://www.who.int/publications/i/item/9789240063600), partially due to reduced access to care and services.
