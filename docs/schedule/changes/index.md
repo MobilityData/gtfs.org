@@ -33,8 +33,8 @@ Recently merged proposals that are now features of the [official GTFS Schedule s
     </div>
     <div class="featurelist">
         <ul>
-            <li>Adds two new files: <code>networks.txt</code> and <code>route_networks.txt</code> to build networks of routes that are associated to fares.</li>
-	    <li>Provides an alternative to <code>routes.network_id</code> so that schedule and fare files can be distinct.</li>
+            <li>Adds two new files: <code>networks.txt</code> and <code>route_networks.txt</code> to build networks of routes that are associated to fares</li>
+	    <li>Provides an alternative to <code>routes.network_id</code> so that schedule and fare files can be distinct</li>
         </ul>
     </div>
 </div>
