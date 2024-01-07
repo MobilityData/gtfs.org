@@ -24,6 +24,7 @@ In order to create a GTFS feed follow the steps below.
 
 **Technical details about GTFS, what it is, and how to create and maintain data:**
 
+- [GTFS Introductory video](https://share.mobilitydata.org/GTFS-intro)
 - [GTFS Schedule Overview](https://gtfs.org/schedule/reference/)
 - [World Bank "Intro to GTFS" online course](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)
 - [MBTA GTFS Onboarding](https://mybinder.org/v2/gh/mbta/gtfs_onboarding/main?urlpath=lab/tree/GTFS_Onboarding.ipynb)
