@@ -6,11 +6,21 @@
 
 <hr>
 
-Fares v2 is a GTFS extension project that aims to address the limitations of Fares v1. This extension project is being adopted in GTFS in iterations and you can find more about the roadmap for its official adoption into GTFS on [this page](/extensions/fares-v2/).
+Fares v2 is a GTFS extension project that aims to address the limitations of Fares v1. This extension project is being adopted in GTFS in iterations and you can find more about the roadmap for its official adoption into GTFS and how to participate on [this page](/extensions/fares-v2/).
 With the adoption and sufficient endorsement of Fares v2, Fares v1 may be deprecated in the future.
 In the interim, producers may implement Fares v2 alongside the implementation of Fares v1 in the same dataset as there exists no technical conflict between the two. Consumers will have the choice of which implementation to consume independently from the other. 
 
 The below examples outline how to model data using Fares v2 and it can be completed with experimental features outlined in the full [proposal document](https://share.mobilitydata.org/gtfs-fares-v2). 
+
+## Getting started with GTFS-Fares v2
+
+To get started with GTFS Fares-v2, you can watch these four video tutorials and follow along with [this written resource](https://share.mobilitydata.org/Fares-v2-written-resource-guide-for-videos).
+- [Video 1](https://share.mobilitydata.org/faresv2-intro): GTFS Fares-v2: An introduction
+- [Video 2](https://share.mobilitydata.org/faresv2-setting-up-google-sheets): GTFS Fares v2: Setting up Google Sheets
+- [Video 3](https://share.mobilitydata.org/faresv2-creating-and-maintaining-data): GTFS Fares v2: Creating and Maintaining Data
+- [Video 4](https://share.mobilitydata.org/faresv2-exporting-and-publishing): Exporting and Publishing GTFS Fares v2
+
+They have been created for transit agencies to understand the purpose of GTFS-Fares v2, as well as how to use Google Sheets to create, edit, and upload GTFS-Fares v2 data. 
 
 ## Define a transit fare
 
