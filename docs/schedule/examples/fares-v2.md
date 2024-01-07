@@ -12,7 +12,7 @@ In the interim, producers may implement Fares v2 alongside the implementation of
 
 The below examples outline how to model data using Fares v2 and it can be completed with experimental features outlined in the full [proposal document](https://share.mobilitydata.org/gtfs-fares-v2). 
 
-## Getting started with GTFS-Fares v2
+## GTFS-Fares v2 training and free resources
 
 To get started with GTFS Fares-v2, you can watch these four video tutorials and follow along with [this written resource](https://share.mobilitydata.org/Fares-v2-written-resource-guide-for-videos).
 - [Video 1](https://share.mobilitydata.org/faresv2-intro): GTFS Fares-v2: An introduction
@@ -21,6 +21,8 @@ To get started with GTFS Fares-v2, you can watch these four video tutorials and 
 - [Video 4](https://share.mobilitydata.org/faresv2-exporting-and-publishing): Exporting and Publishing GTFS Fares v2
 
 They have been created for transit agencies to understand the purpose of GTFS-Fares v2, as well as how to use Google Sheets to create, edit, and upload GTFS-Fares v2 data. 
+
+This [Fares v2 template](https://share.mobilitydata.org/faresv2-template) can be used for creating the necessary fares files from scratch.
 
 ## Define a transit fare
 
