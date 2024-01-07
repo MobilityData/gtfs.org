@@ -25,21 +25,24 @@ In order to create a GTFS feed follow the steps below.
 **Technical details about GTFS, what it is, and how to create and maintain data:**
 
 - [GTFS Introductory video](https://share.mobilitydata.org/GTFS-intro)
-- [GTFS Schedule Overview](https://gtfs.org/schedule/reference/)
+- [Data examples with various features](https://gtfs.org/schedule/examples/)
 - [World Bank "Intro to GTFS" online course](https://olc.worldbank.org/content/introduction-general-transit-feed-specification-gtfs-and-informal-transit-system-mapping)
 - [MBTA GTFS Onboarding](https://mybinder.org/v2/gh/mbta/gtfs_onboarding/main?urlpath=lab/tree/GTFS_Onboarding.ipynb)
 
-**View example feeds with various features:**
+**View example feeds:**
 
 - [GTFS Mobility Database](https://database.mobilitydata.org/) 
 - [Transitland](https://www.transit.land/)
-- [Data examples](https://gtfs.org/schedule/examples/)
+
+See more [data sources](../resources/data)
 
 **For free tools and instructional materials:**
 
 - [MobilityData GTFS Schedule Validator](https://gtfs-validator.mobilitydata.org/) 
-- [NRTAP lessons and GTFS Builder](https://www.nationalrtap.org/Technology-Tools/GTFS-Builder/Support)
+- [NRTAP GTFS Builder](https://www.nationalrtap.org/Technology-Tools/GTFS-Builder/Support)
 - [Arcadis IBI Data Tools](https://www.ibigroup.com/ibi-products/transit-data-tools/)
+
+See more [free tools](../resources/gtfs).
 
 **For ideas on vendors who offer GTFS services:**
 
