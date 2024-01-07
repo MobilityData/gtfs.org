@@ -34,7 +34,7 @@ In order to create a GTFS feed follow the steps below.
 - [GTFS Mobility Database](https://database.mobilitydata.org/) 
 - [Transitland](https://www.transit.land/)
 
-See more [data sources](../resources/data)
+See more [data sources](../resources/data).
 
 **For free tools and instructional materials:**
 
