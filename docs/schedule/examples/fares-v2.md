@@ -13,7 +13,7 @@ In the interim, producers may implement Fares v2 alongside the implementation of
 
 The below examples outline how to model data using Fares v2 and it can be completed with experimental features outlined in the full [proposal document](https://share.mobilitydata.org/gtfs-fares-v2). 
 
-## GTFS-Fares v2 training and free resources
+## Fares v2 training and free resources
 
 To get started with GTFS Fares-v2, you can watch these four video tutorials and follow along with [this written resource](https://share.mobilitydata.org/Fares-v2-written-resource-guide-for-videos).
 - [Video 1](https://share.mobilitydata.org/faresv2-intro): GTFS Fares-v2: An introduction
@@ -25,7 +25,9 @@ They have been created for transit agencies to understand the purpose of GTFS-Fa
 
 This [Fares v2 template](https://share.mobilitydata.org/faresv2-template) can be used for creating the necessary fares files from scratch.
 
-## Define a transit fare
+## Fares v2 data modelling examples
+
+### Define a transit fare
 
 There are several ways to pay fares to use the Maryland Transit Administration system. <a href="https://www.mta.maryland.gov/regular-fares" target="_blank">There are four types of regular full price fare options:</a>
 
@@ -50,7 +52,7 @@ Transit tickets or fares are referred to as fare products in GTFS. They can be d
 
 <hr>
 
-## Create rules for single leg journeys
+### Create rules for single leg journeys
 
 In GTFS, a fare leg corresponds to a trip that a rider makes without transferring between different modes, routes, networks, or agencies. In the Maryland Transit Administration's feed, a single fare allows riders to travel within any pair of stops and subway stations within the `core` network of BaltimoreLink buses, Light RailLink and Metro SubwayLink routes.
 
@@ -69,7 +71,7 @@ Leg groups define trips within a network from an origin to a destination (or a s
 
 <hr>
 
-## Create rules for transfers
+### Create rules for transfers
 
 There is a 90 minute transfer for riders who purchase a one-way fare to ride BaltimoreLink local buses, Metro SubwayLink, or Light RailLink. This means that they can transfer an unlimited number of times between the local buses, subway, and light rail within the 90 minute timeframe.
 
@@ -97,7 +99,7 @@ After defining the fare, creating the appropriate `fare_leg_rule`, and defining 
 
 <sup>[Download the Maryland Transit Administration local bus GTFS feed](https://feeds.mta.maryland.gov/gtfs/local-bus)</sup>
 
-## Describe service locations in the same fare zone
+### Describe service locations in the same fare zone
 
 Some transit agencies operate a zone-based fare structure. Fare zones are divided geographic areas associated with different fare prices. In Bay Area’s BART system, fares are different depending on the origin and destination <a href="https://www.bart.gov/sites/default/files/docs/BART%20Clipper%20Fares%20Triangle%20Chart%20July%202022.pdf" target="_blank">(BART fare differences)</a>, and transit riders will need to know the right fare. Fare areas can be described using the [stops_areas.txt](../../reference/#stops_areastxt) file, which assigns stops from [stops.txt](../../reference/#stopstxt) to [areas.txt](../../reference/#areastxt).
 
@@ -150,7 +152,7 @@ The fare is identified in `fare_products.txt`.
 
 <hr>
 
-## Describe what fare media is accepted
+### Describe what fare media is accepted
 
 San Francisco Muni riders can use several different types of fare media to pay for their trip and validate their fare:
 
@@ -188,7 +190,7 @@ The <a href="https://www.mbta.com" target="_blank">Massachusetts Bay Transportat
 
 <sup><a href="https://www.mbta.com/developers/gtfs" target="_blank">See the Massachusetts Bay Transportation Authority feed</a></sup>
 
-## Define price differences based on fare media
+### Define price differences based on fare media
 
 Muni's fare price is different based on the fare media the rider uses. This example will cover how the adult local fare price changes when using cash or Clipper card. An adult local fare paid for with cash costs $3 USD and the same fare paid for with the Clipper card costs $2.50, 50 cents less.
 
@@ -220,7 +222,7 @@ In Apple Maps, riders can see how their fare price changes. You can compare fare
 <sup><a href="https://511.org/open-data/transit" target="_blank">See the San Francisco Bay Area Regional feed</a></sup>
 
 
-## Describe a contactless fare media option
+### Describe a contactless fare media option
 
 <a href="https://vimeo.com/539436401" target="_blank">The Clean Air Express in Northern Santa Barbara County accepts contactless payment</a> by credit card, Google Pay and Apple Pay.
 
@@ -242,7 +244,7 @@ The single ride fare product shown below has both `cash` and `tap-to-ride` fare 
 <sup><a href="https://gtfs.calitp.org/production/CleanAirExpressFaresv2.zip" target="_blank">Download the Clean Air Express feed</a></sup>
 
 
-## Define price differences based on time and day of trip
+### Define price differences based on time and day of trip
 
 Certain transit agencies vary their fares based on the time and/or day of the week. This means that fares are associated with a time period where the trip is made, such as peak, off-peak hours, or weekends. 
 
@@ -302,7 +304,7 @@ Note that `network_id` references the foreign ID `networks.network_id` or `route
 In this case, a user paying for a trip that departs at  7:30 AM would have to pay 5.00 USD (Peak fare) while another user departing at 11:30 AM would only have to pay a 3.00 USD fare (Off-peak fare).
 
 
-## Define time-variable fares along with zone based fares
+### Define time-variable fares along with zone based fares
 
 In New York's MTA Metro-North railroad network, fares vary based on both the time of the day of the trip, as well as the trip’s origin and destination areas. The following example illustrates the fare rules applicable to a trip from Grand Central Station to Cold Spring (NY, USA).
 
