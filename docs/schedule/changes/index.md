@@ -41,7 +41,7 @@ Recently merged proposals that are now features of the [official GTFS Schedule s
 
 <div class="row">
     <div class="leftcontainer">
-        <h3 class="title"><a href="https://github.com/google/transit/pull/406" class="no-icon" target="_blank">Best Practices: Add Dataset Publishing guidelines and Practice Recommendations for all files</a></h3>
+        <h3 class="title"><a href="https://github.com/google/transit/pull/406" class="no-icon" target="_blank">Best Practices: Add Dataset Publishing guidelines<br>and Practice Recommendations for all files</a></h3>
         <p class="maintainer">#406 by <a href="https://github.com/Sergiodero" class="no-icon" target="_blank">Sergiodero</a> was merged on Nov 16, 2023</p>
     </div>
     <div class="featurelist">
