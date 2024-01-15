@@ -41,6 +41,7 @@
 The following are the steps needed to add accessibility information to your data. The next sections provide more detailed information on  each step. 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 * Step 1: Add wheelchair accessibility information to `stops.txt`
 * Step 2: Add wheelchair accessibility information to `trips.txt`
 * Step 3: Add audio navigation information to `stops.txt`
@@ -61,6 +62,14 @@ The following are the steps needed to add accessibility information to your data
 
 ### Adding Wheelchair Accessibility in GTFS
 >>>>>>> 26174ad (Update pathways.md (#248))
+=======
+* Step 1: Add wheelchair accessibility information to `stops.txt`
+* Step 2: Add wheelchair accessibility information to `trips.txt`
+* Step 3: Add audio navigation information to `stops.txt`
+* Step 4: Add physical accessibility information about stops and stations with GTFS-Pathways
+
+## Adding Wheelchair Accessibility in GTFS
+>>>>>>> ba26cd1 (Updates to pathways page (#278))
 
 You may already be familiar with the structure of GTFS as a series of .txt files. Wheelchair accessibility can be displayed by updating two fields: `wheelchair_boarding` in `stops.txt` and `wheelchair_accessible` in `trips.txt`.
 
@@ -79,10 +88,14 @@ The field `wheelchair_accessible` in `trips.txt` allows you to indicate whether 
 Like `wheelchair_boarding`, when this field is left empty, no accessibility information is displayed. Even if the vehicle is not wheelchair accessible, it is still best to fill in that information to make it clear to riders and allow them to plan their trip with accurate information.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Adding Audio Navigation Aids
 =======
 ### Adding Audio Navigation Aids
 >>>>>>> 26174ad (Update pathways.md (#248))
+=======
+## Adding Audio Navigation Aids
+>>>>>>> ba26cd1 (Updates to pathways page (#278))
 
 Text-to-speech is another way to increase the accessibility of your GTFS. Accurate text-to-speech information ensures that riders using assistive technology to read text aloud are getting the right information. This information can be included in your GTFS by updating `tts_stop_name` in `stops.txt` to correspond to each `stop_name`. Each stop within your GTFS should have a text-to-speech disambiguation that spells out the stop phonetically so it can be pronounced correctly. 
 
@@ -91,6 +104,7 @@ Text-to-speech is another way to increase the accessibility of your GTFS. Accura
 While `tts_stop_name` is currently the only text-to-speech field officially adopted within the GTFS spec, other fields have been discussed and may be added. These include `tts_agency_name`, `tts_route_short_name`, `tts_route_long_name`, `tts_trip_headsign`, `tts_trip_short_name`, and `tts_stop_headsign`.
 
 Riders will need to use an app that supports text-to-speech functionality, in order to benefit from this information. Some apps, such as [NaviLensGo]((https://www.navilens.com/en/)), are designed specifically to assist riders with vision impairments to navigate stations and find the right vehicle. 
+<<<<<<< HEAD
 <<<<<<< HEAD
  
 ## Adding Physical Accessibility Information about a Station
@@ -114,6 +128,17 @@ GTFS-Pathways adds the files `pathways.txt` and `levels.txt` as well as adding t
 ## Adding Physical Accessibility Information about a Station
 
 >>>>>>> 26174ad (Update pathways.md (#248))
+=======
+ 
+## Adding Physical Accessibility Information about a Station
+
+GTFS-Pathways is a component of GTFS that represents transit station details. It allows riders to understand whether they will be able to make a required transfer at a transit station. 
+
+GTFS-Pathways adds the files `pathways.txt` and `levels.txt` as well as adding the `location_type` field in `stops.txt` to link together information described in `pathways.txt`. 
+
+<img class="center" src="../../../assets/pathways-visual.jpg">
+
+>>>>>>> ba26cd1 (Updates to pathways page (#278))
 ### Describe the location of station entrances and exits
 
 With GTFS, it is possible to accurately describe stations using information on entrances and station interiors. This example describes sections of Waterfront station in downtown Vancouver. The station is part of the city’s Skytrain network and is served by the Canada Line, the Expo Line, the SeaBus, and the West Coast Express. Three street level entrances allow riders to enter and exit the station. The rest of the station is underground with a concourse level for fare validation and a lower level with platforms. 
@@ -198,7 +223,11 @@ underground_walkway4,97,98,1,1
 ## Future Additions to GTFS-Pathways
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 While the core specification of GTFS-Pathways has been completely integrated into GTFS, there is recognition that additional accessibility information could be modeled and would be useful to riders. This includes information such as text-to-speech instructions, wheelchair assistance information, equipment-failure reporting, planned or scheduled entrance or exit closures, and elevator and escalator outages. You can find more about the remaining parts of it [in this document](http://bit.ly/gtfs-pathways).
 =======
 While the core specification of GTFS-Pathways has been completely integrated into GTFS, there is recognition that additional accessibility information could be modeled and would be useful to riders. This includes information such as text-to-speech instructions, wheelchair assistance information, equipment-failure reporting, planned or scheduled entrance or exit closures, and elevator and escalator outages.
 >>>>>>> 26174ad (Update pathways.md (#248))
+=======
+While the core specification of GTFS-Pathways has been completely integrated into GTFS, there is recognition that additional accessibility information could be modeled and would be useful to riders. This includes information such as text-to-speech instructions, wheelchair assistance information, equipment-failure reporting, planned or scheduled entrance or exit closures, and elevator and escalator outages. You can find more about the remaining parts of it [in this document](http://bit.ly/gtfs-pathways).
+>>>>>>> ba26cd1 (Updates to pathways page (#278))
