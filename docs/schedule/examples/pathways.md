@@ -21,12 +21,12 @@
 ## Accessibility Checklist
 
 The following are the steps needed to add accessibility information to your data. The next sections provide more detailed information on  each step. 
-- Step 1: Add wheelchair accessibility information to stops.txt
-- Step 2: Add wheelchair accessibility information to trips.txt
-- Step 3: Add audio navigation information to stops.txt
-- Step 4: Add physical accessibility information about stops and stations with GTFS-Pathways
+* Step 1: Add wheelchair accessibility information to `stops.txt`
+* Step 2: Add wheelchair accessibility information to `trips.txt`
+* Step 3: Add audio navigation information to `stops.txt`
+* Step 4: Add physical accessibility information about stops and stations with GTFS-Pathways
 
-### Adding Wheelchair Accessibility in GTFS
+## Adding Wheelchair Accessibility in GTFS
 
 You may already be familiar with the structure of GTFS as a series of .txt files. Wheelchair accessibility can be displayed by updating two fields: `wheelchair_boarding` in `stops.txt` and `wheelchair_accessible` in `trips.txt`.
 
@@ -44,7 +44,7 @@ The field `wheelchair_accessible` in `trips.txt` allows you to indicate whether 
 
 Like `wheelchair_boarding`, when this field is left empty, no accessibility information is displayed. Even if the vehicle is not wheelchair accessible, it is still best to fill in that information to make it clear to riders and allow them to plan their trip with accurate information.
 
-### Adding Audio Navigation Aids
+## Adding Audio Navigation Aids
 
 Text-to-speech is another way to increase the accessibility of your GTFS. Accurate text-to-speech information ensures that riders using assistive technology to read text aloud are getting the right information. This information can be included in your GTFS by updating `tts_stop_name` in `stops.txt` to correspond to each `stop_name`. Each stop within your GTFS should have a text-to-speech disambiguation that spells out the stop phonetically so it can be pronounced correctly. 
 
@@ -53,16 +53,14 @@ Text-to-speech is another way to increase the accessibility of your GTFS. Accura
 While `tts_stop_name` is currently the only text-to-speech field officially adopted within the GTFS spec, other fields have been discussed and may be added. These include `tts_agency_name`, `tts_route_short_name`, `tts_route_long_name`, `tts_trip_headsign`, `tts_trip_short_name`, and `tts_stop_headsign`.
 
 Riders will need to use an app that supports text-to-speech functionality, in order to benefit from this information. Some apps, such as [NaviLensGo]((https://www.navilens.com/en/)), are designed specifically to assist riders with vision impairments to navigate stations and find the right vehicle. 
-
-### Adding Physical Accessibility Information about a Stop
-
-GTFS-Pathways is a component of GTFS that has the goal of providing more accurate information for riders about transit stations. GTFS-Pathways allows a rider to view a possible trip and understand whether they will be able to make a required transfer at a transit station. This information is currently considered recommended but not required within the GTFS spec, but this could change in the future.
-
-GTFS-Pathways adds the files `pathways.txt` and `levels.txt` as well as adding the `location_type` field in `stops.txt` to link together information described in pathways.txt 
-
-<img class="center" src="../../../assets/pathways-visual.jpg">
  
 ## Adding Physical Accessibility Information about a Station
+
+GTFS-Pathways is a component of GTFS that represents transit station details. It allows riders to understand whether they will be able to make a required transfer at a transit station. 
+
+GTFS-Pathways adds the files `pathways.txt` and `levels.txt` as well as adding the `location_type` field in `stops.txt` to link together information described in `pathways.txt`. 
+
+<img class="center" src="../../../assets/pathways-visual.jpg">
 
 ### Describe the location of station entrances and exits
 
@@ -147,4 +145,4 @@ underground_walkway4,97,98,1,1
 
 ## Future Additions to GTFS-Pathways
 
-While the core specification of GTFS-Pathways has been completely integrated into GTFS, there is recognition that additional accessibility information could be modeled and would be useful to riders. This includes information such as text-to-speech instructions, wheelchair assistance information, equipment-failure reporting, planned or scheduled entrance or exit closures, and elevator and escalator outages.
+While the core specification of GTFS-Pathways has been completely integrated into GTFS, there is recognition that additional accessibility information could be modeled and would be useful to riders. This includes information such as text-to-speech instructions, wheelchair assistance information, equipment-failure reporting, planned or scheduled entrance or exit closures, and elevator and escalator outages. You can find more about the remaining parts of it [in this document](http://bit.ly/gtfs-pathways).
