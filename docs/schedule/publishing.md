@@ -71,7 +71,7 @@ In the event you have multiple GTFS datasets available to you—usually the resu
 
 ## Resources and Further Reading
 
-* [Best Practices for Publishing GTFS Data](http://gtfs.org/best-practices/#dataset-publishing--general-practices)
+* [Best Practices for Publishing GTFS Data](https://gtfs.org/schedule/reference/#dataset-publishing-general-practices)
 * [Applications and Uses for GTFS Data](http://gtfs.org/applications)
 * [Principles of Open Data](https://project-open-data.cio.gov/principles/)
 * [Cal-ITP - California Transit Data Guidelines](https://dot.ca.gov/cal-itp/california-minimum-general-transit-feed-specification-gtfs-guidelines)

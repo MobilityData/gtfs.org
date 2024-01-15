@@ -553,7 +553,7 @@ nav:
       - Fares v1: schedule/examples/fares-v1.md
       - Fares v2: schedule/examples/fares-v2.md
       - Frequencies: schedule/examples/frequencies.md
-      - Pathways: schedule/examples/pathways.md
+      - Pathways and accessibility: schedule/examples/pathways.md
       - Transfers: schedule/examples/transfers.md
       - Translations: schedule/examples/translations.md
       - Feed information: schedule/examples/feed-info.md
@@ -562,6 +562,7 @@ nav:
       - schedule/changes/index.md
       - Specification Amendment Process: schedule/process.md
     - Validate: schedule/validate.md
+    - Publish: schedule/publishing.md
   - GTFS Realtime: 
     - Getting Started: realtime/index.md
     - Reference: realtime/reference.md
