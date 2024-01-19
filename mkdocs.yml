@@ -32,6 +32,7 @@ theme:
     - content.tabs.link
     - search.suggest
   custom_dir: theme_overrides
+  custom_dir: staging_banner
   language: en
   locale: en
 extra_css:
@@ -81,6 +82,12 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
   - pymdownx.tabbed:
       alternate_style: true 
 plugins:
@@ -562,6 +569,18 @@ nav:
       - schedule/changes/index.md
       - Specification Amendment Process: schedule/process.md
     - Validate: schedule/validate.md
+    - Components: 
+      - schedule/components/index.md
+      - Base Component: schedule/components/base.md
+      - Accesibility Component: schedule/components/accesibility.md
+      - Fares Component: schedule/components/fares.md
+      - Pathways Component: schedule/components/pathways.md
+      - Metadata Component: schedule/components/metadata.md
+      - Flexible services Component: schedule/components/flexible_services.md
+      - Shapes Component: schedule/components/shapes.md
+      - Transfers Component: schedule/components/transfers.md
+      - Frequency based services Component: schedule/components/frequency_based_services.md
+
   - GTFS Realtime: 
     - Getting Started: realtime/index.md
     - Reference: realtime/reference.md
@@ -576,7 +595,7 @@ nav:
       - Trip Updates: realtime/feed-examples/trip-updates.md
       - Service Alerts: realtime/feed-examples/service-alerts.md
     - Protobuf: realtime/proto.md
-    - Language Bindings: 
+    - Language Bindings:
       - realtime/language-bindings/index.md
       - .NET: realtime/language-bindings/dotnet.md
       - Java: realtime/language-bindings/java.md
