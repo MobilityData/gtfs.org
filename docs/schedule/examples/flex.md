@@ -10,7 +10,7 @@ Flex is a GTFS Schedule extension project that aims to facilitate discoverabilit
 
 The following example demonstrates how to model different demand responsive service use cases using Flex.
 
-## On-demand services within a zone
+## On-demand services within a single zone
 
 ## On-demand services between multiple zones
 
@@ -65,10 +65,10 @@ flächenrufbus_angermünde_weekends | 1 | 60 | 1€ Komfortzuschlag pro Person; 
 [**stop_times.txt**](../../reference/#stop_timestxt)
 trip_id | stop_sequence | location_group_id | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | pickup_booking_rule_id | drop_off_booking_rule_id
 -- | -- | -- | -- | -- | -- | -- | -- | --
-476_weekdays | 1 | 476_stops | 17:30:00 | 22:00:00 | 2 | 1 | flächenrufbus-angermünde-weekdays | flächenrufbus-angermünde-weekdays
-476_weekdays | 2 | 476_stops | 17:30:00 | 22:00:00 | 1 | 2 | flächenrufbus-angermünde-weekdays | flächenrufbus-angermünde-weekdays
-476_weekends | 1 | 476_stops | 08:30:00 | 22:00:00 | 2 | 1 | flächenrufbus-angermünde-weekdays | flächenrufbus-angermünde-weekends
-476_weekends | 2 | 476_stops | 08:30:00 | 22:00:00 | 1 | 2 | flächenrufbus-angermünde-weekdays | flächenrufbus-angermünde-weekends
+476_weekdays | 1 | 476_stops | 17:30:00 | 22:00:00 | 2 | 1 | flächenrufbus_angermünde_weekdays | flächenrufbus_angermünde_weekdays
+476_weekdays | 2 | 476_stops | 17:30:00 | 22:00:00 | 1 | 2 | flächenrufbus_angermünde_weekdays | flächenrufbus_angermünde_weekdays
+476_weekends | 1 | 476_stops | 08:00:00 | 22:00:00 | 2 | 1 | flächenrufbus-angermünde_weekdays | flächenrufbus-angermünde_weekends
+476_weekends | 2 | 476_stops | 08:00:00 | 22:00:00 | 1 | 2 | flächenrufbus-angermünde_weekdays | flächenrufbus-angermünde_weekends
 
 ## Deviated route
 
