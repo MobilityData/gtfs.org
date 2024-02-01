@@ -11,6 +11,97 @@ Flex is a GTFS Schedule extension project that aims to facilitate discoverabilit
 The following example demonstrates how to model different demand responsive service use cases using Flex.
 
 ## On-demand services within a single zone
+Demand-repsonsive services can operate within a specific zone, allowing riders to book pickups at any point A within the zone and drop-offs at any point B within the same zone. An example of this is the Heartland Express Transit service in Minnesota, USA.
+
+### Define trips
+Heartland Express service hours are as follow:
+- Weekdays:
+  - 8:00 AM - 5:00 PM
+  - 6:15 AM – 5:45 PM (New Ulm Only)
+- Sunday: 8:00 AM - Noon (New Ulm Only)
+
+The New Ulm city zone is included within the Brown County zone. To avoid the "zone overlap constraint" issue, Heartland Express can be defined with four trips:
+- Service in New Ulm from 6:15 AM to 8:00 AM on weekdays.
+- County-wide service from 8:00 AM to 5:00 PM on weekdays.
+- Service in New Ulm from 5:00 PM to 5:45 PM on weekdays.
+- Service in New Ulm from 8:00 AM to 12:00 PM on Sundays.
+  
+[**trips.txt**](../../reference/#tripstxt)
+route_id | service_id | trip_id
+-- | -- | -- 
+74362 | c_67295_b_77497_d_31 | t_5374945_b_77497_tn_0
+74362 | c_67295_b_77497_d_31 | t_5374946_b_77497_tn_0
+74362 | c_67295_b_77497_d_31 | t_5374944_b_77497_tn_0
+74362 | c_67295_b_77497_d_64 | t_5374947_b_77497_tn_0
+
+`service_id = c_67295_b_77497_d_31` refers to weekdays, `service_id = c_67295_b_77497_d_64` refers to Sunday.
+
+### Define zones (GeoJSON locations)
+Using the GeoJSON format to define the operational zone of Heartland Express service, separate zones must be defined for Brown County and New Ulm City. Below is a simplified GeoJSON defining the zone of Brown County:
+```json
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "area_708",
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        # Simplified, only presenting 3 coordinates here.
+        "coordinates": [
+          [
+            [
+              -94.7805702,
+              44.4560958
+            ],
+            [
+              -94.7805608,
+              44.4559928
+            ],
+            [
+              -94.7805218,
+              44.4559649
+            ]
+          ]
+        ]
+      },
+      "properties": {}
+    }
+  ]
+```
+
+### Define booking rules
+Here are booking rules that apply to all Heartland Express services:
+- Ride requests should be made between 8 AM and 3 PM weekdays. 
+- Rides must be requested one business day prior to day of the ride. 
+- Ride requests can be made up to 14 days in advance.
+
+Using `booking_type = 2` indicates that the service requires up to prior day(s) booking. `prior_notice_last_day = 1` and `prior_notice_start_day = 14` indicate  indicate that the service can be booked as early as 14 days in advance and as late as the day before.
+
+[**booking_rules.txt**](../../reference/#booking_rulestxt)
+booking_rule_id | booking_type | prior_notice_start_day | prior_notice_start_time | prior_notice_last_day | prior_notice_last_time | message | phone_number | info_url
+-- | -- | -- | -- | -- | -- | -- | -- | --
+booking_route_74362 | 2 | 14 | 8:00:00 | 1 | 15:00:00 | Brown County Heartland Express provides door-to-door on-demand transportation. To request a ride, call 1-507-359-2717 or 1-800-707-2717 by 3pm at least one business day ahead of your trip. | (507) 359-2717 | https://www.co.brown.mn.us/heartland-express-transit
+
+### Define stop_times
+- The operating hours are defined using the `start_pickup_drop_off_window` and `end_pickup_drop_off_window` fields.
+- Travel within the same zone requires two records in stop_times.txt with the same `location_id`.
+  - The first record with `pickup_type = 2` and `drop_off_type = 1` indicates that booking boarding is allowed in the zone.
+  - The second record with `pickup_type = 1` and `drop_off_type = 2` indicates that booking alighting is allowed in the zone.
+ 
+[**stop_times.txt**](../../reference/#stop_timestxt)
+trip_id | location_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | pickup_booking_rule_id | drop_off_booking_rule_id
+-- | -- | -- | -- | -- | -- | -- | -- | --
+t_5374944_b_77497_tn_0 | area_715 | 1 | 06:15:00 | 08:00:00 | 2 | 1 | booking_route_74362 | booking_route_74362
+t_5374944_b_77497_tn_0 | area_715 | 2 | 06:15:00 | 08:00:00 | 1 | 2 | booking_route_74362 | booking_route_74362
+t_5374945_b_77497_tn_0 | area_708 | 1 | 08:00:00 | 17:00:00 | 2 | 1 | booking_route_74362 | booking_route_74362
+t_5374945_b_77497_tn_0 | area_708 | 2 | 08:00:00 | 17:00:00 | 1 | 2 | booking_route_74362 | booking_route_74362
+t_5374946_b_77497_tn_0 | area_715 | 1 | 17:00:00 | 17:45:00 | 2 | 1 | booking_route_74362 | booking_route_74362
+t_5374946_b_77497_tn_0 | area_715 | 2 | 17:00:00 | 17:45:00 | 1 | 2 | booking_route_74362 | booking_route_74362
+t_5374947_b_77497_tn_0 | area_715 | 1 | 08:00:00 | 12:00:00 | 2 | 1 | booking_route_74362 | booking_route_74362
+t_5374947_b_77497_tn_0 | area_715 | 2 | 08:00:00 | 12:45:00 | 1 | 2 | booking_route_74362 | booking_route_74362
+
+`area_715` refers to New Ulm City zone, `area_708` refers to Bronw County zone. 
 
 ## On-demand services between multiple zones
 
