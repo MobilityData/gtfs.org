@@ -6,12 +6,12 @@
 
 <hr>
 
-Flex is a GTFS Schedule extension project that aims to facilitate discoverability of Demand Responsive Transportation Services.
+Flex is a GTFS extension project that aims to facilitate discoverability of Demand Responsive Transportation Services.
 
-The following example demonstrates how to model different demand responsive service use cases using Flex.
+The following example demonstrates how to model different demand responsive service use cases using Flex. **Please note that the following examples are not necessarily an accurate or complete representation of the agencies’ services.**
 
 ## On-demand services within a single zone
-Demand-repsonsive services can operate within a specific zone, allowing riders to book pickups at any point A within the zone and drop-offs at any point B within the same zone. An example of this is the Heartland Express Transit service in Minnesota, USA.
+Demand-repsonsive services can operate within a specific zone, allowing riders to book pickups at any point A within the zone and drop-offs at any point B within the same zone. An example of this is the [Heartland Express Transit](https://www.co.brown.mn.us/heartland-express-transit?view=category&id=56) service in Minnesota, USA.
 
 ### Define trips
 Heartland Express service hours are as follow:
@@ -37,7 +37,7 @@ route_id | service_id | trip_id
 `service_id = c_67295_b_77497_d_31` refers to weekdays, `service_id = c_67295_b_77497_d_64` refers to Sunday.
 
 ### Define zones (GeoJSON locations)
-Using the GeoJSON format to define the operational zone of Heartland Express service, separate zones must be defined for Brown County and New Ulm City. Below is a simplified GeoJSON defining the zone of Brown County:
+Using locations.geojson to define the operational zone of Heartland Express service, separate zones must be defined for Brown County and New Ulm City. Below is a simplified GeoJSON defining the zone of Brown County:
 ```json
 {
   "type": "FeatureCollection",
@@ -154,12 +154,12 @@ flächenrufbus_angermünde_weekends | 1 | 60 | 1€ Komfortzuschlag pro Person; 
   - The second record with `pickup_type = 1` and `drop_off_type = 2` indicates that booking alighting is allowed at the location group.
 
 [**stop_times.txt**](../../reference/#stop_timestxt)
-trip_id | stop_sequence | location_group_id | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | pickup_booking_rule_id | drop_off_booking_rule_id
+trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | pickup_booking_rule_id | drop_off_booking_rule_id
 -- | -- | -- | -- | -- | -- | -- | -- | --
-476_weekdays | 1 | 476_stops | 17:30:00 | 22:00:00 | 2 | 1 | flächenrufbus_angermünde_weekdays | flächenrufbus_angermünde_weekdays
-476_weekdays | 2 | 476_stops | 17:30:00 | 22:00:00 | 1 | 2 | flächenrufbus_angermünde_weekdays | flächenrufbus_angermünde_weekdays
-476_weekends | 1 | 476_stops | 08:00:00 | 22:00:00 | 2 | 1 | flächenrufbus-angermünde_weekdays | flächenrufbus-angermünde_weekends
-476_weekends | 2 | 476_stops | 08:00:00 | 22:00:00 | 1 | 2 | flächenrufbus-angermünde_weekdays | flächenrufbus-angermünde_weekends
+476_weekdays | 476_stops | 1 | 17:30:00 | 22:00:00 | 2 | 1 | flächenrufbus_angermünde_weekdays | flächenrufbus_angermünde_weekdays
+476_weekdays | 476_stops | 2 | 17:30:00 | 22:00:00 | 1 | 2 | flächenrufbus_angermünde_weekdays | flächenrufbus_angermünde_weekdays
+476_weekends | 476_stops | 1 | 08:00:00 | 22:00:00 | 2 | 1 | flächenrufbus-angermünde_weekdays | flächenrufbus-angermünde_weekends
+476_weekends | 476_stops | 2 | 08:00:00 | 22:00:00 | 1 | 2 | flächenrufbus-angermünde_weekdays | flächenrufbus-angermünde_weekends
 
 ## Deviated route
 
