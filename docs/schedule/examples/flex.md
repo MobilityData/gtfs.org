@@ -113,9 +113,9 @@ Similar to the previous example, because service hours vary on different days, i
 route_id | service_id | trip_id 
 -- | -- | -- 
 74375 | weekdays | t_5298036_b_77503_tn_0 
-74385 | saturdays | t_5298041_b_77503_tn_0 
+74375 | saturdays | t_5298041_b_77503_tn_0 
 74375 | weekdays | t_5298046_b_77503_tn_0 
-74385 | saturdays | t_5298051_b_77503_tn_0
+74375 | saturdays | t_5298051_b_77503_tn_0
 
 (Define booking rules and zones using booking_rules.txt and locations.geojson in the same way as the previous example)
 
@@ -191,6 +191,42 @@ trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end
 476_weekends | 476_stops | 2 | 08:00:00 | 22:00:00 | 1 | 2 | flächenrufbus-angermünde_weekdays | flächenrufbus-angermünde_weekends
 
 ## Deviated route
+"Route deviation" refers to services where the vehicle follows a fixed route with a set sequence of stops but has the flexibility to deviate from this route to pick up or drop off riders between stops. Typically, deviations are limited to keep the service on schedule, and advance booking is required for deviated pickups. For example, the [Hermann Express](https://www.newulmmn.gov/553/Hermann-Express-City-Bus-Service) service in New Ulm City:
+
+**The example below has been simplified, download the dataset for more details**
+
+### Define trips
+Since this type of service still involves a series of fixed stops and a fixed schedule, defining trips is similar to normal fixed-route bus services. It requires defining trips for each service throughout the day.
+
+[**trips.txt**](../../reference/#tripstxt)
+route_id | service_id | trip_id | share_id
+-- | -- | -- | -- 
+74513 | c_67295_b_77497_d_31 | t_5374704_b_77497_tn_0 | p_1426044
+74513 | c_67295_b_77497_d_31 | t_5374699_b_77497_tn_0 | p_1426044
+74513 | c_67295_b_77497_d_31 | t_5374698_b_77497_tn_0 | p_1426044
+74513 | c_67295_b_77497_d_31 | t_5374697_b_77497_tn_0 | p_1426044
+... | ... | ... | ...
+
+### Define zones (GeoJSON location)
+Using locations.geojson to define zones for deviated route. Typically, deviations are limited to keep the service on schedule. Therefore, as the vehicle travels, the deviation area between each fixed stop may vary accordingly. The area for route deviation may look like the image below:
+
+### Define stop_times
+- For fixed stops, define fields such as `arrival_time`, `departure_time`, and `stop_id` in a manner similar to normal bus routes.
+- Between fixed stops, define the zones where deviation is allowed.
+- `pickup_type = 1` and `drop_off_type = 3` indicates that pre-booking is required for boarding in the deviation zone, and riders must coordinate with the driver for alighting in the zone.
+
+[**stop_times.txt**](../../reference/#stop_timestxt)
+trip_id | arrival_time | departure_time | stop_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | shape_dist_traveled | pickup_booking_rule_id | drop_off_booking_rule_id
+-- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
+t_5374696_b_77497_tn_0 | 08:00:00 | 08:00:00 | 4149546 | | 1 | | | | | 0 | | 
+t_5374696_b_77497_tn_0 | | | | radius_300_s_4149546_s_4149547 | 2 | 08:00:00 | 8:02:22 | 1 | 3 | | booking_route_74513 | booking_route_74513
+t_5374696_b_77497_tn_0 | 08:02:22 | 08:02:22 | 4149547 | | 3 | | | | | 1221.627114 | | 
+t_5374696_b_77497_tn_0 | | | | radius_300_s_4149546_s_4149548 | 4 | 08:02:22 | 8:03:00 | 1 | 3 | | booking_route_74513 | booking_route_74513
+t_5374696_b_77497_tn_0 | 08:03:22 | 08:03:22 | 4149548 | | 5 | | | | | 1548.216356 | | 
+t_5374696_b_77497_tn_0 | | | | radius_300_s_4149546_s_4149549 | 6 | 08:03:22 | 8:05:00 | 1 | 3 | | booking_route_74513 | booking_route_74513
+... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ...
+t_5374696_b_77497_tn_0 | 08:50:00 | 08:50:00 | 4210601 | | 35 | | | | | 23429.19558 | | 
+t_5374696_b_77497_tn_0 | 08:56:00 | 08:56:00 | 4149564 | | 36 | | | | | 25320.8471 | | 
 
 ## Routing behavior
 
