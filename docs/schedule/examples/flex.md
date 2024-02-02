@@ -104,6 +104,35 @@ t_5374947_b_77497_tn_0 | area_715 | 2 | 08:00:00 | 12:45:00 | 1 | 2 | booking_ro
 `area_715` refers to New Ulm City zone, `area_708` refers to Bronw County zone. 
 
 ## On-demand services between multiple zones
+Some demand-responsive services operate between multiple distinct zones, where riders can book pickups at any point A within one area and drop-offs at any point B within another area. For example, Minnesota River Valley Transit offers on-demand services between Saint Peter and Kasota cities:
+
+### Define trips
+Similar to the previous example, because service hours vary on different days, it's necessary to define trips separately for weekdays and Saturdays. 
+
+[**trips.txt**](../../reference/#tripstxt)
+route_id | service_id | trip_id 
+-- | -- | -- 
+74375 | weekdays | t_5298036_b_77503_tn_0 
+74385 | saturdays | t_5298041_b_77503_tn_0 
+74375 | weekdays | t_5298046_b_77503_tn_0 
+74385 | saturdays | t_5298051_b_77503_tn_0
+
+(Define booking rules and zones using booking_rules.txt and locations.geojson in the same way as the previous example)
+
+### Define stop_times
+- The following data indicates that boarding is only allowed in one zone and alighting is only allowed in another zone. Boarding and alighting in the same zone are not allowed.
+
+[**stop_times.txt**](../../reference/#stop_timestxt)
+trip_id | location_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | pickup_booking_rule_id | drop_off_booking_rule_id
+-- | -- | -- | -- | -- | -- | -- | -- | --
+t_5298036_b_77503_tn_0 | area_713 | 1 | 06:30:00 | 20:00:00 | 2 | 1 | booking_route_74375 | booking_route_74375
+t_5298036_b_77503_tn_0 | area_714 | 2 | 06:30:00 | 20:00:00 | 1 | 2 | booking_route_74375 | booking_route_74375
+t_5298041_b_77503_tn_0 | area_713 | 1 | 09:00:00 | 19:00:00 | 2 | 1 | booking_route_74375 | booking_route_74375
+t_5298041_b_77503_tn_0 | area_714 | 2 | 09:00:00 | 19:00:00 | 1 | 2 | booking_route_74375 | booking_route_74375
+t_5298046_b_77503_tn_0 | area_714 | 1 | 06:30:00 | 20:00:00 | 2 | 1 | booking_route_74375 | booking_route_74375
+t_5298046_b_77503_tn_0 | area_713 | 2 | 06:30:00 | 20:00:00 | 1 | 2 | booking_route_74375 | booking_route_74375
+t_5298051_b_77503_tn_0 | area_714 | 1 | 09:00:00 | 19:00:00 | 2 | 1 | booking_route_74375 | booking_route_74375
+t_5298051_b_77503_tn_0 | area_713 | 2 | 09:00:00 | 19:00:00 | 1 | 2 | booking_route_74375 | booking_route_74375
 
 ## On-demand services where riders must board and alight at specific locations
 In certain demand-responsive services, riders are unable to specify boarding and alighting at any location within a zone. Instead, riders can only book to board and alight at specific designated stops(collection points/ virtual stops). An example of this is the [RufBus service](https://uvg-online.com/rufbus-angermuende/) in Angermünde and Gartz, Germany:
@@ -158,7 +187,7 @@ trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end
 -- | -- | -- | -- | -- | -- | -- | -- | --
 476_weekdays | 476_stops | 1 | 17:30:00 | 22:00:00 | 2 | 1 | flächenrufbus_angermünde_weekdays | flächenrufbus_angermünde_weekdays
 476_weekdays | 476_stops | 2 | 17:30:00 | 22:00:00 | 1 | 2 | flächenrufbus_angermünde_weekdays | flächenrufbus_angermünde_weekdays
-476_weekends | 476_stops | 1 | 08:00:00 | 22:00:00 | 2 | 1 | flächenrufbus-angermünde_weekdays | flächenrufbus-angermünde_weekends
+476_weekends | 476_stops | 1 | 08:00:00 | 22:00:00 | 2 | 1 | flächenrufbus-angermünde_weekdays | flächenrufbus_angermünde_weekends
 476_weekends | 476_stops | 2 | 08:00:00 | 22:00:00 | 1 | 2 | flächenrufbus-angermünde_weekdays | flächenrufbus-angermünde_weekends
 
 ## Deviated route
