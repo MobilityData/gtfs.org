@@ -216,7 +216,7 @@ Using locations.geojson to define zones for deviated route. Typically, deviation
 - `pickup_type = 1` and `drop_off_type = 3` indicates that pre-booking is required for boarding in the deviation zone, and riders must coordinate with the driver for alighting in the zone.
 
 [**stop_times.txt**](../../reference/#stop_timestxt)
-trip_id | arrival_time | departure_time | stop_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | shape_dist_traveled | pickup_booking_rule_id | drop_off_booking_rule_id
+trip_id | arrival_time | departure_time | stop_id | location_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | shape_dist_traveled | pickup_booking_rule_id | drop_off_booking_rule_id
 -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
 t_5374696_b_77497_tn_0 | 08:00:00 | 08:00:00 | 4149546 | | 1 | | | | | 0 | | 
 t_5374696_b_77497_tn_0 | | | | radius_300_s_4149546_s_4149547 | 2 | 08:00:00 | 8:02:22 | 1 | 3 | | booking_route_74513 | booking_route_74513
