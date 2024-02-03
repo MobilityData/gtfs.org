@@ -13,6 +13,8 @@ The following example demonstrates how to model different demand responsive serv
 ## On-demand services within a single zone
 Demand-repsonsive services can operate within a specific zone, allowing riders to book pickups at any point A within the zone and drop-offs at any point B within the same zone. An example of this is the [Heartland Express Transit](https://www.co.brown.mn.us/heartland-express-transit?view=category&id=56) service in Minnesota, USA.
 
+<sup>[Download Heartland Express example dataset](../../../assets/on-demand_services_within_a_single_zone.zip)</sup>
+
 ### Define trips
 Heartland Express service hours are as follow:
 - Weekdays:
@@ -104,7 +106,9 @@ t_5374947_b_77497_tn_0 | area_715 | 2 | 08:00:00 | 12:45:00 | 1 | 2 | booking_ro
 `area_715` refers to New Ulm City zone, `area_708` refers to Bronw County zone. 
 
 ## On-demand services between multiple zones
-Some demand-responsive services operate between multiple distinct zones, where riders can book pickups at any point A within one area and drop-offs at any point B within another area. For example, Minnesota River Valley Transit offers on-demand services between Saint Peter and Kasota cities:
+Some demand-responsive services operate between multiple distinct zones, where riders can book pickups at any point A within one area and drop-offs at any point B within another area. For example, [Minnesota River Valley Transit](https://www.saintpetermn.gov/330/Dial-a-Ride) offers on-demand services between Saint Peter and Kasota cities:
+
+<sup>[Download River Valley Transit example dataset](../../../assets/on-demand_services_between_multiple_zones.zip)</sup>
 
 ### Define trips
 Similar to the previous example, because service hours vary on different days, it's necessary to define trips separately for weekdays and Saturdays. 
@@ -193,7 +197,7 @@ trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end
 ## Deviated route
 "Route deviation" refers to services where the vehicle follows a fixed route with a set sequence of stops but has the flexibility to deviate from this route to pick up or drop off riders between stops. Typically, deviations are limited to keep the service on schedule, and advance booking is required for deviated pickups. For example, the [Hermann Express](https://www.newulmmn.gov/553/Hermann-Express-City-Bus-Service) service in New Ulm City:
 
-**The example below has been simplified, download the dataset for more details**
+**The example below has been simplified, download the [Hermann Express example dataset](../../../assets/deviated_drop-off_route.zip) for more details.**
 
 ### Define trips
 Since this type of service still involves a series of fixed stops and a fixed schedule, defining trips is similar to normal fixed-route bus services. It requires defining trips for each service throughout the day.
@@ -209,6 +213,10 @@ route_id | service_id | trip_id | share_id
 
 ### Define zones (GeoJSON location)
 Using locations.geojson to define zones for deviated route. Typically, deviations are limited to keep the service on schedule. Therefore, as the vehicle travels, the deviation area between each fixed stop may vary accordingly. The area for route deviation may look like the image below:
+
+<div class="flex-photos">
+    <img src="../../../assets/deviated_route_zones.png" alt="deviated route zones">
+</div>
 
 ### Define stop_times
 - For fixed stops, define fields such as `arrival_time`, `departure_time`, and `stop_id` in a manner similar to normal bus routes.
