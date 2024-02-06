@@ -132,11 +132,12 @@ plugins:
 nav:
   - Home: index.md
   - Getting started:
-    - getting_started/index.md
     - What is GTFS?: getting_started/what_is_GTFS.md
-    - How to create GTFS: getting_started/Page2.md
-    - How to contribute: getting_started/Page3.md
-    - Simple examples: getting_started/Page4.md
+    - Why use GTFS?: getting_started/why_use_GTFS.md
+    - How to create GTFS: getting_started/how_to_create_GTFS.md
+    - Check the quality: getting_started/check_the_quality.md
+    - Publishing: getting_started/publishing.md
+    - Examples: getting_started/examples.md
   - Documentation:
     - documentation/index.md
     - Schedule:
@@ -169,7 +170,7 @@ nav:
     - Platforms: community/platforms.md
     - Active projects: community/active_projects.md
   - Resource library:
-    - resource_library/index.md
+    - Resource Library: resource_library/index.md
     - Data examples: 
       - Schedule data examples: 
         - Attributions: resource_library/data_examples/schedule_data_examples/attributions.md
