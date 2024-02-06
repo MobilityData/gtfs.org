@@ -169,9 +169,23 @@ nav:
   - Community:
     - Platforms: community/platforms.md
     - Active projects: community/active_projects.md
-  - Resources:
-    - resource_library/index.md
-    - Data examples: resource_library/data_examples.md
+  - Resource library:
+    - Resource Library: resource_library/index.md
+    - Data examples: 
+      - Schedule data examples: 
+        - Attributions: resource_library/data_examples/schedule_data_examples/attributions.md
+        - Continuous stops: resource_library/data_examples/schedule_data_examples/continuous-stops.md
+        - Fares v1: resource_library/data_examples/schedule_data_examples/fares-v1.md
+        - Fares v2: resource_library/data_examples/schedule_data_examples/fares-v2.md
+        - Feed information: resource_library/data_examples/schedule_data_examples/feed-info.md
+        - Text-to-speech: resource_library/data_examples/schedule_data_examples/text-to-speech.md
+        - Frequencies: resource_library/data_examples/schedule_data_examples/frequencies.md
+        - Pathways: resource_library/data_examples/schedule_data_examples/pathways.md
+        - Transfers: resource_library/data_examples/schedule_data_examples/transfers.md
+        - Transations: resource_library/data_examples/schedule_data_examples/translations.md
+      - Realtime data examples: 
+        - Service alerts: resource_library/data_examples/realtime_data_examples/service-alerts.md
+        - Trip updates: resource_library/data_examples/realtime_data_examples/trip-updates.md
     - Tutorials: resource_library/tutorials.md
     - Tools: resource_library/tools.md
     - GTFS extension projects: resource_library/extension_projects.md
