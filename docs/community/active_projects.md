@@ -22,4 +22,3 @@
             <li>The proposal is composed of 2 extensions: GTFS-FlexibleTrips, which describes the service itself and GTFS-BookingRules, which provides the booking information of GTFS-FlexibleTrips.</li>
         </ul>
     </div>
-    </div>
