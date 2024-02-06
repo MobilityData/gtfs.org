@@ -186,10 +186,13 @@ nav:
       - Realtime data examples: 
         - Service alerts: resource_library/data_examples/realtime_data_examples/service-alerts.md
         - Trip updates: resource_library/data_examples/realtime_data_examples/trip-updates.md
-    - Tutorials: resource_library/tutorials.md
+    - Guides and Tutorials: resource_library/tutorials.md
     - Tools: resource_library/tools.md
+      - 
     - GTFS extension projects: resource_library/extension_projects.md
-    - Propose modifications to the spec: resource_library/propose_modifications.md
+    - GTFS amendment process: 
+      - GTFS Schedule Amendment Process: resource_library/spec_amendment_process/gtfs_schedule_amendment_process.md
+      - GTFS Realtime Amendment Process: resource_library/spec_amendment_process/gtfs_realtime_amendment_process.md
   - About:
       - 5-About/index.md
   - GTFS Schedule:
