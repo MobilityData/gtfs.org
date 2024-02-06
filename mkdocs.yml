@@ -138,7 +138,7 @@ nav:
     - Publishing: getting_started/publishing.md
     - Examples: getting_started/examples.md
   - Documentation:
-    - overview: documentation/overview.md
+    - Overview: documentation/overview.md
     - Schedule:
       - Features: 
         - Overview: documentation/schedule/components/overview.md
