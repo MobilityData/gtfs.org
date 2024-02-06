@@ -171,7 +171,7 @@ nav:
   - Resource library:
     - Overview: resource_library/overview.md
     - Data examples: 
-      - Schedule data examples: 
+      - GTFS Schedule data examples: 
         - Attributions: resource_library/data_examples/schedule_data_examples/attributions.md
         - Continuous stops: resource_library/data_examples/schedule_data_examples/continuous-stops.md
         - Fares v1: resource_library/data_examples/schedule_data_examples/fares-v1.md
@@ -182,7 +182,7 @@ nav:
         - Pathways: resource_library/data_examples/schedule_data_examples/pathways.md
         - Transfers: resource_library/data_examples/schedule_data_examples/transfers.md
         - Transations: resource_library/data_examples/schedule_data_examples/translations.md
-      - Realtime data examples: 
+      - GTFS Realtime data examples: 
         - Service alerts: resource_library/data_examples/realtime_data_examples/service-alerts.md
         - Trip updates: resource_library/data_examples/realtime_data_examples/trip-updates.md
     - Guides and Tutorials: resource_library/tutorials.md
