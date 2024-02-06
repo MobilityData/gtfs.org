@@ -132,12 +132,11 @@ plugins:
 nav:
   - Home: index.md
   - Getting started:
+    - getting_started/index.md
     - What is GTFS?: getting_started/what_is_GTFS.md
-    - Why use GTFS?: getting_started/why_use_GTFS.md
-    - How to create GTFS: getting_started/how_to_create_GTFS.md
-    - Check the quality: getting_started/check_the_quality.md
-    - Publishing: getting_started/publishing.md
-    - Examples: getting_started/examples.md
+    - How to create GTFS: getting_started/Page2.md
+    - How to contribute: getting_started/Page3.md
+    - Simple examples: getting_started/Page4.md
   - Documentation:
     - documentation/index.md
     - Schedule:
@@ -169,9 +168,23 @@ nav:
   - Community:
     - Platforms: community/platforms.md
     - Active projects: community/active_projects.md
-  - Resources:
+  - Resource library:
     - resource_library/index.md
-    - Data examples: resource_library/data_examples.md
+    - Data examples: 
+      - Schedule data examples: 
+        - Attributions: resource_library/data_examples/schedule_data_examples/attributions.md
+        - Continuous stops: resource_library/data_examples/schedule_data_examples/continuous-stops.md
+        - Fares v1: resource_library/data_examples/schedule_data_examples/fares-v1.md
+        - Fares v2: resource_library/data_examples/schedule_data_examples/fares-v2.md
+        - Feed information: resource_library/data_examples/schedule_data_examples/feed-info.md
+        - Text-to-speech: resource_library/data_examples/schedule_data_examples/text-to-speech.md
+        - Frequencies: resource_library/data_examples/schedule_data_examples/frequencies.md
+        - Pathways: resource_library/data_examples/schedule_data_examples/pathways.md
+        - Transfers: resource_library/data_examples/schedule_data_examples/transfers.md
+        - Transations: resource_library/data_examples/schedule_data_examples/translations.md
+      - Realtime data examples: 
+        - Service alerts: resource_library/data_examples/realtime_data_examples/service-alerts.md
+        - Trip updates: resource_library/data_examples/realtime_data_examples/trip-updates.md
     - Tutorials: resource_library/tutorials.md
     - Tools: resource_library/tools.md
     - GTFS extension projects: resource_library/extension_projects.md
