@@ -187,7 +187,8 @@ nav:
         - Service alerts: resource_library/data_examples/realtime_data_examples/service-alerts.md
         - Trip updates: resource_library/data_examples/realtime_data_examples/trip-updates.md
     - Guides and Tutorials: resource_library/tutorials.md
-    - Tools: resource_library/tools.md
+    - Tools: 
+      - Data Portals: resource_library/tools/data_portals.md
       - 
     - GTFS extension projects: resource_library/extension_projects.md
     - GTFS amendment process: 
