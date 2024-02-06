@@ -170,7 +170,7 @@ nav:
     - Platforms: community/platforms.md
     - Active projects: community/active_projects.md
   - Resource library:
-    - Resource Library: resource_library/index.md
+    - Overview: resource_library/overview.md
     - Data examples: 
       - Schedule data examples: 
         - Attributions: resource_library/data_examples/schedule_data_examples/attributions.md
