@@ -137,6 +137,7 @@ nav:
     - How to create GTFS: getting_started/how_to_create_GTFS.md
     - Check the quality: getting_started/check_the_quality.md
     - Publishing: getting_started/publishing.md
+    - Examples: getting_started/examples.md
   - Documentation:
     - documentation/index.md
     - Schedule:
