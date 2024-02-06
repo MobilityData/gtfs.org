@@ -28,7 +28,6 @@ theme:
     - navigation.tabs
     - navigation.indexes
     - navigation.top
-    - toc.integrate
     - content.tabs.link
     - search.suggest
   custom_dir: theme_overrides
