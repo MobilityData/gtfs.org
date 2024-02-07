@@ -31,7 +31,7 @@ theme:
     - content.tabs.link
     - search.suggest
   custom_dir: docs/theme_override_home/
-  custom_dir: theme_overrides
+  custom_dir: docs/staging_banner/
   language: en
   locale: en
 extra_css:
