@@ -170,8 +170,8 @@ nav:
     - Active projects: 
       - Fares v2: community/active_projects/fares-v2.md
       - Flex: community/active_projects/flex.md
-  - Resource library:
-    - Resource Library: resource_library/index.md
+  - Resource Library:
+    - Resource Library: resource_library/overview.md
     - Data examples: 
       - GTFS Schedule data examples: 
         - Attributions: resource_library/data_examples/schedule_data_examples/attributions.md
