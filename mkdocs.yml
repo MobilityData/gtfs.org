@@ -166,10 +166,12 @@ nav:
       - Protobuf: documentation/Realtime/proto.md
       - Recent Additions: documentation/Realtime/recent additions.md
   - Community:
-    - Platforms: community/platforms.md
-    - Active projects: community/active_projects.md
-  - Resource Library:
-    - Overview: resource_library/overview.md
+    - Get involved: community/get_involved.md
+    - Active projects: 
+      - Fares v2: community/active_projects/fares-v2.md
+      - Flex: community/active_projects/flex.md
+  - Resource library:
+    - Resource Library: resource_library/index.md
     - Data examples: 
       - GTFS Schedule data examples: 
         - Attributions: resource_library/data_examples/schedule_data_examples/attributions.md
