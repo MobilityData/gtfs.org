@@ -188,7 +188,6 @@ nav:
     - Guides and Tutorials: resource_library/tutorials.md
     - Tools: 
       - Data Portals: resource_library/tools/data_portals.md
-      - 
     - GTFS extension projects: resource_library/extension_projects.md
     - GTFS amendment process: 
       - GTFS Schedule Amendment Process: resource_library/spec_amendment_process/gtfs_schedule_amendment_process.md
