@@ -5,7 +5,7 @@ As the GTFS Specification grows and adapts to the current needs of transit syste
 The following groups of features, called Components, explain the purpose of each feature as well as the files and fields associated with them, helping users to understand which data is needed in order to support a specific feature.
 
 
-## Base Component
+## Base
 The features included in this component provide the most basic and essential elements that a GTFS needs to represent a transit service. This includes entries for each individual trip, stop, arrival and departure times and service days among many other important pieces of information. Since all of the features included in the base component are essential to enable a working GTFS feed, all these features should be implemented together.
 
 <div class="grid cards" markdown>
@@ -49,7 +49,7 @@ The features included in this component provide the most basic and essential ele
 </div>
 
 
-## Accessibility Component
+## Accessibility
 The Accessibility Component of GTFS contains multiple functionalities to provide information that helps end users navigate and access public transit services. Some of these features can be used to communicate the name and color of a route, making it easier to identify; confirming whether or not a trip and a station are wheelchair accessible, helping users choose the most adequate route; and providing translations in multiple languages, among other things.
 
 <div class="grid cards" markdown>
@@ -94,7 +94,7 @@ The Accessibility Component of GTFS contains multiple functionalities to provide
 </div>
 
 
-## Fares Component
+## Fares
 The Fares component includes multiple features that allow to precisely describe a wide variety of pricing structures and payment methods used by different transit agencies around the world, such as zone-based fares and reloadable prepaid cards. This helps users know the correct price applicable to their trip.
 
 <div class="grid cards" markdown>
@@ -145,7 +145,7 @@ The Fares component includes multiple features that allow to precisely describe 
 </div>
 
 
-##  Pathways Component
+##  Pathways
 The Pathways component contains features that allow to model in-station paths, helping users navigate transit stations from beginning to end and across multiple levels. Some of these features make it possible to communicate the physical characteristics of each individual section of a path, estimate the time required to navigate them and to match this navigation information with the real-world wayfinding systems used in stations.
 
 <div class="grid cards" markdown>
@@ -189,7 +189,7 @@ The Pathways component contains features that allow to model in-station paths, h
 </div>
 
 
-## Metadata Component
+## Metadata
 The Metadata Component contains features that allow to provide further information regarding the producer of the GTFS feed and the feed itself, this includes the names of the organizations as well as contact information.
 
 <div class="grid cards" markdown>
@@ -210,7 +210,7 @@ The Metadata Component contains features that allow to provide further informati
 </div>
 
 
-## Flexible services Component
+## Flexible services
 This component contains features that make it possible to communicate service information for flexible services with special operations that might not follow the common behavior of scheduled and/or fixed  services.
 
 
@@ -226,7 +226,7 @@ This component contains features that make it possible to communicate service in
 
 
 
-## Shapes Component
+## Shapes
 The Shapes component and feature allows to communicate the path that a vehicle follows along a route. Among other things, this can help trip planners to display the route of a trip so that users can know if the route of a service goes to their destination.
 
 
@@ -242,7 +242,7 @@ The Shapes component and feature allows to communicate the path that a vehicle f
 
 
 
-## Transfers Component
+## Transfers
 The transfers component and feature allow to describe transfers between different public transit services. This gives transit agencies the ability to clearly define the applicable rules for each transfer scenario, so that travelers can know if it’s possible to connect trips.
 
 <div class="grid cards" markdown>
@@ -258,7 +258,7 @@ The transfers component and feature allow to describe transfers between differen
 
 
 
-## Frequency-based services Component
+## Frequency-based services
 The frequencies component and feature can be used to represent frequency-based trips (e.g. a bus trips running every 10 minutes, a subway or metro service running every 2 minutes), this can be a useful alternative to providing specific timetables, acting as an alternative to some of the information included in the stop times Feature of the Base Component. 
 
 <div class="grid cards" markdown>
