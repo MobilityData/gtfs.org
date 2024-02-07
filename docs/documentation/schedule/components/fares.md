@@ -1,5 +1,5 @@
 # Fares Component
-The Fares component includes multiple features that allow to precisely describe a wide variety of pricing structures and payment methods used by different transit agencies around the world, such as zone-based fares and reloadable prepaid cards. This helps users know the correct price applicable to their trip.
+The Fares component includes multiple features allowing the precise description of a wide variety of pricing structures and payment methods used by different transit agencies around the world, such as zone-based fares and reloadable prepaid cards. This helps users know the correct price applicable to their trip.
 
 ## Fare Products
 

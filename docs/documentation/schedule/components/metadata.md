@@ -1,5 +1,5 @@
 # Metadata Component
-The Metadata Component contains features that allow to provide further information regarding the producer of the GTFS feed and the feed itself, this includes the names of the organizations as well as contact information.
+The Metadata Component contains features providing further information regarding the producer of the GTFS feed and the feed itself. This includes the names of the organizations as well as contact information.
 
 ## Feed Information
 

@@ -1,5 +1,5 @@
 #  Pathways Component
-The Pathways component contains features that allow to model in-station paths, helping users navigate transit stations from beginning to end and across multiple levels. Some of these features make it possible to communicate the physical characteristics of each individual section of a path, estimate the time required to navigate them and to match this navigation information with the real-world wayfinding systems used in stations.
+The Pathways component contains features that allow the modeling of in-station, helping users navigate transit stations from beginning to end and across multiple levels. Some of these features make it possible to communicate the physical characteristics of each individual section of a path, estimate the time required to navigate them and to match this navigation information with the real-world wayfinding systems used in stations.
 
 ## Location types
 
@@ -13,7 +13,7 @@ This feature is used to classify relevant places within transit stations such as
 
 </div>
 
-## Pathways
+## Pathways basic information
 
 <div class="grid" markdown>
 

@@ -2,7 +2,7 @@
 
 <div class="grid" markdown>
 
-The Shapes component and feature allows to communicate the path that a vehicle follows along a route. Among other things, this can help trip planners to display the route of a trip so that users can know if the route of a service goes to their destination.
+The Shapes component and feature communicates the path a vehicle follows along a route. This allows trip planning applications to display the path of a trip so users have a clear understanding of where the route operates in relation to their travel needs.
 
 | Files associated      | [shapes.txt](/schedule/reference/#shapestxt)                                         | [trips.txt](/schedule/reference/#tripstxt) |
 |-----------------------|--------------------------------------------------------------------------------------|-----------|
