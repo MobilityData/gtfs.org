@@ -136,25 +136,25 @@ nav:
     - How to create GTFS: getting_started/how_to_create_GTFS.md
     - Check the quality: getting_started/check_the_quality.md
     - Publishing: getting_started/publishing.md
-    - Examples: getting_started/examples.md
-  - Documentation:
+    - Basic example: getting_started/examples.md
+  - Technical Documentation:
     - Overview: documentation/overview.md
     - Schedule:
       - Features: 
         - Overview: documentation/schedule/components/overview.md
-        - Base Component: documentation/schedule/components/base.md
-        - Accesibility Component: documentation/schedule/components/accesibility.md
-        - Fares Component: documentation/schedule/components/fares.md
-        - Pathways Component: documentation/schedule/components/pathways.md
-        - Metadata Component: documentation/schedule/components/metadata.md
-        - Flexible services Component: documentation/schedule/components/flexible_services.md
-        - Shapes Component: documentation/schedule/components/shapes.md
-        - Transfers Component: documentation/schedule/components/transfers.md
-        - Frequency based services Component: documentation/schedule/components/frequency_based_services.md
+        - Base: documentation/schedule/components/base.md
+        - Accesibility: documentation/schedule/components/accesibility.md
+        - Fares: documentation/schedule/components/fares.md
+        - Pathways: documentation/schedule/components/pathways.md
+        - Metadata: documentation/schedule/components/metadata.md
+        - Flexible services: documentation/schedule/components/flexible_services.md
+        - Shapes: documentation/schedule/components/shapes.md
+        - Transfers: documentation/schedule/components/transfers.md
+        - Frequency based services: documentation/schedule/components/frequency_based_services.md
       - Reference: documentation/schedule/reference.md
       - Best Practices: documentation/schedule/GTFS schedule best Practices.md
       - Recent additions: documentation/schedule/recent additions.md
-    - Real Time:
+    - Realtime:
       - Overview: documentation/Realtime/overview.md
       - Reference: documentation/Realtime/reference.md
       - Best Practices: documentation/Realtime/best practices.md
@@ -168,7 +168,7 @@ nav:
   - Community:
     - Platforms: community/platforms.md
     - Active projects: community/active_projects.md
-  - Resource library:
+  - Resource Library:
     - Overview: resource_library/overview.md
     - Data examples: 
       - GTFS Schedule data examples: 
@@ -188,91 +188,9 @@ nav:
     - Guides and Tutorials: resource_library/tutorials.md
     - Tools: 
       - Data Portals: resource_library/tools/data_portals.md
-      - 
     - GTFS extension projects: resource_library/extension_projects.md
     - GTFS amendment process: 
       - GTFS Schedule Amendment Process: resource_library/spec_amendment_process/gtfs_schedule_amendment_process.md
       - GTFS Realtime Amendment Process: resource_library/spec_amendment_process/gtfs_realtime_amendment_process.md
   - About:
       - 5-About/index.md
-  - GTFS Schedule:
-    - Getting Started: schedule/index.md
-    - Reference: schedule/reference.md
-    - Best Practices: schedule/best-practices.md
-    - Examples:
-      - schedule/examples/index.md
-      - Example GTFS Feed: schedule/example-feed.md
-      - Routes, stops, and trips: schedule/examples/routes-stops-trips.md
-      - Continuous stops: schedule/examples/continuous-stops.md
-      - Text-to-speech: schedule/examples/text-to-speech.md
-      - Fares v1: schedule/examples/fares-v1.md
-      - Fares v2: schedule/examples/fares-v2.md
-      - Frequencies: schedule/examples/frequencies.md
-      - Pathways: schedule/examples/pathways.md
-      - Transfers: schedule/examples/transfers.md
-      - Translations: schedule/examples/translations.md
-      - Feed information: schedule/examples/feed-info.md
-      - Dataset attributions: schedule/examples/attributions.md
-    - Changes:
-      - schedule/changes/index.md
-      - Specification Amendment Process: schedule/process.md
-    - Validate: schedule/validate.md
-    - Components: 
-      - schedule/components/index.md
-      - Base Component: schedule/components/base.md
-      - Accesibility Component: schedule/components/accesibility.md
-      - Fares Component: schedule/components/fares.md
-      - Pathways Component: schedule/components/pathways.md
-      - Metadata Component: schedule/components/metadata.md
-      - Flexible services Component: schedule/components/flexible_services.md
-      - Shapes Component: schedule/components/shapes.md
-      - Transfers Component: schedule/components/transfers.md
-      - Frequency based services Component: schedule/components/frequency_based_services.md
-
-  - GTFS Realtime: 
-    - Getting Started: realtime/index.md
-    - Reference: realtime/reference.md
-    - Best Practices: realtime/best-practices.md
-    - Feed Entities:
-      - realtime/feed-entities/index.md
-      - Trip Updates: realtime/feed-entities/trip-updates.md
-      - Service Alerts: realtime/feed-entities/service-alerts.md
-      - Vehicle Positions: realtime/feed-entities/vehicle-positions.md
-    - Feed Examples:
-      - realtime/feed-examples/index.md
-      - Trip Updates: realtime/feed-examples/trip-updates.md
-      - Service Alerts: realtime/feed-examples/service-alerts.md
-    - Protobuf: realtime/proto.md
-    - Language Bindings:
-      - realtime/language-bindings/index.md
-      - .NET: realtime/language-bindings/dotnet.md
-      - Java: realtime/language-bindings/java.md
-      - JavaScript/Node.js: realtime/language-bindings/nodejs.md
-      - Python: realtime/language-bindings/python.md
-      - Golang: realtime/language-bindings/golang.md
-      - Ruby: realtime/language-bindings/ruby.md
-      - PHP: realtime/language-bindings/php.md
-    - Changes:
-      - realtime/changes/index.md
-      - Specification Amendment Process: realtime/process.md
-  - Resources:
-    - resources/index.md
-    - Getting Started: resources/getting-started.md
-    - Community: resources/community.md
-    - Data: resources/data.md
-    - Software for Creating APIs: resources/software-for-creating-apis.md
-    - Agency Tools: resources/agency-tools.md
-    - Hardware: resources/hardware.md
-    - Apps: resources/apps.md
-    - SDKs: resources/sdk.md
-    - Visualizations: resources/visualizations.md
-    - GTFS: resources/gtfs.md
-    - GTFS Realtime: resources/gtfs-realtime.md
-    - SIRI: resources/siri.md
-    - Multimodal: resources/multimodal.md
-    - Other: resources/other.md
-  - Extensions:
-    - extensions/index.md
-    - Fares v2: extensions/fares-v2.md
-    - Flex: extensions/flex.md
-  - About: about.md
