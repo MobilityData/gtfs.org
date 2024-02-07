@@ -166,7 +166,7 @@ nav:
       - Protobuf: documentation/Realtime/proto.md
       - Recent Additions: documentation/Realtime/recent additions.md
   - Community:
-    - Platforms: community/platforms.md
+    - Get invloved: community/get_involved.md
     - Active projects: community/active_projects.md
   - Resource library:
     - Resource Library: resource_library/index.md
