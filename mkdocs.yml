@@ -28,7 +28,6 @@ theme:
     - navigation.tabs
     - navigation.indexes
     - navigation.top
-    - toc.integrate
     - content.tabs.link
     - search.suggest
   custom_dir: theme_overrides
@@ -139,7 +138,7 @@ nav:
     - Publishing: getting_started/publishing.md
     - Examples: getting_started/examples.md
   - Documentation:
-    - documentation/index.md
+    - Overview: documentation/overview.md
     - Schedule:
       - Features: 
         - Overview: documentation/schedule/components/overview.md
@@ -169,13 +168,31 @@ nav:
   - Community:
     - Platforms: community/platforms.md
     - Active projects: community/active_projects.md
-  - Resources:
-    - resource_library/index.md
-    - Data examples: resource_library/data_examples.md
-    - Tutorials: resource_library/tutorials.md
-    - Tools: resource_library/tools.md
+  - Resource library:
+    - Overview: resource_library/overview.md
+    - Data examples: 
+      - GTFS Schedule data examples: 
+        - Attributions: resource_library/data_examples/schedule_data_examples/attributions.md
+        - Continuous stops: resource_library/data_examples/schedule_data_examples/continuous-stops.md
+        - Fares v1: resource_library/data_examples/schedule_data_examples/fares-v1.md
+        - Fares v2: resource_library/data_examples/schedule_data_examples/fares-v2.md
+        - Feed information: resource_library/data_examples/schedule_data_examples/feed-info.md
+        - Text-to-speech: resource_library/data_examples/schedule_data_examples/text-to-speech.md
+        - Frequencies: resource_library/data_examples/schedule_data_examples/frequencies.md
+        - Pathways: resource_library/data_examples/schedule_data_examples/pathways.md
+        - Transfers: resource_library/data_examples/schedule_data_examples/transfers.md
+        - Transations: resource_library/data_examples/schedule_data_examples/translations.md
+      - GTFS Realtime data examples: 
+        - Service alerts: resource_library/data_examples/realtime_data_examples/service-alerts.md
+        - Trip updates: resource_library/data_examples/realtime_data_examples/trip-updates.md
+    - Guides and Tutorials: resource_library/tutorials.md
+    - Tools: 
+      - Data Portals: resource_library/tools/data_portals.md
+      - 
     - GTFS extension projects: resource_library/extension_projects.md
-    - Propose modifications to the spec: resource_library/propose_modifications.md
+    - GTFS amendment process: 
+      - GTFS Schedule Amendment Process: resource_library/spec_amendment_process/gtfs_schedule_amendment_process.md
+      - GTFS Realtime Amendment Process: resource_library/spec_amendment_process/gtfs_realtime_amendment_process.md
   - About:
       - 5-About/index.md
   - GTFS Schedule:
