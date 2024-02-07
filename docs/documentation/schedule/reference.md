@@ -4,38 +4,6 @@
 
 This document defines the format and structure of the files that comprise a GTFS dataset.
 
-## Table of Contents
-
-1.  [Document Conventions](#document-conventions)
-2.  [Dataset Files](#dataset-files)
-3.  [File Requirements](#file-requirements)
-4.  [Field Definitions](#field-definitions)
-    -   [agency.txt](#agencytxt)
-    -   [stops.txt](#stopstxt)
-    -   [routes.txt](#routestxt)
-    -   [trips.txt](#tripstxt)
-    -   [stop\_times.txt](#stop_timestxt)
-    -   [calendar.txt](#calendartxt)
-    -   [calendar\_dates.txt](#calendar_datestxt)
-    -   [fare\_attributes.txt](#fare_attributestxt)
-    -   [fare\_rules.txt](#fare_rulestxt)
-    -   [timeframes.txt](#timeframestxt)    
-    -   [fare\_media.txt](#fare_mediatxt)
-    -   [fare\_products.txt](#fare_productstxt) 
-    -   [fare\_leg\_rules.txt](#fare_leg_rulestxt)
-    -   [fare\_transfer\_rules.txt](#fare_transfer_rulestxt)
-    -   [areas.txt](#areastxt)
-    -   [stop_areas.txt](#stop_areastxt)
-    -   [networks.txt](#networkstxt)
-    -   [route_networks.txt](#route_networkstxt)
-    -   [shapes.txt](#shapestxt)
-    -   [frequencies.txt](#frequenciestxt)
-    -   [transfers.txt](#transferstxt)
-    -   [pathways.txt](#pathwaystxt)
-    -   [levels.txt](#levelstxt)
-    -   [translations.txt](#translationstxt)
-    -   [feed\_info.txt](#feed_infotxt)
-    -   [attributions.txt](#attributionstxt)
 
 ## Document Conventions
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", “SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
