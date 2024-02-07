@@ -1,11 +1,11 @@
 # Base component
-The features included in this component provide the most basic and essential elements that a GTFS needs to represent a transit service. This includes entries for each individual trip, stop, arrival and departure times and service days among many other important pieces of information. Since all of the features included in the base component are essential to enable a working GTFS feed, all these features should be implemented together.
+The features included in this component provide the most basic and essential elements that a GTFS needs to represent a transit service. This includes entries for each individual trip, stop, arrival and departure times and service days among many other important pieces of information. Since all of the features included in the base component are essential to enable a working GTFS feed, all these features must be implemented together.
 
 ## Agency
 
 <div class="grid" markdown>
 
-This feature contains basic information regarding the agencies in charge of the transit service, including their name, website URL, and the language and timezone in which the service operates among other information. This allows to match specific services with their own corresponding agency.
+This feature contains basic information regarding the agencies responsible for the transit service, including their name, website URL, and the language and timezone in which the service operates among other information. This allows to match specific services with their own corresponding agency.
 
 | Files associated      | [Agency.txt](/schedule/reference/#agencytxt)                                                                                                     |
 |-----------------------|----------------------------------------------------------------------------------------------------------------|
@@ -16,7 +16,7 @@ This feature contains basic information regarding the agencies in charge of the 
 ## Stops
 
 <div class="grid" markdown>
-This feature allows to represent the basic information elements used to identify where a transit service can be accessed, this could be a metro station or a bus stop. Geographical coordinates are used by this feature to locate the stop or station in a map, while defining a specific ID and name so that it could be identified easily, along with other complementary information.
+This feature allows to represent the basic information elements used to identify where a transit service picks up and drops off passengers, this could be a metro station or a bus stop. Geographical coordinates are used by this feature to locate the stop or station in a map, while defining a specific ID and name so that it could be identified easily, along with other complementary information.
 
 
 | Files associated      | [stops.txt](/schedule/reference/#stopstxt)                                                                                                            |
