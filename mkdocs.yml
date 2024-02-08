@@ -30,8 +30,7 @@ theme:
     - navigation.top
     - content.tabs.link
     - search.suggest
-  custom_dir: docs/theme_overrides/
-  custom_dir: docs/staging_banner/
+  custom_dir: docs/theme_override/
   language: en
   locale: en
 extra_css:
