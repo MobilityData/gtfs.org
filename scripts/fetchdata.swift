@@ -45,7 +45,7 @@ do {
 
     // GTFS Schedule reference (schedule/reference)
 
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/reference.md"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/reference.md"],
                        toFilePath: pathScheduleReference,
               firstDeleteExisting: true,
                  appendToExisting: false)
@@ -61,7 +61,7 @@ do {
 
     // GTFS Schedule best practices (schedule/best-practices)
 
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/MobilityData/GTFS_Schedule_Best-Practices/master/en/best-practices.md"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/MobilityData/GTFS_Schedule_Best-Practices/master/en/best-practices.md"],
                        toFilePath: pathScheduleBestPractice,
               firstDeleteExisting: true,
                  appendToExisting: false)
@@ -75,7 +75,7 @@ do {
 
     // GTFS Schedule examples + GTFS Schedule example feed (schedule/example-feed)
 
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/examples/README.md"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/examples/README.md"],
                        toFilePath: pathScheduleExample,
               firstDeleteExisting: true,
                  appendToExisting: false)
@@ -89,11 +89,11 @@ do {
 
     // GTFS REALTIME + GTFS Realtime overview (realtime/)
 
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/README.md"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/README.md"],
                        toFilePath: pathRealtimeIndex,
               firstDeleteExisting: true,
                  appendToExisting: false)
-    _ = insert(this: "# GTFS Realtime Overview\n\n<div class=\"landing-page\">\n<a class=\"button\" href=\"reference\">Reference</a><a class=\"button\" href=\"best-practices\">Best Practices</a><a class=\"button\" href=\"feed-examples\">Examples</a><a class=\"button\" href=\"changes\">Changes</a>\n</div>\n\n## Getting Started\n\nProviding users transit data updates in real time greatly enhances their experience of your transit services. Providing up-to-date information about current arrival and departure times allows users to smoothly plan their trips. As a result, in case of an unfortunate delay, a rider would be relieved to know that they can stay home a little bit longer.\n\n", 
+    _ = insert(this: "# GTFS Realtime Overview\n\n<div class=\"landing-page\">\n<a class=\"button\" href=\"reference\">Reference</a><a class=\"button\" href=\"best-practices\">Best Practices</a><a class=\"button\" href=\"feed-examples\">Examples</a><a class=\"button\" href=\"changes\">Changes</a>\n</div>\n\n## Getting Started\n\nProviding users transit data updates in real time greatly enhances their experience of your transit services. Providing up-to-date information about current arrival and departure times allows users to smoothly plan their trips. As a result, in case of an unfortunate delay, a rider would be relieved to know that they can stay home a little bit longer.\n\n",
             atLine: Insert.beforeFirst,
       inFileAtPath: pathRealtimeIndex)
     dictOfReplacements = [
@@ -107,10 +107,10 @@ do {
     _ = findAndReplaceOccurences(in: dictOfReplacements, inFileAtPath: pathRealtimeIndex)
 
     // ---------------------------------------------------------------------------------
-    
+
     // GTFS Realtime reference
 
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/reference.md"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/reference.md"],
                        toFilePath: pathRealtimeReference,
               firstDeleteExisting: true,
                  appendToExisting: false)
@@ -130,7 +130,7 @@ do {
 
     // GTFS Realtime proto
 
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/proto/gtfs-realtime.proto"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/proto/gtfs-realtime.proto"],
                        toFilePath: pathRealtimeProto,
               firstDeleteExisting: true,
                  appendToExisting: false)
@@ -142,21 +142,21 @@ do {
     // GTFS Realtime best practices
 
     let arraysOfURLs : [String] = [
-        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/introduction.md", 
-        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/FeedHeader.md", 
-        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/FeedEntity.md", 
-        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/TripUpdate.md", 
-        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/TripDescriptor.md", 
-        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/VehicleDescriptor.md", 
-        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/StopTimeUpdate.md", 
-        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/StopTimeEvent.md", 
-        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/VehiclePosition.md", 
-        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/Position.md", 
-        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/Alert.md", 
-        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/Frequency-based.md", 
+        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/introduction.md",
+        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/FeedHeader.md",
+        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/FeedEntity.md",
+        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/TripUpdate.md",
+        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/TripDescriptor.md",
+        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/VehicleDescriptor.md",
+        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/StopTimeUpdate.md",
+        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/StopTimeEvent.md",
+        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/VehiclePosition.md",
+        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/Position.md",
+        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/Alert.md",
+        "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/Frequency-based.md",
         "https://raw.githubusercontent.com/MobilityData/GTFS_Realtime_Best-Practices/master/en/about.md"
     ]
-    _ = try downloadMarkdown(from: arraysOfURLs, 
+    _ = try downloadMarkdown(from: arraysOfURLs,
                    toFilePath: pathRealtimeBestPractice,
           firstDeleteExisting: true,
              appendToExisting: true)
@@ -174,14 +174,14 @@ do {
 
     // Feed Entities
 
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/feed-entities.md"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/feed-entities.md"],
                        toFilePath: pathRealtimeFeedEntities,
               firstDeleteExisting: true,
                  appendToExisting: false)
     _ = insert(this: "# Feed Entities\n\n", atLine: Insert.beforeFirst, inFileAtPath: pathRealtimeFeedEntities)
 
     // Trip Updates
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/trip-updates.md"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/trip-updates.md"],
                        toFilePath: pathRealtimeFeedEntitiesTripUpdates,
               firstDeleteExisting: true,
                  appendToExisting: false)
@@ -196,37 +196,37 @@ do {
     ]
     _ = findAndReplaceOccurences(in: dictOfReplacements, inFileAtPath: pathRealtimeFeedEntitiesTripUpdates)
 
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/examples/trip-updates-full.asciipb"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/examples/trip-updates-full.asciipb"],
                        toFilePath: pathRealtimeFeedExamplesTripUpdates,
               firstDeleteExisting: true,
                  appendToExisting: false)
-    _ = insert(this: "# Trip Update\nThe following example is an ASCII representation of an full-dataset Trip Update feed.\n```python\n", 
+    _ = insert(this: "# Trip Update\nThe following example is an ASCII representation of an full-dataset Trip Update feed.\n```python\n",
              atLine: Insert.beforeFirst,
        inFileAtPath: pathRealtimeFeedExamplesTripUpdates)
-    _ = insert(this: "\n```", 
+    _ = insert(this: "\n```",
              atLine: Insert.beforeLast,
        inFileAtPath: pathRealtimeFeedExamplesTripUpdates)
 
     // Service Alerts
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/service-alerts.md"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/service-alerts.md"],
                        toFilePath: pathRealtimeFeedEntitiesServiceAlerts,
               firstDeleteExisting: true,
                  appendToExisting: false)
     _ = insert(this: "# Service Alerts\n\n", atLine: Insert.beforeFirst, inFileAtPath: pathRealtimeFeedEntitiesServiceAlerts)
 
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/examples/alerts.asciipb"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/examples/alerts.asciipb"],
                        toFilePath: pathRealtimeFeedExamplesServiceAlerts,
               firstDeleteExisting: true,
                  appendToExisting: false)
-    _ = insert(this: "# Service alert\nThe following example is an ASCII representation of an Alert feed.\n```python\n", 
+    _ = insert(this: "# Service alert\nThe following example is an ASCII representation of an Alert feed.\n```python\n",
              atLine: Insert.beforeFirst,
        inFileAtPath: pathRealtimeFeedExamplesServiceAlerts)
-    _ = insert(this: "\n```", 
+    _ = insert(this: "\n```",
              atLine: Insert.beforeLast,
        inFileAtPath: pathRealtimeFeedExamplesServiceAlerts)
 
     // Vehicle Positions
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/vehicle-positions.md"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/vehicle-positions.md"],
                        toFilePath: pathRealtimeFeedEntitiesVehiclePositions,
               firstDeleteExisting: true,
                  appendToExisting: false)
@@ -240,7 +240,7 @@ do {
     // ---------------------------------------------------------------------------------
 
     // GTFS Realtime Language Bindings
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/README.md"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/README.md"],
                        toFilePath: pathRealtimeLanguageBindings,
               firstDeleteExisting: true,
                  appendToExisting: false)
@@ -255,32 +255,32 @@ do {
         Replacement(findWhat: "(CONTRIBUTING.md)", replaceWith: "(https://github.com/MobilityData/gtfs-realtime-bindings/blob/master/CONTRIBUTING.md)"),
     ]
     _ = findAndReplaceOccurences(in: dictOfReplacements, inFileAtPath: pathRealtimeLanguageBindings)
-    
+
     // dotnet
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/dotnet/README.md"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/dotnet/README.md"],
                        toFilePath: "docs/realtime/language-bindings/dotnet.md",
               firstDeleteExisting: true,
                  appendToExisting: false)
     // java
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/java/README.md"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/java/README.md"],
                        toFilePath: "docs/realtime/language-bindings/java.md",
               firstDeleteExisting: true,
                  appendToExisting: false)
 
     // nodejs
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/nodejs/README.md"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/nodejs/README.md"],
                        toFilePath: "docs/realtime/language-bindings/nodejs.md",
               firstDeleteExisting: true,
                  appendToExisting: false)
 
     // python
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/python/README.md"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/python/README.md"],
                        toFilePath: "docs/realtime/language-bindings/python.md",
               firstDeleteExisting: true,
                  appendToExisting: false)
 
     // golang
-    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/golang/README.md"], 
+    _ = try downloadMarkdown(from: ["https://raw.githubusercontent.com/MobilityData/gtfs-realtime-bindings/master/golang/README.md"],
                        toFilePath: "docs/realtime/language-bindings/golang.md",
               firstDeleteExisting: true,
                  appendToExisting: false)
@@ -320,7 +320,7 @@ func insert(this theString: String, atLine theLine: Insert, inFileAtPath theFile
     do {
         guard let theFilePathURL : URL = URL(string:theFilePath) else { throw LocalError.URLinvalid }
         try theString.write(to: theFilePathURL, atomically: true, encoding: .utf8)
-        
+
     } catch LocalError.URLinvalid {
         print("ERROR : Invalid URL (\(theFilePath))")
 
