@@ -8,15 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4.0.0
+        uses: actions/checkout@v4.1.1
 
       - name: Run fetch data bash script
         run: bash ./scripts/fetchdata.sh
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v5.0.2
+        uses: peter-evans/create-pull-request@v6.0.0
         with:
           title: 'Automated content update'
           branch-suffix: timestamp
           delete-branch: true
-          reviewers: isabelle-dr, emmambd
+          labels: |
+            automated-content-update
+          reviewers: tzujenchanmbd, Sergiodero
