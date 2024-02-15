@@ -21,4 +21,4 @@ jobs:
           delete-branch: true
           labels: |
             automated-content-update
-          reviewers: isabelle-dr, emmambd
+          reviewers: tzujenchanmbd, Sergiodero
