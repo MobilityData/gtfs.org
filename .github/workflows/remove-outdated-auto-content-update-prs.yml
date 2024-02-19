@@ -1,12 +1,20 @@
 name: Remove outdated automatic content update PRs
 on:
+   workflow_dispatch:
    schedule:
         - cron: "50 23 * * *"
 
 jobs:
-    fetchdata:
+    close-stale-pull-requests:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout
+              uses: actions/checkout@v4.1.1
+              with:
+                  ref: main
+                  path: ${{ github.repository }}
+                  fetch-depth: 0
+              
             - name: Load secrets from 1Password
               id: onepw_secrets
               uses: 1Password/load-secrets-action@v1.3.1
@@ -15,12 +23,10 @@ jobs:
               env:
                   OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
                   CREDENTIALS: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/ifkeehu5gzi7wy5ub5qvwkaire/credential"
-                
+
             - name: Close stale issues
-              uses: actions/stale@v9.0.0
+              id: close-stale-issues
+              uses: ./.github/actions/close-stale-prs
               with:
-                  repo-token: ${{ env.CREDENTIALS }}
-                  only-labels: automated-content-update
-                  days-before-close: 1
-                  operations-per-run: 100
-                  close-pr-message: 'This PR has been closed to prevent the same PR from piling up if no one reviews it during the day. If need be a new PR will be created at midnight.'
+                github-token: ${{ env.CREDENTIALS }}
+                label-name: 'automated-content-update'
