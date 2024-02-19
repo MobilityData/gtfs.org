@@ -1,5 +1,5 @@
 # Accessibility Component
-The Accessibility Component of GTFS contains multiple functionalities to provide information that helps end users navigate and access public transit services. Some of these features can be used to communicate the name and color of a route, making it easier to identify; confirming whether or not a trip and a station are wheelchair accessible, helping users choose the most adequate route; and providing translations in multiple languages, among other things.
+The Accessibility Component of GTFS contains multiple functionalities to provide information that helps end users navigate and access public transit services. Some of these features can be used to communicate the name and color of a route, confirm whether or not a trip and a station are wheelchair accessible, or providing translations in multiple languages.
 
 ## Text-to-speech
 

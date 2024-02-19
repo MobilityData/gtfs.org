@@ -1,11 +1,37 @@
 <div class="grid cards" markdown>
 
-- :simple-slack: Join __Slack__ for quick discussions, questions, and sharing.
-- :material-newspaper-variant: Subscribe to the __GTFS Digest__ for monthly updates about all things GTFS.
-- :fontawesome-solid-user-group: Join __GTFS Changes__ to stay informed on development. 
-- :simple-github: Visit __GitHub__ to post issues, participate in discussions around changes, and, propose changes. 
+:simple-slack: Join [__Slack__](https://share.mobilitydata.org/slack) and introduce yourself to the community.
+
+:material-newspaper-variant: Subscribe to the [__GTFS Digest__](https://groups.google.com/g/gtfs-digest) for monthly updates about all things GTFS.
+
+:fontawesome-solid-user-group: Join [__GTFS Changes__](https://groups.google.com/g/gtfs-changes) Google Group to stay informed on development.
+
+:simple-github: Visit [__GitHub__](https://github.com/google/transit) to post issues, participate in discussions around changes, and, propose changes. 
 
 </div>
+
+## Active projects
+
+The community is constantly developing new additions to the specification that could require discussions and working group meetings to accomplish their larger goals in an open source setting. Working group meetings are consensus building discussions led by a facilitator, and attended by developpers, and interested contributors.   
+
+### GTFS-Fares v2
+GTFS-Fares v2 aims at improving the current Fares representation in GTFS by introducing new features like: fare products, rider categories, fare media, and more. These concepts will allow data producers to model different fare structures such as: zone-based, time-based, and inter-agency fares. 
+
+[Learn more](#gtfs-fares-v2){ .md-button }
+[Working Group](#){ .md-button } 
+
+
+### GTFS-Flex
+Flex is a GTFS Schedule extension project that aims to facilitate discoverability of Demand Responsive Transportation Services.
+
+[Learn more](#gtfs-flex){ .md-button }
+
+
+### GTFS Trip-Modifications
+Trip-Modifications are modifications done to a trip to modify its shape, remove stops that are not served anymore, and potentially add temporary stops. Trip-Modifications is mainly used in a detour use case.
+
+[Learn more](#){ .md-button }
+
 
 ### Mailing Lists
 
