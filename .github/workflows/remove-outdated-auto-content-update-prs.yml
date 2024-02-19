@@ -8,6 +8,11 @@ jobs:
     close-stale-pull-requests:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+              with:
+                  ref: main
+              
             - name: Load secrets from 1Password
               id: onepw_secrets
               uses: 1Password/load-secrets-action@v1.3.1
