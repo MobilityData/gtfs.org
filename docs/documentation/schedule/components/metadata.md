@@ -1,11 +1,11 @@
-# Metadata Component
-The Metadata Component contains features providing further information regarding the producer of the GTFS feed and the feed itself. This includes the names of the organizations as well as contact information.
+# Metadata
+GTFS feeds can contain further information regarding the feed itself and its proviver. This can include publisher contact information, feed version and validity period.
 
 ## Feed Information
 
 <div class="grid" markdown>
 
-This feature allows to communicate important information regarding the feed itself, such as the validity of the feed (i.e. start day and end date), the organization responsible for publishing the dataset, and contact information for communication regarding the GTFS dataset and data publishing practices.  
+Feed Information communicates important information about the feed, such as its validity(start day and end date), the publishing organization, and contact information for inquiries regarding the GTFS dataset and data publishing practices.  
 
 | Files associated      | [feed_info.txt](/schedule/reference/#feed_infotxt)                                                                                                                   |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -17,7 +17,7 @@ This feature allows to communicate important information regarding the feed itse
 
 <div class="grid" markdown>
 
-This feature makes it possible to share additional details regarding the organizations (producers, operators and/or authorities ) involved in the creation of the dataset, including their names and contact information.
+Attributions makes it possible to share additional details regarding the organizations involved in the creation of the dataset (producers, operators and/or authorities, etc.).
 
 | Files associated      | [attributions.txt](/schedule/reference/#attributionstxt)                                                                                                  |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

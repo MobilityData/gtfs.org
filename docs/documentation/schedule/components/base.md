@@ -1,11 +1,12 @@
-# Base component
-The features included in this component provide the most basic and essential elements that a GTFS needs to represent a transit service. This includes entries for each individual trip, stop, arrival and departure times and service days among many other important pieces of information. Since all of the features included in the base component are essential to enable a working GTFS feed, all these features must be implemented together.
+# Fundamentals
+The following features provide the most basic and essential elements that a GTFS needs to represent a transit service. A GTFS consists of routes, each with associated trips. These trips visist one or more stops at specific times. Trips only contain time-of-day information, and the days on which they operate are determined by calendars.
+All these features must be implemented together to enable a working GTFS feed.
 
 ## Agency
 
 <div class="grid" markdown>
 
-This feature contains basic information regarding the agencies responsible for the transit service, including their name, website URL, and the language and timezone in which the service operates among other information. This allows to match specific services with their own corresponding agency.
+Agencies contain basic information about the agencies responsible for the transit service, such as their name, website URL, and the language and timezone in which the service operates. This allows to match specific services with their corresponding agency.
 
 | Files associated      | [Agency.txt](/schedule/reference/#agencytxt)                                                                                                     |
 |-----------------------|----------------------------------------------------------------------------------------------------------------|
@@ -16,7 +17,8 @@ This feature contains basic information regarding the agencies responsible for t
 ## Stops
 
 <div class="grid" markdown>
-This feature allows to represent the basic information elements used to identify where a transit service picks up and drops off passengers, this could be a metro station or a bus stop. Geographical coordinates are used by this feature to locate the stop or station in a map, while defining a specific ID and name so that it could be identified easily, along with other complementary information.
+Stops represent the basic elements used to identify where a transit service picks up and drops off passengers. This could be a metro station or a bus stop. Each stop has, among other attributes, geographical coordinates to pinpoint its location on a map, and a name that matches the agency's rider-facing materials. Stops are associated to Trips using Stop Times. 
+With GTFS, it is also possible to describe the interior of larger stations, such as a train station or bus depot, using Pathways (@TODO link). 
 
 
 | Files associated      | [stops.txt](/schedule/reference/#stopstxt)                                                                                                            |
@@ -28,7 +30,7 @@ This feature allows to represent the basic information elements used to identify
 ## Routes
 
 <div class="grid" markdown>
-This feature helps define the elements that identify a transit route, including its name, description and the type of service that is being represented (such as a bus, a subway or metro, ferry, etc.).
+A route is a group of trips under the same branding that are displayed to riders as a single service. Each route has, among other attributes, ra name that matches the agency's rider-facing materials, and the type of service that is being represented (such as a bus, a subway or metro, ferry, etc.).
 
 | Files associated      | [routes.txt](/schedule/reference/#routestxt)                                                                                                                |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------|
@@ -36,22 +38,11 @@ This feature helps define the elements that identify a transit route, including 
 
 </div>
 
-## Stop Times
-
-<div class="grid" markdown>
-This feature is used to represent the arrival and departure times at each stop, allowing users to know precisely at what time the bus, train or ferry is arriving and departing a specific location.
-
-| Files associated      | [stop_times.txt](/schedule/reference/#stop_timestxt)                                                                                                                            |
-|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| **Fields associated** | trip_id<br>arrival_time<br>departure_time<br>stop_id<br>stop_sequence<br>pickup_type<br>drop_off_type<br>shape_dist_traveled<br>timepoint |
-
-</div>
-
 ## Service dates
 
 <div class="grid" markdown>
-This feature helps create the structure required to schedule trips, as well as creating service exemptions such as holidays and other special services on specific dates.
-
+Service dates indicate the range of dates on which a service is running, as well as creating service exemptions such as holidays and other special services on specific dates.
+It works by defining a start date and a finish date in `calendars.txt`, then a marker for each day of the week on which it operates. If there are single-day scheduling changes that occur during this period, then the `calendar_dates.txt` file can be used to override the schedule for each of these days.
 
 | Files associated      | [calendar.txt](/schedule/reference/#calendartxt)                                                                                                       | [calendar_dates.txt](/schedule/reference/#calendar_datestxt)                   |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------|--------------------------------------|
@@ -62,7 +53,7 @@ This feature helps create the structure required to schedule trips, as well as c
 ## Trips
 
 <div class="grid" markdown>
-This feature brings together the main elements of the Base component of GTFS, making it possible to model transit services, by creating individual trips and associating them with their corresponding routes, stops and service dates.
+Trips brings together Routes and Service dates to create journeys that can be taken by riders. Trips are associated to Stopd using Stop Times.
 
 
 | Files associated      | [trips.txt](/schedule/reference/#tripstxt)                                       |
@@ -70,3 +61,16 @@ This feature brings together the main elements of the Base component of GTFS, ma
 | **Fields associated** | route_id<br>service_id<br>trip_id<br>trip_short_name<br>direction_id<br>block_id |
 
 </div>
+
+## Stop Times
+
+<div class="grid" markdown>
+Stop times are used to represent the individual stop arrival and departure times for each trip, allowing riders to know precisely at what time the bus, train or ferry is arriving and departing a specific location. The `stop_times.txt` file is typically the largest in a GTFS feed. 
+Certain services operate on regular a frequency (e. g. a subway line that runs every 5min) rather than having specific arrival and departure times. This can be modeled using Frequency-based sercices (@TODO link), and this can be modeled in conjunction with `stop_times.txt`.
+
+| Files associated      | [stop_times.txt](/schedule/reference/#stop_timestxt)                                                                                                                            |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| **Fields associated** | trip_id<br>arrival_time<br>departure_time<br>stop_id<br>stop_sequence<br>pickup_type<br>drop_off_type<br>timepoint |
+
+</div>
+
