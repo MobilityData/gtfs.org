@@ -1,5 +1,5 @@
 # Base
-The following features provide the most basic and essential elements that a GTFS needs to represent a transit service. A GTFS consists of routes, each with associated trips. These trips visist one or more stops at specific times. Trips only contain time-of-day information, and the days on which they operate are determined by calendars.
+The following features provide the most basic and essential elements that a GTFS needs to represent a transit service. A GTFS consists of routes, each with associated trips. These trips visit one or more stops at specific times. Trips only contain time-of-day information, and the days on which they operate are determined by calendars.
 All these features must be implemented together to enable a working GTFS feed.
 
 ## Agency
@@ -30,7 +30,7 @@ With GTFS, it is also possible to describe the interior of larger stations, such
 ## Routes
 
 <div class="grid" markdown>
-A route is a group of trips under the same branding that are displayed to riders as a single service. Each route has, among other attributes, ra name that matches the agency's rider-facing materials, and the type of service that is being represented (such as a bus, a subway or metro, ferry, etc.).
+A route is a group of trips under the same branding that are displayed to riders as a single service. Each route has, among other attributes, a name that matches the agency's rider-facing materials, and the type of service that is being represented (such as a bus, a subway or metro, ferry, etc.).
 
 | Files associated      | [routes.txt](/schedule/reference/#routestxt)                                                                                                                |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------|
@@ -53,7 +53,7 @@ It works by defining a start date and a finish date in `calendars.txt`, then a m
 ## Trips
 
 <div class="grid" markdown>
-Trips brings together Routes and Service dates to create journeys that can be taken by riders. Trips are associated to Stopd using Stop Times.
+Trips brings together Routes and Service dates to create journeys that can be taken by riders. Trips are associated to Stops using Stop Times.
 
 
 | Files associated      | [trips.txt](/schedule/reference/#tripstxt)                                       |

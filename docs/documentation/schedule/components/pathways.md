@@ -13,7 +13,7 @@ Location types are used to classify key areas within transit stations such as ex
 
 </div>
 
-## Pathways foundations
+## Pathway connections
 
 <div class="grid" markdown>
 
