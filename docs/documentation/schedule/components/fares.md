@@ -14,7 +14,7 @@ This feature is used to list the types of tickets or fares (i.e. single-trip far
 </div>
 
 ### Sample Data
-The following table presents a simple fare product (single ride $2.75 USD). This fare product is the only one available in the system and is applicable for all legs.
+The following table presents a simple fare product (single ride $2.75 USD). 
 
 [fare_products.txt](/schedule/reference/#fare_productstxt)
 | fare_product_id  | fare_product_name  | amount  | currency  |
