@@ -13,6 +13,19 @@ This feature is used to list the types of tickets or fares (i.e. single-trip far
 
 </div>
 
+### Sample Data
+The following table presents a simple fare product (single ride $2.75 USD). This fare product is the only one available in the system and is applicable for all legs.
+
+[fare_products.txt](/schedule/reference/#fare_productstxt)
+| fare_product_id  | fare_product_name  | amount  | currency  |
+|------------------------|--------------------|---|---|
+| single_ride | Single Ride Fare |  2.75 | USD  |
+
+[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)
+| fare_product_id  |
+|------------------|
+| single_ride |
+
 ## Fare Media
 
 <div class="grid" markdown>
@@ -25,6 +38,24 @@ This feature helps define the supported media that can be used to hold and/or va
 
 </div>
 
+### Sample Data
+The following table shows a snippet of different fare media in SF Bay Area. `Clipper` is described as a physical transit card with `fare_media_type=2`. `SFMTA Munimobile` is described as a mobile app with `fare_media_type=2`. `Cash` has no fare media, since it is given directly to the driver without a ticket. As a result, `Cash` is `fare_media_type=0`.
+
+[fare_media.txt](../../reference/#fare_mediatxt)
+
+| fare_media_id | fare_media_name  | fare_media_type |
+|---------------|------------------|-----------------|
+| clipper       | Clipper          | 2               |
+| munimobile    | SFMTA MuniMobile | 4               |
+| cash          | Cash             | 0               |
+
+[fare_products.txt](/schedule/reference/#fare_productstxt)
+| fare_product_id | fare_media_id |
+|-----------------|---------------|
+| single_ride     | Clipper       | 
+| single_ride     | munimobile    |
+| single_ride     | cash          |
+
 ## Route-Based Fares
 
 <div class="grid" markdown>
@@ -36,6 +67,47 @@ This feature allows to describe rules used to apply different fares for specific
 | **Fields associated** | network_id | fare_product_id<br>network_id | network_id<br>network_name | network_id<br>route_id |
 
 </div>
+
+### Sameple data
+The following table illustrates a system that distinguishes between express routes and local routes, corresponding to different fare products. Currently, GTFS offers two methods to model this: one is using [`networks.txt` + `route_networks.txt`], and the other is `routes.network_id`.
+
+**Using `networks.txt` + `route_networks.txt`**
+
+[netowrks.txt](/schedule/reference/#networkstxt)
+| network_id | network_name    |
+|------------|-----------------|
+| express    | Express         |
+| local      | Local           |
+
+[route_networks.txt](/schedule/reference/#route_networkstxt)
+| network_id | route_id |
+|------------|-----------|
+| express    | express_a |
+| express    | express_b |
+| local      | local_1   |
+| local      | local_2   |
+
+[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)
+| network_id | fare_product_id |
+|------------|-----------------|
+| express    | express_single_ride |
+| local      | local_single_ride   |
+
+**OR using `routes.networks_id`**
+
+[routes.txt](/schedule/reference/#routestxt)
+| route_id   | network_id |
+|------------|------------|
+| express_a  | express    |
+| express_b  | express    |
+| local_1    | local      |
+| local_2    | local      |
+
+[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)
+| network_id | fare_product_id |
+|------------|-----------------|
+| express    | express_single_ride |
+| local      | local_single_ride   |
 
 ## Time-Based Fares
 
