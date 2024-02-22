@@ -12,7 +12,6 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
 ### Sample data
 The following table shows a portion of a shape from the TriMet GTFS feed (download it [here](https://developer.trimet.org/GTFS.shtml)).
 
-<div class="grid" markdown>
 
 [shapes.txt](/schedule/reference/#shapestxt)
 
@@ -24,10 +23,6 @@ The following table shows a portion of a shape from the TriMet GTFS feed (downlo
 | 558674     | 45.476242      | -122.723024    | 4                   | 292.2                |
 | 558674     | 45.476244      | -122.72316     | 5                    | 327.1               |
 
-</div>
-
-<div class="grid" markdown>
-
 [trips.txt](/schedule/reference/#tripstxt)
 
 |trip_id |shape_id|
@@ -37,10 +32,6 @@ The following table shows a portion of a shape from the TriMet GTFS feed (downlo
 |13302375|558674  |
 |13302376|558674  |
 
-</div>
-
-<div class="grid" markdown>
-
 [stop_times.txt](/schedule/reference/#stop_timestxt)
 
 |trip_id |stop_sequence|shape_dist_traveled|
@@ -48,5 +39,3 @@ The following table shows a portion of a shape from the TriMet GTFS feed (downlo
 |13302375|1            |0                  |
 |13302375|2            |461.7              |
 |13302375|3            |1245               |
-
-</div>
