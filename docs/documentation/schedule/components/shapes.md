@@ -26,14 +26,12 @@ The following table shows a portion of a shape from the TriMet GTFS feed (downlo
 
 [trips.txt](/schedule/reference/#tripstxt)
 
-|trip_id |route_id|direction_id|shape_id|
-|--------|--------|------------|--------|
-|13302375|1       |1           |558674  |
-|13302376|1       |1           |558674  |
-
-Because these two trips operate along the same route, in the same
-direction, starting and ending in the same location, they can be represented by the
-same shape.
+|trip_id |shape_id|
+|--------|--------|
+|13302373|558673  |
+|13302374|558673  |
+|13302375|558674  |
+|13302376|558674  |
 
 [stop_times.txt](/schedule/reference/#stop_timestxt)
 |trip_id |stop_sequence|shape_dist_traveled|
