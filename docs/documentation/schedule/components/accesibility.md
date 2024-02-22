@@ -1,23 +1,11 @@
-# Accessibility Component
-The Accessibility Component of GTFS contains multiple functionalities to provide information that helps end users navigate and access public transit services. Some of these features can be used to communicate the name and color of a route, confirm whether or not a trip and a station are wheelchair accessible, or providing translations in multiple languages.
-
-## Text-to-speech
-
-<div class="grid" markdown>
-
-This feature allows to provide the necessary inputs to convert text into audio, making it possible to communicate transit information, such as stop names, in a more inclusive format.
-
-| Files associated      | [stops.txt](/schedule/reference/#stopstxt)     |
-|-----------------------|---------------|
-| **Fields associated** | tts_stop_name |
-
-</div>
+# Accessibility
+GTFS contains multiple features intended to assist riders in navigating and accessing public transit services. Such features can communicate route names and colors consistent with the agency's rider-facing materials, indicate wheelchair accessibility for stops or entire trips, or ensure accurate information for riders using assistive technology.
 
 ## Wheelchair accessibility
 
 <div class="grid" markdown>
 
-This feature makes it possible to indicate if a stop and/or vehicle can accommodate users using wheelchairs, allowing them to plan their trips based on the most convenient option for their needs.
+Wheelchair accessibility fields make it possible to indicate if a stop and vehicle can accommodate users using wheelchairs, allowing them to plan their trips based on the most convenient option for their needs.
 
 | Files associated      | [stops.txt](/schedule/reference/#stopstxt)           | [trips.txt](/schedule/reference/#tripstxt)             |
 |-----------------------|---------------------|-----------------------|
@@ -25,11 +13,23 @@ This feature makes it possible to indicate if a stop and/or vehicle can accommod
 
 </div>
 
+## Text-to-speech
+
+<div class="grid" markdown>
+
+Text-to-speech allows to provide the necessary inputs to convert text into audio, ensures that riders using assistive technology to read text aloud are getting the right stop names when using the transit service.
+
+| Files associated      | [stops.txt](/schedule/reference/#stopstxt)     |
+|-----------------------|---------------|
+| **Fields associated** | tts_stop_name |
+
+</div>
+
 ## Route Colors
 
 <div class="grid" markdown>
 
-This feature allows to accurately depict and communicate the color scheme assigned to specific routes by the agency’s design guidelines, this enables users to easily identify transit services by their official color.
+Using route colors allows to accurately depict and communicate the color scheme assigned to specific routes by the agency’s design guidelines, this enables users to easily identify transit services by their official color.
 
 | Files associated      | [routes.txt](/schedule/reference/#routestxt)                       |
 |-----------------------|---------------------------------|
@@ -41,7 +41,7 @@ This feature allows to accurately depict and communicate the color scheme assign
 
 <div class="grid" markdown>
 
-This feature allows to indicate if vehicles providing service on a specific trip are able to accommodate bicycles or not, helping users to plan and access services that enable them to make multimodal trips.
+Specifying bike allowance allows to indicate if vehicles serving specific trips are able to accommodate bicycles or not, helping users to plan and access services that enable them to make multimodal trips.
 
 | Files associated      | [trips.txt](/schedule/reference/#tripstxt)      |
 |-----------------------|---------------|
@@ -53,7 +53,7 @@ This feature allows to indicate if vehicles providing service on a specific trip
 
 <div class="grid" markdown>
 
-This feature allows service information such as station names to be provided in multiple languages enabling travel planners to display the information in a specific language depending on the user’s language and location settings.
+Translations allows service information such as station names to be provided in multiple languages enabling travel planners to display the information in a specific language depending on the user’s language and location settings.
 
 | Files associated      | [translations.txt](/schedule/reference/#translationstxt)                                                                                  |
 |-----------------------|--------------------------------------------------------------------------------------------------|
@@ -65,7 +65,7 @@ This feature allows service information such as station names to be provided in 
 
 <div class="grid" markdown>
 
-This feature allows to communicate the signage used by vehicles indicating the trip’s destination, making it easier for users to identify the correct transit service. This feature supports headsign changes along a specific route.
+Headsigns allows to communicate the signage used by vehicles indicating the trip’s destination, making it easier for users to identify the correct transit service. This feature supports headsign changes along a specific route.
 
 | Files associated      | [trips.txt](/schedule/reference/#tripstxt)      | [stop_times.txt](/schedule/reference/#stop_timestxt)  |
 |-----------------------|---------------|----------------|

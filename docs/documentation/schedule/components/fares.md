@@ -1,11 +1,11 @@
-# Fares Component
-The Fares component includes multiple features allowing the precise description of a wide variety of pricing structures and payment methods used by different transit agencies around the world, such as zone-based fares and reloadable prepaid cards. This helps users know the correct price applicable to their trip.
+# Fares
+GTFS allows to preciely model a wide variety of fare structures used by different transit agencies around the world, such as fares based by zone, by distance traveled, or by time-of-day. GTFS Fares informs riders of the price applicable to their trip and the media they can use to pay.
 
 ## Fare Products
 
 <div class="grid" markdown>
 
-This feature is used to list the types of tickets or fares (i.e. single-trip fare, Monthly pass, etc.)  offered by a transit agency that can be purchased by riders to access a service, defining their name, price and currency. This feature acts as the base to implement all other functionalities associated with fares (except for Fares v1).
+Fare Products lists the types of tickets or fares (i.e. single-trip fare, monthly pass, etc.) offered by a transit agency to access a service. Fare Products serve as a foundation for modeling an agency's fare structure, and they are linked to the transit service through mechanisms outlined in `fare_leg_rules.txt`. The association of Fare Products to various travel conditions, such as routes, areas, and times, determines the fare costs for individual travel segments and transfers.
 
 | Files associated      | [fare_products.txt](/schedule/reference/#fare_productstxt)                  | [fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)  |
 |-----------------------|-----------------------------------------------------------------------------|--------------------|
@@ -17,7 +17,7 @@ This feature is used to list the types of tickets or fares (i.e. single-trip far
 
 <div class="grid" markdown>
 
-This feature helps define the supported media that can be used to hold and/or validate a fare product. This refers to physical or virtual containers such as a paper ticket, a rechargeable transit card or even contactless payment with credit cards or smartphones.
+Fare Media defines the supported media that can be used to hold and/or validate a fare product. This refers to physical or virtual containers such as a paper ticket, a rechargeable transit card or even contactless payment with credit cards or smartphones.
 
 | Files associated      | [fare_media.txt](/schedule/reference/#fare_mediatxt)                                       | [fare_products.txt](/schedule/reference/#fare_productstxt)  |
 |-----------------------|-----------------------------------------------------|-------------------|
@@ -29,7 +29,7 @@ This feature helps define the supported media that can be used to hold and/or va
 
 <div class="grid" markdown>
 
-This feature allows to describe rules used to apply different fares for specific groups of routes, such as special fares for express services or differentiating fares between a BRT service versus traditional bus services.
+Route-Based Fares is used to assign different fares for specific groups of routes, such as special fares for express services or differentiating fares between a Bus Rapid Transit service versus traditional bus services.
 
 | Files associated      | [routes.txt](/schedule/reference/#routestxt) | [fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)            | [netowrks.txt](/schedule/reference/#networkstxt)               | [route_networks.txt](/schedule/reference/#route_networkstxt)    |
 |-----------------------|------------|-------------------------------|----------------------------|------------------------|
@@ -41,7 +41,7 @@ This feature allows to describe rules used to apply different fares for specific
 
 <div class="grid" markdown>
 
-This feature can be used to create rules that are useful to represent fares differentiated based on the time of the day or the day of the week, such as peak and off-peak fares and/or weekend fares.
+Time-based Fares is used to assign fares for specific time-of-day or day-of-week, such as peak and off-peak fares and/or weekend fares.
 
 | Files associated      | [fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)        | [timeframes.txt](/schedule/reference/#timeframestxt)       |
 |-----------------------|---------------------------------------------------------------------|------------------------------------------------------------|
@@ -53,7 +53,7 @@ This feature can be used to create rules that are useful to represent fares diff
 
 <div class="grid" markdown>
 
-This feature allows to define rules that enable fares differentiated when traveling from a specific group of stops to another. This can be useful to represent zone-based systems where a specific fare applies when traveling from one particular zone to another.
+Zone-Based Fares is used to represent zone-based systems where a specific fare applies when traveling from one particular zone to another. A zone is defined by a group of stops.
 
 | Files associated      | [fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)                            | [areas.txt](/schedule/reference/#areastxt)            | [stop_areas.txt](/schedule/reference/#stop_areastxt)     |
 |-----------------------|-----------------------------------------------|----------------------|--------------------|
@@ -61,11 +61,11 @@ This feature allows to define rules that enable fares differentiated when travel
 
 </div>
 
-## Transfer Fares
+## Fares Transfers
 
 <div class="grid" markdown>
 
-This feature allows to define rules applicable when transferring from one leg of the trip to another, this is helpful to correctly model the cost of a multi leg trip especially when a special transfer policy is used such as free transfers for a specific time limit or applying fare discounts to the second leg of the trip.
+Fares Transfers is used to define rules applicable when transferring between legs (or individual travel segments). This allows to model the total cost of a multi-leg travel journey, accounting for special transfer policies, such as free transfers for a specific time limit, or applying fare discounts based on legs already traveled.
 
 | Files associated      | [fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt) | [fare_transfer_rules.txt](/schedule/reference/#fare_transfer_rulestxt)                                                                                                                  |
 |-----------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------------|
@@ -77,7 +77,7 @@ This feature allows to define rules applicable when transferring from one leg of
 
 <div class="grid" markdown>
 
-This feature is a legacy alternative to other Fares Features that allows to model simpler fare information including fare pricing, payment methods and transfers and zone-based fares. While simpler to produce, its capacity to adapt to more complex fare structures is more limited compared to using the rest of the Fares features, thus their is preferred over Fares V1.
+Fares v1 is a legacy alternative to other Fares features described above. It allows to model basic fare information such as fare pricing, payment methods transfers and zone-based fares using the `fare_rules.txt` and `fare_attributes.txt` files. While simpler to produce, it's less capable or modeling more complex fare structures and may be deprecated with sufficient endorsement of other Fare features (that are part of what is called Fares v2).
 
 | Files associated      | [stops.txt](/schedule/reference/#stopstxt) | [fare_attributes.txt](/schedule/reference/#fare_attributestxt)                                                                                | [fare_rules.txt](/schedule/reference/#fare_rulestxt)                                                    |
 |-----------------------|-----------|----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|

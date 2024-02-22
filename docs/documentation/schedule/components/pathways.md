@@ -1,11 +1,11 @@
-#  Pathways Component
-The Pathways component contains features that allow the modeling of in-station, helping users navigate transit stations from beginning to end and across multiple levels. Some of these features make it possible to communicate the physical characteristics of each individual section of a path, estimate the time required to navigate them and to match this navigation information with the real-world wayfinding systems used in stations.
+#  Pathways
+Pathways contains features that allow to model large transit stations, helping riders navigate from station entrances and exists to the location where they board or disambark from a transit vehicle. Some of these features make it possible to communicate a path's physical characteristics and estimated navigation time, and real-world wayfinding systems employed in stations.
 
 ## Location types
 
 <div class="grid" markdown>
 
-This feature is used to classify relevant places within transit stations such as exits/entrances and boarding areas. This can help users by making it easier to identify the right entrance, exit or platform.
+Location types are used to classify key areas within transit stations such as exits/entrances, nodes or boarding areas, as well as their relationship. Location types serve as a fundation for modeling transit stations using Pathways.
 
 | Files associated      | [stops.txt](/schedule/reference/#stopstxt)                       |
 |-----------------------|---------------------------------|
@@ -13,11 +13,11 @@ This feature is used to classify relevant places within transit stations such as
 
 </div>
 
-## Pathways basic information
+## Pathway connections
 
 <div class="grid" markdown>
 
-This feature provides the basic information elements that allow to model paths by connecting relevant points within a station. This can help users navigate large and complex stations by providing directions to connect from one point to the other within the station. To enable this feature, the Location Types feature must be implemented.
+At its foundational level, Pathways offers basic functionality to connect key areas defined in Location types within a station. These connections form pathways, enabling users to obtain precise directions (e. g. from an entrance to the boarding area), which is particularly useful in navigating large and complex transit stations.
 
 | Files associated      | [pathways.txt](/schedule/reference/#pathwaystxt)                                                                 |
 |-----------------------|------------------------------------------------------------------------------|
@@ -25,11 +25,11 @@ This feature provides the basic information elements that allow to model paths b
 
 </div>
 
-## Pathway details
+## Pathways details
 
 <div class="grid" markdown>
 
-This feature makes it possible to provide additional details about the physical characteristics of a station’s pathways, such as the length, width and slope if it’s a ramp or the number of stairs if it’s a stairway. This can help users anticipate the conditions of the in-station route that they need to navigate.
+More details can be added to provide additional details regadring the physical characteristics of a station’s pathways, including length, width and slope (for ramps) or the number of stairs (for stairways). This helps riders anticipate the conditions and accessibility of the pathway they need to navigate.
 
 | Files associated      | [pathways.txt](/schedule/reference/#pathwaystxt)                                    |
 |-----------------------|-------------------------------------------------|
@@ -41,7 +41,7 @@ This feature makes it possible to provide additional details about the physical 
 
 <div class="grid" markdown>
 
-This feature allows to list all different levels within a station, providing users an additional layer of information to help them navigate stations. This feature also enables the use of elevators in conjunction with the Pathways (Basic) feature.
+Levels can be used to list all different levels within a station, providing users with an additional layer of information to stations. This feature also enables the use of elevators in conjunction with the Pathways (Basic) feature.
 
 | Files associated      | [levels.txt](/schedule/reference/#levelstxt)                            | [stops.txt](/schedule/reference/#stopstxt) |
 |-----------------------|---------------------------------------|-----------|
@@ -53,7 +53,7 @@ This feature allows to list all different levels within a station, providing use
 
 <div class="grid" markdown>
 
-This feature helps provide an extra level of detail to in-station directions, helping users to get an estimation on the time required to navigate stations, making it possible to get more accurate travel directions and  travel times.
+In-station traversal time provides an additional level of detail to in-station directions, giving users an estimated time required to navigate stations, resulting in better travel directions and travel times.
 
 | Files associated      | [pathways.txt](/schedule/reference/#pathwaystxt)   |
 |-----------------------|----------------|
@@ -61,11 +61,11 @@ This feature helps provide an extra level of detail to in-station directions, he
 
 </div>
 
-## Pathways directions
+## Pathways signs
 
 <div class="grid" markdown>
 
-This feature allows to bridge the information displayed in trip planners with real-world information elements such as signs, to facilitate in-station text directions. This can help users navigate transit stations more easily by directing them to follow specific signs within a station.
+Pathway signs can bridge the information displayed in trip planners with real-world signs. If this is represented in a feed, trip planners can provide directions such as 'follow signs to '. 
 
 | Files associated      | [pathways.txt](/schedule/reference/#pathwaystxt)                            |
 |-----------------------|-----------------------------------------|

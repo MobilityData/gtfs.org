@@ -1,8 +1,8 @@
-# Transfers Component & Feature
+# Transfers
 
 <div class="grid" markdown>
 
-The transfers component and feature allowes the description of transfers between different public transit services. This gives transit agencies the ability to clearly define the applicable rules for each transfer scenario, so that travelers can know if it’s possible to connect trips.
+Transfers provide details about transitions between different travel segments (or legs), enabling trip planners to determine the feasibility of journeys that include transfers.
 
 | Files associated      | [transfers.txt](/schedule/reference/#transferstxt)                                                                                                                  |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------|
