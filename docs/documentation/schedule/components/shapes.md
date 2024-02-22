@@ -5,7 +5,7 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
 
 ### What's included
 
-|files                             |fields             |
+|Files                             |Fields             |
 |----------------------------------|-------------------|
 |[shapes.txt](/schedule/reference/#shapestxt)                        |`shape_id`, `shape_pt_lat`, `shape_pt_lon`, `shape_pt_sequence`, `shape_dist_traveled`           |
 |[trips.txt](/schedule/reference/#tripstxt)                         |`shape_id`           |
