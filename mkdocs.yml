@@ -16,9 +16,9 @@ theme:
   logo_light_mode: assets/org-white.svg
   palette:
     - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: blue
-      accent: blue
+      scheme: gtfs
+      primary: custom
+      accent: custom
   name: material
   favicon: assets/org-black.svg
   font:
