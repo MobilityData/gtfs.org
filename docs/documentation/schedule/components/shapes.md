@@ -15,7 +15,6 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
 
     The following table shows a portion of a shape from the TriMet GTFS feed (download it [here](https://developer.trimet.org/GTFS.shtml)).
 
-
 [shapes.txt](/schedule/reference/#shapestxt)
 
 | shape_id | shape_pt_lat | shape_pt_lon | shape_pt_sequence | shape_dist_traveled |

@@ -13,6 +13,19 @@ Fare Products lists the types of tickets or fares (i.e. single-trip fare, monthl
 
 </div>
 
+### Sample Data
+The following table presents a simple fare product (single ride $2.75 USD). 
+
+[fare_products.txt](/schedule/reference/#fare_productstxt)
+| fare_product_id  | fare_product_name  | amount  | currency  |
+|------------------------|--------------------|---|---|
+| single_ride | Single Ride Fare |  2.75 | USD  |
+
+[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)
+| fare_product_id  |
+|------------------|
+| single_ride |
+
 ## Fare Media
 
 <div class="grid" markdown>
@@ -25,6 +38,24 @@ Fare Media defines the supported media that can be used to hold and/or validate 
 
 </div>
 
+### Sample Data
+The following table shows a snippet of different fare media in the San Francisco Bay Area. `Clipper` is described as a physical transit card with `fare_media_type=2`. `SFMTA Munimobile` is described as a mobile app with `fare_media_type=2`. `Cash` which is given directly to the driver without a ticket, is `fare_media_type=0`.
+
+[fare_media.txt](../../reference/#fare_mediatxt)
+
+| fare_media_id | fare_media_name  | fare_media_type |
+|---------------|------------------|-----------------|
+| clipper       | Clipper          | 2               |
+| munimobile    | SFMTA MuniMobile | 4               |
+| cash          | Cash             | 0               |
+
+[fare_products.txt](/schedule/reference/#fare_productstxt)
+| fare_product_id | fare_media_id |
+|-----------------|---------------|
+| single_ride     | Clipper       | 
+| single_ride     | munimobile    |
+| single_ride     | cash          |
+
 ## Route-Based Fares
 
 <div class="grid" markdown>
@@ -36,6 +67,47 @@ Route-Based Fares is used to assign different fares for specific groups of route
 | **Fields associated** | network_id | fare_product_id<br>network_id | network_id<br>network_name | network_id<br>route_id |
 
 </div>
+
+### Sample data
+The following table shows a system that categorizes routes into express and local categories, each associated with distinct fare products.
+
+**Using `networks.txt` + `route_networks.txt`**
+
+[netowrks.txt](/schedule/reference/#networkstxt)
+| network_id | network_name    |
+|------------|-----------------|
+| express    | Express         |
+| local      | Local           |
+
+[route_networks.txt](/schedule/reference/#route_networkstxt)
+| network_id | route_id |
+|------------|-----------|
+| express    | express_a |
+| express    | express_b |
+| local      | local_1   |
+| local      | local_2   |
+
+[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)
+| network_id | fare_product_id |
+|------------|-----------------|
+| express    | express_single_ride |
+| local      | local_single_ride   |
+
+**OR using `routes.networks_id`**
+
+[routes.txt](/schedule/reference/#routestxt)
+| route_id   | network_id |
+|------------|------------|
+| express_a  | express    |
+| express_b  | express    |
+| local_1    | local      |
+| local_2    | local      |
+
+[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)
+| network_id | fare_product_id |
+|------------|-----------------|
+| express    | express_single_ride |
+| local      | local_single_ride   |
 
 ## Time-Based Fares
 
