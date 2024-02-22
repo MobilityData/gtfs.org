@@ -17,11 +17,13 @@ Fare Products lists the types of tickets or fares (i.e. single-trip fare, monthl
 The following table presents a simple fare product (single ride $2.75 USD). 
 
 [fare_products.txt](/schedule/reference/#fare_productstxt)
+
 | fare_product_id  | fare_product_name  | amount  | currency  |
-|------------------------|--------------------|---|---|
+|------------------|--------------------|---|---|
 | single_ride | Single Ride Fare |  2.75 | USD  |
 
 [fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)
+
 | fare_product_id  |
 |------------------|
 | single_ride |
@@ -50,6 +52,7 @@ The following table shows a snippet of different fare media in the San Francisco
 | cash          | Cash             | 0               |
 
 [fare_products.txt](/schedule/reference/#fare_productstxt)
+
 | fare_product_id | fare_media_id |
 |-----------------|---------------|
 | single_ride     | Clipper       | 
@@ -74,12 +77,14 @@ The following table shows a system that categorizes routes into express and loca
 **Using `networks.txt` + `route_networks.txt`**
 
 [netowrks.txt](/schedule/reference/#networkstxt)
+
 | network_id | network_name    |
 |------------|-----------------|
 | express    | Express         |
 | local      | Local           |
 
 [route_networks.txt](/schedule/reference/#route_networkstxt)
+
 | network_id | route_id |
 |------------|-----------|
 | express    | express_a |
@@ -88,6 +93,7 @@ The following table shows a system that categorizes routes into express and loca
 | local      | local_2   |
 
 [fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)
+
 | network_id | fare_product_id |
 |------------|-----------------|
 | express    | express_single_ride |
@@ -96,6 +102,7 @@ The following table shows a system that categorizes routes into express and loca
 **OR using `routes.networks_id`**
 
 [routes.txt](/schedule/reference/#routestxt)
+
 | route_id   | network_id |
 |------------|------------|
 | express_a  | express    |
@@ -104,6 +111,7 @@ The following table shows a system that categorizes routes into express and loca
 | local_2    | local      |
 
 [fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)
+
 | network_id | fare_product_id |
 |------------|-----------------|
 | express    | express_single_ride |
@@ -119,6 +127,24 @@ Time-based Fares is used to assign fares for specific time-of-day or day-of-week
 |-----------------------|---------------------------------------------------------------------|------------------------------------------------------------|
 | **Fields associated** | fare_product_id<br>from_timeframe_group_id<br>to_timeframe_group_id | timeframe_group_id<br>start_time<br>end_time<br>service_id |
 
+### Sample data
+The following table presents a system where the peak hours are from 8:00 to 10:00, and the remaining hours are off-peak.
+
+[timeframes.txt](/schedule/reference/#timeframestxt)
+
+| timeframe_group_id | start_time | end_time | service_id |
+|--------------------|------------|----------|------------|
+| peak               | 8:00:00    | 10:00:00 | all_day    |
+| regular            | 0:00:00    | 08:00:00 | all_day    |
+| regular            | 10:00:00   | 24:00:00 | all_day    |
+
+[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)
+
+| from_timeframe_group_id | fare_product_id     |
+|-------------------------|---------------------|
+| peak                    | peak_single_ride    |
+| regular                 | regular_single_ride |
+
 </div>
 
 ## Zone-Based Fares
@@ -130,6 +156,31 @@ Zone-Based Fares is used to represent zone-based systems where a specific fare a
 | Files associated      | [fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)                            | [areas.txt](/schedule/reference/#areastxt)            | [stop_areas.txt](/schedule/reference/#stop_areastxt)     |
 |-----------------------|-----------------------------------------------|----------------------|--------------------|
 | **Fields associated** | fare_product_id<br>from_area_id<br>to_area_id | area_id<br>area_name | area_id<br>stop_id |
+
+### Sample data
+The following table shows the fare from Zone A to Zone B.
+
+[areas.txt](/schedule/reference/#areastxt)
+
+| area_id | area_name |
+|---------|-----------|
+| zone_a  | Zone A    |
+| zone_b  | Zone B    |
+
+[stop_areas.txt](/schedule/reference/#stop_areastxt)
+
+| area_id | stop_id |
+|---------|---------|
+| zone_a  | stop_a  |
+| zone_a  | stop_b  |
+| zone_b  | stop_c  |
+| zone_b  | stop_d  |
+
+[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)
+
+| from_area_id | to_area_id | fare_product_id |
+|--------------|------------|-----------------|
+| zone_a       | zone_b     | zone_a_b_single |
 
 </div>
 
@@ -144,6 +195,21 @@ Fares Transfers is used to define rules applicable when transferring between leg
 | **Fields associated** | leg_group_id       | from_leg_group_id<br>to_leg_group_id<br>transfer_count<br>duration_limit<br>duration_limit_type<br>fare_transfer_type<br>fare_product_id |
 
 </div>
+
+### Sample data
+The following table illustrates that within a 2-hour window, unlimited free transfers are allowed between Leg A within the system.
+
+[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)
+
+| leg_group_id  |
+|---------------|
+| a             |
+
+[fare_transfer_rules.txt](/schedule/reference/#fare_transfer_rulestxt)
+
+| from_leg_group_id | to_leg_group_id | transfer_count | duration_limit | duration_limit_type | fare_transfer_type | fare_product_id |
+|-------------------|-----------------|----------------|----------------|---------------------|--------------------|-----------------|
+| a                 | a               | -1             | 7200           | 1                   | 0                  | free_transfer   |
 
 ## Fares V1
 
