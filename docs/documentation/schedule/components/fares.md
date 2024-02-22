@@ -39,7 +39,7 @@ This feature helps define the supported media that can be used to hold and/or va
 </div>
 
 ### Sample Data
-The following table shows a snippet of different fare media in SF Bay Area. `Clipper` is described as a physical transit card with `fare_media_type=2`. `SFMTA Munimobile` is described as a mobile app with `fare_media_type=2`. `Cash` has no fare media, since it is given directly to the driver without a ticket. As a result, `Cash` is `fare_media_type=0`.
+The following table shows a snippet of different fare media in the San Francisco Bay Area. `Clipper` is described as a physical transit card with `fare_media_type=2`. `SFMTA Munimobile` is described as a mobile app with `fare_media_type=2`. `Cash` which is given directly to the driver without a ticket, is `fare_media_type=0`.
 
 [fare_media.txt](../../reference/#fare_mediatxt)
 
