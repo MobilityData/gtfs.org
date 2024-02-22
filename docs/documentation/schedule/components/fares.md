@@ -69,7 +69,7 @@ This feature allows to describe rules used to apply different fares for specific
 </div>
 
 ### Sample data
-The following table illustrates a system that distinguishes between express routes and local routes, corresponding to different fare products. Currently, GTFS offers two methods to model this: one is using [`networks.txt` + `route_networks.txt`], and the other is `routes.network_id`.
+The following table shows a system that categorizes routes into express and local categories, each associated with distinct fare products.
 
 **Using `networks.txt` + `route_networks.txt`**
 
