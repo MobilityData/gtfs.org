@@ -8,29 +8,38 @@
 
 /* default theme overrides */
 [data-md-color-scheme="gtfs"] {
-    --md-footer-logo-dark-mode: none;
-    --md-footer-logo-light-mode: block;
+
+    /* Default colors */
     --md-default-bg-color: #ffffff;
+    --md-default-fg-color: #1d1c1c;
+
+    /* Main colors */
     --md-primary-bg-color: #ffffff;
     --md-primary-fg-color: #297a29;
     --md-secondary-fg-color: #2b6aa9;
     --md-highlight-color: #c6def4;
-    /* --md-footer-bg-color--dark: #2a75bd; */
-    --md-footer-fg-color: var(--md-default-bg-color);
-    /* --md-footer-fg-color--light: var(--md-primary-bg-color--light); */
-    --md-typeset-color: #212121;
-    --md-typeset-a-color: var(--md-accent-fg-color);
 
     /* Accent color shades */
-    --md-accent-fg-color:                #83aed9;
-    --md-accent-fg-color--transparent:   hsla(#{hex2hsl($clr-indigo-a200)}, 0.1);
+    --md-accent-fg-color:                #83aed9; /* Highlight color when hovering over links */
+    --md-accent-fg-color--transparent:   hsla(var(--md-accent-fg-color), 0.1);
     --md-accent-bg-color:                hsla(0, 0%, 100%, 1);
     --md-accent-bg-color--light:         hsla(0, 0%, 100%, 0.7);
+
+    /* Footer colors */
+    --md-footer-logo-dark-mode: none;
+    --md-footer-logo-light-mode: block;
+    --md-footer-bg-color--dark: #2a75bd;
+    --md-footer-fg-color: var(--md-default-bg-color);
+    --md-footer-fg-color--light: var(--md-primary-bg-color--light);
+
+    /* Other colors */
+    --md-typeset-color: #212121;
+    --md-typeset-a-color: var(--md-accent-fg-color);
 }
 
-[data-md-color-scheme="gtfs"] tr:hover {
+/* [data-md-color-scheme="gtfs"] tr:hover {
     background-color: #f5f5f5 !important;
-}
+} */
 
 [data-md-color-scheme="gtfs"] .only-dark {
     display: none;
