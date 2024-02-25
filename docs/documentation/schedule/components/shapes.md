@@ -25,10 +25,12 @@ The following table shows a portion of a shape from the TriMet GTFS feed (downlo
 </details>
 
 <details><summary>Sample Data</summary>
-    
-The following table shows a portion of a shape from the TriMet GTFS feed (download it <a href="https://developer.trimet.org/GTFS.shtml">here</a>). <br>
+
+<p style="font-size:12px">
+The following table shows a portion of a shape from the TriMet GTFS feed (download it <a href="https://developer.trimet.org/GTFS.shtml">here</a>). <br><br>
 
 <a href="https://staging.gtfs.org/documentation/schedule/reference/#shapestxt">shapes.txt</a> <br>
+</p>
 
 <table>
   <tr>
