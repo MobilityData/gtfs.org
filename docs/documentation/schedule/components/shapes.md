@@ -22,21 +22,36 @@ The following table shows a portion of a shape from the TriMet GTFS feed (downlo
 | 558674     | 45.476242      | -122.723024    | 4                   | 292.2                |
 | 558674     | 45.476244      | -122.72316     | 5                    | 327.1               |
 
-[trips.txt](/schedule/reference/#tripstxt)
+</details>
 
-|trip_id |shape_id|
-|--------|--------|
-|13302373|558673  |
-|13302374|558673  |
-|13302375|558674  |
-|13302376|558674  |
+<details><summary>Sample Data</summary>
+    
+The following table shows a portion of a shape from the TriMet GTFS feed (download it [here](https://developer.trimet.org/GTFS.shtml)). <br>
 
-[stop_times.txt](/schedule/reference/#stop_timestxt)
+[shapes.txt](/schedule/reference/#shapestxt) <br>
 
-|trip_id |stop_sequence|shape_dist_traveled|
-|--------|-------------|-------------------|
-|13302375|1            |0                  |
-|13302375|2            |461.7              |
-|13302375|3            |1245               |
+<table>
+  <tr>
+    <td>shape_id</td>
+    <td>shape_pt_lat</td>
+    <td>shape_pt_lon</td>
+    <td>shape_pt_sequence</td>
+    <td>shape_dist_traveled</td>
+  </tr>
+  <tr>
+    <td>558674</td>
+    <td>45.47623</td>
+    <td>-122.721885</td>
+    <td>1</td>
+    <td>0.0</td>
+  </tr>
+  <tr>
+    <td>558674</td>
+    <td>45.476235</td>
+    <td>-122.72236</td>
+    <td>2</td>
+    <td>121.0</td>
+  </tr>
+</table>
 
 </details>
