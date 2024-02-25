@@ -98,9 +98,11 @@ The following table shows a portion of a shape from the TriMet GTFS feed (downlo
 
 ??? example "Collapsable Sample Data 4"
 
-    The following table shows a portion of a shape from the TriMet GTFS feed (download it [here](https://developer.trimet.org/GTFS.shtml)).
+    <p style="font-size:16px">
+    The following table shows a portion of a shape from the TriMet GTFS feed (download it <a     href="https://developer.trimet.org/GTFS.shtml">here</a>). <br><br>
 
-    [shapes.txt](/schedule/reference/#shapestxt)
+    <a href="https://staging.gtfs.org/documentation/schedule/reference/#shapestxt">shapes.txt</a> <br>
+    </p>
 
     | shape_id | shape_pt_lat | shape_pt_lon | shape_pt_sequence | shape_dist_traveled |
     | --------- | ------------- | ------------- | ------------------ | ------------------- |
@@ -109,8 +111,10 @@ The following table shows a portion of a shape from the TriMet GTFS feed (downlo
     | 558674     | 45.476237      | -122.722523    | 3                   | 163.7                |
     | 558674     | 45.476242      | -122.723024    | 4                   | 292.2                |
     | 558674     | 45.476244      | -122.72316     | 5                    | 327.1               |
-    
-    [trips.txt](/schedule/reference/#tripstxt)
+
+    <p style="font-size:16px">
+    <a href="https://staging.gtfs.org/documentation/schedule/reference/#tripstxt">trips.txt</a> <br>
+    </p>
     
     |trip_id |shape_id|
     |--------|--------|
