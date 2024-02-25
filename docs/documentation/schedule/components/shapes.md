@@ -26,17 +26,17 @@ The following table shows a portion of a shape from the TriMet GTFS feed (downlo
 
 <details><summary>Sample Data</summary>
     
-The following table shows a portion of a shape from the TriMet GTFS feed (download it [here](https://developer.trimet.org/GTFS.shtml)). <br>
+The following table shows a portion of a shape from the TriMet GTFS feed (download it <a href="https://developer.trimet.org/GTFS.shtml">here</a>). <br>
 
-[shapes.txt](/schedule/reference/#shapestxt) <br>
+<a href="https://staging.gtfs.org/documentation/schedule/reference/#shapestxt">shapes.txt</a> <br>
 
 <table>
   <tr>
-    <td>shape_id</td>
-    <td>shape_pt_lat</td>
-    <td>shape_pt_lon</td>
-    <td>shape_pt_sequence</td>
-    <td>shape_dist_traveled</td>
+    <th>shape_id</td>
+    <th>shape_pt_lat</td>
+    <th>shape_pt_lon</td>
+    <th>shape_pt_sequence</td>
+    <th>shape_dist_traveled</td>
   </tr>
   <tr>
     <td>558674</td>
