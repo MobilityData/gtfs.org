@@ -26,7 +26,7 @@ The following table shows a portion of a shape from the TriMet GTFS feed (downlo
 
 <details><summary>Sample Data</summary>
 
-<p style="font-size:13px">
+<p style="font-size:16px">
 The following table shows a portion of a shape from the TriMet GTFS feed (download it <a href="https://developer.trimet.org/GTFS.shtml">here</a>). <br><br>
 
 <a href="https://staging.gtfs.org/documentation/schedule/reference/#shapestxt">shapes.txt</a> <br>
