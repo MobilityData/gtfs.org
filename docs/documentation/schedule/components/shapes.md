@@ -9,7 +9,7 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
 |[stop_times.txt](/schedule/reference/#stop_timestxt)                    |`shape_dist_traveled`|
 
 
-??? example "Sample data"
+??? info "Sample data"
 
     <p style="font-size:16px">
     The following table shows a portion of a shape from the TriMet GTFS feed (download it <a     href="https://developer.trimet.org/GTFS.shtml">here</a>). <br><br>
