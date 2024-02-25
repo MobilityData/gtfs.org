@@ -8,7 +8,35 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
 |[trips.txt](/schedule/reference/#tripstxt)                         |`shape_id`           |
 |[stop_times.txt](/schedule/reference/#stop_timestxt)                    |`shape_dist_traveled`|
 
-<details><summary>Sample Data</summary>
+### Sample data
+[shapes.txt](/schedule/reference/#shapestxt)
+
+| shape_id | shape_pt_lat | shape_pt_lon | shape_pt_sequence | shape_dist_traveled |
+| --------- | ------------- | ------------- | ------------------ | ------------------- |
+| 558674     | 45.47623       | -122.721885    | 1                   | 0.0                  |
+| 558674     | 45.476235      | -122.72236     | 2                   | 121.9                |
+| 558674     | 45.476237      | -122.722523    | 3                   | 163.7                |
+| 558674     | 45.476242      | -122.723024    | 4                   | 292.2                |
+| 558674     | 45.476244      | -122.72316     | 5                    | 327.1               |
+
+[trips.txt](/schedule/reference/#tripstxt)
+
+|trip_id |shape_id|
+|--------|--------|
+|13302373|558673  |
+|13302374|558673  |
+|13302375|558674  |
+|13302376|558674  |
+
+[stop_times.txt](/schedule/reference/#stop_timestxt)
+
+|trip_id |stop_sequence|shape_dist_traveled|
+|--------|-------------|-------------------|
+|13302375|1            |0                  |
+|13302375|2            |461.7              |
+|13302375|3            |1245               |
+
+<details><summary>Collapsable Sample Data 1</summary>
     
 The following table shows a portion of a shape from the TriMet GTFS feed (download it [here](https://developer.trimet.org/GTFS.shtml)).
 
@@ -24,7 +52,7 @@ The following table shows a portion of a shape from the TriMet GTFS feed (downlo
 
 </details>
 
-<details><summary>Sample Data</summary>
+<details><summary>Collapsable Sample Data 2</summary>
 
 <p style="font-size:16px">
 The following table shows a portion of a shape from the TriMet GTFS feed (download it <a href="https://developer.trimet.org/GTFS.shtml">here</a>). <br><br>
@@ -57,3 +85,34 @@ The following table shows a portion of a shape from the TriMet GTFS feed (downlo
 </table>
 
 </details>
+
+??? example "Collapsable Sample Data 3"
+    | shape_id | shape_pt_lat | shape_pt_lon | shape_pt_sequence | shape_dist_traveled |
+    | --------- | ------------- | ------------- | ------------------ | ------------------- |
+    | 558674     | 45.47623       | -122.721885    | 1                   | 0.0                  |
+    | 558674     | 45.476235      | -122.72236     | 2                   | 121.9                |
+    | 558674     | 45.476237      | -122.722523    | 3                   | 163.7                |
+    | 558674     | 45.476242      | -122.723024    | 4                   | 292.2                |
+    | 558674     | 45.476244      | -122.72316     | 5                    | 327.1               |
+
+??? example "Collapsable Sample Data 4"
+    The following table shows a portion of a shape from the TriMet GTFS feed (download it [here](https://developer.trimet.org/GTFS.shtml)).
+
+    [shapes.txt](/schedule/reference/#shapestxt)
+
+    | shape_id | shape_pt_lat | shape_pt_lon | shape_pt_sequence | shape_dist_traveled |
+    | --------- | ------------- | ------------- | ------------------ | ------------------- |
+    | 558674     | 45.47623       | -122.721885    | 1                   | 0.0                  |
+    | 558674     | 45.476235      | -122.72236     | 2                   | 121.9                |
+    | 558674     | 45.476237      | -122.722523    | 3                   | 163.7                |
+    | 558674     | 45.476242      | -122.723024    | 4                   | 292.2                |
+    | 558674     | 45.476244      | -122.72316     | 5                    | 327.1               |
+    
+    [trips.txt](/schedule/reference/#tripstxt)
+    
+    |trip_id |shape_id|
+    |--------|--------|
+    |13302373|558673  |
+    |13302374|558673  |
+    |13302375|558674  |
+    |13302376|558674  |
