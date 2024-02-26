@@ -34,10 +34,7 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
         
         |trip_id |shape_id|
         |--------|--------|
-        |13302373|558673  |
-        |13302374|558673  |
         |13302375|558674  |
-        |13302376|558674  |
 
     !!! note ""
         <p style="font-size:16px">
