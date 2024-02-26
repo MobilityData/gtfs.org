@@ -8,7 +8,7 @@ Agencies contain basic information about the agencies responsible for the transi
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[agency.txt](/schedule/reference/#agencytxt)|`agency_name`, `agency_url`, `agency_timezone`, `agency_lang`, `agency_phone`, `agency_fare_url`, `agency_email |
+|[agency.txt](/schedule/reference/#agencytxt)|`agency_name`, `agency_url`, `agency_timezone`, `agency_lang`, `agency_phone`, `agency_fare_url`, `agency_email` |
 
 ## Stops
 
