@@ -15,7 +15,8 @@ The below examples outline how to model data using Fares v2 and it can be comple
 
 ## Fares v2 training and free resources
 
-To get started with GTFS Fares-v2, you can watch these four video tutorials and follow along with [this written resource](https://share.mobilitydata.org/Fares-v2-written-resource-guide-for-videos).
+To get started with GTFS Fares-v2, you can watch these four video tutorials and follow along with [this written resource](https://share.mobilitydata.org/Fares-v2-written-resource-guide-for-videos).</a>
+
 - [Video 1](https://share.mobilitydata.org/faresv2-intro): GTFS Fares-v2: An introduction
 - [Video 2](https://share.mobilitydata.org/faresv2-setting-up-google-sheets): GTFS Fares v2: Setting up Google Sheets
 - [Video 3](https://share.mobilitydata.org/faresv2-creating-and-maintaining-data): GTFS Fares v2: Creating and Maintaining Data
