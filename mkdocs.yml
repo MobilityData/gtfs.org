@@ -147,7 +147,7 @@ plugins:
             Continuous stops: Berhenti terus menerus
             Text-to-speech: Teks pidato
             Frequencies: Frekuensi
-            Pathways: Jalur
+            Pathways and physical accessibility: Jalur
             Transfers: Transfer
             Translations: Terjemahan
             Feed information: Informasi umpan
@@ -187,7 +187,7 @@ plugins:
             Continuous stops: Kontinuierliche Haltestellen
             Text-to-speech: Text-in-Sprache
             Frequencies: Frequenzen
-            Pathways: Fahrwege
+            Pathways and physical accessibility: Fahrwege
             Transfers: Übertragungen
             Translations: Übersetzungen
             Feed information: Informationen zur Einspeisung
@@ -230,7 +230,7 @@ plugins:
             Continuous stops: Paradas continuas
             Text-to-speech: Texto a voz
             Frequencies: Frecuencias
-            Pathways: Rutas
+            Pathways and physical accessibility: Rutas
             Transfers: Traslados
             Translations: Traducciones
             Feed information: Información sobre la alimentación
@@ -268,7 +268,7 @@ plugins:
             Continuous stops: Arrêts continus
             Text-to-speech: Synthèse vocale
             Frequencies: Fréquences
-            Pathways: Trajets
+            Pathways and physical accessibility: Trajets
             Transfers: Transferts
             Translations: Traductions
             Feed information: Informations sur les flux
@@ -308,7 +308,7 @@ plugins:
             Continuous stops: Paradas contínuas
             Text-to-speech: Texto para o discurso
             Frequencies: Freqüências
-            Pathways: Caminhos
+            Pathways and physical accessibility: Caminhos
             Transfers: Transferências
             Translations: Traduções
             Feed information: Informações sobre alimentação
@@ -350,7 +350,7 @@ plugins:
             Continuous stops: Непрерывные остановки
             Text-to-speech: преобразование текста в речь
             Frequencies: Частоты
-            Pathways: Маршруты
+            Pathways and physical accessibility: Маршруты
             Transfers: Трансферы
             Translations: Переводы
             Feed information: Информация о фиде
@@ -390,7 +390,7 @@ plugins:
             Continuous stops: 连续站点
             Text-to-speech: 文字转语音
             Frequencies: 频次
-            Pathways: 路径
+            Pathways and physical accessibility: 路径
             Transfers: 转移
             Translations: 翻译
             Feed information: 饲料信息
@@ -431,7 +431,7 @@ plugins:
             Continuous stops: 連續停止
             Text-to-speech: 文字轉語音
             Frequencies: 頻率
-            Pathways: 途徑
+            Pathways and physical accessibility: 途徑
             Transfers: 接送服務
             Translations: 翻譯
             Feed information: 飼料信息
@@ -472,7 +472,7 @@ plugins:
             Continuous stops: 連続した停留所
             Text-to-speech: 音声合成
             Frequencies: フリークエンシー
-            Pathways: 経路
+            Pathways and physical accessibility: 経路
             Transfers: トランスファー
             Translations: 翻訳
             Feed information: フィード情報
@@ -513,7 +513,7 @@ plugins:
             Continuous stops: 연속 정지
             Text-to-speech: 텍스트 음성 변환
             Frequencies: 주파수
-            Pathways: 통로
+            Pathways and physical accessibility: 통로
             Transfers: 환승
             Translations: 翻訳
             Feed information: フィード情報
@@ -553,7 +553,7 @@ nav:
       - Fares v1: schedule/examples/fares-v1.md
       - Fares v2: schedule/examples/fares-v2.md
       - Frequencies: schedule/examples/frequencies.md
-      - Pathways and accessibility: schedule/examples/pathways.md
+      - Pathways and physical accessibility: schedule/examples/.md
       - Transfers: schedule/examples/transfers.md
       - Translations: schedule/examples/translations.md
       - Feed information: schedule/examples/feed-info.md
