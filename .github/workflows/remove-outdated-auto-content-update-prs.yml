@@ -15,8 +15,10 @@ jobs:
                   path: ${{ github.repository }}
                   fetch-depth: 0
 
-            - name: Install Node modules
-              run: npm install @actions/core @actions/github
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
               
             - name: Load secrets from 1Password
               id: onepw_secrets
@@ -26,6 +28,9 @@ jobs:
               env:
                   OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
                   CREDENTIALS: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/ifkeehu5gzi7wy5ub5qvwkaire/credential"
+
+            - name: Install Node modules
+              run: npm install @actions/core @actions/github
 
             - name: Close stale issues
               id: close-stale-issues
