@@ -2,7 +2,11 @@
 
 ## Introduction
 
-These are recommended practices for describing realtime public transportation information in the [GTFS Realtime](../reference) data format.
+These are recommended practices for describing real-time public transportation information in the [GTFS Realtime Reference](https://gtfs.org/realtime/reference/) format. These complement the explicit recommendations outlined in the GTFS Realtime Reference using the terms “recommend” or “should”. Although not mandatory, following these best practices can significantly improve the quality of the data and the overall experience for riders.
+
+These practices have been synthesized from the experience of the [GTFS Best Practices working group](https://gtfs.org/schedule/best-practices/#gtfs-best-practices-working-group) members and [application-specific GTFS practice recommendations](http://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS). 
+
+For further background, see the [Frequently Asked Questions](https://gtfs.org/schedule/best-practices/#frequently-asked-questions-faq).
 
 ### Document Structure
 
@@ -24,6 +28,7 @@ Recommended practices are organized into two primary sections
 * Due to how protocol buffers encode [optional values](https://developers.google.com/protocol-buffers/docs/proto#optional), before reading data from a GTFS Realtime feed consumers should check for the presence of values using the protocol buffer-generated `hasX()` methods before using that value and should only use the value if `hasX()` is true (where `X` is the name of the field). If `hasX()` returns `false`, the default value for that field defined in the `gtfs-realtime.proto` value should be assumed. If the consumer uses the value without checking the `hasX()` method first, it may be reading default data that wasn't intentionally published by the producer.
 * Feeds should use HTTPS instead of HTTP (without encryption) to ensure feed integrity.
 * Feeds should cover the vast majority of trips included in the companion static GTFS dataset. In particular, it should include data for high-density and high-traffic city areas and busy routes.
+
 ## Practice Recommendations Organized by Message
 
 ### FeedHeader
@@ -147,7 +152,9 @@ The objectives of maintaining GTFS Realtime Best Practices are to:
 
 ### How to propose or amend published GTFS Realtime Best Practices
 
-The Best Practices are in the process of being merged into the spec. If you'd like to suggest a new best practice, please go to the [GTFS Reference GitHub repository](https://github.com/google/transit/) to open an issue or create a PR, or contact [specifications@mobilitydata.org](mailto:specifications@mobilitydata.org).
+The Best Practices are in the process of being merged into the official GTFS Realtime reference, and some GTFS Best Practices will be removed from this document as this is happening.
+
+If you'd like to suggest a new best practice, please go to the [GTFS Reference GitHub repository](https://github.com/google/transit/) to open an issue or create a PR, or contact [specifications@mobilitydata.org](mailto:specifications@mobilitydata.org).
 
 ### Linking to This Document
 
