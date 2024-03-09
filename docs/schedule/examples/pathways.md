@@ -3,6 +3,7 @@
   </a>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Pathways and Physical accessibility
 
 <hr>
@@ -20,6 +21,9 @@
 >>>>>>> 26174ad (Update pathways.md (#248))
 =======
 # Pathways and Accessibility
+=======
+# Pathways and Physical accessibility
+>>>>>>> 61ef411 (Update pathways.md (#370))
 
 <hr>
 
@@ -66,7 +70,7 @@ The following are the steps needed to add accessibility information to your data
 * Step 1: Add wheelchair accessibility information to `stops.txt`
 * Step 2: Add wheelchair accessibility information to `trips.txt`
 * Step 3: Add audio navigation information to `stops.txt`
-* Step 4: Add physical accessibility information about stops and stations with GTFS-Pathways
+* Step 4: Add physical accessibility information about transit stations with GTFS Pathways
 
 ## Adding Wheelchair Accessibility in GTFS
 >>>>>>> ba26cd1 (Updates to pathways page (#278))
