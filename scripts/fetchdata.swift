@@ -11,13 +11,15 @@ enum LocalError: Error {
     case invalidInput
     case fileNotFound
     case fileNotFoundAtURL
+    case fileCantBeSaved
     case URLinvalid
+    case featureNotImplemented
 }
 
-struct Insert {
-    let value: Int
-    static let beforeFirst : Insert = Insert(value: 1)
-    static let beforeLast : Insert = Insert(value: -1)
+struct Insert : Equatable {
+    let value: Int // specify the line to insert the text in
+    static let beforeFirst : Insert = Insert(value: 1) // insert at the beginning of the file
+    static let afterLast : Insert = Insert(value: -1) // insert at the end of the file
 }
 
 // MARK: - MAIN FUNCTION
@@ -135,7 +137,7 @@ do {
               firstDeleteExisting: true,
                  appendToExisting: false)
     _ = insert(this: "# GTFS Realtime Protobuf\nDownload the [gtfs-realtime.proto](gtfs-realtime.proto) file and use it to compile your GTFS-realtime feed. The contents of the file are shown inline below.\nFor more information about using protobufs, see the [Protocol Buffers Developer Guide](https://developers.google.com/protocol-buffers/docs/overview).\n\n```protobuf\n", atLine: Insert.beforeFirst, inFileAtPath: pathRealtimeProto)
-    _ = insert(this: "\n```", atLine: Insert.beforeLast, inFileAtPath: pathRealtimeProto)
+    _ = insert(this: "\n```", atLine: Insert.afterLast, inFileAtPath: pathRealtimeProto)
 
     // ---------------------------------------------------------------------------------
 
@@ -204,7 +206,7 @@ do {
              atLine: Insert.beforeFirst,
        inFileAtPath: pathRealtimeFeedExamplesTripUpdates)
     _ = insert(this: "\n```",
-             atLine: Insert.beforeLast,
+             atLine: Insert.afterLast,
        inFileAtPath: pathRealtimeFeedExamplesTripUpdates)
 
     // Service Alerts
@@ -222,7 +224,7 @@ do {
              atLine: Insert.beforeFirst,
        inFileAtPath: pathRealtimeFeedExamplesServiceAlerts)
     _ = insert(this: "\n```",
-             atLine: Insert.beforeLast,
+             atLine: Insert.afterLast,
        inFileAtPath: pathRealtimeFeedExamplesServiceAlerts)
 
     // Vehicle Positions
@@ -304,35 +306,102 @@ do {
 
 // MARK: - FUNCTIONS
 
-func downloadMarkdown(from mkdownURLs: [String], toFilePath theFilePath: String, firstDeleteExisting: Bool, appendToExisting: Bool) throws -> String {
+func downloadMarkdown(from mkdownURLs: [String], toFilePath theFilePath: String, firstDeleteExisting: Bool, appendToExisting: Bool) throws -> Bool {
+
     for currentUrl : String in mkdownURLs {
+        
+        // Checks for empty URL parameter, return error if fails.
         if currentUrl.isEmpty { throw LocalError.URLinvalid }
-        guard let currentUrlasURL : URL = URL(string: currentUrl) else { throw LocalError.URLinvalid }
-        if !firstDeleteExisting {
-            let fileContents : String? = try String(contentsOfFile: currentUrlasURL.absoluteString)
-            return fileContents!
+
+        // Create a URLs objects with Strings, return error if fails.
+        guard let currentUrlasURL  : URL = URL(string: currentUrl)  else { throw LocalError.URLinvalid }
+        guard let saveFilePathTemp : URL = URL(string: theFilePath) else { throw LocalError.URLinvalid }
+        
+        // Get file name and create save file path
+        let fileName     : String = currentUrlasURL.lastPathComponent
+        let saveFilePath : URL    = saveFilePathTemp.appendingPathComponent(fileName)
+
+        // If indicated, delete existing file at the save file path first.
+        if firstDeleteExisting { if FileManager.default.fileExists(atPath: saveFilePath.path) { try FileManager.default.removeItem(at: saveFilePath) } }
+
+        let fileContents : String? = try String(contentsOf:currentUrlasURL, encoding: String.Encoding.utf8)
+        do {
+            if appendToExisting {
+                if let fileHandle : FileHandle = try? FileHandle(forWritingTo: saveFilePath) {
+                    try fileHandle.seekToEnd()
+                    fileHandle.write(fileContents!.data(using: String.Encoding.utf8)!)
+                    fileHandle.closeFile()
+                }
+            } else {
+                try fileContents!.write(to: saveFilePath, atomically: false, encoding: String.Encoding.utf8)
+            }
+            return true
+        } catch {
+            throw LocalError.fileCantBeSaved
         }
     }
-    return ""
+
+    return false
 }
 
 func insert(this theString: String, atLine theLine: Insert, inFileAtPath theFilePath: String) -> Bool {
     do {
         guard let theFilePathURL : URL = URL(string:theFilePath) else { throw LocalError.URLinvalid }
-        try theString.write(to: theFilePathURL, atomically: true, encoding: .utf8)
+        // try theString.write(to: theFilePathURL, atomically: true, encoding: .utf8)
+
+        if theLine == Insert.afterLast {
+            if let fileHandle : FileHandle = try? FileHandle(forWritingTo: theFilePathURL) {
+                try fileHandle.seekToEnd()
+                fileHandle.write(theString.data(using: String.Encoding.utf8)!)
+                fileHandle.closeFile()
+            }
+        } else if theLine == Insert.beforeFirst {
+            if let fileHandle : FileHandle = try? FileHandle(forWritingTo: theFilePathURL) {
+                try fileHandle.seek(toOffset: 0)
+                let oldData : Data = try String(contentsOf: theFilePathURL, encoding: .utf8).data(using: .utf8)!
+                var data : Data = theString.data(using: .utf8)!
+                data.append(oldData)
+                fileHandle.write(data)
+                fileHandle.closeFile()
+            }
+        } else {
+            throw LocalError.featureNotImplemented
+        }
 
     } catch LocalError.URLinvalid {
         print("ERROR : Invalid URL (\(theFilePath))")
 
+    } catch LocalError.featureNotImplemented {
+        print("ERROR : This feature is not yet implemented.")
+
     } catch {
         print("ERROR : Error writing at \(theFilePath) : \(error.localizedDescription)")
     }
+
     return false
 }
 
 func findAndReplaceOccurences(in replacements: [Replacement], inFileAtPath theFilePath: String) -> Bool {
-    for replacement : Replacement in replacements {
-        print("Key: \(replacement.findWhat), Value: \(replacement.replaceWith)")
+
+    do {
+
+        guard let theFilePathURL : URL = URL(string:theFilePath) else { throw LocalError.URLinvalid }
+
+        var content : String = try String(contentsOf: theFilePathURL, encoding: .utf8)
+        for replacement : Replacement in replacements {
+            content = content.replacingOccurrences(of: replacement.findWhat, with: replacement.replaceWith)
+        }
+        
+        try content.write(to: theFilePathURL, atomically: true, encoding: .utf8)
+        return true
+
+    } catch LocalError.URLinvalid {
+        print("ERROR : Invalid URL (\(theFilePath))")
+        return false
+
+    } catch {
+        print("ERROR : Error writing file at \(theFilePath) : \(error.localizedDescription)")
+        return false
     }
-    return false
+
 }
