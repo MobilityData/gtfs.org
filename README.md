@@ -36,6 +36,7 @@ We do accept glossary changes. Simpleen uses a glossary for key terms that are c
    - macOS: `pip3 install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git`
 1. Assuming you are still in the cloned repository, run this command to update the content for the specification references and best practices:
    - `bash scripts/fetchdata.sh`
+   - Note: on macOS, you need to install the `gcsplit` command for this script to work: `brew install coreutils`.
 1. To run the site locally: `mkdocs serve`
 1. To build the site locally only: `mkdocs build --clean`
 1. To deploy the site to GitHub Pages: `mkdocs gh-deploy`
