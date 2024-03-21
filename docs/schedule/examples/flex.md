@@ -2,11 +2,11 @@
     <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
   </a>
 
-# Flex
+# Demand responsive services
 
 <hr>
 
-Flex is a GTFS extension project that aims to facilitate discoverability of Demand Responsive Transportation Services.
+Flex is a GTFS extension project which was adopted officially into the GTFS specification in March 2024, its aims to facilitate discoverability of Demand Responsive Transportation Services.
 
 The following example demonstrates how to model different demand responsive service use cases using Flex. **Please note that the following examples are not necessarily an accurate or complete representation of the agencies’ services.**
 
@@ -22,15 +22,15 @@ Heartland Express service hours are as follow:
 
 - Weekdays:
   - 8:00 AM - 5:00 PM
-  - 6:15 AM – 5:45 PM (New Ulm Only)
-- Sunday: 8:00 AM - Noon (New Ulm Only)
+  - 6:15 AM – 5:45 PM (New Ulm zone only)
+- Sunday: 8:00 AM - Noon (New Ulm zone only)
 
-The New Ulm city zone is included within the Brown County zone. To avoid the "zone overlap constraint" issue, Heartland Express can be defined with four trips:
+The New Ulm city zone is contained within the Brown County zone. To avoid the ["zone overlap constraint"](/schedule/examples/flex/#zone-overlap-constraint) issue, Heartland Express can be defined with four trips:
 
-- Service in New Ulm from 6:15 AM to 8:00 AM on weekdays.
+- Service in New Ulm zone from 6:15 AM to 8:00 AM on weekdays.
 - County-wide service from 8:00 AM to 5:00 PM on weekdays.
-- Service in New Ulm from 5:00 PM to 5:45 PM on weekdays.
-- Service in New Ulm from 8:00 AM to 12:00 PM on Sundays.
+- Service in New Ulm zone from 5:00 PM to 5:45 PM on weekdays.
+- Service in New Ulm zone from 8:00 AM to 12:00 PM on Sundays.
   
 [**trips.txt**](../../reference/#tripstxt)
 
@@ -43,7 +43,7 @@ route_id | service_id | trip_id
 
 `service_id = c_67295_b_77497_d_31` refers to weekdays, `service_id = c_67295_b_77497_d_64` refers to Sunday.
 
-### Define zones (GeoJSON locations)
+### Define zone (GeoJSON locations)
 
 Using locations.geojson to define the operational zone of Heartland Express service, separate zones must be defined for Brown County and New Ulm City. Below is a simplified GeoJSON defining the zone of Brown County:
 ```json
@@ -94,12 +94,12 @@ booking_rule_id | booking_type | prior_notice_start_day | prior_notice_start_tim
 -- | -- | -- | -- | -- | -- | -- | -- | --
 booking_route_74362 | 2 | 14 | 8:00:00 | 1 | 15:00:00 | Brown County Heartland Express provides door-to-door on-demand transportation. To request a ride, call 1-507-359-2717 or 1-800-707-2717 by 3pm at least one business day ahead of your trip. | (507) 359-2717 | https://www.co.brown.mn.us/heartland-express-transit
 
-### Define stop_times
+### Define stop times
 
-- The operating hours are defined using the `start_pickup_drop_off_window` and `end_pickup_drop_off_window` fields.
-- Travel within the same zone requires two records in stop_times.txt with the same `location_id`.
-  - The first record with `pickup_type = 2` and `drop_off_type = 1` indicates that booking boarding is allowed in the zone.
-  - The second record with `pickup_type = 1` and `drop_off_type = 2` indicates that booking alighting is allowed in the zone.
+The operating hours are defined using the `start_pickup_drop_off_window` and `end_pickup_drop_off_window` fields. Travel within the same zone requires two records in stop_times.txt with the same `location_id`.
+
+- The first record with `pickup_type = 2` and `drop_off_type = 1` indicates that booking pickup is allowed in the zone.
+- The second record with `pickup_type = 1` and `drop_off_type = 2` indicates that booking drop-off is allowed in the zone.
  
 [**stop_times.txt**](../../reference/#stop_timestxt)
 
@@ -116,9 +116,9 @@ t_5374947_b_77497_tn_0 | area_715 | 2 | 08:00:00 | 12:45:00 | 1 | 2 | booking_ro
 
 `area_715` refers to New Ulm City zone, `area_708` refers to Bronw County zone. 
 
-## On-demand services between multiple zones
+## On-demand services across multiple zones
 
-Some demand-responsive services operate between multiple distinct zones, where riders can book pickups at any point A within one area and drop-offs at any point B within another area. For example, [Minnesota River Valley Transit](https://www.saintpetermn.gov/330/Dial-a-Ride) offers on-demand services between Saint Peter and Kasota cities:
+Some demand-responsive services operate across multiple distinct zones, where riders can book pickups at any location A within one area and drop-offs at any location within another area. For example, [Minnesota River Valley Transit](https://www.saintpetermn.gov/330/Dial-a-Ride) offers on-demand services between Saint Peter and Kasota cities:
 
 <sup>[Download River Valley Transit example dataset](../../../assets/on-demand_services_between_multiple_zones.zip)</sup>
 
@@ -137,9 +137,9 @@ route_id | service_id | trip_id
 
 (Define booking rules and zones using booking_rules.txt and locations.geojson in the same way as the previous example)
 
-### Define stop_times
+### Define stop times
 
-- The following data indicates that boarding is only allowed in one zone and alighting is only allowed in another zone. Boarding and alighting in the same zone are not allowed.
+The following data indicates that pickup is only allowed in one zone and drop-off is only allowed in another zone. pickup and drop-off in the same zone are not allowed.
 
 [**stop_times.txt**](../../reference/#stop_timestxt)
 
@@ -154,13 +154,13 @@ t_5298046_b_77503_tn_0 | area_713 | 2 | 06:30:00 | 20:00:00 | 1 | 2 | booking_ro
 t_5298051_b_77503_tn_0 | area_714 | 1 | 09:00:00 | 19:00:00 | 2 | 1 | booking_route_74375 | booking_route_74375
 t_5298051_b_77503_tn_0 | area_713 | 2 | 09:00:00 | 19:00:00 | 1 | 2 | booking_route_74375 | booking_route_74375
 
-## On-demand services where riders must board and alight at specific locations
+## On-demand services where riders must be picked up and dropped off at specific locations
 
-In certain demand-responsive services, riders are unable to specify boarding and alighting at any location within a zone. Instead, riders can only book to board and alight at specific designated stops(collection points/ virtual stops). An example of this is the [RufBus service](https://uvg-online.com/rufbus-angermuende/) in Angermünde and Gartz, Germany:
+In certain demand-responsive services, riders are unable to specify pickup and drop-off at any location within a zone. Instead, riders can only book to be picked up and dropped off at specific designated stops(collection points/ virtual stops). An example of this is the [RufBus service](https://uvg-online.com/rufbus-angermuende/) in Angermünde and Gartz, Germany:
 
 ### Define trips
 
-Route 476 offers on-demand services between each stop in the Angermünde region, including two trips(services): one for weekdays and the other for weekends. 
+Route 476 offers on-demand services between each stop in the Angermünde region. They operate two services (one for weekdays and the other for weekends), with each one having a single trip_id associated. 
 
 [**trips.txt**](../../reference/#tripstxt)
 
@@ -193,9 +193,9 @@ location_group_id | stop_id
 
 ### Define booking rules
 
-- The 476 route service requires booking at least one hour in advance. Using `booking_type = 1` indicates that the service requires up to same-day booking with advance notice. The `prior_notice_duration_min = 60` indicates a requirement for booking at least 60 minutes in advance.
-- There are slight differences between weekday and weekend bookings, so separate booking rules can be defined for weekday and holiday services. More details can be provided in the `message` field.
-- Information and booking page links can be provided in the `info_url` and `booking_url` fields.
+The 476 route service requires booking at least one hour in advance. Using `booking_type = 1` indicates that the service requires up to same-day booking with advance notice. The `prior_notice_duration_min = 60` indicates a requirement for booking at least 60 minutes in advance. 
+
+There are slight differences between weekday and weekend bookings, so separate booking rules can be defined for weekday and holiday services. More details can be provided in the `message` field. Information and booking page links can be provided in the `info_url` and `booking_url` fields.
 
 [**booking_rules.txt**](../../reference/#booking_rulestxt)
 
@@ -204,12 +204,12 @@ booking_rule_id | booking_type | prior_notice_duration_min | message | phone_num
 flächenrufbus_angermünde_weekdays | 1 | 60 | Anmeldung mind. 60min vorher erforderlich, per Anruf zwischen 08:00 und 24:00 möglich, oder online rund um die Uhr | +49 3332 442 755 | https://uvg-online.com/rufbus-angermuende/ | https://uvg.tdimo.net/bapp/#/astBuchungenView
 flächenrufbus_angermünde_weekends | 1 | 60 | 1€ Komfortzuschlag pro Person; Anmeldung mind. 60min vorher erforderlich, per Anruf zwischen 08:00 und 24:00 möglich, oder online rund um die Uhr | +49 3332 442 755 | https://uvg-online.com/rufbus-angermuende/ | https://uvg.tdimo.net/bapp/#/astBuchungenView
 
-### Define stop_times
+### Define stop times
 
-- The 476 route operates from 5:30 PM to 10:00 PM on weekdays and from 8:00 AM to 10:00 PM on weekends. The operating hours are defined using the `start_pickup_drop_off_window` and `end_pickup_drop_off_window` fields.
-- Travel within the same location group requires two records in stop_times.txt with the same `location_group_id`.
-  - The first record with `pickup_type = 2` and `drop_off_type = 1` indicates that booking boarding is allowed at the location group.
-  - The second record with `pickup_type = 1` and `drop_off_type = 2` indicates that booking alighting is allowed at the location group.
+The 476 route operates from 5:30 PM to 10:00 PM on weekdays and from 8:00 AM to 10:00 PM on weekends. The operating hours are defined using the `start_pickup_drop_off_window` and `end_pickup_drop_off_window` fields. Travel within the same location group requires two records in stop_times.txt with the same `location_group_id`.
+
+  - The first record with `pickup_type = 2` and `drop_off_type = 1` indicates that booking pickup is allowed at the location group.
+  - The second record with `pickup_type = 1` and `drop_off_type = 2` indicates that booking drop-off is allowed at the location group.
 
 [**stop_times.txt**](../../reference/#stop_timestxt)
 
@@ -222,15 +222,15 @@ trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end
 
 ## Deviated route
 
-"Route deviation" refers to services where the vehicle follows a fixed route with a set sequence of stops but has the flexibility to deviate from this route to pick up or drop off riders between stops. Typically, deviations are limited to keep the service on schedule, and advance booking is required for deviated pickups. 
+"Route deviation" refers to services where the vehicle follows a fixed route with a set sequence of stops but has the flexibility to deviate from this route to pick up or drop off riders between stops. Typically, deviations are limited to maintain service punctuality, and prior booking is required for deviated pickups and drop-offs. 
 
-In this example, the [Hermann Express](https://www.newulmmn.gov/553/Hermann-Express-City-Bus-Service) service in New Ulm City allows users to board the service only at fixed stops and to be droped off at any point within a specific deviation area between these stops.
+In this example, the [Hermann Express](https://www.newulmmn.gov/553/Hermann-Express-City-Bus-Service) service in New Ulm City allows users to be picked up only at fixed stops and to be droped off at any point within a specific deviation area between these stops.
 
 **The example below has been simplified, download the [Hermann Express example dataset](../../../assets/deviated_drop-off_route.zip) for more details.**
 
 ### Define trips
 
-Since this type of service still involves a series of fixed stops and a fixed schedule, defining trips is similar to normal fixed-route bus services. It requires defining trips for each service throughout the day.
+Since this type of service still involves a series of fixed stops and a fixed schedule, defining trips is similar to normal fixed-route bus services. It requires defining the trips served by each route throughout all relevant service periods.
 
 [**trips.txt**](../../reference/#tripstxt)
 
@@ -244,17 +244,15 @@ route_id | service_id | trip_id | share_id
 
 ### Define zones (GeoJSON location)
 
-Using locations.geojson to define zones for deviated route. Typically, deviations are limited to keep the service on schedule. Therefore, as the vehicle travels, the deviation area between each fixed stop may vary accordingly. The area for route deviation may look like the image below:
+Using [locations.geojson] (../../reference/#locationsgeojson) to define zones for deviated route. Typically, deviations are limited to keep the service on schedule. Therefore, as the vehicle travels, the deviation area between each fixed stop may vary accordingly. The area for route deviation may look like the image below:
 
 <div class="flex-photos">
     <img src="../../../assets/deviated_route_zones.png" alt="deviated route zones">
 </div>
 
-### Define stop_times
+### Define stop times
 
-- For fixed stops, define fields such as `arrival_time`, `departure_time`, and `stop_id` in a manner similar to normal bus routes.
-- Between fixed stops, define the zones where deviation is allowed.
-- `pickup_type = 1` and `drop_off_type = 3` indicates that deviated pickup is not allowed (limiting boarding to fixed stops only), and that riders must coordinate with the driver for alighting in the deviation zone.
+For fixed stops, define fields such as `arrival_time`, `departure_time`, and `stop_id` in a manner similar to normal bus routes. Between fixed stops, define the zones where deviation is allowed. `pickup_type = 1` and `drop_off_type = 3` indicates that deviated pickup is not allowed (limiting pickup to fixed stops only), and that riders must coordinate with the driver to be dropped off in the deviation zone.
 
 [**stop_times.txt**](../../reference/#stop_timestxt)
 
@@ -272,7 +270,7 @@ t_5374696_b_77497_tn_0 | 08:56:00 | 08:56:00 | 4149564 | | 36 | | | | | 25320.84
 
 ## Routing behavior
 
-### Ignoring intermediate stop_times records with pickup/drop-off Windows
+### Ignoring intermediate stop times records with pickup/drop-off Windows
 
 When providing routing or travel time between the origin and destination, data consumers should ignore intermediate stop_times.txt records that have `start_pickup_drop_off_window` and `end_pickup_drop_off_window` defined. For example:
 
@@ -286,7 +284,7 @@ Consumers should not take Zone2 into consideration when providing routing or tra
 
 ### Zone overlap constraint
 
-Simultaneous overlap of locations.geojson `id` geometry, `start/end_pickup_drop_off_window` time, and `pickup_type` or `drop_off_type` between two or more stop_times records with the same `trip_id` is forbidden.
+Simultaneous overlap of locations.geojson `id` geometry, `start/end_pickup_drop_off_window` time, and `pickup_type` or `drop_off_type` between two or more stop_times.txt records with the same `trip_id` is forbidden.
 
 For example:
 (Where `northportland` refers to a zone within `portland`)
