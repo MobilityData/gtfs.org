@@ -3,7 +3,7 @@ GTFS allows to preciely model a wide variety of fare structures used by differen
 
 ## Fare Products
 
-Fare Products lists the types of tickets or fares (i.e. single-trip fare, monthly pass, etc.) offered by a transit agency to access a service. Fare Products serve as a foundation for modeling an agency's fare structure, and they are linked to the transit service through mechanisms outlined in `fare_leg_rules.txt`. The association of Fare Products to various travel conditions, such as routes, areas, and times, determines the fare costs for individual travel segments and transfers.
+Fare Products lists the types of tickets or fares (i.e. single-trip fare, monthly pass, transfer fees, etc.) offered by a transit agency to access a service. Fare Products serve as a foundation for modeling an agency's fare structure, and they are linked to the transit service through mechanisms outlined in `fare_leg_rules.txt`. The association of Fare Products to various travel conditions, such as routes, areas, and times, determines the fare costs for individual travel segments and transfers.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -19,9 +19,9 @@ Fare Products lists the types of tickets or fares (i.e. single-trip fare, monthl
         <a href="/schedule/reference/#fare_productstxt"><b>fare_products.txt</b></a> <br>
         </p>
 
-        | fare_product_id  | fare_product_name  | amount  | currency  |
-        |------------------|--------------------|---|---|
-        | single_ride | Single Ride Fare |  2.75 | USD  |
+        | fare_product_id  | fare_product_name      | amount  | currency  |
+        |------------------|--------------------    |---      |---        |
+        | single_ride      | Single Ride Fare       |  2.75   | USD       |
 
     !!! note ""
         <p style="font-size:16px">
@@ -62,9 +62,9 @@ Fare Media defines the supported media that can be used to hold and/or validate 
         <a href="/schedule/reference/#fare_productstxt"><b>fare_products.txt</b></a> <br>
         </p>
 
-        | fare_product_id  |
-        |------------------|
-        | single_ride |
+        | fare_product_id  | fare_product_name      | amount  | currency  | fare_media_id |
+        |------------------|--------------------    |---      |---        | ---           |
+        | single_ride      | Single Ride Fare       |  2.75   | USD       | munimobile          |
 
 
 
