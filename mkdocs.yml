@@ -131,20 +131,26 @@ nav:
   - Home: index.md
   - Getting started:
     - What is GTFS?: getting_started/what_is_GTFS.md
+    - Why use GTFS?: getting_started/why_use_GTFS.md
+    - How to produce GTFS?: 
+      - Create: getting_started/how_to_create_GTFS.md
+      - Validate: getting_started/what_is_high-quality_GTFS.md
+      - Publish: getting_started/how_to_publish?.md
+    - What can GTFS do?:
+      - Overview: getting_started/features/overview.md
+      - Base: getting_started/features/base.md
+      - Accesibility: getting_started/features/accesibility.md
+      - Fares: getting_started/features/fares.md
+      - Pathways: getting_started/features/pathways.md
+      - Metadata: getting_started/features/metadata.md
+      - Flexible services: getting_started/features/flexible_services.md
+      - Shapes: getting_started/features/shapes.md
+      - Transfers: getting_started/features/transfers.md
+      - Frequency based services: getting_started/features/frequency_based_services.md
+    - Example GTFS feed: getting_started/example_feed.md
   - Technical Documentation:
     - Overview: documentation/overview.md
     - Schedule:
-      - Features: 
-        - Overview: documentation/schedule/components/overview.md
-        - Base: documentation/schedule/components/base.md
-        - Accesibility: documentation/schedule/components/accesibility.md
-        - Fares: documentation/schedule/components/fares.md
-        - Pathways: documentation/schedule/components/pathways.md
-        - Metadata: documentation/schedule/components/metadata.md
-        - Flexible services: documentation/schedule/components/flexible_services.md
-        - Shapes: documentation/schedule/components/shapes.md
-        - Transfers: documentation/schedule/components/transfers.md
-        - Frequency based services: documentation/schedule/components/frequency_based_services.md
       - Reference: documentation/schedule/reference.md
       - Best Practices: documentation/schedule/GTFS schedule best Practices.md
       - Recent additions: documentation/schedule/recent additions.md
