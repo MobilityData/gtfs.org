@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Array of target languages
-target_languages=("ES" "RU" "JA" "id" "DE" "PT-BR" "ko" "ZH" "zh-TW")
+target_languages=("FR", "ES" "RU" "JA" "id" "DE" "PT-BR" "ko" "ZH" "zh-TW")
 
 escape_quotes() {
     echo "$1" | sed 's/"/\\"/g'
