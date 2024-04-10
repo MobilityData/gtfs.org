@@ -45,7 +45,7 @@ route_id | service_id | trip_id
 
 ### Define zone (GeoJSON locations)
 
-Using locations.geojson to define the operational zone of Heartland Express service, separate zones must be defined for Brown County and New Ulm City. Below is a simplified GeoJSON defining the zone of Brown County:
+Using [locations.geojson](../../reference/#locationsgeojson) to define the operational zone of Heartland Express service, separate zones must be defined for Brown County and New Ulm City. Below is a simplified GeoJSON defining the zone of Brown County:
 ```json
 {
   "type": "FeatureCollection",
@@ -135,7 +135,7 @@ route_id | service_id | trip_id
 74375 | weekdays | t_5298046_b_77503_tn_0 
 74375 | saturdays | t_5298051_b_77503_tn_0
 
-(Define booking rules and zones using booking_rules.txt and locations.geojson in the same way as the previous example)
+(Define booking rules and zones using [booking_rules.txt](../../reference/#booking_rulestxt) and [locations.geojson](../../reference/#locationsgeojson) in the same way as the previous example)
 
 ### Define stop times
 
@@ -244,7 +244,7 @@ route_id | service_id | trip_id | share_id
 
 ### Define zones (GeoJSON location)
 
-Using [locations.geojson] (../../reference/#locationsgeojson) to define zones for deviated route. Typically, deviations are limited to keep the service on schedule. Therefore, as the vehicle travels, the deviation area between each fixed stop may vary accordingly. The area for route deviation may look like the image below:
+Using [locations.geojson](../../reference/#locationsgeojson) to define zones for deviated route. Typically, deviations are limited to keep the service on schedule. Therefore, as the vehicle travels, the deviation area between each fixed stop may vary accordingly. The area for route deviation may look like the image below:
 
 <div class="flex-photos">
     <img src="../../../assets/deviated_route_zones.png" alt="deviated route zones">
@@ -291,6 +291,8 @@ For example:
 
 **Forbidden**
 
+[**stop_times.txt**](../../reference/#stop_timestxt)
+
 trip_id | location_id | stop_sequence | pickup_type | drop_off_type | start_pickup_drop_off_window | end_pickup_drop_off_window
 -- | -- | -- | -- | -- | -- | --
 tripA | portland | 1 | 2 | 1 | 08:00:00 | 12:00:00
@@ -298,6 +300,8 @@ tripA | northportland | 2 | 2 | 1 | 10:00:00 | 14:00:00
 tripA | vancouver | 3 | 1 | 2 | 10:00:00 | 14:00:00
 
 **Allowed**
+
+[**stop_times.txt**](../../reference/#stop_timestxt)
 
 trip_id | location_id | stop_sequence | pickup_type | drop_off_type | start_pickup_drop_off_window | end_pickup_drop_off_window
 -- | -- | -- | -- | -- | -- | --
@@ -307,6 +311,8 @@ tripA | vancouver | 3 | 1 | 2 | 10:00:00 | 14:00:00
 
 or
 
+[**stop_times.txt**](../../reference/#stop_timestxt)
+
 trip_id | location_id | stop_sequence | pickup_type | drop_off_type | start_pickup_drop_off_window | end_pickup_drop_off_window
 -- | -- | -- | -- | -- | -- | --
 tripA | portland | 1 | 2 | 1 | 08:00:00 | 12:00:00
@@ -314,6 +320,8 @@ tripA | northportland | 2 | 1 | 2 | 10:00:00 | 14:00:00
 tripA | vancouver | 3 | 1 | 2 | 10:00:00 | 14:00:00
 
 or
+
+[**stop_times.txt**](../../reference/#stop_timestxt)
 
 trip_id | location_id | stop_sequence | pickup_type | drop_off_type | start_pickup_drop_off_window | end_pickup_drop_off_window
 -- | -- | -- | -- | -- | -- | --
