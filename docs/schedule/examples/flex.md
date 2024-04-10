@@ -25,7 +25,7 @@ Heartland Express service hours are as follow:
   - 6:15 AM – 5:45 PM (New Ulm zone only)
 - Sunday: 8:00 AM - Noon (New Ulm zone only)
 
-The New Ulm city zone is contained within the Brown County zone. To avoid the ["zone overlap constraint"](/schedule/examples/flex/#zone-overlap-constraint) issue, Heartland Express can be defined with four trips:
+The New Ulm city zone is contained within the Brown County zone. To avoid the ["zone overlap constraint"](#zone-overlap-constraint) issue, Heartland Express can be defined with four trips:
 
 - Service in New Ulm zone from 6:15 AM to 8:00 AM on weekdays.
 - County-wide service from 8:00 AM to 5:00 PM on weekdays.
