@@ -558,6 +558,7 @@ nav:
       - Translations: schedule/examples/translations.md
       - Feed information: schedule/examples/feed-info.md
       - Dataset attributions: schedule/examples/attributions.md
+      - Demand responsive services: schedule/examples/flex.md
     - Changes:
       - schedule/changes/index.md
       - Specification Amendment Process: schedule/process.md
