@@ -18,5 +18,5 @@ To help in understanding the GTFS specification and in producing tools that read
     - [Translations](translations)
     - [Feed information](feed-info)
     - [Dataset attributions](attributions)
-    - [Demand responsive services](demand-responsive-services)
+    - [Demand responsive services](flex)
 - See the [Mobility Database](https://database.mobilitydata.org/) and [Transitland](https://www.transit.land/) for public feeds from real transit agencies.
