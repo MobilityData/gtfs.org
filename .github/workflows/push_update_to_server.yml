@@ -36,7 +36,7 @@ jobs:
       with:
         host: ${{ env.ACTION_GXFS_WEBSERVER_SSH_HOST }}
         username: ${{ env.ACTION_GXFS_WEBSERVER_SSH_USER }}
-        key: ${{ secrets.ACTION_MAIN_WEBSERVER_SSH_KEY }}
+        key: ${{ env.ACTION_GXFS_WEBSERVER_SSH_PRIVATE_KEY }}
         port: ${{ env.ACTION_GXFS_WEBSERVER_SSH_PORT }}
         script: |
                     ./gtfs_org_website_updater.sh
