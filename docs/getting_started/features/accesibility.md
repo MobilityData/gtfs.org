@@ -5,48 +5,171 @@ GTFS contains multiple features intended to assist riders in navigating and acce
 
 Wheelchair accessibility fields make it possible to indicate if a stop and vehicle can accommodate users using wheelchairs, allowing them to plan their trips based on the most convenient option for their needs.
 
+**Pre-requirements**: Implement Base features, if provding wheelchair accesibility for station entrances and exits Location Types features is also required.
+
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[stops.txt](/schedule/reference/#stopstxt)|`wheelchair_boarding` |
-|[trips.txt](/schedule/reference/#tripstxt)|`wheelchair_accessible`|
+|[stops.txt](/documentation/schedule/reference/#stopstxt)|`wheelchair_boarding` |
+|[trips.txt](/documentation/schedule/reference/#tripstxt)|`wheelchair_accessible`|
+
+??? note "Sample Data"
+    <p style="font-size:16px">
+    The following tables indicate that in stop `TAS001` some vehicles can be boarded by a rider in a wheelchair `wheelchair_boarding=1` in `stops.txt` while using `trips.txt` it is specified that the vehicle providing service for trip `AWE1` can accommodate at least one rider in a wheelchair, while the vehicle used for trip `AWE2` cannot. 
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="/documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
+        </p>
+
+        | stop_id | stop_name  | stop_lat    | stop_lon   | wheelchair_boarding |
+        |---------|------------|-------------|------------|---------------------|
+        | TAS001  | 5 Av/53 St | 45.5035680  | -73.587079 |                   1 |
+
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="/documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
+        </p>
+
+        | route_id | service_id | trip_id | wheelchair_accessible |
+        |----------|------------|---------|-----------------------|
+        | RA       | WE         | AWE1    |                     1 |
+        | RA       | WE         | AWE2    |                     2 |
+
+
 
 ## Text-to-speech
 
 Text-to-speech allows to provide the necessary inputs to convert text into audio, ensures that riders using assistive technology to read text aloud are getting the right stop names when using the transit service.
 
+**Pre-requirements**: Implement Base features.
+
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[stops.txt](/schedule/reference/#stopstxt)|`tts_stop_name` |
+|[stops.txt](/documentation/schedule/reference/#stopstxt)|`tts_stop_name` |
+
+??? note "Sample Data"
+    <p style="font-size:16px">
+    The following table provides a readable version of the stop name, allowing text-to-speech tools to read the name aloud.
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="/documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
+        </p>
+
+        | stop_id | stop_name  | stop_lat    | stop_lon   | tts_stop_name            |
+        |---------|------------|-------------|------------|--------------------------|
+        | TAS001  | 5 Av/53 St | 45.5035680  | -73.587079 | 5th avenue and 53 street |
 
 ## Route Colors
 
 Using route colors allows to accurately depict and communicate the color scheme assigned to specific routes by the agency’s design guidelines, this enables users to easily identify transit services by their official color.
 
+**Pre-requirements**: Implement Base features.
+
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[routes.txt](/schedule/reference/#routestxt)|`route_color`, `route_text_color` |
+|[routes.txt](/documentation/schedule/reference/#routestxt)|`route_color`, `route_text_color` |
+
+??? note "Sample Data"
+    <p style="font-size:16px">
+    The following table assigns an orange color to route RA using the HEX color code D95700, while also specifying that text should be rendered black.
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="/documentation/schedule/reference/#routestxt"><b>routes.txt</b></a> <br>
+        </p>
+
+        | route_id | agency_id | route_short_name | route_long_name    | route_type | route_color | route_text_color |
+        |----------|-----------|------------------|--------------------|------------|-------------|------------------|
+        | RA       | agency001 |               17 | Mission - Downtown |          3 | D95700      |                0 |
 
 ## Bike Allowed
 
 Specifying bike allowance allows to indicate if vehicles serving specific trips are able to accommodate bicycles or not, helping users to plan and access services that enable them to make multimodal trips.
 
+**Pre-requirements**: Implement Base features.
+
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[trips.txt](/schedule/reference/#tripstxt)|`bikes_allowed` |
+|[trips.txt](/documentation/schedule/reference/#tripstxt)|`bikes_allowed` |
+
+??? note "Sample Data"
+    <p style="font-size:16px">
+    The following table specifies that the vehicle used in trip `AWE1` is able to accommodate at least one bicycle on board, while also specifying that bicycles cannot be accommodated in the vehicle used for trip `AWE2`.
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="/documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
+        </p>
+
+        | route_id | service_id | trip_id | bikes_allowed |
+        |----------|------------|---------|---------------|
+        | RA       | WE         | AWE1    |             2 |
+        | RA       | WE         | AWE2    |             2 |
+
 
 ## Translations
 
 Translations allows service information such as station names to be provided in multiple languages enabling travel planners to display the information in a specific language depending on the user’s language and location settings.
 
+**Pre-requirements**: Implement Base features.
+
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[translations.txt](/schedule/reference/#translationstxt)|`table_name`,`field_name`,`language`,`translation`,`record_id`,`record_sub_id`,`field_value` |
+|[translations.txt](/documentation/schedule/reference/#translationstxt)|`table_name`,`field_name`,`language`,`translation`,`record_id`,`record_sub_id`,`field_value` |
+
+??? note "Sample Data"
+    <p style="font-size:16px">
+    The following table provides French and Spanish translations for two fields used in `routes.txt`: `route_long_name` and `route_desc`.
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="/documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
+        </p>
+
+        | table_name | field_name      | language | translation                                           | record_id | record_sub_id | field_value |
+        |------------|-----------------|----------|-------------------------------------------------------|-----------|---------------|-------------|
+        | routes     | route_long_name | ES       | Mission - Centro                                      | RA        |               |             |
+        | routes     | route_long_name | FR       | Mission - Centre ville                                | RA        |               |             |
+        | routes     | route_desc      | ES       | La ruta "A" viaja desde Lower Mission hasta el centro | RA        |               |             |
+        | routes     | route_desc      | FR       | La route « A » relie Lower Mission au centre-ville.   | RA        |               |             |
 
 ## Headsigns
 
 Headsigns allows to communicate the signage used by vehicles indicating the trip’s destination, making it easier for users to identify the correct transit service. This feature supports headsign changes along a specific route.
 
+**Pre-requirements**: Implement Base features.
+
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[trips.txt](/schedule/reference/#tripstxt)|`trip_headsign` |
-|[stop_times.txt](/schedule/reference/#stop_timestxt)|`stop_headsign`|
+|[trips.txt](/documentation/schedule/reference/#tripstxt)|`trip_headsign` |
+|[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)|`stop_headsign`|
+
+
+??? note "Sample Data"
+    <p style="font-size:16px">
+    The first table specify the headsigns to be used by trips `AWE1` and `AWE2`, while the second one indicates that `AWE1`’s headsign will be modified after stop `TAS004` overriding the one specified in `trips.txt`.
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="/documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
+        </p>
+
+        | route_id | service_id | trip_id | trip_headsign |
+        |----------|------------|---------|---------------|
+        | RA       | WE         | AWE1    | Downtown      |
+        | RA       | WE         | AWE2    | Mission       |
+
+    
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="/documentation/schedule/reference/#stop_timestxt"><b>stop_times.txt</b></a> <br>
+        </p>
+
+        | trip_id | arrival_time | departure_time | stop_id | stop_sequence | stop_headsign          |
+        |---------|--------------|----------------|---------|---------------|------------------------|
+        | AWE1    |      6:10:00 |        6:10:00 | TAS001  |             1 |                        |
+        | AWE1    |      6:14:00 |        6:14:00 | TAS002  |             2 |                        |
+        | AWE1    |      6:20:00 |        6:20:00 | TAS003  |             3 |                        |
+        | AWE1    |      6:23:00 |        6:23:00 | TAS004  |             4 | Downtown - Main Square |
+        | AWE1    |      6:25:00 |        6:25:00 | TAS005  |             5 | Downtown - Main Square |
