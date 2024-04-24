@@ -76,7 +76,7 @@ Using route colors allows to accurately depict and communicate the color scheme 
 
 ??? note "Sample Data"
     <p style="font-size:16px">
-    The following table assigns an orange color to route RA using the HEX color code D95700, while also specifying that text should be rendered black.
+    The following sample assigns an orange color to route RA using the HEX color code `D95700`, while also specifying that text should be rendered black using HEX color code `0`.
     </p>
     !!! note ""
         <p style="font-size:16px">
