@@ -5,13 +5,16 @@ Pathways contains features that allow to model large transit stations, helping r
 
 Location types are used to classify key areas within transit stations such as exits/entrances, nodes or boarding areas, as well as their relationship. Location types serve as a fundation for modeling transit stations using Pathways.
 
-**Pre-requirements**: Implement base features.
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[stops.txt](/documentation/schedule/reference/#stopstxt)|`location_type`, `parent_station` |
 
 ??? note "Sample Data"
+
     <p style="font-size:16px">
     The following sample defines multiple locations within a transit station in `stops.txt`: the parent station, representing the main location, and its child locations such as platforms, entrances/exists, and generic nodes.
     </p>
@@ -39,13 +42,17 @@ Location types are used to classify key areas within transit stations such as ex
 
 At its foundational level, Pathways offers basic functionality to connect key areas defined in Location types within a station. These connections form pathways, enabling users to obtain precise directions (e. g. from an entrance to the boarding area), which is particularly useful in navigating large and complex transit stations.
 
-**Pre-requirements**: Implement base features and location type feature.
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
+- [Location Types feature](/getting_started/features/pathways/#location-types)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[pathways.txt](/documentation/schedule/reference/#pathwaystxt)|`pathway_id`, `from_stop_id`, `to_stop_id`, `pathway_mode`, `is_bidirectional` |
 
 ??? note "Sample Data"
+
     <p style="font-size:16px">
     The following sample defines multiple connections (also referred to as pathways) between pre-established locations: walkways (`pathway_mode=1`), stairs (`pathway_mode=2`), and fare gate (`pathway_mode=6`). Bi-directionality is also specified.
     </p>
@@ -72,15 +79,19 @@ At its foundational level, Pathways offers basic functionality to connect key ar
 
 More details can be added to provide additional details regadring the physical characteristics of a station’s pathways, including length, width and slope (for ramps) or the number of stairs (for stairways). This helps riders anticipate the conditions and accessibility of the pathway they need to navigate.
 
-**Pre-requirements**: Implement base features and pathway connections feature.
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
+- [Pathway connections feature](/getting_started/features/pathways/#pathway-connections)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[pathways.txt](/documentation/schedule/reference/#pathwaystxt)|`max_slope`, `min_width`, `length`, `stair_count`|
 
 ??? note "Sample Data"
+
     <p style="font-size:16px">
-    The following table defines additional details to pre-established pathways including minimum width, step count for stairs and length and maximum slope for walkways.
+    The following sample defines additional details to pre-established pathways including minimum width, step count for stairs and length and maximum slope for walkways.
     </p>
     !!! note ""
         <p style="font-size:16px">
@@ -105,7 +116,10 @@ More details can be added to provide additional details regadring the physical c
 
 Levels can be used to list all different levels within a station, providing users with an additional layer of information to stations. This feature also enables the use of elevators in conjunction with the Pathways connections feature.
 
-**Pre-requirements**: Implement base features and location type feature.
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
+- [Location Types feature](/getting_started/features/pathways/#location-types)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -113,8 +127,9 @@ Levels can be used to list all different levels within a station, providing user
 |[stops.txt](/documentation/schedule/reference/#stopstxt)|`level_id`|
 
 ??? note "Sample Data"
+
     <p style="font-size:16px">
-The following sample define a list of existing levels and assign them to pre-established locations.
+    The following sample define a list of existing levels and assign them to pre-established locations.
     </p>
     !!! note ""
         <p style="font-size:16px">
@@ -153,15 +168,19 @@ The following sample define a list of existing levels and assign them to pre-est
 
 In-station traversal time provides an additional level of detail to in-station directions, giving users an estimated time required to navigate stations, resulting in better travel directions and travel times.
 
-**Pre-requirements**: Implement base features and pathway connections feature.
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
+- [Pathway connections feature](/getting_started/features/pathways/#pathway-connections)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[pathways.txt](/documentation/schedule/reference/#pathwaystxt)|`traversal_time`|
 
 ??? note "Sample Data"
+
     <p style="font-size:16px">
-    The following table defines additional details to pre-established pathways by specifying the estimated travel time in seconds to navigate each pathway.
+    The following sample defines additional details to pre-established pathways by specifying the estimated travel time in seconds to navigate each pathway.
     </p>
     !!! note ""
         <p style="font-size:16px">
@@ -186,15 +205,19 @@ In-station traversal time provides an additional level of detail to in-station d
 
 Pathway signs can bridge the information displayed in trip planners with real-world signs. If this is represented in a feed, trip planners can provide directions such as 'follow signs to '. 
 
-**Pre-requirements**: Implement base features and pathway connections feature.
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
+- [Pathway connections feature](/getting_started/features/pathways/#pathway-connections)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[pathways.txt](/documentation/schedule/reference/#pathwaystxt)|`signposted_as`, `reversed_signposted_as`|
 
 ??? note "Sample Data"
+
     <p style="font-size:16px">
-    The following table specifies the navigation information associated with pre-established pathways, reflecting the text displayed on in-station physical signs. 
+    The following sample specifies the navigation information associated with pre-established pathways, reflecting the text displayed on in-station physical signs. 
     </p>
     !!! note ""
         <p style="font-size:16px">
