@@ -51,6 +51,7 @@ Text-to-speech allows to provide the necessary inputs to convert text into audio
 |[stops.txt](/documentation/schedule/reference/#stopstxt)|`tts_stop_name` |
 
 ??? note "Sample Data"
+
     <p style="font-size:16px">
     The following table provides a readable version of the stop name, allowing text-to-speech tools to read the name aloud.
     </p>
