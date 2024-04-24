@@ -13,7 +13,7 @@ Location types are used to classify key areas within transit stations such as ex
 
 ??? note "Sample Data"
     <p style="font-size:16px">
-    The following table defines multiple nodes within a parent station in `stops.txt`, specifying platforms, entrances and exists and generic nodes.
+    The following sample defines multiple locations within a transit station in `stops.txt`: the parent station, representing the main location, and its child locations such as platforms, entrances/exists, and generic nodes.
     </p>
     !!! note ""
         <p style="font-size:16px">
