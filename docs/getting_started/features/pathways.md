@@ -5,7 +5,7 @@ Pathways contains features that allow to model large transit stations, helping r
 
 Location types are used to classify key areas within transit stations such as exits/entrances, nodes or boarding areas, as well as their relationship. Location types serve as a fundation for modeling transit stations using Pathways.
 
-**Pre-requirements**: 
+**Pre-requirement**: 
 
 - [Base features](/getting_started/features/base)
 
