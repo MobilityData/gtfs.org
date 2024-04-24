@@ -5,7 +5,10 @@ GTFS contains multiple features intended to assist riders in navigating and acce
 
 Wheelchair accessibility fields make it possible to indicate if a stop and vehicle can accommodate users using wheelchairs, allowing them to plan their trips based on the most convenient option for their needs.
 
-**Pre-requirements**: Implement Base features, if provding wheelchair accesibility for station entrances and exits Location Types features is also required.
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
+- [Location Types feature](/getting_started/features/pathways/#location-types) (if providing information for station entrances and/or exits)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -16,8 +19,8 @@ Wheelchair accessibility fields make it possible to indicate if a stop and vehic
 
     <p style="font-size:16px">
     The following sample shows wheelchair boarding is available at stop `TAS001` with  `wheelchair_boarding=1`.
-The vehicle used in trip `AWE1` is equipped to accommodate at least one wheelchair, and the vehicle used in trip `AWE2` is not.
-Both the stop and trip must be wheelchair accessible for a passenger to be able to access a trip at the given stop.
+    The vehicle used in trip `AWE1` is equipped to accommodate at least one wheelchair, and the vehicle used in trip `AWE2` is not.
+    Both the stop and trip must be wheelchair accessible for a passenger to be able to access a trip at the given stop.
     </p>
     !!! note ""
         <p style="font-size:16px">
@@ -44,7 +47,9 @@ Both the stop and trip must be wheelchair accessible for a passenger to be able 
 
 Text-to-speech allows to provide the necessary inputs to convert text into audio, ensures that riders using assistive technology to read text aloud are getting the right stop names when using the transit service.
 
-**Pre-requirements**: Implement Base features.
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -53,7 +58,7 @@ Text-to-speech allows to provide the necessary inputs to convert text into audio
 ??? note "Sample Data"
 
     <p style="font-size:16px">
-    The following table provides a readable version of the stop name, allowing text-to-speech tools to read the name aloud.
+    The following sample provides a readable version of the stop name, allowing text-to-speech tools to read the name aloud.
     </p>
     !!! note ""
         <p style="font-size:16px">
@@ -68,15 +73,18 @@ Text-to-speech allows to provide the necessary inputs to convert text into audio
 
 Using route colors allows to accurately depict and communicate the color scheme assigned to specific routes by the agency’s design guidelines, this enables users to easily identify transit services by their official color.
 
-**Pre-requirements**: Implement Base features.
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[routes.txt](/documentation/schedule/reference/#routestxt)|`route_color`, `route_text_color` |
 
 ??? note "Sample Data"
+
     <p style="font-size:16px">
-    The following sample assigns an orange color to route RA using the HEX color code `D95700`, while also specifying that text should be rendered black using HEX color code `0`.
+    The following sample assigns an orange color to route RA using the HEX color code `D95700`, and specifies that text should be rendered black using HEX color code `0`.
     </p>
     !!! note ""
         <p style="font-size:16px">
@@ -91,7 +99,9 @@ Using route colors allows to accurately depict and communicate the color scheme 
 
 Specifying bike allowance allows to indicate if vehicles serving specific trips are able to accommodate bicycles or not, helping users to plan and access services that enable them to make multimodal trips.
 
-**Pre-requirements**: Implement Base features.
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -99,7 +109,7 @@ Specifying bike allowance allows to indicate if vehicles serving specific trips 
 
 ??? note "Sample Data"
     <p style="font-size:16px">
- The following sample specifies that the vehicle used in trip `AWE1` can accommodate at least one bicycle on board, and the vehicle used in trip `AWE2` cannot.
+    The following sample specifies that the vehicle used in trip `AWE1` can accommodate at least one bicycle on board, and the vehicle used in trip `AWE2` cannot.
     </p>
     !!! note ""
         <p style="font-size:16px">
@@ -116,15 +126,18 @@ Specifying bike allowance allows to indicate if vehicles serving specific trips 
 
 Translations allows service information such as station names to be provided in multiple languages enabling travel planners to display the information in a specific language depending on the user’s language and location settings.
 
-**Pre-requirements**: Implement Base features.
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[translations.txt](/documentation/schedule/reference/#translationstxt)|`table_name`,`field_name`,`language`,`translation`,`record_id`,`record_sub_id`,`field_value` |
 
 ??? note "Sample Data"
+
     <p style="font-size:16px">
-    The following table provides French and Spanish translations for two fields used in `routes.txt`: `route_long_name` and `route_desc`.
+    The following sample provides French and Spanish translations for two fields used in `routes.txt`: `route_long_name` and `route_desc`.
     </p>
     !!! note ""
         <p style="font-size:16px">
@@ -142,7 +155,9 @@ Translations allows service information such as station names to be provided in 
 
 Headsigns allows to communicate the signage used by vehicles indicating the trip’s destination, making it easier for users to identify the correct transit service. This feature supports headsign changes along a specific route.
 
-**Pre-requirements**: Implement Base features.
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -151,8 +166,9 @@ Headsigns allows to communicate the signage used by vehicles indicating the trip
 
 
 ??? note "Sample Data"
+
     <p style="font-size:16px">
-    The first table specify the headsigns to be used by trips `AWE1` and `AWE2`, while the second one indicates that `AWE1`’s headsign will be modified after stop `TAS004` overriding the one specified in `trips.txt`.
+    In the following sample, the first table specify the headsigns to be used by trips `AWE1` and `AWE2`, and the second one indicates that `AWE1`’s headsign will be modified after stop `TAS004`, overriding the one specified in `trips.txt`.
     </p>
     !!! note ""
         <p style="font-size:16px">
