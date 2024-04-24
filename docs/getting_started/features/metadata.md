@@ -6,7 +6,7 @@ GTFS feeds can contain further information regarding the feed itself and its pro
 
 Feed Information communicates important information about the feed, such as its validity (start day and end date), the publishing organization, and contact information for inquiries regarding the GTFS dataset and data publishing practices.  
 
-**Pre-requirements**: 
+**Pre-requirement**: 
 
 - [Base features](/getting_started/features/base)
 
@@ -31,7 +31,7 @@ Feed Information communicates important information about the feed, such as its 
 
 Attributions makes it possible to share additional details regarding the organizations involved in the creation of the dataset (producers, operators and/or authorities, etc.).
 
-**Pre-requirements**: 
+**Pre-requirement**: 
 
 - [Base features](/getting_started/features/base)
 
