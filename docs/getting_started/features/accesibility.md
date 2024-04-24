@@ -47,7 +47,7 @@ Wheelchair accessibility fields make it possible to indicate if a stop and vehic
 
 Text-to-speech allows to provide the necessary inputs to convert text into audio, ensures that riders using assistive technology to read text aloud are getting the right stop names when using the transit service.
 
-**Pre-requirements**: 
+**Pre-requirement**: 
 
 - [Base features](/getting_started/features/base)
 
@@ -73,7 +73,7 @@ Text-to-speech allows to provide the necessary inputs to convert text into audio
 
 Using route colors allows to accurately depict and communicate the color scheme assigned to specific routes by the agency’s design guidelines, this enables users to easily identify transit services by their official color.
 
-**Pre-requirements**: 
+**Pre-requirement**: 
 
 - [Base features](/getting_started/features/base)
 
@@ -99,7 +99,7 @@ Using route colors allows to accurately depict and communicate the color scheme 
 
 Specifying bike allowance allows to indicate if vehicles serving specific trips are able to accommodate bicycles or not, helping users to plan and access services that enable them to make multimodal trips.
 
-**Pre-requirements**: 
+**Pre-requirement**: 
 
 - [Base features](/getting_started/features/base)
 
@@ -126,7 +126,7 @@ Specifying bike allowance allows to indicate if vehicles serving specific trips 
 
 Translations allows service information such as station names to be provided in multiple languages enabling travel planners to display the information in a specific language depending on the user’s language and location settings.
 
-**Pre-requirements**: 
+**Pre-requirement**: 
 
 - [Base features](/getting_started/features/base)
 
@@ -155,7 +155,7 @@ Translations allows service information such as station names to be provided in 
 
 Headsigns allows to communicate the signage used by vehicles indicating the trip’s destination, making it easier for users to identify the correct transit service. This feature supports headsign changes along a specific route.
 
-**Pre-requirements**: 
+**Pre-requirement**: 
 
 - [Base features](/getting_started/features/base)
 
