@@ -14,7 +14,9 @@ Wheelchair accessibility fields make it possible to indicate if a stop and vehic
 
 ??? note "Sample Data"
     <p style="font-size:16px">
-    The following tables indicate that in stop `TAS001` some vehicles can be boarded by a rider in a wheelchair `wheelchair_boarding=1` in `stops.txt` while using `trips.txt` it is specified that the vehicle providing service for trip `AWE1` can accommodate at least one rider in a wheelchair, while the vehicle used for trip `AWE2` cannot. 
+    The following sample shows wheelchair boarding is available at stop `TAS001` with  `wheelchair_boarding=1`.
+The vehicle used in trip `AWE1` is equipped to accommodate at least one wheelchair, and the vehicle used in trip `AWE2` is not.
+Both the stop and trip must be wheelchair accessible for a passenger to be able to access a trip at the given stop.
     </p>
     !!! note ""
         <p style="font-size:16px">
