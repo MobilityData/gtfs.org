@@ -114,7 +114,7 @@ Levels can be used to list all different levels within a station, providing user
 
 ??? note "Sample Data"
     <p style="font-size:16px">
-    The following tables define a list of existing levels and assign them to pre-established nodes.
+The following sample define a list of existing levels and assign them to pre-established locations.
     </p>
     !!! note ""
         <p style="font-size:16px">
