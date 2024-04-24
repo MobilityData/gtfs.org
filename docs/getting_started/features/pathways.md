@@ -47,7 +47,7 @@ At its foundational level, Pathways offers basic functionality to connect key ar
 
 ??? note "Sample Data"
     <p style="font-size:16px">
-    The following table defines multiple connections (also referred to as pathways) between pre-established nodes, including walkways, stairs and fare gates, while also defining its bidirectionality.
+    The following sample defines multiple connections (also referred to as pathways) between pre-established locations: walkways (`pathway_mode=1`), stairs (`pathway_mode=2`), and fare gate (`pathway_mode=6`). Bi-directionality is also specified.
     </p>
     !!! note ""
         <p style="font-size:16px">
