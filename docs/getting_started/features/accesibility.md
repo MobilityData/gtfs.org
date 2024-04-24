@@ -99,7 +99,7 @@ Specifying bike allowance allows to indicate if vehicles serving specific trips 
 
 ??? note "Sample Data"
     <p style="font-size:16px">
-    The following table specifies that the vehicle used in trip `AWE1` is able to accommodate at least one bicycle on board, while also specifying that bicycles cannot be accommodated in the vehicle used for trip `AWE2`.
+ The following sample specifies that the vehicle used in trip `AWE1` can accommodate at least one bicycle on board, and the vehicle used in trip `AWE2` cannot.
     </p>
     !!! note ""
         <p style="font-size:16px">
