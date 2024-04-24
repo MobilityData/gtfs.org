@@ -13,6 +13,7 @@ Wheelchair accessibility fields make it possible to indicate if a stop and vehic
 |[trips.txt](/documentation/schedule/reference/#tripstxt)|`wheelchair_accessible`|
 
 ??? note "Sample Data"
+
     <p style="font-size:16px">
     The following sample shows wheelchair boarding is available at stop `TAS001` with  `wheelchair_boarding=1`.
 The vehicle used in trip `AWE1` is equipped to accommodate at least one wheelchair, and the vehicle used in trip `AWE2` is not.
