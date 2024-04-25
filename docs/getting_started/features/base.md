@@ -161,7 +161,7 @@ Certain services operate on regular a frequency (e. g. a subway line that runs e
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)|`trip_id`, `arrival_time`, `departure_time`, `stop_id`, `stop_sequence`, `pickup_type`, `drop_off_type`, `time_point` |
+|[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)|`trip_id`, `arrival_time`, `departure_time`, `stop_id`, `stop_sequence`, `pickup_type`, `drop_off_type`, `timepoint` |
 
 ??? note "Sample Data"
 
