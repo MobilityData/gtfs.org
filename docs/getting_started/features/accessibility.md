@@ -8,7 +8,7 @@ Wheelchair accessibility fields make it possible to indicate if a stop and vehic
 **Pre-requirements**: 
 
 - [Base features](/getting_started/features/base)
-- [Location Types feature](/getting_started/features/pathways/#location-types) (if providing information for station entrances and/or exits)
+- [Location Types feature](/getting_started/features/pathways/#location-types) when defining accessibility information for station locations such as entrances/exits or boarding areas.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -27,9 +27,9 @@ Wheelchair accessibility fields make it possible to indicate if a stop and vehic
         <a href="/documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
         </p>
 
-        | stop_id | stop_name  | stop_lat    | stop_lon   | wheelchair_boarding |
-        |---------|------------|-------------|------------|---------------------|
-        | TAS001  | 5 Av/53 St | 45.5035680  | -73.587079 |                   1 |
+        | stop_id | stop_name  | stop_lat  | stop_lon   | location_type | wheelchair_boarding |
+        |---------|------------|-----------|------------|---------------|---------------------|
+        | TAS001  | 5 Av/53 St | 40.760167 | -73.975224 |               |                   1 |
 
     !!! note ""
         <p style="font-size:16px">

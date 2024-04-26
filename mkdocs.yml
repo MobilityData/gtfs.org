@@ -139,7 +139,7 @@ nav:
     - What can GTFS do?:
       - Overview: getting_started/features/overview.md
       - Base: getting_started/features/base.md
-      - Accesibility: getting_started/features/accesibility.md
+      - Accessibility: getting_started/features/accessibility.md
       - Fares: getting_started/features/fares.md
       - Pathways: getting_started/features/pathways.md
       - Metadata: getting_started/features/metadata.md
