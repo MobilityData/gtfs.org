@@ -1,7 +1,14 @@
 #!/bin/bash
 
 # Array of target languages
+<<<<<<< Updated upstream
 target_languages=("FR", "ES" "RU" "JA" "id" "DE" "PT-BR" "ko" "ZH" "zh-TW")
+=======
+target_languages=("FR" "ES" "RU" "JA" "id" "DE" "PT-BR" "ko" "ZH" "zh-TW")
+
+# Array of glossaries for each language
+target_glossaries=(89 94 86 86 86 86 86 86 86 86)
+>>>>>>> Stashed changes
 
 escape_quotes() {
     echo "$1" | sed 's/"/\\"/g'
@@ -11,7 +18,9 @@ escape_quotes() {
 input_string="$1"
 
 # Loop through each target language
-for lang in "${target_languages[@]}"; do
+for index in "${!target_languages[@]}"; do
+    lang="${target_languages[$index]}"
+    glossary="${target_glossaries[$index]}"
     # Replace placeholders with actual values
     curl_command=$(cat <<EOF
 curl -s -X POST \
@@ -22,7 +31,7 @@ curl -s -X POST \
       "dataformat": "Markdown",
       "source_language": "EN",
       "target_language": "$lang",
-      "glossary": 89,
+      "glossary": $glossary,
       "text": "$input_string"
    }'
 EOF
