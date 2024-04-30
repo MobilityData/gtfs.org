@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - staging
+      - main
     paths-ignore:
       - 'README.md'
       - 'LICENSE'
