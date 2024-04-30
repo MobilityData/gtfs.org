@@ -7,23 +7,41 @@
   }
 
 /* default theme overrides */
-[data-md-color-scheme="default"] {
+[data-md-color-scheme="gtfs"] {
+
+    /* Default colors */
+    --md-default-bg-color: #ffffff;
+    --md-default-fg-color: #1d1c1c;
+
+    /* Main colors */
+    --md-primary-bg-color: #ffffff;
+    --md-primary-fg-color: #297a29;
+    --md-secondary-fg-color: #2b6aa9;
+    --md-highlight-color: #c6def4;
+
+    /* Accent color shades */
+    --md-accent-fg-color:                #83aed9; /* Highlight color when hovering over links */
+    --md-accent-fg-color--transparent:   hsla(var(--md-accent-fg-color), 0.1);
+    --md-accent-bg-color:                hsla(0, 0%, 100%, 1);
+    --md-accent-bg-color--light:         hsla(0, 0%, 100%, 0.7);
+
+    /* Footer colors */
     --md-footer-logo-dark-mode: none;
     --md-footer-logo-light-mode: block;
-    --md-default-bg-color: #fff;
-    --md-primary-fg-color: #172f50;
-    --md-footer-bg-color--dark: #343a3f;
+    --md-footer-bg-color--dark: #2a75bd;
     --md-footer-fg-color: var(--md-default-bg-color);
     --md-footer-fg-color--light: var(--md-primary-bg-color--light);
+
+    /* Other colors */
     --md-typeset-color: #212121;
     --md-typeset-a-color: var(--md-accent-fg-color);
 }
 
-[data-md-color-scheme="default"] tr:hover {
+/* [data-md-color-scheme="gtfs"] tr:hover {
     background-color: #f5f5f5 !important;
-}
+} */
 
-[data-md-color-scheme="default"] .only-dark {
+[data-md-color-scheme="gtfs"] .only-dark {
     display: none;
 }
 
@@ -63,16 +81,16 @@ code:not(.highlight code) {
 }
 
 a > code {
-    color: #4386FF !important;
+    color: var(--md-secondary-fg-color) !important;
 }
 
 .md-content a {
-    color: #4386FF;
+    color: var(--md-secondary-fg-color);
 }
   
 /* hover highlight */
 div.md-content a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
   
 /* table styles */
@@ -111,7 +129,7 @@ table.example {
     float: right;
 }
 .pencil:hover {
-    fill: #4386FF;
+    fill: var(--md-secondary-fg-color);
 }
   
 /* side nav style */
@@ -170,7 +188,7 @@ c {
 }
 
 .usage-buttons > .button {
-    background-color: #172f50 !important;
+    background-color: var(--md-secondary-fg-color) !important;
 }
 
 /* space between feedback widget icons */
@@ -189,7 +207,7 @@ c {
 } */
 
 .md-nav__link--active {
-    color: #4386FF !important;
+    color: var(--md-secondary-fg-color) !important;
 }
 
 /* external link icon */
@@ -435,7 +453,7 @@ c {
     background: linear-gradient(0deg, #172F50 10%,#08111d 100%) !important;
 }
 .md-banner > * > a {
-    color: #4385FF;
+    color: var(--md-secondary-fg-color);
 }
 
 .md-banner__inner.md-grid.md-typeset {

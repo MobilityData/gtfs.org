@@ -1,21 +1,43 @@
 # GTFS Schedule Best Practices
 
-These are recommended practices for describing public transportation services in the [GTFS Schedule Reference](https://gtfs.org/schedule/reference/) format. These complement the explicit recommendations outlined in the GTFS Schedule Reference using the terms “recommend” or “should”. Although not mandatory, following these best practices can significantly improve the quality of the data and the overall experience for riders.
-
-These practices have been synthesized from the experience of the [GTFS Best Practices working group](#gtfs-best-practices-working-group) members and [application-specific GTFS practice recommendations](http://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS). 
+These are recommended practices for describing public transportation services in the [General Transit Feed Specification (GTFS)](../reference). These practices have been synthesized from the experience of the [GTFS Best Practices working group](#gtfs-best-practices-working-group) members and [application-specific GTFS practice recommendations](http://www.transitwiki.org/TransitWiki/index.php/Best_practices_for_creating_GTFS). 
 
 For further background, see the [Frequently Asked Questions](#frequently-asked-questions-faq).
 
 ## Document Structure
 
-Practices are organized into two primary sections:
+Practices are organized into four primary sections:
 
+* __[Dataset Publishing & General Practices](#dataset-publishing-general-practices):__ These practices relate to the overall structure of the GTFS dataset and to the manner in which GTFS datasets are published.
 * __[Practice Recommendations Organized by File](#practice-recommendations-organized-by-file):__ Recommendations are organized by file and field in the GTFS to facilitate mapping practices back to the official GTFS reference.
 * __[Practice Recommendations Organized by Case](#practice-recommendations-organized-by-case):__ With particular cases, such as loop routes, practices may need to be applied across several files and fields. Such recommendations are consolidated in this section.
+
+## Dataset Publishing & General Practices
+
+* Datasets should be published at a public, permanent URL, including the zip file name. (e.g., www.agency.org/gtfs/gtfs.zip). Ideally, the URL should be directly downloadable without requiring login to access the file, to facilitate download by consuming software applications. While it is recommended (and the most common practice) to make a GTFS dataset openly downloadable, if a data provider does need to control access to GTFS for licensing or other reasons, it is recommended to control access to the GTFS dataset using API keys, which will facilitate automatic downloads.
+* GTFS data is published in iterations so that a single file at a stable location always contains the latest official description of service for a transit agency (or agencies).
+* Maintain persistent identifiers (id fields) for `stop_id`, `route_id`, and `agency_id` across data iterations whenever possible.
+* One GTFS dataset should contain current and upcoming service (sometimes called a “merged” dataset). Google transitfeed tool's [merge function](https://github.com/google/transitfeed/wiki/Merge) can be used to create a merged dataset from two different GTFS feeds.
+    * At any time, the published GTFS dataset should be valid for at least the next 7 days, and ideally for as long as the operator is confident that the schedule will continue to be operated.
+    * If possible, the GTFS dataset should cover at least the next 30 days of service.
+* Remove old services (expired calendars) from the feed.
+* If a service modification will go into effect in 7 days or fewer, express this service change through a [GTFS-realtime](https://developers.google.com/transit/gtfs-realtime/) feed (service advisories or trip updates) rather than static GTFS dataset.
+* The web-server hosting GTFS data should be configured to correctly report the file modification date (see [HTTP/1.1 - Request for Comments 2616](https://tools.ietf.org/html/rfc2616#section-14.29), under Section 14.29).
 
 ## Practice Recommendations Organized by File
 
 This section shows practices organized by file and field, aligning with the [GTFS reference](../reference).
+
+### All Files
+
+| Field Name | Recommendation |
+| --- | --- |
+| Mixed Case | All customer-facing text strings (including stop names, route names, and headsigns) should use Mixed Case (not ALL CAPS), following local conventions for capitalization of place names on displays capable of displaying lower case characters. |
+| | Examples: |
+| | Brighton Churchill Square |
+| | Villiers-sur-Marne |
+| | Market Street |
+| Abbreviations | Avoid use of abbreviations throughout the feed for names and other text (e.g. St. for Street) unless a location is called by its abbreviated name (e.g. “JFK Airport”). Abbreviations may be problematic for accessibility by screen reader software and voice user interfaces. Consuming software can be engineered to reliably convert full words to abbreviations for display, but converting from abbreviations to full words is prone to more risk of error. |
 
 ### agency.txt
 
@@ -231,27 +253,24 @@ These Best Practices were developed by a working group of 17 organizations invol
 
 Working Group members voted on each Best Practice. Most Best Practices were approved by a unanimous vote. In a minority of cases, Best Practices were approved a large majority of organizations.
 
-Some GTFS Best Practices have been merged into the spec and have been removed from this document.
-
 ### Why not just change the GTFS reference?
 
-Good question! The process of examining the Specification, data usage and needs did indeed trigger some changes to the Specification. Since then, certain Best Practices have been merged into the spec based on their level of adoption and community consensus. 
-Eventually, the GTFS Best Practices will become part of the core GTFS Reference. Eventually, the GTFS Best Practices will become part of the core GTFS Reference. To contribute to this effort, please go to the [GTFS Reference GitHub repository](https://github.com/google/transit/), or contact [specifications@mobilitydata.org](mailto:specifications@mobilitydata.org).
+Good question! The process of examining the Specification, data usage and needs did indeed trigger some changes to the Specification (see [closed pull requests in GitHub](https://github.com/google/transit/pulls?q=is%3Apr+is%3Aclosed)). 
+Specification reference amendments are subject to a higher bar of scrutiny and comment than the Best Practices. Certain Best Practices are being merged into the spec based on their level of adoption and community consensus. Eventually, all GTFS Best Practices could become part of the core GTFS Reference.
 
 ### How to check for conformance with these Best Practices?
 
-The Canonical GTFS Schedule Validator checks for compliance against the GTFS Best Practices that can be automatically verified. Each [warning](https://gtfs-validator.mobilitydata.org/rules.html#WARNING-table) corresponds to recommendations that are either explicitly suggested by the GTFS Schedule Reference, using the term “recommend” or “should,” or mentioned in this document.
-You can find more about this validation tool on the [validate page](https://gtfs.org/schedule/validate/).
+The Canonical GTFS Schedule Validator checks for compliance against these Best Practices. You can find more about this validation tool on the [validate page](https://gtfs.org/schedule/validate/).
 
 ### I represent a transit agency. What steps can I take so that our software service providers and vendors follow these Best Practices?
 
 Refer your vendor or software service provider to these Best Practices. We recommend referencing the GTFS Best Practices URL, as well as core Spec Reference in procurement for GTFS-producing software.
 
-### What should I do if I notice a GTFS data feed does not conform to the GTFS Best Practices?
+### What should I do if I notice a GTFS data feed does not conform to these Best Practices?
 
-Identify the contact for the feed, using the `feed_contact_email` or `feed_contact_url` fields in [feed_info.txt](https://gtfs.org/schedule/reference/#feed_infotxt) if they are provided, or looking up contact information on the transit agency or feed producer website. When communicating the issue to the feed producer, link to the specific GTFS Best Practice that isn't being followed using this document (See ["Linking to this Document"](#linking-to-this-document)) or [the appropriate warning](https://gtfs-validator.mobilitydata.org/rules.html#WARNING-table) in the Canonical GTFS Schedule Validator if available.
+Identify the contact for the feed, using the [proposed feed\_contact\_email or feed\_contact\_url](https://github.com/google/transit/pull/31/files) fields in *feed_info.txt* if they exist, or looking up contact information on the transit agency or feed producer website. When communicating the issue to the feed producer, link to the specific GTFS Best Practice under discussion. (See ["Linking to this Document"](#linking-to-this-document)).
 
-### How can I get involved?
+### How do I get involved?
 
 Email [specifications@mobilitydata.org](mailto:specifications@mobilitydata.org).
 
