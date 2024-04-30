@@ -1,0 +1,302 @@
+.md-main {
+    flex-grow: 0
+}
+
+.md-main__inner {
+    display: flex;
+    height: 100%;
+}
+
+.tx-container {
+    padding-top: .0rem;
+    background-image: url('./test.jpg');
+    margin-top: -96px;
+    height: calc(100vh);
+    background-size: cover;
+    position: relative;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(27, 28, 30, 1) 0%, rgba(27, 28, 30, 0.3533788515406162) 67%, rgba(27, 28, 30, 0) 100%);
+    height: 20rem;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2.4rem;
+}
+
+.tx-hero {
+    margin: 32px 2.8rem;
+    color: var(--md-default-bg-color);
+    justify-content: center
+}
+
+.tx-hero h1 {
+    margin-bottom: 1rem;
+    color: currentColor;
+    font-weight: 700
+}
+
+.tx-hero__content {
+    padding-bottom: 1rem;
+    margin: 0 auto;
+}
+
+.tx-hero__image {
+    width: 24rem;
+    height: 24rem;
+    order: 1;
+}
+
+.tx-hero .md-button {
+    margin-top: .5rem;
+    margin-right: .5rem;
+    color: var(--md-default-bg-color);
+}
+
+.tx-hero .md-button--primary {
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+    border-color: var(--md-primary-bg-color);
+}
+
+.tx-hero .md-button:focus,
+.tx-hero .md-button:hover {
+    background-color: var(--md-secondary-fg-color);
+    color: var(--md-default-bg-color);
+    border-color: var(--md-default-bg-color);
+}
+
+.mdx-hero__more {
+    bottom: 0;
+    display: block;
+    left: 50%;
+    margin-left: -.6rem;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+}
+
+.mdx-hero__more svg {
+    fill: #fff;
+    height: 1.2rem;
+    width: 1.2rem;
+}
+
+.feature-item h2 svg {
+    height: 30px;
+    float: center;
+    margin-right: 10px;
+    transform: translateY(10%);
+}
+
+.content-container {
+    padding: 5.2rem 1rem;
+}
+
+.content-container.dark {
+    color: white;
+    background-color: #1B1C1E;
+}
+
+.content-container.dark header h1 {
+    color: white;
+}
+
+.content-container.custom-background {
+    color: white;
+    background-image: url('https://cdnb.artstation.com/p/assets/images/images/022/517/247/large/joshua-ader-scene-anime-train-station-5-comp-ver1-1.jpg?1575714636');
+    background-size: cover;
+    background-position: center;
+}
+
+.content-inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 61rem;
+}
+
+.mdx-list {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.6rem;
+    padding: 0;
+}
+
+.mdx-list-item {
+    display: flex;
+    flex: 1 0 48%;
+    flex-wrap: wrap;
+}
+
+.mdx-list-item .icon-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.mdx-list-item .icon-header h2 {
+    margin: 0;
+    margin-left: 0.6rem;
+}
+
+.mdx-list-item .icon-header .icon-holder {
+    width: 2.2rem;
+    height: 2.2rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mdx-list-item .icon-header svg {
+    fill: white;
+}
+
+.top-hr {
+    margin-top: 42px;
+    align-items: center;
+}
+
+.feature-item {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    box-sizing: border-box;
+    /* top | right | bottom | left */
+    padding: 3px 20px 7px 20px;
+    word-break: break-word
+}
+
+.feature-item h2 {
+    color: #333;
+    font-weight: 300;
+    font-size: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: normal;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: inherit;
+}
+
+.feature-item p {
+    font-size: 16px;
+    line-height: 1.8em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color: #111;
+    margin: 0 0 10px;
+    display: block;
+}
+
+@media screen and (max-width:30em) {
+    .tx-hero h1 {
+        font-size: 1.4rem
+    }
+}
+
+@media screen and (min-width:60em) {
+    .md-sidebar--secondary {
+        display: none
+    }
+
+    
+
+    .tx-hero__content {
+        max-width: 22rem;
+        margin-top: 3.5rem;
+        margin-bottom: 3.5rem;
+        margin-left: 1.0rem;
+        margin-right: 4.0rem;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width:76.25em) {
+    .md-sidebar--primary {
+        display: none
+    }
+
+    .top-hr {
+        width: 100%;
+        display: flex;
+        max-width: 61rem;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0 .2rem;
+    }
+
+    .bottom-hr {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        max-width: 61rem;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0 .2rem;
+    }
+
+    .feature-item {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .feature-item:hover {
+        background-color: var(--md-highlight-color);
+        border-radius: 3px;
+    }
+}
+
+.hr {
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.text-center {
+    text-align: center;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 15px;
+    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+    font-weight: 300;
+    padding-bottom: 10px;
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 0 auto;
+}
+
+.logos img {
+    flex: 1 1 auto;
+    padding: 25px;
+    max-height: 130px;
+    vertical-align: middle;
+}
+
+.hr-logos {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.md-footer-meta__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1.0rem;
+}
+
+.md-footer-social {
+    padding-top: 20px;
+}
