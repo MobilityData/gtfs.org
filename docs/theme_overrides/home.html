@@ -19,7 +19,7 @@
         <div class="tx-hero">
             <div>
                 <h1>GTFS</h1>
-                <p>Simplifying Transit Info for Everyone, Everywhere.</p>
+                <p style="max-width: 500px;">The General Transit Feed Specification (GTFS) is an open-source, community-driven standard that fuels transit information for rider-facing apps.</p>
                 <a href="getting_started/what_is_GTFS/" title="{{ page.next_page.title | striptags }}"
                     class="md-button md-button--primary">
                     Get started
@@ -42,7 +42,7 @@
 <section class="content-container dark">
     <div class="content-inner">
         <header class="md-typeset">
-            <h1>Everything you would expect</h1>
+            <h1>Why choose GTFS?</h1>
         </header>
 
         <ul class="mdx-list md-typeset">
@@ -60,11 +60,10 @@
                         </svg>
                     </div>
 
-                    <h2>It's just gtfs</h2>
+                    <h2>Improved Rider Experience</h2>
                 </div>
                 <p class="mdx-list-item content">
-                    Focus on the content of your documentation and create a professional static site in minutes. No need
-                    to know HTML, CSS or JavaScript - let Material for MkDocs do the heavy lifting for you.
+                    GTFS empowers riders with accurate schedules, real-time updates, and wider app choice, leading to reduced wait times and informed travel decisions.
                 </p>
             </li>
             <li class="mdx-list-item">
@@ -81,11 +80,10 @@
                         </svg>
                     </div>
 
-                    <h2>It's just gtfs</h2>
+                    <h2>Global Reach & Seamless Trips</h2>
                 </div>
                 <p class="mdx-list-item content">
-                    Focus on the content of your documentation and create a professional static site in minutes. No need
-                    to know HTML, CSS or JavaScript - let Material for MkDocs do the heavy lifting for you.
+                    Over 10,000 agencies in 100+ countries use GTFS. This ensures consistent data for multi-agency trips, simplifying travel across regions.
                 </p>
             </li>
             <li class="mdx-list-item">
@@ -102,11 +100,10 @@
                         </svg>
                     </div>
 
-                    <h2>It's just gtfs</h2>
+                    <h2>Simplified Data Sharing</h2>
                 </div>
                 <p class="mdx-list-item content">
-                    Focus on the content of your documentation and create a professional static site in minutes. No need
-                    to know HTML, CSS or JavaScript - let Material for MkDocs do the heavy lifting for you.
+                    GTFS fosters collaboration between transit agencies by enabling easy data exchange. This promotes smoother service integration and information sharing.
                 </p>
             </li>
             <li class="mdx-list-item">
@@ -123,11 +120,10 @@
                         </svg>
                     </div>
 
-                    <h2>It's just gtfs</h2>
+                    <h2>Wider User Base for Apps & Services</h2>
                 </div>
                 <p class="mdx-list-item content">
-                    Focus on the content of your documentation and create a professional static site in minutes. No need
-                    to know HTML, CSS or JavaScript - let Material for MkDocs do the heavy lifting for you.
+                    By adopting GTFS, agencies reach a wider audience through the vast pool of app developers utilizing the standardized data format.
                 </p>
             </li>
             <li class="mdx-list-item">
@@ -144,11 +140,10 @@
                         </svg>
                     </div>
 
-                    <h2>It's just gtfs</h2>
+                    <h2>Open Source Community</h2>
                 </div>
                 <p class="mdx-list-item content">
-                    Focus on the content of your documentation and create a professional static site in minutes. No need
-                    to know HTML, CSS or JavaScript - let Material for MkDocs do the heavy lifting for you.
+                    GTFS is collaboratively developed, ensuring the format remains relevant to meet the evolving needs of riders and agencies. 
                 </p>
             </li>
             <li class="mdx-list-item">
@@ -165,11 +160,10 @@
                         </svg>
                     </div>
 
-                    <h2>It's just gtfs</h2>
+                    <h2>Streamlined Adoption</h2>
                 </div>
                 <p class="mdx-list-item content">
-                    Focus on the content of your documentation and create a professional static site in minutes. No need
-                    to know HTML, CSS or JavaScript - let Material for MkDocs do the heavy lifting for you.
+                    GTFS makes it easy for agencies to get started with a simple data structure using common file formats like .txt and GeoJSON. 
                 </p>
             </li>
         </ul>
@@ -180,7 +174,7 @@
 <section class="content-container">
     <div class="content-inner">
         <header class="md-typeset">
-            <h1>More than just a static site</h1>
+            <h1>GTFS Types</h1>
         </header>
 
         <div class="mdx-spotlight md-typeset ">
@@ -190,15 +184,20 @@
                         alt="Why GTFS" loading="lazy" width="500" height="327">
                 </a>
                 <div class="md-typeset">
-                    <h2>Why GTFS?</h2>
-                    <p> GTFS facilitates seamless data sharing in transit, enabling app integration and real-time
-                        updates. Its community-driven approach enhances accessibility and transparency in public
-                        transportation.
+                    <h2>GTFS Static</h2>
+                    <p> GTFS Static forms the foundation of public transit apps, providing essential, unchanging information. Here's are some of its features: 
                     </p>
-                    <p> By standardizing data formats, GTFS fosters innovation and collaboration among transit agencies
+                    <ul>
+                        <li><b>Routes & Stops</b>: Know exactly where to catch your bus or train.</li>
+                        <li><b>Schedules & Frequencies</b>: Plan trips confidently with clear timetables.</li>
+                        <li><b>Fares</b>: See journey costs upfront in apps.</li>
+                        <li><b>Locations</b>: Visualize the transit network on interactive maps.</li>
+                        <li><b>Flex Routes</b>: Display demand responsive transportation.</li>
+                    </ul>
+                    <!-- <p> By standardizing data formats, GTFS fosters innovation and collaboration among transit agencies
                         and developers. This promotes efficient service delivery and empowers users with accurate and
                         up-to-date information.</p>
-                    <p>
+                    <p> -->
                         <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
                             <span class="twemoji">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -206,7 +205,25 @@
                                         d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
                                     </path>
                                 </svg>
-                            </span> Learn more
+                            </span> Learn more about the features
+                        </a><br>
+                        <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
+                            <span class="twemoji">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
+                                    </path>
+                                </svg>
+                            </span> Reference Documentation
+                        </a><br>
+                        <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
+                            <span class="twemoji">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
+                                    </path>
+                                </svg>
+                            </span> Best Practices
                         </a>
                     </p>
                 </div>
@@ -219,32 +236,52 @@
                         alt="Built-in search" loading="lazy" width="500" height="327">
                 </a>
                 <div class="md-typeset">
-                    <h2>Built-in search</h2>
-                    <p> Material for MkDocs makes your documentation <strong>instantly searchable</strong> with zero
-                        effort: say goodbye to costly third-party crawler-based solutions that can take hours to update.
-                        Ship your documentation with a <strong>highly customizable </strong> and <strong>blazing fast
-                            search</strong> running entirely <strong>in the user's browser</strong> at no extra cost.
+                    <h2>GTFS Realtime</h2>
+                    <p> GTFS Realtime focuses on the ever-changing world of public transit, providing live updates that keep riders informed. Here's how it enhances the user experience:
                     </p>
-                    <p> Even better: search inside code blocks, exclude specific sections or entire pages, boost
-                        important pages in the results and build searchable documentation that <strong>works
-                            offline</strong>. </p>
+                    <ul>
+                        <li><b>Vehicle Locations</b>: Track your bus or train in real-time and see exactly where it is. No more waiting at the stop wondering when it will arrive!</li>
+                        <li><b>Arrival Times</b>: Get a more accurate picture of when your ride will arrive, eliminating the frustration of missed connections.</li>
+                        <li><b>Service Alerts</b>: Be informed about any unexpected delays, cancellations, or disruptions on the network, allowing you to adjust your plans accordingly.</li>
+                    </ul>
                     <p>
-                        <a href="setup/setting-up-site-search/" aria-label="Built-in search">
-                            <span class="twemoji">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
-                                    </path>
-                                </svg>
-                            </span> Learn more
-                        </a>
+                        By incorporating GTFS Realtime data, public transit apps can offer a truly dynamic experience, empowering riders with the most up-to-date information for a smoother and more efficient journey.
+                    </p>
+                    <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
+                        <span class="twemoji">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
+                                </path>
+                            </svg>
+                        </span> Learn more about the features
+                    </a><br>
+                    <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
+                        <span class="twemoji">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
+                                </path>
+                            </svg>
+                        </span> Reference Documentation
+                    </a><br>
+                    <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
+                        <span class="twemoji">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
+                                </path>
+                            </svg>
+                        </span> Best Practices
+                    </a>
                     </p>
                 </div>
             </div>
         </div>
+        
 </section>
 
-<section class="content-container custom-background">
+<!-- <section class="content-container custom-background">
     <div class="content-inner">
         <header class="md-typeset">
             <h1>Trusted in the industry</h1>
@@ -261,60 +298,80 @@
             </a>
         </div>
     </div>
-</section>
+</section> -->
 
-<section class="content-container">
+<section class="content-container dark">
     <div class="content-inner">
         <header class="md-typeset">
-            <h1>What our users say</h1>
+            <h1>Get involved</h1>
+            <p>Join the open-source community and help develop the future of GTFS</p>
         </header>
+        
         <div class="mdx-users md-typeset">
             <figure class="mdx-users__testimonial">
                 <img src="https://squidfunk.github.io/mkdocs-material/assets/images/users/john-maeda.jpg"
                     alt="John Maeda" loading="lazy" width="200" height="200">
                 <figcaption class="md-typeset">
-                    <h2>John Maeda</h2>
-                    <h3> Author / <a href="https://howtospeakmachine.com/">How To Speak Machine</a> </h3>
-                    <hr> <cite> The unwritten rule of the digital transformation handbook is that you'll never have the
-                        resources to design experiences like Apple. But you can always close most usability gaps with an
-                        awesome documentation experience. Expressed similarly in <a
-                            href="https://mitpress.mit.edu/books/laws-simplicity">The Laws of Simplicity</a>, "Learning
-                        makes things simpler". Material for MkDocs is the magical, extensible, Open Source tool that
-                        makes sharing knowledge both easier and beautiful for both the writers and learners. </cite>
+                    <h2>Slack</h2>
+                    <p>Join MobilityData’s and participate in live chat with other GTFS contributors.</p>
+                    <hr> 
+                    <a href="getting_started/what_is_GTFS/" title="{{ page.next_page.title | striptags }}"
+                        class="md-button md-button--primary">
+                        Join Slack
+                    </a>
                 </figcaption>
             </figure>
             <figure class="mdx-users__testimonial">
                 <img src="https://squidfunk.github.io/mkdocs-material/assets/images/users/john-maeda.jpg"
                     alt="John Maeda" loading="lazy" width="200" height="200">
                 <figcaption class="md-typeset">
-                    <h2>John Maeda</h2>
-                    <h3> Author / <a href="https://howtospeakmachine.com/">How To Speak Machine</a> </h3>
-                    <hr> <cite> The unwritten rule of the digital transformation handbook is that you'll never have the
-                        resources to design experiences like Apple. But you can always close most usability gaps with an
-                        awesome documentation experience. Expressed similarly in <a
-                            href="https://mitpress.mit.edu/books/laws-simplicity">The Laws of Simplicity</a>, "Learning
-                        makes things simpler". Material for MkDocs is the magical, extensible, Open Source tool that
-                        makes sharing knowledge both easier and beautiful for both the writers and learners. </cite>
+                    <h2>GitHub</h2>
+                    <p>The google/transit repository on GitHub is where the standard lives. Here you can propose ideas and engage in discussions on current developments.</p>
+                    <hr> 
+                    <a href="getting_started/what_is_GTFS/" title="{{ page.next_page.title | striptags }}"
+                        class="md-button md-button--primary">
+                        Visit Github
+                    </a>
                 </figcaption>
             </figure>
             <figure class="mdx-users__testimonial">
                 <img src="https://squidfunk.github.io/mkdocs-material/assets/images/users/john-maeda.jpg"
                     alt="John Maeda" loading="lazy" width="200" height="200">
                 <figcaption class="md-typeset">
-                    <h2>John Maeda</h2>
-                    <h3> Author / <a href="https://howtospeakmachine.com/">How To Speak Machine</a> </h3>
-                    <hr> <cite> The unwritten rule of the digital transformation handbook is that you'll never have the
-                        resources to design experiences like Apple. But you can always close most usability gaps with an
-                        awesome documentation experience. Expressed similarly in <a
-                            href="https://mitpress.mit.edu/books/laws-simplicity">The Laws of Simplicity</a>, "Learning
-                        makes things simpler". Material for MkDocs is the magical, extensible, Open Source tool that
-                        makes sharing knowledge both easier and beautiful for both the writers and learners. </cite>
+                    <h2>GTFS Digest</h2>
+                    <p>Stay up to date with the GTFS world by subscribing to the GTFS Digest. </p>
+                    <hr> 
+                    <a href="getting_started/what_is_GTFS/" title="{{ page.next_page.title | striptags }}"
+                        class="md-button md-button--primary">
+                        Subscribe
+                    </a>
                 </figcaption>
             </figure>
         </div>
+
+        <div class="md-typeset">
+            <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
+                <span class="twemoji">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
+                        </path>
+                    </svg>
+                </span> More Community Resources
+            </a><br>
+            <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
+                <span class="twemoji">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
+                        </path>
+                    </svg>
+                </span> Active projects 
+            </a>
+        </div>
     </div>
 </section>
-<section class="content-container dark">
+<!-- <section class="content-container dark">
     <div class="content-inner">
         <header class="md-typeset">
             <h1>Become a member</h1>
@@ -331,7 +388,7 @@
                 </a> </p>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Main site box descriptions -->
 <div class="top-hr">
