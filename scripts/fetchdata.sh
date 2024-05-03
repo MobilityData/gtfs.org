@@ -151,6 +151,15 @@ sed -i.bak "1s/^/$new_header\n\n/" docs/realtime/feed-entities/vehicle-positions
 sed -i.bak "s,reference.md#message-tripdescriptor,../reference.md#message-tripdescriptor,g" docs/realtime/feed-entities/vehicle-positions.md
 sed -i.bak "s,reference.md#message-vehicledescriptor,../reference.md#message-vehicledescriptor,g" docs/realtime/feed-entities/vehicle-positions.md
 
+### Trip Modifications
+curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/trip-modifications.md -o docs/realtime/feed-entities/trip-modifications.md
+new_header='# Trip Modifications'
+sed -i.bak "1s/^/$new_header\n\n/" docs/realtime/feed-entities/trip-modifications.md
+sed -i.bak "s,https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stop_timestxt,../schedule/reference/#stop_timestxt,g" docs/realtime/feed-entities/trip-modifications.md
+sed -i.bak 's,images/trip_modification.png,../assets/trip_modification.png,g' docs/realtime/feed-entities/trip-modifications.md
+sed -i.bak 's,images/propagated_delay.png,../assets/propagated_delay.png,g' docs/realtime/feed-entities/trip-modifications.md
+sed -i.bak 's,images/first_stop_reference.png,../assets/first_stop_reference.png,g' docs/realtime/feed-entities/trip-modifications.md
+
 ### service alerts
 curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/examples/alerts.asciipb -o docs/realtime/feed-examples/service-alerts.md
 ALERTS=docs/realtime/feed-examples/service-alerts.md
