@@ -5,6 +5,10 @@ GTFS allows to preciely model a wide variety of fare structures used by differen
 
 Fare Products lists the types of tickets or fares (i.e. single-trip fare, monthly pass, transfer fees, etc.) offered by a transit agency to access a service. Fare Products serve as a foundation for modeling an agency's fare structure, and they are linked to the transit service through mechanisms outlined in `fare_leg_rules.txt`. The association of Fare Products to various travel conditions, such as routes, areas, and times, determines the fare costs for individual travel segments and transfers.
 
+**Pre-requirement**: 
+
+- [Base features](/getting_started/features/base)
+
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[fare_products.txt](/schedule/reference/#fare_productstxt)|`fare_product_id`, `fare_product_name`, `amount`, `currency`, `fare_media_id` |
@@ -36,6 +40,10 @@ Fare Products lists the types of tickets or fares (i.e. single-trip fare, monthl
 ## Fare Media
 
 Fare Media defines the supported media that can be used to hold and/or validate a fare product. This refers to physical or virtual containers such as a paper ticket, a rechargeable transit card or even contactless payment with credit cards or smartphones.
+
+**Pre-requirement**: 
+
+- [Base features](/getting_started/features/base)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -72,6 +80,11 @@ Fare Media defines the supported media that can be used to hold and/or validate 
 ## Route-Based Fares
 
 Route-Based Fares is used to assign different fares for specific groups of routes, such as special fares for express services or differentiating fares between a Bus Rapid Transit service versus traditional bus services.
+
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
+- [Fare Products feature](/getting_started/eatures/fares/#fare-products)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -147,6 +160,11 @@ Route-Based Fares is used to assign different fares for specific groups of route
 
 Time-based Fares is used to assign fares for specific time-of-day or day-of-week, such as peak and off-peak fares and/or weekend fares.
 
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
+- [Fare Products feature](/getting_started/eatures/fares/#fare-products)
+
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[fare_leg_rules.txt](/schedule/reference/#fare_leg_rulestxt)|`fare_product_id`, `from_timeframe_group_id`, `to_timeframe_group_id`|
@@ -181,6 +199,11 @@ Time-based Fares is used to assign fares for specific time-of-day or day-of-week
 ## Zone-Based Fares
 
 Zone-Based Fares is used to represent zone-based systems where a specific fare applies when traveling from one particular zone to another. A zone is defined by a group of stops.
+
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
+- [Fare Products feature](/getting_started/eatures/fares/#fare-products)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -225,6 +248,11 @@ Zone-Based Fares is used to represent zone-based systems where a specific fare a
 
 ## Fares Transfers
 
+**Pre-requirements**: 
+
+- [Base features](/getting_started/features/base)
+- [Fare Products feature](/getting_started/eatures/fares/#fare-products)
+
 Fares Transfers is used to define rules applicable when transferring between legs (or individual travel segments). This allows to model the total cost of a multi-leg travel journey, accounting for special transfer policies, such as free transfers for a specific time limit, or applying fare discounts based on legs already traveled.
 
 | Files included                   | Fields included   |
@@ -259,6 +287,10 @@ Fares Transfers is used to define rules applicable when transferring between leg
 ## Fares V1
 
 Fares v1 is a legacy alternative to other Fares features described above. It allows to model basic fare information such as fare pricing, payment methods transfers and zone-based fares using the `fare_rules.txt` and `fare_attributes.txt` files. While simpler to produce, it's less capable or modeling more complex fare structures and may be deprecated with sufficient endorsement of other Fare features (that are part of what is called Fares v2).
+
+**Pre-requirement**: 
+
+- [Base features](/getting_started/features/base)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
