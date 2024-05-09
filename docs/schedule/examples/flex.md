@@ -120,7 +120,7 @@ t_5374947_b_77497_tn_0 | area_715 | 2 | 08:00:00 | 12:45:00 | 1 | 2 | booking_ro
 
 Some demand-responsive services operate across multiple distinct zones, where riders can book pickups at any location A within one area and drop-offs at any location within another area. For example, [Minnesota River Valley Transit](https://www.saintpetermn.gov/330/Dial-a-Ride) offers on-demand services between Saint Peter and Kasota cities:
 
-<sup>[Download River Valley Transit example dataset](../../../assets/on-demand_services_between_multiple_zones.zip)</sup>
+<sup>[Download River Valley Transit example dataset](../../../assets/on-demand_services_between_multiple_zones(r).zip)</sup>
 
 ### Define trips
 
@@ -132,8 +132,6 @@ route_id | service_id | trip_id
 -- | -- | -- 
 74375 | weekdays | t_5298036_b_77503_tn_0 
 74375 | saturdays | t_5298041_b_77503_tn_0 
-74375 | weekdays | t_5298046_b_77503_tn_0 
-74375 | saturdays | t_5298051_b_77503_tn_0
 
 (Define booking rules and zones using [booking_rules.txt](../../reference/#booking_rulestxt) and [locations.geojson](../../reference/#locationsgeojson) in the same way as the previous example)
 
@@ -149,10 +147,6 @@ t_5298036_b_77503_tn_0 | area_713 | 1 | 06:30:00 | 20:00:00 | 2 | 1 | booking_ro
 t_5298036_b_77503_tn_0 | area_714 | 2 | 06:30:00 | 20:00:00 | 1 | 2 | booking_route_74375 | booking_route_74375
 t_5298041_b_77503_tn_0 | area_713 | 1 | 09:00:00 | 19:00:00 | 2 | 1 | booking_route_74375 | booking_route_74375
 t_5298041_b_77503_tn_0 | area_714 | 2 | 09:00:00 | 19:00:00 | 1 | 2 | booking_route_74375 | booking_route_74375
-t_5298046_b_77503_tn_0 | area_714 | 1 | 06:30:00 | 20:00:00 | 2 | 1 | booking_route_74375 | booking_route_74375
-t_5298046_b_77503_tn_0 | area_713 | 2 | 06:30:00 | 20:00:00 | 1 | 2 | booking_route_74375 | booking_route_74375
-t_5298051_b_77503_tn_0 | area_714 | 1 | 09:00:00 | 19:00:00 | 2 | 1 | booking_route_74375 | booking_route_74375
-t_5298051_b_77503_tn_0 | area_713 | 2 | 09:00:00 | 19:00:00 | 1 | 2 | booking_route_74375 | booking_route_74375
 
 ## On-demand services where riders must be picked up and dropped off at specific locations
 
