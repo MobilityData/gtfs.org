@@ -1,0 +1,91 @@
+name: Upload glossaries CSV to GC bucket and update glossaries in Google Translate API
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'glossaries-for-google-translate-api/**'
+
+jobs:
+  upload_to_gcs:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Load secrets from 1Password
+        id: onepw_secrets
+        uses: 1password/load-secrets-action@v2.0.0
+        with:
+            export-env: true # Export loaded secrets as environment variables
+        env:
+            OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+            GCLOUD_SERVICE_ACCOUNT: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/nyg5diiky4yheorujjdm5h3g6a/ctjnao73yan4bktrxmcafidfdy"
+            GCLOUD_SERVICE_ACCOUNT_JSON: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/nyg5diiky4yheorujjdm5h3g6a/Minifyied JSON"
+            GCLOUD_PROJECT_ID: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/nyg5diiky4yheorujjdm5h3g6a/Project ID"
+            TARGET_BUCKET_URI: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/nyg5diiky4yheorujjdm5h3g6a/Target Bucket URI"
+
+      - name: Checkout code
+        uses: actions/checkout@v4.1.4
+
+      # Authorize GCP, although this step might be superfluous because of next step
+      - name: Authorize GCP
+        id: authorizegcp
+        uses: 'google-github-actions/auth@v2'
+        with:
+          credentials_json:  ${{ env.GCLOUD_SERVICE_ACCOUNT_JSON }}
+
+      # Authenticate with GCP
+      - name: Set up Google Cloud SDK
+        id: authenticategcp
+        uses: google-github-actions/setup-gcloud@v2.1.0
+        with:
+          version: '>= 363.0.0'
+          service_account: ${{ env.GCLOUD_SERVICE_ACCOUNT }}
+          service_account_key: ${{ env.GCLOUD_SERVICE_ACCOUNT_JSON }}
+          project_id: ${{ env.GCLOUD_PROJECT_ID }}
+          export_default_credentials: true
+
+      # Configure Docker to use the gcloud command-line tool as a credential helper
+      - name: Configure Docker
+        id: configdocker
+        run: gcloud auth configure-docker
+
+      - name: Get auth token
+        id: authtoken
+        run: |
+          access_token=$(gcloud auth print-access-token)
+          echo "::set-output name=access_token::$access_token"
+
+      # Upload the file to GCP Bucket. They are uploaded at the root of the bucket, existing files will be replaced without confirmation.
+      - name: Upload files
+        id: uploadfiles
+        run: |
+          for file in $GITHUB_WORKSPACE/glossaries-for-google-translate-api/*; do
+            gsutil cp "$file" gs://${{ env.TARGET_BUCKET_URI }}/${file}
+          done
+
+      - name: Udpate glossaries
+        if: ${{ success() }}
+        id: updateglossaries
+        run: |
+          for file in $GITHUB_WORKSPACE/glossaries-for-google-translate-api/*; do
+            filename=$(basename "$file")
+            file_sans_ext="${filename%.*}"
+            language_code="${file_sans_ext##*-}"
+            curl -X PATCH \
+              "https://translation.googleapis.com/v3/projects/${{ env.GCLOUD_PROJECT_ID }}/locations/us-central1/glossaries/${file_sans_ext}?update_mask=input_config&update_mask=display_name" \
+              -H "Authorization: Bearer ${{ steps.authtoken.outputs.access_token }}" \
+              -H "Content-Type: application/json" \
+              -d '{ \
+                    "name":"projects/${{ env.GCLOUD_PROJECT_ID }}/locations/us-central1/glossaries/${file_sans_ext}", \
+                    "languageCodesSet": { \
+                      "languageCodes": ['en', '$language_code'] \
+                    }, \
+                    "inputConfig": { \
+                      "gcsSource": { \
+                        "inputUri": "gs://${{ env.TARGET_BUCKET_URI }}/$file" \
+                      } \
+                    } \
+                  }'
+          done
