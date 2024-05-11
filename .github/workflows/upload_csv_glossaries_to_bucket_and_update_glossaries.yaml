@@ -40,7 +40,7 @@ jobs:
         id: authenticategcp
         uses: google-github-actions/setup-gcloud@v2.1.0
         with:
-          version: '>= 363.0.0'
+          version: '>= 470.0.0'
           service_account: ${{ env.GCLOUD_SERVICE_ACCOUNT }}
           service_account_key: ${{ env.GCLOUD_SERVICE_ACCOUNT_JSON }}
           project_id: ${{ env.GCLOUD_PROJECT_ID }}
@@ -51,10 +51,11 @@ jobs:
         id: configdocker
         run: gcloud auth configure-docker
 
+      # Get auth token, make sure to use only the first paragraph, sometimes other info is added and would cause issues
       - name: Get auth token
         id: authtoken
         run: |
-          access_token=$(gcloud auth print-access-token)
+          access_token=$(gcloud auth print-access-token | sed '/^$/q')
           echo "::set-output name=access_token::$access_token"
 
       # Upload the file to GCP Bucket. They are uploaded at the root of the bucket, existing files will be replaced without confirmation.
