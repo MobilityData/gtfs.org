@@ -48,7 +48,8 @@ jobs:
         id: uploadfiles
         run: |
           for file in $GITHUB_WORKSPACE/glossaries-for-google-translate-api/*; do
-            gsutil cp "$file" gs://glossaries.mobilitydata.org/${file}
+            filename=$(basename "$file")
+            gsutil cp "$file" gs://glossaries.mobilitydata.org/${filename}
           done
 
       - name: Udpate glossaries
@@ -62,7 +63,7 @@ jobs:
             language_code="${file_sans_ext##*-}"
             patch_url="https://translation.googleapis.com/v3/projects/mbd-translation-service/locations/us-central1/glossaries/${file_sans_ext}?update_mask=input_config,display_name"
             gloss_name="projects/mbd-translation-service/locations/us-central1/glossaries/${file_sans_ext}"
-            gcs_source_uri="gs://glossaries.mobilitydata.org//$file"
+            gcs_source_uri="gs://glossaries.mobilitydata.org//$filename"
             echo "patch_url = $patch_url"
             echo "gloss_name = $gloss_name"
             echo "gcs_source_uri = $gcs_source_uri"
