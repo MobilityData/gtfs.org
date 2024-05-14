@@ -72,8 +72,8 @@ jobs:
               -H "Authorization: Bearer $access_token" \ 
               -H "Content-Type: application/json" \
               -d '{ \
-                    "name": "'"$gloss_name"'", \
-                    "languageCodesSet": { "languageCodes": ['en', "'"$language_code"'"] }, \
-                    "inputConfig": { "gcsSource": { "inputUri": "'"$gcs_source_uri"'" } } \
+                    "name": "$gloss_name", \
+                    "languageCodesSet": { "languageCodes": ['en', '$language_code'] }, \
+                    "inputConfig": { "gcsSource": { "inputUri": "$gcs_source_uri" } } \
                   }'
           done
