@@ -23,7 +23,6 @@ jobs:
             GCLOUD_SERVICE_ACCOUNT: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/nyg5diiky4yheorujjdm5h3g6a/ctjnao73yan4bktrxmcafidfdy"
             GCLOUD_SERVICE_ACCOUNT_JSON: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/nyg5diiky4yheorujjdm5h3g6a/Minifyied JSON"
             GCLOUD_PROJECT_ID: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/nyg5diiky4yheorujjdm5h3g6a/Project ID"
-            TARGET_BUCKET_URI: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/nyg5diiky4yheorujjdm5h3g6a/Target Bucket URI"
 
       - name: Checkout code
         uses: actions/checkout@v4.1.4
@@ -55,7 +54,7 @@ jobs:
         id: uploadfiles
         run: |
           for file in $GITHUB_WORKSPACE/glossaries-for-google-translate-api/*; do
-            gsutil cp "$file" gs://${{ env.TARGET_BUCKET_URI }}/${file}
+            gsutil cp "$file" gs://glossaries.mobilitydata.org/${file}
           done
 
       - name: Udpate glossaries
@@ -68,7 +67,7 @@ jobs:
             language_code="${file_sans_ext##*-}"
             curl -X PATCH \
               "https://translation.googleapis.com/v3/projects/${{ env.GCLOUD_PROJECT_ID }}/locations/us-central1/glossaries/${file_sans_ext}?update_mask=input_config&update_mask=display_name" \
-              -H "Authorization: Bearer ${{ steps.authtoken.outputs.access_token }}" \
+              -H "Authorization: Bearer ${{ steps.authtoken.outputs.access_token }}" \ 
               -H "Content-Type: application/json" \
               -d '{ \
                     "name":"projects/${{ env.GCLOUD_PROJECT_ID }}/locations/us-central1/glossaries/${file_sans_ext}", \
