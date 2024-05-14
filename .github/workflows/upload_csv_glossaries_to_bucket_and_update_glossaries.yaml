@@ -61,18 +61,12 @@ jobs:
             file_sans_ext="${filename%.*}"
             language_code="${file_sans_ext##*-}"
             curl -X PATCH \
-              "https://translation.googleapis.com/v3/projects/${{ env.GCLOUD_PROJECT_ID }}/locations/us-central1/glossaries/${file_sans_ext}?update_mask=input_config&update_mask=display_name" \
+              "https://translation.googleapis.com/v3/projects/mbd-translation-service/locations/us-central1/glossaries/${file_sans_ext}?update_mask=input_config&update_mask=display_name" \
               -H "Authorization: Bearer $access_token" \ 
               -H "Content-Type: application/json" \
               -d '{ \
-                    "name":"projects/${{ env.GCLOUD_PROJECT_ID }}/locations/us-central1/glossaries/${file_sans_ext}", \
-                    "languageCodesSet": { \
-                      "languageCodes": ['en', '$language_code'] \
-                    }, \
-                    "inputConfig": { \
-                      "gcsSource": { \
-                        "inputUri": "gs://glossaries.mobilitydata.org/$file" \
-                      } \
-                    } \
+                    "name":"projects/mbd-translation-service/locations/us-central1/glossaries/${file_sans_ext}", \
+                    "languageCodesSet": { "languageCodes": ['en', '$language_code'] }, \
+                    "inputConfig": { "gcsSource": { "inputUri": "gs://glossaries.mobilitydata.org//$file" } } \
                   }'
           done
