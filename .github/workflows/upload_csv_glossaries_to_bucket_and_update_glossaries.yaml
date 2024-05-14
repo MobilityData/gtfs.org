@@ -41,6 +41,7 @@ jobs:
         with:
           version: '>= 470.0.0'
           project_id: ${{ env.GCLOUD_PROJECT_ID }}
+          install_components: 'gcloud,gsutil'
 
       # Get auth token, make sure to use only the first paragraph, sometimes other info is added and would cause issues
       - name: Get auth token
