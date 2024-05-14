@@ -156,7 +156,6 @@ nav:
       - Best Practices: documentation/schedule/GTFS schedule best Practices.md
       - Recent additions: documentation/schedule/recent additions.md
     - Realtime:
-      - Overview: documentation/Realtime/overview.md
       - Reference: documentation/Realtime/reference.md
       - Best Practices: documentation/Realtime/best practices.md
       - Feed Entities: 
