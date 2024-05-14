@@ -63,8 +63,9 @@ jobs:
             patch_url="https://translation.googleapis.com/v3/projects/mbd-translation-service/locations/us-central1/glossaries/${file_sans_ext}?update_mask=input_config,display_name"
             gloss_name="projects/mbd-translation-service/locations/us-central1/glossaries/${file_sans_ext}"
             gcs_source_uri="gs://glossaries.mobilitydata.org//$file"
-            echo $patch_url
-            echo $gloss_name
+            echo "patch_url = $patch_url"
+            echo "gloss_name = $gloss_name"
+            echo "gcs_source_uri = $gcs_source_uri"
             curl -X PATCH \
               $patch_url \
               -H "Authorization: Bearer $access_token" \ 
