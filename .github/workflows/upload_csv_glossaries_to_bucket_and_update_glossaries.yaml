@@ -46,16 +46,11 @@ jobs:
           project_id: ${{ env.GCLOUD_PROJECT_ID }}
           export_default_credentials: true
 
-      # Configure Docker to use the gcloud command-line tool as a credential helper
-      - name: Configure Docker
-        id: configdocker
-        run: gcloud auth configure-docker
-
       # Get auth token, make sure to use only the first paragraph, sometimes other info is added and would cause issues
       - name: Get auth token
         id: authtoken
         run: |
-          access_token=$(gcloud auth print-access-token | sed '/^$/q')
+          access_token=$(gcloud auth application-default print-access-token | sed '/^$/q')
           echo "::set-output name=access_token::$access_token"
 
       # Upload the file to GCP Bucket. They are uploaded at the root of the bucket, existing files will be replaced without confirmation.
