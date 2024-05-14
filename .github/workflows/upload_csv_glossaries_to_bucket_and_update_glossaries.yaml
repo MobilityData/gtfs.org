@@ -77,7 +77,7 @@ jobs:
                     }, \
                     "inputConfig": { \
                       "gcsSource": { \
-                        "inputUri": "gs://${{ env.TARGET_BUCKET_URI }}/$file" \
+                        "inputUri": "gs://glossaries.mobilitydata.org/$file" \
                       } \
                     } \
                   }'
