@@ -43,13 +43,6 @@ jobs:
           project_id: ${{ env.GCLOUD_PROJECT_ID }}
           install_components: 'gcloud,gsutil'
 
-      # Get auth token, make sure to use only the first paragraph, sometimes other info is added and would cause issues
-      - name: Get auth token
-        id: authtoken
-        run: |
-          access_token=$(gcloud auth application-default print-access-token | sed '/^$/q')
-          echo "{access_token}={$access_token}" >> $GITHUB_OUTPUT
-
       # Upload the file to GCP Bucket. They are uploaded at the root of the bucket, existing files will be replaced without confirmation.
       - name: Upload files
         id: uploadfiles
@@ -62,13 +55,14 @@ jobs:
         if: ${{ success() }}
         id: updateglossaries
         run: |
+          access_token=$(gcloud auth application-default print-access-token | sed '/^$/q')
           for file in $GITHUB_WORKSPACE/glossaries-for-google-translate-api/*; do
             filename=$(basename "$file")
             file_sans_ext="${filename%.*}"
             language_code="${file_sans_ext##*-}"
             curl -X PATCH \
               "https://translation.googleapis.com/v3/projects/${{ env.GCLOUD_PROJECT_ID }}/locations/us-central1/glossaries/${file_sans_ext}?update_mask=input_config&update_mask=display_name" \
-              -H "Authorization: Bearer ${{ steps.authtoken.outputs.access_token }}" \ 
+              -H "Authorization: Bearer $access_token" \ 
               -H "Content-Type: application/json" \
               -d '{ \
                     "name":"projects/${{ env.GCLOUD_PROJECT_ID }}/locations/us-central1/glossaries/${file_sans_ext}", \
