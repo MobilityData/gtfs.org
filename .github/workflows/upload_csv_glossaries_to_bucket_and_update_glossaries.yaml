@@ -61,8 +61,8 @@ jobs:
             filename=$(basename "$file")
             file_sans_ext="${filename%.*}"
             language_code="${file_sans_ext##*-}"
-            patch_url="https://translation.googleapis.com/v3/projects/mbd-translation-service/locations/us-central1/glossaries/${file_sans_ext}?update_mask=input_config,display_name"
-            gloss_name="projects/mbd-translation-service/locations/us-central1/glossaries/${file_sans_ext}"
+            patch_url="https://translation.googleapis.com/v3/projects/810644617646/locations/us-central1/glossaries/${file_sans_ext}?update_mask=input_config&update_mask=display_name"
+            gloss_name="projects/810644617646/locations/us-central1/glossaries/${file_sans_ext}"
             gcs_source_uri="gs://glossaries.mobilitydata.org/$filename"
             
             echo "patch_url = $patch_url"
