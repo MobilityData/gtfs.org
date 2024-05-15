@@ -77,11 +77,11 @@ jobs:
             echo "  -H \"Content-Type: application/json\" \\"
             echo "  -d '$json_data'"
             
-            # Optionally, uncomment the next line to actually execute the curl command after verification
-            # curl -X PATCH "$patch_url" \
-            #   -H "Authorization: Bearer $access_token" \
-            #   -H "Content-Type: application/json" \
-            #   -d "$json_data"
+            # execute the curl command after verification
+            curl -X PATCH "$patch_url" \
+              -H "Authorization: Bearer $access_token" \
+              -H "Content-Type: application/json" \
+              -d "$json_data"
               
             # if [[ $? -eq 0 ]]; then
             #  echo "Patch successful!"
