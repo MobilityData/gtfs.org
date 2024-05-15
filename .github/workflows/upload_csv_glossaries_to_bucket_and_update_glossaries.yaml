@@ -73,10 +73,10 @@ jobs:
             echo "gcs_source_uri = $gcs_source_uri"
             echo "json_data = $json_data"
             
-            curl_output=$(curl -X PATCH "$patch_url" \
+            curl_output=$(curl -s -X PATCH "\"$patch_url\"" \
               -H "Authorization: Bearer $access_token" \ 
               -H "Content-Type: application/json" \
-              -d "$json_data" 2>&1)
+              -d "\"$json_data\"" 2>&1)
               
             if [[ $? -eq 0 ]]; then
               echo "Patch successful!"
