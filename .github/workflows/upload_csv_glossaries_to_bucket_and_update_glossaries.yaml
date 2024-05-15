@@ -68,9 +68,13 @@ jobs:
             echo "patch_url = $patch_url"
             echo "gloss_name = $gloss_name"
             echo "gcs_source_uri = $gcs_source_uri"
+
+            json_data="{\"name\": \"$gloss_name\", \"languageCodesSet\": {\"languageCodes\": [\"en\", \"$language_code\"]}, \"inputConfig\": {\"gcsSource\": {\"inputUri\": \"$gcs_source_uri\"}}}"
+
+            echo "json_data = $json_data"
             
             curl -X PATCH "$patch_url" \
               -H "Authorization: Bearer $access_token" \ 
               -H "Content-Type: application/json" \
-              -d '{ "name": "$gloss_name", "languageCodesSet": { "languageCodes": ['en', '$language_code'] }, "inputConfig": { "gcsSource": { "inputUri": "$gcs_source_uri" } } }'
+              -d "$json_data"
           done
