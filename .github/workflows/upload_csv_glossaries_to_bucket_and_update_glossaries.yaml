@@ -57,24 +57,25 @@ jobs:
         id: updateglossaries
         run: |
           access_token=$(gcloud auth application-default print-access-token | sed '/^$/q')
+          
           for file in $GITHUB_WORKSPACE/glossaries-for-google-translate-api/*; do
+          
             filename=$(basename "$file")
             file_sans_ext="${filename%.*}"
             language_code="${file_sans_ext##*-}"
-            patch_url="https://translation.googleapis.com/v3/projects/810644617646/locations/us-central1/glossaries/${file_sans_ext}?update_mask=input_config&update_mask=display_name"
+            patch_url="https://translation.googleapis.com/v3/projects/810644617646/locations/us-central1/glossaries/${file_sans_ext}?update_mask=input_config,display_name"
             gloss_name="projects/810644617646/locations/us-central1/glossaries/${file_sans_ext}"
             gcs_source_uri="gs://glossaries.mobilitydata.org/$filename"
-            
+            json_data="{ \"name\": \"$gloss_name\", \"languageCodesSet\": { \"languageCodes\": [\"en\", \"$language_code\"] }, \"inputConfig\": { \"gcsSource\": { \"inputUri\": \"$gcs_source_uri\" } } }"
+
             echo "patch_url = $patch_url"
             echo "gloss_name = $gloss_name"
             echo "gcs_source_uri = $gcs_source_uri"
-
-            json_data="{\"name\": \"$gloss_name\", \"languageCodesSet\": {\"languageCodes\": [\"en\", \"$language_code\"]}, \"inputConfig\": {\"gcsSource\": {\"inputUri\": \"$gcs_source_uri\"}}}"
-
             echo "json_data = $json_data"
             
             curl -X PATCH "$patch_url" \
               -H "Authorization: Bearer $access_token" \ 
               -H "Content-Type: application/json" \
               -d "$json_data"
+              
           done
