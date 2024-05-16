@@ -154,6 +154,19 @@ nav:
     - Schedule:
       - Reference: documentation/schedule/reference.md
       - Best Practices: documentation/schedule/GTFS schedule best Practices.md
+      - Data examples:
+        - Attributions: documentation/schedule/examples/attributions.md
+        - Continuous stops: documentation/schedule/examples/continuous-stops.md
+        - Fares v1: documentation/schedule/examples/fares-v1.md
+        - Fares v2: documentation/schedule/examples/fares-v2.md
+        - Feed information: documentation/schedule/examples/feed-info.md
+        - Flexible Services: documentation/schedule/examples/flex.md
+        - Frequencies: documentation/schedule/examples/frequencies.md
+        - Pathways: documentation/schedule/examples/pathways.md
+        - Routes, Stops & Trips: documentation/schedule/examples/routes-stops-trips.md
+        - Text-to-speech: documentation/schedule/examples/text-to-speech.md
+        - Transfers: documentation/schedule/examples/transfers.md
+        - Translations: documentation/schedule/examples/translations.md
       - Recent additions: documentation/schedule/recent additions.md
     - Realtime:
       - Reference: documentation/Realtime/reference.md
@@ -164,6 +177,9 @@ nav:
           - Service Alerts: documentation/Realtime/feed_entities/service-alerts.md
           - Vehicle Positions: documentation/Realtime/feed_entities/vehicle-positions.md
       - Protobuf: documentation/Realtime/proto.md
+      - Data examples:
+        - Service alerts: documentation/Realtime/examples/service-alerts.md
+        - Trip updates: documentation/Realtime/examples/trip-updates.md
       - Recent Additions: documentation/Realtime/recent additions.md
   - Community:
     - Get involved: community/get_involved.md
@@ -172,21 +188,6 @@ nav:
       - Flex: community/active_projects/flex.md
   - Resource Library:
     - Resource Library: resource_library/overview.md
-    - Data examples: 
-      - GTFS Schedule data examples: 
-        - Attributions: resource_library/data_examples/schedule_data_examples/attributions.md
-        - Continuous stops: resource_library/data_examples/schedule_data_examples/continuous-stops.md
-        - Fares v1: resource_library/data_examples/schedule_data_examples/fares-v1.md
-        - Fares v2: resource_library/data_examples/schedule_data_examples/fares-v2.md
-        - Feed information: resource_library/data_examples/schedule_data_examples/feed-info.md
-        - Text-to-speech: resource_library/data_examples/schedule_data_examples/text-to-speech.md
-        - Frequencies: resource_library/data_examples/schedule_data_examples/frequencies.md
-        - Pathways: resource_library/data_examples/schedule_data_examples/pathways.md
-        - Transfers: resource_library/data_examples/schedule_data_examples/transfers.md
-        - Transations: resource_library/data_examples/schedule_data_examples/translations.md
-      - GTFS Realtime data examples: 
-        - Service alerts: resource_library/data_examples/realtime_data_examples/service-alerts.md
-        - Trip updates: resource_library/data_examples/realtime_data_examples/trip-updates.md
     - Guides and Tutorials: resource_library/tutorials.md
     - Tools: 
       - Data Portals: resource_library/tools/data_portals.md

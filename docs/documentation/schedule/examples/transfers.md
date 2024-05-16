@@ -1,10 +1,4 @@
-<a class="pencil-link" href="https://github.com/MobilityData/gtfs.org/edit/main/docs/schedule/examples/continuous-stops.md" title="Edit this page" target="_blank">
-    <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
-  </a>
-
 # Transfers
-
-<hr>
 
 ## Block transfers
 
@@ -18,7 +12,7 @@ Block transfer, also called in-seat transfer, is available when a set of trips m
 
 Block transfers can be made between consecutive trips on different routes or on the same route if the route is a loop line. Use the `block_id` field to specify which trips are in one block and where in-seat transfers are an available option.
 
-For example, consider the following [trips.txt](../../reference/#tripstxt) and [stop_times.txt](../../reference/#stoptimestxt) values:
+For example, consider the following [trips.txt](../../reference/#tripstxt) and [stop_times.txt](../../reference/#stop_timestxt) values:
 
 [**trips.txt**](../../reference/#tripstxt)
 
@@ -27,7 +21,7 @@ For example, consider the following [trips.txt](../../reference/#tripstxt) and [
 | RouteA   | RouteATrip1 |  Block1 |
 | RouteB   | RouteBTrip1 |  Block1 |
 
-[**stop_times.txt**](../../reference/#stoptimestxt)
+[**stop_times.txt**](../../reference/#stop_timestxt)
 
 | trip_id | arrival_time     | departure_time | stop_id | stop_sequence |
 |----------|-------------|---|----|-----|
