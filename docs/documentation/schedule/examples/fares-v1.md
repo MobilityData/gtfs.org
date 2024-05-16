@@ -1,12 +1,6 @@
-<a class="pencil-link" href="https://github.com/MobilityData/gtfs.org/edit/main/docs/schedule/examples/fares-v1.md" title="Edit this page" target="_blank">
-    <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
-  </a>
-
 # Fares v1
 
-<hr>
-
-Composed of [fare_attributes.txt](../../reference/#fare_attributestxt) and [fare_rules.txt](../../reference/#fare_rulestxt), Fares v1 has historically been the official method for describing fare information in GTFS. However the two files are limited in the breadth of factors they can efficiently describe, and are ambiguous to implement. 
+Composed of [fare_attributes.txt](../../reference/#fare_attributestxt) and [fare_rules.txt](../../reference/#fare_rulestxt), Fares v1 has historically been the official method for describing fare information in GTFS. However, the two files are limited in the breadth of factors they can efficiently describe, and are ambiguous to implement. 
 [Fares v2](../../examples/fares-v2/) is an extension project under active development, and it aims to address the limitations of Fares v1.
 
 ## Define an agency’s fare rules
@@ -27,7 +21,7 @@ presto_fare,3.2,CAD,1,,7200
 - The field transfers is left blank to represent unlimited transfers 
 - The field `transfer_duration` corresponds to the 2-hour transfer window (in seconds)
 
-The second file, [fare_rules.txt](../../reference/#fare_rulestxt) assigns fares to journeys through tying a fare to a route as well as an origin/destination on that route. 
+The second file, [fare_rules.txt](../../reference/#fare_rulestxt) assigns fares to journeys by tying a fare to a route as well as an origin/destination on that route. 
 
 For that, two subway lines are defined below in [routes.txt](../../reference/#routestxt):
 
@@ -39,7 +33,7 @@ TTC,Line1,1
 TTC,Line2,1
 ```
 
-In this example, transfers at Bloor-Yonge station are modeled. For that, this station is modeled as two separate stops, the first is Bloor Station which is served by Line 1, and the second is Yonge station, which is served by Line 2. Both have `zone_id=ttc_subway_stations` in order to group all subway stations in a single fare zone. 
+In this example, transfers at Bloor-Yonge Station are modeled. For that, this station is modeled as two separate stops, the first is Bloor Station which is served by Line 1, and the second is Yonge Station, which is served by Line 2. Both have `zone_id=ttc_subway_stations` in order to group all subway stations in a single fare zone. 
 
 [**stops.txt**](../../reference/#stopstxt)
 
@@ -71,8 +65,8 @@ Bloor,Yonge,line1,line2,0
 Yonge,Bloor,line2,line1,0
 ```
 
-- The first models transfers from Line 1 to Line 2 using `from_route_id` and `to_route_id` from Bloor station to Yonge station
-- The second models transfers from Line 2 to Line 1 using `from_route_id` and `to_route_id` from Yonge station to Bloor station
+- The first models transfers from Line 1 to Line 2 using `from_route_id` and `to_route_id` from Bloor Station to Yonge Station
+- The second models transfers from Line 2 to Line 1 using `from_route_id` and `to_route_id` from Yonge Station to Bloor Station
 - The value for `transfer_type` is `0` since there are no specific requirements or considerations for transfers
 
 <sup>[Example source](https://www.ttc.ca/Fares-and-passes)</sup>

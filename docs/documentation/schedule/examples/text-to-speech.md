@@ -1,10 +1,4 @@
-<a class="pencil-link" href="https://github.com/MobilityData/gtfs.org/edit/main/docs/schedule/examples/text-to-speech.md" title="Edit this page" target="_blank">
-    <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
-  </a>
-
 # Text-to-speech
-
-<hr>
 
 ## Abbreviations, unusual pronunciations, large digits and ordinals
 
@@ -27,7 +21,7 @@ Otherwise, the software would read “3300” as “three thousand three hundred
 
 ## Acronyms
 
-For acronyms that are referred to by their letters, letters should be followed by periods or separated by spaces. This clarifies that the acronym should be read letter-by-letter, and not read as a word.
+For acronyms that are referred to by their letters, letters should be followed by periods or separated by spaces. This clarifies that the acronym should be read letter-by-letter, and not as a word.
 
 For Tampa, the headsign “North to UATC” contains an acronym that is pronounced by its individual letters. The text-to-speech disambiguation would be:
 
@@ -43,7 +37,7 @@ or
 | ---- | ---- |
 | North to UATC | north to u a t c |
 
-Oppositely, some acronyms should be read as words: e.g. NATO; NASA. The text-to-speech field should reflect this.
+Conversely, some acronyms should be read as words: e.g. NATO; NASA. The text-to-speech field should reflect this.
 
 !!! Note
 

@@ -1,14 +1,8 @@
-<a class="pencil-link" href="https://github.com/MobilityData/gtfs.org/edit/main/docs/schedule/examples/fares-v2.md" title="Edit this page" target="_blank">
-    <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
-  </a>
-
 # Fares v2
-
-<hr>
 
 Fares v2 is a GTFS extension project that aims to address the limitations of Fares v1. This extension project is being adopted in iterations. The below examples outline how to model basic concepts, including fare products and how riders can use their fare for transfers. See more information about [the Fares v2 extension project here](/extensions/fares-v2/).
 
-In the interim, producers may implement Fares v2 alongside implementation of Fares v1 in the same dataset as there exists no technical conflict between the two. Consumers will have the choice on which implementation to consume independently from the other. 
+In the interim, producers may implement Fares v2 alongside the implementation of Fares v1 in the same dataset as there is no technical conflict between the two. Consumers will have the choice of which implementation to consume independently from the other. 
 With adoption and sufficient endorsement of Fares v2, Fares v1 may be deprecated in the future.
 
 ## Define a transit fare
@@ -72,7 +66,7 @@ The file above represents this in GTFS with the following fields:
 - The `transfer_count` is set to `-1` since there is no limit on the number of transfers permitted
 - The `duration_limit` is set to `5400` seconds,  which is equivalent to 90 minutes
 - The `duration_limit_type` is set to `1` since the transfer time starts when the rider departs on any route in the `core_local_one_way_trip` fare leg and ends when they depart on a different fare leg. 
-- The `fare_transfer_type` is set to `0` since riders only pay for the first fare only. There is no transfer fee or a second fare for transferring within the 90 minute window. Hence, the cost can be modeled as the sum of the first fare and the sums of the transfer fees.
+- The `fare_transfer_type` is set to `0` since riders only pay for the first fare. There is no transfer fee or a second fare for transferring within the 90 minute window. Hence, the cost can be modeled as the sum of the first fare and the sum of the transfer fees.
 - The `transfer_count` is set to `-1` as the rider can transfer an unlimited number of times within the 90 minute `duration_limit` window.
 
 After defining the fare, creating the appropriate `fare_leg_rule`, and defining the `fare_transfer_rule`,  you can see the $2.00 USD `core_local_oneway_fare` appear in trip planners. Here is an example from Transit:
@@ -85,7 +79,7 @@ After defining the fare, creating the appropriate `fare_leg_rule`, and defining 
 
 ## Describe service locations in the same fare zone
 
-Some transit agencies operate a zone-based fare structure. Fare zones are divided geographic areas associated with different fare prices. In Bay Area’s BART system, fares are different depending on the origin and destination <a href="https://www.bart.gov/sites/default/files/docs/BART%20Clipper%20Fares%20Triangle%20Chart%20July%202022.pdf" target="_blank">(BART fare differences)</a>, and transit riders will need to know the right fare. Fare areas can be described using the [stops_areas.txt](../../reference/#stops_areastxt) file, which assigns stops from [stops.txt](../../reference/#stopstxt) to [areas.txt](../../reference/#areastxt).
+Some transit agencies operate a zone-based fare structure. Fare zones are divided geographic areas associated with different fare prices. In Bay Area’s BART system, fares are different depending on the origin and destination <a href="https://www.bart.gov/sites/default/files/docs/BART%20Clipper%20Fares%20Triangle%20Chart%20July%202022.pdf" target="_blank">(BART fare differences)</a>, and transit riders will need to know the right fare. Fare areas can be described using the [stops_areas.txt](../../reference/#stop_areastxt) file, which assigns stops from [stops.txt](../../reference/#stopstxt) to [areas.txt](../../reference/#areastxt).
 
 First, identify the area in [areas.txt](../../reference/#areastxt) . It is acceptable to leave `area_name` blank if there is no area name. In the table below, there are three `area_id` - `ASHB`, `GLEN`, and `OAKL`.
 
@@ -101,7 +95,7 @@ Afterwards, using `stop_id` from the [stops.txt](../../reference/#stopstxt) file
 
 Next, group `stop_id` to each `area_id`. In the BART example, each area contains only 1 `stop_id`. For instance, only stop `ASHB` (Ashby Station) is included in the area `ASHB` However, if an area includes multiple stops, multiple `stop_id` should be listed.
 
-[**stops_areas.txt**](../../reference/#stops_areastxt)
+[**stops_areas.txt**](../../reference/#stop_areastxt)
 
 | area_id | stop_id |
 |---------|---------|
