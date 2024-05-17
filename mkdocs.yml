@@ -70,6 +70,7 @@ extra:
       link: https://share.mobilitydata.org/slack
 markdown_extensions:
   - attr_list
+  - footnotes
   - md_in_html
   - admonition
   - meta
@@ -134,9 +135,9 @@ nav:
     - What is GTFS?: getting_started/what_is_GTFS.md
     - Why use GTFS?: getting_started/why_use_GTFS.md
     - How to produce GTFS?: 
-      - Create: getting_started/how_to_create_GTFS.md
-      - Validate: getting_started/what_is_high-quality_GTFS.md
-      - Publish: getting_started/how_to_publish?.md
+      - Create: getting_started/create.md
+      - Validate: getting_started/validate.md
+      - Publish: getting_started/publish.md
     - What can GTFS do?:
       - Overview: getting_started/features/overview.md
       - Base: getting_started/features/base.md
