@@ -187,6 +187,9 @@ nav:
     - Active projects: 
       - Fares v2: community/active_projects/fares-v2.md
       - Flex: community/active_projects/flex.md
+    - Specification Amendment Process:
+      - GTFS Schedule Amendment Process: community/spec_amendment_process/gtfs_schedule_amendment_process.md
+      - GTFS Realtime Amendment Process: community/spec_amendment_process/gtfs_realtime_amendment_process.md
   - Resource Library:
     - Resource Library: resource_library/overview.md
     - Guides and Tutorials: resource_library/tutorials.md
