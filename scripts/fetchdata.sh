@@ -17,7 +17,7 @@ sed -i.bak 's,examples/3-leg.svg,../assets/3-leg.svg,g' docs/schedule/reference.
 # ---------------------------------------------------------------------------------
 
 ## GTFS Schedule best practices (schedule/best-practices)
-curl https://raw.githubusercontent.com/MobilityData/GTFS_Schedule_Best-Practices/master/en/best-practices.md -o docs/schedule/best-practices.md
+curl https://raw.githubusercontent.com/google/transit/master/gtfs/best-practices/best-practices.md -o docs/schedule/best-practices.md
 
 ### patch links
 sed -i.bak "s,#dataset-publishing--general-practices,#dataset-publishing-general-practices,g" docs/schedule/best-practices.md
@@ -101,16 +101,7 @@ For more information about using protobufs, see the [Protocol Buffers Developer 
 
 ## GTFS Realtime best practices
 rm docs/realtime/best-practices.md
-rm -rf repos
-git clone https://github.com/MobilityData/GTFS_Realtime_Best-Practices repos/gtfs-realtime-best-practices
-BEST_PRACTICE_FILES=(introduction FeedHeader FeedEntity TripUpdate TripDescriptor VehicleDescriptor StopTimeUpdate StopTimeEvent VehiclePosition Position Alert Frequency-based about)
-
-for i in "${BEST_PRACTICE_FILES[@]}"
-do
-    (cat repos/gtfs-realtime-best-practices/en/$i.md ; echo) >> docs/realtime/best-practices.md
-done
-
-rm -rf repos
+curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/best-practices/best-practices.md -o docs/realtime/best-practices.md
 
 ### replace header
 new_header='# GTFS Realtime Best Practices'
