@@ -4,7 +4,7 @@
   
 # GTFS-Flex
 
-Flex is a GTFS Schedule extension project that aims to facilitate discoverability of Demand Responsive Transportation Services.
+GTFS Flex is a GTFS Schedule extension project that aims to facilitate the discoverability of Demand Responsive Transportation Services. For the major part, it has been adopted onto GTFS in Match 2024. Some examples can be found on [this page](https://gtfs.org/schedule/examples/flex/) showing what can be modeled using the officially adopted part of GTFS Flex.
 
 🤔 Services like dial-a-ride are often brushed over by riders, who sometimes have no clue they even exist. This lack of accessibility is an issue for transit agencies, trip planners, and riders. Imagine a group of tourists arriving at your local airport who would like to reach a rural area that only offers an on-demand bus service. The tourists check their preferred trip planner app and do not find a viable public transportation option. They end up renting a car. Being tourists, they miss all of your paper flyers posted along the hallway announcing the on-demand service. Not only is your service underused, but it lacks the discoverability to meet current and future rider demand. This is where GTFS-Flex comes in. GTFS-Flex helps riders discover your service, so they enjoy the services you worked hard to promote.
 
@@ -89,3 +89,4 @@ This area is intended as a community "parking lot". Share something you would li
 - **June 2023**:  <a href="https://mobilitydata.org/recap-mobilitydata-working-meeting-gtfs-flex-service-discovery/" target="_blank">Held Conceptual Working Meeting on GTFS-Flex</a>
 - **July 2023**: <a href="https://github.com/google/transit/pull/388" target="_blank">Published Pull Request #388</a>
 - **August and September 2023**: <a href="https://github.com/google/transit/pull/388" target="_blank">Held "GeoJSON in GTFS?" discussions</a>
+- **March 2024**: <a href="https://github.com/google/transit/pull/433" target="_blank">GTFS Flex was officially adopted</a>
