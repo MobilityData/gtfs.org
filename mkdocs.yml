@@ -190,14 +190,21 @@ nav:
     - Specification Amendment Process:
       - GTFS Schedule Amendment Process: community/spec_amendment_process/gtfs_schedule_amendment_process.md
       - GTFS Realtime Amendment Process: community/spec_amendment_process/gtfs_realtime_amendment_process.md
-  - Resource Library:
-    - Resource Library: resource_library/overview.md
-    - Guides and Tutorials: resource_library/tutorials.md
-    - Tools: 
-      - Data Portals: resource_library/tools/data_portals.md
-    - GTFS extension projects: resource_library/extension_projects.md
-    - GTFS amendment process: 
-      - GTFS Schedule Amendment Process: resource_library/spec_amendment_process/gtfs_schedule_amendment_process.md
-      - GTFS Realtime Amendment Process: resource_library/spec_amendment_process/gtfs_realtime_amendment_process.md
+  - Resources:
+    - Overview: resources/overview.md
+    - Getting Started: resources/getting-started.md
+    - Community: resources/community.md
+    - Data: resources/data.md
+    - Software for Creating APIs: resources/software-for-creating-apis.md
+    - Agency Tools: resources/agency-tools.md
+    - Hardware: resources/hardware.md
+    - Apps: resources/apps.md
+    - SDKs: resources/sdk.md
+    - Visualizations: resources/visualizations.md
+    - GTFS: resources/gtfs.md
+    - GTFS Realtime: resources/gtfs-realtime.md
+    - SIRI: resources/siri.md
+    - Multimodal: resources/multimodal.md
+    - Other: resources/other.md
   - About:
       - About/index.md
