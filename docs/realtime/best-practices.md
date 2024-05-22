@@ -75,7 +75,6 @@ For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then
 | --- | --- |
 | `schedule_relationship` | The behavior of `ADDED` trips are unspecified and the use of this enumeration is not recommended. |
 
-
 ### VehicleDescriptor
 
 If separate `VehiclePosition` and `TripUpdate` feeds are provided, [TripDescriptor](#TripDescriptor) and [VehicleDescriptor](#VehicleDescriptor) ID values pairing should match between the two feeds.
@@ -129,6 +128,7 @@ General guidelines for alerts:
 | --- | --- |
 | `description_text` | Use line breaks to make your service alert easier to read. |
 
+
 ## Practice Recommendations Organized by Use Case
 
 ### Frequency-based trips
@@ -140,26 +140,24 @@ A frequency-based trip does not follow a fixed schedule but attempts to maintain
 * As required by the spec, when describing `trip` in [TripUpdate](#TripUpdate) or [VehiclePosition](#VehiclePosition) by using [TripDescriptor](#TripDescriptor), all of `trip_id`, `start_time`, and `start_date` must be provided. Additionally, `schedule_relationship` should be `UNSCHEDULED`.
  (e.g., re-enforcement trips).
 
-
-## About This Document
+ ## About This Document
 
 ### Objectives
 
-The objectives of maintaining GTFS Realtime Best Practices are to:
+The objectives of these GTFS Best Practices are:
 
+* Support greater interoperability of transit data
 * Improve end-user customer experience in public transportation apps
 * Make it easier for software developers to deploy and scale applications, products, and services
+* Facilitate the use of GTFS in various application categories (beyond its original focus on trip planning)
 
-### How to propose or amend published GTFS Realtime Best Practices
-
-The Best Practices are in the process of being merged into the official GTFS Realtime reference, and some GTFS Best Practices will be removed from this document as this is happening.
-
-If you'd like to suggest a new best practice, please go to the [GTFS Reference GitHub repository](https://github.com/google/transit/) to open an issue or create a PR, or contact [specifications@mobilitydata.org](mailto:specifications@mobilitydata.org).
+### Contributing
+New Best Practices are now being added directly into the [spec](https://gtfs.org/schedule/reference/) in order to gradually consolidate both documents. 
+If you'd like to suggest a new best practice, please go to the [GTFS Reference GitHub repository](https://github.com/google/transit/), [open an issue](https://github.com/google/transit/issues/new/choose) or create a Pull Request, or contact [specifications@mobilitydata.org](mailto:specifications@mobilitydata.org).
 
 ### Linking to This Document
 
 Please link here in order to provide feed producers with guidance for correct formation of GTFS Realtime data. Each individual recommendation has an anchor link. Click the recommendation to get the URL for the in-page anchor link.
 
 If a GTFS Realtime-consuming application makes requirements or recommendations for GTFS Realtime data practices that are not described here, it is recommended to publish a document with those requirements or recommendations to supplement these common best practices.
-
 
