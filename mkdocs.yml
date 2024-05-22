@@ -178,6 +178,15 @@ nav:
           - Service Alerts: documentation/Realtime/feed_entities/service-alerts.md
           - Vehicle Positions: documentation/Realtime/feed_entities/vehicle-positions.md
       - Protobuf: documentation/Realtime/proto.md
+      - Language Bindings:
+        - Overview: documentation/Realtime/language-bindings/overview.md
+        - .NET: documentation/Realtime/language-bindings/dotnet.md
+        - Java: documentation/Realtime/language-bindings/java.md
+        - JavaScript/Node.js: documentation/Realtime/language-bindings/nodejs.md
+        - Python: documentation/Realtime/language-bindings/python.md
+        - Golang: documentation/Realtime/language-bindings/golang.md
+        - Ruby: documentation/Realtime/language-bindings/ruby.md
+        - PHP: documentation/Realtime/language-bindings/php.md
       - Data examples:
         - Service alerts: documentation/Realtime/examples/service-alerts.md
         - Trip updates: documentation/Realtime/examples/trip-updates.md
