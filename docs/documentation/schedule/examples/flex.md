@@ -1,8 +1,9 @@
 # Demand responsive services
 
-Flex is a GTFS extension project which was adopted officially into the GTFS specification in March 2024, its aims to facilitate discoverability of Demand Responsive Transportation Services.
+GTFS Flex is a GTFS extension project which was adopted officially into the GTFS specification in March 2024, its aims to facilitate the discoverability of demand-responsive transportation (DRT) Services.
+Note that different terms exist for demand-responsive services based on the region of the world. See the [Glossary](#glossary) for more.
 
-The following example demonstrates how to model different demand responsive service use cases using Flex. **Please note that the following examples are not necessarily an accurate or complete representation of the agencies’ services.**
+The following example demonstrates how to model different demand-responsive service use cases using Flex. **Please note that the following examples are not necessarily an accurate or complete representation of the agencies’ services.**
 
 ## On-demand services within a single zone
 
@@ -317,4 +318,42 @@ tripA | portland | 1 | 2 | 1 | 08:00:00 | 12:00:00
 tripA | gresham | 2 | 2 | 1 | 10:00:00 | 14:00:00
 tripA | vancouver | 3 | 1 | 2 | 10:00:00 | 14:00:00
 
+## Glossary
+
+📲 Dial-a-ride is a variation of multiple terms used across Europe. 
+
+🇨🇭 In Switzerland, it would fall under the term Rufbus / On-call bus. There's also the availability of the [PubliCar system by PostAuto](https://www.postauto.ch/en/timetable-and-network/publicar). Under this proposal, the PubliCar App and service would be discoverable in the user’s preferred trip planner app. 
+
+🇦🇹 In Austria, dial-a-ride would also be Rufbus and under the bigger umbrella of Bedarfsverkehr (Demand Responsive Transport) and Mikro-ÖV (Microtransit).
+    
+- [bedarfsverkehr.at](https://www.bedarfsverkehr.at/)
+- [Wiener Linien](https://www.wienerlinien.at/documents/843721/4770179/Anleitung_Rufbus_359531.pdf/df430b95-9dd4-0d13-ffdf-bdace15932a8?t=1614165175643)
+- Rufbus (english: dial-a-bus, formerly Anruf-Sammel-Taxi or ASTAX call-collect-taxi)
+- Current GTFS implementation [as an year-long service alert](https://www.google.com/maps/dir/S%C3%BC%C3%9Fenbrunner+Pl.,+1220+Wien,+Austria/2201+Gerasdorf,+Austria/@48.2867283,16.4429959,13z/am=t/data=!4m15!4m14!1m5!1m1!1s0x476d0393b15bc6d9:0x517f69839511fb31!2m2!1d16.4958186!2d48.2772635!1m5!1m1!1s0x476d0488292e6f61:0xeee80d3d2bb6b1f5!2m2!1d16.4690073!2d48.2962096!3e3!5i1?entry=ttu )
+
+🇩🇰 In Denmark, it can be referred to NT / midttrafik / sydtrafik / FYNBUS / movia (https://flextur.dk/)
+    
+- flextur (english: flex trip)
+- formerly flextrafik (english: flex transit)
+
+🇫🇷 ⚠️ In France the terms TDA (Transport à la Demande) and PMR (Personnes à Mobilité Réduite) for Paratransit services
+
+- [Reseau Mistral](https://www.reseaumistral.com/services/service-appel-bus) 
+- Appel bus (english: call bus)
+
+🇩🇪 In Germany they refer to it as On-Demand-Angebot, Flexible Fahrt and AST
+   
+- [BVG](https://www.bvg.de/de/verbindungen/bvg-muva/flexible-fahrt)
+- Brand: Muva
+- On-Demand-Angebot (english: on-demand-service)
+- Flexible Fahrt (english: flexible trip)
+- Other areas
+- Anruf-sammel-taxi or AST (english: call-collect-taxi)
+
+🇬🇧 In the United Kingdom, there is the following service:
+
+- [go2 Sevenoaks](https://www.go-coach.co.uk/go2/ )
+- On-demand service
+
+The terminology varies across borders but in general we can assume that dial-a-ride is any demand responsive service that requires some form of contact by the rider to the operator. 
 <hr>
