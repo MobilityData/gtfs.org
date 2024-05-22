@@ -1,10 +1,6 @@
-<a class="pencil-link" href="https://github.com/MobilityData/gtfs.org/edit/main/docs/extensions/fare-extension.md" title="Edit this page" target="_blank">
-    <svg class="pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
-  </a>
-  
 # GTFS-Fares v2
 
-Fares v2 is a GTFS Schedule extension project that aims to address the limitations of <a href="/schedule/examples/fares-v1">Fares v1</a>.
+Fares v2 is a GTFS Schedule extension project that aims to address the limitations of [Fares v1](../../../documentation/schedule/examples/fares-v1).
 
 The main concepts that Fares v2 plans to represent are
 
@@ -15,7 +11,7 @@ The main concepts that Fares v2 plans to represent are
 
 These concepts will allow data producers to model zone-based, time-dependent, and inter-agency fares. This extension project is being adopted in iterations. 
 
-You can see <a href="/schedule/examples/fares-v2" target="_blank">examples here</a> that show what can be modelled using the adopted Fares v2 base implementation.
+You can see [examples here](../../../documentation/schedule/examples/fares-v2) that show what can be modelled using what has been officially adopted in GTFS.
 
 Producers may implement Fares v2 in the same dataset with Fares v1, since there is no technical conflict between the two. Consumers can choose which version to use independent of the other. With adoption and sufficient endorsement of Fares v2, Fares v1 may be deprecated in the future.
 

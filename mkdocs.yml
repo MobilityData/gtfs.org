@@ -193,12 +193,13 @@ nav:
       - Recent Additions: documentation/Realtime/recent additions.md
   - Community:
     - Get involved: community/get_involved.md
-    - Active projects: 
-      - Fares v2: community/active_projects/fares-v2.md
-      - Flex: community/active_projects/flex.md
-    - Specification Amendment Process:
+    - Governance:
       - GTFS Schedule Amendment Process: community/spec_amendment_process/gtfs_schedule_amendment_process.md
       - GTFS Realtime Amendment Process: community/spec_amendment_process/gtfs_realtime_amendment_process.md
+    - Extensions:
+      - Overview: community/extensions/overview.md
+      - Fares v2: community/extensions/fares-v2.md
+      - Flex: community/extensions/flex.md
   - Resources:
     - Overview: resources/overview.md
     - Getting Started: resources/getting-started.md
