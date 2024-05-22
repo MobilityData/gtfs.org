@@ -573,6 +573,7 @@ nav:
       - Trip Updates: realtime/feed-entities/trip-updates.md
       - Service Alerts: realtime/feed-entities/service-alerts.md
       - Vehicle Positions: realtime/feed-entities/vehicle-positions.md
+      - Trip Modifications: realtime/feed-entities/trip-modifications.md
     - Feed Examples:
       - realtime/feed-examples/index.md
       - Trip Updates: realtime/feed-examples/trip-updates.md
