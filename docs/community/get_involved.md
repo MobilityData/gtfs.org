@@ -27,6 +27,26 @@ To formalize this process, we've established the GTFS Governance framework, whic
 
 </div>
 
+## Extensions
+
+Extensions are proposals to change the specification that are composed by a collection of related files and fields. Additional files and fields can be extended onto GTFS datasets to accommodate a variety of application-specific needs communicated between transit agencies and software vendors, even if these fields are not in the official specification. Once adopted, extensions are merged and documented into the official specification as a set of features. 
+
+<div class="grid cards" markdown>
+
+-   :material-bus:{ .lg .middle } __GTFS Schedule Extensions__ 
+   
+    ---
+
+    [:octicons-arrow-right-24: Learn more](#)
+
+-   :material-bus-marker:{ .lg .middle } __GTFS Realtime Extensions__
+
+    ---
+
+    [:octicons-arrow-right-24: Learn more](#)
+
+</div>
+
 ## Active projects
 
 The community is constantly developing new additions to the specification that could require discussions and working group meetings to accomplish their larger goals in an open source setting. Working group meetings are consensus building discussions led by a facilitator, and attended by developpers, and interested contributors.   
@@ -41,22 +61,6 @@ The community is constantly developing new additions to the specification that c
 
     [:octicons-arrow-right-24: Learn more](../active_projects/fares-v2)
 
--   :material-bus-sign:{ .lg .middle } __GTFS-Flex__
-
-    ---
-
-    GTFS-Flex is a project to improve discoverability of Demand Responsive Transportation Services.
-
-    [:octicons-arrow-right-24: Learn more](../active_projects/flex)
-
--   :material-bus-alert:{ .lg .middle } __GTFS Trip-Modifications__
-
-    ---
-
-    Trip-Modifications modify trip shapes, remove stops, and add temporary stops, useful in detour cases.
-
-    [:octicons-arrow-right-24: Learn more](#)
-
 -   :material-file-document-edit:{ .lg .middle } __GTFS Governance__
 
     ---
@@ -68,6 +72,7 @@ The community is constantly developing new additions to the specification that c
 </div>
 
 
+
 ## Community Resources
 
 Make sure to check out the Resources section for an extensive selection of tips, tools, and tricks. 
@@ -75,6 +80,8 @@ Make sure to check out the Resources section for an extensive selection of tips,
 <div class="grid cards" markdown>
 
 -   :material-file-document-multiple:{ .lg .middle } __Resources__
+
+    ---
 
     [:octicons-arrow-right-24: Learn more](../../resource_library/overview/)
 
