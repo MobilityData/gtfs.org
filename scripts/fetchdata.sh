@@ -82,6 +82,9 @@ sed -i.bak "s,trip-updates.md,/realtime/trip-updates,g" docs/realtime/reference.
 sed -i.bak "s,https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#tripstxt,/schedule/reference/#tripstxt,g" docs/realtime/reference.md
 sed -i.bak "s,/gtfs-realtime/spec/en/examples/migration-duplicated.md,https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/examples/migration-duplicated.md,g" docs/realtime/reference.md
 
+### patch assets links
+sed -i.bak "s,(images/,(../../assets/,g" docs/realtime/reference.md
+
 # ---------------------------------------------------------------------------------
 
 ## GTFS Realtime proto
@@ -147,9 +150,9 @@ curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/
 new_header='# Trip Modifications'
 sed -i.bak "1s/^/$new_header\n\n/" docs/realtime/feed-entities/trip-modifications.md
 sed -i.bak "s,https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stop_timestxt,../schedule/reference/#stop_timestxt,g" docs/realtime/feed-entities/trip-modifications.md
-sed -i.bak 's,images/trip_modification.png,../assets/trip_modification.png,g' docs/realtime/feed-entities/trip-modifications.md
-sed -i.bak 's,images/propagated_delay.png,../assets/propagated_delay.png,g' docs/realtime/feed-entities/trip-modifications.md
-sed -i.bak 's,images/first_stop_reference.png,../assets/first_stop_reference.png,g' docs/realtime/feed-entities/trip-modifications.md
+sed -i.bak 's,images/trip_modification.png,../../assets/trip_modification.png,g' docs/realtime/feed-entities/trip-modifications.md
+sed -i.bak 's,images/propagated_delay.png,../../assets/propagated_delay.png,g' docs/realtime/feed-entities/trip-modifications.md
+sed -i.bak 's,images/first_stop_reference.png,../../assets/first_stop_reference.png,g' docs/realtime/feed-entities/trip-modifications.md
 
 ### service alerts
 curl https://raw.githubusercontent.com/google/transit/master/gtfs-realtime/spec/en/examples/alerts.asciipb -o docs/realtime/feed-examples/service-alerts.md
