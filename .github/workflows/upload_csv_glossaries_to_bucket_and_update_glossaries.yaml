@@ -58,6 +58,25 @@ jobs:
         run: |
           access_token=$(gcloud auth application-default print-access-token | sed '/^$/q')
           
+          # First we need to delete the existing glossaries in Google Translate API. Updating them means adding to the end of what's existing and is not the desired result.
+          for file in $GITHUB_WORKSPACE/glossaries-for-google-translate-api/*; do
+
+            # Extract the necessary data from the filename
+            filename=$(basename "$file")
+            file_sans_ext="${filename%.*}"
+
+            # Delete existing glossary
+            delete_url="https://translation.googleapis.com/v3/projects/810644617646/locations/us-central1/glossaries/${file_sans_ext}"
+            curl -X DELETE "$delete_url" \
+              -H "Authorization: Bearer $access_token" \
+              -H "Content-Type: application/json"
+            
+          done
+
+          # We have to wait since the previous step is an asynchronous request and we don't want to create a glossary that's currently being deleted.
+          sleep 600   # This will sleep for 10 minutes (600 seconds)
+
+          # Create the new glossaries
           for file in $GITHUB_WORKSPACE/glossaries-for-google-translate-api/*; do
 
             # Extract the necessary data from the filename
@@ -69,12 +88,12 @@ jobs:
             patch_url="https://translation.googleapis.com/v3/projects/810644617646/locations/us-central1/glossaries/${file_sans_ext}?update_mask=input_config,display_name"
             gloss_name="projects/810644617646/locations/us-central1/glossaries/${file_sans_ext}"
             gcs_source_uri="gs://glossaries.mobilitydata.org/$filename"
-            json_data="{ \"name\": \"$gloss_name\", \"inputConfig\": { \"gcsSource\": { \"inputUri\": \"$gcs_source_uri\" } } }"
-            
-            # Execute the curl command
-            curl -X PATCH "$patch_url" \
+            json_data="{ \"name\": \"$gloss_name\", \"languagePair\": { \"sourceLanguageCode\": \"en\", \"targetLanguageCode\": \"$language_code\" } , \"inputConfig\": { \"gcsSource\": { \"inputUri\": \"$gcs_source_uri\" } } }"
+
+            # Create new glossary
+            curl -X POST "https://translation.googleapis.com/v3/projects/810644617646/locations/us-central1/glossaries" \
               -H "Authorization: Bearer $access_token" \
               -H "Content-Type: application/json" \
               -d "$json_data"
-            
+
           done
