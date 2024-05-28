@@ -141,14 +141,11 @@ nav:
     - What can GTFS do?:
       - Overview: getting_started/features/overview.md
       - Base: getting_started/features/base.md
+      - Base add-ons: getting_started/features/base_add-ons.md
       - Accessibility: getting_started/features/accessibility.md
       - Fares: getting_started/features/fares.md
       - Pathways: getting_started/features/pathways.md
-      - Metadata: getting_started/features/metadata.md
       - Flexible services: getting_started/features/flexible_services.md
-      - Shapes: getting_started/features/shapes.md
-      - Transfers: getting_started/features/transfers.md
-      - Frequency based services: getting_started/features/frequency_based_services.md
     - Example GTFS feed: getting_started/example_feed.md
   - Technical Documentation:
     - Overview: documentation/overview.md

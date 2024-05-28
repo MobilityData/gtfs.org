@@ -1,4 +1,4 @@
-# Flexible services
+# Flexible Services
 Flexible services, also called demand-responsibe services, are services that do not follow the common behavior of scheduled and/or fixed  service. 
 
 ## Continuous Stops
@@ -6,14 +6,12 @@ Flexible services, also called demand-responsibe services, are services that do 
 Continuous Stops is used when riders can be picked up and/or dropped off between scheduled stops. 
 This can be specified either in `routes.txt`, indicating that riders can be picked up or dropped off at any point along the vehicle’s travel path for every trip of the route, or in `stop_times.txt` for a specific section of a route.  
 
-**Pre-requirement**: 
-
-- [Base features](/getting_started/features/base)
+**Prerequisites**: [Base features](/getting_started/features/base)
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[stop_times.txt](/schedule/reference/#stop_timestxt)|`continuous_pickup`, `continuous_drop_off` |
-|[routes.txt](/schedule/reference/#routestxt)|`continuous_pickup`, `continuous_drop_off` |
+|[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)|`continuous_pickup`, `continuous_drop_off` |
+|[routes.txt](/documentation/schedule/reference/#routestxt)|`continuous_pickup`, `continuous_drop_off` |
 
 ??? note "Sample Data"
 
@@ -56,13 +54,14 @@ This can be specified either in `routes.txt`, indicating that riders can be pick
 
 Booking rules can be used to enable users to reserve a trip on a demand-responsive service. These rules outline the necessary prerequisites for successful bookings and provide contact information where users can make trip reservations. This feature should be used in conjunction with [Predefined Routes With Deviation](/getting_started/features/flexible_services/#predefined-routes-with-deviation), [Zone-based Demand Responsive Services](/getting_started/features/flexible_services/#zone-based-demand-responsive-services) and [Fixed-Stops Demand Responsive Services](/getting_started/features/flexible_services/#fixed-stops-demand-responsive-services) features, if such services require booking.
 
-**Pre-requirement**: 
-
-- [Base features](/getting_started/features/base)
-
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[booking_rules.txt](/schedule/reference/#booking_rulestxt)|`booking_rule_id`, `booking_type`, `prior_notice_duration_min`, `prior_notice_duration_max`, `prior_notice_last_day`, `prior_notice_last_time`, `prior_notice_start_day`, `prior_notice_start_time`, `prior_notice_service_id`, `message`, `pickup_message`, `drop_off_message`, `phone_number`, `info_url`, `booking_url` |
+|[booking_rules.txt](/documentation/schedule/reference/#booking_rulestxt)|`booking_rule_id`, `booking_type`, `prior_notice_duration_min`, `prior_notice_duration_max`, `prior_notice_last_day`, `prior_notice_last_time`, `prior_notice_start_day`, `prior_notice_start_time`, `prior_notice_service_id`, `message`, `pickup_message`, `drop_off_message`, `phone_number`, `info_url`, `booking_url` |
+
+
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 
@@ -85,15 +84,15 @@ Booking rules can be used to enable users to reserve a trip on a demand-responsi
 
 Predefined Routes With Deviation can be used to model flexible services where vehicles can briefly deviate from a specific route to pick up users that booked a trip within a specific area along the route. This uses a combination of traditional stops (like a regular scheduled service) and zones using `locations.geojson`.
 
-**Pre-requirement**: 
-
-- [Base features](/getting_started/features/base)
-- [Booking rules feature](/getting_started/features/flexible_services/#booking-rules) if the service requires booking
-
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)|`location_id`, `start_pickup_drop_off_window`, `end_pickup_drop_off_window`, `pickup_booking_rule_id`, `drop_off_booking_rule_id`|
 |[locations.geojson](/documentation/schedule/reference/#locationsgeojson)|`Type`, `Features`, `Features:Type`, `Features:Id`, `Features:Properties`, `Features:Properties:Stop_name`, `Features:Properties:Stop_description`, `Features:Geometry`, `Features:Geometry:Type`, `Features:Geometry:Coordinates` |
+
+**Prerequisites**:
+
+- [Base features](/getting_started/features/base)
+- [Booking Rules](/getting_started/features/flexible_services/#booking-rules) if the service requires booking
 
 ??? note "Sample Data"
 
@@ -180,15 +179,15 @@ Predefined Routes With Deviation can be used to model flexible services where ve
 
 Zone-based Demand Responsive Services is used to model services that allow pick up and/or drop off at any location within a specific area for users that book a trip. These areas are defined using `locations.geojson` so it does not require the use of `stops.txt`, nor `stop_times.arrival_time` & `stop_times.departure_time`.
 
-**Pre-requirement**: 
-
-- [Base features](/getting_started/features/base)
-- [Booking rules feature](/getting_started/features/flexible_services/#booking-rules) if the service requires booking 
-
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)|`location_id`, `start_pickup_drop_off_window`, `end_pickup_drop_off_window`, `pickup_booking_rule_id`, `drop_off_booking_rule_id`|
 |[locations.geojson](/documentation/schedule/reference/#locationsgeojson)|`Type`, `Features`, `Features:Type`, `Features:Id`, `Features:Properties`, `Features:Properties:Stop_name`, `Features:Properties:Stop_description`, `Features:Geometry`, `Features:Geometry:Type`, `Features:Geometry:Coordinates` |
+
+**Prerequisites**:
+
+- [Base features](/getting_started/features/base)
+- [Booking Rules](/getting_started/features/flexible_services/#booking-rules) if the service requires booking
 
 ??? note "Sample Data"
 
@@ -246,16 +245,16 @@ Zone-based Demand Responsive Services is used to model services that allow pick 
 ## Fixed-Stops Demand Responsive Services
 Fixed-Stops Demand Responsive Services is used to model services that allow pick up and/or drop off at any location within a group of pre-defined stops for users that book a trip. These groups of stops are defined using `location_groups.txt` and `location_group_stops.txt`.
 
-**Pre-requirement**: 
-
-- [Base features](/getting_started/features/base)
-- [Booking rules feature](/getting_started/features/flexible_services/#booking-rules) if the service requires booking
-
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)|`location_group_id`, `start_pickup_drop_off_window`, `end_pickup_drop_off_window`, `pickup_booking_rule_id`, `drop_off_booking_rule_id`|
 |[location_groups.txt](/documentation/schedule/reference/#location_groupstxt)|`location_group_id`, `location_group_name`|
 |[location_group_stops.txt](/documentation/schedule/reference/#location_group_stopstxt)|`location_group_id`, `stop_id`|
+
+**Prerequisites**:
+
+- [Base features](/getting_started/features/base)
+- [Booking Rules](/getting_started/features/flexible_services/#booking-rules) if the service requires booking
 
 ??? note "Sample Data"
 
