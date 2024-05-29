@@ -1,6 +1,6 @@
 # Feed Entities
 
-GTFS Realtime supports three distinct types of realtime data, that can be
+GTFS Realtime supports four distinct types of realtime data, that can be
 combined witin a single realtime feed. Summaries are given below, with full
 documentation given in the relevant section.
 
@@ -47,6 +47,18 @@ Most important are the latitude and longitude the vehicle is at, but we can also
 use data on current speed and odometer readings from the vehicle.
 
 [More about Vehicle Position updates...](vehicle-positions.md)
+
+## Trip Modifications
+
+#### "These trips are affected by a detour on certain days"
+
+Trip modifications are used to describe detours which affect a set of trips. 
+
+A trip modification can cancel certain stops, adjust the timing for trips, 
+provide a new shape that trips will take and provide the location of temporary
+stops along the way.
+
+[More about Trip Modifications...](trip-modifications.md)
 
 ## Historical remark on feed types
 
