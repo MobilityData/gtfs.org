@@ -19,11 +19,11 @@ To formalize this process, we've established the GTFS Governance framework, whic
 
 -   :material-file-document-edit:{ .lg .middle } __GTFS Schedule - Specification Amendment Process__
 
-    [:octicons-arrow-right-24: Learn more](../../resource_library/spec_amendment_process/gtfs_schedule_amendment_process)
+    [:octicons-arrow-right-24: Learn more](../community/governance/gtfs_schedule_amendment_process.md)
 
 -   :material-file-document-edit:{ .lg .middle } __GTFS Realtime - Specification Amendment Process__
 
-    [:octicons-arrow-right-24: Learn more](../../resource_library/spec_amendment_process/gtfs_realtime_amendment_process)
+    [:octicons-arrow-right-24: Learn more](../community/governance/gtfs_realtime_amendment_process.md)
 
 </div>
 
@@ -37,13 +37,13 @@ Extensions are proposals to change the specification that are composed by a coll
    
     ---
 
-    [:octicons-arrow-right-24: Learn more](#)
+    [:octicons-arrow-right-24: Learn more](../../community/extensions/overview/#__tabbed_1_1)
 
 -   :material-bus-marker:{ .lg .middle } __GTFS Realtime Extensions__
 
     ---
 
-    [:octicons-arrow-right-24: Learn more](#)
+    [:octicons-arrow-right-24: Learn more](../../community/extensions/overview/#__tabbed_1_2)
 
 </div>
 
@@ -59,7 +59,7 @@ The community is constantly developing new additions to the specification that c
 
     GTFS-Fares v2 aims to enhance fare representation in GTFS, introducing features like fare products and rider categories.
 
-    [:octicons-arrow-right-24: Learn more](../active_projects/fares-v2)
+    [:octicons-arrow-right-24: Learn more](../community/extensions/fares-v2.md)
 
 -   :material-file-document-edit:{ .lg .middle } __GTFS Governance__
 
@@ -83,7 +83,7 @@ Make sure to check out the Resources section for an extensive selection of tips,
 
     ---
 
-    [:octicons-arrow-right-24: Learn more](../../resource_library/overview/)
+    [:octicons-arrow-right-24: Learn more](../resources/overview.md)
 
 </div>
 
@@ -93,7 +93,6 @@ There are a number of mailing lists that can be good resources when you have que
 
 * [GTFS Changes](https://groups.google.com/group/gtfs-changes): discussion of proposal for extending the GTFS specification, as outlined in the [GTFS Changes document](https://github.com/google/transit/blob/master/gtfs/CHANGES.md).
 * [GTFS Realtime](https://groups.google.com/group/gtfs-realtime): discussion of the [GTFS-realtime specification](https://github.com/google/transit/tree/master/gtfs-realtime).
-* [transitfeed](https://groups.google.com/group/transitfeed): discussion of the open-source [transitfeed](https://groups.google.com/group/transitfeed) project, as well of discussion of the GTFS specification and associated tools.
 * [transit-developers](https://groups.google.com/group/transit-developers): general transit developer discussions. Many transit agencies also have their own developer mailing lists specific to the agency. For example:
     * [NYC MTA](https://groups.google.com/group/mtadeveloperresources)
     * [Portland, OR](https://groups.google.com/group/transit-developers-pdx)
@@ -107,10 +106,9 @@ Check with your local transit agency to see if they have a mailing list of their
 
 
 ### Other Community Resources
-Find other communities and resourses related to GTFS
+Find other communities and resources related to GTFS
 
 - [German Open Transport Meetup](https://github.com/transportkollektiv/meetup/wiki) - You can participate in a [biweekly](https://hackmd.okfn.de/opentransportmeetup#) meetup of the German-speaking open transport community.
-- [OpenTripPlanner](https://github.com/opentripplanner/OpenTripPlanner) Community
-- [TransitWiki](http://transitwiki.org) - A community wiki for transit planners. Like this repo, but better.
-    - [OneBusAway Slack chat](https://onebusaway.herokuapp.com/)
-- [Transit Techies NYC](https://transittechies.nyc/) - NYC-based meetup for those interested in this repo. [Speaker list](https://transittechies.nyc/past) includes many contributors to this repo.
+- [OpenTripPlanner](https://github.com/opentripplanner/OpenTripPlanner) Community.
+- [TransitWiki](http://transitwiki.org) - A community wiki for transit planners. 
+- [Transit Techies NYC](https://transittechies.nyc/) - NYC-based meetup for tech and tranist enthusiasts.
