@@ -25,7 +25,7 @@ The transit agency Victor Valley Transit (Victorville, US-CA) applies a continuo
  
 The Local Fare zone and the County Fare zone are separated by the Air Expressway as shown in the figure below. The scheduled stop National Trails Highway - Air Expressway is located slightly north of this boundary. To be accurate, the transit agency can add a stop at the actual intersection of the bus route with the boundary, from which the continuous pickup and drop-off is available. This stop may remain unscheduled. 
 
-![](../../assets/victor-valley-transit.svg)
+![](../../../assets/victor-valley-transit.svg)
 
 This is described using the files [stop.txt](../../reference/#stopstxt) and [stop_times.txt](../../reference/#stop_timestxt):
 
