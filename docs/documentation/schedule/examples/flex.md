@@ -215,7 +215,7 @@ trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end
 
 In this example, the [Hermann Express](https://www.newulmmn.gov/553/Hermann-Express-City-Bus-Service) service in New Ulm City allows users to be picked up only at fixed stops and to be dropped off at any point within a specific deviation area between these stops.
 
-**The example below has been simplified, download the [Hermann Express example dataset](../../../assets/deviated_drop-off_route.zip) for more details.**
+**The example below has been simplified, download the [Hermann Express example dataset](../../../assets/deviated _drop-off _route.zip) for more details.**
 
 ### Define trips
 

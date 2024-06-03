@@ -4,9 +4,9 @@ A GTFS Realtime feed lets transit agencies provide consumers with realtime infor
 
 Version 2.0 of the feed specification is discussed and documented on this site. Valid versions are "2.0", "1.0".
 
-### Term Definitions
+## Term Definitions
 
-#### Required
+### Required
 
 In GTFS-realtime v2.0 and higher, the *Required* column describes what fields must be provided by a producer in order for the transit data to be valid and make sense to a consuming application.
 
@@ -18,7 +18,7 @@ The following values are used in the *Required* field:
 
 *Note that semantic requirements were not defined in GTFS-realtime version 1.0, and therefore feeds with `gtfs_realtime_version` of `1` may not meet these requirements (see [the proposal for semantic requirements](https://github.com/google/transit/pull/64) for details).*
 
-#### Cardinality
+### Cardinality
 
 *Cardinality* represents the number of elements that may be provided for a particular field, with the following values:
 
@@ -27,14 +27,14 @@ The following values are used in the *Required* field:
 
 Always reference the *Required* and *Description* fields to see when a field is required, conditionally required, or optional. Please reference [`gtfs-realtime.proto`](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto) for Protocol Buffer cardinality.
 
-#### Protocol Buffer data types
+### Protocol Buffer data types
 
 The following protocol buffer data types are used to describe feed elements:
 
 *   **message**: Complex type
 *   **enum**: List of fixed values
 
-#### Experimental fields
+### Experimental fields
 
 Fields labeled as **experimental** are subject to change and not yet formally adopted into the specification. An **experimental** field may be formally adopted in the future.
 
@@ -82,9 +82,9 @@ Fields labeled as **experimental** are subject to change and not yet formally ad
             *   [ReplacementStop](#message-replacementstop)
             
 
-# Elements
+## Elements
 
-## _message_ FeedMessage
+### _message_ FeedMessage
 
 The contents of a feed message. Each message in the stream is obtained as a response to an appropriate HTTP GET request. A realtime feed is always defined with relation to an existing GTFS feed. All the entity ids are resolved with respect to the GTFS feed.
 
@@ -95,7 +95,7 @@ The contents of a feed message. Each message in the stream is obtained as a resp
 |**header** | [FeedHeader](#message-feedheader) | Required | One | Metadata about this feed and feed message. |
 |**entity** | [FeedEntity](#message-feedentity) | Conditionally required | Many | Contents of the feed.  If there is real-time information available for the transit system, this field must be provided.  If this field is empty, consumers should assume there is no real-time information available for the system. |
 
-## _message_ FeedHeader
+### _message_ FeedHeader
 
 Metadata about a feed, included in feed messages.
 
@@ -107,7 +107,7 @@ Metadata about a feed, included in feed messages.
 | **incrementality** | [Incrementality](#enum-incrementality) | Required | One |
 | **timestamp** | [uint64](https://protobuf.dev/programming-guides/proto2/#scalar) | Required | One | This timestamp identifies the moment when the content of this feed has been created (in server time). In POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). To avoid time skew between systems producing and consuming realtime information it is strongly advised to derive timestamp from a time server. It is completely acceptable to use Stratum 3 or even lower strata servers since time differences up to a couple of seconds are tolerable. |
 
-## _enum_ Incrementality
+### _enum_ Incrementality
 
 Determines whether the current fetch is incremental.
 
@@ -121,7 +121,7 @@ Determines whether the current fetch is incremental.
 | **FULL_DATASET** |
 | **DIFFERENTIAL** |
 
-## _message_ FeedEntity
+### _message_ FeedEntity
 
 A definition (or update) of an entity in the transit feed. If the entity is not being deleted, exactly one of 'trip_update', 'vehicle', 'alert' and 'shape' fields should be populated.
 
@@ -137,10 +137,10 @@ A definition (or update) of an entity in the transit feed. If the entity is not 
 | **shape** | [Shape](#message-shape) | Conditionally required | One | Data about the realtime added shapes, such as for a detour. At least one of the fields trip_update, vehicle, alert, or shape must be provided - all these fields cannot be empty. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
 
-## _message_ TripUpdate
+### _message_ TripUpdate
 
-Realtime update on the progress of a vehicle along a trip. Please also refer to the general discussion of the [trip updates entities](trip-updates.md).
-
+Realtime update on the progress of a vehicle along a trip. Please also refer to the general discussion of the [trip updates entities](../../documentation/Realtime/feed_entities/trip-updates.md).
+upd
 Depending on the value of ScheduleRelationship, a TripUpdate can specify:
 
 *   A trip that proceeds along the schedule.
@@ -168,7 +168,7 @@ Note that the update can describe a trip that has already completed.To this end,
 | **delay** | [int32](https://protobuf.dev/programming-guides/proto2/#scalar) | Optional | One | The current schedule deviation for the trip. Delay should only be specified when the prediction is given relative to some existing schedule in GTFS.<br>Delay (in seconds) can be positive (meaning that the vehicle is late) or negative (meaning that the vehicle is ahead of schedule). Delay of 0 means that the vehicle is exactly on time.<br>Delay information in StopTimeUpdates take precedent of trip-level delay information, such that trip-level delay is only propagated until the next stop along the trip with a StopTimeUpdate delay value specified.<br>Feed providers are strongly encouraged to provide a TripUpdate.timestamp value indicating when the delay value was last updated, in order to evaluate the freshness of the data.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.|
 | **trip_properties** | [TripProperties](#message-tripproperties) | Optional | One | Provides the updated properties for the trip. <br><br>**Caution:** this message is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-## _message_ StopTimeEvent
+### _message_ StopTimeEvent
 
 Timing information for a single predicted event (either arrival or departure). Timing consists of delay and/or estimated time, and uncertainty.
 
@@ -185,9 +185,9 @@ Uncertainty applies equally to both time and delay. The uncertainty roughly spec
 | **time** | [int64](https://protobuf.dev/programming-guides/proto2/#scalar) | Conditionally required | One | Event as absolute time. In POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). Either delay or time must be provided within a StopTimeEvent - both fields cannot be empty. |
 | **uncertainty** | [int32](https://protobuf.dev/programming-guides/proto2/#scalar) | Optional | One | If uncertainty is omitted, it is interpreted as unknown. To specify a completely certain prediction, set its uncertainty to 0. |
 
-## _message_ StopTimeUpdate
+### _message_ StopTimeUpdate
 
-Realtime update for arrival and/or departure events for a given stop on a trip. Please also refer to the general discussion of stop time updates in the [TripDescriptor](#message-tripdescriptor) and [trip updates entities](trip-updates.md) documentation.
+Realtime update for arrival and/or departure events for a given stop on a trip. Please also refer to the general discussion of stop time updates in the [TripDescriptor](#message-tripdescriptor) and [trip updates entities](../../documentation/Realtime/feed_entities/trip-updates.md) documentation.
 
 Updates can be supplied for both past and future events. The producer is allowed, although not required, to drop past events.
 The update is linked to a specific stop either through stop_sequence or stop_id, so one of these fields must necessarily be set.  If the same stop_id is visited more than once in a trip, then stop_sequence should be provided in all StopTimeUpdates for that stop_id on that trip.
@@ -204,7 +204,7 @@ The update is linked to a specific stop either through stop_sequence or stop_id,
 | **schedule_relationship** | [ScheduleRelationship](#enum-schedulerelationship) | Optional | One | The default relationship is SCHEDULED. |
 | **stop_time_properties** | [StopTimeProperties](#message-stoptimeproperties) | Optional | One | Realtime updates for certain properties defined within GTFS stop_times.txt <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-## _enum_ ScheduleRelationship
+### _enum_ ScheduleRelationship
 
 The relation between this StopTime and the static schedule.
 
@@ -217,7 +217,7 @@ The relation between this StopTime and the static schedule.
 | **NO_DATA** | No data is given for this stop. It indicates that there is no realtime timing information available. When set NO_DATA is propagated through subsequent stops so this is the recommended way of specifying from which stop you do not have realtime timing information. When NO_DATA is set neither arrival nor departure should be supplied. |
 | **UNSCHEDULED** | The vehicle is operating a frequency-based trip (GTFS frequencies.txt with exact_times = 0). This value should not be used for trips that are not defined in GTFS frequencies.txt, or trips in GTFS frequencies.txt with exact_times = 1. Trips containing `stop_time_updates` with `schedule_relationship: UNSCHEDULED` must also set the TripDescriptor `schedule_relationship: UNSCHEDULED` <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
 
-## _message_ StopTimeProperties
+### _message_ StopTimeProperties
 
 Realtime update for certain properties defined within GTFS stop_times.txt.
 
@@ -229,7 +229,7 @@ Realtime update for certain properties defined within GTFS stop_times.txt.
 |------------------|------------|----------------|-------------------|-------------------|
 | **assigned_stop_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optional | One | Supports real-time stop assignments. Refers to a `stop_id` defined in the GTFS `stops.txt`. <br> The new `assigned_stop_id` should not result in a significantly different trip experience for the end user than the `stop_id` defined in GTFS `stop_times.txt`. In other words, the end user should not view this new `stop_id` as an "unusual change" if the new stop was presented within an app without any additional context. For example, this field is intended to be used for platform assignments by using a `stop_id` that belongs to the same station as the stop originally defined in GTFS `stop_times.txt`. <br> To assign a stop without providing any real-time arrival or departure predictions, populate this field and set `StopTimeUpdate.schedule_relationship = NO_DATA`. <br> If this field is populated, `StopTimeUpdate.stop_sequence` must be populated and `StopTimeUpdate.stop_id` should not be populated. Stop assignments should be reflected in other GTFS-realtime fields as well (e.g., `VehiclePosition.stop_id`). <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-## _message_ TripProperties
+### _message_ TripProperties
 
 Defines updated properties of the trip
 
@@ -244,7 +244,7 @@ Defines updated properties of the trip
 | **start_time** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Conditionally required | One | Defines the departure start time of the trip when it’s duplicated. See definition of `stop_times.departure_time` in (CSV) GTFS. Scheduled arrival and departure times for the duplicated trip are calculated based on the offset between the original trip `departure_time` and this field. For example, if a GTFS trip has stop A with a `departure_time` of `10:00:00` and stop B with `departure_time` of `10:01:00`, and this field is populated with the value of `10:30:00`, stop B on the duplicated trip will have a scheduled `departure_time` of `10:31:00`. Real-time prediction `delay` values are applied to this calculated schedule time to determine the predicted time. For example, if a departure `delay` of `30` is provided for stop B, then the predicted departure time is `10:31:30`. Real-time prediction `time` values do not have any offset applied to them and indicate the predicted time as provided.  For example, if a departure `time` representing 10:31:30 is provided for stop B, then the predicted departure time is `10:31:30`.This field is required if `schedule_relationship` is `DUPLICATED`, otherwise this field must not be populated and will be ignored by consumers. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 | **shape_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optional | One | Specifies the shape of the vehicle travel path for this trip when it differs from the original. Refers to a shape defined in the (CSV) GTFS or a new shape entity in a real-time feed. See definition of `trips.shape_id` in (CSV) GTFS. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-## _message_ VehiclePosition
+### _message_ VehiclePosition
 
 Realtime positioning information for a given vehicle.
 
@@ -265,7 +265,7 @@ Realtime positioning information for a given vehicle.
 | **multi_carriage_details** | [CarriageDetails](#message-CarriageDetails) | Optional | Many | Details of the multiple carriages of this given vehicle. The first occurrence represents the first carriage of the vehicle, **given the current direction of travel**. The number of occurrences of the multi_carriage_details field represents the number of carriages of the vehicle. It also includes non boardable carriages, like engines, maintenance carriages, etc… as they provide valuable information to passengers about where to stand on a platform.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
 
-## _enum_ VehicleStopStatus
+### _enum_ VehicleStopStatus
 
 **Values**
 
@@ -275,7 +275,7 @@ Realtime positioning information for a given vehicle.
 | **STOPPED_AT** | The vehicle is standing at the stop. |
 | **IN_TRANSIT_TO** | The vehicle has departed the previous stop and is in transit. |
 
-## _enum_ CongestionLevel
+### _enum_ CongestionLevel
 
 Congestion level that is affecting this vehicle.
 
@@ -289,7 +289,7 @@ Congestion level that is affecting this vehicle.
 | **CONGESTION** |
 | **SEVERE_CONGESTION** |
 
-## _enum OccupancyStatus_
+### _enum OccupancyStatus_
 
 The state of passenger occupancy for the vehicle or carriage.
 
@@ -314,7 +314,7 @@ For describing passenger occupancy levels on a linear scale, see `occupancy_perc
 | _**NOT_BOARDABLE**_ | _The vehicle or carriage is not boardable and never accepts passengers. Useful for special vehicles or carriages (engine, maintenance carriage, etc…)._ |
 
 
-## _message_ CarriageDetails
+### _message_ CarriageDetails
 
 Carriage specific details, used for vehicles composed of several carriages.
 
@@ -330,7 +330,7 @@ Carriage specific details, used for vehicles composed of several carriages.
 | **occupancy_percentage** | [int32](https://protobuf.dev/programming-guides/proto2/#scalar) | Optional | One | Occupancy percentage for this given carriage, in this vehicle. Follows the same rules as "VehiclePosition.occupancy_percentage". Use -1 in case data is not available for this given carriage.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 | **carriage_sequence** | [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | Required | One | Identifies the order of this carriage with respect to the other carriages in the vehicle's list of CarriageStatus. The first carriage in the direction of travel must have a value of 1. The second value corresponds to the second carriage in the direction of travel and must have a value of 2, and so forth. For example, the first carriage in the direction of travel has a value of 1. If the second carriage in the direction of travel has a value of 3, consumers will discard data for all carriages (i.e., the multi_carriage_details field). Carriages without data must be represented with a valid carriage_sequence number and the fields without data should be omitted (alternately, those fields could also be included and set to the "no data" values). <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-## _message_ Alert
+### _message_ Alert
 
 An alert, indicating some sort of incident in the public transit network.
 
@@ -354,7 +354,7 @@ An alert, indicating some sort of incident in the public transit network.
 | **image_alternative_text** | [TranslatedString](#message-translatedstring) | Optional | One | Text describing the appearance of the linked image in the `image` field (e.g., in case the image can't be displayed or the user can't see the image for accessibility reasons). See the HTML [spec for alt image text](https://html.spec.whatwg.org/#alt). <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
 
-## _enum_ Cause
+### _enum_ Cause
 
 Cause of this alert.
 
@@ -375,7 +375,7 @@ Cause of this alert.
 | **POLICE_ACTIVITY** |
 | **MEDICAL_EMERGENCY** |
 
-## _enum_ Effect
+### _enum_ Effect
 
 The effect of this problem on the affected entity.
 
@@ -395,7 +395,7 @@ The effect of this problem on the affected entity.
 | **NO_EFFECT** |
 | **ACCESSIBILITY_ISSUE** |
 
-## _enum_ SeverityLevel
+### _enum_ SeverityLevel
 
 The severity of the alert.
 
@@ -410,7 +410,7 @@ The severity of the alert.
 | **WARNING** |
 | **SEVERE** |
 
-## _message_ TimeRange
+### _message_ TimeRange
 
 A time interval. The interval is considered active at time `t` if `t` is greater than or equal to the start time and less than the end time.
 
@@ -421,7 +421,7 @@ A time interval. The interval is considered active at time `t` if `t` is greater
 | **start** | [uint64](https://protobuf.dev/programming-guides/proto2/#scalar) | Conditionally required | One | Start time, in POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). If missing, the interval starts at minus infinity.  If a TimeRange is provided, either start or end must be provided - both fields cannot be empty. |
 | **end** | [uint64](https://protobuf.dev/programming-guides/proto2/#scalar) | Conditionally required | One | End time, in POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). If missing, the interval ends at plus infinity. If a TimeRange is provided, either start or end must be provided - both fields cannot be empty. |
 
-## _message_ Position
+### _message_ Position
 
 A geographic position of a vehicle.
 
@@ -435,7 +435,7 @@ A geographic position of a vehicle.
 | **odometer** | [double](https://protobuf.dev/programming-guides/proto2/#scalar) | Optional | One | Odometer value, in meters. |
 | **speed** | [float](https://protobuf.dev/programming-guides/proto2/#scalar) | Optional | One | Momentary speed measured by the vehicle, in meters per second. |
 
-## _message_ TripDescriptor
+### _message_ TripDescriptor
 
 A descriptor that identifies a single instance of a GTFS trip.
 
@@ -464,7 +464,7 @@ TripDescriptor.route_id cannot be used within an Alert EntitySelector to specify
 | **start_date** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Conditionally required | One | The start date of this trip instance in YYYYMMDD format. For scheduled trips (trips not defined in GTFS frequencies.txt), this field must be provided to disambiguate trips that are so late as to collide with a scheduled trip on a next day. For example, for a train that departs 8:00 and 20:00 every day, and is 12 hours late, there would be two distinct trips on the same time. This field can be provided but is not mandatory for schedules in which such collisions are impossible - for example, a service running on hourly schedule where a vehicle that is one hour late is not considered to be related to schedule anymore. This field is required for frequency-based trips defined in GTFS frequencies.txt. If trip_id is omitted, start_date must be provided. |
 | **schedule_relationship** | [ScheduleRelationship](#enum-schedulerelationship-1) | Optional | One | The relation between this trip and the static schedule. If TripDescriptor is provided in an Alert `EntitySelector`, the `schedule_relationship` field is ignored by consumers when identifying the matching trip instance.
 
-## _enum_ ScheduleRelationship
+### _enum_ ScheduleRelationship
 
 The relation between this trip and the static schedule. If a trip is done in accordance with temporary schedule, not reflected in GTFS, then it shouldn't be marked as SCHEDULED, but marked as ADDED.
 
@@ -479,7 +479,7 @@ The relation between this trip and the static schedule. If a trip is done in acc
 | **DUPLICATED** | A new trip that is the same as an existing scheduled trip except for service start date and time. Used with `TripUpdate.TripProperties.trip_id`, `TripUpdate.TripProperties.start_date`, and `TripUpdate.TripProperties.start_time` to copy an existing trip from static GTFS but start at a different service date and/or time. Duplicating a trip is allowed if the service related to the original trip in (CSV) GTFS (in `calendar.txt` or `calendar_dates.txt`) is operating within the next 30 days. The trip to be duplicated is identified via `TripUpdate.TripDescriptor.trip_id`. <br><br> This enumeration does not modify the existing trip referenced by `TripUpdate.TripDescriptor.trip_id` - if a producer wants to cancel the original trip, it must publish a separate `TripUpdate` with the value of CANCELED. Trips defined in GTFS `frequencies.txt` with `exact_times` that is empty or equal to `0` cannot be duplicated. The `VehiclePosition.TripDescriptor.trip_id` for the new trip must contain the matching value from `TripUpdate.TripProperties.trip_id` and `VehiclePosition.TripDescriptor.ScheduleRelationship` must also be set to `DUPLICATED`.  <br><br>*Existing producers and consumers that were using the ADDED enumeration to represent duplicated trips must follow the [migration guide](/gtfs-realtime/spec/en/examples/migration-duplicated.md) to transition to the DUPLICATED enumeration.* |
 | **DELETED** | A trip that existed in the schedule but was removed that must not be shown to users. <br><br> DELETED should be used instead of CANCELED to indicate that a transit provider would like to entirely remove information about the corresponding trip from consuming applications, so the trip is not shown as cancelled to riders, e.g. a trip that is entirely being replaced by another trip. This designation becomes particularly important if several trips are cancelled and replaced with substitute service. If consumers were to show explicit information about the cancellations it would distract from the more important real-time predictions.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-## _message_ VehicleDescriptor
+### _message_ VehicleDescriptor
 
 Identification information for the vehicle performing the trip.
 
@@ -492,11 +492,11 @@ Identification information for the vehicle performing the trip.
 | **license_plate** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optional | One | The license plate of the vehicle. |
 | **wheelchair_accessible** | [WheelchairAccessible](#enum-wheelchairaccessible) | Optional | One | If provided, can overwrite the *wheelchair_accessible* value from the static GTFS. |
 
-## _enum_ WheelchairAccessible
+### _enum_ WheelchairAccessible
 
 If a particuliar trip is accessible to wheelchair. When available, this value should overwrite the _wheelchair_accessible_ value from the static GTFS.
 
-#### Values
+##### Values
 
 | _**Value**_ | _**Comment**_ |
 |-------------|---------------|
@@ -505,7 +505,7 @@ If a particuliar trip is accessible to wheelchair. When available, this value sh
 | **WHEELCHAIR_ACCESSIBLE** | The trip is wheelchair accessible. This value will overwrite the value from the GTFS. |
 | **WHEELCHAIR_INACCESSIBLE** | The trip is **not** wheelchair accessible. This value will overwrite the value from the GTFS. |
 
-## _message_ EntitySelector
+### _message_ EntitySelector
 
 A selector for an entity in a GTFS feed. The values of the fields should correspond to the appropriate fields in the GTFS feed. At least one specifier must be given. If several are given, they should be interpreted as being joined by the logical `AND` operator.  Additionally, the combination of specifiers must match the corresponding information in the GTFS feed.  In other words, in order for an alert to apply to an entity in GTFS it must match all of the provided EntitySelector fields.  For example, an EntitySelector that includes the fields `route_id: "5"` and `route_type: "3"` applies only to the `route_id: "5"` bus - it does not apply to any other routes of `route_type: "3"`.  If a producer wants an alert to apply to `route_id: "5"` as well as `route_type: "3"`, it should provide two separate EntitySelectors, one referencing `route_id: "5"` and another referencing `route_type: "3"`.
 
@@ -522,7 +522,7 @@ At least one specifier must be given - all fields in an EntitySelector cannot be
 | **trip** | [TripDescriptor](#message-tripdescriptor) | Conditionally required | One | The trip instance from the GTFS that this selector refers to. This TripDescriptor must resolve to a single trip instance in the GTFS data (e.g., a producer cannot provide only a trip_id for exact_times=0 trips). If the ScheduleRelationship field is populated within this TripDescriptor it will be ignored by consumers when attempting to identify the GTFS trip.
 | **stop_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Conditionally required | One | The stop_id from the GTFS feed that this selector refers to.
 
-## _message_ TranslatedString
+### _message_ TranslatedString
 
 An internationalized message containing per-language versions of a snippet of text or a URL. One of the strings from a message will be picked up. The resolution proceeds as follows: If the UI language matches the language code of a translation, the first matching translation is picked. If a default UI language (e.g., English) matches the language code of a translation, the first matching translation is picked. If some translation has an unspecified language code, that translation is picked.
 
@@ -532,7 +532,7 @@ An internationalized message containing per-language versions of a snippet of te
 |------------------|------------|----------------|-------------------|-------------------|
 | **translation** | [Translation](#message-translation) | Required | Many | At least one translation must be provided. |
 
-## _message_ Translation
+### _message_ Translation
 
 A localized string mapped to a language.
 
@@ -541,7 +541,7 @@ A localized string mapped to a language.
 | **text** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Required | One | A UTF-8 string containing the message. |
 | **language** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Conditionally required | One | BCP-47 language code. Can be omitted if the language is unknown or if no internationalization is done at all for the feed. At most one translation is allowed to have an unspecified language tag - if there is more than one translation, the language must be provided. |
 
-## _message_ TranslatedImage
+### _message_ TranslatedImage
 
 An internationalized message containing per-language versions of an image. One of the images from a message will be picked up. The resolution proceeds as follows: If the UI language matches the language code of a translation, the first matching translation is picked. If a default UI language (e.g., English) matches the language code of a translation, the first matching translation is picked. If some translation has an unspecified language code, that translation is picked.
 
@@ -553,7 +553,7 @@ An internationalized message containing per-language versions of an image. One o
 |------------------|------------|----------------|-------------------|-------------------|
 | **localized_image** | [LocalizedImage](#message-localizedimage) | Required | Many | At least one localized image must be provided. |
 
-## _message_ LocalizedImage
+### _message_ LocalizedImage
 
 A localized image URL mapped to a language.
 
@@ -563,7 +563,7 @@ A localized image URL mapped to a language.
 | **media_type** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Required | One | IANA media type as to specify the type of image to be displayed. The type must start with "image/" |
 | **language** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Conditionally required | One | BCP-47 language code. Can be omitted if the language is unknown or if no internationalization is done at all for the feed. At most one translation is allowed to have an unspecified language tag - if there is more than one translation, the language must be provided. |
 
-## _message_ Shape
+### _message_ Shape
 
 Describes the physical path that a vehicle takes when the shape is not part of the (CSV) GTFS, such as for an ad-hoc detour. Shapes belong to Trips and consist of an encoded polyline for more efficient transmission.  Shapes do not need to intercept the location of Stops exactly, but all Stops on a trip should lie within a small distance of the shape for that trip, i.e. close to straight line segments connecting the shape points.
 
@@ -576,7 +576,7 @@ Describes the physical path that a vehicle takes when the shape is not part of t
 | **shape_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Required | One |  Identifier of the shape. Must be different than any `shape_id` defined in the (CSV) GTFS. <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 | **encoded_polyline** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Required | One | Encoded polyline representation of the shape. This polyline must contain at least two points. For more information about encoded polylines, see https://developers.google.com/maps/documentation/utilities/polylinealgorithm <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
-## _message_ Stop
+### _message_ Stop
 
 Represents a new Stop added to the feed dynamically. All fields are as described in the (CSV) GTFS specification. The location type of the new stop is `0` (routable stop). 
 
@@ -601,7 +601,7 @@ Represents a new Stop added to the feed dynamically. All fields are as described
 | **level_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optional | One |  See definition of [stops.level_id](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) in (CSV) GTFS. |
 | **platform_code** | [TranslatedString](#message-translatedstring) | Optional | One |  See definition of [stops.platform_code](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) in (CSV) GTFS. |
 
-## _enum_ WheelchairBoarding
+### _enum_ WheelchairBoarding
 
 **Values**
 
@@ -611,13 +611,13 @@ Represents a new Stop added to the feed dynamically. All fields are as described
 | **AVAILABLE** |  Some vehicles at this stop can be boarded by a rider in a wheelchair. |
 | **NOT_AVAILABLE** | Wheelchair boarding is not possible at this stop. |
 
-## _message_ TripModifications
+### _message_ TripModifications
 
 A `TripModifications` message identifies a list of similar trips which are all affected by particular modifications, such as a detour.
 
 <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
  
-[More about Trip Modifications...](trip-modifications.md)
+[More about Trip Modifications...](../../documentation/Realtime/feed_entities/trip-modifications.md)
 
 **Fields**
 
@@ -628,7 +628,7 @@ A `TripModifications` message identifies a list of similar trips which are all a
 | **service_dates** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Required | Many | Dates on which the modification occurs, in the YYYYMMDD format. A trip_id will only be modified if it runs on a given service date; the trip IS NOT required to run on all of the service dates. Producers SHOULD only transmit detours occurring within the next week. The dates provided should not be used as user-facing information, if a user-facing start and end date need to be provided, they can be provided in the linked service alert with `service_alert_id` |
 | **modifications** | [Modification](#message-modification) | Required | Many | A list of modifications to apply to the affected trips. |
 
-## _message_ Modification
+### _message_ Modification
 
 A `Modification` message describes changes to each affected trip starting at `start_stop_selector`.
 
@@ -654,7 +654,7 @@ _Propagated detour delays affect all stops following the end of a modification. 
 | **service_alert_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optional | One | An `id` value from the `FeedEntity` message that contains the `Alert` describing this Modification for user-facing communication. |
 | **last_modified_time** | [uint64](https://protobuf.dev/programming-guides/proto2/#scalar) | Optional | One | This timestamp identifies the moment when the modification has last been changed. In POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC). |
 
-## _message_ StopSelector
+### _message_ StopSelector
 
 Selector for a stop. Either by `stop_id` or `stop_sequence`. At least one of the two values must be provided. 
 
@@ -667,7 +667,7 @@ Selector for a stop. Either by `stop_id` or `stop_sequence`. At least one of the
 | **stop_sequence** | [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | Conditionally Required | One |  Must be the same as in stop_times.txt in the corresponding GTFS feed.  Either `stop_sequence` or `stop_id` must be provided within a `StopSelector` - both fields cannot be empty.  `stop_sequence` is required for trips that visit the same stop_id more than once (e.g., a loop) to disambiguate which stop the prediction is for.  |
 | **stop_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Conditionally Required | One | Must be the same as in stops.txt in the corresponding GTFS feed. Either `stop_sequence` or `stop_id` must be provided within a `StopSelector` - both fields cannot be empty. |
 
-## _message_ SelectedTrips
+### _message_ SelectedTrips
 
 List of selected trips with an associated shape.
 
@@ -680,7 +680,7 @@ List of selected trips with an associated shape.
 | **trip_ids** | [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | Many | One | A list of trip_id from the original (CSV) GTFS that are affected by the containing replacement. Need to contain at least one trip_id.  |
 | **shape_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Required | One | The ID of the new shape for the modified trips in this SelectedTrips. May refer to a new shape added using a GTFS-RT Shape message, or to an existing shape defined in the GTFS-Static feed’s shapes.txt. |
 
-## _message_ ReplacementStop
+### _message_ ReplacementStop
 
 Each `ReplacementStop` message defines a stop that will now be visited by the trip, and optionally specifies the estimated travel time to the stop. 
 
