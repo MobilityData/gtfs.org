@@ -118,7 +118,7 @@ nav:
     - Overview: documentation/overview.md
     - Schedule:
       - Reference: documentation/schedule/reference.md
-      - Best Practices: documentation/schedule/GTFS schedule best Practices.md
+      - Best Practices: documentation/schedule/schedule_best_practices.md
       - Data examples:
         - Attributions: documentation/schedule/examples/attributions.md
         - Continuous stops: documentation/schedule/examples/continuous-stops.md
@@ -137,7 +137,7 @@ nav:
         - Full revision history: documentation/schedule/change_history/revision_history.md
     - Realtime:
       - Reference: documentation/realtime/reference.md
-      - Best Practices: documentation/realtime/best practices.md
+      - Best Practices: documentation/realtime/realtime_best_practices.md
       - Feed Entities: 
           - Overview: documentation/realtime/feed_entities/overview.md
           - Trip Updates: documentation/realtime/feed_entities/trip-updates.md
