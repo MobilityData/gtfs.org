@@ -136,30 +136,30 @@ nav:
         - Recent additions: documentation/schedule/change_history/recent_additions.md
         - Full revision history: documentation/schedule/change_history/revision_history.md
     - Realtime:
-      - Reference: documentation/Realtime/reference.md
-      - Best Practices: documentation/Realtime/best practices.md
+      - Reference: documentation/realtime/reference.md
+      - Best Practices: documentation/realtime/best practices.md
       - Feed Entities: 
-          - Overview: documentation/Realtime/feed_entities/overview.md
-          - Trip Updates: documentation/Realtime/feed_entities/trip-updates.md
-          - Service Alerts: documentation/Realtime/feed_entities/service-alerts.md
-          - Vehicle Positions: documentation/Realtime/feed_entities/vehicle-positions.md
-          - Trip Modifications: documentation/Realtime/feed_entities/trip-modifications.md
-      - Protobuf: documentation/Realtime/proto.md
+          - Overview: documentation/realtime/feed_entities/overview.md
+          - Trip Updates: documentation/realtime/feed_entities/trip-updates.md
+          - Service Alerts: documentation/realtime/feed_entities/service-alerts.md
+          - Vehicle Positions: documentation/realtime/feed_entities/vehicle-positions.md
+          - Trip Modifications: documentation/realtime/feed_entities/trip-modifications.md
+      - Protobuf: documentation/realtime/proto.md
       - Language Bindings:
-        - Overview: documentation/Realtime/language-bindings/overview.md
-        - .NET: documentation/Realtime/language-bindings/dotnet.md
-        - Java: documentation/Realtime/language-bindings/java.md
-        - JavaScript/Node.js: documentation/Realtime/language-bindings/nodejs.md
-        - Python: documentation/Realtime/language-bindings/python.md
-        - Golang: documentation/Realtime/language-bindings/golang.md
-        - Ruby: documentation/Realtime/language-bindings/ruby.md
-        - PHP: documentation/Realtime/language-bindings/php.md
+        - Overview: documentation/realtime/language-bindings/overview.md
+        - .NET: documentation/realtime/language-bindings/dotnet.md
+        - Java: documentation/realtime/language-bindings/java.md
+        - JavaScript/Node.js: documentation/realtime/language-bindings/nodejs.md
+        - Python: documentation/realtime/language-bindings/python.md
+        - Golang: documentation/realtime/language-bindings/golang.md
+        - Ruby: documentation/realtime/language-bindings/ruby.md
+        - PHP: documentation/realtime/language-bindings/php.md
       - Data examples:
-        - Service alerts: documentation/Realtime/examples/service-alerts.md
-        - Trip updates: documentation/Realtime/examples/trip-updates.md
+        - Service alerts: documentation/realtime/examples/service-alerts.md
+        - Trip updates: documentation/realtime/examples/trip-updates.md
       - Change history:
-        - Recent Additions: documentation/Realtime/change_history/recent_additions.md
-        - Full revision history: documentation/Realtime/change_history/revision_history.md
+        - Recent Additions: documentation/realtime/change_history/recent_additions.md
+        - Full revision history: documentation/realtime/change_history/revision_history.md
   - Community:
     - Get involved: community/get_involved.md
     - Governance:
