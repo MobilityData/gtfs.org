@@ -123,7 +123,7 @@ Bike Allowed indicates if vehicles serving specific trips are able to accommodat
 ??? note "Sample Data"
 
     <p style="font-size:16px">
-    The following sample specifies that the vehicle used in trip `AWE1` can accommodate at least one bicycle on board, and the vehicle used in trip `AWE2` cannot.
+    The following sample specifies that the vehicle used in trip `AWE1` can accommodate at least one bicycle on board (`bikes_allowed=1`), and the vehicle used in trip `AWE2` cannot (`bikes_allowed=2`).
     </p>
     !!! note ""
         <p style="font-size:16px">
@@ -132,7 +132,7 @@ Bike Allowed indicates if vehicles serving specific trips are able to accommodat
 
         | route_id | service_id | trip_id | bikes_allowed |
         |----------|------------|---------|---------------|
-        | RA       | WE         | AWE1    |             2 |
+        | RA       | WE         | AWE1    |             1 |
         | RA       | WE         | AWE2    |             2 |
 
 ## Headsigns
