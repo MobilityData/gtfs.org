@@ -66,7 +66,7 @@ Contact us to add your GTFS-Flex implementation to this page
 ## Adoption tracker
 ### Current
 
-<iframe class="airtable-embed" src="https://airtable.com/embed/shrUPyCZWOWrvO2mX?backgroundColor=purple&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+<iframe class="airtable-embed" src="https://airtable.com/embed/appopXWyO2ne6THIw/shrUPyCZWOWrvO2mX?backgroundColor=purple" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
 <a class="button no-icon" href="https://airtable.com/shrcac1fXUrMxfoDV" target="_blank">Request a change</a><a class="button no-icon" href="https://airtable.com/shrgnVR5Su9tkHvUv" target="_blank">Add your organization (consumers)</a><a class="button no-icon" href="https://airtable.com/shrsU4idBtcLuRuwZ" target="_blank">Add your organization (producers)</a>
 
