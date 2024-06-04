@@ -157,6 +157,7 @@ nav:
       - Data examples:
         - Service alerts: documentation/realtime/examples/service-alerts.md
         - Trip updates: documentation/realtime/examples/trip-updates.md
+        - Migration duplicated: documentation/realtime/examples/migration-duplicated.md
       - Change history:
         - Recent Additions: documentation/realtime/change_history/recent_additions.md
         - Full revision history: documentation/realtime/change_history/revision_history.md
