@@ -7,7 +7,7 @@
 [![PHP version](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings.svg)](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings)
 
 Provides PHP classes generated from the
-[GTFS-realtime](https://developers.google.com/transit/gtfs-realtime/) Protocol
+[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) Protocol
 Buffer specification.  These classes will allow you to parse a binary Protocol
 Buffer GTFS-realtime data feed into PHP objects.
 
