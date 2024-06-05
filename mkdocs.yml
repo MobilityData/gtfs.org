@@ -122,10 +122,10 @@ nav:
       - Data examples:
         - Attributions: documentation/schedule/examples/attributions.md
         - Continuous stops: documentation/schedule/examples/continuous-stops.md
+        - Demand responsive services: documentation/schedule/examples/flex.md
         - Fares v1: documentation/schedule/examples/fares-v1.md
         - Fares v2: documentation/schedule/examples/fares-v2.md
         - Feed information: documentation/schedule/examples/feed-info.md
-        - Flexible Services: documentation/schedule/examples/flex.md
         - Frequencies: documentation/schedule/examples/frequencies.md
         - Pathways: documentation/schedule/examples/pathways.md
         - Routes, Stops & Trips: documentation/schedule/examples/routes-stops-trips.md
