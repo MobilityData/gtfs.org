@@ -91,13 +91,13 @@ Make sure to check out the Resources section for an extensive selection of tips,
 
 There are a number of mailing lists that can be good resources when you have questions about public transit data, software, formats like GTFS and GTFS-realtime, and other issues:
 
-* [GTFS Changes](https://groups.google.com/group/gtfs-changes): discussion of proposal for extending the GTFS specification, as outlined in the [GTFS Changes document](https://github.com/google/transit/blob/master/gtfs/CHANGES.md).
-* [GTFS Realtime](https://groups.google.com/group/gtfs-realtime): discussion of the [GTFS-realtime specification](https://github.com/google/transit/tree/master/gtfs-realtime).
-* [transit-developers](https://groups.google.com/group/transit-developers): general transit developer discussions. Many transit agencies also have their own developer mailing lists specific to the agency. For example:
+* [GTFS Changes](https://groups.google.com/group/gtfs-changes): Follow this group to get announcement on votes on the GTFS Schedule Format as outlined in the [GTFS Schedule Specification Amendment Process](../community/governance/gtfs_schedule_amendment_process). 
+* [GTFS Realtime](https://groups.google.com/group/gtfs-realtime): This group is the official forum for discussing GTFS Realtime, asking questions, and proposing changes as outlined in the [GTFS Realtime Specification Amendment Process](../community/governance/gtfs_realtime_amendment_process).
+* [transit-developers](https://groups.google.com/group/transit-developers): general transit developer discussions.
+  * Many transit agencies also have their own developer mailing lists specific to the agency. For example:
     * [NYC MTA](https://groups.google.com/group/mtadeveloperresources)
     * [Portland, OR](https://groups.google.com/group/transit-developers-pdx)
-    * [BART - San Francisco, CA](https://groups.google.com/group/bart-developers)
-    * [MassDOT](https://groups.google.com/group/massdotdevelopers)
+    * [MBTA](https://groups.google.com/group/massdotdevelopers)
     * [Atlanta, GA region](https://groups.google.com/forum/#!forum/atl-transit-developers)
     * [511 San Francisco Bay Area Developer Resources](https://groups.google.com/forum/#!forum/511sfbaydeveloperresources)
 - [OpenTripPlanner](https://github.com/opentripplanner/OpenTripPlanner) Community

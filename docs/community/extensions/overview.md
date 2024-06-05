@@ -19,7 +19,7 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
     
     !!! info "Making an extension official in the specification" 
 
-        Extensions may become active proposals and subsequently [merged](../../../documentation/schedule/recent additions/#recently-merged-proposals) into the official specification via the [Specification Amendment Process](../../community/spec_amendment_process/gtfs_schedule_amendment_process.md).
+        Extensions may become active proposals and subsequently [merged](/documentation/schedule/change_history/recent_additions/) into the official specification via the [Specification Amendment Process](/community/governance/gtfs_schedule_amendment_process/).
 
     !!! note "Contributing to this list"
 
@@ -149,7 +149,7 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
     
     !!! info "Making an extension official in the specification" 
         
-        Extensions may become active proposals and subsequently [merged](../../../documentation/realtime/recent additions/#recently-merged-proposals) into the official specification via the [Specification Amendment Process](../../community/spec_amendment_process/gtfs_realtime_amendment_process.md).
+        Extensions may become active proposals and subsequently [merged](/documentation/realtime/change_history/recent_additions/) into the official specification via the [Specification Amendment Process](/community/governance/gtfs_realtime_amendment_process/).
     
     !!! note "Contributing to this list"
 
