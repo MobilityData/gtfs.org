@@ -46,7 +46,7 @@ Text-to-speech is another way to increase the accessibility of your GTFS. Accura
 
 While `tts_stop_name` is currently the only text-to-speech field officially adopted within the GTFS spec, other fields have been discussed and may be added. These include `tts_agency_name`, `tts_route_short_name`, `tts_route_long_name`, `tts_trip_headsign`, `tts_trip_short_name`, and `tts_stop_headsign`.
 
-Riders will need to use an app that supports text-to-speech functionality, in order to benefit from this information. Some apps, such as [NaviLensGo]((https://www.navilens.com/en/)), are designed specifically to assist riders with vision impairments to navigate stations and find the right vehicle. 
+Riders will need to use an app that supports text-to-speech functionality, in order to benefit from this information. Some apps, such as [NaviLensGo](https://www.navilens.com/en/), are designed specifically to assist riders with vision impairments to navigate stations and find the right vehicle. 
  
 ## Adding Physical Accessibility Information about a Station
 
@@ -54,13 +54,13 @@ GTFS-Pathways is a component of GTFS that represents transit station details. It
 
 GTFS-Pathways adds the files `pathways.txt` and `levels.txt` as well as adding the `location_type` field in `stops.txt` to link together the information described in `pathways.txt`. 
 
-<img class="center" src="../../../assets/pathways-visual.jpg">
+<img class="center" src="../../../../assets/pathways-visual.jpg">
 
 ### Describe the location of station entrances and exits
 
 With GTFS, it is possible to accurately describe stations using information on entrances and station interiors. This example describes sections of Waterfront Station in downtown Vancouver. The station is part of the city’s Skytrain network and is served by the Canada Line, the Expo Line, the SeaBus, and the West Coast Express. Three street level entrances allow riders to enter and exit the station. The rest of the station is underground, with a concourse level for fare validation and a lower level with platforms. 
 
-First, the location of the station and its entrances are defined in [stops.txt](../../reference/#pathwaystxt):
+First, the location of the station and its entrances are defined in [stops.txt](../../reference/#stopstxt):
 
 [**stops.txt**](../../reference/#stopstxt)
 
@@ -91,7 +91,7 @@ stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boar
 96,Waterfront Station Granville Escalator Landing,49.285183,-123.114222,3,12034,
 ```
 
-<img class="center" src="../../../assets/pathways.png" width=700px>
+<img class="center" src="../../../../assets/pathways.png" width=700px>
 
 Next, the file [pathways.txt](../../reference/#pathwaystxt) is used to link nodes to create pathways, where the first record links the nodes pertaining to the top and bottom of the stairs. The `pathway_mode` is set to `2` to indicate stairs, and the last field describes that passengers can go both ways (up and down) on the stairs. 
 
@@ -111,7 +111,7 @@ The elevator at Granville street brings passengers to a pathway at the concourse
 
 Additionally, as shown in the figure below, there is an underground walkway that connects the bottom of the stairs, escalator, and elevator at Granville street to the main station building. Therefore, two additional nodes are created to define the walkway sections.
 
-<img class="center" src="../../../assets/pathways-2.png" width=500px>
+<img class="center" src="../../../../assets/pathways-2.png" width=500px>
 
 [**stops.txt**](../../reference/#stopstxt)
 
@@ -123,7 +123,7 @@ stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boar
 99,Elevator_concourse,49.285257,-123.114163,3,12034,
 ```
 
-<img class="center" src="../../../assets/pathways-3.png" width=500px>
+<img class="center" src="../../../../assets/pathways-3.png" width=500px>
 
 Lastly, the nodes are connected together to define the underground pathway as shown in the file [pathways.txt](../../reference/#pathwaystxt) below:
 

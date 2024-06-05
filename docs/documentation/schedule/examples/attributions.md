@@ -24,5 +24,3 @@ In order to attribute Rejseplanen as a data producer, the file [attributions.txt
 attribution_id,organization_name,attribution_url,is_producer,is_operator,is_authority
 rp,Rejseplanen,https://www.rejseplanen.dk,1,,
 ```
-
-<sup>[Example source](http://www.rejseplanen.info/labs/GTFS.zip)</sup>

@@ -236,7 +236,7 @@ route_id | service_id | trip_id | share_id
 Using [locations.geojson](../../reference/#locationsgeojson) to define zones for deviated route. Typically, deviations are limited to keep the service on schedule. Therefore, as the vehicle travels, the deviation area between each fixed stop may vary accordingly. The area for route deviation may look like the image below:
 
 <div class="flex-photos">
-    <img src="../../../assets/deviated_route_zones.png" alt="deviated route zones">
+    <img src="../../../../assets/deviated_route_zones.png" alt="deviated route zones">
 </div>
 
 ### Define stop times

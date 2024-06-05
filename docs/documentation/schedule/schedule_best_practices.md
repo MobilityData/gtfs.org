@@ -21,7 +21,7 @@ Practices are organized into four primary sections:
     * At any time, the published GTFS dataset should be valid for at least the next 7 days, and ideally for as long as the operator is confident that the schedule will continue to be operated.
     * If possible, the GTFS dataset should cover at least the next 30 days of service.
 * Remove old services (expired calendars) from the feed.
-* If a service modification will go into effect in 7 days or fewer, express this service change through a [GTFS-realtime](https://developers.google.com/transit/gtfs-realtime/) feed (service advisories or trip updates) rather than static GTFS dataset.
+* If a service modification will go into effect in 7 days or fewer, express this service change through a [GTFS-realtime](../../realtime/reference) feed (service advisories or trip updates) rather than static GTFS dataset.
 * The web-server hosting GTFS data should be configured to correctly report the file modification date (see [HTTP/1.1 - Request for Comments 2616](https://tools.ietf.org/html/rfc2616#section-14.29), under Section 14.29).
 
 ## Practice Recommendations Organized by File
@@ -219,7 +219,7 @@ Lasso routes combine aspects of a loop route and directional route.
 
 | Field Name | Recommendation |
 | --- | --- |
-| `trips.trip_id` | The full extent of a “vehicle round-trip” (see illustration [above](#lasso-route-fig)) consists of travel from A to B to B and back to A. An entire vehicle round-trip may be expressed by: <li>A __single__ `trip_id` value/record in `trips.txt`</li><li>__Multiple__ `trip_id` values/records in `trips.txt`, with continuous travel indicated by `block_id`.</li> |
+| `trips.trip_id` | The full extent of a “vehicle round-trip” (see illustration [above](#lasso-routes)) consists of travel from A to B to B and back to A. An entire vehicle round-trip may be expressed by: <li>A __single__ `trip_id` value/record in `trips.txt`</li><li>__Multiple__ `trip_id` values/records in `trips.txt`, with continuous travel indicated by `block_id`.</li> |
 | `stop_times.stop_headsign` | The stops along the A-B section will be passed through in both directions. `stop_headsign` facilitates distinguishing travel direction. Therefore, providing `stop_headsign` is recommended for these trips.example_table: <table class="example"><thead>  <tr><th>Examples:</th></tr></thead><tbody><tr><td>"A via B"</td></tr><tr><td>"A"</td></tr></tbody></table><table class="example"><thead><tr><th>Chicago Transit Authority's <a href="http://www.transitchicago.com/purpleline/">Purple Line</a></th></tr></thead><tbody><tr><td>"Southbound to Loop"</td></tr><tr><td>"Northbound via Loop"</td></tr><tr><td>"Northbound to Linden"</td></tr></tbody></table><table class="example"><thead><tr><th>Edmonton Transit Service Bus Lines, here <a href="http://webdocs.edmonton.ca/transit/route_schedules_and_maps/future/RT039.pdf">the 39</a></th></tr></thead><tbody><tr><td>"Rutherford"</td></tr><tr><td>"Century Park"</td></tr></tbody></table>
 | `trip.trip_headsign` | The trip headsign should be a global description of the trip, like displayed in the schedules. Could be “Linden to Linden via Loop” (Chicago example), or “A to A via B” (generic example). |
 
@@ -260,7 +260,7 @@ Specification reference amendments are subject to a higher bar of scrutiny and c
 
 ### How to check for conformance with these Best Practices?
 
-The Canonical GTFS Schedule Validator checks for compliance against these Best Practices. You can find more about this validation tool on the [validate page](https://gtfs.org/schedule/validate/).
+The Canonical GTFS Schedule Validator checks for compliance against these Best Practices. You can find more about this validation tool on the [validate page](../../../getting_started/validate).
 
 ### I represent a transit agency. What steps can I take so that our software service providers and vendors follow these Best Practices?
 

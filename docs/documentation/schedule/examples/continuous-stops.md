@@ -15,8 +15,6 @@ route_id,route_short_name,route_long_name,route_type,continuous_pickup,continuou
 55,55,Bellows Falls / Springfield Shuttle,3,0,0
 ```
 
-<sup>[Example source](https://crtransit.org/bus-schedules/)</sup>
-
 <hr>
  
 ## Pickup and drop off on a section of the route
