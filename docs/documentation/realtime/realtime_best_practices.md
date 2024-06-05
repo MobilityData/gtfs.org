@@ -51,18 +51,18 @@ General guidelines for trip cancellations:
 
 | Field Name | Recommendation |
 | --- | --- |
-| `trip` | Refer to [message TripDescriptor](#TripDescriptor). |
-|  | If separate `VehiclePosition` and `TripUpdate` feeds are provided, [TripDescriptor](#TripDescriptor) and [VehicleDescriptor](#VehicleDescriptor) ID values pairing should match between the two feeds.<br><br>For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then the corresponding `TripUpdate` entity should also have `vehicle_id:A` and `trip_id:4`. If any `TripUpdate` entity has `trip_id:4` and any `vehicle_id` other than 4, this is an error. |
-| `vehicle` | Refer to [message VehicleDescriptor](#VehicleDescriptor). |
-|  | If separate `VehiclePosition` and `TripUpdate` feeds are provided, [TripDescriptor](#TripDescriptor) and [VehicleDescriptor](#VehicleDescriptor) ID values pairing should match between the two feeds.<br><br>For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then the corresponding `TripUpdate` entity should also have `vehicle_id:A` and `trip_id:4`. If any `TripUpdate` entity has `trip_id:4` and any `vehicle_id` other than 4, this is an error. |
+| `trip` | Refer to [message TripDescriptor](#tripdescriptor). |
+|  | If separate `VehiclePosition` and `TripUpdate` feeds are provided, [TripDescriptor](#tripdescriptor) and [VehicleDescriptor](#vehicledescriptor) ID values pairing should match between the two feeds.<br><br>For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then the corresponding `TripUpdate` entity should also have `vehicle_id:A` and `trip_id:4`. If any `TripUpdate` entity has `trip_id:4` and any `vehicle_id` other than 4, this is an error. |
+| `vehicle` | Refer to [message VehicleDescriptor](#vehicledescriptor). |
+|  | If separate `VehiclePosition` and `TripUpdate` feeds are provided, [TripDescriptor](#tripdescriptor) and [VehicleDescriptor](#vehicledescriptor) ID values pairing should match between the two feeds.<br><br>For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then the corresponding `TripUpdate` entity should also have `vehicle_id:A` and `trip_id:4`. If any `TripUpdate` entity has `trip_id:4` and any `vehicle_id` other than 4, this is an error. |
 | `stop_time_update` | `stop_time_updates` for a given `trip_id` should be strictly ordered by increasing `stop_sequence` and no `stop_sequence` should be repeated. |
-|  | While the trip is in progress, all `TripUpdates` should include at least one `stop_time_update` with a predicted arrival or departure time in the future. Note that the [GTFS Realtime spec](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/trip-updates.md#stop-time-updates) says that producers should not drop a past `StopTimeUpdate` if it refers to a stop with a scheduled arrival time in the future for the given trip (i.e. the vehicle has passed the stop ahead of schedule), as otherwise it will be concluded that there is no update for this stop. |
+|  | While the trip is in progress, all `TripUpdates` should include at least one `stop_time_update` with a predicted arrival or departure time in the future. Note that the [GTFS Realtime spec](../feed_entities/trip-updates/#stoptimeupdate) says that producers should not drop a past `StopTimeUpdate` if it refers to a stop with a scheduled arrival time in the future for the given trip (i.e. the vehicle has passed the stop ahead of schedule), as otherwise it will be concluded that there is no update for this stop. |
 | `timestamp` | Should reflect the time this prediction for this trip was updated. |
 | `delay` | `TripUpdate.delay` should represent schedule deviation, i.e., the observed past value for how ahead/behind schedule the vehicle is. Predictions for future stops should be provided through `StopTimeEvent.delay` or `StopTimeEvent.time`. |
 
 ### TripDescriptor
 
-If separate `VehiclePosition` and `TripUpdate` feeds are provided, [TripDescriptor](#TripDescriptor) and [VehicleDescriptor](#VehicleDescriptor) ID values pairing should match between the two feeds.
+If separate `VehiclePosition` and `TripUpdate` feeds are provided, [TripDescriptor](#tripdescriptor) and [VehicleDescriptor](#vehicledescriptor) ID values pairing should match between the two feeds.
 
 For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then the corresponding `TripUpdate` entity should also have `vehicle_id:A` and `trip_id:4`.
 
@@ -73,7 +73,7 @@ For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then
 
 ### VehicleDescriptor
 
-If separate `VehiclePosition` and `TripUpdate` feeds are provided, [TripDescriptor](#TripDescriptor) and [VehicleDescriptor](#VehicleDescriptor) ID values pairing should match between the two feeds.
+If separate `VehiclePosition` and `TripUpdate` feeds are provided, [TripDescriptor](#tripdescriptor) and [VehicleDescriptor](#vehicledescriptor) ID values pairing should match between the two feeds.
 
 For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then the corresponding `TripUpdate` entity should also have `vehicle_id:A` and `trip_id:4`.
 
@@ -87,15 +87,15 @@ For example, a `VehiclePosition` entity has `vehicle_id:A` and `trip_id:4`, then
 | --- | --- |
 | `stop_sequence` | Provide `stop_sequence` whenever possible, as it unambiguously resolves to a GTFS stop time in `stop_times.txt` unlike `stop_id`, which can occur more than once in a trip (e.g., loop route). |
 | `arrival` | Arrival times between sequential stops should increase - they should not be the same or decrease. | 
-|         | Arrival `time` (specified in [StopTimeEvent](#StopTimeEvent)) should be before the departure `time` for the same stop if a layover or dwell time is expected - otherwise, arrival `time` should be be the same as departure `time`. |
+|         | Arrival `time` (specified in [StopTimeEvent](#stoptimeevent)) should be before the departure `time` for the same stop if a layover or dwell time is expected - otherwise, arrival `time` should be be the same as departure `time`. |
 | `departure` | Departure times between sequential stops should increase - they should not be the same or decrease. |
-|           | Departure `time` (specified in [StopTimeEvent](#StopTimeEvent)) should be the same as the arrival `time` for the same stop if no layover or dwell time is expected - otherwise, departure `time` should be after arrival `time` . |
+|           | Departure `time` (specified in [StopTimeEvent](#stoptimeevent)) should be the same as the arrival `time` for the same stop if no layover or dwell time is expected - otherwise, departure `time` should be after arrival `time` . |
 
 ### StopTimeEvent
 
 | Field Name | Recommendation |
 | --- | --- |
-| `delay` | If only `delay` is provided in a `stop_time_update` `arrival` or `departure` (and not `time`), then the GTFS [`stop_times.txt`](https://gtfs.org/reference/static#stopstxt) should contain `arrival_times` and/or `departure_times` for these corresponding stops. A `delay` value in the realtime feed is meaningless unless you have a clock time to add it to in the GTFS `stop_times.txt` file. |
+| `delay` | If only `delay` is provided in a `stop_time_update` `arrival` or `departure` (and not `time`), then the GTFS [`stop_times.txt`](../../schedule/reference/#stop_timestxt) should contain `arrival_times` and/or `departure_times` for these corresponding stops. A `delay` value in the realtime feed is meaningless unless you have a clock time to add it to in the GTFS `stop_times.txt` file. |
 
 ### VehiclePosition
 
@@ -128,11 +128,11 @@ General guidelines for alerts:
 
 ### Frequency-based trips
 
-A frequency-based trip does not follow a fixed schedule but attempts to maintain predetermined headways. These trips are denoted in [GTFS frequency.txt](https://gtfs.org/reference/static/#frequenciestxt) by setting `exact_times=0` or omitting the `exact_times` field (note that `exact_times=1` trips are *NOT* frequency-based trips - `frequencies.txt` with `exact_times=1` is simply used as a convenience method for storing schedule-based trips in a more compact manner). There are several best practices to keep in mind when constructing GTFS Realtime feeds for frequency-based trips.
+A frequency-based trip does not follow a fixed schedule but attempts to maintain predetermined headways. These trips are denoted in [GTFS frequency.txt](../../schedule/reference/#frequenciestxt) by setting `exact_times=0` or omitting the `exact_times` field (note that `exact_times=1` trips are *NOT* frequency-based trips - `frequencies.txt` with `exact_times=1` is simply used as a convenience method for storing schedule-based trips in a more compact manner). There are several best practices to keep in mind when constructing GTFS Realtime feeds for frequency-based trips.
 
-* In [TripUpdate.StopTimeUpdate](#StopTimeUpdate), the [StopTimeEvent](#StopTimeEvent) for `arrival` and `departure` should not contain `delay` because frequency-based trips do not follow a fixed schedule. Instead, `time` should be provided to indicate arrival/departure predictions.
+* In [TripUpdate.StopTimeUpdate](#stoptimeupdate), the [StopTimeEvent](#stoptimeevent) for `arrival` and `departure` should not contain `delay` because frequency-based trips do not follow a fixed schedule. Instead, `time` should be provided to indicate arrival/departure predictions.
 
-* As required by the spec, when describing `trip` in [TripUpdate](#TripUpdate) or [VehiclePosition](#VehiclePosition) by using [TripDescriptor](#TripDescriptor), all of `trip_id`, `start_time`, and `start_date` must be provided. Additionally, `schedule_relationship` should be `UNSCHEDULED`.
+* As required by the spec, when describing `trip` in [TripUpdate](#tripupdate) or [VehiclePosition](#vehicleposition) by using [TripDescriptor](#tripdescriptor), all of `trip_id`, `start_time`, and `start_date` must be provided. Additionally, `schedule_relationship` should be `UNSCHEDULED`.
  (e.g., re-enforcement trips).
 
 

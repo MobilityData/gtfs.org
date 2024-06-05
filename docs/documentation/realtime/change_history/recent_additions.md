@@ -22,7 +22,7 @@ To contribute to GTFS Realtime, read the [GTFS Realtime Amendment Process](../..
 
 ## Recently Adopted Proposals &ensp;<img src="../../../../assets/pr-merged.svg" style="height:1em;"/>
 
-Recently merged proposals that are now features of the [official GTFS Realtime reference](../../reference). See the complete [Revision History](/documentation/Realtime/change_history/revision_history) for more.
+Recently merged proposals that are now features of the [official GTFS Realtime reference](../../reference). See the complete [Revision History](../revision_history) for more.
 
 
 <div class="row">

@@ -1,6 +1,6 @@
 # Service Alerts
 
-Service alerts allow you to provide updates whenever there is disruption on the network. Delays and cancellations of individual trips should usually be communicated using [Trip updates](trip-updates.md).
+Service alerts allow you to provide updates whenever there is disruption on the network. Delays and cancellations of individual trips should usually be communicated using [Trip updates](../trip-updates).
 
 You have the option to provide the following:
 
@@ -53,7 +53,7 @@ What effect does this problem have on the specified entity? You may specify one 
 
 *   No service
 *   Reduced service
-*   Significant delays (insignificant delays should only be provided through [Trip updates](trip-updates.md)).
+*   Significant delays (insignificant delays should only be provided through [Trip updates](../trip-updates)).
 *   Detour
 *   Additional service
 *   Modified service: Operations are different from what the rider would normally expect.  An example is an alert that reminds riders of an upcoming holiday schedule that is different from normal service on that day of the week.

@@ -52,7 +52,7 @@ When `travel_time_to_stop` is specified, the `arrival_time` is calculated from a
 
 The `departure_time` always equals the `arrival_time`.
 
-The optional fields of [`stop_times.txt`](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stop_timestxt) in the (CSV) GTFS specification are all set to their default values.
+The optional fields of [`stop_times.txt`](../../../schedule/reference/#stop_timestxt) in the (CSV) GTFS specification are all set to their default values.
 
 ![](/../assets/first_stop_reference.png)
 
