@@ -10,7 +10,7 @@ For the major part, it has been adopted in GTFS in Match 2024. Some examples can
 
 🔮 MobilityData expects GTFS-Flex to open the door to deeper standardization of demand responsive transportation, including expansion into transactional and real-time components using GTFS-OnDemand. We are preparing a suggested strategy to best handle the growing number of modes of transportation and complexity of concepts in this area.
 
-<a class="button no-icon" href="https://github.com/MobilityData/gtfs-flex" target="_blank">See the full proposal</a>
+[See the full proposal](https://github.com/MobilityData/gtfs-flex){ .md-button }
 
 ## Latest Pull Request
 This extension describes services that operate according to a schedule, but also include one or more flexible features, such as:
@@ -42,9 +42,9 @@ Here is a [data example](https://docs.google.com/spreadsheets/d/1w5EHuHfxvejqApJ
 
 Visit the Pull Request page to read the full post and contribute to the conversation. 
 
-<a class="button no-icon" href="https://github.com/google/transit/pull/388" target="_blank">See the Pull Request</a>
+[See the Pull Request](https://github.com/google/transit/pull/388){ .md-button }
 
-<a class="button no-icon" href=https://share.mobilitydata.org/slack>Join #gtfs-flex on Slack</a><a class="button no-icon" href=https://groups.google.com/g/gtfs-changes>Join GTFS-Changes Google Group</a>
+[Join #gtfs-flex on Slack](https://share.mobilitydata.org/slack){ .md-button }
 
 ## Early Implementations
 
@@ -66,14 +66,9 @@ Contact us to add your GTFS-Flex implementation to this page
 
 <iframe class="airtable-embed" src="https://airtable.com/embed/shrUPyCZWOWrvO2mX?backgroundColor=purple&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-<a class="button no-icon" href="https://airtable.com/shrcac1fXUrMxfoDV" target="_blank">Request a change</a><a class="button no-icon" href="https://airtable.com/shrgnVR5Su9tkHvUv" target="_blank">Add your organization (consumers)</a><a class="button no-icon" href="https://airtable.com/shrsU4idBtcLuRuwZ" target="_blank">Add your organization (producers)</a>
-
-### Ideas parking lot
-
-This area is intended as a community "parking lot". Share something you would like to add to the next increment of GTFS-Flex.  
-<iframe class="airtable-embed" src="https://airtable.com/embed/shrMOvBrQCCyWPcAS?backgroundColor=purple" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
-
-<a class="button no-icon" href="https://airtable.com/shrr4FVw46i1vsOz7" target="_blank">Add your future plans</a>
+[Request a change](https://airtable.com/shrcac1fXUrMxfoDV){ .md-button }
+[Add your organization (consumers)](https://airtable.com/shrgnVR5Su9tkHvUv){ .md-button }
+[Add your organization (producers)](https://airtable.com/shrsU4idBtcLuRuwZ){ .md-button }
 
 ## History
 

@@ -1,6 +1,6 @@
 # GTFS-Fares v2
 
-Fares v2 is a GTFS Schedule extension project that aims to address the limitations of [Fares v1](../../../documentation/schedule/examples/fares-v1).
+Fares v2 is a GTFS Schedule extension project that aims to address the limitations of [Fares v1](../../../documentation/schedule/examples/fares-v1/).
 
 The main concepts that Fares v2 plans to represent are
 
@@ -15,13 +15,12 @@ You can see [examples here](../../../documentation/schedule/examples/fares-v2) t
 
 Producers may implement Fares v2 in the same dataset with Fares v1, since there is no technical conflict between the two. Consumers can choose which version to use independent of the other. With adoption and sufficient endorsement of Fares v2, Fares v1 may be deprecated in the future.
 
-<a class="button no-icon" href="https://share.mobilitydata.org/gtfs-fares-v2" target="_blank">See the full proposal</a>
+[See the full proposal](https://share.mobilitydata.org/gtfs-fares-v2){ .md-button }
 
 ## Participate in the conversation
 You can stay up to date and join the discussions around Fares v2 by joining our Slack Chanel and the recurring working group meetings.
 
-<a class="button no-icon" href=https://share.mobilitydata.org/slack>Join #gtfs-fares on Slack</a><a class="button no-icon" href=https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057>See the meeting schedule</a><a class="button no-icon" href=https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit>See meeting notes</a>
-
+[Join #gtfs-fares on Slack](https://share.mobilitydata.org/slack){ .md-button } [See the meeting schedule](https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057){ .md-button } [See meeting notes](https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit){ .md-button } 
 
 ## First Adopters
 
@@ -35,12 +34,12 @@ You can stay up to date and join the discussions around Fares v2 by joining our 
 
 <iframe class="airtable-embed" src="https://airtable.com/embed/shrZzYzPYao7iExlW?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-<a class="button no-icon" href="https://airtable.com/shr8aT0K9bpncmy0V" target="_blank">Request a change</a><a class="button no-icon" href="https://airtable.com/shr5B6Pl1r9KH9qMX" target="_blank">Add your organization (consumers)</a><a class="button no-icon" href="https://airtable.com/shrn0Afa3TPNkOAEh" target="_blank">Add your organization (producers)</a>
+[Request a change](https://airtable.com/shr8aT0K9bpncmy0V){ .md-button } [Add your organization (consumers)](https://airtable.com/shr5B6Pl1r9KH9qMX){ .md-button } [Add your organization (producers)](https://airtable.com/shrn0Afa3TPNkOAEh){ .md-button }
 
 ### Future
 <iframe class="airtable-embed" src="https://airtable.com/embed/shrUrgZTO1noUF66R?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-<a class="button no-icon" href="https://airtable.com/shrvnI40zuFXmDsQI" target="_blank">Add your future plans</a>
+[Add your future plans](https://airtable.com/shrvnI40zuFXmDsQI){ .md-button }
 
 ## Fares v2 Features Under Discussion
 
