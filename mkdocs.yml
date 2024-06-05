@@ -553,7 +553,7 @@ nav:
       - Fares v1: schedule/examples/fares-v1.md
       - Fares v2: schedule/examples/fares-v2.md
       - Frequencies: schedule/examples/frequencies.md
-      - Pathways and physical accessibility: schedule/examples/.md
+      - Pathways and physical accessibility: schedule/examples/pathways.md
       - Transfers: schedule/examples/transfers.md
       - Translations: schedule/examples/translations.md
       - Feed information: schedule/examples/feed-info.md
