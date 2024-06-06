@@ -153,7 +153,7 @@ Trips brings together Routes and Service dates to create journeys that can be ta
 ## Stop Times
 
 Stop times are used to represent the individual stop arrival and departure times for each trip, allowing riders to know precisely at what time the bus, train or ferry is arriving and departing a specific location. The `stop_times.txt` file is typically the largest in a GTFS feed. 
-Certain services operate on regular a frequency (e. g. a subway line that runs every 5min) rather than having specific arrival and departure times. This can be modeled using [Frequency-based sercices](/getting_started/features/base_add-ons/#frequency-based_services), and this can be modeled in conjunction with `stop_times.txt`.
+Certain services operate on regular a frequency (e. g. a subway line that runs every 5min) rather than having specific arrival and departure times. This can be modeled using [Frequency-based services](/getting_started/features/base_add-ons/#frequency-based-service), and this can be modeled in conjunction with `stop_times.txt`.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|

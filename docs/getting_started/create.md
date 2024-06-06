@@ -5,21 +5,21 @@ All GTFS feeds start with a dataset in the GTFS Reference format, which is a ser
 
 <img class="center" width="560" height="100%" src="../../../assets/create_001.png">
 
-Each file consists of a list of multiple records (lines of data) with several information fields. For example, each line listed in [routes.txt](/documentation/schedule/reference/#routestxt) represents a public transport route and its fields describe multiple elements of that route, like its name, description, operating agency, etc.
+Each file consists of a list of multiple records (lines of data) with several information fields. For example, each line listed in [routes.txt](../../documentation/schedule/reference/#routestxt) represents a public transport route and its fields describe multiple elements of that route, like its name, description, operating agency, etc.
 
 <img class="center" width="560" height="100%" src="../../../assets/create_002.png">
 
-The base files for a GTFS dataset can be described as follows: A GTFS schedule dataset has one or more routes ([routes.txt](/documentation/schedule/reference/#routestxt)), each route has one or more trips ([trips.txt](/documentation/schedule/reference/#tripstxt)), each trip visits a series of stops ([stops.txt](/documentation/schedule/reference/#stopstxt)) at specified times ([stop_times.txt](/documentation/schedule/reference/#stop_timestxt)). Trips and stop times only contain time of day information; the calendar is used to determine on which days a given trip runs ([calendar.txt](/documentation/schedule/reference/#calendartxt) and [calendar_dates.txt](/documentation/schedule/reference/#calendar_datestxt)). Additionally, multiple agencies ([agency.txt](/documentation/schedule/reference/#agencytxt)) can operate multiple routes. These files are linked to each other with fields that are cross-referenced between them.
+The base files for a GTFS dataset can be described as follows: A GTFS schedule dataset has one or more routes ([routes.txt](../../documentation/schedule/reference/#routestxt)), each route has one or more trips ([trips.txt](../../documentation/schedule/reference/#tripstxt)), each trip visits a series of stops ([stops.txt](../../documentation/schedule/reference/#stopstxt)) at specified times ([stop_times.txt](../../documentation/schedule/reference/#stop_timestxt)). Trips and stop times only contain time of day information; the calendar is used to determine on which days a given trip runs ([calendar.txt](../../documentation/schedule/reference/#calendartxt) and [calendar_dates.txt](../../documentation/schedule/reference/#calendar_datestxt)). Additionally, multiple agencies ([agency.txt](../../documentation/schedule/reference/#agencytxt)) can operate multiple routes. These files are linked to each other with fields that are cross-referenced between them.
 
 <img class="center" width="560" height="100%" src="../../../assets/create_003.png">
 
 Once these files have been set up to create a basic GTFS dataset,  additional (optional) files can be added to enable other functionalities or specific needs between transit agencies and vendors. Some examples of these files include: 
 
-- [shapes.txt](/documentation/schedule/reference/#shapestxt) which allows to graphically represent a trip’s path, 
-- [pathways.txt](/documentation/schedule/reference/#pathwaystxt) which provides information that makes it possible to generate directions to help users navigate stations, 
-- [frequencies.txt](/documentation/schedule/reference/#frequenciestxt) which provides an alternative way to specify stop times. 
+- [shapes.txt](../../documentation/schedule/reference/#shapestxt) which allows to graphically represent a trip’s path, 
+- [pathways.txt](../../documentation/schedule/reference/#pathwaystxt) which provides information that makes it possible to generate directions to help users navigate stations, 
+- [frequencies.txt](../../documentation/schedule/reference/#frequenciestxt) which provides an alternative way to specify stop times. 
 
-For more information on all the GTFS functionalities that can be enabled, see the [“What can GTFS do?”](/getting_started/features/overview/) section. 
+For more information on all the GTFS functionalities that can be enabled, see the [“What can GTFS do?”](../features/overview/) section. 
 
 A GTFS Schedule dataset can be complemented with realtime information like vehicle positions and service updates. To do this, a GTFS Realtime feed needs to be created separately from the existing GTFS Schedule dataset. 
 
@@ -31,7 +31,7 @@ Because GTFS Realtime allows to present the actual status of a fleet, the feed n
 
 If you are an agency looking to produce your first GTFS feed, the first thing you need to do is read the existing documentation.
 
-Begin by exploring the capabilities of GTFS in the ["What can GTFS do?" section](/getting_started/features/overview) and determining the different features of your transit service that you want to represent using the GTFS format. For a more in-depth exploration, the official reference documentation for [GTFS Schedule](/documentation/schedule/reference) and [GTFS Realtime](/documentation/realtime/reference) offers detailed guidance on modeling these features and ensuring compliance.
+Begin by exploring the capabilities of GTFS in the ["What can GTFS do?"](../features/overview) section and determining the different features of your transit service that you want to represent using the GTFS format. For a more in-depth exploration, the official reference documentation for [GTFS Schedule](../../documentation/schedule/reference) and [GTFS Realtime](../../documentation/realtime/reference) offers detailed guidance on modeling these features and ensuring compliance.
 
 Next, collect all the required data from your system. This includes information for all stops, routes, timetables, fares, etc., as many of these details will be the inputs that will populate the GTFS dataset.
 

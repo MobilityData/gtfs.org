@@ -6,12 +6,14 @@ Flexible services, also called demand-responsibe services, are services that do 
 Continuous Stops is used when riders can be picked up and/or dropped off between scheduled stops. 
 This can be specified either in `routes.txt`, indicating that riders can be picked up or dropped off at any point along the vehicle’s travel path for every trip of the route, or in `stop_times.txt` for a specific section of a route.  
 
-**Prerequisites**: [Base features](/getting_started/features/base)
-
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
 |[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)|`continuous_pickup`, `continuous_drop_off` |
 |[routes.txt](/documentation/schedule/reference/#routestxt)|`continuous_pickup`, `continuous_drop_off` |
+
+**Prerequisites**: 
+
+- [Base features](/getting_started/features/base)
 
 ??? note "Sample Data"
 

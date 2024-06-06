@@ -20,7 +20,7 @@ Many agencies hire a vendor to create and manage their GTFS for them. Some vendo
 
 Official GTFS Validators assess the quality of a dataset against the official specification, ensuring a common understanding within the industry of what constitutes a high-quality dataset. 
 
-The free and open-source [Canonical GTFS Schedule validator](https://gtfs-validator.mobilitydata.org/)[^1] maintained by [MobilityData](https://mobilitydata.org/) ensures your GTFS data is compliant with the official [GTFS Schedule Reference](/documentation/schedule/reference/) and [Best Practices](/documentation/schedule/best-practices/). It provides an easy-to-use report that can be shared with other parties and comprehensive documentation.
+The free and open-source [Canonical GTFS Schedule validator](https://gtfs-validator.mobilitydata.org/)[^1] maintained by [MobilityData](https://mobilitydata.org/) ensures your GTFS data is compliant with the official [GTFS Schedule Reference](../../documentation/schedule/reference/) and [Best Practices](../../documentation/schedule/schedule_best_practices). It provides an easy-to-use report that can be shared with other parties and comprehensive documentation.
 
 <div class="usage">
     <div class="usage-list">
@@ -38,8 +38,8 @@ The free and open-source [Canonical GTFS Schedule validator](https://gtfs-valida
     </div>
 </div>
 
-Similarly, using the free and open-source canonical [GTFS Realtime Validator](https://github.com/MobilityData/gtfs-realtime-validator) ensures your GTFS data is compliant with the official [GTFS Realtime Reference](/documentation/Realtime/reference/) and [Best Practices](/documentation/Realtime/best practices/).
+Similarly, using the free and open-source canonical [GTFS Realtime Validator](https://github.com/MobilityData/gtfs-realtime-validator) ensures your GTFS data is compliant with the official [GTFS Realtime Reference](../../documentation/realtime/reference/) and [Best Practices](../../documentation/realtime/realtime_best_practices).
 
-For information on creating high quality data, see the [California Transit Data Guidelines](https://dot.ca.gov/cal-itp/california-transit-data-guidelines), the [GTFS Schedule Best Practices](https://gtfs.org/schedule/best-practices/) and the [GTFS Realtime Best Practices](https://gtfs.org/realtime/best-practices/).
+For information on creating high quality data, see the [California Transit Data Guidelines](https://dot.ca.gov/cal-itp/california-transit-data-guidelines), the [GTFS Schedule Best Practices](../../documentation/schedule/schedule_best_practices) and the [GTFS Realtime Best Practices](../../documentation/realtime/realtime_best_practices).
 
 [^1]: To see more instructions on how to use this tool in your data pipeline and contribute to this project, please visit the [GitHub repository](https://github.com/MobilityData/gtfs-validator).

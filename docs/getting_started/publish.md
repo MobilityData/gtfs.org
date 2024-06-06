@@ -14,15 +14,15 @@ When your agency’s GTFS data is publicly shared, it can be utilized by a varie
 
 ### Feed Aggregators
 
-Sharing your GTFS data also allows it to be indexed by GTFS feed aggregation platforms, which can include state- or region-level directories of GTFS feeds, as well as international feed aggregators like the [Mobility Database](https://database.mobilitydata.org/) and [Transitland](https://www.transit.land/) (see more feed aggregators [here](/resources/data). Being indexed on a feed aggregator increases your agency’s visibility and allows developers, researchers, and other interested parties to easily access your agency’s data for a variety of purposes, including the development of new applications.
+Sharing your GTFS data also allows it to be indexed by GTFS feed aggregation platforms, which can include state- or region-level directories of GTFS feeds, as well as international feed aggregators like the [Mobility Database](https://database.mobilitydata.org/) and [Transitland](https://www.transit.land/) (see more feed aggregators [here](../../resources/data)). Being indexed on a feed aggregator increases your agency’s visibility and allows developers, researchers, and other interested parties to easily access your agency’s data for a variety of purposes, including the development of new applications.
 
 ### Integration with GIS, Analysis, and other Platforms and Tools
 
 GTFS data can also be imported and used on a variety of geospatial analysis platforms. Geographic Information Systems (GIS) programs like Esri’s ArcGIS, as well as the open-source QGIS have their own plugins and extensions that can import and visualize GTFS stop and route data.
 
-- Esri has a [wide variety of tools and plugins](https://esri.github.io/public-transit-tools/) that use GTFS data, including visualizing schedule data
+- Esri has a [wide variety of tools and plugins](https://github.com/Esri/public-transit-tools) that use GTFS data, including visualizing schedule data
 - In QGIS, [GTFS-GO](https://plugins.qgis.org/plugins/GTFS-GO-master/) and [GTFS Loader](https://plugins.qgis.org/plugins/GTFS_Loader/) allow you to visualize routes + stops within the platform  
-- [Additional analysis tools](https://gtfs.org/resources/gtfs/#gtfs-analysis-tools)
+- [Additional analysis tools](../../resources/agency-tools)
 
 Other platforms allow you to visualize and analyze GTFS data in unique ways:
 
@@ -66,4 +66,3 @@ Your GTFS is a zip file containing several interconnected text files (.txt). In 
 If multiple agencies share the same stop with different names or codes, applications like Google Maps might need to pick one. To avoid confusion, coordinate with other agencies to agree on the names and codes. This minimizes conflicts between different GTFS datasets.
 
 In the event you have multiple GTFS datasets available to you —usually the result of one being produced for public applications like Transit App, and another being produced for internal operational CAD/AVL systems— you may need to decide which one will be the published GTFS. It is recommended that you choose to promote the feed that contains the most rider-facing information. Whenever possible, seek to have your GTFS datasets match (same ids for things like stops and trips) so that internal ones do not conflict with public ones, and integrating other feeds like GTFS-RT is possible.
-

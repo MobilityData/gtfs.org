@@ -12,7 +12,7 @@ Stops Wheelchair Accessibility allows to indicate whether wheelchair boarding is
 **Prerequisites**:
 
 - [Base features](/getting_started/features/base)
-- [Location Types](/getting_started/features/pathways/#location-types) when defining accessibility information for station locations such as entrances/exits or boarding areas.
+- [Location Types](/getting_started/features/base_add-ons/#location-types) when defining accessibility information for station locations such as entrances/exits or boarding areas.
 
 ??? note "Sample Data"
 

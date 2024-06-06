@@ -95,7 +95,7 @@ Route-Based Fares is used to assign different fares for specific groups of route
 **Prerequisites**:
 
 - [Base features](/getting_started/features/base)
-- [Fare Products feature](/getting_started/eatures/fares/#fare-products)
+- [Fare Products feature](/getting_started/features/fares/#fare-products)
 
 ??? note "Sample Data"
 
@@ -173,7 +173,7 @@ Time-based Fares is used to assign fares for specific time-of-day or day-of-week
 **Prerequisites**:
 
 - [Base features](/getting_started/features/base)
-- [Fare Products feature](/getting_started/eatures/fares/#fare-products)
+- [Fare Products feature](/getting_started/features/fares/#fare-products)
 
 ??? note "Sample Data"
 
@@ -215,7 +215,7 @@ Zone-Based Fares is used to represent zone-based systems where a specific fare a
 **Prerequisites**:
 
 - [Base features](/getting_started/features/base)
-- [Fare Products feature](/getting_started/eatures/fares/#fare-products)
+- [Fare Products feature](/getting_started/features/fares/#fare-products)
 
 ??? note "Sample Data"
 
@@ -265,7 +265,7 @@ Fares Transfers is used to define rules applicable when transferring between leg
 **Prerequisites**:
 
 - [Base features](/getting_started/features/base)
-- [Fare Products feature](/getting_started/eatures/fares/#fare-products)
+- [Fare Products feature](/getting_started/features/fares/#fare-products)
 
 ??? note "Sample Data"
 
@@ -334,6 +334,12 @@ Fares v1 is a legacy alternative to other Fares features described above. It all
         <p style="font-size:16px">
         <a href="/documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
         </p>
+
+        | stop_id | stop_name | stop_lat  | stop_lon   | zone_id         |
+        |---------|-----------|-----------|------------|-----------------|
+        | A       | stopA     | 43.670049 | -79.385389 | subway_stations |
+        | B       | stopB     | 43.671049 | -79.386789 | subway_stations |
+
 
         | stop_id | stop_name | stop_lat  | stop_lon   | zone_id         |
         |---------|-----------|-----------|------------|-----------------|
