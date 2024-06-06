@@ -16,7 +16,7 @@ jobs:
     - name: Save branch name in env var
       run: |
         CURRENT_BRANCH=$(git branch --show-current)
-        "BRANCH_TO_USE=$CURRENT_BRANCH" >> $GITHUB_ENV
+        echo "BRANCH_TO_USE=$CURRENT_BRANCH" >> $GITHUB_ENV
         echo "Current branch: $CURRENT_BRANCH"
       
     - name: Load secrets from 1Password
