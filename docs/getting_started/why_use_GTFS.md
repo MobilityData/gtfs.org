@@ -14,11 +14,11 @@ GTFS thrives on community collaboration, ensuring its continuous evolution and r
 
 - **Open Collaboration:** GTFS operates as an open data standard, allowing anyone to contribute changes or improvements.
 - **Guided Evolution:** The specification evolution is overseen by an independent nonprofit organization called [MobilityData](https://mobilitydata.org/), and its changes are guided by the principles of ease of use, backwards-compatibility, and pragmatic change. 
-- **Community-driven Development:** The GTFS specification undergoes continuous refinement through input and review from the community, facilitated on platforms like [GitHub](https://github.com/) and [Slack](https://share.mobilitydata.org/slack).
+- **Community-driven Development:** The GTFS specification undergoes continuous refinement through input and review from the community, facilitated on platforms like [GitHub](https://github.com/google/transit) and [Slack](https://share.mobilitydata.org/slack).
 
 [:material-chat-processing: Get Involved](../../community/get_involved){ .md-button }
 [:material-map-plus: Active Projects](../../community/get_involved/#active-projects){ .md-button }
-[:material-book-heart: Guiding Principles](../../community/spec_amendment_process/gtfs_schedule_amendment_process/#guiding-principles){ .md-button }
+[:material-book-heart: Guiding Principles](../../community/governance/gtfs_schedule_amendment_process/#guiding-principles){ .md-button }
 
 ## Simple and Easy to Use
 

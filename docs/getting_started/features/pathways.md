@@ -12,7 +12,7 @@ At its foundational level, Pathways offers basic functionality to connect key ar
 **Prerequisites**:
 
 - [Base features](/getting_started/features/base)
-- [Location Types](/getting_started/features/base-add-ons/#location-types)
+- [Location Types](/getting_started/features/base_add-ons/#location-types)
 
 ??? note "Sample Data"
 
@@ -87,7 +87,7 @@ Levels can be used to list all different levels within a station, providing user
 **Prerequisites**:
 
 - [Base features](/getting_started/features/base)
-- [Location Types](/getting_started/features/pathways/#location-types)
+- [Location Types](/getting_started/features/base_add-ons/#location-types)
 
 ??? note "Sample Data"
 

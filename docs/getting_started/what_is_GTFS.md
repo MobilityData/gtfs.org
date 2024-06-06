@@ -12,7 +12,7 @@ Today, GTFS is the go-to [Open Standard](https://www.interoperablemobility.org/d
 
 ## Support for static and dynamic data
 
-GTFS consists of two main parts: [GTFS Schedule](/documentation/schedule/reference) and [GTFS Realtime](/documentation/realtime/reference).
+GTFS consists of two main parts: [GTFS Schedule](../../documentation/schedule/reference) and [GTFS Realtime](../../documentation/realtime/reference).
 
 <img class="center" width="560" height="100%" src="../../../assets/what_is_gtfs_002.png">
 
@@ -20,11 +20,10 @@ GTFS Schedule contains information about routes, schedules, fares, and geographi
 
 GTFS Realtime contains trip updates, vehicle positions, and service alerts, using the [Protocol Buffers](https://developers.google.com/protocol-buffers/) format. This part of GTFS works in conjunction with GTFS Schedule in order to inform passengers of service disruptions and updated arrival times.
 
-The GTFS Schedule and GTFS Realtime reference documentation is available in the [Technical Documentation section](/documentation/overview).
+The GTFS Schedule and GTFS Realtime reference documentation is available in the [Technical Documentation section](../../documentation/overview).
 
 <iframe class="center" width="560" height="315" src="https://www.youtube-nocookie.com/embed/SDz2460AjNo?si=wFsaN4_Hr3ypxWdp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 <a href="https://www.flaticon.com/authors/freepik" title="Icons by Freepik">Icons created by Freepik - Flaticon</a>
 
 [^1]: In addition to text files, the [GeoJSON](https://geojson.org/) format is now also supported in GTFS to represent certain elements of Demand-responsive services.
-
