@@ -1,26 +1,27 @@
 .md-main {
-    flex-grow: 0
+    display: none;
 }
 
-.md-main__inner {
-    display: flex;
-    height: 100%;
-}
-
+/** TODO: url is temp **/
 .tx-container {
     padding-top: .0rem;
-    background-image: url('./test.jpg');
+    background-image: url('https://s3-alpha-sig.figma.com/img/7d76/2bb4/612569ac72985a5348b79e1e1d298a8f?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=LKfiXXaQoi43MhSm~0ZPZIj4cZRzR7RhWgX9kHJl0htY~RW0qHQyAsred3U5EUf~9IyKQYEDqxPmE~oXV5CoGHbPw3zzAVLPeIQZAI7Kzh0ACeMBCisi1SiDE9UN-Bti~t6KNnKNZBrd2Ux~MwEjXAQ2IyVYsFSntCsA-f0rdWtxXSvxImyRHCXLZOUIc-h8I84g3KwdeBC1e4TVqx-Er~m2SJEf8D9nf-78zOx9-aM7mPBJdyYRO6nP-03IiwimRZkqejT3~DmM5AZTyhlqMPsPv-q5pgEtc7xCaKztixp6v~ChZfKB7Dj7E~4kv9Zt~w7I2q0RvGNhkWIs8YJWIA__');
     margin-top: -96px;
     height: calc(100vh);
     background-size: cover;
     position: relative;
 }
 
+.hero-dark-gradient {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.25);
+}
+
 .hero-content {
     position: absolute;
-    bottom: 0;
+    bottom: 80px;
     width: 100%;
-    background: linear-gradient(0deg, rgba(27, 28, 30, 1) 0%, rgba(27, 28, 30, 0.3533788515406162) 67%, rgba(27, 28, 30, 0) 100%);
     height: 20rem;
     display: flex;
     align-items: flex-end;
@@ -28,15 +29,19 @@
 }
 
 .tx-hero {
-    margin: 32px 2.8rem;
     color: var(--md-default-bg-color);
-    justify-content: center
+    justify-content: center;
+    width: 61rem;
+    margin: auto;
+    padding-left: .6rem;
+    padding-bottom: 156px;
 }
 
 .tx-hero h1 {
     margin-bottom: 1rem;
     color: currentColor;
-    font-weight: 700
+    font-weight: 700; 
+    background-color: var(--md-primary-fg-color);
 }
 
 .tx-hero__content {
@@ -50,39 +55,14 @@
     order: 1;
 }
 
-.tx-hero .md-button {
-    margin-top: .5rem;
-    margin-right: .5rem;
-    color: var(--md-default-bg-color);
-}
+.tx-hero .hero-text {
+    color: var(--md-light-text);
+    font-size: 48px;
+    line-height: 60px;
+    max-width: 735px;
+    font-weight: 700;
+    text-shadow: 0 4px 4px var(--md-accent-bg-color--dark-opacity);
 
-.tx-hero .md-button--primary {
-    background-color: var(--md-primary-fg-color);
-    color: var(--md-primary-bg-color);
-    border-color: var(--md-primary-bg-color);
-}
-
-.tx-hero .md-button:focus,
-.tx-hero .md-button:hover {
-    background-color: var(--md-secondary-fg-color);
-    color: var(--md-default-bg-color);
-    border-color: var(--md-default-bg-color);
-}
-
-.mdx-hero__more {
-    bottom: 0;
-    display: block;
-    left: 50%;
-    margin-left: -.6rem;
-    pointer-events: none;
-    position: absolute;
-    text-align: center;
-}
-
-.mdx-hero__more svg {
-    fill: #fff;
-    height: 1.2rem;
-    width: 1.2rem;
 }
 
 .feature-item h2 svg {
@@ -96,13 +76,22 @@
     padding: 5.2rem 1rem;
 }
 
+.content-container header h1 {
+    width: 100%;
+    text-align: center;
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 47px;
+    margin-bottom: 60px;
+}
+
 .content-container.dark {
     color: white;
-    background-color: #1B1C1E;
+    background: linear-gradient(180deg, var(--md-primary-bg-color) 0%, #2A2A2A 100%);
 }
 
 .content-container.dark header h1 {
-    color: white;
+    color: var(--md-primary-fg-color);
 }
 
 .content-container.custom-background {
@@ -118,18 +107,49 @@
     max-width: 61rem;
 }
 
+/** why choose gtfs section start **/
 .mdx-list {
     display: flex;
     flex-flow: row wrap;
-    gap: 1.6rem;
+    gap: 30px;
     padding: 0;
 }
 
 .mdx-list-item {
     display: flex;
     flex: 1 0 48%;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
+/****/
+.mdx-list-item .icon-holder {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin-right: 30px;
+}
+
+.mdx-list-item .text-content {
+    width: calc(100% - 84px - 30px);
+}
+
+/** TODO: make this into a generic h3 style **/
+.mdx-list-item .text-content h3 {
+    margin: 0;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-size: 26px;
+    color: #333333; /** TODO: change into var **/
+}
+
+/** TODO: make this into a generic p style **/
+.mdx-list-item .content {
+    font-weight: 400;
+    line-height: 28px;
+    font-size: 20px;
+}
+/**/
 
 .mdx-list-item .icon-header {
     width: 100%;
@@ -153,8 +173,17 @@
 }
 
 .mdx-list-item .icon-header svg {
-    fill: white;
+    fill: yellow;
 }
+
+.learn-more-button-container {
+    margin-top: 60px;
+    width: 100%;
+    text-align: center;
+}
+
+/** why choose gtfs section end **/
+
 
 .top-hr {
     margin-top: 42px;
@@ -249,54 +278,4 @@
         background-color: var(--md-highlight-color);
         border-radius: 3px;
     }
-}
-
-.hr {
-    border-bottom: 1px solid #eee;
-    width: 100%;
-    margin: 20px 0;
-}
-
-.text-center {
-    text-align: center;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 15px;
-    font-family: 'Lato', sans-serif;
-    font-size: 23px;
-    font-weight: 300;
-    padding-bottom: 10px;
-}
-
-.logos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: row wrap;
-    margin: 0 auto;
-}
-
-.logos img {
-    flex: 1 1 auto;
-    padding: 25px;
-    max-height: 130px;
-    vertical-align: middle;
-}
-
-.hr-logos {
-    margin-top: 0;
-    margin-bottom: 30px;
-}
-
-.md-footer-meta__inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 1.0rem;
-}
-
-.md-footer-social {
-    padding-top: 20px;
 }
