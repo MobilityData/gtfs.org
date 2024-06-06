@@ -3,16 +3,22 @@ name: Update dev website on server
 # Controls when the action will run. Workflow runs when manually triggered using the UI or API.
 on:
   workflow_dispatch:
-    inputs:
-      branch:
-        type: string
-        description: "Specify the branch to push to"
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
+
+    - name: Checkout code
+      uses: actions/checkout@v4.1.6
+
+    - name: Save branch name in env var
+      run: |
+        CURRENT_BRANCH=$(git branch --show-current)
+        echo "::set-env name=CURRENT_BRANCH::$CURRENT_BRANCH"
+        "BRANCH_TO_USE=$CURRENT_BRANCH" >> $GITHUB_ENV
+        echo "Current branch: $CURRENT_BRANCH"
       
     - name: Load secrets from 1Password
       id: onepw_secrets
@@ -29,7 +35,7 @@ jobs:
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@master
       env:
-        BRANCH_TO_USE: ${{ github.event.inputs.branch }}
+        BRANCH_TO_USE: ${{ env.BRANCH_TO_USE }}
       with:
         host: ${{ env.ACTION_GXFS_WEBSERVER_SSH_HOST }}
         username: ${{ env.ACTION_GXFS_WEBSERVER_SSH_USER }}
