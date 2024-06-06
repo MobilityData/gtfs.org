@@ -16,7 +16,7 @@ jobs:
     - name: Save branch name in env var
       run: |
         CURRENT_BRANCH=$(git branch --show-current)
-        echo "BRANCH_TO_USE=$CURRENT_BRANCH" >> $GITHUB_ENV
+        "BRANCH_TO_USE=$CURRENT_BRANCH" >> $GITHUB_ENV
         echo "Current branch: $CURRENT_BRANCH"
       
     - name: Load secrets from 1Password
@@ -33,13 +33,10 @@ jobs:
           
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@master
-      env:
-        BRANCH_TO_USE: ${{ env.BRANCH_TO_USE }}
       with:
         host: ${{ env.ACTION_GXFS_WEBSERVER_SSH_HOST }}
         username: ${{ env.ACTION_GXFS_WEBSERVER_SSH_USER }}
         key: ${{ env.ACTION_GXFS_WEBSERVER_SSH_PRIVATE_KEY }}
         port: ${{ env.ACTION_GXFS_WEBSERVER_SSH_PORT }}
-        envs: BRANCH_TO_USE
         script: |
-          ./dev_gtfs_org_website_updater.sh
+          ./dev_gtfs_org_website_updater.sh ${{ env.BRANCH_TO_USE }}
