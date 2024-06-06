@@ -3,43 +3,36 @@
 {% extends "main.html" %}
 {% block tabs %}
 {{ super() }}
-<style>
-
-</style>
 
 <head>
     <link rel="stylesheet" href="./home.css">
     <link rel="stylesheet" href="./spotlight.css">
-    <link rel="stylesheet" href="./users.css">
+    <link rel="stylesheet" href="./socials.css">
 </head>
 
 <!-- Main site Entry button descriptions -->
 <section class="tx-container">
+    <div class="hero-dark-gradient"></div>
     <div class="hero-content md-typeset">
         <div class="tx-hero">
             <div>
-                <h1>GTFS</h1>
-                <p style="max-width: 500px;">The General Transit Feed Specification (GTFS) is an open-source, community-driven standard that fuels transit information for rider-facing apps.</p>
+                <p class="hero-text">
+                    GTFS is an open-source, community-driven standard that fuels transit information for rider-facing apps.
+                </p>
                 <a href="getting_started/what_is_GTFS/" title="{{ page.next_page.title | striptags }}"
-                    class="md-button md-button--primary">
+                    class="md-button md-button--primary" style="margin-right: 40px;">
                     Get started
                 </a>
-                <a href="documentation/overview/" title="{{ lang.t('source.link.title') }}" class="md-button">
+                <a href="documentation/overview/" title="{{ lang.t('source.link.title') }}" class="md-button md-button--primary">
                     Documentation
                 </a>
             </div>
-            <div class="mdx-hero__more">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M11 4h2v12l5.5-5.5 1.42 1.42L12 19.84l-7.92-7.92L5.5 10.5 11 16V4Z"></path>
-                </svg>
-            </div>
-
         </div>
     </div>
 </section>
 
 
-<section class="content-container dark">
+<section class="content-container">
     <div class="content-inner">
         <header class="md-typeset">
             <h1>Why choose GTFS?</h1>
@@ -47,348 +40,313 @@
 
         <ul class="mdx-list md-typeset">
             <li class="mdx-list-item">
-                <div class="icon-header">
-                    <div class="icon-holder">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            width="16.4429" height="25.6714">
-                            <g>
-                                <rect height="25.6714" opacity="0" width="16.4429" x="0" y="0" />
-                                <path
-                                    d="M2.80762 22.3267L13.2812 22.3267C14.7583 22.3267 15.7104 21.3013 15.7104 19.7388L15.7104 13.0859C15.7104 10.8521 15.4541 8.60596 15.0879 7.08008C14.7095 5.40771 13.6108 4.1626 11.8774 3.97949C11.4258 3.94287 9.8999 3.80859 8.04443 3.80859C6.17676 3.80859 4.66309 3.94287 4.21143 3.97949C2.47803 4.1626 1.37939 5.40771 1.00098 7.08008C0.634766 8.60596 0.378418 10.8398 0.378418 13.0859L0.378418 19.7388C0.378418 21.3013 1.33057 22.3267 2.80762 22.3267ZM8.04443 15.8691C5.87158 15.8569 3.83301 15.7593 2.88086 15.625C2.35596 15.5518 2.18506 15.2222 2.18506 14.7339L2.18506 13.0493C2.18506 11.145 2.38037 9.66797 2.51465 9.14307C2.6001 8.77686 2.81982 8.49609 3.21045 8.44727C4.22363 8.3252 5.48096 8.25195 8.04443 8.23975C10.6079 8.22754 11.8652 8.3252 12.8784 8.44727C13.269 8.49609 13.4888 8.77686 13.5742 9.14307C13.7085 9.66797 13.9038 11.145 13.9038 13.0493L13.9038 14.7339C13.9038 15.2344 13.7329 15.564 13.208 15.625C11.6699 15.7959 9.63135 15.8813 8.04443 15.8691ZM3.83301 20.0928C3.07617 20.0928 2.53906 19.5557 2.53906 18.7866C2.53906 18.042 3.07617 17.4927 3.83301 17.4927C4.58984 17.4927 5.13916 18.042 5.13916 18.7866C5.13916 19.5557 4.56543 20.0928 3.83301 20.0928ZM12.2314 20.105C11.4868 20.105 10.9253 19.5435 10.9253 18.7866C10.9253 18.0542 11.4868 17.4805 12.2314 17.4805C12.9761 17.4805 13.5376 18.0542 13.5376 18.7866C13.5376 19.5435 12.9639 20.105 12.2314 20.105ZM5.7373 6.65283C5.3833 6.65283 5.13916 6.40869 5.13916 6.05469C5.13916 5.68848 5.3833 5.45654 5.7373 5.45654L10.3516 5.45654C10.7056 5.45654 10.9497 5.68848 10.9497 6.05469C10.9497 6.40869 10.7056 6.65283 10.3516 6.65283ZM0 1.98975C0 2.41699 0.317383 2.68555 0.708008 2.68555C0.915527 2.68555 1.13525 2.57568 1.30615 2.35596C1.83105 1.69678 2.41699 1.44043 3.50342 1.44043L12.5854 1.44043C13.6719 1.44043 14.2578 1.69678 14.7827 2.35596C14.9536 2.57568 15.1733 2.68555 15.3809 2.68555C15.7715 2.68555 16.0889 2.41699 16.0889 1.98975C16.0889 1.68457 15.8691 1.35498 15.5884 1.09863C14.7339 0.280762 13.7573 0.012207 12.5854 0.012207L3.50342 0.012207C2.33154 0.012207 1.35498 0.280762 0.500488 1.09863C0.219727 1.35498 0 1.68457 0 1.98975ZM7.4707 4.30908L5.06592 1.35498L3.125 1.35498L5.52979 4.30908ZM8.61816 4.30908L10.5591 4.30908L12.9639 1.35498L11.0229 1.35498ZM3.03955 22.2168L1.45264 24.7559C1.18408 25.1953 1.44043 25.6714 1.92871 25.6714L2.50244 25.6714C2.79541 25.6714 2.9541 25.5737 3.11279 25.3296L5.0415 22.2168ZM11.0962 22.2168L13.0127 25.3296C13.1714 25.5737 13.3423 25.6714 13.623 25.6714L14.1968 25.6714C14.6851 25.6714 14.9048 25.1831 14.6484 24.7559L13.0737 22.2168Z"
-                                    fill-opacity="0.85" />
-                            </g>
+                <div class="icon-holder">
+                    <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="42" cy="42" r="42" fill="#FFFF00"/>
+                        <path d="M28.7842 37V23C28.7842 20.7909 30.575 19 32.7842 19H50.7842C52.9933 19 54.7842 20.7909 54.7842 23.0001C54.7842 28.0347 54.7842 32.9919 54.7842 37M28.7842 61.1667V61.1667C28.7842 63.2838 30.5004 65 32.6175 65H50.7842C52.9933 65 54.7842 63.2111 54.7842 61.002C54.7842 55.2033 54.7842 47.7069 54.7842 44" stroke="black" stroke-width="2"/>
+                        <circle cx="42" cy="59" r="3" fill="black"/>
+                        <rect x="22.2969" y="37" width="12.973" height="6" rx="3" stroke="black" stroke-width="2"/>
+                        <rect x="22.2969" y="55" width="12.973" height="6" rx="3" stroke="black" stroke-width="2"/>
+                        <rect x="21" y="43" width="15.5676" height="6" rx="3" stroke="black" stroke-width="2"/>
+                        <rect x="21" y="49" width="15.5676" height="6" rx="3" stroke="black" stroke-width="2"/>
+                        <rect x="52" y="37" width="7" height="7" rx="3.5" stroke="black" stroke-width="2"/>
                         </svg>
-                    </div>
-
-                    <h2>Improved Rider Experience</h2>
+                        
                 </div>
-                <p class="mdx-list-item content">
-                    GTFS empowers riders with accurate schedules, real-time updates, and wider app choice, leading to reduced wait times and informed travel decisions.
-                </p>
+                <div class="text-content">
+                    <h3>Improved Rider Experience</h3>
+                    <p class="mdx-list-item content">
+                        GTFS empowers riders with accurate schedules, real-time updates, and wider app choice, leading to reduced wait times and informed travel decisions.
+                    </p>
+                </div>
             </li>
             <li class="mdx-list-item">
-                <div class="icon-header">
-                    <div class="icon-holder">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            width="16.4429" height="25.6714">
-                            <g>
-                                <rect height="25.6714" opacity="0" width="16.4429" x="0" y="0" />
-                                <path
-                                    d="M2.80762 22.3267L13.2812 22.3267C14.7583 22.3267 15.7104 21.3013 15.7104 19.7388L15.7104 13.0859C15.7104 10.8521 15.4541 8.60596 15.0879 7.08008C14.7095 5.40771 13.6108 4.1626 11.8774 3.97949C11.4258 3.94287 9.8999 3.80859 8.04443 3.80859C6.17676 3.80859 4.66309 3.94287 4.21143 3.97949C2.47803 4.1626 1.37939 5.40771 1.00098 7.08008C0.634766 8.60596 0.378418 10.8398 0.378418 13.0859L0.378418 19.7388C0.378418 21.3013 1.33057 22.3267 2.80762 22.3267ZM8.04443 15.8691C5.87158 15.8569 3.83301 15.7593 2.88086 15.625C2.35596 15.5518 2.18506 15.2222 2.18506 14.7339L2.18506 13.0493C2.18506 11.145 2.38037 9.66797 2.51465 9.14307C2.6001 8.77686 2.81982 8.49609 3.21045 8.44727C4.22363 8.3252 5.48096 8.25195 8.04443 8.23975C10.6079 8.22754 11.8652 8.3252 12.8784 8.44727C13.269 8.49609 13.4888 8.77686 13.5742 9.14307C13.7085 9.66797 13.9038 11.145 13.9038 13.0493L13.9038 14.7339C13.9038 15.2344 13.7329 15.564 13.208 15.625C11.6699 15.7959 9.63135 15.8813 8.04443 15.8691ZM3.83301 20.0928C3.07617 20.0928 2.53906 19.5557 2.53906 18.7866C2.53906 18.042 3.07617 17.4927 3.83301 17.4927C4.58984 17.4927 5.13916 18.042 5.13916 18.7866C5.13916 19.5557 4.56543 20.0928 3.83301 20.0928ZM12.2314 20.105C11.4868 20.105 10.9253 19.5435 10.9253 18.7866C10.9253 18.0542 11.4868 17.4805 12.2314 17.4805C12.9761 17.4805 13.5376 18.0542 13.5376 18.7866C13.5376 19.5435 12.9639 20.105 12.2314 20.105ZM5.7373 6.65283C5.3833 6.65283 5.13916 6.40869 5.13916 6.05469C5.13916 5.68848 5.3833 5.45654 5.7373 5.45654L10.3516 5.45654C10.7056 5.45654 10.9497 5.68848 10.9497 6.05469C10.9497 6.40869 10.7056 6.65283 10.3516 6.65283ZM0 1.98975C0 2.41699 0.317383 2.68555 0.708008 2.68555C0.915527 2.68555 1.13525 2.57568 1.30615 2.35596C1.83105 1.69678 2.41699 1.44043 3.50342 1.44043L12.5854 1.44043C13.6719 1.44043 14.2578 1.69678 14.7827 2.35596C14.9536 2.57568 15.1733 2.68555 15.3809 2.68555C15.7715 2.68555 16.0889 2.41699 16.0889 1.98975C16.0889 1.68457 15.8691 1.35498 15.5884 1.09863C14.7339 0.280762 13.7573 0.012207 12.5854 0.012207L3.50342 0.012207C2.33154 0.012207 1.35498 0.280762 0.500488 1.09863C0.219727 1.35498 0 1.68457 0 1.98975ZM7.4707 4.30908L5.06592 1.35498L3.125 1.35498L5.52979 4.30908ZM8.61816 4.30908L10.5591 4.30908L12.9639 1.35498L11.0229 1.35498ZM3.03955 22.2168L1.45264 24.7559C1.18408 25.1953 1.44043 25.6714 1.92871 25.6714L2.50244 25.6714C2.79541 25.6714 2.9541 25.5737 3.11279 25.3296L5.0415 22.2168ZM11.0962 22.2168L13.0127 25.3296C13.1714 25.5737 13.3423 25.6714 13.623 25.6714L14.1968 25.6714C14.6851 25.6714 14.9048 25.1831 14.6484 24.7559L13.0737 22.2168Z"
-                                    fill-opacity="0.85" />
-                            </g>
-                        </svg>
-                    </div>
-
-                    <h2>Global Reach & Seamless Trips</h2>
+                <div class="icon-holder">
+                    <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="42" cy="42" r="42" fill="#FFFF00"/>
+                        <g clip-path="url(#clip0_138_764)">
+                        <path d="M42.0005 64.9565C54.679 64.9565 64.957 54.6785 64.957 42C64.957 29.3214 54.679 19.0435 42.0005 19.0435C29.3219 19.0435 19.0439 29.3214 19.0439 42C19.0439 54.6785 29.3219 64.9565 42.0005 64.9565Z" stroke="#080808" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M58.0175 25.5548C53.8853 28.7792 48.2297 30.7722 42.0001 30.7722C35.7706 30.7722 30.1253 28.7792 25.9932 25.5548" stroke="#080808" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M25.9932 59.3739C30.1253 56.1495 35.781 54.1565 42.0106 54.1565C48.2401 54.1565 53.8853 56.1495 58.0175 59.3739" stroke="#080808" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M42 19.0435V64.9565" stroke="#080808" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M64.957 42H19.0439" stroke="#080808" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M41.9795 18.96C49.7325 24.9078 54.5012 33.0365 54.5012 42C54.5012 50.9635 49.7325 59.0818 41.9795 65.04" stroke="#080808" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M41.9788 65.04C34.2257 59.0922 29.457 50.9635 29.457 42C29.457 33.0365 34.2257 24.9183 41.9788 18.96" stroke="#080808" stroke-width="2" stroke-miterlimit="10"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_138_764">
+                        <rect width="48" height="48" fill="white" transform="translate(18 18)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>                       
                 </div>
-                <p class="mdx-list-item content">
-                    Over 10,000 agencies in 100+ countries use GTFS. This ensures consistent data for multi-agency trips, simplifying travel across regions.
-                </p>
+                <div class="text-content">
+                    <h3>Improved Rider Experience</h3>
+                    <p class="mdx-list-item content">
+                        GTFS empowers riders with accurate schedules, real-time updates, and wider app choice, leading to reduced wait times and informed travel decisions.
+                    </p>
+                </div>
             </li>
             <li class="mdx-list-item">
-                <div class="icon-header">
-                    <div class="icon-holder">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            width="16.4429" height="25.6714">
-                            <g>
-                                <rect height="25.6714" opacity="0" width="16.4429" x="0" y="0" />
-                                <path
-                                    d="M2.80762 22.3267L13.2812 22.3267C14.7583 22.3267 15.7104 21.3013 15.7104 19.7388L15.7104 13.0859C15.7104 10.8521 15.4541 8.60596 15.0879 7.08008C14.7095 5.40771 13.6108 4.1626 11.8774 3.97949C11.4258 3.94287 9.8999 3.80859 8.04443 3.80859C6.17676 3.80859 4.66309 3.94287 4.21143 3.97949C2.47803 4.1626 1.37939 5.40771 1.00098 7.08008C0.634766 8.60596 0.378418 10.8398 0.378418 13.0859L0.378418 19.7388C0.378418 21.3013 1.33057 22.3267 2.80762 22.3267ZM8.04443 15.8691C5.87158 15.8569 3.83301 15.7593 2.88086 15.625C2.35596 15.5518 2.18506 15.2222 2.18506 14.7339L2.18506 13.0493C2.18506 11.145 2.38037 9.66797 2.51465 9.14307C2.6001 8.77686 2.81982 8.49609 3.21045 8.44727C4.22363 8.3252 5.48096 8.25195 8.04443 8.23975C10.6079 8.22754 11.8652 8.3252 12.8784 8.44727C13.269 8.49609 13.4888 8.77686 13.5742 9.14307C13.7085 9.66797 13.9038 11.145 13.9038 13.0493L13.9038 14.7339C13.9038 15.2344 13.7329 15.564 13.208 15.625C11.6699 15.7959 9.63135 15.8813 8.04443 15.8691ZM3.83301 20.0928C3.07617 20.0928 2.53906 19.5557 2.53906 18.7866C2.53906 18.042 3.07617 17.4927 3.83301 17.4927C4.58984 17.4927 5.13916 18.042 5.13916 18.7866C5.13916 19.5557 4.56543 20.0928 3.83301 20.0928ZM12.2314 20.105C11.4868 20.105 10.9253 19.5435 10.9253 18.7866C10.9253 18.0542 11.4868 17.4805 12.2314 17.4805C12.9761 17.4805 13.5376 18.0542 13.5376 18.7866C13.5376 19.5435 12.9639 20.105 12.2314 20.105ZM5.7373 6.65283C5.3833 6.65283 5.13916 6.40869 5.13916 6.05469C5.13916 5.68848 5.3833 5.45654 5.7373 5.45654L10.3516 5.45654C10.7056 5.45654 10.9497 5.68848 10.9497 6.05469C10.9497 6.40869 10.7056 6.65283 10.3516 6.65283ZM0 1.98975C0 2.41699 0.317383 2.68555 0.708008 2.68555C0.915527 2.68555 1.13525 2.57568 1.30615 2.35596C1.83105 1.69678 2.41699 1.44043 3.50342 1.44043L12.5854 1.44043C13.6719 1.44043 14.2578 1.69678 14.7827 2.35596C14.9536 2.57568 15.1733 2.68555 15.3809 2.68555C15.7715 2.68555 16.0889 2.41699 16.0889 1.98975C16.0889 1.68457 15.8691 1.35498 15.5884 1.09863C14.7339 0.280762 13.7573 0.012207 12.5854 0.012207L3.50342 0.012207C2.33154 0.012207 1.35498 0.280762 0.500488 1.09863C0.219727 1.35498 0 1.68457 0 1.98975ZM7.4707 4.30908L5.06592 1.35498L3.125 1.35498L5.52979 4.30908ZM8.61816 4.30908L10.5591 4.30908L12.9639 1.35498L11.0229 1.35498ZM3.03955 22.2168L1.45264 24.7559C1.18408 25.1953 1.44043 25.6714 1.92871 25.6714L2.50244 25.6714C2.79541 25.6714 2.9541 25.5737 3.11279 25.3296L5.0415 22.2168ZM11.0962 22.2168L13.0127 25.3296C13.1714 25.5737 13.3423 25.6714 13.623 25.6714L14.1968 25.6714C14.6851 25.6714 14.9048 25.1831 14.6484 24.7559L13.0737 22.2168Z"
-                                    fill-opacity="0.85" />
-                            </g>
-                        </svg>
-                    </div>
-
-                    <h2>Simplified Data Sharing</h2>
+                <div class="icon-holder">
+                    <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="42" cy="42" r="42" fill="#FFFF00"/>
+                        <path d="M41.0937 56.037H40.7928L40.5419 56.2031L29.0715 63.7923L30.5491 57.2576L30.8251 56.037H29.5737H22.0537C20.3969 56.037 19.0537 54.6939 19.0537 53.037V24C19.0537 22.3431 20.3969 21 22.0537 21H62.0537C63.7106 21 65.0537 22.3431 65.0537 24V53.037C65.0537 54.6939 63.7106 56.037 62.0537 56.037H41.0937Z" stroke="black" stroke-width="2"/>
+                        <path d="M30.1747 40.7162C31.5671 40.7162 32.696 39.5403 32.696 38.0898C32.696 36.6393 31.5671 35.4634 30.1747 35.4634C28.7822 35.4634 27.6533 36.6393 27.6533 38.0898C27.6533 39.5403 28.7822 40.7162 30.1747 40.7162Z" fill="black"/>
+                        <path d="M41.9588 40.7162C43.3513 40.7162 44.4802 39.5403 44.4802 38.0898C44.4802 36.6393 43.3513 35.4634 41.9588 35.4634C40.5663 35.4634 39.4375 36.6393 39.4375 38.0898C39.4375 39.5403 40.5663 40.7162 41.9588 40.7162Z" fill="black"/>
+                        <path d="M53.7381 40.7162C55.1306 40.7162 56.2595 39.5403 56.2595 38.0898C56.2595 36.6393 55.1306 35.4634 53.7381 35.4634C52.3456 35.4634 51.2168 36.6393 51.2168 38.0898C51.2168 39.5403 52.3456 40.7162 53.7381 40.7162Z" fill="black"/>
+                        <path d="M34.6613 47H32.5684L37.6898 29H39.7827L34.6613 47Z" fill="black"/>
+                        <path d="M46.4454 47H44.3525L49.474 29H51.5669L46.4454 47Z" fill="black"/>
+                    </svg>
                 </div>
-                <p class="mdx-list-item content">
-                    GTFS fosters collaboration between transit agencies by enabling easy data exchange. This promotes smoother service integration and information sharing.
-                </p>
+                <div class="text-content">
+                    <h3>Improved Rider Experience</h3>
+                    <p class="mdx-list-item content">
+                        GTFS empowers riders with accurate schedules, real-time updates, and wider app choice, leading to reduced wait times and informed travel decisions.
+                    </p>
+                </div>
             </li>
             <li class="mdx-list-item">
-                <div class="icon-header">
-                    <div class="icon-holder">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            width="16.4429" height="25.6714">
-                            <g>
-                                <rect height="25.6714" opacity="0" width="16.4429" x="0" y="0" />
-                                <path
-                                    d="M2.80762 22.3267L13.2812 22.3267C14.7583 22.3267 15.7104 21.3013 15.7104 19.7388L15.7104 13.0859C15.7104 10.8521 15.4541 8.60596 15.0879 7.08008C14.7095 5.40771 13.6108 4.1626 11.8774 3.97949C11.4258 3.94287 9.8999 3.80859 8.04443 3.80859C6.17676 3.80859 4.66309 3.94287 4.21143 3.97949C2.47803 4.1626 1.37939 5.40771 1.00098 7.08008C0.634766 8.60596 0.378418 10.8398 0.378418 13.0859L0.378418 19.7388C0.378418 21.3013 1.33057 22.3267 2.80762 22.3267ZM8.04443 15.8691C5.87158 15.8569 3.83301 15.7593 2.88086 15.625C2.35596 15.5518 2.18506 15.2222 2.18506 14.7339L2.18506 13.0493C2.18506 11.145 2.38037 9.66797 2.51465 9.14307C2.6001 8.77686 2.81982 8.49609 3.21045 8.44727C4.22363 8.3252 5.48096 8.25195 8.04443 8.23975C10.6079 8.22754 11.8652 8.3252 12.8784 8.44727C13.269 8.49609 13.4888 8.77686 13.5742 9.14307C13.7085 9.66797 13.9038 11.145 13.9038 13.0493L13.9038 14.7339C13.9038 15.2344 13.7329 15.564 13.208 15.625C11.6699 15.7959 9.63135 15.8813 8.04443 15.8691ZM3.83301 20.0928C3.07617 20.0928 2.53906 19.5557 2.53906 18.7866C2.53906 18.042 3.07617 17.4927 3.83301 17.4927C4.58984 17.4927 5.13916 18.042 5.13916 18.7866C5.13916 19.5557 4.56543 20.0928 3.83301 20.0928ZM12.2314 20.105C11.4868 20.105 10.9253 19.5435 10.9253 18.7866C10.9253 18.0542 11.4868 17.4805 12.2314 17.4805C12.9761 17.4805 13.5376 18.0542 13.5376 18.7866C13.5376 19.5435 12.9639 20.105 12.2314 20.105ZM5.7373 6.65283C5.3833 6.65283 5.13916 6.40869 5.13916 6.05469C5.13916 5.68848 5.3833 5.45654 5.7373 5.45654L10.3516 5.45654C10.7056 5.45654 10.9497 5.68848 10.9497 6.05469C10.9497 6.40869 10.7056 6.65283 10.3516 6.65283ZM0 1.98975C0 2.41699 0.317383 2.68555 0.708008 2.68555C0.915527 2.68555 1.13525 2.57568 1.30615 2.35596C1.83105 1.69678 2.41699 1.44043 3.50342 1.44043L12.5854 1.44043C13.6719 1.44043 14.2578 1.69678 14.7827 2.35596C14.9536 2.57568 15.1733 2.68555 15.3809 2.68555C15.7715 2.68555 16.0889 2.41699 16.0889 1.98975C16.0889 1.68457 15.8691 1.35498 15.5884 1.09863C14.7339 0.280762 13.7573 0.012207 12.5854 0.012207L3.50342 0.012207C2.33154 0.012207 1.35498 0.280762 0.500488 1.09863C0.219727 1.35498 0 1.68457 0 1.98975ZM7.4707 4.30908L5.06592 1.35498L3.125 1.35498L5.52979 4.30908ZM8.61816 4.30908L10.5591 4.30908L12.9639 1.35498L11.0229 1.35498ZM3.03955 22.2168L1.45264 24.7559C1.18408 25.1953 1.44043 25.6714 1.92871 25.6714L2.50244 25.6714C2.79541 25.6714 2.9541 25.5737 3.11279 25.3296L5.0415 22.2168ZM11.0962 22.2168L13.0127 25.3296C13.1714 25.5737 13.3423 25.6714 13.623 25.6714L14.1968 25.6714C14.6851 25.6714 14.9048 25.1831 14.6484 24.7559L13.0737 22.2168Z"
-                                    fill-opacity="0.85" />
-                            </g>
-                        </svg>
-                    </div>
-
-                    <h2>Wider User Base for Apps & Services</h2>
+                <div class="icon-holder">
+                    <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="42" cy="42" r="42" fill="#FFFF00"/>
+                        <g clip-path="url(#clip0_138_769)">
+                        <path d="M34.3134 30.475C37.4932 30.475 40.0711 27.8972 40.0711 24.7173C40.0711 21.5374 37.4932 18.9596 34.3134 18.9596C31.1335 18.9596 28.5557 21.5374 28.5557 24.7173C28.5557 27.8972 31.1335 30.475 34.3134 30.475Z" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M28.7959 32.8261C30.1969 31.3771 32.1546 30.475 34.3137 30.475C38.536 30.475 41.9906 33.9297 41.9906 38.152" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M49.6669 30.475C52.8468 30.475 55.4246 27.8972 55.4246 24.7173C55.4246 21.5374 52.8468 18.9596 49.6669 18.9596C46.487 18.9596 43.9092 21.5374 43.9092 24.7173C43.9092 27.8972 46.487 30.475 49.6669 30.475Z" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M41.9902 38.152C41.9902 33.9297 45.4449 30.475 49.6672 30.475C51.8647 30.475 53.8511 31.4059 55.2521 32.9029" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M41.9901 49.6865C45.17 49.6865 47.7478 47.1087 47.7478 43.9288C47.7478 40.749 45.17 38.1711 41.9901 38.1711C38.8102 38.1711 36.2324 40.749 36.2324 43.9288C36.2324 47.1087 38.8102 49.6865 41.9901 49.6865Z" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M41.9906 49.6865C46.2321 49.6865 49.6675 53.1219 49.6675 57.3635V63.7641C49.6675 64.4742 49.0917 65.0404 48.3912 65.0404H35.5995C34.8894 65.0404 34.3232 64.4646 34.3232 63.7641V57.3635C34.3232 53.1219 37.7587 49.6865 42.0002 49.6865H41.9906Z" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M26.6366 43.9192C29.8165 43.9192 32.3943 41.3414 32.3943 38.1615C32.3943 34.9816 29.8165 32.4038 26.6366 32.4038C23.4567 32.4038 20.8789 34.9816 20.8789 38.1615C20.8789 41.3414 23.4567 43.9192 26.6366 43.9192Z" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M26.6369 43.9193C30.8784 43.9193 34.3138 47.3547 34.3138 51.5962V57.9968C34.3138 58.7069 33.738 59.2731 33.0375 59.2731H20.2363C19.5261 59.2731 18.96 58.6973 18.96 57.9968V51.5962C18.96 47.3547 22.3954 43.9193 26.6369 43.9193Z" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M57.3446 43.9192C60.5245 43.9192 63.1023 41.3414 63.1023 38.1615C63.1023 34.9816 60.5245 32.4038 57.3446 32.4038C54.1647 32.4038 51.5869 34.9816 51.5869 38.1615C51.5869 41.3414 54.1647 43.9192 57.3446 43.9192Z" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M57.3441 43.9193C61.5856 43.9193 65.021 47.3547 65.021 51.5962V57.9968C65.021 58.7069 64.4453 59.2731 63.7447 59.2731H50.953C50.2429 59.2731 49.6768 58.6973 49.6768 57.9968V51.5962C49.6768 47.3547 53.1122 43.9193 57.3537 43.9193H57.3441Z" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_138_769">
+                        <rect width="47.9808" height="48" fill="white" transform="translate(18 18)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
                 </div>
-                <p class="mdx-list-item content">
-                    By adopting GTFS, agencies reach a wider audience through the vast pool of app developers utilizing the standardized data format.
-                </p>
+                <div class="text-content">
+                    <h3>Improved Rider Experience</h3>
+                    <p class="mdx-list-item content">
+                        GTFS empowers riders with accurate schedules, real-time updates, and wider app choice, leading to reduced wait times and informed travel decisions.
+                    </p>
+                </div>
             </li>
             <li class="mdx-list-item">
-                <div class="icon-header">
-                    <div class="icon-holder">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            width="16.4429" height="25.6714">
-                            <g>
-                                <rect height="25.6714" opacity="0" width="16.4429" x="0" y="0" />
-                                <path
-                                    d="M2.80762 22.3267L13.2812 22.3267C14.7583 22.3267 15.7104 21.3013 15.7104 19.7388L15.7104 13.0859C15.7104 10.8521 15.4541 8.60596 15.0879 7.08008C14.7095 5.40771 13.6108 4.1626 11.8774 3.97949C11.4258 3.94287 9.8999 3.80859 8.04443 3.80859C6.17676 3.80859 4.66309 3.94287 4.21143 3.97949C2.47803 4.1626 1.37939 5.40771 1.00098 7.08008C0.634766 8.60596 0.378418 10.8398 0.378418 13.0859L0.378418 19.7388C0.378418 21.3013 1.33057 22.3267 2.80762 22.3267ZM8.04443 15.8691C5.87158 15.8569 3.83301 15.7593 2.88086 15.625C2.35596 15.5518 2.18506 15.2222 2.18506 14.7339L2.18506 13.0493C2.18506 11.145 2.38037 9.66797 2.51465 9.14307C2.6001 8.77686 2.81982 8.49609 3.21045 8.44727C4.22363 8.3252 5.48096 8.25195 8.04443 8.23975C10.6079 8.22754 11.8652 8.3252 12.8784 8.44727C13.269 8.49609 13.4888 8.77686 13.5742 9.14307C13.7085 9.66797 13.9038 11.145 13.9038 13.0493L13.9038 14.7339C13.9038 15.2344 13.7329 15.564 13.208 15.625C11.6699 15.7959 9.63135 15.8813 8.04443 15.8691ZM3.83301 20.0928C3.07617 20.0928 2.53906 19.5557 2.53906 18.7866C2.53906 18.042 3.07617 17.4927 3.83301 17.4927C4.58984 17.4927 5.13916 18.042 5.13916 18.7866C5.13916 19.5557 4.56543 20.0928 3.83301 20.0928ZM12.2314 20.105C11.4868 20.105 10.9253 19.5435 10.9253 18.7866C10.9253 18.0542 11.4868 17.4805 12.2314 17.4805C12.9761 17.4805 13.5376 18.0542 13.5376 18.7866C13.5376 19.5435 12.9639 20.105 12.2314 20.105ZM5.7373 6.65283C5.3833 6.65283 5.13916 6.40869 5.13916 6.05469C5.13916 5.68848 5.3833 5.45654 5.7373 5.45654L10.3516 5.45654C10.7056 5.45654 10.9497 5.68848 10.9497 6.05469C10.9497 6.40869 10.7056 6.65283 10.3516 6.65283ZM0 1.98975C0 2.41699 0.317383 2.68555 0.708008 2.68555C0.915527 2.68555 1.13525 2.57568 1.30615 2.35596C1.83105 1.69678 2.41699 1.44043 3.50342 1.44043L12.5854 1.44043C13.6719 1.44043 14.2578 1.69678 14.7827 2.35596C14.9536 2.57568 15.1733 2.68555 15.3809 2.68555C15.7715 2.68555 16.0889 2.41699 16.0889 1.98975C16.0889 1.68457 15.8691 1.35498 15.5884 1.09863C14.7339 0.280762 13.7573 0.012207 12.5854 0.012207L3.50342 0.012207C2.33154 0.012207 1.35498 0.280762 0.500488 1.09863C0.219727 1.35498 0 1.68457 0 1.98975ZM7.4707 4.30908L5.06592 1.35498L3.125 1.35498L5.52979 4.30908ZM8.61816 4.30908L10.5591 4.30908L12.9639 1.35498L11.0229 1.35498ZM3.03955 22.2168L1.45264 24.7559C1.18408 25.1953 1.44043 25.6714 1.92871 25.6714L2.50244 25.6714C2.79541 25.6714 2.9541 25.5737 3.11279 25.3296L5.0415 22.2168ZM11.0962 22.2168L13.0127 25.3296C13.1714 25.5737 13.3423 25.6714 13.623 25.6714L14.1968 25.6714C14.6851 25.6714 14.9048 25.1831 14.6484 24.7559L13.0737 22.2168Z"
-                                    fill-opacity="0.85" />
-                            </g>
-                        </svg>
-                    </div>
-
-                    <h2>Open Source Community</h2>
+                <div class="icon-holder">
+                    <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="42" cy="42" r="42" fill="#FFFF00"/>
+                        <path d="M42 49.766L59 40V57.234L42 67V49.766Z" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M42 49.766L25 40V57.234L42 67V49.766Z" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+                        <path d="M25 40L41.0642 31.4954C41.6496 31.1855 42.3504 31.1855 42.9358 31.4954L59 40" stroke="black" stroke-width="2"/>
+                        <path d="M44 49V27C44 24.7909 45.7909 23 48 23H58" stroke="black" stroke-width="2"/>
+                        <circle cx="55" cy="22" r="3" fill="black"/>
+                        <path d="M40 49V27C40 24.7909 38.2091 23 36 23H26" stroke="black" stroke-width="2"/>
+                        <circle cx="3" cy="3" r="3" transform="matrix(-1 0 0 1 32 19)" fill="black"/>
+                        <path d="M36 46V37C36 34.7909 34.2091 33 32 33H22" stroke="black" stroke-width="2"/>
+                        <circle cx="3" cy="3" r="3" transform="matrix(-1 0 0 1 25 29)" fill="black"/>
+                        <path d="M48 45.5V37C48 34.7909 49.7909 33 52 33H62" stroke="black" stroke-width="2"/>
+                        <circle cx="62" cy="32" r="3" fill="black"/>
+                    </svg>
                 </div>
-                <p class="mdx-list-item content">
-                    GTFS is collaboratively developed, ensuring the format remains relevant to meet the evolving needs of riders and agencies. 
-                </p>
+                <div class="text-content">
+                    <h3>Improved Rider Experience</h3>
+                    <p class="mdx-list-item content">
+                        GTFS empowers riders with accurate schedules, real-time updates, and wider app choice, leading to reduced wait times and informed travel decisions.
+                    </p>
+                </div>
             </li>
             <li class="mdx-list-item">
-                <div class="icon-header">
-                    <div class="icon-holder">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            width="16.4429" height="25.6714">
-                            <g>
-                                <rect height="25.6714" opacity="0" width="16.4429" x="0" y="0" />
-                                <path
-                                    d="M2.80762 22.3267L13.2812 22.3267C14.7583 22.3267 15.7104 21.3013 15.7104 19.7388L15.7104 13.0859C15.7104 10.8521 15.4541 8.60596 15.0879 7.08008C14.7095 5.40771 13.6108 4.1626 11.8774 3.97949C11.4258 3.94287 9.8999 3.80859 8.04443 3.80859C6.17676 3.80859 4.66309 3.94287 4.21143 3.97949C2.47803 4.1626 1.37939 5.40771 1.00098 7.08008C0.634766 8.60596 0.378418 10.8398 0.378418 13.0859L0.378418 19.7388C0.378418 21.3013 1.33057 22.3267 2.80762 22.3267ZM8.04443 15.8691C5.87158 15.8569 3.83301 15.7593 2.88086 15.625C2.35596 15.5518 2.18506 15.2222 2.18506 14.7339L2.18506 13.0493C2.18506 11.145 2.38037 9.66797 2.51465 9.14307C2.6001 8.77686 2.81982 8.49609 3.21045 8.44727C4.22363 8.3252 5.48096 8.25195 8.04443 8.23975C10.6079 8.22754 11.8652 8.3252 12.8784 8.44727C13.269 8.49609 13.4888 8.77686 13.5742 9.14307C13.7085 9.66797 13.9038 11.145 13.9038 13.0493L13.9038 14.7339C13.9038 15.2344 13.7329 15.564 13.208 15.625C11.6699 15.7959 9.63135 15.8813 8.04443 15.8691ZM3.83301 20.0928C3.07617 20.0928 2.53906 19.5557 2.53906 18.7866C2.53906 18.042 3.07617 17.4927 3.83301 17.4927C4.58984 17.4927 5.13916 18.042 5.13916 18.7866C5.13916 19.5557 4.56543 20.0928 3.83301 20.0928ZM12.2314 20.105C11.4868 20.105 10.9253 19.5435 10.9253 18.7866C10.9253 18.0542 11.4868 17.4805 12.2314 17.4805C12.9761 17.4805 13.5376 18.0542 13.5376 18.7866C13.5376 19.5435 12.9639 20.105 12.2314 20.105ZM5.7373 6.65283C5.3833 6.65283 5.13916 6.40869 5.13916 6.05469C5.13916 5.68848 5.3833 5.45654 5.7373 5.45654L10.3516 5.45654C10.7056 5.45654 10.9497 5.68848 10.9497 6.05469C10.9497 6.40869 10.7056 6.65283 10.3516 6.65283ZM0 1.98975C0 2.41699 0.317383 2.68555 0.708008 2.68555C0.915527 2.68555 1.13525 2.57568 1.30615 2.35596C1.83105 1.69678 2.41699 1.44043 3.50342 1.44043L12.5854 1.44043C13.6719 1.44043 14.2578 1.69678 14.7827 2.35596C14.9536 2.57568 15.1733 2.68555 15.3809 2.68555C15.7715 2.68555 16.0889 2.41699 16.0889 1.98975C16.0889 1.68457 15.8691 1.35498 15.5884 1.09863C14.7339 0.280762 13.7573 0.012207 12.5854 0.012207L3.50342 0.012207C2.33154 0.012207 1.35498 0.280762 0.500488 1.09863C0.219727 1.35498 0 1.68457 0 1.98975ZM7.4707 4.30908L5.06592 1.35498L3.125 1.35498L5.52979 4.30908ZM8.61816 4.30908L10.5591 4.30908L12.9639 1.35498L11.0229 1.35498ZM3.03955 22.2168L1.45264 24.7559C1.18408 25.1953 1.44043 25.6714 1.92871 25.6714L2.50244 25.6714C2.79541 25.6714 2.9541 25.5737 3.11279 25.3296L5.0415 22.2168ZM11.0962 22.2168L13.0127 25.3296C13.1714 25.5737 13.3423 25.6714 13.623 25.6714L14.1968 25.6714C14.6851 25.6714 14.9048 25.1831 14.6484 24.7559L13.0737 22.2168Z"
-                                    fill-opacity="0.85" />
-                            </g>
-                        </svg>
-                    </div>
-
-                    <h2>Streamlined Adoption</h2>
+                <div class="icon-holder">
+                    <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="42" cy="42" r="42" fill="#FFFF00"/>
+                        <path d="M62.9683 38.8027C65.4296 40.2237 65.4296 43.7763 62.9683 45.1973L29.538 64.4984C27.0766 65.9194 24 64.1431 24 61.301L24 22.699C24 19.8569 27.0766 18.0806 29.538 19.5016L62.9683 38.8027Z" stroke="#080808" stroke-width="2"/>
+                        <circle cx="33" cy="42" r="2" fill="black" stroke="black" stroke-width="2"/>
+                        <circle cx="45" cy="42" r="2" fill="black" stroke="black" stroke-width="2"/>
+                    </svg>
                 </div>
-                <p class="mdx-list-item content">
-                    GTFS makes it easy for agencies to get started with a simple data structure using common file formats like .txt and GeoJSON. 
-                </p>
+                <div class="text-content">
+                    <h3>Improved Rider Experience</h3>
+                    <p class="mdx-list-item content">
+                        GTFS empowers riders with accurate schedules, real-time updates, and wider app choice, leading to reduced wait times and informed travel decisions.
+                    </p>
+                </div>
             </li>
         </ul>
+        <div class="learn-more-button-container ">
+            <a href="getting_started/what_is_GTFS/" title="{{ page.next_page.title | striptags }}"
+                class="md-button md-button--primary">
+                Learn more about GTFS
+            </a>
+        </div>
     </div>
 
 </section>
 
-<section class="content-container">
+<section class="content-container dark">
     <div class="content-inner">
         <header class="md-typeset">
-            <h1>GTFS Types</h1>
+            <h1>GTFS Formats</h1>
         </header>
 
         <div class="mdx-spotlight md-typeset ">
             <div class="mdx-spotlight__feature reverse">
                 <a href="getting_started/what_is_GTFS/" tabindex="-1" title="Why GTFS">
-                    <img src="https://cdn.shopify.com/s/files/1/0051/1577/3016/files/wall-7-thumb.jpg?v=1610513981"
+                    <!-- TODO: this is temp-->
+                    <img src="https://s3-alpha-sig.figma.com/img/35a9/24c4/6ecfb653a82c5a787780edbec7ced80a?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=R2VraiIbXW9NDEuTSrIruZXE0g3LConMAvrm3xp20kWws6Dzrd1rivhPMy4~eILmRm9aVG4TBIiDtm1PWfFlFRP6TbCkkdopBusVKHmNiviBhVzQ~ipfiGKTNloUDS4s~Vob80nN443YSWXuk1xP0LN5ArFTMCfsq4SVrbC7uX~ubTiGf~QRYH1bbGhgEOYmkqeNKqrjxJDopqQcaxl-asl1jvUlRWVTiFhgJs7bX6PTXmY3r6od83g8Gkp1BeITdKYn9K9Ts3m9qCE6UvQpAKr9f-fsZrZMJlLuKEgYshNpIFLdFc9pbHmEUAgMka-Vxj5~3pZTYAK6Gel2iAuDdw__"
                         alt="Why GTFS" loading="lazy" width="500" height="327">
                 </a>
-                <div class="md-typeset">
-                    <h2>GTFS Static</h2>
-                    <p> GTFS Static forms the foundation of public transit apps, providing essential, unchanging information. Here's are some of its features: 
+                <div class="md-typeset spotlight-content ">
+                    <p class="mdx-spotlight__header"> 
+                        <span class="mdx-spotlight__header--highlight">GTFS Static</span> forms the foundation of public transit apps, providing essential, unchanging information. 
                     </p>
-                    <ul>
-                        <li><b>Routes & Stops</b>: Know exactly where to catch your bus or train.</li>
-                        <li><b>Schedules & Frequencies</b>: Plan trips confidently with clear timetables.</li>
-                        <li><b>Fares</b>: See journey costs upfront in apps.</li>
-                        <li><b>Locations</b>: Visualize the transit network on interactive maps.</li>
-                        <li><b>Flex Routes</b>: Display demand responsive transportation.</li>
+                    <ul class="mdx-spotlight__list">
+                        <li><span class="highlighted-text">Routes & Stops</span>: Know exactly where to catch your bus or train.</li>
+                        <li><span class="highlighted-text">Schedules & Frequencies</span>: Plan trips confidently with clear timetables.</li>
+                        <li><span class="highlighted-text">Fares</span>: See journey costs upfront in apps.</li>
+                        <li><span class="highlighted-text">Locations</span>: Visualize the transit network on interactive maps.</li>
+                        <li><span class="highlighted-text">Flex Routes</span>: Display demand responsive transportation.</li>
                     </ul>
-                    <!-- <p> By standardizing data formats, GTFS fosters innovation and collaboration among transit agencies
-                        and developers. This promotes efficient service delivery and empowers users with accurate and
-                        up-to-date information.</p>
-                    <p> -->
-                        <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
-                            <span class="twemoji">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
-                                    </path>
-                                </svg>
-                            </span> Learn more about the features
-                        </a><br>
-                        <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
-                            <span class="twemoji">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
-                                    </path>
-                                </svg>
-                            </span> Reference Documentation
-                        </a><br>
-                        <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
-                            <span class="twemoji">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
-                                    </path>
-                                </svg>
-                            </span> Best Practices
-                        </a>
-                    </p>
+
+                    <div class="mdx-spotlight__links">
+                        <a href="schedule/reference/">Reference Documentation</a> 
+                        <span class="highlighted-text">/</span> 
+                        <a href="schedule/best-practices/">Best Practices</a>
+                    </div>
+                    
+                    <a href="documentation/schedule/reference/" title="{{ page.next_page.title | striptags }}"
+                        class="md-button md-button--primary">
+                        Learn more about GTFS Static
+                    </a>
+                    
                 </div>
             </div>
         </div>
         <div class="mdx-spotlight md-typeset">
-            <div class="mdx-spotlight__feature">
+            <div class="mdx-spotlight__feature mdx-spotlight__feature--no-button-margin">
                 <a href="setup/setting-up-site-search/" tabindex="-1" title="Built-in search">
-                    <img src="https://cdn.shopify.com/s/files/1/0051/1577/3016/files/mission-wallpaper-thumb.jpg?v=1647373751"
+                    <!-- TODO: this is temp-->
+                    <img src="https://s3-alpha-sig.figma.com/img/1c8d/68e6/4c225fab157a7101b993ce45a87153f7?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Q-bEzegjqBG~9mSuUPYHP9T9ec6WOAUqkmtLygpK8tUfV9uChzoRekhQ8J~i754IXy~Wq4EUoTAA-oUA8EsfBR79Jz82RLo17ZyN9t0ZjCW~sbzasXTrerHvvtgJ5ENWl95~tlRdp~yZFdUc8Wci772IyfYmJIyJ83dwxRzufMU4Vrbhy4xfs3r6fAxk1pIuylOvSfkxU0pQE7HsMoI1qwrlZEJ1MmDJ675raDXtG3zfJ7xjXccG69CjNRZiEmFqiNz08tw5-vlIr-WCNSa4KERjj1Zq81angvRJvaVh2C6ul8iT7ee9xdNzkPy6wj1sb9mSy97uUZKjSSS9y1nfgw__"
                         alt="Built-in search" loading="lazy" width="500" height="327">
                 </a>
-                <div class="md-typeset">
-                    <h2>GTFS Realtime</h2>
-                    <p> GTFS Realtime focuses on the ever-changing world of public transit, providing live updates that keep riders informed. Here's how it enhances the user experience:
+                <div class="md-typeset spotlight-content">
+                    <p class="mdx-spotlight__header"> 
+                        <span class="mdx-spotlight__header--highlight">GTFS Realtime</span> focuses on the ever-changing world of public transit, providing live updates that keep riders informed. 
                     </p>
-                    <ul>
-                        <li><b>Vehicle Locations</b>: Track your bus or train in real-time and see exactly where it is. No more waiting at the stop wondering when it will arrive!</li>
-                        <li><b>Arrival Times</b>: Get a more accurate picture of when your ride will arrive, eliminating the frustration of missed connections.</li>
-                        <li><b>Service Alerts</b>: Be informed about any unexpected delays, cancellations, or disruptions on the network, allowing you to adjust your plans accordingly.</li>
+                    <ul class="mdx-spotlight__list">
+                        <li><span class="highlighted-text">Vehicle Locations</span>: Track your bus or train in real-time and see exactly where it is. No more waiting at the stop wondering when it will arrive!</li>
+                        <li><span class="highlighted-text">Arrival Times</span>: Get a more accurate picture of when your ride will arrive, eliminating the frustration of missed connections.</li>
+                        <li><span class="highlighted-text">Service Alerts</span>: Be informed about any unexpected delays, cancellations, or disruptions on the network, allowing you to adjust your plans accordingly.</li>
                     </ul>
-                    <p>
+                    <p class="mdx-spotlight__paragraph">
                         By incorporating GTFS Realtime data, public transit apps can offer a truly dynamic experience, empowering riders with the most up-to-date information for a smoother and more efficient journey.
                     </p>
-                    <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
-                        <span class="twemoji">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
-                                </path>
-                            </svg>
-                        </span> Learn more about the features
-                    </a><br>
-                    <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
-                        <span class="twemoji">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
-                                </path>
-                            </svg>
-                        </span> Reference Documentation
-                    </a><br>
-                    <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
-                        <span class="twemoji">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
-                                </path>
-                            </svg>
-                        </span> Best Practices
+                    <div class="mdx-spotlight__links">
+                        <a href="realtime/reference/">Reference Documentation</a> 
+                        <span class="highlighted-text">/</span> 
+                        <a href="realtime/best-practices/">Best Practices</a>
+                    </div>
+
+                    <a href="realtime" title="{{ page.next_page.title | striptags }}"
+                        class="md-button md-button--primary">
+                        Learn more about GTFS Realtime
                     </a>
-                    </p>
                 </div>
             </div>
         </div>
         
 </section>
 
-<!-- <section class="content-container custom-background">
+<section class="content-container">
     <div class="content-inner">
         <header class="md-typeset">
-            <h1>Trusted in the industry</h1>
-        </header>
-        <div class="mdx-trust md-typeset">
-            <h3>
-                Industry leaders, as well as many successful Open Source projects, rely on Material for MkDocs to create
-                professional and beautiful documentation – no frontend experience required. Choose a mature and actively
-                maintained solution and start writing in minutes.
-            </h3>
-            <a href="getting_started/what_is_GTFS/" title="{{ page.next_page.title | striptags }}"
-                class="md-button md-button--primary">
-                Get started
-            </a>
-        </div>
-    </div>
-</section> -->
-
-<section class="content-container dark">
-    <div class="content-inner">
-        <header class="md-typeset">
-            <h1>Get involved</h1>
-            <p>Join the open-source community and help develop the future of GTFS</p>
+            <h1>Help develop the future of GTFS</h1>
         </header>
         
-        <div class="mdx-users md-typeset">
-            <figure class="mdx-users__testimonial">
-                <img src="https://squidfunk.github.io/mkdocs-material/assets/images/users/john-maeda.jpg"
-                    alt="John Maeda" loading="lazy" width="200" height="200">
-                <figcaption class="md-typeset">
-                    <h2>Slack</h2>
-                    <p>Join MobilityData’s and participate in live chat with other GTFS contributors.</p>
-                    <hr> 
-                    <a href="getting_started/what_is_GTFS/" title="{{ page.next_page.title | striptags }}"
+        <div class="mdx-socials md-typeset">
+            <figure class="mdx-socials__element">
+                <svg width="221" height="220" viewBox="0 0 221 220" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <circle cx="110.5" cy="110" r="110" fill="#FFFF00"/>
+                    <rect x="50.5" y="50" width="120" height="120" fill="url(#pattern0_138_725)"/>
+                    <defs>
+                    <pattern id="pattern0_138_725" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use xlink:href="#image0_138_725" transform="scale(0.00389105)"/>
+                    </pattern>
+                    <image id="image0_138_725" width="257" height="257" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQEAAAEBCAYAAAB47BD9AAAACXBIWXMAABcSAAAXEgFnn9JSAAAE9GlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgOS4xLWMwMDIgNzkuYTZhNjM5NjhhLCAyMDI0LzAzLzA2LTExOjUyOjA1ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjUuOSAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjQtMDUtMjdUMDg6NTk6MTQtMDQ6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDI0LTA1LTI4VDE2OjA1OjQ2LTA0OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDI0LTA1LTI4VDE2OjA1OjQ2LTA0OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpmMzhlYzdiNy0zYTZjLTQzNjctOTEwZS1lZjg4YmUzYzRjNGYiIHhtcE1NOkRvY3VtZW50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"/>
+                    </defs>
+                </svg>
+                <div class="md-typeset mdx-socials__content">
+                    <h3>Slack</h3>
+                    <p class="">Join MobilityData’s and participate in live chat with other GTFS contributors.</p>
+                    <a href="https://share.mobilitydata.org/slack" target="_blank" title="{{ page.next_page.title | striptags }}"
                         class="md-button md-button--primary">
                         Join Slack
                     </a>
-                </figcaption>
+                </div>
             </figure>
-            <figure class="mdx-users__testimonial">
-                <img src="https://squidfunk.github.io/mkdocs-material/assets/images/users/john-maeda.jpg"
-                    alt="John Maeda" loading="lazy" width="200" height="200">
-                <figcaption class="md-typeset">
-                    <h2>GitHub</h2>
+            <figure class="mdx-socials__element">
+                <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="110" cy="110" r="110" fill="#FFFF00"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M109.585 50C75.2536 50 47.5 77.9582 47.5 112.546C47.5 140.194 65.2827 163.598 89.952 171.881C93.0363 172.504 94.1661 170.536 94.1661 168.88C94.1661 167.43 94.0644 162.459 94.0644 157.281C76.7939 161.009 73.1974 149.825 73.1974 149.825C70.4219 142.576 66.3095 140.713 66.3095 140.713C60.6569 136.881 66.7213 136.881 66.7213 136.881C72.9915 137.296 76.2817 143.302 76.2817 143.302C81.8314 152.828 90.7742 150.136 94.372 148.479C94.8854 144.44 96.5311 141.645 98.2785 140.092C84.504 138.642 70.0114 133.257 70.0114 109.232C70.0114 102.398 72.4769 96.8059 76.3834 92.4571C75.767 90.9041 73.6079 84.4827 77.001 75.888C77.001 75.888 82.2432 74.2309 94.0631 82.3083C99.1237 80.9392 104.343 80.2427 109.585 80.2368C114.827 80.2368 120.171 80.9625 125.106 82.3083C136.927 74.2309 142.169 75.888 142.169 75.888C145.562 84.4827 143.402 90.9041 142.785 92.4571C146.795 96.8059 149.159 102.398 149.159 109.232C149.159 133.257 134.666 138.537 120.789 140.092C123.051 142.059 125.003 145.786 125.003 151.689C125.003 160.077 124.901 166.808 124.901 168.878C124.901 170.536 126.032 172.504 129.115 171.883C153.784 163.597 171.567 140.194 171.567 112.546C171.669 77.9582 143.814 50 109.585 50Z" fill="#080808"/>
+                </svg>
+                    
+                <div class="md-typeset mdx-socials__content">
+                    <h3>GitHub</h3>
                     <p>The google/transit repository on GitHub is where the standard lives. Here you can propose ideas and engage in discussions on current developments.</p>
-                    <hr> 
-                    <a href="getting_started/what_is_GTFS/" title="{{ page.next_page.title | striptags }}"
+                    <a href="https://github.com/MobilityData" target="_blank" title="{{ page.next_page.title | striptags }}"
                         class="md-button md-button--primary">
                         Visit Github
                     </a>
-                </figcaption>
+                </div>
             </figure>
-            <figure class="mdx-users__testimonial">
-                <img src="https://squidfunk.github.io/mkdocs-material/assets/images/users/john-maeda.jpg"
-                    alt="John Maeda" loading="lazy" width="200" height="200">
-                <figcaption class="md-typeset">
-                    <h2>GTFS Digest</h2>
+            <figure class="mdx-socials__element">
+                <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="110" cy="110" r="110" fill="#FFFF00"/>
+                    <path d="M121.062 144.341C107.266 144.341 93.4705 144.352 79.675 144.318C78.5981 144.316 77.8293 144.606 77.0645 145.378C70.8481 151.653 64.5894 157.885 58.3462 164.134C57.3504 165.13 56.2994 166.024 54.8113 166.147C51.6896 166.404 49.5278 164.254 49.5186 160.764C49.4944 151.434 49.4884 142.103 49.5336 132.772C49.5443 130.546 49.7729 128.323 50.2469 126.129C52.9676 113.542 60.1892 104.454 72.029 99.5489C84.9077 94.213 97.1565 96.0675 108.399 104.324C109.144 104.871 109.591 105.113 110.496 104.41C131.887 87.8002 163.115 99.3213 168.729 125.87C169.619 130.079 169.58 134.359 169.386 138.618C169.235 141.949 166.371 144.31 162.748 144.331C157.686 144.36 152.624 144.34 147.562 144.341C138.729 144.341 129.895 144.341 121.062 144.341ZM109.334 144.108C109.334 144.106 109.334 144.103 109.334 144.101C111.762 144.101 114.191 144.123 116.619 144.095C119.45 144.061 121.762 142.232 122.373 139.454C123.173 135.821 122.78 132.123 122.298 128.535C121.099 119.604 117.168 112 110.328 105.995C109.777 105.511 109.467 105.441 108.86 105.948C102.522 111.229 98.8504 118.063 97.0939 126.017C96.2103 130.017 96.4966 134.087 96.4875 138.135C96.4794 141.62 98.9783 144.081 102.495 144.106C104.774 144.121 107.054 144.108 109.334 144.108Z" fill="#080808"/>
+                    <path d="M86.0001 53.0001C96.4854 52.9701 105.073 61.4652 105.12 71.9151C105.168 82.487 96.6658 91.0834 86.1334 91.1127C75.5879 91.1419 67.0099 82.5886 67.0137 72.0484C67.0176 61.5695 75.529 53.0303 86.0001 53.0001Z" fill="#080808"/>
+                    <path d="M133.646 53.0001C144.13 52.9721 152.716 61.4697 152.761 71.9199C152.807 82.4917 144.303 91.0856 133.77 91.1126C123.225 91.1396 114.649 82.5841 114.655 72.0435C114.661 61.5649 123.174 53.028 133.646 53.0001Z" fill="#080808"/>
+                    <path d="M109.334 144.109C107.054 144.109 104.774 144.121 102.495 144.106C98.9782 144.081 96.4793 141.619 96.4874 138.135C96.4966 134.087 96.2102 130.017 97.0938 126.016C98.8505 118.062 102.522 111.229 108.86 105.947C109.467 105.441 109.777 105.511 110.328 105.995C117.168 112 121.099 119.604 122.298 128.535C122.78 132.123 123.172 135.82 122.373 139.454C121.762 142.232 119.45 144.061 116.619 144.094C114.191 144.123 111.762 144.1 109.334 144.1C109.334 144.103 109.334 144.106 109.334 144.109Z" fill="#535353"/>
+                </svg>
+                    
+                <div class="md-typeset mdx-socials__content">
+                    <h3>GTFS Digest</h3>
                     <p>Stay up to date with the GTFS world by subscribing to the GTFS Digest. </p>
-                    <hr> 
                     <a href="getting_started/what_is_GTFS/" title="{{ page.next_page.title | striptags }}"
                         class="md-button md-button--primary">
                         Subscribe
                     </a>
-                </figcaption>
+                </div>
             </figure>
         </div>
 
-        <div class="md-typeset">
-            <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
-                <span class="twemoji">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path
-                            d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
-                        </path>
-                    </svg>
-                </span> More Community Resources
-            </a><br>
-            <a href="getting_started/what_is_GTFS/" aria-label="Why GTFS">
-                <span class="twemoji">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path
-                            d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z">
-                        </path>
-                    </svg>
-                </span> Active projects 
-            </a>
+        <div class="md-typeset mdx-resource__container">
+            <div class="mdx-resource__element">
+                <h3>Community Resources</h3>
+                <p>
+                    Make sure to check out the Resources section for an extensive selection of tips, tools, and tricks.
+                </p>
+                <a href="resources" title="{{ page.next_page.title | striptags }}"
+                    class="md-button md-button--primary">
+                    Checkout the Resources
+                </a>
+            </div>
+            <div class="mdx-resource__element">
+                <h3>Active Projects</h3>
+                <p>
+                    Discover the developing new additions to the specification that could require your help. 
+                </p>
+                <a href="getting_started/what_is_GTFS/" title="{{ page.next_page.title | striptags }}"
+                    class="md-button md-button--primary">
+                    Discover the projects
+                </a>
+            </div>
         </div>
     </div>
 </section>
-<!-- <section class="content-container dark">
-    <div class="content-inner">
-        <header class="md-typeset">
-            <h1>Become a member</h1>
-        </header>
-        <div class="md-typeset">
-            <p> By joining the <a href="insiders/">Insiders</a> program, you'll get immediate access to the latest
-                features while also helping support the ongoing development of Material for MkDocs. Thanks to our <a
-                    href="insiders/#how-to-become-a-sponsor">awesome sponsors</a>, this project is actively maintained
-                and kept in good shape. </p>
-            <p> <strong> Together, we can build documentation that simply works! </strong> </p>
-            <p> <a href="getting_started/what_is_GTFS/" title="{{ page.next_page.title | striptags }}"
-                    class="md-button md-button--primary">
-                    Get started
-                </a> </p>
-        </div>
-    </div>
-</section> -->
 
 {% endblock %}
 {% block content %}{% endblock %}

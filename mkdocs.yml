@@ -22,7 +22,7 @@ theme:
   name: material
   favicon: assets/org-black.svg
   font:
-    text: SF Pro
+    text: Mulish
     code: SF Mono
   features:
     - navigation.tabs

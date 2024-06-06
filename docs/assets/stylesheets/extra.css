@@ -14,16 +14,26 @@
     --md-default-fg-color: #1d1c1c;
 
     /* Main colors */
-    --md-primary-bg-color: #ffffff;
-    --md-primary-fg-color: #297a29;
-    --md-secondary-fg-color: #2b6aa9;
+    --md-primary-bg-color: #080808;
+    --md-primary-fg-color: #FFFF00;
+    --md-secondary-fg-color: #1D64F2;
     --md-highlight-color: #c6def4;
+    --md-secondary-fg-color-white: #ffffff;
+    --md-secondary-fg-color-gray: #F8F8F8;
+    --md-secondary-fg-color-red: #FF4822;
+
+
+    /* Text colors */
+    --md-light-text: #ffffff;
+    --md-color-text: var(--md-primary-fg-color);
 
     /* Accent color shades */
     --md-accent-fg-color:                #83aed9; /* Highlight color when hovering over links */
     --md-accent-fg-color--transparent:   hsla(var(--md-accent-fg-color), 0.1);
     --md-accent-bg-color:                hsla(0, 0%, 100%, 1);
     --md-accent-bg-color--light:         hsla(0, 0%, 100%, 0.7);
+    --md-accent-bg-color--very-light:    rgba(255,255,255,0.25);
+    --md-accent-bg-color--dark-opacity:  rgba(0,0,0,0.25);
 
     /* Footer colors */
     --md-footer-logo-dark-mode: none;
@@ -45,6 +55,53 @@
     display: none;
 }
 
+/** global header start **/
+
+#logo_light_mode {
+    width: 40px;
+    height: 40px;
+}
+
+.md-header {
+    background-color: var(--md-primary-bg-color);
+    color: var(--md-light-text);
+    height: 64px;
+    padding: 12px 0px;
+}
+
+.md-header .md-header__inner {
+    height: 100%;
+}
+
+.md-tabs {
+    background-color: var(--md-primary-bg-color);
+    color: var(--md-color-text);
+    height: 32px;
+}
+
+.md-search__input {
+    background-color: var(--md-accent-bg-color--very-light);
+    border-radius: 2px;
+}
+
+.md-search__icon.md-icon {
+    color: var(--md-accent-bg-color--very-light);
+}
+
+.md-tabs__item {
+    height: 100%;
+    margin-top: 2px;
+}
+
+.md-tabs__link {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/** global header end **/
+
 .md-top:hover {
     background-color: var(--md-primary-fg-color);
 }
@@ -53,11 +110,6 @@
 .md-typeset h1 {
     font-size: 180%;
     color: var(--md-typeset-color);
-}
-  
-/* header font styles */
-h1, h2, h3 {
-    font-weight: 500 !important;
 }
   
 /* title font weight */
@@ -136,30 +188,29 @@ table.example {
 .md-nav__list {
     font-size: 100%;
 }
-  
-/* footer styles */
-footer {
-    background-color: #4B555C !important;
+
+/* buttons */
+.md-button, .md-typeset .md-button{
+    border-radius: 5px;
+    border: 2px solid;
+    padding: 12px 31px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
 }
 
-a.footer-link:not(:hover) {
-    opacity: 56%;
-    transition: 0.15s;
-}
-a.footer-link:hover {
-    transition: 0.15s;
-}
-div.md-footer-copyright {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 1em;
-    font-size: 80%;
+.md-button--primary, .md-typeset .md-button--primary {
+    background-color: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+    border-color: var(--md-primary-bg-color);
 }
 
-/* footer text */
-c {
-    opacity: 56%; 
+.md-button--primary:hover, .md-typeset .md-button--primary:hover {
+    background-color: var(--md-default-bg-color);
+    color: var(--md-primary-bg-color);
+    border-color: var(--md-primary-bg-color);
 }
+
 
 /* list style */
 .md-content li, .md-content ul > li, .md-content li > ul {

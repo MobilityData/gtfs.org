@@ -1,92 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="72.61927mm"
-   height="78.008904mm"
-   viewBox="0 0 72.619271 78.008903"
-   version="1.1"
-   id="svg5"
-   sodipodi:docname="org-dark.svg"
-   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#ffffff"
-     bordercolor="#eeeeee"
-     borderopacity="1"
-     inkscape:pageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="true"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="0.23486916"
-     inkscape:cx="-63.865345"
-     inkscape:cy="38.319207"
-     inkscape:window-width="1312"
-     inkscape:window-height="847"
-     inkscape:window-x="146"
-     inkscape:window-y="25"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="layer1"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0"
-     lock-margins="false" />
-  <defs
-     id="defs2" />
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-14.782917,-106.50313)">
-    <g
-       id="g2720"
-       transform="matrix(7.3578111,0,0,7.3578111,-300.73105,-941.6204)"
-       style="stroke:#ffffff;stroke-opacity:1">
-      <g
-         id="g2925"
-         transform="translate(-10.106553,2.8628005)"
-         style="stroke:#ffffff;stroke-opacity:1">
-        <g
-           id="g3004"
-           style="stroke:#ffffff;stroke-opacity:1">
-          <g
-             id="g3281"
-             style="stroke:#ffffff;stroke-opacity:1">
-            <circle
-               style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.38;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               id="path145"
-               cx="54.74189"
-               cy="141.34149"
-               r="1.5638382" />
-            <circle
-               style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.38;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               id="path145-7"
-               cx="61.103897"
-               cy="142.42261"
-               r="1.5638382" />
-            <circle
-               style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.38;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               id="path145-5"
-               cx="56.107254"
-               cy="148.436"
-               r="1.5638382" />
-            <path
-               style="fill:none;stroke:#ffffff;stroke-width:0.49;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               d="m 57.332716,147.50191 2.720016,-3.88375"
-               id="path2086" />
-            <path
-               style="fill:none;stroke:#ffffff;stroke-width:0.49;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-               d="m 56.310601,141.4349 3.16648,1.13296"
-               id="path2435" />
-          </g>
-        </g>
-      </g>
-    </g>
-  </g>
-</svg>
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <g clip-path="url(#clip0_138_807)">
+   <path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z" fill="#FFFF00"/>
+   <path d="M8.00043 22.515C9.41428 22.515 10.5604 21.3688 10.5604 19.955C10.5604 18.5411 9.41428 17.395 8.00043 17.395C6.58658 17.395 5.44043 18.5411 5.44043 19.955C5.44043 21.3688 6.58658 22.515 8.00043 22.515Z" fill="black"/>
+   <path d="M19.9653 22.515C21.3791 22.515 22.5253 21.3688 22.5253 19.955C22.5253 18.5411 21.3791 17.395 19.9653 17.395C18.5514 17.395 17.4053 18.5411 17.4053 19.955C17.4053 21.3688 18.5514 22.515 19.9653 22.515Z" fill="black"/>
+   <path d="M31.9252 22.515C33.3391 22.515 34.4852 21.3688 34.4852 19.955C34.4852 18.5411 33.3391 17.395 31.9252 17.395C30.5114 17.395 29.3652 18.5411 29.3652 19.955C29.3652 21.3688 30.5114 22.515 31.9252 22.515Z" fill="black"/>
+   <path d="M12.5547 28.64H10.4297L15.6297 11.095H17.7547L12.5547 28.64Z" fill="black"/>
+   <path d="M24.5195 28.64H22.3945L27.5945 11.095H29.7195L24.5195 28.64Z" fill="black"/>
+   </g>
+   <defs>
+   <clipPath id="clip0_138_807">
+   <rect width="40" height="40" fill="white"/>
+   </clipPath>
+   </defs>
+   </svg>
+   
