@@ -16,7 +16,6 @@ jobs:
     - name: Save branch name in env var
       run: |
         CURRENT_BRANCH=$(git branch --show-current)
-        echo "::set-env name=CURRENT_BRANCH::$CURRENT_BRANCH"
         "BRANCH_TO_USE=$CURRENT_BRANCH" >> $GITHUB_ENV
         echo "Current branch: $CURRENT_BRANCH"
       
