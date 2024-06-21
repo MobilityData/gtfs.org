@@ -16,9 +16,9 @@ GTFS thrives on community collaboration, ensuring its continuous evolution and r
 - **Guided Evolution:** The specification evolution is overseen by an independent nonprofit organization called [MobilityData](https://mobilitydata.org/), and its changes are guided by the principles of ease of use, backwards-compatibility, and pragmatic change. 
 - **Community-driven Development:** The GTFS specification undergoes continuous refinement through input and review from the community, facilitated on platforms like [GitHub](https://github.com/google/transit) and [Slack](https://share.mobilitydata.org/slack).
 
-[:material-chat-processing: Get Involved](../../community/get_involved){ .md-button }
-[:material-map-plus: Active Projects](../../community/get_involved/#active-projects){ .md-button }
-[:material-book-heart: Guiding Principles](../../community/governance/gtfs_schedule_amendment_process/#guiding-principles){ .md-button }
+[:material-chat-processing: Get Involved](../../community/get_involved){ .md-button .md-button--primary }
+[:material-map-plus: Active Projects](../../community/get_involved/#active-projects){ .md-button .md-button--primary }
+[:material-book-heart: Guiding Principles](../../community/governance/gtfs_schedule_amendment_process/#guiding-principles){ .md-button .md-button--primary }
 
 ## Simple and Easy to Use
 
@@ -35,7 +35,7 @@ While schedule information is at its core, GTFS also offers additional features 
 - **Flexible services:** GTFS can describe demand-responsive options like dial-a-ride, route deviations, and other services that do not follow the common behavior of scheduled and/or fixed service.
 - **Pathways:** GTFS can model large transit stations, helping riders navigate from station entrances and exits to the location where they board or disembark from a transit vehicle.
 
-[:octicons-search-16: Learn more about GTFS Features](../features/overview){ .md-button }
+[:octicons-search-16: Learn more about GTFS Features](../features/overview){ .md-button .md-button--primary }
 
 ## Improved Rider Experience
 
