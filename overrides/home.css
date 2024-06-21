@@ -2,10 +2,9 @@
     display: none;
 }
 
-/** TODO: url is temp **/
 .tx-container {
     padding-top: .0rem;
-    background-image: url('https://s3-alpha-sig.figma.com/img/7d76/2bb4/612569ac72985a5348b79e1e1d298a8f?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=LKfiXXaQoi43MhSm~0ZPZIj4cZRzR7RhWgX9kHJl0htY~RW0qHQyAsred3U5EUf~9IyKQYEDqxPmE~oXV5CoGHbPw3zzAVLPeIQZAI7Kzh0ACeMBCisi1SiDE9UN-Bti~t6KNnKNZBrd2Ux~MwEjXAQ2IyVYsFSntCsA-f0rdWtxXSvxImyRHCXLZOUIc-h8I84g3KwdeBC1e4TVqx-Er~m2SJEf8D9nf-78zOx9-aM7mPBJdyYRO6nP-03IiwimRZkqejT3~DmM5AZTyhlqMPsPv-q5pgEtc7xCaKztixp6v~ChZfKB7Dj7E~4kv9Zt~w7I2q0RvGNhkWIs8YJWIA__');
+    background-image: url('./assets/landing/hero.jpg');
     margin-top: -96px;
     height: calc(100vh);
     background-size: cover;
@@ -92,13 +91,6 @@
 
 .content-container.dark header h1 {
     color: var(--md-primary-fg-color);
-}
-
-.content-container.custom-background {
-    color: white;
-    background-image: url('https://cdnb.artstation.com/p/assets/images/images/022/517/247/large/joshua-ader-scene-anime-train-station-5-comp-ver1-1.jpg?1575714636');
-    background-size: cover;
-    background-position: center;
 }
 
 .content-inner {
