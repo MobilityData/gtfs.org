@@ -35,3 +35,31 @@
 .md-social__link svg {
     max-height: none;
 }
+
+@media screen and (max-width:900px) {
+    .md-footer-meta__inner {
+        padding: 0 50px;
+    }
+
+    .md-footer-copyright c {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    
+    .md-footer-copyright svg {
+        height: 40px;
+        width: 100%;
+        margin-left: 5px;
+    }
+    
+    .md-social {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .md-footer-meta__inner {
+        justify-content: center;
+    }
+}
+

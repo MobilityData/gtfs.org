@@ -10,7 +10,7 @@ For the major part, it has been adopted in GTFS in Match 2024. Some examples can
 
 🔮 MobilityData expects GTFS-Flex to open the door to deeper standardization of demand responsive transportation, including expansion into transactional and real-time components using GTFS-OnDemand. We are preparing a suggested strategy to best handle the growing number of modes of transportation and complexity of concepts in this area.
 
-[See the full proposal](https://github.com/MobilityData/gtfs-flex){ .md-button }
+[See the full proposal](https://github.com/MobilityData/gtfs-flex){ .md-button .md-button--primary }
 
 ## Latest Pull Request
 This extension describes services that operate according to a schedule, but also include one or more flexible features, such as:
@@ -42,9 +42,9 @@ Here is a [data example](https://docs.google.com/spreadsheets/d/1w5EHuHfxvejqApJ
 
 Visit the Pull Request page to read the full post and contribute to the conversation. 
 
-[See the Pull Request](https://github.com/google/transit/pull/388){ .md-button }
+[See the Pull Request](https://github.com/google/transit/pull/388){ .md-button .md-button--primary }
 
-[Join #gtfs-flex on Slack](https://share.mobilitydata.org/slack){ .md-button }
+[Join #gtfs-flex on Slack](https://share.mobilitydata.org/slack){ .md-button .md-button--primary }
 
 ## Early Implementations
 
@@ -59,16 +59,16 @@ Visit the Pull Request page to read the full post and contribute to the conversa
 
 Contact us to add your GTFS-Flex implementation to this page
 
-<a class="button no-icon" href=mailto:specification@mobilitydata.org >Contact us</a>
+<a class="md-button md-button--primary" href=mailto:specification@mobilitydata.org >Contact us</a>
 
 ## Adoption tracker
 ### Current
 
 <iframe class="airtable-embed" src="https://airtable.com/embed/shrUPyCZWOWrvO2mX?backgroundColor=purple&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-[Request a change](https://airtable.com/shrcac1fXUrMxfoDV){ .md-button }
-[Add your organization (consumers)](https://airtable.com/shrgnVR5Su9tkHvUv){ .md-button }
-[Add your organization (producers)](https://airtable.com/shrsU4idBtcLuRuwZ){ .md-button }
+[Request a change](https://airtable.com/shrcac1fXUrMxfoDV){ .md-button .md-button--primary }
+[Add your organization (consumers)](https://airtable.com/shrgnVR5Su9tkHvUv){ .md-button .md-button--primary }
+[Add your organization (producers)](https://airtable.com/shrsU4idBtcLuRuwZ){ .md-button .md-button--primary }
 
 ## History
 

@@ -15,12 +15,12 @@ You can see [examples here](../../../documentation/schedule/examples/fares-v2) t
 
 Producers may implement Fares v2 in the same dataset with Fares v1, since there is no technical conflict between the two. Consumers can choose which version to use independent of the other. With adoption and sufficient endorsement of Fares v2, Fares v1 may be deprecated in the future.
 
-[See the full proposal](https://share.mobilitydata.org/gtfs-fares-v2){ .md-button }
+[See the full proposal](https://share.mobilitydata.org/gtfs-fares-v2){ .md-button .md-button--primary }
 
 ## Participate in the conversation
 You can stay up to date and join the discussions around Fares v2 by joining our Slack Chanel and the recurring working group meetings.
 
-[Join #gtfs-fares on Slack](https://share.mobilitydata.org/slack){ .md-button } [See the meeting schedule](https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057){ .md-button } [See meeting notes](https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit){ .md-button } 
+[Join #gtfs-fares on Slack](https://share.mobilitydata.org/slack){ .md-button .md-button--primary} [See the meeting schedule](https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057){ .md-button .md-button--primary } [See meeting notes](https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit){ .md-button .md-button--primary } 
 
 ## First Adopters
 
@@ -34,12 +34,12 @@ You can stay up to date and join the discussions around Fares v2 by joining our 
 
 <iframe class="airtable-embed" src="https://airtable.com/embed/shrZzYzPYao7iExlW?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-[Request a change](https://airtable.com/shr8aT0K9bpncmy0V){ .md-button } [Add your organization (consumers)](https://airtable.com/shr5B6Pl1r9KH9qMX){ .md-button } [Add your organization (producers)](https://airtable.com/shrn0Afa3TPNkOAEh){ .md-button }
+[Request a change](https://airtable.com/shr8aT0K9bpncmy0V){ .md-button .md-button--primary } [Add your organization (consumers)](https://airtable.com/shr5B6Pl1r9KH9qMX){ .md-button .md-button--primary } [Add your organization (producers)](https://airtable.com/shrn0Afa3TPNkOAEh){ .md-button .md-button--primary }
 
 ### Future
 <iframe class="airtable-embed" src="https://airtable.com/embed/shrUrgZTO1noUF66R?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-[Add your future plans](https://airtable.com/shrvnI40zuFXmDsQI){ .md-button }
+[Add your future plans](https://airtable.com/shrvnI40zuFXmDsQI){ .md-button .md-button--primary }
 
 ## Fares v2 Features Under Discussion
 
