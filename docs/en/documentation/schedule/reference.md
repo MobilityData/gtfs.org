@@ -334,7 +334,7 @@ Primary key (`service_id`, `date`)
 The [calendar_dates.txt](#calendar_datestxt) table explicitly activates or disables service by date. It may be used in two ways.
 
 * Recommended: Use [calendar_dates.txt](#calendar_datestxt) in conjunction with [calendar.txt](#calendartxt) to define exceptions to the default service patterns defined in [calendar.txt](#calendartxt). If service is generally regular, with a few changes on explicit dates (for instance, to accommodate special event services, or a school schedule), this is a good approach. In this case `calendar_dates.service_id` is a foreign ID referencing `calendar.service_id`.
-* Alternate: Omit [calendar.txt](#calendartxt), and specify each date of service in [calendar_dates.txt](#calendardatestxt). This allows for considerable service variation and accommodates service without normal weekly schedules. In this case `service_id` is an ID.
+* Alternate: Omit [calendar.txt](#calendartxt), and specify each date of service in [calendar_dates.txt](#calendar_datestxt). This allows for considerable service variation and accommodates service without normal weekly schedules. In this case `service_id` is an ID.
 
 |  Field Name | Type | Presence | Description |
 |  ------ | ------ | ------ | ------ |
