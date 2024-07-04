@@ -19,7 +19,7 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
     
     !!! info "Making an extension official in the specification" 
 
-        Extensions may become active proposals and subsequently [merged](/documentation/schedule/change_history/recent_additions/) into the official specification via the [Specification Amendment Process](/community/governance/gtfs_schedule_amendment_process/).
+        Extensions may become active proposals and subsequently [merged](../../../documentation/schedule/change_history/recent_additions/) into the official specification via the [Specification Amendment Process](../../governance/gtfs_schedule_amendment_process/).
 
     !!! note "Contributing to this list"
 
@@ -40,7 +40,7 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
 
     <div class="row">
     <div class="leftcontainer">
-            <a href="/../../../community/extensions/fares-v2" class="no-icon" target="_blank"><h3 class="title">GTFS-Fares v2</h3></a>
+            <a href="../fares-v2" class="no-icon" target="_blank"><h3 class="title">GTFS-Fares v2</h3></a>
             <p class="maintainer">Maintained by <a href="https://mobilitydata.org/" class="no-icon" target="_blank">MobilityData</a></p>
     </div>
     <div class="featurelist">
@@ -53,7 +53,7 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
 
     <div class="row">
     <div class="leftcontainer">
-            <a href="/../../../community/extensions/flex" class="no-icon" target="_blank"><h3 class="title">GTFS-Flex</h3></a>
+            <a href="../flex" class="no-icon" target="_blank"><h3 class="title">GTFS-Flex</h3></a>
             <p class="maintainer">Maintained by <a href="https://mobilitydata.org/" class="no-icon" target="_blank">MobilityData</a></p>
     </div>
     <div class="featurelist">
@@ -149,7 +149,7 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
     
     !!! info "Making an extension official in the specification" 
         
-        Extensions may become active proposals and subsequently [merged](/documentation/realtime/change_history/recent_additions/) into the official specification via the [Specification Amendment Process](/community/governance/gtfs_realtime_amendment_process/).
+        Extensions may become active proposals and subsequently [merged](../../../documentation/realtime/change_history/recent_additions/) into the official specification via the [Specification Amendment Process](../../governance/gtfs_realtime_amendment_process/).
     
     !!! note "Contributing to this list"
 
