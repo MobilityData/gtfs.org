@@ -2,11 +2,11 @@
 
 Trip updates represent fluctuations in the timetable. We would expect to receive trip updates for all trips you have scheduled that are realtime-capable. These updates would give a predicted arrival or departure time for stops along the route. Trip updates can also provide for more complex scenarios where trips are canceled or added to the schedule, or even re-routed.
 
-**Reminder:** In [GTFS](../../schedule/reference.md), a trip is a sequence of two of more stops occurring at a specific time.
+**Reminder:** In [GTFS](../../../schedule/reference), a trip is a sequence of two of more stops occurring at a specific time.
 
 There should be **at most** one trip update for each scheduled trip. In case there is no trip update for a scheduled trip, it will be concluded that no realtime data is available for the trip. The data consumer should **not** assume that the trip is running on time.
 
-If a vehicle is serving multiple trips within the same block (for more information about trips and blocks, please refer to [GTFS trips.txt](../../schedule/reference.md/#tripstxt)):
+If a vehicle is serving multiple trips within the same block (for more information about trips and blocks, please refer to [GTFS trips.txt](../../../schedule/reference/#tripstxt)):
 
 * the feed should include a TripUpdate for the trip currently being served by the vehicle. Producers are encouraged to include TripUpdates for one or more trips after the current trip in this vehicle's block if the producer is confident in the quality of the predictions for these future trip(s). Including multiple TripUpdates for the same vehicle avoids prediction "pop-in" for riders as the vehicle transitions from one trip to another and also gives riders advance notice of delays that impact downstream trips (e.g., when the known delay exceeds planned layover times between trips).
 * the respective TripUpdate entities are not required to be added to the feed in the same order that they are scheduled in the block. For example, if there are trips with `trip_ids` 1, 2, and 3 that all belong to one block, and the vehicle travels trip 1, then trip 2, and then trip 3, the `trip_update` entities may appear in any order - for example, adding trip 2, then trip 1, and then trip 3 is allowed.
