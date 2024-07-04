@@ -1,6 +1,6 @@
 # GTFS Realtime
 
-- [GTFS-realtime documentation](https://github.com/google/transit/tree/master/gtfs-realtime). Also available in [Español](https://github.com/google/transit/tree/master/gtfs-realtime/spec/es).
+- [GTFS-realtime documentation](https://github.com/google/transit/tree/master/gtfs-realtime).
 - [GTFS-realtime Autodoc](https://laidig.github.io/gtfs-rt-autodoc/index.html) - Automatically generated documentation for GTFS-realtime, generated from the official [GTFS-realtime protocol buffer specification](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto) and including some extensions.
 
 ## GTFS Realtime Libraries & Demo Apps
@@ -18,7 +18,7 @@
 
 ## GTFS Realtime (and Other Real-time API) Archival Tools
 
-- [GTFS-realtime to SQL](https://github.com/OpenMobilityData/GtfsRealTimeToSql) - Parses a GTFS-RealTime feed into an SQL database (used in [OpenMobilityData.org](https://openmobilitydata.org))
+- [~~GTFS-realtime to SQL~~](https://github.com/OpenMobilityData/GtfsRealTimeToSql) - Parses a GTFS-RealTime feed into an SQL database (used in [OpenMobilityData.org](https://openmobilitydata.org))
 - [gtfsrdb](https://github.com/CUTR-at-USF/gtfsrdb) - A Python tool that supports reading and archiving GTFS-realtime feeds into a database
 - [retro-gtfs](https://github.com/SAUSy-Lab/retro-gtfs) - A Python application that collects real-time data from the Nextbus API and archives it into the GTFS format (i.e., retrospective GTFS).
 
@@ -58,8 +58,8 @@ Massachusetts Bay Transportation Authority (MBTA)](https://github.com/mbta).
 - [GTFS Data Pipeline for TfNSW Bus Datasets](https://github.com/teckkean/GTFS-Data-Pipeline-TfNSW-Bus) - A data pipeline developed for the TfNSW's GTFS Static and Realtime datasets. The datasets generated using the pipeline have been used to validate the performance of TfNSW's Transit Signal Priority Request via Public Transport Information and Priority System (PTIPS).
 - [manual-gtfsrt](https://github.com/pailakka/manual-gtfsrt) - A Go-based tool that serves a GTFS-RT feed created from editable JSON.
 - [print-gtfs-rt-cli](https://github.com/derhuerst/print-gtfs-rt-cli) – Javascript tool to read a GTFS Realtime feed from stdin, print human-readable or as JSON.
-- [transitcast](https://github.com/OpenTransitTools/transitcast) - Uses GTFS and GTFS-RT vehicle position feed generating an estimated transition time it takes for each vehicle to move from scheduled stop to scheduled stop recording these an "observed_stop_time" table. These records can later be used to train a machine learning model to make vehicle travel predictions. Created by TriMet as part of [an FTA IMI project](https://trimet.org/imi/program.htm).
+- [~~transitcast~~](https://github.com/OpenTransitTools/transitcast) - Uses GTFS and GTFS-RT vehicle position feed generating an estimated transition time it takes for each vehicle to move from scheduled stop to scheduled stop recording these an "observed_stop_time" table. These records can later be used to train a machine learning model to make vehicle travel predictions. Created by TriMet as part of [an FTA IMI project](https://trimet.org/imi/program.htm).
 - [transit-feed-quality-calculator](https://github.com/CUTR-at-USF/transit-feed-quality-calculator) - A Java project that uses the [gtfs-realtime-validator](https://github.com/CUTR-at-USF/gtfs-realtime-validator) to assess the quality of a large number of transit feeds, fetching the feed URLs from a global directory ([TransitFeeds.com/OpenMobilityData.org](https://openmobilitydata.org/)).
 - [Transit Network Model](https://github.com/tmelliott/TransitNetworkModel) - A tool to generate predictions using GTFS-realtime VehiclePositions, a particle filter, and a Kalman Filter. 
-- [GTFS Realtime Display](https://git.wtf-eg.de/dancesWithCycles/gtfs-rt-display) - Analyse, monitor and maintain GTFS Realtime data. [Example instances](https://www.swingbe.de/activity/gtfs-rt-display/)
+- [~~GTFS Realtime Display~~](https://git.wtf-eg.de/dancesWithCycles/gtfs-rt-display) - Analyse, monitor and maintain GTFS Realtime data. [Example instances](https://www.swingbe.de/activity/gtfs-rt-display/)
 
