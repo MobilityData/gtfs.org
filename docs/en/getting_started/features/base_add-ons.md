@@ -7,12 +7,12 @@ Feed Information communicates important information about the feed, such as its 
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[feed_info.txt](/documentation/schedule/reference/#feed_infotxt)|`feed_publisher_name`, `feed_publisher_url`, `feed_lang`, `default_lang`, `feed_start_date`, `feed_end_date`, `feed_version`, `feed_contact_email`, `feed_contact_url` |
+|[feed_info.txt](../../../documentation/schedule/reference/#feed_infotxt)|`feed_publisher_name`, `feed_publisher_url`, `feed_lang`, `default_lang`, `feed_start_date`, `feed_end_date`, `feed_version`, `feed_contact_email`, `feed_contact_url` |
 
 
 **Prerequisites**: 
 
-- [Base features](/getting_started/features/base)
+- [Base features](../base)
 
 ??? note "Sample Data"
 
@@ -20,7 +20,7 @@ Feed Information communicates important information about the feed, such as its 
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#feed_infotxt"><b>feed_info.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#feed_infotxt"><b>feed_info.txt</b></a> <br>
         </p>
 
         | feed_publisher_name	      | feed_publisher_url   | feed_lang | default_lang | feed_start_date | feed_end_date | feed_version | feed_contact_email | feed_contact_url             |
@@ -33,14 +33,14 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
 
 |Files included                             |Fields included            |
 |----------------------------------|-------------------|
-|[shapes.txt](/documentation/schedule/reference/#shapestxt)                        |`shape_id`, `shape_pt_lat`, `shape_pt_lon`, `shape_pt_sequence`, `shape_dist_traveled`           |
-|[trips.txt](/documentation/schedule/reference/#tripstxt)                         |`shape_id`           |
-|[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)                    |`shape_dist_traveled`|
+|[shapes.txt](../../../documentation/schedule/reference/#shapestxt)                        |`shape_id`, `shape_pt_lat`, `shape_pt_lon`, `shape_pt_sequence`, `shape_dist_traveled`           |
+|[trips.txt](../../../documentation/schedule/reference/#tripstxt)                         |`shape_id`           |
+|[stop_times.txt](../../../documentation/schedule/reference/#stop_timestxt)                    |`shape_dist_traveled`|
 
 
 **Prerequisites**: 
 
-- [Base features](/getting_started/features/base)
+- [Base features](../base)
 
 ??? note "Sample data"
 
@@ -49,7 +49,7 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#shapestxt">shapes.txt</a> <br>
+        <a href="../../../documentation/schedule/reference/#shapestxt">shapes.txt</a> <br>
         </p>
     
         | shape_id | shape_pt_lat | shape_pt_lon | shape_pt_sequence | shape_dist_traveled |
@@ -62,7 +62,7 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#tripstxt">trips.txt</a> <br>
+        <a href="../../../documentation/schedule/reference/#tripstxt">trips.txt</a> <br>
         </p>
         
         |trip_id |shape_id|
@@ -71,7 +71,7 @@ When defining shapes, there is a balance between their level of detail (e.g. fol
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#stop_timestxt">stop_times.txt</a> <br>
+        <a href="../../../documentation/schedule/reference/#stop_timestxt">stop_times.txt</a> <br>
         </p>
         
         |trip_id |stop_sequence|shape_dist_traveled|
@@ -86,12 +86,12 @@ Using Route Colors allows to accurately depict and communicate the color scheme 
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[routes.txt](/documentation/schedule/reference/#routestxt)|`route_color`, `route_text_color` |
+|[routes.txt](../../../documentation/schedule/reference/#routestxt)|`route_color`, `route_text_color` |
 
 
 **Prerequisites**: 
 
-- [Base features](/getting_started/features/base)
+- [Base features](../base)
 
 ??? note "Sample Data"
 
@@ -100,7 +100,7 @@ Using Route Colors allows to accurately depict and communicate the color scheme 
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#routestxt"><b>routes.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#routestxt"><b>routes.txt</b></a> <br>
         </p>
 
         | route_id | agency_id | route_short_name | route_long_name    | route_type | route_color | route_text_color |
@@ -113,12 +113,12 @@ Bike Allowed indicates if vehicles serving specific trips are able to accommodat
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[trips.txt](/documentation/schedule/reference/#tripstxt)|`bikes_allowed` |
+|[trips.txt](../../../documentation/schedule/reference/#tripstxt)|`bikes_allowed` |
 
 
 **Prerequisites**: 
 
-- [Base features](/getting_started/features/base)
+- [Base features](../base)
 
 ??? note "Sample Data"
 
@@ -127,7 +127,7 @@ Bike Allowed indicates if vehicles serving specific trips are able to accommodat
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
         </p>
 
         | route_id | service_id | trip_id | bikes_allowed |
@@ -141,10 +141,12 @@ Headsigns allows to communicate the signage used by vehicles indicating the trip
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[trips.txt](/documentation/schedule/reference/#tripstxt)|`trip_headsign` |
-|[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)|`stop_headsign`|
+|[trips.txt](../../../documentation/schedule/reference/#tripstxt)|`trip_headsign` |
+|[stop_times.txt](../../../documentation/schedule/reference/#stop_timestxt)|`stop_headsign`|
 
-**Prerequisite**: [Base features](/getting_started/features/base)
+**Prerequisite**: 
+
+- [Base features](../base)
 
 ??? note "Sample Data"
 
@@ -153,7 +155,7 @@ Headsigns allows to communicate the signage used by vehicles indicating the trip
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
         </p>
 
         | route_id | service_id | trip_id | trip_headsign |
@@ -164,7 +166,7 @@ Headsigns allows to communicate the signage used by vehicles indicating the trip
     
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#stop_timestxt"><b>stop_times.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#stop_timestxt"><b>stop_times.txt</b></a> <br>
         </p>
 
         | trip_id | arrival_time | departure_time | stop_id | stop_sequence | stop_headsign          |
@@ -181,12 +183,12 @@ Location Types are used to classify key areas within transit stations such as ex
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[stops.txt](/documentation/schedule/reference/#stopstxt)|`location_type`, `parent_station` |
+|[stops.txt](../../../documentation/schedule/reference/#stopstxt)|`location_type`, `parent_station` |
 
 
 **Prerequisites**: 
 
-- [Base features](/getting_started/features/base)
+- [Base features](../base)
 
 ??? note "Sample Data"
 
@@ -195,7 +197,7 @@ Location Types are used to classify key areas within transit stations such as ex
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
         </p>
 
         | stop_id      | stop_name                                             | location_type | parent_station |
@@ -220,12 +222,12 @@ When modeling a Frequency-based service, `stop_times.txt` contains the relative 
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[frequencies.txt](/documentation/schedule/reference/#frequenciestxt)|`trip_id`, `start_time`, `end_time`, `headway_secs`, `exact_times` |
+|[frequencies.txt](../../../documentation/schedule/reference/#frequenciestxt)|`trip_id`, `start_time`, `end_time`, `headway_secs`, `exact_times` |
 
 
 **Prerequisites**: 
 
-- [Base features](/getting_started/features/base)
+- [Base features](../base)
 
 ??? note "Sample Data"
 
@@ -238,7 +240,7 @@ When modeling a Frequency-based service, `stop_times.txt` contains the relative 
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#frequenciestxt"><b>frequencies.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#frequenciestxt"><b>frequencies.txt</b></a> <br>
         </p>
 
         | trip_id | start_time | end_time | headway_secs | exact_times |
@@ -252,12 +254,12 @@ Transfers provide details about transitions between different travel segments (o
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[transfers.txt](/documentation/schedule/reference/#transferstxt)|`from_stop_id`, `to_stop_id`, `from_route_id`, `to_route_id`, `from_trip_id`, `to_trip_id`, `transfer_type`, `min_transfer_time` |
+|[transfers.txt](../../../documentation/schedule/reference/#transferstxt)|`from_stop_id`, `to_stop_id`, `from_route_id`, `to_route_id`, `from_trip_id`, `to_trip_id`, `transfer_type`, `min_transfer_time` |
 
 
 **Prerequisites**: 
 
-- [Base features](/getting_started/features/base)
+- [Base features](../base)
 
 ??? note "Sample Data"
 
@@ -266,7 +268,7 @@ Transfers provide details about transitions between different travel segments (o
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#transferstxt"><b>transfers.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#transferstxt"><b>transfers.txt</b></a> <br>
         </p>
 
         | from_stop_id | to_stop_id | from_route_id | to_route_id | from_trip_id | to_trip_id | transfer_type | min_transfer_time |
@@ -281,12 +283,12 @@ Translations allows service information such as station names to be provided in 
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[translations.txt](/documentation/schedule/reference/#translationstxt)|`table_name`,`field_name`,`language`,`translation`,`record_id`,`record_sub_id`,`field_value` |
+|[translations.txt](../../../documentation/schedule/reference/#translationstxt)|`table_name`,`field_name`,`language`,`translation`,`record_id`,`record_sub_id`,`field_value` |
 
 
 **Prerequisites**: 
 
-- [Base features](/getting_started/features/base)
+- [Base features](../base)
 
 ??? note "Sample Data"
 
@@ -295,7 +297,7 @@ Translations allows service information such as station names to be provided in 
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#translationstxt"><b>translations.txt</b></a> <br>
         </p>
 
         | table_name | field_name      | language | translation                                           | record_id | record_sub_id | field_value |
@@ -311,12 +313,12 @@ Attributions makes it possible to share additional details regarding the organiz
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[attributions.txt](/documentation/schedule/reference/#attributionstxt) |`attribution_id`, `agency_id`, `route_id`, `trip_id`, `organization_name`, `is_producer`, `is_operator`, `is_authority`, `attribution_url`, `attribution_email`, `attribution_phone` |
+|[attributions.txt](../../../documentation/schedule/reference/#attributionstxt) |`attribution_id`, `agency_id`, `route_id`, `trip_id`, `organization_name`, `is_producer`, `is_operator`, `is_authority`, `attribution_url`, `attribution_email`, `attribution_phone` |
 
 
 **Prerequisites**: 
 
-- [Base features](/getting_started/features/base)
+- [Base features](../base)
 
 ??? note "Sample Data"
 
@@ -324,7 +326,7 @@ Attributions makes it possible to share additional details regarding the organiz
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#attributionstxt"><b>attributions.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#attributionstxt"><b>attributions.txt</b></a> <br>
         </p>
 
         | attribution_id | agency_id | route_id | trip_id | organization_name        | is_producer | is_operator | is_authority | attribution_url                  | attribution_email       | attribution_phone |
