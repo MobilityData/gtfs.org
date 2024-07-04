@@ -8,12 +8,12 @@ This can be specified either in `routes.txt`, indicating that riders can be pick
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)|`continuous_pickup`, `continuous_drop_off` |
-|[routes.txt](/documentation/schedule/reference/#routestxt)|`continuous_pickup`, `continuous_drop_off` |
+|[stop_times.txt](../../../documentation/schedule/reference/#stop_timestxt)|`continuous_pickup`, `continuous_drop_off` |
+|[routes.txt](../../../documentation/schedule/reference/#routestxt)|`continuous_pickup`, `continuous_drop_off` |
 
 **Prerequisites**: 
 
-- [Base features](/getting_started/features/base)
+- [Base features](../base)
 
 ??? note "Sample Data"
 
@@ -32,7 +32,7 @@ This can be specified either in `routes.txt`, indicating that riders can be pick
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#routestxt"><b>routes.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#routestxt"><b>routes.txt</b></a> <br>
         </p>
 
         | route_id | route_short_name | route_type | continuous_pickup | continuous_drop_off |
@@ -41,7 +41,7 @@ This can be specified either in `routes.txt`, indicating that riders can be pick
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#stop_timestxt"><b>stop_times.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#stop_timestxt"><b>stop_times.txt</b></a> <br>
         </p>
 
         | trip_id | arrival_time | departure_time | stop_id | stop_sequence | continuous_pickup | continuous_drop_off |
@@ -54,16 +54,16 @@ This can be specified either in `routes.txt`, indicating that riders can be pick
 
 ##  Booking Rules
 
-Booking rules can be used to enable users to reserve a trip on a demand-responsive service. These rules outline the necessary prerequisites for successful bookings and provide contact information where users can make trip reservations. This feature should be used in conjunction with [Predefined Routes With Deviation](/getting_started/features/flexible_services/#predefined-routes-with-deviation), [Zone-based Demand Responsive Services](/getting_started/features/flexible_services/#zone-based-demand-responsive-services) and [Fixed-Stops Demand Responsive Services](/getting_started/features/flexible_services/#fixed-stops-demand-responsive-services) features, if such services require booking.
+Booking rules can be used to enable users to reserve a trip on a demand-responsive service. These rules outline the necessary prerequisites for successful bookings and provide contact information where users can make trip reservations. This feature should be used in conjunction with [Predefined Routes With Deviation](#predefined-routes-with-deviation), [Zone-based Demand Responsive Services](#zone-based-demand-responsive-services) and [Fixed-Stops Demand Responsive Services](#fixed-stops-demand-responsive-services) features, if such services require booking.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[booking_rules.txt](/documentation/schedule/reference/#booking_rulestxt)|`booking_rule_id`, `booking_type`, `prior_notice_duration_min`, `prior_notice_duration_max`, `prior_notice_last_day`, `prior_notice_last_time`, `prior_notice_start_day`, `prior_notice_start_time`, `prior_notice_service_id`, `message`, `pickup_message`, `drop_off_message`, `phone_number`, `info_url`, `booking_url` |
+|[booking_rules.txt](../../../documentation/schedule/reference/#booking_rulestxt)|`booking_rule_id`, `booking_type`, `prior_notice_duration_min`, `prior_notice_duration_max`, `prior_notice_last_day`, `prior_notice_last_time`, `prior_notice_start_day`, `prior_notice_start_time`, `prior_notice_service_id`, `message`, `pickup_message`, `drop_off_message`, `phone_number`, `info_url`, `booking_url` |
 
 
 **Prerequisites**: 
 
-- [Base features](/getting_started/features/base)
+- [Base features](../base)
 
 ??? note "Sample Data"
 
@@ -73,7 +73,7 @@ Booking rules can be used to enable users to reserve a trip on a demand-responsi
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#booking_rulestxt"><b>booking_rules.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#booking_rulestxt"><b>booking_rules.txt</b></a> <br>
         </p>
 
         | booking_rule_id | booking_type | prior_notice_duration_min | prior_notice_duration_max | prior_notice_last_day | prior_notice_last_time | prior_notice_start_day | prior_notice_start_time | prior_notice_service_id | message                                                                                                                                            | pickup_message | drop_off_message | phone_number   | info_url             | booking_url             |
@@ -88,13 +88,13 @@ Predefined Routes With Deviation can be used to model flexible services where ve
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)|`location_id`, `start_pickup_drop_off_window`, `end_pickup_drop_off_window`, `pickup_booking_rule_id`, `drop_off_booking_rule_id`|
-|[locations.geojson](/documentation/schedule/reference/#locationsgeojson)|`Type`, `Features`, `Features:Type`, `Features:Id`, `Features:Properties`, `Features:Properties:Stop_name`, `Features:Properties:Stop_description`, `Features:Geometry`, `Features:Geometry:Type`, `Features:Geometry:Coordinates` |
+|[stop_times.txt](../../../documentation/schedule/reference/#stop_timestxt)|`location_id`, `start_pickup_drop_off_window`, `end_pickup_drop_off_window`, `pickup_booking_rule_id`, `drop_off_booking_rule_id`|
+|[locations.geojson](../../../documentation/schedule/reference/#locationsgeojson)|`Type`, `Features`, `Features:Type`, `Features:Id`, `Features:Properties`, `Features:Properties:Stop_name`, `Features:Properties:Stop_description`, `Features:Geometry`, `Features:Geometry:Type`, `Features:Geometry:Coordinates` |
 
 **Prerequisites**:
 
-- [Base features](/getting_started/features/base)
-- [Booking Rules](/getting_started/features/flexible_services/#booking-rules) if the service requires booking
+- [Base features](../base)
+- [Booking Rules](#booking-rules) if the service requires booking
 
 ??? note "Sample Data"
 
@@ -103,7 +103,7 @@ Predefined Routes With Deviation can be used to model flexible services where ve
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#stop_timestxt"><b>stop_times.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#stop_timestxt"><b>stop_times.txt</b></a> <br>
         </p>
 
         | trip_id  | arrival_time | departure_time | stop_id | location_id           | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | shape_dist_traveled | pickup_booking_rule_id | drop_off_booking_rule_id |
@@ -116,7 +116,7 @@ Predefined Routes With Deviation can be used to model flexible services where ve
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#locationsgeojson"><b>locations.geojson</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#locationsgeojson"><b>locations.geojson</b></a> <br>
         </p>
 
         ~~~
@@ -183,13 +183,13 @@ Zone-based Demand Responsive Services is used to model services that allow pick 
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)|`location_id`, `start_pickup_drop_off_window`, `end_pickup_drop_off_window`, `pickup_booking_rule_id`, `drop_off_booking_rule_id`|
-|[locations.geojson](/documentation/schedule/reference/#locationsgeojson)|`Type`, `Features`, `Features:Type`, `Features:Id`, `Features:Properties`, `Features:Properties:Stop_name`, `Features:Properties:Stop_description`, `Features:Geometry`, `Features:Geometry:Type`, `Features:Geometry:Coordinates` |
+|[stop_times.txt](../../../documentation/schedule/reference/#stop_timestxt)|`location_id`, `start_pickup_drop_off_window`, `end_pickup_drop_off_window`, `pickup_booking_rule_id`, `drop_off_booking_rule_id`|
+|[locations.geojson](../../../documentation/schedule/reference/#locationsgeojson)|`Type`, `Features`, `Features:Type`, `Features:Id`, `Features:Properties`, `Features:Properties:Stop_name`, `Features:Properties:Stop_description`, `Features:Geometry`, `Features:Geometry:Type`, `Features:Geometry:Coordinates` |
 
 **Prerequisites**:
 
-- [Base features](/getting_started/features/base)
-- [Booking Rules](/getting_started/features/flexible_services/#booking-rules) if the service requires booking
+- [Base features](../base)
+- [Booking Rules](#booking-rules) if the service requires booking
 
 ??? note "Sample Data"
 
@@ -198,7 +198,7 @@ Zone-based Demand Responsive Services is used to model services that allow pick 
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#stop_timestxt"><b>stop_times.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#stop_timestxt"><b>stop_times.txt</b></a> <br>
         </p>
 
         | trip_id  | location_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | pickup_booking_rule_id | drop_off_booking_rule_id |
@@ -208,7 +208,7 @@ Zone-based Demand Responsive Services is used to model services that allow pick 
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#locationsgeojson"><b>locations.geojson</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#locationsgeojson"><b>locations.geojson</b></a> <br>
         </p>
 
         ~~~
@@ -249,14 +249,14 @@ Fixed-Stops Demand Responsive Services is used to model services that allow pick
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[stop_times.txt](/documentation/schedule/reference/#stop_timestxt)|`location_group_id`, `start_pickup_drop_off_window`, `end_pickup_drop_off_window`, `pickup_booking_rule_id`, `drop_off_booking_rule_id`|
-|[location_groups.txt](/documentation/schedule/reference/#location_groupstxt)|`location_group_id`, `location_group_name`|
-|[location_group_stops.txt](/documentation/schedule/reference/#location_group_stopstxt)|`location_group_id`, `stop_id`|
+|[stop_times.txt](../../../documentation/schedule/reference/#stop_timestxt)|`location_group_id`, `start_pickup_drop_off_window`, `end_pickup_drop_off_window`, `pickup_booking_rule_id`, `drop_off_booking_rule_id`|
+|[location_groups.txt](../../../documentation/schedule/reference/#location_groupstxt)|`location_group_id`, `location_group_name`|
+|[location_group_stops.txt](../../../documentation/schedule/reference/#location_group_stopstxt)|`location_group_id`, `stop_id`|
 
 **Prerequisites**:
 
-- [Base features](/getting_started/features/base)
-- [Booking Rules](/getting_started/features/flexible_services/#booking-rules) if the service requires booking
+- [Base features](../base)
+- [Booking Rules](#booking-rules) if the service requires booking
 
 ??? note "Sample Data"
 
@@ -266,7 +266,7 @@ Fixed-Stops Demand Responsive Services is used to model services that allow pick
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#location_groupstxt"><b>location_groups.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#location_groupstxt"><b>location_groups.txt</b></a> <br>
         </p>
 
         | location_group_id | location_group_name           |
@@ -275,7 +275,7 @@ Fixed-Stops Demand Responsive Services is used to model services that allow pick
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#location_group_stopstxt"><b>location_group_stops.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#location_group_stopstxt"><b>location_group_stops.txt</b></a> <br>
         </p>
 
         | location_group_id | stop_id |
@@ -287,7 +287,7 @@ Fixed-Stops Demand Responsive Services is used to model services that allow pick
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#stop_timestxt"><b>stop_times.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#stop_timestxt"><b>stop_times.txt</b></a> <br>
         </p>
 
         | trip_id  | location_group_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | pickup_booking_rule_id | drop_off_booking_rule_id |

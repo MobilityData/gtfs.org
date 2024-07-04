@@ -7,12 +7,12 @@ Stops Wheelchair Accessibility allows to indicate whether wheelchair boarding is
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[stops.txt](/documentation/schedule/reference/#stopstxt)|`wheelchair_boarding` |
+|[stops.txt](../../../documentation/schedule/reference/#stopstxt)|`wheelchair_boarding` |
 
 **Prerequisites**:
 
-- [Base features](/getting_started/features/base)
-- [Location Types](/getting_started/features/base_add-ons/#location-types) when defining accessibility information for station locations such as entrances/exits or boarding areas.
+- [Base features](../base)
+- [Location Types](../base_add-ons/#location-types) when defining accessibility information for station locations such as entrances/exits or boarding areas.
 
 ??? note "Sample Data"
 
@@ -21,7 +21,7 @@ Stops Wheelchair Accessibility allows to indicate whether wheelchair boarding is
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
         </p>
 
         | stop_id | stop_name  | stop_lat  | stop_lon   | location_type | wheelchair_boarding |
@@ -35,11 +35,11 @@ Trips Wheelchair Accessibility make it possible to indicate if a vehicle can acc
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[trips.txt](/documentation/schedule/reference/#tripstxt)|`wheelchair_accessible`|
+|[trips.txt](../../../documentation/schedule/reference/#tripstxt)|`wheelchair_accessible`|
 
 **Prerequisites**: 
 
-- [Base features](/getting_started/features/base)
+- [Base features](../base)
 
 ??? note "Sample Data"
 
@@ -48,7 +48,7 @@ Trips Wheelchair Accessibility make it possible to indicate if a vehicle can acc
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
         </p>
 
         | route_id | service_id | trip_id | wheelchair_accessible |
@@ -63,11 +63,11 @@ Text-to-speech allows to provide the necessary inputs to convert text into audio
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[stops.txt](/documentation/schedule/reference/#stopstxt)|`tts_stop_name` |
+|[stops.txt](../../../documentation/schedule/reference/#stopstxt)|`tts_stop_name` |
 
 **Prerequisites**: 
 
-- [Base features](/getting_started/features/base)
+- [Base features](../base)
 
 ??? note "Sample Data"
 
@@ -76,7 +76,7 @@ Text-to-speech allows to provide the necessary inputs to convert text into audio
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
         </p>
 
         | stop_id | stop_name  | stop_lat    | stop_lon   | tts_stop_name            |

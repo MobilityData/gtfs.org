@@ -7,12 +7,12 @@ At its foundational level, Pathways offers basic functionality to connect key ar
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[pathways.txt](/documentation/schedule/reference/#pathwaystxt)|`pathway_id`, `from_stop_id`, `to_stop_id`, `pathway_mode`, `is_bidirectional` |
+|[pathways.txt](../../../documentation/schedule/reference/#pathwaystxt)|`pathway_id`, `from_stop_id`, `to_stop_id`, `pathway_mode`, `is_bidirectional` |
 
 **Prerequisites**:
 
-- [Base features](/getting_started/features/base)
-- [Location Types](/getting_started/features/base_add-ons/#location-types)
+- [Base features](../base)
+- [Location Types](../base_add-ons/#location-types)
 
 ??? note "Sample Data"
 
@@ -21,7 +21,7 @@ At its foundational level, Pathways offers basic functionality to connect key ar
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#pathwaystxt"><b>pathways.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#pathwaystxt"><b>pathways.txt</b></a> <br>
         </p>
 
         | pathway_id | from_stop_id | to_stop_id | pathway_mode | is_bidirectional |
@@ -44,12 +44,12 @@ More details can be added regarding the physical characteristics of a station’
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[pathways.txt](/documentation/schedule/reference/#pathwaystxt)|`max_slope`, `min_width`, `length`, `stair_count`|
+|[pathways.txt](../../../documentation/schedule/reference/#pathwaystxt)|`max_slope`, `min_width`, `length`, `stair_count`|
 
 **Prerequisites**:
 
-- [Base features](/getting_started/features/base)
-- [Pathway Connections](/getting_started/features/pathways/#pathway-connections)
+- [Base features](../base)
+- [Pathway Connections](#pathway-connections)
 
 ??? note "Sample Data"
 
@@ -58,7 +58,7 @@ More details can be added regarding the physical characteristics of a station’
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#pathwaystxt"><b>pathways.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#pathwaystxt"><b>pathways.txt</b></a> <br>
         </p>
 
         | pathway_id | max_slope | min_width | length | stair_count |
@@ -81,13 +81,13 @@ Levels can be used to list all different levels within a station, providing user
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[levels.txt](/documentation/schedule/reference/#levelstxt)|`level_id`, `level_index`, `level_name`|
-|[stops.txt](/documentation/schedule/reference/#stopstxt)|`level_id`|
+|[levels.txt](../../../documentation/schedule/reference/#levelstxt)|`level_id`, `level_index`, `level_name`|
+|[stops.txt](../../../documentation/schedule/reference/#stopstxt)|`level_id`|
 
 **Prerequisites**:
 
-- [Base features](/getting_started/features/base)
-- [Location Types](/getting_started/features/base_add-ons/#location-types)
+- [Base features](../base)
+- [Location Types](../base_add-ons/#location-types)
 
 ??? note "Sample Data"
 
@@ -96,7 +96,7 @@ Levels can be used to list all different levels within a station, providing user
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
         </p>
 
         | level_id          | level_index | level_name |
@@ -108,7 +108,7 @@ Levels can be used to list all different levels within a station, providing user
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#pathwaystxt"><b>pathways.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#pathwaystxt"><b>pathways.txt</b></a> <br>
         </p>
 
         | stop_id      | level_id |
@@ -133,12 +133,12 @@ In-station Traversal Time provides an additional level of detail to in-station d
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[pathways.txt](/documentation/schedule/reference/#pathwaystxt)|`traversal_time`|
+|[pathways.txt](../../../documentation/schedule/reference/#pathwaystxt)|`traversal_time`|
 
 **Prerequisites**: 
 
-- [Base features](/getting_started/features/base)
-- [Pathway Connections](/getting_started/features/pathways/#pathway-connections)
+- [Base features](../base)
+- [Pathway Connections](#pathway-connections)
 
 ??? note "Sample Data"
 
@@ -147,7 +147,7 @@ In-station Traversal Time provides an additional level of detail to in-station d
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#pathwaystxt"><b>pathways.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#pathwaystxt"><b>pathways.txt</b></a> <br>
         </p>
 
         | pathway_id | traversal_time |
@@ -170,12 +170,12 @@ Pathway Signs can bridge the information displayed in trip planners with real-wo
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
-|[pathways.txt](/documentation/schedule/reference/#pathwaystxt)|`signposted_as`, `reversed_signposted_as`|
+|[pathways.txt](../../../documentation/schedule/reference/#pathwaystxt)|`signposted_as`, `reversed_signposted_as`|
 
 **Prerequisites**:
 
-- [Base features](/getting_started/features/base)
-- [Pathway Connections](/getting_started/features/pathways/#pathway-connections)
+- [Base features](../base)
+- [Pathway Connections](#pathway-connections)
 
 ??? note "Sample Data"
 
@@ -184,7 +184,7 @@ Pathway Signs can bridge the information displayed in trip planners with real-wo
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="/documentation/schedule/reference/#pathwaystxt"><b>pathways.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#pathwaystxt"><b>pathways.txt</b></a> <br>
         </p>
 
         | pathway_id | signposted_as    | reversed_signposted_as |
