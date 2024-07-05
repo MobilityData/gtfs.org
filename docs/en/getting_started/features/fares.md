@@ -56,7 +56,7 @@ Fare Media defines the supported media that can be used to hold and/or validate 
 ??? note "Sample Data"
 
     <p style="font-size:16px">
-    The following sample shows a snippet of different fare media in the San Francisco Bay Area. `Clipper` is described as a physical transit card with `fare_media_type=2`. `SFMTA Munimobile` is described as a mobile app with `fare_media_type=2`. `Cash` which is given directly to the driver without a ticket, is `fare_media_type=0`.
+    The following sample shows a snippet of different Fare Media in the San Francisco Bay Area. `Clipper` is described as a physical transit card with `fare_media_type=2`. `SFMTA Munimobile` is described as a mobile app with `fare_media_type=2`. `Cash` which is given directly to the driver without a ticket, is `fare_media_type=0`.
     </p>
     !!! note ""
         <p style="font-size:16px">
@@ -163,7 +163,7 @@ Route-Based Fares is used to assign different fares for specific groups of route
 
 ## Time-Based Fares
 
-Time-based Fares is used to assign fares for specific time-of-day or day-of-week, such as peak and off-peak fares and/or weekend fares.
+Time-Based Fares is used to assign fares for specific time-of-day or day-of-week, such as peak and off-peak fares and/or weekend fares.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -291,7 +291,7 @@ Fares Transfers is used to define rules applicable when transferring between leg
         | a                 | a               | -1             | 7200           | 1                   | 0                  | free_transfer   |
 
 
-## Fares V1
+## Fares v1
 
 Fares v1 is a legacy alternative to other Fares features described above. It allows to model basic fare information such as fare pricing, payment methods transfers and zone-based fares using the `fare_rules.txt` and `fare_attributes.txt` files. While simpler to produce, it's less capable or modeling more complex fare structures and may be deprecated with sufficient endorsement of other Fare features (that are part of what is called Fares v2).
 

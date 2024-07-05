@@ -84,9 +84,9 @@ A route is a group of trips under the same branding that are displayed to riders
         | RA       | tb        |               17 | Mission - Downtown | The "A" route travels from lower Mission to Downtown. |          3 | https://www.transitbus.org/routes/ra |               12 |
 
 
-## Service dates
+## Service Dates
 
-Service dates indicate the range of dates on which a service is running, as well as creating service exemptions such as holidays and other special services on specific dates.
+Service Dates indicate the range of dates on which a service is running, as well as creating service exemptions such as holidays and other special services on specific dates.
 It works by defining a start date and a finish date in `calendars.txt`, then a marker for each day of the week on which it operates. If there are single-day scheduling changes that occur during this period, then the `calendar_dates.txt` file can be used to override the schedule for each of these days.
 
 | Files included                   | Fields included   |

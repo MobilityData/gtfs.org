@@ -54,7 +54,7 @@ This can be specified either in `routes.txt`, indicating that riders can be pick
 
 ##  Booking Rules
 
-Booking rules can be used to enable users to reserve a trip on a demand-responsive service. These rules outline the necessary prerequisites for successful bookings and provide contact information where users can make trip reservations. This feature should be used in conjunction with [Predefined Routes With Deviation](#predefined-routes-with-deviation), [Zone-based Demand Responsive Services](#zone-based-demand-responsive-services) and [Fixed-Stops Demand Responsive Services](#fixed-stops-demand-responsive-services) features, if such services require booking.
+Booking Rules can be used to enable users to reserve a trip on a demand-responsive service. These rules outline the necessary prerequisites for successful bookings and provide contact information where users can make trip reservations. This feature should be used in conjunction with [Predefined Routes with Deviation](#predefined-routes-with-deviation), [Zone-Based Demand Responsive Services](#zone-based-demand-responsive-services) and [Fixed-Stops Demand Responsive Services](#fixed-stops-demand-responsive-services) features, if such services require booking.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -68,7 +68,7 @@ Booking rules can be used to enable users to reserve a trip on a demand-responsi
 ??? note "Sample Data"
 
     <p style="font-size:16px">
-    The following sample shows two different set of booking rules, the first one for trips that must be booked at least one day in advance (before 1PM) and no more than 14 days prior, and a second one for trips that can be booked at least 45 minutes prior to the trip and no more than 5 hours before.
+    The following sample shows two different sets of booking rules, the first one for trips that must be booked at least one day in advance (before 1PM) and no more than 14 days prior, and a second one for trips that can be booked at least 45 minutes prior to the trip and no more than 5 hours before.
 
     </p>
     !!! note ""
@@ -82,9 +82,9 @@ Booking rules can be used to enable users to reserve a trip on a demand-responsi
         | route_br_4545   |            1 |                        45 |                       300 |                       |                        |                        |                         |                         | To request a ride, use the official booking system in our website, trips must be booked at least 45 min in advance                                 |                |                  | (123)-111-2233 | flexservice.org/info | flexservice.org/booking |
 
 
-## Predefined Routes With Deviation
+## Predefined Routes with Deviation
 
-Predefined Routes With Deviation can be used to model flexible services where vehicles can briefly deviate from a specific route to pick up users that booked a trip within a specific area along the route. This uses a combination of traditional stops (like a regular scheduled service) and zones using `locations.geojson`.
+Predefined Routes with Deviation can be used to model flexible services where vehicles can briefly deviate from a specific route to pick up users that booked a trip within a specific area along the route. This uses a combination of traditional stops (like a regular scheduled service) and zones using `locations.geojson`.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -177,9 +177,9 @@ Predefined Routes With Deviation can be used to model flexible services where ve
         } 
         ~~~
 
-## Zone-based Demand Responsive Services
+## Zone-Based Demand Responsive Services
 
-Zone-based Demand Responsive Services is used to model services that allow pick up and/or drop off at any location within a specific area for users that book a trip. These areas are defined using `locations.geojson` so it does not require the use of `stops.txt`, nor `stop_times.arrival_time` & `stop_times.departure_time`.
+Zone-Based Demand Responsive Services is used to model services that allow pick up and/or drop off at any location within a specific area for users that book a trip. These areas are defined using `locations.geojson` so it does not require the use of `stops.txt`, nor `stop_times.arrival_time` & `stop_times.departure_time`.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|

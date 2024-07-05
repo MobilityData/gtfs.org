@@ -57,9 +57,9 @@ Trips Wheelchair Accessibility make it possible to indicate if a vehicle can acc
         | RA       | WE         | AWE2    |                     2 |
 
 
-## Text-to-speech
+## Text-to-Speech
 
-Text-to-speech allows to provide the necessary inputs to convert text into audio, ensures that riders using assistive technology to read text aloud are getting the right stop names when using the transit service.
+Text-to-Speech allows to provide the necessary inputs to convert text into audio, ensures that riders using assistive technology to read text aloud are getting the right stop names when using the transit service.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
