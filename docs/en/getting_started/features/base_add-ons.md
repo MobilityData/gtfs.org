@@ -29,7 +29,7 @@ Feed Information communicates important information about the feed, such as its 
 
 ## Shapes
 Shapes can be defined and associated with trips, enabling trip planning applications to display trips on a map and inform riders of the distance they need to travel in a transit vehicle. The `shape_dist_traveled` fields are used to programmatically determine how much of a shape to draw when showing a map to riders.
-When defining shapes, there is a balance between their level of detail (e.g. following the exact curvature of roads) and conveying only the necessary information efficiently.
+When defining Shapes, there is a balance between their level of detail (e.g. following the exact curvature of roads) and conveying only the necessary information efficiently.
 
 |Files included                             |Fields included            |
 |----------------------------------|-------------------|
@@ -177,9 +177,9 @@ Headsigns allows to communicate the signage used by vehicles indicating the trip
         | AWE1    |      6:23:00 |        6:23:00 | TAS004  |             4 | Downtown - Main Square |
         | AWE1    |      6:25:00 |        6:25:00 | TAS005  |             5 | Downtown - Main Square |
 
-## Location types
+## Location Types
 
-Location Types are used to classify key areas within transit stations such as exits/entrances, nodes or boarding areas, as well as their relationship. Location types serve as a foundation for modeling transit stations using Pathways.
+Location Types are used to classify key areas within transit stations such as exits/entrances, nodes or boarding areas, as well as their relationship. Location Types serve as a foundation for modeling transit stations using Pathways.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -215,10 +215,10 @@ Location Types are used to classify key areas within transit stations such as ex
         | A102_F01     | Main Street station - Paid side of fare gate          |             3 | Station_A102   |
         | A102_F02     | Main Street station - Unpaid side of fare gate        |             3 | Station_A102   |
 
-## Frequency-based service
+## Frequency-Based Service
 
-Frequency-based service can be used to model services that operate on a regular frequency, such as buses running every 10 minutes or subway services operating 2 minutes within specified time intervals.
-When modeling a Frequency-based service, `stop_times.txt` contains the relative times between stops in order to determine the times to be displayed to riders. 
+Frequency-Based Service can be used to model services that operate on a regular frequency, such as buses running every 10 minutes or subway services operating 2 minutes within specified time intervals.
+When modeling a Frequency-Based Service, `stop_times.txt` contains the relative times between stops in order to determine the times to be displayed to riders. 
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|

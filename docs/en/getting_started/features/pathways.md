@@ -3,7 +3,7 @@ Pathways features can model large transit stations, guiding riders from station 
 
 ## Pathway Connections
 
-At its foundational level, Pathways offers basic functionality to connect key areas defined in Location types within a station. These connections form pathways, enabling users to obtain precise directions (e. g. from an entrance to the boarding area), which is particularly useful in navigating large and complex transit stations.
+At its foundational level, Pathways offers basic functionality to connect key areas defined in Location Types within a station. These connections form pathways, enabling users to obtain precise directions (e. g. from an entrance to the boarding area), which is particularly useful in navigating large and complex transit stations.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -127,9 +127,9 @@ Levels can be used to list all different levels within a station, providing user
         | A102_F02     |       -1 |
        
 
-## In-station Traversal Time
+## In-Station Traversal Time
 
-In-station Traversal Time provides an additional level of detail to in-station directions, giving users an estimated time required to navigate stations, resulting in better travel directions and travel times.
+In-Station Traversal Time provides an additional level of detail to in-station directions, giving users an estimated time required to navigate stations, resulting in better travel directions and travel times.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|

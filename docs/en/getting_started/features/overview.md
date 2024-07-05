@@ -82,7 +82,7 @@ These features enhance a GTFS dataset, improving rider experience and facilitati
 
     [:octicons-arrow-right-24: Learn more](../base_add-ons/#headsigns)
 
-- :material-subway-variant:{ .lg .middle } __Location types__
+- :material-subway-variant:{ .lg .middle } __Location Types__
 
     Classify key areas within transit stations such as entrances and exits.
 
@@ -132,7 +132,7 @@ Accessibility features provide essential information for people with disabilitie
 
     [:octicons-arrow-right-24: Learn more](../accessibility/#trips-wheelchair-accessibility)
 
-- :material-subway-variant:{ .lg .middle } __Text-to-speech__
+- :material-subway-variant:{ .lg .middle } __Text-to-Speech__
 
     Provide the necessary inputs to convert text for stop names into audio.
 
@@ -197,13 +197,13 @@ Pathways features allows to model large transit stations, so that riders are gui
 
 <div class="grid cards" markdown>
 
--   :material-subway-variant:{ .lg .middle } __Pathways connections__
+-   :material-subway-variant:{ .lg .middle } __Pathway Connections__
 
     Model paths connecting relevant points within a transit station.
 
     [:octicons-arrow-right-24: Learn more](../pathways/#pathway-connections)
 
--   :material-subway-variant:{ .lg .middle } __Pathway details__
+-   :material-subway-variant:{ .lg .middle } __Pathway Details__
 
     Provide additional details regarding the physical characteristics of a pathway.
 
@@ -215,13 +215,13 @@ Pathways features allows to model large transit stations, so that riders are gui
 
     [:octicons-arrow-right-24: Learn more](../pathways/#levels)
 
--   :material-subway-variant:{ .lg .middle } __In-station traversal time__
+-   :material-subway-variant:{ .lg .middle } __In-Station Traversal Time__
 
     Communicate the estimated time to navigate paths within a transit station.
 
     [:octicons-arrow-right-24: Learn more](../pathways/#in-station-traversal-time)
 
--   :material-subway-variant:{ .lg .middle } __Pathways signs__
+-   :material-subway-variant:{ .lg .middle } __Pathway Signs__
 
     Communicate the in-station signage associated with a pathway.
 
@@ -234,7 +234,7 @@ Flexible services, or demand-responsive services, that do not follow regular sch
 
 <div class="grid cards" markdown>
 
-- :material-subway-variant:{ .lg .middle } __Continuous stops__
+- :material-subway-variant:{ .lg .middle } __Continuous Stops__
 
     Indicate if a user can be picked up and/or dropped off between stops.
     
@@ -246,7 +246,7 @@ Flexible services, or demand-responsive services, that do not follow regular sch
 
     [:octicons-arrow-right-24: Learn more](../flexible_services/#booking-rules)
 
-- :material-subway-variant:{ .lg .middle } __Predefined Routes With Deviation__
+- :material-subway-variant:{ .lg .middle } __Predefined Routes with Deviation__
 
     Vehicles that can briefly deviate from a route to pick up or drop off.   
 
