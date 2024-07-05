@@ -1,5 +1,10 @@
 # Resources overview
 
+!!! info "This section is under review" 
+
+        This section currently mirrors the content of the awesome-transit list, please be aware that some external links might be outdated. To provide feedback on the contents of this list, please open an issue or pull request in the [awesome-transit repository](https://github.com/MobilityData/awesome-transit). A reviewed version of this section will be released in the future.
+
+
 ### Community list of transit APIs, apps, datasets, research, and software :bus::star2::train::star2::steam_locomotive:
 
 Have something to add or change? Open a [pull request](https://github.com/CUTR-at-USF/awesome-transit/pulls) or [issue](https://github.com/CUTR-at-USF/awesome-transit/issues) at [MobilityData/awesome-transit](https://github.com/CUTR-at-USF/awesome-transit).
