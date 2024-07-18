@@ -1,4 +1,5 @@
-# Fares
+# :material-cash: Fares
+
 GTFS allows to precisely model a wide variety of fare structures used by different transit agencies around the world, such as fares based by zone, by distance traveled, or by time-of-day. GTFS Fares informs riders of the price applicable to their trip and the media they can use to pay.
 
 ## Fare Products
