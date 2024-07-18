@@ -1,4 +1,4 @@
-# Base add-ons
+# :material-plus-box-multiple-outline: Base add-ons
 These features expand the capabilities described in Base, serving to either enhance the comprehensiveness of a GTFS dataset to provide a better experience for riders, or facilitate collaboration between agencies, data vendors, and data re-users. These enhancements may entail introducing new fields within the files described in Base, or creating new files.
 
 ## Feed Information

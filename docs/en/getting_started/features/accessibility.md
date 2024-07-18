@@ -1,4 +1,4 @@
-# Accessibility
+# :material-wheelchair: Accessibility
 The Accessibility features are intended to provide people with disabilities the information they need to access the service.
 
 ## Stops Wheelchair Accessibility
