@@ -23,7 +23,14 @@ The GTFS Specification is not set in stone. Instead, it is an open specification
   	- The advocate should announce the specific end time at the start of the vote.
   	- During voting period only editorial changes to the proposal are allowed (typos, wording may change as long as it does not change the meaning).
   	- Anyone is allowed to vote yes/no in a form of comment to the pull request, and votes can be changed until the end of the voting period.
-	@@ -34,13 +34,11 @@ The GTFS Specification is not set in stone. Instead, it is an open specification
+    If a voter changes her vote, it is recommended to do it by updating the original vote comment by striking through the vote and writing the new vote.
+  	- Votes before the start of the voting period are not considered.
+	- Opening and closing of votes must be announced on the [GTFS Changes mailing list](https://groups.google.com/forum/#!forum/gtfs-changes).
+1. The proposal is accepted if there is a unanimous consensus yes with at least 3 votes.
+  	- The proposer's vote does not count towards the 3 vote total. For example, if Proposer X creates a pull request and votes yes, and User Y and Z vote yes, this is counted as 2 total yes votes.
+  	- Votes against shall be motivated, and ideally provide actionable feedback.
+  	- If the vote has failed, then the advocate may choose to continue work on the proposal, or to abandon the proposal.
+    Either decision of the advocate must be announced in the [GTFS Changes mailing list](https://groups.google.com/forum/#!forum/gtfs-changes).
   	- If the advocate continues the work on proposal then a new vote can be called for at any point in time.
 1. Any pull request remaining inactive for 30 calendar days will be closed. When a pull request is closed, the corresponding proposal is considered abandoned. The advocate may reopen the pull request at any time if they wish to continue or maintain the conversation.
 1. If the proposal is accepted:
@@ -32,36 +39,30 @@ The GTFS Specification is not set in stone. Instead, it is an open specification
     Google is responsible for eventually updating relevant translations into supported languages, but pure translation pull requests from the community are welcome and will be accepted as soon as all editorial comments are addressed.
 1. The final result of the pull request (accepted or abandoned) should be announced on the same Google Groups thread where the pull request was originally announced.
 
-## Guiding Principles
-In order to preserve the original vision of GTFS, a number of guiding principles have been established to take into consideration when extending the spec:
-
-	@@ -62,4 +60,4 @@ Every new feature adds complexity to the creation and reading of feeds. Therefor
 <hr>
 
-## Revision History
-{{ external_markdown('https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/revision-history.md', '### Revision History') }}
-
-<hr>
-
-## Guiding Principles
+### Guiding Principles
 In order to preserve the original vision of GTFS, a number of guiding principles have been established to take into consideration when extending the spec:
 
-**Feeds should be easy to create and edit**<br>
+#### Feeds should be easy to create and edit
 We chose CSV as the basis for the specification because it's easy to view and edit using spreadsheet programs and text editors, which is helpful for smaller agencies. It's also straightforward to generate from most programming languages and databases, which is good for publishers of larger feeds.
 
-**Feeds should be easy to parse**<br>
+#### Feeds should be easy to parse
 Feed readers should be able to extract the information they're looking for with as little work as possible. Changes and additions to the feed should be as broadly useful as possible, to minimize the number of code paths that readers of the feed need to implement. (However, making creation easier should be given precedence, since there will ultimately be more feed publishers than feed readers.)
 
-**The spec is about passenger information**<br>
+#### The spec is about passenger information
 GTFS is primarily concerned with passenger information. That is, the spec should include information that can help power tools for riders, first and foremost. There is potentially a large amount of operations-oriented information that transit agencies might want to transmit internally between systems. GTFS is not intended for that purpose and there are potentially other operations-oriented data-standards that may be more appropriate.
 
-**Changes to the spec should be backwards-compatible**<br>
+#### Changes to the spec should be backwards-compatible
 When adding features to the specification, we want to avoid making changes that will make existing feeds invalid. We don't want to create more work for existing feed publishers until they want to add capabilities to their feeds. Also, whenever possible, we want existing parsers to be able to continue to read the older parts of newer feeds.
 
-**Speculative features are discouraged**<br>
+#### Speculative features are discouraged
 Every new feature adds complexity to the creation and reading of feeds. Therefore, we want to take care to only add features that we know to be useful. Ideally, any proposal will have been tested by generating data for a real transit system that uses the new feature and writing software to read and display it. Note that the GTFS readily allows for extensions to the format through the addition of extra columns and files that are ignored by the official parsers & validators, so proposals can be easily prototyped and tested on existing feeds.
 
 <hr>
 
 ## Revision History
+
+```markdown
 {{ external_markdown('https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/revision-history.md', '### Revision History') }}
+```
