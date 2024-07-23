@@ -39,7 +39,7 @@ In order to preserve the original vision of GTFS, a number of guiding principles
 <hr>
 
 ## Revision History
-{{ external_markdown(‘https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/revision-history.md’, ‘### Revision History’) }}
+{{ external_markdown('https://raw.githubusercontent.com/google/transit/master/gtfs/spec/en/revision-history.md', '### Revision History') }}
 
 <hr>
 
