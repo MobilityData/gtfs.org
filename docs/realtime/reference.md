@@ -617,7 +617,7 @@ A `TripModifications` message identifies a list of similar trips which are all a
 
 <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
  
-[More about Trip Modifications...](trip-modifications.md)
+[More about Trip Modifications...](../feed-entities/trip-modifications/)
 
 **Fields**
 
