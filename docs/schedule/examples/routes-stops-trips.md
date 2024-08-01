@@ -57,7 +57,7 @@ stop_id,stop_code,stop_name,stop_lat,stop_lon,location_type
 - The sixth field (`location_type`) is used to differentiate stops from stations
 - The first record corresponds to a bus stop, hence `location_type=0`
 - The second record corresponds to station, hence `location_type=1`
-- A complete list of values for `location_type `can be found [here](../../reference/stopstxt)
+- A complete list of values for `location_type `can be found [here](../../reference/#stopstxt)
 
 <hr>
 
