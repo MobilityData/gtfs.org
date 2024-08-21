@@ -6,10 +6,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/gtfs-realtime-bindings.svg)](https://badge.fury.io/rb/gtfs-realtime-bindings)
 
-Provides Ruby classes generated from the
-[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) Protocol
-Buffer specification.  These classes will allow you to parse a binary Protocol
-Buffer GTFS-realtime data feed into Ruby objects.
+Provides Ruby classes generated from the [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) Protocol Buffer specification.  These classes will allow you to parse a binary Protocol Buffer GTFS-realtime data feed into Ruby objects.
 
 !!! fail "Deprecated"
 
@@ -17,8 +14,7 @@ Buffer GTFS-realtime data feed into Ruby objects.
 
 ## Add the Dependency
 
-To use the `gtfs-realtime-bindings` classes in your own project, you need to
-first install the [Ruby gem](https://rubygems.org/gems/gtfs-realtime-bindings):
+To use the `gtfs-realtime-bindings` classes in your own project, you need to first install the [Ruby gem](https://rubygems.org/gems/gtfs-realtime-bindings):
 
 ```
 gem install gtfs-realtime-bindings
@@ -26,9 +22,7 @@ gem install gtfs-realtime-bindings
 
 ## Example Code
 
-The following code snippet demonstrates downloading a GTFS-realtime data feed
-from a particular URL, parsing it as a FeedMessage (the root type of the
-GTFS-realtime schema), and iterating over the results.
+The following code snippet demonstrates downloading a GTFS-realtime data feedf rom a particular URL, parsing it as a FeedMessage (the root type of theGTFS-realtime schema), and iterating over the results.
 
 ```ruby
 require 'protobuf'
@@ -45,6 +39,4 @@ for entity in feed.entity do
 end
 ```
 
-For more details on the naming conventions for the Ruby classes generated from
-the [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto),
-check out the [the gtfs-realtime.pb.rb source file](https://github.com/MobilityData/gtfs-realtime-bindings/blob/master/ruby/lib/google/transit/gtfs-realtime.pb.rb).
+For more details on the naming conventions for the Ruby classes generated from the [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), check out the [the gtfs-realtime.pb.rb source file](https://github.com/MobilityData/gtfs-realtime-bindings/blob/master/ruby/lib/google/transit/gtfs-realtime.pb.rb).

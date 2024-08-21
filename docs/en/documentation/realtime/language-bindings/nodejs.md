@@ -2,22 +2,15 @@
 
 [![npm version](https://badge.fury.io/js/gtfs-realtime-bindings.svg)](http://badge.fury.io/js/gtfs-realtime-bindings)
 
-Provides JavaScript classes and their associated types generated from the
-[GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) Protocol
-Buffer specification.  These classes will allow you to parse a binary Protocol
-Buffer GTFS-realtime data feed into JavaScript objects.
+Provides JavaScript classes and their associated types generated from the [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) Protocol Buffer specification.  These classes will allow you to parse a binary Protocol Buffer GTFS-realtime data feed into JavaScript objects.
 
-These bindings are designed to be used in the [Node.js](http://nodejs.org/)
-environment, but with some effort, they can probably be used in other
-JavaScript environments as well.
+These bindings are designed to be used in the [Node.js](http://nodejs.org/) environment, but with some effort, they can probably be used in other JavaScript environments as well.
 
-We use the [ProtoBuf.js](https://github.com/dcodeIO/ProtoBuf.js) library for
-JavaScript Protocol Buffer support.
+We use the [ProtoBuf.js](https://github.com/dcodeIO/ProtoBuf.js) library for JavaScript Protocol Buffer support.
 
 ## Add the Dependency
 
-To use the `gtfs-realtime-bindings` classes in your own project, you need to
-first install our [Node.js npm package](https://www.npmjs.com/package/gtfs-realtime-bindings):
+To use the `gtfs-realtime-bindings` classes in your own project, you need tofirst install our [Node.js npm package](https://www.npmjs.com/package/gtfs-realtime-bindings):
 
 ```
 npm install gtfs-realtime-bindings
@@ -25,15 +18,11 @@ npm install gtfs-realtime-bindings
 
 ## Example Code
 
-The following Node.js code snippet demonstrates downloading a GTFS-realtime
-data feed from a particular URL, parsing it as a FeedMessage (the root type of
-the GTFS-realtime schema), and iterating over the results.
+The following Node.js code snippet demonstrates downloading a GTFS-realtime data feed from a particular URL, parsing it as a FeedMessage (the root type of the GTFS-realtime schema), and iterating over the results.
 
 In order to make this example work, you must first install `node-fetch` with NPM.
 
-_Note: this exemple is using ES modules (`import`/`export` syntax) and is not compatible
-with CommonJS (`require` syntax). You can use CommonJS by converting `import` to `require`
-and installing `node-fetch@2`. Learn more about ES modules [here](https://nodejs.org/api/esm.html)._
+_Note: this exemple is using ES modules (`import`/`export` syntax) and is not compatible with CommonJS (`require` syntax). You can use CommonJS by converting `import` to `require` and installing `node-fetch@2`. Learn more about ES modules [here](https://nodejs.org/api/esm.html)._
 
 ```javascript
 import GtfsRealtimeBindings from "gtfs-realtime-bindings";
@@ -71,8 +60,4 @@ import fetch from "node-fetch";
 })();
 ```
 
-For more details on the naming conventions for the JavaScript classes generated
-from the
-[gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto),
-check out the [ProtoBuf.js project](https://github.com/dcodeIO/ProtoBuf.js/wiki)
-which we use to handle our Protocol Buffer serialization.
+For more details on the naming conventions for the JavaScript classes generated from the [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto), check out the [ProtoBuf.js project](https://github.com/dcodeIO/ProtoBuf.js/wiki)which we use to handle our Protocol Buffer serialization.

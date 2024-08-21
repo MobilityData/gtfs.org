@@ -160,7 +160,7 @@ td {
 }
 td,
 th {
-  padding: 0.75em !important;
+  padding: 0.75em;
 }
 td code {
   white-space: nowrap;

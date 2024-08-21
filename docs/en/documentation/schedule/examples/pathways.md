@@ -14,7 +14,8 @@
 
 ## Accessibility Checklist
 
-The following are the steps needed to add accessibility information to your data. The next sections provide more detailed information on  each step. 
+The following are the steps needed to add accessibility information to your data. The next sections provide more detailed information on  each step.
+ 
 * Step 1: Add wheelchair accessibility information to `stops.txt`
 * Step 2: Add wheelchair accessibility information to `trips.txt`
 * Step 3: Add audio navigation information to `stops.txt`

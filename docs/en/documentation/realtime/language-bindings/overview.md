@@ -2,21 +2,11 @@
 
 ## Introduction
 
-[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) is a data format for communicating real-time information about public transit systems.
-GTFS Realtime data is encoded and decoded using [Protocol Buffers](https://developers.google.com/protocol-buffers/), a compact binary representation designed for fast and efficient processing.  The data schema itself is defined in [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto).
+[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) is a data format for communicating real-time information about public transit systems. GTFS Realtime data is encoded and decoded using [Protocol Buffers](https://developers.google.com/protocol-buffers/), a compact binary representation designed for fast and efficient processing.  The data schema itself is defined in [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto).
 
-To work with GTFS Realtime data, a developer would typically use the
-`gtfs-realtime.proto` schema to generate classes in the programming language of
-their choice.  These classes can then be used for constructing GTFS-realtime
-data model objects and serializing them as binary data or, in the reverse
-direction, parsing binary data into data model objects.
+To work with GTFS Realtime data, a developer would typically use the`gtfs-realtime.proto` schema to generate classes in the programming language of their choice. These classes can then be used for constructing GTFS-realtime data model objects and serializing them as binary data or, in the reverse direction, parsing binary data into data model objects.
 
-Because generating GTFS Realtime data model classes from the
-`gtfs-realtime.proto` schema is such a common task, but also one that sometimes
-causes confusion for first-time developers, this project aims to provide
-pre-generated GTFS Realtime language bindings for a number of the most popular
-programming languages.  Where possible, these language bindings will be
-published as packages to facilitate their use in other projects.
+Because generating GTFS Realtime data model classes from the`gtfs-realtime.proto` schema is such a common task, but also one that sometimes causes confusion for first-time developers, this project aims to provide pre-generated GTFS Realtime language bindings for a number of the most popular programming languages.  Where possible, these language bindings will be published as packages to facilitate their use in other projects.
 
 ## Supported Languages
 

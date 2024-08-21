@@ -24,6 +24,7 @@ Recommended practices are organized into two primary sections
 * Due to how protocol buffers encode [optional values](https://developers.google.com/protocol-buffers/docs/proto#optional), before reading data from a GTFS Realtime feed consumers should check for the presence of values using the protocol buffer-generated `hasX()` methods before using that value and should only use the value if `hasX()` is true (where `X` is the name of the field). If `hasX()` returns `false`, the default value for that field defined in the `gtfs-realtime.proto` value should be assumed. If the consumer uses the value without checking the `hasX()` method first, it may be reading default data that wasn't intentionally published by the producer.
 * Feeds should use HTTPS instead of HTTP (without encryption) to ensure feed integrity.
 * Feeds should cover the vast majority of trips included in the companion static GTFS dataset. In particular, it should include data for high-density and high-traffic city areas and busy routes.
+
 ## Practice Recommendations Organized by Message
 
 ### FeedHeader

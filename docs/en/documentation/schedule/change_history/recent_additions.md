@@ -22,7 +22,7 @@ To contribute to GTFS, read the [GTFS Schedule Amendment Process](../../../../co
 
 ## Recently Adopted Proposals &ensp;<img src="../../../../assets/pr-merged.svg" style="height:1em;"/>
 
-Recently merged proposals that are now features of the [official GTFS Schedule Reference](../../reference). See the complete [Revision History](/documentation/schedule/change_history/revision_history) for more.
+Recently merged proposals that are now features of the [official GTFS Schedule Reference](../../reference). See the complete [Revision History](../revision_history) for more.
 
 <div class="row">
     <div class="leftcontainer">

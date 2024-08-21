@@ -1,7 +1,7 @@
 site_name: General Transit Feed Specification
 site_url: https://gtfs.org
 repo_url: https://github.com/google/transit
-docs_dir: 'docs/en/' # Where to find the English markdown files
+docs_dir: 'docs/' # Where to find the English markdown files
 
 validation:
   nav:
@@ -17,6 +17,7 @@ theme:
   custom_dir: overrides/
   logo: assets/logo.png
   logo_light_mode: assets/logo.png
+  favicon: assets/favicon.ico
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: gtfs
@@ -33,7 +34,6 @@ theme:
     - navigation.footer
     - content.tabs.link
     - search.suggest
-  locale: en
 extra_css:
   - assets/stylesheets/extra.css
   - assets/stylesheets/footer.css
@@ -73,9 +73,37 @@ extra:
       - name: English
         link: /
         lang: en
-      # - name: Français
-      #   link: /fr/
-      #   lang: fr
+      - name: Français
+        link: /fr/
+        lang: fr
+      - name: Español
+        link: /es/
+        lang: es
+      - name: Deutsch (wird bald verfügbar sein)
+        link: /de/
+        lang: de
+      - name: 日本語 (今後追加予定)
+        link: /ja/
+        lang: ja
+      - name: Português (em breve)
+        link: /pt/
+        lang: pt
+      - name: Русский (будет добавлен позже)
+        link: /ru/
+        lang: ru
+      - name: Bahasa Indonesia (akan segera hadir)
+        link: /id/
+        lang: id
+      - name: 한국어 (곧 제공 예정)
+        link: /ko/
+        lang: ko
+      - name: 中文 - 简体（即将推出）
+        link: /zh/
+        lang: zh
+      - name: 中文 - 繁體（即將推出）
+        link: /zh-TW/
+        lang: zh-TW
+
 markdown_extensions:
   - attr_list
   - footnotes
@@ -104,15 +132,180 @@ plugins:
   - external-markdown
   - search:
       lang: en
+  - redirects:
+      redirect_maps:
+        'redirections_only/blog/index.md': 'https://blog.gtfs.org/'
+        'fr/redirections_only/blog/index.md': 'https://blog.gtfs.org/'
+        'es/redirections_only/blog/index.md': 'https://blog.gtfs.org/'
   - i18n:
       docs_structure: folder
       reconfigure_search: false
       reconfigure_material: true
+      fallback_to_default: true
       languages:
         - locale: en
           name: English
           build: true
           default: true
+        - locale: es
+          name: Español
+          build: true
+          nav_translations:
+            Home: Inicio
+            Getting started: Primeros pasos
+            What is GTFS?: ¿Qué es GTFS?
+            Why use GTFS?: ¿Por qué utilizar GTFS?
+            How to produce GTFS?: ¿Cómo producir GTFS?
+            Create: Crear
+            Validate: Validar
+            Publish: Publicar
+            What can GTFS do?: ¿Qué puede hacer GTFS?
+            Overview: Descripción general
+            Base: Base
+            Base add-ons: Complementos
+            Accessibility: Accesibilidad
+            Fares: Tarifas
+            Pathways: Recorridos
+            Flexible services: Servicios Flexibles
+            Example GTFS feed: Ejemplo de un feed GTFS
+            Technical Documentation: Documentación técnica
+            Reference: Referencia
+            Best Practices: Mejores prácticas
+            Data examples: Ejemplos de datos
+            Attributions: Atribuciones
+            Continuous stops: Paradas continuas
+            Demand responsive services: Servicios sobre demanda
+            Fares v1: Tarifas v1
+            Fares v2: Tarifas v2
+            Feed information: Información del feed
+            Frequencies: Frecuencias
+            Pathways: Recorridos (Pathways)
+            Routes, Stops & Trips: Rutas, Paradas y Viajes
+            Text-to-speech: Texto a voz
+            Transfers: Transferencias
+            Translations: Traducciones
+            Change history: Historial de cambios
+            Recent additions: Adiciones recientes
+            Full revision history: Historial completo de revisiones
+            Feed Entities: Entidades del feed
+            Trip Updates: Actualizaciones de viaje (Trip Updates)
+            Service Alerts: Alertas de servicio (Service Alerts)
+            Vehicle Positions: Posiciones del vehículo (Vehicle Positions)
+            Trip Modifications: Modificaciones de viaje (Trip Modifications)
+            Protobuf: Protobuf
+            Language Bindings: Bindings de lenguaje
+            Migration duplicated: Migración duplicada
+            Community: Comunidad
+            Get involved: Involúcrese
+            Governance: Governanza
+            GTFS Schedule Amendment Process: Proceso de modificación GTFS Schedule
+            GTFS Realtime Amendment Process: Proceso de modificación GTFS Realtime
+            Extensions: Extensiones
+            Fares v2: Fares v2
+            Flex: Flex
+            About: Acerca de
+            Blog: Blog
+
+        - locale: fr
+          name: Français
+          build: true
+          nav_translations:
+            Home: Accueil
+            Getting started: Premiers pas
+            Getting Started: Premiers pas
+            What is GTFS?: Qu’est-ce que GTFS ?
+            Why use GTFS?: Pourquoi utiliser GTFS ?
+            How to produce GTFS?: Comment produire du GTFS ?
+            Create: Créer
+            Validate: Valider
+            Publish: Publier
+            What can GTFS do?: Que peut faire GTFS ?
+            Overview: Aperçu
+            Base: Base
+            Base add-ons: Modules Complémentaires à Base
+            Accessibility: Accessibilité
+            Fares: Tarifs
+            Pathways: Pathways
+            Flexible services: Services flexibles
+            Example GTFS feed: Exemple de flux GTFS
+            Technical Documentation: Documentation technique
+            Reference: Référence
+            Best Practices: Bonnes pratiques
+            Data examples: Exemples de données
+            Attributions: Attributions
+            Continuous stops: Arrêts continus
+            Demand responsive services: Transport à la demande
+            Fares v1: Fares v1
+            Fares v2: Fares v2
+            Feed information: Informations sur le flux
+            Frequencies: Fréquences
+            Pathways: Pathways
+            Routes, Stops & Trips: Lignes, arrêts et trajets 
+            Text-to-speech: Synthèse vocale
+            Transfers: Transferts
+            Translations: Traductions
+            Change history: Historique des changements
+            Recent additions: Ajouts récents
+            Recent Additions: Ajouts récents
+            Full revision history: Historique complet des révisions 
+            Feed Entities: Entités de flux
+            Trip Updates: Mises à jour du voyage
+            Trip updates: Mises à jour du voyage
+            Service Alerts: Alertes de service
+            Service alerts: Alertes de service
+            Vehicle Positions: Positions des véhicules
+            Trip Modifications: Trip Modifications
+            Protobuf: Protobuf
+            Language Bindings: Binding de langage
+            Migration duplicated: Migration dupliquée
+            Community: Communauté
+            Software for Creating APIs: Logiciel de création d'API
+            Data: Données
+            Agency Tools: Outils pour les agences
+            Hardware: Matériel
+            Visualizations: Visualisations
+            Other: Autre
+            Get involved: S'impliquer
+            Governance: Gouvernance
+            GTFS Schedule Amendment Process: Processus de modification GTFS Schedule
+            GTFS Realtime Amendment Process: Processus de modification GTFS Realtime
+            Extensions: Extensions
+            Fares v2: Fares v2
+            Flex: Flex
+            About: À propos
+
+        - locale: de
+          name: Deutsch
+          build: true
+
+        - locale: ja
+          name: 日本語
+          build: true
+
+        - locale: pt
+          name: Português
+          build: true
+
+        - locale: ru
+          name: Русский
+          build: true
+
+        - locale: id
+          name: Bahasa Indonesia
+          build: true
+
+        - locale: ko
+          name: 한국어
+          build: true
+
+        - locale: zh
+          name: 中文 - 简体
+          build: true
+
+        - locale: zh-TW
+          name: 中文 - 繁體
+          build: true
+
 nav:
   - Home: index.md
   - Getting started:
@@ -205,3 +398,5 @@ nav:
     - Other: resources/other.md
   - About:
       - about/index.md
+  - Blog:
+      - redirections_only/blog/index.md
