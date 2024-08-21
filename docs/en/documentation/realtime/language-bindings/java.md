@@ -2,18 +2,13 @@
 
 ![Maven Central Version](https://img.shields.io/maven-central/v/org.mobilitydata/gtfs-realtime-bindings.svg)
 
-Provides Java classes generated from the [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime)
-Protocol Buffer specification.  These classes will allow you to parse a binary Protocol Buffer
-GTFS-realtime data feed into Java objects.
+Provides Java classes generated from the [GTFS-realtime](https://github.com/google/transit/tree/master/gtfs-realtime) Protocol Buffer specification.  These classes will allow you to parse a binary Protocol Buffer GTFS-realtime data feed into Java objects.
 
 ## Add the Dependency 
 
-To use the `gtfs-realtime-bindings` classes in your own project, you need to add
-an appropriate dependency.  We publish our module to the [Maven Central Repository](http://search.maven.org/)
-so that it can be easily referenced by Java build tools like Maven, Ivy, and Gradle.
+To use the `gtfs-realtime-bindings` classes in your own project, you need to add an appropriate dependency.  We publish our module to the [Maven Central Repository](http://search.maven.org/) so that it can be easily referenced by Java build tools like Maven, Ivy, and Gradle.
 
-For [Maven](http://maven.apache.org/), add the following to your `pom.xml`
-dependencies section:
+For [Maven](http://maven.apache.org/), add the following to your `pom.xml` dependencies section:
 
 ```xml
 <dependency>
@@ -23,8 +18,7 @@ dependencies section:
 </dependency>
 ```
 
-For [Gradle](https://www.gradle.org/), add the following to your `build.gradle`
-dependecies section:
+For [Gradle](https://www.gradle.org/), add the following to your `build.gradle` dependecies section:
 
 ```
 implementation group: 'org.mobilitydata', name: 'gtfs-realtime-bindings', version: '0.0.8'
@@ -34,8 +28,7 @@ Make sure the Maven central repository is referenced by your project.
 
 ## Example Code
 
-The following code snippet demonstrates downloading a GTFS-realtime data feed
-from a particular URL, parsing it as a FeedMessage (the root type of the
+The following code snippet demonstrates downloading a GTFS-realtime data feed from a particular URL, parsing it as a FeedMessage (the root type of the
 GTFS-realtime schema), and iterating over the results.
 
 ```java
@@ -57,10 +50,7 @@ public class GtfsRealtimeExample {
 }
 ```
 
-For more details on the naming conventions for the Java classes generated from
-the [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto),
-check out the [Java Generated Code](https://developers.google.com/protocol-buffers/docs/reference/java-generated)
-section of the Protocol Buffers developer site.
+For more details on the naming conventions for the Java classes generated from the [gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto),check out the [Java Generated Code](https://developers.google.com/protocol-buffers/docs/reference/java-generated) section of the Protocol Buffers developer site.
 
 ## Project History
 

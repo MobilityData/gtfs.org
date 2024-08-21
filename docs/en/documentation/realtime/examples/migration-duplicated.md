@@ -100,5 +100,6 @@ It is suggested that you notify existing consumers (e.g., via a developer mailin
 As mentioned above, producers will transition from `ADDED` to `DUPLICATED` enumerations by initially publishing two entities for each duplicated trip, using one of the two above options for matching IDs between the entities. 
  
 Therefore, when a consumer implements support for `DUPLICATED` trips, it is important that consumers:
+
  1. Ignore any `ADDED` trips that have the same `trip.trip_id` as a `DUPLICATED` trip `trip.trip_id`
  1. Ignore any `ADDED` trips that have the same `trip.trip_id` as a `DUPLICATED` trip `trip_properties.trip_id`
