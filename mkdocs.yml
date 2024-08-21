@@ -137,6 +137,14 @@ plugins:
         'redirections_only/blog/index.md': 'https://blog.gtfs.org/'
         'fr/redirections_only/blog/index.md': 'https://blog.gtfs.org/'
         'es/redirections_only/blog/index.md': 'https://blog.gtfs.org/'
+        'de/redirections_only/blog/index.md': 'https://blog.gtfs.org/'
+        'ja/redirections_only/blog/index.md': 'https://blog.gtfs.org/'
+        'id/redirections_only/blog/index.md': 'https://blog.gtfs.org/'
+        'pt/redirections_only/blog/index.md': 'https://blog.gtfs.org/'
+        'ru/redirections_only/blog/index.md': 'https://blog.gtfs.org/'
+        'ko/redirections_only/blog/index.md': 'https://blog.gtfs.org/'
+        'zh/redirections_only/blog/index.md': 'https://blog.gtfs.org/'
+        'zh-TW/redirections_only/blog/index.md': 'https://blog.gtfs.org/'
   - i18n:
       docs_structure: folder
       reconfigure_search: false
