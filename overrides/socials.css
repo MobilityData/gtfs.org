@@ -66,11 +66,19 @@
         flex-direction: column;
     }
 
+    .mdx-socials__content p {
+        height: initial;
+    }
+
     .mdx-resource__container {
         flex-direction: column;
     }
 
     .mdx-resource__element {
         width: 100%;
+    }
+
+    .mdx-socials__element svg{
+        width: 150px;
     }
 }

@@ -1,17 +1,16 @@
 <!-- Custom HTML site displayed as the Home chapter -->
-
 {% extends "main.html" %}
 {% block tabs %}
 {{ super() }}
-
 <head>
     <link rel="stylesheet" href="./home.css">
     <link rel="stylesheet" href="./spotlight.css">
     <link rel="stylesheet" href="./socials.css">
+    <script src="./home.js"></script>
 </head>
 
 <!-- Main site Entry button descriptions -->
-<section class="tx-container">
+<section class="tx-container no-js">
     <div class="hero-dark-gradient"></div>
     <div class="hero-content md-typeset">
         <div class="tx-hero">
@@ -31,7 +30,6 @@
     </div>
 </section>
 
-
 <section class="content-container">
     <div class="content-inner">
         <header class="md-typeset">
@@ -39,7 +37,7 @@
         </header>
 
         <ul class="mdx-list md-typeset">
-            <li class="mdx-list-item">
+            <li class="mdx-list-item fade-in">
                 <div class="icon-holder">
                     <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="42" cy="42" r="42" fill="#FFFF00"/>
@@ -60,7 +58,7 @@
                     </p>
                 </div>
             </li>
-            <li class="mdx-list-item">
+            <li class="mdx-list-item fade-in">
                 <div class="icon-holder">
                     <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="42" cy="42" r="42" fill="#FFFF00"/>
@@ -86,7 +84,7 @@
                         Over 10,000 agencies in 100+ countries use GTFS, ensuring consistent data for multi-agency trips and simplifying travel across regions.
                 </div>
             </li>
-            <li class="mdx-list-item">
+            <li class="mdx-list-item fade-in">
                 <div class="icon-holder">
                     <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="42" cy="42" r="42" fill="#FFFF00"/>
@@ -105,7 +103,7 @@
                     </p>
                 </div>
             </li>
-            <li class="mdx-list-item">
+            <li class="mdx-list-item fade-in">
                 <div class="icon-holder">
                     <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="42" cy="42" r="42" fill="#FFFF00"/>
@@ -135,7 +133,7 @@
                     </p>
                 </div>
             </li>
-            <li class="mdx-list-item">
+            <li class="mdx-list-item fade-in">
                 <div class="icon-holder">
                     <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="42" cy="42" r="42" fill="#FFFF00"/>
@@ -159,7 +157,7 @@
                     </p>
                 </div>
             </li>
-            <li class="mdx-list-item">
+            <li class="mdx-list-item fade-in">
                 <div class="icon-holder">
                     <svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="42" cy="42" r="42" fill="#FFFF00"/>
@@ -192,13 +190,13 @@
             <h1>Two Formats in One Standard</h1>
         </header>
 
-        <div class="mdx-spotlight md-typeset ">
+        <div class="mdx-spotlight md-typeset">
             <div class="mdx-spotlight__feature reverse">
-                <a href="getting_started/what_is_GTFS/" tabindex="-1" title="Why GTFS">
+                <a href="getting_started/what_is_GTFS/" tabindex="-1" title="Why GTFS" class="fade-in-2">
                     <img src="./assets/landing/gtfs-static.png"
                         alt="GTFS Static" loading="lazy" width="500" height="327">
                 </a>
-                <div class="md-typeset spotlight-content ">
+                <div class="md-typeset spotlight-content fade-in-2">
                     <p class="mdx-spotlight__header"> 
                         <span class="mdx-spotlight__header--highlight">GTFS Schedule</span> forms the foundation of rider-facing transit information, providing essential, static data. 
                     </p>
@@ -226,11 +224,11 @@
         </div>
         <div class="mdx-spotlight md-typeset">
             <div class="mdx-spotlight__feature mdx-spotlight__feature--no-button-margin">
-                <a href="setup/setting-up-site-search/" tabindex="-1" title="Built-in search">
+                <a href="setup/setting-up-site-search/" tabindex="-1" title="Built-in search" class="fade-in-2">
                     <img src="./assets/landing/gtfs-realtime.png"
                         alt="GTFS Realtime" loading="lazy" width="500" height="327">
                 </a>
-                <div class="md-typeset spotlight-content">
+                <div class="md-typeset spotlight-content fade-in-2">
                     <p class="mdx-spotlight__header"> 
                         <span class="mdx-spotlight__header--highlight">GTFS Realtime</span> focuses on the ever-changing world of public transit, providing live updates that keep riders informed. 
                     </p>
@@ -262,7 +260,7 @@
         </header>
         
         <div class="mdx-socials md-typeset">
-            <figure class="mdx-socials__element">
+            <figure class="mdx-socials__element fade-in-3">
                 <svg width="221" height="220" viewBox="0 0 221 220" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <circle cx="110.5" cy="110" r="110" fill="#FFFF00"/>
                     <rect x="50.5" y="50" width="120" height="120" fill="url(#pattern0_138_725)"/>
@@ -282,7 +280,7 @@
                     </a>
                 </div>
             </figure>
-            <figure class="mdx-socials__element">
+            <figure class="mdx-socials__element fade-in-3">
                 <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="110" cy="110" r="110" fill="#FFFF00"/>
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M109.585 50C75.2536 50 47.5 77.9582 47.5 112.546C47.5 140.194 65.2827 163.598 89.952 171.881C93.0363 172.504 94.1661 170.536 94.1661 168.88C94.1661 167.43 94.0644 162.459 94.0644 157.281C76.7939 161.009 73.1974 149.825 73.1974 149.825C70.4219 142.576 66.3095 140.713 66.3095 140.713C60.6569 136.881 66.7213 136.881 66.7213 136.881C72.9915 137.296 76.2817 143.302 76.2817 143.302C81.8314 152.828 90.7742 150.136 94.372 148.479C94.8854 144.44 96.5311 141.645 98.2785 140.092C84.504 138.642 70.0114 133.257 70.0114 109.232C70.0114 102.398 72.4769 96.8059 76.3834 92.4571C75.767 90.9041 73.6079 84.4827 77.001 75.888C77.001 75.888 82.2432 74.2309 94.0631 82.3083C99.1237 80.9392 104.343 80.2427 109.585 80.2368C114.827 80.2368 120.171 80.9625 125.106 82.3083C136.927 74.2309 142.169 75.888 142.169 75.888C145.562 84.4827 143.402 90.9041 142.785 92.4571C146.795 96.8059 149.159 102.398 149.159 109.232C149.159 133.257 134.666 138.537 120.789 140.092C123.051 142.059 125.003 145.786 125.003 151.689C125.003 160.077 124.901 166.808 124.901 168.878C124.901 170.536 126.032 172.504 129.115 171.883C153.784 163.597 171.567 140.194 171.567 112.546C171.669 77.9582 143.814 50 109.585 50Z" fill="#080808"/>
@@ -297,7 +295,7 @@
                     </a>
                 </div>
             </figure>
-            <figure class="mdx-socials__element">
+            <figure class="mdx-socials__element fade-in-3">
                 <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="110" cy="110" r="110" fill="#FFFF00"/>
                     <path d="M121.062 144.341C107.266 144.341 93.4705 144.352 79.675 144.318C78.5981 144.316 77.8293 144.606 77.0645 145.378C70.8481 151.653 64.5894 157.885 58.3462 164.134C57.3504 165.13 56.2994 166.024 54.8113 166.147C51.6896 166.404 49.5278 164.254 49.5186 160.764C49.4944 151.434 49.4884 142.103 49.5336 132.772C49.5443 130.546 49.7729 128.323 50.2469 126.129C52.9676 113.542 60.1892 104.454 72.029 99.5489C84.9077 94.213 97.1565 96.0675 108.399 104.324C109.144 104.871 109.591 105.113 110.496 104.41C131.887 87.8002 163.115 99.3213 168.729 125.87C169.619 130.079 169.58 134.359 169.386 138.618C169.235 141.949 166.371 144.31 162.748 144.331C157.686 144.36 152.624 144.34 147.562 144.341C138.729 144.341 129.895 144.341 121.062 144.341ZM109.334 144.108C109.334 144.106 109.334 144.103 109.334 144.101C111.762 144.101 114.191 144.123 116.619 144.095C119.45 144.061 121.762 142.232 122.373 139.454C123.173 135.821 122.78 132.123 122.298 128.535C121.099 119.604 117.168 112 110.328 105.995C109.777 105.511 109.467 105.441 108.86 105.948C102.522 111.229 98.8504 118.063 97.0939 126.017C96.2103 130.017 96.4966 134.087 96.4875 138.135C96.4794 141.62 98.9783 144.081 102.495 144.106C104.774 144.121 107.054 144.108 109.334 144.108Z" fill="#080808"/>

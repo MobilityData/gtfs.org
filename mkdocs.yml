@@ -15,8 +15,8 @@ validation:
 
 theme:
   custom_dir: overrides/
-  logo: assets/org-black.svg
-  logo_light_mode: assets/org-white.svg
+  logo: assets/logo.png
+  logo_light_mode: assets/logo.png
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: gtfs
