@@ -15,7 +15,9 @@
   /* Main colors */
   --md-primary-bg-color: #080808;
   --md-primary-fg-color: #ffff00;
+  --md-primary-fg-color--dark: #cccc00;
   --md-secondary-fg-color: #1d64f2;
+  --md-accent-fg-color: red;
   --md-highlight-color: #c6def4;
   --md-secondary-fg-color-white: #ffffff;
   --md-secondary-fg-color-gray: #f8f8f8;
@@ -42,7 +44,7 @@
 
   /* Other colors */
   --md-typeset-color: #212121;
-  --md-typeset-a-color: var(--md-accent-fg-color);
+  --md-typeset-a-color: var(--md-secondary-fg-color);
 }
 
 /* [data-md-color-scheme="gtfs"] tr:hover {
@@ -207,6 +209,7 @@ table.example {
   background-color: var(--md-default-bg-color);
   color: var(--md-primary-bg-color);
   border-color: var(--md-primary-bg-color);
+  display: inline-block;
 }
 
 .md-button--primary,
@@ -274,17 +277,14 @@ table.example {
     color: var(--md-typeset-color) !important;
 } */
 
-.md-nav__link--active {
-  color: var(--md-secondary-fg-color) !important;
-}
 
 /* external link icon */
-.md-content a[href^="https://"]:not(.img, .pencil-link, .no-icon, .usage-buttons > .button):after {
+.md-content a[href^="https://"]:not(.img, .pencil-link, .no-icon, .usage-buttons > .button, :has(img)):after {
     content: '';
     display: inline-block;
     width: 16px;
     height: 16px;
-    margin-left: 15px;
+    margin-left: 6px;
     background: url(../external.svg);
     background-size: contain;
 }
@@ -293,9 +293,21 @@ table.example {
     filter: grayscale(1) brightness(0);
 }
 
-@media only screen and (max-width: 550px) {
+
+.md-nav--primary .md-nav__title {
+    height: 7rem;
+    white-space: normal;
+    line-height: 1.5rem;
+}
+
+@media only screen and (max-width: 650px) {
+
+  [data-md-component="announce"] {
+   z-index: 1;
+  }
+
   .md-tabs {
-    display: inline-flex;
+    display: none;
   }
 }
 
@@ -343,15 +355,6 @@ table.example {
     background-color: unset !important;
     box-shadow: 0px 0px 2px 2px #efefef !important;
     position: relative !important;
-  }
-
-  .md-sidebar__inner
-    > .md-nav.md-nav--primary.md-nav--lifted.md-nav--integrated
-    > .md-nav__list
-    > .md-nav__item.md-nav__item--active
-    > .md-nav__link.md-nav__link--active {
-    background-color: unset !important;
-    box-shadow: 0px 0px 2px 2px #efefef !important;
   }
 
   /* bold nav heading */
