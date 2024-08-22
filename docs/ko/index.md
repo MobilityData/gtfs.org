@@ -1,6 +1,12 @@
-# Translation in Progress!
-## We’re still working on bringing our site to you in 한국어. But don’t worry, it’s coming soon!
+---
+hide:
+  - navigation
+  - toc
+---
 
-Meanwhile, you can catch the express train to our [English site](https://gtfs.org), or take a leisurely ride through our [archived site](https://archive.gtfs.org). Just a heads-up: the archived site is like an old, charming train station: full of history, but no longer in service!
+# 번역 진행 중!
+## 우리는 여전히 우리 사이트를 한국어로 제공하기 위해 노력하고 있습니다. 하지만 걱정하지 마세요. 곧 출시될 예정입니다!
 
-### Thanks for your patience as we work to make your journey smoother in the near future!
+한편, [영문 사이트](https://gtfs.org)에서 최신 정보를 확인하시거나, 번역된 내용이 담긴 [아카이브 사이트](https://archive.gtfs.org)를 방문하시면 됩니다. 귀하의 언어로. 경고합니다. 보관된 사이트는 더 이상 유지 관리되지 않으며 현재 사이트만큼 최신 상태가 아닐 수 있습니다.
+
+### 이 웹사이트를 개선하기 위해 노력하는 동안 기다려 주셔서 감사합니다.

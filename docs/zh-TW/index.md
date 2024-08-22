@@ -1,6 +1,17 @@
-# Translation in Progress!
-## We’re still working on bringing our site to you in 中文 - 繁體. But don’t worry, it’s coming soon!
+---
+hide:
+  - navigation
+  - toc
+---
 
-Meanwhile, you can catch the express train to our [English site](https://gtfs.org), or take a leisurely ride through our [archived site](https://archive.gtfs.org). Just a heads-up: the archived site is like an old, charming train station: full of history, but no longer in service!
+# 翻譯進行中！
+## 我們仍在努力為您提供繁體中文網站。但別擔心，它很快就會到來！
 
-### Thanks for your patience as we work to make your journey smoother in the near future!
+同時，您可以在[英文網站](https://gtfs.org)上查看最新信息，或訪問包含翻譯內容的[存檔網站](https://archive.gtfs.org)用您的語言。公平警告，存檔網站不再維護，可能不如當前網站最新。
+
+### 感謝您的耐心配合，我們致力於使本網站變得更好。
+
+
+
+
+

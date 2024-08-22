@@ -1,6 +1,12 @@
-# Translation in Progress!
-## We’re still working on bringing our site to you in Bahasa Indonesia. But don’t worry, it’s coming soon!
+---
+hide:
+  - navigation
+  - toc
+---
 
-Meanwhile, you can catch the express train to our [English site](https://gtfs.org), or take a leisurely ride through our [archived site](https://archive.gtfs.org). Just a heads-up: the archived site is like an old, charming train station: full of history, but no longer in service!
+# Terjemahan Sedang Berlangsung!
+## Kami masih berupaya menghadirkan situs kami kepada Anda dalam bahasa Indonesia. Tapi jangan khawatir, ini akan segera hadir!
 
-### Thanks for your patience as we work to make your journey smoother in the near future!
+Sementara itu, Anda dapat melihat informasi terkini di [situs berbahasa Inggris](https://gtfs.org), atau mengunjungi [situs yang diarsipkan](https://archive.gtfs.org) yang berisi konten terjemahan dalam bahasa Anda. Peringatan yang wajar, situs yang diarsipkan tidak lagi dikelola dan mungkin tidak mutakhir seperti situs saat ini.
+
+### Terima kasih atas kesabaran Anda saat kami berupaya menjadikan situs web ini lebih baik.
