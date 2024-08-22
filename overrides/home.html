@@ -1,12 +1,16 @@
 <!-- Custom HTML site displayed as the Home chapter -->
+
+{% set lang = config.theme.language %}
+{% import "./locales/"+lang+".html" as text %}
+
 {% extends "main.html" %}
 {% block tabs %}
 {{ super() }}
 <head>
-    <link rel="stylesheet" href="./home.css">
-    <link rel="stylesheet" href="./spotlight.css">
-    <link rel="stylesheet" href="./socials.css">
-    <script src="./home.js"></script>
+    <link rel="stylesheet" href="./assets/landing/home.css">
+    <link rel="stylesheet" href="./assets/landing/spotlight.css">
+    <link rel="stylesheet" href="./assets/landing/socials.css">
+    <script src="./assets/landing/home.js"></script>
 </head>
 
 <!-- Main site Entry button descriptions -->
@@ -16,14 +20,14 @@
         <div class="tx-hero">
             <div>
                 <p class="hero-text">
-                    GTFS is a community-driven open standard for rider-facing transit information.
+                    {{text.t("pageTitle")}}
                 </p>
                 <a href="getting_started/what_is_GTFS/" title="{{ page.next_page.title | striptags }}"
                     class="md-button md-button--primary" style="margin-right: 40px;">
-                    Get started
+                    {{text.t("getStartedButton")}}
                 </a>
                 <a href="documentation/overview/" title="{{ lang.t('source.link.title') }}" class="md-button md-button--primary">
-                    Documentation
+                    {{text.t("documentationButton")}}
                 </a>
             </div>
         </div>
@@ -33,8 +37,8 @@
 <section class="content-container">
     <div class="content-inner">
         <header class="md-typeset">
-            <h1>Why use GTFS?</h1>
-        </header>
+            <h1>{{text.t("whyUseGtfsTitle")}}</h1>
+        </header>   
 
         <ul class="mdx-list md-typeset">
             <li class="mdx-list-item fade-in">
@@ -52,9 +56,9 @@
                         
                 </div>
                 <div class="text-content">
-                    <h3>Improved Rider Experience</h3>
+                    <h3>{{text.t("whyUseGtfsSubtitle1")}}</h3>
                     <p class="mdx-list-item content">
-                        GTFS empowers riders with accurate schedules, and real-time updates, leading to reduced wait times and informed travel decisions.
+                        {{text.t("whyUseGtfsTextBlock1")}}
                     </p>
                 </div>
             </li>
@@ -79,9 +83,9 @@
                     </svg>                       
                 </div>
                 <div class="text-content">
-                    <h3>Global Reach & Seamless Trips</h3>
+                    <h3>{{text.t("whyUseGtfsSubtitle4")}}</h3>
                     <p class="mdx-list-item content">
-                        Over 10,000 agencies in 100+ countries use GTFS, ensuring consistent data for multi-agency trips and simplifying travel across regions.
+                        {{text.t("whyUseGtfsTextBlock4")}}
                 </div>
             </li>
             <li class="mdx-list-item fade-in">
@@ -97,9 +101,9 @@
                     </svg>
                 </div>
                 <div class="text-content">
-                    <h3>Simple and Easy to Use</h3>
+                    <h3>{{text.t("whyUseGtfsSubtitle2")}}</h3>
                     <p class="mdx-list-item content">
-                        GTFS makes it easy for transit agencies by relying on a simple data structure, fostering collaboration and interoperability.
+                        {{text.t("whyUseGtfsTextBlock2")}}
                     </p>
                 </div>
             </li>
@@ -127,9 +131,9 @@
                     </svg>
                 </div>
                 <div class="text-content">
-                    <h3>Access to a Wide Range of Applications</h3>
+                    <h3>{{text.t("whyUseGtfsSubtitle5")}}</h3>
                     <p class="mdx-list-item content">
-                        By adopting GTFS, agencies reach a wider audience through the vast pool of app developers utilizing the standardized data format.
+                        {{text.t("whyUseGtfsTextBlock5")}}
                     </p>
                 </div>
             </li>
@@ -151,9 +155,9 @@
                     </svg>
                 </div>
                 <div class="text-content">
-                    <h3>Open Source Community</h3>
+                    <h3>{{text.t("whyUseGtfsSubtitle3")}}</h3>
                     <p class="mdx-list-item content">
-                        GTFS thrives on community collaboration, ensuring its continuous evolution and relevance, with a primary focus on passenger-facing information within the specification.
+                        {{text.t("whyUseGtfsTextBlock3")}}
                     </p>
                 </div>
             </li>
@@ -167,9 +171,9 @@
                     </svg>
                 </div>
                 <div class="text-content">
-                    <h3>More than just Schedules</h3>
+                    <h3>{{text.t("whyUseGtfsSubtitle6")}}</h3>
                     <p class="mdx-list-item content">
-                        While schedule information is at its core, GTFS also offers additional features that enhance the transit experience, such as fares, flexible services, and real-time updates.
+                        {{text.t("whyUseGtfsTextBlock6")}}
                     </p>
                 </div>
             </li>
@@ -177,7 +181,7 @@
         <div class="learn-more-button-container ">
             <a href="getting_started/what_is_GTFS/" title="{{ page.next_page.title | striptags }}"
                 class="md-button md-button--primary">
-                Learn more about GTFS
+                {{text.t("leanMoreGTFSButton")}}
             </a>
         </div>
     </div>
@@ -187,7 +191,7 @@
 <section class="content-container dark">
     <div class="content-inner">
         <header class="md-typeset">
-            <h1>Two Formats in One Standard</h1>
+            <h1>{{text.t("twoFormatsTitle")}}</h1>
         </header>
 
         <div class="mdx-spotlight md-typeset">
@@ -198,25 +202,25 @@
                 </a>
                 <div class="md-typeset spotlight-content fade-in-2">
                     <p class="mdx-spotlight__header"> 
-                        <span class="mdx-spotlight__header--highlight">GTFS Schedule</span> forms the foundation of rider-facing transit information, providing essential, static data. 
+                        {{text.t("twoFormatsScheduleSubtitle")}}
                     </p>
                     <ul class="mdx-spotlight__list">
-                        <li><span class="highlighted-text">Routes & Stops</span>: Know exactly where to catch your bus or train.</li>
-                        <li><span class="highlighted-text">Schedules & Frequencies</span>: Plan trips confidently with clear timetables.</li>
-                        <li><span class="highlighted-text">Fares</span>: See journey costs upfront in apps.</li>
-                        <li><span class="highlighted-text">Flex Routes</span>: Display demand responsive transportation.</li>
-                        <li><span class="highlighted-text">And more...</span></li>
+                        <li>{{text.t("twoFormatsScheduleList1")}}</li>
+                        <li>{{text.t("twoFormatsScheduleList2")}}</li>
+                        <li>{{text.t("twoFormatsScheduleList3")}}</li>
+                        <li>{{text.t("twoFormatsScheduleList4")}}</li>
+                        <li>{{text.t("twoFormatsScheduleList5")}}</li>
                     </ul>
 
                     <div class="mdx-spotlight__links">
-                        <a href="documentation/schedule/reference/">Reference Documentation</a> 
+                        <a href="documentation/schedule/reference/">{{text.t("twoFormatsScheduleReferenceDoc")}}</a> 
                         <span class="highlighted-text">/</span> 
-                        <a href="documentation/schedule/schedule_best_practices/">Best Practices</a>
+                        <a href="documentation/schedule/schedule_best_practices/">{{text.t("twoFormatsScheduleBestPractices")}}</a>
                     </div>
                     
                     <a href="documentation/overview/#gtfs-schedule" title="{{ page.next_page.title | striptags }}"
                         class="md-button md-button--primary">
-                        Learn more about GTFS Schedule
+                        {{text.t("twoFormatsScheduleLearnMoreButton")}}
                     </a>
                     
                 </div>
@@ -230,22 +234,22 @@
                 </a>
                 <div class="md-typeset spotlight-content fade-in-2">
                     <p class="mdx-spotlight__header"> 
-                        <span class="mdx-spotlight__header--highlight">GTFS Realtime</span> focuses on the ever-changing world of public transit, providing live updates that keep riders informed. 
+                        {{text.t("twoFormatsRealtimeSubtitle")}}
                     </p>
                     <ul class="mdx-spotlight__list">
-                        <li><span class="highlighted-text">Vehicle Locations</span>: Track your bus or train in real-time and see exactly where it is. No more waiting at the stop wondering when it will arrive!</li>
-                        <li><span class="highlighted-text">Arrival Times</span>: Get a more accurate idea of when your ride will arrive, eliminating the frustration of missed connections.</li>
-                        <li><span class="highlighted-text">Service Alerts</span>: Receive notifications about any service disruptions on the network, allowing you to adjust your plans accordingly.</li>
+                        <li>{{text.t("twoFormatsRealtimeList1")}}</li>
+                        <li>{{text.t("twoFormatsRealtimeList2")}}</li>
+                        <li>{{text.t("twoFormatsRealtimeList3")}}</li>
                     </ul>
                     <div class="mdx-spotlight__links">
-                        <a href="documentation/realtime/reference/">Reference Documentation</a> 
+                        <a href="documentation/realtime/reference/">{{text.t("twoFormatsScheduleReferenceDoc")}}</a> 
                         <span class="highlighted-text">/</span> 
-                        <a href="documentation/realtime/realtime_best_practices/">Best Practices</a>
+                        <a href="documentation/realtime/realtime_best_practices/">{{text.t("twoFormatsScheduleBestPractices")}}</a>
                     </div>
 
                     <a href="documentation/overview/#gtfs-realtime" title="{{ page.next_page.title | striptags }}"
                         class="md-button md-button--primary">
-                        Learn more about GTFS Realtime
+                        {{text.t("twoFormatsRealtimeLearnMoreButton")}}
                     </a>
                 </div>
             </div>
@@ -256,7 +260,7 @@
 <section class="content-container">
     <div class="content-inner">
         <header class="md-typeset">
-            <h1>Help develop the future of GTFS</h1>
+            <h1>{{text.t("helpDevelopFutureTitle")}}</h1>
         </header>
         
         <div class="mdx-socials md-typeset">
@@ -273,10 +277,10 @@
                 </svg>
                 <div class="md-typeset mdx-socials__content">
                     <h3>Slack</h3>
-                    <p class="">Join the official slack channel and participate in live chat with other GTFS contributors.</p>
+                    <p class="">{{text.t("helpDevelopFutureSlackText")}}</p>
                     <a href="https://share.mobilitydata.org/slack" target="_blank" title="{{ page.next_page.title | striptags }}"
                         class="md-button md-button--primary">
-                        Join Slack
+                        {{text.t("helpDevelopFutureSlackButton")}}
                     </a>
                 </div>
             </figure>
@@ -288,10 +292,10 @@
                     
                 <div class="md-typeset mdx-socials__content">
                     <h3>GitHub</h3>
-                    <p>The google/transit repository on GitHub is where the standard lives. Propose ideas and engage in discussions.</p>
+                    <p>{{text.t("helpDevelopFutureGitHubText")}}</p>
                     <a href="https://github.com/google/transit" target="_blank" title="{{ page.next_page.title | striptags }}"
                         class="md-button md-button--primary">
-                        Visit Github
+                        {{text.t("helpDevelopFutureGitHubButton")}}
                     </a>
                 </div>
             </figure>
@@ -305,11 +309,11 @@
                 </svg>
                     
                 <div class="md-typeset mdx-socials__content">
-                    <h3>GTFS Digest</h3>
-                    <p>Stay up to date with the GTFS world by subscribing to the GTFS Digest. </p>
+                    <h3>{{text.t("helpDevelopFutureDigestSubtitle")}}</h3>
+                    <p>{{text.t("helpDevelopFutureDigestText")}}</p>
                     <a href="https://groups.google.com/g/gtfs-digest" title="{{ page.next_page.title | striptags }}"
                         class="md-button md-button--primary">
-                        Subscribe
+                        {{text.t("helpDevelopFutureDigestButton")}}
                     </a>
                 </div>
             </figure>
@@ -317,23 +321,23 @@
 
         <div class="md-typeset mdx-resource__container">
             <div class="mdx-resource__element">
-                <h3>Community Resources</h3>
+                <h3>{{text.t("helpDevelopFutureCommResourcesTitle")}}</h3>
                 <p>
-                    Make sure to check out the Resources section for an extensive selection of tips, tools, and tricks.
+                    {{text.t("helpDevelopFutureCommResourcesText")}}
                 </p>
                 <a href="resources/overview/" title="{{ page.next_page.title | striptags }}"
                     class="md-button md-button--primary">
-                    Checkout the Resources
+                    {{text.t("helpDevelopFutureCommResourcesButton")}}
                 </a>
             </div>
             <div class="mdx-resource__element">
-                <h3>Active Projects</h3>
+                <h3>{{text.t("helpDevelopFutureActiveProjectsTitle")}}</h3>
                 <p>
-                    Discover the developing new additions to the specification that could require your help. 
+                    {{text.t("helpDevelopFutureActiveProjectsText")}}
                 </p>
                 <a href="community/get_involved/#active-projects" title="{{ page.next_page.title | striptags }}"
                     class="md-button md-button--primary">
-                    Discover the projects
+                    {{text.t("helpDevelopFutureActiveProjectsButton")}}
                 </a>
             </div>
         </div>
