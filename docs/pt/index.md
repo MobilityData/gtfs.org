@@ -1,6 +1,12 @@
-# Translation in Progress!
-## We’re still working on bringing our site to you in Português. But don’t worry, it’s coming soon!
+---
+hide:
+  - navigation
+  - toc
+---
 
-Meanwhile, you can catch the express train to our [English site](https://gtfs.org), or take a leisurely ride through our [archived site](https://archive.gtfs.org). Just a heads-up: the archived site is like an old, charming train station: full of history, but no longer in service!
+# Tradução em curso!
+## Ainda estamos a trabalhar para lhe trazer o nosso site em português. Mas não se preocupe, está a chegar em breve!
 
-### Thanks for your patience as we work to make your journey smoother in the near future!
+Entretanto, pode ver as informações mais atualizadas no [site em inglês](https://gtfs.org) ou visitar o [site arquivado](https://archive.gtfs.org) que contém o conteúdo traduzido no seu idioma. Aviso justo, o site arquivado já não é mantido e pode não estar tão atualizado como o site atual.
+
+### Obrigado pela sua paciência enquanto trabalhamos para tornar este site melhor.
