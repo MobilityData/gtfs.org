@@ -14,14 +14,14 @@
  
  Par exemple, considérons les valeurs suivantes [trips.txt](../../reference/#tripstxt) et [stop_times.txt](../../reference/#stop_timestxt): 
  
- [** trips.txt**](../../reference/#tripstxt) 
+ [**trips.txt**](../../reference/#tripstxt) 
  
 | route_id | trip_id     | block_id  |
 |----------|-------------|---|
 | RouteA   | RouteATrip1 |  Block1 |
 | RouteB   | RouteBTrip1 |  Block1 |
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 | trip_id | arrival_time     | departure_time | stop_id | stop_sequence |
 |----------|-------------|---|----|-----|

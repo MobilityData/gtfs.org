@@ -85,7 +85,7 @@
  
  El uso de `booking_type = 2` indica que el servicio requiere reserva hasta el día(s) anterior(es). `prior_notice_last_day = 1` y `prior_notice_start_day = 14` indican que el servicio se puede reservar con 14 días de antelación y hasta el día anterior. 
  
- [** booking_rules.txt**](../../reference/#booking_rulestxt) 
+ [**booking_rules.txt**](../../reference/#booking_rulestxt) 
  
  booking_rule_id | booking_type | prior_notice_start_day | prior_notice_start_time | prior_notice_last_day | prior_notice_last_time | message | phone_number | info_url
 --|--|--|--|--|--|--|--|-- 
@@ -98,7 +98,7 @@
  - El primer registro con `pickup_type = 2` y `drop_off_type = 1` indica que la recogida de reservas está permitida en la zona. 
  - El segundo registro con `pickup_type = 1` y `drop_off_type = 2` indica que se permite la entrega de reservas en la zona. 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | location_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | pickup_booking_rule_id | drop_off_booking_rule_id
 -- | -- | -- | -- | -- | -- | -- | -- | --
@@ -202,7 +202,7 @@ La ruta 476 opera de 17:30 a 22:00 de lunes a viernes y de 8:00 A. m.a 22:00 p.m
 - el primer registro con `pickup_type = 2` y `drop_off_type = 1` indica que se permite la recogida de reservas en el grupo de ubicación. 
 - El segundo registro con `pickup_type = 1` y `drop_off_type = 2` indica que se permite la entrega de reservas en el grupo de ubicación. 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | pickup_booking_rule_id | drop_off_booking_rule_id
 -- | -- | -- | -- | -- | -- | -- | -- | --
@@ -283,7 +283,7 @@ tripA | Zone3 | 3 | 1 | 2 | 10:00:00 | 18:00:00
  
  **Prohibido** 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | location_id | stop_sequence | pickup_type | drop_off_type | start_pickup_drop_off_window | end_pickup_drop_off_window
 -- | -- | -- | -- | -- | -- | --

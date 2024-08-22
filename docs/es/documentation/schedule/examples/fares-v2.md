@@ -124,7 +124,7 @@
  * El área de llegada es `GLEN` 
  * El producto de tarifa para el área de salida/llegada es `BA:matrix:ASHB-GLEN` 
  
- [** fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
+ [**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
  
  | leg_group_id | from_area_id|to_area_id|fare_product_id|
 |--------------|-----------|------------|---------------|
@@ -159,7 +159,7 @@
  
  `Clipper` se describe como una tarjeta de transporte física con `fare_media_type=2`. `SFMTA Munimobile` se describe como una aplicación móvil con `fare_media_type=2`. El `efectivo` no tiene ningún medio de pago, ya que se entrega directamente al conductor sin necesidad de billete. Como resultado, `Cash` es `fare_media_type=0`. 
  
- [** fare_media.txt**](../../reference/#fare_mediatxt) 
+ [**fare_media.txt**](../../reference/#fare_mediatxt) 
  
 | fare_media_id | fare_media_name  | fare_media_type |
 |---------------|------------------|-----------------|
@@ -227,7 +227,7 @@
  
  El producto de tarifa de viaje único que se muestra a continuación tiene opciones de medios de tarifa "efectivo" y "tap-to-ride". Cuando el viaje sencillo se paga con la tarifa "tap-to-ride", es un dólar más barato. 
  
- [** fare_products.txt**](../../reference/#fare_productstxt) 
+ [**fare_products.txt**](../../reference/#fare_productstxt) 
  
 | fare_product_id | fare_product_name  | fare_media_id | amount | currency |
 |---------------|------------------|---------------|--------|----------|

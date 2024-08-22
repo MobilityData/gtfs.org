@@ -6,7 +6,7 @@
  
  Le fichier [routes.txt](../../reference/#routestxt) permet de décrire ce service à l’aide des champs `continuous_pickup` et `continuous_drop_off`. Les champs sont définis sur `0` pour indiquer que les ramassages et dépôts continus sont autorisés. 
  
- [** routes.txt**](../../reference/#routestxt) 
+ [**routes.txt**](../../reference/#routestxt) 
  
 ```
 route_id,route_short_name,route_long_name,route_type,continuous_pickup,continuous_drop_off
@@ -48,7 +48,7 @@ F,Silver Lakes Market,34.744662,-117.335407
  - Une entrée avec `continuous_pickup=0` indique que les ramassages continus sont autorisés depuis cet arrêt jusqu’à l’arrêt suivant
  - Une entrée avec `continuous_pickup=1` indique que les ramassages continus sont interdits à partir de cet arrêt jusqu’à l’arrêt suivant 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 ```
 trip_id,stop_id,stop_sequence,departure_time,arrival_time,continuous_pickup,continuous_drop_off,timepoint

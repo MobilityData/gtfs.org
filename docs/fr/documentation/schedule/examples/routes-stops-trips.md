@@ -6,7 +6,7 @@
  
  La première étape consiste à ajouter les informations sur l’agence comme indiqué dans le fichier [agency.txt](../../reference/#agencytxt) ci-dessous. Ce fichier contient des informations de haut niveau sur l’agence. 
  
- [** agency.txt**](../../reference/#agencytxt) 
+ [**agency.txt**](../../reference/#agencytxt) 
  
 ```
 agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone
@@ -15,7 +15,7 @@ CT,Calgary Transit,http://www.calgarytransit.com,America/Edmonton,,403-262-1000
  
  Calgary Transit exploite des services de TLR, de BRT, de bus réguliers, de transport adapté et de transport en commun à la demande dans Calgary, Alberta. Dans cet exemple, deux itinéraires sont définis, le premier est un bus et le second est un LRT. À l’aide du fichier [routes.txt](../../reference/#routestxt), chaque itinéraire se voit attribuer un identifiant unique, ainsi qu’un nom court ainsi qu’un nom long pour une lisibilité humaine. 
  
- [** routes.txt**](../../reference/#routestxt) 
+ [**routes.txt**](../../reference/#routestxt) 
  
 ```
 agency_id,route_id,route_short_name,route_long_name,route_type,route_url,route_color,route_text_color
@@ -37,7 +37,7 @@ CT,202-20666,202,Blue Line - Saddletowne/69 Street CTrain,0,www.calgarytransit.c
  
  Dans GTFS, les arrêts et les gares sont décrits à l’aide du fichier [stops.txt](../../reference/#stopstxt), ci-dessous, un arrêt de bus est défini dans le premier enregistrement et une station LRT est définie dans le deuxième enregistrement. 
  
- [** stops.txt**](../../reference/#stopstxt) 
+ [**stops.txt**](../../reference/#stopstxt) 
  
 ```
 stop_id,stop_code,stop_name,stop_lat,stop_lon,location_type
@@ -61,7 +61,7 @@ stop_id,stop_code,stop_name,stop_lat,stop_lon,location_type
  
  Tout d’abord, l’étendue du service doit être définie à l’aide de [calendar.txt](../../reference/#calendartxt). 
  
- [** calendar.txt**](../../reference/#calendartxt) 
+ [**calendar.txt**](../../reference/#calendartxt) 
  
 ```
 service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
@@ -72,7 +72,7 @@ weekend_service,0,0,0,0,0,1,1,20220623,20220903
  
  Dans cet exemple, le fichier [trips.txt](../../reference/#tripstxt) décrit 3 voyages de week-end desservis par l’itinéraire MAX Orange décrit ci-dessus. 
  
- [** trips.txt**](../../reference/#tripstxt) 
+ [**trips.txt**](../../reference/#tripstxt) 
  
 ```
 route_id,service_id,trip_id,trip_headsign,direction_id,shape_id
@@ -92,7 +92,7 @@ route_id,service_id,trip_id,trip_headsign,direction_id,shape_id
  
  Le `shape_id=3030026` correspond au MAX Orange vers Saddletowne. Le fichier ci-dessous comprend des informations sur les points qui délimitent le trajet, ainsi que la distance entre chaque point et le début du trajet. Avec ces informations, il est possible de tracer l’itinéraire sur une carte à des fins de planification de voyage. 
  
- [** shapes.txt**](../../reference/#shapestxt) 
+ [**shapes.txt**](../../reference/#shapestxt) 
  
 ```
 shape_id,shape_pt_lat,shape_pt_lon,shape_pt_sequence,shape_dist_traveled
@@ -126,7 +126,7 @@ shape_id,shape_pt_lat,shape_pt_lon,shape_pt_sequence,shape_dist_traveled
  
  Cependant, cela complique le fichier puisque `service_id` est cassé en deux et cette rupture se répercutera sur [trips.txt](../../reference/#tripstxt). Au lieu de cela, cela peut être fait de manière plus simple en utilisant [calendar_dates.txt](../../reference/#calendar_datestxt) comme indiqué ci-dessous : 
  
- [** calendar_dates.txt**](../../reference/#calendar_datestxt) 
+ [**calendar_dates.txt**](../../reference/#calendar_datestxt) 
  
 ```
 service_id,date,exception_type

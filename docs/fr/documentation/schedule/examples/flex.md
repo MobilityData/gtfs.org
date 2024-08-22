@@ -28,7 +28,7 @@
  - Service dans la zone New Ulm de 17h00 à 17h45 en semaine. 
  - Service dans la zone New Ulm de 8h00 à 12h00 le dimanche. 
  
- [** trips.txt**](../../reference/#tripstxt) 
+ [**trips.txt**](../../reference/#tripstxt) 
  
 route_id | service_id | trip_id
 -- | -- | -- 
@@ -84,7 +84,7 @@ route_id | service_id | trip_id
  
  L’utilisation de `booking_type = 2` indique que le service nécessite une réservation jusqu’au(x) jour(s) précédent(s). `prior_notice_last_day = 1` et `prior_notice_start_day = 14` indiquent que le service peut être réservé dès 14 jours à l’avance et au plus tard la veille. 
  
- [** booking_rules.txt**](../../reference/#booking_rulestxt) 
+ [**booking_rules.txt**](../../reference/#booking_rulestxt) 
  
  booking_rule_id | booking_type | prior_notice_start_day | prior_notice_start_time | prior_notice_last_day | prior_notice_last_time | message | phone_number | info_url
 -- | -- | -- | -- | -- | -- | -- | -- | --
@@ -97,7 +97,7 @@ booking_route_74362 | 2 | 14 | 8:00:00 | 1 | 15:00:00 | Brown County Heartland E
  - La première entrée avec `pickup_type = 2` et `drop_off_type = 1` indique que la réservation pour une prise en charge est autorisée dans la zone. 
  - La deuxième entrée avec `pickup_type = 1` et `drop_off_type = 2` indique que la réservation pour un dépôt est autorisée dans la zone. 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | location_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | pickup_booking_rule_id | drop_off_booking_rule_id
 -- | -- | -- | -- | -- | -- | -- | -- | --
@@ -122,7 +122,7 @@ t_5374947_b_77497_tn_0 | area_715 | 2 | 08:00:00 | 12:45:00 | 1 | 2 | booking_ro
  
  Semblable à l’exemple précédent, car les heures de service varient selon les jours, il est nécessaire de définir les déplacements séparément pour les jours de semaine et les samedis. 
  
- [** trips.txt**](../../reference/#tripstxt) 
+ [**trips.txt**](../../reference/#tripstxt) 
  
 route_id | service_id | trip_id 
 -- | -- | -- 
@@ -135,7 +135,7 @@ route_id | service_id | trip_id
  
  Les données suivantes indiquent que le ramassage n’est autorisé que dans une zone et le dépôt n’est autorisé que dans une autre zone. Les prises en charge et les dépôts dans la même zone ne sont pas autorisés. 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | location_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | pickup_booking_rule_id | drop_off_booking_rule_id
 -- | -- | -- | -- | -- | -- | -- | -- | --
@@ -152,7 +152,7 @@ t_5298041_b_77503_tn_0 | area_714 | 2 | 09:00:00 | 19:00:00 | 1 | 2 | booking_ro
  
 La route 476 offre des services à la demande entre chaque arrêt dans la région d’Angermünde. Ils exploitent deux services (un pour la semaine et l’autre pour le week-end), chacun étant associé à un seul trip_id. 
  
- [** trips.txt**](../../reference/#tripstxt) 
+ [**trips.txt**](../../reference/#tripstxt) 
  
 route_id | service_id | trip_id 
 -- | -- | -- 
@@ -163,13 +163,13 @@ route_id | service_id | trip_id
  
  Comme les usagers peuvent réserver des services entre chaque arrêt, pour éviter de définir toutes les combinaisons d’arrêt à arrêt dans stop_times.txt, l’approche appropriée consiste à définir ces arrêts en tant qu’emplacement groupe en utilisant location_groups.txt et location_group_stops.txt. 
  
- [** location_groups.txt**](../../reference/#location_groupstxt) 
+ [**location_groups.txt**](../../reference/#location_groupstxt) 
  
 location_group_id | location_group_name 
 -- | -- 
 476_stops | durch den RufBus 476 bedientes Gebiet im Raum Angermünde
  
- [** location_group_stops.txt**](../../reference/#location_group_stopstxt) 
+ [**location_group_stops.txt**](../../reference/#location_group_stopstxt) 
  
 location_group_id | stop_id 
 -- | -- 
@@ -187,7 +187,7 @@ location_group_id | stop_id
  
  Il existe de légères différences entre les réservations en semaine et les réservations le week-end, des règles de réservation distinctes peuvent donc être définies pour les services en semaine et pendant les jours fériés. Plus de détails peuvent être fournis dans le champ `message`. Des liens vers des informations et des pages de réservation peuvent être fournis dans les champs `info_url` et `booking_url`. 
  
- [** booking_rules.txt**](../../reference/#booking_rulestxt) 
+ [**booking_rules.txt**](../../reference/#booking_rulestxt) 
  
 booking_rule_id | booking_type | prior_notice_duration_min | message | phone_number | info_url | booking_url
 -- | -- | -- | -- | -- | -- | --
@@ -201,7 +201,7 @@ flächenrufbus_angermünde_weekends | 1 | 60 | 1€ Komfortzuschlag pro Person; 
  - La première entrée avec `pickup_type = 2` et `drop_off_type = 1` indique que la réservation pour une prise en charge est autorisée dans le groupe d’emplacements. 
  - La deuxième entrée avec `pickup_type = 1` et `drop_off_type = 2` indique que la réservation pour un dépôt est autorisée dans le groupe d’emplacements. 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | pickup_booking_rule_id | drop_off_booking_rule_id
 -- | -- | -- | -- | -- | -- | -- | -- | --
@@ -222,7 +222,7 @@ trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end
  
  Étant donné que ce type de service implique toujours une série d’arrêts fixes et un horaire fixe, la définition des trajets est similaire aux services de bus normaux à itinéraire fixe. Cela nécessite de définir les déplacements desservis par chaque itinéraire tout au long de toutes les périodes de service pertinentes. 
  
- [** trips.txt**](../../reference/#tripstxt) 
+ [**trips.txt**](../../reference/#tripstxt) 
  
 route_id | service_id | trip_id | share_id
 -- | -- | -- | -- 
@@ -244,7 +244,7 @@ route_id | service_id | trip_id | share_id
  
  Pour les arrêts fixes, définissez des champs tels que `arrival_time`, `departure_time` et `stop_id` d’une manière similaire aux itinéraires de bus normaux. Entre les arrêts fixes, définissez les zones où l’écart est autorisé. `pickup_type = 1` et `drop_off_type = 3` indiquent que la prise en charge déviée n’est pas autorisée (en limitant la prise en charge aux arrêts fixes uniquement) et que les passagers doivent se coordonner avec le conducteur pour être déposés dans la zone de déviation. 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | arrival_time | departure_time | stop_id | location_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | shape_dist_traveled | pickup_booking_rule_id | drop_off_booking_rule_id
 -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
@@ -280,7 +280,7 @@ tripA | Zone3 | 3 | 1 | 2 | 10:00:00 | 18:00:00
  
  **Interdit** 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | location_id | stop_sequence | pickup_type | drop_off_type | start_pickup_drop_off_window | end_pickup_drop_off_window
 -- | -- | -- | -- | -- | -- | --
@@ -290,7 +290,7 @@ tripA | vancouver | 3 | 1 | 2 | 10:00:00 | 14:00:00
  
  **Autorisé** 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | location_id | stop_sequence | pickup_type | drop_off_type | start_pickup_drop_off_window | end_pickup_drop_off_window
 -- | -- | -- | -- | -- | -- | --
@@ -300,7 +300,7 @@ tripA | vancouver | 3 | 1 | 2 | 10:00:00 | 14:00:00
  
  ou 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | location_id | stop_sequence | pickup_type | drop_off_type | start_pickup_drop_off_window | end_pickup_drop_off_window
 -- | -- | -- | -- | -- | -- | --
@@ -310,7 +310,7 @@ tripA | vancouver | 3 | 1 | 2 | 10:00:00 | 14:00:00
  
  ou 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | location_id | stop_sequence | pickup_type | drop_off_type | start_pickup_drop_off_window | end_pickup_drop_off_window
 -- | -- | -- | -- | -- | -- | --
