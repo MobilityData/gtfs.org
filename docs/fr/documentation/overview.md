@@ -29,4 +29,4 @@
  
  Le format d’échange de données GTFS Realtime est basé sur [Protocol Buffers](https://developers.google.com/protocol-buffers/) qui est un mécanisme neutre en termes de langage et de plate-forme pour sérialiser des données structurées (pensez à XML, mais plus petit, plus rapide et plus simple). 
  
- De la même manière que le calendrier GTFS, la [référence GTFS en temps réel](../realtime/reference) est la source de vérité qui établit les règles et les exigences pour tout flux GTFS en temps réel, tandis que le [gtfs-realtime.proto](../realtime/proto) définit la hiérarchie des éléments et leurs définitions de type qui sont utilisés. 
+ De la même manière que le GTFS Schedule, la [référence GTFS Realtime](../realtime/reference) est la source de vérité qui établit les règles et les exigences pour tout flux GTFS Realtime, tandis que le [gtfs-realtime.proto](../realtime/proto) définit la hiérarchie des éléments et leurs définitions de type qui sont utilisés. 

@@ -1,4 +1,4 @@
-# Liaisons de langage .NET GTFS en temps réel 
+# Liaisons de langage .NET GTFS Realtime 
  
  [![Version NuGet](https://badge.fury.io/nu/GtfsRealtimeBindings.svg)](http://badge.fury.io/nu/GtfsRealtimeBindings ) 
  
@@ -15,7 +15,7 @@ Install-Package GtfsRealtimeBindings
  
 ## Exemple de code 
  
- L’extrait de code suivant montre le téléchargement d’un flux de données GTFS en temps réel à partir d’une URL particulière, l’analyse en tant que FeedMessage (le type racine du schéma GTFS en temps réel) et en itérant sur les résultats. 
+ L’extrait de code suivant montre le téléchargement d’un flux de données GTFS Realtime à partir d’une URL particulière, l’analyse en tant que FeedMessage (le type racine du schéma GTFS Realtime) et en itérant sur les résultats. 
  
 ```csharp
 using System.Net;

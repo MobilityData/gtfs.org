@@ -5,11 +5,11 @@
 
 <img class="center" width="560" height="100%" src="../../assets/create_001.png"> 
  
- Chaque fichier est constitué d’une liste de plusieurs enregistrements (lignes de données) avec plusieurs champs d’information. Par exemple, chaque ligne répertoriée dans [routes.txt](../../documentation/schedule/reference/#routestxt) représente un itinéraire de transport public et ses champs décrivent plusieurs éléments de cet itinéraire, comme son nom, sa description, son mode d’exploitation.agence, etc. 
+ Chaque fichier est constitué d’une liste de plusieurs entrées (lignes de données) avec plusieurs champs d’information. Par exemple, chaque ligne répertoriée dans [routes.txt](../../documentation/schedule/reference/#routestxt) représente un itinéraire de transport public et ses champs décrivent plusieurs éléments de cet itinéraire, comme son nom, sa description, agence d’exploitation, etc. 
  
 <img class="center" width="560" height="100%" src="../../assets/create_002.png"> 
  
- Les fichiers de base d’un jeu de données GTFS peuvent être décrits comme suit : Un jeu de données de planification GTFS comporte une ou plusieurs routes ([routes.txt](../../documentation/schedule/reference/#routestxt)), chaque itinéraire comporte un ou plusieurs trajets ([trips.txt](../../documentation/schedule/reference/#tripstxt)), chaque trajet visite une série d’arrêts ([stops.txt](../../documentation/schedule/reference/#stopstxt)) à des heures spécifiées ([stop_times.txt](../../documentation/schedule/reference/#stop_timestxt)). Les Trajets et les horaires d’arrêts contiennent uniquement des informations sur l’heure de la journée ; le calendrier est utilisé pour déterminer les jours auxquels un voyage donné a lieu ([calendar.txt](../../documentation/schedule/reference/#calendartxt) et [calendar_dates.txt](../../documentation/planning/reference/#calendar_datestxt)). De plus, plusieurs agences ([agency.txt](../../documentation/schedule/reference/#agencytxt)) peuvent exploiter plusieurs itinéraires. Ces fichiers sont liés les uns aux autres avec des champs qui font l’objet de références croisées entre eux. 
+ Les fichiers de base d’un jeu de données GTFS peuvent être décrits comme suit : Un jeu de données de planification GTFS comporte une ou plusieurs routes ([routes.txt](../../documentation/schedule/reference/#routestxt)), chaque itinéraire comporte un ou plusieurs trajets ([trips.txt](../../documentation/schedule/reference/#tripstxt)), chaque trajet visite une série d’arrêts ([stops.txt](../../documentation/schedule/reference/#stopstxt)) à des heures spécifiées ([stop_times.txt](../../documentation/schedule/reference/#stop_timestxt)). Les trajets et les horaires d’arrêts contiennent uniquement des informations sur l’heure de la journée ; le calendrier est utilisé pour déterminer les jours auxquels un voyage donné a lieu ([calendar.txt](../../documentation/schedule/reference/#calendartxt) et [calendar_dates.txt](../../documentation/planning/reference/#calendar_datestxt)). De plus, plusieurs agences ([agency.txt](../../documentation/schedule/reference/#agencytxt)) peuvent exploiter plusieurs itinéraires. Ces fichiers sont liés les uns aux autres avec des champs qui font l’objet de références croisées entre eux. 
 
 <img class="center" width="560" height="100%" src="../../assets/create_003.png"> 
  
@@ -37,7 +37,7 @@
  
  En fonction de la taille et de la complexité de votre système, vous avez la possibilité de créer les données en interne ou de faire appel à un fournisseur GTFS externe pour transformer les données au format GTFS. 
  
- Dans certains cas, les petites agences disposant d’une poignée d’itinéraires créent elles-mêmes les données à l’aide de logiciels couramment disponibles tels que des feuilles de calcul et des éditeurs de texte. 
+ Dans certains cas, les petites agences disposant de peu d’itinéraires créent elles-mêmes les données à l’aide de logiciels couramment disponibles tels que des feuilles de calcul et des éditeurs de texte. 
  
  Lorsqu’elles traitent un système plus vaste, la plupart des agences acquièrent un logiciel de gestion GTFS spécialisé auprès de fournisseurs spécialisés, mais certaines peuvent opter pour le développement de leurs propres outils internes. Enfin, lorsque les caractéristiques du système s’avèrent difficiles pour les agences qui souhaitent rédiger elles-mêmes des ensembles de données, la production GTFS peut être entièrement sous-traitée à des sociétés spécialisées dans la production de données GTFS. 
  

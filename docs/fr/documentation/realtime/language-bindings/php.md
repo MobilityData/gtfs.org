@@ -36,7 +36,7 @@ composer update
 
 ## Exemple de code 
  
- L’extrait de code suivant montre le téléchargement d’un flux de données GTFS en temps réel à partir d’une URL particulière, en l’analysant comme un FeedMessage (le type racine du schéma GTFS en temps réel), et itérer sur les résultats. 
+ L’extrait de code suivant montre le téléchargement d’un flux de données GTFS Realtime à partir d’une URL particulière, en l’analysant comme un FeedMessage (le type racine du schéma GTFS Realtime), et itérer sur les résultats. 
  
 ```php
 require_once 'vendor/autoload.php';

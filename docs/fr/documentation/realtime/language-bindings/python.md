@@ -19,7 +19,7 @@ pip install --upgrade gtfs-realtime-bindings
 
 ## Exemple de code 
  
- L’extrait de code suivant montre le téléchargement d’un flux de données GTFS en temps réel à partir d’une URL particulière, son analyse en tant que FeedMessage (le type racine du schéma GTFS en temps réel) et son itération les résultats. 
+ L’extrait de code suivant montre le téléchargement d’un flux de données GTFS Realtime à partir d’une URL particulière, son analyse en tant que FeedMessage (le type racine du schéma GTFS Realtime) et son itération les résultats. 
  
 ```python
 from google.transit import gtfs_realtime_pb2

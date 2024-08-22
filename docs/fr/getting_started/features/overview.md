@@ -1,6 +1,6 @@
-# Fonctionnalités du calendrier GTFS 
+# Fonctionnalités du GTFS Schedule 
  
- À mesure que le format de référence GTFS évolue pour répondre aux besoins actuels des systèmes de transport en commun, ses fonctions peuvent devenir de plus en plus complexes. Les **Fonctionnalités GTFS** sont destinées à fournir une explication claire et définitive des fonctionnalités activées par le format de référence GTFS. Cela aide les agences de transport en commun, les vendeurs, les consommateurs et les chercheurs à comprendre les capacités de GTFS et à répondre à la question : **Que puis-je faire avec GTFS ?** 
+ À mesure que le format de référence GTFS évolue pour répondre aux besoins actuels des systèmes de transport en commun, ses fonctions peuvent devenir de plus en plus complexes. Les **Fonctionnalités GTFS** sont destinées à fournir une explication claire et définitive des fonctionnalités activées par le format de référence GTFS. Cela aide les agences de transport en commun, les fournisseurs, les consommateurs et les chercheurs à comprendre les capacités de GTFS et à répondre à la question : **Que puis-je faire avec GTFS ?** 
  
  Les groupes de fonctionnalités suivants expliquent l’objectif de chaque fonctionnalité ainsi que le les fichiers et les champs qui leur sont associés, aidant les utilisateurs à comprendre quelles données sont nécessaires pour prendre en charge une fonctionnalité spécifique. 
  
@@ -98,7 +98,7 @@
  
     Décrire les transferts autorisés entre différents services de transport en commun. 
  
-    [:octicons-arrow-right-24: En savoir plus](../base_add-ons/#transfers) 
+    [:octicons-arrow-right-24: En savoir plus](../base_add-ons/#transferts) 
  
  - :material-plus-box-multiple-outline:{ .lg.middle } __Traductions__ 
  
@@ -126,7 +126,7 @@
  
     [:octicons-arrow-right-24: En savoir plus](../accessibility/#accessibilite-aux-personnes-en-fauteuil-roulant-aux-arrets) 
  
- - :material-wheelchair:{ .lg.middle } __Accessibilité aux Personnes en Fauteuil Roulant lors des Trajets__  
+ - :material-wheelchair:{ .lg.middle } __Accessibilité aux Personnes en Fauteuil Roulant lors des trajets__  
  
     Indiquer si un véhicule peut accueillir des passagers en fauteuil roulant. 
  
@@ -182,7 +182,7 @@
  
     [:octicons-arrow-right-24: En savoir plus](../fares/#transferts-tarifaires) 
  
- - :material-cash:{ .lg.middle } __Tarifs V1__ 
+ - :material-cash:{ .lg.middle } __Fares v1__ 
  
     Fonctionnalité héritée qui permet une représentation plus simple des informations tarifaires. 
  
@@ -234,9 +234,9 @@
 
 <div class="grid cards" markdown> 
  
- - :material-transit-detour:{ .lg.middle } __Arrêts Continus__ 
+ - :material-transit-detour:{ .lg.middle } __Arrêts continus__ 
  
-    Indiquer si un utilisateur·rice peut être pris en charge et/ou déposé entre les arrêts. 
+    Indiquer si un utilisateur peut être pris en charge et/ou déposé entre les arrêts. 
  
     [:octicons-arrow-right-24: En savoir plus](../flexible_services/#arrets-continus) 
  
@@ -258,7 +258,7 @@
  
     [:octicons-arrow-right-24: En savoir plus](../flexible_services/#services-a-la-demande-bases-sur-les-zones) 
  
- - :material-transit-detour:{ .lg.middle } __Services à la Demande avec Arrêts Fixes__ 
+ - :material-transit-detour:{ .lg.middle } __Services à la Demande avec arrêts fixes__ 
  
     Services qui permettent de prendre en charge/déposer à n’importe quel endroit au sein d’un groupe d’arrêts. 
  

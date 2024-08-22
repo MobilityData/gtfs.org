@@ -65,7 +65,7 @@
  
 #### Février 2019 
  
- * Ajout de l’option d’effet NO_EFFECT pour l’alerte de service GTFS en temps réel. Voir [discussion](https://github.com/google/transit/pull/137). 
+ * Ajout de l’option d’effet NO_EFFECT pour l’alerte de service GTFS Realtime. Voir [discussion](https://github.com/google/transit/pull/137). 
  * Ajouter un nouveau champ facultatif SeverityLevel au flux d’alertes de service. Voir [discussion](https://github.com/google/transit/pull/136). 
  * Ajoutez de nouveaux champs facultatifs pour la fonctionnalité de Synthèse Vocale dans le flux d’alertes de service. Voir [discussion](https://github.com/google/transit/pull/135). 
  
@@ -79,7 +79,7 @@
  
 #### 30 janvier 2015 
  
- * Ajout de l’espace de noms d’extension Protocol Buffer à tous les messages GTFS en temps réel restants qui n’en avaient pas déjà un (tels que `FeedMessage` et `FeedEntity`). 
+ * Ajout de l’espace de noms d’extension Protocol Buffer à tous les messages GTFS Realtime restants qui n’en avaient pas déjà un (tels que `FeedMessage` et `FeedEntity`). 
  
 #### 28 janvier 2015 
  
@@ -109,7 +109,7 @@
  
 #### 30 novembre 2011 
  
- * Ajout de l’espace de noms d’extension Protocol Buffer aux principaux messages GTFS en temps réel pour faciliter l’écriture d’extensions dans la spécification. 
+ * Ajout de l’espace de noms d’extension Protocol Buffer aux principaux messages GTFS Realtime pour faciliter l’écriture d’extensions dans la spécification. 
  
 #### 25 octobre 2011 
  
