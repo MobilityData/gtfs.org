@@ -6,10 +6,13 @@ help: ## This help.
 clean:
 	rm -rf site/
 
-serve: clean
-	mkdocs serve
+serve:
+	make clean
+	./scripts/i18n-landing-assets-setup.sh
+	mkdocs serve --watch overrides
 
 build:
+	scripts/i18n-landing-assets-setup.sh
 	mkdocs build
 
 deploy:

@@ -1,6 +1,6 @@
 .tx-container {
   padding-top: 0rem;
-  background-image: url("./assets/landing/hero.jpg");
+  background-image: url("./hero.jpg");
   margin-top: -96px;
   height: calc(100vh);
   background-size: cover;

@@ -1,3 +1,14 @@
 .DS_Store
 site/
 node_modules
+
+overrides/fr/*
+overrides/es/*
+overrides/de/*
+overrides/id/*
+overrides/ja/*
+overrides/ko/*
+overrides/pt/*
+overrides/ru/*
+overrides/zh/*
+overrides/zh-TW/*
