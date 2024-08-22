@@ -6,7 +6,7 @@
  
  La SNCB publie les données GTFS en français comme indiqué dans le fichier ci-dessous : 
  
- [** agency.txt**](../../reference/#agencytxt) 
+ [**agency.txt**](../../reference/#agencytxt) 
  
 ```
 agency_id,agency_name,agency_url,agency_timezone,agency_lang
@@ -16,7 +16,7 @@ NMBS/SNCB,NMBS/SNCB,http://www.belgiantrain.be/,Europe/Brussels,fr
  
  La langue de l’agence étant le français, les noms des stations sont répertoriés en français dans [stops.txt](../../reference/#stopstxt). 
  
- [** stops.txt**](../../reference/#stopstxt) 
+ [**stops.txt**](../../reference/#stopstxt) 
  
 ```
 stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station,platform_code
@@ -27,7 +27,7 @@ S8821006,,Anvers-Central,,51.2172000,4.42109800,,,1,,
  
  Le fichier [translations.txt](../../reference/#translationstxt) est ensuite utilisé pour traduire les noms des stations de la langue par défaut de l’agence (le français dans ce cas) vers le néerlandais. 
  
- [** translations.txt**](../../reference/#translationstxt) 
+ [**translations.txt**](../../reference/#translationstxt) 
  
 ```
 table_name,field_name,record_id,language,translation
@@ -43,7 +43,7 @@ stops,stop_name,S8815040,nl,Brussel-West
  
  Il existe une autre façon de traduire les noms en GTFS en utilisant le fichier [translations.txt](../../reference/#translationstxt), où le champ `field_value` est utilisé à la place de `record_id`. Dans ce cas, le nom de la station est utilisé pour rechercher l’enregistrement à traduire à partir de [stops.txt](../../reference/#stopstxt). 
  
- [** translations.txt**](../../reference/#translationstxt) 
+ [**translations.txt**](../../reference/#translationstxt) 
  
 ```
 table_name,field_name,field_value,language,translation

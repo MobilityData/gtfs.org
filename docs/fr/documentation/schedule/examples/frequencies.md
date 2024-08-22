@@ -4,7 +4,7 @@
  
  La Société de Transport de Montréal exploite des services de transport en commun à Montréal et exploite un service basé sur des fréquences de passage pour ses lignes de métro. Par conséquent, au lieu de fournir un horaire avec les heures d’arrivée et de départ dans un ensemble de données GTFS, le fichier [frequencies.txt](../../reference/#frequenciestxt) est utilisé pour décrire la fréquence du service tout au long de la durée du service. La répétition d’un trajet ne fonctionne que dans les cas où le timing entre les arrêts reste cohérent pour tous les arrêts. Lors de la modélisation d’un service basé sur la fréquence, stop_times.txt (@TODO link) contient les temps relatifs entre les arrêts afin de déterminer les temps à afficher aux passagers. 
  
- [** frequencies.txt**](../../reference/#frequenciestxt) 
+ [**frequencies.txt**](../../reference/#frequenciestxt) 
  
 ```
 trip_id,start_time,end_time,headway_secs

@@ -10,7 +10,7 @@
  Sinon, le logiciel lirait « 3300 » comme « trois mille trois cents ». 
  - Les ordinaux, tels que 1er, 2e et 3e, doivent être épelés : par exemple, « 1er » devient « premier ». 
  
- [** stops.txt**](../../reference/#stopstxt) 
+ [**stops.txt**](../../reference/#stopstxt) 
  
 | stop_id | stop_name | tts_stop_name |
 | ---- | ---- | ---- |
@@ -25,7 +25,7 @@
  
  Pour Tampa, le signe « North to UATC » contient un acronyme qui se prononce par ses lettres individuelles. La désambiguïsation de la synthèse vocale serait : 
  
- [** trips.txt**](../../reference/#tripstxt) 
+ [**trips.txt**](../../reference/#tripstxt) 
  
 | trip_headsign | tts_trip_headsign |
 | ---- | ---- |

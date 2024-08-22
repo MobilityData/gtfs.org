@@ -34,7 +34,7 @@
  
  Les billets ou tarifs de transport en commun sont appelés produits tarifaires dans GTFS. Ils peuvent être décrits à l’aide du fichier [fare_products.txt](../../reference/#fare_productstxt). Chaque entrée correspond à un tarif spécifique. 
  
- [** fare_products.txt**](../../reference/#fare_productstxt) 
+ [**fare_products.txt**](../../reference/#fare_productstxt) 
  
 | fare_product_id  | fare_product_name  | amount  | currency  |
 |------------------------|--------------------|---|---|
@@ -54,7 +54,7 @@
  
  Les groupes de trajets tarifaires définissent des trajets au sein d’un réseau depuis une origine vers une destination (ou un ensemble d’origines vers un ensemble de destinations si les identifiants de zone correspondent à des arrêts groupés). Le fichier ci-dessous décrit les règles pour voyager n’importe où au sein du réseau central de la Maryland Transit Administration. Chaque règle correspond à l’un des produits tarifaires réguliers dans [Définir un exemple de tarif de transport](/#definir-un-titre-de-transport). 
  
- [** fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
+ [**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
  
 |  leg_group_id |  network_id | fare_product_id  |
 |---|---|---|
@@ -71,7 +71,7 @@
  
  Il existe un transfert de 90 minutes pour les passagers qui achètent un aller simple pour emprunter les bus locaux BaltimoreLink, Metro SubwayLink ou Light RailLink. Cela signifie qu’ils peuvent transférer un nombre illimité de fois entre les bus locaux, le métro et le train léger sur rail dans un délai de 90 minutes. 
  
- [** fare_transfer_rules.txt**](../../reference/#fare_transfer_rulestxt) 
+ [**fare_transfer_rules.txt**](../../reference/#fare_transfer_rulestxt) 
  
 | from_leg_group_id       | to_leg_group_id  | duration_limit | duration_limit_type | fare_transfer_type | transfer_count |
 |-------------------------|---|----------------|-------------------|---------------------|----------------|
@@ -101,7 +101,7 @@
  
  Tout d’abord, identifiez la zone dans [areas.txt](../../reference/#areastxt). Il est acceptable de laisser « `area_name` » vide s’il n’y a pas de nom de zone. Dans le tableau ci-dessous, il y a trois `area_id` - `ASHB`, `GLEN` et `OAKL`. 
  
- [** areas.txt**](../../reference/#areastxt) 
+ [**areas.txt**](../../reference/#areastxt) 
  
 | area_id | area_name |
 |---------|-----------|
@@ -127,7 +127,7 @@
  * La zone d’arrivée est `GLEN` 
  * Le produit tarifaire pour la zone de départ/arrivée est `BA:matrix:ASHB-GLEN` 
  
- [** fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
+ [**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
  
 | leg_group_id | from_area_id|to_area_id|fare_product_id|
 |--------------|-----------|------------|---------------|
@@ -136,7 +136,7 @@
  
  Le tarif est identifié dans `fare_products.txt`. 
  
- [** fare_products.txt**](../../reference/#fare_productstxt) 
+ [**fare_products.txt**](../../reference/#fare_productstxt) 
  
 | fare_product_id     | fare_product_name| amount | currency |
 |---------------------|-----------|--------|----------|
@@ -162,7 +162,7 @@
  
  `Clipper` est décrit comme une carte de transport physique avec `fare_media_type=2`. `SFMTA Munimobile` est décrit comme une application mobile avec `fare_media_type=2`. Le paiement en espèces n’a pas de support tarifaire, puisqu’il est remis directement au conducteur sans ticket. Par conséquent, `Cash` vaut `fare_media_type=0`. 
  
- [** fare_media.txt**](../../reference/#fare_mediatxt) 
+ [**fare_media.txt**](../../reference/#fare_mediatxt) 
  
 | fare_media_id | fare_media_name  | fare_media_type |
 |---------------|------------------|-----------------|
@@ -176,7 +176,7 @@
  
  La <a href="https://www.mbta.com" target="_blank">Massachusetts Bay Transportation Authority (MBTA)</a> permet aux utilisateurs de payer leurs déplacements et leurs pass à l’aide d’un billet papier physique appelé CharlieTicket. Pour refléter cela, il existe un média tarifaire `charlieticket` dans le flux de MBTA avec un `fare_media_type=1`. 
  
- [** fare_media.txt**](../../reference/#fare_mediatxt) 
+ [**fare_media.txt**](../../reference/#fare_mediatxt) 
  
 | fare_media_id | fare_media_name  | fare_media_type |
 |---------------|------------------|-----------------|
@@ -192,7 +192,7 @@
  
  Chaque entrée ci-dessous décrit un support tarifaire. 
  
- [** fare_media.txt**](../../reference/#fare_mediatxt) 
+ [**fare_media.txt**](../../reference/#fare_mediatxt) 
  
 | fare_media_id | fare_media_name  | fare_media_type |
 |---------------|------------------|-----------------|
@@ -201,7 +201,7 @@
  
  L’extrait de fichier `fare_products.txt` ci-dessous montre comment le montant du produit `Muni single local fare` varie en fonction du support tarifaire utilisé par le passager. 
  
- [** fare_products.txt**](../../reference/#fare_productstxt) 
+ [**fare_products.txt**](../../reference/#fare_productstxt) 
  
 | fare_product_id | fare_product_name  | amount | currency | fare_media_id |
 |---------------|------------------|-------|--- |---------------|
@@ -230,7 +230,7 @@
  
  Le produit tarifaire aller simple présenté ci-dessous propose à la fois des options de support tarifaire `cash` et `tap-to-ride`. Lorsque le trajet simple est payé avec le tarif `tap-to-ride`, il coûte un dollar de moins. 
  
- [** fare_products.txt**](../../reference/#fare_productstxt) 
+ [**fare_products.txt**](../../reference/#fare_productstxt) 
  
 | fare_product_id | fare_product_name  | fare_media_id | amount | currency |
 |---------------|------------------|---------------|--------|----------|
@@ -248,7 +248,7 @@
  
  Premièrement, les jours de service sont définis à l’aide de `calendar.txt`. 
  
- [** calendar.txt**](../../reference/#calendartxt) 
+ [**calendar.txt**](../../reference/#calendartxt) 
  
 | service_id       | monday | tuesday | wednesday | thursday | friday | saturday | sunday | start_date | end_date |
 |------------------|--------|---------|-----------|----------|--------|----------|--------|------------|----------|
@@ -259,7 +259,7 @@
  
  Ensuite, les périodes horaires souhaitées sont définies dans `timeframes.txt`, en fournissant un identifiant, les jours applicables via une référence à `calendar.service_id`, et le cas échéant, l’heure de début et l’heure de fin pour chaque période horaire. 
  
- [** timeframes.txt**](../../reference/#timeframestxt) 
+ [**timeframes.txt**](../../reference/#timeframestxt) 
  
 | timeframe_group_id | start_time | end_time | service_id       |
 |--------------------|------------|----------|------------------|
@@ -274,7 +274,7 @@
  
  Ensuite, les tarifs spécifiques à une heure correspondants dans `fare_products.txt` sont créés (par exemple, tarif Peak) 
  
- [** fare_products.txt**](../../reference/#fare_productstxt)
+ [**fare_products.txt**](../../reference/#fare_productstxt)
 
 | fare_product_id | fare_product_name                             | amount | currency |
 |-----------------|-----------------------------------------------|--------|----------|
@@ -286,7 +286,7 @@
  Enfin, les périodes horaires sont associées aux produits tarifaires dans `fare_leg_rules.txt` à l’aide des champs `from_timeframe_group_id` et `to_timeframe_group_id`. Ces champs déterminent si un tarif s’applique uniquement au début du trajet ou à la fois au début et à la fin du trajet. 
  Pour cet exemple, basé sur les tarifs WMATA, le tarif dépend uniquement de l’heure de départ du trajet, donc `to_timeframe_group_id` est laissé vide. 
  
- [** fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
+ [**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
  
 | network_id | fare_product_id | from_timeframe_group_id | to_timeframe_group_id |
 |------------|-----------------|-------------------------|-----------------------|
@@ -306,7 +306,7 @@
  
  Cet exemple est basé sur un <a href="https://docs.google.com/spreadsheets/d/1-cD-R2OH5xAQAbNWNlrXD7WOw594lVdW-bomuLo6bI8/edit?usp=sharing" target="_blank">ensemble de données</a> produit par <a href="https://www.itoworld.com/" target="_blank">ITO World</a>, présentant un voyage qui utilise dix arrêts répartis dans six zones différentes. 
  
- [** stops.txt**](../../reference/#stopstxt) 
+ [**stops.txt**](../../reference/#stopstxt) 
  
 | stop_id | stop_name           | stop_lat  | stop_lon   |
 |---------|---------------------|-----------|------------|
@@ -322,7 +322,7 @@
 | ITO2383 | Grand Central       | 40.752823 | -73.977196 |
  
  
- [** stop_areas.txt**](../../reference/#stop_areastxt) 
+ [**stop_areas.txt**](../../reference/#stop_areastxt) 
  
 | area_id   | stop_id |
 |-----------|---------|
@@ -338,14 +338,14 @@
 | mnr_HUD-9 | ITO2096 |
  
  
- [** route_networks.txt**](../../reference/#route_networkstxt) 
+ [**route_networks.txt**](../../reference/#route_networkstxt) 
  
 | network_id | route_id |
 |------------|----------|
 | mnr_hudson | 669      |
  
  
- [** networks.txt**](../../reference/#networkstxt) 
+ [**networks.txt**](../../reference/#networkstxt) 
  
 | network_id | network_name    |
 |------------|-----------------|
@@ -353,7 +353,7 @@
  
  Les jours de service pour les trains 3 et 13 sont définis à l’aide de `calendar.txt`. Notamment, d’autres entrées avec des jours génériques (c’est-à-dire les jours de la semaine, le week-end et n’importe quel jour) qui ne sont associées à aucun voyage sont définies, et celles-ci seront associées à des périodes horaires afin de modéliser des `time-variable fares`. 
  
- [** calendar.txt**](../../reference/#calendartxt) 
+ [**calendar.txt**](../../reference/#calendartxt) 
  
 | service_id | monday | tuesday | wednesday | thursday | friday | saturday | sunday | start_date | end_date |
 |------------|--------|---------|-----------|----------|--------|----------|--------|------------|----------|
@@ -371,7 +371,7 @@
  * Not AM Peak : horaire de la semaine non inclus en AM Peak 
  * Pas AM2PM Peak : heure de la semaine non incluse dans AM2PM Peak 
  
- [** timeframes.txt**](../../reference/#timeframestxt) 
+ [**timeframes.txt**](../../reference/#timeframestxt) 
  
 | timeframe_group_id | start_time | end_time | service_id |
 |:------------------:|:----------:|:--------:|:----------:|
@@ -390,7 +390,7 @@
  
  Chaque produit tarifaire individuel est défini dans `fare_products.txt`. Étant donné que Cold Spring est situé dans la zone 7, cet exemple répertorie uniquement les trajets entre les zones 1 et 7. Le jeu de données complet comprendrait un enregistrement pour chaque prix défini par une combinaison d’heure et de zone. De plus, l’exemple n’affiche qu’un seul support tarifaire (`paper`), mais des combinaisons supplémentaires pourraient être créées si les prix variaient également en fonction du support tarifaire. 
  
- [** fare_products.txt**](../../reference/#fare_productstxt) 
+ [**fare_products.txt**](../../reference/#fare_productstxt) 
  
 | fare_product_id        | fare_product_name                  | fare_media_id | amount | currency |
 |------------------------|------------------------------------|---------------|--------|----------|
@@ -401,7 +401,7 @@
  
  Enfin, les combinaisons de zones d’origine et de destination, ainsi que leurs périodes horaires respectives sont associées au produit tarifaire correspondant dans `fare_leg_rules.txt`. Ici, les voyages commençant ou arrivant dans la zone 1 (c’est-à-dire `area_id=mnr_1`) pendant les heures de pointe sont soumis à un tarif de pointe spécifique correspondant aux zones d’arrivée et de départ du voyage (c’est-à-dire `fare_product_id=mnr_1:HUD-7_adult_peak`). 
  
- [** fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
+ [**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
  
 | network_id | from_area_id | to_area_id | fare_product_id        | from_timeframe_group_id | to_timeframe_group_id |
 |------------|--------------|------------|------------------------|-------------------------|-----------------------|

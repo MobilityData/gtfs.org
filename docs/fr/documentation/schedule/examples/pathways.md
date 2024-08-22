@@ -63,7 +63,7 @@
  
  Dans un premier temps, l’emplacement de la gare et ses entrées sont définis dans [stops.txt](../../reference/#stopstxt) : 
  
- [** stops.txt**](../../reference/#stopstxt) 
+ [**stops.txt**](../../reference/#stopstxt) 
  
 ```
 stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boarding
@@ -83,7 +83,7 @@ stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boar
  
  L’entrée de la station Waterfront à la rue Granville a un ascenseur, un escalator et des escaliers, les entrées sont définies comme les nœuds ci-dessus dans [stops.txt](../../reference/#stopstxt). Pour connecter les entrées aux sections intérieures de la station, des nœuds supplémentaires doivent être créés dans [stops.txt](../../reference/#stopstxt) sous le `parent_station` de Waterfront Station. Dans le fichier [stops.txt](../../reference/#stopstxt) ci-dessous, les nœuds génériques (`location_type 3`) qui correspondent au bas de l’escalier et de l’escalator sont définis. 
  
- [** stops.txt**](../../reference/#stopstxt) 
+ [**stops.txt**](../../reference/#stopstxt) 
  
 ```
 stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boarding
@@ -98,7 +98,7 @@ stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boar
  
  De même, le deuxième enregistrement décrit l’escalier roulant (`pathway_mode` défini sur `4`). Étant donné que les escaliers mécaniques ne peuvent se déplacer que dans une seule direction, le champ `is_bidirectional` est défini sur `0`, donc l’escalier roulant se déplace dans un sens, du nœud `96` à `91` (vers le haut). 
  
- [** pathways.txt**](../../reference/#pathwaystxt) 
+ [**pathways.txt**](../../reference/#pathwaystxt) 
  
 ```
 pathway_id,from_stop_id,to_stop_id_pathway_mode,is_bidirectional
