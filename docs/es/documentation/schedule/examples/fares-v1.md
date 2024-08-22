@@ -9,7 +9,7 @@
  
  Este servicio se puede representar utilizando los archivos [fare_attributes.txt](../../reference/#fare_attributestxt), [fare_rules.txt](../../reference/#fare_rulestxt) y [transfers.txt](../../reference/#transferstxt). El primer archivo, [fare_attributes.txt](../../reference/#fare_attributestxt) describe las tarifas de la agencia, a continuación se muestra un ejemplo de la tarifa presto: 
  
- [** fare_attributes.txt**](../../reference/#fare_attributestxt) 
+ [**fare_attributes.txt**](../../reference/#fare_attributestxt) 
  
 ```
 fare_id,price,currency_type,payment_method,transfers,transfer_duration
@@ -25,7 +25,7 @@ presto_fare,3.2,CAD,1,,7200
  
  Para ello, a continuación se definen dos líneas de metro en [routes.txt](../../reference/#routestxt): 
  
- [** routes.txt**](../../reference/#routestxt) 
+ [**routes.txt**](../../reference/#routestxt) 
  
 ```
 agency_id,route_id,route_type
@@ -35,7 +35,7 @@ TTC,Line2,1
  
  En este ejemplo, las transferencias en La estación Bloor-Yonge está modelada. Para eso, esta estación se modela como dos paradas separadas, la primera es la estación Bloor, a la que llega la Línea 1, y la segunda es la Estación Yonge, a la que llega la Línea 2. Ambas tienen `zone_id=ttc_subway_stations` para agrupar todas estaciones de metro en zona de tarifa única. 
  
- [** stops.txt**](../../reference/#stopstxt) 
+ [**stops.txt**](../../reference/#stopstxt) 
  
 ```
 stop_id,stop_name,stop_lat,stop_lon,zone_id
@@ -47,7 +47,7 @@ Yonge,Yonge Station,,43.671049,-79.386789,ttc_subway_stations
  
  - Para `fare_id=presto_fare`, los pasajeros pueden viajar entre dos estaciones cualesquiera en la Línea 1 (`route_id=line1`) y `origin_id=ttc_subway_stations` y `destination_id=ttc_subway_stations`. 
  
- [** fare_rules.txt**](../../reference/#fare_rulestxt) 
+ [**fare_rules.txt**](../../reference/#fare_rulestxt) 
  
 ```
 fare_id,route_id,origin_id,destination_id
@@ -57,7 +57,7 @@ presto_fare,line2,ttc_subway_stations,ttc_subway_stations
  
  El tercer archivo, [transfers.txt](../../reference/#transferstxt) define los puntos de transferencia entre diferentes rutas. Para modelar transferencias en la estación Bloor-Yonge, se requieren dos entradas: 
  
- [** transfers.txt**](../../reference/#transferstxt) 
+ [**transfers.txt**](../../reference/#transferstxt) 
  
 ```
 from_stop_id,to_stop_id,from_route_id,to_route_id,transfer_type

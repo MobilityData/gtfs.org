@@ -11,7 +11,7 @@
  
  A continuación se muestra un ejemplo de Transport for Cairio: 
  
- [** feed_info.txt**](../../reference/#feed_infotxt) 
+ [**feed_info.txt**](../../reference/#feed_infotxt) 
  
 ```
 feed_publisher_name,feed_publisher_url,feed_lang,feed_start_date,feed_end_date,feed_version

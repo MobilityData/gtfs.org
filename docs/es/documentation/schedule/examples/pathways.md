@@ -61,7 +61,7 @@
  
  Primero, la ubicación de la estación y sus entradas se definen en [stops.txt](../../reference/#stopstxt): 
  
- [** stops.txt**](../../reference/#stopstxt) 
+ [**stops.txt**](../../reference/#stopstxt) 
  
 ```
 stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boarding
@@ -81,7 +81,7 @@ stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boar
  
  La entrada a la estación Waterfront en la calle Granville tiene un ascensor, una escalera mecánica y escaleras; las entradas se definen como nodos arriba en [stops.txt](../../reference/#stopstxt). Para conectar las entradas a las secciones internas de la estación, se deben crear nodos adicionales en [stops.txt](../../reference/#stopstxt) bajo `parent_station` de Waterfront Station. En el archivo [stops.txt](../../reference/#stopstxt) a continuación, se definen los nodos genéricos (`e` 3`) que corresponden a la parte inferior de la escalera y la escalera mecánica. 
  
- [** stops.txt**](../../reference/#stopstxt) 
+ [**stops.txt**](../../reference/#stopstxt) 
  
 ```
 stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boarding
@@ -96,7 +96,7 @@ stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boar
  
  De manera similar, el segundo registro describe la escalera mecánica (`pathway_mode` establecido en `4`). Dado que las escaleras mecánicas sólo pueden moverse en una dirección, el campo "`is_bidirectional`" se establece en "0", por lo que la escalera mecánica se mueve en una dirección, desde el nodo "96" al "91" (hacia arriba). 
  
- [** pathways.txt**](../../reference/#pathwaystxt) 
+ [**pathways.txt**](../../reference/#pathwaystxt) 
  
 ```
 pathway_id,from_stop_id,to_stop_id_pathway_mode,is_bidirectional
@@ -112,7 +112,7 @@ escalatorA,96,91,4,0
  
 <img class="center" src="../../../../assets/pathways-2.png" width=500px> 
  
- [** stops.txt**](../../reference/#stopstxt) 
+ [**stops.txt**](../../reference/#stopstxt) 
  
 ```
 stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boarding
@@ -126,7 +126,7 @@ stop_id,stop_name,stop_lat,stop_lon,location_type,parent_station,wheelchair_boar
  
  Por último, los nodos se conectan entre sí para definir el camino subterráneo como se muestra en el archivo [pathways.txt](../../reference/#pathwaystxt) a continuación: 
  
- [** pathways.txt**](../../reference/#pathwaystxt) 
+ [**pathways.txt**](../../reference/#pathwaystxt) 
  
 ```
 pathway_id,from_stop_id,to_stop_id_pathway_mode,is_bidirectional

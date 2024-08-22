@@ -6,7 +6,7 @@
  
  Por ejemplo, Rejseplanen es un motor de búsqueda de servicios de ferrocarril y autobús en Dinamarca. La empresa publica un conjunto de datos GTFS que contiene datos de múltiples agencias y proveedores, como se muestra a continuación en [agency.txt](../../reference/#agencytxt). 
  
- [** agency.txt**](../../reference/#agencytxt) 
+ [**agency.txt**](../../reference/#agencytxt) 
 
 ```
 agency_id,agency_name,agency_url,agency_timezone,agency_lang
@@ -18,7 +18,7 @@ agency_id,agency_name,agency_url,agency_timezone,agency_lang
  
  Para atribuir a Rejseplanen como productor de datos, el archivo [attributions.txt](../../reference/#attributionstxt), donde se define un ID de atribución junto con el nombre y la URL de la organización. Los campos `is_producer`, `is_operator` y `is_authority` se utilizan para categorizar Rejseplanen como se muestra a continuación: 
  
- [** attributions.txt**](../../reference/#attributionstxt) 
+ [**attributions.txt**](../../reference/#attributionstxt) 
  
 ```
 attribution_id,organization_name,attribution_url,is_producer,is_operator,is_authority

@@ -32,9 +32,9 @@
  
  Si bien la información de horarios es fundamental, GTFS también ofrece funciones adicionales que mejoran la experiencia de tránsito, como: 
  
- - ** Tarifas:* * GTFS puede incluir información de tarifas para desgloses precisos de los costos en todas las rutas y opciones de viaje. 
+ - **Tarifas:** GTFS puede incluir información de tarifas para desgloses precisos de los costos en todas las rutas y opciones de viaje. 
  - **Servicios flexibles:** GTFS puede describir opciones que responden a la demanda, como marcar un viaje, desviaciones de ruta y otros servicios que no siguen el comportamiento común del servicio programado y/o fijo. 
- - ** Recorridos:** GTFS puede modelar grandes estaciones de tránsito, ayudando a los pasajeros a navegar desde las entradas y salidas de las estaciones hasta el lugar donde abordan o desembarcan de un vehículo de tránsito. 
+ - **Recorridos:** GTFS puede modelar grandes estaciones de tránsito, ayudando a los pasajeros a navegar desde las entradas y salidas de las estaciones hasta el lugar donde abordan o desembarcan de un vehículo de tránsito. 
  
  [:octicons-search-16: Obtenga más información sobre las Funciones GTFS](../features/overview){ .md-button .md-button--primary } 
  
