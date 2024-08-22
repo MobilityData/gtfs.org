@@ -17,28 +17,28 @@
  - **Évolution guidée :** L’évolution des spécifications est supervisée par une organisation indépendante à but non lucratif appelée [MobilityData](https://mobilitydata.org/), et ses modifications sont guidées par les principes de facilité d’utilisation, rétrocompatibilité et changement pragmatique. 
  - **Développement piloté par la communauté :** La spécification GTFS fait l’objet d’un perfectionnement continu grâce aux commentaires et à l’examen de la communauté, facilités sur des plateformes telles que [GitHub](https://github.com/google/transit) et [Slack](https://share.mobilitydata.org/slack). 
  
- [:material-chat-processing: impliquez-vous](../../community/get_involved){ .md-button .md-button--primary } 
- [:material-map-plus: actif Projets](../../community/get_involved/#projets-actifs){ .md-button .md-button--primary } 
- [:material-book-heart: principes directeurs](../../community/governance/gtfs_schedule_amendment_process/#principes-directeurs){ .md-button .md-button--primary } 
+ [:material-chat-processing: Impliquez-vous](../../community/get_involved){ .md-button .md-button--primary } 
+ [:material-map-plus: Projets actifs](../../community/get_involved/#projets-actifs){ .md-button .md-button--primary } 
+ [:material-book-heart: Principes directeurs](../../community/governance/gtfs_schedule_amendment_process/#principes-directeurs){ .md-button .md-button--primary } 
  
 ## Simple et facile à utiliser 
  
  GTFS favorise la collaboration entre les agences de transport en commun en permettant des données faciles échange, favorisant une intégration plus fluide des services et le partage d’informations. Voici comment GTFS simplifie le partage de données : 
  
- - **Facilité d’intégration :** GTFS permet aux agences de démarrer facilement avec une structure de données simple utilisant des formats de fichiers courants tels que.txt et GeoJSON, favorisant ainsi la collaboration et l’interopérabilité. 
+ - **Facilité d’intégration :** GTFS permet aux agences de démarrer facilement avec une structure de données simple utilisant des formats de fichiers courants tels que .txt et GeoJSON, favorisant ainsi la collaboration et l’interopérabilité. 
  - **Rétrocompatible :** lors de la mise à jour de la spécification, les flux existants restent valides et maintiennent la compatibilité avec les analyseurs existants. 
  
 ## GTFS peut probablement faire plus que vous ne le pensez 
  
  Bien que les informations sur les horaires soient essentielles, GTFS offre également des fonctionnalités supplémentaires qui améliorent l’expérience de transport en commun, telles que : 
  
- - **Tarifs:** GTFS peut inclure des informations tarifaires pour une ventilation précise des coûts selon les itinéraires et les options de voyage. 
- - **Services flexibles :** GTFS peut décrire des options adaptées à la demande, telles que les services de numérotation, les déviations d’itinéraire et d’autres services qui ne suivent pas le comportement courant des services programmés et/ou fixes. 
+ - **Tarifs:** GTFS peut inclure des informations tarifaires pour afficher le coût du trajet selon les itinéraires et les options de voyage. 
+ - **Services flexibles :** GTFS peut décrire des options adaptées à la demande, telles que les transports à la demande, les déviations d’itinéraire et d’autres services qui ne suivent pas le comportement courant des services programmés et/ou fixes. 
  - **Parcours:** GTFS peut modéliser de grandes gares de transport en commun, aidant les usagers à naviguer depuis les entrées et sorties des gares jusqu’à l’endroit où ils montent ou descendent d’un véhicule de transport en commun. 
  
  [:octicons-search-16: En savoir plus sur les Fonctionnalités GTFS](../features/overview){ .md-button .md-button--primary } 
  
-## Expérience du pilote améliorée 
+## Expérience des usagers améliorée 
  
  Voici comment GTFS responsabilise les passagers et améliore leur expérience : 
  
@@ -47,7 +47,7 @@
  
 ## Accès à un large éventail d’applications 
  
- En adoptant GTFS, les agences atteignent un public plus large grâce au vaste pool de développeurs d’applications utilisant le format de données standardisé. Voici comment GTFS élargit la base utilisateur·rice des applications et des services : 
+ En adoptant GTFS, les agences atteignent un public plus large grâce au vaste pool de développeurs d’applications utilisant le format de données standardisé. Voici comment GTFS élargit la base utilisateur des applications et des services : 
  
  - **Portée étendue des applications :** L’accès aux données GTFS permet aux développeurs d’applications d’atteindre un public plus large d’usagers des transports en commun, améliorant ainsi la convivialité et les fonctionnalités des applications de transports en commun. 
  - **Interopérabilité :** Les normes ouvertes facilitent un échange de données transparent entre les agences de transport en commun et les développeurs d’applications, favorisant ainsi l’interopérabilité et la collaboration. 

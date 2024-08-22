@@ -22,7 +22,7 @@ gem install gtfs-realtime-bindings
  
 ## Exemple de code 
  
- L’extrait de code suivant montre le téléchargement d’un flux de données GTFS en temps réel à partir d’une URL particulière, en l’analysant comme un FeedMessage (le type racine du GTFS-schéma en temps réel) et itérer sur les résultats. 
+ L’extrait de code suivant montre le téléchargement d’un flux de données GTFS Realtime à partir d’une URL particulière, en l’analysant comme un FeedMessage (le type racine du GTFS-schéma en temps réel) et itérer sur les résultats. 
  
 ```ruby
 require 'protobuf'

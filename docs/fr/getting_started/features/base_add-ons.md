@@ -1,5 +1,5 @@
 # :material-plus-box-multiple-outline: Modules Complémentaires à Base 
- Ces fonctionnalités étendent les fonctionnalités décrites dans Base, servant soit à améliorer l’exhaustivité d’un ensemble de données GTFS pour offrir une meilleure expérience aux passagers, soit à faciliter la collaboration entre les agences., les fournisseurs de données et les réutilisateurs de données. Ces améliorations peuvent impliquer l’introduction de nouveaux champs dans les fichiers décrits dans Base ou la création de nouveaux fichiers. 
+ Ces fonctionnalités étendent les fonctionnalités décrites dans Base, servant soit à améliorer l’exhaustivité d’un ensemble de données GTFS pour offrir une meilleure expérience aux passagers, soit à faciliter la collaboration entre les agences, les fournisseurs de données et les réutilisateurs de données. Ces améliorations peuvent impliquer l’introduction de nouveaux champs dans les fichiers décrits dans Base ou la création de nouveaux fichiers. 
  
 ## Informations sur le Flux 
  
@@ -181,7 +181,7 @@
  
 ## Types d’emplacement 
  
- Les Types d’emplacement sont utilisés pour classer les zones clés au sein des gares de transport en commun telles que les sorties/entrées, les nœuds ou les zones d’embarquement, ainsi que leurs relations. Les Types d’emplacement servent de base à la modélisation des gares de transport en commun à l’aide de Parcours. 
+ Les types d’emplacement sont utilisés pour classer les zones clés au sein des gares de transport en commun telles que les sorties/entrées, les nœuds ou les zones d’embarquement, ainsi que leurs relations. Les types d’emplacement servent de base à la modélisation des gares de transport en commun à l’aide de Parcours. 
  
  | Fichiers inclus | Champs inclus | 
  |------------------------|-------------------| 

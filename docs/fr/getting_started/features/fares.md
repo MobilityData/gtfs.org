@@ -287,9 +287,9 @@
         |-------------------|-----------------|----------------|----------------|---------------------|--------------------|-----------------|
         | a                 | a               | -1             | 7200           | 1                   | 0                  | free_transfer   | 
  
-## Tarifs v1 
+## Fares v1 
  
- Tarifs v1 est une alternative héritée aux autres fonctionnalités Tarifs décrites ci-dessus. Il permet de modéliser les informations tarifaires de base telles que la tarification, les transferts de modes de paiement et les tarifs par zone à l’aide des fichiers `fare_rules.txt` et `fare_attributes.txt`. Bien que plus simple à produire, il est moins performant ou modélise des structures tarifaires plus complexes et peut être obsolète avec une approbation suffisante d’autres fonctionnalités tarifaires (qui font partie de ce qu’on appelle Tarifs v2). 
+ Fares v1 est une alternative héritée aux autres fonctionnalités Tarifs décrites ci-dessus. Il permet de modéliser les informations tarifaires de base telles que la tarification, les transferts de modes de paiement et les tarifs par zone à l’aide des fichiers `fare_rules.txt` et `fare_attributes.txt`. Bien que plus simple à produire, il est moins performant ou modélise des structures tarifaires plus complexes et peut être obsolète avec une approbation suffisante d’autres fonctionnalités tarifaires (qui font partie de ce qu’on appelle Fares v2). 
  
  | Fichiers inclus | Champs inclus | 
  |------------------------|-------------------| 

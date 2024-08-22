@@ -18,7 +18,7 @@ npm install gtfs-realtime-bindings
  
 ## Exemple de code 
  
- Le nœud suivant L’extrait de code.js montre le téléchargement d’un flux de données GTFS en temps réel à partir d’une URL particulière, son analyse en tant que FeedMessage (le type racine du du schéma GTFS en temps réel) et l’itération sur les résultats. 
+ Le nœud suivant L’extrait de code.js montre le téléchargement d’un flux de données GTFS Realtime à partir d’une URL particulière, son analyse en tant que FeedMessage (le type racine du du schéma GTFS Realtime) et l’itération sur les résultats. 
  
  Pour que cet exemple fonctionne, vous devez d’abord installer `node-fetch` avec NPM. 
  

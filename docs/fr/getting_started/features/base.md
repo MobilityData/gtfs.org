@@ -1,6 +1,6 @@
 # :material-subway-variant: Base
 
- Les fonctionnalités suivantes fournissent les éléments les plus basiques et essentiels dont un GTFS a besoin pour représenter un service de transport en commun. Un GTFS se compose d’itinéraires, chacun avec des trajets associés. Ces voyages visitent un ou plusieurs arrêts à des heures précises. Les Trajets ne contiennent que des informations sur l’heure et les jours pendant lesquels ils fonctionnent sont déterminés par des calendriers. 
+ Les fonctionnalités suivantes fournissent les éléments les plus basiques et essentiels dont un GTFS a besoin pour représenter un service de transport en commun. Un GTFS se compose d’itinéraires, chacun avec des trajets associés. Ces voyages visitent un ou plusieurs arrêts à des heures précises. Les trajets ne contiennent que des informations sur l’heure et les jours pendant lesquels ils fonctionnent sont déterminés par des calendriers. 
  Toutes ces fonctionnalités doivent être implémentées ensemble pour permettre un flux GTFS fonctionnel. 
  
 ## Agence 
@@ -32,7 +32,7 @@
  
 ## Arrêts 
  
- Les Arrêts représentent les éléments de base utilisés pour identifier l’endroit où un service de transport en commun prend et dépose les passagers. Cela peut être une station de métro ou un arrêt de bus. Chaque arrêt possède, entre autres attributs, des coordonnées géographiques permettant de localiser son emplacement sur une carte et un nom qui correspond au matériel destiné aux usagers de l’agence. Les Arrêts sont associés aux Trajets à l’aide des Horaires d’arrêt. 
+ Les arrêts représentent les éléments de base utilisés pour identifier l’endroit où un service de transport en commun prend et dépose les passagers. Cela peut être une station de métro ou un arrêt de bus. Chaque arrêt possède, entre autres attributs, des coordonnées géographiques permettant de localiser son emplacement sur une carte et un nom qui correspond au matériel destiné aux usagers de l’agence. Les arrêts sont associés aux trajets à l’aide des horaires d’arrêt. 
  Avec GTFS, il est également possible de décrire l’intérieur de gares plus grandes, comme une gare ferroviaire ou un dépôt de bus, en utilisant [Parcours](/getting_started/features/pathways). 
  
  | Fichiers inclus | Champs inclus | 
@@ -127,7 +127,7 @@
  
 ## Trajets 
  
- Trajets regroupe les Lignes et les Dates de Service pour créer des trajets pouvant être effectués par les passagers. Les Trajets sont associés aux Arrêts à l’aide des Horaires d’arrêt. 
+ Trajets regroupe les lignes et les dates de service pour créer des trajets pouvant être effectués par les passagers. Les trajets sont associés aux arrêts à l’aide des horaires d’arrêt. 
  
  | Fichiers inclus | Champs inclus | 
  |------------------------|-------------------| 
@@ -154,7 +154,7 @@
  
 ## Horaires d’arrêt 
  
- Les heures d’arrêt sont utilisées pour représenter les heures d’arrivée et de départ des arrêts individuels pour chaque trajet, permettant aux usagers de savoir précisément à quelle heure le bus, le train ou le ferry arrive et part d’un endroit spécifique..Le fichier « `stop_times.txt` » est généralement le plus volumineux d’un flux GTFS. 
+ Les horaires d'arrêt sont utilisées pour représenter les heures d’arrivée et de départ des arrêts individuels pour chaque trajet, permettant aux usagers de savoir précisément à quelle heure le bus, le train ou le ferry arrive et part d’un endroit spécifique. Le fichier « `stop_times.txt` » est généralement le plus volumineux d’un flux GTFS. 
  Certains services fonctionnent à une fréquence régulière (par exemple une ligne de métro qui circule toutes les 5 minutes) plutôt que d’avoir des heures d’arrivée et de départ spécifiques. Cela peut être modélisé à l’aide de [Frequency-based services](../base_add-ons/#frequences), et cela peut être modélisé en conjonction avec `stop_times.txt`. 
  
  | Fichiers inclus | Champs inclus | 

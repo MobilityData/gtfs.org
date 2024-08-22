@@ -4,7 +4,7 @@
  
 ## Arrêts Continus 
  
- Les Arrêts Continus sont utilisés lorsque les passagers peuvent être récupérés et/ou déposés entre des arrêts programmés. 
+ Les arrêts continus sont utilisés lorsque les passagers peuvent être récupérés et/ou déposés entre des arrêts programmés. 
  Cela peut être spécifié soit dans `routes.txt`, indiquant que les passagers peuvent être pris en charge ou déposés à tout moment le long du trajet du véhicule pour chaque trajet de l’itinéraire, soit dans `stop_times.txt` pour une section spécifique d’un itinéraire. 
  
  | Fichiers inclus | Champs inclus | 
@@ -55,7 +55,7 @@
  
 ## Règles de réservation 
  
- Les règles de réservation peuvent être utilisées pour permettre aux utilisateurs de réserver un voyage sur un service répondant à la demande. Ces règles décrivent les conditions préalables nécessaires à une réservation réussie et fournissent des informations de contact auprès desquelles les utilisateurs peuvent effectuer des réservations de voyage. Cette fonctionnalité doit être utilisée conjointement avec [Lignes prédéfinis avec déviation](#itineraires-predefinis-avec-detours), [Services à la demande basés sur la zone](#services-a-la-demande-bases-sur-les-zones) et [Arrêts fixes fonctionnalités à la Services à la Demande avec Arrêts Fixes](#services-a-la-demande-avec-arrets-fixes), si ces services nécessitent une réservation. 
+ Les règles de réservation peuvent être utilisées pour permettre aux utilisateurs de réserver un voyage sur un service répondant à la demande. Ces règles décrivent les conditions préalables nécessaires à une réservation réussie et fournissent des informations de contact auprès desquelles les utilisateurs peuvent effectuer des réservations de voyage. Cette fonctionnalité doit être utilisée conjointement avec [Lignes prédéfinis avec déviation](#itineraires-predefinis-avec-detours), [Services à la demande basés sur la zone](#services-a-la-demande-bases-sur-les-zones) et [arrêts fixes fonctionnalités à la Services à la Demande avec arrêts fixes](#services-a-la-demande-avec-arrets-fixes), si ces services nécessitent une réservation. 
  
  | Fichiers inclus | Champs inclus | 
  |------------------------|-------------------| 
@@ -245,8 +245,8 @@
         }
         ~~~
  
-## Services à la Demande avec Arrêts Fixes 
- Les Services à la Demande avec Arrêts Fixes sont utilisés pour modéliser des services qui permettent de prendre en charge et/ou de déposer à n’importe quel endroit au sein d’un groupe d’arrêts prédéfinis pour les utilisateurs qui réservent un voyage. Ces groupes d’arrêts sont définis à l’aide de `location_groups.txt` et `location_group_stops.txt`. 
+## Services à la Demande avec arrêts fixes 
+ Les Services à la Demande avec arrêts fixes sont utilisés pour modéliser des services qui permettent de prendre en charge et/ou de déposer à n’importe quel endroit au sein d’un groupe d’arrêts prédéfinis pour les utilisateurs qui réservent un voyage. Ces groupes d’arrêts sont définis à l’aide de `location_groups.txt` et `location_group_stops.txt`. 
  
  | Fichiers inclus | Champs inclus | 
  |------------------------|-------------------| 

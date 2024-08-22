@@ -90,7 +90,7 @@
  
 #### Correspondance de trajets alternatifs 
  
- Les Trajets qui ne sont pas basés sur la fréquence peuvent également être identifiés de manière unique par un 
+ Les trajets qui ne sont pas basés sur la fréquence peuvent également être identifiés de manière unique par un 
  TripDescriptor comprenant la combinaison de : 
  
  *    __route_id__
