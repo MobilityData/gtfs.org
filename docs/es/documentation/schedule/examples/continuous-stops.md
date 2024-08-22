@@ -6,7 +6,7 @@
  
  El archivo [routes.txt](../../reference/#routestxt) se utiliza para describir este servicio utilizando los campos `continuous_pickup` y `continuous_drop_off`. Los campos están configurados en "0" para indicar que se permiten recogidas y entregas continuas. 
  
- [** routes.txt**](../../reference/#routestxt) 
+ [**routes.txt**](../../reference/#routestxt) 
  
 ```
 route_id,route_short_name,route_long_name,route_type,continuous_pickup,continuous_drop_off
@@ -48,7 +48,7 @@ F,Silver Lakes Market,34.744662,-117.335407
  - Un registro con `continuous_pickup=0` indica que se permiten recogidas continuas desde esa parada hasta la siguiente parada
  - Un registro con `continuous_pickup =1` indica que están prohibidos los arranques continuos desde esa parada hasta la siguiente parada 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 ```
 trip_id,stop_id,stop_sequence,departure_time,arrival_time,continuous_pickup,continuous_drop_off,timepoint

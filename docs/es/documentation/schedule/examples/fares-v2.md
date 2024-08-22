@@ -31,7 +31,7 @@
  
  Los boletos o tarifas de tránsito se denominan productos tarifarios en GTFS. Se pueden describir utilizando el archivo [fare_products.txt](../../reference/#fare_productstxt). Cada entrada corresponde a una tarifa específica. 
  
- [** fare_products.txt**](../../reference/#fare_productstxt) 
+ [**fare_products.txt**](../../reference/#fare_productstxt) 
  
 | fare_product_id  | fare_product_name  | amount  | currency  |
 |------------------------|--------------------|---|---|
@@ -51,7 +51,7 @@
  
  Los grupos de tramos definen viajes dentro de una red desde un origen a un destino (o un conjunto de orígenes a un conjunto de destinos si los ID de área corresponden a paradas agrupadas). El siguiente archivo describe las reglas para viajar a cualquier lugar dentro de la red principal de la Administración de Tránsito de Maryland. Cada regla corresponde a uno de los productos de tarifa regular en [Definir un ejemplo de tarifa de tránsito](#definir-una-tarifa-de-transito). 
  
- [** fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
+ [**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
  
  |  leg_group_id |  network_id | fare_product_id  |
 |---|---|---|
@@ -68,7 +68,7 @@
  
  Hay una transferencia de 90 minutos para los pasajeros que compran una tarifa de ida para viajar en los autobuses locales BaltimoreLink, Metro SubwayLink o Light RailLink. Esto significa que pueden hacer transbordos un número ilimitado de veces entre los autobuses locales, el metro y el tren ligero en un plazo de 90 minutos. 
  
- [** fare_transfer_rules.txt**](../../reference/#fare_transfer_rulestxt) 
+ [**fare_transfer_rules.txt**](../../reference/#fare_transfer_rulestxt) 
  
 | from_leg_group_id       | to_leg_group_id  | duration_limit | duration_limit_type | fare_transfer_type | transfer_count |
 |-------------------------|---|----------------|-------------------|---------------------|----------------|
@@ -98,7 +98,7 @@
  
  Primero, identifique el área en [areas.txt](../../reference/#areastxt). Es aceptable dejar `area_name` en blanco si no hay ningún nombre de área. En la siguiente tabla, hay tres `area_id` : `ASHB`, `GLEN` y `OAKL`. 
  
- [** areas.txt**](../../reference/#areastxt) 
+ [**areas.txt**](../../reference/#areastxt) 
  
 | area_id | area_name |
 |---------|-----------|
@@ -133,7 +133,7 @@
  
  La tarifa está identificada en `fare_products.txt`. 
  
- [** fare_products.txt**](../../reference/#fare_productstxt) 
+ [**fare_products.txt**](../../reference/#fare_productstxt) 
  
 | fare_product_id     | fare_product_name| amount | currency |
 |---------------------|-----------|--------|----------|
@@ -173,7 +173,7 @@
  
  La <a href="https://www.mbta.com" target="_blank">Autoridad de Transporte de la Bahía de Massachusetts (MBTA)</a> permite a los usuarios pagar viajes y pases utilizando un boleto físico llamado CharlieTicket. Para reflejar esto, hay un medio de tarifa "charlieticket" en el feed de MBTA con un "fare_media_type=1". 
  
- [** fare_media.txt**](../../reference/#fare_mediatxt) 
+ [**fare_media.txt**](../../reference/#fare_mediatxt) 
  
  | fare_media_id | fare_media_name  | fare_media_type |
 |---------------|------------------|-----------------|
@@ -189,7 +189,7 @@
  
  Cada entrada a continuación describe un medio de tarifa. 
  
- [** fare_media.txt**](../../reference/#fare_mediatxt) 
+ [**fare_media.txt**](../../reference/#fare_mediatxt) 
  
 | fare_product_id | fare_product_name  | amount | currency | fare_media_id |
 |---------------|------------------|-------|--- |---------------|
@@ -198,7 +198,7 @@
  
  El fragmento de archivo `fare_products.txt` a continuación muestra cómo el monto del producto `Muni single local fare` varía según el medio de tarifa que utiliza el pasajero. 
  
- [** fare_products.txt**](../../reference/#fare_productstxt) 
+ [**fare_products.txt**](../../reference/#fare_productstxt) 
  
 | fare_product_id | fare_product_name  | amount | currency | fare_media_id |
 |---------------|------------------|-------|--- |---------------|
@@ -245,7 +245,7 @@
  
  Primero, los días de servicio se definen utilizando `calendar.txt`. 
  
- [** calendar.txt**](../../reference/#calendartxt) 
+ [**calendar.txt**](../../reference/#calendartxt) 
  
 | service_id       | monday | tuesday | wednesday | thursday | friday | saturday | sunday | start_date | end_date |
 |------------------|--------|---------|-----------|----------|--------|----------|--------|------------|----------|
@@ -256,7 +256,7 @@
  
  Luego, los plazos deseados se definen en `timeframes.txt`, proporcionando una identificación, los días aplicables mediante una referencia a `calendar.service_id` y, si corresponde, la hora de inicio y finalización de cada horario.período. 
  
- [** timeframes.txt**](../../reference/#timeframestxt) 
+ [**timeframes.txt**](../../reference/#timeframestxt) 
  
 | timeframe_group_id | start_time | end_time | service_id       |
 |--------------------|------------|----------|------------------|
@@ -271,7 +271,7 @@
  
  A continuación, se crean las tarifas específicas de hora correspondiente en `fare_products.txt` (por ejemplo, tarifa pico) 
  
- [** fare_products.txt**](../../reference/#fare_productstxt) 
+ [**fare_products.txt**](../../reference/#fare_productstxt) 
 
 | fare_product_id | fare_product_name                             | amount | currency |
 |-----------------|-----------------------------------------------|--------|----------|
@@ -283,7 +283,7 @@
  Por último, los plazos se asocian con productos tarifarios en `fare_leg_rules.txt` utilizando los campos `from_timeframe_group_id` y `to_timeframe_group_id`. Estos campos determinan si una tarifa se aplica únicamente al inicio del tramo o tanto al inicio como al final del tramo. 
  Para este ejemplo, según las tarifas WMATA, la tarifa depende únicamente del horario de salida del tramo, por lo que `to_timeframe_group_id` se deja en blanco. 
  
- [** fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
+ [**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
  
 | network_id | fare_product_id | from_timeframe_group_id | to_timeframe_group_id |
 |------------|-----------------|-------------------------|-----------------------|
@@ -303,7 +303,7 @@
  
  Este ejemplo se basa en un <a href="https://docs.google.com/spreadsheets/d/1-cD-R2OH5xAQAbNWNlrXD7WOw594lVdW-bomuLo6bI8/edit?usp=sharing" target="_blank">conjunto de datos</a> producido por <a href="https://www.itoworld.com/" target="_blank">ITO World</a>, que presenta un viaje que utiliza diez paradas distribuidas en seis áreas diferentes. 
  
- [** stops.txt**](../../reference/#stopstxt) 
+ [**stops.txt**](../../reference/#stopstxt) 
  
 | stop_id | stop_name           | stop_lat  | stop_lon   |
 |---------|---------------------|-----------|------------|
@@ -319,7 +319,7 @@
 | ITO2383 | Grand Central       | 40.752823 | -73.977196 |
  
  
- [** stop_areas.txt**](../../reference/#stop_areastxt) 
+ [**stop_areas.txt**](../../reference/#stop_areastxt) 
  
 | area_id   | stop_id |
 |-----------|---------|
@@ -335,14 +335,14 @@
 | mnr_HUD-9 | ITO2096 |
  
  
- [** route_networks.txt**](../../reference/#route_networkstxt) 
+ [**route_networks.txt**](../../reference/#route_networkstxt) 
  
 | network_id | route_id |
 |------------|----------|
 | mnr_hudson | 669      |
  
  
- [** networks.txt**](../../reference/#networkstxt) 
+ [**networks.txt**](../../reference/#networkstxt) 
  
 | network_id | network_name    |
 |------------|-----------------|
@@ -350,7 +350,7 @@
  
  Los días de servicio para los servicios de tren 3 y 13 se definen mediante `calendar.txt`. En particular, se definen otros registros con días genéricos (es decir, entre semana, fines de semana y cualquier día) que no están asociados con ningún viaje, y estos se asociarán con períodos de tiempo para modelar "tarifas variables en el tiempo". 
  
- [** calendar.txt**](../../reference/#calendartxt) 
+ [**calendar.txt**](../../reference/#calendartxt) 
  
 | service_id | monday | tuesday | wednesday | thursday | friday | saturday | sunday | start_date | end_date |
 |------------|--------|---------|-----------|----------|--------|----------|--------|------------|----------|
@@ -368,7 +368,7 @@
  * Pico No AM: horario entre semana no incluido en AM Pico 
  * No Pico AM2PM: horario de los días laborables no incluido en Pico AM2PM 
  
- [** timeframes.txt**](../../reference/#timeframestxt) 
+ [**timeframes.txt**](../../reference/#timeframestxt) 
  
 | timeframe_group_id | start_time | end_time | service_id |
 |:------------------:|:----------:|:--------:|:----------:|
@@ -387,7 +387,7 @@
  
  Cada producto de tarifa individual se define en `fare_products.txt`. Dado que Cold Spring está ubicado en la zona 7, este ejemplo solo enumera viajes entre las zonas 1 y 7. El conjunto de datos completo incluiría un registro para cada precio definido por una combinación de hora y zona. Además, el ejemplo solo muestra un medio de tarifa ("papel"), pero se podrían crear combinaciones adicionales si los precios también variaran según el medio de tarifa. 
  
- [** fare_products.txt**](../../reference/#fare_productstxt) 
+ [**fare_products.txt**](../../reference/#fare_productstxt) 
  
 | fare_product_id        | fare_product_name                  | fare_media_id | amount | currency |
 |------------------------|------------------------------------|---------------|--------|----------|
@@ -399,7 +399,7 @@
  
  Por último, las combinaciones de zonas de origen y destino, junto con sus respectivos horarios, se asocian al producto tarifario correspondiente en `fare_leg_rules.txt`. Aquí, los viajes que comienzan o llegan a la Zona 1 (es decir, `area_id=mnr_1`) durante las horas pico están sujetos a una tarifa pico específica correspondiente a las zonas de llegada y salida del viaje (es decir, `fare_product_id=mnr_1:HUD-7_adult_peak`). 
  
- [** fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
+ [**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt) 
  
 | network_id | from_area_id | to_area_id | fare_product_id        | from_timeframe_group_id | to_timeframe_group_id |
 |------------|--------------|------------|------------------------|-------------------------|-----------------------|

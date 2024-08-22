@@ -1,4 +1,4 @@
-# GTFS: Hacer que los datos del transporte público sean universalmente accesibles
+# GTFS: datos de transporte público universalmente accesibles
 
 ## Un estándar de datos abiertos para la información de los pasajeros en transporte público 
  

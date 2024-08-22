@@ -10,7 +10,7 @@
  De lo contrario, el software leerá “3300” como “tres mil trescientos”. 
  - Los ordinales, como 1.º, 2.º y 3.º, deben deletrearse: por ejemplo, “1.º” se convierte en “primero”. 
  
- [** stops.txt**](../../reference/#stopstxt) 
+ [**stops.txt**](../../reference/#stopstxt) 
  
 | stop_id | stop_name | tts_stop_name |
 | ---- | ---- | ---- |
@@ -25,7 +25,7 @@
  
  Para Tampa, el letrero “North to UATC” contiene un acrónimo que se pronuncia con sus letras individuales. La desambiguación de texto a voz sería: 
  
- [** trips.txt**](../../reference/#tripstxt) 
+ [**trips.txt**](../../reference/#tripstxt) 
  
 | trip_headsign | tts_trip_headsign |
 | ---- | ---- |

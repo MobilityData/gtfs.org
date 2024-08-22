@@ -27,7 +27,7 @@
  - Servicio en la zona de New Ulm de 17:00 a 17:45 de lunes a viernes. 
  - Servicio en la zona de New Ulm de 8:00 a 12:00 los domingos. 
  
- [** trips.txt**](../../reference/#tripstxt) 
+ [**trips.txt**](../../reference/#tripstxt) 
  
  route_id | service_id | trip_id
 --|--|-- 
@@ -123,7 +123,7 @@ t_5374947_b_77497_tn_0 | area_715 | 2 | 08:00:00 | 12:45:00 | 1 | 2 | booking_ro
  
  Similar al ejemplo anterior, debido a que los horarios de servicio varían en diferentes días, es necesario definir los viajes por separado para los días laborables y los sábados. 
  
- [** trips.txt**](../../reference/#tripstxt) 
+ [**trips.txt**](../../reference/#tripstxt) 
  
  route_id | service_id | trip_id
 --|--|-- 
@@ -136,7 +136,7 @@ t_5374947_b_77497_tn_0 | area_715 | 2 | 08:00:00 | 12:45:00 | 1 | 2 | booking_ro
  
  Los siguientes datos indican que la recogida solo se permite en una zona y la entrega solo se permite en otra zona. No se permite recoger y dejar en la misma zona. 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | location_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | pickup_booking_rule_id | drop_off_booking_rule_id
 -- | -- | -- | -- | -- | -- | -- | -- | --
@@ -153,7 +153,7 @@ t_5298041_b_77503_tn_0 | area_714 | 2 | 09:00:00 | 19:00:00 | 1 | 2 | booking_ro
  
  Ofertas de la ruta 476 servicios bajo demanda entre cada parada en la región de Angermünde. Operan dos servicios (uno para los días laborables y el otro para los fines de semana), y cada uno tiene un único trip_id asociado. 
  
- [** trips.txt**](../../reference/#tripstxt) 
+ [**trips.txt**](../../reference/#tripstxt) 
  
 route_id | service_id | trip_id 
 -- | -- | -- 
@@ -164,13 +164,13 @@ route_id | service_id | trip_id
  
  Como los pasajeros pueden reservar servicios entre cada parada, para evitar definir todas las combinaciones de parada a parada en stop_times.txt, el enfoque apropiado es definir estas paradas como una ubicación grupo usando location_groups.txt y location_group_stops.txt. 
  
- [** location_groups.txt**](../../reference/#location_groupstxt) 
+ [**location_groups.txt**](../../reference/#location_groupstxt) 
  
 location_group_id | location_group_name 
 -- | -- 
 476_stops | durch den RufBus 476 bedientes Gebiet im Raum Angermünde
  
- [** location_group_stops.txt**](../../reference/#location_group_stopstxt) 
+ [**location_group_stops.txt**](../../reference/#location_group_stopstxt) 
  
 location_group_id | stop_id 
 -- | -- 
@@ -188,7 +188,7 @@ location_group_id | stop_id
  
  Existen ligeras diferencias entre las reservas de días laborables y de fin de semana, por lo que se pueden definir reglas de reserva independientes para servicios de días laborables y festivos. Se pueden proporcionar más detalles en el campo "`message`". Los enlaces a páginas de información y reservas se pueden proporcionar en los campos `info_url` y `booking_url`. 
  
- [** booking_rules.txt**](../../reference/#booking_rulestxt) 
+ [**booking_rules.txt**](../../reference/#booking_rulestxt) 
  
 booking_rule_id | booking_type | prior_notice_duration_min | message | phone_number | info_url | booking_url
 -- | -- | -- | -- | -- | -- | --
@@ -223,7 +223,7 @@ trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end
  
  Dado que este tipo de servicio todavía implica una serie de paradas fijas y un horario fijo, definir viajes es similar a los servicios normales de autobús de ruta fija. Requiere definir los viajes realizados por cada ruta a lo largo de todos los períodos de servicio relevantes. 
  
- [** trips.txt**](../../reference/#tripstxt) 
+ [**trips.txt**](../../reference/#tripstxt) 
  
  route_id | service_id | trip_id | share_id
 --|--|--|-- 
@@ -245,7 +245,7 @@ trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end
  
  Para paradas fijas, defina campos como `arrival_time`, `departure_time` y `stop_id` de manera similar a las rutas de autobús normales. Entre paradas fijas, definir las zonas donde se permite el desvío. `pickup_type = 1` y `drop_off_type = 3` indican que no se permite la recogida desviada (limitando la recogida a paradas fijas únicamente) y que los pasajeros deben coordinar con el conductor para ser dejados en la zona de desviación. 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | arrival_time | departure_time | stop_id | location_id | stop_sequence | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | shape_dist_traveled | pickup_booking_rule_id | drop_off_booking_rule_id
 -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
@@ -293,7 +293,7 @@ tripA | vancouver | 3 | 1 | 2 | 10:00:00 | 14:00:00
  
  **Permitido** 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | location_id | stop_sequence | pickup_type | drop_off_type | start_pickup_drop_off_window | end_pickup_drop_off_window
 -- | -- | -- | -- | -- | -- | --
@@ -303,7 +303,7 @@ tripA | vancouver | 3 | 1 | 2 | 10:00:00 | 14:00:00
  
  o 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | location_id | stop_sequence | pickup_type | drop_off_type | start_pickup_drop_off_window | end_pickup_drop_off_window
 -- | -- | -- | -- | -- | -- | --
@@ -313,7 +313,7 @@ tripA | vancouver | 3 | 1 | 2 | 10:00:00 | 14:00:00
  
  o 
  
- [** stop_times.txt**](../../reference/#stop_timestxt) 
+ [**stop_times.txt**](../../reference/#stop_timestxt) 
  
 trip_id | location_id | stop_sequence | pickup_type | drop_off_type | start_pickup_drop_off_window | end_pickup_drop_off_window
 -- | -- | -- | -- | -- | -- | --
