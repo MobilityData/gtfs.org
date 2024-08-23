@@ -1,6 +1,7 @@
 site_name: General Transit Feed Specification
 site_url: https://gtfs.org
 repo_url: https://github.com/google/transit
+repo_name: GTFS Repository
 docs_dir: 'docs/' # Where to find the English markdown files
 
 validation:
