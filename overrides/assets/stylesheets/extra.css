@@ -6,6 +6,16 @@
   display: var(--md-footer-logo-dark-mode);
 }
 
+.md-header {
+  overflow-x: hidden ;
+}
+
+/* side nav that affects all pages */
+.md-sidebar.md-sidebar--primary .md-sidebar__scrollwrap {
+  background-color: white;
+  box-shadow: none;
+}
+
 /* default theme overrides */
 [data-md-color-scheme="gtfs"] {
   /* Default colors */
@@ -295,7 +305,7 @@ table.example {
     line-height: 1.5rem;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 600px) {
 
   [data-md-component="announce"] {
    z-index: 1;
