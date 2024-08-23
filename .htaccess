@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Match any URL under /ja, /ru, /pt, /ko, /id, /de, /zh, or /zh-TW and redirect to the corresponding index.html
+RewriteCond %{REQUEST_URI} ^/(ja|ru|pt|ko|id|de|zh|zh-TW)/
+RewriteCond %{REQUEST_URI} !index\.html$
+RewriteRule ^(.+?)/.+$ /$1/index.html [L,R=302]
