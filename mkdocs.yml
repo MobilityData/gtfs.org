@@ -41,19 +41,19 @@ extra:
   analytics:
     provider: google
     property: G-DRBTC7SSDT
-    feedback:
-      # title: Was this page helpful?
-      ratings:
-        - icon: material/numeric-positive-1
-          name: This page was helpful
-          data: 1
-          note: >-
-            Thanks for your feedback!
-        - icon: material/numeric-negative-1
-          name: This page could be improved
-          data: 0
-          note: >- 
-            Thanks for your feedback! Help us improve this page by using our <a href="https://share.mobilitydata.org/gtfs-org-feedback-form?usp=pp_url&entry.942719219={url}" target=_blank>feedback form</a>.
+    # feedback:
+    #   # title: Was this page helpful?
+    #   ratings:
+    #     - icon: material/numeric-positive-1
+    #       name: This page was helpful
+    #       data: 1
+    #       note: >-
+    #         Thanks for your feedback!
+    #     - icon: material/numeric-negative-1
+    #       name: This page could be improved
+    #       data: 0
+    #       note: >- 
+    #         Thanks for your feedback! Help us improve this page by using our <a href="https://share.mobilitydata.org/gtfs-org-feedback-form?usp=pp_url&entry.942719219={url}" target=_blank>feedback form</a>.
   consent:
     title: Cookie Consent
     description: >-
