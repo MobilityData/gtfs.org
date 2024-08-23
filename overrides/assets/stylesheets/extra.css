@@ -17,7 +17,6 @@
   --md-primary-fg-color: #ffff00;
   --md-primary-fg-color--dark: #cccc00;
   --md-secondary-fg-color: #1d64f2;
-  --md-accent-fg-color: red;
   --md-highlight-color: #c6def4;
   --md-secondary-fg-color-white: #ffffff;
   --md-secondary-fg-color-gray: #f8f8f8;
@@ -105,10 +104,6 @@
 }
 
 /** global header end **/
-
-.md-top:hover {
-  background-color: var(--md-primary-fg-color);
-}
 
 /* h1 style */
 .md-typeset h1 {
