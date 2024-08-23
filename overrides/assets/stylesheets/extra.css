@@ -6,10 +6,6 @@
   display: var(--md-footer-logo-dark-mode);
 }
 
-.md-header {
-  overflow-x: hidden ;
-}
-
 /* side nav that affects all pages */
 .md-sidebar.md-sidebar--primary .md-sidebar__scrollwrap {
   background-color: white;
@@ -282,33 +278,32 @@ table.example {
     color: var(--md-typeset-color) !important;
 } */
 
-
 /* external link icon */
-.md-content a[href^="https://"]:not(.img, .pencil-link, .no-icon, .usage-buttons > .button, :has(img)):after {
-    content: '';
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-left: 6px;
-    background: url(../external.svg);
-    background-size: contain;
+.md-content a[href^="https://"]:not(.img, .pencil-link, .no-icon, .usage-buttons > .button, :has(img)):after
+{
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 6px;
+  background: url(../external.svg);
+  background-size: contain;
 }
 
-.md-content a[href^="https://"]:not(.img, .pencil-link, .no-icon, .usage-buttons > .button).md-button--primary:after {
-    filter: grayscale(1) brightness(0);
+.md-content a[href^="https://"]:not(.img, .pencil-link, .no-icon, .usage-buttons > .button).md-button--primary:after
+{
+  filter: grayscale(1) brightness(0);
 }
-
 
 .md-nav--primary .md-nav__title {
-    height: 7rem;
-    white-space: normal;
-    line-height: 1.5rem;
+  height: 7rem;
+  white-space: normal;
+  line-height: 1.5rem;
 }
 
 @media only screen and (max-width: 600px) {
-
   [data-md-component="announce"] {
-   z-index: 1;
+    z-index: 1;
   }
 
   .md-tabs {
@@ -599,5 +594,32 @@ table.example {
     display: flex;
     max-width: 650px;
     justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .md-select__inner {
+    right: -30px;
+    left: auto;
+    transform: none;
+  }
+
+  .md-select:focus-within .md-select__inner,
+  .md-select:hover .md-select__inner {
+    transform: none;
+  }
+
+  .md-select__inner:after {
+    left: 261px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .md-select__inner {
+    right: -45px;
+  }
+
+  .md-select__inner:after {
+    left: 247px;
   }
 }
