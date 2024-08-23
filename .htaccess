@@ -1,10 +1,10 @@
 RewriteEngine On
 
+# Match any URL trying to access the blog in anything but EN and redirect them to EN
+RewriteCond %{REQUEST_URI} ^/(?:fr|es|ja|ru|pt|ko|id|de|zh|zh-TW)/blog/
+RewriteRule ^(.+?)/.+$ /blog/ [L,R=302]
+
 # Match any URL under /ja, /ru, /pt, /ko, /id, /de, /zh, or /zh-TW and redirect to the corresponding index.html
 RewriteCond %{REQUEST_URI} ^/(ja|ru|pt|ko|id|de|zh|zh-TW)/
 RewriteCond %{REQUEST_URI} !index\.html$
 RewriteRule ^(.+?)/.+$ /$1/index.html [L,R=302]
-
-# Match any URL trying to access the blog in anything but EN and redirect them to EN
-RewriteCond %{REQUEST_URI} ^/(?:fr|es|ja|ru|pt|ko|id|de|zh|zh-TW)/blog/
-RewriteRule ^(.+?)/.+$ /blog/ [L,R=302]
