@@ -1,6 +1,6 @@
 # General Transit Feed Specification (GTFS) 
  
- La General Transit Feed Specification (GTFS) est une [norme ouverte](https://www.interoperablemobility.org/definitions/#open_standard) utilisée pour diffuser des informations pertinentes sur les systèmes de transport en commun aux cavaliers. Il permet __agences de transport en commun__ de publier leurs données de transport en commun dans un format pouvant être utilisé par une grande variété d’applications logicielles. 
+ La General Transit Feed Specification (GTFS) est une [norme ouverte](https://www.interoperablemobility.org/definitions/#open_standard) utilisée pour diffuser des informations pertinentes sur les systèmes de transport en commun aux cavaliers. Il permet aux agences de transport en commun de publier leurs données de transport en commun dans un format pouvant être utilisé par une grande variété d’applications logicielles. 
  
  GTFS se compose de deux parties principales : [GTFS Schedule](../schedule/reference) et [GTFS Realtime](../realtime/reference). 
  
@@ -12,7 +12,7 @@
  
  Parallèlement à cet ensemble de fichiers de base, des fichiers supplémentaires (facultatifs) peuvent également être regroupés pour fournir des informations sur d’autres éléments de service, tels que les tarifs, les traductions, les transferts, les itinéraires en gare, etc. Il existe actuellement plus de 15 des fichiers facultatifs qui étendent les éléments de base de GTFS, notamment locations.geojson qui a introduit un nouveau format en plus des fichiers texte (.txt) qui peuvent être utilisés pour représenter des zones géographiques. 
  
- La source de vérité pour tous les fichiers de planification GTFS est la [Référence de planification GTFS] officielle (../schedule/reference), qui fournit des informations détaillées sur les exigences pour tous les éléments d’information de chaque fichier qui compose un ensemble de données de planification GTFS..
+ La source de vérité pour tous les fichiers de GTFS Schedule est la [Référence de GTFS Schedule](../schedule/reference) officielle, qui fournit des informations détaillées sur les exigences pour tous les éléments d’information de chaque fichier qui compose un ensemble de données de GTFS Schedule.
  
  
 ## [GTFS Realtime](../realtime/reference) 
@@ -21,7 +21,9 @@
  
  La spécification prend actuellement en charge les types d’informations suivants : 
  
- - Mises à jour des trajets- retards, annulations, itinéraires modifiés- Alertes de service- arrêt déplacé, événements imprévus affectant une gare, un itinéraire ou l’ensemble du réseau- Positions des véhicules- informations sur les véhicules, y compris l’emplacement et le niveau de congestion 
+ - Mises à jour des trajets - retards, annulations, itinéraires modifiés
+ - Alertes de service - arrêt déplacé, événements imprévus affectant une gare, un itinéraire ou l’ensemble du réseau
+ - Positions des véhicules - informations sur les véhicules, y compris l’emplacement et le niveau de congestion 
  
  Pour en savoir plus à leur sujet, visitez la section [Feed Entities](../realtime/feed_entities/overview). 
  
