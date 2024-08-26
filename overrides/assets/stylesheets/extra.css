@@ -295,7 +295,7 @@ table.example {
   filter: grayscale(1) brightness(0);
 }
 
-.md-nav--primary .md-nav__title {
+.md-nav--primary .md-nav__title[for="__drawer"]  {
   height: 7rem;
   white-space: normal;
   line-height: 1.5rem;
@@ -348,13 +348,6 @@ table.example {
   }
   .md-content {
     margin: 0px 15px 0px 15px;
-  }
-
-  /* neutral nav header */
-  .md-nav__item > .md-nav__link.md-nav__container {
-    background-color: unset !important;
-    box-shadow: 0px 0px 2px 2px #efefef !important;
-    position: relative !important;
   }
 
   /* bold nav heading */

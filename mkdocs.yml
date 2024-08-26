@@ -36,6 +36,8 @@ theme:
     - navigation.footer
     - content.tabs.link
     - search.suggest
+  icon:
+    repo: fontawesome/brands/github
 extra_css:
   - assets/stylesheets/extra.css
   - assets/stylesheets/footer.css
