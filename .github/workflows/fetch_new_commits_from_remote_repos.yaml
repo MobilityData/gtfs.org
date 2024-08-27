@@ -1,0 +1,20 @@
+name: Fetch new commits from remote repos
+
+on:
+  workflow_dispatch:
+#   schedule:
+#     - cron: '0 4 * * *'  # Runs every day at 4 AM UTC
+
+jobs:
+  run-swift-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.7
+
+      - name: Run Swift Script
+        id: run-swift-script
+        run: swift scripts/monitor-remote-repos-for-new-commits.swift
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
