@@ -30,7 +30,7 @@ struct HTTPValue : Encodable {
 // MARK: - Constants
 
 let baseDestinationURL     : String = "gtfs.org"
-let numberOfDaysToLookBack : Int    = 1
+let numberOfDaysToLookBack : Int    = 7
 let baseName               : String = "main"
 let prRepo                 : String = "MobilityData/\(baseDestinationURL)"
 let prAssignees            : String = "[\"Sergiodero,tzujenchanmbd\"]" // needs to be a list. Ex: ["name1,name2"]
