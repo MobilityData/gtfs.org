@@ -67,6 +67,9 @@ extra:
         - reject
         - manage
   social:
+    - icon: fontawesome/solid/square-rss
+      name: GTFS Digest RSS feed
+      link: https://gtfs.org/blog/feed_rss_created.xml
     - icon: fontawesome/brands/github
       link: https://github.com/MobilityData
     - icon: fontawesome/brands/linkedin

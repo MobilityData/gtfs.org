@@ -3,7 +3,7 @@
 <div class="grid cards" markdown>
 
 - :simple-slack: Join [__Slack__](https://share.mobilitydata.org/slack) and introduce yourself to the community.
-- :material-newspaper-variant: Subscribe to the [__GTFS Digest__](https://groups.google.com/g/gtfs-digest) for monthly updates about all things GTFS.
+- :material-newspaper-variant: Subscribe to the [__GTFS Digest__](https://gtfs.org/blog/) for monthly updates about all things GTFS.
 - :fontawesome-solid-user-group: Join [__GTFS Changes__](https://groups.google.com/g/gtfs-changes) Google Group to stay informed on development. 
 - :simple-github: Visit [__GitHub__](https://github.com/google/transit) to post issues, participate in discussions around changes, and, propose changes. 
 
