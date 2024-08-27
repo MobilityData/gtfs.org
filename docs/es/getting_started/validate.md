@@ -20,7 +20,7 @@
  
  Los validadores oficiales de GTFS evalúan la calidad de un conjunto de datos con respecto a la especificación oficial, lo que garantiza un entendimiento común dentro de la industria sobre lo que constituye un conjunto de datos de alta calidad. 
  
- El [validador de programación GTFS canónico](https://gtfs-validator.mobilitydata.org/)[^1] gratuito y de código abierto mantenido por [MobilityData](https://mobilitydata.org/) garantiza sus datos GTFS cumplen con la [Referencia de programación GTFS](../../documentation/schedule/reference/) y las [Mejores prácticas](../../documentation/schedule/schedule_best_practices) oficiales. Proporciona un informe fácil de usar que se puede compartir con otras partes y documentación completa. 
+ El [validador de GTFS Schedule  canónico](https://gtfs-validator.mobilitydata.org/)[^1] gratuito y de código abierto mantenido por [MobilityData](https://mobilitydata.org/) garantiza sus datos GTFS cumplen con la [Referencia de GTFS Schedule](../../documentation/schedule/reference/) y las [Mejores prácticas](../../documentation/schedule/schedule_best_practices) oficiales. Proporciona un informe fácil de usar que se puede compartir con otras partes y documentación completa. 
  
 <div class="usage">
     <div class="usage-list">
