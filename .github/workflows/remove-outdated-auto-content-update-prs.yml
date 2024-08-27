@@ -1,8 +1,8 @@
 name: Remove outdated automatic content update PRs
 on:
    workflow_dispatch:
-   schedule:
-        - cron: "50 23 * * *"
+  #  schedule:
+  #       - cron: "50 23 * * *"
 
 jobs:
     close-stale-pull-requests:

@@ -1,0 +1,84 @@
+.mdx-socials {
+    display: flex;
+    gap: 30px;
+    margin: 2.4rem 0;
+}
+
+.mdx-socials__element {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 0;
+    text-align: center;
+}
+
+.mdx-socials__element img {
+    border-radius: 5rem;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10rem;
+}
+
+/** TODO: generic h3 and p **/
+.mdx-socials__content h3 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.mdx-socials__content p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    margin: 15px 0 30px;
+    height: 112px;
+}
+
+.mdx-resource__container {
+    display: flex;
+    gap: 30px;
+}
+
+.mdx-resource__element {
+    background-color: var(--md-primary-bg-color);
+    text-align: center;
+    padding: 30px;
+    color: var(--md-light-text);
+    width: calc(50% - 15px);
+}
+
+/** TODO: make this into a generic h3 style **/
+.mdx-resource__element h3 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 30px;
+    margin: 0 0 15px;
+}
+
+.mdx-resource__element p {
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width:76.25em) {
+    .mdx-socials  {
+        flex-direction: column;
+    }
+
+    .mdx-socials__content p {
+        height: initial;
+    }
+
+    .mdx-resource__container {
+        flex-direction: column;
+    }
+
+    .mdx-resource__element {
+        width: 100%;
+    }
+
+    .mdx-socials__element svg{
+        width: 150px;
+    }
+}
