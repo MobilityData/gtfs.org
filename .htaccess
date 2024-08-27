@@ -1,4 +1,68 @@
+# Redirect for simple redirections
+Redirect schedule/reference/ documentation/schedule/reference/
+Redirect schedule/best-practices/ documentation/schedule/GTFS%20schedule%20best%20Practices/
+Redirect schedule/examples/ documentation/overview/
+Redirect schedule/example-feed/ getting_started/example_feed/
+Redirect schedule/examples/routes-stops-trips/ documentation/schedule/examples/routes-stops-trips/
+Redirect schedule/examples/continuous-stops/ documentation/schedule/examples/continuous-stops/
+Redirect schedule/examples/text-to-speech/ documentation/schedule/examples/text-to-speech/
+Redirect schedule/examples/fares-v1/ documentation/schedule/examples/fares-v1/
+Redirect schedule/examples/fares-v2/ documentation/schedule/examples/fares-v2/
+Redirect schedule/examples/frequencies/ documentation/schedule/examples/frequencies/
+Redirect schedule/examples/pathways/ documentation/schedule/examples/pathways/
+Redirect schedule/examples/transfers/ documentation/schedule/examples/transfers/
+Redirect schedule/examples/translations/ documentation/schedule/examples/translations/
+Redirect schedule/examples/feed-info/ documentation/schedule/examples/feed-info/
+Redirect schedule/examples/attributions/ documentation/schedule/examples/attributions/
+Redirect schedule/examples/flex/ documentation/schedule/examples/flex/
+Redirect schedule/changes/ documentation/schedule/change_history/recent_additions/
+Redirect schedule/process/ community/governance/gtfs_schedule_amendment_process/
+Redirect schedule/validate/ getting_started/validate/
+Redirect schedule/publishing/ getting_started/publish/
+Redirect realtime/ documentation/overview/
+Redirect realtime/reference/ documentation/realtime/reference/
+Redirect realtime/best-practices/ documentation/realtime/realtime_best_practices/
+Redirect realtime/feed-entities/ documentation/realtime/feed_entities/overview/
+Redirect realtime/feed-entities/trip-updates/ documentation/realtime/feed_entities/trip-updates/
+Redirect realtime/feed-entities/service-alerts/ documentation/realtime/feed_entities/service-alerts/
+Redirect realtime/feed-entities/vehicle-positions/ documentation/realtime/feed_entities/vehicle-positions/
+Redirect realtime/feed-entities/trip-modifications/ documentation/realtime/feed_entities/trip-modifications/
+Redirect realtime/feed-examples/ documentation/overview/
+Redirect realtime/feed-examples/trip-updates/ documentation/realtime/examples/trip-updates/
+Redirect realtime/feed-examples/service-alerts/ documentation/realtime/examples/service-alerts/
+Redirect realtime/proto/ documentation/realtime/proto/
+Redirect realtime/language-bindings/ documentation/realtime/language-bindings/overview/
+Redirect realtime/language-bindings/dotnet/ documentation/realtime/language-bindings/dotnet/
+Redirect realtime/language-bindings/java/ documentation/realtime/language-bindings/java/
+Redirect realtime/language-bindings/nodejs/ documentation/realtime/language-bindings/nodejs/
+Redirect realtime/language-bindings/python/ documentation/realtime/language-bindings/python/
+Redirect realtime/language-bindings/golang/ documentation/realtime/language-bindings/golang/
+Redirect realtime/language-bindings/ruby/ documentation/realtime/language-bindings/ruby/
+Redirect realtime/language-bindings/php/ documentation/realtime/language-bindings/php/
+Redirect realtime/changes/ documentation/realtime/change_history/recent_additions/
+Redirect realtime/process/ community/governance/gtfs_realtime_amendment_process/
+Redirect resources/ resources/overview/
+Redirect resources/community/ community/get_involved/
+Redirect extensions/ community/extensions/overview/
+Redirect extensions/fares-v2/ community/extensions/fares-v2/
+Redirect extensions/flex/ community/extensions/flex/
+
+# Anchor redirections
 RewriteEngine On
+RewriteRule ^/realtime/process/#guiding-principles https://gtfs.org/community/governance/gtfs_realtime_amendment_process/#guiding-principles [R=301,NE,R]
+RewriteRule ^realtime/process/#revision-history https://gtfs.org/documentation/realtime/change_history/revision_history/ [R=301,R]
+RewriteRule ^realtime/process/#experimental-fields https://gtfs.org/community/governance/gtfs_realtime_amendment_process/#experimental-fields [R=301,NE,R]
+RewriteRule ^#why-use-gtfs https://gtfs.org/getting_started/why_use_GTFS/ [R=301,R]
+RewriteRule ^#what-is-high-quality-gtfs https://gtfs.org/getting_started/validate/ [R=301,R]
+RewriteRule ^schedule/#getting-started https://gtfs.org/getting_started/create/ [R=301,R]
+RewriteRule ^schedule/#training-resources https://gtfs.org/resources/overview/ [R=301,R]
+RewriteRule ^schedule/#getting-help-community https://gtfs.org/community/get_involved/ [R=301,R]
+RewriteRule ^schedule/process/#guiding-principles https://gtfs.org/community/governance/gtfs_schedule_amendment_process/#guiding-principles [R=301,NE,R]
+RewriteRule ^schedule/process/#revision-history https://gtfs.org/documentation/schedule/change_history/revision_history/ [R=301,R]
+
+# Match any URL trying to access the blog in anything but EN and redirect them to EN
+RewriteCond %{REQUEST_URI} ^/(?:fr|es|ja|ru|pt|ko|id|de|zh|zh-TW)/blog/
+RewriteRule ^(.+?)/.+$ /blog/ [L,R=302]
 
 # Match any URL trying to access the blog in anything but EN and redirect them to EN
 RewriteCond %{REQUEST_URI} ^/(?:fr|es|ja|ru|pt|ko|id|de|zh|zh-TW)/blog/
