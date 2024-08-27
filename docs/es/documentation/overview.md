@@ -6,9 +6,9 @@
  
 ## [GTFS Schedule](../schedule/reference) 
  
- Programación GTFS es una especificación de feed que define un formato común para información estática sobre transporte público. Se compone de una colección de archivos simples, en su mayoría archivos de texto (.txt), que están contenidos en un único archivo ZIP. 
+ GTFS Schedule es una especificación de feed que define un formato común para información estática sobre transporte público. Se compone de una colección de archivos simples, en su mayoría archivos de texto (.txt), que están contenidos en un único archivo ZIP. 
  
- Cada archivo describe un aspecto particular de la información de tránsito, como paradas, rutas, viajes, etc. En su forma más básica, un conjunto de datos de programación GTFS se compone de 7 archivos: `agency.txt`, `routes.txt`, `trips.txt`, `stops.txt`, `stop_times.txt`, `calendar.txt` y `calendar_dates.txt`. 
+ Cada archivo describe un aspecto particular de la información de tránsito, como paradas, rutas, viajes, etc. En su forma más básica, un conjunto de datos de GTFS Schedule se compone de 7 archivos: `agency.txt`, `routes.txt`, `trips.txt`, `stops.txt`, `stop_times.txt`, `calendar.txt` y `calendar_dates.txt`. 
  
  Junto con este conjunto básico de archivos, también se pueden agrupar archivos adicionales (opcionales) para proporcionar información de otros elementos del servicio, como tarifas, traducciones, transbordos, trayectos en la estación, etc. Actualmente existen más de 15 Archivos opcionales que amplían los elementos básicos de GTFS, incluido locations.geojson, que introdujo un nuevo formato además de los archivos de texto (.txt) que se pueden utilizar para representar áreas geográficas. 
  

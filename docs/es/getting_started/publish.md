@@ -31,7 +31,7 @@ Cuándo Los datos GTFS de su agencia se comparten públicamente y pueden ser uti
 
 ### Crear y mantener un enlace de recuperación permanente 
  
- Un enlace de búsqueda es una URL permanente en la que se almacenan los archivos de programación GTFS de su agencia. Por lo general, está alojado en el sitio web de su agencia o en su proveedor, si contrata uno para la producción de GTFS. Así es como las aplicaciones de planificación de viajes como Google Maps acceden a tus datos. Idealmente, sus archivos de programación GTFS deberían poder descargarse directamente desde esta URL sin necesidad de iniciar sesión. Sin embargo, si esto no es factible debido a restricciones de licencia, su agencia puede controlar el acceso a los datos utilizando y emitiendo claves API a los usuarios de los datos. 
+ Un enlace de búsqueda es una URL permanente en la que se almacenan los archivos de GTFS Schedule de su agencia. Por lo general, está alojado en el sitio web de su agencia o en su proveedor, si contrata uno para la producción de GTFS. Así es como las aplicaciones de planificación de viajes como Google Maps acceden a tus datos. Idealmente, sus archivos de GTFS Schedule deberían poder descargarse directamente desde esta URL sin necesidad de iniciar sesión. Sin embargo, si esto no es factible debido a restricciones de licencia, su agencia puede controlar el acceso a los datos utilizando y emitiendo claves API a los usuarios de los datos. 
  
 ### URL y nombres de archivos 
  
@@ -42,7 +42,7 @@ Cuándo Los datos GTFS de su agencia se comparten públicamente y pueden ser uti
  - **BUENO:** http://www.bart.gov/dev/schedules/google_transit.zip, 
  - **EVITAR:** http://www.bart.gov/dev/horarios/google_transit_Fall_2021.zip 
  
- Del mismo modo, mantén constante el nombre de la carpeta ZIP que contiene los archivos de programación GTFS, incluso si realizas actualizaciones en el feed. Por ejemplo, cuando actualiza una fuente, no debe agregar ningún tipo de date o número de versión al nombre de la carpeta ZIP. Si desea incluir datos sobre la versión del feed o las fechas de inicio y finalización del feed, puede incluirlos en el archivo feed_info.txt. 
+ Del mismo modo, mantén constante el nombre de la carpeta ZIP que contiene los archivos de GTFS Schedule, incluso si realizas actualizaciones en el feed. Por ejemplo, cuando actualiza una fuente, no debe agregar ningún tipo de date o número de versión al nombre de la carpeta ZIP. Si desea incluir datos sobre la versión del feed o las fechas de inicio y finalización del feed, puede incluirlos en el archivo feed_info.txt. 
  
  - **BUENO:** “YourAgency_gtfs.zip”, “google_transit.zip”, “gtfs.zip”, 
  - **EVITAR:** “YourAgency_gtfs_092921.zip”, “YourAgency_Fall2021.zip” § § 
