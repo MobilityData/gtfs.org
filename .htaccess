@@ -41,7 +41,7 @@ Redirect 301 /realtime/language-bindings/ruby/ /documentation/realtime/language-
 Redirect 301 /realtime/language-bindings/php/ /documentation/realtime/language-bindings/php/
 Redirect 301 /realtime/changes/ /documentation/realtime/change_history/recent_additions/
 Redirect 301 /realtime/process/ /community/governance/gtfs_realtime_amendment_process/
-Redirect 301 /resources/ /resources/overview/
+# Redirect 301 /resources/ /resources/overview/
 Redirect 301 /resources/community/ /community/get_involved/
 Redirect 301 /extensions/ /community/extensions/overview/
 Redirect 301 /extensions/fares-v2/ /community/extensions/fares-v2/
