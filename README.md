@@ -22,6 +22,9 @@ We do accept glossary changes. Simpleen uses a glossary for key terms that are c
 
 ## Building the site locally
 
+> [!WARNING]
+> A private token from MKDocs Material Insiders is required to build this site.
+
 1. In Terminal, change the directory to one where you wish to build the site.
 1. Ensure you have an up-to-date version of pip:
    - Linux: `pip install pip` or `pip install --upgrade pip`
@@ -34,11 +37,8 @@ We do accept glossary changes. Simpleen uses a glossary for key terms that are c
 1. Have [Material for MkDocs Insiders](https://squidfunk.github.io/mkdocs-material/insiders/`) installed. Substitute `${GH_TOKEN}` with MobilityData's access token:
    - Linux: `pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git`
    - macOS: `pip3 install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git`
-1. Assuming you are still in the cloned repository, run this command to update the content for the specification references and best practices:
-   - `bash scripts/fetchdata.sh`
-1. To run the site locally: `mkdocs serve`
-1. To build the site locally only: `mkdocs build --clean`
-1. To deploy the site to GitHub Pages: `mkdocs gh-deploy`
+1. To run the site locally: `make serve`
+1. To build the site locally: `make build`
 
 ## License
 
