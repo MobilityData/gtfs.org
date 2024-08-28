@@ -41,14 +41,19 @@ Redirect 301 /realtime/language-bindings/ruby/ /documentation/realtime/language-
 Redirect 301 /realtime/language-bindings/php/ /documentation/realtime/language-bindings/php/
 Redirect 301 /realtime/changes/ /documentation/realtime/change_history/recent_additions/
 Redirect 301 /realtime/process/ /community/governance/gtfs_realtime_amendment_process/
-# Redirect 301 /resources/ /resources/overview/
 Redirect 301 /resources/community/ /community/get_involved/
 Redirect 301 /extensions/ /community/extensions/overview/
 Redirect 301 /extensions/fares-v2/ /community/extensions/fares-v2/
 Redirect 301 /extensions/flex/ /community/extensions/flex/
 
-# Anchor redirections
+# Turn the rewrite engine on for the rest
 RewriteEngine On
+
+# Only redirect if the URL is exactly /resources/
+RewriteCond %{REQUEST_URI} ^/resources/$
+RewriteRule ^resources/$ /resources/overview/ [L,R=301]
+
+# Anchor redirections
 RewriteRule ^realtime/process/#guiding-principles https://gtfs.org/community/governance/gtfs_realtime_amendment_process/#guiding-principles [R=301,NE]
 RewriteRule ^realtime/process/#revision-history https://gtfs.org/documentation/realtime/change_history/revision_history/ [R=301]
 RewriteRule ^realtime/process/#experimental-fields https://gtfs.org/community/governance/gtfs_realtime_amendment_process/#experimental-fields [R=301,NE]
