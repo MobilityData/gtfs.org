@@ -21,3 +21,5 @@ pyyaml_env_tag==0.1
 six==1.16.0
 watchdog==4.0.1
 zipp==3.19.1
+pillow==10.4.0
+cairosvg==2.7.1
