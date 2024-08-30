@@ -54,7 +54,8 @@ Visite la página Pull Request para leer la publicación completa y contribuir a
 - [Alianza de tránsito del noroeste de Oregón (NW Connector)](https://nwconnector.org/other-services/) 
 - [Aplicación Vamos Mobility](https://vamosmobileapp.com/) 
 - [RTD Denver Flexride](https://www.rtd-denver.com/services/flexride) 
-- [Proyecto OTP DRT de transporte público de Nebraska: Trillium, Olsson, Cambridge Systematics y TransitPlus](https://trips.nebraskatransit.com/#/) 
+- [Proyecto OTP DRT de transporte público de Nebraska: Trillium, Olsson, Cambridge Systematics y TransitPlus](https://trips.nebraskatransit.com/#/)
+- [Proyecto One-Call/One-Click: Planificador de viajes Find a Ride](https://www.findaride.org/tripplanner) 
  
 Contáctenos para agregar su implementación GTFS-Flex a esta página 
 
@@ -64,7 +65,7 @@ Contáctenos para agregar su implementación GTFS-Flex a esta página
 
 ### Actual 
  
-<iframe class="airtable-embed" src="https://airtable.com/embed/shrUPyCZWOWrvO2mX?backgroundColor=purple&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid#ccc;"></iframe> 
+<iframe class="airtable-embed" src="https://airtable.com/embed/appopXWyO2ne6THIw/shrUPyCZWOWrvO2mX?backgroundColor=purple" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
 [Solicitar un cambio](https://airtable.com/shrcac1fXUrMxfoDV){ .md-button .md-button--primary } 
 [Agregue su organización (consumidores)](https://airtable.com/shrgnVR5Su9tkHvUv){ .md-button .md-button--primary } 
