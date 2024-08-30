@@ -56,6 +56,7 @@ Visit the Pull Request page to read the full post and contribute to the conversa
 - [Vamos Mobility App](https://vamosmobileapp.com/)
 - [RTD Denver Flexride](https://www.rtd-denver.com/services/flexride)
 - [Nebraska Public Transit DRT OTP Project: Trillium, Olsson, Cambridge Systematics, and TransitPlus](https://trips.nebraskatransit.com/#/)
+- [One-Call/One-Click project: Find a Ride's Trip planner](https://www.findaride.org/tripplanner)
 
 Contact us to add your GTFS-Flex implementation to this page
 
@@ -64,7 +65,7 @@ Contact us to add your GTFS-Flex implementation to this page
 ## Adoption tracker
 ### Current
 
-<iframe class="airtable-embed" src="https://airtable.com/embed/shrUPyCZWOWrvO2mX?backgroundColor=purple&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+<iframe class="airtable-embed" src="https://airtable.com/embed/appopXWyO2ne6THIw/shrUPyCZWOWrvO2mX?backgroundColor=purple" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
 [Request a change](https://airtable.com/shrcac1fXUrMxfoDV){ .md-button .md-button--primary }
 [Add your organization (consumers)](https://airtable.com/shrgnVR5Su9tkHvUv){ .md-button .md-button--primary }
