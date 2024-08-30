@@ -22,6 +22,9 @@ We do accept glossary changes. Simpleen uses a glossary for key terms that are c
 
 ## Building the site locally
 
+> [!WARNING]
+> A private token from MKDocs Material Insiders is required to build this site.
+
 1. In Terminal, change the directory to one where you wish to build the site.
 1. Ensure you have an up-to-date version of pip:
    - Linux: `pip install pip` or `pip install --upgrade pip`
@@ -37,9 +40,8 @@ We do accept glossary changes. Simpleen uses a glossary for key terms that are c
 1. Assuming you are still in the cloned repository, run this command to update the content for the specification references and best practices:
    - `bash scripts/fetchdata.sh`
    - Note: on macOS, you need to install the `gcsplit` command for this script to work: `brew install coreutils`.
-1. To run the site locally: `mkdocs serve`
-1. To build the site locally only: `mkdocs build --clean`
-1. To deploy the site to GitHub Pages: `mkdocs gh-deploy`
+1. To run the site locally: `make serve`
+1. To build the site locally: `make build`
 
 ## License
 

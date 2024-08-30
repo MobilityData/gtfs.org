@@ -1,6 +1,8 @@
 site_name: General Transit Feed Specification
 site_url: https://gtfs.org
 repo_url: https://github.com/google/transit
+repo_name: GTFS Repository
+docs_dir: 'docs/' # Where to find the English markdown files
 
 validation:
   nav:
@@ -13,46 +15,49 @@ validation:
     unrecognized_links: ignore
 
 theme:
-  logo_light_mode: assets/org-white.svg
+  locale: en
+  custom_dir: overrides/
+  logo: assets/logo.png
+  logo_light_mode: assets/logo.png
+  favicon: assets/favicon.ico
   palette:
     - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: blue
-      accent: blue
+      scheme: gtfs
+      primary: custom
+      accent: custom
   name: material
-  favicon: assets/org-black.svg
   font:
-    text: SF Pro
+    text: Mulish
     code: SF Mono
   features:
     - navigation.tabs
     - navigation.indexes
     - navigation.top
-    - toc.integrate
+    - navigation.footer
     - content.tabs.link
     - search.suggest
-  custom_dir: theme_overrides
-  language: en
-  locale: en
+  icon:
+    repo: fontawesome/brands/github
 extra_css:
   - assets/stylesheets/extra.css
+  - assets/stylesheets/footer.css
 extra:
   analytics:
     provider: google
     property: G-DRBTC7SSDT
-    feedback:
-      # title: Was this page helpful?
-      ratings:
-        - icon: material/numeric-positive-1
-          name: This page was helpful
-          data: 1
-          note: >-
-            Thanks for your feedback!
-        - icon: material/numeric-negative-1
-          name: This page could be improved
-          data: 0
-          note: >- 
-            Thanks for your feedback! Help us improve this page by using our <a href="https://share.mobilitydata.org/gtfs-org-feedback-form?usp=pp_url&entry.942719219={url}" target=_blank>feedback form</a>.
+    # feedback:
+    #   # title: Was this page helpful?
+    #   ratings:
+    #     - icon: material/numeric-positive-1
+    #       name: This page was helpful
+    #       data: 1
+    #       note: >-
+    #         Thanks for your feedback!
+    #     - icon: material/numeric-negative-1
+    #       name: This page could be improved
+    #       data: 0
+    #       note: >- 
+    #         Thanks for your feedback! Help us improve this page by using our <a href="https://share.mobilitydata.org/gtfs-org-feedback-form?usp=pp_url&entry.942719219={url}" target=_blank>feedback form</a>.
   consent:
     title: Cookie Consent
     description: >-
@@ -62,14 +67,53 @@ extra:
         - reject
         - manage
   social:
+    - icon: fontawesome/solid/square-rss
+      name: GTFS Digest RSS feed
+      link: https://gtfs.org/blog/feed_rss_created.xml
     - icon: fontawesome/brands/github
       link: https://github.com/MobilityData
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/mobilitydata
     - icon: fontawesome/brands/slack
       link: https://share.mobilitydata.org/slack
+  alternate:
+      - name: English
+        link: /
+        lang: en
+      - name: Français
+        link: /fr/
+        lang: fr
+      - name: Español
+        link: /es/
+        lang: es
+      - name: Deutsch (wird bald verfügbar sein)
+        link: /de/
+        lang: de
+      - name: 日本語 (今後追加予定)
+        link: /ja/
+        lang: ja
+      - name: Português (em breve)
+        link: /pt/
+        lang: pt
+      - name: Русский (будет добавлен позже)
+        link: /ru/
+        lang: ru
+      - name: Bahasa Indonesia (akan segera hadir)
+        link: /id/
+        lang: id
+      - name: 한국어 (곧 제공 예정)
+        link: /ko/
+        lang: ko
+      - name: 中文 - 简体（即将推出）
+        link: /zh/
+        lang: zh
+      - name: 中文 - 繁體（即將推出）
+        link: /zh-TW/
+        lang: zh-TW
+
 markdown_extensions:
   - attr_list
+  - footnotes
   - md_in_html
   - admonition
   - meta
@@ -81,6 +125,12 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
   - pymdownx.tabbed:
       alternate_style: true 
 plugins:
@@ -89,507 +139,251 @@ plugins:
   - external-markdown
   - search:
       lang: en
-  - redirects:
-      redirect_maps:
-        'gtfs-background.md': 'background.md'
-        'reference/static.md': 'schedule/reference.md'
-        'reference/realtime/v2.md': 'realtime/reference.md'
-        'reference/realtime/v1.md': 'realtime/reference.md'
-        'reference/realtime/index.md': 'realtime/reference.md'
-        'getting-started.md': 'schedule/index.md'
-        'examples.md': 'schedule/examples/index.md'
-        'testing.md': 'resources/gtfs.md'
-        'best-practices.md': 'schedule/best-practices.md'
-        'data-examples.md': 'schedule/examples/index.md'
-        'changes.md': 'extensions/index.md'
-        'reference/realtime/changes.md': 'realtime/changes/index.md'
-        'reference/static/changes.md': 'schedule/changes/index.md'
-        'applications.md': 'resources/apps.md'
-        'license.md': 'about.md'
-        'realtime/service-alerts.md': 'realtime/feed-entities/service-alerts.md'
-        'realtime/trip-updates.md': 'realtime/feed-entities/trip-updates.md'
-        'realtime/vehicle-positions.md': 'realtime/feed-entities/vehicle-positions.md'
-        'realtime/code-examples/index.md': 'realtime/language-bindings/index.md'
-        'realtime/code-examples/dotnet.md': 'realtime/language-bindings/dotnet.md'
-        'realtime/code-examples/java.md': 'realtime/language-bindings/java.md'
-        'realtime/code-examples/nodejs.md': 'realtime/language-bindings/nodejs.md'
-        'realtime/code-examples/python.md': 'realtime/language-bindings/python.md'
-        'realtime/code-examples/golang.md': 'realtime/language-bindings/golang.md'
-        'realtime/code-examples/ruby.md': 'realtime/language-bindings/ruby.md'
-        'realtime/code-examples/php.md': 'realtime/language-bindings/php.md'
-        'schedule/guiding-principles.md': 'schedule/process.md'
-        'schedule/revision-history.md': 'schedule/process.md'
-        'realtime/guiding-principles.md': 'realtime/process.md'
-        'realtime/revision-history.md': 'realtime/process.md'
-        'realtime/extensions.md': 'realtime/process.md'
   - i18n:
-      docs_structure: suffix
+      docs_structure: folder
       reconfigure_search: false
       reconfigure_material: true
+      fallback_to_default: true
       languages:
         - locale: en
           name: English
           build: true
           default: true
-        - locale: id
-          name: Bahasa Indonesia
-          build: true
-          nav_translations:
-            Home: Rumah
-            Resources: Sumber Daya
-            Extensions: Ekstensi
-            About: Tentang
-            Reference: Referensi
-            Best Practices: Praktik Terbaik
-            Examples: Contoh
-            Example GTFS Feed: Contoh Dataset GTFS
-            Routes, stops, and trips: Rute, pemberhentian, dan perjalanan
-            Continuous stops: Berhenti terus menerus
-            Text-to-speech: Teks pidato
-            Frequencies: Frekuensi
-            Pathways: Jalur
-            Transfers: Transfer
-            Translations: Terjemahan
-            Feed information: Informasi umpan
-            Dataset attributions: Atribusi set data
-            Data Examples: Contoh Data
-            Changes: Perubahan
-            Validate: Mengesahkan
-            Specification Amendment Process: Proses Amandemen Spesifikasi
-            Feed Entities: Entitas data
-            Feed Examples: Contoh Data
-            Protobuf: Penyangga Protokol
-            Language Bindings: Pengikatan Bahasa
-            Getting Started: Memulai
-            Community: Komunitas
-            Data: Data
-            Software for Creating APIs: Perangkat Lunak untuk Membuat API
-            Agency Tools: Alat-alat Agensi
-            Hardware: Perangkat Keras
-            Apps: Aplikasi
-            SDKs: SDK
-            Visualizations: Visualisasi
-            SIRI: SIRI
-            Multimodal: Multimodal
-            Other: Lainnya
-        - locale: de
-          name: Deutsch
-          build: true
-          nav_translations:
-            Home: Startseite
-            Resources: Ressourcen
-            Extensions: Erweiterungen
-            About: Über
-            Reference: Referenz
-            Best Practices: Bewährte Praktiken
-            Examples: Beispiele
-            Routes, stops, and trips: Routen, Haltestellen und Fahrten
-            Continuous stops: Kontinuierliche Haltestellen
-            Text-to-speech: Text-in-Sprache
-            Frequencies: Frequenzen
-            Pathways: Fahrwege
-            Transfers: Übertragungen
-            Translations: Übersetzungen
-            Feed information: Informationen zur Einspeisung
-            Dataset attributions: Datensatz-Attribute
-            Example GTFS Feed: Beispiel GTFS-Feed
-            Data Examples: Daten Beispiele
-            Changes: Änderungen
-            Validate: Validieren Sie
-            Specification Amendment Process: Prozess zur Änderung der Spezifikation
-            Feed Entities: Daten-Entitäten
-            Feed Examples: Daten Beispiele
-            Protobuf: Protokoll Puffer
-            Language Bindings: Sprachbindungen
-            Getting Started: Erste Schritte
-            Community: Gemeinschaft
-            Data: Daten
-            Software for Creating APIs: Software zur Erstellung von APIs
-            Agency Tools: Agentur-Tools
-            Hardware: Hardware
-            Apps: Apps
-            SDKs: SDKs
-            Visualizations: Visualisierungen
-            SIRI: SIRI
-            Multimodal: Multimodal
-            Other: Andere
         - locale: es
           name: Español
           build: true
           nav_translations:
             Home: Inicio
-            Resources: Recursos
-            Extensions: Extensiones
-            About: Acerca de
+            Getting started: Primeros pasos
+            What is GTFS?: ¿Qué es GTFS?
+            Why use GTFS?: ¿Por qué utilizar GTFS?
+            How to produce GTFS?: ¿Cómo producir GTFS?
+            Create: Crear
+            Validate: Validar
+            Publish: Publicar
+            What can GTFS do?: ¿Qué puede hacer GTFS?
+            Overview: Descripción general
+            Base: Base
+            Base add-ons: Complementos
+            Accessibility: Accesibilidad
+            Fares: Tarifas
+            Pathways: Recorridos
+            Flexible services: Servicios Flexibles
+            Example GTFS feed: Ejemplo de un feed GTFS
+            Technical Documentation: Documentación técnica
             Reference: Referencia
             Best Practices: Mejores prácticas
-            Examples: Ejemplos
-            Example GTFS Feed: Ejemplo de conjunto de datos GTFS
-            Data Examples: Ejemplos de datos
-            Routes, stops, and trips: Rutas, paradas y viajes
+            Data examples: Ejemplos de datos
+            Attributions: Atribuciones
             Continuous stops: Paradas continuas
-            Text-to-speech: Texto a voz
+            Demand responsive services: Servicios sobre demanda
+            Fares v1: Tarifas v1
+            Fares v2: Tarifas v2
+            Feed information: Información del feed
             Frequencies: Frecuencias
-            Pathways: Rutas
-            Transfers: Traslados
+            Pathways: Recorridos (Pathways)
+            Routes, Stops & Trips: Rutas, Paradas y Viajes
+            Text-to-speech: Texto a voz
+            Transfers: Transferencias
             Translations: Traducciones
-            Feed information: Información sobre la alimentación
-            Dataset attributions: Atribuciones del conjunto de datos
-            Changes: Cambios
-            Validate: Validar
-            Specification Amendment Process: Proceso de modificación del pliego de condiciones
-            Feed Entities: Entidades de datos
-            Feed Examples: Ejemplos de datos
-            Protobuf: Buffer de protocolo
-            Language Bindings: Enlaces lingüísticos
-            Getting Started: Cómo empezar
+            Change history: Historial de cambios
+            Recent additions: Adiciones recientes
+            Full revision history: Historial completo de revisiones
+            Feed Entities: Entidades del feed
+            Trip Updates: Actualizaciones de viaje (Trip Updates)
+            Service Alerts: Alertas de servicio (Service Alerts)
+            Vehicle Positions: Posiciones del vehículo (Vehicle Positions)
+            Trip Modifications: Modificaciones de viaje (Trip Modifications)
+            Protobuf: Protobuf
+            Language Bindings: Bindings de lenguaje
+            Migration duplicated: Migración duplicada
             Community: Comunidad
-            Data: Datos
-            Software for Creating APIs: Software para la creación de APIs
-            Agency Tools: Herramientas de la Agencia
-            Hardware: Hardware
-            Apps: Aplicaciones
-            SDKs: SDKs
-            Visualizations: Visualizaciones
-            SIRI: SIRI
-            Multimodal: Multimodal
-            Other: Otros
+            Get involved: Involúcrese
+            Governance: Governanza
+            GTFS Schedule Amendment Process: Proceso de modificación GTFS Schedule
+            GTFS Realtime Amendment Process: Proceso de modificación GTFS Realtime
+            Extensions: Extensiones
+            Fares v2: Fares v2
+            Flex: Flex
+            About: Acerca de
+            Blog: Blog
+
         - locale: fr
           name: Français
           build: true
           nav_translations:
             Home: Accueil
+            Getting started: Premiers pas
+            Getting Started: Premiers pas
+            What is GTFS?: Qu’est-ce que GTFS ?
+            Why use GTFS?: Pourquoi utiliser GTFS ?
+            How to produce GTFS?: Comment produire du GTFS ?
+            Create: Créer
+            Validate: Valider
+            Publish: Publier
+            What can GTFS do?: Que peut faire GTFS ?
+            Overview: Aperçu
+            Base: Base
+            Base add-ons: Modules Complémentaires à Base
+            Accessibility: Accessibilité
+            Fares: Tarifs
+            Pathways: Pathways
+            Flexible services: Services flexibles
+            Example GTFS feed: Exemple de flux GTFS
+            Technical Documentation: Documentation technique
             Reference: Référence
-            Best Practices: Meilleures pratiques
-            Examples: Exemples
-            Example GTFS Feed: Exemple de flux GTFS
-            Data Examples: Exemples de données
-            Routes, stops, and trips: Itinéraires, arrêts et trajets
+            Best Practices: Bonnes pratiques
+            Data examples: Exemples de données
+            Attributions: Attributions
             Continuous stops: Arrêts continus
-            Text-to-speech: Synthèse vocale
+            Demand responsive services: Transport à la demande
+            Fares v1: Fares v1
+            Fares v2: Fares v2
+            Feed information: Informations sur le flux
             Frequencies: Fréquences
-            Pathways: Trajets
+            Pathways: Pathways
+            Routes, Stops & Trips: Lignes, arrêts et trajets 
+            Text-to-speech: Synthèse vocale
             Transfers: Transferts
             Translations: Traductions
-            Feed information: Informations sur les flux
-            Dataset attributions: Attribution des données
-            Changes: Changements
-            Validate: Valider
-            Specification Amendment Process: Processus de modification de la spécification
-            Feed Entities: Entités de flux de données
-            Feed Examples: Exemples de flux de données 
-            Protobuf: Tampon de protocole
-            Language Bindings: Liaisons linguistiques
-            Resources: Ressources
-            Getting Started: Pour commencer
+            Change history: Historique des changements
+            Recent additions: Ajouts récents
+            Recent Additions: Ajouts récents
+            Full revision history: Historique complet des révisions 
+            Feed Entities: Entités de flux
+            Trip Updates: Mises à jour du voyage
+            Trip updates: Mises à jour du voyage
+            Service Alerts: Alertes de service
+            Service alerts: Alertes de service
+            Vehicle Positions: Positions des véhicules
+            Trip Modifications: Trip Modifications
+            Protobuf: Protobuf
+            Language Bindings: Binding de langage
+            Migration duplicated: Migration dupliquée
             Community: Communauté
+            Software for Creating APIs: Logiciel de création d'API
             Data: Données
-            Software for Creating APIs: Logiciels pour la création d'API
-            Agency Tools: Outils de l'agence
-            Hardware: Matériel informatique
-            Apps: Applications
+            Agency Tools: Outils pour les agences
+            Hardware: Matériel
             Visualizations: Visualisations
-            Multimodal: Multimodales
-            Other: Autres ressources
+            Other: Autre
+            Get involved: S'impliquer
+            Governance: Gouvernance
+            GTFS Schedule Amendment Process: Processus de modification GTFS Schedule
+            GTFS Realtime Amendment Process: Processus de modification GTFS Realtime
+            Extensions: Extensions
+            Fares v2: Fares v2
+            Flex: Flex
             About: À propos
-        - locale: pt-BR
-          name: Português - Brasil
+
+        - locale: de
+          name: Deutsch
           build: true
-          nav_translations:
-            Home: Início
-            Resources: Recursos
-            Extensions: Extensões
-            About: Sobre
-            Reference: Referência
-            Best Practices: Melhores Práticas
-            Examples: Exemplos
-            Example GTFS Feed: Exemplo GTFS Dataset
-            Routes, stops, and trips: Rotas, paradas e viagens
-            Continuous stops: Paradas contínuas
-            Text-to-speech: Texto para o discurso
-            Frequencies: Freqüências
-            Pathways: Caminhos
-            Transfers: Transferências
-            Translations: Traduções
-            Feed information: Informações sobre alimentação
-            Dataset attributions: Atribuições do conjunto de dados
-            Data Examples: Exemplos de dados
-            Changes: Mudanças
-            Validate: Validar
-            Specification Amendment Process: Processo de Alteração de Especificações
-            Feed Entities: Entidades de dados
-            Feed Examples: Exemplos de dados
-            Protobuf: Buffer de protocolo
-            Language Bindings: Encadernação de idiomas
-            Getting Started: Como Começar
-            Community: Comunidade
-            Data: Dados
-            Software for Creating APIs: Software para criação de APIs
-            Agency Tools: Ferramentas de Agência
-            Hardware: Hardware
-            Apps: Apps
-            SDKs: SDKs
-            Visualizations: Visualizações
-            SIRI: SIRI
-            Multimodal: Multimodal
-            Other: Outros
-        - locale: ru
-          name: Русский
-          build: true
-          nav_translations:
-            Home: Главная
-            Resources: Ресурсы
-            Extensions: Расширения
-            About: О сайте
-            Reference: Ссылка
-            Best Practices: Лучшие практики
-            Examples: Примеры
-            Example GTFS Feed: Пример набора данных GTFS
-            Data Examples: Примеры данных
-            Routes, stops, and trips: Маршруты, остановки и поездки
-            Continuous stops: Непрерывные остановки
-            Text-to-speech: преобразование текста в речь
-            Frequencies: Частоты
-            Pathways: Маршруты
-            Transfers: Трансферы
-            Translations: Переводы
-            Feed information: Информация о фиде
-            Dataset attributions: Атрибуты набора данных
-            Changes: Изменения
-            Validate: Проверить
-            Specification Amendment Process: Процесс внесения изменений в спецификацию
-            Feed Entities: Сущности данных
-            Feed Examples: Примеры данных
-            Protobuf: Буфер протокола
-            Language Bindings: Языковые привязки
-            Getting Started: Начало работы
-            Community: Сообщество
-            Data: Данные
-            Software for Creating APIs: Программное обеспечение для создания API
-            Agency Tools: Инструменты агентства
-            Hardware: Оборудование
-            Apps: Приложения
-            SDKs: SDKs
-            Visualizations: Визуализации
-            SIRI: SIRI
-            Multimodal: Мультимодальный
-            Other: Другое
-        - locale: zh
-          name: 中文 - 简体
-          build: true
-          nav_translations:
-            Home: 首页
-            Resources: 资源
-            Extensions: 延伸
-            About: 关于
-            Reference: 参考资料
-            Best Practices: 最佳实践
-            Examples: 实例
-            Example GTFS Feed: GTFS数据集示例
-            Routes, stops, and trips: 路线、站点和行程
-            Continuous stops: 连续站点
-            Text-to-speech: 文字转语音
-            Frequencies: 频次
-            Pathways: 路径
-            Transfers: 转移
-            Translations: 翻译
-            Feed information: 饲料信息
-            Dataset attributions: 数据集属性
-            Data Examples: 数据实例
-            Changes: 变化
-            Validate: 验证
-            Specification Amendment Process: 规范修订过程
-            Feed Entities: 数据实体
-            Feed Examples: 数据实例
-            Protobuf: 协议缓冲区
-            Language Bindings: 语言绑定
-            Getting Started: 入门
-            Community: 社区
-            Data: 数据
-            Software for Creating APIs: 创建API的软件
-            Agency Tools: 机构工具
-            Hardware: 硬件设施
-            Apps: 应用
-            SDKs: SDKs
-            Visualizations: 视觉化
-            SIRI: シリーズ
-            Multimodal: 多式联运
-            Other: 其他
-        - locale: zh-TW
-          name: 中文 - 繁體
-          build: true
-          nav_translations:
-            Home: 家
-            Resources: 資源
-            Extensions: 擴展
-            About: 關於
-            Reference: 參考
-            Best Practices: 最佳實踐
-            Examples: 例子
-            Example GTFS Feed: 示例 GTFS 提要
-            Routes, stops, and trips: 路線、站點和行程
-            Continuous stops: 連續停止
-            Text-to-speech: 文字轉語音
-            Frequencies: 頻率
-            Pathways: 途徑
-            Transfers: 接送服務
-            Translations: 翻譯
-            Feed information: 飼料信息
-            Dataset attributions: 數據集屬性
-            Data Examples: 數據示例
-            Changes: 變化
-            Validate: 證實
-            Specification Amendment Process: 規範修改過程
-            Feed Entities: 飼料實體
-            Feed Examples: 提要示例
-            Protobuf: 原型緩衝區
-            Language Bindings: 語言綁定
-            Getting Started: 入門
-            Community: 社區
-            Data: 數據
-            Software for Creating APIs: 用於創建 API 的軟件
-            Agency Tools: 代理工具
-            Hardware: 硬件
-            Apps: 應用
-            SDKs: SDK
-            Visualizations: 可視化
-            SIRI: 西里
-            Multimodal: 多式聯運
-            Other: 其他
+
         - locale: ja
           name: 日本語
           build: true
-          nav_translations:
-            Home: ホーム
-            Resources: リソース
-            Extensions: エクステンション
-            About: アバウト
-            Reference: 参考
-            Best Practices: ベストプラクティス
-            Examples: 事例紹介
-            Example GTFS Feed: GTFSデータセットの例
-            Routes, stops, and trips: ルート、ストップ、トリップ
-            Continuous stops: 連続した停留所
-            Text-to-speech: 音声合成
-            Frequencies: フリークエンシー
-            Pathways: 経路
-            Transfers: トランスファー
-            Translations: 翻訳
-            Feed information: フィード情報
-            Dataset attributions: データセットの帰属
-            Data Examples: データ例
-            Changes: 変更点
-            Validate: バリデート
-            Specification Amendment Process: 仕様変更プロセス
-            Feed Entities: データエンティティ
-            Feed Examples: データ例
-            Protobuf: プロトコルバッファ
-            Language Bindings: 言語バインディング
-            Getting Started: はじめに
-            Community: コミュニティ
-            Data: データ
-            Software for Creating APIs: APIを作成するためのソフトウェア
-            Agency Tools: エージェンシーツール
-            Hardware: ハードウェア
-            Apps: アプリ
-            SDKs: SDK
-            Visualizations: ビジュアライゼーション
-            SIRI: SIRI
-            Multimodal: マルチモーダル
-            Other: その他
+
+        - locale: pt
+          name: Português
+          build: true
+
+        - locale: ru
+          name: Русский
+          build: true
+
+        - locale: id
+          name: Bahasa Indonesia
+          build: true
+
         - locale: ko
           name: 한국어
           build: true
-          nav_translations:
-            Home: 집
-            Resources: 자원
-            Extensions: 확장
-            About: 에 대한
-            Reference: 참조
-            Best Practices: 모범 사례
-            Examples: 예
-            Example GTFS Feed: GTFS 데이터세트 예시
-            Routes, stops, and trips: 경로, 정류장 및 여행
-            Continuous stops: 연속 정지
-            Text-to-speech: 텍스트 음성 변환
-            Frequencies: 주파수
-            Pathways: 통로
-            Transfers: 환승
-            Translations: 翻訳
-            Feed information: フィード情報
-            Dataset attributions: データセットの帰属
-            Data Examples: 데이터 예
-            Changes: 변경 사항
-            Validate: 확인
-            Specification Amendment Process: 사양 수정 프로세스
-            Feed Entities: 데이터 개체
-            Feed Examples: 데이터 예
-            Protobuf: 프로토콜 버퍼
-            Language Bindings: 언어 바인딩
-            Getting Started: 시작하기
-            Community: 지역 사회
-            Data: 데이터
-            Software for Creating APIs: API 생성용 소프트웨어
-            Agency Tools: 대행사 도구
-            Hardware: 하드웨어
-            Apps: 앱
-            SDKs: SDK
-            Visualizations: 시각화
-            SIRI: SIRI
-            Multimodal: 멀티모달
-            Other: 다른
+
+        - locale: zh
+          name: 中文 - 简体
+          build: true
+
+        - locale: zh-TW
+          name: 中文 - 繁體
+          build: true
+
 nav:
   - Home: index.md
-  - GTFS Schedule:
-    - Getting Started: schedule/index.md
-    - Reference: schedule/reference.md
-    - Best Practices: schedule/best-practices.md
-    - Examples:
-      - schedule/examples/index.md
-      - Example GTFS Feed: schedule/example-feed.md
-      - Routes, stops, and trips: schedule/examples/routes-stops-trips.md
-      - Continuous stops: schedule/examples/continuous-stops.md
-      - Text-to-speech: schedule/examples/text-to-speech.md
-      - Fares v1: schedule/examples/fares-v1.md
-      - Fares v2: schedule/examples/fares-v2.md
-      - Frequencies: schedule/examples/frequencies.md
-      - Pathways: schedule/examples/pathways.md
-      - Transfers: schedule/examples/transfers.md
-      - Translations: schedule/examples/translations.md
-      - Feed information: schedule/examples/feed-info.md
-      - Dataset attributions: schedule/examples/attributions.md
-    - Changes:
-      - schedule/changes/index.md
-      - Specification Amendment Process: schedule/process.md
-    - Validate: schedule/validate.md
-  - GTFS Realtime: 
-    - Getting Started: realtime/index.md
-    - Reference: realtime/reference.md
-    - Best Practices: realtime/best-practices.md
-    - Feed Entities:
-      - realtime/feed-entities/index.md
-      - Trip Updates: realtime/feed-entities/trip-updates.md
-      - Service Alerts: realtime/feed-entities/service-alerts.md
-      - Vehicle Positions: realtime/feed-entities/vehicle-positions.md
-    - Feed Examples:
-      - realtime/feed-examples/index.md
-      - Trip Updates: realtime/feed-examples/trip-updates.md
-      - Service Alerts: realtime/feed-examples/service-alerts.md
-    - Protobuf: realtime/proto.md
-    - Language Bindings: 
-      - realtime/language-bindings/index.md
-      - .NET: realtime/language-bindings/dotnet.md
-      - Java: realtime/language-bindings/java.md
-      - JavaScript/Node.js: realtime/language-bindings/nodejs.md
-      - Python: realtime/language-bindings/python.md
-      - Golang: realtime/language-bindings/golang.md
-      - Ruby: realtime/language-bindings/ruby.md
-      - PHP: realtime/language-bindings/php.md
-    - Changes:
-      - realtime/changes/index.md
-      - Specification Amendment Process: realtime/process.md
+  - Getting started:
+    - What is GTFS?: getting_started/what_is_GTFS.md
+    - Why use GTFS?: getting_started/why_use_GTFS.md
+    - How to produce GTFS?: 
+      - Create: getting_started/create.md
+      - Validate: getting_started/validate.md
+      - Publish: getting_started/publish.md
+    - What can GTFS do?:
+      - Overview: getting_started/features/overview.md
+      - Base: getting_started/features/base.md
+      - Base add-ons: getting_started/features/base_add-ons.md
+      - Accessibility: getting_started/features/accessibility.md
+      - Fares: getting_started/features/fares.md
+      - Pathways: getting_started/features/pathways.md
+      - Flexible services: getting_started/features/flexible_services.md
+    - Example GTFS feed: getting_started/example_feed.md
+  - Technical Documentation:
+    - Overview: documentation/overview.md
+    - Schedule:
+      - Reference: documentation/schedule/reference.md
+      - Best Practices: documentation/schedule/schedule_best_practices.md
+      - Data examples:
+        - Attributions: documentation/schedule/examples/attributions.md
+        - Continuous stops: documentation/schedule/examples/continuous-stops.md
+        - Demand responsive services: documentation/schedule/examples/flex.md
+        - Fares v1: documentation/schedule/examples/fares-v1.md
+        - Fares v2: documentation/schedule/examples/fares-v2.md
+        - Feed information: documentation/schedule/examples/feed-info.md
+        - Frequencies: documentation/schedule/examples/frequencies.md
+        - Pathways: documentation/schedule/examples/pathways.md
+        - Routes, Stops & Trips: documentation/schedule/examples/routes-stops-trips.md
+        - Text-to-speech: documentation/schedule/examples/text-to-speech.md
+        - Transfers: documentation/schedule/examples/transfers.md
+        - Translations: documentation/schedule/examples/translations.md
+      - Change history:
+        - Recent additions: documentation/schedule/change_history/recent_additions.md
+        - Full revision history: documentation/schedule/change_history/revision_history.md
+    - Realtime:
+      - Reference: documentation/realtime/reference.md
+      - Best Practices: documentation/realtime/realtime_best_practices.md
+      - Feed Entities: 
+          - Overview: documentation/realtime/feed_entities/overview.md
+          - Trip Updates: documentation/realtime/feed_entities/trip-updates.md
+          - Service Alerts: documentation/realtime/feed_entities/service-alerts.md
+          - Vehicle Positions: documentation/realtime/feed_entities/vehicle-positions.md
+          - Trip Modifications: documentation/realtime/feed_entities/trip-modifications.md
+      - Protobuf: documentation/realtime/proto.md
+      - Language Bindings:
+        - Overview: documentation/realtime/language-bindings/overview.md
+        - .NET: documentation/realtime/language-bindings/dotnet.md
+        - Java: documentation/realtime/language-bindings/java.md
+        - JavaScript/Node.js: documentation/realtime/language-bindings/nodejs.md
+        - Python: documentation/realtime/language-bindings/python.md
+        - Golang: documentation/realtime/language-bindings/golang.md
+        - Ruby: documentation/realtime/language-bindings/ruby.md
+        - PHP: documentation/realtime/language-bindings/php.md
+      - Data examples:
+        - Service alerts: documentation/realtime/examples/service-alerts.md
+        - Trip updates: documentation/realtime/examples/trip-updates.md
+        - Migration duplicated: documentation/realtime/examples/migration-duplicated.md
+      - Change history:
+        - Recent Additions: documentation/realtime/change_history/recent_additions.md
+        - Full revision history: documentation/realtime/change_history/revision_history.md
+  - Community:
+    - Get involved: community/get_involved.md
+    - Governance:
+      - GTFS Schedule Amendment Process: community/governance/gtfs_schedule_amendment_process.md
+      - GTFS Realtime Amendment Process: community/governance/gtfs_realtime_amendment_process.md
+    - Extensions:
+      - Overview: community/extensions/overview.md
+      - Fares v2: community/extensions/fares-v2.md
+      - Flex: community/extensions/flex.md
   - Resources:
-    - resources/index.md
+    - Overview: resources/overview.md
     - Getting Started: resources/getting-started.md
     - Community: resources/community.md
     - Data: resources/data.md
@@ -604,8 +398,7 @@ nav:
     - SIRI: resources/siri.md
     - Multimodal: resources/multimodal.md
     - Other: resources/other.md
-  - Extensions:
-    - extensions/index.md
-    - Fares v2: extensions/fares-v2.md
-    - Flex: extensions/flex.md
-  - About: about.md
+  - About:
+      - about/index.md
+  - Blog:
+      - blog/index.md
