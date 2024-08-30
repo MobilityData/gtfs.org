@@ -86,12 +86,12 @@ extra:
       - name: Español
         link: /es/
         lang: es
+      - name: 日本語
+        link: /ja/
+        lang: ja
       - name: Deutsch (wird bald verfügbar sein)
         link: /de/
         lang: de
-      - name: 日本語 (今後追加予定)
-        link: /ja/
-        lang: ja
       - name: Português (em breve)
         link: /pt/
         lang: pt

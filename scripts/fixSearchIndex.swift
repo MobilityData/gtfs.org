@@ -47,7 +47,7 @@ var newSearchIndex : SearchIndex = searchIndex
 var searchIndexDocs : [SearchIndexDocs] = [SearchIndexDocs]()
 
 /// An array of prefixes used to filter documents based on their location. Any prefix not in this array will be removed.
-let prefixes : [String] = ["en/", "es/", "fr/"] // Other options: "ja/", "id/", "de/", "pt/", "ru/", "ko/", "zh/", "zh-TW/"
+let prefixes : [String] = ["en/", "es/", "fr/", "ja/"] // Other options: "ja/", "id/", "de/", "pt/", "ru/", "ko/", "zh/", "zh-TW/"
 
 /// Iterates over each document in the search index and filters out any document whose location starts with any of the specified prefixes.
 for doc : SearchIndexDocs in newSearchIndex.docs { if prefixes.allSatisfy({ !doc.location.starts(with: $0) }) { searchIndexDocs.append(doc) } }
