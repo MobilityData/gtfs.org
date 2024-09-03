@@ -1,0 +1,77 @@
+# -----------------------------------------------------------------------------
+# Configuration
+# -----------------------------------------------------------------------------
+
+# Meta tags
+tags:
+
+  # Open Graph
+  og:type: website
+  og:title: page_title_with_site_name
+  og:description: page_description
+  og:image: "{{ image.url }}"
+  og:image:type: "{{ image.type }}"
+  og:image:width: "{{ image.width }}"
+  og:image:height: "{{ image.height }}"
+  og:url: "{{ page.canonical_url }}"
+
+  # Twitter
+  twitter:card: summary_large_image
+  twitter:title: page_title_with_site_name
+  twitter:description: page_description
+  twitter:image: "{{ image.url }}"
+
+# -----------------------------------------------------------------------------
+# Specification
+# -----------------------------------------------------------------------------
+
+# Card size and layers
+size: { width: 1200, height: 630 }
+layers:
+
+  # Background
+  - background:
+      image: layouts/hero.jpg
+      color: "#0000008f"
+
+  # Logo
+  - size: { width: 64, height: 64 }
+    offset: { x: 64, y: 64 }
+    icon:
+      value: bootstrap/gtfs_logo_yellow
+
+  # Site name
+  - size: { width: 350, height: 125 }
+    offset: { x: 155, y: 55 }
+    typography:
+      content: General Transit Feed Specification
+      color: "#FFFFFF"
+      overflow: shrink
+      font:
+        style: Bold
+
+  # Page title
+  - size: { width: 1072, height: 215 }
+    offset: { x: 64, y: 220 }
+    typography:
+      content: "{{ page.title }}"
+      align: start top
+      color: "#FFFFFF"
+      line:
+        amount: 3
+        height: 1.25
+      font:
+        style: Bold
+
+  # Page description
+  - size: { width: 1072, height: 135 }
+    offset: { x: 64, y: 495 }
+    typography:
+      content: GTFS is a community-driven open standard for rider-facing transit information.
+      align: start
+      color: "#FFFF00"
+      line:
+        amount: 3
+        height: 1.25
+      font:
+        style: Regular
