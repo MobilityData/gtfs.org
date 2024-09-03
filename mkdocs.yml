@@ -148,6 +148,12 @@ plugins:
         - en
         - es
         - fr
+  - social:
+      cards_layout_dir: layouts/
+      cards_layout: custom
+      cards_layout_options:
+        font_family: Mulish
+      # debug: true
   - i18n:
       docs_structure: folder
       reconfigure_search: false
