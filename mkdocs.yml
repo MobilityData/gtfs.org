@@ -14,6 +14,9 @@ validation:
     absolute_links: ignore
     unrecognized_links: ignore
 
+watch:
+  - layouts
+
 theme:
   locale: en
   custom_dir: overrides/
