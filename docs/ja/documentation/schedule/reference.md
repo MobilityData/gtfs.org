@@ -78,7 +78,7 @@
 - **日付** - YYYYMMDD 形式のサービス日。サービス日内の時刻は 24:00:00 を超える場合があるため、サービス日には後続の日の情報が含まれることがあります。<br>*例: 2018 年 9 月 13 日の場合は`20180913`。*
 - **電子メール** - 電子メール アドレス。<br>*例: `example@example.com`*
 - **Enum** - `説明`列で定義された定義済み定数のセットからのオプション。<br>*例: `route_type`フィールドには、路面電車の場合は `0`、地下鉄の場合は`1` が含まれます...*
-- **ID** - IDフィールドの値は内部IDであり、乗客に表示されるものではなく、UTF-8 文字のシーケンスです。印刷可能な ASCII 文字のみを使用することをお勧めします。ファイル内で一意である必要がある ID には、`一意のID`というラベルが付けられます。1つの.txtファイルで定義されたIDは、別の.txtファイルで参照されることがよくあります。別のテーブルのIDを参照する ID には、`外部ID `というラベルが付けられます。<br>*例: [stops.txt](#stopstxt) の`stop_id`フィールドは`一意のID `です。[stops.txt](#stopstxt) の`parent_station`フィールドは` `stops.stop_id`を参照する外部ID `です。*
+- **ID** - IDフィールドの値は内部IDであり、乗客に表示されるものではなく、UTF-8 文字のシーケンスです。印刷可能な ASCII 文字のみを使用することをお勧めします。ファイル内で一意である必要がある ID には、`一意のID`というラベルが付けられます。1つの.txtファイルで定義されたIDは、別の.txtファイルで参照されることがよくあります。別のテーブルのIDを参照する ID には、`外部ID `というラベルが付けられます。<br>*例: [stops.txt](#stopstxt) の`stop_id`フィールドは`一意のID `です。[stops.txt](#stopstxt) の`parent_station`フィールドは`stops.stop_id`を参照する外部ID `です。*
 - **言語コード** - IETF BCP 47 言語コード。IETF BCP 47 の概要については、[http://www.rfc-editor.org/rfc/bcp/bcp47.txt](http://www.rfc-editor.org/rfc/bcp/bcp47 .txt) および [http://www.w3.org/International/articles/language-tags/](http://www.w3.org/International/articles/language-tags/) を参照してください。<br>*例: 英語の場合は`en`、アメリカ英語の場合は`en-US`、ドイツ語の場合は `de`。*
 - **緯度** - 10 進度での WGS84 緯度。値は -90.0 以上 90.0 以下である必要があります。 <br>例: ローマのコロッセオの場合は `41.890169`。
 - **経度** - 10 進度での WGS84 経度。値は -180.0 以上 180.0 以下である必要があります。<br>例: ローマのコロッセオの場合は `12.492269`。
@@ -100,7 +100,7 @@ Float または Integer フィールド タイプに適用される記号:
 例: **非負float** - 0 以上の浮動小数点数。_
 
 ### データセット属性
-データセットの **主キー** は、行を一意に識別するフィールドまたはフィールドの組み合わせです。`Primary key (*)` は、ファイルに提供されたすべてのフィールドを使用して行を一意に識別するときに使用されます。 `Primary key (none)` は、ファイルで 1 行のみが許可されることを意味します。
+データセットの **主キー** は、行を一意に識別するフィールドまたはフィールドの組み合わせです。`主キー (*)` は、ファイルに提供されたすべてのフィールドを使用して行を一意に識別するときに使用されます。 `主キー (none)` は、ファイルで 1 行のみが許可されることを意味します。
 
 例: `trip_id` フィールドと `stop_sequence` フィールドは [stop_times.txt](#stop_timestxt) の主キーになります。_
 
@@ -182,8 +182,8 @@ Float または Integer フィールド タイプに適用される記号:
 主キー(`agency_id`)
 
 | フィールド名 | タイプ | 存在 | 説明 |
-|------|------|------|------|------|
-| `agency_id` | ユニークID | **条件付きで必須** | 多くの場合、交通機関と同義である交通ブランドを識別します。 1つの機関が複数の個別のサービスを運営している場合など、機関とブランドは異なる場合があることに注意してください。 このドキュメントでは、「ブランド」の代わりに「機関」という用語を使用します。 データセットには、複数の機関のデータが含まれる場合があります。<br><br>条件付きで必須:<br>- データセットに複数の交通機関のデータが含まれている場合は**必須**です。<br>- それ以外の場合は推奨。 |
+|------|------|------|------|
+| `agency_id` | ユニークID | **条件付きで必須** | 多くの場合、交通機関と同義である交通ブランドを識別します。1つの機関が複数の個別のサービスを運営している場合など、機関とブランドは異なる場合があることに注意してください。 このドキュメントでは、「ブランド」の代わりに「機関」という用語を使用します。 データセットには、複数の機関のデータが含まれる場合があります。<br><br>条件付きで必須:<br>- データセットに複数の交通機関のデータが含まれている場合は**必須**です。<br>- それ以外の場合は推奨。 |
 | `agency_name` | Text | **必須** | 交通機関の正式名称。 |
 | `agency_url` | URL | **必須** | 交通機関の URL。 |
 | `agency_timezone` | タイムゾーン | **必須** | 交通機関が所在するタイムゾーン。データセットで複数の機関が指定されている場合、それぞれに同じ`agency_timezone`が必要です。 |
@@ -250,7 +250,7 @@ Float または Integer フィールド タイプに適用される記号:
 | `route_id` | `routes.route_id`部ID | **必須** | ルートを識別します。 |
 | `service_id` | `calendar.service_id`または`calendar_dates.service_id`部ID | **必須** | 1つ以上のルートでサービスが利用可能な日付のセットを識別します。 |
 | `trip_id` | ユニークID | **必須** | 旅行を識別します。 |
-| `trip_headsign` | Text | 任意 | 乗客に旅行の目的地を示す標識に表示されるText。このフィールドは、ルート内の旅行を区別するために使用できる、車両にヘッドサイン テキストが表示されるすべてのサービスに推奨されます。<br><br>旅行中にヘッドサインが変わる場合、旅行中の特定の`stop_time`の ` `stop_times.stop_headsign`の値を定義することで、`trip_headsign`の値を上書きできます。 |
+| `trip_headsign` | Text | 任意 | 乗客に旅行の目的地を示す標識に表示されるText。このフィールドは、ルート内の旅行を区別するために使用できる、車両にヘッドサイン テキストが表示されるすべてのサービスに推奨されます。<br><br>旅行中にヘッドサインが変わる場合、旅行中の特定の`stop_time`の `stop_times.stop_headsign`の値を定義することで、`trip_headsign`の値を上書きできます。 |
 | `trip_short_name` | Text | 任意 | 通勤電車の列車番号を識別するなど、乗客に旅行を識別するために使用される一般向けのテキスト。乗客が旅行名をあまり使用しない場合は、`trip_short_name` `trip_short_name`を空にする必要があります。`trip_short_name` 値を指定する場合、サービス日内の旅行を一意に識別する必要があります。目的地名や特急/急行の指定には使用しないでください。 |
 | `direction_id` | 列挙型 | 任意 | 旅行の移動方向を示します。このフィールドはルーティングには使用しないでください。時刻表を公開するときに方向別に旅行を分ける方法を提供します。有効なオプションは次のとおりです。<br><br>`0` - 一方向への移動（例：往路）。<br>`1` - 反対方向に移動します（例：入線）。<hr> *例: `trip_headsign`と`direction_id`フィールドを一緒に使用して、一連の旅行の各方向への旅行に名前を割り当てることができます。[trips.txt](#tripstxt) ファイルには、時刻表で使用するために次のレコードを含めることができます。*<br>`trip_id,...,旅行の見出し,方向ID`<br>`1234,...,空港,0`<br>`1505,...,Downtown,1` |
 | `block_id` | ID | 任意 | 旅行が属するブロックを識別します。ブロックは、共有のサービス日と`block_id`によって定義される、同じ車両を使用して行われる単一の旅行または複数の連続した旅行で構成されます。`block_id`には、異なるサービス日の旅行が含まれる場合があり、個別のブロックが作成されます。[以下の例](#example-blocks-and-service-day)を参照してください。座席内乗り換え情報を提供するには、代わりに`transfer_type` `4` の [transfers](#transferstxt) を指定する必要があります。 |
@@ -284,7 +284,7 @@ Float または Integer フィールド タイプに適用される記号:
 | フィールド名 |タイプ | 存在 | 説明 |
 |------|------|------|------|
 | `trip_id` | `trips.trip_id`部ID | **必須** | 旅行を識別します。 |
-| `arrival_time` | 時間 | **条件付きで必須** | `stops.stop_timezone`ではなく`agency.agency_timezone`ム` ゾーンでの、特定の旅行 (`stop_times.stop_id`で定義) の停留所 (`stop_times.trip_id` stop_times.stop_id` で定義) への到着時刻。<br><br>停留所での到着時間と出発時間が別々でない場合は、`arrival_time`と`departure_time` は同じである必要があります。<br><br>サービス日の深夜以降の時間については、HH:MM:SS 形式で 24:00:00 より大きい値を入力します。<br><br>正確な到着時刻と出発時刻 (`timepoint=1`) が利用できない場合は、推定または補間された到着時刻と出発時刻 (`timepoint=0`) を指定する必要があります。<br><br>条件付きで必須:<br>- **旅行の最初と最後の停車地に必須** (`stop_times.stop_sequence`で定義)。<br>- ** `timepoint=1` の場合は必須** です。<br>- `start_pickup_drop_off_window`または`end_pickup_drop_off_window`が定義されている場合は**禁止**です。<br>- それ以外の場合は任意。|
+| `arrival_time` | 時間 | **条件付きで必須** | `stops.stop_timezone`ではなく`agency.agency_timezone`ム` ゾーンでの、特定の旅行 (`stop_times.stop_id`で定義) の停留所 (`stop_times.trip_id` stop_times.stop_id` で定義) への到着時刻。<br><br>停留所での到着時間と出発時間が別々でない場合は、`arrival_time`と`departure_time` は同じである必要があります。<br><br>サービス日の深夜以降の時間については、HH:MM:SS 形式で 24:00:00 より大きい値を入力します。<br><br>正確な到着時刻と出発時刻 (`timepoint=1`) が利用できない場合は、推定または補間された到着時刻と出発時刻 (`timepoint=0`) を指定する必要があります。<br><br>条件付きで必須:<br>- **旅行の最初と最後の停車地に必須** (`stop_times.stop_sequence`で定義)。<br>- **`timepoint=1`の場合は必須** です。<br>- `start_pickup_drop_off_window`または`end_pickup_drop_off_window`が定義されている場合は**禁止**です。<br>- それ以外の場合は任意。|
 | `departure_time` | 時間 | **条件付きで必須** | `stops.stop_timezone`ではなく`agency.agency_timezone`で指定されたタイムゾーンでの、特定の旅行 (`stop_times.trip_id`で定義) からの出発時刻。<br><br>停留所での到着時間と出発時間が別々でない場合は、`arrival_time`と`departure_time` は同じである必要があります。<br><br>サービス日の深夜以降の時間については、HH:MM:SS 形式で 24:00:00 より大きい値を入力します。<br><br>正確な到着時刻と出発時刻 (`timepoint=1`) が利用できない場合は、推定または補間された到着時刻と出発時刻 (`timepoint=0`) を指定する必要があります。<br><br>条件付きで必須:<br>- ** `timepoint=1` の場合は必須** です。<br>- `start_pickup_drop_off_window`または`end_pickup_drop_off_window`が定義されている場合は**禁止**です。<br>- それ以外の場合は任意。 |
 | `stop_id` | `stops.stop_id`部ID | **条件付きで必須** | サービス対象の停留所を識別します。旅行中にサービスされるすべての停留所は、[stop_times.txt](#stop_timestxt) に記録されている必要があります。参照される場所は停留所/プラットフォームである必要があります。つまり、`stops.location_type`値は `0` または空である必要があります。同じ旅行で停留所が複数回サービスされる場合があり、複数の旅行とルートが同じ停留所にサービスを提供する場合があります。<br><br>停留所を使用するオンデマンド サービスは、それらの停留所でサービスが利用できる順序で参照する必要があります。データ コンシューマーは、各 stop_time の`pickup/drop_off_type`と各`start/end_pickup_drop_off_window`の時間制約によって禁止されていない限り、ある停留所または場所から旅行中の後の任意の停留所または場所への移動が可能であると想定する必要があります。<br><br>条件付きで必須:<br>- **必須** `stop_times.location_group_id`と`stop_times.location_id`が定義されていない場合。<br>- `stop_times.location_group_id`または`stop_times.location_id`が定義されている場合は**禁止**です。|
 | `location_group_id` | `location_groups.location_group_id`部 ID | **条件付きで禁止** | 乗客が乗車または降車をリクエストできる停留所のグループを示すサービス対象の場所グループを識別します。旅行中にサービスされるすべての場所グループは、[stop_times.txt](#stop_timestxt) に記録されている必要があります。複数の旅行とルートが同じ場所グループにサービスを提供できます。<br><br>ロケーション グループを使用するオンデマンド サービスは、それらのロケーション グループでサービスが利用可能な順序で参照する必要があります。データ コンシューマーは、各 stop_time の`pickup/drop_off_type`と各`start/end_pickup_drop_off_window`の時間制約によって禁止されていない限り、ある停留所または場所から旅行中の後の任意の停留所または場所への移動が可能であると想定する必要があります。<br><br>**条件付きで禁止**:<br>- `stop_times.stop_id`または`stop_times.location_id`が定義されている場合は**禁止**です。|
@@ -313,7 +313,7 @@ Float または Integer フィールド タイプに適用される記号:
 主キー(`service_id`)
 
 | フィールド名 | タイプ | 存在 | 説明 |
-|------|------|------|------|------|
+|------|------|------|------|
 | `service_id` | ユニークID | **必須** | 1つ以上のルートでサービスが利用可能な日付のセットを識別します。 |
 | `monday` | 列挙型 | **必須** | `start_date`フィールドと`end_date`フィールドで指定されたdate範囲のすべての月曜日にサービスが実行されるかどうかを示します。特定の日付の例外は [calendar_dates.txt](#calendar_datestxt) にリストされていることに注意してください。有効なオプションは次のとおりです。<br><br>`1` - サービスはdate範囲内のすべての月曜日に利用できます。<br>`0` -date範囲内の月曜日にはサービスは利用できません。 |
 | `tuesday` | 列挙型 | **必須** | 火曜日に適用される点を除き、`monday`と同じように機能します |
@@ -333,7 +333,7 @@ Float または Integer フィールド タイプに適用される記号:
 
 [calendar_dates.txt](#calendar_datestxt) テーブルは、dateによってサービスを明示的に有効または無効にします。2つの方法で使用できます。
 
-*推奨: [calendar_dates.txt](#calendar_datestxt) を [calendar.txt](#calendartxt) と組み合わせて使用​​し、[calendar.txt](#calendartxt) で定義されているデフォルトのサービス パターンの例外を定義します。サービスが通常定期的で、明示的な日付にいくつかの変更がある場合 (たとえば、特別なイベント サービスや学校のスケジュールに対応するため)、これは適切なアプローチです。この場合、`calendar_dates.service_id`は`calendar.service_id`を参照する外部IDです。
+* 推奨: [calendar_dates.txt](#calendar_datestxt) を [calendar.txt](#calendartxt) と組み合わせて使用​​し、[calendar.txt](#calendartxt) で定義されているデフォルトのサービス パターンの例外を定義します。サービスが通常定期的で、明示的な日付にいくつかの変更がある場合 (たとえば、特別なイベント サービスや学校のスケジュールに対応するため)、これは適切なアプローチです。この場合、`calendar_dates.service_id`は`calendar.service_id`を参照する外部IDです。
 * 代替: [calendar.txt](#calendartxt) を省略し、[calendar_dates.txt](#calendar_datestxt) で各サービスのdateを指定します。これにより、かなりのサービスバリエーションが可能になり、通常の週次スケジュールのないサービスに対応できます。この場合、`service_id`はIDです。
 
 | フィールド名 | タイプ | 存在 | 説明 |
@@ -378,7 +378,7 @@ ataset ですが、特定のデータセットに対してデータ コンシュ
 [fare_rules.txt](#fare_rulestxt) および [fare_attributes.txt](#fare_attributestxt) を使用して運賃体系を指定する方法を示す例については、GoogleTransitDataFeed オープンソース プロジェクト wiki の [FareExamples](https://web.archive.org/web/20111207224351/https://code.google.com/p/googletransitdatafeed/wiki/FareExamples) をご覧ください。
 
 | フィールド名 | タイプ | 存在 | 説明 |
-|------|------|------|------|------|
+|------|------|------|------|
 | `fare_id` | `fare_attributes.fare_id`部ID | **必須** | 運賃クラスを識別します。 |
 | `route_id` | `routes.route_id`部ID | 任意 | 運賃クラスに関連付けられたルートを識別します。同じ運賃属性を持つルートが複数存在する場合は、ルートごとに [fare_rules.txt](#fare_rulestxt) にレコードを作成します。<hr> *例: 運賃クラス`b`がルート`TSW`と`TSE`で有効な場合、[fare_rules.txt](#fare_rulestxt) ファイルには運賃クラスに関する次のレコードが含まれます。*<br>運賃ID、`route_id`<br>`b,TSW`<br>`b,TSE`|
 | `origin_id` | `stops.zone_id`部ID | 任意 | 出発地ゾーンを識別します。運賃クラスに複数の出発地ゾーンがある場合は、[fare_rules.txt](#fare_rulestxt) に各`origin_id`のレコードを作成します。<hr>例: 運賃クラス`b`がゾーン`2`またはゾーン`8`から出発するすべての旅行に有効な場合、[fare_rules.txt](#fare_rulestxt) ファイルには運賃クラスに関する次のレコードが含まれます。<br>`運賃ID,...,原産地ID`<br>`b,...,2`<br>`b,...,8` |
@@ -449,38 +449,27 @@ ataset ですが、特定のデータセットに対してデータ コンシュ
 
 区間のコストを処理するには:
 
- 1.ファイル [fare_leg_rules.txt](#fare_leg_rulestxt) は、旅行の特性を定義するフィールドでフィルタリングする必要があります。これらのフィールドは次のとおりです:
+ 1. ファイル [fare_leg_rules.txt](#fare_leg_rulestxt) は、旅行の特性を定義するフィールドでフィルタリングする必要があります。これらのフィールドは次のとおりです:
     - `fare_leg_rules.network_id` 
     - `fare_leg_rules.from_area_id` 
     - `fare_leg_rules.to_area_id` 
     - `fare_leg_rules.from_timeframe_group_id` 
     - `fare_leg_rules.to_timeframe_group_id` 
-<br/> 
-
- 2.旅行の特性に基づいて、区間が [fare_leg_rules.txt](#fare_leg_rulestxt) のレコードと完全に一致する場合、そのレコードを処理して区間のコストを決定する必要があります。このファイルは、空のエントリを 2つの方法で処理します: 空のセマンティクスまたはルールの優先順位。
-<br/> 
-
- 3.完全一致が見つからず、`rule_priority` フィールドが存在しない場合は、`fare_leg_rules.network_id`、`fare_leg_rules.from_area_id`、および`fare_leg_rules.to_area_id`の空のエントリをチェックして、区間のコストを処理する必要があります。
+ 2. 旅行の特性に基づいて、区間が [fare_leg_rules.txt](#fare_leg_rulestxt) のレコードと完全に一致する場合、そのレコードを処理して区間のコストを決定する必要があります。このファイルは、空のエントリを 2つの方法で処理します: 空のセマンティクスまたはルールの優先順位。
+ 3. 完全一致が見つからず、`rule_priority` フィールドが存在しない場合は、`fare_leg_rules.network_id`、`fare_leg_rules.from_area_id`、および`fare_leg_rules.to_area_id`の空のエントリをチェックして、区間のコストを処理する必要があります。
     - `fare_leg_rules.network_id`の空のエントリは、[routes.txt](#routestxt) または [networks.txt](#networkstxt) で定義されているすべてのネットワークに対応しますが、`fare_leg_rules.network_id`の下にリストされているネットワークは除きます。
-
     - `fare_leg_rules.from_area_id`の空のエントリは、`areas.area_id`で定義されているすべてのエリアに対応しますが、`fare_leg_rules.from_area_id`の下にリストされているエリアは除きます。
     - 空の`fare_leg_rules.to_area_id`のエントリは、`fare_leg_rules.to_area_id`の下にリストされているものを除いて、`areas.area_id`で定義されているすべてのエリアに対応します 
-<br/> 
-
  4. `rule_priority` フィールドが存在する場合、
     - `fare_leg_rules.network_id`のエントリが空の場合、区間のネットワークはこのルールのマッチングには影響しません。
     - `fare_leg_rules.from_area_id`のエントリが空の場合、区間の出発エリアはこのルールのマッチングには影響しません。
-    - `fare_leg_rules.to_area_id`のエントリが空の場合、区間の到着エリアはこのルールのマッチングには影響しません。
-<br/> 
-      
- 5.区間が上記の規則のいずれにも一致しない場合は、運賃は不明です。
-
-<br/> 
+    - `fare_leg_rules.to_area_id`のエントリが空の場合、区間の到着エリアはこのルールのマッチングには影響しません。  
+ 5. 区間が上記の規則のいずれにも一致しない場合は、運賃は不明です。
 
 | フィールド名 | タイプ | 存在 | 説明 |
-|------|------|------|------|------|
+|------|------|------|------|
 | `leg_group_id` | ID | 任意 | [fare_leg_rules.txt](#fare_leg_rulestxt) 内のエントリのグループを識別します。<br><br>`fare_transfer_rules.from_leg_group_id`と`fare_transfer_rules.to_leg_group_id`間の運賃振替ルールを記述するために使用されます。<br><br>[fare_leg_rules.txt](#fare_leg_rulestxt) 内の複数のエントリが同じ`fare_leg_rules.leg_group_id`に属している場合があります。<br><br>[fare_leg_rules.txt](#fare_leg_rulestxt) 内の同じエントリ (`fare_leg_rules.leg_group_id`は含まない) は、複数の`fare_leg_rules.leg_group_id`に属してはなりません。|
-| `network_id` | ` `routes.network_id`または`networks.network_id`部ID | 任意 | 運賃区間ルールに適用されるルート ネットワークを識別します。<br><br>`rule_priority` フィールドが存在せず、フィルタリングされている`network_id`に一致する`fare_leg_rules.network_id`値がない場合、デフォルトで空の`fare_leg_rules.network_id`が一致します。<br><br>`fare_leg_rules.network_id`の空のエントリは、[routes.txt](#routestxt) または [networks.txt](#networkstxt) で定義されているすべてのネットワークに対応しますが、`fare_leg_rules.network_id`の下にリストされているネットワークは除きます。<br><br>ファイルに `rule_priority` フィールドが存在する場合、空の`fare_leg_rules.network_id`は、区間のルート ネットワークがこのルールのマッチングに影響しないことを示します。 |
+| `network_id` | `routes.network_id`または`networks.network_id`部ID | 任意 | 運賃区間ルールに適用されるルート ネットワークを識別します。<br><br>`rule_priority` フィールドが存在せず、フィルタリングされている`network_id`に一致する`fare_leg_rules.network_id`値がない場合、デフォルトで空の`fare_leg_rules.network_id`が一致します。<br><br>`fare_leg_rules.network_id`の空のエントリは、[routes.txt](#routestxt) または [networks.txt](#networkstxt) で定義されているすべてのネットワークに対応しますが、`fare_leg_rules.network_id`の下にリストされているネットワークは除きます。<br><br>ファイルに `rule_priority` フィールドが存在する場合、空の`fare_leg_rules.network_id`は、区間のルート ネットワークがこのルールのマッチングに影響しないことを示します。 |
 | `from_area_id` | `areas.area_id`部ID | 任意 | 出発エリアを識別します。<br><br>`rule_priority` フィールドが存在せず、フィルタリングされている`area_id`に一致する`fare_leg_rules.from_area_id`値がない場合、デフォルトで空の`fare_leg_rules.from_area_id`が一致します。<br><br>`fare_leg_rules.from_area_id`の空のエントリは、`fare_leg_rules.from_area_id`の下にリストされているものを除く、`areas.area_id`で定義されているすべてのエリアに対応します。<br><br>ファイルに `rule_priority` フィールドが存在する場合、空の`fare_leg_rules.from_area_id`は、区間の出発エリアがこのルールのマッチングに影響しないことを示します。 |
 | `to_area_id` | `areas.area_id`部ID | 任意 | 到着エリアを識別します。<br><br>`rule_priority` フィールドが存在せず、フィルタリングされている`area_id`に一致する`fare_leg_rules.to_area_id`値がない場合、デフォルトで空の`fare_leg_rules.to_area_id`が一致します。<br><br>`fare_leg_rules.to_area_id`の空のエントリは、`fare_leg_rules.to_area_id`の下にリストされているものを除く、`areas.area_id`で定義されているすべてのエリアに対応します。<br><br>ファイルに `rule_priority` フィールドが存在する場合、空の`fare_leg_rules.to_area_id`は、区間の到着エリアがこのルールのマッチングに影響しないことを示します。 |
 | `from_timeframe_group_id` | `timeframes.timeframe_group_id`部ID | 任意 | 運賃区間の開始時に運賃検証イベントのタイムフレームを定義します。<br><br>運賃区間の`開始時間`は、イベントの発生が予定されている時間です。たとえば、乗客が乗車して運賃を確認する運賃区間の開始時のバスの予定出発時刻がその時間になります。以下のルール マッチング セマンティクスでは、開始時間は [timeframes.txt](#timeframestxt) の [ローカル時間セマンティクス](#timeframe-local-time-semantics) によって決定されるローカル時間で計算されます。運賃区間の出発イベントの停留所または駅は、必要に応じてタイムゾーン解決に使用する必要があります。<br><br>`from_timeframe_group_id`を指定する運賃区間ルールの場合、[timeframes.txt](#timeframestxt) に以下の条件がすべて満たされるレコードが少なくとも 1つ存在する場合、そのルールは特定の区間と一致します。<br>- `timeframe_group_id`の値は`from_timeframe_group_id`の値と同じです。<br>- レコードの`service_id`によって識別される日のセットには、運賃区間の開始時刻の`現在の日`が含まれます。<br>- 運賃区間の開始時間の`時刻`は、レコードの`timeframes.start_time`値以上であり、`timeframes.end_time`値未満です。<br><br>空の`fare_leg_rules.from_timeframe_group_id`は、区間の開始時刻がこのルールの一致に影響しないことを示します。 |
@@ -500,15 +489,12 @@ ataset ですが、特定のデータセットに対してデータ コンシュ
 
  1. `fare_leg_rules.txt`で定義された適用可能な運賃区間グループは、乗客の旅程に基づいて、すべての個々の旅行区間に対して決定する必要があります2.ファイル [fare_transfer_rules.txt](#fare_transfer_rulestxt) は、乗り換えの特性を定義するフィールドでフィルタリングする必要があります。これらのフィールドは次のとおりです:
     - `fare_transfer_rules.from_leg_group_id` 
-    - `fare_transfer_rules.to_leg_group_id`<br/> 
-   <br/> 
-
- 3.乗り換えの特性に基づいて、乗り換えが [fare_transfer_rules.txt](#fare_transfer_rulestxt) のレコードと完全に一致する場合、そのレコードを処理して乗り換えコストを決定する必要があります。
- 4.完全に一致するものが見つからない場合は、乗り換えコストを処理するために、`from_leg_group_id`または`to_leg_group_id`の空のエントリを確認する必要があります。
+    - `fare_transfer_rules.to_leg_group_id`
+ 3. 乗り換えの特性に基づいて、乗り換えが [fare_transfer_rules.txt](#fare_transfer_rulestxt) のレコードと完全に一致する場合、そのレコードを処理して乗り換えコストを決定する必要があります。
+ 4. 完全に一致するものが見つからない場合は、乗り換えコストを処理するために、`from_leg_group_id`または`to_leg_group_id`の空のエントリを確認する必要があります。
     - `fare_transfer_rules.from_leg_group_id`の空のエントリは、`fare_leg_rules.leg_group_id`で定義されているすべての区間グループに対応しますが、`fare_transfer_rules.from_leg_group_id`にリストされているものを除きます。
-    - `fare_transfer_rules.to_leg_group_id`の空のエントリは、`fare_leg_rules.leg_group_id` で定義されているすべての区間グループに対応しますが、`fare_leg_rules.leg_group_id`にリストされているものを除きます。 `fare_transfer_rules.to_leg_group_id`<br/> 
-   <br/> 
- 5.移籍が上記のいずれの規則にも該当しない場合は、移籍の取り決めはなく、各レグは別個のものとみなされます。
+    - `fare_transfer_rules.to_leg_group_id`の空のエントリは、`fare_leg_rules.leg_group_id` で定義されているすべての区間グループに対応しますが、`fare_leg_rules.leg_group_id`にリストされているものを除きます。 `fare_transfer_rules.to_leg_group_id`
+ 5. 移籍が上記のいずれの規則にも該当しない場合は、移籍の取り決めはなく、各レグは別個のものとみなされます。
 
 <br/> 
 
@@ -545,7 +531,7 @@ ataset ですが、特定のデータセットに対してデータ コンシュ
 [stops.txt](#stopstxt) からエリアに停留所を割り当てます。
 
 | フィールド名 | タイプ | 存在 | 説明 |
-|------|------|------|------|------|
+|------|------|------|------|
 | `area_id` | `areas.area_id`部ID | **必須** | 1つまたは複数の`stop_id`が属するエリアを識別します。同じ`stop_id` が複数の`area_id`で定義される場合があります。 |
 | `stop_id` | `stops.stop_id`部ID | **必須** | 停留所を識別します。このフィールドで駅（つまり、`stops.location_type=1`の停留所）が定義されている場合、そのすべてのプラットフォーム（つまり、この駅が `stops.parent_station` `stops.location_type=0`のすべての停留所）は同じエリアの一部であると見なされます。この動作は、プラットフォームを他のエリアに割り当てることで上書きできます。 |
 
@@ -571,7 +557,7 @@ ataset ですが、特定のデータセットに対してデータ コンシュ
 [routes.txt](#routestxt) からのルートをネットワークに割り当てます。
 
 | フィールド名 | タイプ | 存在 | 説明 |
-|------|------|------|------|------|
+|------|------|------|------|
 | `network_id` | `networks.network_id`部ID | **必須** | 1つまたは複数の`route_id`が属するネットワークを識別します。`route_id` は、1つの`network_id`でのみ定義できます。|
 | `route_id` | `routes.route_id`部ID | **必須** | ルートを識別します。 |
 
@@ -581,7 +567,7 @@ ataset ですが、特定のデータセットに対してデータ コンシュ
 
 主キー(`shape_id`、`shape_pt_sequence`)
 
-ルート形状は、車両がルート線形に沿って移動するパスを説明し、ファイルshapes.txtで定義されます。ルート形状は便に関連付けられ、車両が順番に通過する一連のポイントで構成されます。ルート形状は停留所等の位置を正確にインターセプトする必要はありませんが、トリップのすべての停留所等は、そのトリップのシェイプからわずかな距離内、つまりシェイプポイントを接続する直線セグメントの近くに配置する必要があります。 shapes.txtファイルは、すべてのルートベースのサービス (ゾーンベースのデマンドレスポンシブサービスではありません) に含める必要があります。
+ルート形状は、車両がルート線形に沿って移動するパスを説明し、ファイル`shapes.txt`で定義されます。ルート形状は便に関連付けられ、車両が順番に通過する一連のポイントで構成されます。ルート形状は停留所等の位置を正確にインターセプトする必要はありませんが、トリップのすべての停留所等は、そのトリップのシェイプからわずかな距離内、つまりシェイプポイントを接続する直線セグメントの近くに配置する必要があります。 `shapes.txt`ファイルは、すべてのルートベースのサービス (ゾーンベースのデマンドレスポンシブサービスではありません) に含める必要があります。
 
 | フィールド名 | タイプ | 存在 | 説明 |
 |------|------|------|------|
@@ -600,7 +586,7 @@ ataset ですが、特定のデータセットに対してデータ コンシュ
 [Frequencies.txt](#frequenciestxt)は、一定のヘッドウェイ (旅行間の時間) で動作する旅行を表します。このファイルは、2つの異なるタイプのサービスを表すために使用できます。
 
 * 頻度ベースのサービス (`exact_times`=`0`)。このサービスでは、サービスは 1 日を通して固定のスケジュールに従いません。代わりに、オペレーターは旅行に対して事前に決定されたヘッドウェイを厳密に維持しようとします。
-* スケジュール ベースのサービス (`exact_times`= `1`) の圧縮表現。指定された期間の旅行に対してまったく同じヘッドウェイを持ちます。スケジュール ベースのサービスでは、オペレーターはスケジュールに厳密に従おうとします。
+* スケジュール ベースのサービス (`exact_times`=`1`) の圧縮表現。指定された期間の旅行に対してまったく同じヘッドウェイを持ちます。スケジュール ベースのサービスでは、オペレーターはスケジュールに厳密に従おうとします。
 
 
 | フィールド名 | タイプ |存在 | 説明 |
@@ -619,19 +605,19 @@ ataset ですが、特定のデータセットに対してデータ コンシュ
 
 旅程を計算する際、GTFS を使用するアプリケーションは、許容される時間と停留所の近接性に基づいて乗り換えを補間します。 [Transfers.txt](#transferstxt) は、選択した乗り換えに対する追加のルールとオーバーライドを指定します。
 
-`from_trip_id`、`to_trip_id`、`from_route_id`、および`to_route_id` を使用すると、乗り換えルールの詳細度をさらに高めることができます。`from_stop_id`と`to_stop_id`に加えて、詳細度の順位付けは次のようになります:
+`from_trip_id`、`to_trip_id`、`from_route_id`、および`to_route_id`を使用すると、乗り換えルールの詳細度をさらに高めることができます。`from_stop_id`と`to_stop_id`に加えて、詳細度の順位付けは次のようになります:
 
- 1.両方の`trip_id`が定義されています: `from_trip_id`と`to_trip_id`。
+ 1. 両方の`trip_id`が定義されています: `from_trip_id`と`to_trip_id`。
  2. 1つの`trip_id`と`route_id`セットが定義されています: (`from_trip_id`と`to_route_id`) または (`from_route_id`と`to_trip_id`) 。
  3. 1つの`trip_id`が定義されています: `from_trip_id`または`to_trip_id`。
- 4.両方の`route_id`が定義されています: `from_route_id`と`to_route_id`。
+ 4. 両方の`route_id`が定義されています: `from_route_id`と`to_route_id`。
  5. 1つの`route_id`が定義されています: `from_route_id`または`to_route_id`。
- 6..`from_stop_id`および`to_stop_id`が定義されています: ルートまたは旅行関連のフィールドは設定されていません。
+ 6. `from_stop_id`および`to_stop_id`が定義されています: ルートまたは旅行関連のフィールドは設定されていません。
 
 到着旅行と出発旅行の順序付けられたペアが指定されている場合、これら 2つの旅行間に適用される最も詳細度の高い乗り換えが選択されます。どの旅行のペアにも、適用可能な最大詳細度が同等の 2つの乗り換えが存在することはできません。
 
 | フィールド名 | タイプ | 存在 | 説明 |
-|------|------|------|------|------|
+|------|------|------|------|
 | `from_stop_id` | `stops.stop_id`部ID | **条件付きで必須** | ルート間の接続が開始される停留所または駅を識別します。このフィールドが駅を参照する場合、乗り換えルールはそのすべての子停留所に適用されます。`transfer_types` 4および5.では駅の参照は禁止されています。|
 | `to_stop_id` | `stops.stop_id`部ID | **条件付きで必須** |ルート間の接続が終了する停留所または駅を識別します。このフィールドが駅を参照する場合、転送ルールはすべての子停留所に適用されます。`transfer_types` 4および5.では、駅の参照は禁止されています。|
 | `from_route_id` | `routes.route_id`部ID | 任意 | 接続が始まるルートを識別します。<br><br>`from_route_id`が定義されている場合、乗り換えは指定された`from_stop_id`のルート上の到着旅行に適用されます。<br><br>`from_trip_id`と`from_route_id` の両方が定義されている場合、`trip_id` は`route_id`に属している必要があり、`from_trip_id`が優先されます。 |
@@ -649,7 +635,7 @@ ataset ですが、特定のデータセットに対してデータ コンシュ
 
 リンクされたトリップ転送と block_id の両方が提供され、矛盾する結果が生成される場合は、リンクされたトリップ転送を使用する必要があります。
 
-`from_trip_id` の最後の停車地は、`from_trip_id` `to_trip_id`の最初の停車地に地理的に近いするべきであるがあり、`from_trip_id`の最後の到着時刻は、` `to_trip_id`の最初の出発時刻より前であるが近いするべきである。`to_trip_id` トリップが次の運行日に発生する場合、`from_trip_id`の最後の到着時刻は、`to_trip_id` `to_trip_id`の最初の出発時刻より遅くてもかまいしてもよい。
+`from_trip_id` の最後の停車地は、`from_trip_id` `to_trip_id`の最初の停車地に地理的に近いするべきであるがあり、`from_trip_id`の最後の到着時刻は、`to_trip_id`の最初の出発時刻より前であるが近いするべきである。`to_trip_id` トリップが次の運行日に発生する場合、`from_trip_id`の最後の到着時刻は、`to_trip_id` `to_trip_id`の最初の出発時刻より遅くてもかまいしてもよい。
 
  通常の場合、便は1 対 1 でリンクできしてもよいが、より複雑なトリップの継続を表すために、1 対 n、n 対 1、または n 対 n でリンクすることもしてもよい。たとえば、2つの列車の旅程 (下の図の旅程 A と旅程 B) は、共通の駅で車両連結操作を行った後、1つの列車の旅程 (旅程 C) に統合できます。
 
@@ -707,7 +693,7 @@ ataset ですが、特定のデータセットに対してデータ コンシュ
 駅の階を説明します。[pathways.txt](#pathwaystxt) と併用すると便利です。
 
 | フィールド名 | タイプ | 存在 | 説明 |
-|------|------|------|------|------|
+|------|------|------|------|
 | `level_id` | ユニークID | **必須** | 駅の階を識別します。|
 | `level_index` | Float | **必須** | 相対的な位置を示すレベルの数値インデックス。<br><br>地上レベルのインデックスは `0` で、地上レベルは正のインデックスで示され、地下レベルは負のインデックスで示されます。|
 | `level_name` | Text | 任意 | 建物または駅内の乗客から見たレベルの名前。<hr> 例: エレベーターで「中二階」または「プラットフォーム」または「-1」まで行きます。 |
@@ -814,7 +800,7 @@ stops.txt のstops.txtをロケーション グループに割り当てます。
 
 ファイル: **条件付きで必須**
 
-Primary key (none) 
+主キー (none) 
 
 ファイルには、データセットが記述するサービスではなく、データセット自体に関する情報が含まれます。場合によっては、データセットの発行者が機関とは異なるエンティティであることがあります。
 
