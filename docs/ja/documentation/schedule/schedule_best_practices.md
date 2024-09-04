@@ -62,15 +62,15 @@
 | | 停留所の位置は、乗客が乗車する歩行者通行権のすぐ近くに配置する必要があります (つまり、道路の正しい側)。 |
 | | 停留所の位置が別のデータ フィード間で共有されている場合 (つまり、2 つの機関がまったく同じ停留所/乗車施設を使用している場合)、両方の停留所にまったく同じ`stop_lat`と`stop_lon`を使用して、停留所が共有されていることを示します。 |
 | `parent_station`と`location_type` | 多くの駅やターミナルには複数の乗車施設があります (モードに応じて、バス ベイ、プラットフォーム、埠頭、ゲート、またはその他の用語で呼ばれる場合があります)。このような場合、フィード作成者は、駅、乗車施設 (子停留所とも呼ばれます)、およびそれらの関係を説明する必要があります。<ul><li>駅またはターミナルは、`location_type = 1`の`stops.txt`内のレコードとして定義する必要があります。</li><li>各乗車施設は、`location_type = 0`の停留所として定義する必要があります。`parent_station` フィールドは、乗車施設がある駅の`stop_id`を参照する必要があります。</li></ul> |
-| | 駅や子供用停留所に名前を付ける場合は、乗客によく知られ、乗客が駅や乗車施設（バス停、プラットホーム、埠頭、ゲートなど）を識別できるような名前を付けてください。<table class=’example’><thead><tr><th>親ステーション名</th><th>子の停留所名</th></tr></thead><tbody><tr><td>シカゴ ユニオン駅</td><td>シカゴ ユニオン駅 19番線</td></tr><tr><td>サンフランシスコフェリービルディングターミナル</td><td>サンフランシスコフェリービルターミナルゲートE</td></tr><tr><td>ダウンタウン トランジット センター</td><td>ダウンタウン トランジット センター ベイ B</td></tr></tbody></table> |
+| | 駅や子供用停留所に名前を付ける場合は、乗客によく知られ、乗客が駅や乗車施設（バス停、プラットホーム、埠頭、ゲートなど）を識別できるような名前を付けてください。<table class="example"><thead><tr><th>親ステーション名</th><th>子の停留所名</th></tr></thead><tbody><tr><td>シカゴ ユニオン駅</td><td>シカゴ ユニオン駅 19番線</td></tr><tr><td>サンフランシスコフェリービルディングターミナル</td><td>サンフランシスコフェリービルターミナルゲートE</td></tr><tr><td>ダウンタウン トランジット センター</td><td>ダウンタウン トランジット センター ベイ B</td></tr></tbody></table> |
 
 ### routes.txt 
 
 | フィールド名 | 推奨事項 |
 |---|---|
-| `route_long_name` | 仕様リファレンスの定義:<q>この名前は、通常、 <code>route_short_name</code>よりも説明的で、ルートの目的地または停車地が含まれることがよくあります。route_short_name または<code>route_long_name</code>の少なくとも 1 つを指定する必要があります。適切な場合は、両方を指定することも<code>route_short_name</code>ます。ルートに長い名前がない場合は、 <code>route_short_name</code>を指定し、このフィールドの値として空のstringを使用してください。</q><br>長い名前の種類の例を以下に示します。<table class=’example’><thead><tr><th colspan=’3’>主な移動経路または回廊</th></tr><tr><th>ルート名</th><th>形状</th><th>事業者</th></tr></thead><tbody><tr><td><a href=’https://www.sfmta.com/getting-around/transit/routes-stops/n-judah’>`N`/`ユダ`</a></td><td> <code>route_short_name</code>/<br> <code>route_long_name</code></td><td>サンフランシスコの<a href=’https://www.sfmta.com/’>Muni</a></td></tr><tr><td> <a href=’https://trimet.org/schedules/r006.htm’>`6`/`L` キング ジュニア ブルバード`</a></td><td> <code>route_short_name</code>/<br> <code>route_long_name</code></td><td>オレゴン州ポートランドの<a href=’https://trimet.org/’>TriMet</a> 。</td></tr><tr><td> <a href=’http://www.ratp.fr/informer/pdf/orienter/f_plan.php?nompdf=m6’>『6』/『ネイション～エトワール』</a></td><td> <code>route_short_name</code>/<br> <code>route_long_name</code></td><td>フランスのパリにある<a href=’http://www.ratp.fr/’>RATP</a> 。</td></tr><tr><td> <a href=’http://www.bvg.de/images/content/linienverlaeufe/LinienverlaufU2.pdf’>`U2`-`パンコウ – ルーレーベン`</a></td><td> <code>route_short_name</code> -<br> <code>route_long_name</code></td><td> <a href=’http://www.bvg.de/’>BVG</a> 、ドイツ、ベルリン</td></tr></tbody></table><table class=’example’><thead><tr><th>サービスの説明</th></tr></thead><tbody><tr><td><a href=’https://128bc.org/schedules/rev-bus-hartwell-area/’>`ハートウェルエリアシャトル`</a></td></tr></tbody></table>        
+| `route_long_name` | 仕様リファレンスの定義:<q>この名前は、通常、 <code>route_short_name</code>よりも説明的で、ルートの目的地または停車地が含まれることがよくあります。route_short_name または<code>route_long_name</code>の少なくとも 1 つを指定する必要があります。適切な場合は、両方を指定することも<code>route_short_name</code>ます。ルートに長い名前がない場合は、 <code>route_short_name</code>を指定し、このフィールドの値として空のstringを使用してください。</q><br>長い名前の種類の例を以下に示します。<table class="example"><thead><tr><th colspan=’3’>主な移動経路または回廊</th></tr><tr><th>ルート名</th><th>形状</th><th>事業者</th></tr></thead><tbody><tr><td><a href=’https://www.sfmta.com/getting-around/transit/routes-stops/n-judah’>`N`/`ユダ`</a></td><td> <code>route_short_name</code>/<br> <code>route_long_name</code></td><td>サンフランシスコの<a href=’https://www.sfmta.com/’>Muni</a></td></tr><tr><td> <a href=’https://trimet.org/schedules/r006.htm’>`6`/`L` キング ジュニア ブルバード`</a></td><td> <code>route_short_name</code>/<br> <code>route_long_name</code></td><td>オレゴン州ポートランドの<a href=’https://trimet.org/’>TriMet</a> 。</td></tr><tr><td> <a href=’http://www.ratp.fr/informer/pdf/orienter/f_plan.php?nompdf=m6’>『6』/『ネイション～エトワール』</a></td><td> <code>route_short_name</code>/<br> <code>route_long_name</code></td><td>フランスのパリにある<a href=’http://www.ratp.fr/’>RATP</a> 。</td></tr><tr><td> <a href=’http://www.bvg.de/images/content/linienverlaeufe/LinienverlaufU2.pdf’>`U2`-`パンコウ – ルーレーベン`</a></td><td> <code>route_short_name</code> -<br> <code>route_long_name</code></td><td> <a href=’http://www.bvg.de/’>BVG</a> 、ドイツ、ベルリン</td></tr></tbody></table><table class="example"><thead><tr><th>サービスの説明</th></tr></thead><tbody><tr><td><a href=’https://128bc.org/schedules/rev-bus-hartwell-area/’>`ハートウェルエリアシャトル`</a></td></tr></tbody></table>        
 | | `route_long_name`には`route_short_name`を含めないでください。 |
-| | `route_long_name`を入力するときは、サービス ID を含む完全な指定を含めます。例:<table class=’example’><thead><tr><th>サービス ID</th><th>おすすめ</th><th>例</th></tr></thead><tbody><tr><td>`MAXライトレール`<br>オレゴン州ポートランドのTriMet</td><td> <code>route_long_name</code>はブランド（MAX）と特定のルート指定を含める必要があります。</td><td> `MAXレッドライン``MAXブルーライン`</td></tr><tr><td> `ラピッドライド`<br>ニューメキシコ州アルバカーキの ABQ ライド</td><td><code>route_long_name</code>はブランド（Rapid Ride）と特定のルート指定を含める必要があります。</td><td> `ラピッドライドレッドライン`<br> `ラピッドライドブルーライン`</td></tr></tbody></table> 
+| | `route_long_name`を入力するときは、サービス ID を含む完全な指定を含めます。例:<table class="example"><thead><tr><th>サービス ID</th><th>おすすめ</th><th>例</th></tr></thead><tbody><tr><td>`MAXライトレール`<br>オレゴン州ポートランドのTriMet</td><td> <code>route_long_name</code>はブランド（MAX）と特定のルート指定を含める必要があります。</td><td> `MAXレッドライン``MAXブルーライン`</td></tr><tr><td> `ラピッドライド`<br>ニューメキシコ州アルバカーキの ABQ ライド</td><td><code>route_long_name</code>はブランド（Rapid Ride）と特定のルート指定を含める必要があります。</td><td> `ラピッドライドレッドライン`<br> `ラピッドライドブルーライン`</td></tr></tbody></table> 
 | `route_id` | 指定された名前付きルート上のすべての旅行は、同じ`route_id`を参照する必要があります。<li>ルートの異なる方向を異なる`route_id`値に分割しないでください。</li><li>ルートの異なる運行区間を異なる`route_id`値に分割しないでください。つまり、 `routes.txt`に`n` AM`サービスと`n` PM`サービスに異なるレコードを作成しないでください。</li> |
 | | ルート グループに明確に名前が付けられた分岐 (1A と 1B など) が含まれる場合は、ルート [branches](#branches) の場合の推奨事項に従って、 `route_short_name`と`route_long_name`を決定します。 |
 | `route_color`と`route_text_color` | 標識や印刷物およびオンラインの顧客情報と一致している必要があります (したがって、他の場所に存在しない場合は含めないでください)。 |
@@ -82,9 +82,9 @@
 
 | フィールド名 | 推奨事項 |
 |---|---|
-| `trip_headsign` | ` `trip_headsign`または`stop_headsign`フィールドにルート名 ( `route_short_name`および`route_long_name`と一致するもの) を指定しないでください。 |
-| | ルート内の旅行を区別するために使用できる、車両のヘッドサイン上に表示される目的地、方向、およびその他の旅行指定テキストを含める必要があります。車両に表示される方向情報との一貫性は、GTFS データセットで提供されるヘッドサインを決定するための最優先の目標です。その他の情報は、この主要目標を損なわない場合にのみ含める必要があります。旅行中にヘッドサインが変更される場合は、 `trip_headsign`を`stop_times.stop_headsign`で上書きします。以下に、考えられるいくつかのケースに対する推奨事項を示します。 |
-| |<table class="example"><thead><tr><th>ルートの説明</th><th>おすすめ</th></tr></thead><tbody><tr><td>2A. 目的地のみ</td><td>終点の目的地を入力してください。例: `ト` センター`、`ド` シティ センター`、`ン` ビーチ`></td></tr><tr><td> 2B. ウェイポイントのある目的地</td><td>&lt;destination> 経由 &lt;waypoint> “Highgate via Charing Cross”。車両がそれらのウェイポイントを通過した後に、乗客に表示されるヘッドサインからウェイポイントが削除された場合は、 <code>stop_times.stop_headsign</code>を使用して更新されたヘッドサインを設定します。</td></tr><tr><td> 2C. 地方の地名と停留所</td><td>目的地の市内または自治区内に複数の停留所がある場合は、目的地の市内に到着したら<code>stop_times.stop_headsign</code>を使用します。</td></tr><tr><td> 2D. 方向のみ</td><td>`北行き`、`内向き`、`時計回り`などの用語を使用して方向を示します。</td></tr><tr><td> 2E. 目的地までの道順</td><td>&lt;方向> から &lt;終点名> へ (例: `南行きサンノゼ行き`)</td></tr><tr><td> 2F. 目的地と経由地を含む方向</td><td>&lt;方向> から &lt;ウェイポイント> を経由して &lt;目的地> へ（`グ` クロス経由でハイゲートへ北行き`）。</td></tr></tbody></table> |
+| `trip_headsign` | `trip_headsign`または`stop_headsign`フィールドにルート名 (`route_short_name`および`route_long_name`と一致するもの) を指定しないでください。 |
+| | ルート内の旅行を区別するために使用できる、車両のヘッドサイン上に表示される目的地、方向、およびその他の旅行指定テキストを含める必要があります。車両に表示される方向情報との一貫性は、GTFS データセットで提供されるヘッドサインを決定するための最優先の目標です。その他の情報は、この主要目標を損なわない場合にのみ含める必要があります。旅行中にヘッドサインが変更される場合は、`trip_headsign`を`stop_times.stop_headsign`で上書きします。以下に、考えられるいくつかのケースに対する推奨事項を示します。 |
+| |<table class="example"><thead><tr><th>ルートの説明</th><th>おすすめ</th></tr></thead><tbody><tr><td>2A. 目的地のみ</td><td>終点の目的地を入力します。例: 「トランジット センター」、「ポートランド シティ センター」、「ジャンセン ビーチ」</td></tr><tr><td> 2B. ウェイポイントのある目的地</td><td><destination> 経由 <waypoint> 「Highgate via Charing Cross」。車両がそれらのウェイポイントを通過した後に、乗客に表示されるヘッドサインからウェイポイントが削除された場合は、`stop_times.stop_headsign`を使用して更新されたヘッドサインを設定します。</td></tr><tr><td> 2C. 地方の地名と停留所</td><td>目的地の市内または自治区内に複数の停留所がある場合は、目的地の市内に到着したら<code>stop_times.stop_headsign</code>を使用します。</td></tr><tr><td> 2D. 方向のみ</td><td>`北行き`、`内向き`、`時計回り`などの用語を使用して方向を示します。</td></tr><tr><td> 2E. 目的地までの道順</td><td>&lt;方向> から &lt;終点名> へ (例: `南行きサンノゼ行き`)</td></tr><tr><td> 2F. 目的地と経由地を含む方向</td><td>&lt;方向> から &lt;ウェイポイント> を経由して &lt;目的地> へ（`グ` クロス経由でハイゲートへ北行き`）。</td></tr></tbody></table> |
 | | ヘッドサインの先頭に`To`や`Towards`という言葉を使用しないでください。 |
 | `direction_id` | データセット全体で一貫して 0 と 1 の値を使用します。つまり<ul><li>1 = 赤ルートのアウトバウンドの場合、1 = 緑ルートのアウトバウンド</li><li>1 = ルート X の北行きの場合、1 = ルート Y の北行き</li><li>ルートXが1 = 時計回りの場合、ルートYも1 = 時計回り</li></ul>|
 | `bikes_allowed` | フェリー旅行の場合、自転車が許可されている (または許可されていない) ことを明示的に指定します。データが欠落しているためにフェリー旅行を避けると、通常、大きな迂回につながります。 |
@@ -96,7 +96,7 @@
 | フィールド名 | 推奨事項 |
 |---|---|
 | `pickup_type`および`drop_off_type` | 旅客サービスを提供しない無収入 (回送) 旅行では、すべての`stop_times`行で`pickup_type`および`drop_off_type`の値を`1`に設定する必要があります。
-| |有償運行の場合、運行状況を監視するための内部の`グ` ポイント`や、乗客が乗車できない車庫などのその他の場所は、` pickup_type = 1` (乗車不可) および `drop_off_type = 1` (降車不可) でマークする必要があります。 |
+| |有償運行の場合、運行状況を監視するための内部の`グ` ポイント`や、乗客が乗車できない車庫などのその他の場所は、`pickup_type=1` (乗車不可) および `drop_off_type=1` (降車不可) でマークする必要があります。 |
 | `arrival_time`および`departure_time` | `arrival_time`と`departure_time`フィールドには、可能な限り、拘束力のない推定時間またはタイム ポイント間の補間時間を含め、時間値を指定する必要があります。 |
 | `stop_headsign` | 一般に、ヘッドサイン値は駅の標識にも対応する必要があります。<br><br>以下の場合、`南行き`は駅の標識では使用されていないため、顧客に誤解を与える可能性があります。
 | |<table class="example"><thead><tr><th colspan="2"> NYC で南行きの 2 名の場合:</th></tr><tr><th> <code>stop_times.txt</code>行の場合:</th><th> <code>stop_headsign</code>値を使用します:</th></tr></thead><tbody><tr><td>マンハッタンに到着するまで</td><td><code>Manhattan &amp; Brooklyn</code></td></tr><tr><td>ダウンタウンに到着するまで</td><td><code>Downtown &amp; Brooklyn</code></td></tr><tr><td>ブルックリンに到着するまで</td><td><code>Brooklyn</code></td></tr><tr><td>ブルックリンに到着したら</td><td><code>Brooklyn (New Lots Av)</code></td></tr></tbody></table> |
@@ -164,20 +164,20 @@
 
 ループ ルートでは、車両の乗車は同じ場所 (場合によってはトランジット センターまたは乗り換えセンター) で始まり、終わります。車両は通常、連続的に運行し、車両がループを続ける間、乗客は車内にとどまることができます。
 
- <img src="https://raw.githubusercontent.com/MobilityData/GTFS_Schedule_Best-Practices/master/en/loop-route.svg" width=200px style="display: block; margin-left: auto; margin-right: auto;"> 
+<img src="https://raw.githubusercontent.com/MobilityData/GTFS_Schedule_Best-Practices/master/en/loop-route.svg" width=200px style="display: block; margin-left: auto; margin-right: auto;"> 
 
- したがって、乗客に車両の進行方向を示すために、行先表示の推奨事項を適用する必要があります。
+したがって、乗客に車両の進行方向を示すために、行先表示の推奨事項を適用する必要があります。
 
 移動方向の変更を示すには、 `stop_times.txt`ファイルに`stop_headsigns`を指定します。`stop_headsign`は、定義されている停留所から出発する旅行の方向を説明します。旅行の各停留所に`stop_headsigns`を追加すると、旅行中のヘッドサイン情報を変更できます。
 
-2 つのエンドポイント間で動作するルート (同じバスが往復する場合など) に対して、 stop_times.txtファイルで 1 つの循環旅行を定義しないでください。代わりに、旅行を 2 つの別々の旅行方向に分割します。
+2つのエンドポイント間で動作するルート (同じバスが往復する場合など) に対して、 stop_times.txtファイルで 1 つの循環旅行を定義しないでください。代わりに、旅行を 2 つの別々の旅行方向に分割します。
 
 循環旅行のモデリングの例:
 
 - 停留所ごとにヘッドサインが変化する循環旅行
 
 | trip_id | arrive_time | department_id | stop_sequence | stop_headsign |
-|---------|--------------|----------------|---------|---------------|---------------|
+|---------|--------------|----------------|---------|---------------|
 | trip_1 | 06:10:00    | 06:10:00       | stop_A | 1             | "B"          |
 | trip_1 | 06:15:00    | 06:15:00       | stop_B | 2             | "C"          |
 | trip_1 | 06:20:00    | 06:20:00       | stop_C | 3             | "D"          |
