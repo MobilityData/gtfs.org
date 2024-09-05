@@ -3,7 +3,7 @@
 # Define the source directory
 SOURCE_DIR="overrides/assets/landing"
 
-LANGUAGES=("fr" "es" "de" "id" "ko" "pt" "ru" "zh" "zh-TW")
+LANGUAGES=("fr" "es" "ja" "de" "id" "ko" "pt" "ru" "zh" "zh-TW")
 
 # Loop through each language and copy the source directory
 for lang in "${LANGUAGES[@]}"; do
