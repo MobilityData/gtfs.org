@@ -138,7 +138,11 @@ plugins:
   #     enabled: !ENV [OFFLINE, true]
   - external-markdown
   - search:
-      lang: en
+      lang: 
+        - en
+        - es
+        - fr
+        - ja
   - i18n:
       docs_structure: folder
       reconfigure_search: false
