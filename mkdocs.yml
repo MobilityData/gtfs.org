@@ -144,10 +144,7 @@ plugins:
   #     enabled: !ENV [OFFLINE, true]
   - external-markdown
   - search:
-      lang: 
-        - en
-        - es
-        - fr
+      lang: en
   - social:
       cards_layout_dir: layouts/
       cards_layout: custom
@@ -164,6 +161,7 @@ plugins:
           name: English
           build: true
           default: true
+
         - locale: es
           name: Español
           build: true
