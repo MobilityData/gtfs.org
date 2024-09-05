@@ -1,3 +1,8 @@
+---
+title: GTFS Schedule Features
+description: Discover the capabilities of GTFS Schedule by familiarizing yourself with its features.
+---
+
 # GTFS Schedule Features
 
 As the GTFS Reference format evolves to meet the current needs of transit systems, its functions can become increasingly complex. The **GTFS Features** are intended to provide a clear and definitive explanation of functionalities enabled by the GTFS Reference format. This helps transit agencies, vendors, consumers and researchers understand the capabilities of GTFS and answer the question: **What can I do with GTFS?** 

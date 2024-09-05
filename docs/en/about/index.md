@@ -1,3 +1,8 @@
+---
+title: About GTFS.org
+description: Learn about GTFS.org, its stewardship by MobilityData, the evolution of GTFS, contribution guidelines, and licensing details.
+---
+
 # About 
 
 GTFS.org is the central documentation platform for the General Transit Feed Specification. This site and its contents are maintained by [MobilityData](https://mobilitydata.org/).

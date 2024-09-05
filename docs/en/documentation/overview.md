@@ -1,3 +1,8 @@
+---
+title: Technical Documentation
+description: Access GTFS reference documents, best practices, data examples, and change history for both GTFS Schedule and GTFS Realtime.
+---
+
 # General Transit Feed Specification (GTFS)
 
 The General Transit Feed Specification (GTFS) is an [Open Standard](https://www.interoperablemobility.org/definitions/#open_standard) used to distribute relevant information about transit systems to riders. It allows public transit agencies to publish their transit data in a format that can be consumed by a wide variety of software applications.

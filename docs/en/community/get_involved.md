@@ -1,3 +1,8 @@
+---
+title: Get Involved
+description: Join the GTFS community to stay informed, consult the governance, propose changes, and collaborate on active projects.
+---
+
 ## Join the Community
 
 <div class="grid cards" markdown>

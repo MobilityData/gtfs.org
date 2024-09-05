@@ -1,3 +1,8 @@
+---
+title: GTFS Schedule Reference Documentation
+description: Dive deep into GTFS Schedule and consult the reference document.
+---
+
 ## General Transit Feed Specification Reference
 
 **Revised Aug 16, 2024. See [Revision History](../change_history/revision_history) for more details.**

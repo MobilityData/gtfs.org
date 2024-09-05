@@ -1,3 +1,8 @@
+---
+title: GTFS Realtime Reference Documentation
+description: Dive deep into GTFS Realtime and consult the reference document.
+---
+
 # GTFS Realtime Reference
 
 A GTFS Realtime feed lets transit agencies provide consumers with realtime information about disruptions to their service (stations closed, lines not operating, important delays, etc.) location of their vehicles, and expected arrival times.

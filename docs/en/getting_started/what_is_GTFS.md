@@ -1,3 +1,8 @@
+---
+title: Getting Started
+description: Discover GTFS basics, why it's important, how to create it, and its key features.
+---
+
 # GTFS: Making Public Transit Data Universally Accessible
 
 ## An open data standard for transit passenger information
