@@ -55,7 +55,7 @@ layers:
   - size: { width: 1072, height: 215 }
     offset: { x: 64, y: 220 }
     typography:
-      content: "{{ page.meta['title'] | default(page.title) }}"
+      content: "{{ page.meta['title'] | default('The Home of GTFS') }}"
       align: start top
       overflow: shrink
       color: "#FFFFFF"
