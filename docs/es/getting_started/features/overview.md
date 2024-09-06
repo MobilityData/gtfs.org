@@ -120,23 +120,23 @@
  
 <div class="grid cards" markdown> 
  
- - :material-wheelchair:{ .lg.middle } __Stops Wheelchair Accessibility__ 
+ - :material-wheelchair:{ .lg.middle } __Accesibilidad para Sillas de Ruedas en Paradas__ 
  
     Indica si es posible el embarque en silla de ruedas desde un lugar. 
  
-    [:octicons-arrow-right-24: Más información](../accessibility/#stops-wheelchair-accessibility) 
+    [:octicons-arrow-right-24: Más información](../accessibility/#accesibilidad-para-sillas-de-ruedas-en-paradas) 
  
- - :material-wheelchair:{ .lg.middle } __Trips Accesibilidad para sillas de ruedas__  
+ - :material-wheelchair:{ .lg.middle } __Accesibilidad para Sillas de Ruedas en Viajes__  
  
     Indica si un vehículo puede acomodar pasajeros en sillas de ruedas. 
  
-    [:octicons-arrow-right-24: Más información](../accessibility/#trips-wheelchair-accessibility) 
+    [:octicons-arrow-right-24: Más información](../accessibility/#accesibilidad-para-sillas-de-ruedas-en-viajes) 
  
  - :material-wheelchair:{ .lg.middle } __Texto a Voz__ 
  
     Proporciona las entradas necesarias para convertir el texto de los nombres de las paradas en audio. 
  
-    [:octicons-arrow-right-24: Más información](../accessibility/#text-to-speech) 
+    [:octicons-arrow-right-24: Más información](../accessibility/#texto-a-voz) 
 </div> 
  
  
@@ -149,43 +149,43 @@
  
     Definir la lista de boletos o tipos de tarifas disponibles para los usuarios. 
  
-    [:octicons-arrow-right-24: Más información](../fares/#fare-products) 
+    [:octicons-arrow-right-24: Más información](../fares/#productos-de-tarifa) 
  
  - :material-cash:{ .lg.middle } __Medios de Tarifa__ 
  
     Defina los medios que se pueden utilizar para retener y/o validar un producto tarifario. 
  
-    [:octicons-arrow-right-24: Más información](../fares/#fare-media) 
+    [:octicons-arrow-right-24: Más información](../fares/#medios-de-tarifa) 
  
  - :material-cash:{ .lg.middle } __Tarifas Basadas en Rutas__ 
  
     Describir las reglas utilizadas para aplicar diferentes tarifas para grupos específicos de rutas. 
  
-    [:octicons-arrow-right-24: Más información](../fares/#route-based-fares) 
+    [:octicons-arrow-right-24: Más información](../fares/#tarifas-basadas-en-rutas) 
  
  - :material-cash:{ .lg.middle } __Tarifas Basadas en Tiempo__ 
  
     Describir tarifas diferenciadas por hora del día o día de la semana. 
  
-    [:octicons-arrow-right-24: Más información](../fares/#time-based-fares) 
+    [:octicons-arrow-right-24: Más información](../fares/#tarifas-basadas-en-tiempo) 
  
  - :material-cash:{ .lg.middle } __Tarifas Basadas en Zonas__ 
  
     Describir tarifas diferenciadas al viajar de una zona a otra. 
  
-    [:octicons-arrow-right-24: Más información](../fares/#zone-based-fares) 
+    [:octicons-arrow-right-24: Más información](../fares/#tarifas-basadas-en-zonas) 
  
- - :material-cash:{ .lg.middle } __Fares Transfers__ 
+ - :material-cash:{ .lg.middle } __Transferencias de Tarifas__ 
  
     Definir las tarifas aplicables al transbordo de un tramo del viaje a otro. 
  
-    [:octicons-arrow-right-24: Más información](../fares/#fares-transfers) 
+    [:octicons-arrow-right-24: Más información](../fares/#transferencias-de-tarifas) 
  
  - :material-cash:{ .lg.middle } __Tarifas V1__ 
  
     Función heredada que permite una representación más sencilla de la información de tarifas. 
  
-    [:octicons-arrow-right-24: Más información](../fares/#fares-v1) 
+    [:octicons-arrow-right-24: Más información](../fares/#tarifas-v1) 
  
 </div> 
  
@@ -200,31 +200,31 @@
  
     Modelar rutas que conectan puntos relevantes dentro de una estación de tránsito. 
  
-    [:octicons-arrow-right-24: Más información](../pathways/#pathway-connections) 
+    [:octicons-arrow-right-24: Más información](../pathways/#conexiones-de-recorridos) 
  
  - :material-escalator:{ .lg.middle } __Detalles de Recorridos__ 
  
     Proporcione detalles adicionales sobre las características físicas de una vía. 
  
-    [:octicons-arrow-right-24: Más información](../pathways/#pathway-details) 
+    [:octicons-arrow-right-24: Más información](../pathways/#detalles-de-recorridos) 
  
  - :material-escalator:{ .lg.middle } __Niveles__ 
  
     Describir y enumerar todos los diferentes niveles dentro de una estación de tránsito. 
  
-    [:octicons-arrow-right-24: Más información](../pathways/#levels) 
+    [:octicons-arrow-right-24: Más información](../pathways/#niveles) 
  
  - :material-escalator:{ .lg.middle } __Tiempo de recorrido en la estación__ 
  
     Comunicar el tiempo estimado para recorrer trayectos dentro de una estación de tránsito. 
  
-    [:octicons-arrow-right-24: Más información](../pathways/#in-station-traversal-time) 
+    [:octicons-arrow-right-24: Más información](../pathways/#tiempo-de-recorrido-en-la-estacion) 
  
  - :material-escalator:{ .lg.middle } __Señalamientos de Recorridos__ 
  
     Comunicar la señalización en la estación asociada a una vía. 
  
-    [:octicons-arrow-right-24: Más información](../pathways/#pathway-signs) 
+    [:octicons-arrow-right-24: Más información](../pathways/#senalamientos-de-sendas) 
  
 </div> 
  
@@ -238,13 +238,13 @@
  
     Indique si un usuario puede ser recogido y/o dejado entre paradas. 
  
-    [:octicons-arrow-right-24: Más información](../flexible_services/#continuous-stops) 
+    [:octicons-arrow-right-24: Más información](../flexible_services/#paradas-continuas) 
  
  - :material-transit-detour:{ .lg.middle } __Reglas de reserva__ 
  
     Indique si los usuarios pueden reservar un viaje en un servicio que responda a la demanda. 
  
-    [:octicons-arrow-right-24: Más información](../flexible_services/#booking-rules) 
+    [:octicons-arrow-right-24: Más información](../flexible_services/#reglas-de-reserva) 
  
  - :material-transit-detour:{ .lg.middle } __Rutas predefinidas con desviación__ 
  
