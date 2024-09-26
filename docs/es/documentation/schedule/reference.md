@@ -746,7 +746,7 @@ La **clave principal** de un conjunto de datos es el campo o combinación de cam
  Define zonas donde los pasajeros pueden solicitar que los recojan o los dejen mediante servicios a pedido. Estas zonas se representan como polígonos GeoJSON. 
  
  - Este archivo utiliza un subconjunto del formato GeoJSON, descrito en [RFC 7946](https://tools.ietf.org/html/rfc7946).
- - Cada polígono debe ser válido según la definición de la [Especificación de características simples de OpenGIS, sección 6.1.11](http:( http://www.opengis.net/doc/is/sfa/1.2.1).
+ - Cada polígono debe ser válido según la definición de la [Especificación de características simples de OpenGIS, sección 6.1.11](http://www.opengis.net/doc/is/sfa/1.2.1).
  - El archivo `locations.geojson` debe contener una `FeatureCollection`. 
  - Una "`FeatureCollection`" define varias ubicaciones de paradas donde los pasajeros pueden solicitar que los recojan o los dejen. 
  - Cada `Feature` de GeoJSON debe tener un `id`. El "`id`" debe ser único en todos los valores de "`stops.stop_id`", locations.geojson "`id`" y "`location_group_id`". 
