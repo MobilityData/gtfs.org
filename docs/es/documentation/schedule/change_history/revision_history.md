@@ -2,6 +2,10 @@
 
 ### Historial de revisiones
 
+#### Septiembre de 2024
+* Aclarar la presencia y el uso de los campos from/to_stop_id y from/to_trip_id en transfers.txt. Ver [discusión](https://github.com/google/transit/pull/455).
+* Se agregaron reglas de validez para polígonos en archivos GeoJSON. Ver [discusión](https://github.com/google/transit/pull/476)
+
 #### Agosto de 2024
 * Se modificó la presencia de stops.txt debido a los servicios bajo demanda. Ver [discusión](https://github.com/google/transit/pull/472).
 * Se aclaró el uso previsto para el timepoint en stop_times.txt. Ver [discusión](https://github.com/google/transit/pull/474).
