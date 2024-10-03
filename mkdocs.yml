@@ -86,12 +86,12 @@ extra:
       - name: Español
         link: /es/
         lang: es
+      - name: 日本語
+        link: /ja/
+        lang: ja
       - name: Deutsch (wird bald verfügbar sein)
         link: /de/
         lang: de
-      - name: 日本語 (今後追加予定)
-        link: /ja/
-        lang: ja
       - name: Português (em breve)
         link: /pt/
         lang: pt
@@ -138,7 +138,11 @@ plugins:
   #     enabled: !ENV [OFFLINE, true]
   - external-markdown
   - search:
-      lang: en
+      lang: 
+        - en
+        - es
+        - fr
+        - ja
   - i18n:
       docs_structure: folder
       reconfigure_search: false
@@ -149,6 +153,7 @@ plugins:
           name: English
           build: true
           default: true
+
         - locale: es
           name: Español
           build: true
@@ -275,6 +280,7 @@ plugins:
             Fares v2: Fares v2
             Flex: Flex
             About: À propos
+            Blog: Blogue
 
         - locale: de
           name: Deutsch
@@ -283,6 +289,70 @@ plugins:
         - locale: ja
           name: 日本語
           build: true
+          nav_translations:
+            Home: ホーム
+            Getting started: はじめる
+            Getting Started: はじめる
+            What is GTFS?: GTFSとは何ですか?
+            Why use GTFS?: GTFS を使用する理由
+            How to produce GTFS?: GTFS を作成するには?
+            Create: 作る
+            Validate: 検証
+            Publish: 公開
+            What can GTFS do?: GTFS で何ができる?
+            Overview: 概要
+            Base: ベース
+            Base add-ons: ベースアドオン
+            Accessibility: アクセシビリティ
+            Fares: 運賃
+            Pathways: 経路
+            Flexible services: 柔軟なサービス
+            Example GTFS feed: GTFS フィードの例
+            Technical Documentation: 技術文書
+            Reference: 参照
+            Best Practices: ベストプラクティス
+            Data examples: データ例
+            Attributions: 帰属
+            Continuous stops: 連続ストップ
+            Demand responsive services: デマンド対応輸送
+            Fares v1: Fares v1
+            Fares v2: Fares v2
+            Feed information: フィード情報
+            Frequencies: フリークエンシー
+            Pathways: 経路
+            Routes, Stops & Trips: ルート、ストップ、トリップ
+            Text-to-speech: テキスト読み上げ
+            Transfers: トランスファー
+            Translations: 翻訳
+            Change history: 変更履歴
+            Recent additions: 最近の追加
+            Recent Additions: 最近の追加
+            Full revision history: 完全な改訂履歴
+            Feed Entities: フィードエンティティ
+            Trip Updates: 旅行最新情報
+            Trip updates: 旅行最新情報
+            Service Alerts: サービスアラート
+            Service alerts: サービスアラート
+            Vehicle Positions: 自車位置
+            Trip Modifications: 旅行の変更
+            Protobuf: Protobuf
+            Language Bindings: 言語のバインディング
+            Migration duplicated: 重複した移行
+            Community: コミュニティ
+            Software for Creating APIs: API作成用ソフトウェア
+            Data: データ
+            Agency Tools: エージェンシーツール
+            Hardware: ハードウェア
+            Visualizations: 視覚化
+            Other: その他
+            Get involved: 参加する
+            Governance: 統治
+            GTFS Schedule Amendment Process: GTFSスケジュール修正プロセス
+            GTFS Realtime Amendment Process: GTFSリアルタイム修正プロセス
+            Extensions: エクステンション
+            Flex: Flex
+            About: アバウト
+            Blog: ブログ
 
         - locale: pt
           name: Português
