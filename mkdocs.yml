@@ -291,9 +291,9 @@ plugins:
           build: true
           nav_translations:
             Home: ホーム
-            Getting started: はじめる
-            Getting Started: はじめる
-            What is GTFS?: GTFSとは何ですか?
+            Getting started: 始めに
+            Getting Started: 始めに
+            What is GTFS?: GTFS とは何ですか?
             Why use GTFS?: GTFS を使用する理由
             How to produce GTFS?: GTFS を作成するには?
             Create: 作る
@@ -347,8 +347,8 @@ plugins:
             Other: その他
             Get involved: 参加する
             Governance: 統治
-            GTFS Schedule Amendment Process: GTFSスケジュール修正プロセス
-            GTFS Realtime Amendment Process: GTFSリアルタイム修正プロセス
+            GTFS Schedule Amendment Process: GTFS スケジュール修正プロセス
+            GTFS Realtime Amendment Process: GTFS realtime 修正プロセス
             Extensions: エクステンション
             Flex: Flex
             About: アバウト
