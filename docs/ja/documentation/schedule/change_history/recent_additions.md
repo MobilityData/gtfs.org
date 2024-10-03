@@ -52,7 +52,7 @@ GTFS に貢献するには、[GTFS スケジュール修正プロセス](../../.
 
 <div class="row">
 <div class="leftcontainer">
-<h3 class="title"><a href="https://github.com/google/transit/pull/406" class="no-icon" target="_blank">ベスト プラクティス: すべてのファイルに対するデータセット公開ガイドラインと実践推奨事項を追加します</a></h3>
+<h3 class="title"><a href="https://github.com/google/transit/pull/406" class="no-icon" target="_blank">ベスト プラクティス: <br>すべてのファイルに対するデータセット<br>公開ガイドラインと実践推奨事項を追加します</a></h3>
 <p class="maintainer">#406 by <a href="https://github.com/Sergiodero" class="no-icon" target="_blank">Sergiodero</a> は 2023 年 11 月 16 日にマージされました</p>
 </div>
 <div class="featurelist">
