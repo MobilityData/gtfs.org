@@ -42,9 +42,9 @@ GTFS Flex は、デマンド レスポンシブ交通サービスの発見可能
 
 投稿全体を読んだり、会話に参加したりするには、プルリクエストページにアクセスしてください。 
 
-[プルリクエストを見る](https://github.com/google/transit/pull/388){ .md-button.md-button--primary }
+[プルリクエストを見る](https://github.com/google/transit/pull/388){ .md-button .md-button--primary}
 
-[Slack で #gtfs-flex に参加する](https://share.mobilitydata.org/slack){ .md-button.md-button--primary }
+[Slack で #gtfs-flex に参加する](https://share.mobilitydata.org/slack){ .md-button .md-button--primary}
 
 ## 初期実装
 
@@ -66,9 +66,9 @@ GTFS Flex は、デマンド レスポンシブ交通サービスの発見可能
 
 <iframe class="airtable-embed" src="https://airtable.com/embed/appopXWyO2ne6THIw/shrUPyCZWOWrvO2mX?backgroundColor=purple" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-[変更をリクエスト](https://airtable.com/shrcac1fXUrMxfoDV){ .md-button.md-button--primary }
-[組織を追加(消費者)](https://airtable.com/shrgnVR5Su9tkHvUv){ .md-button.md-button--primary }
-[組織を追加(プロデューサー)](https://airtable.com/shrsU4idBtcLuRuwZ){ .md-button.md-button--primary }
+[変更をリクエスト](https://airtable.com/shrcac1fXUrMxfoDV){ .md-button .md-button--primary}
+[組織を追加(消費者)](https://airtable.com/shrgnVR5Su9tkHvUv){ .md-button .md-button--primary}
+[組織を追加(プロデューサー)](https://airtable.com/shrsU4idBtcLuRuwZ){ .md-button .md-button--primary}
 
 ## 履歴
 

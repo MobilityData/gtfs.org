@@ -1,28 +1,28 @@
 # GTFS-Fares v2 
 
-Fares v2は、[運賃V1](../../../documentation/schedule/examples/fares-v1/) の制限に対処することを目的としたGTFS schedule拡張プロジェクトです。
+Fares v2は、[Fares v1](../../../documentation/schedule/examples/fares-v1/) の制限に対処することを目的としたGTFS schedule拡張プロジェクトです。
 
 Fares Fares v2で表現する予定の主な概念は次のとおりです。
 
--チケット商品(チケットやパスなど)
+- チケット商品(チケットやパスなど)
 - 乗客カテゴリ (高齢者や子供など)
--チケットメディア(交通パス、紙のチケット、非接触型銀行カードなど)
+- チケットメディア(交通パス、紙のチケット、非接触型銀行カードなど)
 - 運賃上限
 
 これらの概念により、データ作成者はゾーンベース、時間依存、および機関間運賃をモデル化できるようになります。この拡張プロジェクトは、反復的に採用されています。 
 
 GTFS で公式に採用されているものを使用してモデル化できる内容を示す [例](../../../documentation/schedule/examples/fares-v2) をここで確認できます。
 
-プロデューサーは、 Fares v2 と運賃V1の間に技術的な競合がないため、同じデータセットにFares v2 を実装してもよい。コンシューマーは、他のバージョンとは関係なく、どちらのバージョンを使用するかを選択できます。 Fares v2が採用され、十分な支持が得られれば、将来的に運賃V1 は廃止されるしてもよい [提案の全文を見る](https://share.mobilitydata.org/gtfs-fares-v2){ .md-button.md-button--primary }
+プロデューサーは、 Fares v2 と Fares v1の間に技術的な競合がないため、同じデータセットにFares v2 を実装してもよい。コンシューマーは、他のバージョンとは関係なく、どちらのバージョンを使用するかを選択できます。 Fares v2が採用され、十分な支持が得られれば、将来的に Fares v1 は廃止されるしてもよい [提案の全文を見る](https://share.mobilitydata.org/gtfs-fares-v2){ .md-button .md-button--primary}
 
 ## 会話に参加する
 Slack チャネルや定期的なワーキング グループ ミーティングに参加することで、 Fares v2に関するdate情報を入手し、議論に参加できます。
 
-[Slack で#gtfs-fares に参加する](https://share.mobilitydata.org/slack){ .md-button.md-button--primary} [ミーティング スケジュールを見る](https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057){ .md-button.md-button--primary } [会議メモを参照](https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit){ .md-button.md-button--primary } 
+[Slack で #gtfs-fares に参加する](https://share.mobilitydata.org/slack){ .md-button .md-button--primary} [ミーティング スケジュールを見る](https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057){ .md-button .md-button--primary} [会議メモを参照](https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit){ .md-button .md-button--primary}
 
 ## 最初の採用者
 
-🎉 Fares v2の最初の採用者に感謝！公式仕様に追加するための公開投票が開始される前に、少なくとも 1 人のデータプロデューサーと 1 人のコンシューマーが実験的な機能を実装することを約束するしなければならない。これらの組織は、GTFS が進化し続けるように、実験的な変更に多大な時間と労力を費やしています。
+🎉 Fares v2 の最初の採用者に感謝！公式仕様に追加するための公開投票が開始される前に、少なくとも1人のデータプロデューサーと 1 人のコンシューマーが実験的な機能を実装することを約束するしなければならない。これらの組織は、GTFS が進化し続けるように、実験的な変更に多大な時間と労力を費やしています。
 
 - プロデューサー: <a href="https://www.interline.io/" target="_blank">Interline</a> 、<a href="https://www.mta.maryland.gov/developer-resources" target="_blank">メリーランド州運輸省</a>、 <a href="https://dot.ca.gov/cal-itp/cal-itp-gtfs" target="_blank">Cal-ITP</a> 、 <a href="https://trilliumtransit.com/" target="_blank">Trillium Solutions</a> 、 <a href="https://www.itoworld.com/" target="_blank">ITO World</a> 、 <a href="https://www.mbta.com/" target="_blank">MBTA</a> 、 <a href="http://www.pvta.com/" target="_blank">PVTA</a> 
 - コンシューマー: <a href="https://transitapp.com/" target="_blank">Transit</a> 、 <a href="https://www.apple.com/">Apple Maps</a> 
@@ -32,12 +32,12 @@ Slack チャネルや定期的なワーキング グループ ミーティング
 
 <iframe class="airtable-embed" src="https://airtable.com/embed/shrZzYzPYao7iExlW?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-[Request a change](https://airtable.com/shr8aT0K9bpncmy0V){ .md-button .md-button--primary } [Add your organization (consumers)](https://airtable.com/shr5B6Pl1r9KH9qMX){ .md-button .md-button--primary } [Add your organization (producers)](https://airtable.com/shrn0Afa3TPNkOAEh){ .md-button .md-button--primary }
+[Request a change](https://airtable.com/shr8aT0K9bpncmy0V){ .md-button .md-button--primary} [Add your organization (consumers)](https://airtable.com/shr5B6Pl1r9KH9qMX){ .md-button .md-button--primary} [Add your organization (producers)](https://airtable.com/shrn0Afa3TPNkOAEh){ .md-button .md-button--primary}
 
 ### 将来
 <iframe class="airtable-embed" src="https://airtable.com/embed/shrUrgZTO1noUF66R?backgroundColor=red&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-[Add your future plans](https://airtable.com/shrvnI40zuFXmDsQI){ .md-button .md-button--primary }
+[Add your future plans](https://airtable.com/shrvnI40zuFXmDsQI){ .md-button .md-button--primary}
 
 ## 議論中のFares v2の機能
 

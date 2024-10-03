@@ -16,32 +16,35 @@
 
 ??? note "サンプルデータ"
 
-   <p style="font-size:16px"> 
+    <p style="font-size:16px">
     次のサンプルは、`wheelchair_boarding=1` を使用して停留所 `TAS001` で車椅子での乗車が可能であることを示しています。
-   </p> 
-    !!! 注記 ""
-      <p style="font-size:16px"> 
-       <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a><br> 
-      </p> 
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
+        </p>
 
         | stop_id | stop_name  | stop_lat  | stop_lon   | location_type | wheelchair_boarding |
         |---------|------------|-----------|------------|---------------|---------------------|
         | TAS001  | 5 Av/53 St | 40.760167 | -73.975224 |               |                   1 |
 
-
 ## 便車椅子でのアクセシビリティ
 
-便車椅子でのアクセシビリティでは、車両が車椅子を使用する乗客に対応できるかどうかを示すことができます。車椅子を使用する乗客のサービスを提供するためには、車両が車椅子を使用する乗客に対応できることを指定することは、車両が対応できないことを指定するのと同じくらい重要です。乗客が特定の停留所で旅行にアクセスできるようにするには、停留所と旅行の両方が車椅子でアクセス可能でしなければならない | 含まれるファイル                   | 含まれるフィールド   |
+便車椅子でのアクセシビリティでは、車両が車椅子を使用する乗客に対応できるかどうかを示すことができます。車椅子を使用する乗客のサービスを提供するためには、車両が車椅子を使用する乗客に対応できることを指定することは、車両が対応できないことを指定するのと同じくらい重要です。乗客が特定の停留所で旅行にアクセスできるようにするには、停留所と旅行の両方が車椅子でアクセス可能でしなければならない 
+
+| 含まれるファイル                   | 含まれるフィールド   |
 |----------------------------------|-----------------------------------|
-|[trips.txt](../../../documentation/schedule/reference/#tripstxt)| `wheelchair_accessible`|**前提条件**: 
+| [trips.txt](../../../documentation/schedule/reference/#tripstxt)| `wheelchair_accessible` |
+
+**前提条件**: 
 
 - [基本機能](../ベース)
 
 ??? note "サンプル データ"
 
-   <p style="font-size:16px"> 
+    <p style="font-size:16px">
     次のサンプルは、旅行 `AWE1` で使用される車両には少なくとも1台の車椅子を収容できる装備があり、旅行 `AWE2` で使用される車両にはそれがないことを示しています。
-   </p> 
+    </p>
     !!! note ""
         <p style="font-size:16px">
         <a href="../../../documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
@@ -51,7 +54,6 @@
         |----------|------------|---------|-----------------------|
         | RA       | WE         | AWE1    |                     1 |
         | RA       | WE         | AWE2    |                     2 |
-
 
 ## テキスト読み上げ
 
@@ -67,9 +69,9 @@
 
 ??? note "サンプル データ"
 
-   <p style="font-size:16px"> 
+    <p style="font-size:16px">
     次のサンプルは、停留所名の読み取り可能なバージョンを提供し、テキスト読み上げツールで名前を読み上げることができます。
-   </p> 
+    </p>
     !!! note ""
         <p style="font-size:16px">
         <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>

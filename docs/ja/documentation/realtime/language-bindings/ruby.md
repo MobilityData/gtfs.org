@@ -10,7 +10,7 @@
 
 !!! fail "非推奨"
 
-   2019 年 2 月現在、公式の Google プロトコル ツール `google-protobuf` は、proto2 ファイルの [拡張機能をサポートしていません](https://github.com/protocolbuffers/protobuf/issues/1198)。サードパーティ ツールの [ruby-protocol-buffers](https://github.com/codekitchen/ruby-protocol-buffers) は、`gem install ruby​​-protocol-buffers` を使用してインストールできますが、単体テストが失敗するため、Ruby GTFS-rt バインディングの既存の構造と一致していないようです。そのため、Google プロトコル バッファ ツールで proto2 ファイルの公式サポートが実装されるまで、Ruby バインディングは非推奨となります。
+    2019 年 2 月現在、公式の Google プロトコル ツール `google-protobuf` は、proto2 ファイルの [拡張機能をサポートしていません](https://github.com/protocolbuffers/protobuf/issues/1198)。サードパーティ ツールの [ruby-protocol-buffers](https://github.com/codekitchen/ruby-protocol-buffers) は、`gem install ruby​​-protocol-buffers` を使用してインストールできますが、単体テストが失敗するため、Ruby GTFS-rt バインディングの既存の構造と一致していないようです。そのため、Google プロトコル バッファ ツールで proto2 ファイルの公式サポートが実装されるまで、Ruby バインディングは非推奨となります。
 
 ## 依存関係の追加
 

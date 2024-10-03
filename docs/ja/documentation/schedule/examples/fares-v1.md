@@ -1,4 +1,4 @@
-#運賃V1 
+# Fares V1 
 
 [fare_attributes.txt](../../reference/#fare_attributestxt) と [fare_rules.txt](../../reference/#fare_rulestxt) で構成される運賃V1 は、歴史的に GTFS で運賃情報を記述するための公式の方法でした。しかし、2 つのファイルは、効率的に記述できる要素の幅が限られており、実装があいまいです。
 [Fares v2](../../examples/fares-v2/) は現在開発中の拡張プロジェクトで、運賃 V1 の制限に対処することを目的としています。

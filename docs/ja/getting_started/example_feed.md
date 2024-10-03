@@ -1,6 +1,6 @@
 # GTFS フィードの例
 
-この GTFS フィードの例には、交通フィード内の各ファイルのデータ サンプルがカンマ区切りで表示されています。ここで表示されるサンプル データ ファイルは、すべて相互に関連しているわけではありません。また、作業用に最終形式の完全な GTFS フィードをダウンロード](https://github.com/google/transit/blob/master/gtfs/spec/en/examples/sample-feed-1.zip?raw=true) したり、同じフィードの個々のファイルをオンラインで [こちら](https://github.com/google/transit/tree/master/gtfs/spec/en/examples/sample-feed-1) から参照したりすることもできます。
+この GTFS フィードの例には、交通フィード内の各ファイルのデータ サンプルがカンマ区切りで表示されています。ここで表示されるサンプル データ ファイルは、すべて相互に関連しているわけではありません。また、作業用に最終形式の完全な [GTFS フィードをダウンロード](https://github.com/google/transit/blob/master/gtfs/spec/en/examples/sample-feed-1.zip?raw=true) したり、同じフィードの個々のファイルをオンラインで [こちら](https://github.com/google/transit/tree/master/gtfs/spec/en/examples/sample-feed-1) から参照したりすることもできます。
 
 ## agency.txt 
 

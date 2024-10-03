@@ -16,9 +16,9 @@ GTFS はコミュニティのコラボレーションによって発展し、継
 - **ガイド付きの進化:**仕様の進化は [MobilityData](https://mobilitydata.org/) と呼ばれる独立した非営利団体によって監視されており、その変更は使いやすさ、後方互換性、実用的な変更という原則に従って行われます。 
 - **コミュニティ主導の開発:**GTFS 仕様は、[GitHub](https://github.com/google/transit) や [Slack](https://share.mobilitydata.org/slack) などのプラットフォームで促進されるコミュニティからの入力とレビューを通じて継続的に改良されています。
 
-[:material-chat-processing: 参加する](../../community/get_involved){ .md-button.md-button--primary }
-[:material-map-plus: アクティブなプロジェクト](../../community/get_involved/#active-projects){ .md-button.md-button--primary }
-[:material-book-heart: 基本原則](../../community/governance/gtfs_schedule_amendment_process/#guiding-principles){ .md-button.md-button--primary }
+[:material-chat-processing: 参加する](../../community/get_involved){ .md-button .md-button--primary }
+[:material-map-plus: アクティブなプロジェクト](../../community/get_involved/#active-projects){ .md-button .md-button--primary }
+[:material-book-heart: 基本原則](../../community/governance/gtfs_schedule_amendment_process/#guiding-principles){ .md-button .md-button--primary }
 
 ## シンプルで使いやすい
 
@@ -35,7 +35,7 @@ GTFS は、データ交換を容易にし、サービスの統合をスムーズ
 - **フレキシブルサービス:** GTFS では、ダイヤル ア ライド、ルートの変更、およびスケジュールされたサービスや固定サービスの一般的な動作に従わないその他のサービスなど、需要に応じたオプションを記述できます。
 - **構内通路:** GTFS では、大規模な交通機関の駅をモデル化できるため、乗客は駅の出入り口から目的の場所まで移動できます。公共交通機関の車両に乗車または降車します。
 
-[:octicons-search-16: GTFS機能の詳細](../features/overview){ .md-button.md-button--primary }
+[:octicons-search-16: GTFS機能の詳細](../features/overview){ .md-button .md-button--primary }
 
 ## 乗客エクスペリエンスの向上
 

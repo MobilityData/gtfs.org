@@ -12,7 +12,7 @@
 
 !!! fail "非推奨"
 
-   2019年2月現在、公式の `google-protobuf` Google プロトコル ツールは [proto2 ファイルをサポートしていません](https://github.com/protocolbuffers/protobuf/issues/3623)。そのため、proto2 ファイルの公式サポートが Google プロトコル バッファツールに実装されるまで、PHP バインディングは非推奨となります。
+    2019年2月現在、公式の `google-protobuf` Google プロトコル ツールは [proto2 ファイルをサポートしていません](https://github.com/protocolbuffers/protobuf/issues/3623)。そのため、proto2 ファイルの公式サポートが Google プロトコル バッファツールに実装されるまで、PHP バインディングは非推奨となります。
 
 ## 依存関係を追加する
 

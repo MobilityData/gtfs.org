@@ -1,15 +1,15 @@
 ---
-title: GTFS.orgについて
-description: GTFS.org、MobilityData による管理、GTFSの進化、貢献ガイドライン、ライセンスの詳細について説明します。
+title: GTFS.org について
+description: GTFS.org、MobilityData による管理、GTFS の進化、貢献ガイドライン、ライセンスの詳細について説明します。
 ---
 
-# 
+# アバウト
 
 GTFS.org については、 General Transit Feed Specificationの中心的なドキュメントプラットフォームです。このサイトとそのコンテンツは、[MobilityData](https://mobilitydata.org/) によって管理されています。
 
 GTFS.org ドメイン名の購入と使用貸与、そしてコミュニティのリーダーシップの提供に対して、[Andrew Byrd](https://www.linkedin.com/in/byrdandrew) に感謝します。
 
-## GTFS.orgへの貢献
+## GTFS.org への貢献
 
 このウェブサイトのコンテンツへの編集を提案するには、MobilityData の [documentation@mobilitydata.org](mailto:document@mobilitydata.org) に連絡するか、[GTFS.org GitHub リポジトリ](https://github.com/mobilitydata/gtfs.org) にアクセスして編集内容をプル リクエストとして送信してください。
 
@@ -17,8 +17,7 @@ GTFS.org ドメイン名の購入と使用貸与、そしてコミュニティ�
 
 旅行や駅など、GTFS.org 全体でするべきである使用される重要な用語の用語集の変更は受け付けています。サイト全体に適用される重要な用語の翻訳を提案したい場合は、[GTFS.org GitHub リポジトリ](https://github.com/mobilitydata/gtfs.org)で問題を作成できます。
 
-
-## GTFSの進化
+## GTFS の進化
 
 GTFSは、オレゴン州ポートランドの TriMet と Google のコラボレーションから始まりました。TriMet は Google と協力して、Google マップにインポートできる、管理しやすく使いやすい形式に交通データをフォーマットしました。この交通データ形式は、もともとGoogle Transit Feed Specification （GTFS）として知られていました。
 

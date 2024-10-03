@@ -1,4 +1,4 @@
-# :material-subway-variant: `、`
+# :material-subway-variant: ベース
 以下の機能は、 GTFS が交通サービスを表すために必要な最も基本的かつ重要な要素を提供します。GTFS はルート・路線系統で構成され、各ルートには関連する便があります。これらの便は、特定の時間に 1 つ以上の停留所等を訪れます。便には時刻情報のみが含まれ、運行日はカレンダーによって決定されます。
 GTFS フィードを機能させるには、これらすべての機能を同時に実装する必要がしなければならない##事業者
 
@@ -14,8 +14,8 @@ GTFS フィードを機能させるには、これらすべての機能を同時
 
 ??? note "サンプルデータ"
 
-   <p style="font-size:16px"> 
-   </p> 
+    <p style="font-size:16px">
+    </p>
     !!! note ""
         <p style="font-size:16px">
         <a href="../../../documentation/schedule/reference/#agencytxt"><b>agency.txt</b></a> <br>
@@ -25,9 +25,7 @@ GTFS フィードを機能させるには、これらすべての機能を同時
         |-----------|-------------|----------------------------|---------------------|-------------|----------------|----------------------------------|------------------------|
         | tb        | Transit Bus | https://www.transitbus.org | America/Los_Angeles | EN          | (777) 555-7777 | https://www.transitbus.org/fares | contact@transitbus.org |
 
-
-
-##停留所等
+## 停留所等
 
 停留所等は、交通サービスが乗客を乗降させる場所を識別するために使用される基本要素を表します。地下鉄の駅やバス停などです。各停留所には、他の属性とともに、地図上で位置を正確に示すための地理座標や、機関の乗客向け資料と一致する名前があります。停留所等は停車時刻 を使用して便に関連付けられます。
 GTFS では、[構内通路](/getting_started/機能/構内通路) を使用して、鉄道駅やバス停などの大きな駅の内部を記述することもできます。
@@ -42,9 +40,9 @@ GTFS では、[構内通路](/getting_started/機能/構内通路) を使用し�
 
 ??? note "サンプルデータ"
 
-   <p style="font-size:16px"> 
+    <p style="font-size:16px">
     
-   </p> 
+    </p>
     !!! note ""
         <p style="font-size:16px">
         <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
@@ -54,8 +52,7 @@ GTFS では、[構内通路](/getting_started/機能/構内通路) を使用し�
         |---------|-----------|--------------------------------------------|------------|-----------|------------|-----------------------------------------|---------------|---------------|
         | TAS001  | TAS001    | Southwest corner of 5 Avenue and 53 Street | 5 Av/53 St | 45.503568 | -73.587079 | https://www.transitbus.org/stops/TAS001 |               |               |
 
-
-##ルート・路線系統
+## ルート・路線系統
 
 ルートとは、同じブランドの下にある便のグループで、乗客には単一のサービスとして表示されます。各ルートには、他の属性の中でも、機関の乗客向け資料に一致する名前と、表されるサービスの種類 (バス、地下鉄、フェリーなど) があります。
 
@@ -69,9 +66,9 @@ GTFS では、[構内通路](/getting_started/機能/構内通路) を使用し�
 
 ??? note "サンプルデータ"
 
-   <p style="font-size:16px"> 
+    <p style="font-size:16px">
     次のサンプルはバスルート (`route_type=3`) を定義します。
-   </p> 
+    </p>
     !!! note ""
         <p style="font-size:16px">
         <a href="../../../documentation/schedule/reference/#routestxt"><b>routes.txt</b></a> <br>
@@ -80,7 +77,6 @@ GTFS では、[構内通路](/getting_started/機能/構内通路) を使用し�
         | route_id | agency_id | route_short_name | route_long_name    | route_desc                                            | route_type | route_url                            | route_sort_order |
         |----------|-----------|------------------|--------------------|-------------------------------------------------------|------------|--------------------------------------|------------------|
         | RA       | tb        |               17 | Mission - Downtown | The "A" route travels from lower Mission to Downtown. |          3 | https://www.transitbus.org/routes/ra |               12 |
-
 
 ## 運行日
 
@@ -98,28 +94,28 @@ GTFS では、[構内通路](/getting_started/機能/構内通路) を使用し�
 
 ??? note "サンプルデータ"
 
-   <p style="font-size:16px"> 
+    <p style="font-size:16px">
     次のサンプルでは、​​2024 年 7 月の 2 つのサービス (平日と週末) を定義しており、これには週末サービスとして運行される 7 月 4 日の特別休日サービスが含まれます。
-   </p> 
+    </p>
     !!! note ""
-      <p style="font-size:16px"> 
-       <a href="../../../documentation/schedule/reference/#calendartxt"><b>calendar.txt</b></a><br> 
-      </p> 
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#calendartxt"><b>calendar.txt</b></a> <br>
+        </p>
 
-       | service_id | 月曜日 | 火曜日 | 水曜日 | 木曜日 | 金曜日 | 土曜日 | 日曜日 | start_date | end_date |
-       |------------|---------|-----------|-----------|----------|----------|----------|----------|----------|
-       | WE         |      0 |       0 |         0 |       0 |      0 |       1 |      1 |   20240701 | 20240731 |
-       | WD         |      1 |       1 |         1 |       1 |      1 |       0 |      0 |   20240701 | 20240731 |
+        | service_id | monday | tuesday | wednesday | thursday | friday | saturday | sunday | start_date | end_date |
+        |------------|--------|---------|-----------|----------|--------|----------|--------|------------|----------|
+        | WE         |      0 |       0 |         0 |        0 |      0 |        1 |      1 |   20240701 | 20240731 |
+        | WD         |      1 |       1 |         1 |        1 |      1 |        0 |      0 |   20240701 | 20240731 |
 
-    ??? note ""
-      <p style="font-size:16px"> 
-       <a href="../../../documentation/schedule/reference/#calendar_datestxt"><b>calendar_dates.txt</b></a><br> 
-      </p> 
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#calendar_datestxt"><b>calendar_dates.txt</b></a> <br>
+        </p>
 
-       | service_id | date     | exception_type |
-       |-----------|----------|----------------|
-       | WD         | 20240704 |             2 |
-       | WE         | 20240704 |             1 |
+        | service_id | date     | exception_type |
+        |------------|----------|----------------|
+        | WD         | 20240704 |              2 |
+        | WE         | 20240704 |              1 |
 
 ## 便
 
@@ -135,18 +131,18 @@ GTFS では、[構内通路](/getting_started/機能/構内通路) を使用し�
 
 ??? note "サンプルデータ"
 
-   <p style="font-size:16px"> 
+    <p style="font-size:16px">
     次のサンプルでは、​​RA ルートの両方向に実行される 2 つの便を定義します。
-   </p> 
+    </p>
     !!! note ""
-      <p style="font-size:16px"> 
-       <a href="../../../documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a><br> 
-      </p> 
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
+        </p>
 
-       | route_id | service_id | trip_id | trip_short_name | direction_id | block_id |
-       |----------|-----------|----------|-----------------|--------------|----------|
-       | RA       | WE         | AWE1     |            3885 |            0 |       1 |
-       | RA       | WE         | AWE2     |            3887 |            1 |       2 |
+        | route_id | service_id | trip_id | trip_short_name | direction_id | block_id |
+        |----------|------------|---------|-----------------|--------------|----------|
+        | RA       | WE         | AWE1    |            3885 |            0 |        1 |
+        | RA       | WE         | AWE2    |            3887 |            1 |        2 |
 
 ## 停車時刻
 
@@ -163,18 +159,18 @@ GTFS では、[構内通路](/getting_started/機能/構内通路) を使用し�
 
 ??? note "サンプルデータ"
 
-   <p style="font-size:16px"> 
+    <p style="font-size:16px">
     次のサンプルは、5 つの停留所等での旅行のスケジュールを定義します。
-   </p> 
+    </p>
     !!! note ""
-      <p style="font-size:16px"> 
-       <a href="../../../documentation/schedule/reference/#stop_timestxt"><b>stop_times.txt</b></a><br> 
-      </p> 
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#stop_timestxt"><b>stop_times.txt</b></a> <br>
+        </p>
 
-       | trip_id | arrive_time | department_id | stop_sequence | pickup_type | drop_off_type | timepoint |
-       |---------|--------------|----------------|---------|---------------|------------|---------------|------------|
-       | AWE1     |      6:10:00 |       6:10:00 | TAS001 |             1 |          0 |             0 |         1 |
-       | AWE1     |      6:14:00 |       6:14:00 | TAS002 |             2 |          0 |             0 |         1 |
-       | AWE1     |      6:20:00 |      6:20:00 | TAS003 |             3 |          0 |             0 |         1 |
-       | AWE1     |      6:23:00 |      6:23:00 | TAS004 |             4 |          0 |             0 |         1 |
-       | AWE1     |      6:25:00 |      6:25:00 | TAS005 |             5 |          0 |             0 |         1 |
+        | trip_id | arrival_time | departure_time | stop_id | stop_sequence | pickup_type | drop_off_type | timepoint |
+        |---------|--------------|----------------|---------|---------------|-------------|---------------|-----------|
+        | AWE1    |      6:10:00 |        6:10:00 | TAS001  |             1 |           0 |             0 |         1 |
+        | AWE1    |      6:14:00 |        6:14:00 | TAS002  |             2 |           0 |             0 |         1 |
+        | AWE1    |      6:20:00 |        6:20:00 | TAS003  |             3 |           0 |             0 |         1 |
+        | AWE1    |      6:23:00 |        6:23:00 | TAS004  |             4 |           0 |             0 |         1 |
+        | AWE1    |      6:25:00 |        6:25:00 | TAS005  |             5 |           0 |             0 |         1 |
