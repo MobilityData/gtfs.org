@@ -43,24 +43,25 @@
 ??? note "サンプルデータ"
 
     <p style="font-size:16px">
-    次のサンプルは、TriMet GTFSフィード（ダウンロードはこちら）から取得したシェイプの一部を示しています。<a     href="https://developer.trimet.org/GTFS.shtml">ここ ）。<br><br> 
-        </p>
-        !!! note ""
-            <p style="font-size:16px">
-            <a href="../../../documentation/schedule/reference/#shapestxt">shapes.txt</a> <br>
-            </p>
-        
-            | shape_id | shape_pt_lat | shape_pt_lon | shape_pt_sequence | shape_dist_traveled |
-            | --------- | ------------- | ------------- | ------------------ | ------------------- |
-            | 558674     | 45.47623       | -122.721885    | 1                   | 0.0                  |
-            | 558674     | 45.476235      | -122.72236     | 2                   | 121.9                |
-            | 558674     | 45.476237      | -122.722523    | 3                   | 163.7                |
-            | 558674     | 45.476242      | -122.723024    | 4                   | 292.2                |
-            | 558674     | 45.476244      | -122.72316     | 5                    | 327.1               |
+    次のサンプルは、TriMet GTFSフィード（ダウンロードはこちら）から取得したシェイプの一部を示しています。<a href="https://developer.trimet.org/GTFS.shtml">ここ。
+    </p>
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="../../../documentation/schedule/reference/#tripstxt">trips.txt</a> <br>
+        <a href="../../../documentation/schedule/reference/#shapestxt"><b>shapes.txt</b></a> <br>
+        </p>
+        
+        | shape_id | shape_pt_lat | shape_pt_lon | shape_pt_sequence | shape_dist_traveled |
+        | --------- | ------------- | ------------- | ------------------ | ------------------- |
+        | 558674     | 45.47623       | -122.721885    | 1                   | 0.0                  |
+        | 558674     | 45.476235      | -122.72236     | 2                   | 121.9                |
+        | 558674     | 45.476237      | -122.722523    | 3                   | 163.7                |
+        | 558674     | 45.476242      | -122.723024    | 4                   | 292.2                |
+        | 558674     | 45.476244      | -122.72316     | 5                    | 327.1               |
+
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
         </p>
         
         |trip_id |shape_id|
@@ -69,7 +70,7 @@
 
     !!! note ""
         <p style="font-size:16px">
-        <a href="../../../documentation/schedule/reference/#stop_timestxt">stop_times.txt</a> <br>
+        <a href="../../../documentation/schedule/reference/#stop_timestxt"><b>stop_times.txt</b></a> <br>
         </p>
         
         |trip_id |stop_sequence|shape_dist_traveled|
