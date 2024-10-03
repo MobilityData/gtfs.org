@@ -186,7 +186,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 主キー(`agency_id`)
 
 | フィールド名 | タイプ | 存在 | 説明 |
-|------|------|------|------|------|
+|------|------|------|------|
 | `agency_id` |ユニーク ID |**条件付きで必須**| 交通事業者と同義であることが多い交通ブランドを識別します。 1 つの事業者が複数の個別のサービスを運営している場合など、機関とブランドは異なる場合があることに注意してください。 このドキュメントでは、`ブランド`の代わりに`事業者`という用語を使用します。 データセットには、複数の機関のデータが含まれるしてもよい。<br><br>条件付きで必須:<br> - データセットに複数の交通機関のデータが含まれている場合は**必須**です。<br> - それ以外の場合は推奨。 |
 | `agency_name` |Text|**必須**| 交通事業者の正式名称。 |
 | `agency_url` | URL |**必須**| 交通事業者の URL。 |
@@ -518,8 +518,8 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 
 | フィールド名 | タイプ | 存在 | 説明 |
 |------|------|------|------|
-| `from_leg_group_id` | `fare_leg_rules.leg_group_id`部` ID |任意| 転送前の運賃区間ルールのグループを識別します。<br><br>フィルタリングされている`leg_group_id`に一致する`fare_transfer_rules.from_leg_group_id`値がない場合、デフォルトで空の`fare_transfer_rules.from_leg_group_id`が一致します。<br><br> `fare_transfer_rules.from_leg_group_id`の空のエントリは、 `fare_transfer_rules.from_leg_group_id`にリストされているものを除く、 `fare_leg_rules.leg_group_id`で定義されているすべての区間グループに対応します |
-| `to_leg_group_id` | `fare_leg_rules.leg_group_id`部` ID |任意| 転送後の運賃区間ルールのグループを識別します。<br><br>フィルタリングされている`leg_group_id`に一致する`fare_transfer_rules.to_leg_group_id`値がない場合、デフォルトで空の`fare_transfer_rules.to_leg_group_id`が一致します。<br><br> `fare_transfer_rules.to_leg_group_id`の空のエントリは、 `fare_leg_rules.leg_group_id`にリストされているものを除く、 `fare_transfer_rules.to_leg_group_id`で定義されているすべての区間グループに対応します |
+| `from_leg_group_id` | `fare_leg_rules.leg_group_id` 部 ID |**任意**| 転送前の運賃区間ルールのグループを識別します。<br><br>フィルタリングされている`leg_group_id`に一致する`fare_transfer_rules.from_leg_group_id`値がない場合、デフォルトで空の`fare_transfer_rules.from_leg_group_id`が一致します。<br><br> `fare_transfer_rules.from_leg_group_id`の空のエントリは、 `fare_transfer_rules.from_leg_group_id`にリストされているものを除く、 `fare_leg_rules.leg_group_id`で定義されているすべての区間グループに対応します |
+| `to_leg_group_id` | `fare_leg_rules.leg_group_id` 部 ID |**任意**| 転送後の運賃区間ルールのグループを識別します。<br><br>フィルタリングされている`leg_group_id`に一致する`fare_transfer_rules.to_leg_group_id`値がない場合、デフォルトで空の`fare_transfer_rules.to_leg_group_id`が一致します。<br><br> `fare_transfer_rules.to_leg_group_id`の空のエントリは、 `fare_leg_rules.leg_group_id`にリストされているものを除く、 `fare_transfer_rules.to_leg_group_id`で定義されているすべての区間グループに対応します |
 | `transfer_count` | ゼロ以外の整数 |**条件付きで禁止**| 乗り換えルールを適用してもよい連続乗り換えの数を定義します。<br><br>有効なオプションは次のとおりです。<br> `-1` - 制限なし。<br> `1`以上 - 転送ルールが適用さしてもよい乗り換えの数を定義します。<br><br>サブジャーニーが異なる`transfer_count`を持つ複数のレコードと一致する場合、サブジャーニーの現在の転送カウント以上の最小`transfer_count`を持つルールが選択されます。<br><br>条件付きで禁止:<br> - `fare_transfer_rules.from_leg_group_id` が`fare_transfer_rules.to_leg_group_id`と等しくない場合は**禁止**です。<br> -**必須**`fare_transfer_rules.from_leg_group_id`が`fare_transfer_rules.to_leg_group_id`と等しい場合。 |
 | `duration_limit` | 正の整数 |任意| 乗り換えの期間制限を定義します。<br><br>秒単位の整数増分で表現するしなければならない。<br><br>期間制限がない場合は、 `fare_transfer_rules.duration_limit` は空にするしなければならない。 |
 | `duration_limit_type` | 列挙型 |**条件付きで必須**| `fare_transfer_rules.duration_limit`の相対的な開始と終了を定義します。<br><br>有効なオプションは次のとおりです。<br> `0` - 現在の区間の出発運賃の検証と次の区間の到着運賃の検証の間。<br> `1` - 現在の区間の出発運賃の検証と次の区間の出発運賃の検証の間。<br> `2` - 現在の区間の到着運賃の検証と次の区間の出発運賃の検証の間。<br> `3` - 現在の区間の到着運賃の検証と次の区間の到着運賃の検証の間。<br><br>条件付きで必須:<br> -** `fare_transfer_rules.duration_limit`が定義されている場合は必須。<br> - `fare_transfer_rules.duration_limit`が空の場合は**禁止**です。 |
@@ -632,8 +632,10 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
  5. 1つの`route_id`が定義されています: `from_route_id`または`to_route_id`。
  6. `from_stop_id`および`to_stop_id` が定義されています: ルートまたは旅行関連のフィールドは設定されていません。
 
-到着旅行と出発旅行の順序付けられたペアが指定されている場合、これら 2 つの便間に適用される最も詳細度の高い乗り換えが選択されます。どの便のペアにも、適用可能な最大詳細度が同等の 2 つの乗り換えが存在することはするべきではない | フィールド名 | タイプ | 存在 | 説明 |
-|------|------|------|------|------|
+到着旅行と出発旅行の順序付けられたペアが指定されている場合、これら 2 つの便間に適用される最も詳細度の高い乗り換えが選択されます。どの便のペアにも、適用可能な最大詳細度が同等の 2 つの乗り換えが存在することはするべきではない 
+
+| フィールド名 | タイプ | 存在 | 説明 |
+|------|------|------|------|
 | `from_stop_id` | `stops.stop_id` を参照する外部 ID |**条件付きで必須**|ルート・路線系統間の接続が開始される停留所または駅を識別します。このフィールドが駅を参照する場合、乗り換えルールはそのすべての子の停留所等に適用されます。`transfer_types` 4 および5.では駅の参照は禁止されています。|
 | `transfer_types` `to_stop_id` | `stops.stop_id` 部 ID |**条件付きで必須**|ルート・路線系統間の接続が終了する停留所または駅を識別します。このフィールドが駅を参照する場合、転送ルールはすべての子停留所等に適用されます。`transfer_types` 4 および5.では、駅の参照は禁止されています。|
 | `from_route_id` | `routes.route_id` 部 ID |任意| 接続が始まるルートを識別します。<br><br> `from_route_id`が定義されている場合、乗り換えは指定された`from_stop_id`のルート上の到着旅行に適用されます。<br><br> `from_trip_id`と`from_route_id` の両方が定義されている場合、 `trip_id`は`route_id`に属しているしなければならない、 `from_trip_id` が優先されます。 |
