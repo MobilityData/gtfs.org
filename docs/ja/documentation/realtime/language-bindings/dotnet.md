@@ -16,13 +16,14 @@ Install-Package GtfsRealtimeBindings
 
 次のコード スニペットは、特定の URL から GTFS リアルタイム データ フィードをダウンロードし、それをFeedMessage (GTFS リアルタイム スキーマのルート タイプ) として解析し、結果を反復処理する方法を示しています。
 
-```p` using System.Net;
+```csharp
+using System.Net;
 using ProtoBuf;
 using TransitRealtime;
 
-WebRequest req = HttpWebRequest.Create("URL OF YOUR GTFS-REALTIMEソースはここに記述します");
- FeedMessage feed = Serializer.Deserialize<FeedMessage> (req.GetResponse().GetResponseStream());
-foreach ( feed.Entities 内のFeedEntityエンティティ) {
-...
+WebRequest req = HttpWebRequest.Create("URL OF YOUR GTFS-REALTIME SOURCE GOES HERE");
+FeedMessage feed = Serializer.Deserialize<FeedMessage>(req.GetResponse().GetResponseStream());
+foreach (FeedEntity entity in feed.Entities) {
+  ...
 }
 ```

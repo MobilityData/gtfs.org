@@ -1,521 +1,602 @@
-# GTFS Realtime Protobuf
+# GTFS realtime Protobuf
 [gtfs-realtime.proto](gtfs-realtime.proto) ファイルをダウンロードし、それを使用して GTFS-realtime フィードをコンパイルします。ファイルの内容は、以下にインラインで示されています。
 protobufs の使用の詳細については、[Protocol Buffers Developer Guide](https://developers.google.com/protocol-buffers/docs/overview) をご覧ください。
-```protobuf
-//Copyright 2015 The GTFS Specifications Authors.
-//
-//Apache License、バージョン 2.0 (以下`ライセンス`) に基づいてライセンス供与されます。
-//ライセンスに準拠しない限り、このファイルを使用することはできません。
-//ライセンスのコピーは、
-//
-//  http://www.apache.org/licenses/LICENSE-2.0 から入手できます。
-//
-//適用法で義務付けられている場合、または書面で同意されている場合を除き、ライセンスに基づいて配布されるソフトウェアは、
-//`現状のまま`で配布され、
-//明示的または黙示的ないかなる種類の保証または条件もありません。
-//特定の言語については、ライセンスをご覧ください。ライセンスに基づく権限および
-//制限を規定します。
 
-//GTFSGTFS Realtimeのプロトコル定義ファイル。
+```protobuf
+// Copyright 2015 The GTFS Specifications Authors.
 //
-//GTFS Realtimeを使用すると、交通機関は消費者に対して、サービスへの混乱 (駅の閉鎖、路線の運行停止、重大な遅延など)、車両の場所、到着予定時刻に関するリアルタイムの
-//情報を提供できます。
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
 //
-//このプロトコルは、次の場所で公開されています:
-//https://github.com/google/transit/tree/master/gtfs-realtime
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+// Protocol definition file for GTFS Realtime.
+//
+// GTFS Realtime lets transit agencies provide consumers with realtime
+// information about disruptions to their service (stations closed, lines not
+// operating, important delays etc), location of their vehicles and expected
+// arrival times.
+//
+// This protocol is published at:
+// https://github.com/google/transit/tree/master/gtfs-realtime
 
 syntax = "proto2";
 option java_package = "com.google.transit.realtime";
 package transit_realtime;
 
-//フィードmessageの内容。
-//フィードは、フィード メッセージの連続ストリームです。ストリーム内の各messageは、
-//適切な HTTP GET リクエストへの応答として取得されます。
-//リアルタイム フィードは常に、既存の GTFS フィードとの関連で定義されます。
-//すべてのエンティティ ID は、GTFS フィードを基準にして解決されます。
-//このファイルに記載されている`必須`および`オプション`は、セマンティック カーディナリティではなく、プロトコル
-//バッファ カーディナリティを参照することに注意してください。フィールド
-//セマンティック カーディナリティについては、https://github.com/google/transit/tree/master/gtfs-realtime の reference.md をご覧くださいmessage FeedMessage {
-//このフィードとフィードmessageに関するメタデータ。
- required FeedHeader header = 1;
+// The contents of a feed message.
+// A feed is a continuous stream of feed messages. Each message in the stream is
+// obtained as a response to an appropriate HTTP GET request.
+// A realtime feed is always defined with relation to an existing GTFS feed.
+// All the entity ids are resolved with respect to the GTFS feed.
+// Note that "required" and "optional" as stated in this file refer to Protocol
+// Buffer cardinality, not semantic cardinality.  See reference.md at
+// https://github.com/google/transit/tree/master/gtfs-realtime for field
+// semantic cardinality.
+message FeedMessage {
+  // Metadata about this feed and feed message.
+  required FeedHeader header = 1;
 
-//フィードの内容。
- repeat FeedEntity entity = 2;
+  // Contents of the feed.
+  repeated FeedEntity entity = 2;
 
-//拡張機能の名前空間により、サードパーティ デベロッパーは
-//GTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価できます。
- extensions 1000 to 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//次の拡張機能 ID は、組織によるプライベート使用のために予約されています。
- extensions 9000 to 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
-//フィード メッセージに含まれる、フィードに関するメタデータ。
- message FeedHeader {
-//フィード仕様のバージョン。
-//現在のバージョンは 2.0 です。有効なバージョンは`2.0`、`1.0`です。
- 必須string gtfs_realtime_version = 1;
+// Metadata about a feed, included in feed messages.
+message FeedHeader {
+  // Version of the feed specification.
+  // The current version is 2.0.  Valid versions are "2.0", "1.0".
+  required string gtfs_realtime_version = 1;
 
-//現在のフェッチが増分かどうかを判断します。現在、
-//DIFFERENTIAL モードはサポートされておらず、このモードを使用するフィードの動作は未指定です。GTFS GTFS Realtimeメーリング リスト
-//で DIFFERENTIAL モードの動作を完全に指定することについて議論されており、
-//議論が確定するとドキュメントが更新されます。
- enum Incrementality {
+  // Determines whether the current fetch is incremental.  Currently,
+  // DIFFERENTIAL mode is unsupported and behavior is unspecified for feeds
+  // that use this mode.  There are discussions on the GTFS Realtime mailing
+  // list around fully specifying the behavior of DIFFERENTIAL mode and the
+  // documentation will be updated when those discussions are finalized.
+  enum Incrementality {
     FULL_DATASET = 0;
     DIFFERENTIAL = 1;
- }
- オプションIncrementality incrementality = 2 [default = FULL_DATASET];
+  }
+  optional Incrementality incrementality = 2 [default = FULL_DATASET];
 
-//このタイムスタンプは、このフィードのコンテンツが作成された時刻 (サーバー時間) を識別します。 POSIX 時間（つまり、1970 年 1 月 1 日 00:00:00 UTC からの秒数）。
- オプションのuint64 timestamp = 3;
+  // This timestamp identifies the moment when the content of this feed has been
+  // created (in server time). In POSIX time (i.e., number of seconds since
+  // January 1st 1970 00:00:00 UTC).
+  optional uint64 timestamp = 3;
 
-//extensions 名前空間により、サードパーティの開発者はGTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価できます。
- extensions 1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//以下の拡張 ID は、あらゆる組織による私的使用のために予約されています。
- extensions 9000 から 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
-//交通フィード内のエンティティの定義（または更新）。
- message FeedEntity {
-//ID は増分サポートを提供するためだけに使用されます。ID はFeedMessage内で一意である必要があります。後続の FeedMessage には、同じ ID の FeedEntities を含めることができます。差分更新の場合、何らかの ID を持つ新しいFeedEntityが、同じ ID を持つ古いFeedEntityを置き換えます (または削除します - 下記の is_deleted を参照してください)。
-//フィードによって参照される実際の G​​TFS エンティティ (駅、ルート、旅行など) は、明示的なセレクタによって指定する必要があります (詳細については、下記のEntitySelectorを参照してください)。
- 必須string id = 1;
+// A definition (or update) of an entity in the transit feed.
+message FeedEntity {
+  // The ids are used only to provide incrementality support. The id should be
+  // unique within a FeedMessage. Consequent FeedMessages may contain
+  // FeedEntities with the same id. In case of a DIFFERENTIAL update the new
+  // FeedEntity with some id will replace the old FeedEntity with the same id
+  // (or delete it - see is_deleted below).
+  // The actual GTFS entities (e.g. stations, routes, trips) referenced by the
+  // feed must be specified by explicit selectors (see EntitySelector below for
+  // more info).
+  required string id = 1;
 
-//このエンティティを削除するかどうか。増分フェッチにのみ関連します。
- オプションbool is_deleted = 2 [default = false];
+  // Whether this entity is to be deleted. Relevant only for incremental
+  // fetches.
+  optional bool is_deleted = 2 [default = false];
 
-//エンティティ自体に関するデータ。次のフィールドの 1 つが必ず存在する必要があります (エンティティが削除される場合を除く)。
- オプションTripUpdate trip_update = 3;
- オプションVehiclePosition automobile = 4;
- オプション Alert alert = 5;
+  // Data about the entity itself. Exactly one of the following fields must be
+  // present (unless the entity is being deleted).
+  optional TripUpdate trip_update = 3;
+  optional VehiclePosition vehicle = 4;
+  optional Alert alert = 5;
 
-//注: このフィールドはまだ試験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
- オプション Shape shape = 6;
- オプション Stop stop = 7;
- オプションTripModifications trip_modifications = 8;
+  // NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+  optional Shape shape = 6;
+  optional Stop stop = 7;
+  optional TripModifications trip_modifications = 8;
 
-//extensions 名前空間により、サードパーティの開発者は
-//GTFS Realtime仕様を拡張して、新機能や
-//仕様の変更を追加および評価できます。
- extensions 1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//以下の拡張機能 ID は、あらゆる組織による私的使用のために予約されています。
- extensions 9000 から 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
 //
-//フィードで使用されるエンティティ。
+// Entities used in the feed.
 //
 
-//旅程に沿った車両の進行状況のリアルタイム更新。
-//ScheduleRelationshipの値に応じて、 TripUpdateでは以下を指定できます。
-//- スケジュールに沿って進む旅程。
-//- ルートに沿って進むが、固定スケジュールがない旅程。
-//- スケジュールに関して追加または削除された旅程。
+// Realtime update of the progress of a vehicle along a trip.
+// Depending on the value of ScheduleRelationship, a TripUpdate can specify:
+// - A trip that proceeds along the schedule.
+// - A trip that proceeds along a route but has no fixed schedule.
+// - A trip that have been added or removed with regard to schedule.
 //
-//更新は将来予測される到着/出発イベント、またはすでに発生した過去のイベントについてです。
-//通常、イベントが現在の時間に近づくにつれて、更新はより正確で確実になります (以下の不確実性を参照)。
-//それが不可能な場合でも、過去のイベントの情報は
-//正確で確実である必要があります。特に、更新が過去の時間を指し示していても、その更新の不確実性が 0 でない場合、クライアントは更新が (間違った) 予測であり、旅行がまだ完了していないと結論付ける必要があります。
+// The updates can be for future, predicted arrival/departure events, or for
+// past events that already occurred.
+// Normally, updates should get more precise and more certain (see
+// uncertainty below) as the events gets closer to current time.
+// Even if that is not possible, the information for past events should be
+// precise and certain. In particular, if an update points to time in the past
+// but its update's uncertainty is not 0, the client should conclude that the
+// update is a (wrong) prediction and that the trip has not completed yet.
 //
-//更新は、すでに完了した旅行を記述する場合があることに注意してください。
-//このためには、旅行の最後の停止の更新を提供すれば十分です。
-//その時間が過去である場合、クライアントはそれから旅行全体が過去であると結論付けます (重要ではありませんが、前の停止の更新も提供できます)。
-//このオプションは、スケジュールより早く完了した旅行に最も関連していますが、スケジュールによると、旅行は現在の時間でまだ進行中です。この旅程の更新を削除すると、クライアントは旅程がまだ進行中であると想定する可能性があります。
-//フィード プロバイダーは過去の更新を削除することが許可されていますが、必須ではありません。これは、これが実際に役立つ場合の 1 つです。
- message TripUpdate {
-//このmessageが適用される旅程。実際の旅程インスタンスごとに、最大で 1 つのTripUpdateエンティティを指定できます。
-//ない場合は、予測情報がないことを意味します。
-//旅程がスケジュールどおりに進んでいることを意味するわけではありません。
- required TripDescriptor trip = 1;
+// Note that the update can describe a trip that is already completed.
+// To this end, it is enough to provide an update for the last stop of the trip.
+// If the time of that is in the past, the client will conclude from that that
+// the whole trip is in the past (it is possible, although inconsequential, to
+// also provide updates for preceding stops).
+// This option is most relevant for a trip that has completed ahead of schedule,
+// but according to the schedule, the trip is still proceeding at the current
+// time. Removing the updates for this trip could make the client assume
+// that the trip is still proceeding.
+// Note that the feed provider is allowed, but not required, to purge past
+// updates - this is one case where this would be practically useful.
+message TripUpdate {
+  // The Trip that this message applies to. There can be at most one
+  // TripUpdate entity for each actual trip instance.
+  // If there is none, that means there is no prediction information available.
+  // It does *not* mean that the trip is progressing according to schedule.
+  required TripDescriptor trip = 1;
 
-//この旅程を運行している車両に関する追加情報。
- optimal VehicleDescriptor automobile = 3;
+  // Additional information on the vehicle that is serving this trip.
+  optional VehicleDescriptor vehicle = 3;
 
-//予測される単一のイベント (到着または出発) のタイミング情報。
-//タイミングは、遅延および/または推定時刻、および不確実性で構成されます。
-//- 予測が GTFS 内の既存のスケジュールと比較して提供される場合は、遅延を使用する必要があります。
-//- 予測スケジュールがあるかどうかに関係なく、時間を指定する必要があります。 
-// 時間と遅延の両方が指定されている場合は、時間が優先されます
-// (ただし、通常、スケジュールされた旅行に対して時間が指定されている場合は、
-// GTFS のスケジュールされた時間 + 遅延に等しくする必要があります)。
-//
-//不確実性は、時間と遅延の両方に等しく適用されます。
-//不確実性は、実際の遅延の予想される誤差を大まかに指定します (ただし、
-//正確な統計的意味はまだ定義していないことに注意してください)。
-//コンピューターのタイミング制御下で運転される列車など、不確実性が 0 になる可能性もありますmessage StopTimeEvent {
-  //遅延 (秒単位) は、正 (車両が遅れていることを意味する) または
-  //負 (車両がスケジュールより進んでいることを意味する) になります。遅延が 0
-    の場合、車両は時間どおりに到着していることを意味します。
-    オプションのint32 delay = 1;
+  // Timing information for a single predicted event (either arrival or
+  // departure).
+  // Timing consists of delay and/or estimated time, and uncertainty.
+  // - delay should be used when the prediction is given relative to some
+  //   existing schedule in GTFS.
+  // - time should be given whether there is a predicted schedule or not. If
+  //   both time and delay are specified, time will take precedence
+  //   (although normally, time, if given for a scheduled trip, should be
+  //   equal to scheduled time in GTFS + delay).
+  //
+  // Uncertainty applies equally to both time and delay.
+  // The uncertainty roughly specifies the expected error in true delay (but
+  // note, we don't yet define its precise statistical meaning). It's possible
+  // for the uncertainty to be 0, for example for trains that are driven under
+  // computer timing control.
+  message StopTimeEvent {
+    // Delay (in seconds) can be positive (meaning that the vehicle is late) or
+    // negative (meaning that the vehicle is ahead of schedule). Delay of 0
+    // means that the vehicle is exactly on time.
+    optional int32 delay = 1;
 
-  //イベントは絶対時間として表されます。
-  //Unix 時間 (つまり、1970 年 1 月 1 日 00:00:00
-  //UTC からの秒数)。
-    オプションのint64 time = 2;
+    // Event as absolute time.
+    // In Unix time (i.e., number of seconds since January 1st 1970 00:00:00
+    // UTC).
+    optional int64 time = 2;
 
-  //不確実性が省略されている場合は、不明と解釈されます。
-  //予測が不明または不確実すぎる場合は、遅延 (または時間) フィールド
-  //は空にする必要があります。このような場合、不確実性フィールドは無視されます。
-  //完全に確実な予測を指定するには、その不確実性を 0 に設定します。
-    オプションint32不確実性 = 3;
+    // If uncertainty is omitted, it is interpreted as unknown.
+    // If the prediction is unknown or too uncertain, the delay (or time) field
+    // should be empty. In such case, the uncertainty field is ignored.
+    // To specify a completely certain prediction, set its uncertainty to 0.
+    optional int32 uncertainty = 3;
 
-  //拡張機能の名前空間により、サードパーティの開発者は
-  //GTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価できます。
-    拡張機能 1000 ～ 1999;
+    // The extensions namespace allows 3rd-party developers to extend the
+    // GTFS Realtime Specification in order to add and evaluate new features
+    // and modifications to the spec.
+    extensions 1000 to 1999;
 
-  //次の拡張機能 ID は、組織によるプライベート使用のために予約されています。
-    拡張機能 9000 ～ 9999;
- }
+    // The following extension IDs are reserved for private use by any organization.
+    extensions 9000 to 9999;
+  }
 
-//旅行中の特定の停車地の到着イベントや出発イベントのリアルタイム更新。更新は、過去のイベントと将来のイベントの両方に提供できます。
-//プロデューサーは、過去のイベントを削除することが許可されていますが、必須ではありません。
- message StopTimeUpdate {
-  //更新はstop_sequenceまたは
-  //stop_id のいずれかを介して特定の停車地にリンクされるため、以下のフィールドのいずれかが必ず設定されている必要があります。
-  //詳細については、 TripDescriptorのドキュメントを参照してください。
+  // Realtime update for arrival and/or departure events for a given stop on a
+  // trip. Updates can be supplied for both past and future events.
+  // The producer is allowed, although not required, to drop past events.
+  message StopTimeUpdate {
+    // The update is linked to a specific stop either through stop_sequence or
+    // stop_id, so one of the fields below must necessarily be set.
+    // See the documentation in TripDescriptor for more information.
 
-  //対応する GTFS フィードのstop_times.txtと同じであるしなければならないがあります。
-    オプション uint32 stop_sequence = 1;
-  //対応する GTFS フィードのstops.txtと同じである必要がありしなければならない。
-    オプションstring stop_id = 4;
+    // Must be the same as in stop_times.txt in the corresponding GTFS feed.
+    optional uint32 stop_sequence = 1;
+    // Must be the same as in stops.txt in the corresponding GTFS feed.
+    optional string stop_id = 4;
 
-    オプションStopTimeEvent arrive = 2;
-    オプションStopTimeEvent departure = 3;
+    optional StopTimeEvent arrival = 2;
+    optional StopTimeEvent departure = 3;
 
-  //指定された停車地からの出発後の予想乗車率。
-  //将来の停車地に対してのみ提供する必要があります。
-  //到着または
-  //出発の StopTimeEvent なしで destination_occupancy_status を提供するには、 ScheduleRelationshipをNO_DATA に設定します。
-    オプションのVehiclePosition. OccupancyStatus destination_occupancy_status = 7;
+    // Expected occupancy after departure from the given stop.
+    // Should be provided only for future stops.
+    // In order to provide departure_occupancy_status without either arrival or
+    // departure StopTimeEvents, ScheduleRelationship should be set to NO_DATA. 
+    optional VehiclePosition.OccupancyStatus departure_occupancy_status = 7;
     
-  //StopTimeEvents と静的スケジュールの関係。
+    // The relation between the StopTimeEvents and the static schedule.
     enum ScheduleRelationship {
-    //車両は、必ずしもスケジュールの時間に従っているわけではありませんが、静的なスケジュールに従って停車します。
-    //到着と出発の少なくとも 1 つを指定する必要があります。この停車場のスケジュールに到着時間と出発時間の両方が含まれている場合は、この更新にも両方が含まれている必要があります。頻度ベースの旅程 (exact_times = 0 の GTFS frequencies.txt )
-    //には SCHEDULED 値を指定せず、代わりに UNSCHEDULED を使用する必要があります。
+      // The vehicle is proceeding in accordance with its static schedule of
+      // stops, although not necessarily according to the times of the schedule.
+      // At least one of arrival and departure must be provided. If the schedule
+      // for this stop contains both arrival and departure times then so must
+      // this update. Frequency-based trips (GTFS frequencies.txt with exact_times = 0)
+      // should not have a SCHEDULED value and should use UNSCHEDULED instead.
       SCHEDULED = 0;
 
-    //停車地はスキップされます。つまり、車両はこの停車地には停車しません。
-    //到着と出発はオプションです。
+      // The stop is skipped, i.e., the vehicle will not stop at this stop.
+      // Arrival and departure are optional.
       SKIPPED = 1;
 
-    //この停車地には StopTimeEvents が指定されていません。
-    //この値の主な目的は、旅程の一部についてのみ時間予測を提供することです。つまり、旅程の最後の更新に NO_DATA
-    //指定子が含まれている場合、旅程の残りの停車地の StopTimeEvents も指定されていないと見なされます。
-    //到着も出発も指定しないでください。
+      // No StopTimeEvents are given for this stop.
+      // The main intention for this value is to give time predictions only for
+      // part of a trip, i.e., if the last update for a trip has a NO_DATA
+      // specifier, then StopTimeEvents for the rest of the stops in the trip
+      // are considered to be unspecified as well.
+      // Neither arrival nor departure should be supplied.
       NO_DATA = 2;
 
-    //車両は GTFS で定義された旅程を運行していますfrequencies.txtで exact_times = 0と設定します。
-    //この値は、GTFS frequencies.txtで定義されていない旅程、または GTFS frequencies.txtで exact_times = 1.と設定されている旅程には使用しないでください。ScheduleRelationship =UNSCHEDULED とScheduleRelationshipされた StopTimeUpdates
-    //を含む便では、 TripDescriptorも設定する必要があります。ScheduleRelationship =UNSCHEDULED.
-    //注: このフィールドはまだ試験段階であり、変更される可能性があります。将来的には正式に採用される可能性があります。
+      // The vehicle is operating a trip defined in GTFS frequencies.txt with exact_times = 0.
+      // This value should not be used for trips that are not defined in GTFS frequencies.txt,
+      // or trips in GTFS frequencies.txt with exact_times = 1. Trips containing StopTimeUpdates
+      // with ScheduleRelationship=UNSCHEDULED must also set TripDescriptor.ScheduleRelationship=UNSCHEDULED.
+      // NOTE: This field is still experimental, and subject to change. It may be
+      // formally adopted in the future.
       UNSCHEDULED = 3;
     }
-    オプションのScheduleRelationship schedule_relationship = 5
-       [default = SCHEDULED];
+    optional ScheduleRelationship schedule_relationship = 5
+        [default = SCHEDULED];
 
-  //停止時刻の更新された値を提供します。
-  //注: このmessageはまだ試験段階であり、変更される可能性があります。将来的には正式に採用される可能性があります。
+    // Provides the updated values for the stop time.
+    // NOTE: This message is still experimental, and subject to change. It may be formally adopted in the future.
     message StopTimeProperties {
-    //リアルタイムの停車地割り当てをサポートします。 GTFS のstops.txtで定義された stop_id を参照します。
-    //新しい assignment_stop_id によって、エンド ユーザーの旅行体験が GTFS のstop_times.txtで定義された stop_id と比べて大幅に異なることはあってはなりません。つまり、新しい停留所が追加のコンテキストなしでアプリ内に表示された場合は、エンド ユーザーはこの新しい stop_id を`異常な変更`と見なすべきではありません。
-    //たとえば、このフィールドは、GTFS stop_times.txtで最初に定義された停留所と同じ駅に属する stop_id を使用して、プラットフォームの割り当てに使用することを目的としています。
-    //リアルタイムの到着または出発の予測を提供せずに停留所を割り当てるには、このフィールドに値を入力して、 StopTimeUpdate.schedule_relationship = NO_DATA を設定します。
-    //このフィールドに値を入力する場合は、 `StopTimeUpdate.stop_id` を省略し、 `StopTimeUpdate.stop_sequence`のみを使用することをお勧めします。 
-    //`StopTimeProperties.assigned_stop_id`と`StopTimeUpdate.stop_id` が設定されている場合、 `StopTimeUpdate.stop_id` は`assigned_stop_id`と一致する必要があります。
-    //プラットフォームの割り当ては、他の GTFS リアルタイム フィールドにも反映される必要があります
-    //(例: `VehiclePosition.stop_id`)。
-    //注: このフィールドはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
-      optional string assignment_stop_id = 1;
+      // Supports real-time stop assignments. Refers to a stop_id defined in the GTFS stops.txt.
+      // The new assigned_stop_id should not result in a significantly different trip experience for the end user than
+      // the stop_id defined in GTFS stop_times.txt. In other words, the end user should not view this new stop_id as an
+      // "unusual change" if the new stop was presented within an app without any additional context.
+      // For example, this field is intended to be used for platform assignments by using a stop_id that belongs to the
+      // same station as the stop originally defined in GTFS stop_times.txt.
+      // To assign a stop without providing any real-time arrival or departure predictions, populate this field and set
+      // StopTimeUpdate.schedule_relationship = NO_DATA.
+      // If this field is populated, it is preferred to omit `StopTimeUpdate.stop_id` and use only `StopTimeUpdate.stop_sequence`. If
+      // `StopTimeProperties.assigned_stop_id` and `StopTimeUpdate.stop_id` are populated, `StopTimeUpdate.stop_id` must match `assigned_stop_id`.
+      // Platform assignments should be reflected in other GTFS-realtime fields as well
+      // (e.g., `VehiclePosition.stop_id`).
+      // NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+      optional string assigned_stop_id = 1;
 
-    //extensions 名前空間により、サードパーティの開発者はGTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価できます。
-      extensions 1000 ～ 1999;
+      // The extensions namespace allows 3rd-party developers to extend the
+      // GTFS Realtime Specification in order to add and evaluate new features
+      // and modifications to the spec.
+      extensions 1000 to 1999;
 
-    //次の拡張 ID は、組織によるプライベート使用のために予約されています。
-      extensions 9000 ～ 9999;
+      // The following extension IDs are reserved for private use by any organization.
+      extensions 9000 to 9999;
     }
 
-  //GTFS stop_times.txt内で定義されている特定のプロパティのリアルタイム更新 
-  //注: このフィールドはまだ試験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
-    オプションのStopTimeProperties stop_time_properties = 6;
+    // Realtime updates for certain properties defined within GTFS stop_times.txt
+    // NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+    optional StopTimeProperties stop_time_properties = 6;
 
-  //extensions 名前空間により、サードパーティの開発者はGTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価できます。
-    extensions 1000 から 1999;
+    // The extensions namespace allows 3rd-party developers to extend the
+    // GTFS Realtime Specification in order to add and evaluate new features
+    // and modifications to the spec.
+    extensions 1000 to 1999;
 
-  //以下の拡張 ID は、あらゆる組織による私的使用のために予約されています。
-    extensions 9000 から 9999;
- }
+    // The following extension IDs are reserved for private use by any organization.
+    extensions 9000 to 9999;
+  }
 
-//旅行の StopTimes への更新 (将来の予測と、場合によっては過去の予測、つまりすでに発生したものの両方)。
-//更新はstop_sequenceで並べ替え、次に指定された停車地までの旅行のすべての停車地に適用する必要があります。
-//
-//例 1:
-//停車地が 20 か所ある旅行の場合、到着遅延と出発遅延が 0 のStopTimeUpdate が現在の停車地のstop_sequence は、旅行が
-//正確に時間通りであることを意味します。
-//
-//例 2:
-//同じ旅行インスタンスに対して、3 つの StopTimeUpdate が提供されます:
-//- stop_sequence 3 の遅延は 5 分
-//- stop_sequence 8 の遅延は 1 分
-//- stop_sequence 10 の遅延時間は未指定
-//これは次のように解釈されます:
-//- stop_sequences 3、4、5、6、7 の遅延は 5 分です。
-//- stop_sequences 8、9 の遅延は 1 分です。
-//- stop_sequences 10、...の遅延は不明です。
- StopTimeUpdateが繰り返されます stop_time_update = 2;
+  // Updates to StopTimes for the trip (both future, i.e., predictions, and in
+  // some cases, past ones, i.e., those that already happened).
+  // The updates must be sorted by stop_sequence, and apply for all the
+  // following stops of the trip up to the next specified one.
+  //
+  // Example 1:
+  // For a trip with 20 stops, a StopTimeUpdate with arrival delay and departure
+  // delay of 0 for stop_sequence of the current stop means that the trip is
+  // exactly on time.
+  //
+  // Example 2:
+  // For the same trip instance, 3 StopTimeUpdates are provided:
+  // - delay of 5 min for stop_sequence 3
+  // - delay of 1 min for stop_sequence 8
+  // - delay of unspecified duration for stop_sequence 10
+  // This will be interpreted as:
+  // - stop_sequences 3,4,5,6,7 have delay of 5 min.
+  // - stop_sequences 8,9 have delay of 1 min.
+  // - stop_sequences 10,... have unknown delay.
+  repeated StopTimeUpdate stop_time_update = 2;
 
-//車両のリアルタイムの進行状況が測定された最新の瞬間
-//将来の StopTimes を推定します。過去の StopTimes が提供される場合、
-//到着/出発時刻はこの値よりも早くなる可能性があります。 POSIX
-//時間 (つまり、1970 年 1 月 1 日 00:00:00 UTC からの秒数)。
- オプションのuint64 timestamp = 4;
+  // The most recent moment at which the vehicle's real-time progress was measured
+  // to estimate StopTimes in the future. When StopTimes in the past are provided,
+  // arrival/departure times may be earlier than this value. In POSIX
+  // time (i.e., the number of seconds since January 1st 1970 00:00:00 UTC).
+  optional uint64 timestamp = 4;
 
-//旅行の現在のスケジュール偏差。遅延は
-//GTFS の既存のスケジュール
-//を基準に予測が与えられる場合にのみ指定する必要があります。
-//
-//遅延 (秒単位) は正 (車両が遅れていることを意味する) または
-//負 (車両がスケジュールより進んでいることを意味する) になります。遅延が 0
-//の場合、車両は時間どおりであることを意味します。
-//
-//StopTimeUpdates の遅延情報は、旅行レベルの遅延
-//情報よりも優先されます。そのため、旅行レベルの遅延は、 StopTimeUpdate遅延値が指定された次の
-//停車地までしか伝播されません。
-//
-//フィード プロバイダーは、データの鮮度を評価するために、遅延値が最後に更新された日時を示すTripUpdate.timestamp
-//値を提供することを強くお勧めします。
-//
-//注: このフィールドはまだ実験段階であり、変更される可能性があります。将来
-//正式に採用される可能性があります。
- オプションのint32 delay = 5;
+  // The current schedule deviation for the trip.  Delay should only be
+  // specified when the prediction is given relative to some existing schedule
+  // in GTFS.
+  //
+  // Delay (in seconds) can be positive (meaning that the vehicle is late) or
+  // negative (meaning that the vehicle is ahead of schedule). Delay of 0
+  // means that the vehicle is exactly on time.
+  //
+  // Delay information in StopTimeUpdates take precedent of trip-level delay
+  // information, such that trip-level delay is only propagated until the next
+  // stop along the trip with a StopTimeUpdate delay value specified.
+  //
+  // Feed providers are strongly encouraged to provide a TripUpdate.timestamp
+  // value indicating when the delay value was last updated, in order to
+  // evaluate the freshness of the data.
+  //
+  // NOTE: This field is still experimental, and subject to change. It may be
+  // formally adopted in the future.
+  optional int32 delay = 5;
 
-//迂回がある場合の新しい shape_id など、旅行の更新されたプロパティを定義します。または、重複した旅行のtrip_id、 start_date、および start_time を定義します。
-//注: このmessageはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性がありますmessage TripProperties {
-  //(CSV) GTFS trips.txt 
-    で定義されている既存の旅行の複製であるが、異なるサービスdateおよび/または時刻 ( TripProperties.start_date フィールドと 
-  //TripProperties.start_time フィールドを使用して定義) に開始する新しい旅行の識別子を定義します。trips の定義を参照してください。(CSV) GTFS のtrip_id 。その値は、(CSV) GTFS で使用される値と異なる必要があります
-  //。schedule_relationship=DUPLICATED の場合は必須。それ以外の場合は、このフィールドに値を入力してはならず、コンシューマーによって無視されます。
-  //注: このフィールドはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
-    オプションのstring trip_id = 1;
-  //DUPLICATED 旅行が実行されるサービスdate(YYYYMMDD 形式)。 
-  //schedule_relationship=DUPLICATED の場合は必須。それ以外の場合は、このフィールドに値を入力してはならず、コンシューマーによって無視されます。
-  //注: このフィールドはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
-    オプションのstringstart_date = 2;
-  //複製された旅行の出発開始時刻を定義します。(CSV) GTFS の stop_times.departure_time
-  //の定義を参照してください。複製された旅行の予定到着時刻と出発時刻は、元の旅行の出発時刻とこのフィールド間のオフセット
-  //に基づいて計算されます。たとえば、GTFS 旅行の停留所 A の出発時刻が 10:00:00、停留所 B の出発時刻が 10:01:00 で、このフィールドに値
-  //10:30:00 が設定されている場合、複製された旅行の停留所 B の予定出発時刻は 10:31:00 になります。リアルタイム予測
-  //遅延値は、予測時間を決定するために、計算されたスケジュール時間に適用されます。たとえば、停留所 B の出発遅延が 30 の場合、予測される出発時間は 10:31:30 です。リアルタイム予測時間値にはオフセットが適用されず、提供された予測時間を示します。
-  //たとえば、停留所 B の出発時間が 10:31:30 の場合、予測される出発時間は 10:31:30 です。このフィールドは、schedule_relationship が DUPLICATED の場合に必須です。それ以外の場合は、このフィールドに値を入力してはならず、コンシューマーによって無視されます。
-  //注: このフィールドはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
-    オプションのstringstart_time = 3;
-  //旅行の形状が
-  //(CSV) GTFS で指定された形状と異なる場合に車両の移動経路の形状を指定します。または、乗客の需要に基づいて異なる経路を取る車両など、(CSV) GTFS によって提供されていない場合にリアルタイムで指定します。(CSV) GTFS の trips.shape_id の定義を参照してください。形状が (CSV) GTFS
-  //でもリアルタイムでも定義されていない場合、形状は不明であると見なされます。このフィールドは、(CSV) GTFS のshapes.txt 
-  //で定義された形状、または (protobuf) リアルタイム フィードの Shape を参照できます。この旅行の停車順序 (停車シーケンス) は
-  //(CSV) GTFS と同じである必要があります。迂回が発生した場合など、元の旅行の一部であるが、今後は行かなくなる停留所等は、schedule_relationship=SKIPPED としてマークする必要があります。
-  //注: このフィールドはまだ実験段階であり、変更される可能性があります。将来正式に採用される可能性があります。 
-    オプションのstring shape_id = 4;
+  // Defines updated properties of the trip, such as a new shape_id when there is a detour. Or defines the
+  // trip_id, start_date, and start_time of a DUPLICATED trip. 
+  // NOTE: This message is still experimental, and subject to change. It may be formally adopted in the future.
+  message TripProperties {
+    // Defines the identifier of a new trip that is a duplicate of an existing trip defined in (CSV) GTFS trips.txt
+    // but will start at a different service date and/or time (defined using the TripProperties.start_date and
+    // TripProperties.start_time fields). See definition of trips.trip_id in (CSV) GTFS. Its value must be different
+    // than the ones used in the (CSV) GTFS. Required if schedule_relationship=DUPLICATED, otherwise this field must not
+    // be populated and will be ignored by consumers.
+    // NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+    optional string trip_id = 1;
+    // Service date on which the DUPLICATED trip will be run, in YYYYMMDD format. Required if
+    // schedule_relationship=DUPLICATED, otherwise this field must not be populated and will be ignored by consumers.
+    // NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+    optional string start_date = 2;
+    // Defines the departure start time of the trip when it’s duplicated. See definition of stop_times.departure_time
+    // in (CSV) GTFS. Scheduled arrival and departure times for the duplicated trip are calculated based on the offset
+    // between the original trip departure_time and this field. For example, if a GTFS trip has stop A with a
+    // departure_time of 10:00:00 and stop B with departure_time of 10:01:00, and this field is populated with the value
+    // of 10:30:00, stop B on the duplicated trip will have a scheduled departure_time of 10:31:00. Real-time prediction
+    // delay values are applied to this calculated schedule time to determine the predicted time. For example, if a
+    // departure delay of 30 is provided for stop B, then the predicted departure time is 10:31:30. Real-time
+    // prediction time values do not have any offset applied to them and indicate the predicted time as provided.
+    // For example, if a departure time representing 10:31:30 is provided for stop B, then the predicted departure time
+    // is 10:31:30. This field is required if schedule_relationship is DUPLICATED, otherwise this field must not be
+    // populated and will be ignored by consumers.
+    // NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+    optional string start_time = 3;
+    // Specifies the shape of the vehicle travel path when the trip shape differs from the shape specified in
+    // (CSV) GTFS or to specify it in real-time when it's not provided by (CSV) GTFS, such as a vehicle that takes differing
+    // paths based on rider demand. See definition of trips.shape_id in (CSV) GTFS. If a shape is neither defined in (CSV) GTFS
+    // nor in real-time, the shape is considered unknown. This field can refer to a shape defined in the (CSV) GTFS in shapes.txt
+    // or a Shape in the (protobuf) real-time feed. The order of stops (stop sequences) for this trip must remain the same as
+    // (CSV) GTFS. Stops that are a part of the original trip but will no longer be made, such as when a detour occurs, should
+    // be marked as schedule_relationship=SKIPPED.
+    // NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future. 
+    optional string shape_id = 4;
 
-  //extensions 名前空間により、サードパーティの開発者は
-  //GTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価できます。
-    extensions 1000 から 1999;
+    // The extensions namespace allows 3rd-party developers to extend the
+    // GTFS Realtime Specification in order to add and evaluate new features
+    // and modifications to the spec.
+    extensions 1000 to 1999;
 
-  //以下の拡張 ID は、あらゆる組織による私的使用のために予約されています。
-    extensions 9000 から 9999;
- }
- オプションのTripProperties trip_properties = 6;
+    // The following extension IDs are reserved for private use by any organization.
+    extensions 9000 to 9999;
+  }
+  optional TripProperties trip_properties = 6;
 
-//extensions 名前空間により、サードパーティの開発者は
-//GTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価できます。
- extensions 1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//以下の拡張 ID は、あらゆる組織による私的使用のために予約されています。
- extensions 9000 から 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
-//特定の車両のリアルタイム位置情報。
- message VehiclePosition {
-//この Trip が使用する Trip車両がサービスを提供している。
-//特定の
-//旅行インスタンスで車両を識別できない場合は、空または一部になることがあります。
- オプションのTripDescriptor trip = 1;
+// Realtime positioning information for a given vehicle.
+message VehiclePosition {
+  // The Trip that this vehicle is serving.
+  // Can be empty or partial if the vehicle can not be identified with a given
+  // trip instance.
+  optional TripDescriptor trip = 1;
 
-//この旅行を提供している車両に関する追加情報。
- オプションのVehicleDescriptor Vehicle = 8;
+  // Additional information on the vehicle that is serving this trip.
+  optional VehicleDescriptor vehicle = 8;
 
-//この車両の現在位置。
- オプションのPosition position = 2;
+  // Current position of this vehicle.
+  optional Position position = 2;
 
-//現在の停車地の停車シーケンス インデックス。
-//current_stop_sequence (つまり、それが参照する停車地) の意味は
-//current_status によって決まります。
-//current_status がない場合、IN_TRANSIT_TO が想定されます。
- オプションの uint32 current_stop_sequence = 3;
-//現在の停車地を識別します。値は、
-//対応する GTFS フィード内のstops.txtと同じである必要があります。
- オプションのstring stop_id = 7;
+  // The stop sequence index of the current stop. The meaning of
+  // current_stop_sequence (i.e., the stop that it refers to) is determined by
+  // current_status.
+  // If current_status is missing IN_TRANSIT_TO is assumed.
+  optional uint32 current_stop_sequence = 3;
+  // Identifies the current stop. The value must be the same as in stops.txt in
+  // the corresponding GTFS feed.
+  optional string stop_id = 7;
 
- enum VehicleStopStatus {
-  //車両が停車地に到着しようとしています (停車表示
-  //では通常、車両のシンボルが点滅します)。
+  enum VehicleStopStatus {
+    // The vehicle is just about to arrive at the stop (on a stop
+    // display, the vehicle symbol typically flashes).
     INCOMING_AT = 0;
 
-  //車両が停車地に停止しています。
+    // The vehicle is standing at the stop.
     STOPPED_AT = 1;
 
-  //車両が出発し、次の停車地に向かっています。
+    // The vehicle has departed and is in transit to the next stop.
     IN_TRANSIT_TO = 2;
- }
-//現在の停車地に関する車両の正確なステータス。
-//current_stop_sequence が指定されていない場合は無視されます。
- オプションのVehicleStopStatus current_status = 4 [default = IN_TRANSIT_TO];
+  }
+  // The exact status of the vehicle with respect to the current stop.
+  // Ignored if current_stop_sequence is missing.
+  optional VehicleStopStatus current_status = 4 [default = IN_TRANSIT_TO];
 
-//車両の位置が測定された瞬間。 POSIX 時間
-//(つまり、1970 年 1 月 1 日 00:00:00 UTC からの秒数)。
- オプションのuint64 timestamp = 5;
+  // Moment at which the vehicle's position was measured. In POSIX time
+  // (i.e., number of seconds since January 1st 1970 00:00:00 UTC).
+  optional uint64 timestamp = 5;
 
-//この車両に影響を与えている混雑レベル。
- enum CongestionLevel {
+  // Congestion level that is affecting this vehicle.
+  enum CongestionLevel {
     UNKNOWN_CONGESTION_LEVEL = 0;
     RUNNING_SMOOTHLY = 1;
     STOP_AND_GO = 2;
     CONGESTION = 3;
-    SEVERE_CONGESTION = 4;//車を離れる人々。
- }
- オプションのCongestionLevel concentration_level = 6;
+    SEVERE_CONGESTION = 4;  // People leaving their cars.
+  }
+  optional CongestionLevel congestion_level = 6;
 
-//車両または客車の乗客占有状態。
-//個々のプロデューサーは、すべてのOccupancyStatus値を公開することはできません。したがって、コンシューマー
-//は、 OccupancyStatusOccupancyStatusを表す必要があります。同様に、プロデューサーは、実際の車両の乗車状態に対応するOccupancyStatus値を使用する必要があります。
-//乗客の乗車レベルを線形スケールで記述するには、 `occupancy_percentage`を参照してください。
-//このフィールドはまだ実験段階であり、変更される可能性があります。将来正式に採用される可能性があります。
- enum OccupancyStatus {
-  //車両または客車はほとんどの基準で空であると見なされ、乗客はほとんどまたはまったくいませんが、乗客はまだ受け入れています。
+  // The state of passenger occupancy for the vehicle or carriage.
+  // Individual producers may not publish all OccupancyStatus values. Therefore, consumers
+  // must not assume that the OccupancyStatus values follow a linear scale.
+  // Consumers should represent OccupancyStatus values as the state indicated 
+  // and intended by the producer. Likewise, producers must use OccupancyStatus values that
+  // correspond to actual vehicle occupancy states.
+  // For describing passenger occupancy levels on a linear scale, see `occupancy_percentage`.
+  // This field is still experimental, and subject to change. It may be formally adopted in the future.
+  enum OccupancyStatus {
+    // The vehicle or carriage is considered empty by most measures, and has few or no
+    // passengers onboard, but is still accepting passengers.
     EMPTY = 0;
 
-  //車両または客車には多数の座席があります。
-  //このカテゴリに該当するほど十分に大きいと見なされる利用可能な座席の総数に対する空席の数は、フィード プロデューサーの裁量で決定されます。
+    // The vehicle or carriage has a large number of seats available.
+    // The amount of free seats out of the total seats available to be
+    // considered large enough to fall into this category is determined at the
+    // discretion of the producer.
     MANY_SEATS_AVAILABLE = 1;
 
-  //車両または客車には比較的少ない座席があります。
-  //このカテゴリに該当するほど十分に小さいと見なされる利用可能な座席の総数に対する空席の数は、フィード プロデューサーの裁量で決定されます。
+    // The vehicle or carriage has a relatively small number of seats available.
+    // The amount of free seats out of the total seats available to be
+    // considered small enough to fall into this category is determined at the
+    // discretion of the feed producer.
     FEW_SEATS_AVAILABLE = 2;
 
-  //車両または客車は現在、立っている乗客のみを収容できます。
+    // The vehicle or carriage can currently accommodate only standing passengers.
     STANDING_ROOM_ONLY = 3;
 
-  //車両または客車は現在、立っている乗客のみを収容でき
-  //スペースが限られています。
+    // The vehicle or carriage can currently accommodate only standing passengers
+    // and has limited space for them.
     CRUSHED_STANDING_ROOM_ONLY = 4;
 
-  //車両または客車はほとんどの基準で満員と見なされますが、
-  //乗客の乗車を許可している可能性があります。
+    // The vehicle or carriage is considered full by most measures, but may still be
+    // allowing passengers to board.
     FULL = 5;
 
-  //車両または客車は乗客を受け入れていませんが、通常は乗客の乗車を受け入れます。
+    // The vehicle or carriage is not accepting passengers, but usually accepts passengers for boarding.
     NOT_ACCEPTING_PASSENGERS = 6;
 
-  //車両または客車には現在利用可能な占有データがありません。
+    // The vehicle or carriage doesn't have any occupancy data available at that time.
     NO_DATA_AVAILABLE = 7;
 
-  //車両または客車は乗車できず、乗客を受け入れることはありません。
-  //特別な車両または客車（機関車、保守車両など）に役立ちます。
+    // The vehicle or carriage is not boardable and never accepts passengers.
+    // Useful for special vehicles or carriages (engine, maintenance carriage, etc…).
     NOT_BOARDABLE = 8;
 
- }
-//multi_carriage_status に客車ごとのOccupancyStatusが設定されている場合、
-//このフィールドは車両全体を記述する必要があります。乗客を受け入れるすべての車両を考慮します。
- オプションのOccupancyStatus occupancy_status = 9;
+  }
+  // If multi_carriage_status is populated with per-carriage OccupancyStatus,
+  // then this field should describe the entire vehicle with all carriages accepting passengers considered.
+  optional OccupancyStatus occupancy_status = 9;
 
-//車両内の乗客の占有率を示すパーセンテージ値。
-//値は小数点なしの整数で表されます。0 は 0%、100 は 100% を意味します。
-//値 100 は、座席と立席の両方の定員を含み、現在の運行規則で許可されている、車両が設計された最大占有率を表します。
-//設計された最大定員よりも多くの乗客がいる場合、値は 100 を超えることがあります。
-//occupancy_percentage の精度は、個々の乗客が車両に乗り降りするのを追跡できないほど低くする必要があります。
-//multi_carriage_status に車両ごとの occupancy_percentage が設定されている場合、
-//このフィールドは、乗客を受け入れるすべての車両を考慮した車両全体を記述する必要があります。
-//このフィールドはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
- オプション uint32 occupancy_percentage = 10;
+  // A percentage value indicating the degree of passenger occupancy in the vehicle.
+  // The values are represented as an integer without decimals. 0 means 0% and 100 means 100%.
+  // The value 100 should represent the total maximum occupancy the vehicle was designed for,
+  // including both seated and standing capacity, and current operating regulations allow.
+  // The value may exceed 100 if there are more passengers than the maximum designed capacity.
+  // The precision of occupancy_percentage should be low enough that individual passengers cannot be tracked boarding or alighting the vehicle.
+  // If multi_carriage_status is populated with per-carriage occupancy_percentage, 
+  // then this field should describe the entire vehicle with all carriages accepting passengers considered.
+  // This field is still experimental, and subject to change. It may be formally adopted in the future.
+  optional uint32 occupancy_percentage = 10;
 
-//複数の客車で構成されている車両に使用される、客車固有の詳細
-//このmessage/フィールドはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
- message CarriageDetails {
+  // Carriage specific details, used for vehicles composed of several carriages
+  // This message/field is still experimental, and subject to change. It may be formally adopted in the future.
+  message CarriageDetails {
 
-  //客車の識別。車両ごとに一意である必要があります。
-    オプションのstringid = 1;
+    // Identification of the carriage. Should be unique per vehicle.
+    optional string id = 1;
 
-  //客車を識別するために乗客に表示される、ユーザーに表示されるラベル。例: "7712"、"Car ABC-32" など...
-  //このmessage/フィールドはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
-    オプションのstringlabel = 2;
+    // User visible label that may be shown to the passenger to help identify
+    // the carriage. Example: "7712", "Car ABC-32", etc...
+    // This message/field is still experimental, and subject to change. It may be formally adopted in the future.
+    optional string label = 2;
 
-  //この車両のこの客車の占有状況
-  //このmessage/フィールドはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
-    オプションのOccupancyStatus occupancy_status = 3 [default = NO_DATA_AVAILABLE];
+    // Occupancy status for this given carriage, in this vehicle
+    // This message/field is still experimental, and subject to change. It may be formally adopted in the future.
+    optional OccupancyStatus occupancy_status = 3 [default = NO_DATA_AVAILABLE];
 
-  //この車両のこの特定の車両の占有率。
-  //`VehiclePosition.occupancy_percentage`と同じルールに従います
-  //この特定の車両のデータが利用できない場合は -1 (それ以外の場合は protobuf のデフォルトが 0 になるため)
-  //このmessage/フィールドはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
-    オプションint32 occupancy_percentage = 4 [default = -1];
+    // Occupancy percentage for this given carriage, in this vehicle.
+    // Follows the same rules as "VehiclePosition.occupancy_percentage"
+    // -1 in case data is not available for this given carriage (as protobuf defaults to 0 otherwise)
+    // This message/field is still experimental, and subject to change. It may be formally adopted in the future.
+    optional int32 occupancy_percentage = 4 [default = -1];
 
-  //車両のCarriageDetailsリスト内の他の車両に対するこの車両の順序を識別します。
-  //移動方向の最初の車両の値は1.である必要があります。
-  //2 番目の値は移動方向の 2 番目の車両に対応し、値 2 である必要があります。以下同様です。
-  //たとえば、移動方向の最初の車両の値は1.です。
-  //移動方向の 2 番目の車両の値が 3 の場合、
-  //コンシューマーはすべての車両のデータ (つまり、multi_carriage_details フィールド) を破棄します。
-  //データのない車両は、有効な carrier_sequence 番号で表す必要があり、データのないフィールドは省略する必要があります (または、それらのフィールドを含めて`データなし`に設定することもできます)。値)。
-  //このmessage/フィールドはまだ実験段階であり、変更される可能性があります。将来正式に採用される可能性があります。
-    オプション uint32 キャリッジ シーケンス = 5;
+    // Identifies the order of this carriage with respect to the other
+    // carriages in the vehicle's list of CarriageDetails.
+    // The first carriage in the direction of travel must have a value of 1.
+    // The second value corresponds to the second carriage in the direction
+    // of travel and must have a value of 2, and so forth.
+    // For example, the first carriage in the direction of travel has a value of 1.
+    // If the second carriage in the direction of travel has a value of 3,
+    // consumers will discard data for all carriages (i.e., the multi_carriage_details field).
+    // Carriages without data must be represented with a valid carriage_sequence number and the fields 
+    // without data should be omitted (alternately, those fields could also be included and set to the "no data" values).
+    // This message/field is still experimental, and subject to change. It may be formally adopted in the future.
+    optional uint32 carriage_sequence = 5;
 
-  //拡張機能の名前空間により、サードパーティの開発者は
-  //GTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価できます。
-    拡張機能 1000 ～ 1999;
+    // The extensions namespace allows 3rd-party developers to extend the
+    // GTFS Realtime Specification in order to add and evaluate new features and
+    // modifications to the spec.
+    extensions 1000 to 1999;
 
-  //次の拡張機能 ID は、組織による私的使用のために予約されています。
-    拡張機能 9000 ～ 9999;
- }
+    // The following extension IDs are reserved for private use by any organization.
+    extensions 9000 to 9999;
+  }
 
-//この車両の複数の車両の詳細。
-//最初の出現は、最初の車両を表します。
+  // Details of the multiple carriages of this given vehicle.
+  // The first occurrence represents the first carriage of the vehicle, 
+  // given the current direction of travel. 
+  // The number of occurrences of the multi_carriage_details 
+  // field represents the number of carriages of the vehicle.
+  // It also includes non boardable carriages, 
+  // like engines, maintenance carriages, etc… as they provide valuable 
+  // information to passengers about where to stand on a platform.
+  // This message/field is still experimental, and subject to change. It may be formally adopted in the future.
+  repeated CarriageDetails multi_carriage_details = 11;
 
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//現在の移動方向に基づいて、車両の車両を特定します。 
-//multi_carriage_details 
-//フィールドの出現回数は、車両の車両数を表します。
-//これには、機関車や保守車両などの乗車不可の車両も含まれます。これらは、プラットフォームのどこに立つべきかについて乗客に貴重な情報を提供するためです。
-//このmessageフィールドはまだ実験的なものであり、変更される可能性があります。将来、正式に採用される可能性があります。
- repeat CarriageDetails multi_carriage_details = 11;
-
-//extensions 名前空間により、サードパーティの開発者は
-//GTFS Realtime仕様を拡張して、新機能や
-//仕様の変更を追加および評価できます。
- extensions 1000 から 1999;
-
-//次の拡張機能 ID は、組織による私的使用のために予約されています。
- extensions 9000 から 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
-//公共交通機関ネットワークで何らかのインシデントが発生したことを示すアラート。
- message Alert {
-//アラートをユーザーに示す時刻。指定されていない場合は、
-//アラートはフィードに表示される限り表示されます。
-//複数の範囲が指定されている場合は、そのすべての範囲でアラートが表示されます。
- repeat TimeRange active_period = 1;
+// An alert, indicating some sort of incident in the public transit network.
+message Alert {
+  // Time when the alert should be shown to the user. If missing, the
+  // alert will be shown as long as it appears in the feed.
+  // If multiple ranges are given, the alert will be shown during all of them.
+  repeated TimeRange active_period = 1;
 
-//このアラートをユーザーに通知する必要があるエンティティ。
- repeat EntitySelector inform_entity = 5;
+  // Entities whose users we should notify of this alert.
+  repeated EntitySelector informed_entity = 5;
 
-//このアラートの原因。 cause_detail が含まれている場合は、Cause も含める必要があります。
- enum Cause {
+  // Cause of this alert. If cause_detail is included, then Cause must also be included.
+  enum Cause {
     UNKNOWN_CAUSE = 1;
-    OTHER_CAUSE = 2;     //機械で表現できません。
+    OTHER_CAUSE = 2;        // Not machine-representable.
     TECHNICAL_PROBLEM = 3;
-    STRIKE = 4;           //公共交通機関の従業員が仕事を停止しました。
-    DEMONSTRATION = 5;    //人々が道路を封鎖しています。
+    STRIKE = 4;             // Public transit agency employees stopped working.
+    DEMONSTRATION = 5;      // People are blocking the streets.
     ACCIDENT = 6;
     HOLIDAY = 7;
     WEATHER = 8;
@@ -523,15 +604,17 @@ package transit_realtime;
     CONSTRUCTION = 10;
     POLICE_ACTIVITY = 11;
     MEDICAL_EMERGENCY = 12;
- }
- オプションの Cause cause = 6 [default = UNKNOWN_CAUSE];
+  }
+  optional Cause cause = 6 [default = UNKNOWN_CAUSE];
 
-//この問題が影響を受けるエンティティに与える影響はどのようなものですか。 effect_detail が含まれている場合は、Effect も含める必要があります。
- enum Effect {
+  // What is the effect of this problem on the affected entity. If effect_detail is included, then Effect must also be included.
+  enum Effect {
     NO_SERVICE = 1;
     REDUCED_SERVICE = 2;
 
-  //重大な遅延は考慮しません。検出が難しく、ユーザーへの影響が小さく、頻度が高すぎるため、結果が乱雑になります。
+    // We don't care about INsignificant delays: they are hard to detect, have
+    // little impact on the user, and would clutter the results as they are too
+    // frequent.
     SIGNIFICANT_DELAYS = 3;
 
     DETOUR = 4;
@@ -542,509 +625,573 @@ package transit_realtime;
     STOP_MOVED = 9;
     NO_EFFECT = 10;
     ACCESSIBILITY_ISSUE = 11;
- }
- オプションの Effect effect = 7 [default = UNKNOWN_EFFECT];
+  }
+  optional Effect effect = 7 [default = UNKNOWN_EFFECT];
 
-//パフォーマンスに関する追加情報を提供する URL alert.
- オプションのTranslatedString url = 8;
+  // The URL which provides additional information about the alert.
+  optional TranslatedString url = 8;
 
-//アラート ヘッダー。アラート テキストの短い要約がプレーン テキストとして含まれています。
- オプションのTranslatedString header_text = 10;
+  // Alert header. Contains a short summary of the alert text as plain-text.
+  optional TranslatedString header_text = 10;
 
-//アラートの完全な説明がプレーン テキストとして含まれています。
-//説明の情報は、ヘッダーの情報に追加する必要があります。
- オプションのTranslatedString description_text = 11;
+  // Full description for the alert as plain-text. The information in the
+  // description should add to the information of the header.
+  optional TranslatedString description_text = 11;
 
-//テキスト読み上げの実装で使用されるアラート ヘッダーのText。このフィールドは、header_text のテキスト読み上げバージョンです。
- オプションのTranslatedString tts_header_text = 12;
+  // Text for alert header to be used in text-to-speech implementations. This field is the text-to-speech version of header_text.
+  optional TranslatedString tts_header_text = 12;
 
-//テキスト読み上げの実装で使用されるアラートの完全な説明のText。このフィールドは、description_text の音声合成バージョンです。
- オプションのTranslatedString tts_description_text = 13;
+  // Text for full description for the alert to be used in text-to-speech implementations. This field is the text-to-speech version of description_text.
+  optional TranslatedString tts_description_text = 13;
 
-//このアラートの重大度。
- enum SeverityLevel {
- UNKNOWN_SEVERITY = 1;
- INFO = 2;
- WARNING = 3;
- SEVERE = 4;
- }
+  // Severity of this alert.
+  enum SeverityLevel {
+	UNKNOWN_SEVERITY = 1;
+	INFO = 2;
+	WARNING = 3;
+	SEVERE = 4;
+  }
 
- オプションのSeverityLevel severity_level = 14 [default = UNKNOWN_SEVERITY];
+  optional SeverityLevel severity_level = 14 [default = UNKNOWN_SEVERITY];
 
-//アラート テキストとともに表示されるTranslatedImage 。迂回、駅の閉鎖などのアラート効果を視覚的に説明するために使用されます。画像はアラートの理解を深めるものでなければなりません。画像内で伝えられる重要な情報は、アラート テキストにも含まれている必要があります。
-//次の種類の画像は推奨されません : 主にテキストを含む画像、追加情報を含まないマーケティングまたはブランド画像。
-//注: このフィールドはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
- オプションのTranslatedImage image = 15; 
+  // TranslatedImage to be displayed along the alert text. Used to explain visually the alert effect of a detour, station closure, etc. The image must enhance the understanding of the alert. Any essential information communicated within the image must also be contained in the alert text.
+  // The following types of images are discouraged : image containing mainly text, marketing or branded images that add no additional information. 
+  // NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+  optional TranslatedImage image = 15; 
 
-//`image`フィールドでリンクされた画像の外観を説明するText(例: 画像を表示できない場合
-//またはアクセシビリティ上の理由でユーザーが画像を見ることができない場合)。画像の代替テキストについては、HTML 仕様を参照してください - https://html.spec.whatwg.org/#alt.
-//注: このフィールドはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
- オプションのTranslatedString image_alternative_text = 16;
- 
- 
-//アラートの原因の説明。Cause よりも具体的な機関固有の言語を使用できます。cause_detail が含まれている場合は、Cause も含める必要があります。
-//注: このフィールドはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
- オプションのTranslatedString cause_detail = 17;
- 
-//アラートの効果の説明。Effect よりも具体的な機関固有の言語を使用できます。 effect_detail が含まれる場合、Effect も含まれている必要があります。
-//注: このフィールドはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
- オプションのTranslatedString effect_detail = 18;
+  // Text describing the appearance of the linked image in the `image` field (e.g., in case the image can't be displayed
+  // or the user can't see the image for accessibility reasons). See the HTML spec for alt image text - https://html.spec.whatwg.org/#alt.
+  // NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+  optional TranslatedString image_alternative_text = 16;
+  
+  
+  // Description of the cause of the alert that allows for agency-specific language; more specific than the Cause. If cause_detail is included, then Cause must also be included.
+  // NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+  optional TranslatedString cause_detail = 17;
+  
+  // Description of the effect of the alert that allows for agency-specific language; more specific than the Effect. If effect_detail is included, then Effect must also be included.
+  // NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+  optional TranslatedString effect_detail = 18;
 
-//extensions 名前空間により、サードパーティの開発者はGTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価できます。
- extensions 1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features
+  // and modifications to the spec.
+  extensions 1000 to 1999;
 
-//次の拡張機能 ID は、あらゆる組織によるプライベート使用のために予約されています。
- extensions 9000 から 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
 //
-//上記で使用されている低レベルのデータ構造。
+// Low level data structures used above.
 //
 
-//時間間隔。 ’t’ が開始時刻以上で終了時刻未満の場合、その間隔は時刻 ’t’ にアクティブであるとみなされます。
- message TimeRange {
-//開始時刻、POSIX 時間 (つまり、1970 年 1 月 1 日 00:00:00 UTC からの秒数)。
-//指定がない場合、間隔はマイナス無限大で始まります。
- 省略可能なuint64 start = 1;
+// A time interval. The interval is considered active at time 't' if 't' is
+// greater than or equal to the start time and less than the end time.
+message TimeRange {
+  // Start time, in POSIX time (i.e., number of seconds since January 1st 1970
+  // 00:00:00 UTC).
+  // If missing, the interval starts at minus infinity.
+  optional uint64 start = 1;
 
-//終了時刻、POSIX 時間 (つまり、1970 年 1 月 1 日 00:00:00 UTC からの秒数)。
-//指定がない場合、間隔はプラス無限大で終了します。
- 省略可能なuint64 end = 2;
+  // End time, in POSIX time (i.e., number of seconds since January 1st 1970
+  // 00:00:00 UTC).
+  // If missing, the interval ends at plus infinity.
+  optional uint64 end = 2;
 
-//拡張機能の名前空間により、サードパーティの開発者は
-//GTFS Realtime仕様を拡張して、新機能や
-//仕様の変更を追加および評価できます。
- 拡張機能 1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//次の拡張機能 ID はプライベート用に予約されていますあらゆる組織で使用できます。
- extensions 9000 to 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
-//位置。
- message Position {
-//WGS-84 座標系での北度。
- required float latitude = 1;
+// A position.
+message Position {
+  // Degrees North, in the WGS-84 coordinate system.
+  required float latitude = 1;
 
-//WGS-84 座標系での東度。
- required float longitude = 2;
+  // Degrees East, in the WGS-84 coordinate system.
+  required float longitude = 2;
 
-//方位 (度単位、北から時計回り、つまり 0 が北、90 が東)。
-//これはコンパス方位、または次の停車地または中間地点への方向になります。
-//これは、以前の位置のシーケンスから推測される方向であってはなりません。これは、以前のデータから計算できます。
- オプションfloat bearing = 3;
+  // Bearing, in degrees, clockwise from North, i.e., 0 is North and 90 is East.
+  // This can be the compass bearing, or the direction towards the next stop
+  // or intermediate location.
+  // This should not be direction deduced from the sequence of previous
+  // positions, which can be computed from previous data.
+  optional float bearing = 3;
 
-//走行距離計の値 (メートル単位)。
- オプション double odometer = 4;
-//車両によって測定された瞬間速度 (メートル/秒単位)。
- オプションfloat speed = 5;
+  // Odometer value, in meters.
+  optional double odometer = 4;
+  // Momentary speed measured by the vehicle, in meters per second.
+  optional float speed = 5;
 
-//extensions 名前空間により、サードパーティ デベロッパーはGTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価します。
- 拡張機能 1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//以下の拡張機能 ID は、あらゆる組織による私的使用のために予約されています。
- 拡張機能 9000 から 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
-//GTFS 旅行のインスタンス、またはルートに沿った旅行のすべてのインスタンスを識別する記述子。
-//- 単一の旅行インスタンスを指定するには、 trip_id (および必要な場合はstart_time) を設定します。route_id も設定する場合は、特定の旅行に対応するものと同じにする必要がありますroute_id//- 特定のルートに沿ったすべての旅行を指定するには、 route_idのみを設定します。trip_idが不明な場合は、 TripUpdateの停止シーケンス ID では不十分であり、stop_id も提供する必要があることに注意してください。 
-// 加えて、絶対的な到着/出発時刻も提供する必要があります。
- message TripDescriptor {
-//このセレクタが参照する GTFS フィードからのtrip_id//頻度ベースでない旅行の場合、このフィールドは旅行を一意に識別するのに十分です。頻度ベースの旅行の場合、start_time と start_date も
-//必要になることがあります。schedule_relationship がTripUpdate内で DUPLICATED される場合、 trip_id は複製される
-//静的 GTFS からの旅行を識別します。schedule_relationship がVehiclePosition内で DUPLICATED される場合、 trip_idは新しい複製旅行を識別し、対応するTripUpdateの値を含める必要があります。TripProperties。 trip_id.
- オプションのstringtrip_id = 1;
+// A descriptor that identifies an instance of a GTFS trip, or all instances of
+// a trip along a route.
+// - To specify a single trip instance, the trip_id (and if necessary,
+//   start_time) is set. If route_id is also set, then it should be same as one
+//   that the given trip corresponds to.
+// - To specify all the trips along a given route, only the route_id should be
+//   set. Note that if the trip_id is not known, then stop sequence ids in
+//   TripUpdate are not sufficient, and stop_ids must be provided as well. In
+//   addition, absolute arrival/departure times must be provided.
+message TripDescriptor {
+  // The trip_id from the GTFS feed that this selector refers to.
+  // For non frequency-based trips, this field is enough to uniquely identify
+  // the trip. For frequency-based trip, start_time and start_date might also be
+  // necessary. When schedule_relationship is DUPLICATED within a TripUpdate, the trip_id identifies the trip from
+  // static GTFS to be duplicated. When schedule_relationship is DUPLICATED within a VehiclePosition, the trip_id
+  // identifies the new duplicate trip and must contain the value for the corresponding TripUpdate.TripProperties.trip_id.
+  optional string trip_id = 1;
 
-//このセレクタが参照する GTFS のroute_idオプションのstringroute_id = 5;
+  // The route_id from the GTFS that this selector refers to.
+  optional string route_id = 5;
 
-//GTFS フィードtrips.txtファイルの direction_id。
-//このセレクタが参照する旅行の移動方向を示します。
- オプションの uint32 direction_id = 6;
+  // The direction_id from the GTFS feed trips.txt file, indicating the
+  // direction of travel for trips this selector refers to.
+  optional uint32 direction_id = 6;
 
-//この旅行インスタンスの当初の予定開始時刻。
-//trip_id が非頻度ベースの旅行に対応する場合、このフィールド
-//は省略するか、GTFS フィードの値と同じにする必要があります。
-//trip_id が頻度ベースの旅行に対応する場合、旅行の更新と車両の位置に対して start_time を指定する必要があります。旅行が exact_times=1 の GTFS レコードに対応する場合、start_time は対応する期間のfrequencies.txtの start_time より headway_secs の倍数
-//(0 を含む) 後でなければなりません。旅行が exact_times=0 に該当する場合、start_time は任意で、当初は旅行の最初の出発時刻と想定されます。いったん確立されると、この頻度ベースの旅行の start_time は、最初の出発時刻が変更された場合でも不変と見なされます。その時間変更は、代わりにStopTimeUpdateに反映されます。
-//フィールドの形式とセマンティクスは、GTFS/frequencies.txt/start_time と同じです (例: 11:15:35 または 25:15:35)。
- オプションのstringstart_time = 2;
-//この旅行インスタンスの予定開始date。
-//翌日の予定旅行と重なるほど遅れている旅行を明確にするために指定するしなければならない。たとえば、毎日 8:00
-//と 20:00 に出発し、12 時間遅れている列車の場合、同じ時間に 2 つの異なる
-//旅行が存在することになります。
-//このフィールドは提供できますが、そのような
-//衝突が不可能なスケジュールでは必須ではありません。たとえば、1 時間遅れの車両はスケジュールとは関係がないと見なされる、1 時間ごとの
-//スケジュールで実行されるサービスなどです。
-//YYYYMMDD 形式です。
- オプションのstringstart_date = 3;
+  // The initially scheduled start time of this trip instance.
+  // When the trip_id corresponds to a non-frequency-based trip, this field
+  // should either be omitted or be equal to the value in the GTFS feed. When
+  // the trip_id correponds to a frequency-based trip, the start_time must be
+  // specified for trip updates and vehicle positions. If the trip corresponds
+  // to exact_times=1 GTFS record, then start_time must be some multiple
+  // (including zero) of headway_secs later than frequencies.txt start_time for
+  // the corresponding time period. If the trip corresponds to exact_times=0,
+  // then its start_time may be arbitrary, and is initially expected to be the
+  // first departure of the trip. Once established, the start_time of this
+  // frequency-based trip should be considered immutable, even if the first
+  // departure time changes -- that time change may instead be reflected in a
+  // StopTimeUpdate.
+  // Format and semantics of the field is same as that of
+  // GTFS/frequencies.txt/start_time, e.g., 11:15:35 or 25:15:35.
+  optional string start_time = 2;
+  // The scheduled start date of this trip instance.
+  // Must be provided to disambiguate trips that are so late as to collide with
+  // a scheduled trip on a next day. For example, for a train that departs 8:00
+  // and 20:00 every day, and is 12 hours late, there would be two distinct
+  // trips on the same time.
+  // This field can be provided but is not mandatory for schedules in which such
+  // collisions are impossible - for example, a service running on hourly
+  // schedule where a vehicle that is one hour late is not considered to be
+  // related to schedule anymore.
+  // In YYYYMMDD format.
+  optional string start_date = 3;
 
-//この旅行と静的スケジュールの関係。旅程が
-//一時的なスケジュールに従って行われ、GTFS に反映されていない場合は、
-//SCHEDULED としてマークするのではなく、おそらく ADDED としてマークします。
- enum ScheduleRelationship {
-  //GTFS scheduleに従って実行されている旅程、または関連付けられるほどスケジュールされた旅程に近い
-  //旅程。
+  // The relation between this trip and the static schedule. If a trip is done
+  // in accordance with temporary schedule, not reflected in GTFS, then it
+  // shouldn't be marked as SCHEDULED, but likely as ADDED.
+  enum ScheduleRelationship {
+    // Trip that is running in accordance with its GTFS schedule, or is close
+    // enough to the scheduled trip to be associated with it.
     SCHEDULED = 0;
 
-  //故障した車両の交換や突然の乗客の増加に対応するためなど、実行スケジュールに加えて追加された旅程。
-  //注: 現在、このモードを使用するフィードの動作は指定されていません。 GTFS GitHub
-  //[(1)](https://github.com/google/transit/issues/106) [(2)](https://github.com/google/transit/pull/221)
-  //[(3)](https://github.com/google/transit/pull/219) では、ADDED の旅程を完全に指定するか廃止するかについて議論されており、
-  //議論が確定した時点でドキュメントが更新されます。
+    // An extra trip that was added in addition to a running schedule, for
+    // example, to replace a broken vehicle or to respond to sudden passenger
+    // load.
+    // NOTE: Currently, behavior is unspecified for feeds that use this mode. There are discussions on the GTFS GitHub
+    // [(1)](https://github.com/google/transit/issues/106) [(2)](https://github.com/google/transit/pull/221)
+    // [(3)](https://github.com/google/transit/pull/219) around fully specifying or deprecating ADDED trips and the
+    // documentation will be updated when those discussions are finalized.
     ADDED = 1;
 
-  //スケジュールが関連付けられていない状態で運行されている旅程 (GTFS frequencies.txt exact_times=0)。
-  //ScheduleRelationship =UNSCHEDULED の便では、すべての StopTimeUpdates も設定する必要があります。 ScheduleRelationship=UNSCHEDULED.
+    // A trip that is running with no schedule associated to it (GTFS frequencies.txt exact_times=0).
+    // Trips with ScheduleRelationship=UNSCHEDULED must also set all StopTimeUpdates.ScheduleRelationship=UNSCHEDULED.
     UNSCHEDULED = 2;
 
-  //スケジュールには存在していたが削除された旅程。
+    // A trip that existed in the schedule but was removed.
     CANCELED = 3;
 
-  //使用しないでください。後方互換性のためだけに使用します。
+    // Should not be used - for backwards-compatibility only.
     REPLACEMENT = 5 [deprecated=true];
 
-  //故障した車両の交換や突然の乗客の増加に対応するためなど、TripPropertiesTripUpdateに加えて追加された旅程。TripUpdate.TripProperties.trip_id、 TripUpdate,
-  //およびTripUpdateとともに使用して、静的 GTFS から既存の旅程をコピーしますが、開始日は別のサービスdateTripProperties/または時刻にtrip_idます。(CSV) GTFS
-  //( TripPropertiesまたはcalendar_dates.txt内) の元の旅程に関連するサービスが今後 30 日以内に運行される場合、旅程の複製が許可されます。複製する旅程は、 TripUpdateによって識別trip_idれます。この列挙体は、 TripDescriptorによって参照される既存の旅程を変更しtrip_idん。プロデューサーが元の旅程をキャンセルする場合は、CANCELED または DELETED の値をTripUpdate別のTripUpdateを公開する必要があります。GTFS frequencies.txtで定義され、exact_times が空または 0 にTripDescriptor便は複製できません。新しい旅程のVehiclePositionには、 TripUpdateとtrip_idVehiclePositionの一致する値が含まれている必要があります。 ScheduleRelationship 
-  //も DUPLICATED に設定する必要があります。
-  //重複した旅行を表すために ADDED 列挙を使用していた既存のプロデューサーとコンシューマーは、
-  //移行ガイド (https://github.com/google/transit/tree/master/gtfs-realtime/spec/en/examples/migration-duplicated.md)
-  //に従って DUPLICATED 列挙に移行する必要があります。
-  //注: このフィールドはまだ試験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
+    // An extra trip that was added in addition to a running schedule, for example, to replace a broken vehicle or to
+    // respond to sudden passenger load. Used with TripUpdate.TripProperties.trip_id, TripUpdate.TripProperties.start_date,
+    // and TripUpdate.TripProperties.start_time to copy an existing trip from static GTFS but start at a different service
+    // date and/or time. Duplicating a trip is allowed if the service related to the original trip in (CSV) GTFS
+    // (in calendar.txt or calendar_dates.txt) is operating within the next 30 days. The trip to be duplicated is
+    // identified via TripUpdate.TripDescriptor.trip_id. This enumeration does not modify the existing trip referenced by
+    // TripUpdate.TripDescriptor.trip_id - if a producer wants to cancel the original trip, it must publish a separate
+    // TripUpdate with the value of CANCELED or DELETED. Trips defined in GTFS frequencies.txt with exact_times that is
+    // empty or equal to 0 cannot be duplicated. The VehiclePosition.TripDescriptor.trip_id for the new trip must contain
+    // the matching value from TripUpdate.TripProperties.trip_id and VehiclePosition.TripDescriptor.ScheduleRelationship
+    // must also be set to DUPLICATED.
+    // Existing producers and consumers that were using the ADDED enumeration to represent duplicated trips must follow
+    // the migration guide (https://github.com/google/transit/tree/master/gtfs-realtime/spec/en/examples/migration-duplicated.md)
+    // to transition to the DUPLICATED enumeration.
+    // NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
     DUPLICATED = 6;
 
 
-  //スケジュールには存在していたが削除された旅行で、ユーザーには表示してはならない。
-  //交通機関プロバイダーが、対応する旅行に関する情報を消費アプリケーションから完全に削除し、乗客に旅行がキャンセルされたと表示されないようにするには、CANCELED ではなく DELETED を使用する必要があります。たとえば、旅行が完全に別の旅行に置き換えられる場合などです。
-  //この指定は、複数の旅行がキャンセルされ、代替サービスに置き換えられる場合に特に重要になります。
-  //キャンセルに関する明示的な情報を消費者に示すと、より重要なリアルタイム予測が妨げられます。
-  //注: このフィールドはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
+    // A trip that existed in the schedule but was removed and must not be shown to users.
+    // DELETED should be used instead of CANCELED to indicate that a transit provider would like to entirely remove
+    // information about the corresponding trip from consuming applications, so the trip is not shown as cancelled to
+    // riders, e.g. a trip that is entirely being replaced by another trip.
+    // This designation becomes particularly important if several trips are cancelled and replaced with substitute service.
+    // If consumers were to show explicit information about the cancellations it would distract from the more important
+    // real-time predictions.
+    // NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
     DELETED = 7;
- }
- オプションScheduleRelationship schedule_relationship = 4;
+  }
+  optional ScheduleRelationship schedule_relationship = 4;
 
- message ModifiedTripSelector {
-  //含まれるTripModificationsオブジェクトがこの旅行に影響を与えるFeedEntityの ’id’。
-    オプションstring modifications_id = 1;
+  message ModifiedTripSelector {
+    // The 'id' from the FeedEntity in which the contained TripModifications object affects this trip.
+    optional string modifications_id = 1;
 
-  //modifications_id によって変更される GTFS フィードのtrip_idオプションstring affected_trip_id = 2;
- }
- オプション ModifiedTripSelector modified_trip = 7;
+    // The trip_id from the GTFS feed that is modified by the modifications_id
+    optional string affected_trip_id = 2;
+  }
+  optional ModifiedTripSelector modified_trip = 7;
 
-//extensions 名前空間により、サードパーティの開発者は
-//GTFS Realtime仕様を拡張して、新機能や
-//仕様の変更を追加および評価できます。
- extensions 1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//次の拡張 ID は、あらゆる組織による私的使用のために予約されています。
- extensions 9000 から 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
-//実行中の車両の識別情報旅行。
- message VehicleDescriptor {
-//車両の内部システム ID。車両ごとに一意である必要があり、システム内を移動する際に車両を追跡するために使用できます。
- オプションのstringid = 1;
+// Identification information for the vehicle performing the trip.
+message VehicleDescriptor {
+  // Internal system identification of the vehicle. Should be unique per
+  // vehicle, and can be used for tracking the vehicle as it proceeds through
+  // the system.
+  optional string id = 1;
 
-//ユーザーに表示されるラベル。つまり、正しい車両を識別するために乗客に表示する必要があるもの。
- オプションのstringlabel = 2;
+  // User visible label, i.e., something that must be shown to the passenger to
+  // help identify the correct vehicle.
+  optional string label = 2;
 
-//車両のナンバー プレート。
- オプションのstringlicense_plate = 3;
+  // The license plate of the vehicle.
+  optional string license_plate = 3;
 
- enum WheelchairAccessible {
-  //旅行には車椅子でのアクセシビリティに関する情報がありません。
-  //これは **デフォルト** の動作です。静的 GTFS に
-  //_wheelchair_accessible_ 値が含まれている場合、上書きされません。
+  enum WheelchairAccessible {
+    // The trip doesn't have information about wheelchair accessibility.
+    // This is the **default** behavior. If the static GTFS contains a
+    // _wheelchair_accessible_ value, it won't be overwritten.
     NO_VALUE = 0;
 
-  //旅行にアクセシビリティ値がありません。
-  //この値により、GTFS の値が上書きされます。
+    // The trip has no accessibility value present.
+    // This value will overwrite the value from the GTFS.
     UNKNOWN = 1;
 
-  //旅行に車椅子でアクセスできます。
-  //この値により、GTFS の値が上書きされます。
+    // The trip is wheelchair accessible.
+    // This value will overwrite the value from the GTFS.
     WHEELCHAIR_ACCESSIBLE = 2;
 
-  //旅行に車椅子でアクセスできません。
-  //この値により、GTFS の値が上書きされます。
+    // The trip is **not** wheelchair accessible.
+    // This value will overwrite the value from the GTFS.
     WHEELCHAIR_INACCESSIBLE = 3;
- }
- オプションWheelchairAccessible wheels_accessible = 4 [default = NO_VALUE];
+  }
+  optional WheelchairAccessible wheelchair_accessible = 4 [default = NO_VALUE];
 
-//拡張機能の名前空間により、サードパーティの開発者は
-//GTFS Realtime仕様を拡張して、新機能や
-//仕様の変更を追加および評価できます。
- 拡張機能1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//次の拡張 ID は、あらゆる組織による私的使用のために予約されています。
- 拡張 9000 から 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
-//GTFS フィード内のエンティティのセレクターmessage EntitySelector {
-//フィールドの値は、
-//GTFS フィード内の適切なフィールドに対応している必要があります。
-//少なくとも 1 つの指定子を指定する必要があります。複数指定した場合は、
-//一致は指定されたすべての指定子に適用する必要があります。
- オプションのstringagency_id = 1;
- オプションのstringroute_id = 2;
-//GTFS の route_type に対応します。
- オプションのint32 route_type = 3;
- オプションのTripDescriptor trip = 4;
- オプションのstringstop_id = 5;
-//GTFS trips.txtの trip direction_id に対応します。指定されている場合は、
-//route_idも指定する必要があります。
- オプション uint32 direction_id = 6;
+// A selector for an entity in a GTFS feed.
+message EntitySelector {
+  // The values of the fields should correspond to the appropriate fields in the
+  // GTFS feed.
+  // At least one specifier must be given. If several are given, then the
+  // matching has to apply to all the given specifiers.
+  optional string agency_id = 1;
+  optional string route_id = 2;
+  // corresponds to route_type in GTFS.
+  optional int32 route_type = 3;
+  optional TripDescriptor trip = 4;
+  optional string stop_id = 5;
+  // Corresponds to trip direction_id in GTFS trips.txt. If provided the
+  // route_id must also be provided.
+  optional uint32 direction_id = 6;
 
-//extensions 名前空間により、サードパーティの開発者は
-//GTFS Realtime仕様を拡張して、新機能や
-//仕様の変更を追加および評価できます。
- extensions 1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//次の拡張 ID は、組織による私的使用のために予約されています。
- extensions 9000 から 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
-//テキストまたは URL のスニペットの言語ごとのバージョンを含む国際化message。
-//messageから文字列の 1 つが取得されます。解決は次のように進行します:
-//1. UI 言語が翻訳の言語コードと一致する場合、
-//  最初に一致する翻訳が選択されます。
-//2.デフォルトの UI 言語 (例: 英語) が翻訳の言語コードと一致する場合、
-//  最初に一致する翻訳が選択されます。
-//3.翻訳に言語コードが指定されていない場合は、その翻訳が選択されます。
- message TranslatedString {
- message Translation {
-  //messageを含む UTF-8string。
+// An internationalized message containing per-language versions of a snippet of
+// text or a URL.
+// One of the strings from a message will be picked up. The resolution proceeds
+// as follows:
+// 1. If the UI language matches the language code of a translation,
+//    the first matching translation is picked.
+// 2. If a default UI language (e.g., English) matches the language code of a
+//    translation, the first matching translation is picked.
+// 3. If some translation has an unspecified language code, that translation is
+//    picked.
+message TranslatedString {
+  message Translation {
+    // A UTF-8 string containing the message.
     required string text = 1;
-  //BCP-47 言語コード。言語が不明な場合、またはフィードに対して i18n がまったく行われない場合は省略できます。最大 1 つの翻訳に、未指定の言語タグを付けることができます。
-    オプションのstringlanguage = 2;
+    // BCP-47 language code. Can be omitted if the language is unknown or if
+    // no i18n is done at all for the feed. At most one translation is
+    // allowed to have an unspecified language tag.
+    optional string language = 2;
 
-  //extensions 名前空間により、サードパーティの開発者は
-  //GTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価できます。
-    extensions 1000 から 1999;
+    // The extensions namespace allows 3rd-party developers to extend the
+    // GTFS Realtime Specification in order to add and evaluate new features and
+    // modifications to the spec.
+    extensions 1000 to 1999;
 
-  //以下の拡張 ID は、あらゆる組織による私的使用のために予約されています。
-    extensions 9000 から 9999;
- }
-//少なくとも 1 つの翻訳を指定する必要があります。
- 繰り返し Translation translation = 1;
+    // The following extension IDs are reserved for private use by any organization.
+    extensions 9000 to 9999;
+  }
+  // At least one translation must be provided.
+  repeated Translation translation = 1;
 
-//extensions 名前空間により、サードパーティの開発者は
-//GTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価できます。
- extensions 1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//以下の拡張 ID は、あらゆる組織による私的使用のために予約されています。
- extensions 9000 から 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
-//国際化された画像には、画像にリンクする URL の言語別バージョン
-//およびメタ情報
-//messageの画像のうち 1 つだけがコンシューマーによって保持されます。解決は次のように行われます
-//:
-//1. UI 言語が翻訳の言語コードと一致する場合
-//  最初に一致する翻訳が選択されます。
-//2.デフォルトの UI 言語 (例: 英語) が翻訳の言語コードと一致する場合
-//  最初に一致する翻訳が選択されます。
-//3.翻訳に未指定の言語コードがある場合、その翻訳が選択されます
-//  注: このフィールドはまだ実験段階であり、変更される可能性があります。将来正式に採用される可能性があります。
- message TranslatedImage {
- message LocalizedImage {
-  //画像にリンクする URL を含む文字列
-  //リンクされる画像は 2MB 未満である必要があります。 
-  //画像が大幅に変更され、コンシューマー側で更新が必要になる場合、プロデューサーは URL を新しいものに更新する必要があります。
-  //URL は http://または https://を含む完全修飾 URL である必要があり、URL 内のすべての特殊文字は正しくエスケープする必要があります。完全修飾 URL 値の作成方法については、次の http://www.w3.org/Addressing/URL/4_URI_Recommentations.html を参照してください。
-    必須のstringurl = 1;
+// An internationalized image containing per-language versions of a URL linking to an image
+// along with meta information
+// Only one of the images from a message will be retained by consumers. The resolution proceeds
+// as follows:
+// 1. If the UI language matches the language code of a translation,
+//    the first matching translation is picked.
+// 2. If a default UI language (e.g., English) matches the language code of a
+//    translation, the first matching translation is picked.
+// 3. If some translation has an unspecified language code, that translation is
+//    picked.
+// NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+message TranslatedImage {
+  message LocalizedImage {
+    // String containing an URL linking to an image
+    // The image linked must be less than 2MB. 
+    // If an image changes in a significant enough way that an update is required on the consumer side, the producer must update the URL to a new one.
+    // The URL should be a fully qualified URL that includes http:// or https://, and any special characters in the URL must be correctly escaped. See the following http://www.w3.org/Addressing/URL/4_URI_Recommentations.html for a description of how to create fully qualified URL values.
+    required string url = 1;
 
-  //表示する画像のタイプを指定するための IANA メディア タイプ。
-  //タイプは "image/" で始まる必要があります
-    必須のstringmedia_type = 2;
+    // IANA media type as to specify the type of image to be displayed. 
+    // The type must start with "image/"
+    required string media_type = 2;
 
-  //BCP-47 言語コード。言語が不明な場合、またはフィードに対して i18n がまったく行われない場合は省略できます。最大で 1 つの翻訳に、未指定の言語タグを付けることができます。
-    オプションのstringlanguage = 3;
+    // BCP-47 language code. Can be omitted if the language is unknown or if
+    // no i18n is done at all for the feed. At most one translation is
+    // allowed to have an unspecified language tag.
+    optional string language = 3;
 
 
-  //extensions 名前空間により、サードパーティ デベロッパーは
-  //GTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価できます。
-    extensions 1000 から 1999;
+    // The extensions namespace allows 3rd-party developers to extend the
+    // GTFS Realtime Specification in order to add and evaluate new features and
+    // modifications to the spec.
+    extensions 1000 to 1999;
 
-  //以下の拡張 ID は、あらゆる組織による私的使用のために予約されています。
-    extensions 9000 から 9999;
- }
-//ローカライズされた画像を少なくとも 1 つ提供する必要があります。
- repeat LocalizedImage localized_image = 1;
+    // The following extension IDs are reserved for private use by any organization.
+    extensions 9000 to 9999;
+  }
+  // At least one localized image must be provided.
+  repeated LocalizedImage localized_image = 1;
 
-//extensions 名前空間により、サードパーティ デベロッパーは
-//GTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価できます。
- extensions 1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//以下の拡張 ID は、あらゆる組織による私的使用のために予約されています。
- extensions 9000 から9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
-//迂回など、車両が (CSV) GTFS の一部ではない場合に車両がたどる物理的な経路を記述します。ルート形状は便に属し、一連のシェイプ ポイントで構成されます。
-//ポイントを順番にトレースすると、車両の経路が提供されます。ルート形状は停留所等の位置を正確に横切る必要はありませんが、旅行のすべての停留所等 は、その旅行のシェイプからわずかな距離内、つまりシェイプ ポイントを接続する直線セグメントの近くに配置する必要があります。
-//注: このmessageはまだ実験段階であり、変更される可能性があります。将来正式に採用される可能性があります。
- message Shape {
-//シェイプの識別子。 (CSV) GTFS で定義されている shape_id と異なるしなければならない。
-//このフィールドは reference.md に従って必須ですが、"必須は永久に有効" であるため、ここではオプションとして指定する必要があります。
-//https://developers.google.com/protocol-buffers/docs/proto#specifying_field_rules を参照してください。
-//注: このフィールドはまだ試験段階であり、変更される可能性があります。将来正式に採用される可能性があります。
- オプションのstringshape_id = 1;
- 
-//シェイプのエンコードされたポリライン表現。このポリラインには少なくとも 2 つのポイントが含まれている必要があります。
-//エンコードされたポリラインの詳細については、https://developers.google.com/maps/documentation/utilities/polylinealgorithm を参照してください
-//このフィールドは reference.md に従って必須ですが、`必須は永久に有効`であるため、ここではオプションとして指定する必要があります
-//https://developers.google.com/protocol-buffers/docs/proto#specifying_field_rules を参照してください
-//注: このフィールドはまだ実験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
- オプションのstringencoding_polyline = 2;
+// Describes the physical path that a vehicle takes when it's not part of the (CSV) GTFS,
+// such as for a detour. Shapes belong to Trips, and consist of a sequence of shape points.
+// Tracing the points in order provides the path of the vehicle.  Shapes do not need to intercept
+// the location of Stops exactly, but all Stops on a trip should lie within a small distance of
+// the shape for that trip, i.e. close to straight line segments connecting the shape points
+// NOTE: This message is still experimental, and subject to change. It may be formally adopted in the future.
+message Shape {
+  // Identifier of the shape. Must be different than any shape_id defined in the (CSV) GTFS.
+  // This field is required as per reference.md, but needs to be specified here optional because "Required is Forever"
+  // See https://developers.google.com/protocol-buffers/docs/proto#specifying_field_rules
+  // NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+  optional string shape_id = 1;
+  
+  // Encoded polyline representation of the shape. This polyline must contain at least two points.
+  // For more information about encoded polylines, see https://developers.google.com/maps/documentation/utilities/polylinealgorithm
+  // This field is required as per reference.md, but needs to be specified here optional because "Required is Forever"
+  // See https://developers.google.com/protocol-buffers/docs/proto#specifying_field_rules
+  // NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+  optional string encoded_polyline = 2;
 
-//extensions 名前空間により、サードパーティの開発者は
-//GTFS Realtime仕様を拡張して、新機能や
-//仕様の変更を追加および評価できます。
- extensions 1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//次の拡張 ID は、あらゆる組織による私的使用のために予約されています。
- extensions 9000 から 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
-//旅行が運行される停留所を記述します。すべてのフィールドは、GTFS-Static 仕様で説明されているとおりです。
-//注: このmessageはまだ試験段階であり、変更される可能性があります。将来的には正式に採用される可能性があります。
- message Stop {
- enum WheelchairBoarding {
+// Describes a stop which is served by trips. All fields are as described in the GTFS-Static specification.
+// NOTE: This message is still experimental, and subject to change. It may be formally adopted in the future.
+message Stop {
+  enum WheelchairBoarding {
     UNKNOWN = 0;
     AVAILABLE = 1;
     NOT_AVAILABLE = 2;
    }
 
- オプションのstringstop_id = 1;
- オプションのTranslatedString stop_code = 2;
- オプションのTranslatedString stop_name = 3;
- オプションのTranslatedString tts_stop_name = 4;
- オプションのTranslatedString stop_desc = 5;
- オプションのfloat stop_lat = 6;
- オプションのfloat stop_lon = 7;
- オプションのstringzone_id = 8;
- オプションのTranslatedString stop_url = 9;
- オプションのstringparent_station = 11;
- オプションのstringstop_timezone = 12;
- オプションのWheelchairBoarding wheels_boarding = 13 [default = UNKNOWN];
- オプションのstringlevel_id = 14;
- オプションのTranslatedString platform_code = 15;
+  optional string stop_id = 1;
+  optional TranslatedString stop_code = 2;
+  optional TranslatedString stop_name = 3;
+  optional TranslatedString tts_stop_name = 4;
+  optional TranslatedString stop_desc = 5;
+  optional float stop_lat = 6;
+  optional float stop_lon = 7;
+  optional string zone_id = 8;
+  optional TranslatedString stop_url = 9;
+  optional string parent_station = 11;
+  optional string stop_timezone = 12;
+  optional WheelchairBoarding wheelchair_boarding = 13 [default = UNKNOWN];
+  optional string level_id = 14;
+  optional TranslatedString platform_code = 15;
 
-//extensions 名前空間を使用すると、サードパーティの開発者が
-//GTFS Realtime仕様を拡張して、新機能や
-//仕様の変更を追加および評価できます。
- extensions 1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//以下の拡張 ID は、あらゆる組織による私的使用のために予約されています。
- extensions 9000 から 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
-//注: このフィールドはまだ試験段階であり、変更される可能性があります。将来、正式に採用される可能性があります。
- message TripModifications {
-//`Modification`messageは、`start_stop_selector` から始まる、影響を受ける各旅程の n 個の停車時刻の範囲を置き換えます。
- message Modification {
-  //この変更の影響を受ける元の旅程の最初の stop_time の停車セレクター。
-  //`end_stop_selector` と組み合わせて使用​​します。 
-  //`start_stop_selector` は必須であり、`travel_time_to_stop` で使用される参照停車地を定義するために使用されます。
-    オプションのStopSelector start_stop_selector = 1;
+// NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+message TripModifications {
+  // A `Modification` message replaces a span of n stop times from each affected trip starting at `start_stop_selector`.
+  message Modification {
+    // The stop selector of the first stop_time of the original trip that is to be affected by this modification.
+    // Used in conjuction with `end_stop_selector`. 
+    // `start_stop_selector` is required and is used to define the reference stop used with `travel_time_to_stop`.
+    optional StopSelector start_stop_selector = 1;
 
-  //この変更によって影響を受ける元の旅行の最後の停車地の停車地セレクター。
-  //選択は包括的であるため、その変更によって 1 つの stop_time のみが置き換えられる場合は、`start_stop_selector` と `end_stop_selector` は同等である必要があります。
-  //stop_time が置き換えられない場合は、`end_stop_selector` を指定しないでください。それ以外の場合は必須です。
-    オプションのStopSelector end_stop_selector = 2;
+    // The stop selector of the last stop of the original trip that is to be affected by this modification. 
+    // The selection is inclusive, so if only one stop_time is replaced by that modification, `start_stop_selector` and `end_stop_selector` must be equivalent.
+    // If no stop_time is replaced, `end_stop_selector` must not be provided. It's otherwise required.
+    optional StopSelector end_stop_selector = 2;
 
-  //この変更の終了後にすべての出発時刻と到着時刻に追加する遅延の秒数。
-  //同じ旅行に複数の変更が適用されると、旅行が進むにつれて遅延が累積します。 
-    オプションint32 propagated_modification_delay = 3 [デフォルト = 0];
+    // The number of seconds of delay to add to all departure and arrival times following the end of this modification. 
+    // If multiple modifications apply to the same trip, the delays accumulate as the trip advances. 
+    optional int32 propagated_modification_delay = 3 [default = 0];
 
-  //元の旅行の停留所を置き換える代替停留所のリスト。
-  //新しい停車時刻の長さは、置き換えられた停車時刻の数より短くなったり、同じになったり、長くなったりする場合があります。 
-    繰り返しReplacementStop replacement_stops = 4;
+    // A list of replacement stops, replacing those of the original trip. 
+    // The length of the new stop times may be less, the same, or greater than the number of replaced stop times. 
+    repeated ReplacementStop replacement_stops = 4;
 
-  //ユーザー向けのコミュニケーション用にこのModificationを説明する`Alert`を含む`FeedEntity`messageの`id`値。
-    オプションのstringservice_alert_id = 5;
+    // An `id` value from the `FeedEntity` message that contains the `Alert` describing this Modification for user-facing communication.
+    optional string service_alert_id = 5;
 
-  //このタイムスタンプは、変更が最後に変更された瞬間を識別します。
-  //POSIX 時間 (つまり、1970 年 1 月 1 日 00:00:00 UTC からの秒数)。
-    オプションのuint64 last_modified_time = 6;
+    // This timestamp identifies the moment when the modification has last been changed.
+    // In POSIX time (i.e., number of seconds since January 1st 1970 00:00:00 UTC).
+    optional uint64 last_modified_time = 6;
 
-  //拡張機能の名前空間により、サードパーティの開発者は
-  //GTFS Realtime仕様を拡張して、新機能や
-  //仕様の変更を追加および評価できます。
-    拡張機能 1000 から 1999;
+    // The extensions namespace allows 3rd-party developers to extend the
+    // GTFS Realtime Specification in order to add and evaluate new features and
+    // modifications to the spec.
+    extensions 1000 to 1999;
 
-  //次の拡張機能 ID は、あらゆる組織によるプライベート使用のために予約されています。
-    拡張機能 9000 から 9999;
- }
+    // The following extension IDs are reserved for private use by any organization.
+    extensions 9000 to 9999;
+  }
 
-message SelectedTrips {
-  //この置換の影響を受ける、新しい`shape_id`がすべて同じである旅行のリスト。
-    繰り返しstringtrip_ids = 1;
-  //このSelectedTrips内の変更された旅行の新しいシェイプのID//GTFS-RT Shapemessageを使用して追加された新しいシェイプ、または GTFS-Static フィードのshapes.txtで定義されている既存のシェイプを参照する場合があります。
-    オプションのstringshape_id = 2;
+  message SelectedTrips {
+    // A list of trips affected with this replacement that all have the same new `shape_id`.
+    repeated string trip_ids = 1;
+    // The ID of the new shape for the modified trips in this SelectedTrips.
+    // May refer to a new shape added using a GTFS-RT Shape message, or to an existing shape defined in the GTFS-Static feed’s shapes.txt.
+    optional string shape_id = 2;
 
-  //extensions 名前空間により、サードパーティの開発者は
-  //GTFS Realtime仕様を拡張して、新機能や
-  //仕様の変更を追加および評価できます。
-    extensions 1000 から 1999;
+    // The extensions namespace allows 3rd-party developers to extend the
+    // GTFS Realtime Specification in order to add and evaluate new features and
+    // modifications to the spec.
+    extensions 1000 to 1999;
 
-  //次の拡張 ID は、あらゆる組織によるプライベート使用のために予約されています。
-    extensions 9000 から 9999;
+    // The following extension IDs are reserved for private use by any organization.
+    extensions 9000 to 9999;
 }
 
- //このTripModificationsの影響を受ける選択された旅行のリスト。
- 繰り返しSelectedTrips selected_trips = 1;
+   // A list of selected trips affected by this TripModifications.
+  repeated SelectedTrips selected_trips = 1;
 
-//trip_ids で定義されたtrip_idのリアルタイム旅行記述子の開始時刻のリスト。
-//頻度ベースの旅行でtrip_idの複数の出発をターゲットにするのに便利です。
- repeated string start_times = 2;
+  // A list of start times in the real-time trip descriptor for the trip_id defined in trip_ids. 
+  // Useful to target multiple departures of a trip_id in a frequency-based trip.
+  repeated string start_times = 2;
 
-//変更が発生する日付 (YYYYMMDD 形式)。プロデューサーは、今後 1 週間以内に発生する迂回のみを送信するするべきである。
-//提供された日付はユーザー向けの情報として使用しないでください。ユーザー向けの開始日と終了dateを提供する必要がある場合は、リンクされたサービス アラートで `service_alert_id` を使用して提供できます。
- repeated string service_dates = 3;
+  // Dates on which the modifications occurs, in the YYYYMMDD format. Producers SHOULD only transmit detours occurring within the next week.
+  // The dates provided should not be used as user-facing information, if a user-facing start and end date needs to be provided, they can be provided in the linked service alert with `service_alert_id`
+  repeated string service_dates = 3;
 
-//影響を受ける旅行に適用する変更のリスト。
- repeated Modification modifications = 4; 
+  // A list of modifications to apply to the affected trips. 
+  repeated Modification modifications = 4; 
 
-//拡張機能の名前空間により、サードパーティの開発者は
-//GTFS Realtime仕様を拡張して、新機能や
-//仕様の変更を追加および評価できます。
- 拡張機能 1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//以下の拡張機能 ID は、
-
-あらゆる組織による私的使用のために提供されます。
- 拡張子 9000 から 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
-//注: このフィールドはまだ実験段階であり、変更される可能性があります。将来正式に採用される可能性があります。
-//停留所シーケンスまたは stop_id で停留所を選択します。 2 つの値のうち少なくとも 1 つは指定する必要があります。
- message StopSelector { 
-//対応する GTFS フィードのstop_times.txtと同じであるしなければならない。
- オプションの uint32 stop_sequence = 1;
-//対応する GTFS フィードのstops.txtと同じであるしなければならない。
- オプションのstring stop_id = 2;
+// NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+// Select a stop by stop sequence or by stop_id. At least one of the two values must be provided.
+message StopSelector { 
+  // Must be the same as in stop_times.txt in the corresponding GTFS feed.
+  optional uint32 stop_sequence = 1;
+  // Must be the same as in stops.txt in the corresponding GTFS feed.
+  optional string stop_id = 2;
 
-//extensions 名前空間により、サードパーティのデベロッパーは
-//GTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価できます。
- extensions 1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//次の拡張 ID は、あらゆる組織による私的使用のために予約されています。
- extensions 9000 から 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 
-//注: このフィールドはまだ試験段階であり、変更される可能性があります。将来正式に採用される可能性がありますmessage ReplacementStop {
-//この停留所への到着時刻と参照停留所への到着時刻の差 (秒単位)。参照停留所は、start_stop_selector の前の停留所です。変更が旅程の最初の停車地から始まる場合、旅程の最初の停車地が参照停車地になります。
-//この値は単調に増加するしなければならないがあり、元の旅程の最初の停車地が参照停車地である場合は負の数のみにすることができます。
- オプションint32 travel_time_to_stop = 1;
+// NOTE: This field is still experimental, and subject to change. It may be formally adopted in the future.
+message ReplacementStop {
+  // The difference in seconds between the arrival time at this stop and the arrival time at the reference stop. The reference stop is the stop prior to start_stop_selector. If the modification begins at the first stop of the trip, then the first stop of the trip is the reference stop.
+  // This value MUST be monotonically increasing and may only be a negative number if the first stop of the original trip is the reference stop.
+  optional int32 travel_time_to_stop = 1;
 
-//旅程で訪問される代替の停車地ID-RT Stopmessageを使用して追加された新しい停車地、または GTFS-Static フィードのstops.txtで定義されている既存の停車地を参照する場合があります。停留所には location_type=0 (ルート可能な停留所)がしなければならない。
- オプションのstringstop_id = 2;
+  // The replacement stop ID which will now be visited by the trip. May refer to a new stop added using a GTFS-RT Stop message, or to an existing stop defined in the GTFS-Static feed’s stops.txt. The stop MUST have location_type=0 (routable stops).
+  optional string stop_id = 2;
 
-//extensions 名前空間により、サードパーティの開発者はGTFS Realtime仕様を拡張して、新機能や仕様の変更を追加および評価できます。
- extensions 1000 から 1999;
+  // The extensions namespace allows 3rd-party developers to extend the
+  // GTFS Realtime Specification in order to add and evaluate new features and
+  // modifications to the spec.
+  extensions 1000 to 1999;
 
-//次の拡張 ID は、あらゆる組織によるプライベート使用のために予約されています。
- extensions 9000 から 9999;
+  // The following extension IDs are reserved for private use by any organization.
+  extensions 9000 to 9999;
 }
 ```
-

@@ -1,80 +1,84 @@
 # サービスアラート
 
-次の例は、アラートフィードの ASCII 表現です。
+次の例は、アラートフィードのASCII表現です。
 
-```python#ヘッダー情報
+```python
+# header information
 header {
-# 速度仕様のバージョン。現在は`2.0`です。有効なバージョンは`2.0`、`1.0`です。
- gtfs_realtime_version: `2.0`
+  # version of speed specification. Currently "2.0". Valid versions are "2.0", "1.0".
+  gtfs_realtime_version: "2.0"
 
-# データセットが増分か完全かを決定します
- incrementality: FULL_DATASET#このデータセットがサーバー上で生成された時刻
-# アラート フィードのシーケンスを決定するためのもの
- timestamp: 1284457468
+  # determines whether dataset is incremental or full
+  incrementality: FULL_DATASET
+
+  # the time where this dataset was generated on server
+  # for determining the sequence of alert feeds
+  timestamp: 1284457468
 }
-# フィードには複数のエンティティを含めることができます
+# multiple entities can be included in the feed
 entity {
-# エンティティの一意の識別子
- id: `0`
+  # unique identifier for the entity
+  id: "0"
 
-# エンティティの`タイプ`
- alert {
-  # アラートがアクティブな場合は複数の期間を定義できます
+  # "type" of the entity
+  alert {
+    # multiple periods can be defined when alert is active
     active_period {
-     # POSIX エポック形式の開始時刻
-      start: 1284457468#POSIX エポック形式の終了時刻
+      # start time in POSIX epoch format
+      start: 1284457468
+      # end time in POSIX epoch format
       end: 1284468072
     }
-  # 影響を受ける GTFS エンティティを選択します
+    # selects which GTFS entities will be affected
     informed_entity {
-     # 有効なパラメータ: 
-     # agency_id、 route_id、route_type、stop_id、trip ( TripDescriptorを参照)
-       route_id: "219"
+      # valid parameters: 
+      # agency_id, route_id, route_type, stop_id, trip (see TripDescriptor)
+      route_id: "219"
     }
-  # 1 つのアラート エンティティに複数のセレクター (informed_entity) を含めることができます
+    # multiple selectors (informed_entity) can be included in one alert entity
     informed_entity {
       stop_id: "16230"
     }
-  # 1 つの informed_entity に複数のフィールドを含めることができます
+    # multiple fields can be included in one informed_entity
     informed_entity {
       stop_id: "16299"
-       route_id: "100"
-     # この例では、ルート 100 のストップ 16299 を意味します。
-     # これは、ルート 100 の他のストップやストップ 16299 の他のルートには適用されません。
+      route_id: "100"
+      # This example means route 100 at stop 16299.
+      # This does not apply to any other stop on route 100 and any other route at stop 16299.
     }
 
-  # アラートの原因 - 有効な値については gtfs-realtime.proto を参照してください
-    cause: CONSTRUCTION#アラートの影響 - を参照してください有効な値については gtfs-realtime.proto を参照してください
-    effect: DETOUR#指定された URL は追加情報を提供します
+    # cause of the alert - see gtfs-realtime.proto for valid values
+    cause: CONSTRUCTION
+    # effect of the alert - see gtfs-realtime.proto for valid values
+    effect: DETOUR
+
+    # the given url provides additional information
     url {
-     # 複数の言語/翻訳がサポートされています
+      # multiple languages/translations supported
       translation {
-     # Google の外部でホストされているページ（プロバイダ/代理店など）
-       text: "http://www.sometransitagency/alerts"
-       language: "en"
+        # page hosted outside of Google (at provider/agency, etc.)
+        text: "http://www.sometransitagency/alerts"
+        language: "en"
       }
     }
 
-  # アラートのヘッダーが強調表示されます
+    # header for the alert will be highlighted
     header_text {
-     # 複数の言語/翻訳がサポートされています
+      # multiple languages/translations supported
       translation {
-       text: "Stop at Elm street is closed, temporary stop at Oak street"
-       language: "en"
+        text: "エルム ストリートの停留所は閉鎖されています。オーク ストリートに臨時停留所があります"
+        language: "ja"
       }
     }
 
-  # アラートの説明。ヘッダーテキストへの追加情報
+    # Alert description. Additional info to the header text
     description_text {
-     # 複数の言語/翻訳がサポートされています
+      # multiple languages/translations supported
       translation {
-       text: "エルム ストリートの工事のため、停留所は閉鎖されています。臨時停留所は、300 メートル北のオーク ストリートにあります"
-       language: "en"
+        text: "エルム ストリートの工事のため、停留所は閉鎖されています。臨時停留所はオーク ストリートの 300 メートル北にあります"
+        language: "ja"
       }
     }
- }
+  }
 }
 ```
-
-
-

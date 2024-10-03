@@ -90,7 +90,7 @@ Route-Based Fares is used to assign different fares for specific groups of route
 |----------------------------------|-------------------|
 |[routes.txt](../../../documentation/schedule/reference/#routestxt)|`network_id`|
 |[fare_leg_rules.txt](../../../documentation/schedule/reference/#fare_leg_rulestxt)|`fare_product_id`, `network_id`|
-|[netowrks.txt](../../../documentation/schedule/reference/#networkstxt)|`network_id`, `network_name`|
+|[networks.txt](../../../documentation/schedule/reference/#networkstxt)|`network_id`, `network_name`|
 |[route_networks.txt](../../../documentation/schedule/reference/#route_networkstxt)|`network_id`, `route_id`|
 
 **Prerequisites**:

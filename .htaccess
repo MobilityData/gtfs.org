@@ -2,6 +2,7 @@
 RewriteEngine On
 
 # Redirect rules using regex
+RedirectMatch 301 ^/reference/static/?$ /documentation/schedule/reference/
 RedirectMatch 301 ^/schedule/reference/?$ /documentation/schedule/reference/
 RedirectMatch 301 ^/schedule/best-practices/?$ /documentation/schedule/schedule_best_practices/
 RedirectMatch 301 ^/schedule/example-feed/?$ /getting_started/example_feed/
