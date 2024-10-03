@@ -324,7 +324,10 @@ tripA | vancouver | 3 | 1 | 2 | 10:00:00 | 14:00:00
 
 🇦🇹 オーストリアでは、ダイアル ア ライドは Rufbus でもあり、Bedarfsverkehr (Demand Responsive Transport) と Mikro-ÖV (Microtransit) というより大きな傘下になります。
 
-- [bedarfsverkehr.at](https://www.bedarfsverkehr.at/) - [Wiener Linien](https://www.wienerlinien.at/documents/843721/4770179/Anleitung_Rufbus_359531.pdf/df430b95-9dd4-0d13-ffdf-bdace15932a8?t=1614 165175643) - Rufbus (英語: ダイヤル・ア・バス、以前は Anruf-Sammel-Taxi または ASAX call-collect-taxi) - 現在の GTFS 実装 [年間サービスとして]アラート](https://www.google.com/maps/dir/S%C3%BC%C3%9Fenbrunner+Pl.,+1220+Wien,+Austria/2201+Gerasdorf,+Austria/@48.2867283,16.4429959,13z/am=t/data=!4m15!4m14!1m5!1m1 !1s0x476d0393b15bc6d9:0x517f69839511fb31!2m2!1d16.4958186!2d48.2772635!1m5!1m1!1s0x476d0488292e6f61:0xeee80d3d2bb6b1f5!2m2!1d16.4690073!2d48.2962096!3e3!5i1?エントリ=ttu )
+- [bedarfsverkehr.at](https://www.bedarfsverkehr.at/) 
+- [Wiener Linien](https://www.wienerlinien.at/documents/843721/4770179/Anleitung_Rufbus_359531.pdf/df430b95-9dd4-0d13-ffdf-bdace15932a8?t=1614165175643) 
+- Rufbus (英語: ダイヤル・ア・バス、以前は Anruf-Sammel-Taxi または ASAX call-collect-taxi) 
+- 現在の GTFS 実装 [年間サービスとして アラート](https://www.google.com/maps/dir/S%C3%BC%C3%9Fenbrunner+Pl.,+1220+Wien,+Austria/2201+Gerasdorf,+Austria/@48.2867283,16.4429959,13z/am=t/data=!4m15!4m14!1m5!1m1!1s0x476d0393b15bc6d9:0x517f69839511fb31!2m2!1d16.4958186!2d48.2772635!1m5!1m1!1s0x476d0488292e6f61:0xeee80d3d2bb6b1f5!2m2!1d16.4690073!2d48.2962096!3e3!5i1?entry=ttu)
 
 🇩🇰 デンマークでは、NT / midttrafik / sydtrafik / FYNBUS / movia (https://flextur.dk/) と呼ばれます
 
