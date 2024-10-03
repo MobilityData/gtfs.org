@@ -18,7 +18,7 @@ GTFS リファレンス形式は、交通システムの現在のニーズを満
     
     [:octicons-arrow-right-24: 詳細はこちら](../ベース/# 事業者)
 
-- :material-subway-variant:{ .lg.middle } __停留所等__停留所__ 
+- :material-subway-variant:{ .lg.middle } __停留所等 停留所__ 
 
     交通サービスが乗客を乗せたり降ろしたりする場所を定義します。
 
@@ -32,7 +32,7 @@ GTFS リファレンス形式は、交通システムの現在のニーズを満
 
 - :material-subway-variant:{ .lg.middle } __運行日__ 
 
-   便とサービスの免除をスケジュールするための構造を作成します。
+    便とサービスの免除をスケジュールするための構造を作成します。
 
     [:octicons-arrow-right-24: 詳細](../ベース/#service-dates)
 
@@ -239,7 +239,7 @@ GTFS は、ゾーン、距離、時間帯に基づく運賃など、さまざま
 
 - :material-transit-detour:{ .lg.middle } __連続した停留所等__ 
 
-   停留所等間でユーザーを乗せたり降ろしたりできるかどうかを示します。
+    停留所等間でユーザーを乗せたり降ろしたりできるかどうかを示します。
     
     [:octicons-arrow-right-24: 詳細はこちら](../flexible_services/#continuous-stops)
 
@@ -263,7 +263,7 @@ GTFS は、ゾーン、距離、時間帯に基づく運賃など、さまざま
 
 - :material-transit-detour:{ .lg.middle } __固定停留所型のデマンドサービス____ 
 
-   停留所等グループ内の任意の場所での乗車/降車を可能にするサービス。
+    停留所等グループ内の任意の場所での乗車/降車を可能にするサービス。
    
     [:octicons-arrow-right-24: 詳細はこちら詳細](../flexible_services/#固定停止需要対応サービス)
 
