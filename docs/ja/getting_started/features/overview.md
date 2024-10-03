@@ -1,14 +1,13 @@
 ---
-title: GTFS schedule機能
-description: GTFS scheduleの機能について理解を深め、その機能について理解を深めましょう。
+title: GTFS Schedule Features
+description: GTFS schedule の機能について理解を深め、その機能について理解を深めましょう。
 ---
 
-# GTFS schedule機能
+# GTFS Schedule Features
 
-GTFS リファレンス形式は、交通システムの現在のニーズを満たすために進化していますが、その機能はますます複雑になる可能性があります。**GTFS機能**は、GTFS リファレンス形式によって実現される機能について明確かつ決定的な説明を提供することを目的としています。これにより、交通機関、ベンダー、消費者、研究者は GTFS の機能を理解し、`S` で何ができるのか`という質問に答えることができます。**次の機能グループでは、各機能の目的と、それらに関連付けられているファイルとフィールドについて説明し、特定の機能をサポートするためにどのデータが必要かをユーザーが理解できるようにします。
+GTFS リファレンス フォーマットは、交通システムの現在のニーズを満たすために進化しており、その機能はますます複雑になる可能性があります。**GTFS Schedule Features** は、GTFS リファレンス フォーマットによって実現される機能について明確かつ明確な説明を提供することを目的としています。これにより、交通機関、ベンダー、消費者、研究者は GTFS の機能を理解し、「**GTFS で何ができるのか?」という質問に答えることができます。
 
-##ベース
-これらの重要な機能は、 GTFS フィードの中核を形成します。これらは、交通サービスを表すために必要な最小限の要素です。
+次の機能グループでは、各機能の目的と、それに関連付けられているファイルとフィールドについて説明しており、特定の機能をサポートするためにどのデータが必要かをユーザーが理解するのに役立ちます。
 
 <div class="grid cards" markdown> 
 
@@ -50,7 +49,7 @@ GTFS リファレンス形式は、交通システムの現在のニーズを満
 
 </div> 
 
-##ベースアドオン
+## ベースアドオン
 これらの機能はGTFS データセットを強化し、乗客のエクスペリエンスを向上させ、機関、ベンダー、データ再利用者間のコラボレーションを促進します。既存のファイルに新しいフィールドを追加したり、新しいファイルを作成したりすることがしてもよい。
 
 <div class="grid cards" markdown> 
@@ -65,7 +64,7 @@ GTFS リファレンス形式は、交通システムの現在のニーズを満
 
     車両が走行中にたどる地理的経路を定義します。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../base_add-ons/# ルート形状)
+    [:octicons-arrow-right-24: 詳細はこちら](../base_add-ons/#feed-information)
 
 - :material-plus-box-multiple-outline:{ .lg.middle } __路線系統色__ 
 
@@ -83,7 +82,7 @@ GTFS リファレンス形式は、交通システムの現在のニーズを満
 
     車両が旅行の目的地を示すために使用する標識を伝えます。
 
-    [:octicons-arrow-right-24: 詳しくはこちら](../base_add-ons/# 行先表示)
+    [:octicons-arrow-right-24: 詳しくはこちら](../base_add-ons/#headsigns)
 
 - :material-plus-box-multiple-outline:{ .lg.middle } __停留所等の種別__ 
 
@@ -101,19 +100,19 @@ GTFS リファレンス形式は、交通システムの現在のニーズを満
 
     異なる交通サービス間で許可される乗り換えについて説明します。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../base_add-ons/# 乗り換え)
+    [:octicons-arrow-right-24: 詳細はこちら](../base_add-ons/#transfers)
 
 -   :material-plus-box-multiple-outline:{ .lg.middle } __翻訳__ 
 
     複数の言語でサービス情報を伝えます。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../base_add-ons/# 翻訳)
+    [:octicons-arrow-right-24: 詳細はこちら](../base_add-ons/#translations)
 
 - :material-plus-box-multiple-outline:{ .lg.middle } __帰属組織__ 
 
     データセットの作成に関わった人物を伝えます。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../base_add-ons/# 帰属組織)
+    [:octicons-arrow-right-24: 詳細はこちら](../base_add-ons/#attributions)
 
 </div> 
 
@@ -127,19 +126,19 @@ GTFS リファレンス形式は、交通システムの現在のニーズを満
 
     場所から車椅子での乗車が可能かどうかを示します。    
 
-    [:octicons-arrow-right-24: 詳細はこちら](../アクセシビリティ/#stops-wheelchair-accessibility)
+    [:octicons-arrow-right-24: 詳細はこちら](../accessibility/#stops-wheelchair-accessibility)
 
 - :material-wheelchair:{ .lg.middle } __乗車の車椅子でのアクセス__
 
     車両が車椅子を使用する乗客に対応できるかどうかを示します。       
 
-    [:octicons-arrow-right-24: 詳細はこちら](../アクセシビリティ/#trips-wheelchair-accessibility)
+    [:octicons-arrow-right-24: 詳細はこちら](../accessibility/#trips-wheelchair-accessibility)
 
 - :material-wheelchair:{ .lg.middle } __テキスト読み上げ__ 
 
     停留所名のTextを音声に変換するために必要な入力を提供します。
 
-    [:octicons-arrow-right-24: 詳細はこちら詳細](../アクセシビリティ/#テキスト読み上げ)
+    [:octicons-arrow-right-24: 詳細はこちら詳細](../accessibility/#text-to-speech)
 
 </div> 
 
@@ -153,43 +152,43 @@ GTFS は、ゾーン、距離、時間帯に基づく運賃など、さまざま
 
     ユーザーが利用できるチケットまたは運賃の種類のリストを定義します。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../運賃/#fare-products)
+    [:octicons-arrow-right-24: 詳細はこちら](../fares/#fare-products)
 
 -   :material-cash:{ .lg.middle } __チケットメディア____ 
 
     運賃商品の保持や検証に使用できるメディアを定義します。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../運賃/#fare-media)
+    [:octicons-arrow-right-24: 詳細はこちら](../fares/#fare-media)
 
 -   :material-cash:{ .lg.middle } __乗車経路ベースの運賃__ 
 
     特定のルート・路線系統グループに異なる運賃を適用するために使用するルールについて説明します。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../運賃/#route-based-fares)
+    [:octicons-arrow-right-24: 詳細はこちら](../fares/#route-based-fares)
 
 -   :material-cash:{ .lg.middle } __時間ベースの運賃__ 
 
     時間帯や曜日によって異なる運賃について説明します。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../運賃/#time-based-fares)
+    [:octicons-arrow-right-24: 詳細はこちら](../fares/#time-based-fares)
 
 -   :material-cash:{ .lg.middle } __ゾーンベースの運賃__ 
 
     あるエリアから別のエリアに旅行するときに異なる運賃について説明します。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../運賃/#zone-based-fares)
+    [:octicons-arrow-right-24: 詳細はこちら](../fares/#zone-based-fares)
 
 -   :material-cash:{ .lg.middle } __運賃の乗り換え__
 
     旅行の 1 つの区間から別の区間に乗り換えるときに適用される料金を定義します。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../運賃/#fares-transfers)
+    [:octicons-arrow-right-24: 詳細はこちら](../fares/#fares-transfers)
 
 -   :material-cash:{ .lg.middle } __運賃V1__ 
 
     運賃情報をよりシンプルに表現できるレガシー機能。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../運賃/#fares-v1)
+    [:octicons-arrow-right-24: 詳細はこちら](../fares/#fares-v1)
 
 </div> 
 
@@ -204,31 +203,31 @@ GTFS は、ゾーン、距離、時間帯に基づく運賃など、さまざま
 
     交通機関の駅内の関連ポイントを接続する経路をモデル化します。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../構内通路/#pathway-connections)
+    [:octicons-arrow-right-24: 詳細はこちら](../pathways/#pathway-connections)
 
 -   :material-escalator:{ .lg.middle } __構内通路の詳細__ 
 
     経路の物理的特性に関する追加の詳細を提供します。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../構内通路/#pathway-details)
+    [:octicons-arrow-right-24: 詳細はこちら](../pathways/#pathway-details)
 
 -   :material-escalator:{ .lg.middle } __階・フロア__ 
 
     交通機関の駅内のすべての異なる階・フロアについて説明し、リストします。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../構内通路/# 階・フロア)
+    [:octicons-arrow-right-24: 詳細はこちら](../pathways/#levels)
 
 -   :material-escalator:{ .lg.middle } __駅構内移動時間__ 
 
     駅構内の経路を移動するのに要する推定時間を伝達します。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../構内通路/#in-station-traversal-time)
+    [:octicons-arrow-right-24: 詳細はこちら](../pathways/#in-station-traversal-time)
 
 -   :material-escalator:{ .lg.middle } __通路標識__ 
 
     経路に関連付けられた駅構内標識を伝達します。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../構内通路/#pathway-signs)
+    [:octicons-arrow-right-24: 詳細はこちら](../pathways/#pathway-signs)
 
 </div> 
 
@@ -255,16 +254,16 @@ GTFS は、ゾーン、距離、時間帯に基づく運賃など、さまざま
 
     [:octicons-arrow-right-24: 詳細はこちら](../flexible_services/#predefined-routes-with-deviation)
 
-- :material-transit-detour:{ .lg.middle } __ゾーンベースのデマンドサービス____ 
+- :material-transit-detour:{ .lg.middle } __ゾーンベースのデマンドサービス__
 
     特定のエリア内の任意の場所での乗車/降車を可能にするサービス。
 
     [:octicons-arrow-right-24: 詳細はこちら](../flexible_services/#zone-based-demand-responsive-services)
 
-- :material-transit-detour:{ .lg.middle } __固定停留所型のデマンドサービス____ 
+- :material-transit-detour:{ .lg.middle } __固定停留所型のデマンドサービス__
 
     停留所等グループ内の任意の場所での乗車/降車を可能にするサービス。
    
-    [:octicons-arrow-right-24: 詳細はこちら詳細](../flexible_services/#固定停止需要対応サービス)
+    [:octicons-arrow-right-24: 詳細はこちら詳細](../flexible_services/#fixed-stops-demand-responsive-services)
 
 </div> 

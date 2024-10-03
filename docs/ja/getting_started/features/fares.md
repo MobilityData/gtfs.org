@@ -1,24 +1,26 @@
-# :material-cash:運賃
+# :material-cash: 運賃
 
 GTFS では、世界中のさまざまな交通機関が使用する、ゾーン別、移動距離別、または時間帯別の運賃など、さまざまな運賃体系を正確にモデル化できます。GTFS運賃は、旅行に適用される価格と、支払いに使用できる媒体を乗客に通知します。
 
-##チケット商品
+## チケット商品
 
 チケット商品には、交通事業者がサービスにアクセスするために提供するチケットまたは運賃の種類 (つまり、片道運賃、月間パス、乗り換え料金など) がリストされます。チケット商品は、機関の運賃構造をモデル化するための基礎として機能し、 `fare_leg_rules.txt`で概説されているメカニズムを通じて交通サービスにリンクされます。チケット商品をルート・路線系統、エリア、時間などのさまざまな旅行条件に関連付けることで、個々の旅行区間と乗り換えの運賃コストが決まります。
 
 | 含まれるファイル                   |含まれるフィールド   |
 |----------------------------------|-------------------|
-|[fare_products.txt](../../../documentation/schedule/reference/#fare_productstxt)| `fare_product_id`、 `fare_product_name`、 `amount`、 `currency`、 `fare_media_id` |
-|[fare_leg_rules.txt](../../../documentation/schedule/reference/#fare_leg_rulestxt)| `fare_product_id`|**前提条件**: 
+|[fare_products.txt](../../../documentation/schedule/reference/#fare_productstxt)| `fare_product_id`、`fare_product_name`、`amount`、`currency`、`fare_media_id` |
+|[fare_leg_rules.txt](../../../documentation/schedule/reference/#fare_leg_rulestxt)| `fare_product_id`|
+
+**前提条件**:  
 
 - [基本機能](../ベース)
 
-??? 注`サンプルデータ`
+??? note "サンプルデータ"
 
    <p style="font-size:16px"> 
     次のサンプルは、単純な運賃商品 (片道 2.75 米ドル) を示しています。
    </p> 
-    !!! 注記 ""
+    !!! note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#fare_productstxt"><b>fare_products.txt</b></a><br> 
       </p> 
@@ -27,7 +29,7 @@ GTFS では、世界中のさまざまな交通機関が使用する、ゾーン
        |------------------|--------------------    |---      |---       |
        | single_ride      | 片道乗車料金       | 2.75   | USD       |
 
-    !!! 注 ""
+    ??? note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a><br> 
       </p> 
@@ -37,23 +39,25 @@ GTFS では、世界中のさまざまな交通機関が使用する、ゾーン
        | single_ride |
 
 
-##チケットメディア
+## チケットメディア
 
 チケットメディアは、運賃商品の保持や検証に使用できるサポートされているメディアを定義します。これは、紙のチケット、再チャージ可能な交通カード、さらにはクレジットカードやスマートフォンによる非接触型決済などの物理または仮想のコンテナーを指します。
 
 | 含まれるファイル                   | 含まれるフィールド   |
 |----------------------------------|-------------------|
-|[fare_media.txt](../../../documentation/schedule/reference/#fare_mediatxt)| `fare_media_id`、 `fare_media_name`、 `fare_media_type`|
-|[fare_products.txt](../../../documentation/schedule/reference/#fare_productstxt)| `fare_media_id`|**前提条件**: 
+|[fare_media.txt](../../../documentation/schedule/reference/#fare_mediatxt)| `fare_media_id`、`fare_media_name`、`fare_media_type`|
+|[fare_products.txt](../../../documentation/schedule/reference/#fare_productstxt)| `fare_media_id`|
+
+**前提条件**:  
 
 - [基本機能](../ベース)
 
-??? `サンプルデータ`の注記
+??? note "サンプルデータ"
 
    <p style="font-size:16px"> 
     次のサンプルは、サンフランシスコ ベイエリアのさまざまなチケットメディアのスニペットを示しています。`Clipper` は、`fare_media_type=2` の物理的な交通カードとして記述されています。`A` Munimobile` は、`fare_media_type=2` のモバイル アプリとして記述されています。チケットなしで運転手に直接渡される `Cash` は、`fare_media_type=0` です。
    </p> 
-    !!! 注記 ""
+    !!! note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#fare_mediatxt"><b>fare_media.txt</b></a><br> 
       </p> 
@@ -64,7 +68,7 @@ GTFS では、世界中のさまざまな交通機関が使用する、ゾーン
        | munimobile    | SFMTA MuniMobile | 4               |
        | cas​​h          | Cash          | 0               | 
 
-    !!! 注記 ""
+    !!! note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#fare_productstxt"><b>fare_products.txt</b></a><br> 
       </p> 
@@ -76,28 +80,30 @@ GTFS では、世界中のさまざまな交通機関が使用する、ゾーン
 
 
 
-##乗車経路ベースの運賃
+## 乗車経路ベースの運賃
 
 乗車経路ベースの運賃は、急行サービスの特別運賃や、バス高速輸送サービスと従来のバスサービスの運賃を区別するなど、特定のルート・路線系統グループに異なる運賃を割り当てるために使用されます。
 
 | 含まれるファイル                   | 含まれるフィールド   |
 |----------------------------------|-------------------|
 |[routes.txt](../../../documentation/schedule/reference/#routestxt)| `network_id`|
-|[fare_leg_rules.txt](../../../documentation/schedule/reference/#fare_leg_rulestxt)| `fare_product_id`、 `network_id`|
-|[netowrks.txt](../../../documentation/schedule/reference/#networkstxt)| `network_id`、 `network_name`|
-|[route_networks.txt](../../../documentation/schedule/reference/#route_networkstxt)| `network_id`、 `route_id`|**前提条件**:
+|[fare_leg_rules.txt](../../../documentation/schedule/reference/#fare_leg_rulestxt)| `fare_product_id`、`network_id`|
+|[networks.txt](../../../documentation/schedule/reference/#networkstxt)| `network_id`、`network_name`|
+|[route_networks.txt](../../../documentation/schedule/reference/#route_networkstxt)| `network_id`、`route_id`|
+
+**前提条件**: 
 
 - [基本機能](../ベース)
 - [チケット商品機能](#fare-products)
 
-??? 注:`サンプルデータ`
+??? note "サンプルデータ"
 
    <p style="font-size:16px"> 
     次のサンプルは、ルート・路線系統をエクスプレス カテゴリとローカル カテゴリに分類し、それぞれに異なるチケット商品を割り当てるシステムを示しています。</p> 
 
    <p style="font-size:16px">**`networks.txt` + `route_networks.txt` を使用する**</p> 
 
-    !!! 注記 ""
+    !!! note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#networkstxt"><b>networks.txt</b></a><br> 
       </p> 
@@ -107,7 +113,7 @@ GTFS では、世界中のさまざまな交通機関が使用する、ゾーン
        | express    | Express         |
        | local      | Local          |
 
-    !!! 注 ""
+    ??? note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#route_networkstxt"><b>route_networks.txt</b></a><br> 
       </p> 
@@ -119,7 +125,7 @@ GTFS では、世界中のさまざまな交通機関が使用する、ゾーン
        | local      | local_1   |
        | local      | local_2   |
 
-    !!! 注 ""
+    ??? note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a><br> 
       </p> 
@@ -131,7 +137,7 @@ GTFS では、世界中のさまざまな交通機関が使用する、ゾーン
 
    <p style="font-size:16px">**または`ルート・路線系統を使用する**</p> 
 
-    !!! 注記 ""
+    !!! note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#routestxt"><b>routes.txt</b></a><br> 
       </p> 
@@ -143,7 +149,7 @@ GTFS では、世界中のさまざまな交通機関が使用する、ゾーン
        | local_1    | local      |
        | local_2    | local      |
 
-    !!! 注 ""
+    ??? note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a><br> 
       </p> 
@@ -154,24 +160,26 @@ GTFS では、世界中のさまざまな交通機関が使用する、ゾーン
        | local      | local_single_ride   |
 
 
-##時間ベースの運賃
+## 時間ベースの運賃
 
 時間ベースの運賃は、ピーク運賃やオフピーク運賃、週末運賃など、特定の時間帯や曜日の運賃を割り当てるために使用されます。
 
 | 含まれるファイル                   | 含まれるフィールド   |
 |----------------------------------|-------------------|
-|[fare_leg_rules.txt](../../../documentation/schedule/reference/#fare_leg_rulestxt)| `fare_product_id`、 `from_timeframe_group_id`、 `to_timeframe_group_id`|
-|[timeframes.txt](../../../documentation/schedule/reference/#timeframestxt)| `timeframe_group_id`、 `start_time`、 `end_time`、 `service_id`|**前提条件**:
+|[fare_leg_rules.txt](../../../documentation/schedule/reference/#fare_leg_rulestxt)| `fare_product_id`、`from_timeframe_group_id`、`to_timeframe_group_id`|
+|[timeframes.txt](../../../documentation/schedule/reference/#timeframestxt)| `timeframe_group_id`、`start_time`、`end_time`、`service_id`|
+
+**前提条件**: 
 
 - [基本機能](../ベース)
 - [チケット商品機能](../運賃/#fare-products)
 
-??? 注:`サンプルデータ`
+??? note "サンプルデータ"
 
    <p style="font-size:16px"> 
     次のサンプルは、ピーク時間が 8:00 から 10:00 で、残りの時間がオフピークであるシステムを示しています。</p> 
 
-    !!! 注記 ""
+    !!! note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#timeframestxt"><b>timeframes.txt</b></a><br> 
       </p> 
@@ -182,36 +190,38 @@ GTFS では、世界中のさまざまな交通機関が使用する、ゾーン
        | normal            | 0:00:00    | 08:00:00 | all_day    |
        | normal            | 10:00:00   | 24:00:00 | all_day    |
 
-    !!! 注 ""
+    ??? note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a><br> 
       </p> 
 
        | from_timeframe_group_id | fare_product_id    |
        |------------------------|---------------------|
-       |peak                   |peak_single_ride    |
-       |regular                |regular_single_ride |
+       |peak                    | peak_single_ride    |
+       |regular                 | regular_single_ride |
 
 
-##ゾーンベースの運賃
+## ゾーンベースの運賃
 
 ゾーンベースの運賃は、特定の運賃が特定のゾーンから別のゾーンへ移動する際に適用されるゾーンベースのシステムを表すために使用されます。ゾーンは停留所等のグループによって定義されます。
 
 | 含まれるファイル                   | 含まれるフィールド   |
 |----------------------------------|-------------------|
-|[fare_leg_rules.txt](../../../documentation/schedule/reference/#fare_leg_rulestxt)| `fare_product_id`、 `from_area_id`、 `to_area_id`|
-|[areas.txt](../../../documentation/schedule/reference/#areastxt)| `area_id`、 `area_name`|
-|[stop_areas.txt](../../../documentation/schedule/reference/#stop_areastxt)| `area_id`、 `stop_id`|**前提条件**:
+|[fare_leg_rules.txt](../../../documentation/schedule/reference/#fare_leg_rulestxt)| `fare_product_id`、`from_area_id`、`to_area_id`|
+|[areas.txt](../../../documentation/schedule/reference/#areastxt)| `area_id`、`area_name`|
+|[stop_areas.txt](../../../documentation/schedule/reference/#stop_areastxt)| `area_id`、`stop_id`|
+
+**前提条件**: 
 
 - [基本機能](../ベース)
 - [チケット商品機能](../運賃/#fare-products)
 
-??? 注:`サンプルデータ`
+??? note "サンプルデータ"
 
    <p style="font-size:16px"> 
     次のサンプルは、ゾーン A からゾーン B までの運賃を示しています。</p> 
 
-    !!! 注記 ""
+    !!! note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#areastxt"><b>areas.txt</b></a><br> 
       </p> 
@@ -221,7 +231,7 @@ GTFS では、世界中のさまざまな交通機関が使用する、ゾーン
        | zone_a | ゾーン A    |
        | zone_b | ゾーン B    |
 
-    !!! 注 ""
+    ??? note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#stop_areastxt"><b>stop_areas.txt</b></a><br> 
       </p> 
@@ -233,7 +243,7 @@ GTFS では、世界中のさまざまな交通機関が使用する、ゾーン
        | zone_b | stop_c |
        | zone_b | stop_d |
 
-    !!! 注 ""
+    ??? note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a><br> 
       </p> 
@@ -249,17 +259,19 @@ GTFS では、世界中のさまざまな交通機関が使用する、ゾーン
 | 含まれるファイル                      | 含まれるフィールド   |
 |----------------------------------|-------------------|
 |[fare_leg_rules.txt](../../../documentation/schedule/reference/#fare_leg_rulestxt)| `leg_group_id`|
-|[fare_transfer_rules.txt](../../../documentation/schedule/reference/#fare_transfer_rulestxt)| `from_leg_group_id`、 `to_leg_group_id`、 `transfer_count`、 `duration_limit`、 `duration_limit_type`、 `fare_transfer_type`、 `fare_product_id`|**前提条件**:
+|[fare_transfer_rules.txt](../../../documentation/schedule/reference/#fare_transfer_rulestxt)| `from_leg_group_id`、`to_leg_group_id`、`transfer_count`、`duration_limit`、`duration_limit_type`、`fare_transfer_type`、`fare_product_id`|
+
+**前提条件**: 
 
 - [基本機能](../ベース)
 - [チケット商品機能](../運賃/#fare-products)
 
-??? 注:`サンプルデータ`
+??? note "サンプルデータ"
 
    <p style="font-size:16px"> 
-    次のサンプルは、2 時間のウィンドウ内で、システム内の Leg A 間で無制限の無料乗り換えが許可されていることを示しています。</p> 
+    次のサンプルは、2時間のウィンドウ内で、システム内の Leg A 間で無制限の無料乗り換えが許可されていることを示しています。</p> 
 
-    !!! 注記 ""
+    !!! note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#fare_leg_rulestxt"><b>fare_leg_rules.txt</b></a><br> 
       </p> 
@@ -268,7 +280,7 @@ GTFS では、世界中のさまざまな交通機関が使用する、ゾーン
        |--------------|
        | a             |
 
-    !!! 注記 ""
+    !!! note ""
       <p style="font-size:16px"> 
        <a href="../../../documentation/schedule/reference/#fare_transfer_rulestxt"><b>fare_transfer_rules.txt</b></a><br> 
       </p> 
@@ -280,53 +292,55 @@ GTFS では、世界中のさまざまな交通機関が使用する、ゾーン
 
 ## 運賃V1 
 
- 運賃V1 は、上で説明した他の運賃機能の従来の代替手段です。`fare_rules.txt` および`fare_attributes.txt`ファイルを使用して、`fare_rules.txt`設定、支払い方法の乗り換え、ゾーンベースの運賃などの基本的な運賃情報をモデル化できます。作成は簡単ですが、より複雑な運賃構造をモデル化する能力が低く、他の運賃機能( Fares v2と呼ばれる機能の一部) の十分な承認があれば廃止されるしてもよい。
+ 運賃V1 は、上で説明した他の運賃機能の従来の代替手段です。`fare_rules.txt` および `fare_attributes.txt` ファイルを使用して、`fare_rules.txt` 設定、支払い方法の乗り換え、ゾーンベースの運賃などの基本的な運賃情報をモデル化できます。作成は簡単ですが、より複雑な運賃構造をモデル化する能力が低く、他の運賃機能( Fares v2と呼ばれる機能の一部) の十分な承認があれば廃止されるしてもよい。
 
 | 含まれるファイル                   | 含まれるフィールド   |
 |----------------------------------|-----------------------------------|
-|[stops.txt](../../../documentation/schedule/reference/#stopstxt)| `zone_id`|
-|[fare_attributes.txt](../../../documentation/schedule/reference/#fare_attributestxt)| `fare_id` `price` `currency_type` `payment_method` `transfers` `agency_id` `transfer_duration`|
-|[fare_rules.txt](../../../documentation/schedule/reference/#fare_rulestxt)| `fare_id` `route_id` `origin_id` `destination_id` `contains_id`|**前提条件**: 
+| [stops.txt](../../../documentation/schedule/reference/#stopstxt) | `zone_id` |
+| [fare_attributes.txt](../../../documentation/schedule/reference/#fare_attributestxt) | `fare_id` `price` `currency_type` `payment_method` `transfers` `agency_id` `transfer_duration` |
+| [fare_rules.txt](../../../documentation/schedule/reference/#fare_rulestxt) | `fare_id` `route_id` `origin_id` `destination_id` `contains_id` |
+
+**前提条件**:  
 
 - [基本機能](../ベース)
 
-??? 注: "サンプルデータ"
+??? note "サンプルデータ"
 
    <p style="font-size:16px"> 
     次のサンプルは、プリペイド カードを使用してネットワークを移動すると 3.20 カナダ ドルかかり、2 時間以内で乗り換えが無料になることを示しています。</p> 
 
-    !!! 注記 ""
-      <p style="font-size:16px"> 
-       <a href="../../../documentation/schedule/reference/#fare_attributestxt"><b>fare_attributes.txt</b></a><br> 
-      </p> 
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#fare_attributestxt"><b>fare_attributes.txt</b></a> <br>
+        </p>
 
-       | fare_id          | price | currency_type | payment_method | 乗り換え | transfer_duration |
-       |-------------------|-------|---------------|----------------|-----------|-------------------|
-       | prepaid-card_fare | 3.2   | CAD          | 1             |          | 7200             |
+        | fare_id           | price | currency_type | payment_method | transfers | transfer_duration |
+        |-------------------|-------|---------------|----------------|-----------|-------------------|
+        | prepaid-card_fare | 3.2   | CAD           | 1              |           | 7200              |
 
     !!! note ""
-      <p style="font-size:16px"> 
-       <a href="../../../documentation/schedule/reference/#fare_rulestxt"><b>fare_rules.txt</b></a><br> 
-      </p> 
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#fare_rulestxt"><b>fare_rules.txt</b></a> <br>
+        </p>
 
-       | fare_id          | route_id | origin_id       | destination_id |
-       |-------------------|----------|-----------------|-----------------|
-       | prepaid-card_fare | line1    | subway_stations | subway_stations |
-       | prepaid-card_fare | line2    | subway_stations | subway_stations |
+        | fare_id           | route_id | origin_id       | destination_id  |
+        |-------------------|----------|-----------------|-----------------|
+        | prepaid-card_fare | line1    | subway_stations | subway_stations |
+        | prepaid-card_fare | line2    | subway_stations | subway_stations |
 
-    !!! 注 ""
-      <p style="font-size:16px"> 
-       <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a><br> 
-      </p> 
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
+        </p>
 
-       | stop_id | stop_name | stop_lat | stop_lon   | zone_id         |
-       |---------|-----------|------------|------------|-----------------|
-       | A       | stopA    | 43.670049 |-79.385389 | subway_stations |
-       | B       | stopB    | 43.671049 |-79.386789 | subway_stations |
+        | stop_id | stop_name | stop_lat  | stop_lon   | zone_id         |
+        |---------|-----------|-----------|------------|-----------------|
+        | A       | stopA     | 43.670049 | -79.385389 | subway_stations |
+        | B       | stopB     | 43.671049 | -79.386789 | subway_stations |
 
 
-       | stop_id | stop_name | stop_lat | stop_lon   | zone_id         |
-       |---------|-----------|------------|------------|-----------------|
-       | A       | stopA    | 43.670049 |-79.385389 | 地下鉄駅 |
-       | B       | stopB    | 43.671049 |-79.386789 | 地下鉄駅 |
+        | stop_id | stop_name | stop_lat  | stop_lon   | zone_id         |
+        |---------|-----------|-----------|------------|-----------------|
+        | A       | stopA     | 43.670049 | -79.385389 | subway_stations |
+        | B       | stopB     | 43.671049 | -79.386789 | subway_stations |
 
