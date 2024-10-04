@@ -6,10 +6,10 @@ Fares Fares v2で表現する予定の主な概念は次のとおりです。
 
 - チケット商品(チケットやパスなど)
 - 乗客カテゴリ (高齢者や子供など)
-- チケットメディア(交通パス、紙のチケット、非接触型銀行カードなど)
+- 運賃メディア(交通パス、紙のチケット、非接触型銀行カードなど)
 - 運賃上限
 
-これらの概念により、データ作成者はゾーンベース、時間依存、および機関間運賃をモデル化できるようになります。この拡張プロジェクトは、反復的に採用されています。 
+これらの概念により、データ作成者はゾーンベース、時間依存、および事業者間運賃をモデル化できるようになります。この拡張プロジェクトは、反復的に採用されています。 
 
 GTFS で公式に採用されているものを使用してモデル化できる内容を示す [例](../../../documentation/schedule/examples/fares-v2) をここで確認できます。
 
@@ -51,8 +51,8 @@ Slack チャネルや定期的なワーキング グループ ミーティング
 -**2022年3月**: <a href="https://github.com/google/transit/pull/286#issuecomment-1080716109" target="_blank">オープン投票#2 → 不成立</a>
 -**2022年してもよい**: <a href="https://github.com/google/transit/pull/286#issuecomment-1121392932" target="_blank">オープン投票#3 → 成立</a>
 -**2022年8月**: <a href="https://github.com/google/transit/issues/341" target="_blank">Fares v2の次のフェーズに関するコミュニティの議論開始</a>
--**2022年11月**: <a href="https://github.com/google/transit/pull/355" target="_blank">チケットメディアドラフトのプルリクエストがフィードバック用に公開</a>
+-**2022年11月**: <a href="https://github.com/google/transit/pull/355" target="_blank">運賃メディアドラフトのプルリクエストがフィードバック用に公開</a>
 -**2022年12月**: <a href="https://github.com/google/transit/issues/341#issuecomment-1339947915" target="_blank">コミュニティが機能のスタックランク付け順序を特定し、反復の優先順位を決定</a>
--**2023年3月**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">チケットメディアパス</a>
+-**2023年3月**: <a href="https://github.com/google/transit/pull/355#issuecomment-1468326858" target="_blank">運賃メディアパス</a>
 -**2023年7月**: <a href="https://github.com/google/transit/pull/357#issuecomment-1653561813" target="_blank">時間/日によって異なる運賃パス</a>
 -**2023年11月2023**: <a href="https://github.com/google/transit/pull/405#issuecomment-1830665141" target="_blank">ネットワークを定義するための専用ファイル</a>

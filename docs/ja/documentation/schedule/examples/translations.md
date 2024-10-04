@@ -2,7 +2,7 @@
 
 ## 駅名を翻訳する
 
-一部の交通機関プロバイダーは複数の言語でサービスを提供しています。その 1 つがベルギー国鉄 (現地では NMBS/SNCB、オランダ語では Nationale Maatschappij der Belgische Spoorwegen、フランス語では Société nationale des chemins de fer belges として知られています) です。同社は駅名を複数の言語で提供しており、ユーザーの言語と場所の設定に応じて表示されます。
+一部の交通事業者プロバイダーは複数の言語でサービスを提供しています。その 1 つがベルギー国鉄 (現地では NMBS/SNCB、オランダ語では Nationale Maatschappij der Belgische Spoorwegen、フランス語では Société nationale des chemins de fer belges として知られています) です。同社は駅名を複数の言語で提供しており、ユーザーの言語と場所の設定に応じて表示されます。
 
 NMBS/SNCB は、以下のファイルに示すように、GTFS データをフランス語で公開しています。
 

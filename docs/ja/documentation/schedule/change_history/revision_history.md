@@ -7,20 +7,20 @@
 * GeoJSON ファイルのポリゴンの有効性ルールを追加しました。[ディスカッション](https://github.com/google/transit/pull/476) を参照してください。
 
 #### 2024年8月
-* 需要対応型サービスのため、stops.txt の存在を変更します。[ディスカッション](https://github.com/google/transit/pull/472) を参照してください。
+* デマンドサービスのため、stops.txt の存在を変更します。[ディスカッション](https://github.com/google/transit/pull/472) を参照してください。
 * stop_times.txt の timepoint の使用目的を明確にします。[ディスカッション](https://github.com/google/transit/pull/474) を参照してください。
 * ヘッドサインが推奨されることを追加します。[ディスカッション](https://github.com/google/transit/pull/485) を参照してください。
 
 #### 2024年7月
 * feed_info.txt の要件を更新しました。[ディスカッション](https://github.com/google/transit/pull/460) を参照してください。
-* シェイプを含める必要があることを追加しました。[ディスカッション](https://github.com/google/transit/pull/470) を参照してください。
+* 形状を含める必要があることを追加しました。[ディスカッション](https://github.com/google/transit/pull/470) を参照してください。
 
 #### 2024年5月
 * `fare_leg_rules.txt` に `rule_priority` フィールドを追加しました。[ディスカッション](https://github.com/google/transit/pull/418) を参照してください。
 * `stops.zone_id` の存在を明確にしました。[ディスカッション](https://github.com/google/transit/pull/432) を参照してください。
 
 #### 2024年4月
-* 運賃商品の定義を明確にしました。[ディスカッション](https://github.com/google/transit/pull/426) を参照してください。
+* チケット商品の定義を明確にしました。[ディスカッション](https://github.com/google/transit/pull/426) を参照してください。
 
 #### 2024年3月
 * GTFS Flex を追加しました。[ディスカッション](https://github.com/google/transit/pull/433) をご覧ください。
@@ -36,7 +36,7 @@
 * GTFS ファイル内のサブフォルダを禁止しました。[ディスカッション](https://github.com/google/transit/pull/379) をご覧ください。
 * 時間または曜日による変動運賃を追加しました。[ディスカッション](https://github.com/google/transit/pull/357) を参照してください。
 * stop_times.txt の暗黙のタイムゾーンを明確にしました。[ディスカッション](https://github.com/google/transit/pull/378) を参照してください。
-* 停車時刻を指定します。shape_dist_traveled は、トリップ シェイプの最大距離を超えてはいけません。[ディスカッション](https://github.com/google/transit/pull/380) を参照してください。
+* 停車時刻を指定します。shape_dist_traveled は、トリップ 形状の最大距離を超えてはいけません。[ディスカッション](https://github.com/google/transit/pull/380) を参照してください。
 * ベスト プラクティス: 推奨プレゼンスを追加します。[ディスカッション](https://github.com/google/transit/pull/386) を参照してください。
 
 #### 2023年3月14日
@@ -122,7 +122,7 @@
 
 #### 2019年6月25日
 
-* シェイプ ポイントと停留所の関係を明確にしました。[ディスカッション](https://github.com/google/transit/pull/39) を参照してください。
+* 形状 ポイントと停留所の関係を明確にしました。[ディスカッション](https://github.com/google/transit/pull/39) を参照してください。
 
 #### 2019年4月4日
 
@@ -226,7 +226,7 @@
 
 #### 2009年3月30日
 
-* 交通機関フィードを一般公開するための新しいセクション。これは、データの解釈方法や記述方法に厳密に変更を加えるものではないため、これまでグループで議論されていませんでした。ただし、GTFS 形式のデータを使用できるアプリケーションが増えているため、Google 以外の GTFS の使用に関する議論を含めることが有益であると考える Google スタッフもいました。
+* 交通事業者フィードを一般公開するための新しいセクション。これは、データの解釈方法や記述方法に厳密に変更を加えるものではないため、これまでグループで議論されていませんでした。ただし、GTFS 形式のデータを使用できるアプリケーションが増えているため、Google 以外の GTFS の使用に関する議論を含めることが有益であると考える Google スタッフもいました。
 * CSV 形式の明確化: [ディスカッション](https://groups.google.com/forum/#!topic/gtfs-changes/03qz5aTA2mk)。
 * route_color フィールドと route_text_color フィールドの説明で対照的な色を選択する方法に関する追加のガイダンス。
 * trip_short_name。これらのスレッドで提案され、テストされたとおり: a および b。
@@ -249,7 +249,7 @@
 #### 2008年8月6日
 
 * transfers.txt ファイルを追加しました。フィード パブリッシャーが望ましい乗り換え動作に関するヒントを提供できるようにしました ([元の提案](https://groups.google.com/forum/#!topic/gtfs-changes/cL1E4oKKpKw))
-* stops.txt に location_type および parent_station フィールドを追加しました。これにより、停車地点を駅にグループ化できるようになりました ([元の提案](https://groups.google.com/forum/#!topic/gtfs-changes/ScGAyZ9a_yw))
+* stops.txt に location_type および parent_station フィールドを追加しました。これにより、停留所点を駅にグループ化できるようになりました ([元の提案](https://groups.google.com/forum/#!topic/gtfs-changes/ScGAyZ9a_yw))
 * 代理店の音声電話番号を提供する agency_phone フィールドを追加しました ([元の提案](https://groups.google.com/forum/#!topic/gtfs-changes/ScGAyZ9a_yw))提案](https://groups.google.com/forum/#!topic/gtfs-changes/8Itt58ueyqA))
 * オープンソースのテスト ツールについて言及した「フィードのテスト」セクションを追加
 * CSV 形式、agency_timezone、agency_lang、route_color、route_text_color、arrival_time、departure_time、calendar.txt と calendar_dates.txt、運賃表、frequencies.txt についての説明を追加
@@ -267,9 +267,9 @@
 #### 2007年11月20日
 
 * block_id の説明を明確化
-* 言語を変更して Google Transit を強調しないようにしました (Google 以外のアプリケーションは GTFS を使用しており、交通機関のルーティングは Google マップの統合機能になったため)。また、さまざまなタイプミスを修正しました
+* 言語を変更して Google Transit を強調しないようにしました (Google 以外のアプリケーションは GTFS を使用しており、交通事業者のルーティングは Google マップの統合機能になったため)。また、さまざまなタイプミスを修正しました
 * 現在の Google マップ UI での GTFS フィールドの表示を反映するようにサンプルのスクリーンショットを更新しました
-* 交通機関データ プロバイダの Google 連絡先メール アドレスを更新しました
+* 交通事業者データ プロバイダの Google 連絡先メール アドレスを更新しました
 * 書式を更新しました
 
 #### 2007年10月5日
@@ -286,9 +286,9 @@
 #### 2007年4月9日
 
 * に関するセクションを追加しました[フィードの送信](https://developers.google.com/transit/google-transit#SubmitFeedToGoogle)。
-* [デモ交通機関フィードの例](https://developers.google.com/transit/gtfs/examples/gtfs-feed)を追加しました。
+* [デモ交通事業者フィードの例](https://developers.google.com/transit/gtfs/examples/gtfs-feed)を追加しました。
 * すべてのサービス日付がcalendar_dates.txtで定義されている場合はcalendar.txtを省略できるという注記を追加しました。
-* agency_idフィールドを1つの機関のみを含むフィードでオプションにしました。これにより、agency_idのない既存のフィードを有効なままにすることができます。
+* agency_idフィールドを1つの事業者のみを含むフィードでオプションにしました。これにより、agency_idのない既存のフィードを有効なままにすることができます。
 * agency_url、stop_url、route_urlのより完全な仕様と、これらのフィールドの追加のサンプル値を追加しました。
 * 有効なroute_type値として6 (ゴンドラ)と7 (ケーブルカー)を追加しました。
 
@@ -304,9 +304,9 @@
 
 * ヘッドウェイ ベースのスケジュールをサポートするために frequencies.txt を追加しました。
 
-* 同じフィードで複数の機関が許可されるようになりました。また、agencys.txt とroutes.txt の両方に新しい agency_id フィールドが追加され、どのルートをどの機関が運行するかを指定できるようになりました。
+* 同じフィードで複数の事業者が許可されるようになりました。また、agencys.txt とroutes.txt の両方に新しい agency_id フィールドが追加され、どのルートをどの事業者が運行するかを指定できるようになりました。
 
-* ルートごとおよび停車地ごとの URL を追加しました。
+* ルートごとおよび停留所ごとの URL を追加しました。
 
 * trips.txt に direction_id フィールドを追加しました。
 
@@ -314,13 +314,13 @@
 
 * オプションの route_color と route_text_color をroutes.txt に追加して、ルートの色をサポートしました。
 
-* 住所を使用して停車地を指定する機能を削除しました。以前のバージョンの仕様では、stop_street、stop_city、stop_region、stop_postcode、stop_country の各フィールドで住所を使用して交通機関の停留所の場所を指定できました。現在は、緯度には stop_lat、経度には stop_lon を使用して停留所の場所を指定する必要があります。これは、ほとんどのアプリケーションでより便利です。
+* 住所を使用して停留所を指定する機能を削除しました。以前のバージョンの仕様では、stop_street、stop_city、stop_region、stop_postcode、stop_country の各フィールドで住所を使用して交通事業者の停留所の場所を指定できました。現在は、緯度には stop_lat、経度には stop_lon を使用して停留所の場所を指定する必要があります。これは、ほとんどのアプリケーションでより便利です。
 * ケーブルカーの車両タイプを、routes.txt の route_type フィールドに追加しました。
 * 変更の概要については、元の [Headway ブログ投稿](http://headwayblog.com/2007/03/02/google-feed-spec-update-2007-02/) を参照してください。
 
 #### 2006年11月29日
 
-* shapes.txt によるトリップ シェイプ情報のサポートを追加
+* shapes.txt によるトリップ 形状情報のサポートを追加
 * stop_sequence の定義を明確化
 * pickup_type と drop_off_type をオプションとしてマーク
 

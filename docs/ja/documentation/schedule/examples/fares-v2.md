@@ -1,6 +1,6 @@
 # Fares v2 
 
-Fares v2 は、Fares v1 の制限に対処することを目的とした GTFS 拡張プロジェクトです。この拡張プロジェクトは、段階的に採用されています。以下の例では、運賃製品や乗客が運賃を乗り換えに使用する方法など、基本概念をモデル化する方法の概要を示します。[Fares v2 拡張プロジェクトの詳細については、こちら](../../../../community/extensions/fares-v2) を参照してください。
+Fares v2 は、Fares v1 の制限に対処することを目的とした GTFS 拡張プロジェクトです。この拡張プロジェクトは、段階的に採用されています。以下の例では、チケット商品や乗客が運賃を乗り換えに使用する方法など、基本概念をモデル化する方法の概要を示します。[Fares v2 拡張プロジェクトの詳細については、こちら](../../../../community/extensions/fares-v2) を参照してください。
 
 当面の間、プロデューサーは Fares v2 を Fares v1 の実装と並行して同じデータセットに実装できます。両者の間に技術的な競合はありません。消費者は、他の実装とは独立してどちらの実装を使用するかを選択できます。
 
@@ -19,7 +19,7 @@ GTFS Fares-v2 を使い始めるには、これらの 4 つのビデオ チュ�
 - [動画 3](https://share.mobilitydata.org/faresv2-creating-and-maintaining-data): GTFS Fares-v2: データの作成と維持
 - [動画 4](https://share.mobilitydata.org/faresv2-exporting-and-publishing): GTFS Fares-v2 のエクスポートと公開 
 
-これらは、交通機関が GTFS-Fares v2 の目的と、Google スプレッドシートを使用して GTFS-Fares v2 データを作成、編集、アップロードする方法を理解できるように作成されています。 
+これらは、交通事業者が GTFS-Fares v2 の目的と、Google スプレッドシートを使用して GTFS-Fares v2 データを作成、編集、アップロードする方法を理解できるように作成されています。 
 
 この [Fares v2 template](https://share.mobilitydata.org/faresv2-template) は、必要な運賃ファイルを最初から作成するために使用できます。
 
@@ -34,7 +34,7 @@ GTFS Fares-v2 を使い始めるには、これらの 4 つのビデオ チュ�
 - 1 週間パス (22 米ドル)
 - 1 か月パス (77 米ドル)
 
-交通チケットまたは運賃は、GTFS では運賃商品と呼ばれます。これらは、[fare_products.txt](../../reference/#fare_productstxt) ファイルを使用して記述できます。各エントリは特定の運賃に対応します。
+交通チケットまたは運賃は、GTFS ではチケット商品と呼ばれます。これらは、[fare_products.txt](../../reference/#fare_productstxt) ファイルを使用して記述できます。各エントリは特定の運賃に対応します。
 
 [**fare_products.txt**](../../reference/#fare_productstxt)
 
@@ -51,9 +51,9 @@ GTFS Fares-v2 を使い始めるには、これらの 4 つのビデオ チュ�
 
 ### 単一区間の旅程のルールを作成する
 
-GTFS では、運賃区間は、乗客が異なるモード、ルート・路線系統、ネットワーク、または機関間で乗り換えを行わずに行う旅行に対応します。メリーランド州交通局のフィードでは、単一運賃で、乗客は BaltimoreLink バス、Light RailLink、および Metro SubwayLinkルート・路線系統の `core` ネットワーク内にある任意の停留所等と地下鉄駅のペア内を移動できます。
+GTFS では、運賃区間は、乗客が異なるモード、ルート・路線系統、ネットワーク、または事業者間で乗り換えを行わずに行う便に対応します。メリーランド州交通局のフィードでは、単一運賃で、乗客は BaltimoreLink バス、Light RailLink、および Metro SubwayLinkルート・路線系統の `core` ネットワーク内にある任意の停留所等と地下鉄駅のペア内を移動できます。
 
-区間グループは、ネットワーク内の出発地から目的地 (または、エリア ID がグループ化された停留所等に対応している場合は、出発地のセットから目的地のセット) への便を定義します。以下のファイルには、メリーランド州交通局のコア ネットワーク内の任意の場所を移動するためのルールが記述されています。各ルールは、[交通機関の運賃の定義例](#define-a-transit-fare) の通常チケット商品の 1 つに対応します。
+区間グループは、ネットワーク内の出発地から目的地 (または、エリア ID がグループ化された停留所等に対応している場合は、出発地のセットから目的地のセット) への便を定義します。以下のファイルには、メリーランド州交通局のコア ネットワーク内の任意の場所を移動するためのルールが記述されています。各ルールは、[交通事業者の運賃の定義例](#define-a-transit-fare) の通常チケット商品の 1 つに対応します。
 
 [**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
 
@@ -81,14 +81,14 @@ BaltimoreLink のローカル バス、Metro SubwayLink、または Light RailLi
 
 上記のファイルは、次のフィールドを使用して GTFS でこれを表しています:
 
-- 片道旅行 (`core_local_one_way_trip`) の区間への乗り換えが可能です
+- 片道便 (`core_local_one_way_trip`) の区間への乗り換えが可能です
 - 許可される乗り換え回数に制限がないため、`transfer_count` は `-1` に設定されています
 - `duration_limit` は `5400` 秒に設定されており、これは 90 分に相当します
 - 乗り換え時間は、乗客が `core_local_one_way_trip` 運賃区間のいずれかのルートで出発したときに開始され、別の運賃区間で出発したときに終了するため、`duration_limit_type` は `1` に設定されています。
 - 乗客は最初の運賃のみを支払うため、`fare_transfer_type` は `0` に設定されています。90 分の時間枠内での乗り換えには、乗り換え料金や 2 つ目の運賃はかかりません。したがって、コストは最初の運賃の合計と乗り換え料金の合計としてモデル化できます。
 - 乗客は 90 分間の `duration_limit` ウィンドウ内で無制限に乗り換えることができるため、`transfer_count` は `-1` に設定されています。
 
-料金を定義し、適切な `fare_leg_rule` を作成し、`fare_transfer_rule` を定義すると、2.00 USD の `core_local_oneway_fare` が旅行プランナーに表示されます。以下は Transit からの例です。
+料金を定義し、適切な `fare_leg_rule` を作成し、`fare_transfer_rule` を定義すると、2.00 USD の `core_local_oneway_fare` が便プランナーに表示されます。以下は Transit からの例です。
 
 <div class="flex-photos">
     <img src="../../../../assets/transit-fares-mdot.png" alt="fare of $2 USD">
@@ -98,7 +98,7 @@ BaltimoreLink のローカル バス、Metro SubwayLink、または Light RailLi
 
 ### 同じ運賃ゾーン内のサービス場所を説明する
 
-一部の交通機関は、ゾーンベースの運賃体系を運用しています。運賃ゾーンは、異なる運賃価格に関連付けられた地理的エリアに分割されています。ベイエリアの BART システムでは、出発地と目的地によって運賃が異なり <a href="https://www.bart.gov/sites/default/files/docs/BART%20Clipper%20Fares%20Triangle%20Chart%20July%202022.pdf" target="_blank">(BART 運賃の違い)</a>、交通機関の利用者は正しい運賃を知る必要があります。運賃エリアは [stops_areas.txt](../../reference/#stop_areastxt) ファイルを使用して記述できます。このファイルでは、[stops.txt](../../reference/#stopstxt) から [areas.txt](../../reference/#areastxt) に停車駅が割り当てられます。
+一部の交通事業者は、ゾーンベースの運賃体系を運用しています。運賃ゾーンは、異なる運賃価格に関連付けられた地理的エリアに分割されています。ベイエリアの BART システムでは、出発地と目的地によって運賃が異なり <a href="https://www.bart.gov/sites/default/files/docs/BART%20Clipper%20Fares%20Triangle%20Chart%20July%202022.pdf" target="_blank">(BART 運賃の違い)</a>、交通事業者の利用者は正しい運賃を知る必要があります。運賃エリアは [stops_areas.txt](../../reference/#stop_areastxt) ファイルを使用して記述できます。このファイルでは、[stops.txt](../../reference/#stopstxt) から [areas.txt](../../reference/#areastxt) に停車駅が割り当てられます。
 
 まず、[areas.txt](../../reference/#areastxt) でエリアを特定します。エリア名がない場合は、`area_name` を空白のままにしておくことができます。下の表には、`ASHB`、`GLEN`、`OAKL` の 3 つの `area_id` があります。
 
@@ -122,11 +122,11 @@ BaltimoreLink のローカル バス、Metro SubwayLink、または Light RailLi
 | GLEN    | GLEN    | 
 | OAKL    | OAKL    | 
 
-`fare_leg_rules.txt` では、出発地と到着地に応じて異なる運賃商品を識別できます。たとえば、最初のエントリは次のようになります:
+`fare_leg_rules.txt` では、出発地と到着地に応じて異なるチケット商品を識別できます。たとえば、最初のエントリは次のようになります:
 
 * 出発地は `ASHB` です
 * 到着地は `GLEN` です
-* 出発/到着地の運賃商品は `BA:matrix:ASHB-GLEN` です
+* 出発/到着地のチケット商品は `BA:matrix:ASHB-GLEN` です
 
 [**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
 
@@ -173,9 +173,9 @@ BaltimoreLink のローカル バス、Metro SubwayLink、または Light RailLi
 
 <sup><a href="https://511.org/open-data/transit" target="_blank">サンフランシスコ ベイエリア地域フィードをご覧ください</a></sup>
 
-さらに、物理的なチケットをチケットメディアとして記述したいプロデューサーは、`fare_media_type=1` を使用できます。
+さらに、物理的なチケットを運賃メディアとして記述したいプロデューサーは、`fare_media_type=1` を使用できます。
 
-<a href="https://www.mbta.com" target="_blank">マサチューセッツ湾交通局 (MBTA)</a>では、CharlieTicket と呼ばれる物理的な紙のチケットを使用して、ユーザーが便やパスの料金を支払うことを許可しています。これを反映するために、MBTA のフィードには `fare_media_type=1` の `charlieticket`チケットメディアがあります。
+<a href="https://www.mbta.com" target="_blank">マサチューセッツ湾交通局 (MBTA)</a>では、CharlieTicket と呼ばれる物理的な紙のチケットを使用して、ユーザーが便やパスの料金を支払うことを許可しています。これを反映するために、MBTA のフィードには `fare_media_type=1` の `charlieticket`運賃メディアがあります。
 
 [**fare_media.txt**](../../reference/#fare_mediatxt)
 
@@ -187,11 +187,11 @@ BaltimoreLink のローカル バス、Metro SubwayLink、または Light RailLi
 
 <sup><a href="https://www.mbta.com/developers/gtfs" target="_blank">マサチューセッツ湾交通局フィードを参照してください</a></sup>
 
-###チケットメディアに基づいて価格差を定義する 
+###運賃メディアに基づいて価格差を定義する 
 
-Muni の運賃は、乗客が使用するチケットメディアによって異なります。この例では、現金または Clipper カードを使用した場合に大人のローカル運賃がどのように変わるかについて説明します。現金で支払う大人のローカル運賃は 3 米ドルですが、同じ運賃を Clipper カードで支払うと 50 セント安い 2.50 米ドルになります。
+Muni の運賃は、乗客が使用する運賃メディアによって異なります。この例では、現金または Clipper カードを使用した場合に大人のローカル運賃がどのように変わるかについて説明します。現金で支払う大人のローカル運賃は 3 米ドルですが、同じ運賃を Clipper カードで支払うと 50 セント安い 2.50 米ドルになります。
 
-以下の各エントリはチケットメディアについて説明しています。
+以下の各エントリは運賃メディアについて説明しています。
 
 [**fare_media.txt**](../../reference/#fare_mediatxt)
 
@@ -200,7 +200,7 @@ Muni の運賃は、乗客が使用するチケットメディアによって異
 | clipper       | Clipper          | 2               |
 | cas​​h          | Cash          | 0               |
 
-以下の`fare_products.txt`ル` スニペットは、乗客が使用するチケットメディアに応じて `i` シングル ローカル運賃` 商品の金額がどのように変化するかを示しています。
+以下の`fare_products.txt`ル` スニペットは、乗客が使用する運賃メディアに応じて `i` シングル ローカル運賃` 商品の金額がどのように変化するかを示しています。
 
 [**fare_products.txt**](../../reference/#fare_productstxt)
 
@@ -219,17 +219,17 @@ Apple マップでは、乗客は運賃がどのように変化するかを確�
 <sup><a href="https://511.org/open-data/transit" target="_blank">サンフランシスコ ベイエリア地域フィードを参照してください</a></sup>
 
 
-### 非接触型チケットメディアオプションについて説明します 
+### 非接触型運賃メディアオプションについて説明します 
 
 <a href="https://vimeo.com/539436401" target="_blank">サンタバーバラ郡北部の Clean Air Express では、</a>クレジットカード、Google Pay、 Apple Payによる非接触型支払いが受け付けられます。
 
-Clean Air Express フィードには、cEMV (非接触型 Europay、Mastercard、Visa) オプションであるため、`fare_media_type=3` の `tap_to_ride`チケットメディアがあります。
+Clean Air Express フィードには、cEMV (非接触型 Europay、Mastercard、Visa) オプションであるため、`fare_media_type=3` の `tap_to_ride`運賃メディアがあります。
 
 | fare_media_id | fare_media_name | fare_media_type |
 |---------------|-----------------|-----------------|
 | tap_to_ride   | Tap to Ride     | 3               |
 
-以下に示す 1 回の乗車運賃製品には、`cash` と `tap-to-ride` の両方のチケットメディアオプションがあります。 1 回の乗車料金を`タップして乗車`チケットメディアで支払うと、1 ドル安くなります。
+以下に示す 1 回の乗車チケット商品には、`cash` と `tap-to-ride` の両方の運賃メディアオプションがあります。 1 回の乗車料金を`タップして乗車`運賃メディアで支払うと、1 ドル安くなります。
 
 [**fare_products.txt**](../../reference/#fare_productstxt)
 
@@ -241,11 +241,11 @@ Clean Air Express フィードには、cEMV (非接触型 Europay、Mastercard�
  <sup><a href="https://gtfs.calitp.org/production/CleanAirExpressFaresv2.zip" target="_blank">Clean Air Express フィードをダウンロードする</a></sup>
 
 
-### 時間と旅行日に基づいて価格差を定義する
+### 時間と便日に基づいて価格差を定義する
 
-一部の交通機関は、時間や曜日に基づいて運賃を変更します。つまり、運賃は、ピーク時、オフピーク時、週末など、旅行が行われる時間帯に関連付けられます。
+一部の交通事業者は、時間や曜日に基づいて運賃を変更します。つまり、運賃は、ピーク時、オフピーク時、週末など、便が行われる時間帯に関連付けられます。
 
-ワシントン DC のメトロレールの運賃は、旅行の日時など、複数の要因によって異なります。GTFS の可変時間運賃は、`timeframes.txtを使用して定義できます。このファイルでは、特定の時間帯を指定して、それを`fare_leg_rules.txt`で関連付け、旅行が行われる時間に対応する適用可能な運賃商品を割り当てることができます。以下は、2023 年春現在の WMATA の運賃に基づいた架空の例です。
+ワシントン DC のメトロレールの運賃は、便の日時など、複数の要因によって異なります。GTFS の可変時間運賃は、`timeframes.txtを使用して定義できます。このファイルでは、特定の時間帯を指定して、それを`fare_leg_rules.txt`で関連付け、便が行われる時間に対応する適用可能なチケット商品を割り当てることができます。以下は、2023 年春現在の WMATA の運賃に基づいた架空の例です。
 
 まず、サービス日は`calendar.txt`を使用して定義されます。
 
@@ -296,15 +296,15 @@ Clean Air Express フィードには、cEMV (非接触型 Europay、Mastercard�
 | 1          | peak_fare       | weekday_peak            |                       |
 | 1          | regular_fare    | weekday_offpeak         |                       |
 
-`network_id` は外部 ID `networks.network_id` または `routes.network_id` を参照し、各旅行の正しい運賃商品の選択は、`stop_times.txt` の到着時間と出発時間と、`timeframes.txt` で定義された時間の組み合わせになることに注意してください。
+`network_id` は外部 ID `networks.network_id` または `routes.network_id` を参照し、各便の正しいチケット商品の選択は、`stop_times.txt` の到着時間と出発時間と、`timeframes.txt` で定義された時間の組み合わせになることに注意してください。
 
-この場合、午前 7:30 に出発する旅行の料金を支払うユーザーは 5.00 USD (ピーク料金) を支払う必要がありますが、午前 11:30 に出発する別のユーザーは 3.00 USD (オフピーク料金) のみを支払う必要があります。
+この場合、午前 7:30 に出発する便の料金を支払うユーザーは 5.00 USD (ピーク料金) を支払う必要がありますが、午前 11:30 に出発する別のユーザーは 3.00 USD (オフピーク料金) のみを支払う必要があります。
 
 ### 時間変動運賃とゾーンベース運賃を定義する 
 
-ニューヨークの MTA メトロノース鉄道網では、運賃は旅行の時間帯と出発地および目的地の両方に基づいて異なります。次の例は、グランド セントラル駅からコールド スプリング (米国ニューヨーク州) への旅行に適用される運賃規則を示しています。
+ニューヨークの MTA メトロノース鉄道網では、運賃は便の時間帯と出発地および目的地の両方に基づいて異なります。次の例は、グランド セントラル駅からコールド スプリング (米国ニューヨーク州) への便に適用される運賃規則を示しています。
 
-この例は、<a href="https://docs.google.com/spreadsheets/d/1-cD-R2OH5xAQAbNWNlrXD7WOw594lVdW-bomuLo6bI8/edit?usp=sharing" target="_blank">ITO World</a> が作成した <a href="https://www.itoworld.com/" target="_blank">データセット</a> に基づいており、6 つの異なるエリアに分散した 10 の停留所を利用する旅行を取り上げています。
+この例は、<a href="https://docs.google.com/spreadsheets/d/1-cD-R2OH5xAQAbNWNlrXD7WOw594lVdW-bomuLo6bI8/edit?usp=sharing" target="_blank">ITO World</a> が作成した <a href="https://www.itoworld.com/" target="_blank">データセット</a> に基づいており、6 つの異なるエリアに分散した 10 の停留所を利用する便を取り上げています。
 
 [**stops.txt**](../../reference/#stopstxt)
 
@@ -388,7 +388,7 @@ Clean Air Express フィードには、cEMV (非接触型 Europay、Mastercard�
 | mnr_notam2pmpeak   | 20:00:00   | 24:00:00 | weekdays   |
 
 
-各運賃商品は`fare_products.txt`で定義されています。Cold Spring はゾーン 7 にあるため、この例ではゾーン 1 と7. の間の便をリストしています。完全なデータセットには、時間とゾーンの組み合わせで定義された各価格のレコードが含まれます。また、この例では 1 つのチケットメディア(`paper`) のみが表示されていますが、チケットメディアによって価格も異なる場合は、追加の組み合わせを作成できます。.
+各チケット商品は`fare_products.txt`で定義されています。Cold Spring はゾーン 7 にあるため、この例ではゾーン 1 と7. の間の便をリストしています。完全なデータセットには、時間とゾーンの組み合わせで定義された各価格のレコードが含まれます。また、この例では 1 つの運賃メディア(`paper`) のみが表示されていますが、運賃メディアによって価格も異なる場合は、追加の組み合わせを作成できます。.
 
 [**fare_products.txt**](../../reference/#fare_productstxt)
 
@@ -400,7 +400,7 @@ Clean Air Express フィードには、cEMV (非接触型 Europay、Mastercard�
 | mnr_HUD-7:1_adult      | Inbound Adult Off Peak Zonal Fare  | paper         | 15.00  | USD      |
 
 
-最後に、出発地と目的地のエリアの組み合わせとそれぞれの時間枠が、 `fare_leg_rules.txt`の対応する運賃商品に関連付けられます。ここで、ピーク時にゾーン 1 (つまり `area_id=mnr_1`) から出発または到着する便には、旅行の到着ゾーンと出発ゾーンに対応する特定のピーク料金 (つまり `fare_product_id=mnr_1:HUD-7_adult_peak`) が適用されます。
+最後に、出発地と目的地のエリアの組み合わせとそれぞれの時間枠が、 `fare_leg_rules.txt`の対応するチケット商品に関連付けられます。ここで、ピーク時にゾーン 1 (つまり `area_id=mnr_1`) から出発または到着する便には、便の到着ゾーンと出発ゾーンに対応する特定のピーク料金 (つまり `fare_product_id=mnr_1:HUD-7_adult_peak`) が適用されます。
 
 [**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
 
@@ -414,9 +414,9 @@ Clean Air Express フィードには、cEMV (非接触型 Europay、Mastercard�
 | mnr_hudson | mnr_HUD-7    | mnr_1      | mnr_HUD-7:1_adult_peak | weekdays                | mnr_ampeak            |
 
 
-このデータセットを使用すると、グランド セントラル (ゾーン `mnr_1`) を午後 6:45 に出発する予定の列車 #869 (`service_id=3`) に乗車するユーザーは、旅行が `mnr_am2pmpeak` 期間に開始され、`zone mnr_1` から始まるため、アウトバウンド大人ピーク ゾーン料金 20.00 USD を支払う必要があります。
+このデータセットを使用すると、グランド セントラル (ゾーン `mnr_1`) を午後 6:45 に出発する予定の列車 #869 (`service_id=3`) に乗車するユーザーは、便が `mnr_am2pmpeak` 期間に開始され、`zone mnr_1` から始まるため、アウトバウンド大人ピーク ゾーン料金 20.00 USD を支払う必要があります。
 
-または、列車 #883 (`service_id=13`) で旅行するユーザーは、この列車がグランド セントラル (ゾーン `mnr_1`) を午後 9:04 に出発する予定であるため、アウトバウンド大人オフピーク ゾーン料金 15.00 USD のみを支払う必要があります。
+または、列車 #883 (`service_id=13`) で便するユーザーは、この列車がグランド セントラル (ゾーン `mnr_1`) を午後 9:04 に出発する予定であるため、アウトバウンド大人オフピーク ゾーン料金 15.00 USD のみを支払う必要があります。
 
 <a href="https://apple.com/maps" target="_blank">Apple マップ</a> では、乗客は料金がどのように変化するかを確認し、列車の予定出発時刻の横にある料金を比較できます。
 

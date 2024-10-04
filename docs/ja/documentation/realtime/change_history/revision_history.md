@@ -8,7 +8,7 @@
 
 #### 2022年11月
 
-* 削除された旅行のサポートを追加しました。[ディスカッション](https://github.com/google/transit/pull/352)を参照してください。
+* 削除された便のサポートを追加しました。[ディスカッション](https://github.com/google/transit/pull/352)を参照してください。
 
 #### 2022年07月
 
@@ -52,7 +52,7 @@
 
 #### 2020年3月12日
 
-* ブロック内の次の旅行についてTripUpdate予測を提供することを推奨します。 [ディスカッション](https://github.com/google/transit/pull/206)を参照してください。
+* ブロック内の次の便についてTripUpdate予測を提供することを推奨します。 [ディスカッション](https://github.com/google/transit/pull/206)を参照してください。
 
 #### 2019年8月
 

@@ -2,7 +2,7 @@
 
 ## はじめに
 
-[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) は、公共交通機関に関するリアルタイム情報を伝達するためのデータ形式です。GTFS Realtime データは、[プロトコル バッファ](https://developers.google.com/protocol-buffers/) を使用してエンコードおよびデコードされます。これは、高速かつ効率的な処理のために設計されたコンパクトなバイナリ表現です。データ スキーマ自体は、[gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto) で定義されています。
+[GTFS Realtime](https://github.com/google/transit/tree/master/gtfs-realtime) は、公共交通事業者に関するリアルタイム情報を伝達するためのデータ形式です。GTFS Realtime データは、[プロトコル バッファ](https://developers.google.com/protocol-buffers/) を使用してエンコードおよびデコードされます。これは、高速かつ効率的な処理のために設計されたコンパクトなバイナリ表現です。データ スキーマ自体は、[gtfs-realtime.proto](https://github.com/google/transit/blob/master/gtfs-realtime/proto/gtfs-realtime.proto) で定義されています。
 
 GTFS Realtime データを操作するには、開発者は通常、`gtfs-realtime.proto` スキーマを使用して、選択したプログラミング言語でクラスを生成します。これらのクラスは、GTFS-realtime データ モデル オブジェクトを構築してバイナリ データとしてシリアル化するために使用したり、逆にバイナリ データをデータ モデル オブジェクトに解析するために使用したりできます。
 

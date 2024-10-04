@@ -3,7 +3,7 @@
 GTFS Flex は、2024 年 3 月に GTFS 仕様に正式に採用された GTFS 拡張プロジェクトであり、デマンド レスポンシブ交通 (DRT) サービスの検出可能性を高めることを目的としています。
 デマンド レスポンシブ サービスには、世界の地域に基づいて異なる用語が存在することに注意してください。詳細については、[用語集](#glossary) を参照してください。
 
-次の例は、Flex を使用してさまざまなデマンド レスポンシブ サービスのユース ケースをモデル化する方法を示しています。**次の例は、必ずしも機関のサービスを正確にまたは完全に表しているわけではないことに注意してください。**
+次の例は、Flex を使用してさまざまなデマンド レスポンシブ サービスのユース ケースをモデル化する方法を示しています。**次の例は、必ずしも事業者のサービスを正確にまたは完全に表しているわけではないことに注意してください。**
 
 ## 単一ゾーン内のオンデマンド サービス
 
@@ -11,7 +11,7 @@ GTFS Flex は、2024 年 3 月に GTFS 仕様に正式に採用された GTFS �
 
 <sup>[Heartland Express サンプル データセットをダウンロード](../../../assets/on-demand_services_within_a_single_zone.zip)</sup>
 
-### 旅行の定義
+### 便の定義
 
 Heartland Express のサービス時間は次のとおりです。
 
@@ -87,7 +87,7 @@ Heartland Express サービスすべてに適用される予約ルールは次�
 
 booking_rule_id | booking_type | prior_notice_start_day | prior_notice_start_time | prior_notice_last_day | prior_notice_last_time | message | phone_number | info_url
 --|--|--|--|--|--|--|--|--|--
-booking_route_74362 | 2 | 14 | 8:00:00 | 1 | 15:00:00 | Brown County Heartland Express は、オンデマンドのドアツードアの交通手段を提供します。乗車をリクエストするには、旅行の少なくとも 1 営業日前の午後 3 時までに 1-507-359-2717 または 1-800-707-2717 に電話してください。 | (507) 359-2717 | https://www.co.brown.mn.us/heartland-express-transit###停車時刻の定義 
+booking_route_74362 | 2 | 14 | 8:00:00 | 1 | 15:00:00 | Brown County Heartland Express は、オンデマンドのドアツードアの交通手段を提供します。乗車をリクエストするには、便の少なくとも 1 営業日前の午後 3 時までに 1-507-359-2717 または 1-800-707-2717 に電話してください。 | (507) 359-2717 | https://www.co.brown.mn.us/heartland-express-transit###停車時刻の定義 
 
 運行時間は、 `start_pickup_drop_off_window`フィールドと`end_pickup_drop_off_window`フィールドを使用して定義されます。同じゾーン内を移動するには、 stop_times.txtに同じ`location_id`つ` 2 つのレコードが必要です。
 
@@ -267,7 +267,7 @@ tripA | Zone1 | 1 | 2 | 1 | 08:00:00 | 18:00:00
 tripA | Zone2 | 2 | 1 | 2 | 08:00:00 | 14:00:00
 tripA | Zone3 | 3 | 1 | 2 | 10:00:00 | 18:00:00
 
-消費者は、Zone1 から Zone3 への旅行のルートや移動時間を指定する際に、Zone2 を考慮に入れないでください。
+消費者は、Zone1 から Zone3 への便のルートや移動時間を指定する際に、Zone2 を考慮に入れないでください。
 
 ### ゾーン重複制約
 
@@ -320,7 +320,7 @@ tripA | vancouver | 3 | 1 | 2 | 10:00:00 | 14:00:00
 
 📲 ダイアル ア ライドは、ヨーロッパ全土で使用されている複数の用語のバリエーションです。
 
-🇨🇭 スイスでは、Rufbus / オンコール バスという用語に該当します。[PostAuto の PubliCar システム](https://www.postauto.ch/en/timetable-and-network/publicar) も利用できます。この提案では、PubliCar アプリとサービスは、ユーザーが好む旅行プランナー アプリで見つけられるようになります。
+🇨🇭 スイスでは、Rufbus / オンコール バスという用語に該当します。[PostAuto の PubliCar システム](https://www.postauto.ch/en/timetable-and-network/publicar) も利用できます。この提案では、PubliCar アプリとサービスは、ユーザーが好む便プランナー アプリで見つけられるようになります。
 
 🇦🇹 オーストリアでは、ダイアル ア ライドは Rufbus でもあり、Bedarfsverkehr (Demand Responsive Transport) と Mikro-ÖV (Microtransit) というより大きな傘下になります。
 

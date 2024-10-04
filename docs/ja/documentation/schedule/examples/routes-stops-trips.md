@@ -13,7 +13,7 @@ agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone
 CT,Calgary Transit,http://www.calgarytransit.com,America/Edmonton,,403-262-1000
 ```
 
-Calgary Transit は、アルバータ州カルガリーで LRT、BRT、定期バス サービス、準交通機関、オンデマンド交通を運営しています。この例では、2 つのルート・路線系統が定義されており、1 つ目はバス、2 つ目は LRT です。ファイル [routes.txt](../../reference/#routestxt) を使用して、各ルートにユニーク IDと、人間が読みやすいように短い名前と長い名前が割り当てられます。
+Calgary Transit は、アルバータ州カルガリーで LRT、BRT、定期バス サービス、準交通事業者、オンデマンド交通を運営しています。この例では、2 つのルート・路線系統が定義されており、1 つ目はバス、2 つ目は LRT です。ファイル [routes.txt](../../reference/#routestxt) を使用して、各ルートにユニーク IDと、人間が読みやすいように短い名前と長い名前が割り当てられます。
 
 [**routes.txt**](../../reference/#routestxt)
 
@@ -29,7 +29,7 @@ CT,202-20666,202,Blue Line - Saddletowne/69 Street CTrain,0,www.calgarytransit.c
 - 2番目は LRT なので、`route_type=0` です。
 - `route_type` の値の完全なリストは、[こちら](../../reference/#routestxt) にあります。
 
-残りのフィールドには、ルート固有の URL や、地図上でサービスを表す機関固有の色などの追加情報が含まれます。
+残りのフィールドには、ルート固有の URL や、地図上でサービスを表す事業者固有の色などの追加情報が含まれます。
 
 <hr> 
 
@@ -57,7 +57,7 @@ stop_id,stop_code,stop_name,stop_lat,stop_lon,location_type
 
 ## 便
 
-機関のルート・路線系統を記述した後、各ルートで提供される便を記述できるようになります。 
+事業者のルート・路線系統を記述した後、各ルートで提供される便を記述できるようになります。 
 
 まず、[calendar.txt](../../reference/#calendartxt) を使用してサービスの範囲を定義する必要があります。
 
@@ -83,13 +83,13 @@ route_id,service_id,trip_id,trip_headsign,direction_id,shape_id
 
 - MAX Orange に対応する [routes.txt](../../reference/#routestxt) の `route_id` がリストされます
 - 週末に対応する [calendar.txt](../../reference/#calendartxt) の `service_id` がリストされます
-- 各レコードには、各旅行の一意の ID が含まれます。
+- 各レコードには、各便の一意の ID が含まれます。
 ヘッドサイン テキストが提供されます。これは、通常、バスの内外の標識に表示されます
-- フィールド `direction_id` を使用すると、同じルートの異なる方向への旅行を区別できます。たとえば、インバウンド旅行とアウトバウンド旅行、または南行き旅行と北行き旅行を区別できます。
-- この場合、Saddletowne への旅行には `direction_id=0` があり、Brentwood への旅行には `direction_id=1` があります。 direction_id の値には固有の意味はなく、移動の方向を別の方向に割り当てるためにのみ使用されます
+- フィールド `direction_id` を使用すると、同じルートの異なる方向への便を区別できます。たとえば、インバウンド便とアウトバウンド便、または南行き便と北行き便を区別できます。
+- この場合、Saddletowne への便には `direction_id=0` があり、Brentwood への便には `direction_id=1` があります。 direction_id の値には固有の意味はなく、移動の方向を別の方向に割り当てるためにのみ使用されます
 - [shapes.txt](../../reference/#shapestxt) の `shape_id` は、サドルタウン行きの MAX Orange ルートに対応しており、最初のレコードにはリストされています。また、2 番目と 3 番目のレコードには、ブレントウッド行きの MAX Orange ルートに対応しています
 
-`shape_id=3030026` は、サドルタウン行きの MAX Orange に対応しています。以下のファイルには、旅行の概要を示すポイントに関する情報と、各ポイントと旅行の開始点の間の距離が含まれています。この情報を使用して、旅行計画や分析の目的でルートをマップ上にプロットすることができます。
+`shape_id=3030026` は、サドルタウン行きの MAX Orange に対応しています。以下のファイルには、便の概要を示すポイントに関する情報と、各ポイントと便の開始点の間の距離が含まれています。この情報を使用して、便計画や分析の目的でルートをマップ上にプロットすることができます。
 
 [**shapes.txt**](../../reference/#shapestxt) 
 

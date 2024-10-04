@@ -1,6 +1,6 @@
 # GTFS realtimeの変更
 
-GTFS realtimeリファレンスは固定されたものではありません。GTFS realtimeを使用する交通機関、開発者、その他の関係者のコミュニティによって開発および保守されているオープン仕様です。GTFS realtimeデータのプロデューサーとコンシューマーのこのコミュニティは、新しい機能を有効にするために仕様を拡張するための提案をすることが期待されています。
+GTFS realtimeリファレンスは固定されたものではありません。GTFS realtimeを使用する交通事業者、開発者、その他の関係者のコミュニティによって開発および保守されているオープン仕様です。GTFS realtimeデータのプロデューサーとコンシューマーのこのコミュニティは、新しい機能を有効にするために仕様を拡張するための提案をすることが期待されています。
 
 GTFSGTFS realtimeに貢献するには、[GTFS realtime修正プロセス](../../../../community/governance/gtfs_realtime_amendment_process)を読み、GTFS Github リポジトリ ( <a href="https://github.com/google/transit" target="_blank">google/transit</a> ) の未解決の<a href="https://github.com/google/transit/issues" target="_blank">問題</a>と<a href="https://github.com/google/transit/pulls" target="_blank">プルリクエスト</a>での議論に従ってください。 ![](../../../assets/mark-github.svg)
 

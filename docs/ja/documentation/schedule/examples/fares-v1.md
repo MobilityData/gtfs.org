@@ -1,13 +1,13 @@
 # Fares V1 
 
-[fare_attributes.txt](../../reference/#fare_attributestxt) と [fare_rules.txt](../../reference/#fare_rulestxt) で構成される運賃V1 は、歴史的に GTFS で運賃情報を記述するための公式の方法でした。しかし、2 つのファイルは、効率的に記述できる要素の幅が限られており、実装があいまいです。
+[fare_attributes.txt](../../reference/#fare_attributestxt) と [fare_rules.txt](../../reference/#fare_rulestxt) で構成されるFares v1 は、歴史的に GTFS で運賃情報を記述するための公式の方法でした。しかし、2 つのファイルは、効率的に記述できる要素の幅が限られており、実装があいまいです。
 [Fares v2](../../examples/fares-v2/) は現在開発中の拡張プロジェクトで、運賃 V1 の制限に対処することを目的としています。
 
-## 機関の運賃規則を定義する
+## 事業者の運賃規則を定義する
 
 トロント交通委員会の地下鉄ネットワークで乗客が PRESTO カードを使用して支払う場合、乗車料金は3.20カナダドルです。乗客は、2 時間以内に TTC が運営する他の地下鉄、路面電車、またはバスルート・路線系統に乗り換えることもできます。
 
-このサービスは、[fare_attributes.txt](../../reference/#fare_attributestxt)、[fare_rules.txt](../../reference/#fare_rulestxt)、および [transfers.txt](../../reference/#transferstxt) ファイルを使用して表すことができます。最初のファイル [fare_attributes.txt](../../reference/#fare_attributestxt) には、交通機関の運賃が記載されています。以下は、プレスト運賃の例です。
+このサービスは、[fare_attributes.txt](../../reference/#fare_attributestxt)、[fare_rules.txt](../../reference/#fare_rulestxt)、および [transfers.txt](../../reference/#transferstxt) ファイルを使用して表すことができます。最初のファイル [fare_attributes.txt](../../reference/#fare_attributestxt) には、交通事業者の運賃が記載されています。以下は、プレスト運賃の例です。
 
 [**fare_attributes.txt**](../../reference/#fare_attributestxt)
 

@@ -1,6 +1,6 @@
 # GTFS scheduleの変更
 
-GTFS スケジュール リファレンスは、固定されたものではありません。GTFS を使用する交通機関、開発者、その他の関係者のコミュニティによって開発および保守されているオープン仕様です。GTFS データのプロデューサーとコンシューマーのこのコミュニティは、新しい機能を有効にするために仕様を拡張するための提案をすることが期待されています。
+GTFS スケジュール リファレンスは、固定されたものではありません。GTFS を使用する交通事業者、開発者、その他の関係者のコミュニティによって開発および保守されているオープン仕様です。GTFS データのプロデューサーとコンシューマーのこのコミュニティは、新しい機能を有効にするために仕様を拡張するための提案をすることが期待されています。
 
 GTFS に貢献するには、[GTFS スケジュール修正プロセス](../../../../community/governance/gtfs_schedule_amendment_process) を読み、GTFS Github リポジトリ (<a href="https://github.com/google/transit" target="_blank">google/transit</a>) のオープンな <a href="https://github.com/google/transit/issues" target="_blank">問題</a> と <a href="https://github.com/google/transit/pulls" target="_blank">プル リクエスト</a> での議論に従ってください。 ![](../../../assets/mark-github.svg)
 
@@ -31,7 +31,7 @@ GTFS に貢献するには、[GTFS スケジュール修正プロセス](../../.
 </div>
 <div class="featurelist">
 <ul>
-<li><a href="../../../../community/extensions/flex" class="no-icon" target="_blank">GTFS-Flex 提案</a> により、乗客は旅行プランナーで需要に応じたサービスを発見できます</li>
+<li><a href="../../../../community/extensions/flex" class="no-icon" target="_blank">GTFS-Flex 提案</a> により、乗客は便プランナーで需要に応じたサービスを発見できます</li>
 <li>複数のファイルが追加されました仕様、GeoJson を GTFS に統合する locations.geojson を含む </li>
 </ul>
 </div>
@@ -101,8 +101,8 @@ GTFS に貢献するには、[GTFS スケジュール修正プロセス](../../.
 <ul>
 <li>運賃メディアは、<a href="../../../../community/extensions/fares-v2">GTFS 運賃 v2 拡張提案</a> の重要な要素です</li>
 <li>乗客が乗車を検証するために使用できるものを表します (例:交通カード、モバイルアプリ、または非接触型銀行カードを使用したタップして支払う)</li>
-<li>運賃商品は特定の運賃メディアに関連付けることができます (例: 月間パスは交通カードでのみ利用できます)</li>
-<li>運賃商品の価格は運賃メディアに基づいて定義できます (例: モバイルアプリ経由で購入するとチケットが安くなります)</li>
+<li>チケット商品は特定の運賃メディアに関連付けることができます (例: 月間パスは交通カードでのみ利用できます)</li>
+<li>チケット商品の価格は運賃メディアに基づいて定義できます (例: モバイルアプリ経由で購入するとチケットが安くなります)</li>
 </ul>
 </div>
 </div>
