@@ -60,10 +60,10 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
 * **フィールド値** - フィールド内の個々のエントリ。表では 1 つのセルとして表されます。
 * **サービス日** - サービス日は、ルートのスケジュールを示すために使用される期間です。サービス日の正確な定義は事業者によって異なりますが、サービス日は暦日と一致しないことがよくありしてもよい。たとえば、金曜日の 08:00:00 から土曜日の 02:00:00 まで実行されるサービスは、1つのサービス日に 08:00:00 から 26:00:00 まで実行されると示される場合があります。
 * **テキスト読み上げフィールド** - このフィールドには、親フィールドと同じ情報が含まれている必要があります (親フィールドが空の場合は、親フィールドが参照されます)。このフィールドは、テキスト読み上げを目的としているため、省略形は削除するか (「St」は「Street」または「Saint」と読み上げます。「Elizabeth I」は「Elizabeth the first」と読み上げます)、そのまま読み上げます (「JFK Airport」は省略形として読み上げます)。
-* **区間** - 乗客が便中の 2 つの連続する場所の間で乗降する便。
-* **旅程** - 出発地から目的地までの全体的な便で、途中のすべての区間と乗り換えが含まれます。
+* **区間** - 乗客が旅行中の 2 つの連続する場所の間で乗降する便。
+* **旅程** - 出発地から目的地までの全体的な旅行で、途中のすべての区間と乗り換えが含まれます。
 * **サブ旅程** - 旅程のサブセットを構成する 2 つ以上の区間。
-* **チケット商品** - 便の支払いや検証に使用できる購入可能なチケット商品。
+* **チケット商品** - 旅行の支払いや検証に使用できる購入可能なチケット商品。
 
 ### 存在
 フィールドとファイルに適用可能な存在条件:
@@ -127,8 +127,8 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | [timeframes.txt](#timeframestxt) |任意|dateと時間の要素に依存する運賃の運賃ルールで使用するdateと時間の期間。 |
 | [fare_media.txt](#fare_mediatxt) |任意|チケット商品を使用するために使用できる運賃メディアを説明します。<br><br>ファイル [fare_media.txt](#fare_mediatxt) は、[fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) に示されていない概念を説明しています。そのため、[fare_media.txt](#fare_mediatxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に独立しています。|
 | [fare_products.txt](#fare_productstxt) |任意| 乗客が購入できるさまざまな種類のチケットまたは運賃を説明しています。<br><br>ファイル [fare_products.txt](#fare_productstxt) には、[fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) に示されていないチケット商品が記載されています。そのため、[fare_products.txt](#fare_productstxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に独立しています。|
-| [fare_leg_rules.txt](#fare_leg_rulestxt) |任意| 個々の便区間の運賃規則。<br><br>ファイル [fare_leg_rules.txt](#fare_leg_rulestxt) は、運賃構造をモデル化するためのより詳細な方法を提供します。そのため、[fare_leg_rules.txt](#fare_leg_rulestxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に別です。 |
-| [fare_transfer_rules.txt](#fare_transfer_rulestxt) |任意| 便区間間の乗り換えに関する運賃規則。<br><br> [fare_leg_rules.txt](#fare_leg_rulestxt) とともに、ファイル [fare_transfer_rules.txt](#fare_transfer_rulestxt) は、運賃構造をモデル化するより詳細な方法を提供します。そのため、[fare_transfer_rules.txt](#fare_transfer_rulestxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に別です。 |
+| [fare_leg_rules.txt](#fare_leg_rulestxt) |任意| 個々の旅行区間の運賃規則。<br><br>ファイル [fare_leg_rules.txt](#fare_leg_rulestxt) は、運賃構造をモデル化するためのより詳細な方法を提供します。そのため、[fare_leg_rules.txt](#fare_leg_rulestxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に別です。 |
+| [fare_transfer_rules.txt](#fare_transfer_rulestxt) |任意| 旅行区間間の乗り換えに関する運賃規則。<br><br> [fare_leg_rules.txt](#fare_leg_rulestxt) とともに、ファイル [fare_transfer_rules.txt](#fare_transfer_rulestxt) は、運賃構造をモデル化するより詳細な方法を提供します。そのため、[fare_transfer_rules.txt](#fare_transfer_rulestxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に別です。 |
 | [areas.txt](#areastxt) |任意| 場所のエリアグループ化。 |
 | [stop_areas.txt](#stop_areastxt) |任意|停留所等をエリアに割り当てるルール。 |
 | [networks.txt](#networkstxt) | **条件付きで禁止** | ルートのネットワーク グループ化。<br><br>条件付きで禁止:<br>- `network_id` が [routes.txt](#routestxt) に存在する場合は **禁止**。<br>- それ以外の場合はオプション。|
@@ -209,8 +209,8 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | `stop_name` | テキスト | **条件付きで必須** | 場所の名前。`stop_name` は、時刻表に印刷されているか、オンラインで公開されているか、標識に表示されている、事業者の乗客向けの場所の名前と一致する必要があります。他の言語に翻訳するには、[translations.txt](#translationstxt) を使用します。<br><br>場所が乗車エリア (`location_type=4`) の場合、`stop_name` には事業者が表示する乗車エリアの名前を含める必要があります。ヨーロッパの一部の都市間鉄道駅のように 1 文字だけの場合もあれば、「車椅子乗車エリア」（ニューヨーク市の地下鉄）や「短距離列車の先頭」（パリの RER）のようなテキストの場合もあります。<br><br>条件付きで必須:<br>- 停留所 (`location_type=0`)、駅 (`location_type=1`)、または出入口 (`location_type=2`) の場所の場合は **必須** です。<br>- 汎用ノード (`location_type=3`) または乗車エリア (`location_type=4`) の場所の場合はオプションです。|
 | `tts_stop_name` | テキスト | オプション | `stop_name` の読み取り可能なバージョンです。詳細については、[用語の定義](#term-definitions) の「音声合成フィールド」を参照してください。|
 | `stop_desc` | テキスト | オプション | 有用で質の高い情報を提供する場所の説明。 `stop_name` と重複してはいけません。|
-| `stop_lat` | 緯度 | **条件付きで必須** | 場所の緯度。<br><br>停留所/プラットフォーム (`location_type=0`) および乗車エリア (`location_type=4`) の場合、座標はバスポール (存在する場合) の座標、ない場合は便者が車両に乗車する場所 (車両が停止する道路や線路ではなく、歩道またはプラットフォーム) の座標である必要があります。<br><br>条件付きで必須:<br>- 停留所 (`location_type=0`)、駅 (`location_type=1`)、または入口/出口 (`location_type=2`) の場所の場合は **必須**。<br>- 汎用ノード (`location_type=3`) または乗車エリア (`location_type=4`) の場所の場合はオプション。|
-| `stop_lon` | 経度 | **条件付きで必須** |場所の経度。<br><br>停留所/プラットフォーム (`location_type=0`) および乗車エリア (`location_type=4`) の場合、座標はバスポール (存在する場合) の座標、ない場合は便者が車両に乗車する場所 (車両が停車する道路や線路ではなく、歩道またはプラットフォーム) の座標である必要があります。<br><br>条件付きで必須:<br>- 停留所 (`location_type=0`)、駅 (`location_type=1`)、または入口/出口 (`location_type=2`) の場所の場合は **必須** です。<br>- 汎用ノード (`location_type=3`) または乗車エリア (`location_type=4`) の場所の場合はオプションです。|
+| `stop_lat` | 緯度 | **条件付きで必須** | 場所の緯度。<br><br>停留所/プラットフォーム (`location_type=0`) および乗車エリア (`location_type=4`) の場合、座標はバスポール (存在する場合) の座標、ない場合は旅行者が車両に乗車する場所 (車両が停止する道路や線路ではなく、歩道またはプラットフォーム) の座標である必要があります。<br><br>条件付きで必須:<br>- 停留所 (`location_type=0`)、駅 (`location_type=1`)、または入口/出口 (`location_type=2`) の場所の場合は **必須**。<br>- 汎用ノード (`location_type=3`) または乗車エリア (`location_type=4`) の場所の場合はオプション。|
+| `stop_lon` | 経度 | **条件付きで必須** |場所の経度。<br><br>停留所/プラットフォーム (`location_type=0`) および乗車エリア (`location_type=4`) の場合、座標はバスポール (存在する場合) の座標、ない場合は旅行者が車両に乗車する場所 (車両が停車する道路や線路ではなく、歩道またはプラットフォーム) の座標である必要があります。<br><br>条件付きで必須:<br>- 停留所 (`location_type=0`)、駅 (`location_type=1`)、または入口/出口 (`location_type=2`) の場所の場合は **必須** です。<br>- 汎用ノード (`location_type=3`) または乗車エリア (`location_type=4`) の場所の場合はオプションです。|
 | `zone_id` | ID | オプション | 停留所の料金ゾーンを識別します。このレコードが駅または駅の入口を表す場合、`zone_id` は無視されます。|
 | `stop_url` | URL | オプション | 場所に関する Web ページの URL。これは、`agency.agency_url` および `routes.route_url` フィールド値とは異なる必要があります。|
 | `location_type` | 列挙型 | オプション | 場所の種類。有効なオプションは次のとおりです:<br><br>`0` (または空白) - **停留所** (または **プラットフォーム**)。乗客が交通事業者の車両に乗降する場所です。`parent_station` 内で定義されている場合はプラットフォームと呼ばれます。<br>`1` - **駅**。1 つ以上のプラットフォームを含む物理的な構造またはエリア。<br>`2` - **入口/出口**。乗客が通りから駅に出入りできる場所です。入口/出口が複数の駅に属している場合、経路によって両方にリンクできますが、データ プロバイダーはそのうちの 1 つを親として選択する必要があります。<br>`3` - **汎用ノード**。駅内の場所。他の `location_type` に一致せず、[pathways.txt](#pathwaystxt) で定義されている経路をリンクするために使用できます。<br>`4` - **乗車エリア**。プラットフォーム上の特定の場所で、乗客が車両に乗ったり降車したりすることができます。|
@@ -293,7 +293,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | `stop_id` | `stops.stop_id` を参照する外部 ID | **条件付きで必須** | 運行される停留所を識別します。運行中に運行されるすべての停留所は、[stop_times.txt](#stop_timestxt) に記録されている必要があります。参照される場所は停留所/プラットフォームである必要があります。つまり、`stops.location_type` 値は `0` または空である必要があります。同じ旅程で 1 つの停留所が複数回サービスされる場合があり、複数の旅程とルートが同じ停留所にサービスを提供する場合があります。<br><br>停留所を使用するオンデマンド サービスは、それらの停留所でサービスが利用できる順序で参照する必要があります。データ コンシューマーは、各 stop_time の `pickup/drop_off_type` と各 `start/end_pickup_drop_off_window` の時間制約によって禁止されていない限り、ある停留所または場所から便中の任意の停留所または場所への移動が可能であると想定する必要があります。<br><br>条件付きで必須:<br>- `stop_times.location_group_id` と `stop_times.location_id` が定義されていない場合は**必須**です。<br>- `stop_times.location_group_id` または `stop_times.location_id` が定義されている場合は**禁止**です。|
 | `location_group_id` | `location_groups.location_group_id` を参照する外部 ID | **条件付きで禁止** | 乗客が乗車または降車をリクエストできる停留所のグループを示すサービス対象ロケーション グループを識別します。便中にサービスを受けるすべての場所グループは、[stop_times.txt](#stop_timestxt) に記録されている必要があります。複数の便とルートが同じ場所グループにサービスを提供する場合があります。<br><br>場所グループを使用するオンデマンド サービスは、それらの場所グループでサービスが利用できる順序で参照する必要があります。データ コンシューマーは、各 stop_time の `pickup/drop_off_type` と各 `start/end_pickup_drop_off_window` の時間制約によって禁止されていない限り、便中のある停留所または場所から後の任意の停留所または場所への移動が可能であると想定する必要があります。<br><br>**条件付きで禁止**:<br>- `stop_times.stop_id` または `stop_times.location_id` が定義されている場合は **禁止** です。|
 | `location_id` | `locations.geojson` から `id` を参照する外部 ID | **条件付きで禁止** |乗客が乗車または降車をリクエストできるサービス提供ゾーンに対応する GeoJSON ロケーションを識別します。便中にサービス提供されたすべての GeoJSON ロケーションは、[stop_times.txt](#stop_timestxt) に記録されている必要があります。複数の便およびルートが同じ GeoJSON ロケーションにサービスを提供する場合があります。<br><br>ロケーション内のオンデマンド サービスは、それらのロケーションでサービスが利用できる順序で参照する必要があります。データ コンシューマーは、各 stop_time の `pickup/drop_off_type` および各 `start/end_pickup_drop_off_window` の時間制約によって禁止されていない限り、ある停留所またはロケーションから便中の後の任意の停留所またはロケーションへの移動が可能であると想定する必要があります。<br><br>**条件付きで禁止**:<br>- `stop_times.stop_id` または `stop_times.location_group_id` が定義されている場合は **禁止** です。|
-| `stop_sequence` | 負でない整数 | **必須** | 特定の便の停留所、場所グループ、または GeoJSON の場所の順序。値は便に沿って増加する必要がありますが、連続している必要はありません。<hr>*例: 便の最初の場所には `stop_sequence`=`1`、便の 2 番目の場所には `stop_sequence`=`23`、3 番目の場所には `stop_sequence`=`40` などを設定できます。* <br><br> 同じ場所グループまたは GeoJSON の場所内で便するには、[stop_times.txt](#stop_timestxt) に同じ `location_group_id` または `location_id` を持つ 2 つのレコードが必要です。 |
+| `stop_sequence` | 負でない整数 | **必須** | 特定の便の停留所、場所グループ、または GeoJSON の場所の順序。値は便に沿って増加する必要がありますが、連続している必要はありません。<hr>*例: 便の最初の場所には `stop_sequence`=`1`、便の 2 番目の場所には `stop_sequence`=`23`、3 番目の場所には `stop_sequence`=`40` などを設定できます。* <br><br> 同じ場所グループまたは GeoJSON の場所内で旅行するには、[stop_times.txt](#stop_timestxt) に同じ `location_group_id` または `location_id` を持つ 2 つのレコードが必要です。 |
 | `stop_headsign` | テキスト | オプション | 乗客に便の目的地を示す標識に表示されるテキスト。このフィールドは、停留所間でヘッドサインが変わる場合にデフォルトの `trips.trip_headsign` を上書きします。行程全体でヘッドサインが表示される場合は、代わりに `trips.trip_headsign` を使用する必要があります。<br><br> 1 つの `stop_time` に指定された `stop_headsign` 値は、同じ行程内の後続の `stop_time` には適用されません。同じ行程内の複数の `stop_time` に対して `trip_headsign` をオーバーライドする場合は、各 `stop_time` 行で `stop_headsign` 値を繰り返す必要があります。|
 | `start_pickup_drop_off_window` | 時間 | **条件付きで必須** | GeoJSON の場所、場所グループ、または停留所でオンデマンド サービスが利用可能になる時間。<br><br>**条件付きで必須**:<br>- `stop_times.location_group_id` または `stop_times.location_id` が定義されている場合は**必須**です。<br>- `end_pickup_drop_off_window` が定義されている場合は**必須**です。<br>- `arrival_time` または `departure_time` が定義されている場合は**禁止**です。<br>- それ以外の場合はオプションです。|
 | `end_pickup_drop_off_window` | 時間 | **条件付きで必須** | GeoJSON の場所、場所グループ、または停留所でオンデマンド サービスが終了する時間。<br><br>**条件付きで必須**:<br>- `stop_times.location_group_id` または `stop_times.location_id` が定義されている場合は **必須**。<br>- `start_pickup_drop_off_window` が定義されている場合は **必須**。<br>- `arrival_time` または `departure_time` が定義されている場合は **禁止**。<br>- それ以外の場合はオプション。|
@@ -385,9 +385,9 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | ------ | ------ | ------ | ------ |
 | `fare_id` | `fare_attributes.fare_id` を参照する外部 ID | **必須** | 運賃クラスを識別します。 |
 | `route_id` | `routes.route_id` を参照する外部 ID | オプション | 運賃クラスに関連付けられたルートを識別します。同じ運賃属性を持つ複数のルートが存在する場合は、各ルートの [fare_rules.txt](#fare_rulestxt) にレコードを作成します。<hr>*例: 運賃クラス「b」がルート「TSW」および「TSE」で有効な場合、[fare_rules.txt](#fare_rulestxt) ファイルには運賃クラスに関する次のレコードが含まれます:* <br> ` fare_id,route_id`<br>`b,TSW` <br> `b,TSE`|
-| `origin_id` | `stops.zone_id` を参照する外部 ID | オプション | 出発地ゾーンを識別します。運賃クラスに複数の出発地ゾーンがある場合は、[fare_rules.txt](#fare_rulestxt) に各 `origin_id` のレコードを作成します。<hr>*例: 運賃クラス "b" がゾーン "2" またはゾーン "8" のいずれかから出発するすべての便に有効な場合、[fare_rules.txt](#fare_rulestxt) ファイルには運賃クラスの次のレコードが含まれます:* <br> `fare_id,...,origin_id` <br> `b,...,2` <br> `b,...,8` |
+| `origin_id` | `stops.zone_id` を参照する外部 ID | オプション | 出発地ゾーンを識別します。運賃クラスに複数の出発地ゾーンがある場合は、[fare_rules.txt](#fare_rulestxt) に各 `origin_id` のレコードを作成します。<hr>*例: 運賃クラス "b" がゾーン "2" またはゾーン "8" のいずれかから出発するすべての旅行に有効な場合、[fare_rules.txt](#fare_rulestxt) ファイルには運賃クラスの次のレコードが含まれます:* <br> `fare_id,...,origin_id` <br> `b,...,2` <br> `b,...,8` |
 | `destination_id` | `stops.zone_id` を参照する外部 ID | オプション | 目的地ゾーンを識別します。運賃クラスに複数の目的地ゾーンがある場合は、[fare_rules.txt](#fare_rulestxt) に各 `destination_id` のレコードを作成します。<hr>*例: `origin_id` フィールドと `destination_id` フィールドを一緒に使用して、運賃クラス "b" がゾーン 3 と 4 の間の移動に有効であることを指定できます。ゾーン 3 と 5 の間の移動の場合、[fare_rules.txt](#fare_rulestxt) ファイルには運賃クラスの次のレコードが含まれます:* <br>`fare_id,...,origin_id,destination_id` <br>`b,...,3,4`<br> `b,...,3,5` |
-| `contains_id` | `stops.zone_id` を参照する外部 ID | オプション | 特定の運賃クラスを使用しているときに乗客が進入するゾーンを識別します。一部のシステムで正しい運賃クラスを計算するために使用されます。 <hr>*例: 運賃クラス「c」がゾーン 5、6、7 を通過する GRT ルートのすべての便に関連付けられている場合、[fare_rules.txt](#fare_rulestxt) には次のレコードが含まれます:* <br> `fare_id,route_id,...,contains_id` <br> `c,GRT,...,5` <br>`c,GRT,...,6` <br>`c,GRT,...,7` <br> *運賃を適用するにはすべての `contains_id` ゾーンが一致している必要があるため、ゾーン 5 と 6 を通過し、ゾーン 7 を通過しない旅程には運賃クラス「c」はありません。詳細については、GoogleTransitDataFeed プロジェクト wiki の [https://code.google.com/p/googletransitdatafeed/wiki/FareExamples](https://code.google.com/p/googletransitdatafeed/wiki/FareExamples) をご覧ください。* |
+| `contains_id` | `stops.zone_id` を参照する外部 ID | オプション | 特定の運賃クラスを使用しているときに乗客が進入するゾーンを識別します。一部のシステムで正しい運賃クラスを計算するために使用されます。 <hr>*例: 運賃クラス「c」がゾーン 5、6、7 を通過する GRT ルートのすべての旅行に関連付けられている場合、[fare_rules.txt](#fare_rulestxt) には次のレコードが含まれます:* <br> `fare_id,route_id,...,contains_id` <br> `c,GRT,...,5` <br>`c,GRT,...,6` <br>`c,GRT,...,7` <br> *運賃を適用するにはすべての `contains_id` ゾーンが一致している必要があるため、ゾーン 5 と 6 を通過し、ゾーン 7 を通過しない旅程には運賃クラス「c」はありません。詳細については、GoogleTransitDataFeed プロジェクト wiki の [https://code.google.com/p/googletransitdatafeed/wiki/FareExamples](https://code.google.com/p/googletransitdatafeed/wiki/FareExamples) をご覧ください。* |
 
 ### timeframes.txt 
 
@@ -447,13 +447,13 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 
 主キー(`network_id, from_area_id, to_area_id, from_timeframe_group_id, to_timeframe_group_id, fare_product_id`)
 
-便の各区間の運賃規則。
+旅行の各区間の運賃規則。
 
  [`fare_leg_rules.txt`](#fare_leg_rulestxt) の運賃は、乗客が移動する区間に一致する規則を見つけるために、ファイル内のすべてのレコードをフィルタリングして照会するしなければならない。
 
 区間のコストを処理するには:
 
-1. ファイル [fare_leg_rules.txt](#fare_leg_rulestxt) は、便の特性を定義するフィールドでフィルタリングするしなければならない。これらのフィールドは次のとおりです:
+1. ファイル [fare_leg_rules.txt](#fare_leg_rulestxt) は、旅行の特性を定義するフィールドでフィルタリングするしなければならない。これらのフィールドは次のとおりです:
     - `fare_leg_rules.network_id` 
     - `fare_leg_rules.from_area_id` 
     - `fare_leg_rules.to_area_id` 
@@ -461,7 +461,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
     - `fare_leg_rules.to_timeframe_group_id` 
 <br/> 
 
-2. 便の特性に基づいて、区間が [fare_leg_rules.txt](#fare_leg_rulestxt) のレコードと完全に一致する場合、そのレコードを処理して区間のコストを決定するしなければならない。このファイルは、空のエントリを 2 つの方法で処理します: 空のセマンティクスまたはルールの優先順位。
+2. 旅行の特性に基づいて、区間が [fare_leg_rules.txt](#fare_leg_rulestxt) のレコードと完全に一致する場合、そのレコードを処理して区間のコストを決定するしなければならない。このファイルは、空のエントリを 2 つの方法で処理します: 空のセマンティクスまたはルールの優先順位。
 <br/> 
 
 3. 完全一致が見つからず、`rule_priority` フィールドが存在しない場合は、 `fare_leg_rules.network_id`、 `fare_leg_rules.from_area_id`、および`fare_leg_rules.to_area_id`の空のエントリをチェックして、区間のコストを処理するしなければならない。
@@ -498,11 +498,11 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 
 主キー(`from_leg_group_id, to_leg_group_id, fare_product_id, transfer_count, duration_limit`)
 
-[`fare_leg_rules.txt`](#fare_leg_rulestxt) で定義された便区間間の乗り換えの運賃規則。
+[`fare_leg_rules.txt`](#fare_leg_rulestxt) で定義された旅行区間間の乗り換えの運賃規則。
 
 複数区間の旅程の費用を処理するには:
 
-1. `fare_leg_rules.txt`で定義された適用可能な運賃区間グループは、乗客の旅程に基づいて、すべての個々の便区間に対して決定するするべきである。
+1. `fare_leg_rules.txt`で定義された適用可能な運賃区間グループは、乗客の旅程に基づいて、すべての個々の旅行区間に対して決定するするべきである。
 2. ファイル [fare_transfer_rules.txt](#fare_transfer_rulestxt) は、乗り換えの特性を定義するフィールドでフィルタリングするしなければならない。これらのフィールドは次のとおりです:
    - `fare_transfer_rules.from_leg_group_id` 
    - `fare_transfer_rules.to_leg_group_id`<br/> 
@@ -593,7 +593,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | `shape_pt_lat` |緯度 |**必須**| 形状 ポイントの緯度。[shapes.txt](#shapestxt) 内の各レコードは、形状を定義するために使用される形状 ポイントを表します。|
 | `shape_pt_lon` | 経度 |**必須**| 形状 ポイントの経度。|
 | `shape_pt_sequence` | 負でない整数 | **必須** | 形状 ポイントが接続して形状を形成するシーケンス。値は移動に沿って増加する必要がありますが、連続している必要はありません。<hr>*例: 形状 "A_shp" の定義に 3 つのポイントがある場合、[shapes.txt](#shapestxt) ファイルには形状を定義する次のレコードが含まれる可能性があります:* <br> `shape_id,shape_pt_lat,shape_pt_lon,shape_pt_sequence` <br> `A_shp,37.61956,-122.48161,0` <br> `A_shp,37.64430,-122.41070,6` <br> `A_shp,37.65863,-122.30839,11` |
-| `shape_dist_traveled` | 非負の浮動小数点数 | オプション | 最初の形状 ポイントからこのレコードで指定されたポイントまでの形状に沿って実際に移動した距離。便プランナーがマップ上に形状の正しい部分を表示するために使用します。値は `shape_pt_sequence` とともに増加する必要があり、ルートに沿った逆方向の移動を示すために使用してはなりません。距離の単位は、[stop_times.txt](#stop_timestxt) で使用されている単位と一致している必要があります。<br><br>ループまたはインライン (車両が 1 回の移動で同じ部分の線形を横切ったり通過したりする) があるルートに推奨されます。<br><img src="../../../assets/inlining.svg" width=200px style="display: block; margin-left: auto; margin-right: auto;"> <br>車両が移動中にポイントでルート線形をたどったり横断したりする場合、[shapes.txt](#shapestxt) のポイントの一部が [stop_times.txt](#stop_timestxt) のレコードとどのように対応しているかを明確にするために、`shape_dist_traveled` が重要です。<hr>*例: バスが上記で A_shp に定義した 3 つのポイントに沿って移動する場合、追加の `shape_dist_traveled` 値 (ここではキロメートル単位で表示) は次のようになります。* <br> `shape_id,shape_pt_lat,shape_pt_lon,shape_pt_sequence,shape_dist_traveled`<br>`A_shp,37.61956,-122.48161,0,0`<br>`A_shp,37.64430,-122.41070,6,6.8310` <br> `A_shp,37.65863,-122.30839,11,15.8765` |
+| `shape_dist_traveled` | 非負の浮動小数点数 | オプション | 最初の形状 ポイントからこのレコードで指定されたポイントまでの形状に沿って実際に移動した距離。旅行計画者がマップ上に形状の正しい部分を表示するために使用します。値は `shape_pt_sequence` とともに増加する必要があり、ルートに沿った逆方向の移動を示すために使用してはなりません。距離の単位は、[stop_times.txt](#stop_timestxt) で使用されている単位と一致している必要があります。<br><br>ループまたはインライン (車両が 1 回の移動で同じ部分の線形を横切ったり通過したりする) があるルートに推奨されます。<br><img src="../../../assets/inlining.svg" width=200px style="display: block; margin-left: auto; margin-right: auto;"> <br>車両が移動中にポイントでルート線形をたどったり横断したりする場合、[shapes.txt](#shapestxt) のポイントの一部が [stop_times.txt](#stop_timestxt) のレコードとどのように対応しているかを明確にするために、`shape_dist_traveled` が重要です。<hr>*例: バスが上記で A_shp に定義した 3 つのポイントに沿って移動する場合、追加の `shape_dist_traveled` 値 (ここではキロメートル単位で表示) は次のようになります。* <br> `shape_id,shape_pt_lat,shape_pt_lon,shape_pt_sequence,shape_dist_traveled`<br>`A_shp,37.61956,-122.48161,0,0`<br>`A_shp,37.64430,-122.41070,6,6.8310` <br> `A_shp,37.65863,-122.30839,11,15.8765` |
 
 ### frequencies.txt 
 
