@@ -92,7 +92,7 @@ These features enhance a GTFS dataset, improving rider experience and facilitati
 
     Represent services that operate on a regular frequency or specific headways.                           
 
-    [:octicons-arrow-right-24: Learn more](../base_add-ons/#frequency-based-service)
+    [:octicons-arrow-right-24: Learn more](../base_add-ons/#frequencies)
 
 - :material-plus-box-multiple-outline:{ .lg .middle } __Transfers__
 
@@ -176,11 +176,11 @@ GTFS can model various fare structures, such as zone, distance, or time-of-day b
 
     [:octicons-arrow-right-24: Learn more](../fares/#zone-based-fares)
 
--   :material-cash:{ .lg .middle } __Fares Transfers__
+-   :material-cash:{ .lg .middle } __Fare Transfers__
 
     Define fees applicable when transferring from one leg of the trip to another.
 
-    [:octicons-arrow-right-24: Learn more](../fares/#fares-transfers)
+    [:octicons-arrow-right-24: Learn more](../fares/#fare-transfers)
 
 -   :material-cash:{ .lg .middle } __Fares V1__
 
