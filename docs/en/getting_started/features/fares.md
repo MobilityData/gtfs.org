@@ -254,9 +254,9 @@ Zone-Based Fares is used to represent zone-based systems where a specific fare a
         |--------------|------------|-----------------|
         | zone_a       | zone_b     | zone_a_b_single |
 
-## Fares Transfers
+## Fare Transfers
 
-Fares Transfers is used to define rules applicable when transferring between legs (or individual travel segments). This allows to model the total cost of a multi-leg travel journey, accounting for special transfer policies, such as free transfers for a specific time limit, or applying fare discounts based on legs already traveled.
+Fare Transfers is used to define rules applicable when transferring between legs (or individual travel segments). This allows to model the total cost of a multi-leg travel journey, accounting for special transfer policies, such as free transfers for a specific time limit, or applying fare discounts based on legs already traveled.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|

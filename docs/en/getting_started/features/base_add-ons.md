@@ -215,10 +215,10 @@ Location Types are used to classify key areas within transit stations such as ex
         | A102_F01     | Main Street station - Paid side of fare gate          |             3 | Station_A102   |
         | A102_F02     | Main Street station - Unpaid side of fare gate        |             3 | Station_A102   |
 
-## Frequency-Based Service
+## Frequencies
 
-Frequency-Based Service can be used to model services that operate on a regular frequency, such as buses running every 10 minutes or subway services operating 2 minutes within specified time intervals.
-When modeling a Frequency-Based Service, `stop_times.txt` contains the relative times between stops in order to determine the times to be displayed to riders. 
+Frequencies can be used to model services that operate based on a regular frequency, such as buses running every 10 minutes or subway services operating 2 minutes within specified time intervals.
+When modeling services that operate on a regular frequency, `stop_times.txt` contains the relative times between stops in order to determine the times to be displayed to riders. 
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
