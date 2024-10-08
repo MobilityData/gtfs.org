@@ -218,7 +218,7 @@ Location Types are used to classify key areas within transit stations such as ex
 ## Frequencies
 
 Frequencies can be used to model services that operate based on a regular frequency, such as buses running every 10 minutes or subway services operating 2 minutes within specified time intervals.
-When modeling a frequency-based Service, `stop_times.txt` contains the relative times between stops in order to determine the times to be displayed to riders. 
+When modeling services that operate on a regular frequency, `stop_times.txt` contains the relative times between stops in order to determine the times to be displayed to riders. 
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
