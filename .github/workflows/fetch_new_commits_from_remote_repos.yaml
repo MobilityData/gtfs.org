@@ -27,3 +27,12 @@ jobs:
         run: swift scripts/monitor-remote-repos-for-new-commits.swift
         env:
           GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
+
+      - name: Create PR if commits exist
+        if: steps.run-swift-script.outputs.branch_name != ''
+        id: create-pr
+        uses: peter-evans/create-pull-request@v7.0.5
+        with:
+          branch: ${{ steps.run-swift-script.outputs.branch_name }}
+          title: ${{ steps.run-swift-script.outputs.pr_title }}
+          body: ${{ steps.run-swift-script.outputs.pr_body }}
