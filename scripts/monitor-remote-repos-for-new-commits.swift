@@ -1,5 +1,7 @@
 import Foundation
-
+#if canImport(FoundationNetworking)
+import FoundationNetworking // Import Foundation for Linux
+#endif
 
 // MARK: - Enums & Structs
 
