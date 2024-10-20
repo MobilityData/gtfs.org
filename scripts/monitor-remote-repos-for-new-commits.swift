@@ -270,11 +270,16 @@ if !modifiedFiles.isEmpty {
         }.joined(separator: "\n")
 
         let fullPrBody : String = prBody + "\n\n" + prContent
-        
-        print("::set-output name=branch_name::\"\(branchName)\"")
-        print("::set-output name=pr_title::\"\(prTitle)\"")
-        print("::set-output name=pr_body::\"\(fullPrBody)\"")
+
+        // echo "
+
+        print("echo branch_name=\(branchName) >> $GITHUB_OUTPUT")
+        print("echo pr_title=\(prTitle) >> $GITHUB_OUTPUT")
+        print("echo pr_body=\(fullPrBody) >> $GITHUB_OUTPUT")
     }
 } else {
-    print("no commits")
+
+        print("echo branch_name=\"\" >> $GITHUB_OUTPUT")
+        print("echo pr_title=\"\" >> $GITHUB_OUTPUT")
+        print("echo pr_body=\"\" >> $GITHUB_OUTPUT")
 }
