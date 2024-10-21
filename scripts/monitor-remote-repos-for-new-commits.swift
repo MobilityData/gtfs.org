@@ -192,6 +192,26 @@ func fetchModifiedFiles(commitSha: String, targetRepo: String) -> [String] {
     return files.compactMap { $0["filename"] as? String }
 }
 
+/// Writes a key-value pair to the `$GITHUB_OUTPUT` environment variable to be used between steps in a GitHub Actions workflow.
+///
+/// This function takes a key and its corresponding value and writes it to `$GITHUB_OUTPUT`, which allows subsequent steps in a GitHub Actions workflow to access this output.
+///
+/// Example:
+/// ```
+/// setGitHubOutput(key: "branch_name", value: "feature-branch")
+/// ```
+///
+/// - Parameters:
+///   - key: The key to be used in the output, which will be referenced in subsequent steps.
+///   - value: The value corresponding to the key that will be stored in the output.
+func setGitHubOutput(key: String, value: String) {
+    let task : Process = Process()
+    task.launchPath = "/bin/bash"
+    task.arguments = ["-c", "echo \(key)=\(value) >> $GITHUB_OUTPUT"]
+    task.launch()
+    task.waitUntilExit()
+}
+
 // MARK: - Main
 
 /// Iterates through a list of pages to monitor, fetches recent commits for each monitored file, collects the modified files and commit URLs, and stores them for later use.
@@ -271,15 +291,25 @@ if !modifiedFiles.isEmpty {
 
         let issueBody : String = prBody + "\n\n" + prContent
 
-        print("echo found_commits=true >> $GITHUB_OUTPUT")
-        print("echo branch_name=\(branchName) >> $GITHUB_OUTPUT")
-        print("echo issue_title=\(issueTitle) >> $GITHUB_OUTPUT")
-        print("echo issue_body=\(issueBody) >> $GITHUB_OUTPUT")
+        setGitHubOutput(key: "found_commits", value: "true")
+        setGitHubOutput(key: "branch_name", value: branchName)
+        setGitHubOutput(key: "issue_title", value: issueTitle)
+        setGitHubOutput(key: "issue_body", value: issueBody)
+
+        // print("echo found_commits=true >> $GITHUB_OUTPUT")
+        // print("echo branch_name=\(branchName) >> $GITHUB_OUTPUT")
+        // print("echo issue_title=\(issueTitle) >> $GITHUB_OUTPUT")
+        // print("echo issue_body=\(issueBody) >> $GITHUB_OUTPUT")
     }
 } else {
 
-        print("echo found_commits=false >> $GITHUB_OUTPUT")
-        print("echo branch_name=\"\" >> $GITHUB_OUTPUT")
-        print("echo issue_title=\"\" >> $GITHUB_OUTPUT")
-        print("echo issue_body=\"\" >> $GITHUB_OUTPUT")
+        setGitHubOutput(key: "found_commits", value: "false")
+        setGitHubOutput(key: "branch_name", value: "")
+        setGitHubOutput(key: "issue_title", value: "")
+        setGitHubOutput(key: "issue_body", value: "")
+
+        // print("echo found_commits=false >> $GITHUB_OUTPUT")
+        // print("echo branch_name=\"\" >> $GITHUB_OUTPUT")
+        // print("echo issue_title=\"\" >> $GITHUB_OUTPUT")
+        // print("echo issue_body=\"\" >> $GITHUB_OUTPUT")
 }
