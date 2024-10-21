@@ -31,6 +31,7 @@ struct HTTPValue : Encodable {
 
 // MARK: - Constants
 
+let isInDebugMode          : Bool   = true
 let baseDestinationURL     : String = "gtfs.org"
 let numberOfDaysToLookBack : Int    = 7
 let baseName               : String = "main"
@@ -150,6 +151,7 @@ let pagesToMonitor : [PageToMonitor] = [
 ///   - body: The HTTP body data to be sent with the request. This is typically used with methods like `.POST` and `.PUT`.
 /// - Returns: The function returns the data received from the HTTP response. If the request fails or there is no data, it returns `nil``.
 func makeRequest(url: URL, method: RESTmethod = .GET, body: Data? = nil) -> Data? {
+    if isInDebugMode { print("makeRequest : start") }
     var request : URLRequest = URLRequest(url: url)
     request.httpMethod = method.rawValue
     request.addValue(HTTPValue.bearer + githubToken, forHTTPHeaderField: HTTPHeaderField.authorization)
@@ -165,6 +167,7 @@ func makeRequest(url: URL, method: RESTmethod = .GET, body: Data? = nil) -> Data
     }
     
     task.resume() ; _ = semaphore.wait(timeout: .distantFuture)  // Make the semaphore pause the runtime until incremented
+    if isInDebugMode { print("makeRequest : end") }
     return data
 }
 
@@ -174,9 +177,11 @@ func makeRequest(url: URL, method: RESTmethod = .GET, body: Data? = nil) -> Data
 ///   - targetRepo: The repository from which the commit history is to be fetched, specified in the format "owner/repo".
 /// - Returns: An array of dictionaries, where each dictionary represents a commit. If an error occurs during the request or parsing, the function returns an empty array.
 func fetchCommits(forFilePath: String, targetRepo: String) -> [[String: Any]] {
+    if isInDebugMode { print("fetchCommits : start") }
     let url: URL = URL(string: "https://api.github.com/repos/\(targetRepo)/commits?path=\(forFilePath)&since=\(sinceDateIso8601)")!
     guard let data: Data = makeRequest(url: url),
           let json: [[String: Any]] = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]] else { return [] }
+    if isInDebugMode { print("fetchCommits : end") }
     return json
 }
 
@@ -186,10 +191,12 @@ func fetchCommits(forFilePath: String, targetRepo: String) -> [[String: Any]] {
 ///   - targetRepo: The repository from which the modified files are to be fetched, specified in the format "owner/repo".
 /// - Returns: An array of strings, where each string represents the file path of a modified file in the specified commit. If an error occurs during the request or parsing, the function returns an empty array.
 func fetchModifiedFiles(commitSha: String, targetRepo: String) -> [String] {
+    if isInDebugMode { print("fetchModifiedFiles : start") }
     let url : URL = URL(string: "https://api.github.com/repos/\(targetRepo)/commits/\(commitSha)")!
     guard let data  : Data             = makeRequest(url: url),
           let json  : [String : Any]   = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
           let files : [[String : Any]] = json["files"] as? [[String: Any]] else { return [] }
+    if isInDebugMode { print("fetchModifiedFiles : start") }
     return files.compactMap { $0["filename"] as? String }
 }
 
@@ -206,6 +213,7 @@ func fetchModifiedFiles(commitSha: String, targetRepo: String) -> [String] {
 ///   - key: The key to be used in the output, which will be referenced in subsequent steps.
 ///   - value: The value corresponding to the key that will be stored in the output.
 func setGitHubOutput(key: String, value: String) {
+    if isInDebugMode { print("setGitHubOutput : start") }
     let task : Process = Process()
     task.executableURL = URL(fileURLWithPath: "/bin/bash")
     
@@ -247,6 +255,9 @@ func setGitHubOutput(key: String, value: String) {
 var modifiedFiles : [String] = []
 var commitUrls    : [String: [String]] = [:]  // Change the value type to [String]
 
+if isInDebugMode { print("==== START SCRIPT ====") }
+if isInDebugMode { print("Cycle through the Pages to Monitor array") }
+
 for page: PageToMonitor in pagesToMonitor {
     let commits: [[String: Any]] = fetchCommits(forFilePath: page.monitorPageAtURL, targetRepo: page.targetRepo)
     for commit: [String: Any] in commits {
@@ -277,6 +288,7 @@ for page: PageToMonitor in pagesToMonitor {
 /// 2.	Construct PR Content: If there are any matching monitored files, it generates a branch name and constructs the PR content, including a table of file information and commit URLs formatted for display.
 /// 3.	Set GitHub Action Outputs: It sets the output variables branch_name, issue_title, and issue_body with the constructed content for the next GitHub Action step to use.
 
+if isInDebugMode { print("Build table and write to GH Output") }
 if !modifiedFiles.isEmpty {
     let uniqueFiles : [String] = Array(Set(modifiedFiles))
     let monitoredFiles : [PageToMonitor] = pagesToMonitor.filter { monitorPage in
