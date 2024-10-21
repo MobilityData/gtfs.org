@@ -1,6 +1,6 @@
 import Foundation
 #if canImport(FoundationNetworking)
-import FoundationNetworking // Import Foundation for Linux
+    import FoundationNetworking // Import Foundation for Linux
 #endif
 
 // MARK: - Enums & Structs
@@ -37,8 +37,25 @@ let baseName               : String = "main"
 let prRepo                 : String = "MobilityData/\(baseDestinationURL)"
 let prAssignees            : String = "[\"Sergiodero,tzujenchanmbd\"]" // needs to be a list. Ex: ["name1,name2"]
 let prLabels               : String = "[\"automated-content-update\"]" // needs to be a list. Ex: ["label1,label2"]
-let issueTitle                : String = "Daily Report: Modified Files on remote repos (\(currentDateComponents.year ?? 0)-\(currentDateComponents.month ?? 0)-\(currentDateComponents.day ?? 0))"
+let issueTitle             : String = "Daily Report: Modified Files on remote repos (\(currentDateComponents.year ?? 0)-\(currentDateComponents.month ?? 0)-\(currentDateComponents.day ?? 0))"
 let prBody                 : String = "The following files have been modified in the last \(numberOfDaysToLookBack) day(s):\n"
+
+
+// MARK: - Configuration
+
+let githubToken    : String = ProcessInfo.processInfo.environment["GITHUB_TOKEN"]!
+// Captures the token in the action step when formulated like this:
+//    - name: Run Swift script
+//      id: run-swift-script
+//      run: swift /path/to/your/script.swift
+//      env:
+//        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+let githubDateTimeFormat : String        = "yyyy-MM-dd'T'HH:mm:ss'Z'"  // Github requires dates be formatted like this : YYYY-MM-DDTHH:MM:SSZ
+let currentDate          : Date          = Date() ; let currentDateComponents : DateComponents = Calendar.current.dateComponents([.day, .year, .month], from: currentDate)
+let sinceDate            : Date          = Calendar.current.date(byAdding: .day, value: -numberOfDaysToLookBack, to: Date())!
+let iso8601Formatter     : DateFormatter = DateFormatter() ; iso8601Formatter.dateFormat = githubDateTimeFormat
+let sinceDateIso8601     : String        = iso8601Formatter.string(from: sinceDate)
 
 // MARK: - Dict of pages to monitor
 
@@ -123,22 +140,6 @@ let pagesToMonitor : [PageToMonitor] = [
                   correspondsToURL : "https://\(baseDestinationURL)/resources/",
                   notes            : "Monitors intro, table of contents, about and license sections. The corresponding URL is actually every section in Resources (from Overview to Other), since this script can't detect changes in anchors of files to monitor, therefore you need to match anchors with each sections listed below.<br><br>• https://\(baseDestinationURL)/resources/overview/<br>• https://\(baseDestinationURL)/resources/community/<br>• https://\(baseDestinationURL)/resources/data/<br>• https://\(baseDestinationURL)/resources/software-for-creating-apis/<br>• https://\(baseDestinationURL)/resources/agency-tools/<br>• https://\(baseDestinationURL)/resources/hardware/<br>• https://\(baseDestinationURL)/resources/apps/<br>• https://\(baseDestinationURL)/resources/sdk/<br>• https://\(baseDestinationURL)/resources/visualizations/<br>• https://\(baseDestinationURL)/resources/gtfs/<br>• https://\(baseDestinationURL)/resources/gtfs-realtime/<br>• https://\(baseDestinationURL)/resources/siri/<br>• https://\(baseDestinationURL)/resources/multimodal/<br>• https://\(baseDestinationURL)/resources/other/")
 ]
-
-// MARK: - Configuration
-
-let githubToken    : String = ProcessInfo.processInfo.environment["GITHUB_TOKEN"]!
-// Captures the token in the action step when formulated like this:
-//    - name: Run Swift script
-//      id: run-swift-script
-//      run: swift /path/to/your/script.swift
-//      env:
-//        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-let githubDateTimeFormat : String = "yyyy-MM-dd'T'HH:mm:ss'Z'"  // Github requires dates be formatted like this : YYYY-MM-DDTHH:MM:SSZ
-let currentDate      : Date   = Date() ; let currentDateComponents : DateComponents = Calendar.current.dateComponents([.day, .year, .month], from: currentDate)
-let sinceDate        : Date   = Calendar.current.date(byAdding: .day, value: -numberOfDaysToLookBack, to: Date())!
-let iso8601Formatter : DateFormatter = DateFormatter() ; iso8601Formatter.dateFormat = githubDateTimeFormat
-let sinceDateIso8601 : String = iso8601Formatter.string(from: sinceDate)
 
 // MARK: - Functions
 
