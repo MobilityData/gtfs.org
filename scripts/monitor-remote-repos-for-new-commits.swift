@@ -271,14 +271,14 @@ if !modifiedFiles.isEmpty {
 
         let issueBody : String = prBody + "\n\n" + prContent
 
-        // echo "
-
+        print("echo found_commits=true >> $GITHUB_OUTPUT")
         print("echo branch_name=\(branchName) >> $GITHUB_OUTPUT")
         print("echo issue_title=\(issueTitle) >> $GITHUB_OUTPUT")
         print("echo issue_body=\(issueBody) >> $GITHUB_OUTPUT")
     }
 } else {
 
+        print("echo found_commits=false >> $GITHUB_OUTPUT")
         print("echo branch_name=\"\" >> $GITHUB_OUTPUT")
         print("echo issue_title=\"\" >> $GITHUB_OUTPUT")
         print("echo issue_body=\"\" >> $GITHUB_OUTPUT")
