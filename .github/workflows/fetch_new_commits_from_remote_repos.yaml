@@ -28,12 +28,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
 
-      - name: Create PR if commits exist
-        # if: steps.run-swift-script.outputs.branch_name != ''
-        id: create-pr
-        uses: peter-evans/create-pull-request@v7.0.5
+      - name: Create issue
+        id: create-issue
+        if: steps.run-swift-script.outputs.found_commits == 'true'
+        uses: dacbd/create-issue-action@v2.0.0
         with:
           token: ${{ env.GITHUB_TOKEN }}
-          branch: ${{ steps.run-swift-script.outputs.branch_name }}
-          title: ${{ steps.run-swift-script.outputs.pr_title }}
-          body: ${{ steps.run-swift-script.outputs.pr_body }}
+          assignees: Sergiodero
+          title: ${{ steps.run-swift-script.outputs.issue_title }}
+          body: ${{ steps.run-swift-script.outputs.issue_body }}
