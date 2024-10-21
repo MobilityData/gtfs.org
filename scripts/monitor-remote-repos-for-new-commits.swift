@@ -205,11 +205,16 @@ func fetchModifiedFiles(commitSha: String, targetRepo: String) -> [String] {
 ///   - key: The key to be used in the output, which will be referenced in subsequent steps.
 ///   - value: The value corresponding to the key that will be stored in the output.
 func setGitHubOutput(key: String, value: String) {
-    let task : Process = Process()
-    task.launchPath = "/bin/bash"
+    let task = Process()
+    task.executableURL = URL(fileURLWithPath: "/bin/bash")
     task.arguments = ["-c", "echo \(key)=\(value) >> $GITHUB_OUTPUT"]
-    task.launch()
-    task.waitUntilExit()
+    
+    do {
+        try task.run()
+        task.waitUntilExit()
+    } catch {
+        print("Failed to run task: \(error)")
+    }
 }
 
 // MARK: - Main
