@@ -30,7 +30,7 @@ jobs:
 
       - name: Create issue
         id: create-issue
-        if: steps.run-swift-script.outputs.found_commits == 'true'
+        # if: steps.run-swift-script.outputs.found_commits == 'true'
         uses: dacbd/create-issue-action@v2.0.0
         with:
           token: ${{ env.GITHUB_TOKEN }}
