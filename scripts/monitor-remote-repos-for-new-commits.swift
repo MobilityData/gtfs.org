@@ -37,7 +37,7 @@ let baseName               : String = "main"
 let prRepo                 : String = "MobilityData/\(baseDestinationURL)"
 let prAssignees            : String = "[\"Sergiodero,tzujenchanmbd\"]" // needs to be a list. Ex: ["name1,name2"]
 let prLabels               : String = "[\"automated-content-update\"]" // needs to be a list. Ex: ["label1,label2"]
-let prTitle                : String = "Daily Report: Modified Files on remote repos (\(currentDateComponents.year ?? 0)-\(currentDateComponents.month ?? 0)-\(currentDateComponents.day ?? 0))"
+let issueTitle                : String = "Daily Report: Modified Files on remote repos (\(currentDateComponents.year ?? 0)-\(currentDateComponents.month ?? 0)-\(currentDateComponents.day ?? 0))"
 let prBody                 : String = "The following files have been modified in the last \(numberOfDaysToLookBack) day(s):\n"
 
 // MARK: - Dict of pages to monitor
@@ -241,12 +241,12 @@ for page: PageToMonitor in pagesToMonitor {
 ///   - commitUrls (Dictionary of [String: [String]]): A dictionary where the key is the monitored file URL and the value is an array of commit URLs that modified this file.
 ///   - pagesToMonitor (Array of PageToMonitor): An array of PageToMonitor structs, each representing a file to monitor, its corresponding URL, notes, and the target repository.
 ///   - currentDateComponents (DateComponents): A date components object representing the current date.
-///   - prTitle (String): The title of the pull request.
-///   - prBody (String): The body content of the pull request.
+///   - issueTitle (String): The title of the pull request.
+///   - issueBody (String): The body content of the pull request.
 
 /// 1.	Filter and Identify Modified Files: If there are modified files, it creates a unique list and filters the monitored files that match these modifications.
 /// 2.	Construct PR Content: If there are any matching monitored files, it generates a branch name and constructs the PR content, including a table of file information and commit URLs formatted for display.
-/// 3.	Set GitHub Action Outputs: It sets the output variables branch_name, pr_title, and pr_body with the constructed content for the next GitHub Action step to use.
+/// 3.	Set GitHub Action Outputs: It sets the output variables branch_name, issue_title, and issue_body with the constructed content for the next GitHub Action step to use.
 
 if !modifiedFiles.isEmpty {
     let uniqueFiles : [String] = Array(Set(modifiedFiles))
@@ -269,17 +269,17 @@ if !modifiedFiles.isEmpty {
             return "| [\(page.monitorPageAtURL)](\(page.monitorPageAtURL)) | [\(page.correspondsToURL)](\(page.correspondsToURL)) | \(commits) | \(page.notes) |"
         }.joined(separator: "\n")
 
-        let fullPrBody : String = prBody + "\n\n" + prContent
+        let issueBody : String = prBody + "\n\n" + prContent
 
         // echo "
 
         print("echo branch_name=\(branchName) >> $GITHUB_OUTPUT")
-        print("echo pr_title=\(prTitle) >> $GITHUB_OUTPUT")
-        print("echo pr_body=\(fullPrBody) >> $GITHUB_OUTPUT")
+        print("echo issue_title=\(issueTitle) >> $GITHUB_OUTPUT")
+        print("echo issue_body=\(issueBody) >> $GITHUB_OUTPUT")
     }
 } else {
 
         print("echo branch_name=\"\" >> $GITHUB_OUTPUT")
-        print("echo pr_title=\"\" >> $GITHUB_OUTPUT")
-        print("echo pr_body=\"\" >> $GITHUB_OUTPUT")
+        print("echo issue_title=\"\" >> $GITHUB_OUTPUT")
+        print("echo issue_body=\"\" >> $GITHUB_OUTPUT")
 }
