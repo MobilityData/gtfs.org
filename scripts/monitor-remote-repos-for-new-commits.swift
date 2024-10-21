@@ -219,16 +219,19 @@ func setGitHubOutput(key: String, value: String) {
     let task : Process = Process()
     task.executableURL = URL(fileURLWithPath: "/bin/bash")
     
-    // Wrap value in double quotes to handle special characters
     let quotedValue : String = "\"\(value)\""
     task.arguments = ["-c", "echo \(key)=\(quotedValue) >> $GITHUB_OUTPUT"]
     
     do {
         try task.run()
         task.waitUntilExit()
+        print("Task completed successfully")
+    } catch let error as NSError {
+        print("Failed to run task with error: \(error), \(error.userInfo)")
     } catch {
-        print("Failed to run task: \(error)")
+        print("Unknown error occurred: \(error)")
     }
+    if isInDebugMode { print("setGitHubOutput : end") }
 }
 
 // MARK: - Main
@@ -314,25 +317,25 @@ if !modifiedFiles.isEmpty {
 
         let issueBody : String = prBody + "\n\n" + prContent
 
-        setGitHubOutput(key: "found_commits", value: "true")
-        setGitHubOutput(key: "branch_name", value: branchName)
-        setGitHubOutput(key: "issue_title", value: issueTitle)
-        setGitHubOutput(key: "issue_body", value: issueBody)
+        // setGitHubOutput(key: "found_commits", value: "true")
+        // setGitHubOutput(key: "branch_name", value: branchName)
+        // setGitHubOutput(key: "issue_title", value: issueTitle)
+        // setGitHubOutput(key: "issue_body", value: issueBody)
 
-        // print("echo found_commits=true >> $GITHUB_OUTPUT")
-        // print("echo branch_name=\(branchName) >> $GITHUB_OUTPUT")
-        // print("echo issue_title=\(issueTitle) >> $GITHUB_OUTPUT")
-        // print("echo issue_body=\(issueBody) >> $GITHUB_OUTPUT")
+        print("echo found_commits=true >> $GITHUB_OUTPUT")
+        print("echo branch_name=\(branchName) >> $GITHUB_OUTPUT")
+        print("echo issue_title=\(issueTitle) >> $GITHUB_OUTPUT")
+        print("echo issue_body=\(issueBody) >> $GITHUB_OUTPUT")
     }
 } else {
 
-        setGitHubOutput(key: "found_commits", value: "false")
-        setGitHubOutput(key: "branch_name", value: "")
-        setGitHubOutput(key: "issue_title", value: "")
-        setGitHubOutput(key: "issue_body", value: "")
+        // setGitHubOutput(key: "found_commits", value: "false")
+        // setGitHubOutput(key: "branch_name", value: "")
+        // setGitHubOutput(key: "issue_title", value: "")
+        // setGitHubOutput(key: "issue_body", value: "")
 
-        // print("echo found_commits=false >> $GITHUB_OUTPUT")
-        // print("echo branch_name=\"\" >> $GITHUB_OUTPUT")
-        // print("echo issue_title=\"\" >> $GITHUB_OUTPUT")
-        // print("echo issue_body=\"\" >> $GITHUB_OUTPUT")
+        print("echo found_commits=false >> $GITHUB_OUTPUT")
+        print("echo branch_name=\"\" >> $GITHUB_OUTPUT")
+        print("echo issue_title=\"\" >> $GITHUB_OUTPUT")
+        print("echo issue_body=\"\" >> $GITHUB_OUTPUT")
 }
