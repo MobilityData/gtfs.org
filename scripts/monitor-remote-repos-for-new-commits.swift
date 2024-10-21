@@ -161,9 +161,11 @@ func makeRequest(url: URL, method: RESTmethod = .GET, body: Data? = nil) -> Data
     let semaphore : DispatchSemaphore = DispatchSemaphore(value: 0)
     var data: Data? = nil
     
-    let task : URLSessionDataTask = URLSession.shared.dataTask(with: request) { (responseData : Data?, _ : URLResponse?, _ : (any Error)?) in
-        data = responseData
-        semaphore.signal()
+    let task : URLSessionDataTask = URLSession.shared.dataTask(with: request) { ( responseData : Data?, _ : URLResponse?, _ : (any Error)?) in
+        DispatchQueue.main.async {
+            data = responseData
+            semaphore.signal()
+        }
     }
     
     task.resume() ; _ = semaphore.wait(timeout: .distantFuture)  // Make the semaphore pause the runtime until incremented
