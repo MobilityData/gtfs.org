@@ -24,16 +24,29 @@ jobs:
 
       - name: Run Swift Script
         id: run-swift-script
-        run: swift scripts/monitor-remote-repos-for-new-commits.swift
+        run: OUTPUT=$(swift scripts/monitor-remote-repos-for-new-commits.swift)
         env:
           GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
 
+      - name: Parse Output
+        id: parse-output
+        run: |
+          FOUND_COMMITS=$(echo "$swift_output" | jq -r '.found_commits')
+          BRANCH_NAME=$(echo "$swift_output" | jq -r '.branch_name')
+          ISSUE_TITLE=$(echo "$swift_output" | jq -r '.issue_title')
+          ISSUE_BODY=$(echo "$swift_output" | jq -r '.issue_body')
+
+          echo "found_commits=$FOUND_COMMITS" >> $GITHUB_OUTPUT
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "issue_title=$ISSUE_TITLE" >> $GITHUB_OUTPUT
+          echo "issue_body=$ISSUE_BODY" >> $GITHUB_OUTPUT
+
       - name: Create issue
         id: create-issue
-        # if: steps.run-swift-script.outputs.found_commits == 'true'
+        # if: steps.parse-output.outputs.found_commits == 'true'
         uses: dacbd/create-issue-action@v2.0.0
         with:
           token: ${{ env.GITHUB_TOKEN }}
           assignees: Sergiodero
-          title: ${{ steps.run-swift-script.outputs.issue_title }}
-          body: ${{ steps.run-swift-script.outputs.issue_body }}
+          title: ${{ steps.parse-output.outputs.issue_title }}
+          body: ${{ steps.parse-output.outputs.issue_body }}

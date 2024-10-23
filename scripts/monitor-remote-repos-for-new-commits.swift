@@ -210,44 +210,6 @@ func fetchModifiedFiles(commitSha: String, targetRepo: String) async throws -> [
     return files.compactMap { $0["filename"] as? String }
 }
 
-/// Writes a key-value pair to the `$GITHUB_OUTPUT` environment variable to be used between steps in a GitHub Actions workflow.
-///
-/// This function takes a key and its corresponding value and writes it to `$GITHUB_OUTPUT`, which allows subsequent steps in a GitHub Actions workflow to access this output.
-///
-/// Example:
-/// ```
-/// setGitHubOutput(key: "branch_name", value: "feature-branch")
-/// ```
-///
-/// - Parameters:
-///   - key: The key to be used in the output, which will be referenced in subsequent steps.
-///   - value: The value corresponding to the key that will be stored in the output.
-func setGitHubOutput(key: String, value: String) {
-    if isInDebugMode { print("setGitHubOutput : start") }
-    
-    let task: Process = Process()
-    task.executableURL = URL(fileURLWithPath: "/bin/bash")
-    
-    // Pass the GITHUB_OUTPUT environment variable properly
-    if let githubOutputPath = ProcessInfo.processInfo.environment["GITHUB_OUTPUT"] {
-        let quotedValue: String = "\"\(value)\""
-        task.arguments = ["-c", "echo \(key)=\(quotedValue) >> \(githubOutputPath)"]
-        
-        do {
-            try task.run()
-            task.waitUntilExit()
-        } catch let error as NSError {
-            print("Failed to run task with error: \(error), \(error.userInfo)")
-        } catch {
-            print("Unknown error occurred: \(error)")
-        }
-    } else {
-        print("GITHUB_OUTPUT environment variable is not set")
-    }
-    
-    if isInDebugMode { print("setGitHubOutput : end") }
-}
-
 // MARK: - Main
 
 /// Iterates through a list of pages to monitor, fetches recent commits for each monitored file, collects the modified files and commit URLs, and stores them for later use.
@@ -341,26 +303,26 @@ func processCommits(modifiedFiles: [String], commitUrls: [String: [String]]) {
             
             if isInDebugMode { print("issueBody : \n\n \(issueBody)") }
             
-            setGitHubOutput(key: "found_commits", value: "true")
-            setGitHubOutput(key: "branch_name", value: branchName)
-            setGitHubOutput(key: "issue_title", value: issueTitle)
-            setGitHubOutput(key: "issue_body", value: issueBody)
+            let output: [String: Any] = [
+                "found_commits": true,
+                "branch_name": branchName,
+                "issue_title": issueTitle,
+                "issue_body": issueBody
+            ]
             
-//            print("echo found_commits=true >> $GITHUB_OUTPUT")
-//            print("echo branch_name=\(branchName) >> $GITHUB_OUTPUT")
-//            print("echo issue_title=\(issueTitle) >> $GITHUB_OUTPUT")
-//            print("echo issue_body=\(issueBody) >> $GITHUB_OUTPUT")
+            if let jsonData : Data = try? JSONSerialization.data(withJSONObject: output, options: []),
+               let jsonString : String = String(data: jsonData, encoding: .utf8) { print(jsonString) }
         }
     } else {
         
-        setGitHubOutput(key: "found_commits", value: "false")
-        setGitHubOutput(key: "branch_name", value: "")
-        setGitHubOutput(key: "issue_title", value: "")
-        setGitHubOutput(key: "issue_body", value: "")
+        let output: [String: Any] = [
+            "found_commits": false,
+            "branch_name": "",
+            "issue_title": "",
+            "issue_body": ""
+        ]
         
-//        print("echo found_commits=false >> $GITHUB_OUTPUT")
-//        print("echo branch_name=\"\" >> $GITHUB_OUTPUT")
-//        print("echo issue_title=\"\" >> $GITHUB_OUTPUT")
-//        print("echo issue_body=\"\" >> $GITHUB_OUTPUT")
+        if let jsonData : Data = try? JSONSerialization.data(withJSONObject: output, options: []),
+           let jsonString : String = String(data: jsonData, encoding: .utf8) { print(jsonString) }
     }
 }
