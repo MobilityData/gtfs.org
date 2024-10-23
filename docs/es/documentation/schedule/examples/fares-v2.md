@@ -6,20 +6,20 @@
  Con la adopción y respaldo suficiente de Tarifas v2, Tarifas v1 puede quedar obsoleto en el futuro. 
  Mientras tanto, los productores pueden implementar Tarifas v2 junto con la implementación de Tarifas v1 en el mismo conjunto de datos, ya que no existe ningún conflicto técnico entre los dos. Los consumidores tendrán la opción de elegir qué implementación consumir independientemente de la otra. 
  
- Los siguientes ejemplos describen cómo modelar datos usando Tarifas v2 y se puede completar con las funciones experimentales descritas en el [documento de propuesta](https://share.mobilitydata.org/gtfs-fares-v2). 
+ Los siguientes ejemplos describen cómo modelar datos usando Tarifas v2 y se puede completar con las funciones experimentales descritas en el <a href="https://share.mobilitydata.org/gtfs-fares-v2" target="_blank">documento de propuesta</a>. 
  
 ## Capacitación y recursos gratuitos de Tarifas v2 
  
- Para comenzar con GTFS Fares-v2, puede ver estos cuatro videos tutoriales y seguir [este recurso escrito](https://share.mobilitydata.org/Fares-v2-write-resource-guide-for-videos). 
+ Para comenzar con GTFS Fares-v2, puede ver estos cuatro videos tutoriales y seguir <a href="https://share.mobilitydata.org/Fares-v2-write-resource-guide-for-videos" target="_blank">este recurso escrito</a>. 
  
- - [Video 1](https://share.mobilitydata.org/faresv2-intro): GTFS Fares-v2: Introducción
- - [Video 2](https://share.mobilitydata.org/faresv2-setting-up-google-sheets): Tarifas GTFS v2: Configuración de Google Sheets
- - [Video 3](https://share.mobilitydata.org/faresv2-creating-and-maintaining-data): Tarifas GTFS v2: Creación y mantenimiento de datos
- - [Video 4](https://share.mobilitydata.org/faresv2-exporting-and-publishing): Exportación y publicación de Tarifas GTFS v2 
+ - <a href="https://share.mobilitydata.org/faresv2-intro" target="_blank">Video 1</a>: GTFS Fares-v2: Introducción
+ - <a href="https://share.mobilitydata.org/faresv2-setting-up-google-sheets" target="_blank">Video 2</a>: Tarifas GTFS v2: Configuración de Google Sheets
+ - <a href="https://share.mobilitydata.org/faresv2-creating-and-maintaining-data" target="_blank">Video 3</a>: Tarifas GTFS v2: Creación y mantenimiento de datos
+ - <a href="https://share.mobilitydata.org/faresv2-exporting-and-publishing" target="_blank">Video 4</a>: Exportación y publicación de Tarifas GTFS v2 
  
  Han sido creadas para agencias de transporte para comprender el propósito de GTFS-Fares v2, así como también cómo utilizar Google Sheets para crear, editar y cargar datos de GTFS-Fares v2. 
  
- Esta [plantilla de Tarifas v2](https://share.mobilitydata.org/faresv2-template) se puede utilizar para crear los archivos de tarifas necesarios desde cero. 
+ Esta <a href="https://share.mobilitydata.org/faresv2-template" target="_blank">plantilla de Tarifas v2</a> se puede utilizar para crear los archivos de tarifas necesarios desde cero. 
  
 ## Ejemplos de modelado de datos de Tarifas v2
 
@@ -41,7 +41,7 @@
 | core_local_7_day_fare  | 7-Day Pass - Core Service |  22.00 | USD  |
  
  
- <sup>[Descargue el feed GTFS del autobús local de la Administración de Tránsito de Maryland](https://feeds.mta.maryland.gov/gtfs/local-bus)</sup> 
+ <sup><a href="https://feeds.mta.maryland.gov/gtfs/local-bus" target="_blank">Descargue el feed GTFS del autobús local de la Administración de Tránsito de Maryland</a></sup> 
  
 <hr> 
  
@@ -60,7 +60,7 @@
 | core_local_one_way_trip | core  |  core_local_31_day_fare |
 | core_local_one_way_trip | core  |  core_local_7_day_fare |
  
- <sup>[Descargue el feed GTFS del autobús local de la Administración de Tránsito de Maryland](https://feeds.mta.maryland.gov/gtfs/local-bus)</sup> 
+ <sup><a href="https://feeds.mta.maryland.gov/gtfs/local-bus" target="_blank">Descargue el feed GTFS del autobús local de la Administración de Tránsito de Maryland</a></sup> 
  
 <hr> 
  
@@ -90,7 +90,7 @@
     <img src="../../../../assets/transit-fares-mdot.png" alt="fare of $2 USD">
 </div>
  
- <sup>[Descargar el feed GTFS del autobús local de la Administración de Tránsito de Maryland](https://feeds.mta.maryland.gov/gtfs/local-bus)</sup> 
+ <sup><a href="https://feeds.mta.maryland.gov/gtfs/local-bus" target="_blank">Descargar el feed GTFS del autobús local de la Administración de Tránsito de Maryland</a></sup> 
  
 ### Describir las ubicaciones de servicio en la misma zona tarifaria
 
