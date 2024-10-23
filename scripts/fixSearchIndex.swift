@@ -3,27 +3,43 @@
 import Foundation
 
 /// Represents the structure of the search index JSON file.
-struct SearchIndex : Codable {
+struct SearchIndex: Codable {
     let config : SearchIndexConfig
     var docs   : [SearchIndexDocs]
 }
 
 /// Holds configuration details of the search index.
-struct SearchIndexConfig : Codable {
+struct SearchIndexConfig: Codable {
     let lang      : [String]
     let separator : String
+    let pipeline  : [String]
+    let fields    : SearchIndexFields
 
-    enum CodingKeys : String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case lang
         case separator
+        case pipeline
+        case fields
     }
+}
+
+/// Represents the boost settings for individual fields in the search index.
+struct SearchIndexFields: Codable {
+    let title : SearchIndexFieldBoost
+    let text  : SearchIndexFieldBoost
+    let tags  : SearchIndexFieldBoost
+}
+
+/// Represents the boost value for a field in the search index.
+struct SearchIndexFieldBoost: Codable {
+    let boost : Double
 }
 
 /// Represents individual documents within the search index.
 struct SearchIndexDocs: Codable {
     let location : String
-    let text     : String
     let title    : String
+    let text     : String
 }
 
 /// The path to the search index JSON file, relative to the base folder of the Git repository.
@@ -53,7 +69,8 @@ do {
     var searchIndexDocs: [SearchIndexDocs] = []
     
     /// An array of prefixes used to filter documents based on their location. Any prefix not in this array will be removed.
-    let prefixes: [String] = ["en/", "es/", "fr/"] // Other options: "ja/", "id/", "de/", "pt/", "ru/", "ko/", "zh/", "zh-TW/"
+    // English does not have a prefix, so anything without one will be preserved.
+    let prefixes: [String] = ["es/", "fr/", "ja/", "id/", "de/", "pt/", "ru/", "ko/", "zh/", "zh-TW/"] 
 
     /// Count the number of documents that match the prefixes before filtering.
     let initialCount: Int = searchIndex.docs.filter { doc in
