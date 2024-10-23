@@ -6,20 +6,20 @@ In the interim, producers may implement Fares v2 alongside the implementation of
 With adoption and sufficient endorsement of Fares v2, Fares v1 may be deprecated in the future.
 In the interim, producers may implement Fares v2 alongside the implementation of Fares v1 in the same dataset as there exists no technical conflict between the two. Consumers will have the choice of which implementation to consume independently from the other. 
 
-The below examples outline how to model data using Fares v2 and it can be completed with experimental features outlined in the full [proposal document](https://share.mobilitydata.org/gtfs-fares-v2). 
+The below examples outline how to model data using Fares v2 and it can be completed with experimental features outlined in the full <a href="https://share.mobilitydata.org/gtfs-fares-v2" target="_blank">proposal document</a>. 
 
 ## Fares v2 training and free resources
 
-To get started with GTFS Fares-v2, you can watch these four video tutorials and follow along with [this written resource](https://share.mobilitydata.org/Fares-v2-written-resource-guide-for-videos).</a>
+To get started with GTFS Fares-v2, you can watch these four video tutorials and follow along with <a href="https://share.mobilitydata.org/Fares-v2-written-resource-guide-for-videos" target="_blank">this written resource</a>.
 
-- [Video 1](https://share.mobilitydata.org/faresv2-intro): GTFS Fares-v2: An introduction
-- [Video 2](https://share.mobilitydata.org/faresv2-setting-up-google-sheets): GTFS Fares v2: Setting up Google Sheets
-- [Video 3](https://share.mobilitydata.org/faresv2-creating-and-maintaining-data): GTFS Fares v2: Creating and Maintaining Data
-- [Video 4](https://share.mobilitydata.org/faresv2-exporting-and-publishing): Exporting and Publishing GTFS Fares v2
+- <a href="https://share.mobilitydata.org/faresv2-intro" target="_blank">Video 1</a> : GTFS Fares-v2: An introduction
+- <a href="https://share.mobilitydata.org/faresv2-setting-up-google-sheets" target="_blank">Video 2</a> : GTFS Fares v2: Setting up Google Sheets
+- <a href="https://share.mobilitydata.org/faresv2-creating-and-maintaining-data" target="_blank">Video 3</a> : GTFS Fares v2: Creating and Maintaining Data
+- <a href="https://share.mobilitydata.org/faresv2-exporting-and-publishing" target="_blank">Video 4</a> : Exporting and Publishing GTFS Fares v2
 
 They have been created for transit agencies to understand the purpose of GTFS-Fares v2, as well as how to use Google Sheets to create, edit, and upload GTFS-Fares v2 data. 
 
-This [Fares v2 template](https://share.mobilitydata.org/faresv2-template) can be used for creating the necessary fares files from scratch.
+This <a href="https://share.mobilitydata.org/faresv2-template" target="_blank">Fares v2 template</a> can be used for creating the necessary fares files from scratch.
 
 ## Fares v2 data modelling examples
 
@@ -44,7 +44,7 @@ Transit tickets or fares are referred to as fare products in GTFS. They can be d
 | core_local_7_day_fare  | 7-Day Pass - Core Service |  22.00 | USD  |
 
 
-<sup>[Download the Maryland Transit Administration local bus GTFS feed](https://feeds.mta.maryland.gov/gtfs/local-bus)</sup>
+<sup><a href="https://feeds.mta.maryland.gov/gtfs/local-bus" target="_blank">Download the Maryland Transit Administration local bus GTFS feed</a></sup>
 
 <hr>
 
@@ -63,7 +63,7 @@ Leg groups define trips within a network from an origin to a destination (or a s
 | core_local_one_way_trip | core  |  core_local_31_day_fare |
 | core_local_one_way_trip | core  |  core_local_7_day_fare |
 
-<sup>[Download the Maryland Transit Administration local bus GTFS feed](https://feeds.mta.maryland.gov/gtfs/local-bus)</sup>
+<sup><a href="https://feeds.mta.maryland.gov/gtfs/local-bus" target="_blank">Download the Maryland Transit Administration local bus GTFS feed</a></sup>
 
 <hr>
 
@@ -93,7 +93,7 @@ After defining the fare, creating the appropriate `fare_leg_rule`, and defining 
     <img src="../../../../assets/transit-fares-mdot.png" alt="fare of $2 USD">
 </div>
 
-<sup>[Download the Maryland Transit Administration local bus GTFS feed](https://feeds.mta.maryland.gov/gtfs/local-bus)</sup>
+<sup><a href="https://feeds.mta.maryland.gov/gtfs/local-bus" target="_blank">Download the Maryland Transit Administration local bus GTFS feed</a></sup>
 
 ### Describe service locations in the same fare zone
 
