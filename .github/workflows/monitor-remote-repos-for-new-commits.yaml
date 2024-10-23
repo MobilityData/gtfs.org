@@ -36,7 +36,7 @@ jobs:
           FOUND_COMMITS=$(echo "$swift_output" | jq -r '.found_commits')
           BRANCH_NAME=$(echo "$swift_output" | jq -r '.branch_name')
           ISSUE_TITLE=$(echo "$swift_output" | jq -r '.issue_title')
-          ISSUE_BODY=$(echo "$swift_output" | jq -r '.issue_body')
+          ISSUE_BODY=$(echo "$swift_output" | jq -r '.issue_body' | sed ':a;N;$!ba;s/\n/\\n/g' | sed 's/|/\\|/g')
 
           echo "found_commits=$FOUND_COMMITS" >> $GITHUB_OUTPUT
           echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
