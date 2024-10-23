@@ -24,7 +24,9 @@ jobs:
 
       - name: Run Swift Script
         id: run-swift-script
-        run: OUTPUT=$(swift scripts/monitor-remote-repos-for-new-commits.swift)
+        run: |
+            OUTPUT=$(swift scripts/monitor-remote-repos-for-new-commits.swift)
+            echo "swift_output=$OUTPUT" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
 
