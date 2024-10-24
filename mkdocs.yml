@@ -138,8 +138,8 @@ plugins:
   #     enabled: !ENV [OFFLINE, true]
   - external-markdown
   - privacy:
-    links_attr_map:
-      target: _blank
+      links_attr_map:
+        target: _blank
   - search:
       lang: en
   - i18n:
