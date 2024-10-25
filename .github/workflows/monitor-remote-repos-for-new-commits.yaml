@@ -36,16 +36,23 @@ jobs:
           FOUND_COMMITS=$(echo "$swift_output" | jq -r '.found_commits')
           BRANCH_NAME=$(echo "$swift_output" | jq -r '.branch_name')
           ISSUE_TITLE=$(echo "$swift_output" | jq -r '.issue_title')
+          
+          # First get the escaped version for workflow variables
           ISSUE_BODY=$(echo "$swift_output" | jq -r '.issue_body' | sed ':a;N;$!ba;s/\n/\\n/g' | sed 's/|/\\|/g')
-
+          
+          # Output the regular variables
           echo "found_commits=$FOUND_COMMITS" >> $GITHUB_OUTPUT
           echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
           echo "issue_title=$ISSUE_TITLE" >> $GITHUB_OUTPUT
-          echo "issue_body=$ISSUE_BODY" >> $GITHUB_OUTPUT
+          
+          # Output the unescaped body using EOF delimiter for proper multiline handling
+          echo "issue_body<<EOF" >> $GITHUB_OUTPUT
+          echo "$swift_output" | jq -r '.issue_body' >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Create issue
         id: create-issue
-        # if: steps.parse-output.outputs.found_commits == 'true'
+        if: steps.parse-output.outputs.found_commits == 'true'
         uses: dacbd/create-issue-action@v2.0.0
         with:
           token: ${{ env.GITHUB_TOKEN }}
