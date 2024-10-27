@@ -139,7 +139,7 @@
  
 ### _message_ TripUpdate 
  
- Mise à jour en temps réel sur la progression d’un véhicule tout au long d’un trajet. Veuillez également vous référer à la discussion générale sur les [entités de mises à jour de voyage](../../../documentation/realtime/feed_entities/trip-updates). 
+ Mise à jour en temps réel sur la progression d’un véhicule tout au long d’un trajet. Veuillez également vous référer à la discussion générale sur les [entités de mises à jour de voyage](../../../documentation/realtime/feed-entities/trip-updates). 
  upd 
  En fonction de la valeur de ScheduleRelationship, un TripUpdate peut spécifier : 
  
@@ -187,7 +187,7 @@
  
 ### _message_ StopTimeUpdate 
  
- Mise à jour en temps réel des événements d’arrivée et/ou de départ pour un arrêt donné d’un voyage. Veuillez également vous référer à la discussion générale sur les mises à jour des horaires d'arrêt dans la documentation [TripDescriptor](#message-tripdescriptor) et [trip mises à jour entités](../../../documentation/realtime/feed_entities/trip-updates). 
+ Mise à jour en temps réel des événements d’arrivée et/ou de départ pour un arrêt donné d’un voyage. Veuillez également vous référer à la discussion générale sur les mises à jour des horaires d'arrêt dans la documentation [TripDescriptor](#message-tripdescriptor) et [trip mises à jour entités](../../../documentation/realtime/feed-entities/trip-updates). 
  
  Des mises à jour peuvent être fournies pour les événements passés et futurs. Le producteur est autorisé, bien que cela ne soit pas obligatoire, à abandonner les événements passés. 
  La mise à jour est liée à un arrêt spécifique soit via stop_sequence soit stop_id, donc l’un de ces champs doit obligatoirement être renseigné. Si le même stop_id est visité plus d’une fois au cours d’un trajet, alors stop_sequence doit être fourni dans toutes les StopTimeUpdates pour ce stop_id lors de ce trajet. 
@@ -617,7 +617,7 @@
 
 <br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
  
- [En savoir plus sur les modifications de voyage...](../../../documentation/realtime/feed_entities/trip-modifications) 
+ [En savoir plus sur les modifications de voyage...](../../../documentation/realtime/feed-entities/trip-modifications) 
  
  **Champs** 
  
@@ -634,11 +634,11 @@
 
 <br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
 
-<img src="../../../assets/trip_modification.png"> 
+<img src="../../../assets/trip-modification.png"> 
  
  _Un exemple montrant l’effet d’une modification sur un voyage particulier. Cette modification pourra également s’appliquer à plusieurs autres déplacements._ 
  
-<img src="../../../assets/propagated_delay.png"> 
+<img src="../../../assets/propagated-delay.png"> 
  
  _Les délais de détour propagés affectent tous les arrêts suivant la fin d’une modification. Si un trajet comporte plusieurs modifications, les retards se cumulent._ 
  
@@ -686,7 +686,7 @@
 
 <br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
 
-<img src="../../../assets/first_stop_reference.png"> 
+<img src="../../../assets/first-stop-reference.png"> 
  
  _Si une modification affecte le premier arrêt du trajet, cet arrêt sert également d’arrêt de référence de la modification._ 
  

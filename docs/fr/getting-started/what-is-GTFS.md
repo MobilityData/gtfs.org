@@ -6,7 +6,7 @@
  
  Il permet aux agences de transport en commun de publier leurs données de transport en commun dans un format qui peut être utilisé par une grande variété d’applications logicielles, le plus souvent des planificateurs d'itinéraire. Cela signifie que les utilisateurs peuvent facilement obtenir des informations d'itinéraire pour accéder aux services de transport en commun en utilisant leur smartphone ou un appareil similaire. 
 
-<img class="center" width="560" height="100%" src="../../assets/what_is_gtfs_001.png"> 
+<img class="center" width="560" height="100%" src="../../assets/what-is-gtfs-001.png"> 
  
  Aujourd’hui, GTFS est l'[Open Standard](https://www.interoperablemobility.org/definitions/#open_standard) incontournable pour des milliers de fournisseurs de transports publics dans le monde. Certaines agences produisent elles-mêmes ces données, tandis que d’autres font appel à un fournisseur pour créer et gérer leurs données. 
  
@@ -14,7 +14,7 @@
  
  GTFS se compose de deux parties principales : [GTFS Schedule](../../documentation/schedule/reference) et [GTFS Realtime](../../documentation/realtime/reference). 
 
-<img class="center" width="560" height="100%" src="../../assets/what_is_gtfs_002.png"> 
+<img class="center" width="560" height="100%" src="../../assets/what-is-gtfs-002.png"> 
 
  GTFS Schedule contient des informations sur les itinéraires, les horaires, les tarifs et les arrêts, parmi de nombreuses autres fonctionnalités, et il est présenté dans des fichiers texte simples[^1]. Ce format simple permet une création et une maintenance faciles sans recourir à des logiciels complexes ou propriétaires. 
  

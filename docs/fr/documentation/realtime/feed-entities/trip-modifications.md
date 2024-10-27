@@ -36,11 +36,11 @@
  
  La séquence de `replacement_stops` peut être de longueur arbitraire. Par exemple, 3 arrêts pourraient être remplacés par 2, 4 ou 0 arrêts selon la situation. 
  
- ![](/../assets/trip_modification.png) 
+ ![](/../assets/trip-modification.png) 
  
  _Un exemple montrant l’effet d’une modification sur un voyage particulier. Cette modification peut également s’appliquer à plusieurs autres trajets._ 
  
- ![](/../assets/propagated_delay.png) 
+ ![](/../assets/propagated-delay.png) 
  
  _Les délais de détour propagés affectent tous les arrêts suivant la fin d’une modification. Si un trajet a plusieurs modifications, les retards sont accumulés._ 
  
@@ -54,6 +54,6 @@
  
  Les champs facultatifs de [`stop_times.txt`](../../../schedule/reference/#stop_timestxt) dans la spécification (CSV) GTFS sont tous définis sur leurs valeurs par défaut. 
  
- ![](/../assets/first_stop_reference.png) 
+ ![](/../assets/first-stop-reference.png) 
  
  _Si une modification affecte le premier arrêt du trajet, cet arrêt sert également d’arrêt de référence de la modification._ 

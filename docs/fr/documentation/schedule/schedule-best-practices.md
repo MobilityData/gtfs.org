@@ -260,7 +260,7 @@
  
 ### Comment vérifier la conformité à ces bonnes pratiques ? 
  
- Le validateur de GTFS Schedule canonique vérifie la conformité par rapport à ces bonnes pratiques. Vous pouvez en savoir plus sur cet outil de validation sur la [page de validation](../../../getting_started/validate). 
+ Le validateur de GTFS Schedule canonique vérifie la conformité par rapport à ces bonnes pratiques. Vous pouvez en savoir plus sur cet outil de validation sur la [page de validation](../../../getting-started/validate). 
  
 ### Je représente une agence de transport. Quelles mesures puis-je prendre pour que nos fournisseurs de services logiciels suivent ces bonnes pratiques ? 
  

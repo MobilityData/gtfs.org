@@ -420,6 +420,6 @@
  Dans <a href="https://apple.com/maps" target="_blank">Apple Maps</a>, les passagers peuvent voir l’évolution du prix de leur billet et comparer les prix en fonction du départ prévu du train : 
  
 <div class="flex-photos"> 
- <img src="../../../../assets/TimeVariableFares_Peak.png" alt="Tarif de zone de pointe pour adultes sortants de 20,00 USD"> 
- <img src="../../../../assets/TimeVariableFares_OffPeak.png" alt="Tarif zonal hors pointe adulte sortant de 15,00 USD"> 
+ <img src="../../../../assets/TimeVariableFares-Peak.png" alt="Tarif de zone de pointe pour adultes sortants de 20,00 USD"> 
+ <img src="../../../../assets/TimeVariableFares-OffPeak.png" alt="Tarif zonal hors pointe adulte sortant de 15,00 USD"> 
 </div> 

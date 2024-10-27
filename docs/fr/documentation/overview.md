@@ -25,7 +25,7 @@
  - Alertes de service - arrêt déplacé, événements imprévus affectant une gare, un itinéraire ou l’ensemble du réseau
  - Positions des véhicules - informations sur les véhicules, y compris l’emplacement et le niveau de congestion 
  
- Pour en savoir plus à leur sujet, visitez la section [Feed Entities](../realtime/feed_entities/overview). 
+ Pour en savoir plus à leur sujet, visitez la section [Feed Entities](../realtime/feed-entities/overview). 
  
  GTFS Realtime a été conçu autour de la facilité de mise en œuvre, d’une bonne interopérabilité GTFS et d’une concentration sur l’information des passagers. Cela a été possible grâce à un partenariat entre les [initiales Live Transit Updates](https://developers.google.com/transit/google-transit#LiveTransitUpdates) agences partenaires, un certain nombre de développeurs de transports en commun et Google. La spécification est publiée sous la [Licence Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.html). 
  
