@@ -32,7 +32,7 @@ Agencies contain basic information about the agencies responsible for the transi
 ## Stops
 
 Stops represent the basic elements used to identify where a transit service picks up and drops off passengers. This could be a metro station or a bus stop. Each stop has, among other attributes, geographical coordinates to pinpoint its location on a map, and a name that matches the agency's rider-facing materials. Stops are associated to Trips using Stop Times. 
-With GTFS, it is also possible to describe the interior of larger stations, such as a train station or bus depot, using [Pathways](/getting_started/features/pathways).
+With GTFS, it is also possible to describe the interior of larger stations, such as a train station or bus depot, using [Pathways](/getting-started/features/pathways).
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|

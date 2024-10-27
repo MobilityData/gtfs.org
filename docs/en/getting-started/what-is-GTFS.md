@@ -6,7 +6,7 @@ The General Transit Feed Specification, also known as GTFS, is a standardized da
 
 It allows public transit agencies to publish their transit data in a format that can be consumed by a wide variety of software applications, most commonly trip planners. This means that users can easily get travel information to access public transit services by using their smartphones or similar devices.
 
-<img class="center" width="560" height="100%" src="../../../assets/what_is_gtfs_001.png">
+<img class="center" width="560" height="100%" src="../../../assets/what-is-gtfs-001.png">
 
 Today, GTFS is the go-to [Open Standard](https://www.interoperablemobility.org/definitions/#open_standard) for thousands of public transport providers worldwide. Some agencies produce this data themselves, while others employ a vendor to create and maintain data for them. 
 
@@ -14,7 +14,7 @@ Today, GTFS is the go-to [Open Standard](https://www.interoperablemobility.org/d
 
 GTFS consists of two main parts: [GTFS Schedule](../../documentation/schedule/reference) and [GTFS Realtime](../../documentation/realtime/reference).
 
-<img class="center" width="560" height="100%" src="../../../assets/what_is_gtfs_002.png">
+<img class="center" width="560" height="100%" src="../../../assets/what-is-gtfs-002.png">
 
 GTFS Schedule contains information about routes, schedules, fares, and geographic transit details among many other features, and it is presented in simple text files[^1]. This straightforward format allows for easy creation and maintenance without relying on complex or proprietary software.
 

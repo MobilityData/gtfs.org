@@ -260,7 +260,7 @@ Specification reference amendments are subject to a higher bar of scrutiny and c
 
 ### How to check for conformance with these Best Practices?
 
-The Canonical GTFS Schedule Validator checks for compliance against these Best Practices. You can find more about this validation tool on the [validate page](../../../getting_started/validate).
+The Canonical GTFS Schedule Validator checks for compliance against these Best Practices. You can find more about this validation tool on the [validate page](../../../getting-started/validate).
 
 ### I represent a transit agency. What steps can I take so that our software service providers and vendors follow these Best Practices?
 
