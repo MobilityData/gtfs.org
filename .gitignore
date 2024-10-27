@@ -12,3 +12,4 @@ overrides/pt/*
 overrides/ru/*
 overrides/zh/*
 overrides/zh-TW/*
+/.cache
