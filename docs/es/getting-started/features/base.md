@@ -33,7 +33,7 @@
 ## Paradas 
  
  Las Paradas representan los elementos básicos utilizados para identificar dónde un servicio de tránsito recoge y deja pasajeros. Podría ser una estación de metro o una parada de autobús. Cada parada tiene, entre otros atributos, coordenadas geográficas para señalar su ubicación en un mapa y un nombre que coincide con los materiales de la agencia orientados a los pasajeros. Las Paradas se asocian a Viajes mediante Horarios de Parada. 
- Con GTFS, también es posible describir el interior de estaciones más grandes, como una estación de tren o una estación de autobuses, usando [Recorridos](/getting_started/funciones/pathways). 
+ Con GTFS, también es posible describir el interior de estaciones más grandes, como una estación de tren o una estación de autobuses, usando [Recorridos](/getting-started/funciones/pathways). 
 
  | Archivos incluidos | Campos incluidos | 
  |----------------------------------|-------------------| 

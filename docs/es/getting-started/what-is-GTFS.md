@@ -6,7 +6,7 @@
  
  Permite a las agencias de transporte público publicar sus datos de tránsito en un formato que puede ser consumido por una amplia variedad de aplicaciones de software, más comúnmente planificadores de viajes. Esto significa que los usuarios pueden obtener fácilmente información de viaje para acceder a los servicios de transporte público utilizando sus teléfonos inteligentes o dispositivos similares. 
  
-<img class="center" width="560" height="100%" src="../../assets/what_is_gtfs_001.png"> 
+<img class="center" width="560" height="100%" src="../../assets/what-is-gtfs-001.png"> 
  
  Hoy en día, GTFS es el [Estándar abierto](https://www.interoperablemobility.org/definitions/#open_standard) para miles de proveedores de transporte público en todo el mundo. Algunas agencias producen estos datos por sí mismas, mientras que otras emplean a un proveedor para crear y mantener datos para ellos. 
  
@@ -14,7 +14,7 @@
  
  GTFS consta de dos partes principales: [GTFS Schedule](../../documentation/schedule/reference) y [GTFS Realtime](../../documentation/realtime/reference). 
  
-<img class="center" width="560" height="100%" src="../../assets/what_is_gtfs_002.png"> 
+<img class="center" width="560" height="100%" src="../../assets/what-is-gtfs-002.png"> 
  
  GTFS Schedule contiene información sobre rutas, horarios, tarifas y detalles de tránsito geográfico, entre muchas otras funciones, y se presenta en archivos de texto simples[^1]. Este formato sencillo permite una fácil creación y mantenimiento sin depender de software complejo o propietario. 
  

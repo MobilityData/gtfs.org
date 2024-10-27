@@ -25,7 +25,7 @@
  - Alertas de servicio: parada movida, eventos imprevistos que afectan a una estación, ruta o a toda la red
  - Posiciones de vehículos: información sobre los vehículos, incluida la ubicación y el nivel de congestión 
  
- Para obtener más información sobre ellos, visite la sección [Feed Entities](../realtime/feed_entities/overview). 
+ Para obtener más información sobre ellos, visite la sección [Feed Entities](../realtime/feed-entities/overview). 
  
  GTFS Realtime se diseñó teniendo en cuenta la facilidad de implementación, la buena interoperabilidad de GTFS y un enfoque en la información de los pasajeros. Esto fue posible gracias a una asociación de las [actualizaciones iniciales de Live Transit](https://developers.google.com/transit/google-transit#LiveTransitUpdates) agencias asociadas, varios desarrolladores de transporte y Google. La especificación se publica bajo la [Licencia Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.html). 
  

@@ -33,7 +33,7 @@
     </div> 
     <div class="usage-video">
         <video class="center" width="560" height="315" controls>
-            <source src="../../assets/validator_demo_large.mp4" type="video/mp4">
+            <source src="../../assets/validator-demo-large.mp4" type="video/mp4">
         </video>
     </div>
 </div>

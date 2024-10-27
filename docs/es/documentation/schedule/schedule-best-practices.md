@@ -260,7 +260,7 @@
  
 ### ¿Cómo comprobar la conformidad con estas mejores prácticas? 
  
- El Validador de Programación Canonical GTFS verifica el cumplimiento de estas Mejores Prácticas. Puede encontrar más información sobre esta herramienta de validación en la [página de validación](../../../getting_started/validate). 
+ El Validador de Programación Canonical GTFS verifica el cumplimiento de estas Mejores Prácticas. Puede encontrar más información sobre esta herramienta de validación en la [página de validación](../../../getting-started/validate). 
  
 ### Represento a una agencia de tránsito. ¿Qué pasos puedo tomar para que nuestros proveedores de servicios de software y vendedores sigan estas mejores prácticas? 
  

@@ -3,15 +3,15 @@
 ## Descripción general de un feed GTFS 
  Todos los feeds GTFS comienzan con un conjunto de datos en el formato de referencia GTFS, que es una serie de archivos CSV guardados con una extensión de archivo.txt [^1]. En su implementación más básica, un conjunto de datos GTFS generalmente comienza con siete archivos base, combinados en un archivo.zip alojado en una URL pública y estable: este es el feed GTFS. 
  
-<img class="center" width="560" height="100%" src="../../assets/create_001.png"> 
+<img class="center" width="560" height="100%" src="../../assets/create-001.png"> 
  
  Cada archivo consta de una lista de múltiples registros (líneas de datos) con varios campos de información. Por ejemplo, cada línea enumerada en [routes.txt](../../documentation/schedule/reference/#routestxt) representa una ruta de transporte público y sus campos describen múltiples elementos de esa ruta, como su nombre, descripción, operación agencia, etc. 
  
-<img class="center" width="560" height="100%" src="../../assets/create_002.png"> 
+<img class="center" width="560" height="100%" src="../../assets/create-002.png"> 
  
  Los archivos base para un conjunto de datos GTFS se pueden describir de la siguiente manera: Un conjunto de datos de GTFS Schedule tiene una o más rutas ([routes.txt](../../documentation/schedule/reference/#routestxt)), cada ruta tiene uno o más viajes ([trips.txt](../../documentation/schedule/reference/#tripstxt)), cada viaje visita una serie de paradas ([stops.txt](../../documentation/schedule/reference/#stopstxt)) en momentos específicos ([stop_times.txt](../../documentation/schedule/reference/#stop_timestxt)). Los Viajes y las horarios de parada solo contienen información sobre la hora del día; el calendario se utiliza para determinar en qué días se realiza un viaje determinado ([calendar.txt](../../documentation/schedule/reference/#calendartxt) y [calendar_dates.txt](../../documentation/schedule/reference/#calendar_datestxt)). Además, varias agencias ([agency.txt](../../documentation/schedule/reference/#agencytxt)) pueden operar múltiples rutas. Estos archivos están vinculados entre sí con campos que tienen referencias cruzadas entre ellos. 
  
-<img class="center" width="560" height="100%" src="../../assets/create_003.png"> 
+<img class="center" width="560" height="100%" src="../../assets/create-003.png"> 
  
  Una vez que estos archivos se hayan configurado para crear un conjunto de datos GTFS básico, se pueden agregar archivos adicionales (opcionales) para habilitar otras funcionalidades o necesidades específicas entre agencias de tránsito y proveedores. Algunos ejemplos de estos archivos incluyen: 
  

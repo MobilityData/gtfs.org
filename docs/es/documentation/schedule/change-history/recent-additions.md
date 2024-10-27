@@ -22,7 +22,7 @@
  
 ## Propuestas adoptadas recientemente <img src="../../../../assets/pr-merged.svg" style="height:1em;"/> 
  
- Propuestas recientemente adoptadas que ahora son funciones de la [referencia oficial de GTFS Schedule](../../referencia). Consulte el [Historial de revisiones](/documentation/schedule/change_history/revision_history) completo para obtener más información. 
+ Propuestas recientemente adoptadas que ahora son funciones de la [referencia oficial de GTFS Schedule](../../referencia). Consulte el [Historial de revisiones](/documentation/schedule/change-history/revision_history) completo para obtener más información. 
  
 <div class="row"> 
     <div class="leftcontainer"> 

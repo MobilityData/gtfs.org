@@ -36,11 +36,11 @@
  
  La secuencia de `paradas_de_reemplazo` puede tener una longitud arbitraria. Por ejemplo, 3 paradas podrían reemplazarse por 2, 4 o 0 paradas, según lo requiera la situación. 
  
- ![](/../assets/trip_modification.png) 
+ ![](/../assets/trip-modification.png) 
  
  _Un ejemplo que muestra el efecto de una modificación en un viaje en particular. Esta modificación también se puede aplicar a varios otros viajes._ 
  
- ![](/../assets/propagated_delay.png) 
+ ![](/../assets/propagated-delay.png) 
  
  _Los retrasos de desvío propagados afectan a todas las paradas posteriores al final de una modificación. Si un viaje tiene múltiples modificaciones, los retrasos se acumulan._ 
  
@@ -54,6 +54,6 @@
  
  Los campos opcionales de [`stop_times.txt`](../../../schedule/reference/#stop_timestxt) en la especificación GTFS (CSV) están todos configurados en sus valores predeterminados. 
  
- ![](/../assets/first_stop_reference.png) 
+ ![](/../assets/first-stop-reference.png) 
  
  _Si una modificación afecta a la primera parada del viaje, esa parada también sirve como parada de referencia de la modificación._ 
