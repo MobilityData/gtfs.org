@@ -17,7 +17,7 @@ jobs:
   build-macos-14:
     runs-on: macos-14
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4.2.2
       - name: Build Swift scripts on macOS 14
         run: swift build -v
       # - name: Run tests
@@ -26,7 +26,7 @@ jobs:
   build-macos-15:
     runs-on: macos-15 # macos 15 comes with Swift 6 which has breaking changes
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4.2.2
       - name: Build Swift scripts on macOS 15
         run: swift build -v
       # - name: Run tests
@@ -35,7 +35,7 @@ jobs:
   build-ubuntu:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4.2.2
       - name: Build Swift scripts on Ubuntu
         run: swift build -v
       # - name: Run tests
