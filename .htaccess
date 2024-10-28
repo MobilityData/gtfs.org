@@ -1,6 +1,9 @@
 # Enable the rewrite engine
 RewriteEngine On
 
+# Enable case-sensitive matching
+Options +SymLinksIfOwnerMatch
+
 # Redirect rules using regex
 RedirectMatch 301 ^/reference/static/?$ /documentation/schedule/reference/
 RedirectMatch 301 ^/schedule/reference/?$ /documentation/schedule/reference/
@@ -51,6 +54,15 @@ RewriteRule ^schedule/#training-resources https://gtfs.org/resources/overview/ [
 RewriteRule ^schedule/#getting-help-community https://gtfs.org/community/get-involved/ [R=301]
 RewriteRule ^schedule/process/#guiding-principles https://gtfs.org/community/governance/gtfs-schedule-amendment-process/#guiding-principles [R=301,NE]
 RewriteRule ^schedule/process/#revision-history https://gtfs.org/documentation/schedule/change-history/revision-history/ [R=301]
+
+# Redirect any URL containing underscores to the same URL with hyphens, plus correcting the file with spaces
+RewriteCond %{THE_REQUEST} [_ ]
+RewriteRule ^([^_]*)[_ ]([^_]*)$ $1-$2 [N]
+RewriteRule ^(.*)[_ ](.*)$ $1-$2 [R=301,NC,L]
+
+RewriteCond %{THE_REQUEST} %20
+RewriteRule ^([^%]*?)%20([^%]*)$ $1-$2 [N]
+RewriteRule ^(.*?)%20(.*)$ $1-$2 [R=301,NC,L]
 
 # Match any URL trying to access the blog in anything but EN and redirect them to EN
 RewriteCond %{REQUEST_URI} ^/(?:fr|es|ja|ru|pt|ko|id|de|zh|zh-TW)/blog/
