@@ -20,7 +20,6 @@ jobs:
       matrix:
         os: [macos-14, macos-15, ubuntu-latest] # macos 15 comes with Swift 6 which has breaking changes vs Swift 5.*
       fail-fast: false
-    continue-on-error: true
 
     steps:
       - name: Checkout code
@@ -28,4 +27,16 @@ jobs:
       - name: Print Swift version
         run: swift --version
       - name: Build Swift scripts
-        run: swiftc scripts/*.swift
+        run: swiftc scripts/*.swift || exit 1
+
+  check-builds:
+    needs: build
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Check build matrix status
+        run: |
+          if [[ "${{ needs.build.result }}" == "failure" || "${{ needs.build.result }}" == "cancelled" ]]; then
+            echo "One or more builds failed"
+            exit 1
+          fi
