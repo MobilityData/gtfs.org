@@ -19,7 +19,7 @@
  
     !!! info "Hacer oficial una extensión en la especificación" 
  
-        Las extensiones pueden convertirse en propuestas activas y posteriormente [adoptarse](../../../documentation/schedule/change_history/recent_additions/) en la especificación oficial a través de [Proceso de modificación de especificaciones](../../governance/gtfs_schedule_amendment_process/). 
+        Las extensiones pueden convertirse en propuestas activas y posteriormente [adoptarse](../../../documentation/schedule/change-history/recent_additions/) en la especificación oficial a través de [Proceso de modificación de especificaciones](../../governance/gtfs_schedule_amendment_process/). 
  
     !!! note "Contribuir a esta lista" 
  
@@ -150,7 +150,7 @@
  
     !!! info "Hacer oficial una extensión en la especificación" 
  
-        Las extensiones pueden convertirse en propuestas activas y posteriormente [adoptarse](../../../documentation/realtime/change_history/recent_additions/) en la especificación oficial a través de [Proceso de modificación de especificaciones](../../governance/gtfs_realtime_amendment_process/). 
+        Las extensiones pueden convertirse en propuestas activas y posteriormente [adoptarse](../../../documentation/realtime/change-history/recent_additions/) en la especificación oficial a través de [Proceso de modificación de especificaciones](../../governance/gtfs_realtime_amendment_process/). 
  
     !!! note "Contribuir a esta lista" 
  

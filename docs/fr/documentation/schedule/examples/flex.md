@@ -9,7 +9,7 @@
  
  Les services à la demande peuvent fonctionner dans une zone spécifique, permettant aux passagers de réserver des prises en charge à n’importe quel point A de la zone et des dépôts à n’importe quel point B de la même zone. Un exemple de ceci est le service [Heartland Express Transit](https://www.co.brown.mn.us/heartland-express-transit?view=category&amp;id=56) dans le Minnesota, aux États-Unis. 
  
- <sup>[Télécharger l’exemple de données Heartland Express](../../../assets/on-demand_services_within_a_single_zone.zip)</sup> 
+ <sup>[Télécharger l’exemple de données Heartland Express](../../../assets/on-demand-services-within-a-single-zone.zip)</sup> 
  
 ### Définir les trajets 
  
@@ -116,7 +116,7 @@ t_5374947_b_77497_tn_0 | area_715 | 2 | 08:00:00 | 12:45:00 | 1 | 2 | booking_ro
  
  Certains services à la demande fonctionnent dans plusieurs zones distinctes, où les passagers peuvent réserver des prises en charge à n’importe quel endroit A dans une zone et des dépôts à n’importe quel endroit dans une autre zone. Par exemple, [Minnesota River Valley Transit](https://www.saintpetermn.gov/330/Dial-a-Ride) propose des services à la demande entre les villes de Saint Peter et Kasota : 
  
- <sup>[Télécharger l’exemple de River Valley Transit](../../../assets/on-demand_services_between_multiple_zones(r).zip)</sup> 
+ <sup>[Télécharger l’exemple de River Valley Transit](../../../assets/on-demand-services-between-multiple-zones(r).zip)</sup> 
  
 ### Définir les trajets 
  
@@ -216,7 +216,7 @@ trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end
  
  Dans cet exemple, le service [Hermann Express](https://www.newulmmn.gov/553/Hermann-Express-City-Bus-Service) de New Ulm permet aux usagers d’être récupérés uniquement à des arrêts définis et être déposés à tout moment dans une zone de déviation spécifique entre ces arrêts. 
  
- **L’exemple ci-dessous a été simplifié, téléchargez l’[exemple de jeu de données Hermann Express](../../../assets/deviated _drop-off _route.zip) pour plus de détails.** 
+ **L’exemple ci-dessous a été simplifié, téléchargez l’[exemple de jeu de données Hermann Express](../../../assets/deviated-drop-off-route.zip) pour plus de détails.** 
  
 ### Définir les trajets 
  
@@ -237,7 +237,7 @@ route_id | service_id | trip_id | share_id
  Utilisez [locations.geojson](../../reference/#locationsgeojson) pour définir des zones pour l’itinéraire dévié. En règle générale, les écarts sont limités pour maintenir le service dans les délais. Par conséquent, au fur et à mesure du déplacement du véhicule, la zone d’écart entre chaque arrêt fixe peut varier en conséquence. La zone de déviation d’itinéraire peut ressembler à l’image ci-dessous : 
  
 <div class="flex-photos"> 
-<img src="../../../../assets/deviated_route_zones.png" alt="zones d’itinéraire déviées"> 
+<img src="../../../../assets/deviated-route-zones.png" alt="zones d’itinéraire déviées"> 
 </div> 
  
 ### Définir les horaires d’arrêts 

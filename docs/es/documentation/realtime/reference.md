@@ -139,7 +139,7 @@
  
 ### _message_ TripUpdate 
  
- Actualización en tiempo real del progreso de un vehículo a lo largo de un viaje. Consulte también la discusión general sobre las [entidades de actualizaciones de viajes](../../../documentation/realtime/feed_entities/trip-updates). 
+ Actualización en tiempo real del progreso de un vehículo a lo largo de un viaje. Consulte también la discusión general sobre las [entidades de actualizaciones de viajes](../../../documentation/realtime/feed-entities/trip-updates). 
  upd 
  Dependiendo del valor de ScheduleRelationship, TripUpdate puede especificar: 
  
@@ -187,7 +187,7 @@
  
 ### _message_ StopTimeUpdate 
  
- Actualización en tiempo real de eventos de llegada y/o salida para una parada determinada de un viaje. Consulte también la discusión general sobre las actualizaciones de la hora de parada en la documentación [TripDescriptor](#message-tripdescriptor) y [entidades de actualizaciones de viaje](../../../documentation/realtime/feed_entities/trip-updates). 
+ Actualización en tiempo real de eventos de llegada y/o salida para una parada determinada de un viaje. Consulte también la discusión general sobre las actualizaciones de la hora de parada en la documentación [TripDescriptor](#message-tripdescriptor) y [entidades de actualizaciones de viaje](../../../documentation/realtime/feed-entities/trip-updates). 
  
  Se pueden proporcionar actualizaciones para eventos pasados ​​y futuros. Al productor se le permite, aunque no es obligatorio, descartar eventos pasados. 
  La actualización está vinculada a una parada específica ya sea a través de stop_sequence o stop_id, por lo que necesariamente se debe configurar uno de estos campos. Si se visita el mismo stop_id más de una vez en un viaje, entonces se debe proporcionar stop_sequence en todas las StopTimeUpdates para ese stop_id en ese viaje. 
@@ -617,7 +617,7 @@
  
 <br><br> **Precaución:**este campo aún es **experimental** y está sujeto a cambios. Es posible que se adopte formalmente en el futuro. 
  
- [Más sobre Modificaciones de viaje...](../../../documentation/realtime/feed_entities/trip-modifications) 
+ [Más sobre Modificaciones de viaje...](../../../documentation/realtime/feed-entities/trip-modifications) 
  
  **Campos** 
  
@@ -634,11 +634,11 @@
  
 <br><br> **Precaución:**este campo aún es **experimental** y está sujeto a cambios. Es posible que se adopte formalmente en el futuro. 
  
-<img src="../../../assets/trip_modification.png"> 
+<img src="../../../assets/trip-modification.png"> 
  
  _Un ejemplo que muestra el efecto de una modificación en un viaje en particular. Esta modificación también podrá aplicarse a varios otros viajes._ 
  
-<img src="../../../assets/propagated_delay.png"> 
+<img src="../../../assets/propagated-delay.png"> 
  
  _Los retrasos propagados en los desvíos afectan a todas las paradas posteriores al final de una modificación. Si un viaje tiene múltiples modificaciones, los retrasos se acumulan._ 
  
@@ -686,7 +686,7 @@
  
 <br><br> **Precaución:**este campo aún es **experimental** y está sujeto a cambios. Es posible que se adopte formalmente en el futuro. 
  
-<img src="../../../assets/first_stop_reference.png"> 
+<img src="../../../assets/first-stop-reference.png"> 
  
  _Si una modificación afecta a la primera parada del viaje, esa parada sirve también como parada de referencia de la modificación._ 
  

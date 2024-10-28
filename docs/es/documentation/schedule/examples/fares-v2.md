@@ -418,6 +418,6 @@
  En <a href="https://apple.com/maps" target="_blank">Apple Maps</a>, los pasajeros pueden ver cómo cambia el precio de su tarifa y comparar los precios de las tarifas junto a la salida programada del tren: 
  
 <div class="flex-photos"> 
- <img src="../../../../assets/TimeVariableFares_Peak.png" alt="Tarifa Zonal Pico Adulto Saliente de 20.00 USD"> 
- <img src="../../../../assets/TimeVariableFares_OffPeak.png" alt="Tarifa Zonal Saliente Adulto Fuera de Horas Pico de 15.00 USD"> 
+ <img src="../../../../assets/TimeVariableFares-Peak.png" alt="Tarifa Zonal Pico Adulto Saliente de 20.00 USD"> 
+ <img src="../../../../assets/TimeVariableFares-OffPeak.png" alt="Tarifa Zonal Saliente Adulto Fuera de Horas Pico de 15.00 USD"> 
 </div> 

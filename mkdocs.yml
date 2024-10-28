@@ -314,26 +314,26 @@ plugins:
 nav:
   - Home: index.md
   - Getting started:
-    - What is GTFS?: getting_started/what_is_GTFS.md
-    - Why use GTFS?: getting_started/why_use_GTFS.md
+    - What is GTFS?: getting-started/what-is-GTFS.md
+    - Why use GTFS?: getting-started/why-use-GTFS.md
     - How to produce GTFS?: 
-      - Create: getting_started/create.md
-      - Validate: getting_started/validate.md
-      - Publish: getting_started/publish.md
+      - Create: getting-started/create.md
+      - Validate: getting-started/validate.md
+      - Publish: getting-started/publish.md
     - What can GTFS do?:
-      - Overview: getting_started/features/overview.md
-      - Base: getting_started/features/base.md
-      - Base add-ons: getting_started/features/base_add-ons.md
-      - Accessibility: getting_started/features/accessibility.md
-      - Fares: getting_started/features/fares.md
-      - Pathways: getting_started/features/pathways.md
-      - Flexible services: getting_started/features/flexible_services.md
-    - Example GTFS feed: getting_started/example_feed.md
+      - Overview: getting-started/features/overview.md
+      - Base: getting-started/features/base.md
+      - Base add-ons: getting-started/features/base-add-ons.md
+      - Accessibility: getting-started/features/accessibility.md
+      - Fares: getting-started/features/fares.md
+      - Pathways: getting-started/features/pathways.md
+      - Flexible services: getting-started/features/flexible-services.md
+    - Example GTFS feed: getting-started/example-feed.md
   - Technical Documentation:
     - Overview: documentation/overview.md
     - Schedule:
       - Reference: documentation/schedule/reference.md
-      - Best Practices: documentation/schedule/schedule_best_practices.md
+      - Best Practices: documentation/schedule/schedule-best-practices.md
       - Data examples:
         - Attributions: documentation/schedule/examples/attributions.md
         - Continuous stops: documentation/schedule/examples/continuous-stops.md
@@ -348,17 +348,17 @@ nav:
         - Transfers: documentation/schedule/examples/transfers.md
         - Translations: documentation/schedule/examples/translations.md
       - Change history:
-        - Recent additions: documentation/schedule/change_history/recent_additions.md
-        - Full revision history: documentation/schedule/change_history/revision_history.md
+        - Recent additions: documentation/schedule/change-history/recent-additions.md
+        - Full revision history: documentation/schedule/change-history/revision-history.md
     - Realtime:
       - Reference: documentation/realtime/reference.md
-      - Best Practices: documentation/realtime/realtime_best_practices.md
+      - Best Practices: documentation/realtime/realtime-best-practices.md
       - Feed Entities: 
-          - Overview: documentation/realtime/feed_entities/overview.md
-          - Trip Updates: documentation/realtime/feed_entities/trip-updates.md
-          - Service Alerts: documentation/realtime/feed_entities/service-alerts.md
-          - Vehicle Positions: documentation/realtime/feed_entities/vehicle-positions.md
-          - Trip Modifications: documentation/realtime/feed_entities/trip-modifications.md
+          - Overview: documentation/realtime/feed-entities/overview.md
+          - Trip Updates: documentation/realtime/feed-entities/trip-updates.md
+          - Service Alerts: documentation/realtime/feed-entities/service-alerts.md
+          - Vehicle Positions: documentation/realtime/feed-entities/vehicle-positions.md
+          - Trip Modifications: documentation/realtime/feed-entities/trip-modifications.md
       - Protobuf: documentation/realtime/proto.md
       - Language Bindings:
         - Overview: documentation/realtime/language-bindings/overview.md
@@ -374,13 +374,13 @@ nav:
         - Trip updates: documentation/realtime/examples/trip-updates.md
         - Migration duplicated: documentation/realtime/examples/migration-duplicated.md
       - Change history:
-        - Recent Additions: documentation/realtime/change_history/recent_additions.md
-        - Full revision history: documentation/realtime/change_history/revision_history.md
+        - Recent Additions: documentation/realtime/change-history/recent-additions.md
+        - Full revision history: documentation/realtime/change-history/revision-history.md
   - Community:
-    - Get involved: community/get_involved.md
+    - Get involved: community/get-involved.md
     - Governance:
-      - GTFS Schedule Amendment Process: community/governance/gtfs_schedule_amendment_process.md
-      - GTFS Realtime Amendment Process: community/governance/gtfs_realtime_amendment_process.md
+      - GTFS Schedule Amendment Process: community/governance/gtfs-schedule-amendment-process.md
+      - GTFS Realtime Amendment Process: community/governance/gtfs-realtime-amendment-process.md
     - Extensions:
       - Overview: community/extensions/overview.md
       - Fares v2: community/extensions/fares-v2.md

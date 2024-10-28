@@ -9,7 +9,7 @@
  
  Los servicios que responden a la demanda pueden operar dentro de una zona específica, lo que permite a los pasajeros reservar recogidas en cualquier punto A dentro de la zona y entregas en cualquier punto B dentro de la misma zona. Un ejemplo de esto es el servicio [Heartland Express Transit](https://www.co.brown.mn.us/heartland-express-transit?view=category&amp;id=56) en Minnesota, EE. UU. 
  
- <sup>[Descargar conjunto de datos de ejemplo de Heartland Express](../../../assets/on-demand_services_within_a_single_zone.zip)</sup> 
+ <sup>[Descargar conjunto de datos de ejemplo de Heartland Express](../../../assets/on-demand-services-within-a-single-zone.zip)</sup> 
  
 ### Definir viajes 
  
@@ -117,7 +117,7 @@ t_5374947_b_77497_tn_0 | area_715 | 2 | 08:00:00 | 12:45:00 | 1 | 2 | booking_ro
  
  Algunos servicios que responden a la demanda operan en múltiples zonas distintas, donde los pasajeros pueden reservar recogidas en cualquier ubicación A dentro de un área y entregas en cualquier ubicación dentro de otra área. Por ejemplo, [Minnesota River Valley Transit](https://www.saintpetermn.gov/330/Dial-a-Ride) ofrece servicios a pedido entre las ciudades de Saint Peter y Kasota: 
  
- <sup>[Descargar ejemplo de River Valley Transit conjunto de datos](../../../assets/on-demand_services_between_multiple_zones(r).zip)</sup> 
+ <sup>[Descargar ejemplo de River Valley Transit conjunto de datos](../../../assets/on-demand-services-between-multiple-zones(r).zip)</sup> 
  
 ### Definir viajes 
  
@@ -217,7 +217,7 @@ trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end
  
  En este ejemplo, el servicio [Hermann Express](https://www.newulmmn.gov/553/Hermann-Express-City-Bus-Service) en New Ulm City permite que los usuarios sean recogidos solo en puntos fijos.paradas y ser dejado en cualquier punto dentro de un área de desviación específica entre estas paradas. 
  
- **El siguiente ejemplo se ha simplificado; descargue el [conjunto de datos de ejemplo de Hermann Express](../../../assets/deviated _drop-off _route.zip) para obtener más detalles.** 
+ **El siguiente ejemplo se ha simplificado; descargue el [conjunto de datos de ejemplo de Hermann Express](../../../assets/deviated-drop-off-route.zip) para obtener más detalles.** 
  
 ### Definir viajes 
  
@@ -238,7 +238,7 @@ trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end
  Usar [locations.geojson](../../reference/#locationsgeojson) para definir zonas para ruta desviada. Normalmente, las desviaciones se limitan para mantener el servicio según lo previsto. Por lo tanto, a medida que el vehículo avanza, el área de desviación entre cada parada fija puede variar en consecuencia. El área de desviación de ruta puede parecerse a la siguiente imagen: 
  
 <div class="flex-photos"> 
-<img src="../../../../assets/deviated_route_zones.png" alt="zonas de ruta desviadas"> 
+<img src="../../../../assets/deviated-route-zones.png" alt="zonas de ruta desviadas"> 
 </div> 
  
 ### Definir horarios de parada 
