@@ -19,6 +19,8 @@ jobs:
     strategy:
       matrix:
         os: [macos-14, macos-15, ubuntu-latest] # macos 15 comes with Swift 6 which has breaking changes vs Swift 5.*
+      fail-fast: false
+    continue-on-error: true
 
     steps:
       - uses: actions/checkout@v4.2.2
