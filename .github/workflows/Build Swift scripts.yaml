@@ -23,6 +23,9 @@ jobs:
     continue-on-error: true
 
     steps:
-      - uses: actions/checkout@v4.2.2
+      - name: Checkout code
+        uses: actions/checkout@v4.2.2
+      - name: Print Swift version
+        run: swift --version
       - name: Build Swift scripts
         run: swiftc scripts/*.swift
