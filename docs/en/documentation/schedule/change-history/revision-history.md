@@ -2,6 +2,9 @@
 
 ### Revision History
 
+#### October 2024
+* Clarification and small changes for Trip Modifications. See [discussion](https://github.com/google/transit/pull/497).
+
 #### September 2024
 * Clarify presence and use of from/to_stop_id & from/to_trip_id fields in transfers.txt. See [discussion](https://github.com/google/transit/pull/455).
 * Added validity rules for polygons in GeoJSON files. See [discussion](https://github.com/google/transit/pull/476)
