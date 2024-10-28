@@ -138,6 +138,7 @@ plugins:
   #     enabled: !ENV [OFFLINE, true]
   - external-markdown
   - privacy:
+      assets: false
       links_attr_map:
         target: _blank
   - search:
