@@ -4,7 +4,7 @@
 
 #### Octubre de 2024
 
- * Aclaraciones y pequeños cambios para las modificaciones de viaje. Consulte la [discusión](https://github.com/google/transit/pull/497).
+ * Aclaraciones y pequeños cambios para las modificaciones de viaje (Trip Modifications). Consulte la [discusión](https://github.com/google/transit/pull/497).
 
 #### Marzo 2024 
  
