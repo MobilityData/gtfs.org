@@ -18,20 +18,43 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macos-14, macos-15, ubuntu-latest] # macos 15 comes with Swift 6 which has breaking changes vs Swift 5.*
-        swift: ["5.9", "6.0", "5.9"]
+        include:
+          # macOS 14 configurations
+          - os: macos-14
+            swift: "5.9"
+            command: "xcrun --sdk macosx swiftc -import-objc-header /usr/include/Foundation/Foundation.h scripts/*.swift"
+          
+          # macOS 15 configurations
+          - os: macos-15
+            swift: "6.0"
+            command: "xcrun --sdk macosx swiftc -import-objc-header /usr/include/Foundation/Foundation.h scripts/*.swift"
+          
+          # Ubuntu configuration
+          - os: ubuntu-latest
+            swift: "5.9"
+            command: "swiftc -I/usr/include/swift -L/usr/lib/swift/linux scripts/*.swift"
       fail-fast: false
 
     steps:
-      - uses: swift-actions/setup-swift@v2.1.0
-        with:
-          swift-version: ${{ matrix.swift }}
+      - name: Install Swift dependencies (Ubuntu)
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y swift-runtime swift-compiler libsqlite3-dev
+
       - name: Checkout code
         uses: actions/checkout@v4.2.2
+
+      - name: Setup Swift
+        uses: swift-actions/setup-swift@v2.1.0
+        with:
+          swift-version: ${{ matrix.swift }}
+
       - name: Print Swift version
         run: swift --version
+
       - name: Build Swift scripts
-        run: swiftc scripts/*.swift || exit 1
+        run: ${{ matrix.command }} || exit 1
 
   check-builds:
     needs: build
