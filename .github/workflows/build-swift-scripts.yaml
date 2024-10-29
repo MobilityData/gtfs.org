@@ -41,29 +41,14 @@ jobs:
         run: |
           # Install required packages
           sudo apt-get update
-          sudo apt-get install -y \
-            binutils \
-            git \
-            gnupg2 \
-            libc6-dev \
-            libcurl4-openssl-dev \
-            libedit2 \
-            libgcc-9-dev \
-            libpython3.8 \
-            libsqlite3-0 \
-            libstdc++-9-dev \
-            libxml2-dev \
-            libz3-dev \
-            pkg-config \
-            tzdata \
-            zlib1g-dev
+          sudo apt-get install -y binutils git gnupg2 libc6-dev libcurl4-openssl-dev libedit2 libgcc-9-dev libpython3.8 libsqlite3-0 libstdc++-9-dev libxml2-dev libz3-dev pkg-config tzdata zlib1g-dev
           
           # Download and install Swift
-          SWIFT_SIGNING_KEY=A62AE125BBBFBB96A6E042EC925CC1CCED3D1561
-          wget -q -O - https://download.swift.org/swift-${matrix.swift}-release/ubuntu2204/swift-${matrix.swift}-RELEASE/swift-${matrix.swift}-RELEASE-ubuntu22.04.tar.gz.sig | gpg --verify - swift-${matrix.swift}-RELEASE-ubuntu22.04.tar.gz
-          wget https://download.swift.org/swift-${matrix.swift}-release/ubuntu2204/swift-${matrix.swift}-RELEASE/swift-${matrix.swift}-RELEASE-ubuntu22.04.tar.gz
-          tar xzf swift-${matrix.swift}-RELEASE-ubuntu22.04.tar.gz
-          sudo mv swift-${matrix.swift}-RELEASE-ubuntu22.04 /usr/share/swift
+          SWIFT_VERSION=${{ matrix.swift }}
+          wget -q -O - "https://download.swift.org/swift-${SWIFT_VERSION}-release/ubuntu2204/swift-${SWIFT_VERSION}-RELEASE/swift-${SWIFT_VERSION}-RELEASE-ubuntu22.04.tar.gz.sig" | gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys A62AE125BBBFBB96A6E042EC925CC1CCED3D1561 && gpg --verify - "swift-${SWIFT_VERSION}-RELEASE-ubuntu22.04.tar.gz" || true
+          wget "https://download.swift.org/swift-${SWIFT_VERSION}-release/ubuntu2204/swift-${SWIFT_VERSION}-RELEASE/swift-${SWIFT_VERSION}-RELEASE-ubuntu22.04.tar.gz"
+          tar xzf "swift-${SWIFT_VERSION}-RELEASE-ubuntu22.04.tar.gz"
+          sudo mv "swift-${SWIFT_VERSION}-RELEASE-ubuntu22.04" /usr/share/swift
           echo "PATH=/usr/share/swift/usr/bin:$PATH" >> $GITHUB_ENV
 
       - name: Checkout code
