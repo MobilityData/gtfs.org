@@ -484,13 +484,17 @@ The relation between this trip and the static schedule. If a trip is done in acc
 | **DELETED** | A trip that existed in the schedule but was removed that must not be shown to users. <br><br> DELETED should be used instead of CANCELED to indicate that a transit provider would like to entirely remove information about the corresponding trip from consuming applications, so the trip is not shown as cancelled to riders, e.g. a trip that is entirely being replaced by another trip. This designation becomes particularly important if several trips are cancelled and replaced with substitute service. If consumers were to show explicit information about the cancellations it would distract from the more important real-time predictions.<br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future. |
 
 ## _message_ ModifiedTripSelector
+
 When a service is affected by a trip modification, `ModifiedTripSelector` is used to select some trip. More detail in the [Trip Modification](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/trip-modifications.md#linkage-to-tripupdates) specification.
+
 **Values**
+
 | _**Field Name**_ | _**Type**_ | _**Required**_ | _**Cardinality**_ | _**Description**_ |
-| **modifications_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Required | One | The `id` of the `FeedEntity` in which the contained `TripModifications` object affects this trip.
-| **affected_trip_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Required | One | The `trip_id` from the GTFS feed that is modified by the `modifications_id`
-| **start_time** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optional | One | The initially scheduled start time of this trip instance, applied to the frequency based modified trip. Same definition as **start_time** in [TripDescriptor](#message-tripdescriptor).
-| **start_date** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optional | One |  The start date of this trip instance in YYYYMMDD format, applied to the modified trip. Same definition as **start_date** in [TripDescriptor](#message-tripdescriptor).
+|------------------|------------|----------------|-------------------|-------------------|
+| **modifications_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Required | One | The `id` of the `FeedEntity` in which the contained `TripModifications` object affects this trip.|
+| **affected_trip_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Required | One | The `trip_id` from the GTFS feed that is modified by the `modifications_id`|
+| **start_time** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optional | One | The initially scheduled start time of this trip instance, applied to the frequency based modified trip. Same definition as **start_time** in [TripDescriptor](#message-tripdescriptor).|
+| **start_date** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optional | One |  The start date of this trip instance in YYYYMMDD format, applied to the modified trip. Same definition as **start_date** in [TripDescriptor](#message-tripdescriptor).|
 
 ### _message_ VehicleDescriptor
 

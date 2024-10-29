@@ -485,13 +485,17 @@
  | **DELETED** | Un viaje que existía en el cronograma pero que fue eliminado y que no debe mostrarse a los usuarios.<br><br> ELIMINADO debe usarse en lugar de CANCELADO para indicar que un proveedor de transporte desea eliminar por completo la información sobre el viaje correspondiente de las aplicaciones consumidoras, de modo que el viaje no se muestre como cancelado a los pasajeros, por ejemplo, un viaje que está siendo reemplazado por completo por otro viaje. Esta designación adquiere particular importancia si se cancelan varios viajes y se reemplazan con un servicio sustituto. Si los consumidores mostraran información explícita sobre las cancelaciones, esto distraería la atención de las predicciones más importantes en tiempo real.<br><br> **Precaución:**este campo aún es **experimental** y está sujeto a cambios. Es posible que se adopte formalmente en el futuro. | 
  
 ## _message_ ModifiedTripSelector
+
 Cuando un servicio se ve afectado por una modificación de viaje, se utiliza `ModifiedTripSelector` para seleccionar algún viaje. Más detalles en la especificación [Trip Modification](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/trip-modifications.md#linkage-to-tripupdates).
+
 **Valores**
+
 | _**Nombre de campo**_ | _**Tipo**_ | _**Obligatorio**_ | _**Cardenalidad**_ | _**Descripción**_ |
-|**modifications_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Obligatorio | Uno | El `id` de la `FeedEntity` en la que el objeto `TripModifications` contenido afecta a este viaje. 
-|**affected_trip_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Obligatorio | Uno | El `trip_id` del feed GTFS que es modificado por el `modifications_id` 
-|**start_time**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Opcional | Uno | La hora de inicio programada inicialmente de esta instancia de viaje, aplicada al viaje modificado basado en frecuencia. La misma definición que **start_time** en [TripDescriptor](#message-tripdescriptor). 
-|**start_date**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Opcional | Uno | La date de inicio de esta instancia de viaje en formato AAAAMMDD, aplicada al viaje modificado. La misma definición que **start_date** en [TripDescriptor](#message-tripdescriptor).
+|------------------|------------|----------------|-------------------|-------------------|
+|**modifications_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Obligatorio | Uno | El `id` de la `FeedEntity` en la que el objeto `TripModifications` contenido afecta a este viaje.|
+|**affected_trip_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Obligatorio | Uno | El `trip_id` del feed GTFS que es modificado por el `modifications_id`|
+|**start_time**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Opcional | Uno | La hora de inicio programada inicialmente de esta instancia de viaje, aplicada al viaje modificado basado en frecuencia. La misma definición que **start_time** en [TripDescriptor](#message-tripdescriptor).|
+|**start_date**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Opcional | Uno | La date de inicio de esta instancia de viaje en formato AAAAMMDD, aplicada al viaje modificado. La misma definición que **start_date** en [TripDescriptor](#message-tripdescriptor).|
 
 ### _message_ VehicleDescriptor 
  
