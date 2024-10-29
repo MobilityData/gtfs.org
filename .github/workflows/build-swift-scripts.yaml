@@ -19,9 +19,13 @@ jobs:
     strategy:
       matrix:
         os: [macos-14, macos-15, ubuntu-latest] # macos 15 comes with Swift 6 which has breaking changes vs Swift 5.*
+        swift: ["5.9", "6.0", "5.9"]
       fail-fast: false
 
     steps:
+      - uses: swift-actions/setup-swift@v2.1.0
+        with:
+          swift-version: ${{ matrix.swift }}
       - name: Checkout code
         uses: actions/checkout@v4.2.2
       - name: Print Swift version
