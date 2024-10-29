@@ -57,6 +57,7 @@
         * [VehiclePosition](#message-vehicleposition) 
             * [TripDescriptor](#message-tripdescriptor) 
                 * [ScheduleRelationship](#enum-schedulerelationship_1) 
+                * [ModifiedTripSelector](#message-modifiedtripselector)
             * [VehicleDescriptor](#message-vehicledescriptor) 
                 * [WheelchairAccessible](#enum-wheelchairaccessible) 
             * [Position](#message-position) 
@@ -123,7 +124,7 @@
  
 ### _message_ FeedEntity 
  
- Une définition (ou mise à jour) d’une entité dans le flux de transit. Si l’entité n’est pas supprimée, exactement l’un des champs « trip_update », « véhicule », « alerte » et « forme » doit être renseigné. 
+ Une définition (ou une mise à jour) d’une entité dans le flux de transit. Si l’entité n’est pas supprimée, exactement l’un des champs ’trip_update’, ’vehicle’, ’alert’, ’shape’, ’stop’ ou ’trip_modification’ doit être renseigné.
  
  **Champs** 
  
@@ -135,7 +136,8 @@
  | **vehicle** | [VehiclePosition](#message-vehicleposition) | Requis sous condition | Un | Données sur la position en temps réel d’un véhicule. Au moins un des champs trip_update, véhicule, alerte ou forme doit être fourni- tous ces champs ne peuvent pas être vides. | 
  | **alert** | [Alerte](#message-alert) | Requis sous condition | Un | Données sur l’alerte en temps réel. Au moins un des champs trip_update, véhicule, alerte ou forme doit être fourni- tous ces champs ne peuvent pas être vides. | 
  | **shape** | [Forme](#message-shape) | Requis sous condition | Un | Données sur les formes ajoutées en temps réel, par exemple pour un détour. Au moins un des champs trip_update, véhicule, alerte ou forme doit être fourni- tous ces champs ne peuvent pas être vides.<br><br> **Attention :**ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
- 
+ |**stop**| [Stop](#message-stop) | Conditionnellement requis | Un | Un nouvel arrêt ajouté au flux de manière dynamique.<br><br>**Attention :**ce champ est encore**expérimental**et sujet à changement. Il pourra être formellement adopté à l’avenir. |
+ |**trip_modifications**| [TripModifications](#message-tripmodifications) | Conditionnellement requis | Un | Liste des trajets affectés par des modifications particulières, comme un détour.<br><br>**Attention :** ce champ est encore **expérimental** et sujet à changement. Il peut être formellement adopté dans le futur. |
  
 ### _message_ TripUpdate 
  
@@ -463,7 +465,8 @@
  | **start_time** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis sous condition | Un | Heure de début initialement prévue de cette instance de voyage. Lorsque le trip_id correspond à un voyage non basé sur la fréquence, ce champ doit être omis ou être égal à la valeur du flux GTFS. Lorsque le trip_id correspond à un trajet basé sur la fréquence défini dans GTFS frequencies.txt, start_time est requis et doit être spécifié pour les mises à jour du trajet et les positions des véhicules. Si le trajet correspond à l’enregistrement GTFS exact_times=1, alors start_time doit être un multiple (y compris zéro) de headway_secs après frequencies.txt start_time pour la période correspondante. Si le trajet correspond à exact_times=0, alors son heure de début peut être arbitraire et devrait initialement être le premier départ du voyage. Une fois établi, le start_time de ce trajet exact_times=0 basé sur la fréquence doit être considéré comme immuable, même si la première heure de départ change- ce changement d’heure peut plutôt être reflété dans un StopTimeUpdate. Si trip_id est omis, start_time doit être fourni. Le format et la sémantique du champ sont les mêmes que ceux de GTFS/frequencies.txt/start_time, par exemple 11:15:35 ou 25:15:35. | 
  | **start_date** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis sous condition | Un | La date de début de cette instance de voyage au format AAAAMMJJ. Pour les trajets programmés (trajets non définis dans GTFS frequencies.txt), ce champ doit être fourni pour lever l’ambiguïté des trajets qui sont si tardifs qu’ils entrent en collision avec un trajet programmé le jour suivant. Par exemple, pour un train qui part à 8h00 et à 20h00 tous les jours et qui a 12 heures de retard, il y aurait deux trajets distincts à la même heure. Ce champ peut être fourni mais n’est pas obligatoire pour les horaires dans lesquels de telles collisions sont impossibles- par exemple, un service fonctionnant selon un horaire horaire où un véhicule en retard d’une heure n’est plus considéré comme étant lié à l’horaire. Ce champ est obligatoire pour les trajets basés sur la fréquence définis dans GTFS frequencies.txt. Si trip_id est omis, start_date doit être fourni. | 
  | **schedule_relationship** | [ScheduleRelationship](#enum-schedulerelationship_1) | Optionnel | Un | La relation entre ce déplacement et l’horaire statique. Si TripDescriptor est fourni dans une alerte `EntitySelector`, le champ `schedule_relationship` est ignoré par les consommateurs lors de l’identification de l’instance de voyage correspondante. 
- 
+ |**modified_trip**| [ModifiedTripSelector](#message-modifiedtripselector) | Optionnel | Un | Lien vers toutes les modifications apportées à ce voyage (changements de forme, suppression ou ajout d’arrêts). Si ce champ est fourni, les champs `trip_id`, `route_id`, `direction_id`, `start_time`, `start_date` de `TripDescriptor` DOIVENT être laissés vides, pour éviter toute confusion chez les consommateurs qui ne recherchent pas la valeur `ModifiedTripSelector`. 
+
 ### _enum_ ScheduleRelationship 
  
  La relation entre ce trajet et l’horaire statique. Si un voyage est effectué conformément à un horaire temporaire, non reflété dans GTFS, il ne doit pas être marqué comme PLANIFIÉ, mais comme AJOUTÉ. 
@@ -479,6 +482,19 @@
  | **DUPLICATED** | Un nouveau trajet identique à un trajet programmé existant, à l’exception de la date et de l’heure de début du service. Utilisé avec `TripUpdate.TripProperties.trip_id`, `TripUpdate.TripProperties.start_date` et `TripUpdate.TripProperties.start_time` pour copier un voyage existant à partir de GTFS statique mais commencer à une date et/ou une heure de service différente. La duplication d’un voyage est autorisée si le service lié au voyage d’origine au format (CSV) GTFS (dans `calendar.txt` ou `calendar_dates.txt`) fonctionne dans les 30 prochains jours. Le voyage à dupliquer est identifié via `TripUpdate.TripDescriptor.trip_id`.<br><br> Cette énumération ne modifie pas le voyage existant référencé par `TripUpdate.TripDescriptor.trip_id` - si un producteur souhaite annuler le voyage d’origine, il doit publier un `TripUpdate` séparé avec la valeur CANCELED. Les trajets définis dans GTFS `frequencies.txt` avec `exact_times` vide ou égal à `0` ne peuvent pas être dupliqués. Le `VehiclePosition.TripDescriptor.trip_id` pour le nouveau voyage doit contenir la valeur correspondante de `TripUpdate.TripProperties.trip_id` et `VehiclePosition.TripDescriptor.ScheduleRelationship` doit également être défini sur `DUPLICATED`.<br><br> *Les producteurs et consommateurs existants qui utilisaient l’énumération ADDED pour représenter les voyages en double doivent suivre le [guide de migration](../../realtime/examples//migration-duplicated) pour passer à l’énumération DUPLICATED.* | 
  | **DELETED** | Un trajet qui existait dans le planning mais qui a été supprimé et qui ne doit pas être montré aux utilisateurs.<br><br> DELETED doit être utilisé au lieu de CANCELED pour indiquer qu’un fournisseur de transport souhaite supprimer entièrement les informations sur le trajet correspondant des applications consommatrices, afin que le trajet ne soit pas affiché comme annulé aux usagers, par exemple un trajet qui est entièrement remplacé par un autre trajet. Cette désignation devient particulièrement importante si plusieurs voyages sont annulés et remplacés par un service de substitution. Si les consommateurs devaient afficher des informations explicites sur les annulations, cela les détournerait des prévisions en temps réel les plus importantes.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
  
+## _message_ ModifiedTripSelector
+
+Lorsqu’un service est affecté par une modification de trajet, `ModifiedTripSelector` est utilisé pour sélectionner un trajet. Plus de détails dans la spécification [Trip Modification](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/trip-modifications.md#linkage-to-tripupdates).
+
+**Valeurs**
+
+| _**Nom de champ**_ | _**Type**_ | _**Requis**_ | _**Cardinalité**_ | _**Description**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+|**modifications_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis | Un | L’ `id` de l’ `FeedEntity` dans laquelle l’objet `TripModifications` contenu affecte ce voyage.|
+|**affected_trip_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis | Un | Le `trip_id` du flux GTFS modifié par le `modifications_id`|
+|**start_time**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | L’heure de début initialement prévue de cette instance de voyage, appliquée au voyage modifié qui est basé sur la fréquence. Même définition que **start_time** dans [TripDescriptor](#message-tripdescriptor).|
+|**start_date**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Date de début de cette instance de voyage au format AAAAMMJJ, appliquée au voyage modifié. Même définition que **start_date** dans [TripDescriptor](#message-tripdescriptor).|
+
 ### _message_ VehicleDescriptor 
  
  Informations d’identification du véhicule effectuant le trajet. 

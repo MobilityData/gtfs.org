@@ -2,6 +2,10 @@
 
 ### Revision History
 
+#### October 2024
+
+* Clarification and small changes for Trip Modifications. See [discussion](https://github.com/google/transit/pull/497).
+
 #### March 2024
 
 * Adopted Trip-Modifications. See [discussion](https://github.com/google/transit/pull/403).

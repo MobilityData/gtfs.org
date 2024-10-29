@@ -57,6 +57,7 @@
         *   [VehiclePosition](#message-vehicleposition)
             *   [TripDescriptor](#message-tripdescriptor)
                 *   [ScheduleRelationship](#enum-schedulerelationship_1)
+                *   [ModifiedTripSelector](#message-modifiedtripselector)
             *   [VehicleDescriptor](#message-vehicledescriptor)
                 *   [WheelchairAccessible](#enum-wheelchairaccessible)
             *   [Position](#message-position)
@@ -123,7 +124,7 @@
  
 ### _message_ FeedEntity 
  
- Una definición (o actualización) de una entidad en el feed de tránsito. Si la entidad no se elimina, se debe completar exactamente uno de los campos ’trip_update’, ’vehicle’, ’alert’ y ’shape’. 
+ Una definición (o actualización) de una entidad en el feed de tránsito. Si no se está eliminando la entidad, se debe completar exactamente uno de los campos ’trip_update’, ’vehicle’, ’alert’, ’shape’, ’stop’ o ’trip_modification’.
  
  **Campos** 
  
@@ -135,6 +136,8 @@
  | **vehicle** | [VehiclePosition](#message-vehicleposition) | Requerido condicionalmente | Uno | Datos sobre la posición en tiempo real de un vehículo. Se debe proporcionar al menos uno de los campos trip_update, vehículo, alerta o forma; todos estos campos no pueden estar vacíos. | 
  | **alert** | [Alert](#message-alert) | Requerido condicionalmente | Uno | Datos sobre la alerta en tiempo real. Se debe proporcionar al menos uno de los campos trip_update, vehículo, alerta o forma; todos estos campos no pueden estar vacíos. | 
  | **shape** | [Shape](#message-shape) | Requerido condicionalmente | Uno | Datos sobre las formas agregadas en tiempo real, como por ejemplo un desvío. Se debe proporcionar al menos uno de los campos trip_update, vehículo, alerta o forma; todos estos campos no pueden estar vacíos.<br><br> **Precaución:**este campo aún es **experimental** y está sujeto a cambios. Es posible que se adopte formalmente en el futuro. | 
+ |**stop**| [Stop](#message-stop) | Condicionalmente requerido | Uno | Una nueva parada agregada al feed dinámicamente.<br><br>**Precaución:**este campo aún es**experimental**y está sujeto a cambios. Es posible que se adopte formalmente en el futuro. |
+ |**trip_modifications**| [TripModifications](#message-tripmodifications) | Obligatorio condicionalmente | Uno | Lista de viajes afectados por una modificación en particular, como un desvío.<br><br>**Precaución:**este campo aún es**experimental**y está sujeto a cambios. Puede adoptarse formalmente en el futuro. |
  
  
 ### _message_ TripUpdate 
@@ -463,6 +466,8 @@
  | **start_time** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requerido condicionalmente | Uno | La hora de inicio inicialmente programada de esta instancia de viaje. Cuando trip_id corresponde a un viaje no basado en frecuencia, este campo debe omitirse o ser igual al valor en el feed GTFS. Cuando trip_id corresponde a un viaje basado en frecuencia definido en GTFS frequencies.txt, start_time es obligatorio y debe especificarse para las actualizaciones de viaje y las posiciones de los vehículos. Si el viaje corresponde a exactitud_times=1 registro GTFS, entonces start_time debe ser un múltiplo (incluido cero) de headway_secs posterior a frequencies.txt start_time para el período de tiempo correspondiente. Si el viaje corresponde a horas_exactas=0, entonces su hora_inicio puede ser arbitraria y se espera inicialmente que sea la primera salida del viaje. Una vez establecida, la hora de inicio de este viaje exacto_times=0 basado en frecuencia debe considerarse inmutable, incluso si cambia la primera hora de salida; ese cambio de hora puede reflejarse en un StopTimeUpdate. Si se omite trip_id, se debe proporcionar start_time. El formato y la semántica del campo son los mismos que los de GTFS/frequencies.txt/hora_inicio, por ejemplo, 11:15:35 o 25:15:35. | 
  | **start_date** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requerido condicionalmente | Uno | La date de inicio de esta instancia de viaje en formato AAAAMMDD. Para viajes programados (viajes no definidos en frequencies.txt GTFS.txt), se debe proporcionar este campo para eliminar la ambigüedad de los viajes que llegan tan tarde como para coincidir con un viaje programado para el día siguiente. Por ejemplo, para un tren que sale a las 8:00 y a las 20:00 todos los días y tiene un retraso de 12 horas, habría dos viajes distintos al mismo tiempo. Este campo se puede proporcionar, pero no es obligatorio, para horarios en los que tales colisiones son imposibles; por ejemplo, un servicio que se ejecuta según un horario horario donde un vehículo que llega una hora tarde ya no se considera relacionado con el horario. Este campo es obligatorio para viajes basados ​​en frecuencia definidos en frequencies.txt GTFS.txt. Si se omite trip_id, se debe proporcionar start_date. | 
  | **schedule_relationship** | [ScheduleRelationship](#enum-schedulerelationship_1) | Opcional | Uno | La relación entre este viaje y el horario estático. Si TripDescriptor se proporciona en una alerta `EntitySelector`, los consumidores ignoran el campo `schedule_relationship` al identificar la instancia de viaje coincidente. 
+ |**modified_trip**| [ModifiedTripSelector](#message-modifiedtripselector) | Opcional | Uno | Enlace a cualquier modificación realizada a este viaje (cambios de forma, eliminación o adición de paradas). Si se proporciona este campo, los campos `trip_id`, `route_id`, `direction_id`, `start_time`, `start_date` del `TripDescriptor` DEBE dejarse vacíos, para evitar confusiones por parte de los consumidores que no están buscando el valor `ModifiedTripSelector`.
+
  
 ### _enum_ ScheduleRelationship 
  
@@ -479,6 +484,19 @@
  | **DUPLICATED** | Un nuevo viaje que es igual a un viaje programado existente excepto por la date y hora de inicio del servicio. Se utiliza con `TripUpdate.TripProperties.trip_id`, `TripUpdate.TripProperties.start_date` y `TripUpdate.TripProperties.start_time` para copiar un viaje existente desde GTFS estático pero comenzar en una date y/u hora de servicio diferente. Se permite duplicar un viaje si el servicio relacionado con el viaje original en (CSV) GTFS (en `calendar.txt` o `calendar_dates.txt`) está operando dentro de los próximos 30 días. El viaje a duplicar se identifica mediante `TripUpdate.TripDescriptor.trip_id`.<br><br> Esta enumeración no modifica el viaje existente al que hace referencia `TripUpdate.TripDescriptor.trip_id` ; si un productor desea cancelar el viaje original, debe publicar un `TripUpdate` separado con el valor CANCELADO. Los Viajes definidos en GTFS `frequencies.txt` con `exact_times` que esté vacío o igual a `0` no se pueden duplicar. El `VehiclePosition.TripDescriptor.trip_id` para el nuevo viaje debe contener el valor coincidente de `TripUpdate.TripProperties.trip_id` y `VehiclePosition.TripDescriptor.ScheduleRelationship` también debe estar configurado en `DUPLICATED`.<br><br> *Los productores y consumidores existentes que utilizaban la enumeración AGREGADA para representar viajes duplicados deben seguir la [guía de migración](../../realtime/examples/migration-duplicated) para realizar la transición a la enumeración DUPLICADA.* | 
  | **DELETED** | Un viaje que existía en el cronograma pero que fue eliminado y que no debe mostrarse a los usuarios.<br><br> ELIMINADO debe usarse en lugar de CANCELADO para indicar que un proveedor de transporte desea eliminar por completo la información sobre el viaje correspondiente de las aplicaciones consumidoras, de modo que el viaje no se muestre como cancelado a los pasajeros, por ejemplo, un viaje que está siendo reemplazado por completo por otro viaje. Esta designación adquiere particular importancia si se cancelan varios viajes y se reemplazan con un servicio sustituto. Si los consumidores mostraran información explícita sobre las cancelaciones, esto distraería la atención de las predicciones más importantes en tiempo real.<br><br> **Precaución:**este campo aún es **experimental** y está sujeto a cambios. Es posible que se adopte formalmente en el futuro. | 
  
+## _message_ ModifiedTripSelector
+
+Cuando un servicio se ve afectado por una modificación de viaje, se utiliza `ModifiedTripSelector` para seleccionar algún viaje. Más detalles en la especificación [Trip Modification](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/trip-modifications.md#linkage-to-tripupdates).
+
+**Valores**
+
+| _**Nombre de campo**_ | _**Tipo**_ | _**Obligatorio**_ | _**Cardenalidad**_ | _**Descripción**_ |
+|------------------|------------|----------------|-------------------|-------------------|
+|**modifications_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Obligatorio | Uno | El `id` de la `FeedEntity` en la que el objeto `TripModifications` contenido afecta a este viaje.|
+|**affected_trip_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Obligatorio | Uno | El `trip_id` del feed GTFS que es modificado por el `modifications_id`|
+|**start_time**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Opcional | Uno | La hora de inicio programada inicialmente de esta instancia de viaje, aplicada al viaje modificado basado en frecuencia. La misma definición que **start_time** en [TripDescriptor](#message-tripdescriptor).|
+|**start_date**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Opcional | Uno | La date de inicio de esta instancia de viaje en formato AAAAMMDD, aplicada al viaje modificado. La misma definición que **start_date** en [TripDescriptor](#message-tripdescriptor).|
+
 ### _message_ VehicleDescriptor 
  
  Información de identificación del vehículo que realiza el viaje. 

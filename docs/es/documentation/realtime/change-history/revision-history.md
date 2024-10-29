@@ -2,6 +2,10 @@
 
 ## Historial de revisiones
 
+#### Octubre de 2024
+
+ * Aclaraciones y pequeños cambios para las modificaciones de viaje (Trip Modifications). Consulte la [discusión](https://github.com/google/transit/pull/497).
+
 #### Marzo 2024 
  
  * Modificaciones de viaje adoptadas. Consulte la [discusión](https://github.com/google/transit/pull/403). 
