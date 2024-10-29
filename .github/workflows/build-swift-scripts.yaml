@@ -22,11 +22,11 @@ jobs:
           # macOS 14 configuration
           - os: macos-14
             swift: "5.9"
-            command: "xcrun --sdk macosx swiftc -import-objc-header /usr/include/Foundation/Foundation.h scripts/*.swift"
+            command: "xcrun --sdk macosx swiftc scripts/*.swift"
           
           # macOS 15 configuration
           - os: macos-15
-            command: "xcrun --sdk macosx swiftc -import-objc-header /usr/include/Foundation/Foundation.h scripts/*.swift"
+            command: "xcrun --sdk macosx swiftc scripts/*.swift"
       fail-fast: false
 
     steps:
