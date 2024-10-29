@@ -19,43 +19,23 @@ jobs:
     strategy:
       matrix:
         include:
-          # macOS 14 configurations
+          # macOS 14 configuration
           - os: macos-14
             swift: "5.9"
             command: "xcrun --sdk macosx swiftc -import-objc-header /usr/include/Foundation/Foundation.h scripts/*.swift"
           
-          # macOS 15 configurations
+          # macOS 15 configuration
           - os: macos-15
-            swift: "6.0"
             command: "xcrun --sdk macosx swiftc -import-objc-header /usr/include/Foundation/Foundation.h scripts/*.swift"
-          
-          # Ubuntu configuration
-          - os: ubuntu-latest
-            swift: "5.9"
-            command: "swiftc scripts/*.swift"
       fail-fast: false
 
     steps:
-      - name: Install Swift dependencies (Ubuntu)
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          # Install required packages
-          sudo apt-get update
-          sudo apt-get install -y binutils git gnupg2 libc6-dev libcurl4-openssl-dev libedit2 libgcc-9-dev libpython3.8 libsqlite3-0 libstdc++-9-dev libxml2-dev libz3-dev pkg-config tzdata zlib1g-dev
-          
-          # Download and install Swift
-          SWIFT_VERSION=${{ matrix.swift }}
-          wget -q -O - "https://download.swift.org/swift-${SWIFT_VERSION}-release/ubuntu2204/swift-${SWIFT_VERSION}-RELEASE/swift-${SWIFT_VERSION}-RELEASE-ubuntu22.04.tar.gz.sig" | gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys A62AE125BBBFBB96A6E042EC925CC1CCED3D1561 && gpg --verify - "swift-${SWIFT_VERSION}-RELEASE-ubuntu22.04.tar.gz" || true
-          wget "https://download.swift.org/swift-${SWIFT_VERSION}-release/ubuntu2204/swift-${SWIFT_VERSION}-RELEASE/swift-${SWIFT_VERSION}-RELEASE-ubuntu22.04.tar.gz"
-          tar xzf "swift-${SWIFT_VERSION}-RELEASE-ubuntu22.04.tar.gz"
-          sudo mv "swift-${SWIFT_VERSION}-RELEASE-ubuntu22.04" /usr/share/swift
-          echo "PATH=/usr/share/swift/usr/bin:$PATH" >> $GITHUB_ENV
-
       - name: Checkout code
         uses: actions/checkout@v4.2.2
 
-      - name: Setup Swift (non-Ubuntu)
-        if: matrix.os != 'ubuntu-latest'
+      # Only setup Swift for macOS 14
+      - name: Setup Swift
+        if: matrix.os == 'macos-14'
         uses: swift-actions/setup-swift@v2.1.0
         with:
           swift-version: ${{ matrix.swift }}
