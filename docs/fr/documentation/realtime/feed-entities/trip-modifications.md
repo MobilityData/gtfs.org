@@ -22,8 +22,8 @@
 ## Lien vers TripUpdates 
  
  * Une TripUpdate DEVRAIT être fournie en utilisant un `ModifiedTripSelector` à l’intérieur du `TripDescriptor` de TripUpdate. 
-     * Lorsque TripUpdate fait référence au voyage de remplacement, le application réutilisatrice doit se comporter comme si le GTFS statique aurait été modifié avec les TripModifications (par exemple `arrival_time`, `departure_time`, `stop_sequence`, `stop_id` sur les arrêts de remplacement). 
-    * Lorsque vous fournissez un `ModifiedTripSelector`, les autres champs du `TripDescriptor` DOIT être laissés vides, pour éviter toute confusion chez les consommateurs qui ne recherchent pas la valeur `ModifiedTripSelector`. 
+    * Lorsque TripUpdate fait référence au voyage de remplacement, le application réutilisatrice doit se comporter comme si le GTFS statique aurait été modifié avec les TripModifications (par exemple `arrival_time`, `departure_time`, `stop_sequence`, `stop_id` sur les arrêts de remplacement). 
+    * Lors de la fourniture d’un `ModifiedTripSelector`, les champs `trip_id`, `route_id`, `direction_id`, `start_time`, `start_date` du `TripDescriptor` DOIT être laissés vides, pour éviter toute confusion chez les consommateurs qui ne recherchent pas la valeur `ModifiedTripSelector`. 
     * Les flux TripUpdate fournissant des mises à jour avec `ModifiedTripSelector` DEVRAIT également inclure un TripUpdate ciblant les clients qui ne prennent pas en charge TripModifications. En d’autres termes, il devrait y avoir deux TripUpdates : une pour les clients avec des voyages modifiés (avec `TripModifications`) et une pour les clients avec le GTFS d’origine non modifié (sans `TripModifications`). 
     * Fournir un TripUpdate avec un `ModifiedTripSelector` est le seul moyen de créer des prédictions aux arrêts de remplacement. 
  * Si aucun TripUpdate de ce type n’est trouvé, les TripUpdates pour le `trip_id` d’origine s’appliqueront au voyage modifié. 
