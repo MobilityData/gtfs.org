@@ -31,6 +31,9 @@ RedirectMatch 301 ^/realtime/process/?$ /community/governance/gtfs-realtime-amen
 RedirectMatch 301 ^/resources/community/?$ /community/get-involved/
 RedirectMatch 301 ^/extensions/([^/]+)/?$ /community/extensions/$1/
 RedirectMatch 301 ^/extensions/?$ /community/extensions/overview/
+RedirectMatch 301 ^/blog/redirections-only/home/?$ /
+RedirectMatch 301 ^/home/?$ /
+RedirectMatch 301 ^/blog/redirections-only/(.*)$ /$1
 
 # Language bindings redirects
 RewriteRule ^realtime/language-bindings/?$ /documentation/realtime/language-bindings/overview/ [L,R=301]
