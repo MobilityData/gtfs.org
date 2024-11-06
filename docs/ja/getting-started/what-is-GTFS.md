@@ -11,7 +11,7 @@ GTFS とも呼ばれるGeneral Transit Feed Specification は、公共交通事�
 
 これにより、公共交通事業者は、さまざまなソフトウェア アプリケーション (最も一般的なのは便計画者)で使用できる形式で交通データを公開できます。つまり、ユーザーはスマートフォンなどのデバイスを使用して、公共交通事業者のサービスにアクセスするための移動情報を簡単に入手できます。
 
-<img class="center" width="560" height="100%" src="../../../assets/what_is_gtfs_001.png"> 
+<img class="center" width="560" height="100%" src="../../../assets/what-is-gtfs-001.png"> 
 
 今日、GTFS は世界中の何千もの公共交通事業者にとって頼りになる [オープン スタンダード](https://www.interoperablemobility.org/definitions/#open_standard) です。一部の事業者は独自にこのデータを作成しますが、他の事業者はベンダーにデータの作成と管理を委託しています。
 
@@ -19,7 +19,7 @@ GTFS とも呼ばれるGeneral Transit Feed Specification は、公共交通事�
 
 GTFS は、[GTFS schedule](../../documentation/schedule/reference) と [GTFS realtime](../../documentation/realtime/reference) という 2 つの主要部分で構成されています。
 
-<img class="center" width="560" height="100%" src="../../../assets/what_is_gtfs_002.png"> 
+<img class="center" width="560" height="100%" src="../../../assets/what-is-gtfs-002.png"> 
 
 GTFS schedule には、ルート・路線系統、スケジュール、運賃、地理的な交通事業者の詳細など、さまざまな機能に関する情報が含まれており、シンプルなTextファイル [^1] で提供されます。このわかりやすい形式により、複雑なソフトウェアや独自のソフトウェアに頼ることなく、簡単に作成および保守できます。
 

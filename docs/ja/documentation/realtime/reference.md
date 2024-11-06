@@ -139,7 +139,7 @@ GTFS リアルタイム v2.0 以降では、*必須* 列は、交通事業者デ
 
 ### _message_ TripUpdate 
 
-便中の車両の進行状況に関するリアルタイム更新。[便更新エンティティ](../../../documentation/realtime/feed_entities/trip-updates) の一般的な説明も参照してください。
+便中の車両の進行状況に関するリアルタイム更新。[便更新エンティティ](../../../documentation/realtime/feed-entities/trip-updates) の一般的な説明も参照してください。
 
 ScheduleRelationship の値に応じて、TripUpdate では以下を指定できます。
 
@@ -187,7 +187,7 @@ ScheduleRelationship の値に応じて、TripUpdate では以下を指定でき
 
 ### _message_ StopTimeUpdate 
 
-便中の特定の停留所の到着イベントや出発イベントのリアルタイム更新。[TripDescriptor](#message-tripdescriptor) および [便更新エンティティ](../../../documentation/realtime/feed_entities/trip-updates) ドキュメントの停車時間更新に関する一般的な説明も参照してください。
+便中の特定の停留所の到着イベントや出発イベントのリアルタイム更新。[TripDescriptor](#message-tripdescriptor) および [便更新エンティティ](../../../documentation/realtime/feed-entities/trip-updates) ドキュメントの停車時間更新に関する一般的な説明も参照してください。
 
 過去と未来の両方のイベントの更新を提供できます。プロデューサーは過去のイベントを削除できますが、必須ではありません。
 更新はstop_sequenceまたは stop_id のいずれかを介して特定の停留所にリンクされるため、これらのフィールドのいずれかが必ず設定されているしなければならないます。1つの旅程で同じ stop_id を複数回訪れる場合は、その旅程のその stop_id のすべての StopTimeUpdates でstop_sequence を指定するするべきである。
@@ -613,7 +613,7 @@ Textのスニペットまたは URL の言語別バージョンを含む国際�
 
 **注意:** このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよいがあります。
  
-[便の変更についての詳細...](../../../documentation/realtime/feed_entities/trip-modifications)
+[便の変更についての詳細...](../../../documentation/realtime/feed-entities/trip-modifications)
 
 **フィールド**
 
@@ -630,11 +630,11 @@ Textのスニペットまたは URL の言語別バージョンを含む国際�
 
 **注意:** このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよいがあります。
 
-<img src="../../../assets/trip_modification.png"> 
+<img src="../../../assets/trip-modification.png"> 
 
 特定の便に対するModificationの効果を示す例。このModificationは、他のいくつかの便にも適用されるしてもよい。_
 
-<img src="../../../assets/propagated_delay.png"> 
+<img src="../../../assets/propagated-delay.png"> 
 
 伝播された迂回遅延は、Modificationの終了後にすべての停留所等に影響します。便に複数の変更がある場合、遅延は累積されます。
 
@@ -681,7 +681,7 @@ Textのスニペットまたは URL の言語別バージョンを含む国際�
 
 **注意:** このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよいがあります。
 
-<img src="../../../assets/first_stop_reference.png"> 
+<img src="../../../assets/first-stop-reference.png"> 
 
 Modificationが旅程の最初の停留所に影響する場合、その停留所はModificationの参照停留所としても機能します。
 

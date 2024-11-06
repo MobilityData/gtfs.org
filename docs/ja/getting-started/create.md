@@ -3,15 +3,15 @@
 ## GTFS フィードの概要
 すべての GTFS フィードは、GTFS リファレンス形式のデータセットから始まります。これは、 .txtファイル拡張子で保存された一連の CSV ファイルです[^1]。最も基本的な実装では、GTFS データセットは通常、7 つのベースファイルから始まり、安定したパブリック URL でホストされる .zip ファイルにまとめられます。これが GTFS フィードです。
 
-<img class="center" width="560" height="100%" src="../../../assets/create_001.png"> 
+<img class="center" width="560" height="100%" src="../../../assets/create-001.png"> 
 
 各ファイルは、複数の情報フィールドを持つ複数のレコード（データ行）のリストで構成されています。たとえば、[routes.txt](../../documentation/schedule/reference/#routestxt) にリストされている各行は公共交通事業者のルートを表し、そのフィールドはルートの名前、説明、運行事業者など、ルートの複数の要素を記述します。
 
-<img class="center" width="560" height="100%" src="../../../assets/create_002.png"> 
+<img class="center" width="560" height="100%" src="../../../assets/create-002.png"> 
 
 GTFS データセットのベースファイルは、次のように記述できます。GTFSGTFS scheduleデータセットには 1 つ以上のルート・路線系統([routes.txt](../../documentation/schedule/reference/#routestxt)) が含まれ、各ルートには 1 つ以上の便([trips.txt](../../documentation/schedule/reference/#tripstxt)) が含まれ、各便は指定された時間 ([stops.txt](../../documentation/schedule/reference/#stop_timestxt)) に一連の停留所等([stop_times.txt](../../documentation/schedule/reference/#stopstxt)) を訪問します。便と停車時刻には時刻情報のみが含まれます。カレンダーは、特定の便が実行される日を決定するために使用されます ([calendar.txt](../../documentation/schedule/reference/#calendartxt) および [calendar_dates.txt](../../documentation/schedule/reference/#calendar_datestxt))。さらに、複数の事業者 ([agency.txt](../../documentation/schedule/reference/#agencytxt)) が複数のルート・路線系統を運行できます。これらのファイルは、相互参照されるフィールドによって互いにリンクされています。
 
-<img class="center" width="560" height="100%" src="../../../assets/create_003.png"> 
+<img class="center" width="560" height="100%" src="../../../assets/create-003.png"> 
 
 これらのファイルを設定し、基本的な GTFS データセットを作成したら、その他の機能や交通事業者とベンダー間の特定のニーズに対応するために、追加の (任意) ファイルを追加できます。これらのファイルの例としては、次のようなものがあります。
 
