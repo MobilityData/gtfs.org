@@ -292,7 +292,7 @@ Congestion level that is affecting this vehicle.
 | **CONGESTION** |
 | **SEVERE_CONGESTION** |
 
-### _enum OccupancyStatus_
+### _enum_ OccupancyStatus
 
 The state of passenger occupancy for the vehicle or carriage.
 
