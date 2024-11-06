@@ -24,7 +24,7 @@
 
 各 [StopTimeUpdate](../../reference/#message-stoptimeupdate) は停留所にリンクされています。通常、これは GTFS stop_sequence または GTFS stop_id を使用して行うことができます。ただし、GTFS trip_id のない便の更新を提供する場合は、stop_sequence に値がないため、stop_id を指定する必要があります。stop_id は GTFS の stop_id を参照する必要があります。便中に同じ stop_id を複数回訪問する場合は、その便のその stop_id のすべての StopTimeUpdates で stop_sequence を指定する必要があります。
 
-更新では、[StopTimeEvent](../../reference/#message-stoptimeevent) を使用して、[StopTimeUpdates](../../reference/#message-stoptimeupdate) の停留所での **到着** および/または **出発** の正確なタイミングを提供できます。これには絶対的な**時間**または**遅延**（つまり、予定時刻からの秒単位のオフセット）のいずれかを含める必要があります。遅延は、運行更新が定期運行の GTFS 運行を参照する場合にのみ使用できます。頻度ベースの運行ではありません。この場合、時間は予定時刻 + 遅延に等しくする必要があります。[StopTimeEvent](../../reference/#message-stoptimeevent) とともに予測の**不確実性** を指定することもできます。これについては、ページの下の [不確実性](#uncertainty) セクションで詳しく説明します。
+更新では、[StopTimeEvent](../../reference/#message-stoptimeevent) を使用して、[StopTimeUpdates](../../reference/#message-stoptimeupdate) の停留所での **到着** および/または **出発** の正確なタイミングを提供できます。これには絶対的な**時間**または**遅延**（つまり、予定時刻からの秒単位のオフセット）のいずれかを含める必要があります。遅延は、運行更新が定期運行の GTFS 運行を参照する場合にのみ使用できます。頻度ベースの運行ではありません。この場合、時間は予定時刻 + 遅延に等しくする必要があります。[StopTimeEvent](../../reference/#message-stoptimeevent) とともに予測の**不確実性** を指定することもできます。これについては、ページの下の [不確実性](#_3) セクションで詳しく説明します。
 
 各 [StopTimeUpdate](../../reference/#message-stoptimeupdate) のデフォルトのスケジュール関係は**スケジュール** です。（これは、運行のスケジュール関係とは異なることに注意してください）。停留所点で停車しない場合はこれを**スキップ** に変更できます。運行の一部にリアルタイム データしかない場合は**データなし** に変更できます。
 
