@@ -421,6 +421,6 @@ Clean Air Express フィードには、cEMV (非接触型 Europay、Mastercard�
 <a href="https://apple.com/maps" target="_blank">Apple マップ</a> では、乗客は料金がどのように変化するかを確認し、列車の予定出発時刻の横にある料金を比較できます。
 
 <div class="flex-photos">
-    <img src="../../../../assets/TimeVariableFares_Peak.png" alt="Outbound Adult Peak Zonal Fare of 20.00 USD">
-    <img src="../../../../assets/TimeVariableFares_OffPeak.png" alt="Outbound Adult Off Peak Zonal Fare of 15.00 USD">
+    <img src="../../../../assets/TimeVariableFares-Peak.png" alt="Outbound Adult Peak Zonal Fare of 20.00 USD">
+    <img src="../../../../assets/TimeVariableFares-OffPeak.png" alt="Outbound Adult Off Peak Zonal Fare of 15.00 USD">
 </div>

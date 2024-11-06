@@ -55,7 +55,7 @@
 | `vehicle` | [メッセージ VehicleDescriptor](#vehicledescriptor) を参照してください。 |
 | | `VehiclePosition` フィードと `TripUpdate` フィードが別々に提供される場合、[TripDescriptor](#tripdescriptor) と [VehicleDescriptor](#vehicledescriptor) ID 値のペアリングは 2 つのフィード間で一致する必要があります。<br><br>たとえば、`VehiclePosition` エンティティに `vehicle_id:A` と `trip_id:4` がある場合、対応する `TripUpdate` エンティティにも `vehicle_id:A` と `trip_id:4` が必要です。`TripUpdate` エンティティに `trip_id:4` があり、`vehicle_id` が 4 以外の場合、これはエラーです。|
 | `stop_time_update` | 特定の `trip_id` の `stop_time_updates` は、`stop_sequence` の昇順に厳密に順序付けする必要があり、`stop_sequence` を繰り返すことはできません。|
-| |便の進行中は、すべての `TripUpdates` に、将来の到着または出発の予測時刻を含む `stop_time_update` が少なくとも 1 つ含まれている必要があります。[GTFS Realtime 仕様](../feed_entities/trip-updates/#stoptimeupdate) では、特定の便で予定到着時刻が将来の停留所を参照している場合 (つまり、車両が予定より早く停留所を通過している場合)、プロデューサーは過去の `StopTimeUpdate` を削除してはならないと規定されています。そうしないと、この停留所の更新がないと判断されます。|
+| |便の進行中は、すべての `TripUpdates` に、将来の到着または出発の予測時刻を含む `stop_time_update` が少なくとも 1 つ含まれている必要があります。[GTFS Realtime 仕様](../feed-entities/trip-updates/#stoptimeupdate) では、特定の便で予定到着時刻が将来の停留所を参照している場合 (つまり、車両が予定より早く停留所を通過している場合)、プロデューサーは過去の `StopTimeUpdate` を削除してはならないと規定されています。そうしないと、この停留所の更新がないと判断されます。|
 | `timestamp` | この便の予測が更新された時刻を反映する必要があります。|
 | `delay` | `TripUpdate.delay` はスケジュールの偏差、つまり車両がスケジュールよりどれだけ進んでいるか/遅れているかの過去の観測値を表す必要があります。将来の停留所の予測は、`StopTimeEvent.delay` または `StopTimeEvent.time` を通じて提供される必要があります。|
 
