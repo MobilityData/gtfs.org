@@ -28,6 +28,6 @@ GTFS realtimeは、公共交通事業者が現在の到着時刻と出発時刻�
 - サービス アラート - 停留所の移動、駅、ルート、またはネットワーク全体に影響を及ぼす予期しないイベント
 - 車両の位置 - 場所や混雑レベルなどの車両に関する情報
 
-詳細については、[フィード エンティティ](../realtime/feed_entities/overview) セクションをご覧ください。
+詳細については、[フィード エンティティ](../realtime/feed-entities/overview) セクションをご覧ください。
 
 GTFS realtimeは、使いやすさを重視して設計されています。実装、GTFS の相互運用性、乗客情報への重点が重視されています。これは、[初期の Live Transit Updates](https://developers.google.com/transit/google-transit#LiveTransitUpdates) パートナー事業者、多数の交通事業者開発者、および Google のパートナーシップを通じて実現しました。仕様は [Apache 2.0 ライセンス](http://www.apache.org/licenses/LICENSE-2.0.html) に基づいて公開されていますGTFS realtimeデータ交換形式は [プロトコル バッファ](https://developers.google.com/protocol-buffers/) に基づいています。これは、構造化データをシリアル化する言語およびプラットフォームに依存しないメカニズムです (XML のようなものですが、より小さく、より高速で、よりシンプルです)。 GTFS scheduleと同様に、[GTFS realtimeリファレンス](../realtime/reference) は、あらゆるGTFS realtimeフィードのルールと要件を確立する信頼できる情報源であり、[gtfs-realtime.proto](../realtime/proto) ファイルは、使用される要素の階層とそのタイプ定義を定義します。

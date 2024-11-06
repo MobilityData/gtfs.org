@@ -35,11 +35,11 @@ GTFS-TripModifications を通じて作成された便は、指定された各 `t
 
 `replacement_stops` のシーケンスは任意の長さにすることができます。たとえば、状況に応じて、3つの停車場所を2つ、4つ、または0つの停車場所に置き換えることができます。
 
-![](/../assets/trip_modification.png)
+![](/../assets/trip-modification.png)
 
 _特定の便に対する変更の効果を示す例。この変更は、他の複数の便にも適用できます。_
 
-![](/../assets/propagated_delay.png)
+![](/../assets/propagated-delay.png)
 
 _伝播された迂回遅延は、変更の終了後にすべての停車場所に影響します。旅程に複数の変更がある場合、遅延は累積されます。_
 
@@ -53,6 +53,6 @@ _伝播された迂回遅延は、変更の終了後にすべての停車場所�
 
 (CSV) GTFS 仕様の [`stop_times.txt`](../../../schedule/reference/#stop_timestxt) のオプション フィールドはすべてデフォルト値に設定されています。
 
-![](/../assets/first_stop_reference.png)
+![](/../assets/first-stop-reference.png)
 
 変更が便の最初の停留所に影響する場合、その停留所は変更の参照停留所としても機能します。

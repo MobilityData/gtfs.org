@@ -9,7 +9,7 @@ GTFS Flex は、2024 年 3 月に GTFS 仕様に正式に採用された GTFS �
 
 デマンド レスポンシブ サービスは特定のゾーン内で運用できるため、乗客はゾーン内の任意のポイント A でピックアップを予約し、同じゾーン内の任意のポイント B でドロップオフを予約できます。一例として、米国ミネソタ州の [Heartland Express Transit](https://www.co.brown.mn.us/heartland-express-transit?view=category&id=56) サービスが挙げられます。
 
-<sup>[Heartland Express サンプル データセットをダウンロード](../../../assets/on-demand_services_within_a_single_zone.zip)</sup>
+<sup>[Heartland Express サンプル データセットをダウンロード](../../../assets/on-demand-services-within-a-single-zone.zip)</sup>
 
 ### 便の定義
 
@@ -113,7 +113,7 @@ t_5374947_b_77497_tn_0 | area_715 | 2 | 08:00:00 | 12:45:00 | 1 | 2 | booking_ro
 
 一部のデマンド対応サービスは複数の異なるゾーンにまたがって運営されており、乗客は 1 つのエリア内の任意の場所 A で乗車を予約し、別のエリア内の任意の場所で降車を予約できます。たとえば、[Minnesota River Valley Transit](https:( https://www.saintpetermn.gov/330/Dial-a-Ride) は、セントピーター市とカソタ市の間でオンデマンド サービスを提供しています。
 
- <sup>[River Valley Transit のサンプル データセットをダウンロード](../../../assets/on-demand_services_between_multiple_zones(r).zip)</sup> 
+ <sup>[River Valley Transit のサンプル データセットをダウンロード](../../../assets/on-demand-services-between-multiple-zones(r).zip)</sup> 
 
 ### 便の定義 
 
@@ -213,7 +213,7 @@ trip_id | location_group_id | stop_sequence | start_pickup_drop_off_window | end
 
 この例では、ニューアルム市の [Hermann Express](https://www.newulmmn.gov/553/Hermann-Express-City-Bus-Service) サービスでは、ユーザーは固定の停留所でのみ乗車でき、これらの停留所間の特定の逸脱エリア内の任意の地点で降ろすことができます。
 
-**以下の例は簡略化されています。詳細については、[Hermann Express サンプル データセット](../../../assets/deviated _drop-off _route.zip) をダウンロードしてください。**
+**以下の例は簡略化されています。詳細については、[Hermann Express サンプル データセット](../../../assets/deviated-drop-off-route.zip) をダウンロードしてください。**
 
 ### 便の定義 
 
@@ -234,7 +234,7 @@ route_id | service_id | trip_id | share_id
 [locations.geojson](../../reference/#locationsgeojson) を使用して、ルートを逸脱するゾーンを定義します。通常、逸脱はサービスをスケジュールどおりに維持するために制限されます。したがって、車両が移動すると、各固定停留所間の逸脱エリアがそれに応じて変化するしてもよい。ルート逸脱のエリアは、次の画像のようにしてもよい:
 
 <div class="flex-photos">
-    <img src="../../../../assets/deviated_route_zones.png" alt="deviated route zones">
+    <img src="../../../../assets/deviated-route-zones.png" alt="deviated route zones">
 </div>
 
 ###停車時刻を定義する 
