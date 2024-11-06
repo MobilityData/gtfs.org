@@ -36,11 +36,11 @@ A `Modification` message describes changes to each affected trip starting at `st
 
 The sequence of `replacement_stops` may be of arbitrary length. For example, 3 stops could be replaced by 2, 4, or 0 stops as the situation may require.
 
-![](/../assets/trip_modification.png)
+![](/../assets/trip-modification.png)
 
 _An example showing the effect of a modification on a particular trip. This modification may also be applied to several other trips._
 
-![](/../assets/propagated_delay.png)
+![](/../assets/propagated-delay.png)
 
 _Propagated detour delays affect all stops following the end of a modification. If a trip has multiple modifications, the delays are accumulated._
 
@@ -54,6 +54,6 @@ The `departure_time` always equals the `arrival_time`.
 
 The optional fields of [`stop_times.txt`](../../../schedule/reference/#stop_timestxt) in the (CSV) GTFS specification are all set to their default values.
 
-![](/../assets/first_stop_reference.png)
+![](/../assets/first-stop-reference.png)
 
 _If a modification affects the first stop of the trip, that stop also serves as the reference stop of the modification._

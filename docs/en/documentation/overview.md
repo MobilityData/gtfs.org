@@ -25,7 +25,7 @@ The specification currently supports the following types of information:
 - Service alerts - stop moved, unforeseen events affecting a station, route or the entire network
 - Vehicle positions - information about the vehicles including location and congestion level
 
-To learn more about them visit the [Feed Entities](../realtime/feed_entities/overview) section.
+To learn more about them visit the [Feed Entities](../realtime/feed-entities/overview) section.
 
 GTFS Realtime was designed around ease of implementation, good GTFS interoperability and a focus on passenger information. This was possible through a partnership of the [initial Live Transit Updates](https://developers.google.com/transit/google-transit#LiveTransitUpdates) partner agencies, a number of transit developers and Google. The specification is published under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html).
 
