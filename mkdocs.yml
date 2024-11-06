@@ -144,9 +144,6 @@ plugins:
   - search:
       lang: 
         - en
-        - es
-        - fr
-        - ja
   - i18n:
       docs_structure: folder
       reconfigure_search: false
