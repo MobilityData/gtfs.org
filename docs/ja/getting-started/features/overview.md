@@ -15,37 +15,37 @@ GTFS リファレンス フォーマットは、交通システムの現在の�
 
     交通サービスを担当する事業者についての詳細を伝えます。
     
-    [:octicons-arrow-right-24: 詳細はこちら](../ベース/# 事業者)
+    [:octicons-arrow-right-24: 詳細はこちら](../base/# 事業者)
 
 - :material-subway-variant:{ .lg.middle } __停留所等 停留所__ 
 
     交通サービスが乗客を乗せたり降ろしたりする場所を定義します。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../ベース/# 停留所等)
+    [:octicons-arrow-right-24: 詳細はこちら](../base/# 停留所等)
 
 - :material-subway-variant:{ .lg.middle } __ルート・路線系統__ 
 
     名前やサービスの種類などの交通ルートの要素を定義します。
 
-    [:octicons-arrow-right-24: 詳細はこちら](../ベース/#ルート・路線系統)
+    [:octicons-arrow-right-24: 詳細はこちら](../base/#ルート・路線系統)
 
 - :material-subway-variant:{ .lg.middle } __運行日__ 
 
     便とサービスの免除をスケジュールするための構造を作成します。
 
-    [:octicons-arrow-right-24: 詳細](../ベース/#service-dates)
+    [:octicons-arrow-right-24: 詳細](../base/#service-dates)
 
 - :material-subway-variant:{ .lg.middle } __便__ 
 
     定義されたルートに沿ってスケジュールされた時間に移動する交通事業者の車両を表します。
 
-    [:octicons-arrow-right-24: 詳細](../ベース/# 便)
+    [:octicons-arrow-right-24: 詳細](../base/# 便)
 
 -   :material-subway-variant:{ .lg.middle } __停車時刻__ 
 
     各停留所の各便の到着時刻と出発時刻を定義します。
 
-    [:octicons-arrow-right-24: 詳細](../ベース/#stop-times)
+    [:octicons-arrow-right-24: 詳細](../base/#stop-times)
 
 </div> 
 

@@ -8,8 +8,8 @@
 
 推奨プラクティスは、2 つの主要なセクションに分かれています
 
-* __[message別にまとめたプラクティス推奨事項](#practice-recommendations-organized-by-message):__ 推奨事項は、公式のGTFS realtimeリファレンスに記載されているのと同じ順序で、messageとフィールド別にまとめられています。
-* __[ケース別にまとめたプラクティス推奨事項](#practice-recommendations-organized-by-use-case):__ 頻度ベースのサービス (対スケジュール ベースのサービス) などの特定のケースでは、プラクティスを複数のメッセージとフィールド、および対応するGTFS scheduleデータに適用する必要がしてもよい。このセクションでは、このような推奨事項をまとめています。
+* __[message別にまとめたプラクティス推奨事項](#_4):__ 推奨事項は、公式のGTFS realtimeリファレンスに記載されているのと同じ順序で、messageとフィールド別にまとめられています。
+* __[ケース別にまとめたプラクティス推奨事項](#_6):__ 頻度ベースのサービス (対スケジュール ベースのサービス) などの特定のケースでは、プラクティスを複数のメッセージとフィールド、および対応するGTFS scheduleデータに適用する必要がしてもよい。このセクションでは、このような推奨事項をまとめています。
 
 ### フィード公開と一般的なプラクティス
 
@@ -61,7 +61,7 @@
 
 ### TripDescriptor 
 
-`VehiclePosition`と`TripUpdate`フィードが別々に提供される場合、[TripDescriptor](#TripDescriptor) と [VehicleDescriptor](#VehicleDescriptor) ID値のペアリングは 2 つのフィード間で一致するするべきである。
+`VehiclePosition`と`TripUpdate`フィードが別々に提供される場合、[TripDescriptor](#tripdescriptor) と [VehicleDescriptor](#vehicledescriptor) ID値のペアリングは 2 つのフィード間で一致するするべきである。
 
 たとえば、`VehiclePosition`エンティティに`vehicle_id:A`と`trip_id:4` がある場合、対応する`TripUpdate`エンティティにも`vehicle_id:A`と`trip_id:4`がするべきである。
 
@@ -72,7 +72,7 @@
 
 ### VehicleDescriptor 
 
-`VehiclePosition`と`TripUpdate`フィードが別々に提供される場合、[TripDescriptor](#TripDescriptor) と [VehicleDescriptor](#VehicleDescriptor) ID値のペアリングは 2 つのフィード間で一致するするべきである。
+`VehiclePosition`と`TripUpdate`フィードが別々に提供される場合、[TripDescriptor](#tripdescriptor) と [VehicleDescriptor](#vehicledescriptor) ID値のペアリングは 2 つのフィード間で一致するするべきである。
 
 たとえば、`VehiclePosition`エンティティに`vehicle_id:A`と`trip_id:4`がある場合、対応する`TripUpdate`エンティティにも`vehicle_id:A`と`trip_id:4`が必要するべきである。
 
@@ -129,9 +129,9 @@
 
 頻度ベースの旅程は、固定のスケジュールには従わず、事前に決定された間隔を維持しようとします。これらの便は、[GTFS 頻度.txt](../../schedule/reference/#frequenciestxt) で`exact_times=0`を設定するか、`exact_times`フィールドを省略することで示されます ( `exact_times=1`の便は頻度ベースの旅程ではないことに注意してください。`exact_times =`exact_times=1`を指定した`frequencies.txt`は、スケジュールベースの便を便コンパクトに保存するための便利な方法として使用されているだけです)。頻度ベースの便のGTFS realtimeフィードを作成する際には、いくつかのベスト プラクティスに留意する必要があります。
 
-* [TripUpdate. StopTimeUpdate](#StopTimeUpdate) では、頻度ベースの便は固定スケジュールに従わないため、`arrival`と`departure`の [StopTimeEvent](#StopTimeEvent) に`delay`を含めするべきではない。代わりに、到着/出発の予測を示すために`time` を指定するするべきである。
+* [TripUpdate. StopTimeUpdate](#stoptimeupdate) では、頻度ベースの便は固定スケジュールに従わないため、`arrival`と`departure`の [StopTimeEvent](#stoptimeevent) に`delay`を含めするべきではない。代わりに、到着/出発の予測を示すために`time` を指定するするべきである。
 
-* 仕様で必須ように、[TripUpdate](#TripUpdate) または [VehiclePosition](#VehiclePosition) で [TripDescriptor](#TripDescriptor) を使用して`trip` を記述する場合は、`trip_id`、`start_time`、および`start_date`をすべて指定するしなければならない。さらに、`schedule_relationship` は`UNSCHEDULED`にするするべきである。
+* 仕様で必須ように、[TripUpdate](#tripupdate) または [VehiclePosition](#vehicleposition) で [TripDescriptor](#tripdescriptor) を使用して`trip` を記述する場合は、`trip_id`、`start_time`、および`start_date`をすべて指定するしなければならない。さらに、`schedule_relationship` は`UNSCHEDULED`にするするべきである。
  (例: 強化便)。
 
 
