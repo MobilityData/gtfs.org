@@ -166,9 +166,9 @@ __例:__
 
 <img src="https://raw.githubusercontent.com/MobilityData/GTFS_Schedule_Best-Practices/master/en/loop-route.svg" width=200px style="display: block; margin-left: auto; margin-right: auto;"> 
 
-したがって、乗客に車両の進行方向を示すために、行先表示の推奨事項を適用するするべきである移動方向の変更を示すには、 `stop_times.txt`ファイルに`stop_headsigns` を`stop_headsign`します。`stop_headsign` は、定義されている停留所から出発する便の方向を説明します。便の各停留所に`stop_headsigns` を追加すると、便中のヘッドサイン情報を変更できます。
+したがって、乗客に車両の進行方向を示すために、行先表示の推奨事項を適用するするべきである移動方向の変更を示すには、`stop_times.txt`ファイルに `stop_headsigns` を設定します。`stop_headsign` は、定義されている停留所から出発する便の方向を説明します。便の各停留所に`stop_headsigns`を追加すると、便中のヘッドサイン情報を変更できます。
 
-2つのエンドポイント間で動作するルート (同じバスが往復する場合など) に対して、 stop_times.txtファイルで 1 つの循環便を定義しないでください。代わりに、便を 2 つの別々の便方向に分割します。
+2つのエンドポイント間で動作するルート (同じバスが往復する場合など) に対して、 stop_times.txtファイルで1つの循環便を定義しないでください。代わりに、便を2つの別々の便方向に分割します。
 
 __循環便のモデリングの例:__
 
