@@ -8,7 +8,6 @@ Los datos contenidos en el archivo shapes.txt desempeñan un papel fundamental e
 
   <img class="center" width="1500" height="100%" src="../../../../assets/shapes-1.png"> 
 
-
 2. Asegúrese de que las formas comiencen en la estación de origen y finalicen en la estación de destino. Evite formas que sean demasiado cortas o demasiado largas.
 
   <img class="center" width="1500" height="100%" src="../../../../assets/shapes-2a.png">
