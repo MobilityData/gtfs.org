@@ -41,7 +41,10 @@ let githubToken    : String = ProcessInfo.processInfo.environment["GITHUB_TOKEN"
 //      env:
 //        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-let numberOfDaysToLookBack : Int           = 30
+// GET USER INPUT VALUE
+let args : [String] = CommandLine.arguments
+var numberOfDaysToLookBack: Int = 30 // Declare the variable with a default value
+if args.count >= 2 { numberOfDaysToLookBack = Int(args[1]) ?? 30 } // Default value is used if input provided by user can't be used.
 
 let githubDateTimeFormat   : String        = "yyyy-MM-dd'T'HH:mm:ss'Z'"  // Github requires dates be formatted like this : YYYY-MM-DDTHH:MM:SSZ
 let currentDate            : Date          = Date() ; let currentDateComponents : DateComponents = Calendar.current.dateComponents([.day, .year, .month], from: currentDate)

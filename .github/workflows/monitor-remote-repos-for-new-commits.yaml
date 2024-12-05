@@ -2,8 +2,11 @@ name: Fetch new commits from remote repos
 
 on:
   workflow_dispatch:
-#   schedule:
-#     - cron: '0 4 * * *'  # Runs every day at 4 AM UTC
+    inputs:
+      number_input:
+        description: "Enter a number of days from today (default is 30 days)."
+        required: true
+        default: "30"
 
 jobs:
   run-swift-script:
@@ -25,7 +28,8 @@ jobs:
       - name: Run Swift Script
         id: run-swift-script
         run: |
-            OUTPUT=$(swift scripts/monitor-remote-repos-for-new-commits.swift)
+            NUMBER_OF_DAYS=${{ github.event.inputs.number_input }}
+            OUTPUT=$(swift scripts/monitor-remote-repos-for-new-commits.swift $NUMBER_OF_DAYS)
             echo "swift_output=$OUTPUT" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
