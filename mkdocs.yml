@@ -249,7 +249,8 @@ plugins:
             Feed information: Informations sur le flux
             Frequencies: Fréquences
             Pathways: Pathways
-            Routes, Stops & Trips: Lignes, arrêts et trajets 
+            Routes, Stops & Trips: Lignes, arrêts et trajets
+            Shapes: Tracé des lignes (Shapes) 
             Text-to-speech: Synthèse vocale
             Transfers: Transferts
             Translations: Traductions
@@ -323,6 +324,7 @@ plugins:
             Frequencies: フリークエンシー
             Pathways: 経路
             Routes, Stops & Trips: ルート、ストップ、トリップ
+            Shapes: ルート形状
             Text-to-speech: テキスト読み上げ
             Transfers: トランスファー
             Translations: 翻訳
