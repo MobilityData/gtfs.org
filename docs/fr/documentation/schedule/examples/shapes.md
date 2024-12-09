@@ -8,13 +8,13 @@ Les données contenues dans le fichier shapes.txt jouent un rôle essentiel dans
 
     <img class="center" width="1500" height="100%" src="../../../../assets/shapes-1.png"> 
 
-  2. Veiller à ce que les lignes partent de la station d'origine et se terminent à la station de destination. Évitez les lignes trop courtes ou trop longues.
+  2. Veiller à ce que les tracés des lignes partent de la station d'origine et se terminent à la station de destination. Évitez les tracés des lignes trop courtes ou trop longues.
 
     <img class="center" width="1500" height="100%" src="../../../../assets/shapes-2a.png"> 
 
     <img class="center" width="1500" height="100%" src="../../../../assets/shapes-2b.png"> 
 
-  3. Dans une ligne définie par un seul shape_id, évitez les retours en arrière illogiques ou les inversions de points inutiles.
+  3. Dans une tracé de lignes définie par un seul shape_id, évitez les retours en arrière illogiques ou les inversions de points inutiles.
 
     <img class="center" width="1500" height="100%" src="../../../../assets/shapes-3.png"> 
 
@@ -28,10 +28,10 @@ Les données contenues dans le fichier shapes.txt jouent un rôle essentiel dans
 
         <img class="center" width="1500" height="100%" src="../../../../assets/shapes-4b.png"> 
 
-  5. Lorsque le véhicule se déplace dans des courbes, les points de ligne doivent être suffisamment denses pour permettre une présentation visuellement fluide pour les conducteurs.
+  5. Lorsque le véhicule se déplace dans des courbes, les points de tracé doivent être suffisamment denses pour permettre une présentation visuellement fluide pour les passagers.
 
     <img class="center" width="1500" height="100%" src="../../../../assets/shapes-5.png"> 
 
-  6. Les alignements ne doivent pas « dévier » vers un arrêt sur le trottoir, un quai ou un lieu d’embarquement.
+  6. Les tracés ne doivent pas « dévier » vers un arrêt sur le trottoir, un quai ou un lieu d’embarquement.
 
    <img class="center" width="1500" height="100%" src="../../../../assets/shapes-6.png">
