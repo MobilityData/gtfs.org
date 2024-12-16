@@ -2,9 +2,6 @@
 
 ### 改訂履歴
 
-#### 2024年10月
-* 旅行の変更に関する明確化と小さな変更。[ディスカッション](https://github.com/google/transit/pull/497)を参照してください。
-
 #### 2024年9月
 * transfers.txt の from/to_stop_id および from/to_trip_id フィールドの存在と使用を明確にします。[ディスカッション](https://github.com/google/transit/pull/455) を参照してください。
 * GeoJSON ファイルのポリゴンの有効性ルールを追加しました。[ディスカッション](https://github.com/google/transit/pull/476) を参照してください。
