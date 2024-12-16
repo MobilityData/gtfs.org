@@ -21,13 +21,13 @@ GTFS-TripModifications を通じて作成された便は、指定された各 `t
 ## Linkage to TripUpdates (TripUpdatesへのリンク)
 
 * TripUpdate は、TripUpdate の `TripDescriptor` 内の `ModifiedTripSelector` を使用して提供する必要があります。
-* TripUpdate が代替の旅程を参照する場合、消費者は静的 GTFS が TripModifications (代替の停留所の `arrival_time`、`departure_time`、`stop_sequence`、`stop_id` など) で変更されたかのように動作する必要があります。
-* `ModifiedTripSelector` を提供する場合、`TripDescriptor` の他のフィールドは空のままにしておく必要があります。これは、`ModifiedTripSelector` 値を探していない消費者による混乱を避けるためです。
-* `ModifiedTripSelector` を使用して更新を提供する TripUpdate フィードには、TripModifications をサポートしていないクライアントを対象とする TripUpdate も含める必要があります。つまり、TripUpdate は 2 つあるはずです。1 つは変更された便 (`TripModifications` あり) を持つクライアント用、もう 1 つは変更されていない元の GTFS (`TripModifications` なし) を持つクライアント用です。
-* `ModifiedTripSelector` を含む TripUpdate を提供することが、代替の停留所で予測を作成する唯一の方法です。
+    * TripUpdate が代替の旅程を参照する場合、消費者は静的 GTFS が TripModifications (代替の停留所の `arrival_time`、`departure_time`、`stop_sequence`、`stop_id` など) で変更されたかのように動作する必要があります。
+    * `ModifiedTripSelector` を指定する場合、`ModifiedTripSelector` 値を探していないコンシューマーによる混乱を避けるため、 `TripDescriptor`の`trip_id`、 `route_id`、` `direction_id`、` `start_time`、 `start_date`フィールドは空のままにしておく必要があります。 
+    * `ModifiedTripSelector` を使用して更新を提供する TripUpdate フィードには、TripModifications をサポートしていないクライアントを対象とする TripUpdate も含める必要があります。つまり、TripUpdate は 2 つあるはずです。1 つは変更された便 (`TripModifications` あり) を持つクライアント用、もう 1 つは変更されていない元の GTFS (`TripModifications` なし) を持つクライアント用です。
+    * `ModifiedTripSelector` を含む TripUpdate を提供することが、代替の停留所で予測を作成する唯一の方法です。
 * そのような TripUpdate が見つからない場合、元の `trip_id` の TripUpdate が変更後の便に適用されます。
-* この場合、使用される静的 GTFS 情報は、TripModifications が適用される前の静的 GTFS からのものである必要があります。
-* 以前の便と新しい変更後の便の間の共通の停留所ではリアルタイム情報を利用できますが、代替の停留所では ETA は利用できません。
+    * この場合、使用される静的 GTFS 情報は、TripModifications が適用される前の静的 GTFS からのものである必要があります。
+    * 以前の便と新しい変更後の便の間の共通の停留所ではリアルタイム情報を利用できますが、代替の停留所では ETA は利用できません。
 
 ## 変更
 
