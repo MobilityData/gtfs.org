@@ -1,6 +1,6 @@
 ## Référence de General Transit Feed Specification 
  
- **Révisé le 16 octobre 2024. Voir [Historique des révisions](../change_history/revision_history) pour plus de détails.** 
+ **Révisé le 5 décembre 2024. Voir [Historique des révisions](../change_history/revision_history) pour plus de détails.** 
  
  Ce document définit le format et la structure de les fichiers qui composent un jeu de données GTFS. 
  
@@ -11,36 +11,37 @@
  3. [Exigences relatives aux fichiers](#exigences-relatives-aux-fichiers) 
  4. [Publication des jeux de données et pratiques générales](#publication-des-jeux-de-donnees-et-pratiques-generales) 
  5. [Définitions des champs](#definitions-des-champs) 
- - [agency.txt](#agencytxt) 
- - [stops.txt](#stopstxt) 
- - [routes.txt](#routestxt) 
- - [trips.txt](#tripstxt) 
- - [stop\_times.txt](#stop_timestxt) 
- - [calendar.txt](#calendartxt) 
- - [calendar\_dates.txt](#calendar_datestxt) 
- - [fare\_attributes.txt](#fare_attributestxt) 
- - [fare\_rules.txt](#fare_rulestxt) 
- - [timeframes.txt](#timeframestxt) 
- - [fare\_media.txt](#fare_mediatxt) 
- - [fare\_products.txt](#fare_productstxt) 
- - [tarif\ _leg\_rules.txt](#fare_leg_rulestxt) 
- - [fare\_transfer\_rules.txt](#fare_transfer_rulestxt) 
- - [areas.txt](#areastxt) 
- - [stop_areas.txt](#stop_areastxt) 
- - [networks.txt](#networkstxt) 
- - [route_networks.txt](#route_networkstxt) 
- - [shapes.txt](#shapestxt) 
- - [frequencies.txt](#frequenciestxt) 
- - [transfers.txt](#transferstxt) 
- - [pathways.txt](#pathwaystxt) 
- - [levels.txt](#levelstxt) 
- - [location_groups.txt](#location_groupstxt) 
- - [location_group_stops.txt](#location_group_stopstxt) 
- - [locations.geojson](#locationsgeojson) 
- - [booking_rules.txt](#booking_rulestxt) 
- - [translations.txt](#translationstxt) 
- - [flux\ _info.txt](#feed_infotxt) 
- - [attributions.txt](#attributionstxt) 
+      - [agency.txt](#agencytxt) 
+      - [stops.txt](#stopstxt) 
+      - [routes.txt](#routestxt) 
+      - [trips.txt](#tripstxt) 
+      - [stop\_times.txt](#stop_timestxt) 
+      - [calendar.txt](#calendartxt) 
+      - [calendar\_dates.txt](#calendar_datestxt) 
+      - [fare\_attributes.txt](#fare_attributestxt) 
+      - [fare\_rules.txt](#fare_rulestxt) 
+      - [timeframes.txt](#timeframestxt) 
+      - [fare\_media.txt](#fare_mediatxt) 
+      - [fare\_products.txt](#fare_productstxt) 
+      - [tarif\ _leg\_rules.txt](#fare_leg_rulestxt) 
+      - [fare_leg_join_rules.txt](#fare_leg_join_rulestxt)
+      - [fare\_transfer\_rules.txt](#fare_transfer_rulestxt) 
+      - [areas.txt](#areastxt) 
+      - [stop_areas.txt](#stop_areastxt) 
+      - [networks.txt](#networkstxt) 
+      - [route_networks.txt](#route_networkstxt) 
+      - [shapes.txt](#shapestxt) 
+      - [frequencies.txt](#frequenciestxt) 
+      - [transfers.txt](#transferstxt) 
+      - [pathways.txt](#pathwaystxt) 
+      - [levels.txt](#levelstxt) 
+      - [location_groups.txt](#location_groupstxt) 
+      - [location_group_stops.txt](#location_group_stopstxt) 
+      - [locations.geojson](#locationsgeojson) 
+      - [booking_rules.txt](#booking_rulestxt) 
+      - [translations.txt](#translationstxt) 
+      - [flux\ _info.txt](#feed_infotxt) 
+      - [attributions.txt](#attributionstxt) 
  
 ## Conventions du document 
  Les mots clés "DOIT", "NE DOIT PAS", "OBLIGATOIRE", "DEVRA", "NE DEVRA PAS", "DEVRAIT", "NE DEVRAIT PAS", "RECOMMANDÉ", "PEUT" et "OPTIONNELLE" dans ce document doivent être interprétés comme décrit dans la [RFC 2119](https://tools.ietf.org/html/rfc2119). 
@@ -60,7 +61,9 @@
  * **Voyage** - Voyage global de l’origine à la destination, y compris tous les tronçons et transferts intermédiaires. 
  * **Sous-voyage** - Deux tronçons ou plus qui constituent un sous-ensemble d’un voyage. 
  * **Produit tarifaire** - Produits tarifaires achetables qui peuvent être utilisés pour payer ou valider un voyage. 
- 
+ * **Tronçon tarifaire effectif** - Un sous-trajet de deux ou plusieurs tronçons qui doit être traité comme un seul tronçon pour les règles de correspondance dans [fare_leg_rules.txt](#fare_leg_rulestxt) aux fins du calcul du tarif.
+
+
 ### Présence 
  Conditions de présence applicables aux champs et fichiers : 
  
@@ -123,6 +126,7 @@
  | [fare_media.txt](#fare_mediatxt) | Optionnel | Décrire les supports tarifaires qui peuvent être utilisés pour utiliser les produits tarifaires.<br><br> Le fichier [fare_media.txt](#fare_mediatxt) décrit les concepts qui ne sont pas représentés dans [fare_attributes.txt](#fare_attributestxt) et [fare_rules.txt](#fare_rulestxt). En tant que tel, l’utilisation de [fare_media.txt](#fare_mediatxt) est entièrement distincte des fichiers [fare_attributes.txt](#fare_attributestxt) et [fare_rules.txt](#fare_rulestxt). | 
  | [fare_products.txt](#fare_productstxt) | Optionnel | Décrire les différents types de billets ou de tarifs pouvant être achetés par les passagers.<br><br> Le fichier [fare_products.txt](#fare_productstxt) décrit les produits tarifaires qui ne sont pas représentés dans [fare_attributes.txt](#fare_attributestxt) et [fare_rules.txt](#fare_rulestxt). En tant que tel, l’utilisation de [fare_products.txt](#fare_productstxt) est entièrement distincte des fichiers [fare_attributes.txt](#fare_attributestxt) et [fare_rules.txt](#fare_rulestxt). | 
  | [fare_leg_rules.txt](#fare_leg_rulestxt) | Optionnel | Règles tarifaires pour les différents tronçons du voyage.<br><br> Le fichier [fare_leg_rules.txt](#fare_leg_rulestxt) fournit une méthode plus détaillée pour modéliser les structures tarifaires. En tant que tel, l’utilisation de [fare_leg_rules.txt](#fare_leg_rulestxt) est entièrement distincte des fichiers [fare_attributes.txt](#fare_attributestxt) et [fare_rules.txt](#fare_rulestxt). | 
+ | [fare_leg_join_rules.txt](#fare_leg_join_rulestxt) | Optionnel | Les règles de définition de deux ou plusieurs segments doivent être considérées comme un seul**segment tarifaire effectif**aux fins de la correspondance avec les règles de [fare_leg_rules.txt](#fare_leg_rulestxt)|
  | [fare_transfer_rules.txt](#fare_transfer_rulestxt) | Optionnel | Règles tarifaires pour les transferts entre les tronçons du voyage.<br><br> Avec [fare_leg_rules.txt](#fare_leg_rulestxt), le fichier [fare_transfer_rules.txt](#fare_transfer_rulestxt) fournit une méthode plus détaillée pour modéliser les structures tarifaires. En tant que tel, l’utilisation de [fare_transfer_rules.txt](#fare_transfer_rulestxt) est entièrement distincte des fichiers [fare_attributes.txt](#fare_attributestxt) et [fare_rules.txt](#fare_rulestxt). | 
  | [areas.txt](#areastxt) | Optionnel | Regroupement de zones d’emplacements. | 
  | [stop_areas.txt](#stop_areastxt) | Optionnel | Règles pour attribuer des arrêts aux zones. | 
@@ -477,17 +481,33 @@
 
 <br/> 
  
- | Nom du champ | Tapez | Présence | Descriptif | 
- |------|------|------|------| 
- | `leg_group_id` | ID | Optionnel | Identifie un groupe d’entrées dans [fare_leg_rules.txt](#fare_leg_rulestxt).<br><br> Utilisé pour décrire les règles de transfert tarifaire entre `fare_transfer_rules.from_leg_group_id` et `fare_transfer_rules.to_leg_group_id`.<br><br> Plusieurs entrées dans [fare_leg_rules.txt](#fare_leg_rulestxt) peuvent appartenir au même `fare_leg_rules.leg_group_id`.<br><br> La même entrée dans [fare_leg_rules.txt](#fare_leg_rulestxt) (sans compter `fare_leg_rules.leg_group_id`) ne doit pas appartenir à plusieurs `fare_leg_rules.leg_group_id`.| 
- | `network_id` | ID étranger faisant référence à `routes.network_id` ou `networks.network_id`| Optionnel | Identifie un réseau d’itinéraires qui s’applique à la règle du segment tarifaire.<br><br> Si le champ `rule_priority` n’existe pas ET qu’il n’y a pas de valeurs `fare_leg_rules.network_id` correspondant au `network_id` filtré, `fare_leg_rules.network_id` vide sera mis en correspondance par défaut.<br><br> Une entrée vide dans `fare_leg_rules.network_id` correspond à tous les réseaux définis dans [routes.txt](#routestxt) ou [networks.txt](#networkstxt) à l’exclusion de ceux répertoriés sous `fare_leg_rules.network_id`<br><br> Si le champ `rule_priority` existe dans le fichier, un `fare_leg_rules.network_id` vide indique que le réseau de routes du tronçon n’affecte pas la correspondance de cette règle. | 
- | `from_area_id` | ID étranger faisant référence à `areas.area_id` | Optionnel | Identifie une zone de départ.<br><br> Si le champ `rule_priority` n’existe pas ET qu’il n’y a pas de valeurs `fare_leg_rules.from_area_id` correspondant à la `area_id` filtrée, `fare_leg_rules.from_area_id` vide sera mis en correspondance par défaut.<br><br> Une entrée vide dans `fare_leg_rules.from_area_id` correspond à toutes les zones définies dans `areas.area_id` à l’exclusion de celles répertoriées sous `fare_leg_rules.from_area_id`<br><br> Si le champ `rule_priority` existe dans le fichier, un `fare_leg_rules.from_area_id` vide indique que la zone de départ du tronçon n’affecte pas la correspondance de cette règle. | 
- | `to_area_id` | ID étranger faisant référence à `areas.area_id` | Optionnel | Identifie une zone d’arrivée.<br><br> Si le champ `rule_priority` n’existe pas ET qu’il n’y a pas de valeurs `fare_leg_rules.to_area_id` correspondant à la `area_id` filtrée, `fare_leg_rules.to_area_id` vide sera mis en correspondance par défaut.<br><br> Une entrée vide dans `fare_leg_rules.to_area_id` correspond à toutes les zones définies dans `areas.area_id` à l’exclusion de celles répertoriées sous `fare_leg_rules.to_area_id`<br><br> Si le champ `rule_priority` existe dans le fichier, un `fare_leg_rules.to_area_id` vide indique que la zone d’arrivée du tronçon n’affecte pas la correspondance de cette règle. | 
- | `from_timeframe_group_id` | ID étranger faisant référence à `timeframes.timeframe_group_id` | Optionnel | Définit la période de l’événement de validation tarifaire au début du segment tarifaire.<br><br> L’« heure de début » du trajet tarifaire est l’heure à laquelle l’événement est prévu pour avoir lieu. Par exemple, l’heure peut être l’heure de départ prévue d’un bus au début d’un trajet tarifaire où le passager embarque et valide son tarif. Pour la sémantique de correspondance de règle ci-dessous, l’heure de début est calculée en heure locale, comme déterminé par la [Sémantique de l’heure locale](#semantique-de-lheure-locale-de-la-periode) de [timeframes.txt](#timeframestxt). L’arrêt ou la gare de l’événement de départ du tronçon tarifaire doit être utilisé pour la résolution du fuseau horaire, le cas échéant.<br><br> Pour une règle de segment tarifaire qui spécifie un `from_timeframe_group_id`, cette règle correspondra à un segment particulier s’il existe au moins une entrée dans [timeframes.txt](#timeframestxt) où toutes les conditions suivantes sont vraies<br> - La valeur de `timeframe_group_id` est égale à la valeur `from_timeframe_group_id` .<br> - L’ensemble de jours identifiés par le `service_id` de l'entrée contient le « jour actuel » de l’heure de début du segment tarifaire.<br> - L’« heure du jour » de l’heure de début du trajet tarifaire est supérieure ou égale à la valeur `timeframes.start_time` de l'entrée et inférieure à la valeur `timeframes.end_time`.<br><br> Un `fare_leg_rules.from_timeframe_group_id` vide indique que l’heure de début du tronçon n’affecte pas la correspondance de cette règle. | 
- | `to_timeframe_group_id` | ID étranger faisant référence à `timeframes.timeframe_group_id` | Optionnel | Définit la période de temps pour l’événement de validation tarifaire à la fin du segment tarifaire.<br><br> L’« heure de fin » du trajet tarifaire est l’heure à laquelle l’événement est prévu pour avoir lieu. Par exemple, l’heure peut être l’heure d’arrivée prévue d’un bus à la fin d’un trajet tarifaire où le passager descend et valide son tarif. Pour la sémantique de correspondance de règle ci-dessous, l’heure de fin est calculée en heure locale, comme déterminé par la [Sémantique de l’heure locale](#semantique-de-lheure-locale-de-la-periode) de [timeframes.txt](#timeframestxt). L’arrêt ou la gare de l’événement d’arrivée du tronçon tarifaire doit être utilisé pour la résolution du fuseau horaire, le cas échéant.<br><br> Pour une règle de segment tarifaire qui spécifie un `to_timeframe_group_id`, cette règle correspondra à un segment particulier s’il existe au moins une entrée dans [timeframes.txt](#timeframestxt) où toutes les conditions suivantes sont vraies<br> - La valeur de `timeframe_group_id` est égale à la valeur `to_timeframe_group_id` .<br> - L’ensemble de jours identifiés par le `service_id` de l'entrée contient le « jour en cours » de l’heure de fin du trajet tarifaire.<br> - L’« heure du jour » de l’heure de fin du trajet tarifaire est supérieure ou égale à la valeur `timeframes.start_time` de l'entrée et inférieure à la valeur `timeframes.end_time`.<br><br> Un `fare_leg_rules.to_timeframe_group_id` vide indique que l’heure de fin du tronçon n’affecte pas la correspondance de cette règle. | 
- | `fare_product_id` | ID étranger faisant référence à `fare_products.fare_product_id` | **Requis** | Le produit tarifaire requis pour parcourir le tronçon. | 
- | `rule_priority` | Entier non négatif | Optionnel | Définit l’ordre de priorité dans lequel les règles de correspondance sont appliquées aux segments, permettant à certaines règles d’avoir priorité sur d’autres. Lorsque plusieurs entrées dans `fare_leg_rules.txt` correspondent, la règle ou l’ensemble de règles avec la valeur la plus élevée pour `rule_priority` sera sélectionné.<br><br> Une valeur vide pour `rule_priority` est traitée comme zéro. | 
+| Nom du champ | Tapez | Présence | Descriptif | 
+|------|------|------|------| 
+| `leg_group_id` | ID | Optionnel | Identifie un groupe d’entrées dans [fare_leg_rules.txt](#fare_leg_rulestxt).<br><br> Utilisé pour décrire les règles de transfert tarifaire entre `fare_transfer_rules.from_leg_group_id` et `fare_transfer_rules.to_leg_group_id`.<br><br> Plusieurs entrées dans [fare_leg_rules.txt](#fare_leg_rulestxt) peuvent appartenir au même `fare_leg_rules.leg_group_id`.<br><br> La même entrée dans [fare_leg_rules.txt](#fare_leg_rulestxt) (sans compter `fare_leg_rules.leg_group_id`) ne doit pas appartenir à plusieurs `fare_leg_rules.leg_group_id`.| 
+| `network_id` | ID étranger référençant `routes.network_id` ou `networks.network_id`| Optionnel | Identifie un réseau de lignes qui s’applique à la règle de segment tarifaire.<br><br> Si le champ `rule_priority` n’existe pas ET qu’il n’y a pas de valeurs `fare_leg_rules.network_id` correspondantes au `network_id` filtré, les valeurs `fare_leg_rules.network_id` vides seront mises en correspondance par défaut.<br><br> Une entrée vide dans `fare_leg_rules.network_id` correspond à tous les réseaux définis dans [routes.txt](#routestxt) ou [networks.txt](#networkstxt) à l’exclusion de ceux répertoriés sous `fare_leg_rules.network_id`<br><br> Si le champ `rule_priority` existe dans le fichier, un `fare_leg_rules.network_id` vide indique que le réseau routier du tronçon n’affecte pas la correspondance de cette règle.<br><br> Lors de la correspondance avec un [tarif effectif de plusieurs segments](#fare_leg_join_rulestxt), chaque segment doit avoir le même `network_id` qui sera utilisé pour la correspondance. |
+| `from_area_id` | ID étranger référençant `areas.area_id` | Optionnel | Identifie une zone de départ.<br><br> Si le champ `rule_priority` n’existe pas ET qu’il n’y a pas de valeurs `fare_leg_rules.from_area_id` correspondantes à `area_id` filtrées, les valeurs `fare_leg_rules.from_area_id` vides seront mises en correspondance par défaut.<br><br> Une entrée vide dans `fare_leg_rules.from_area_id` correspond à toutes les zones définies dans `areas.area_id` à l’exclusion de celles répertoriées sous `fare_leg_rules.from_area_id`<br><br> Si le champ `rule_priority` existe dans le fichier, un `fare_leg_rules.from_area_id` vide indique que la zone de départ du trajet n’affecte pas la correspondance de cette règle.<br><br> Lors de la correspondance avec un [tronçon tarifaire effectif de plusieurs tronçons](#fare_leg_join_rulestxt), le premier tronçon du tronçon tarifaire effectif est utilisé pour déterminer la zone de départ. |
+| `to_area_id` | ID étranger référençant `areas.area_id` | Optionnel | Identifie une zone d’arrivée.<br><br> Si le champ `rule_priority` n’existe pas ET qu’il n’y a pas de valeurs `fare_leg_rules.to_area_id` correspondantes à `area_id` filtrées, les valeurs `fare_leg_rules.to_area_id` vides seront mises en correspondance par défaut.<br><br> Une entrée vide dans `fare_leg_rules.to_area_id` correspond à toutes les zones définies dans `areas.area_id` à l’exclusion de celles répertoriées sous `fare_leg_rules.to_area_id`<br><br> Si le champ `rule_priority` existe dans le fichier, un `fare_leg_rules.to_area_id` vide indique que la zone d’arrivée du trajet n’affecte pas la correspondance de cette règle.<br><br> Lors de la correspondance avec un [tronçon tarifaire effectif de plusieurs tronçons](#fare_leg_join_rulestxt), le dernier tronçon du tronçon tarifaire effectif est utilisé pour déterminer la zone d’arrivée. |
+| `from_timeframe_group_id` | ID étranger référençant `timeframes.timeframe_group_id` | Optionnel | Définit le délai pour l’événement de validation du tarif au début du tronçon tarifaire.<br><br> L’« heure de début » du segment tarifaire est l’heure à laquelle l’événement est prévu de se produire. Par exemple, l’heure peut être l’heure de départ prévue d’un bus au début d’un segment tarifaire où le passager monte à bord et valide son tarif. Pour la sémantique de correspondance des règles ci-dessous, l’heure de début est calculée en heure locale, comme déterminé par [Sémantique de l’heure locale](#localtimesemantics) de [timeframes.txt](#timeframestxt). L’arrêt ou la station de l’événement de départ du segment tarifaire doit être utilisé pour la résolution du fuseau horaire, le cas échéant.<br><br> Pour une règle de segment tarifaire qui spécifie un `from_timeframe_group_id`, cette règle correspondra à un segment particulier s’il existe au moins un enregistrement dans [timeframes.txt](#timeframestxt) où toutes les conditions suivantes sont vraies<br> - La valeur de `timeframe_group_id` est égale à la valeur `from_timeframe_group_id` .<br> - L’ensemble des jours identifiés par le « `service_id` » de l’enregistrement contient le « jour actuel » de l’heure de début du tronçon tarifaire.<br> - L’« heure du jour » de l’heure de début du segment tarifaire est supérieure ou égale à la valeur « `timeframes.start_time` » de l’enregistrement et inférieure à la valeur « `timeframes.end_time` » .<br><br> Un `fare_leg_rules.from_timeframe_group_id` vide indique que l’heure de début de l’étape n’affecte pas la correspondance de cette règle.<br><br> Lors de la correspondance avec un [tronçon tarifaire effectif de plusieurs tronçons](#fare_leg_join_rulestxt), le premier tronçon du tronçon tarifaire effectif est utilisé pour déterminer l’événement de validation tarifaire de départ. |
+| `to_timeframe_group_id` | ID étranger référençant `timeframes.timeframe_group_id` | Optionnel | Définit le délai pour l’événement de validation tarifaire à la fin du tronçon tarifaire.<br><br> L’« heure de fin » du segment tarifaire est l’heure à laquelle l’événement est prévu de se produire. Par exemple, l’heure peut être l’heure d’arrivée prévue d’un bus à la fin d’un segment tarifaire où le passager descend et valide son tarif. Pour la sémantique de correspondance des règles ci-dessous, l’heure de fin est calculée en heure locale, comme déterminé par [Sémantique de l’heure locale](#localtimesemantics) de [timeframes.txt](#timeframestxt). L’arrêt ou la station de l’événement d’arrivée du segment tarifaire doit être utilisé pour la résolution du fuseau horaire, le cas échéant.<br><br> Pour une règle de segment tarifaire qui spécifie un `to_timeframe_group_id`, cette règle correspondra à un segment particulier s’il existe au moins un enregistrement dans [timeframes.txt](#timeframestxt) où toutes les conditions suivantes sont vraies<br> - La valeur de `timeframe_group_id` est égale à la valeur `to_timeframe_group_id` .<br> - L’ensemble des jours identifiés par le « `service_id` » de l’enregistrement contient le « jour actuel » de l’heure de fin du tronçon tarifaire.<br> - L’« heure du jour » de l’heure de fin du segment tarifaire est supérieure ou égale à la valeur « `timeframes.start_time` » de l’enregistrement et inférieure à la valeur « `timeframes.end_time` » .<br><br> Un `fare_leg_rules.to_timeframe_group_id` vide indique que l’heure de fin de l’étape n’affecte pas la correspondance de cette règle.<br><br> Lors de la correspondance avec un [tronçon tarifaire effectif de plusieurs tronçons](#fare_leg_join_rulestxt), le dernier tronçon du tronçon tarifaire effectif est utilisé pour déterminer l’événement de validation tarifaire final. |
+| `fare_product_id` | ID étranger faisant référence à `fare_products.fare_product_id` | **Requis** | Le produit tarifaire requis pour parcourir le tronçon. | 
+| `rule_priority` | Entier non négatif | Optionnel | Définit l’ordre de priorité dans lequel les règles de correspondance sont appliquées aux segments, permettant à certaines règles d’avoir priorité sur d’autres. Lorsque plusieurs entrées dans `fare_leg_rules.txt` correspondent, la règle ou l’ensemble de règles avec la valeur la plus élevée pour `rule_priority` sera sélectionné.<br><br> Une valeur vide pour `rule_priority` est traitée comme zéro. | 
  
+### fare_leg_join_rules.txt 
+
+Fichier :**Optionnel**Clé primaire (`from_network_id, to_network_id, from_stop_id, to_stop_id`)
+
+Pour un sous-trajet de deux segments consécutifs avec un transfert, si le transfert correspond à tous les prédicats correspondants spécifiés par un enregistrement particulier dans le fichier, alors ces deux segments doivent être considérés comme un seul**segment tarifaire effectif**aux fins de la correspondance avec les règles de [`fare_leg_rules.txt`](#fare_leg_rulestxt).
+- Sauf remplacement explicite par `from_stop_id` et `to_stop_id`, la dernière station du segment pré-transfert et la première station du segment post-transfert doit être le même pour l’enregistrement.
+- Si une valeur de champ de prédicat correspondante est vide ou non spécifiée pour un enregistrement particulier dans le fichier, alors ce champ doit être ignoré aux fins de la correspondance.
+- Lorsqu’un sous-trajet contient des transferts consécutifs qui correspondent chacun à une règle de jointure, alors l’ensemble du sous-trajet doit être considéré comme un seul**tronçon de tarif effectif**.
+
+| Nom du champ | Type | Présence | Description |
+|------|------|------|------|
+| `from_network_id` | ID étranger référençant `routes.network_id` ou `networks.network_id`|**Requis**| Correspond à un tronçon de pré-transfert qui utilise le réseau de route spécifié. S’il est spécifié, le même `to_network_id` doit également être spécifié. |
+| `to_network_id` | ID étranger référençant `routes.network_id` ou `networks.network_id`|**Requis**| Correspond à un segment post-transfert qui utilise le réseau d’itinéraires spécifié. S’il est spécifié, le même `from_network_id` doit également être spécifié. |
+| `from_stop_id` | ID étranger référençant `stops.stop_id`|**Requis sous condition**| Correspond à un segment pré-transfert qui se termine à l’arrêt (`location_type=0` ou vide) ou à la station (`location_type=1`) spécifié.<br><br> Requis sous condition:<br> - **Requis** si `to_stop_id` est défini.<br> - Optionnel sinon. |
+| `to_stop_id` | ID étranger référençant `stops.stop_id`|**Requis sous condition**| Correspond à une étape post-transfert qui démarre à l’arrêt (`location_type=0` ou vide) ou à la station (`location_type=1`) spécifié.<br><br> Requis sous condition:<br> - **Requis** si `from_stop_id` est défini.<br> - Optionnel sinon. |
+
 ### fare_transfer_rules.txt 
  
  Fichier : **Optionnel** 
