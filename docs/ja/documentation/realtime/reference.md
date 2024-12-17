@@ -480,8 +480,16 @@ trip_idが不明な場合は、 TripUpdateの駅シーケンス ID では不十�
 | **DELETED** | スケジュールに存在していたが削除された旅程で、ユーザーに表示してはいけません。 <br><br> 交通事業者プロバイダーが、対応する便に関する情報を消費アプリケーションから完全に削除し、乗客に便がキャンセルされたと表示されないようにするには、CANCELED ではなく DELETED を使用する必要があります。たとえば、便が別の便に完全に置き換えられる場合などです。この指定は、複数の便がキャンセルされ、代替サービスに置き換えられる場合に特に重要になります。消費者がキャンセルに関する明確な情報を表示すると、より重要なリアルタイム予測が妨げられます。<br><br>**注意:** このフィールドはまだ **実験的** であり、変更される可能性があります。将来正式に採用される可能性があります。|
 
 ## _message_ ModifiedTripSelector
-サービスが旅行の変更の影響を受ける場合、`ModifiedTripSelector` を使用して旅行を選択します。詳細については、[旅行のModification](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/trip-modifications.md#linkage-to-tripupdates)仕様を参照してください。**値**| _**フィールド名**_ | _**タイプ**_ | _**必須**_ | _**カーディナリティ**_ | _**説明**_ |
-|**modifications_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |必須| 1つ |含まれる`TripModifications`オブジェクトがこの旅程に影響を与える`FeedEntity`の`id` |**affected_trip_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |必須| 1つ | `modifications_id` によって変更される GTFS フィードからの`trip_id` |**start_time**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1つ | 頻度に基づいて変更された旅程に適用される、この旅程インスタンスの当初のスケジュール開始時刻。[TripDescriptor](#message-tripdescriptor) の**start_time**と同じ定義です。
+
+サービスが旅行の変更の影響を受ける場合、`ModifiedTripSelector` を使用して旅行を選択します。詳細については、[旅行のModification](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/trip-modifications.md#linkage-to-tripupdates)仕様を参照してください。
+
+**値**
+
+| _**フィールド名**_ | _**タイプ**_ | _**必須**_ | _**カーディナリティ**_ | _**説明**_ |
+|-------------|---------------|-------------|---------------|-------------|
+|**modifications_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |必須| 1つ |含まれる`TripModifications`オブジェクトがこの旅程に影響を与える`FeedEntity`の`id` |
+|**affected_trip_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |必須| 1つ | `modifications_id` によって変更される GTFS フィードからの`trip_id` |
+|**start_time**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1つ | 頻度に基づいて変更された旅程に適用される、この旅程インスタンスの当初のスケジュール開始時刻。[TripDescriptor](#message-tripdescriptor) の**start_time**と同じ定義です。|
 |**start_date**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1つ |変更された旅行に適用される、この旅行インスタンスの開始date(YYYYMMDD 形式)。[TripDescriptor](#message-tripdescriptor) の**start_date**と同じ定義です。|
 
 ### _message_ VehicleDescriptor 
