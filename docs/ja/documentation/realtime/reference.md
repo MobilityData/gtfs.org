@@ -57,6 +57,7 @@ GTFS リアルタイム v2.0 以降では、*必須* 列は、交通事業者デ
         *   [VehiclePosition](#message-vehicleposition)
             *   [TripDescriptor](#message-tripdescriptor)
                 *   [ScheduleRelationship](#enum-schedulerelationship_1)
+                *   [ModifiedTripSelector](#message-modifiedtripselector)
             *   [VehicleDescriptor](#message-vehicledescriptor)
                 *   [WheelchairAccessible](#enum-wheelchairaccessible)
             *   [Position](#message-position)
@@ -123,7 +124,7 @@ GTFS リアルタイム v2.0 以降では、*必須* 列は、交通事業者デ
 
 ### _message_ FeedEntity 
 
-交通フィード内のエンティティの定義 (または更新)。エンティティが削除されない場合は、「trip_update」、「vehicle」、「alert」、「shape」フィールドのいずれか 1つを入力する必要があります。
+交通フィード内のエンティティの定義 (または更新)。エンティティが削除されない場合は、`trip_update`、`vehicle`、`alert`、`shape`、`stop`、または `trip_modification` か1つを入力する必要があります。
 
 **フィールド**
 
@@ -135,6 +136,8 @@ GTFS リアルタイム v2.0 以降では、*必須* 列は、交通事業者デ
 | **vehicle** | [VehiclePosition](#message-vehicleposition) | 条件付きで必須 | 1つ | 車両のリアルタイムのPositionに関するデータ。trip_update、vehicle、alert、または shape のフィールドのうち少なくとも 1つを指定するしなければならない。これらのフィールドすべてを空にすることはできません。 |
 | **alert** | [アラート](#message-alert) | 条件付きで必須 | 1つ | リアルタイム アラートに関するデータ。trip_update、vehicle、alert、shape のフィールドのうち少なくとも 1つを指定するしなければならない。これらのフィールドすべてを空にすることはできません。|
 | **shape** | [形状](#message-shape) | 条件付きで必須 | 1つ | 迂回路などのリアルタイムで追加されたルート形状に関するデータ。trip_update、vehicle、alert、shape のフィールドのうち少なくとも 1つを指定するしなければならない。これらのフィールドすべてを空にすることはできません。<br><br>**注意:** このフィールドはまだ**試験的**であり、変更される可能性があります。将来、正式に採用されるしてもよいがあります。 |
+|**stop**| [Stop](#message-stop) | 条件付きで必須 | 1つ |新しい停留所がフィードに動的に追加されました。<br><br>**注意:**このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。 |
+|**trip_modifications**| [TripModifications](#message-tripmodifications) | 条件付きで必須 | 1つ | 迂回などの特定の変更によって影響を受ける旅行のリスト。<br><br>**注意:**このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。 | 
 
 
 ### _message_ TripUpdate 
@@ -152,8 +155,8 @@ ScheduleRelationship の値に応じて、TripUpdate では以下を指定でき
 
 車両が同じブロック内で複数の便を提供している場合 (便とブロックの詳細については、[GTFS trips.txt](../../schedule/reference/#tripstxt)を参照してください):
 
-* フィードには、車両が現在提供している便の TripUpdate を含める必要があります。プロデューサーは、将来の便の予測の品質に自信がある場合は、この車両のブロックに現在の便の後の 1 つ以上の便の TripUpdate を含めることが推奨されます。同じ車両に複数の TripUpdate を含めると、車両が 1 つの便から別の便に移行する際に乗客に予測が「突然表示される」のを回避でき、また、下流の便に影響する遅延 (既知の遅延が便間の予定の乗り継ぎ時間を超える場合など) を乗客に事前に通知できます。
-* それぞれの TripUpdate エンティティは、ブロックでスケジュールされている順序と同じ順序でフィードに追加する必要はありません。たとえば、`trip_ids` が 1、2、3 で、すべて 1 つのブロックに属する便があり、車両が便 1、便 2、便 3 の順に移動する場合は、`trip_update` エンティティは任意の順序で表示できます。たとえば、便 2、便 1、便 3 の順で追加できます。
+* フィードには、車両が現在提供している便の TripUpdate を含める必要があります。プロデューサーは、将来の便の予測の品質に自信がある場合は、この車両のブロックに現在の便の後の 1つ以上の便の TripUpdate を含めることが推奨されます。同じ車両に複数の TripUpdate を含めると、車両が 1つの便から別の便に移行する際に乗客に予測が「突然表示される」のを回避でき、また、下流の便に影響する遅延 (既知の遅延が便間の予定の乗り継ぎ時間を超える場合など) を乗客に事前に通知できます。
+* それぞれの TripUpdate エンティティは、ブロックでスケジュールされている順序と同じ順序でフィードに追加する必要はありません。たとえば、`trip_ids` が 1、2、3 で、すべて 1つのブロックに属する便があり、車両が便 1、便 2、便 3 の順に移動する場合は、`trip_update` エンティティは任意の順序で表示できます。たとえば、便 2、便 1、便 3 の順で追加できます。
 
 更新では、すでに完了した旅程を記述できることに注意してください。このためには、旅程の最後の停留所の更新を提供すれば十分です。最後の停留所への到着時刻が過去である場合、クライアントは便全体が過去であると結論付けます (重要ではありませんが、先行する停留所等の更新も提供できます)。このオプションは、スケジュールより早く完了したが、スケジュールによると現時点で便がまだ進行中である便に最も関連しています。この便の更新を削除すると、クライアントは便がまだ進行中であると想定する可能性があります。フィード プロバイダーは過去の更新を消去できますが、必須ではないことに注意してください。これは、これが実際に役立つ 1つのケースです。
 
@@ -459,6 +462,7 @@ trip_idが不明な場合は、 TripUpdateの駅シーケンス ID では不十�
 |**start_time**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1 | この旅程インスタンスの当初の予定開始時刻。trip_idが非頻度ベースの旅程に対応する場合、このフィールドは省略するか、GTFS フィードの値と同じにするするべきである。trip_idがGTFS frequencies.txtで定義された頻度ベースの旅程に対応する場合、start_time は必須であり、旅程の更新と車両の位置のために指定するしなければならない。旅程が exact_times=1 の GTFS レコードに対応する場合、start_time は対応する期間のfrequencies.txt のstart_time より headway_secs の倍数 (0 を含む) 後にするしなければならない。旅程が exact_times=0 に対応する場合、start_time は任意でかまいませしてもよいが、当初は旅程の最初の出発時刻になると予想されます。一度設定されると、この頻度ベースの exact_times=0 の旅程の start_time は、最初の出発時刻が変更された場合でも不変と見なすするべきである。その時間変更は、代わりにStopTimeUpdateに反映されるしてもよいtrip_idを省略する場合は、 start_time を指定するしなければならない。フィールドの形式とセマンティクスは、GTFS/frequencies.txt/start_time と同じです (例: 11:15:35 または 25:15:35)。|
 |**start_date**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1つ | この旅程インスタンスの開始date(YYYYMMDD 形式)。スケジュールされた便(GTFS frequencies.txtで定義されていない便) の場合、翌日のスケジュールされた旅程と重なるほど遅れている便を明確にするために、このフィールドを指定するしなければならない。たとえば、毎日 8:00 と 20:00 に出発し、12 時間遅れている列車の場合、同じ時間に 2つの異なる便が存在することになります。このフィールドは指定できますが、このような衝突が不可能なスケジュールでは必須ではありません。たとえば、1 時間遅れている車両はスケジュールとは関係がないと見なされる、1 時間ごとのスケジュールで実行されるサービスなどです。このフィールドは、GTFS frequencies.txtで定義されている頻度ベースの便では必須。trip_idが省略されている場合は、start_date を指定するしなければならない。|
 |**schedule_relationship**| [ScheduleRelationship](#enum-schedulerelationship_1) |任意| 1つ | この便と静的スケジュールの関係。TripDescriptorがAlert `EntitySelector`で指定されている場合、一致する便インスタンスを識別するときに、`schedule_relationship`フィールドはコンシューマーによって無視されます。
+|**modified_trip**| [ModifiedTripSelector](#message-modifiedtripselector) |任意| 1つ | この旅行に対して行われた変更へのリンク (形状の変更、停車地の削除または追加)。このフィールドを指定する場合、 `TripDescriptor`の`trip_id`、 `route_id`、 `direction_id`、 `start_time`、 `start_date`フィールドは、`ModifiedTripSelector` 値を探していない消費者による混乱を避けるために、空のままにしておく必要があります。|
 
 ### _enum_ ScheduleRelationship 
 
@@ -474,6 +478,11 @@ trip_idが不明な場合は、 TripUpdateの駅シーケンス ID では不十�
 | **CANCELED** | スケジュールに存在していたが削除された旅程。|
 | **DUPLICATED** | サービス開始日時を除き、既存のスケジュールされた旅程と同じ新しい旅程。 `TripUpdate.TripProperties.trip_id`、`TripUpdate.TripProperties.start_date`、および `TripUpdate.TripProperties.start_time` と一緒に使用して、静的 GTFS から既存の旅程をコピーしますが、開始日は異なるサービス日付および/または時刻にします。(CSV) GTFS (`calendar.txt` または `calendar_dates.txt`) 内の元の旅程に関連するサービスが今後 30 日以内に運行される場合、旅程の複製が許可されます。複製する旅程は、`TripUpdate.TripDescriptor.trip_id` によって識別されます。<br><br> この列挙では、`TripUpdate.TripDescriptor.trip_id` によって参照される既存の旅程は変更されません。プロデューサーが元の旅程をキャンセルする場合は、CANCELED の値を持つ別の `TripUpdate` を公開する必要があります。 GTFS の `frequencies.txt` で定義されている、`exact_times` が空または `0` に等しい旅程は複製できません。新しい旅程の `VehiclePosition.TripDescriptor.trip_id` には、`TripUpdate.TripProperties.trip_id` の一致する値が含まれている必要があり、`VehiclePosition.TripDescriptor.ScheduleRelationship` も `DUPLICATED` に設定する必要があります。<br><br>*重複した旅程を表すために ADDED 列挙を使用していた既存のプロデューサーとコンシューマーは、[移行ガイド](../../realtime/examples//migration-duplicated) に従って DUPLICATED 列挙に移行する必要があります。* |
 | **DELETED** | スケジュールに存在していたが削除された旅程で、ユーザーに表示してはいけません。 <br><br> 交通事業者プロバイダーが、対応する便に関する情報を消費アプリケーションから完全に削除し、乗客に便がキャンセルされたと表示されないようにするには、CANCELED ではなく DELETED を使用する必要があります。たとえば、便が別の便に完全に置き換えられる場合などです。この指定は、複数の便がキャンセルされ、代替サービスに置き換えられる場合に特に重要になります。消費者がキャンセルに関する明確な情報を表示すると、より重要なリアルタイム予測が妨げられます。<br><br>**注意:** このフィールドはまだ **実験的** であり、変更される可能性があります。将来正式に採用される可能性があります。|
+
+## _message_ ModifiedTripSelector
+サービスが旅行の変更の影響を受ける場合、`ModifiedTripSelector` を使用して旅行を選択します。詳細については、[旅行のModification](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/trip-modifications.md#linkage-to-tripupdates)仕様を参照してください。**値**| _**フィールド名**_ | _**タイプ**_ | _**必須**_ | _**カーディナリティ**_ | _**説明**_ |
+|**modifications_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |必須| 1つ |含まれる`TripModifications`オブジェクトがこの旅程に影響を与える`FeedEntity`の`id` |**affected_trip_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |必須| 1つ | `modifications_id` によって変更される GTFS フィードからの`trip_id` |**start_time**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1つ | 頻度に基づいて変更された旅程に適用される、この旅程インスタンスの当初のスケジュール開始時刻。[TripDescriptor](#message-tripdescriptor) の**start_time**と同じ定義です。
+|**start_date**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1つ |変更された旅行に適用される、この旅行インスタンスの開始date(YYYYMMDD 形式)。[TripDescriptor](#message-tripdescriptor) の**start_date**と同じ定義です。|
 
 ### _message_ VehicleDescriptor 
 
@@ -503,7 +512,7 @@ trip_idが不明な場合は、 TripUpdateの駅シーケンス ID では不十�
 
 ### _message_ EntitySelector 
 
-GTFS フィード内のエンティティのセレクター。フィールドの値は、GTFS フィード内の適切なフィールドに対応している必要があります。少なくとも 1 つの指定子を指定する必要があります。複数の指定子を指定する場合、それらは論理 `AND` 演算子で結合されていると解釈されます。さらに、指定子の組み合わせは、GTFS フィード内の対応する情報と一致している必要があります。つまり、アラートを GTFS 内のエンティティに適用するには、提供されているすべての EntitySelector フィールドと一致する必要があります。たとえば、`route_id: "5"` および `route_type: "3"` フィールドを含む EntitySelector は、`route_id: "5"` バスにのみ適用され、`route_type: "3"` の他のルートには適用されません。プロデューサーがアラートを `route_id: "5"` と `route_type: "3"` の両方に適用する場合、`route_id: "5"` を参照する EntitySelector と `route_type: "3"` を参照する EntitySelector の 2 つを別々に提供する必要があります。
+GTFS フィード内のエンティティのセレクター。フィールドの値は、GTFS フィード内の適切なフィールドに対応している必要があります。少なくとも 1つの指定子を指定する必要があります。複数の指定子を指定する場合、それらは論理 `AND` 演算子で結合されていると解釈されます。さらに、指定子の組み合わせは、GTFS フィード内の対応する情報と一致している必要があります。つまり、アラートを GTFS 内のエンティティに適用するには、提供されているすべての EntitySelector フィールドと一致する必要があります。たとえば、`route_id: "5"` および `route_type: "3"` フィールドを含む EntitySelector は、`route_id: "5"` バスにのみ適用され、`route_type: "3"` の他のルートには適用されません。プロデューサーがアラートを `route_id: "5"` と `route_type: "3"` の両方に適用する場合、`route_id: "5"` を参照する EntitySelector と `route_type: "3"` を参照する EntitySelector の 2 つを別々に提供する必要があります。
 
 少なくとも 1つの指定子を指定するしなければならない。EntitySelectorのすべてのフィールドを空にすることはできません。
 
