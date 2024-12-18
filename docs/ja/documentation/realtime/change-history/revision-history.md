@@ -2,6 +2,10 @@
 
 ### 改訂履歴
 
+#### 2024年12月
+
+* リアルタイム データのベースとなるGTFS Scheduleフィードの feed_info.feed_version に一致する新しいstringフィールドを追加しました。 [ディスカッション](https://github.com/google/transit/pull/434) を参照してください。
+
 #### 2024年10月
 
 * 旅行の変更に関する明確化と小さな変更。[ディスカッション](https://github.com/google/transit/pull/497)を参照してください。
