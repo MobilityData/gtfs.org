@@ -5,7 +5,7 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
 
 ##General Transit Feed Specificationリファレンス
 
-**2024 年 10 月 16 日に改訂されました。詳細については、[改訂履歴](../change_history/revision_history) を参照してください。**
+**2024 年 12 月 5 日に改訂されました。詳細については、[改訂履歴](../change_history/revision_history) を参照してください。**
 
 このドキュメントでは、GTFS データセットを構成するファイルの形式と構造を定義します。
 
@@ -29,6 +29,7 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
     -   [fare\_media.txt](#fare_mediatxt)
     -   [fare\_products.txt](#fare_productstxt) 
     -   [fare\_leg\_rules.txt](#fare_leg_rulestxt)
+    -   [fare_leg_join_rules.txt](#fare_leg_join_rulestxt)
     -   [fare\_transfer\_rules.txt](#fare_transfer_rulestxt)
     -   [areas.txt](#areastxt)
     -   [stop_areas.txt](#stop_areastxt)
@@ -64,6 +65,7 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
 * **旅程** - 出発地から目的地までの全体的な旅行で、途中のすべての区間と乗り換えが含まれます。
 * **サブ旅程** - 旅程のサブセットを構成する 2 つ以上の区間。
 * **チケット商品** - 旅行の支払いや検証に使用できる購入可能なチケット商品。
+* **有効な運賃区間** - 運賃計算の目的で [fare_leg_rules.txt](#fare_leg_rulestxt) のマッチングルールで 1 つの区間として扱われる 2 つ以上の区間のサブ旅程計算。
 
 ### 存在
 フィールドとファイルに適用可能な存在条件:
@@ -128,6 +130,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | [fare_media.txt](#fare_mediatxt) |任意|チケット商品を使用するために使用できる運賃メディアを説明します。<br><br>ファイル [fare_media.txt](#fare_mediatxt) は、[fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) に示されていない概念を説明しています。そのため、[fare_media.txt](#fare_mediatxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に独立しています。|
 | [fare_products.txt](#fare_productstxt) |任意| 乗客が購入できるさまざまな種類のチケットまたは運賃を説明しています。<br><br>ファイル [fare_products.txt](#fare_productstxt) には、[fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) に示されていないチケット商品が記載されています。そのため、[fare_products.txt](#fare_productstxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に独立しています。|
 | [fare_leg_rules.txt](#fare_leg_rulestxt) |任意| 個々の旅行区間の運賃規則。<br><br>ファイル [fare_leg_rules.txt](#fare_leg_rulestxt) は、運賃構造をモデル化するためのより詳細な方法を提供します。そのため、[fare_leg_rules.txt](#fare_leg_rulestxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に別です。 |
+| [fare_leg_join_rules.txt](#fare_leg_join_rulestxt) |任意| 2 つ以上の区間を定義するルールは、[fare_leg_rules.txt](#fare_leg_rulestxt)|
 | [fare_transfer_rules.txt](#fare_transfer_rulestxt) |任意| 旅行区間間の乗り換えに関する運賃規則。<br><br> [fare_leg_rules.txt](#fare_leg_rulestxt) とともに、ファイル [fare_transfer_rules.txt](#fare_transfer_rulestxt) は、運賃構造をモデル化するより詳細な方法を提供します。そのため、[fare_transfer_rules.txt](#fare_transfer_rulestxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に別です。 |
 | [areas.txt](#areastxt) |任意| 場所のエリアグループ化。 |
 | [stop_areas.txt](#stop_areastxt) |任意|停留所等をエリアに割り当てるルール。 |
@@ -337,7 +340,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 
 [calendar_dates.txt](#calendar_datestxt) テーブルは、dateによってサービスを明示的に有効または無効にします。2 つの方法で使用してもよい。
 
-* 推奨: [calendar.txt](#calendar_datestxt) を [calendar.txt](#calendartxt) と組み合わせて使用​​します。サービスが一般的に定期的で、明示的な日付にいくつかの変更がある場合 (たとえば、特別なイベント サービスや学校のスケジュールに対応するため)、これは適切なアプローチです。この場合、 `calendar_dates.service_id`は`calendar.service_id`部` IDです。
+* 推奨: [calendar.txt](#calendar_datestxt) を [calendar.txt](#calendartxt) と組み合わせて使用​​します。サービスが一般的に定期的で、明示的な日付にいくつかの変更がある場合 (たとえば、特別なイベント サービスや学校のスケジュールに対応するため)、これは適切なアプローチです。この場合、 `calendar_dates.service_id`は`calendar.service_id`部 IDです。
 * 代替: [calendar.txt](#calendartxt) を省略し、[calendar_dates.txt](#calendar_datestxt) で各サービスのdateを指定します。これにより、かなりのサービスバリエーションが可能になり、通常の週次スケジュールのないサービスに対応できます。この場合、 `service_id`はIDです。
 
 | フィールド名 | タイプ | 存在 | 説明 |
@@ -436,7 +439,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 |------|------|------|------|
 | `fare_product_id` | ID |**必須**| チケット商品またはチケット商品のセットを識別します。<br><br> [fare_products.txt](#fare_productstxt) 内の複数のレコードが同じ`fare_product_id`を共有するしてもよい。その場合、別のファイルから参照されたときに、そのIDを持つすべてのレコードが取得されます。<br><br>複数のレコードが同じ`fare_product_id` を共有してしてもよいても、異なる`fare_media_id`を持つ場合があります。これは、チケット商品を使用するために利用できるさまざまな方法 (潜在的に異なる価格) を示します。|
 | `fare_product_name` |Text|任意| 乗客に表示されるチケット商品の名前。|
-| `fare_media_id` | `fare_media.fare_media_id`部` ID |任意| 便中にチケット商品を使用するために使用できる運賃メディアを識別します。`fare_media_id` が空の場合、運賃メディアは不明であると見なされます。|
+| `fare_media_id` | `fare_media.fare_media_id`部 ID |任意| 便中にチケット商品を使用するために使用できる運賃メディアを識別します。`fare_media_id` が空の場合、運賃メディアは不明であると見なされます。|
 | `amount` |通貨金額 |**必須**| チケット商品のコスト。乗り継ぎ割引を表す場合は負の値になる場合がしてもよい。無料のチケット商品を表す場合はゼロになる場合がしてもよい。|
 | `currency` | 通貨コード |**必須**| チケット商品のコストの通貨。 |
 
@@ -484,13 +487,29 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | フィールド名 | タイプ | 存在 | 説明 |
 | ------ | ------ | ------ | ------ |
 | `leg_group_id` | ID | 任意 | [fare_leg_rules.txt](#fare_leg_rulestxt) 内のエントリのグループを識別します。<br><br> `fare_transfer_rules.from_leg_group_id` と `fare_transfer_rules.to_leg_group_id` 間の運賃転送ルールを記述するために使用されます。<br><br>[fare_leg_rules.txt](#fare_leg_rulestxt) 内の複数のエントリが同じ `fare_leg_rules.leg_group_id` に属することができます。<br><br>[fare_leg_rules.txt](#fare_leg_rulestxt) 内の同じエントリ (`fare_leg_rules.leg_group_id` を含まない) が複数の `fare_leg_rules.leg_group_id` に属することはできません。|
-| `network_id` | `routes.network_id` または `networks.network_id` を参照する外部 ID | 任意 |運賃区間ルールに適用される路線ネットワークを識別します。<br><br>`rule_priority` フィールドが存在せず、フィルタリングされている `network_id` に一致する `fare_leg_rules.network_id` 値がない場合、デフォルトで空の `fare_leg_rules.network_id` が一致します。<br><br> `fare_leg_rules.network_id` の空のエントリは、[routes.txt](#routestxt) または [networks.txt](#networkstxt) で定義されているすべてのネットワークに対応しますが、`fare_leg_rules.network_id` の下にリストされているものは除きます。<br><br> ファイルに `rule_priority` フィールドが存在する場合、空の `fare_leg_rules.network_id` は、区間の路線ネットワークがこのルールの一致に影響しないことを示します。|
-| `from_area_id` | `areas.area_id` を参照する外部 ID | 任意 | 出発エリアを識別します。<br><br>`rule_priority` フィールドが存在せず、フィルタリングされている `area_id` に一致する `fare_leg_rules.from_area_id` 値がない場合、デフォルトで空の `fare_leg_rules.from_area_id` が一致します。<br><br>`fare_leg_rules.from_area_id` の空のエントリは、`fare_leg_rules.from_area_id` の下にリストされているものを除き、`areas.area_id` で定義されているすべてのエリアに対応します。<br><br> ファイルに `rule_priority` フィールドが存在する場合、空の `fare_leg_rules.from_area_id` は、区間の出発エリアがこのルールの一致に影響しないことを示します。|
-| `to_area_id` | `areas.area_id` を参照する外部 ID | 任意 | 到着エリアを識別します。<br><br>`rule_priority` フィールドが存在せず、フィルタリングされている `area_id` に一致する `fare_leg_rules.to_area_id` 値がない場合、デフォルトで空の `fare_leg_rules.to_area_id` が一致します。<br><br> `fare_leg_rules.to_area_id` の空のエントリは、`fare_leg_rules.to_area_id` の下にリストされているものを除き、`areas.area_id` で定義されているすべてのエリアに対応します。<br><br>ファイルに `rule_priority` フィールドが存在する場合、空の `fare_leg_rules.to_area_id` は、区間の到着エリアがこのルールの一致に影響しないことを示します。|
-| `from_timeframe_group_id` | `timeframes.timeframe_group_id` を参照する外部 ID | 任意 | 運賃区間の開始時に運賃検証イベントのタイムフレームを定義します。<br><br>運賃区間の「開始時刻」は、イベントが発生するようにスケジュールされている時刻です。たとえば、乗客が乗車して運賃を検証する運賃区間の開始時のバスの予定出発時刻が時刻になります。以下のルール マッチング セマンティクスでは、開始時刻は [timeframes.txt](#timeframestxt) の [ローカル時間セマンティクス](#_14) によって決定されるローカル時間で計算されます。適切な場合、運賃区間の出発イベントの停車駅または駅がタイムゾーン解決に使用されます。<br><br>`from_timeframe_group_id` を指定する運賃区間ルールの場合、[timeframes.txt](#timeframestxt) に次の条件がすべて当てはまるレコードが少なくとも 1 つ存在する場合、そのルールは特定の区間に一致します。<br>- `timeframe_group_id` の値は `from_timeframe_group_id` の値と同じです。<br>- レコードの `service_id` によって識別される日のセットには、運賃区間の開始時刻の「現在の日」が含まれます。<br>- 運賃区間の開始時刻の「時刻」は、レコードの `timeframes.start_time` 値以上であり、`timeframes.end_time` 値未満です。<br><br>空の `fare_leg_rules.from_timeframe_group_id` は、レグの開始時間は、このルールのマッチングには影響しません。 |
-| `to_timeframe_group_id` | `timeframes.timeframe_group_id` を参照する外部 ID | 任意 | 運賃区間の終了時に運賃検証イベントのタイムフレームを定義します。<br><br>運賃区間の「終了時刻」は、イベントが発生するようにスケジュールされている時刻です。たとえば、乗客が降車して運賃を検証する運賃区間の終了時にバスが到着する予定時刻などです。以下のルール マッチング セマンティクスでは、終了時刻は [timeframes.txt](#timeframestxt) の [ローカル時間セマンティクス](#_14) によって決定されるローカル時間で計算されます。適切な場合、運賃区間の到着イベントの停車駅または駅がタイムゾーン解決に使用されます。<br><br>`to_timeframe_group_id` を指定する運賃区間ルールの場合、[timeframes.txt](#timeframestxt) に次の条件がすべて当てはまるレコードが少なくとも 1 つ存在すると、そのルールは特定の区間に一致します。<br>- `timeframe_group_id` の値は `to_timeframe_group_id` の値と等しい。<br>- レコードの `service_id` によって識別される日のセットには、運賃区間の終了時刻の「現在の日」が含まれます。<br>- 運賃区間の終了時刻の「時刻」は、レコードの `timeframes.start_time` 値以上であり、`timeframes.end_time` 値未満です。<br><br>空の `fare_leg_rules.to_timeframe_group_id` は、区間の終了時間は、このルールのマッチングには影響しません。 |
+| `network_id` | `routes.network_id`または`networks.network_id`部 ID |任意| 運賃区間ルールに適用されるルート ネットワークを識別します。<br><br> `rule_priority` フィールドが存在せず、フィルタリングされている`network_id`に一致する`fare_leg_rules.network_id`値がない場合、デフォルトで空の`fare_leg_rules.network_id`が一致します。<br><br> `fare_leg_rules.network_id`の空のエントリは、[routes.txt](#routestxt) または [networks.txt](#networkstxt) で定義されているすべてのネットワークに対応しますが、 `fare_leg_rules.network_id`の下にリストされているネットワークは除きます。<br><br>ファイルに `rule_priority` フィールドが存在する場合、空の`fare_leg_rules.network_id`は、区間のルート ネットワークがこのルールの一致に影響しないことを示します。<br><br> [複数の区間の有効な運賃区間](#fare_leg_join_rulestxt)と照合する場合、各区間には、照合に使用される同じ`network_id`が必要です。 |
+| `from_area_id` | `areas.area_id`部 ID |任意| 出発エリアを識別します。<br><br> `rule_priority` フィールドが存在せず、フィルタリングされている`area_id`に一致する`fare_leg_rules.from_area_id`値がない場合、デフォルトで空の`fare_leg_rules.from_area_id`が一致します。<br><br> `fare_leg_rules.from_area_id`の空のエントリは、` `fare_leg_rules.from_area_id`の下にリストされているものを除く、 `areas.area_id`で定義されているすべてのエリアに対応します。<br><br>ファイルに `rule_priority` フィールドが存在する場合、空の`fare_leg_rules.from_area_id`は、区間の出発エリアがこのルールの一致に影響しないことを示します。<br><br> [複数の区間の有効な運賃区間](#fare_leg_join_rulestxt)と照合する場合、有効な運賃区間の最初の区間が出発エリアの決定に使用されます。 |
+| `to_area_id` | `areas.area_id`部 ID |任意| 到着エリアを識別します。<br><br> `rule_priority` フィールドが存在せず、フィルタリングされている`area_id`に一致する`fare_leg_rules.to_area_id`値がない場合、デフォルトで空の`fare_leg_rules.to_area_id`が一致します。<br><br> `fare_leg_rules.to_area_id`の空のエントリは、` `fare_leg_rules.to_area_id`の下にリストされているものを除く、 `areas.area_id`で定義されているすべてのエリアに対応します。<br><br>ファイルに `rule_priority` フィールドが存在する場合、空の`fare_leg_rules.to_area_id`は、区間の到着エリアがこのルールの一致に影響しないことを示します。<br><br> [複数の区間の有効な運賃区間](#fare_leg_join_rulestxt)と照合する場合、有効な運賃区間の最後の区間が到着エリアの決定に使用されます。 |
+| `from_timeframe_group_id` | `timeframes.timeframe_group_id`部 ID |任意| 運賃区間の開始時の運賃検証イベントのタイムフレームを定義します。<br><br>運賃区間の`開始時間`は、イベントの発生が予定されている時間です。たとえば、乗客が乗車して運賃を確認する運賃区間の開始時のバスの予定出発時刻がその時間になります。以下のルール マッチング セマンティクスでは、開始時間は [timeframes.txt](#timeframestxt) の [ローカル時間セマンティクス](#localtimesemantics) によって決定されるローカル時間で計算されます。運賃区間の出発イベントの停留所または駅は、必要に応じてタイムゾーン解決に使用する必要があります。<br><br> `from_timeframe_group_id`を指定する運賃区間ルールの場合、[timeframes.txt](#timeframestxt) に以下の条件がすべて満たされるレコードが少なくとも 1 つ存在する場合、そのルールは特定の区間と一致します。<br> - `timeframe_group_id`の値は`from_timeframe_group_id`の値と同じです。<br> - レコードの`service_id`によって識別される日のセットには、運賃区間の開始時刻の`現在の日`が含まれます。<br> - 運賃区間の開始時間の`時刻`は、レコードの`timeframes.start_time`値以上であり、 `timeframes.end_time`値未満です。<br><br>空の`fare_leg_rules.from_timeframe_group_id`は、区間の開始時刻がこのルールの一致に影響しないことを示します。<br><br> [複数の区間の有効な運賃区間](#fare_leg_join_rulestxt)と照合する場合、有効な運賃区間の最初の区間が運賃検証イベントの開始を決定するために使用されます。 |
+| `to_timeframe_group_id` | `timeframes.timeframe_group_id` を参照する外部 ID |任意| 運賃区間の終了時の運賃検証イベントのタイムフレームを定義します。<br><br>運賃区間の`終了時間`は、イベントの発生が予定されている時間です。たとえば、乗客が降りて運賃を確認する運賃区間の終了時のバスの予定到着時間などが考えられます。以下のルールマッチングセマンティクスでは、終了時間は [timeframes.txt](#timeframestxt) の [ローカルタイムセマンティクス](#localtimesemantics) によって決定されるローカルタイムで計算されます。運賃区間の到着イベントの停留所または駅は、必要に応じてタイムゾーン解決に使用する必要があります。<br><br> `to_timeframe_group_id`を指定する運賃区間ルールの場合、[timeframes.txt](#timeframestxt) に以下の条件がすべて満たされるレコードが少なくとも 1 つ存在する場合、そのルールは特定の区間と一致します。<br> - `timeframe_group_id`の値は`to_timeframe_group_id`の値と同じです。<br> - レコードの`service_id`によって識別される日のセットには、運賃区間の終了時刻の`現在の日`が含まれます。<br> - 運賃区間の終了時間の`時刻`は、レコードの`timeframes.start_time`値以上であり、 `timeframes.end_time`値未満です。<br><br>空の`fare_leg_rules.to_timeframe_group_id`は、区間の終了時刻がこのルールの一致に影響しないことを示します。<br><br> [複数の区間の有効な運賃区間](#fare_leg_join_rulestxt)と照合する場合、有効な運賃区間の最後の区間が終了運賃検証イベントの決定に使用されます。 |
 | `fare_product_id` | `fare_products.fare_product_id` を参照する外部 ID | **必須** | 区間を移動するために必要なチケット商品。 |
 | `rule_priority` | 負でない整数 | 任意 | マッチング ルールが区間に適用される優先順位を定義し、特定のルールを他のルールよりも優先できるようにします。`fare_leg_rules.txt` 内の複数のエントリが一致する場合、`rule_priority` の値が最も高いルールまたはルール セットが選択されます。<br><br>`rule_priority` の値が空の場合、ゼロとして扱われます。 |
+
+### fare_leg_join_rules.txt 
+
+ファイル:**任意**主キー (`from_network_id、to_network_id、from_stop_id、to_stop_id`)
+
+乗り換えを含む 2 つの連続する区間のサブ旅程の場合、乗り換えがファイル内の特定のレコードで指定されたすべての一致する述語に一致する場合、それらの 2 つの区間は、[`fare_leg_rules.txt`](#fare_leg_rulestxt) 内のルールとの照合の目的で、単一の**有効な運賃区間**と見なされます。
+- `from_stop_id`および`to_stop_id`によって明示的に上書きされない限り、乗り換え前の区間の最後の駅と乗り換え後の区間の最初の駅は、レコードに対して同じである必要があります。
+-ファイル内の特定のレコードに対して一致する述語フィールド値が空白または未指定の場合、そのフィールドは一致の目的で無視されます。
+- サブ旅程に、それぞれが結合ルールに一致する連続した乗り換えが含まれる場合、サブ旅程全体を 1 つの**有効な運賃区間**と見なす必要があります。
+
+| フィールド名 | タイプ | 存在 | 説明 |
+|------|------|------|------|
+| `from_network_id` | `routes.network_id`または`networks.network_id`部 ID |**必須**| 指定されたルート ネットワークを使用する乗り換え前の区間と一致します。指定されている場合は、同じ `to_network_id` も指定する必要があります。 |
+| `to_network_id` | `routes.network_id`または`networks.network_id`部 ID |**必須**|指定されたルート ネットワークを使用する乗り換え後の区間と一致します。指定する場合は、同じ `from_network_id` も指定する必要があります。|
+| `from_stop_id` | `stops.stop_id`部 ID |**条件付きで必須**| 指定された停留所 (`location_type=0`または空) または駅 (`location_type=1`) で終了する乗り換え前の区間と一致します。<br><br>条件付きで必須:<br> -**`to_stop_id`が定義されている場合は必須**です。<br> - それ以外の場合は任意。 |
+| `to_stop_id` | `stops.stop_id`部 ID |**条件付きで必須**| 指定された停留所 (`location_type=0`または空) または駅 (`location_type=1`) で開始する乗り換え後の区間と一致します。<br><br>条件付きで必須:<br> -**`from_stop_id`が定義されている場合は必須。<br> - それ以外の場合は任意。 |
 
 ### fare_transfer_rules.txt 
 
@@ -524,7 +543,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | `duration_limit` | 正の整数 |任意| 乗り換えの期間制限を定義します。<br><br>秒単位の整数増分で表現するしなければならない。<br><br>期間制限がない場合は、 `fare_transfer_rules.duration_limit` は空にするしなければならない。 |
 | `duration_limit_type` | 列挙型 |**条件付きで必須**| `fare_transfer_rules.duration_limit`の相対的な開始と終了を定義します。<br><br>有効なオプションは次のとおりです。<br> `0` - 現在の区間の出発運賃の検証と次の区間の到着運賃の検証の間。<br> `1` - 現在の区間の出発運賃の検証と次の区間の出発運賃の検証の間。<br> `2` - 現在の区間の到着運賃の検証と次の区間の出発運賃の検証の間。<br> `3` - 現在の区間の到着運賃の検証と次の区間の到着運賃の検証の間。<br><br>条件付きで必須:<br> -** `fare_transfer_rules.duration_limit`が定義されている場合は必須。<br> - `fare_transfer_rules.duration_limit`が空の場合は**禁止**です。 |
 | `fare_transfer_type` | 列挙型 |**必須**| 旅程中の区間間の乗り換えのコスト処理方法を示します。<br> ![](../../assets/2-leg.svg)<br>有効なオプションは次のとおりです。<br> `0` - 出発区間`fare_leg_rules.fare_product_id`と`fare_transfer_rules.fare_product_id`を加算したもの。A + AB。<br> `1` - 出発区間の`fare_leg_rules.fare_product_id`と`fare_transfer_rules.fare_product_id`と到着区間の`fare_leg_rules.fare_product_id` を加算します。A + AB + B。<br> `2` - `fare_transfer_rules.fare_product_id`; AB.<br><br>旅程中の複数の乗り換え間のコスト処理のやり取り:<br> ![](../../assets/3-leg.svg)<br><table><thead><tr><th> `fare_transfer_type`</th><th>処理A > B</th><th>処理B > C</th></tr></thead><tbody><tr><td> `0`</td><td> A + A +B プラス</td><td>S + BC</td></tr><tr><td> `1`</td><td> A + AB + B</td><td> S + BC + C</td></tr><tr><td> `2`</td><td> AB</td><td> S + BC</td></tr></tbody></table>ここで、S は、前の区間と乗り換えの合計処理コストを示します。 |
-| `fare_product_id` | `fare_products.fare_product_id`部` ID |任意| 2 つの運賃区間間の乗り換えに必須チケット商品。空の場合、乗り換えルールのコストは 0 です。|
+| `fare_product_id` | `fare_products.fare_product_id`部 ID |任意| 2 つの運賃区間間の乗り換えに必須チケット商品。空の場合、乗り換えルールのコストは 0 です。|
 
 
 ### areas.txt 
@@ -609,7 +628,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 
 | フィールド名 |タイプ | 存在 | 説明 |
 |------|------|------|------|
-| `trip_id` | `trips.trip_id`部` ID |**必須**| 指定されたサービス間隔が適用される便を識別します。 |
+| `trip_id` | `trips.trip_id`部 ID |**必須**| 指定されたサービス間隔が適用される便を識別します。 |
 | `start_time` | 時間 |**必須**| 最初の車両が指定された間隔で便の最初の停留所から出発する時刻。 |
 | `end_time` | 時間 |**必須**| 便の最初の停留所でサービスが別の間隔に変更される (または停止する) 時刻。 |
 | `headway_secs` | 正の整数 |**必須**| `start_time`と`end_time`で指定された時間間隔中に、便の同じ停留所 (間隔) から出発する間隔 (秒単位)。同じ便に複数の間隔を定義してもよいが、重複するしてはいけない。新しい運行間隔は、前の運行間隔が終了した正確な時間に開始されるしてもよい。 |

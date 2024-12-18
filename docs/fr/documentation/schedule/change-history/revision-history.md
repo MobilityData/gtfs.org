@@ -2,6 +2,9 @@
 
 ### Historique des révisions
 
+#### Décembre 2024
+* Ajout de `fare_leg_join_rules.txt` et introduction du concept de segment tarifaire effectif. Voir [discussion](https://github.com/google/transit/pull/439).
+
 #### Septembre 2024
 * Clarifier la présence et l’utilisation des champs from/to_stop_id et from/to_trip_id dans transfers.txt. Voir [discussion](https://github.com/google/transit/pull/455).
 * Ajout de règles de validité pour les polygones dans les fichiers GeoJSON. Voir [discussion](https://github.com/google/transit/pull/476)

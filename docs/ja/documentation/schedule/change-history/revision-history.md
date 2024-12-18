@@ -2,6 +2,9 @@
 
 ### 改訂履歴
 
+#### 2024 年 12 月
+* `fare_leg_join_rules.txt` を追加し、実効運賃区間の概念を導入しました。[ディスカッション](https://github.com/google/transit/pull/439) を参照してください。
+
 #### 2024年9月
 * transfers.txt の from/to_stop_id および from/to_trip_id フィールドの存在と使用を明確にします。[ディスカッション](https://github.com/google/transit/pull/455) を参照してください。
 * GeoJSON ファイルのポリゴンの有効性ルールを追加しました。[ディスカッション](https://github.com/google/transit/pull/476) を参照してください。
