@@ -20,7 +20,7 @@
  
 #### Juillet 2022 
  
- * Ajout cause_detail et effect_detail. Voir [discussion](https://github.com/google/transit/pull/332) 
+ * Ajout de cause_detail et effect_detail. Voir [discussion](https://github.com/google/transit/pull/332) 
  * Ajout de la possibilité de spécifier une valeur accessible en fauteuil roulant dans un TripUpdate. VehicleDescriptor. Voir [discussion](https://github.com/google/transit/pull/340). 
  
 #### Septembre 2021 
@@ -29,11 +29,11 @@
  
 #### Août 2021 
  
- * Ajout GTFS-NewShapes comme expérimental. Voir [discussion](https://github.com/google/transit/pull/272). 
+ * Ajout de GTFS-NewShapes comme expérimental. Voir [discussion](https://github.com/google/transit/pull/272). 
  
 #### Avril 2021 
  
- * Ajout exit_occupancy_status à TripUpdate. Voir [discussion](https://github.com/google/transit/pull/260). 
+ * Ajout de exit_occupancy_status à TripUpdate. Voir [discussion](https://github.com/google/transit/pull/260). 
  
 #### Février 2021 
  
@@ -56,7 +56,7 @@
 #### Avril 2020 
  
  * Marquer SeverityLevel comme final. Voir [discussion](https://github.com/google/transit/pull/214). 
- * Ajout occupation_percentage. Voir [discussion](https://github.com/google/transit/pull/213). 
+ * Ajout de occupation_percentage. Voir [discussion](https://github.com/google/transit/pull/213). 
  
 #### 12 mars 2020 
  
@@ -65,16 +65,16 @@
 #### Août 2019 
  
  * Documenter que les trip_updates ne doivent pas nécessairement se produire dans le flux en ordre de bloc. Voir [discussion](https://github.com/google/transit/pull/176). 
- * Ajout StopTimeUpdate. Valeur UNSCHEDULED de ScheduleRelationship. Voir [discussion](https://github.com/google/transit/pull/173). 
+ * Ajout de StopTimeUpdate. Valeur UNSCHEDULED de ScheduleRelationship. Voir [discussion](https://github.com/google/transit/pull/173). 
  
 #### Mai 2019 
  
- * Ajout un effet d’alerte de problème d’accessibilité. Voir [discussion](https://github.com/google/transit/pull/164). 
+ * Ajout d'un effet d’alerte de problème d’accessibilité. Voir [discussion](https://github.com/google/transit/pull/164). 
  
 #### Février 2019 
  
  * Ajout de l’option d’effet NO_EFFECT pour l’alerte de service GTFS Realtime. Voir [discussion](https://github.com/google/transit/pull/137). 
- * Ajout un nouveau champ facultatif SeverityLevel au flux d’alertes de service. Voir [discussion](https://github.com/google/transit/pull/136). 
+ * Ajout d'un nouveau champ facultatif SeverityLevel au flux d’alertes de service. Voir [discussion](https://github.com/google/transit/pull/136). 
  * Ajout de nouveaux champs facultatifs pour la fonctionnalité de Synthèse Vocale dans le flux d’alertes de service. Voir [discussion](https://github.com/google/transit/pull/135). 
  
 #### Avril 2018 
