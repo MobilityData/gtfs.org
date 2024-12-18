@@ -107,6 +107,7 @@ GTFS リアルタイム v2.0 以降では、*必須* 列は、交通事業者デ
 | **gtfs_realtime_version** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | 必須 | 1つ | フィード仕様のバージョン。現在のバージョンは 2.0 です。 |
 | **incrementality** | [Incrementality](#enum-incrementality) | 必須 | 1 |
 | **timestamp** | [uint64](https://protobuf.dev/programming-guides/proto2/#scalar) | 必須 | 1 | このタイムスタンプは、このフィードの内容が作成された瞬間を識別します (サーバー時間)。POSIX 時間 (つまり、1970年1月1日 00:00:00UTC からの秒数)。リアルタイム情報を生成するシステムと消費するシステム間の時間のずれを回避するには、タイム サーバーからタイムスタンプを取得することを強くお勧めします。数秒までの時間差は許容されるため、Stratum 3 またはそれより低い Strata サーバーを使用することはまったく問題ありません。 |
+|**feed_version**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1 つ | リアルタイム データのベースとなる GTFS フィードの `feed_info.feed_version` に一致する文字列。ユーザーはこれを使用して、現在アクティブな GTFS フィードや、ダウンロード可能な新しいフィードを識別できます。 |
 
 ### _enum_ Incrementality
 
