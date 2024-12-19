@@ -2,13 +2,17 @@
 
 ## Historial de revisiones
 
+#### Diciembre de 2024
+
+* Se agregó un nuevo campo de string que coincide con feed_info.feed_version de la fuente de GTFS Schedule en la que se basan los datos en tiempo real. Consulte la [discusión](https://github.com/google/transit/pull/434).
+
 #### Octubre de 2024
 
  * Aclaraciones y pequeños cambios para las modificaciones de viaje (Trip Modifications). Consulte la [discusión](https://github.com/google/transit/pull/497).
 
 #### Marzo 2024 
  
- * Modificaciones de viaje adoptadas. Consulte la [discusión](https://github.com/google/transit/pull/403). 
+ * Modificaciones de viaje (trip modifications) adoptado. Consulte la [discusión](https://github.com/google/transit/pull/403). 
  
 #### Noviembre 2022 
  
@@ -16,7 +20,7 @@
  
 #### Julio 2022 
  
- * Añadir cause_detail y effect_detail. Ver [discusión](https://github.com/google/transit/pull/332) 
+ * Se agregó cause_detail y effect_detail. Ver [discusión](https://github.com/google/transit/pull/332) 
  * Se agregó la capacidad de especificar un valor accesible para sillas de ruedas en un TripUpdate. VehicleDescriptor. Consulte la [discusión](https://github.com/google/transit/pull/340). 
  
 #### Septiembre 2021 
@@ -25,11 +29,11 @@
  
 #### Agosto de 2021 
  
- * Agregar GTFS-NewShapes como experimental. Consulte la [discusión](https://github.com/google/transit/pull/272). 
+ * Se agregó GTFS-NewShapes como experimental. Consulte la [discusión](https://github.com/google/transit/pull/272). 
  
 #### Abril de 2021 
  
- * Agregar return_occupancy_status a TripUpdate. Consulte la [discusión](https://github.com/google/transit/pull/260). 
+ * Se agregó return_occupancy_status a TripUpdate. Consulte la [discusión](https://github.com/google/transit/pull/260). 
  
 #### Febrero 2021 
  
@@ -37,26 +41,26 @@
  
 #### Septiembre 2020 
  
- * Soporta aglomeración de varios autos. Consulte la [discusión](https://github.com/google/transit/pull/237). 
+ * Soporte para la aglomeración de varios autos (multi-car crowding). Consulte la [discusión](https://github.com/google/transit/pull/237). 
  
 #### Abril 2020 
  
- *Asignaciones de parada de soporte. Consulte la [discusión](https://github.com/google/transit/pull/219). 
+ * Soporte para asignaciones de parada. Consulte la [discusión](https://github.com/google/transit/pull/219). 
  
 #### Julio 2020 
  
- * Soporta viajes DUPLICADOS. Consulte la [discusión](https://github.com/google/transit/pull/221). 
+ * Soporte para viajes DUPLICADOS. Consulte la [discusión](https://github.com/google/transit/pull/221). 
  * Alerta tts_header_text, tts_description_text ya no es experimental. Consulte la [discusión](https://github.com/google/transit/pull/229). 
- * Etiquete los viajes GTFS-RT AGREGADOS como no completamente especificados. Consulte la [discusión](https://github.com/google/transit/pull/230). 
+ * Etiqueta los viajes GTFS-RT AGREGADOS como no completamente especificados. Consulte la [discusión](https://github.com/google/transit/pull/230). 
  
 #### Abril 2020 
  
- * Marcar SeverityLevel como final. Consulte la [discusión](https://github.com/google/transit/pull/214). 
+ * Marca SeverityLevel como final. Consulte la [discusión](https://github.com/google/transit/pull/214). 
  * Agregar porcentaje_ocupación. Consulte la [discusión](https://github.com/google/transit/pull/213). 
  
 #### 12 de marzo de 2020 
  
- *Recomendar proporcionar predicciones de TripUpdate para el próximo viaje en bloque. Consulte la [discusión](https://github.com/google/transit/pull/206). 
+ * Recomendar proporcionar predicciones de TripUpdate para el próximo viaje en bloque. Consulte la [discusión](https://github.com/google/transit/pull/206). 
  
 #### Agosto de 2019 
  
@@ -65,13 +69,13 @@
  
 #### Mayo de 2019 
  
- * Agregar efecto de alerta de problema de accesibilidad. Consulte la [discusión](https://github.com/google/transit/pull/164). 
+ * Se agregó efecto de alerta de problema de accesibilidad. Consulte la [discusión](https://github.com/google/transit/pull/164). 
  
 #### Febrero de 2019 
  
- * Agregar opción de efecto NO_EFFECT para alerta de servicio GTFS en tiempo real. Consulte la [discusión](https://github.com/google/transit/pull/137). 
- * Agregar un nuevo campo opcional SeverityLevel al feed de alertas de servicio. Consulte la [discusión](https://github.com/google/transit/pull/136). 
- * Agregar nuevos campos opcionales para la funcionalidad de Texto a Voz en el feed de alertas de servicio. Consulte la [discusión](https://github.com/google/transit/pull/135). 
+ * Se agregó opción de efecto NO_EFFECT para alerta de servicio GTFS en tiempo real. Consulte la [discusión](https://github.com/google/transit/pull/137). 
+ * Se agregó un nuevo campo opcional SeverityLevel al feed de alertas de servicio. Consulte la [discusión](https://github.com/google/transit/pull/136). 
+ * Se agregó nuevos campos opcionales para la funcionalidad de Texto a Voz en el feed de alertas de servicio. Consulte la [discusión](https://github.com/google/transit/pull/135). 
  
 #### Abril 2018 
  
