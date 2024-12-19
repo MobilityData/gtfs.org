@@ -1,4 +1,4 @@
-# Calendario GTFS
+# GTFS Schedule
 
 ### Historial de revisiones
 
