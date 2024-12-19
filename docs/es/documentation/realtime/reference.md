@@ -107,6 +107,7 @@
  | **gtfs_realtime_version** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Obligatorio | Uno | Versión de la especificación del feed. La versión actual es 2.0. | 
  | **incrementality** | [Incrementality](#enum-incrementality) | Obligatorio | Uno | 
  | **timestamp** | [uint64](https://protobuf.dev/programming-guides/proto2/#scalar) | Obligatorio | Uno | Esta marca de tiempo identifica el momento en que se creó el contenido de este feed (en hora del servidor). En hora POSIX (es decir, número de segundos desde el 1 de enero de 1970 a las 00:00:00 UTC). Para evitar el desfase temporal entre los sistemas que producen y consumen información en tiempo real, se recomienda encarecidamente derivar la marca de tiempo de un servidor de tiempo. Es completamente aceptable utilizar servidores de estrato 3 o incluso de estratos inferiores, ya que las diferencias horarias de hasta un par de segundos son tolerables. | 
+ |**feed_version**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Opcional | Una | Cadena que coincide con `feed_info.feed_version` de la fuente GTFS en la que se basan los datos en tiempo real. Los consumidores pueden usar esto para identificar qué fuente GTFS está activa actualmente o cuándo hay una nueva disponible para descargar. |
  
 ### _enum_ Incrementality 
  
