@@ -107,7 +107,8 @@
  | **gtfs_realtime_version** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis | Un | Version de la spécification du flux. La version actuelle est la 2.0. | 
  | **incrementality** | [Incrementality](#enum-incrementality) | Requis | Un | 
  | **timestamp** | [uint64](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis | Un | Cet horodatage identifie le moment où le contenu de ce flux a été créé (en heure du serveur). En temps POSIX (c’est-à-dire nombre de secondes depuis le 1er janvier 1970 00:00:00 UTC). Pour éviter les décalages horaires entre les systèmes produisant et consommant des informations en temps réel, il est fortement conseillé de dériver l’horodatage d’un serveur de temps. Il est tout à fait acceptable d’utiliser des serveurs de strate 3 ou même inférieure, car des différences horaires allant jusqu’à quelques secondes sont tolérables. | 
- 
+ |**feed_version**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Optionnel | Un | Chaîne qui correspond à `feed_info.feed_version` du flux GTFS sur lequel les données en temps réel sont basées. Les consommateurs peuvent l’utiliser pour identifier quel flux GTFS est actuellement actif ou quand un nouveau est disponible au téléchargement. |
+
 ### _enum_ Incrementality 
  
  Détermine si la récupération actuelle est incrémentielle. 
