@@ -2,6 +2,9 @@
 
 ### Historial de revisiones
 
+#### Diciembre de 2024
+* Se agregó `fare_leg_join_rules.txt` e introdujo el concepto de tramo de tarifa efectiva. Consulte [discusión](https://github.com/google/transit/pull/439).
+
 #### Septiembre de 2024
 * Aclarar la presencia y el uso de los campos from/to_stop_id y from/to_trip_id en transfers.txt. Ver [discusión](https://github.com/google/transit/pull/455).
 * Se agregaron reglas de validez para polígonos en archivos GeoJSON. Ver [discusión](https://github.com/google/transit/pull/476)
