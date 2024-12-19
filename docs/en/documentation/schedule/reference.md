@@ -1,6 +1,6 @@
 ## General Transit Feed Specification Reference
 
-**Revised Dec 5, 2024. See [Revision History](../change_history/revision_history) for more details.**
+**Revised Dec 5, 2024. See [Revision History](../change-history/revision-history) for more details.**
 
 This document defines the format and structure of the files that comprise a GTFS dataset.
 
@@ -15,17 +15,17 @@ This document defines the format and structure of the files that comprise a GTFS
     -   [stops.txt](#stopstxt)
     -   [routes.txt](#routestxt)
     -   [trips.txt](#tripstxt)
-    -   [stop\_times.txt](#stop_timestxt)
+    -   [stop_times.txt](#stop_timestxt)
     -   [calendar.txt](#calendartxt)
-    -   [calendar\_dates.txt](#calendar_datestxt)
-    -   [fare\_attributes.txt](#fare_attributestxt)
-    -   [fare\_rules.txt](#fare_rulestxt)
+    -   [calendar_dates.txt](#calendar_datestxt)
+    -   [fare_attributes.txt](#fare_attributestxt)
+    -   [fare_rules.txt](#fare_rulestxt)
     -   [timeframes.txt](#timeframestxt)    
-    -   [fare\_media.txt](#fare_mediatxt)
-    -   [fare\_products.txt](#fare_productstxt) 
-    -   [fare\_leg\_rules.txt](#fare_leg_rulestxt)
+    -   [fare_media.txt](#fare_mediatxt)
+    -   [fare_products.txt](#fare_productstxt) 
+    -   [fare_leg_rules.txt](#fare_leg_rulestxt)
     -   [fare_leg_join_rules.txt](#fare_leg_join_rulestxt)
-    -   [fare\_transfer\_rules.txt](#fare_transfer_rulestxt)
+    -   [fare_transfer_rules.txt](#fare_transfer_rulestxt)
     -   [areas.txt](#areastxt)
     -   [stop_areas.txt](#stop_areastxt)
     -   [networks.txt](#networkstxt)
@@ -40,7 +40,7 @@ This document defines the format and structure of the files that comprise a GTFS
     -   [locations.geojson](#locationsgeojson)
     -   [booking_rules.txt](#booking_rulestxt)
     -   [translations.txt](#translationstxt)
-    -   [feed\_info.txt](#feed_infotxt)
+    -   [feed_info.txt](#feed_infotxt)
     -   [attributions.txt](#attributionstxt)
 
 ## Document Conventions
@@ -499,6 +499,7 @@ File: **Optional**
 Primary Key (`from_network_id, to_network_id, from_stop_id, to_stop_id`)
 
 For a sub-journey of two consecutive legs with a transfer, if the transfer matches all matching predicates specified by a particular record in the file, then those two legs should be considered as a single **effective fare leg** for the purposes of matching against rules in [`fare_leg_rules.txt`](#fare_leg_rulestxt).
+
 - Unless overridden explicitly by `from_stop_id` and `to_stop_id`, the last station of the pre-transfer leg and the first station of the post-transfer leg must be the same for the record.
 - If a matching predicate field value is blank or unspecified for a particular record in the file, then that field should be ignored for the purposes of matching.
 - When a sub-journey contains consecutive transfers that each match a join rule, then the entire sub-journey should be considered as a single **effective fare leg**.

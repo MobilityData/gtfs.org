@@ -5,7 +5,7 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
 
 ##General Transit Feed Specificationリファレンス
 
-**2024 年 12 月 5 日に改訂されました。詳細については、[改訂履歴](../change_history/revision_history) を参照してください。**
+**2024 年 12 月 5 日に改訂されました。詳細については、[改訂履歴](../change-history/revision-history) を参照してください。**
 
 このドキュメントでは、GTFS データセットを構成するファイルの形式と構造を定義します。
 
@@ -20,17 +20,17 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
     -   [stops.txt](#stopstxt)
     -   [routes.txt](#routestxt)
     -   [trips.txt](#tripstxt)
-    -   [stop\_times.txt](#stop_timestxt)
+    -   [stop_times.txt](#stop_timestxt)
     -   [calendar.txt](#calendartxt)
-    -   [calendar\_dates.txt](#calendar_datestxt)
-    -   [fare\_attributes.txt](#fare_attributestxt)
-    -   [fare\_rules.txt](#fare_rulestxt)
+    -   [calendar_dates.txt](#calendar_datestxt)
+    -   [fare_attributes.txt](#fare_attributestxt)
+    -   [fare_rules.txt](#fare_rulestxt)
     -   [timeframes.txt](#timeframestxt)    
-    -   [fare\_media.txt](#fare_mediatxt)
-    -   [fare\_products.txt](#fare_productstxt) 
-    -   [fare\_leg\_rules.txt](#fare_leg_rulestxt)
+    -   [fare_media.txt](#fare_mediatxt)
+    -   [fare_products.txt](#fare_productstxt) 
+    -   [fare_leg_rules.txt](#fare_leg_rulestxt)
     -   [fare_leg_join_rules.txt](#fare_leg_join_rulestxt)
-    -   [fare\_transfer\_rules.txt](#fare_transfer_rulestxt)
+    -   [fare_transfer_rules.txt](#fare_transfer_rulestxt)
     -   [areas.txt](#areastxt)
     -   [stop_areas.txt](#stop_areastxt)
     -   [networks.txt](#networkstxt)
@@ -45,7 +45,7 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
     -   [locations.geojson](#locationsgeojson)
     -   [booking_rules.txt](#booking_rulestxt)
     -   [translations.txt](#translationstxt)
-    -   [feed\_info.txt](#feed_infotxt)
+    -   [feed_info.txt](#feed_infotxt)
     -   [attributions.txt](#attributionstxt)
 
 ## ドキュメントの規則
@@ -500,8 +500,9 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 ファイル:**任意**主キー (`from_network_id、to_network_id、from_stop_id、to_stop_id`)
 
 乗り換えを含む 2 つの連続する区間のサブ旅程の場合、乗り換えがファイル内の特定のレコードで指定されたすべての一致する述語に一致する場合、それらの 2 つの区間は、[`fare_leg_rules.txt`](#fare_leg_rulestxt) 内のルールとの照合の目的で、単一の**有効な運賃区間**と見なされます。
+
 - `from_stop_id`および`to_stop_id`によって明示的に上書きされない限り、乗り換え前の区間の最後の駅と乗り換え後の区間の最初の駅は、レコードに対して同じである必要があります。
--ファイル内の特定のレコードに対して一致する述語フィールド値が空白または未指定の場合、そのフィールドは一致の目的で無視されます。
+- ファイル内の特定のレコードに対して一致する述語フィールド値が空白または未指定の場合、そのフィールドは一致の目的で無視されます。
 - サブ旅程に、それぞれが結合ルールに一致する連続した乗り換えが含まれる場合、サブ旅程全体を 1 つの**有効な運賃区間**と見なす必要があります。
 
 | フィールド名 | タイプ | 存在 | 説明 |

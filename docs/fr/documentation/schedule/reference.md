@@ -1,6 +1,6 @@
 ## Référence de General Transit Feed Specification 
  
- **Révisé le 5 décembre 2024. Voir [Historique des révisions](../change_history/revision_history) pour plus de détails.** 
+ **Révisé le 5 décembre 2024. Voir [Historique des révisions](../change-history/revision-history) pour plus de détails.** 
  
  Ce document définit le format et la structure de les fichiers qui composent un jeu de données GTFS. 
  
@@ -15,17 +15,17 @@
       - [stops.txt](#stopstxt) 
       - [routes.txt](#routestxt) 
       - [trips.txt](#tripstxt) 
-      - [stop\_times.txt](#stop_timestxt) 
+      - [stop_times.txt](#stop_timestxt) 
       - [calendar.txt](#calendartxt) 
-      - [calendar\_dates.txt](#calendar_datestxt) 
-      - [fare\_attributes.txt](#fare_attributestxt) 
-      - [fare\_rules.txt](#fare_rulestxt) 
+      - [calendar_dates.txt](#calendar_datestxt) 
+      - [fare_attributes.txt](#fare_attributestxt) 
+      - [fare_rules.txt](#fare_rulestxt) 
       - [timeframes.txt](#timeframestxt) 
-      - [fare\_media.txt](#fare_mediatxt) 
-      - [fare\_products.txt](#fare_productstxt) 
-      - [tarif\ _leg\_rules.txt](#fare_leg_rulestxt) 
+      - [fare_media.txt](#fare_mediatxt) 
+      - [fare_products.txt](#fare_productstxt) 
+      - [tarif _leg_rules.txt](#fare_leg_rulestxt) 
       - [fare_leg_join_rules.txt](#fare_leg_join_rulestxt)
-      - [fare\_transfer\_rules.txt](#fare_transfer_rulestxt) 
+      - [fare_transfer_rules.txt](#fare_transfer_rulestxt) 
       - [areas.txt](#areastxt) 
       - [stop_areas.txt](#stop_areastxt) 
       - [networks.txt](#networkstxt) 
@@ -40,7 +40,7 @@
       - [locations.geojson](#locationsgeojson) 
       - [booking_rules.txt](#booking_rulestxt) 
       - [translations.txt](#translationstxt) 
-      - [flux\ _info.txt](#feed_infotxt) 
+      - [feed_info.txt](#feed_infotxt) 
       - [attributions.txt](#attributionstxt) 
  
 ## Conventions du document 
@@ -497,6 +497,7 @@
 Fichier :**Optionnel**Clé primaire (`from_network_id, to_network_id, from_stop_id, to_stop_id`)
 
 Pour un sous-trajet de deux segments consécutifs avec un transfert, si le transfert correspond à tous les prédicats correspondants spécifiés par un enregistrement particulier dans le fichier, alors ces deux segments doivent être considérés comme un seul**segment tarifaire effectif**aux fins de la correspondance avec les règles de [`fare_leg_rules.txt`](#fare_leg_rulestxt).
+
 - Sauf remplacement explicite par `from_stop_id` et `to_stop_id`, la dernière station du segment pré-transfert et la première station du segment post-transfert doit être le même pour l’enregistrement.
 - Si une valeur de champ de prédicat correspondante est vide ou non spécifiée pour un enregistrement particulier dans le fichier, alors ce champ doit être ignoré aux fins de la correspondance.
 - Lorsqu’un sous-trajet contient des transferts consécutifs qui correspondent chacun à une règle de jointure, alors l’ensemble du sous-trajet doit être considéré comme un seul**tronçon de tarif effectif**.
