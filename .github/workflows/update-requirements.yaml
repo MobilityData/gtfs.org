@@ -2,7 +2,7 @@ name: Update requirements.txt
 
 on:
   schedule:
-    - cron: '0 3 1 * *' # Run every Monday at 3 AM UTC
+    - cron: '0 3 1 * *' # Runs every first day of the month @ 3 AM.
   workflow_dispatch: # Allow manual runs
 
 jobs:
