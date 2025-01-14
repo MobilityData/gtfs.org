@@ -2,9 +2,7 @@
 
  Tarifas v2 es un proyecto de extensión GTFS que tiene como objetivo abordar las limitaciones de Tarifas v1. Este proyecto de extensión se está adoptando en iteraciones. Los siguientes ejemplos describen cómo modelar conceptos básicos, incluidos los productos tarifarios y cómo los pasajeros pueden usar su tarifa para realizar transferencias. Vea más información sobre [el proyecto de extensión Tarifas v2 aquí](../../../../community/extensions/fares-v2). 
  
- Mientras tanto, los productores pueden implementar Tarifas v2 junto con la implementación de Tarifas v1 en el mismo conjunto de datos, ya que no existe ningún conflicto técnico entre los dos. Los consumidores tendrán la opción de elegir qué implementación consumir independientemente de la otra. 
- Con la adopción y respaldo suficiente de Tarifas v2, Tarifas v1 puede quedar obsoleto en el futuro. 
- Mientras tanto, los productores pueden implementar Tarifas v2 junto con la implementación de Tarifas v1 en el mismo conjunto de datos, ya que no existe ningún conflicto técnico entre los dos. Los consumidores tendrán la opción de elegir qué implementación consumir independientemente de la otra. 
+ Mientras tanto, los productores pueden implementar Tarifas v2 junto con la implementación de Tarifas v1 en el mismo conjunto de datos, ya que no existe ningún conflicto técnico entre los dos. Los consumidores tendrán la opción de elegir qué implementación consumir independientemente de la otra. Con la adopción y respaldo suficiente de Tarifas v2, Tarifas v1 puede quedar obsoleto en el futuro.
  
  Los siguientes ejemplos describen cómo modelar datos usando Tarifas v2 y se puede completar con las funciones experimentales descritas en el [documento de propuesta](https://share.mobilitydata.org/gtfs-fares-v2). 
  

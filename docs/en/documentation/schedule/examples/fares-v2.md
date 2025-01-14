@@ -2,9 +2,7 @@
 
 Fares v2 is a GTFS extension project that aims to address the limitations of Fares v1. This extension project is being adopted in iterations. The below examples outline how to model basic concepts, including fare products and how riders can use their fare for transfers. See more information about [the Fares v2 extension project here](../../../../community/extensions/fares-v2).
 
-In the interim, producers may implement Fares v2 alongside the implementation of Fares v1 in the same dataset as there is no technical conflict between the two. Consumers will have the choice of which implementation to consume independently from the other. 
-With adoption and sufficient endorsement of Fares v2, Fares v1 may be deprecated in the future.
-In the interim, producers may implement Fares v2 alongside the implementation of Fares v1 in the same dataset as there exists no technical conflict between the two. Consumers will have the choice of which implementation to consume independently from the other. 
+In the interim, producers may implement Fares v2 alongside the implementation of Fares v1 in the same dataset as there is no technical conflict between the two. Consumers will have the choice of which implementation to consume independently from the other. With adoption and sufficient endorsement of Fares v2, Fares v1 may be deprecated in the future. 
 
 The below examples outline how to model data using Fares v2 and it can be completed with experimental features outlined in the full [proposal document](https://share.mobilitydata.org/gtfs-fares-v2). 
 

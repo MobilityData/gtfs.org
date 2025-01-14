@@ -2,9 +2,7 @@
  
  Fares v2 est un projet d’extension GTFS qui vise à remédier aux limitations de Fares v1. Ce projet d’extension est adopté par itérations. Les exemples ci-dessous expliquent comment modéliser les concepts de base, y compris les produits tarifaires et comment les passagers peuvent utiliser leur tarif pour les transferts. Voir plus d’informations sur [le projet d’extension Fares v2 ici](../../../../community/extensions/fares-v2). 
  
- Entre-temps, les producteurs peuvent mettre en œuvre Fares v2 parallèlement à la mise en œuvre de Fares v1 dans le même ensemble de données, car il n’y a pas de conflit technique entre les deux. Les consommateurs auront le choix de l’implémentation à consommer indépendamment de l’autre. 
- Avec l’adoption et l’approbation suffisante de Fares v2, Fares v1 pourrait être obsolète à l’avenir. 
- En attendant, les producteurs peuvent implémenter Fares v2 parallèlement à l’implémentation de Fares v1 dans le même ensemble de données car il n’existe aucun conflit technique entre les deux. Les consommateurs auront le choix de l’implémentation à consommer indépendamment de l’autre. 
+ Entre-temps, les producteurs peuvent mettre en œuvre Fares v2 parallèlement à la mise en œuvre de Fares v1 dans le même ensemble de données, car il n’y a pas de conflit technique entre les deux. Les consommateurs auront le choix de l’implémentation à consommer indépendamment de l’autre. Avec l’adoption et l’approbation suffisante de Fares v2, Fares v1 pourrait être obsolète à l’avenir.
  
  Les exemples ci-dessous décrivent comment modéliser les données à l’aide de Fares v2 et peuvent être complétés par des fonctionnalités expérimentales décrites dans le [document de proposition](https://share.mobilitydata.org/gtfs-fares-v2). 
  
