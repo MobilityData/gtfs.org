@@ -1,6 +1,6 @@
 ## Referencia de General Transit Feed Specification 
  
- **Revisado el 5 de diciembre de 2024. Consulte [Historial de revisiones](../change-history/revision-history) para obtener más detalles.** 
+ **Revisado el 23 de enero de 2025. Consulte [Historial de revisiones](../change-history/revision-history) para obtener más detalles.** 
  
  Este documento define el formato y la estructura de los archivos que componen un conjunto de datos GTFS. 
  
@@ -192,7 +192,7 @@ La **clave principal** de un conjunto de datos es el campo o combinación de cam
  | `agency_timezone` | Zona horaria | **Obligatorio** | Zona horaria donde se encuentra la agencia de tránsito. Si se especifican varias agencias en el conjunto de datos, cada una debe tener la misma `agency_timezone`. | 
  | `agency_lang` | Código de idioma | Opcional | Idioma principal utilizado por esta agencia de tránsito. Debe proporcionarse para ayudar a los consumidores de GTFS a elegir reglas de capitalización y otras configuraciones específicas del idioma para el conjunto de datos. | 
  | `agency_phone` | Número de teléfono | Opcional | Un número de teléfono de voz para la agencia especificada. Este campo es un valor de string que presenta el número de teléfono como típico del área de servicio de la agencia. Puede contener signos de puntuación para agrupar los dígitos del número. Se permite el texto que se puede marcar (por ejemplo, "503-238-RIDE" de TriMet), pero el campo no debe contener ningún otro texto descriptivo. | 
- | `agency_fare_url` | URL | Opcional | URL de una página web que permite a un pasajero comprar boletos u otros instrumentos tarifarios para esa agencia en línea. | 
+ | `agency_fare_url` | URL | Opcional | URL de una página web donde un pasajero puede comprar boletos u otros instrumentos de tarifas para esa agencia, o una página web que contiene información sobre las tarifas de esa agencia. | 
  | `agency_email` | Correo electrónico | Opcional | Dirección de correo electrónico monitorizada activamente por el departamento de atención al cliente de la agencia. Esta dirección de correo electrónico debe ser un punto de contacto directo donde los pasajeros del transporte público puedan comunicarse con un representante de servicio al cliente de la agencia. | 
  
 ### stops.txt 
