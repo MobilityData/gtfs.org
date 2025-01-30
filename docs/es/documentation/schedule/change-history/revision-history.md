@@ -2,6 +2,9 @@
 
 ### Historial de revisiones
 
+#### Enero de 2025
+* Se actualizó agency_fare_url para ampliar su descripción e incluir solo información sobre tarifas. Ver [discusión](https://github.com/google/transit/pull/524).
+
 #### Diciembre de 2024
 * Se agregó `fare_leg_join_rules.txt` e introdujo el concepto de tramo de tarifa efectiva. Consulte [discusión](https://github.com/google/transit/pull/439).
 
@@ -15,7 +18,7 @@
 * Se agregó que se recomiendan los carteles de destino (Headsigns). Ver [discusión](https://github.com/google/transit/pull/485).
 
 #### Julio de 2024
-* Se actualizó los requisitos de prescencia de feed_info.txt. Ver [discusión](https://github.com/google/transit/pull/460).
+* Se actualizaron los requisitos de prescencia de feed_info.txt. Ver [discusión](https://github.com/google/transit/pull/460).
 * Se agregó que shapes.txt debería ser incluido. Ver [discusión](https://github.com/google/transit/pull/470).
 
 #### Mayo de 2024 
