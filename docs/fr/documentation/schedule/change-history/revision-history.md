@@ -3,7 +3,7 @@
 ### Historique des révisions
 
 #### Janvier 2025
-* Mettre à jour agency_fare_url pour développer sa description et inclure uniquement les informations sur les tarifs. Voir [discussion](https://github.com/google/transit/pull/524).
+* Mettre à jour agency_fare_url pour étendre sa description et inclure les informations sur les tarifs. Voir [discussion](https://github.com/google/transit/pull/524).
 
 #### Décembre 2024
 * Ajout de `fare_leg_join_rules.txt` et introduction du concept de segment tarifaire effectif. Voir [discussion](https://github.com/google/transit/pull/439).
