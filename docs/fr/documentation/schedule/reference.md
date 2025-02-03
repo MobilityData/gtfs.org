@@ -1,6 +1,6 @@
 ## Référence de General Transit Feed Specification 
  
- **Révisé le 5 décembre 2024. Voir [Historique des révisions](../change-history/revision-history) pour plus de détails.** 
+ **Révisé le 23 janvier 2025. Voir [Historique des révisions](../change-history/revision-history) pour plus de détails.** 
  
  Ce document définit le format et la structure de les fichiers qui composent un jeu de données GTFS. 
  
@@ -193,7 +193,7 @@
  | `agency_timezone` | Fuseau horaire | **Requis** | Fuseau horaire où se trouve l’agence de transport en commun. Si plusieurs agences sont spécifiées dans le jeu de données, chacune doit avoir le même `agency_timezone`. | 
  | `agency_lang` | Code de langue | Optionnel | Langue principale utilisée par cette agence de transport en commun. Doit être fourni pour aider les consommateurs GTFS à choisir les règles de capitalisation et d’autres paramètres spécifiques à la langue pour le jeu de données. | 
  | `agency_phone` | Numéro de téléphone | Optionnel | Un numéro de téléphone vocal pour l’agence spécifiée. Ce champ est une valeur de string qui présente le numéro de téléphone comme étant typique de la zone de service de l’agence. Il peut contenir des signes de ponctuation pour regrouper les chiffres du numéro. Le texte composable (par exemple, « 503-238-RIDE » de TriMet) est autorisé, mais le champ ne doit contenir aucun autre texte descriptif. | 
- | `agency_fare_url` | URL | Optionnel | URL d’une page Web qui permet à un passager d’acheter en ligne des billets ou d’autres instruments tarifaires pour cette agence. | 
+ | `agency_fare_url` | URL | Optionnel | URL d’une page Web où un passager peut acheter des billets ou d’autres instruments tarifaires pour cette agence, ou une page Web contenant des informations sur les tarifs de cette agence. |
  | `agency_email` | Courriel | Optionnel | Adresse e-mail activement surveillée par le service client de l’agence. Cette adresse e-mail doit être un point de contact direct où les usagers des transports en commun peuvent joindre un représentant du service client de l’agence. | 
  
 ### stops.txt 
