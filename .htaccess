@@ -52,18 +52,6 @@ RewriteRule ^realtime/$ /documentation/overview/ [L,R=301]
 RewriteCond %{REQUEST_URI} ^/realtime/reference/$
 RewriteRule ^realtime/reference/$ /documentation/realtime/reference/ [L,R=301]
 
-# Anchor redirections
-RewriteRule ^realtime/process/#guiding-principles https://gtfs.org/community/governance/gtfs-realtime-amendment-process/#guiding-principles [R=301,NE]
-RewriteRule ^realtime/process/#revision-history https://gtfs.org/documentation/realtime/change-history/revision-history/ [R=301]
-RewriteRule ^realtime/process/#experimental-fields https://gtfs.org/community/governance/gtfs-realtime-amendment-process/#experimental-fields [R=301,NE]
-RewriteRule ^#why-use-gtfs https://gtfs.org/getting-started/why-use-GTFS/ [R=301]
-RewriteRule ^#what-is-high-quality-gtfs https://gtfs.org/getting-started/validate/ [R=301]
-RewriteRule ^schedule/#getting-started https://gtfs.org/getting-started/create/ [R=301]
-RewriteRule ^schedule/#training-resources https://gtfs.org/resources/overview/ [R=301]
-RewriteRule ^schedule/#getting-help-community https://gtfs.org/community/get-involved/ [R=301]
-RewriteRule ^schedule/process/#guiding-principles https://gtfs.org/community/governance/gtfs-schedule-amendment-process/#guiding-principles [R=301,NE]
-RewriteRule ^schedule/process/#revision-history https://gtfs.org/documentation/schedule/change-history/revision-history/ [R=301]
-
 # Redirect any URL containing underscores to the same URL with hyphens, plus correcting the file with spaces
 #RewriteCond %{THE_REQUEST} [_ ]
 #RewriteRule ^([^_]*)[_ ]([^_]*)$ $1-$2 [N]
