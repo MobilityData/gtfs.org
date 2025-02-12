@@ -451,7 +451,15 @@ nav:
   - Community:
     - Get involved: community/get-involved.md
     - Governance:
-      - GTFS Schedule Amendment Process: community/governance/gtfs-schedule-amendment-process.md
+      #- GTFS Schedule Amendment Process: community/governance/gtfs-schedule-amendment-process.md
+      - GTFS Schedule:
+        - Introduction: community/governance/schedule/intro.md
+        - Guiding Principles: community/governance/schedule/guiding-principles.md
+        - Roles and Responsabilities: community/governance/schedule/roles.md
+        - Change types: community/governance/schedule/change-types.md
+        - Change Process: community/governance/schedule/change-process.md
+        #- Change Process Overview: community/governance/schedule/test-process-overview.md
+        #- Change Process Step-by-step: community/governance/schedule/test-process-steps.md 
       - GTFS Realtime Amendment Process: community/governance/gtfs-realtime-amendment-process.md
     - Extensions:
       - Overview: community/extensions/overview.md
