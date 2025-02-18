@@ -60,13 +60,27 @@ This process guides how the community proposes, reviews, and adopts changes to m
 
 All of the steps in the Issue and Pull Request Stages are highlighted below. Consider that only Track A: Functional changes utilizes all the steps. Track B: Non-Functional changes and Track C: Documentation Maintenance utilize a shortened version of the process: 
 
+|  | Functional Changes | Non-Functional Changes | Documentation Maintenance |
+| :---: | :---: | :---: | :---: |
+| Step 1.1: Issue Publication | x | x | x |
+| Step 1.2: Issue Discussion | x | x | x |
+| Step 2.1: Pull Request Publication | x | x | x |
+| Step 2.2: Pull Request Discussion | x | x | x |
+| Step 2.3: Pull Request Review | x | x | x |
+| Step 2.4: Vote to Test | x |  |  |
+| Step 2.5: Testing | x |  |  |
+| Step 2.6: Vote to Adopt | x | x |  |
+| Step 2.7: Adoption | x | x | x |
+
 **Stage 1: Issue applies to all tracks**
+
 * 1.1 Issue Publication
 * 1.2 Issue Discussion
 
-Stage 2: Pull Request
+**Stage 2: Pull Request**
 
 **Track A: Functional Changes utilizes steps:** 
+
 * 2.1 Pull Request Publication  
 * 2.2 Pull Request Discussion  
 * 2.3 Pull Request Review  
@@ -76,6 +90,7 @@ Stage 2: Pull Request
 * 2.7 Adoption  
 
 **Track B: Non-Functional Changes utilizes steps:**
+
 * 2.1 Pull Request Publication  
 * 2.2 Pull Request Discussion  
 * 2.3 Pull Request Review  
@@ -83,6 +98,7 @@ Stage 2: Pull Request
 * 2.7 Adoption  
 
 **Track C: Documentation Maintenance utilizes steps:**   
+
 * 2.1 Pull Request Publication  
 * 2.2 Pull Request Discussion  
 * 2.3 Pull Request Review  
