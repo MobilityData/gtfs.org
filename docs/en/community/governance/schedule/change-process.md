@@ -60,17 +60,17 @@ This process guides how the community proposes, reviews, and adopts changes to m
 
 All of the steps in the Issue and Pull Request Stages are highlighted below. Consider that only Track A: Functional changes utilizes all the steps. Track B: Non-Functional changes and Track C: Documentation Maintenance utilize a shortened version of the process: 
 
-|  | Functional Changes | Non-Functional Changes | Documentation Maintenance |
-| :---: | :---: | :---: | :---: |
-| Step 1.1: Issue Publication | x | x | x |
-| Step 1.2: Issue Discussion | x | x | x |
-| Step 2.1: Pull Request Publication | x | x | x |
-| Step 2.2: Pull Request Discussion | x | x | x |
-| Step 2.3: Pull Request Review | x | x | x |
-| Step 2.4: Vote to Test | x |  |  |
-| Step 2.5: Testing | x |  |  |
-| Step 2.6: Vote to Adopt | x | x |  |
-| Step 2.7: Adoption | x | x | x |
+|  | Track A: Functional Changes | Track B: Non-Functional Changes | Track C: Documentation Maintenance |
+| ----- | :---: | :---: | :---: |
+| **Step 1.1: Issue Publication** | x | x | x |
+| **Step 1.2: Issue Discussion** | x | x | x |
+| **Step 2.1: Pull Request Publication** | x | x | x |
+| **Step 2.2: Pull Request Discussion** | x | x | x |
+| **Step 2.3: Pull Request Review** | x | x | x |
+| **Step 2.4: Vote to Test** | x |  |  |
+| **Step 2.5: Testing** | x |  |  |
+| **Step 2.6: Vote to Adopt** | x | x |  |
+| **Step 2.7: Adoption** | x | x | x |
 
 **Stage 1: Issue applies to all tracks**
 
