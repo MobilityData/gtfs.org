@@ -163,7 +163,7 @@ The community engages in discussions to help develop a proposal for modifying th
 
 A proposal to change the specification is published by opening a Pull Request in [the GTFS Repository](https://github.com/google/transit/pulls). The Advocate who publishes the proposal must focus on a single change; anyone is welcome to propose a modification.
 
-**<ins>Actions</ins>** 
+==**Actions**== 
 
 1. **Applying the Changes**
 
@@ -174,7 +174,7 @@ A proposal to change the specification is published by opening a Pull Request in
 
     * The Advocate [creates a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) in the [GTFS Repository](https://github.com/google/transit/pulls) from their fork. 
 
-**<ins>Requirements</ins>** 
+==**Requirements**== 
 
 | Requirement | Details |
 | :---- | :---- |
