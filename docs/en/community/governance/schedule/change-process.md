@@ -63,15 +63,15 @@ All of the steps in the Issue and Pull Request Stages are highlighted below. Con
 
 |  | Track A: Functional Changes | Track B: Non-Functional Changes | Track C: Documentation Maintenance |
 | ----- | :---: | :---: | :---: |
-| **Step 1.1: Issue Publication** | x | x | x |
-| **Step 1.2: Issue Discussion** | x | x | x |
-| **Step 2.1: Pull Request Publication** | x | x | x |
-| **Step 2.2: Pull Request Discussion** | x | x | x |
-| **Step 2.3: Pull Request Review** | x | x | x |
-| **Step 2.4: Vote to Test** | x |  |  |
-| **Step 2.5: Testing** | x |  |  |
-| **Step 2.6: Vote to Adopt** | x | x |  |
-| **Step 2.7: Adoption** | x | x | x |
+| **Step 1.1: Issue Publication** | ✓ | ✓ | ✓ |
+| **Step 1.2: Issue Discussion** | ✓ | ✓ | ✓ |
+| **Step 2.1: Pull Request Publication** | ✓ | ✓ | ✓ |
+| **Step 2.2: Pull Request Discussion** | ✓ | ✓ | ✓ |
+| **Step 2.3: Pull Request Review** | ✓ | ✓ | ✓ |
+| **Step 2.4: Vote to Test** | ✓ |  |  |
+| **Step 2.5: Testing** | ✓ |  |  |
+| **Step 2.6: Vote to Adopt** | ✓ | ✓ |  |
+| **Step 2.7: Adoption** | ✓ | ✓ | ✓ |
 
 ### Step 1.1: Issue Publication
 
