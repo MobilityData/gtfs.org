@@ -4,8 +4,10 @@ The specification change process guides how the community proposes, reviews, and
 
 The specification change process is categorized into 3 tracks according to the three change types: functional changes, non-functional changes, and documentation maintenance. The change process is separated into 2 stages: 
 
-* Issue Stage: New ideas are introduced, needs are identified, and the feasibility of changes is discussed.  
-* Pull Request Stage: Ideas from the Issue Stage are developed, tested, and approved for adoption.
+* **Issue Stage:** New ideas are introduced, needs are identified, and the feasibility of changes is discussed.  
+* **Pull Request Stage:** Ideas from the Issue Stage are developed, tested, and approved for adoption.
+
+The entire process happens within the [GitHub google/transit repository](https://github.com/google/transit/pulls) and ensures that all changes are thoroughly evaluated before being adopted.
 
 <img class="center" width="100%" height="100%" src="../../../../assets/governance-process-overview.png" alt="GTFS Governance Change Process overview"> 
 
@@ -17,11 +19,14 @@ The Issue Stage is meant for discussing new ideas, identifying needs, and propos
 
 It’s recommended to start at the Issue stage to build consensus around new ideas. However, if the proposal’s scope is already well-defined, beginning directly at the Pull Request stage is appropriate.
 
+The Issue stage is composed of the following steps:
+
+* 1.1 Issue Publication
+* 1.2 Issue Discussion
+
 ## Stage 2: Pull Request 
 
-The Pull Request Stage is where ideas from the Issue Stage are developed and implemented into the specification. This stage is divided into 3 tracks depending on the change type. 
-
-The entire process happens within the [GitHub google/transit repository](https://github.com/google/transit/pulls) and ensures that all changes are thoroughly evaluated before being adopted.
+The Pull Request Stage is where ideas from the Issue Stage are developed and implemented into the specification. This stage is divided into 3 tracks depending on the change type. Consider that only Track A: Functional changes utilizes all the steps. Track B: Non-Functional changes and Track C: Documentation Maintenance utilize a shortened version of the process
 
 ### Track A: Functional Changes
 
@@ -29,11 +34,21 @@ The entire process happens within the [GitHub google/transit repository](https:/
 
 This process guides how the community proposes, reviews, and adopts Functional changes to the specification in the [GTFS Repository](https://github.com/google/transit/pulls). 
 
-* A proposal is submitted by opening a Pull Request in the GTFS Repository.   
-* The community engages in discussions to refine the proposal and reviews it before testing.   
-* After a preliminary vote, First Adopters test the proposed changes.   
-* The community votes to decide whether the changes should be officially adopted.  
-* Finally, changes are implemented into the specification.
+1. A proposal is submitted by opening a Pull Request in the GTFS Repository.   
+2. The community engages in discussions to refine the proposal and reviews it before testing.   
+3. After a preliminary vote, First Adopters test the proposed changes.   
+4. The community votes to decide whether the changes should be officially adopted.  
+5. Finally, changes are implemented into the specification.
+
+Track A: Functional Changes utilizes steps: 
+
+* 2.1 Pull Request Publication  
+* 2.2 Pull Request Discussion  
+* 2.3 Pull Request Review  
+* 2.4 Vote to test  
+* 2.5 Testing  
+* 2.6 Vote to Adopt  
+* 2.7 Adoption  
 
 ### Track B: Non-Functional Changes
 
@@ -41,10 +56,18 @@ This process guides how the community proposes, reviews, and adopts Functional c
 
 This process guides how the community proposes, reviews, and adopts Non-Functional changes to the specification in the [GTFS Repository](https://github.com/google/transit/pulls).
 
-* A proposal is submitted by opening a Pull Request in the GTFS Repository.   
-* The community engages in discussions to refine the proposal.  
-* The community votes to decide whether the changes should be officially adopted.  
-* Finally, changes are implemented into the specification.
+1. A proposal is submitted by opening a Pull Request in the GTFS Repository.   
+2. The community engages in discussions to refine the proposal.  
+3. The community votes to decide whether the changes should be officially adopted.  
+4. Finally, changes are implemented into the specification.
+
+Track B: Non-Functional Changes utilizes steps:  
+
+* 2.1 Pull Request Publication  
+* 2.2 Pull Request Discussion  
+* 2.3 Pull Request Review  
+* 2.6 Vote to Adopt  
+* 2.7 Adoption  
 
 ### Track C: Documentation Maintenance
 
@@ -52,30 +75,16 @@ This process guides how the community proposes, reviews, and adopts Non-Function
 
 This process guides how the community proposes, reviews, and adopts changes to maintain the documentation in the [GTFS Repository](https://github.com/google/transit/pulls).
 
-* A proposal is submitted by opening a Pull Request in the GTFS Repository.   
-* The community engages in discussions to refine the proposal  
-* Finally, changes are implemented into the specification.
+1. A proposal is submitted by opening a Pull Request in the GTFS Repository.   
+2. The community engages in discussions to refine the proposal  
+3. Finally, changes are implemented into the specification.
 
-### Pull Request Stage Steps
+Track C: Documentation Maintenance utilizes steps:  
+ 
+* 2.1 Pull Request Publication  
+* 2.2 Pull Request Discussion  
+* 2.3 Pull Request Review  
+* 2.7 Adoption
 
-All of the steps in the Pull Request Stage are highlighted below. Consider that only Track A: Functional changes utilizes all the steps. Track B: Non-Functional changes and Track C: Documentation Maintenance utilize a shortened version of the process: 
 
-* Track A: Functional Changes utilizes steps:  
-    * 2.1 Pull Request Publication  
-    * 2.2 Pull Request Discussion  
-    * 2.3 Pull Request Review  
-    * 2.4 Vote to test  
-    * 2.5 Testing  
-    * 2.6 Vote to Adopt  
-    * 2.7 Adoption  
-* Track B: Non-Functional Changes utilizes steps:  
-    * 2.1 Pull Request Publication  
-    * 2.2 Pull Request Discussion  
-    * 2.3 Pull Request Review  
-    * 2.6 Vote to Adopt  
-    * 2.7 Adoption  
-* Track C: Documentation Maintenance utilizes steps:   
-    * 2.1 Pull Request Publication  
-    * 2.2 Pull Request Discussion  
-    * 2.3 Pull Request Review  
-    * 2.7 Adoption
+

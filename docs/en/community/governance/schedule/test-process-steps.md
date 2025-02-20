@@ -10,13 +10,13 @@ A Contributor shares their idea to improve the specification by opening an Issue
 
 * Anyone can open an Issue to start a discussion.
 
-**<ins>Actions</ins>** 
+**Actions** 
 
 1. **Issue Submission**
 
     * A Contributor posts an Issue describing an idea and the problem it would solve.
 
-**<ins>Suggestions</ins>** 
+**Suggestions** 
 
 | Suggestion | Details |
 | :---- | :---- |
@@ -30,7 +30,7 @@ A Contributor shares their idea to improve the specification by opening an Issue
 
 The community engages in discussions to help develop a proposal for modifying the specification, which will be submitted as a Pull Request in the next stage.
 
-**<ins>Actions</ins>** 
+**ACTIONS**
 
 1. **Issue Discussion**
 
@@ -42,7 +42,7 @@ The community engages in discussions to help develop a proposal for modifying th
     * The Working Group can be organized by any contributor or the Maintainer.  
     * Discussions held in Working Group meetings should be summarized in the Issue comments.
 
-**<ins>Suggestions</ins>** 
+**SUGGESTIONS**
 
 | Suggestion | Details |
 | :---- | :---- |

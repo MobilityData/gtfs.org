@@ -1,27 +1,28 @@
 # Change Process
 
+## Overview
+
 The specification change process guides how the community proposes, reviews, and adopts changes to the specification in the [GTFS Repository](https://github.com/google/transit/pulls). 
 
-The specification change process is categorized into 3 tracks according to the three change types: functional changes, non-functional changes, and documentation maintenance. The change process is separated into 2 stages: 
-
-* Issue Stage: New ideas are introduced, needs are identified, and the feasibility of changes is discussed.  
-* Pull Request Stage: Ideas from the Issue Stage are developed, tested, and approved for adoption.
+The specification change process divided into 2 main stages and categorized into 3 tracks according to the three change types: functional changes, non-functional changes, and documentation maintenance. 
 
 <img class="center" width="100%" height="100%" src="../../../../assets/governance-process-overview.png" alt="GTFS Governance Change Process overview"> 
 
-The issue stage is the same for all 3 tracks. The Pull Request stage differs in each of the 3 tracks. 
-
-## Stage 1: Issue 
+### Stage 1: Issue 
 
 The Issue Stage is meant for discussing new ideas, identifying needs, and proposing improvements to the specification. Issues help evaluate the necessity and support for a change, while organizing the resources required to proceed to the Pull Request Stage. 
 
 It’s recommended to start at the Issue stage to build consensus around new ideas. However, if the proposal’s scope is already well-defined, beginning directly at the Pull Request stage is appropriate.
 
-## Stage 2: Pull Request 
+### Stage 2: Pull Request 
 
 The Pull Request Stage is where ideas from the Issue Stage are developed and implemented into the specification. This stage is divided into 3 tracks depending on the change type. 
 
 The entire process happens within the [GitHub google/transit repository](https://github.com/google/transit/pulls) and ensures that all changes are thoroughly evaluated before being adopted.
+
+## Process Tracks
+
+The issue stage is the same for all 3 tracks. The Pull Request stage differs in each of the 3 tracks. 
 
 ### Track A: Functional Changes
 
@@ -71,38 +72,6 @@ All of the steps in the Issue and Pull Request Stages are highlighted below. Con
 | **Step 2.5: Testing** | x |  |  |
 | **Step 2.6: Vote to Adopt** | x | x |  |
 | **Step 2.7: Adoption** | x | x | x |
-
-**Stage 1: Issue applies to all tracks**
-
-* 1.1 Issue Publication
-* 1.2 Issue Discussion
-
-**Stage 2: Pull Request**
-
-**Track A: Functional Changes utilizes steps:** 
-
-* 2.1 Pull Request Publication  
-* 2.2 Pull Request Discussion  
-* 2.3 Pull Request Review  
-* 2.4 Vote to test  
-* 2.5 Testing  
-* 2.6 Vote to Adopt  
-* 2.7 Adoption  
-
-**Track B: Non-Functional Changes utilizes steps:**
-
-* 2.1 Pull Request Publication  
-* 2.2 Pull Request Discussion  
-* 2.3 Pull Request Review  
-* 2.6 Vote to Adopt  
-* 2.7 Adoption  
-
-**Track C: Documentation Maintenance utilizes steps:**   
-
-* 2.1 Pull Request Publication  
-* 2.2 Pull Request Discussion  
-* 2.3 Pull Request Review  
-* 2.7 Adoption
 
 ### Step 1.1: Issue Publication
 
@@ -163,7 +132,7 @@ The community engages in discussions to help develop a proposal for modifying th
 
 A proposal to change the specification is published by opening a Pull Request in [the GTFS Repository](https://github.com/google/transit/pulls). The Advocate who publishes the proposal must focus on a single change; anyone is welcome to propose a modification.
 
-==**Actions**== 
+**<ins>Actions</ins>** 
 
 1. **Applying the Changes**
 
@@ -174,7 +143,7 @@ A proposal to change the specification is published by opening a Pull Request in
 
     * The Advocate [creates a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) in the [GTFS Repository](https://github.com/google/transit/pulls) from their fork. 
 
-==**Requirements**== 
+**<ins>Requirements</ins>**
 
 | Requirement | Details |
 | :---- | :---- |

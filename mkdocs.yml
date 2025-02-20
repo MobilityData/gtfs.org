@@ -458,8 +458,8 @@ nav:
         - Roles and Responsabilities: community/governance/schedule/roles.md
         - Change types: community/governance/schedule/change-types.md
         - Change Process: community/governance/schedule/change-process.md
-        #- Change Process Overview: community/governance/schedule/test-process-overview.md
-        #- Change Process Step-by-step: community/governance/schedule/test-process-steps.md 
+        - Change Process Overview: community/governance/schedule/test-process-overview.md
+        - Change Process Step-by-step: community/governance/schedule/test-process-steps.md 
       - GTFS Realtime Amendment Process: community/governance/gtfs-realtime-amendment-process.md
     - Extensions:
       - Overview: community/extensions/overview.md
