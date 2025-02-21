@@ -4,7 +4,7 @@
 
 The specification change process guides how the community proposes, reviews, and adopts changes to the specification in the [GTFS Repository](https://github.com/google/transit/pulls). 
 
-The specification change process divided into 2 main stages and categorized into 3 tracks according to the three change types: functional changes, non-functional changes, and documentation maintenance. 
+The specification change process is divided into **2 main stages** and categorized into **3 tracks** according to the three [change types](../change-types): [functional changes](../change-types/#1-functional-changes), [non-functional changes](../change-types/#2-non-functional-changes), and [documentation maintenance](../change-types/#3-documentation-maintenance). 
 
 <img class="center" width="100%" height="100%" src="../../../../assets/governance-process-overview.png" alt="GTFS Governance Change Process overview"> 
 
@@ -12,7 +12,7 @@ The specification change process divided into 2 main stages and categorized into
 
 The Issue Stage is meant for discussing new ideas, identifying needs, and proposing improvements to the specification. Issues help evaluate the necessity and support for a change, while organizing the resources required to proceed to the Pull Request Stage. 
 
-It’s recommended to start at the Issue stage to build consensus around new ideas. However, if the proposal’s scope is already well-defined, beginning directly at the Pull Request stage is appropriate.
+It’s recommended to start at the Issue stage to build consensus around new ideas. However, if the proposal’s scope is already well-defined, beginning directly at the Pull Request Stage is appropriate.
 
 ### Stage 2: Pull Request 
 
@@ -22,13 +22,13 @@ The entire process happens within the [GitHub google/transit repository](https:/
 
 ## Process Tracks
 
-The issue stage is the same for all 3 tracks. The Pull Request stage differs in each of the 3 tracks. 
+Depending on the type of the proposed change, different tracks apply to the change process. While the Issue Stage remains the same across all three tracks, the Pull Request Stage varies for each track.
 
 ### Track A: Functional Changes
 
 <img class="center" width="100%" height="100%" src="../../../../assets/governance-process-functional.png" alt="GTFS Governance Change Process Track A"> 
 
-This process guides how the community proposes, reviews, and adopts Functional changes to the specification in the [GTFS Repository](https://github.com/google/transit/pulls). 
+This process guides how the community proposes, reviews, and adopts [Functional changes](../change-types/#1-functional-changes) to the specification in the [GTFS Repository](https://github.com/google/transit/pulls). 
 
 * A proposal is submitted by opening a Pull Request in the GTFS Repository.   
 * The community engages in discussions to refine the proposal and reviews it before testing.   
@@ -40,7 +40,7 @@ This process guides how the community proposes, reviews, and adopts Functional c
 
 <img class="center" width="100%" height="100%" src="../../../../assets/governance-process-non-functional.png" alt="GTFS Governance Change Process Track B"> 
 
-This process guides how the community proposes, reviews, and adopts Non-Functional changes to the specification in the [GTFS Repository](https://github.com/google/transit/pulls).
+This process guides how the community proposes, reviews, and adopts [Non-Functional changes](../change-types/#2-non-functional-changes) to the specification in the [GTFS Repository](https://github.com/google/transit/pulls).
 
 * A proposal is submitted by opening a Pull Request in the GTFS Repository.   
 * The community engages in discussions to refine the proposal.  
@@ -51,7 +51,7 @@ This process guides how the community proposes, reviews, and adopts Non-Function
 
 <img class="center" width="100%" height="100%" src="../../../../assets/governance-process-documentation.png" alt="GTFS Governance Change Process Track C"> 
 
-This process guides how the community proposes, reviews, and adopts changes to maintain the documentation in the [GTFS Repository](https://github.com/google/transit/pulls).
+This process guides how the community proposes, reviews, and adopts [changes to maintain the documentation](../change-types/#3-documentation-maintenance) in the [GTFS Repository](https://github.com/google/transit/pulls).
 
 * A proposal is submitted by opening a Pull Request in the GTFS Repository.   
 * The community engages in discussions to refine the proposal  
@@ -59,7 +59,7 @@ This process guides how the community proposes, reviews, and adopts changes to m
 
 ## Process Steps
 
-All of the steps in the Issue and Pull Request Stages are highlighted below. Consider that only Track A: Functional changes utilizes all the steps. Track B: Non-Functional changes and Track C: Documentation Maintenance utilize a shortened version of the process: 
+All of the steps in the Issue and Pull Request Stages are highlighted below. Consider that only Track A utilizes all the steps. Track B and Track C utilize a shortened version of the process: 
 
 |  | Track A: Functional Changes | Track B: Non-Functional Changes | Track C: Documentation Maintenance |
 | ----- | :---: | :---: | :---: |
@@ -121,14 +121,13 @@ The community engages in discussions to help develop a proposal for modifying th
 | **Confirm Requirements** | Ensure that all necessary requirements for developing the proposal are confirmed. |
 | **Gather Input** | Collect feedback from multiple contributors and assess overall support for the proposal. |
 | **Summarize Discussions** | Regularly update the original post with the most recent points of discussion, such as: consensus reached, agreed scope, announcement of advocate and / or interested parties for testing.  |
-| **Identify a potential Advocate** | Identify a contributor willing to develop the full proposal and take on the role of Advocate in the Pull Request stage. |
+| **Identify a potential Advocate** | Identify a contributor willing to develop the full proposal and take on the role of Advocate in the Pull Request Stage. |
 
 ### Step 2.1: Pull Request Publication
 
 <img class="center" width="100%" height="100%" src="../../../../assets/governance-process-step-2.1.png" alt="GTFS Governance Change Process Step 2.1"> 
 
-> Info  
-> Applicable to all Tracks 
+> Info: Applicable to all Tracks 
 
 A proposal to change the specification is published by opening a Pull Request in [the GTFS Repository](https://github.com/google/transit/pulls). The Advocate who publishes the proposal must focus on a single change; anyone is welcome to propose a modification.
 
@@ -157,8 +156,7 @@ A proposal to change the specification is published by opening a Pull Request in
 
 <img class="center" width="100%" height="100%" src="../../../../assets/governance-process-step-2.2.png" alt="GTFS Governance Change Process Step 2.2"> 
   
-> Info  
-> Applicable to all Tracks 
+> Info: Applicable to all Tracks 
 
 The community engages in conversations to help refine and develop the proposal.
 
@@ -189,8 +187,7 @@ The community engages in conversations to help refine and develop the proposal.
 
 <img class="center" width="100%" height="100%" src="../../../../assets/governance-process-step-2.3.png" alt="GTFS Governance Change Process Step 2.3"> 
 
-> Info  
-> Applicable to all Tracks 
+> Info: Applicable to all Tracks 
 
 The community provides feedback to the advocate to prepare the proposal for testing. 
 
@@ -219,8 +216,7 @@ The community provides feedback to the advocate to prepare the proposal for test
 
 <img class="center" width="100%" height="100%" src="../../../../assets/governance-process-step-2.4.png" alt="GTFS Governance Change Process Step 2.4"> 
 
-> Info  
-> Not applicable to Track B: Non-Functional Changes and Track C: Documentation Maintenance
+> Info: Not applicable to Track B: Non-Functional Changes and Track C: Documentation Maintenance
 
 The community votes to confirm consensus on the proposal’s scope and to ensure it is technically sound enough to proceed to testing.
 
@@ -273,8 +269,7 @@ The vote must meet the following conditions:
 
 <img class="center" width="100%" height="100%" src="../../../../assets/governance-process-step-2.5.png" alt="GTFS Governance Change Process Step 2.5"> 
 
-> Info  
-> Not applicable to Track B: Non-Functional Changes and Track C: Documentation Maintenance
+> Info: Not applicable to Track B: Non-Functional Changes and Track C: Documentation Maintenance
 
 One GTFS producer and one GTFS consumer volunteer to serve as First Adopters by implementing the proposed changes for testing.
 
@@ -308,8 +303,7 @@ The Advocate can proceed with a Vote to Adopt (step 2.6) only after all requirem
 
 <img class="center" width="100%" height="100%" src="../../../../assets/governance-process-step-2.6.png" alt="GTFS Governance Change Process Step 2.6"> 
 
-> Info  
-> Not applicable to Track C: Documentation Maintenance
+> Info: Not applicable to Track C: Documentation Maintenance
 
 The community votes to confirm whether or not the proposed changes are to be officially adopted into the specification.
 
@@ -366,8 +360,7 @@ The vote must meet the following conditions:
 
 <img class="center" width="100%" height="100%" src="../../../../assets/governance-process-step-2.7.png" alt="GTFS Governance Change Process Step 2.7"> 
   
-> Info  
-> Applicable to all tracks.
+> Info: Applicable to all tracks.
 
 The Maintainer implements the changes officially adopted after a successful vote.
 

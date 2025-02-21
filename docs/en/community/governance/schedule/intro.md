@@ -8,10 +8,10 @@ The governance framework for GTFS is composed of the following elements:
 
 <img class="center" width="560" height="100%" src="../../../../assets/governance-intro-pillars.png" alt="Main elements of GTFS Governance">
 
-* Guiding principles  
-* Roles and responsibilities  
-* Change types  
-* Change process
+* [Guiding principles](../guiding-principles)  
+* [Roles and responsibilities](../roles)  
+* [Change types](../change-types)
+* [Change process](../change-process)
 
 The GTFS Change Process is the procedure by which modifications or additions to GTFS are proposed, discussed, and approved by the community. This process ensures that the specification evolves in a stable, predictable and collaborative way.
 
@@ -23,6 +23,6 @@ A change refers to any proposed modification to the GTFS documentation hosted in
 
 Anyone can contribute to the development of GTFS. Typically, anyone with a suggestion or idea for improving the specification follows the steps outlined in the GTFS Change Process to refine and advance their proposal.
 
-To navigate the process effectively, it's important to understand the different types of changes which determine the specific steps that need to be taken. Thus, it’s recommended that contributors familiarize themselves with these change categories, as well as the roles and responsibilities, to better understand their participation and involvement.
+To navigate the process effectively, it's important to understand the different [types of changes](../change-types) which determine the specific steps that need to be taken. Thus, it’s recommended that contributors familiarize themselves with these change categories, as well as the [roles and responsibilities](../roles), to better understand their participation and involvement.
 
 
