@@ -63,15 +63,15 @@ All of the steps in the Issue and Pull Request Stages are highlighted below. Con
 
 |  | Track A: Functional Changes | Track B: Non-Functional Changes | Track C: Documentation Maintenance |
 | ----- | :---: | :---: | :---: |
-| **Step 1.1: Issue Publication** | ✓ | ✓ | ✓ |
-| **Step 1.2: Issue Discussion** | ✓ | ✓ | ✓ |
-| **Step 2.1: Pull Request Publication** | ✓ | ✓ | ✓ |
-| **Step 2.2: Pull Request Discussion** | ✓ | ✓ | ✓ |
-| **Step 2.3: Pull Request Review** | ✓ | ✓ | ✓ |
-| **Step 2.4: Vote to Test** | ✓ |  |  |
-| **Step 2.5: Testing** | ✓ |  |  |
-| **Step 2.6: Vote to Adopt** | ✓ | ✓ |  |
-| **Step 2.7: Adoption** | ✓ | ✓ | ✓ |
+| **[Step 1.1: Issue Publication](#step-11-issue-publication)** | ✓ | ✓ | ✓ |
+| **[Step 1.2: Issue Discussion](#step-12-issue-discussion)** | ✓ | ✓ | ✓ |
+| **[Step 2.1: Pull Request Publication](#step-21-pull-request-publication)** | ✓ | ✓ | ✓ |
+| **[Step 2.2: Pull Request Discussion](#step-22-pull-request-discussion)** | ✓ | ✓ | ✓ |
+| **[Step 2.3: Pull Request Review](#step-23-pull-request-review)** | ✓ | ✓ | ✓ |
+| **[Step 2.4: Vote to Test](#step-24-vote-to-test)** | ✓ |  |  |
+| **[Step 2.5: Testing](#step-25-testing)** | ✓ |  |  |
+| **[Step 2.6: Vote to Adopt](#step-26-vote-to-adopt)** | ✓ | ✓ |  |
+| **[Step 2.7: Adoption](#step-27-adoption)** | ✓ | ✓ | ✓ |
 
 ### Step 1.1: Issue Publication
 
