@@ -6,14 +6,14 @@ GTFS governance refers to the framework that guides how the GTFS is maintained, 
 
 The governance framework for GTFS is composed of the following elements:
 
-<img class="center" width="560" height="100%" src="../../../../assets/governance-intro-pillars.png" alt="Main elements of GTFS Governance">
-
 * [Guiding principles](../guiding-principles)  
 * [Roles and responsibilities](../roles)  
 * [Change types](../change-types)
 * [Change process](../change-process)
 
-The GTFS Change Process is the procedure by which modifications or additions to GTFS are proposed, discussed, and approved by the community. This process ensures that the specification evolves in a stable, predictable and collaborative way.
+<img class="center" width="560" height="100%" src="../../../../assets/governance-intro-pillars.png" alt="Main elements of GTFS Governance">
+
+Notably, the GTFS Change Process is the procedure by which modifications or additions to GTFS are proposed, discussed, and approved by the community. This process ensures that the specification evolves in a stable, predictable and collaborative way.
 
 ## What is a specification change?
 

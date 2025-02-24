@@ -2,11 +2,11 @@
 
 Proposed changes to the specification are categorized based on their impact on its functionality and interpretation. Each category follows a specific process before being officially adopted into GTFS.
 
-<img class="center" width="100%" height="100%" src="../../../../assets/governance-change-types.png" alt="GTFS Governance Change Types"> 
+<img class="center" width="1080" height="100%" src="../../../../assets/governance-change-types.png" alt="GTFS Governance Change Types"> 
 
 ## 1. Functional changes
 
-Functional changes refers to modifications that significantly affect specification functionalities. These changes typically require testing and include adding new elements (files, fields, enums) or modifying existing ones. Such changes have to follow the complete specification change process in order to be officially adopted.
+Functional changes refers to modifications that significantly affect specification functionalities. These changes typically require testing and include adding new elements (files, fields, enums) or modifying existing ones. Such changes have to follow the complete specification [Change Process](../change-process) in order to be officially adopted.
 
 Past Examples:
 
@@ -27,7 +27,7 @@ Modifications that do not introduce substantial changes to existing functionalit
 
 ### Governance
 
-Changes to the processes and guidelines governing the management of the specification include updates to the amendment process, modifications to roles and responsibilities, revisions to contribution guidelines, and adjustments to any document related to the governance framework. These updates ensure clear and effective management practices.
+Changes to the processes and guidelines governing the management of the specification include updates to the [Change Process](../change-process), modifications to [Roles and Responsibilities](../roles) and [Change Types](../change-types), revisions to the [Guiding Principles](../guiding-principles), and adjustments to any other document related to the [governance framework](../intro). These updates ensure clear and effective management practices.
 
 * Past Examples:   
     * [PR #387](https://github.com/google/transit/pull/387) updates the specification change process to switch from Swiss business days to calendar days only.

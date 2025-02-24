@@ -2,7 +2,7 @@
 
 The community is composed of two main stakeholder categories: Contributors and the Maintainer. 
 
-<img class="center" width="800" height="100%" src="../../../../assets/governance-roles-1.png" alt="GTFS Governance Roles"> 
+<img class="center" width="1080" height="100%" src="../../../../assets/governance-roles-1.png" alt="GTFS Governance Roles"> 
 
 ## Contributors
 
@@ -37,7 +37,7 @@ Individuals or organizations that do not qualify as either Producers or Consumer
 
 ## Maintainer
 
-The Maintainer supports and facilitates the specification change process, and their role as an impartial facilitator is to guide the community toward making consensus-driven decisions. MobilityData currently serves as the Maintainer of GTFS. 
+The Maintainer supports and facilitates the specification [Change Process](../change-process), and their role as an impartial facilitator is to guide the community toward making consensus-driven decisions. MobilityData currently serves as the Maintainer of GTFS. 
 
 **Responsibilities**:
 
@@ -51,10 +51,10 @@ The Maintainer supports and facilitates the specification change process, and th
 
 ## Special roles
 
-General Contributors, Producers, Consumers and the Maintainer can take on special roles to support the development of specification changes. The Advocate and First Adopter roles are particularly critical for the Change Process to function effectively.
+General Contributors, Producers, Consumers and the Maintainer can take on special roles to support the development of specification changes. The Advocate and First Adopter roles are particularly critical for the [Change Process](../change-process) to function effectively.
 
 
-<img class="center" width="100%" height="100%" src="../../../../assets/governance-roles-2.png" alt="GTFS Governance Special Roles"> 
+<img class="center" width="1080" height="100%" src="../../../../assets/governance-roles-2.png" alt="GTFS Governance Special Roles"> 
 
 ### Advocate
 
@@ -62,7 +62,7 @@ An Advocate proposes a change to the official specification by publishing a Pull
 
 **Responsibilities**
 
-* Follows the appropriate Change Process for the proposed change.  
+* Follows the requirements of the [Change Process](../change-process) for the proposed change.  
 * Request assistance from the Maintainer if necessary. 
 
 ### First Adopter
