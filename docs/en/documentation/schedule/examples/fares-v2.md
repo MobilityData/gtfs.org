@@ -6,8 +6,6 @@ Key Fares (v2) features include Fare Products, Fare Media, Route-based fares, Zo
 
 GTFS Fares (v2) continues to evolve as a community-driven project, developed under the working name [GTFS-Fares v2](../../../../community/extensions/fares-v2). For guidance on modeling experimental features, refer to [the full proposal document](https://share.mobilitydata.org/gtfs-fares-v2).
 
-Because GTFS maintains backward compatibility, Legacy Fares (v1) features can coexist with Fares (v2) without technical conflicts. However, implementing Fares (v2) is recommended to ensure future scalability and alignment with ongoing specification developments
-
 ## Fares training and free resources
 
 To get started with GTFS Fares (v2), you can watch these four video tutorials and follow along with [this written resource](https://share.mobilitydata.org/Fares-v2-written-resource-guide-for-videos).</a>
@@ -17,7 +15,7 @@ To get started with GTFS Fares (v2), you can watch these four video tutorials an
 - [Video 3](https://share.mobilitydata.org/faresv2-creating-and-maintaining-data): GTFS Fares (v2): Creating and Maintaining Data
 - [Video 4](https://share.mobilitydata.org/faresv2-exporting-and-publishing): Exporting and Publishing GTFS Fares (v2)
 
-They have been created for transit agencies to understand the purpose of Fares (v2), as well as how to use Google Sheets to create, edit, and upload GTFS Fares (v2) data. 
+These videos have been created for transit agencies to understand the purpose of Fares (v2), as well as how to use Google Sheets to create, edit, and upload GTFS Fares (v2) data. 
 
 This [Fares (v2) template](https://share.mobilitydata.org/faresv2-template) can be used for creating the necessary fares files from scratch.
 
