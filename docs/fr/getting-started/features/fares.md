@@ -14,7 +14,7 @@
  
  **Prérequis** : 
  
- - [fonctionnalités de Base](../base) 
+ - [Fonctionnalités de Base](../base) 
 
 ??? note "Exemples de données"
 
@@ -51,7 +51,7 @@
  
  **Prérequis** : 
  
- - [fonctionnalités de Base](../base) 
+ - [Fonctionnalités de Base](../base) 
  
 ??? note "Exemples de données"
 
@@ -78,6 +78,47 @@
         |------------------|--------------------    |---      |---        | ---           |
         | single_ride      | Single Ride Fare       |  2.75   | USD       | munimobile          |
 
+## Catégories de passagers
+
+Les catégories de passagers sont utilisées pour représenter les différents types de passagers des transports publics éligibles à des tarifs spécifiques, tels que les personnes âgées, les étudiants et les adultes. Les applications de planification de voyage peuvent utiliser ces informations pour afficher les catégories disponibles et afficher le tarif par défaut défini par l’agence fournissant le flux.
+
+| Fichiers inclus | Champs inclus | 
+|----------------------------------|-------------------|
+|[rider_categories.txt](../../../documentation/schedule/reference/#rider_categoriestxt)|`rider_category_id`, `rider_category_name`, `is_default_fare_category`, `eligibility_url`|
+|[fare_products.txt](../../../documentation/schedule/reference/#fare_productstxt)|`rider_category_id`|
+
+
+ **Prérequis** : 
+
+ - [Fonctionnalités de Base](../base) 
+ - [Fonctionnalité Produits tarifaires](#produits-tarifaires) 
+
+??? note "Exemples de données"
+
+    <p style="font-size:16px">
+    L’exemple suivant présente trois catégories de cavaliers distinctes, la catégorie Adulte étant définie comme catégorie par défaut. 
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#rider_categoriestxt"><b>rider_categories.txt</b></a> <br>
+        </p>
+
+        | rider_category_id | rider_category_name | is_default_fare_category | eligibility_url |
+        |---|---|---|---|
+        | rc01-adult | Adult | 1 |  |
+        | rc02-senior | Senior (65+) | 0 | https://www.agency-abcd.org/info/reduced-fare-65 |
+        | rc03-student | Student | 0 | https://www.agency-abcd.org/info/reduced-fare-students |
+
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#fare_productstxt"><b>fare_products.txt</b></a> <br>
+        </p>
+
+        | fare_product_id | fare_product_name          | rider_category_id | amount | currency |
+        |-----------------|----------------------------|-------------------|--------|----------|
+        | single_ride     | Single Ride Fare           | rc01-adult        |   2.75 | USD      |
+        | single_ride     | Single Ride Fare - Student | rc03-student      |   1.50 | USD      |
+
 ## Tarifs Basés sur l’Itinéraire 
  
  Les Tarifs Basés sur l’Itinéraire sont utilisés pour attribuer différents tarifs à des groupes spécifiques d’itinéraires, tels que des tarifs spéciaux pour les services express ou des tarifs différenciés entre un bus rapide. Service de transport en commun par rapport aux services de bus traditionnels. 
@@ -91,7 +132,7 @@
  
  **Prérequis** : 
  
- - [fonctionnalités de Base](../base) 
+ - [Fonctionnalités de Base](../base) 
  - [Fonctionnalité Produits tarifaires](#produits-tarifaires) 
  
 ??? note "Exemples de données"
@@ -169,7 +210,7 @@
  
  **Prérequis** : 
  
- - [fonctionnalités de Base](../base) 
+ - [Fonctionnalités de Base](../base) 
  - [Fonctionnalité des Produits tarifaires](../fares/#produits-tarifaires) 
 
 ??? note "Exemples de données"
@@ -210,7 +251,7 @@
  
  **Prérequis** : 
  
- - [fonctionnalités de Base](../base) 
+ - [Fonctionnalités de Base](../base) 
  - [Fonctionnalité des Produits tarifaires](../fares/#produits-tarifaires) 
 
 ??? note "Exemples de données"
@@ -261,7 +302,7 @@
  
  **Prérequis** : 
  
- - [fonctionnalités de Base](../base) 
+ - [Fonctionnalités de Base](../base) 
  - [Fonctionnalité des Produits tarifaires](../fares/#produits-tarifaires) 
 
 ??? note "Exemples de données"
@@ -300,7 +341,7 @@
  
  **Prérequis** : 
  
- - [fonctionnalités de Base](../base) 
+ - [Fonctionnalités de Base](../base) 
 
 ??? note "Exemples de données"
 
