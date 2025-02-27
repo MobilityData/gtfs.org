@@ -1,4 +1,4 @@
-# Fares Examples
+# Fares (v2)
 
 Fares (also known as Fares v2) is a [GTFS Schedule feature](../../../../getting-started/features/overview/) that standardizes rider-facing fare information, allowing users to discover ticketing and pricing options based on the fare structures and conditions of each transit system and its connections.
 

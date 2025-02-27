@@ -1,4 +1,4 @@
-# Legacy Fares Examples
+# Legacy Fares (v1)
 
 Legacy Fares (v1) is an earlier, basic GTFS fares model that supports limited fare elements. It can only model origin to destination, zone-based, and route-based fare structures, along with a minimal set of transfer rules. While it remains a feature in GTFS for backward compatibility purposes, transitioning to [Fares (v2)](../../examples/fares-v2/) is recommended, as it offers comprehensive ticketing, payment information, and supports a much broader range of fare structures and rules.
 
