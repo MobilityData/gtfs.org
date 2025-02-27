@@ -56,61 +56,61 @@
  
     Comunicar información importante sobre el feed en sí. 
  
-    [:octicons-arrow-right-24: Más información](../base_add-ons/#informacion-del-feed) 
+    [:octicons-arrow-right-24: Más información](../base-add-ons/#informacion-del-feed) 
  
  - :material-plus-box-multiple-outline:{ .lg.middle } __Shapes__ 
  
     Definir la ruta geográfica que sigue un vehículo a lo largo de un viaje. 
  
-    [:octicons-arrow-right-24: Más información](../base_add-ons/#shapes) 
+    [:octicons-arrow-right-24: Más información](../base-add-ons/#shapes) 
  
  - :material-plus-box-multiple-outline:{ .lg.middle } __Colores de Ruta__ 
  
     Representar y comunicar con precisión el esquema de color asignado a rutas específicas. 
  
-    [:octicons-arrow-right-24: Más información](../base_add-ons//#colores-de-ruta) 
+    [:octicons-arrow-right-24: Más información](../base-add-ons//#colores-de-ruta) 
  
  - :material-plus-box-multiple-outline:{ .lg.medio } __Bicicleta Permitida__ 
  
     Comunicar si los vehículos tienen capacidad para bicicletas o no. 
  
-    [:octicons-arrow-right-24: Más información](../base_add-ons/#bicicleta-permitida) 
+    [:octicons-arrow-right-24: Más información](../base-add-ons/#bicicleta-permitida) 
  
  - :material-plus-box-multiple-outline:{ .lg.medio } __Cartel de destino__ 
  
     Comunicar la señalización utilizada por los vehículos indicando el destino del viaje. 
  
-    [:octicons-arrow-right-24: Más información](../base_add-ons/#cartel-de-destino) 
+    [:octicons-arrow-right-24: Más información](../base-add-ons/#cartel-de-destino) 
  
  - :material-plus-box-multiple-outline:{ .lg.middle } __Tipos de Ubicación__ 
  
     Clasificar áreas clave dentro de las estaciones de tránsito, como entradas y salidas. 
  
-    [:octicons-arrow-right-24: Más información](../base_add-ons/#tipos-de-ubicacion) 
+    [:octicons-arrow-right-24: Más información](../base-add-ons/#tipos-de-ubicacion) 
  
  - :material-plus-box-multiple-outline:{ .lg.medio } __Frecuencias__ 
  
     Representan servicios que operan en una frecuencia regular o en intervalos específicos. 
  
-    [:octicons-arrow-right-24: Más información](../base_add-ons/#servicio-basado-en-frecuencia) 
+    [:octicons-arrow-right-24: Más información](../base-add-ons/#servicio-basado-en-frecuencia) 
  
  - :material-plus-box-multiple-outline:{. lg.middle } __Transferencias__ 
  
     Describe las transferencias permitidas entre diferentes servicios de tránsito. 
  
-    [:octicons-arrow-right-24: Más información](../base_add-ons/#transferencias) 
+    [:octicons-arrow-right-24: Más información](../base-add-ons/#transferencias) 
  
  - :material-plus-box-multiple-outline:{ .lg.middle } __Traducciones__ 
  
     Comunicar información de servicio en múltiples idiomas. 
  
-    [:octicons-arrow-right-24: Más información](../base_add-ons/#traducciones) 
+    [:octicons-arrow-right-24: Más información](../base-add-ons/#traducciones) 
  
  - :material-plus-box-multiple-outline:{ .lg.middle } __Atribuciones__ 
  
     Comunicar quién participó en la creación del conjunto de datos. 
  
-    [:octicons-arrow-right-24: Más información](../base_add-ons/#atribuciones) 
+    [:octicons-arrow-right-24: Más información](../base-add-ons/#atribuciones) 
  
 </div> 
  
@@ -156,6 +156,12 @@
     Defina los medios que se pueden utilizar para retener y/o validar un producto tarifario. 
  
     [:octicons-arrow-right-24: Más información](../fares/#medios-de-tarifa) 
+
+-   :material-cash:{ .lg .middle } __Categorías de Pasajeros__
+
+    Representar diferentes categorías de pasajeros elegibles para ciertas tarifas.
+
+    [:octicons-arrow-right-24: Learn more](../fares/#categorias-de-pasajeros)
  
  - :material-cash:{ .lg.middle } __Tarifas Basadas en Rutas__ 
  
@@ -238,30 +244,30 @@
  
     Indique si un usuario puede ser recogido y/o dejado entre paradas. 
  
-    [:octicons-arrow-right-24: Más información](../flexible_services/#paradas-continuas) 
+    [:octicons-arrow-right-24: Más información](../flexible-services/#paradas-continuas) 
  
  - :material-transit-detour:{ .lg.middle } __Reglas de reserva__ 
  
     Indique si los usuarios pueden reservar un viaje en un servicio que responda a la demanda. 
  
-    [:octicons-arrow-right-24: Más información](../flexible_services/#reglas-de-reserva) 
+    [:octicons-arrow-right-24: Más información](../flexible-services/#reglas-de-reserva) 
  
  - :material-transit-detour:{ .lg.middle } __Rutas predefinidas con desviación__ 
  
     Vehículos que pueden desviarse brevemente de una ruta para recoger o dejar. 
  
-    [:octicons-arrow-right-24: Más información](../flexible_services/#rutas-predefinidas-con-desviación) 
+    [:octicons-arrow-right-24: Más información](../flexible-services/#rutas-predefinidas-con-desviación) 
  
  - :material-transit-detour:{ .lg.middle } __Servicios Bajo Demanda Basados en Zonas__ 
  
     Servicios que permiten recoger/dejar en cualquier lugar dentro de un área específica. 
  
-    [:octicons-arrow-right-24: Más información](../flexible_services/#zone-based-demand-responsive-services) 
+    [:octicons-arrow-right-24: Más información](../flexible-services/#zone-based-demand-responsive-services) 
  
  - :material-transit-detour:{ .lg.medio } __Servicios Bajo Demanda con Paradas Fijas__ 
  
     Servicios que permiten recoger/dejar en cualquier ubicación dentro de un grupo de paradas. 
  
-    [:octicons-arrow-right-24: Más información](../flexible_services/#fixed-stops-demand-responsive-services) 
+    [:octicons-arrow-right-24: Más información](../flexible-services/#fixed-stops-demand-responsive-services) 
  
 </div> 
