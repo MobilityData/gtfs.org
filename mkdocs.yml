@@ -411,8 +411,8 @@ nav:
         - Attributions: documentation/schedule/examples/attributions.md
         - Continuous stops: documentation/schedule/examples/continuous-stops.md
         - Demand responsive services: documentation/schedule/examples/flex.md
-        - Fares v1: documentation/schedule/examples/fares-v1.md
-        - Fares v2: documentation/schedule/examples/fares-v2.md
+        - Fares (v2): documentation/schedule/examples/fares-v2.md
+        - Legacy Fares (v1): documentation/schedule/examples/fares-v1.md
         - Feed information: documentation/schedule/examples/feed-info.md
         - Frequencies: documentation/schedule/examples/frequencies.md
         - Pathways: documentation/schedule/examples/pathways.md

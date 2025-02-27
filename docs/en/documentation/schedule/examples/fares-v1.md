@@ -1,7 +1,8 @@
-# Fares v1
+# Legacy Fares (v1)
 
-Composed of [fare_attributes.txt](../../reference/#fare_attributestxt) and [fare_rules.txt](../../reference/#fare_rulestxt), Fares v1 has historically been the official method for describing fare information in GTFS. However, the two files are limited in the breadth of factors they can efficiently describe, and are ambiguous to implement. 
-[Fares v2](../../examples/fares-v2/) is an extension project under active development, and it aims to address the limitations of Fares v1.
+Legacy Fares (v1) is an earlier, basic GTFS fares model that supports limited fare elements. It can only model origin to destination, zone-based, and route-based fare structures, along with a minimal set of transfer rules. While it remains a feature in GTFS for backward compatibility purposes, transitioning to [Fares (v2)](../../examples/fares-v2/) is recommended, as it offers comprehensive ticketing, payment information, and supports a much broader range of fare structures and rules.
+
+Composed of [fare_attributes.txt](../../reference/#fare_attributestxt) and [fare_rules.txt](../../reference/#fare_rulestxt), Legacy Fares (v1) has historically been the official method for describing fare information in GTFS. However, the two files are limited in the breadth of factors they can efficiently describe, and are ambiguous to implement. 
 
 ## Define an agency’s fare rules
 

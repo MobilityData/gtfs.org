@@ -1,25 +1,25 @@
-# Fares v2
+# Fares (v2)
 
-Fares v2 is a GTFS extension project that aims to address the limitations of Fares v1. This extension project is being adopted in iterations. The below examples outline how to model basic concepts, including fare products and how riders can use their fare for transfers. See more information about [the Fares v2 extension project here](../../../../community/extensions/fares-v2).
+Fares (also known as Fares v2) is a [GTFS Schedule feature](../../../../getting-started/features/overview/) that standardizes rider-facing fare information, allowing users to discover ticketing and pricing options based on the fare structures and conditions of each transit system and its connections.
 
-In the interim, producers may implement Fares v2 alongside the implementation of Fares v1 in the same dataset as there is no technical conflict between the two. Consumers will have the choice of which implementation to consume independently from the other. With adoption and sufficient endorsement of Fares v2, Fares v1 may be deprecated in the future. 
+Key Fares (v2) features include Fare Products, Fare Media, Route-based fares, Zone-based fares, Time-based fares, and Transfer rules.
 
-The below examples outline how to model data using Fares v2 and it can be completed with experimental features outlined in the full [proposal document](https://share.mobilitydata.org/gtfs-fares-v2). 
+GTFS Fares (v2) continues to evolve as a community-driven project, developed under the working name [GTFS-Fares v2](../../../../community/extensions/fares-v2). For guidance on modeling experimental features, refer to [the full proposal document](https://share.mobilitydata.org/gtfs-fares-v2).
 
-## Fares v2 training and free resources
+## Fares training and free resources
 
-To get started with GTFS Fares-v2, you can watch these four video tutorials and follow along with [this written resource](https://share.mobilitydata.org/Fares-v2-written-resource-guide-for-videos).</a>
+To get started with GTFS Fares (v2), you can watch these four video tutorials and follow along with [this written resource](https://share.mobilitydata.org/Fares-v2-written-resource-guide-for-videos).</a>
 
-- [Video 1](https://share.mobilitydata.org/faresv2-intro): GTFS Fares-v2: An introduction
-- [Video 2](https://share.mobilitydata.org/faresv2-setting-up-google-sheets): GTFS Fares v2: Setting up Google Sheets
-- [Video 3](https://share.mobilitydata.org/faresv2-creating-and-maintaining-data): GTFS Fares v2: Creating and Maintaining Data
-- [Video 4](https://share.mobilitydata.org/faresv2-exporting-and-publishing): Exporting and Publishing GTFS Fares v2
+- [Video 1](https://share.mobilitydata.org/faresv2-intro): GTFS Fares (v2): An introduction
+- [Video 2](https://share.mobilitydata.org/faresv2-setting-up-google-sheets): GTFS Fares (v2): Setting up Google Sheets
+- [Video 3](https://share.mobilitydata.org/faresv2-creating-and-maintaining-data): GTFS Fares (v2): Creating and Maintaining Data
+- [Video 4](https://share.mobilitydata.org/faresv2-exporting-and-publishing): Exporting and Publishing GTFS Fares (v2)
 
-They have been created for transit agencies to understand the purpose of GTFS-Fares v2, as well as how to use Google Sheets to create, edit, and upload GTFS-Fares v2 data. 
+These videos have been created for transit agencies to understand the purpose of Fares (v2), as well as how to use Google Sheets to create, edit, and upload GTFS Fares (v2) data. 
 
-This [Fares v2 template](https://share.mobilitydata.org/faresv2-template) can be used for creating the necessary fares files from scratch.
+This [Fares (v2) template](https://share.mobilitydata.org/faresv2-template) can be used for creating the necessary fares files from scratch.
 
-## Fares v2 data modelling examples
+## Fares data modelling examples
 
 ### Define a transit fare
 
@@ -154,7 +154,7 @@ San Francisco Muni riders can use several different types of fare media to pay f
 - Use the <a href="https://www.sfmta.com/getting-around/muni/fares/munimobile" target="_blank">Munimobile app</a>
 - Pay for the fare in cash
 
-These validation methods are referred to as `fare_media` in GTFS-Fares v2 and can be described using `fare_media.txt`.
+These validation methods are referred to as `fare_media` in GTFS Fares (v2) and can be described using `fare_media.txt`.
 
 Below is an example snippet from the <a href="https://511.org/open-data/transit" target="_blank">San Francisco Bay Area Regional Feed</a> that can be accessed with the 511 SF Bay API.
 
