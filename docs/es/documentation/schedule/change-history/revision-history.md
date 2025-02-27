@@ -2,6 +2,9 @@
 
 ### Historial de revisiones
 
+#### Febrero de 2025
+* Se agregó `rider_categories.txt`. Ver [discusión](https://github.com/google/transit/pull/511).
+
 #### Enero de 2025
 * Se actualizó agency_fare_url para ampliar su descripción e incluir solo información sobre tarifas. Ver [discusión](https://github.com/google/transit/pull/524).
 

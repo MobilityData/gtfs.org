@@ -2,10 +2,14 @@
 
 ### 改訂履歴
 
-#### 2025 年 1 月
+#### 2025年2月
+
+* rider_categories.txtを追加しました。[ディスカッション](https://github.com/google/transit/pull/511) を参照してください。
+
+#### 2025年1月
 * agency_fare_url を更新して説明を拡張し、運賃情報のみを含めます。[ディスカッション](https://github.com/google/transit/pull/524) を参照してください。
 
-#### 2024 年 12 月
+#### 2024年12月
 * `fare_leg_join_rules.txt` を追加し、実効運賃区間の概念を導入しました。[ディスカッション](https://github.com/google/transit/pull/439) を参照してください。
 
 #### 2024年9月

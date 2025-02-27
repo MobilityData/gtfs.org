@@ -1,6 +1,6 @@
 ## Referencia de General Transit Feed Specification 
  
- **Revisado el 23 de enero de 2025. Consulte [Historial de revisiones](../change-history/revision-history) para obtener más detalles.** 
+ **Revisado el 24 de febrero de 2025. Consulte [Historial de revisiones](../change-history/revision-history) para obtener más detalles.** 
  
  Este documento define el formato y la estructura de los archivos que componen un conjunto de datos GTFS. 
  
@@ -15,12 +15,13 @@
     - [stops.txt](#stopstxt) 
     - [routes.txt](#routestxt) 
     - [trips.txt](#tripstxt) 
-    - [parada_times.txt](#stop_timestxt) 
+    - [stop_times.txt](#stop_timestxt) 
     - [calendar.txt](#calendartxt) 
     - [calendar_dates.txt](#calendar_datestxt) 
     - [fare_attributes.txt](#fare_attributestxt) 
     - [fare_rules.txt](#fare_rulestxt) 
     - [timeframes.txt](#timeframestxt) 
+    - [rider_categories.txt](#rider_categoriestxt) 
     - [fare_media.txt](#fare_mediatxt) 
     - [fare_products.txt](#fare_productstxt) 
     - [fare_leg_rules.txt](#fare_leg_rulestxt) 
@@ -122,6 +123,7 @@ La **clave principal** de un conjunto de datos es el campo o combinación de cam
  | [fare_attributes.txt](#fare_attributestxt) | Opcional | Información de tarifas para las rutas de una agencia de tránsito. | 
  | [fare_rules.txt](#fare_rulestxt) | Opcional | Reglas para aplicar tarifas por itinerarios. | 
  | [timeframes.txt](#timeframestxt) | Opcional | Períodos de fecha y hora que se utilizarán en las reglas de tarifas para tarifas que dependen de factores de date y hora. | 
+ | [rider_categories.txt](#rider_categoriestxt) | Opcional | Define categorías de pasajeros (por ejemplo, personas mayores, estudiantes). |
  | [fare_media.txt](#fare_mediatxt) | Opcional | Describir los medios tarifarios que se pueden emplear para utilizar productos tarifarios.<br><br> El archivo [fare_media.txt](#fare_mediatxt) describe conceptos que no están representados en [fare_attributes.txt](#fare_attributestxt) y [fare_rules.txt](#fare_rulestxt). Como tal, el uso de [fare_media.txt](#fare_mediatxt) es completamente independiente de los archivos [fare_attributes.txt](#fare_attributestxt) y [fare_rules.txt](#fare_rulestxt). | 
  | [fare_products.txt](#fare_productstxt) | Opcional | Describir los diferentes tipos de billetes o tarifas que pueden adquirir los pasajeros.<br><br> El archivo [fare_products.txt](#fare_productstxt) describe productos de tarifas que no están representados en [fare_attributes.txt](#fare_attributestxt) y [fare_rules.txt](#fare_rulestxt). Como tal, el uso de [fare_products.txt](#fare_productstxt) es completamente independiente de los archivos [fare_attributes.txt](#fare_attributestxt) y [fare_rules.txt](#fare_rulestxt). | 
  | [fare_leg_rules.txt](#fare_leg_rulestxt) | Opcional | Reglas de tarifas para tramos individuales de viaje.<br><br> El archivo [fare_leg_rules.txt](#fare_leg_rulestxt) proporciona un método más detallado para modelar estructuras de tarifas. Como tal, el uso de [fare_leg_rules.txt](#fare_leg_rulestxt) es completamente independiente de los archivos [fare_attributes.txt](#fare_attributestxt) y [fare_rules.txt](#fare_rulestxt). | 
@@ -352,8 +354,7 @@ La **clave principal** de un conjunto de datos es el campo o combinación de cam
  Clave principal (`fare_id`) 
  
  **Versiones**<br> 
- Hay dos opciones de modelado para describir tarifas. GTFS- Tarifas V1 es la opción heredada para describir información mínima de tarifas. GTFS-Fares V2 es un método actualizado que permite una descripción más detallada de la estructura de tarifas de una agencia. Se permite que ambos estén presentes en un conjunto de datos, pero un consumidor de datos solo debe utilizar un método para un conjunto de datos determinado. Se recomienda que GTFS-Fares V2 tenga prioridad sobre GTFS- Tarifas V1.<br><br> Los archivos asociados con GTFS- Tarifas V1 son:<br> - [fare_attributes.txt](#fare_attributestxt)<br> - [fare_rules.txt](#fare_rulestxt)<br><br> Los archivos asociados con GTFS-Fares V2 son:<br> - [fare_media.txt](#fare_mediatxt)<br> - [fare_products.txt](#fare_productstxt)<br> - [fare_leg_rules.txt](#fare_leg_rulestxt)<br> - [fare_transfer_rules.txt](#fare_transfer_rulestxt) 
- 
+ Hay dos opciones de modelado para describir tarifas. GTFS- Tarifas V1 es la opción heredada para describir información mínima de tarifas. GTFS-Fares V2 es un método actualizado que permite una descripción más detallada de la estructura de tarifas de una agencia. Se permite que ambos estén presentes en un conjunto de datos, pero un consumidor de datos solo debe utilizar un método para un conjunto de datos determinado. Se recomienda que GTFS-Fares V2 tenga prioridad sobre GTFS- Tarifas V1.<br><br> Los archivos asociados con GTFS-Fares V1 son: <br> - [fare_attributes.txt](#fare_attributestxt) <br> - [fare_rules.txt](#fare_rulestxt) <br><br> Los archivos asociados con GTFS-Fares V2 son:<br> - [fare_media.txt](#fare_mediatxt) <br> - [fare_products.txt](#fare_productstxt) <br> - [rider_categories.txt](#rider_categoriestxt) <br> - [fare_leg_rules.txt](#fare_leg_rulestxt)<br> - [fare_leg_join_rules.txt](#fare_leg_join_rulestxt)<br> - [fare_transfer_rules.txt](#fare_transfer_rulestxt)<br> - [timeframes.txt](#timeframestxt)<br> - [networks.txt](#networkstxt)<br> - [route_networks.txt](#route_networkstxt)<br> - [areas.txt](#areastxt)<br> - [stop_areas.txt](#stop_areastxt)
 <br> 
 
  | Nombre del campo | Tipo | Presencia | Descripción | 
@@ -408,6 +409,21 @@ La **clave principal** de un conjunto de datos es el campo o combinación de cam
 - Al evaluar el tiempo de un evento de tarifa con [timeframes.txt](#timeframestxt), el tiempo del evento se calcula en la hora local utilizando la zona horaria local, según lo determinado por `stop_timezone`, si se especifica, de la parada o estación principal para el evento de tarifa. Si no se especifica, se debe utilizar la zona horaria de la agencia del feed. 
  - El “día actual” es la date actual del evento de tarifa, calculada en relación con la zona horaria local. El “día actual” puede ser diferente del día de servicio de un viaje de tarifa, especialmente para viajes que se extienden después de la medianoche. 
  - La “hora del día” para el evento de tarifa se calcula en relación con el “día actual” utilizando la semántica del tipo de campo Tiempo GTFS. 
+
+### rider_categories.txt 
+
+Archivo: **Opcional**
+
+Clave principal (`rider_category_id`)
+
+Define categorías de pasajeros (por ejemplo, personas mayores, estudiantes).
+
+| Nombre del campo | Tipo | Presencia | Descripción |
+|------|------|------|------|
+| `rider_category_id` | ID única |**Obligatorio**| Identifica una categoría de pasajero. |
+| `rider_category_name` | Text |**Obligatorio**| Nombre de la categoría del pasajero tal como se muestra al pasajero. |
+| `is_default_fare_category` | Enumeración |**Obligatorio**| Especifica si una entrada en [rider_categories.txt](#rider_categoriestxt) debe considerarse la categoría predeterminada (es decir, la categoría principal que debe mostrarse a los pasajeros). Por ejemplo: Tarifa de adulto, Tarifa regular, etc. Las opciones válidas son:<br><br> `0` o vacío: la categoría no se considera predeterminada.<br> `1` - La categoría se considera la predeterminada.<br><br> Cuando varias categorías de pasajeros son elegibles para un único producto tarifario especificado por un `fare_product_id`, debe haber exactamente una de estas categorías de pasajeros elegibles indicada como la categoría de pasajero predeterminada (`is_default_fare_category = 1`). |
+| `eligibility_url` | URL | Opcional | URL de una página web, generalmente de la agencia operadora, que proporciona información detallada sobre una categoría de pasajero específica y/o describe sus criterios de elegibilidad. |
  
 ### fare_media.txt 
  
@@ -427,14 +443,15 @@ La **clave principal** de un conjunto de datos es el campo o combinación de cam
  
  Archivo: **Opcional** 
  
- Clave principal (`fare_product_id`, `fare_media_id`) 
+ Clave principal (`fare_product_id`, `rider_category_id`, `fare_media_id`) 
  
  Se utiliza para describir el rango de tarifas disponibles para la compra por los pasajeros o se tienen en cuenta al calcular la tarifa total para viajes con múltiples tramos, como los costos de transferencia. 
 
  | Nombre del campo | Tipo | Presencia | Descripción | 
  |------|------|------|------| 
- | `fare_product_id` | ID | **Obligatorio** | Identifica un producto tarifario o un conjunto de productos tarifarios.<br><br> Varios registros en [fare_products.txt](#fare_productstxt) pueden compartir el mismo `fare_product_id`, en cuyo caso todos los registros con esa ID se recuperarán cuando se haga referencia a ellos desde otro archivo.<br><br> Varios registros pueden compartir el mismo `fare_product_id` pero con diferentes `fare_media_id`, lo que indica varios métodos disponibles para emplear el producto de tarifa, potencialmente a diferentes precios. | 
+ | `fare_product_id` | ID | **Obligatorio** | Identifica un producto tarifario o un conjunto de productos tarifarios.<br><br> Se permiten varios registros que compartan el mismo `fare_product_id` siempre y cuando contengan diferentes `fare_media_id` o `rider_category_id`. Los `fare_media_id` diferentes indicarían que hay varios métodos disponibles para emplear el producto tarifario, potencialmente a diferentes precios. Los `rider_category_id` diferentes indicarían que varias categorías de pasajeros son elegibles para el producto tarifario, potencialmente a diferentes precios. |
  | `fare_product_name` | Text | Opcional | El nombre del producto de tarifa que se muestra a los pasajeros. | 
+ | `rider_category_id` | Identificación externa que hace referencia a `rider_categories.rider_category_id` | Opcional | Identifica una categoría de pasajero elegible para el producto tarifario.<br><br> Si `fare_products.rider_category_id` está vacío, el producto de tarifa es elegible para cualquier `rider_category_id`.<br><br> Cuando varias categorías de pasajeros son elegibles para un único producto de tarifa especificado por un `fare_product_id`, debe haber solo una de estas categorías de pasajeros indicada como la categoría de pasajero predeterminada (`is_default_fare_category = 1`). |
  | `fare_media_id` | ID extranjera que hace referencia a `fare_media.fare_media_id` | Opcional | Identifica un medio tarifario que se puede emplear para utilizar el producto tarifario durante el viaje. Cuando `fare_media_id` está vacío, se considera que el medio de tarifa es desconocido.| 
  | `amount` | Cantidad de moneda | **Obligatorio** | El costo del producto tarifario. Puede ser negativo para representar descuentos en transferencias. Puede ser cero para representar un producto tarifario gratuito. | 
  | `currency` | Código de moneda | **Obligatorio** | La moneda del costo del producto tarifario. | 

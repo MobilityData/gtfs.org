@@ -1,6 +1,6 @@
 ## Référence de General Transit Feed Specification 
  
- **Révisé le 23 janvier 2025. Voir [Historique des révisions](../change-history/revision-history) pour plus de détails.** 
+ **Révisé le 24 février 2025. Voir [Historique des révisions](../change-history/revision-history) pour plus de détails.** 
  
  Ce document définit le format et la structure de les fichiers qui composent un jeu de données GTFS. 
  
@@ -21,6 +21,7 @@
       - [fare_attributes.txt](#fare_attributestxt) 
       - [fare_rules.txt](#fare_rulestxt) 
       - [timeframes.txt](#timeframestxt) 
+      - [rider_categories.txt](#rider_categoriestxt)
       - [fare_media.txt](#fare_mediatxt) 
       - [fare_products.txt](#fare_productstxt) 
       - [tarif _leg_rules.txt](#fare_leg_rulestxt) 
@@ -123,6 +124,7 @@
  | [fare_attributes.txt](#fare_attributestxt) | Optionnel | Informations tarifaires pour les itinéraires d’une agence de transport en commun. | 
  | [fare_rules.txt](#fare_rulestxt) | Optionnel | Règles d’application des tarifs pour les itinéraires. | 
  | [timeframes.txt](#timeframestxt) | Optionnel | Périodes de date et d’heure à utiliser dans les règles tarifaires pour les tarifs qui dépendent de facteurs de date et d’heure. | 
+ | [rider_categories.txt](#rider_categoriestxt) | Optionnel | Définit les catégories de passagers (par exemple, personnes âgées, étudiants). |
  | [fare_media.txt](#fare_mediatxt) | Optionnel | Décrire les supports tarifaires qui peuvent être utilisés pour utiliser les produits tarifaires.<br><br> Le fichier [fare_media.txt](#fare_mediatxt) décrit les concepts qui ne sont pas représentés dans [fare_attributes.txt](#fare_attributestxt) et [fare_rules.txt](#fare_rulestxt). En tant que tel, l’utilisation de [fare_media.txt](#fare_mediatxt) est entièrement distincte des fichiers [fare_attributes.txt](#fare_attributestxt) et [fare_rules.txt](#fare_rulestxt). | 
  | [fare_products.txt](#fare_productstxt) | Optionnel | Décrire les différents types de billets ou de tarifs pouvant être achetés par les passagers.<br><br> Le fichier [fare_products.txt](#fare_productstxt) décrit les produits tarifaires qui ne sont pas représentés dans [fare_attributes.txt](#fare_attributestxt) et [fare_rules.txt](#fare_rulestxt). En tant que tel, l’utilisation de [fare_products.txt](#fare_productstxt) est entièrement distincte des fichiers [fare_attributes.txt](#fare_attributestxt) et [fare_rules.txt](#fare_rulestxt). | 
  | [fare_leg_rules.txt](#fare_leg_rulestxt) | Optionnel | Règles tarifaires pour les différents tronçons du voyage.<br><br> Le fichier [fare_leg_rules.txt](#fare_leg_rulestxt) fournit une méthode plus détaillée pour modéliser les structures tarifaires. En tant que tel, l’utilisation de [fare_leg_rules.txt](#fare_leg_rulestxt) est entièrement distincte des fichiers [fare_attributes.txt](#fare_attributestxt) et [fare_rules.txt](#fare_rulestxt). | 
@@ -353,7 +355,7 @@
  Clé primaire (`fare_id`) 
  
  **Versions**<br> 
- Il existe deux options de modélisation pour décrire les tarifs. GTFS-Fares v1 est l’option héritée pour décrire les informations tarifaires minimales. GTFS-Fares V2 est une méthode mise à jour qui permet un compte rendu plus détaillé de la structure tarifaire d’une agence. Les deux peuvent être présentes dans un jeu de données, mais une seule méthode doit être utilisée par un application réutilisatrice de données pour un jeu de données donné. Il est recommandé que GTFS-Fares V2 soit prioritaire sur GTFS-Fares v1.<br><br> Les fichiers associés à GTFS-Fares v1 sont :<br> - [fare_attributes.txt](#fare_attributestxt)<br> - [fare_rules.txt](#fare_rulestxt)<br><br> Les fichiers associés à GTFS-Fares V2 sont :<br> - [fare_media.txt](#fare_mediatxt)<br> - [fare_products.txt](#fare_productstxt)<br> - [fare_leg_rules.txt](#fare_leg_rulestxt)<br> - [fare_transfer_rules.txt](#fare_transfer_rulestxt) 
+ Il existe deux options de modélisation pour décrire les tarifs. GTFS-Fares v1 est l’option héritée pour décrire les informations tarifaires minimales. GTFS-Fares V2 est une méthode mise à jour qui permet un compte rendu plus détaillé de la structure tarifaire d’une agence. Les deux peuvent être présentes dans un jeu de données, mais une seule méthode doit être utilisée par un application réutilisatrice de données pour un jeu de données donné. Il est recommandé que GTFS-Fares V2 soit prioritaire sur GTFS-Fares v1.<br><br> Les fichiers associés à GTFS-Fares v1 sont :<br>- [fare_attributes.txt](#fare_attributestxt)<br>- [fare_rules.txt](#fare_rulestxt)<br><br> Les fichiers associés à GTFS-Fares V2 sont :<br>- [fare_media.txt](#fare_mediatxt)<br>- [fare_products.txt](#fare_productstxt)<br>- [rider_categories.txt](#rider_categoriestxt)<br>- [fare_leg_rules.txt](#fare_leg_rulestxt)<br>- [fare_leg_join_rules.txt](#fare_leg_join_rulestxt)<br>- [fare_transfer_rules.txt](#fare_transfer_rulestxt)<br>- [timeframes.txt](#timeframestxt)<br>- [networks.txt](#networkstxt)<br>- [route_networks.txt](#route_networkstxt)<br>- [areas.txt](#areastxt)<br>- [stop_areas.txt](#stop_areastxt)
  
 <br> 
  
@@ -409,7 +411,22 @@
 - Lors de l’évaluation de l’heure d’un événement tarifaire par rapport à [timeframes.txt](#timeframestxt), l’heure de l’événement est calculée en heure locale en utilisant le fuseau horaire local, tel que déterminé par le `stop_timezone`, si spécifié, de l’arrêt ou de la gare parent pour l’événement tarifaire. S’il n’est pas spécifié, le fuseau horaire de l’agence du flux doit être utilisé à la place. 
  - Le « jour en cours » est la date actuelle de l’événement tarifaire, calculée par rapport au fuseau horaire local. Le « jour en cours » peut être différent du jour de service d’un trajet tarifaire, en particulier pour les trajets qui s’étendent après minuit. 
  - L’« heure de la journée » pour l’événement tarifaire est calculée par rapport au « jour en cours » à l’aide de la sémantique de type champ GTFS Time. 
- 
+
+### rider_categories.txt
+
+Fichier : **Optionnel**
+
+Clé primaire (`rider_category_id`)
+
+Définit les catégories de passagers (par exemple, personnes âgées, étudiants).
+
+| Nom du champ | Type | Présence | Description |
+|------|------|------|------|
+| `rider_category_id` | ID unique | **Requis** | Identifie une catégorie de passager. |
+| `rider_category_name` | Text | **Requis** | Nom de la catégorie de passager tel qu’il est affiché au passager. |
+| `is_default_fare_category` | Enum | **Requis** | Spécifie si une entrée dans [rider_categories.txt](#rider_categoriestxt) doit être considérée comme la catégorie par défaut (c’est-à-dire la catégorie principale qui doit être affichée aux passagers). Par exemple : tarif adulte, tarif normal, etc. Les options valides sont :<br><br> `0` ou vide - La catégorie n’est pas considérée comme la valeur par défaut.<br> `1` - La catégorie est considérée comme celle par défaut.<br><br> Lorsque plusieurs catégories de passagers sont admissibles à un produit tarifaire unique spécifié par un `fare_product_id`, il doit y avoir exactement une de ces catégories de passagers admissibles indiquée comme catégorie de passager par défaut (`is_default_fare_category = 1`). |
+| `eligibility_url` | URL | Optionnel | URL d’une page Web, généralement de l’agence exploitante, qui fournit des informations détaillées sur une catégorie de passager spécifique et/ou décrit ses critères d’éligibilité. |
+
 ### fare_media.txt 
  
  Fichier : **Optionnel** 
@@ -428,14 +445,15 @@
  
  Fichier : **Optionnel** 
  
- Clé primaire (`fare_product_id`, `fare_media_id`) 
+ Clé primaire (`fare_product_id`, `rider_category_id`, `fare_media_id`) 
  
  Utilisée pour décrire la gamme de tarifs disponibles à l’achat par les passagers ou pris en compte dans le calcul du tarif total pour les trajets à plusieurs tronçons, comme les frais de transfert. 
  
  | Nom du champ | Tapez | Présence | Descriptif | 
  |------|------|------|------| 
- | `fare_product_id` | ID | **Requis** | Identifie un produit tarifaire ou un ensemble de produits tarifaires.<br><br> Plusieurs entrées dans [fare_products.txt](#fare_productstxt) peuvent partager le même `fare_product_id`, auquel cas toutes les entrées avec cet ID seront récupérées lorsqu’elles seront référencées à partir d’un autre fichier.<br><br> Plusieurs entrées peuvent partager le même `fare_product_id` mais avec des `fare_media_id` différents, indiquant diverses méthodes disponibles pour utiliser le produit tarifaire, potentiellement à des prix différents. | 
+ | `fare_product_id` | ID | **Requis** | Identifie un produit tarifaire ou un ensemble de produits tarifaires.<br><br> Plusieurs enregistrements partageant le même `fare_product_id` sont autorisés à condition qu’ils contiennent des `fare_media_id` ou `rider_category_id` différents. Des `fare_media_id` différents indiqueraient que diverses méthodes sont disponibles pour utiliser le produit tarifaire, potentiellement à des prix différents. Des `rider_category_id` différents indiqueraient que plusieurs catégories de passagers sont éligibles pour le produit tarifaire, potentiellement à des prix différents. |
  | `fare_product_name` | Texte | Optionnel | Le nom du produit tarifaire tel qu’affiché aux passagers. | 
+ | `rider_category_id` | ID étranger référençant `rider_categories.rider_category_id` | Optionnel | Identifie une catégorie de passager éligible pour le produit tarifaire.<br><br> Si `fare_products.rider_category_id` est vide, le produit tarifaire est éligible pour n’importe quel `rider_category_id`.<br><br> Lorsque plusieurs catégories de passagers sont éligibles à un produit tarifaire unique spécifié par un `fare_product_id`, une seule de ces catégories de passagers doit être indiquée comme catégorie de passager par défaut (`is_default_fare_category = 1`).
  | `fare_media_id` | ID étranger faisant référence à `fare_media.fare_media_id` | Optionnel | Identifie un support tarifaire qui peut être utilisé pour utiliser le produit tarifaire pendant le voyage. Lorsque `fare_media_id` est vide, on considère que le support tarifaire est inconnu.| 
  | `amount` | Montant en devise | **Requis** | Le coût du produit tarifaire. Peut être négatif pour représenter les remises de transfert. Peut être zéro pour représenter un produit tarifaire gratuit. | 
  | `currency` | Code devise | **Requis** | La devise du coût du produit tarifaire. | 

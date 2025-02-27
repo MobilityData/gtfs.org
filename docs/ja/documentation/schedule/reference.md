@@ -5,7 +5,7 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
 
 ##General Transit Feed Specificationリファレンス
 
-**2025 年 1 月 23 日に改訂されました。詳細については、[改訂履歴](../change-history/revision-history) を参照してください。**
+**2025 年 2 月 24 日に改訂されました。詳細については、[改訂履歴](../change-history/revision-history) を参照してください。**
 
 このドキュメントでは、GTFS データセットを構成するファイルの形式と構造を定義します。
 
@@ -25,7 +25,8 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
     -   [calendar_dates.txt](#calendar_datestxt)
     -   [fare_attributes.txt](#fare_attributestxt)
     -   [fare_rules.txt](#fare_rulestxt)
-    -   [timeframes.txt](#timeframestxt)    
+    -   [timeframes.txt](#timeframestxt)
+    -   [rider_categories.txt](#rider_categoriestxt)    
     -   [fare_media.txt](#fare_mediatxt)
     -   [fare_products.txt](#fare_productstxt) 
     -   [fare_leg_rules.txt](#fare_leg_rulestxt)
@@ -127,6 +128,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | [fare_attributes.txt](#fare_attributestxt) |任意| 交通事業者のルート・路線系統の運賃情報。 |
 | [fare_rules.txt](#fare_rulestxt) |任意| 旅程に運賃を適用するルール。 |
 | [timeframes.txt](#timeframestxt) |任意|dateと時間の要素に依存する運賃の運賃ルールで使用するdateと時間の期間。 |
+| [rider_categories.txt](#rider_categoriestxt) |任意| 乗客のカテゴリを定義します (例: 高齢者、学生)。 |
 | [fare_media.txt](#fare_mediatxt) |任意|チケット商品を使用するために使用できる運賃メディアを説明します。<br><br>ファイル [fare_media.txt](#fare_mediatxt) は、[fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) に示されていない概念を説明しています。そのため、[fare_media.txt](#fare_mediatxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に独立しています。|
 | [fare_products.txt](#fare_productstxt) |任意| 乗客が購入できるさまざまな種類のチケットまたは運賃を説明しています。<br><br>ファイル [fare_products.txt](#fare_productstxt) には、[fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) に示されていないチケット商品が記載されています。そのため、[fare_products.txt](#fare_productstxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に独立しています。|
 | [fare_leg_rules.txt](#fare_leg_rulestxt) |任意| 個々の旅行区間の運賃規則。<br><br>ファイル [fare_leg_rules.txt](#fare_leg_rulestxt) は、運賃構造をモデル化するためのより詳細な方法を提供します。そのため、[fare_leg_rules.txt](#fare_leg_rulestxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に別です。 |
@@ -356,7 +358,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 主キー(`fare_id`)
 
 **バージョン**<br>
-運賃を記述するためのモデリング 任意は 2 つあります。GTFS-Fares V1 は、最小限の運賃情報を記述するための従来の任意です。GTFS-Fares V2 は、交通事業者の運賃構造をより詳細に説明できる更新された方法です。データセットには両方の方法を使用できますが、特定のデータセットに対してデータ コンシューマーが使用できる方法は 1 つだけです。GTFS-Fares V2 を GTFS-Fares V1 よりも優先することをお勧めします。 <br><br>GTFS-Fares V1 に関連付けられているファイルは次のとおりです: <br>- [fare_attributes.txt](#fare_attributestxt)<br>- [fare_rules.txt](#fare_rulestxt)<br><br>GTFS-Fares V2 に関連付けられているファイルは次のとおりです: <br>- [fare_media.txt](#fare_mediatxt)<br>- [fare_products.txt](#fare_productstxt)<br>- [fare_leg_rules.txt](#fare_leg_rulestxt)<br>- [fare_transfer_rules.txt](#fare_transfer_rulestxt)
+運賃を記述するためのモデリング 任意は 2 つあります。GTFS-Fares V1 は、最小限の運賃情報を記述するための従来の任意です。GTFS-Fares V2 は、交通事業者の運賃構造をより詳細に説明できる更新された方法です。データセットには両方の方法を使用できますが、特定のデータセットに対してデータ コンシューマーが使用できる方法は 1 つだけです。GTFS-Fares V2 を GTFS-Fares V1 よりも優先することをお勧めします。 <br><br> GTFS- Fares v1に関連付けられているファイルは次のとおりです。<br> - [fare_attributes.txt](#運賃属性txt)<br> - [fare_rules.txt](#運賃規則txt)<br><br> GTFS-Fares v2に関連付けられているファイルは次のとおりです。<br> - [fare_media.txt](#fare_mediatxt)<br> - [fare_products.txt](#fare_productstxt)<br> - [rider_categories.txt](#rider_categoriestxt)<br> - [fare_leg_rules.txt](#運賃規則txt)<br> - [fare_leg_join_rules.txt](#fare_leg_join_rulestxt)<br> - [fare_transfer_rules.txt](#運賃振替ルールtxt)<br> - [timeframes.txt](#timeframestxt)<br> - [networks.txt](#networkstxt)<br> - [route_networks.txt](#route_networkstxt)<br> - [areas.txt](#areastxt)<br> - [stop_areas.txt](#stop_areastxt)
 
 <br> 
 
@@ -413,6 +415,21 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 - `現在の日`は、ローカル タイムゾーンを基準に計算された運賃イベントの時間の現在のdateです。`現在の日`は、特に深夜を過ぎる便の場合、運賃区間の便のサービス日とは異なるしてもよい。
 - 運賃イベントの`時刻`は、GTFS 時間フィールドタイプのセマンティクスを使用して、`現在の日`を基準にして計算されます。
 
+### rider_categories.txt 
+
+ファイル: **任意**
+
+主キー(`rider_category_id`)
+
+ライダーのカテゴリを定義します (例: 高齢者、学生)。
+
+| フィールド名 | タイプ | 存在 | 説明 |
+|------|------|------|------|
+| `rider_category_id` |ユニーク ID |**必須**| ライダー カテゴリを識別します。 |
+| `rider_category_name` |Text|**必須**|乗客に表示される乗客カテゴリ名。 |
+| `is_default_fare_category` | 列挙型 |**必須**| [rider_categories.txt](#rider_categoriestxt) のエントリをデフォルト カテゴリ (つまり、乗客に表示さするべきであるメイン カテゴリ) と見なすするべきであるどうかを指定します。例: 大人料金、通常料金など。有効なオプションは次のとおりです。<br><br> `0` または空 - カテゴリはデフォルトとは見なされません。<br> `1` - カテゴリはデフォルトのものと見なされます。<br><br> `fare_product_id`で指定された単一の運賃商品に複数の乗客カテゴリが適格である場合、これらの適格な乗客カテゴリのうち 1 つだけがデフォルトの乗客カテゴリ (`is_default_fare_category = 1`) として指定されてしなければならない必要があります。 |
+| `eligibility_url` | URL |任意| 通常は運行事業者が提供する、特定の乗客カテゴリに関する詳細情報を提供したり、その適格基準を説明したりする Web ページの URL。 |
+
 ### fare_media.txt 
 
 ファイル: **任意**
@@ -431,14 +448,15 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 
 ファイル: **任意**
 
-主キー(`fare_product_id`、 `fare_media_id`)
+主キー(`fare_product_id`、`rider_category_id`、 `fare_media_id`)
 
 乗客が購入可能な運賃の範囲を記述したり、乗り換えコストなど、複数の区間を含む旅程の合計運賃を計算するときに考慮したりするために使用されます。
 
 | フィールド名 | タイプ | 存在 | 説明 |
 |------|------|------|------|
-| `fare_product_id` | ID |**必須**| チケット商品またはチケット商品のセットを識別します。<br><br> [fare_products.txt](#fare_productstxt) 内の複数のレコードが同じ`fare_product_id`を共有するしてもよい。その場合、別のファイルから参照されたときに、そのIDを持つすべてのレコードが取得されます。<br><br>複数のレコードが同じ`fare_product_id` を共有してしてもよいても、異なる`fare_media_id`を持つ場合があります。これは、チケット商品を使用するために利用できるさまざまな方法 (潜在的に異なる価格) を示します。|
+| `fare_product_id` | ID |**必須**| 運賃商品またはチケット商品のセットを識別します。<br><br>同じ`fare_product_id`を共有する複数のレコードは、異なる`fare_media_id`または `rider_category_id` を含む限り許可されます。異なる`fare_media_id`は、運賃商品を使用するためにさまざまな方法が利用可能であることを示し、価格が異なる可能性があります。異なる `rider_category_id` は、運賃商品の対象となるライダー カテゴリが複数あることを示し、価格が異なる可能性があります。|
 | `fare_product_name` |Text|任意| 乗客に表示されるチケット商品の名前。|
+| `rider_category_id` | `rider_categories.rider_category_id` を参照する外部 ID |任意| 運賃商品の対象となるライダー カテゴリを識別します。<br><br> `fare_products.rider_category_id` が空の場合、運賃商品はどの `rider_category_id` でも対象となります。<br><br> `fare_product_id`で指定された単一の運賃商品に複数の乗客カテゴリが該当する場合、これらの乗客カテゴリのうち 1 つだけがデフォルトの乗客カテゴリとして指定されるしなければならない(`is_default_fare_category = 1`)。|
 | `fare_media_id` | `fare_media.fare_media_id`部 ID |任意| 便中にチケット商品を使用するために使用できる運賃メディアを識別します。`fare_media_id` が空の場合、運賃メディアは不明であると見なされます。|
 | `amount` |通貨金額 |**必須**| チケット商品のコスト。乗り継ぎ割引を表す場合は負の値になる場合がしてもよい。無料のチケット商品を表す場合はゼロになる場合がしてもよい。|
 | `currency` | 通貨コード |**必須**| チケット商品のコストの通貨。 |
