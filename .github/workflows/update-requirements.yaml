@@ -41,7 +41,7 @@ jobs:
       - name: Update requirements.txt
         run: |
           source venv/bin/activate
-          pur -r ./requirements.txt
+          pur -r ./requirements.txt --no-install
 
       - name: Check for changes
         id: check_changes
