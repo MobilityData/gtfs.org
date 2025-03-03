@@ -5,13 +5,13 @@
 ## agency.txt 
  
  ``` 
- agence_id,agency_name,agency_url,agency_timezone,agency_phone,agency_lang 
+ agency_id,agency_name,agency_url,agency_timezone,agency_phone,agency_lang 
  FunBus,The Fun Bus,https://www.thefunbus.org,America/Los_Angeles,(310) 555-0222,en 
  ``` 
  
  ``` 
- agence_id,agency_name,agency_url,agency_timezone,agency_lang 
- agence001, Agence de transport en commun,https://www.transitcommuterbus.com/, PST,fr 
+ agency_id,agency_name,agency_url,agency_timezone,agency_lang 
+ agency001,Transit Agency,https://www.transitcommuterbus.com/,America/Vancouver,en
  [...] 
  ``` 
  

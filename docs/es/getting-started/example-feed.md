@@ -11,7 +11,7 @@ FunBus,The Fun Bus,https://www.thefunbus.org,America/Los_Angeles,(310) 555-0222,
 
 ```
 agency_id,agency_name,agency_url,agency_timezone,agency_lang
-agency001,Transit Agency,https://www.transitcommuterbus.com/,PST,en
+agency001,Transit Agency,https://www.transitcommuterbus.com/,America/Vancouver,en
 [...]
 ```
 
