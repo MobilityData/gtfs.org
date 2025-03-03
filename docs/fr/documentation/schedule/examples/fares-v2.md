@@ -2,7 +2,7 @@
  
  Tarifs (également appelés Fares v2) est une [fonctionnalité de GTFS Schedule](../../../../getting-started/features/overview/) qui normalise les informations tarifaires destinées aux usagers, permettant aux utilisateurs de découvrir les options de billetterie et de tarification en fonction des structures tarifaires et des conditions de chaque système de transport et de ses connexions. 
  
- Les Tarifs fonctionnalités de Tarifs (v2) incluent les Produits tarifaires, les Tarif Média, les tarifs basés sur l’itinéraire, les tarifs basés sur la zone, les tarifs basés sur le temps et les règles de transfert.
+ Les tarifs clés de Tarifs (v2) incluent les Produits tarifaires, les Tarif Média, les tarifs basés sur l’itinéraire, les tarifs basés sur la zone, les tarifs basés sur le temps et les règles de transfert.
  
  GTFS Tarifs (v2) continue d’évoluer en tant que projet communautaire, développé sous le nom de travail [GTFS-Fares v2](../../../../community/extensions/fares-v2). Pour obtenir des conseils sur la modélisation des fonctionnalités expérimentales, reportez-vous au [document de proposition complet](https://share.mobilitydata.org/gtfs-fares-v2).
  
@@ -15,7 +15,7 @@
  - [Vidéo 3](https://share.mobilitydata.org/faresv2-creating-and-maintaining-data) : GTFS Tarifs (v2) : Création et maintenance des données
  - [Vidéo 4](https://share.mobilitydata.org/faresv2-exporting-and-publishing) : Exportation et publication des GTFS Tarifs (v2) 
  
- Ces vidéos ont été créées pour que les agences de transport comprennent l’objectif des Tarifs (v2), ainsi que la manière d’utiliser Google Sheets pour créer, modifier et télécharger des données sur les Tarifs GTFS (v2). 
+ Ces vidéos ont été créées pour que les agences de transport en commun pour comprendre l’objectif des Tarifs (v2), ainsi que la manière d’utiliser Google Sheets pour créer, modifier et télécharger des données sur les Tarifs GTFS (v2). 
  
  Ce [modèle Fares (v2)](https://share.mobilitydata.org/faresv2-template) peut être utilisé pour créer les fichiers de tarifs nécessaires à partir de zéro. 
  
