@@ -1,7 +1,8 @@
-# Tarifas v1 
+# Tarifas - versión antigua (v1)
 
- Compuesto por [fare_attributes.txt](../../reference/#fare_attributestxt) y [fare_rules.txt](../../reference/#fare_rulestxt), Tarifas v1 históricamente ha sido el método oficial para describir la información de tarifas en GTFS. Sin embargo, los dos archivos están limitados en la variedad de factores que pueden describir de manera eficiente y su implementación es ambigua. 
- [Tarifas v2](../../examples/fares-v2/) es un proyecto de extensión en desarrollo activo y tiene como objetivo abordar las limitaciones de Tarifas v1. 
+La versión antigua de Tarifas (v1) es un modelo de tarifas GTFS básico que admite elementos de tarifas limitados. Solo puede modelar estructuras de tarifas de origen a destino, basadas en zonas y basadas en rutas, junto con un conjunto mínimo de reglas de transferencia. Si bien sigue siendo una característica de GTFS por motivos de compatibilidad con versiones anteriores, se recomienda realizar la transición a [Tarifas (v2)](../../examples/fares-v2/), ya que ofrece información completa sobre emisión de boletos y pagos, y admite una gama mucho más amplia de estructuras y reglas de tarifas.
+
+Compuesta por [fare_attributes.txt](../../reference/#fare_attributestxt) y [fare_rules.txt](../../reference/#fare_rulestxt), la versión antigua de Tarifas (v1) ha sido históricamente el método oficial para describir la información de tarifas en GTFS. Sin embargo, los dos archivos están limitados en la amplitud de los factores que pueden describir de manera eficiente y son ambiguos para implementar. 
  
 ## Definir las reglas de tarifas de una agencia 
  

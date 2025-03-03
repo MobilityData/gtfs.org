@@ -1,25 +1,25 @@
-# Fares v2 
+# 運賃(v2)
 
-Fares v2 は、Fares v1 の制限に対処することを目的とした GTFS 拡張プロジェクトです。この拡張プロジェクトは、段階的に採用されています。以下の例では、チケット商品や乗客が運賃を乗り換えに使用する方法など、基本概念をモデル化する方法の概要を示します。[Fares v2 拡張プロジェクトの詳細については、こちら](../../../../community/extensions/fares-v2) を参照してください。
+運賃(Fares v2とも呼ばれる) は、乗客向けの運賃情報を標準化する [GTFS Schedule機能](../../../../getting-started/features/overview/) であり、ユーザーは各交通システムとその接続の運賃構造と条件に基づいて、チケットと価格のオプションを見つけることができます。
 
-当面の間、プロデューサーは Fares v2 を Fares v1 の実装と並行して同じデータセットに実装できます。両者の間に技術的な競合はありません。消費者は、他の実装とは独立してどちらの実装を使用するかを選択できます。Fares v2 が採用され、十分な支持が得られれば、将来的に Fares v1 は廃止される可能性があります。
+主要な運賃(v2)機能には、チケット商品、チケットメディア、乗車経路ベースの運賃、ゾーンベースの運賃、時間ベースの運賃、乗り換えルールなどがあります。
 
-以下の例は、Fares v2 を使用してデータをモデル化する方法の概要を示しており、完全な [提案文書](https://share.mobilitydata.org/gtfs-fares-v2) に概説されている実験的な機能を使用して完了できます。
+GTFS運賃(v2) は、作業名 [GTFS-Fares v2](../../../../community/extensions/fares-v2) で開発され、コミュニティ主導のプロジェクトとして進化を続けています。実験的な機能のモデリングに関するガイダンスについては、[完全な提案文書](https://share.mobilitydata.org/gtfs-fares-v2)を参照してください。
 
-## Fares v2 のトレーニングと無料リソース
+## 運賃のトレーニングと無料リソース
 
-GTFS Fares-v2 を使い始めるには、これらの 4 つのビデオ チュートリアルを視聴し、[この書面によるリソース](https://share.mobilitydata.org/Fares-v2-written-resource-guide-for-videos) に従ってください。 
+GTFS運賃(v2) の使用を開始するには、次の 4 つのビデオ チュートリアルを視聴し、[この書面によるリソース](https://share.mobilitydata.org/Fares-v2-written-resource-guide-for-videos)に沿って進めてください。  
 
-- [動画 1](https://share.mobilitydata.org/faresv2-intro): GTFS Fares-v2: 概要
-- [動画 2](https://share.mobilitydata.org/faresv2-setting-up-google-sheets): GTFS Fares-v2: Google スプレッドシートの設定
-- [動画 3](https://share.mobilitydata.org/faresv2-creating-and-maintaining-data): GTFS Fares-v2: データの作成と維持
-- [動画 4](https://share.mobilitydata.org/faresv2-exporting-and-publishing): GTFS Fares-v2 のエクスポートと公開 
+- [動画 1](https://share.mobilitydata.org/faresv2-intro): GTFS運賃(v2): 概要
+- [動画 2](https://share.mobilitydata.org/faresv2-setting-up-google-sheets): GTFS運賃(v2): Google スプレッドシートの設定
+- [動画 3](https://share.mobilitydata.org/faresv2-creating-and-maintaining-data): GTFS運賃(v2): データの作成と維持
+- [動画 4](https://share.mobilitydata.org/faresv2-exporting-and-publishing): GTFS運賃(v2) のエクスポートと公開 
 
-これらは、交通事業者が GTFS-Fares v2 の目的と、Google スプレッドシートを使用して GTFS-Fares v2 データを作成、編集、アップロードする方法を理解できるように作成されています。 
+これらの動画は、運賃(v2) の目的と、Google スプレッドシートを使用して GTFS運賃(v2) データを作成、編集、アップロードする方法を交通機関に理解してもらうために作成されています。 
 
-この [Fares v2 template](https://share.mobilitydata.org/faresv2-template) は、必要な運賃ファイルを最初から作成するために使用できます。
+この [運賃(v2) テンプレート](https://share.mobilitydata.org/faresv2-template) は、必要な運賃ファイルを最初から作成するために使用できます。
 
-## Fares v2 データモデリングの例
+## 運賃データ モデリングの例
 
 ### 交通運賃を定義する
 
@@ -153,7 +153,7 @@ BaltimoreLink のローカル バス、Metro SubwayLink、または Light RailLi
 - <a href="https://www.sfmta.com/getting-around/muni/fares/munimobile" target="_blank">Munimobile アプリ</a> を使用する
 - 現金で運賃を支払う
 
-これらの検証方法は、GTFS-Fares v2 では `fare_media` と呼ばれ、`fare_media.txt` を使用して説明できます。
+これらの検証方法は、GTFS Fares (v2) では `fare_media` と呼ばれ、`fare_media.txt` を使用して説明できます。
 
 以下は、511 SF Bay API でアクセスできる <a href="https://511.org/open-data/transit" target="_blank">サンフランシスコ ベイエリア地域フィード</a> からの抜粋例です。
 

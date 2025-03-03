@@ -1,25 +1,25 @@
-# Fares v2 
+# Tarifs (v2)
  
- Fares v2 est un projet d’extension GTFS qui vise à remédier aux limitations de Fares v1. Ce projet d’extension est adopté par itérations. Les exemples ci-dessous expliquent comment modéliser les concepts de base, y compris les produits tarifaires et comment les passagers peuvent utiliser leur tarif pour les transferts. Voir plus d’informations sur [le projet d’extension Fares v2 ici](../../../../community/extensions/fares-v2). 
+ Tarifs (également appelés Fares v2) est une [fonctionnalité de GTFS Schedule](../../../../getting-started/features/overview/) qui normalise les informations tarifaires destinées aux usagers, permettant aux utilisateurs de découvrir les options de billetterie et de tarification en fonction des structures tarifaires et des conditions de chaque système de transport et de ses connexions. 
  
- Entre-temps, les producteurs peuvent mettre en œuvre Fares v2 parallèlement à la mise en œuvre de Fares v1 dans le même ensemble de données, car il n’y a pas de conflit technique entre les deux. Les consommateurs auront le choix de l’implémentation à consommer indépendamment de l’autre. Avec l’adoption et l’approbation suffisante de Fares v2, Fares v1 pourrait être obsolète à l’avenir.
+ Les tarifs clés de Tarifs (v2) incluent les produits tarifaires, les médias tarifaires, les tarifs basés sur l’itinéraire, les tarifs basés sur la zone, les tarifs basés sur le temps et les règles de transfert.
  
- Les exemples ci-dessous décrivent comment modéliser les données à l’aide de Fares v2 et peuvent être complétés par des fonctionnalités expérimentales décrites dans le [document de proposition](https://share.mobilitydata.org/gtfs-fares-v2). 
+ GTFS Tarifs (v2) continue d’évoluer en tant que projet communautaire, développé sous le nom de travail [GTFS-Fares v2](../../../../community/extensions/fares-v2). Pour obtenir des conseils sur la modélisation des fonctionnalités expérimentales, reportez-vous au [document de proposition complet](https://share.mobilitydata.org/gtfs-fares-v2).
  
-## Formation Fares v2 et ressources gratuites 
+## Formation sur les Tarifs et ressources gratuites
  
- Pour démarrer avec GTFS-Fares v2, vous pouvez regarder ces quatre didacticiels vidéo et suivre [cette ressource écrite](https://share.mobilitydata.org/Fares-v2-written-resource-guide-for-videos). 
+ Pour démarrer avec GTFS Tarifs (v2), vous pouvez regarder ces quatre didacticiels vidéo et suivre [cette ressource écrite](https://share.mobilitydata.org/Fares-v2-written-resource-guide-for-videos).  
  
- - [Vidéo 1](https://share.mobilitydata.org/faresv2-intro) : GTFS-Fares v2 : Une introduction
- - [Vidéo 2](https://share.mobilitydata.org/faresv2-setting-up-google-sheets) : GTFS-Fares v2 : Configuration de Google Sheets
- - [Vidéo 3](https://share.mobilitydata.org/faresv2-creating-and-maintaining-data) : GTFS-Fares v2 : Création et maintenance des données
- - [Vidéo 4](https://share.mobilitydata.org/faresv2-exporting-and-publishing) : Exportation et publication des GTFS-Fares v2 
+ - [Vidéo 1](https://share.mobilitydata.org/faresv2-intro) : GTFS Tarifs (v2) : Une introduction
+ - [Vidéo 2](https://share.mobilitydata.org/faresv2-setting-up-google-sheets) : GTFS Tarifs (v2) : Configuration de Google Sheets
+ - [Vidéo 3](https://share.mobilitydata.org/faresv2-creating-and-maintaining-data) : GTFS Tarifs (v2) : Création et maintenance des données
+ - [Vidéo 4](https://share.mobilitydata.org/faresv2-exporting-and-publishing) : Exportation et publication des GTFS Tarifs (v2) 
  
- Ils ont été créés pour les agences de transport en commun pour comprendre l’objectif de GTFS-Fares v2, ainsi que comment utiliser Google Sheets pour créer, modifier et télécharger des données GTFS-Fares v2. 
+ Ces vidéos ont été créées pour que les agences de transport en commun pour comprendre l’objectif des Tarifs (v2), ainsi que la manière d’utiliser Google Sheets pour créer, modifier et télécharger des données sur les Tarifs GTFS (v2). 
  
- Ce [modèle Fares v2](https://share.mobilitydata.org/faresv2-template) peut être utilisé pour créer les fichiers de tarifs nécessaires à partir de zéro. 
+ Ce [modèle Fares (v2)](https://share.mobilitydata.org/faresv2-template) peut être utilisé pour créer les fichiers de tarifs nécessaires à partir de zéro. 
  
-## Exemples de modélisation de données Fares v2
+## Exemples de modélisation des données de Tarifs
 
 ### Définir un titre de transport 
  
@@ -154,7 +154,7 @@
  - Utilisez l’ <a href="https://www.sfmta.com/getting-around/muni/fares/munimobile" target="_blank">application Munimobile</a> 
  - Payez le tarif en espèces 
  
- Ces méthodes de validation sont appelées `fare_media` dans GTFS-Fares v2 et peuvent être décrites à l’aide de `fare_media.txt`. 
+ Ces méthodes de validation sont appelées `fare_media` dans GTFS Tarifs (v2) et peuvent être décrites à l’aide de `fare_media.txt`. 
  
  Vous trouverez ci-dessous un exemple d’extrait du <a href="https://511.org/open-data/transit" target="_blank">flux régional de la région de la baie de San Francisco</a> accessible avec l’API 511 SF Bay. 
  

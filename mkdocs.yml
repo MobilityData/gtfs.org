@@ -185,8 +185,8 @@ plugins:
             Attributions: Atribuciones
             Continuous stops: Paradas continuas
             Demand responsive services: Servicios sobre demanda
-            Fares v1: Tarifas v1
-            Fares v2: Tarifas v2
+            Fares (v2): Tarifas (v2)
+            Legacy Fares (v1): Tarifas - versión antigua (v1)
             Feed information: Información del feed
             Frequencies: Frecuencias
             Pathways: Recorridos (Pathways)
@@ -246,8 +246,8 @@ plugins:
             Attributions: Attributions
             Continuous stops: Arrêts continus
             Demand responsive services: Transport à la demande
-            Fares v1: Fares v1
-            Fares v2: Fares v2
+            Fares (v2): Tarifs (v2)
+            Legacy Fares (v1): Tarifs - ancienne version (v1)
             Feed information: Informations sur le flux
             Frequencies: Fréquences
             Pathways: Pathways
@@ -320,8 +320,8 @@ plugins:
             Attributions: 帰属
             Continuous stops: 連続ストップ
             Demand responsive services: デマンド対応輸送
-            Fares v1: Fares v1
-            Fares v2: Fares v2
+            Fares (v2): 運賃 (v2)
+            Legacy Fares (v1): 運賃 - 旧バージョン (v1)
             Feed information: フィード情報
             Frequencies: フリークエンシー
             Pathways: 経路

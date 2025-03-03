@@ -1,7 +1,8 @@
-# Fares v1 
+# Tarifs - ancienne version (v1)
  
- Composé de [fare_attributes.txt](../../reference/#fare_attributestxt) et [fare_rules.txt](../../reference/#fare_rulestxt), Fares v1 a historiquement été la méthode officielle pour décrire les informations tarifaires dans GTFS. Cependant, les deux fichiers sont limités dans l’étendue des facteurs qu’ils peuvent décrire efficacement et sont ambigus à mettre en œuvre. 
- [Fares v2](../../examples/fares-v2/) est un projet d’extension en cours de développement actif et vise à remédier aux limitations de Fares v1. 
+L'ancienne version des Tarifs (v1) est un modèle tarifaire GTFS de base antérieur qui prend en charge des éléments tarifaires limités. Il peut uniquement modéliser des structures tarifaires de l’origine à la destination, basées sur la zone et basées sur l’itinéraire, ainsi qu’un ensemble minimal de règles de transfert. Bien qu’il reste une fonctionnalité de GTFS à des fins de compatibilité ascendante, la transition vers [Tarifs (v2)](../../examples/fares-v2/) est recommandée, car il offre une billetterie complète, des informations de paiement et prend en charge une gamme beaucoup plus large de structures et de règles tarifaires.
+
+Composé de [fare_attributes.txt](../../reference/#fare_attributestxt) et [fare_rules.txt](../../reference/#fare_rulestxt), l'ancienne version des Tarifs (v1) a toujours été la méthode officielle de description des informations tarifaires dans GTFS. Cependant, les deux fichiers sont limités dans l’étendue des facteurs qu’ils peuvent décrire efficacement et sont ambigus à mettre en œuvre. 
  
 ## Définir les règles tarifaires d’une agence 
  
