@@ -158,6 +158,12 @@ GTFS can model various fare structures, such as zone, distance, or time-of-day b
 
     [:octicons-arrow-right-24: Learn more](../fares/#fare-media)
 
+-   :material-cash:{ .lg .middle } __Rider Categories__
+
+    Represent different categories of riders eligible for certain fares.
+
+    [:octicons-arrow-right-24: Learn more](../fares/#rider-categories)
+
 -   :material-cash:{ .lg .middle } __Route-Based Fares__
 
     Describe the rules used to apply different fares for specific groups of routes.

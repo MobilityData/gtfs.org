@@ -79,8 +79,46 @@ Fare Media defines the supported media that can be used to hold and/or validate 
         |------------------|--------------------    |---      |---        | ---           |
         | single_ride      | Single Ride Fare       |  2.75   | USD       | munimobile          |
 
+## Rider Categories
+
+Rider Categories is used to represent the different types of public transportation riders eligible for specific fare rates, such as Elderly, Student, and Adult. Trip planning applications can use this information to display the available categories and show the default fare set by the agency providing the feed.
+
+| Files included                   | Fields included   |
+|----------------------------------|-------------------|
+|[rider_categories.txt](../../../documentation/schedule/reference/#rider_categoriestxt)|`rider_category_id`, `rider_category_name`, `is_default_fare_category`, `eligibility_url`|
+|[fare_products.txt](../../../documentation/schedule/reference/#fare_productstxt)|`rider_category_id`|
 
 
+**Prerequisites**: 
+
+- [Base features](../base)
+- [Fare Products feature](#fare-products)
+
+??? note "Sample Data"
+
+    <p style="font-size:16px">
+    The following sample presents three distinct rider categories, with the Adult category set as the default. 
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#rider_categoriestxt"><b>rider_categories.txt</b></a> <br>
+        </p>
+
+        | rider_category_id | rider_category_name | is_default_fare_category | eligibility_url |
+        |---|---|---|---|
+        | rc01-adult | Adult | 1 |  |
+        | rc02-senior | Senior (65+) | 0 | https://www.agency-abcd.org/info/reduced-fare-65 |
+        | rc03-student | Student | 0 | https://www.agency-abcd.org/info/reduced-fare-students |
+
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#fare_productstxt"><b>fare_products.txt</b></a> <br>
+        </p>
+
+        | fare_product_id | fare_product_name          | rider_category_id | amount | currency |
+        |-----------------|----------------------------|-------------------|--------|----------|
+        | single_ride     | Single Ride Fare           | rc01-adult        |   2.75 | USD      |
+        | single_ride     | Single Ride Fare - Student | rc03-student      |   1.50 | USD      |
 
 ## Route-Based Fares
 

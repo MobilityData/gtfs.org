@@ -79,7 +79,47 @@
         |------------------|--------------------    |---      |---        | ---           |
         | single_ride      | Single Ride Fare       |  2.75   | USD       | munimobile          |
 
- 
+## Categorías de pasajeros
+
+Las categorías de pasajeros se utilizan para representar los diferentes tipos de pasajeros del transporte público que pueden optar a tarifas específicas, como personas mayores, estudiantes y adultos. Las aplicaciones de planificación de viajes pueden utilizar esta información para mostrar las categorías disponibles y la tarifa predeterminada establecida por la agencia que proporciona la información.
+
+| Archivos incluidos | Campos incluidos | 
+|----------------------------------|-------------------|
+|[rider_categories.txt](../../../documentation/schedule/reference/#rider_categoriestxt)|`rider_category_id`, `rider_category_name`, `is_default_fare_category`, `eligibility_url`|
+|[fare_products.txt](../../../documentation/schedule/reference/#fare_productstxt)|`rider_category_id`|
+
+
+**Requisitos previos**: 
+
+ - [Funciones Base](../base) 
+ - [Función de Productos de Tarifa](#productos-de-tarifa) 
+
+??? note "Datos de muestra"
+
+    <p style="font-size:16px">
+     El siguiente ejemplo presenta tres categorías de pasajeros distintas, siendo la categoría Adulto la predeterminada. 
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#rider_categoriestxt"><b>rider_categories.txt</b></a> <br>
+        </p>
+
+        | rider_category_id | rider_category_name | is_default_fare_category | eligibility_url |
+        |---|---|---|---|
+        | rc01-adult | Adult | 1 |  |
+        | rc02-senior | Senior (65+) | 0 | https://www.agency-abcd.org/info/reduced-fare-65 |
+        | rc03-student | Student | 0 | https://www.agency-abcd.org/info/reduced-fare-students |
+
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#fare_productstxt"><b>fare_products.txt</b></a> <br>
+        </p>
+
+        | fare_product_id | fare_product_name          | rider_category_id | amount | currency |
+        |-----------------|----------------------------|-------------------|--------|----------|
+        | single_ride     | Single Ride Fare           | rc01-adult        |   2.75 | USD      |
+        | single_ride     | Single Ride Fare - Student | rc03-student      |   1.50 | USD      |
+
 ## Tarifas Basadas en Rutas 
  
  Tarifas Basadas en Rutas se utiliza para asignar diferentes tarifas para grupos específicos de rutas, como tarifas especiales para servicios expresos o diferenciar tarifas entre un Bus Rapid Servicio de tránsito versus servicios de autobús tradicionales. 

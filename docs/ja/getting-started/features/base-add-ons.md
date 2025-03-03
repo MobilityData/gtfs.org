@@ -300,6 +300,8 @@
         | routes     | route_desc      | ES       | La ruta "A" viaja desde Lower Mission hasta el centro | RA        |               |             |
         | routes     | route_desc      | FR       | La route « A » relie Lower Mission au centre-ville.   | RA        |               |             |
 
+## 帰属組織
+
 帰属により、データセットの作成に関与した組織 (プロデューサー、オペレーター、および/または当局など) に関する追加の詳細を共有できるようになります。
 
 | 含まれるファイル                   | 含まれるフィールド   |

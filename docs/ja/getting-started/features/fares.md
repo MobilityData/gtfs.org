@@ -76,6 +76,47 @@ GTFS では、世界中のさまざまな交通事業者が使用する、ゾー
         |------------------|--------------------    |---      |---        | ---           |
         | single_ride      | Single Ride Fare       |  2.75   | USD       | munimobile          |
 
+## 乗客カテゴリ
+
+乗客カテゴリは、高齢者、学生、成人など、特定の運賃が適用される公共交通機関の乗客のさまざまなタイプを表すために使用されます。旅行計画アプリケーションは、この情報を使用して、利用可能なカテゴリを表示し、フィードを提供する事業者によって設定されたデフォルトの運賃を表示できます。
+
+| 含まれるファイル                   | 含まれるフィールド   |
+|----------------------------------|-------------------|
+|[rider_categories.txt](../../../documentation/schedule/reference/#rider_categoriestxt)|`rider_category_id`, `rider_category_name`, `is_default_fare_category`, `eligibility_url`|
+|[fare_products.txt](../../../documentation/schedule/reference/#fare_productstxt)|`rider_category_id`|
+
+
+**前提条件**: 
+
+- [基本機能](../base)
+- [チケット商品機能](#_2)
+
+??? note "サンプルデータ"
+
+    <p style="font-size:16px">
+    次のサンプルでは、​​3 つの異なるライダー カテゴリが示されており、大人カテゴリがデフォルトとして設定されています。
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#rider_categoriestxt"><b>rider_categories.txt</b></a> <br>
+        </p>
+
+        | rider_category_id | rider_category_name | is_default_fare_category | eligibility_url |
+        |---|---|---|---|
+        | rc01-adult | Adult | 1 |  |
+        | rc02-senior | Senior (65+) | 0 | https://www.agency-abcd.org/info/reduced-fare-65 |
+        | rc03-student | Student | 0 | https://www.agency-abcd.org/info/reduced-fare-students |
+
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#fare_productstxt"><b>fare_products.txt</b></a> <br>
+        </p>
+
+        | fare_product_id | fare_product_name          | rider_category_id | amount | currency |
+        |-----------------|----------------------------|-------------------|--------|----------|
+        | single_ride     | Single Ride Fare           | rc01-adult        |   2.75 | USD      |
+        | single_ride     | Single Ride Fare - Student | rc03-student      |   1.50 | USD      |
+
 ## 乗車経路ベースの運賃
 
 乗車経路ベースの運賃は、急行サービスの特別運賃や、バス高速輸送サービスと従来のバスサービスの運賃を区別するなど、特定のルート・路線系統グループに異なる運賃を割り当てるために使用されます。
