@@ -96,7 +96,7 @@ Les catégories de passagers sont utilisées pour représenter les différents t
 ??? note "Exemples de données"
 
     <p style="font-size:16px">
-    L’exemple suivant présente trois catégories de cavaliers distinctes, la catégorie Adulte étant définie comme catégorie par défaut. 
+    L’exemple suivant présente trois catégories de passagers distinctes, la catégorie Adulte étant définie comme catégorie par défaut. 
     </p>
     !!! note ""
         <p style="font-size:16px">
