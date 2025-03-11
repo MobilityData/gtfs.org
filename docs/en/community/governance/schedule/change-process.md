@@ -127,7 +127,7 @@ The community engages in discussions to help develop a proposal for modifying th
 
 <img class="center" width="1200" height="100%" src="../../../../assets/governance-process-step-2.1.svg" alt="GTFS Governance Change Process Step 2.1"> 
 
-> Info: Applicable to all Tracks 
+> Note: Applicable to all Tracks 
 
 A proposal to change the specification is published by opening a Pull Request in [the GTFS Repository](https://github.com/google/transit/pulls). The [Advocate](../roles/#advocate) who publishes the proposal must focus on a single change; anyone is welcome to propose a modification.
 
@@ -156,7 +156,7 @@ A proposal to change the specification is published by opening a Pull Request in
 
 <img class="center" width="1200" height="100%" src="../../../../assets/governance-process-step-2.2.svg" alt="GTFS Governance Change Process Step 2.2"> 
   
-> Info: Applicable to all Tracks 
+> Note: Applicable to all Tracks 
 
 The community engages in conversations to help refine and develop the proposal.
 
@@ -187,7 +187,7 @@ The community engages in conversations to help refine and develop the proposal.
 
 <img class="center" width="1200" height="100%" src="../../../../assets/governance-process-step-2.3.svg" alt="GTFS Governance Change Process Step 2.3"> 
 
-> Info: Applicable to all Tracks 
+> Note: Applicable to all Tracks 
 
 The community provides feedback to the [Advocate](../roles/#advocate) to prepare the proposal for testing. 
 
@@ -216,7 +216,7 @@ The community provides feedback to the [Advocate](../roles/#advocate) to prepare
 
 <img class="center" width="1200" height="100%" src="../../../../assets/governance-process-step-2.4.svg" alt="GTFS Governance Change Process Step 2.4"> 
 
-> Info: Not applicable to Track B: Non-Functional Changes and Track C: Documentation Maintenance
+> Note: Not applicable to Track B: Non-Functional Changes and Track C: Documentation Maintenance
 
 The community votes to confirm consensus on the proposal’s scope and to ensure it is technically sound enough to proceed to testing.
 
@@ -269,7 +269,7 @@ The vote must meet the following conditions:
 
 <img class="center" width="1200" height="100%" src="../../../../assets/governance-process-step-2.5.svg" alt="GTFS Governance Change Process Step 2.5"> 
 
-> Info: Not applicable to Track B: Non-Functional Changes and Track C: Documentation Maintenance
+> Note: Not applicable to Track B: Non-Functional Changes and Track C: Documentation Maintenance
 
 One GTFS [Producer](../roles/#producers) and one GTFS [Consumer](../roles/#consumers) volunteer to serve as [First Adopters](../roles/#first-adopter) by implementing the proposed changes for testing.
 
@@ -303,7 +303,7 @@ The [Advocate](../roles/#advocate) can proceed with a Vote to Adopt ([step 2.6](
 
 <img class="center" width="1200" height="100%" src="../../../../assets/governance-process-step-2.6.svg" alt="GTFS Governance Change Process Step 2.6"> 
 
-> Info: Not applicable to Track C: Documentation Maintenance
+> Note: Not applicable to Track C: Documentation Maintenance
 
 The community votes to confirm whether or not the proposed changes are to be officially adopted into the specification.
 
@@ -357,7 +357,7 @@ The vote must meet the following conditions:
 
 <img class="center" width="1200" height="100%" src="../../../../assets/governance-process-step-2.7.svg" alt="GTFS Governance Change Process Step 2.7"> 
   
-> Info: Applicable to all tracks.
+> Note: Applicable to all tracks.
 
 The [Maintainer](../roles/#maintainer) implements the changes officially adopted after a successful vote.
 
