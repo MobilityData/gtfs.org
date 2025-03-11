@@ -257,7 +257,7 @@ The vote must meet the following conditions:
 | **Consensus Principle** | The vote is based on **unanimous consensus**. |
 | **Vote Passing Criteria** | The vote passes when all contributors vote **\+1**. |
 | **Vote Failing Criteria** | The vote fails when any contributor votes **\-1**. |
-| **Voting Format** | Votes should be formatted as follows: <br>- *“+1 or \-1, Organization Name, Contributor Type (Consumer, Producer, or General Contributor), Link to Produced Feed or Consuming Application”* |
+| **Voting Format** | Votes must be formatted as follows: <br>- *“+1 or \-1, Organization Name, Contributor Type (Consumer, Producer, or General Contributor), Link to Produced Feed or Consuming Application”* |
 | **Voting Against** | Contributors providing a negative vote (-1) must give actionable feedback. <br>- Actionable feedback is practical and constructive, providing concrete observations or suggestions to help solve the identified issue:  <br> - “*This proposal does not respect the backward compatibility principle of GTFS and we propose to create a separate file instead.*” |
 | **Minimum Votes** | At least 5 votes must be cast. |
 | **Participant Composition** | At least 2 consumers and 2 producers must participate in the vote. |
@@ -296,8 +296,8 @@ The [Advocate](../roles/#advocate) can proceed with a Vote to Adopt ([step 2.6](
 | :---- | :---- |
 | **Minimum Testing Period**  | The testing period must last **at least 7 full calendar days**. |
 | **Tester Participation** | At least 1 Consumer and 1 Producer must apply and test the proposed changes. |
-| **Problem identification during testing** | First Adopters testing the changes should report any identified issues by commenting on the Pull Request, ideally with a suggested solution, to allow the Advocate to make necessary adjustments to the proposal. <br>- If the change significantly impacts the proposal’s scope, any Contributor may flag it, prompting the Advocate to either return the proposal to the discussion step ([step 2.2](#step-22-pull-request-discussion)) or consider withdrawing it. |
-| **Testing Proof** | First Adopters should apply, test, and share changes in a public-facing environment:  <br>- a link to a public-facing GTFS feed for Producers <br>- a public-facing link to a GTFS consuming application for Consumers.  |
+| **Problem identification during testing** | First Adopters testing the changes must report any identified issues by commenting on the Pull Request, ideally with a suggested solution, to allow the Advocate to make necessary adjustments to the proposal. <br>- If the change significantly impacts the proposal’s scope, any Contributor may flag it, prompting the Advocate to either return the proposal to the discussion step ([step 2.2](#step-22-pull-request-discussion)) or consider withdrawing it. |
+| **Testing Proof** | First Adopters must apply, test, and share changes in a public-facing environment:  <br>- a link to a public-facing GTFS feed for Producers <br>- a public-facing link to a GTFS consuming application for Consumers.  |
 
 ### Step 2.6: Vote to Adopt
 
@@ -317,9 +317,6 @@ The community votes to confirm whether or not the proposed changes are to be off
 2. **Voting Process**  
      
     * [Contributors](../roles/#contributors) must vote in the comment section of the Pull Request.  
-    * Votes should be formatted as follows:  
-        *“(+1 or \-1, Organization Name, Contributor Type)”*  
-    * [Contributors](../roles/#contributors) providing a negative vote (-1) must give actionable feedback.  
     
 3. **Editing and Canceling**  
      
@@ -348,7 +345,7 @@ The vote must meet the following conditions:
 | **Consensus Principle** | The vote is based on **a qualified majority** (80% majority) |
 | **Vote Passing Criteria** | The vote passes when 80% or more of contributors vote **\+1**. |
 | **Vote Failing Criteria** | The vote fails when more than 20% of contributors vote **\-1**. |
-| **Voting Format** | Votes should be formatted as follows: <br>- *“+1 or \-1, Organization Name, Contributor Type (Consumer, Producer, or General Contributor), Link to Produced Feed or Consuming Application”* |
+| **Voting Format** | Votes must be formatted as follows: <br>- *“+1 or \-1, Organization Name, Contributor Type (Consumer, Producer, or General Contributor), Link to Produced Feed or Consuming Application”* |
 | **Voting Against** | Contributors providing a negative vote (-1) must give actionable feedback. <br>- Actionable feedback is practical and constructive, providing concrete observations or suggestions to help solve the identified issue:  <br> - “*This proposal does not respect the backward compatibility principle of GTFS and we propose to create a separate file instead.*” |
 | **Minimum Votes** | At least 5 votes must be cast. |
 | **Participant Composition** | At least 2 consumers and 2 producers must participate in the vote. |
