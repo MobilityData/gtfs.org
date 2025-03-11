@@ -41,17 +41,17 @@ The Maintainer supports and facilitates the specification [Change Process](../ch
 
 **Responsibilities**:
 
-* Assist Advocates in facilitating discussions when needed.   
+* Assist [Advocates](#advocate) in facilitating discussions when needed.   
 * Provide constructive feedback and recommendations to help refine proposals.  
 * Check that the terminology used in specification proposals aligns with the one used in the official specification.  
 * Ensure all GTFS Contributors follow the governance framework by monitoring and moderating community interactions.  
-* Can act as the Advocate for proposals.  
-* Assume the role of the Advocate if they become unresponsive at any point.  
+* Can act as the [Advocate](#advocate) for proposals.  
+* Assume the role of the [Advocate](#advocate) if they become unresponsive at any point.  
 * Cannot participate in any voting process. 
 
 ## Special roles
 
-General Contributors, Producers, Consumers and the Maintainer can take on special roles to support the development of specification changes. The Advocate and First Adopter roles are particularly critical for the [Change Process](../change-process) to function effectively.
+General Contributors, Producers, Consumers and the Maintainer can take on special roles to support the development of specification changes. The [Advocate](#advocate) and [First Adopter](#first-adopter) roles are particularly critical for the [Change Process](../change-process) to function effectively.
 
 
 <img class="center" width="1200" height="100%" src="../../../../assets/governance-roles-2.svg" alt="GTFS Governance Special Roles"> 
