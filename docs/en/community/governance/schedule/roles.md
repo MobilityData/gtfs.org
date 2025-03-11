@@ -1,6 +1,6 @@
 # Roles and Responsibilities
 
-The community is composed of two main stakeholder categories: Contributors and the Maintainer. 
+The community is composed of two main stakeholder categories: [Contributors](#contributors) and the [Maintainer](#maintainer). 
 
 <img class="center" width="1200" height="100%" src="../../../../assets/governance-roles-1.svg" alt="GTFS Governance Roles"> 
 
