@@ -2,7 +2,7 @@
 
 The community is composed of two main stakeholder categories: Contributors and the Maintainer. 
 
-<img class="center" width="1080" height="100%" src="../../../../assets/governance-roles-1.png" alt="GTFS Governance Roles"> 
+<img class="center" width="1080" height="100%" src="../../../../assets/governance-roles-1.svg" alt="GTFS Governance Roles"> 
 
 ## Contributors
 
@@ -54,7 +54,7 @@ The Maintainer supports and facilitates the specification [Change Process](../ch
 General Contributors, Producers, Consumers and the Maintainer can take on special roles to support the development of specification changes. The Advocate and First Adopter roles are particularly critical for the [Change Process](../change-process) to function effectively.
 
 
-<img class="center" width="1080" height="100%" src="../../../../assets/governance-roles-2.png" alt="GTFS Governance Special Roles"> 
+<img class="center" width="1080" height="100%" src="../../../../assets/governance-roles-2.svg" alt="GTFS Governance Special Roles"> 
 
 ### Advocate
 
