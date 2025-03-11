@@ -290,13 +290,13 @@ One GTFS [Producer](../roles/#producers) and one GTFS [Consumer](../roles/#consu
 
 **<ins>Requirements</ins>** 
 
-The [Advocate](../roles/#advocate) can proceed with a Vote to Adopt (step 2.6) only after all requirements of the testing period have been completed.
+The [Advocate](../roles/#advocate) can proceed with a Vote to Adopt ([step 2.6](#step-26-vote-to-adopt)) only after all requirements of the testing period have been completed.
 
 | Requirement | Details |
 | :---- | :---- |
 | **Minimum Testing Period**  | The testing period must last **at least 7 full calendar days**. |
 | **Tester Participation** | At least 1 Consumer and 1 Producer must apply and test the proposed changes. |
-| **Problem identification during testing** | Testing Consumer(s) and Producer(s) should report any identified issues by commenting on the Pull Request, ideally with a suggested solution, to allow the Advocate to make necessary adjustments to the proposal. <br>- If the change significantly impacts the proposal’s scope, any Contributor may flag it, prompting the Advocate to either return the proposal to the discussion step (2.2) or consider withdrawing it. |
+| **Problem identification during testing** | Testing Consumer(s) and Producer(s) should report any identified issues by commenting on the Pull Request, ideally with a suggested solution, to allow the Advocate to make necessary adjustments to the proposal. <br>- If the change significantly impacts the proposal’s scope, any Contributor may flag it, prompting the Advocate to either return the proposal to the discussion step ([step 2.2](#step-22-pull-request-discussion)) or consider withdrawing it. |
 | **Testing Proof** | Testers should apply, test, and share changes in a public-facing environment:  <br>- a link to a public-facing GTFS feed for Producers <br>- a public-facing link to a GTFS consuming application for Consumers.  |
 
 ### Step 2.6: Vote to Adopt
@@ -335,7 +335,7 @@ The community votes to confirm whether or not the proposed changes are to be off
      
     * If the vote fails, the [Advocate](../roles/#advocate) can choose to either:  
         1. Adjust proposal based on actionable feedback provided and call another vote,  
-        2. Go back to the discussion step (2.2) and redefine the scope, or  
+        2. Go back to the discussion step ([step 2.2](#step-22-pull-request-discussion)) and redefine the scope, or  
         3. Abandon the proposal.  
     * The [Advocate](../roles/#advocate) must announce their decision in the Pull Request comment section and in the [GTFS Changes mailing list](https://groups.google.com/g/gtfs-changes) discussion thread.
 
