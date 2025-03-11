@@ -277,16 +277,16 @@ One GTFS [Producer](../roles/#producers) and one GTFS [Consumer](../roles/#consu
 
 1. **Tester Confirmation**  
      
-    * The [Advocate](../roles/#advocate) confirms the identity of the [Consumer](../roles/#consumers)(s) and [Producer](../roles/#producers)(s) which will test the changes in the Pull Request comment section.  
+    * The [Advocate](../roles/#advocate) confirms the identity of the [First Adopters](../roles/#first-adopter) which will test the changes in the Pull Request comment section.  
     
 2. **Testing**
 
-    * The testing [Consumer](../roles/#consumers)(s) and [Producer](../roles/#producers)(s) apply and test the changes in a public-facing environment.  
+    * The [First Adopters](../roles/#first-adopter) apply and test the changes in a public-facing environment.  
     * Testing lasts as long as necessary to ensure that all requirements are met before calling a vote to adopt.
 
 3. **Proof of Testing**
 
-    * The testing [Consumer](../roles/#consumers)(s) and [Producer](../roles/#producers)(s) show proof of testing by sharing a link to the implemented changes in the pull request comments.
+    * The [First Adopters](../roles/#first-adopter) show proof of testing by sharing a link to the implemented changes in the pull request comments.
 
 **<ins>Requirements</ins>** 
 
@@ -296,8 +296,8 @@ The [Advocate](../roles/#advocate) can proceed with a Vote to Adopt ([step 2.6](
 | :---- | :---- |
 | **Minimum Testing Period**  | The testing period must last **at least 7 full calendar days**. |
 | **Tester Participation** | At least 1 Consumer and 1 Producer must apply and test the proposed changes. |
-| **Problem identification during testing** | Testing Consumer(s) and Producer(s) should report any identified issues by commenting on the Pull Request, ideally with a suggested solution, to allow the Advocate to make necessary adjustments to the proposal. <br>- If the change significantly impacts the proposal’s scope, any Contributor may flag it, prompting the Advocate to either return the proposal to the discussion step ([step 2.2](#step-22-pull-request-discussion)) or consider withdrawing it. |
-| **Testing Proof** | Testers should apply, test, and share changes in a public-facing environment:  <br>- a link to a public-facing GTFS feed for Producers <br>- a public-facing link to a GTFS consuming application for Consumers.  |
+| **Problem identification during testing** | First Adopters testing the changes should report any identified issues by commenting on the Pull Request, ideally with a suggested solution, to allow the Advocate to make necessary adjustments to the proposal. <br>- If the change significantly impacts the proposal’s scope, any Contributor may flag it, prompting the Advocate to either return the proposal to the discussion step ([step 2.2](#step-22-pull-request-discussion)) or consider withdrawing it. |
+| **Testing Proof** | First Adopters should apply, test, and share changes in a public-facing environment:  <br>- a link to a public-facing GTFS feed for Producers <br>- a public-facing link to a GTFS consuming application for Consumers.  |
 
 ### Step 2.6: Vote to Adopt
 
