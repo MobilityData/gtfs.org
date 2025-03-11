@@ -2,7 +2,7 @@
 
 Proposed changes to the specification are categorized based on their impact on its functionality and interpretation. Each category follows a specific process before being officially adopted into GTFS.
 
-<img class="center" width="1080" height="100%" src="../../../../assets/governance-change-types.svg" alt="GTFS Governance Change Types"> 
+<img class="center" width="1200" height="100%" src="../../../../assets/governance-change-types.svg" alt="GTFS Governance Change Types"> 
 
 ## 1. Functional changes
 
