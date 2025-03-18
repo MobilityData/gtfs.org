@@ -1,0 +1,30 @@
+name: Check website loads OK
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-url:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install playwright
+
+      - name: Run Playwright test
+        run: |
+          npx playwright install
+          npx playwright codegen https://gtfs.org --output=playwright-test.js
+          node playwright-test.js || exit 1
