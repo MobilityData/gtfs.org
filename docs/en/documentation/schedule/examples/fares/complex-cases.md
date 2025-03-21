@@ -1,4 +1,4 @@
-# Modeling Complex Fare Details:
+# Modeling Complex Fare Details
 
 Fares v2 can also model additional fare scheme complexities.
 
@@ -9,7 +9,9 @@ Fares v2 can also model additional fare scheme complexities.
 | Area sets | Groups of zones. This concepts allows for more complex zone structures to be modeled | The fare is determined by the zones that a vehicle passes. The zones might be unstructured. | `Area_sets.txt, fare_leg_rules.txt` | Metro Transit |
 | Nonconsecutive transfers | Defined [above](?tab=t.0#heading=h.ghu596tn2vja)\* as setting transfer rule applicability to both consecutive and nonconsecutive legs. This allows the search for all possible combinations to find the optimal price. | The fare is determined by considered all the leg crossed and all the possible transfer combinations | `fare_transfer_rules.txt` | Translink ([above](?tab=t.0#heading=h.ghu596tn2vja)) Puget Sound agencies (King County Metro \- Sound Transit \- Community Transit) |
 
-1. #### Fare media transfer mechanism:    Example: SEPTA (Pennsylvania)
+#### Fare media transfer mechanism:
+
+Example: SEPTA (Pennsylvania)
 
 Recall: SEPTA uses four fare media: 
 
@@ -57,7 +59,9 @@ Then add `fare_product_behavior=0` to `fare_transfer_rules.txt`.
 
 `fare_product_behavior=0` means that the same fare product needs to be used in both legs for the transfer to be valid (and allow for 2 transfers). The fare product in this case is `bus_metro_key_contactless`, which uses “SEPTA Key” or contactless payments.
 
-2. #### Joining fare legs:    Example: SEPTA (Pennsylvania)
+#### Joining fare legs:
+
+Example: SEPTA (Pennsylvania)
 
 Recall: SEPTA allows a free interchange at three stations (15th St/City Hall, 13th St and Drexel Station at 30th St). At those stations, a rider can transfer from two metro legs without paying an additional fare.  
 Essentially, you can consider two legs that transfer at one of those stations as one leg. This can be modeled in v2 using `fare_leg_join_rules.txt`.
@@ -86,7 +90,9 @@ The `stop_ids` of the stations in question are already defined in `stops.txt`
 
 Make sure you write all the stop pairs that are linked freely (without a fare gate)..
 
-3. #### Area sets:    Example: Metro Transit (Minneapolis)
+#### Area sets:
+
+Example: Metro Transit (Minneapolis)
 
 Recall: Metro Transit has a reduced 0.50$ fare for trips taking place entirely within downtown Minneapolis. This can be modeled in different ways:
 
@@ -133,7 +139,9 @@ Adding rule priority ensures that a leg that contains downtown and is contained 
 
 This example is the simplest use of area sets. Other agencies like VRR (Verkehrsverbund Rhein-Ruhr), NJTransit, Ruter and Auckland Transport have more complicated blocks of zones that can be modelled using area sets.
 
-4. #### Nonconsecutive transfers:    Example: ORCA (Puget Sound)
+#### Nonconsecutive transfers:
+
+Example: ORCA (Puget Sound)
 
 Recall: For ORCA
 

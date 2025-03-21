@@ -8,12 +8,15 @@ Defining rider categories allows trip planners (GTFS consumers) to show differen
 
 Rider categories are defined in two steps:
 
-1. **Create each rider category in rider\_categories.txt**  
-   1. rider\_category\_id: the unique id of the rider category  
-   2. rider\_category\_name: The rider-facing name of the category (Adult, Student, etc)  
-   3. is\_default\_fare\_cateory: If the category is the default one, set this field to 1, otherwise set to 0 or keep empty.  
-   4. eligibility\_url: If the agency has a web page that contains information about the conditions for the rider category, it can be included in this field. Otherwise, the entire column is optional.  
-   5. Consult the documentation\[link\*\] for more information regarding rider categories.
+#### Specify rider categories
+
+Each category is created in rider\_categories.txt
+
+* rider\_category\_id: the unique id of the rider category  
+* rider\_category\_name: The rider-facing name of the category (Adult, Student, etc)  
+* is\_default\_fare\_cateory: If the category is the default one, set this field to 1, otherwise set to 0 or keep empty.  
+* eligibility\_url: If the agency has a web page that contains information about the conditions for the rider category, it can be included in this field. Otherwise, the entire column is optional.  
+* Consult the documentation\[link\*\] for more information regarding rider categories.
 
 Rider categories for Translink in `rider_categories.txt`  
 `rider_categories.txt`
@@ -23,8 +26,9 @@ Rider categories for Translink in `rider_categories.txt`
 | adult | Adult | 1 |  |
 | concession | Concession |  | https://www.translink.ca/transit-fares/pricing-and-fare-zones\#:\~:text=Fare%20Pricing-,Concession%20Fares,-Passengers%20who%20are |
 
-2. **Associate fare products to rider categories**  
-   1. In fare\_products.txt, fill the fare products like the previous sections (section. [Route-Based Fares](?tab=t.0#heading=h.47j0ltwx34j3)), then add a column rider\_category\_id which references the rider\_category\_id from rider\_categories.txt
+#### Associate with fare products
+
+* In fare\_products.txt, fill the fare products like the previous sections (section. [Route-Based Fares](?tab=t.0#heading=h.47j0ltwx34j3)), then add a column rider\_category\_id which references the rider\_category\_id from rider\_categories.txt
 
 The example below shows two different bus fare products for flat bus fare for adults and for concession categories. Follow the same approach for all other products by duplicating the fare product and changing the amount and the rider\_category\_id.
 
