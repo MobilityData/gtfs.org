@@ -1,6 +1,8 @@
 # Fare Transfers
 
-## Main files: fare\_leg\_rules.txt, fare\_transfer\_rules.txt Example: Translink (Vancouver)
+*Main files: fare\_leg\_rules.txt, fare\_transfer\_rules.txt*
+
+*Example: Translink (Vancouver)*
 
 **Recall ([Fares v2 Features](?tab=t.0#heading=h.o1dhl0gqp9z8)):** Fare Transfers is used to define rules applicable when transferring between legs. The total cost of the journey will be determined by taking into account the fare products for the legs and the fare products for the transfers between them.
 
@@ -11,7 +13,7 @@ Recall: For Translink,
 
 Fare transfers are modeled as follows:
 
-#### Create transfer fare products
+### **Create transfer fare products**
 
 These fare products represent what the transfers cost.  
 In Translink’s case, when transferring under a certain time window (90min) from a 1-zone leg (eg: Zone 1 to Zone 1), to a 2-zone leg (Zone 1 to Zone 2), the difference between the legs is paid. So the rider pays an additional 2\_zone\_fare \- 1\_zone\_fare \= 4.65 \- 3.20 \= 1.45 CAD
@@ -28,7 +30,7 @@ In Translink’s case, when transferring under a certain time window (90min) fro
 | 2\_zone\_to\_3\_zone\_upgrade | AddFare 2 zones  to 3 zones upgrade | 1.70 | CAD | contactless |
 | 1\_zone\_to\_3\_zone\_upgrade | AddFare 1 zone  to 3 zones upgrade | 3.15 | CAD | contactless |
 
-#### Create the transfers
+### **Create the transfers**
 
 Transfers exist in fare\_transfer\_rules.txt.
 
@@ -61,7 +63,7 @@ Transfers exist in fare\_transfer\_rules.txt.
 | ZN1\_ZN2 | ZN2\_ZN3 | 5400 | 1 | 0 | 2\_zone\_to\_3\_zone\_upgrade |
 | … | … | … | … | … | … |
 
-#### Enable Nonconsecutive Transfers
+### **Enable Nonconsecutive Transfers**
 
 This step is required for some cases. In certain fare structures, nonconsecutive transfers have to be taken into account. The first leg of a journey can influence a third or fourth leg of a journey.
 

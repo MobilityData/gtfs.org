@@ -1,6 +1,8 @@
 # Rider Categories
 
-## Main files: rider\_categories.txt, fare\_products.txt Example: Translink (Vancouver)
+*Main files: rider\_categories.txt, fare\_products.txt*
+
+*Example: Translink (Vancouver)*
 
 **Recall ([Fares v2 Features](?tab=t.0#heading=h.o1dhl0gqp9z8)):** is used to represent the different types of public transportation riders eligible for specific fare rates, such as Elderly, Student, and Adult.
 
@@ -8,7 +10,7 @@ Defining rider categories allows trip planners (GTFS consumers) to show differen
 
 Rider categories are defined in two steps:
 
-#### Specify rider categories
+### **Specify rider categories**
 
 Each category is created in rider\_categories.txt
 
@@ -26,7 +28,7 @@ Rider categories for Translink in `rider_categories.txt`
 | adult | Adult | 1 |  |
 | concession | Concession |  | https://www.translink.ca/transit-fares/pricing-and-fare-zones\#:\~:text=Fare%20Pricing-,Concession%20Fares,-Passengers%20who%20are |
 
-#### Associate with fare products
+### **Associate with fare products**
 
 * In fare\_products.txt, fill the fare products like the previous sections (section. [Route-Based Fares](?tab=t.0#heading=h.47j0ltwx34j3)), then add a column rider\_category\_id which references the rider\_category\_id from rider\_categories.txt
 

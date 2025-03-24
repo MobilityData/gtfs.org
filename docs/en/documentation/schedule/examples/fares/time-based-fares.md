@@ -1,6 +1,8 @@
-# Time-based fares:
+# Time-based fares
 
-## Main files: fare\_leg\_rules.txt, areas.txt, stop\_areas.txt Example: Translink (Vancouver)
+*Main files: fare\_leg\_rules.txt, areas.txt, stop\_areas.txt*
+
+*Example: Translink (Vancouver)*
 
 **Recall ([Fares v2 Features](?tab=t.0#heading=h.o1dhl0gqp9z8)):** Time-Based Fares assigns different fares to journeys based on different times of the day of different weekdays. This fare feature models peak/off-peak fares and fare updates for special occasions.
 
@@ -10,7 +12,7 @@ This can be modeled using the file `timeframes.txt`. The cheaper time-based fare
 
 Time-Based fares are created as follows:
 
-#### Create timeframes
+### **Create timeframes**
 
 	  
 In timeframes.txt, add the different timeframes that allow the modeling of the fare rules
@@ -25,6 +27,8 @@ In timeframes.txt, add the different timeframes that allow the modeling of the f
   * start\_time and end\_time values over 24:00:00 are forbidden. If a timeframe spans across midnight, then it should be split at midnight into two timeframe rows. They can have the same timeframe\_group\_id
 
 First, the weekday and weekend services are separately created in `calendar.txt`
+
+`calendar.txt`
 
 | service\_id | monday | tuesday  | wednesday | thursday | friday | saturday | sunday | start\_date | end\_date |
 | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
@@ -44,7 +48,7 @@ Then, we create the timeframes in `timeframes.txt`. First a weekday service from
 
 Note that the same timeframe\_group\_id `weekday_evening` is kept to avoid duplication of fare legs. For “weekend”, keep start\_time and end\_time empty which means that the timeframe is associated with the whole service (entire weekend).
 
-#### Add fare products and fare leg rules
+### **Add fare products and fare leg rules**
 
 1. Create the fare products in fare\_products.txt and the fare leg rules in fare\_leg\_rules.txt.  
    For Translink’s case, there are two fares to add. A one-zone fare and a one-zone Sea Island fare. In this case, both fares already exist. (We will simplify them at a later stage.)  
@@ -80,7 +84,7 @@ With `rule_priority=1` for Sea Island legs, they keep their priority in applying
 | flat\_fare\_sea\_island\_leg | skytrain\_seabus | sea\_island\_1\_zone\_fare | sea\_island |  | weekday\_evening |  | 1 |
 | flat\_fare\_sea\_island\_leg | skytrain\_seabus | sea\_island\_1\_zone\_fare | sea\_island |  | weekend |  | 1 |
 
-#### Simplify using rule\_priority
+### **Simplify using rule\_priority**
 
 Since the evening/weekend fare is the same as a flat fare/one-zone fare, further simplification can be achieved using rule\_priority.
 
