@@ -6,7 +6,7 @@
 
 **Recall ([Fares v2 Features](?tab=t.0#heading=h.o1dhl0gqp9z8)):** The fare products will be stored inside different fare media which are used to validate them when boarding public transit.
 
-To specify which fare media are available for a transit agency, they have to be defined in the table fare\_media.txt, this is done as follows:
+To specify which fare media are available for a transit agency, they have to be created in the table fare\_media.txt, this is done as follows:
 
 1. Fill the fare\_media\_id column with a unique ID identifying the fare media.   
    1. This is the Primary Key used to associate it with fare\_products.txt.   

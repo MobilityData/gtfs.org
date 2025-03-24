@@ -12,19 +12,22 @@ This can be modeled using the file `timeframes.txt`. The cheaper time-based fare
 
 Time-Based fares are created as follows:
 
-### **Create timeframes**
+### Create timeframes
 
 	  
 In timeframes.txt, add the different timeframes that allow the modeling of the fare rules
 
-* Timeframe\_group\_id: Unique id for the timeframe  
-* start\_time: When the timeframe for the special fare starts  
-* end\_time: when the timeframe for the special fare ends.  
-* service\_id: A foreign key referencing a service\_id from calendar.txt or calendar\_dates.txt. This allows the Time-based fare to be matched to a service day or a range of service days.  
-* [Consult the documentation](https://gtfs.org/documentation/schedule/reference/#timeframestxt) to read more about timeframe.txt and how to set it up.  
-* Note:  
-  * end\_time is not included in the timeframe. Eg: If end\_time=12:00:00, then the timeframe ends at 11:59:59.  
-  * start\_time and end\_time values over 24:00:00 are forbidden. If a timeframe spans across midnight, then it should be split at midnight into two timeframe rows. They can have the same timeframe\_group\_id
+  1. Timeframe\_group\_id: Unique id for the timeframe  
+  2. start\_time: When the timeframe for the special fare starts  
+  3. end\_time: when the timeframe for the special fare ends.  
+  4. service\_id: A foreign key referencing a service\_id from calendar.txt or calendar\_dates.txt. This allows the Time-based fare to be matched to a service day or a range of service days.  
+
+[Consult the documentation](https://gtfs.org/documentation/schedule/reference/#timeframestxt) to read more about timeframe.txt and how to set it up.  
+
+Note:
+
+* end\_time is not included in the timeframe. Eg: If end\_time=12:00:00, then the timeframe ends at 11:59:59.  
+* start\_time and end\_time values over 24:00:00 are forbidden. If a timeframe spans across midnight, then it should be split at midnight into two timeframe rows. They can have the same timeframe\_group\_id
 
 First, the weekday and weekend services are separately created in `calendar.txt`
 
@@ -48,11 +51,11 @@ Then, we create the timeframes in `timeframes.txt`. First a weekday service from
 
 Note that the same timeframe\_group\_id `weekday_evening` is kept to avoid duplication of fare legs. For “weekend”, keep start\_time and end\_time empty which means that the timeframe is associated with the whole service (entire weekend).
 
-### **Add fare products and fare leg rules**
+### Add fare products and fare leg rules
 
-1. Create the fare products in fare\_products.txt and the fare leg rules in fare\_leg\_rules.txt.  
-   For Translink’s case, there are two fares to add. A one-zone fare and a one-zone Sea Island fare. In this case, both fares already exist. (We will simplify them at a later stage.)  
-2. Restrict the previous fare legs to weekday daytime timeframes, and the new legs to weekday evening and weekend timeframes, This is done by referencing from\_timeframe\_group\_id and to\_timeframe\_group\_id in fare\_leg\_rules.txt. For Translink, we assume that only the leg’s start time matters in determining the fare (no further information was found)
+  1. Create the fare products in fare\_products.txt and the fare leg rules in fare\_leg\_rules.txt.  
+    For Translink’s case, there are two fares to add. A one-zone fare and a one-zone Sea Island fare. In this case, both fares already exist. (We will simplify them at a later stage.)  
+  2. Restrict the previous fare legs to weekday daytime timeframes, and the new legs to weekday evening and weekend timeframes, This is done by referencing from\_timeframe\_group\_id and to\_timeframe\_group\_id in fare\_leg\_rules.txt. For Translink, we assume that only the leg’s start time matters in determining the fare (no further information was found)
 
 In fare\_leg\_rules.txt below, flat\_fare\_leg was repeated and associated with skytrain\_seabus network twice, once for the weekday evening timeframe and once for the weekend timeframe. This allows the association of the one-zone fare to SkyTrain and Seabus on evenings and weekends.
 
@@ -84,12 +87,12 @@ With `rule_priority=1` for Sea Island legs, they keep their priority in applying
 | flat\_fare\_sea\_island\_leg | skytrain\_seabus | sea\_island\_1\_zone\_fare | sea\_island |  | weekday\_evening |  | 1 |
 | flat\_fare\_sea\_island\_leg | skytrain\_seabus | sea\_island\_1\_zone\_fare | sea\_island |  | weekend |  | 1 |
 
-### **Simplify using rule\_priority**
+### Simplify using rule\_priority
 
 Since the evening/weekend fare is the same as a flat fare/one-zone fare, further simplification can be achieved using rule\_priority.
 
-1. Assign a higher priority to evening/weekend legs.  
-2. Remove the timeframe association to weekday daytime legs.
+  1. Assign a higher priority to evening/weekend legs.  
+  2. Remove the timeframe association to weekday daytime legs.
 
 By setting a higher rule\_priority for the evening and weekend legs, and leaving the `rule_priority` field empty for the weekday daytime legs (which interprets it as 0), the evening and weekend legs are prioritized when they are in effect (in their timeframes). This will lead to the calculation of the correct fare.
 

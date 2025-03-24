@@ -23,14 +23,12 @@ Zone-based fares are modeled in two steps:
 
 For routes operating under zone-based fares, each stop served by the route is located in a zone. Stops from stops.txt are assigned to their respective zones by using areas.txt and stop\_areas.txt.
 
-1. areas.txt creates the zones by having  
-
-   - area\_id: A unique identifier for the zone (ZN1, ZN2, ZN3)  
-   - area\_name: The name of the zone (eg: The name of ZN1 can be “Zone 1: Vancouver”)  
-
-2. stop\_areas.txt associates stops to zones by creating rows of  
-   - stop\_id: the Foreign Key referencing the id of the stop from stops.txt  
-   - Area\_id: the Foreign Key referencing the id of the zone from areas.txt  
+   1. areas.txt creates the zones by having  
+      - area\_id: A unique identifier for the zone (ZN1, ZN2, ZN3)  
+      - area\_name: The name of the zone (eg: The name of ZN1 can be “Zone 1: Vancouver”)  
+   2. stop\_areas.txt associates stops to zones by creating rows of  
+      - stop\_id: the Foreign Key referencing the id of the stop from stops.txt  
+      - Area\_id: the Foreign Key referencing the id of the zone from areas.txt  
 
 [Consult the document](https://gtfs.org/documentation/schedule/reference/#areastxt) for more information on areas.
 
@@ -107,8 +105,8 @@ The fare products for SkyTrain and SeaBus are added to `fare_products.txt`
 
 The relevant routes for this fare need to be grouped together under networks. The process is the same as with Route-Based fares\[link\*\]
 
-1. A network is created for zone-based routes. In Vancouver’s case, it can have the network\_id “skytrain\_seabus”  
-2. The route\_ids for the SkyTrain routes (Canada Line, Millennium Line, Expo Line) and for the SeaBus are associated to the network\_id “skytrain\_seabus” in route\_networks.txt or routes.txt
+   1. A network is created for zone-based routes. In Vancouver’s case, it can have the network\_id “skytrain\_seabus”  
+   2. The route\_ids for the SkyTrain routes (Canada Line, Millennium Line, Expo Line) and for the SeaBus are associated to the network\_id “skytrain\_seabus” in route\_networks.txt or routes.txt
 
 `Example with skytrain_seabus` is specified in `networks.txt` and associated with route\_ids in `route_networks.txt`.
 
@@ -132,10 +130,10 @@ The relevant routes for this fare need to be grouped together under networks. Th
 
 After having created the areas, fare products and networks, associate them with legs. The legs are created like with Route-Based fares\[link\*\]. Each leg is then matched to a fare product to provide its cost.
 
-1. Add the leg\_group\_id, its network\_id and its fare\_product\_id,  
-2. Add from\_area\_id and to\_area\_id tp specify the zones that the leg departs from and arrives to.  
-   Eg: ZN1\_ZN1 is the leg that remains within Zone 1 because from\_area\_id=ZN1 and to\_area\_id=ZN1. ZN1\_ZN1 is associated with the 1\_zone\_fare fare\_product.  
-3. Create fare leg entries for both directions. Note that ZN1\_ZN2 is listed twice in the example below. It is first associated with (from\_area\_id=ZN1, to\_area\_id=ZN2), then with (from\_area\_id=ZN2, to\_area\_id=ZN1).
+   1. Add the leg\_group\_id, its network\_id and its fare\_product\_id,  
+   2. Add from\_area\_id and to\_area\_id tp specify the zones that the leg departs from and arrives to.  
+      Eg: ZN1\_ZN1 is the leg that remains within Zone 1 because from\_area\_id=ZN1 and to\_area\_id=ZN1. ZN1\_ZN1 is associated with the 1\_zone\_fare fare\_product.  
+   3. Create fare leg entries for both directions. Note that ZN1\_ZN2 is listed twice in the example below. It is first associated with (from\_area\_id=ZN1, to\_area\_id=ZN2), then with (from\_area\_id=ZN2, to\_area\_id=ZN1).
 
 The first example does not contain Sea Island legs which will be dealt with in the next paragraph. The relevant fare legs are added to to `fare_leg_rules.txt` as:
 
@@ -160,19 +158,15 @@ To represent Sea Island legs, another matching rule should be introduced. Since 
 
 To resolve this ambiguity, the field rule\_priority is introduced. `rule_priority` defines the order of priority in which matching rules are applied to legs, allowing the rules with higher values of priority to take precedence over other rules with lower or empty values for `rule_priority`.
 
-1. Add rule\_priority as a field  
-
-2. Add the legs that start from Sea Island.  
-
-   - The legs sea\_island\_ZN1 and sea\_island\_ZN3 both cost 5 CAD \+ a 2-zone fare.  
-   - The leg sea\_island\_ZN1 costs 5 CAD \+ a 1-zone fare.  
-   - The leg sea\_island\_sea\_island is free.  
-   
-3. Set the values for rule\_priority accordingly.  
-
-   - sea\_island\_sea\_island has the highest priority (rule\_priority=2). This ensures that if the origin stop and destination stop of a leg are in sea\_island (inside Zone 2), the prioritized leg is sea\_island\_sea\_island  
-   - The legs that start from Sea Island and end somewhere else (Zone 1, Zone 3, Zone 2 outside of Sea Island) have rule\_priority=1  
-   - The remaining legs have the lowest priority: rule\_priority=0 (or empty)
+   1. Add rule\_priority as a field  
+   2. Add the legs that start from Sea Island.  
+      - The legs sea\_island\_ZN1 and sea\_island\_ZN3 both cost 5 CAD \+ a 2-zone fare.  
+      - The leg sea\_island\_ZN1 costs 5 CAD \+ a 1-zone fare.  
+      - The leg sea\_island\_sea\_island is free.  
+   3. Set the values for rule\_priority accordingly.  
+      - sea\_island\_sea\_island has the highest priority (rule\_priority=2). This ensures that if the origin stop and destination stop of a leg are in sea\_island (inside Zone 2), the prioritized leg is sea\_island\_sea\_island  
+      - The legs that start from Sea Island and end somewhere else (Zone 1, Zone 3, Zone 2 outside of Sea Island) have rule\_priority=1  
+      - The remaining legs have the lowest priority: rule\_priority=0 (or empty)
 
 `fare_leg_rules.txt`
 

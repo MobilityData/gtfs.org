@@ -10,7 +10,7 @@ Route-Based fares are represented by fare products that offer a flat-rate fare. 
 
 Route-Based fares are created as follows:
 
-### **Create the Fare Product in fare\_products.txt**.
+### Create fare products
 Each fare product is created in fare\_products.txt by specifying:
 
    1. fare\_product\_id: An identifier for the fare product
@@ -37,22 +37,19 @@ Note that by having three entries with the same product but different fare\_medi
 
 To simplify the example, we will work using *only the contactless* fare products.
 
-### **Create networks that group the routes**  
+### Create networks that group the routes  
 For route-based fares, each group of routes has a different fare. These groups are also called networks. If all routes for an agency have the same fare, then they will be grouped under one network.  
 
 In Translink’s case, buses need to be separated into their own group, because they have a flat-rate fare. As opposed to SkyTrain and Seabus whose fare depends on the number of crossed zones ([Section. Zone-Based Fares](?tab=t.0#heading=h.6a6lgwt3uh85))
 
 Networks are created in networks.txt and route\_networks.txt (or routes.txt).  
 
-1. networks.txt contains the definitions of the networks, fill it with:  
-
-   - network\_id: Unique identifier for the network  
-   - Network\_name: Name of the network (eg: Translink Buses, TTC Subway, STM All Routes, etc)  
-
-2. After creating the networks, associate them with routes by using either route\_networks.txt (or routes.txt).  
-
-   - In route\_networks.txt: Add rows that contain route\_id and the corresponding network\_id.  
-   - Or, in routes.txt, add a field called network\_id that associates a network to each route.  
+   1. networks.txt contains the definitions of the networks, fill it with:  
+      - network\_id: Unique identifier for the network  
+      - Network\_name: Name of the network (eg: Translink Buses, TTC Subway, STM All Routes, etc)  
+   2. After creating the networks, associate them with routes by using either route\_networks.txt (or routes.txt).
+      - In route\_networks.txt: Add rows that contain route\_id and the corresponding network\_id.  
+      - Or, in routes.txt, add a field called network\_id that associates a network to each route.  
 
 [Consult the documentation](https://gtfs.org/documentation/schedule/reference/#networkstxt) for more details on networks
 
@@ -74,7 +71,7 @@ Then, it is linked to every bus route in `route_networks.txt`. Where route\_ids 
 | 11201 | bus |
 | … | … |
 
-### **Create fare leg rules**   
+### Create fare leg rules   
    In GTFS, a fare leg corresponds to a trip that a rider makes without transferring between different modes, routes, networks, or agencies. Therefore, a leg associates a network of routes (specified in network.txt) to a route-based fare product (specified in fare\_products.txt). 
    
    In Translink’s case, one bus leg means taking one Translink bus and remaining on that bus from stop A to stop B. Once the rider changes the bus to another bus, another mode or another agency, they start a different leg.
