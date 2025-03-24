@@ -137,10 +137,10 @@ plugins:
   # - offline:
   #     enabled: !ENV [OFFLINE, true]
   - external-markdown
-  #- privacy:
-  #    assets: false
-  #    links_attr_map:
-  #      target: _blank
+  - privacy:
+      assets: false
+      links_attr_map:
+        target: _blank
   - search:
       lang: 
         - en
