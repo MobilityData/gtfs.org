@@ -6,7 +6,7 @@ Fares v2 can also model additional fare scheme complexities.
 | :---- | :---- | :---- | :---- | :---- |
 | Fare product/fare media transfer mechanism | Whether a transfer requires having the same fare product/fare media in order to be permissible. Works in stored value systems. | Using a stored value card allows for a transfer, while using cash on the first leg cannot allow for stored value transfer in the second leg. | `fare_transfer_rules.txt` | SEPTA |
 | Joining fare legs | Treating multiple legs as one leg for the purposes of matching. | Transferring between two legs at a station that doesn’t have turnstiles for another validation | `fare_leg_join_rules.txt` | SEPTA |
-| Area sets | Groups of zones. This concepts allows for more complex zone structures to be modeled | The fare is determined by the zones that a vehicle passes. The zones might be unstructured. | `Area_sets.txt, fare_leg_rules.txt` | Metro Transit |
+| Area sets | Groups of zones. This concepts allows for more complex zone structures to be modeled | The fare is determined by the zones that a vehicle passes. The zones might be unstructured. | `Area_sets.txt`, `fare_leg_rules.txt` | Metro Transit |
 | Nonconsecutive transfers | Defined [above](?tab=t.0#heading=h.ghu596tn2vja)\* as setting transfer rule applicability to both consecutive and nonconsecutive legs. This allows the search for all possible combinations to find the optimal price. | The fare is determined by considered all the leg crossed and all the possible transfer combinations | `fare_transfer_rules.txt` | Translink ([above](?tab=t.0#heading=h.ghu596tn2vja)) Puget Sound agencies (King County Metro \- Sound Transit \- Community Transit) |
 
 ### Fare media transfer mechanism
