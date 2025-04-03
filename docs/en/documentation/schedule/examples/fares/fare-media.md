@@ -1,26 +1,31 @@
-# Fare Media
+# Fare media
 
-*Main files: fare_media.txt, fare_products.txt*
+*Main files: fare_media.txt, fare_products.txt*  
+*Example: [Translink (Vancouver)](../intro/#Translink(Vancouver))*
 
-*Example: Translink (Vancouver)*
+!!! info "Reminder" 
 
-**Recall ([Fares v2 Features](?tab=t.0#heading=h.o1dhl0gqp9z8)):** The fare products will be stored inside different fare media which are used to validate them when boarding public transit.
+    The fare products will be stored inside different fare media which are used to validate them when boarding public transit. For more information revisit the [Features section](../intro/#fares-features-and-their-files) in the Introduction page.
 
-To specify which fare media are available for a transit agency, they have to be created in the table fare\_media.txt, this is done as follows:
+## Create fare media
 
-1. Fill the fare\_media\_id column with a unique ID identifying the fare media.   
-   1. This is the Primary Key used to associate it with fare\_products.txt.   
-2. Fill the fare\_media\_name column with the rider-facing name of the fare media.  
-3. Fill the fare\_media\_type column with the appropriate enum (0 \= None, 1 \= Physical Paper Ticket, 2 \= Physical Transit Card, 3 \= cEMV, 4 \= Mobile App).
+Fare media entries are created in `fare_media.txt` as follows:
 
-[Consult the reference documentation](https://gtfs.org/documentation/schedule/reference/#fare_mediatxt) for more information on the enums used in fare\_media\_type.
+1. Fill the **fare_media_id** column with a unique ID identifying the fare media.  
+    * This is the Primary Key used to associate it with `fare_products.txt`.  
+2. Fill the **fare_media_name** column with the rider-facing name of the fare media.  
+3. Fill the **fare_media_type** column with the appropriate enum (0= None, 1= Physical Paper Ticket, 2= Physical Transit Card, 3= cEMV, 4=Mobile App).
 
-`fare_media.txt`
+[Consult the documentation](https://gtfs.org/documentation/schedule/reference) for more details on fare products.
 
-| fare\_media\_id | fare\_media\_name | fare\_media\_type |
+For this example, five different fare media are created, each assigned an ID, a name, and a type of media. For instance, since the Compass Card is a physical transit card, fare_media_type \= 2 is assigned.
+
+[**fare_media.txt**](../../../reference/#fare_mediatxt)
+
+| fare_media_id | fare_media_name | fare_media_type |
 | :---- | :---- | :---- |
 | cash | Cash | 0 |
 | contactless | Contactless | 3 |
-| compass\_card | Compass Card | 2 |
-| compass\_ticket | Compass Ticket | 2 |
+| compass_card | Compass Card | 2 |
+| compass_ticket | Compass Ticket | 1 |
 | wallet | Mobile Wallet | 3 |
