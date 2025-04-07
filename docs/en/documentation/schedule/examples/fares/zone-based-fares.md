@@ -11,6 +11,15 @@
 
     This section includes examples for Contactless fares only. To support other fare media types, duplicate the relevant `fare_products.txt` rows and update the amount and fare_media_id fields accordingly.
 
+## Define zones
+
+For routes operating under zone-based fares, each stop served by the route is located in a zone. Zones are created in `areas.txt` as follows:
+
+1. Fill **area_id** with the unique identifier for the zone.  
+2. Fill **area_name** with the name of the zone.
+
+[Consult the documentation](../../../reference/#areastxt) for more information on zones.
+
 !!! info "Reminder"
 
     For [Translink](../intro/#Translink(Vancouver)), buses use flat-rate fares. But SkyTrain and SeaBus use zone fares. Each stop is assigned to one of the three zones: ZN1, ZN2 and ZN3.
@@ -23,15 +32,6 @@
 
     * Journeys that start from Sea Island charge an additional CAD 5.00 over journeys starting from     ZN2.   
     * Journeys that end in Sea Island charge the same amount as journeys ending in ZN2. Journeys that   take place entirely within Sea Island are free.
-
-## Define zones
-
-For routes operating under zone-based fares, each stop served by the route is located in a zone. Zones are created in `areas.txt` as follows:
-
-1. Fill **area_id** with the unique identifier for the zone.  
-2. Fill **area_name** with the name of the zone.
-
-[Consult the documentation](../../../reference/#areastxt) for more information on zones.
 
 In this example, four areas are created, one per each zone and an additional one for Sea Island. Each zone is assigned a unique identifier (ZN1, ZN2, ZN3, sea_island) as well as their respective name in area_name. 
 
