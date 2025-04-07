@@ -9,8 +9,6 @@
 
 !!! Note
 
-    Recall that the examples are shown only for *Contactless* fares. To support other fares and fare media, copy the fare_products.txt rows then change with their amount and fare_media_id.
-
     This section includes examples for Contactless fares only. To support other fare media types, duplicate the relevant `fare_products.txt` rows and update the amount and fare_media_id fields accordingly.
 
 !!! info "Reminder"
@@ -129,7 +127,7 @@ Networks are created in `networks.txt` as follows:
 
 [Consult the documentation](../../../reference/#networkstxt) for more details on networks.
 
-In [Translink’s](../intro/#Translink(Vancouver)) case, buses were previously separated into their own network (see [Route-based Fares](../route-based-fares) section), since they have a flat fare structure. Similarly, SkyTrain and Seabus will be grouped under one network since their fare depends on the number of crossed zones. A network_id called "skytrain_seabus” is created.
+In [Translink’s](../intro/#Translink(Vancouver)) case, buses were previously separated into their own network (see [Route-based Fares](../route-based-fares) section), since they have a flat fare structure. Similarly, SkyTrain and Seabus will be grouped under one network since their fare depends on the number of crossed zones. A network_id called "skytrain_seabus" is created.
 
 [**networks.txt**](../../../reference/#networkstxt)
 
@@ -146,7 +144,7 @@ After creating the network, it needs to be associated with the routes contained 
 
 [Consult the documentation](../../../reference/#route_networkstxt) for more details on route networks.
 
-In this example, The route_ids for the SkyTrain routes (Canada Line, Millennium Line, Expo Line) and for the SeaBus are associated with the network_id "skytrain_seabus” in `route_networks.txt`. In the snapshot below, 13686 is the route_id for the Canada Line, 30052 is the route_id for the Millennium Line.
+In this example, The route_ids for the SkyTrain routes (Canada Line, Millennium Line, Expo Line) and for the SeaBus are associated with the network_id "skytrain_seabus" in `route_networks.txt`. In the snapshot below, 13686 is the route_id for the Canada Line, 30052 is the route_id for the Millennium Line.
 
 [**route_networks.txt**](../../../reference/#route_networkstxt)
 
@@ -176,9 +174,9 @@ In this example, multiple leg groups are added for each possible zone combinatio
 
 Note that ZN1_ZN2 is listed twice in the example below. It is first associated with (from_area_id=ZN1, to_area_id=ZN2), then with (from_area_id=ZN2, to_area_id=ZN1) in a second line. This means that ZN1_ZN2 represents a leg group whose fare rules match both directions of travel between ZN1 and ZN2.
 
-!!! info "Note”
+!!! Note
 
-The example below does not contain Sea Island legs which will be dealt with in the next step.
+    The example below does not contain Sea Island legs which will be dealt with in the next step.
 
 [**fare_leg_rules.txt**](../../../reference/#fare_leg_rulestxt)
 
@@ -206,7 +204,7 @@ This is done in `fare_leg_rules.txt` as follows:
 
 [Consult the documentation](../../../reference/#fare_transfer_rulestxt) for more details on fare leg rules.
 
-In this example, since Sea Island exists inside Zone 2, if a leg starts from Sea Island and ends in Zone 2, is it considered a "Sea Island to Zone 2” leg or a "Zone 2 to Zone 2” leg, or a "Sea Island to Sea Island leg”? In fact, the leg will be matched to all 3 possibilities, which will cause ambiguity.
+In this example, since Sea Island exists inside Zone 2, if a leg starts from Sea Island and ends in Zone 2, is it considered a "Sea Island to Zone 2" leg or a "Zone 2 to Zone 2" leg, or a "Sea Island to Sea Island leg"? In fact, the leg will be matched to all 3 possibilities, which will cause ambiguity.
 
 First, the legs that start from Sea Island are added:
 
