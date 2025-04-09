@@ -25,7 +25,7 @@ Route-Based fares are represented by fare products that offer a flat-rate fare. 
 
 [Consult the documentation](../../../reference/#fare_productstxt) for more details on fare products.
 
-In this example, a fare product called *bus_flat_fare* represents the flat fares for Translink Buses. Since there are three entries with different `fare_media_id` values, this fare product can be validated with cash, a contactless card, or a Compass Card. The price for paying with a Compass Card is lower than the other fare media options.
+In this example, a fare product called `bus_flat_fare` represents the flat fares for Translink Buses. Since there are three entries with different `fare_media_id` values, this fare product can be validated with cash, a contactless card, or a Compass Card. The price for paying with a Compass Card is lower than the other fare media options.
 
 [**fare_products.txt**](../../../reference/#fare_productstxt)
 
@@ -65,7 +65,7 @@ After creating the network, it needs to be associated with the routes contained 
 
 [Consult the documentation](../../../reference/#networkstxt) for more details on networks.
 
-In this example, each bus route is associated with the *translink_bus* network. The `route_id` refers to a bus `route_id` in `routes.txt`.
+In this example, each bus route is associated with the `translink_bus` network. The `route_id` refers to a bus `route_id` in `routes.txt`.
 
 [**route_networks.txt**](../../../reference/#route_networkstxt)
 
@@ -92,7 +92,7 @@ Route-based fare leg rules are created as follows:
 
 For [Translink](../intro/#translink-vancouver), a bus leg consists of taking a single Translink bus from stop A to stop B without transferring. Changing to another bus, mode, or agency starts a new leg.
 
-In this example, a fare leg rule in `fare_leg_rules.txt` links the *translink_bus* network to the *bus_flat_fare* product, ensuring all legs within this network are priced accordingly.
+In this example, a fare leg rule in `fare_leg_rules.txt` links the `translink_bus` network to the `bus_flat_fare` product, ensuring all legs within this network are priced accordingly.
 
 [**fare_leg_rules.txt**](../../../reference/#fare_leg_rulestxt)
 
