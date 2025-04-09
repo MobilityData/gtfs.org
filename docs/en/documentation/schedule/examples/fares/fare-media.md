@@ -1,7 +1,7 @@
 # Fare media
 
 *Main files: fare_media.txt, fare_products.txt*  
-*Example: [Translink (Vancouver)](../intro/#Translink(Vancouver))*
+*Example: [Translink (Vancouver)](../intro/#translink-vancouver)*
 
 !!! info "Reminder" 
 
@@ -18,7 +18,7 @@ Fare media entries are created in `fare_media.txt` as follows:
 
 [Consult the documentation](https://gtfs.org/documentation/schedule/reference) for more details on fare products.
 
-For this example, five different fare media are created, each assigned an ID, a name, and a type of media. For instance, since the Compass Card is a physical transit card, fare_media_type \= 2 is assigned.
+For this example, five different fare media are created, each assigned an ID, a name, and a type of media. For instance, since the Compass Card is a physical transit card, `fare_media_type=2` is assigned.
 
 [**fare_media.txt**](../../../reference/#fare_mediatxt)
 
