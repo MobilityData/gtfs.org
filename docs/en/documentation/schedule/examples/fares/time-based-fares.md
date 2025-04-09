@@ -1,7 +1,7 @@
 # Time-based fares
 
 *Main files: fare_leg_rules.txt, timeframes.txt*  
-*Example: [Translink (Vancouver)](../intro/#Translink(Vancouver))*
+*Example: [Translink (Vancouver)](../intro/#translink-vancouver)*
 
 !!! info "Reminder"
 
@@ -31,8 +31,8 @@ Timeframes contain both the days of the week and the times of day under which th
 
 !!! Note  
 
-	The timeframe ends one second before end_time. E.g. If end_time=11:00:00, then the timeframe ends at 10:59:59.  
-	If a timeframe crosses midnight, then it should be split at midnight into two timeframe rows with the same timeframe_group_id. Values over 24:00:00 are forbidden.
+	The timeframe ends one second before end_time. E.g. If `end_time=11:00:00`, then the timeframe ends at 10:59:59.  
+	If a timeframe crosses midnight, then it should be split at midnight into two timeframe rows with the same `timeframe_group_id`. Values over 24:00:00 are forbidden.
 
 !!! info "Reminder"
 
@@ -42,11 +42,11 @@ This can be modeled using the file `timeframes.txt`. The cheaper time-based fare
 
 In this example, three timeframe groups are created. 
 
-First, a weekday_daytime timeframe is defined from 3:00 AM to 6:30 PM.
+First, a *weekday_daytime* timeframe is defined from 3:00 AM to 6:30 PM.
 
-Next, the weekday_evening timeframe is split into two parts because it crosses midnight: from 6:30 PM to midnight, and from midnight to 3:00 AM. Both parts are associated with the weekday service.
+Next, the *weekday_evening* timeframe is split into two parts because it crosses midnight: from 6:30 PM to midnight, and from midnight to 3:00 AM. Both parts are associated with the weekday service.
 
-Finally, a weekend timeframe is created to cover the entire day on weekends. For this timeframe, start_time and end_time are left empty, meaning it applies to the entire duration of the weekend_service.
+Finally, a *weekend* timeframe is created to cover the entire day on weekends. For this timeframe, `start_time` and `end_time` are left empty, meaning it applies to the entire duration of the *weekend_service*.
 
 [**timeframes.txt**](../../../reference/#timeframestxt)
 
@@ -76,17 +76,17 @@ Fare leg rules are associated with different timeframes to ensure that leg match
 
 !!! Note
 
-    For Translink, there's no information on whether a leg's end time affects the fare, so we assume it doesn't. This means if a leg starts during the weekday_daytime timeframe, it's treated as part of that timeframe, even if it ends in a different timeframe.
+    For Translink, there's no information on whether a leg's end time affects the fare, so we assume it doesn't. This means if a leg starts during the *weekday_daytime* timeframe, it's treated as part of that timeframe, even if it ends in a different timeframe.
 
-In this example, flat_fare_leg was repeated twice, once for the weekday_evening timeframe and once for the weekend timeframe. This allows the association of the one-zone/flat rate fare to SkyTrain and Seabus on evenings and weekends.
+In this example, *flat_fare_leg* was repeated twice, once for the *weekday_evening* timeframe and once for the *weekend* timeframe. This allows the association of the one-zone/flat rate fare to SkyTrain and Seabus on evenings and weekends.
 
-Furthermore, the flat_fare_sea_island_leg was created to associate the Sea Island legs that depart from sea_island to any zone with a sea_island_1_zone_fare during daytime_evening and weekend.
+Furthermore, the *flat_fare_sea_island_leg* was created to associate the Sea Island legs that depart from *sea_island* to any zone with a *sea_island_1_zone_fare* during daytime_evening and weekend.
 
-With rule_priority=1 for Sea Island legs, they keep their priority in applying the additional CAD 5.00 fare. Since all fares are 1-zone fares outside of weekday daytime, the additional CAD 5.00 applies to the 1-zone fare and the new fare for trips originating from Sea Island is `sea_island_1_zone_fare` which has an amount of CAD 5.00 + CAD 3.20 = CAD 8.20.
+With `rule_priority=1` for Sea Island legs, they keep their priority in applying the additional CAD 5.00 fare. Since all fares are 1-zone fares outside of weekday daytime, the additional CAD 5.00 applies to the 1-zone fare and the new fare for trips originating from Sea Island is `sea_island_1_zone_fare` which has an amount of CAD 5.00 + CAD 3.20 = CAD 8.20.
 
 !!! Note
 
-    If the column **rule_priority** exists, when **from_area_id** (respectively **to_area_id**) is left empty it means that the origin zone **from_area_id** (respectively the destination zone **to_area_id**) does not affect the matching of the leg. Similarly if one of **from_timeframe_group_id** and **to_timeframe_group_id** is left empty, that field is irrelevant to the matching process.
+    If the column `rule_priority` exists, when `from_area_id` (respectively **to_area_id**) is left empty it means that the origin zone `from_area_id` (respectively the destination zone `to_area_id`) does not affect the matching of the leg. Similarly if one of `from_timeframe_group_id*` and `to_timeframe_group_id` is left empty, that field is irrelevant to the matching process.
 
 **[fare_leg_rules.txt](../../../reference/#fare_leg_rulestxt) (full file)**	
 
@@ -115,18 +115,18 @@ With rule_priority=1 for Sea Island legs, they keep their priority in applying t
 
 !!! info "Reminder"
 
-    The rule_priority field determines the order in which matching rules are applied: rules with higher rule_priority values take precedence over those with lower or empty values.
+    The `rule_priority` field determines the order in which matching rules are applied: rules with higher `rule_priority` values take precedence over those with lower or empty values.
 
-Since the weekday evening and weekend fare is the same as a flat fare or a one-zone fare, further simplification can be achieved using rule_priority.
+Since the weekday evening and weekend fare is the same as a flat fare or a one-zone fare, further simplification can be achieved using `rule_priority`.
 
 1. Assign a higher priority to evening/weekend legs.  
 2. Remove the timeframe association to weekday daytime legs.
 
-In this example, by setting a higher rule_priority for the weekday evening and weekend legs, and leaving the rule_priority field empty for the weekday daytime legs (which is the same as setting it to 0), the evening and weekend legs are prioritized over the weekday daytime leg when they are in effect (during their timeframes). This will lead to the calculation of the correct fare.
+In this example, by setting a higher `rule_priority` for the weekday evening and weekend legs, and leaving the `rule_priority` field empty for the weekday daytime legs (which is the same as setting it to 0), the evening and weekend legs are prioritized over the weekday daytime leg when they are in effect (during their timeframes). This will lead to the calculation of the correct fare.
 
-* The leg flat_fare_leg during weekday evenings and weekends is assigned rule_priority=1 so that it takes precedence over all other flat fare legs or zone-based legs. So when the journey takes place inside the timeframe weekday_evening or weekend, the flat fare leg is selected on top of all other legs (excluding Sea Island legs) since it’s prioritized.  
-* The leg flat_fare_leg_sea_island during evenings and weekends is assigned rule_priority=2 so that it is prioritized over other legs originating from Sea Island (whose rule_priority was assigned 1 from the previous [Zone-Based Fares](../zone-based-fares) section) during these timeframes.  
-* The leg sea_island_sea_island_leg is assigned rule_priority=3 so that it is prioritized over all other legs that match from_area_it=sea_island and to_area_it=sea_island at all times. This guarantees the free fare within Sea Island at all times, regardless of any timeframes.
+* The leg *flat_fare_leg* during weekday evenings and weekends is assigned `rule_priority=1` so that it takes precedence over all other flat fare legs or zone-based legs. So when the journey takes place inside the timeframe *weekday_evening* or *weekend*, the flat fare leg is selected on top of all other legs (excluding Sea Island legs) since it’s prioritized.  
+* The leg *flat_fare_leg_sea_island* during evenings and weekends is assigned `rule_priority=2` so that it is prioritized over other legs originating from Sea Island (whose rule_priority was assigned 1 from the previous [Zone-Based Fares](../zone-based-fares) section) during these timeframes.  
+* The leg *sea_island_sea_island_leg* is assigned `rule_priority=3` so that it is prioritized over all other legs that match `from_area_it=sea_island` and `to_area_it=sea_island` at all times. This guarantees the free fare within Sea Island at all times, regardless of any timeframes.
 
 **[fare_leg_rules.txt](../../../reference/#fare_leg_rulestxt) (full file)**	
 
