@@ -1,7 +1,7 @@
 # Route-based Fares
 
 *Main files: fare_leg_rules.txt, networks.txt, route_networks.txt, routes.txt*  
-*Example: [Translink (Vancouver)](../intro/#Translink(Vancouver))*
+*Example: [Translink (Vancouver)](../intro/#translink-vancouver)*
 
 !!! info "Reminder"
 
@@ -25,7 +25,7 @@ Route-Based fares are represented by fare products that offer a flat-rate fare. 
 
 [Consult the documentation](../../../reference/#fare_productstxt) for more details on fare products.
 
-In this example, a fare product called bus_flat_fare represents the flat fares for Translink Buses. Since there are three entries with different fare_media_id values, this fare product can be validated with cash, a contactless card, or a Compass Card. The price for paying with a Compass Card is lower than the other fare media options.
+In this example, a fare product called *bus_flat_fare* represents the flat fares for Translink Buses. Since there are three entries with different `fare_media_id` values, this fare product can be validated with cash, a contactless card, or a Compass Card. The price for paying with a Compass Card is lower than the other fare media options.
 
 [**fare_products.txt**](../../../reference/#fare_productstxt)
 
@@ -46,7 +46,7 @@ Networks are created in `networks.txt` as follows:
 1. Fill the **network_id** column with a unique ID identifying the network.  
 2. Fill the **network_name** column with the name of the network (e.g., Translink Buses, TTC Subway, STM All Routes).
 
-In [Translink’s](../intro/#Translink(Vancouver)) case, buses need to be separated into their own group, because they have a flat-rate fare. As opposed to SkyTrain and Seabus whose fare depends on the number of crossed zones (revisit the [Zone-Based Fares](../zone-based-fares) section).
+In [Translink’s](../intro/#translink-vancouver) case, buses need to be separated into their own group, because they have a flat-rate fare. As opposed to SkyTrain and Seabus whose fare depends on the number of crossed zones (revisit the [Zone-Based Fares](../zone-based-fares) section).
 
 In this example, a network called translink_bus is created to represent Translink Buses.
 
@@ -65,7 +65,7 @@ After creating the network, it needs to be associated with the routes contained 
 
 [Consult the documentation](../../../reference/#networkstxt) for more details on networks.
 
-In this example, each bus route is associated with the translink_bus network. The route_id refers to a bus route_id in `routes.txt`.
+In this example, each bus route is associated with the *translink_bus* network. The `route_id` refers to a bus `route_id` in `routes.txt`.
 
 [**route_networks.txt**](../../../reference/#route_networkstxt)
 
@@ -90,9 +90,9 @@ Route-based fare leg rules are created as follows:
 
 [Consult the documentation](../../../reference/#fare_leg_rulestxt) for more details on fare leg rules.
 
-For [Translink](../intro/#Translink(Vancouver)), a bus leg consists of taking a single Translink bus from stop A to stop B without transferring. Changing to another bus, mode, or agency starts a new leg.
+For [Translink](../intro/#translink-vancouver), a bus leg consists of taking a single Translink bus from stop A to stop B without transferring. Changing to another bus, mode, or agency starts a new leg.
 
-In this example, a fare leg rule in `fare_leg_rules.txt` links the translink_bus network to the bus_flat_fare product, ensuring all legs within this network are priced accordingly.
+In this example, a fare leg rule in `fare_leg_rules.txt` links the *translink_bus* network to the *bus_flat_fare* product, ensuring all legs within this network are priced accordingly.
 
 [**fare_leg_rules.txt**](../../../reference/#fare_leg_rulestxt)
 
