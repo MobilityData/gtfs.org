@@ -33,7 +33,7 @@ For routes operating under zone-based fares, each stop served by the route is lo
     * Journeys that start from Sea Island charge an additional CAD 5.00 over journeys starting from ZN2.   
     * Journeys that end in Sea Island charge the same amount as journeys ending in ZN2. Journeys that take place entirely within Sea Island are free.
 
-In this example, four areas are created, one per each zone and an additional one for Sea Island. Each zone is assigned a unique identifier (ZN1, ZN2, ZN3, sea_island) as well as their respective name in area_name. 
+In this example, four areas are created, one per each zone and an additional one for Sea Island. Each zone is assigned a unique identifier (`ZN1`, `ZN2`, `ZN3`, `sea_island`) as well as their respective name in `area_name`. 
 
 [**areas.txt**](../../../reference/#areastxt)
 
@@ -53,7 +53,7 @@ Each stop from `stops.txt` needs to be assigned to a zone that contains it. Stop
 
 [Consult the documentation](../../../reference/#areastxt) for more information on areas.
 
-In this example, each stop in Translink’s service area is assigned to *ZN1*, *ZN2* or *ZN3*. The Sea Island stops (*99901*, *99902*, *99903*) are associated with both *ZN2* and *sea_island* since they exist within both zones. Later in this section, `rule_priority` will help differentiate between *sea_island* and *ZN2* legs.
+In this example, each stop in Translink’s service area is assigned to `ZN1`, `ZN2` or `ZN3`. The Sea Island stops (`99901`, `99902`, `99903`) are associated with both `ZN2` and `sea_island` since they exist within both zones. Later in this section, `rule_priority` will help differentiate between `sea_island` and `ZN2` legs.
 
 [**stop_areas.txt**](../../../reference/#stop_areastxt)
 
@@ -127,7 +127,7 @@ Networks are created in `networks.txt` as follows:
 
 [Consult the documentation](../../../reference/#networkstxt) for more details on networks.
 
-In [Translink’s](../intro/#translink-vancouver) case, buses were previously separated into their own network (see [Route-based Fares](../route-based-fares) section), since they have a flat fare structure. Similarly, SkyTrain and Seabus will be grouped under one network since their fare depends on the number of crossed zones. A `network_id` called *skytrain_seabus* is created.
+In [Translink’s](../intro/#translink-vancouver) case, buses were previously separated into their own network (see [Route-based Fares](../route-based-fares) section), since they have a flat fare structure. Similarly, SkyTrain and Seabus will be grouped under one network since their fare depends on the number of crossed zones. A `network_id` called `skytrain_seabus` is created.
 
 [**networks.txt**](../../../reference/#networkstxt)
 
@@ -144,7 +144,7 @@ After creating the network, it needs to be associated with the routes contained 
 
 [Consult the documentation](../../../reference/#route_networkstxt) for more details on route networks.
 
-In this example, The `route_ids` for the SkyTrain routes (Canada Line, Millennium Line, Expo Line) and for the SeaBus are associated with the `network_id` *skytrain_seabus* in `route_networks.txt`. In the snapshot below, *13686* is the `route_id` for the Canada Line, *30052* is the route_id for the Millennium Line.
+In this example, The `route_ids` for the SkyTrain routes (Canada Line, Millennium Line, Expo Line) and for the SeaBus are associated with the `network_id` `skytrain_seabus` in `route_networks.txt`. In the snapshot below, *13686* is the `route_id` for the Canada Line, `30052` is the route_id for the Millennium Line.
 
 [**route_networks.txt**](../../../reference/#route_networkstxt)
 
@@ -170,9 +170,9 @@ Zone-based fare leg rules are created as follows:
 
 [Consult the documentation](../../../reference/#fare_leg_rulestxt) for more details on fare leg rules.
 
-In this example, multiple leg groups are added for each possible zone combination. For example, *ZN1_ZN1* is the leg that remains within Zone 1 because `from_area_id=ZN1` and `to_area_id=ZN1`. *ZN1_ZN1* is associated with the *1_zone_fare* `fare_product_id`. 
+In this example, multiple leg groups are added for each possible zone combination. For example, `ZN1_ZN1` is the leg that remains within Zone 1 because `from_area_id=ZN1` and `to_area_id=ZN1`. `ZN1_ZN1` is associated with the `1_zone_fare` `fare_product_id`. 
 
-Note that *ZN1_ZN2* is listed twice in the example below. It is first associated with (`from_area_id=ZN1`, `to_area_id=ZN2`), then with (`from_area_id=ZN2`, `to_area_id=ZN1`) in a second line. This means that *ZN1_ZN2* represents a leg group whose fare rules match both directions of travel between *ZN1* and *ZN2*.
+Note that `ZN1_ZN2` is listed twice in the example below. It is first associated with (`from_area_id=ZN1`, `to_area_id=ZN2`), then with (`from_area_id=ZN2`, `to_area_id=ZN1`) in a second line. This means that `ZN1_ZN2` represents a leg group whose fare rules match both directions of travel between `ZN1` and `ZN2`.
 
 !!! Note
 
@@ -208,13 +208,13 @@ In this example, since Sea Island exists inside Zone 2, if a leg starts from Sea
 
 First, the legs that start from Sea Island are added:
 
-* The legs *sea_island_ZN1* and *sea_island_ZN3* both cost CAD 5.00 + a 2-zone fare.  
-* The leg *sea_island_ZN2* costs CAD 5.00 + a 1-zone fare.  
-* The leg *sea_island_sea_island* is free.
+* The legs `sea_island_ZN1` and `sea_island_ZN3` both cost CAD 5.00 + a 2-zone fare.  
+* The leg `sea_island_ZN2` costs CAD 5.00 + a 1-zone fare.  
+* The leg `sea_island_sea_island` is free.
 
 Then, `rule_priority` is filled with the appropriate values:
 
-* *sea_island_sea_island* has the highest priority (`rule_priority=2`). This ensures that if the origin stop and destination stop of a leg are in *sea_island* (inside Zone 2), the prioritized leg is *sea_island_sea_island*  
+* `sea_island_sea_island`has the highest priority (`rule_priority=2`). This ensures that if the origin stop and destination stop of a leg are in `sea_island` (inside Zone 2), the prioritized leg is `sea_island_sea_island` 
 * The legs that start from Sea Island and end somewhere else (Zone 1, Zone 3, Zone 2 outside of Sea Island) have `rule_priority=1`  
 * The remaining legs have the lowest priority: `rule_priority=0` (or empty)
 
