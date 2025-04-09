@@ -37,7 +37,7 @@ Each fare product can be eligible for one or multiple rider categories. To showc
    * This is a Foreign Key referencing **rider_category_id** in `rider_categories.txt`.  
    * An empty **rider_category_id** in `fare_products.txt` means that the fare product is eligible for any rider category.
 
-For this example, two different bus fare products are specified for flat bus fare for adults and for concession categories. When *bus_flat_fare* is associated with the adult rider category, the amount is CAD 3.20. When *bus_flat_fare* is associated with the concession rider category, the amount is CAD 2.15.
+For this example, two different bus fare products are specified for flat bus fare for adults and for concession categories. When `bus_flat_fare` is associated with the adult rider category, the amount is CAD 3.20. When `bus_flat_fare` is associated with the concession rider category, the amount is CAD 2.15.
 
 [**fare_products.txt**](../../../reference/#fare_productstxt)
 
