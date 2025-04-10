@@ -411,14 +411,16 @@ nav:
         - Demand responsive services: documentation/schedule/examples/flex.md
         - Fares:
           - Introduction: documentation/schedule/examples/fares/intro.md
-          - Fare media: documentation/schedule/examples/fares/fare-media.md
-          - Route-based Fares: documentation/schedule/examples/fares/route-based-fares.md
-          - Zone-based Fares: documentation/schedule/examples/fares/zone-based-fares.md
-          - Time-based Fares: documentation/schedule/examples/fares/time-based-fares.md
+          - Fare Media: documentation/schedule/examples/fares/fare-media.md
+          - Fare Products: documentation/schedule/examples/fares/fare-products.md
+          - Route-Based Fares: documentation/schedule/examples/fares/route-based-fares.md
+          - Zone-Based Fares: documentation/schedule/examples/fares/zone-based-fares.md
+          - Time-Based Fares: documentation/schedule/examples/fares/time-based-fares.md
           - Fare Transfers: documentation/schedule/examples/fares/fare-transfers.md
           - Rider Categories: documentation/schedule/examples/fares/rider-categories.md
           - Complex cases: documentation/schedule/examples/fares/complex-cases.md
-          - Legacy Fares: documentation/schedule/examples/fares-v1.md
+          - Archived examples: documentation/schedule/examples/fares-v2.md
+        - Legacy Fares: documentation/schedule/examples/fares-v1.md
         - Feed information: documentation/schedule/examples/feed-info.md
         - Frequencies: documentation/schedule/examples/frequencies.md
         - Pathways: documentation/schedule/examples/pathways.md
