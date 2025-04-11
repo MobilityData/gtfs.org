@@ -27,7 +27,7 @@ For more detailed information on these features and the files included for each 
 
 ### Relations between files
 
-The Entity-Relationship Diagram (ERD) diagram below describes how Faress (v2) files work together.
+The Entity-Relationship Diagram (ERD) diagram below describes how Fares (v2) files work together.
 
 <iframe width="768" height="432" src="https://miro.com/app/embed/uXjVIHu_Wws=/?pres=1&frameId=3458764623400726374&embedId=111450801270" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
 
@@ -65,8 +65,8 @@ The tables below present the concepts of commonly used terms in this guide and i
 | Concept | Description |
 | :---- | :---- |
 | Leg | A single continuous segment of a journey taken on a specific service or route, typically between two stops, with no transfer. |
-| Sub-journey | Two or more legs that comprise a subset of a journey  |
-| Journey | Overall travel from origin to destination, including all legs and transfers in between  |
+| Sub-journey | Two or more legs that comprise a subset of a journey.  |
+| Journey | Overall travel from origin to destination, including all legs and transfers in between.  |
 
 <img class="center" width="1200" height="100%" src="../../../../../../assets/glossary-journey-abcd.svg"> 
 
