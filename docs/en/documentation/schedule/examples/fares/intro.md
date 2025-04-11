@@ -47,6 +47,7 @@ Translink is a public transit agency in Vancouver. As of November 2024, Vancouve
 | ----- | ----- |
 | **Fare Media** | - **Cash** <br>- **Compass Ticket** (Paper ticket) <br>- **Compass Card** (Physical transit card) <br>- **Contactless payment cards** and **mobile wallets** |
 | **Bus Fare** | Flat fare of **CAD 3.20**. |
+| **Daily pass** | - Costs **CAD 11.50** for buses and all zones. <br>- Valid **only on Compass Card or Compass Ticket**. |
 | **SkyTrain and SeaBus Fares** | **Zone-based fare** depending on the number of zones crossed. <br>- **Zone 1**: Vancouver. <br>- **Zone 2**: Burnaby, Richmond, North Vancouver. <br>- **Zone 3**: Surrey, Coquitlam. |
 | **[Airport AddFare](https://www.translink.ca/transit-fares/transferring-and-addfare)** | - An additional  **CAD 5.00** for SkyTrain trips originating from **Sea Island**. <br>- Travel between the three Sea Island stations is **free**. |
 | **Weekend and Evening Fares** | - All fares are **Zone 1** (bus flat rate of **CAD 3.20**) from 6:30 PM to 3:00 AM and on weekends. <br>- The fares for journeys starting from Sea Island still have an additional fare. So from 6:30 PM to 3:00 AM and on weekends, their fare becomes 5.00 + 3.20 = CAD 8.20. |
