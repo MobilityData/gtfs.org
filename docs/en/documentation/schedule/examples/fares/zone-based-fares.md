@@ -156,7 +156,13 @@ In this example, The `route_ids` for the SkyTrain routes (Canada Line, Millenniu
 
 ## Create fare leg rules 
 
-In GTFS, a leg corresponds to a trip that a rider makes without transferring between different modes, routes, networks, or agencies.  The fare of a leg is determined by matching the leg to a fare product using a fare leg rule. For zone-based fares, a fare leg rule associates a network of routes (which was created in `networks.txt`) operating between zones (defined in `areas.txt`) to a fare product (which was created in `fare_products.txt`).
+!!! info "Reminder"
+
+    **Leg**: Travel in which a rider boards and alights between a pair of subsequent locations along a trip.
+
+    **Leg Group**: A set of one or more legs that share common fare rules or conditions.
+
+The fare of a leg is determined by matching the leg to a fare product using a fare leg rule. For zone-based fares, a fare leg rule associates a network of routes (which was created in `networks.txt`) operating between zones (defined in `areas.txt`) to a fare product (which was created in `fare_products.txt`).
 
 Zone-based fare leg rules are created as follows:
 
