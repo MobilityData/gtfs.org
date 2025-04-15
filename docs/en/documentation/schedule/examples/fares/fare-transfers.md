@@ -5,7 +5,7 @@
 
 !!! info "Reminder"
 
-    Fare Transfers is used to define rules applicable when transferring between legs. The journey’s total cost is derived from the fare products applied to individual legs and to the transfers connecting them. For more information revisit the [[Features section](../intro/#fares-features-and-their-files) in the Introduction page.
+    Fare Transfers is used to define rules applicable when transferring between legs. The journey’s total cost is derived from the fare products applied to individual legs and to the transfers connecting them. For more information revisit the [Features section](../intro/#fares-features-and-their-files) in the Introduction page.
 
 !!! info "Reminder"
 
