@@ -1,5 +1,9 @@
 # Fares (v2)
 
+!!! info
+
+    The examples on this page may be outdated. This page will be deprecated soon. For the most up-to-date examples, please refer to the new [Fares example section](../intro).
+
 Fares (also known as Fares v2) is a [GTFS Schedule feature](../../../../getting-started/features/overview/) that standardizes rider-facing fare information, allowing users to discover ticketing and pricing options based on the fare structures and conditions of each transit system and its connections.
 
 Key Fares (v2) features include Fare Products, Fare Media, Route-based fares, Zone-based fares, Time-based fares, and Transfer rules.
