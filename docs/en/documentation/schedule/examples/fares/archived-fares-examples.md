@@ -88,7 +88,7 @@ The file above represents this in GTFS with the following fields:
 After defining the fare, creating the appropriate `fare_leg_rule`, and defining the `fare_transfer_rule`,  you can see the $2.00 USD `core_local_oneway_fare` appear in trip planners. Here is an example from Transit:
 
 <div class="flex-photos">
-    <img src="../../../../assets/transit-fares-mdot.png" alt="fare of $2 USD">
+    <img src="../../../../../assets/transit-fares-mdot.png" alt="fare of $2 USD">
 </div>
 
 <sup>[Download the Maryland Transit Administration local bus GTFS feed](https://feeds.mta.maryland.gov/gtfs/local-bus)</sup>
@@ -209,8 +209,8 @@ The `fare_products.txt` file snippet below shows how the amount of the `Muni sin
 In Apple Maps, riders can see how their fare price changes. You can compare fare prices under the "Board the Muni J Church train" instruction:
 
 <div class="flex-photos">
-    <img src="../../../../assets/apple-muni-cash.jpg" alt="cash fare of $3 USD">
-    <img src="../../../../assets/apple-muni-clipper.jpg" alt="Clipper card fare of $2.50 USD">
+    <img src="../../../../../assets/apple-muni-cash.jpg" alt="cash fare of $3 USD">
+    <img src="../../../../../assets/apple-muni-clipper.jpg" alt="Clipper card fare of $2.50 USD">
 </div>
 
 <sup><a href="https://511.org/open-data/transit" target="_blank">See the San Francisco Bay Area Regional feed</a></sup>
@@ -419,6 +419,6 @@ Alternatively, a user traveling in train #883 (`service_id=13`) would pay an Out
 In <a href="https://apple.com/maps" target="_blank">Apple Maps</a>, riders can see how their fare price changes and compare fare prices next to the train scheduled departure:
 
 <div class="flex-photos">
-    <img src="../../../../assets/TimeVariableFares-Peak.png" alt="Outbound Adult Peak Zonal Fare of 20.00 USD">
-    <img src="../../../../assets/TimeVariableFares-OffPeak.png" alt="Outbound Adult Off Peak Zonal Fare of 15.00 USD">
+    <img src="../../../../../assets/TimeVariableFares-Peak.png" alt="Outbound Adult Peak Zonal Fare of 20.00 USD">
+    <img src="../../../../../assets/TimeVariableFares-OffPeak.png" alt="Outbound Adult Off Peak Zonal Fare of 15.00 USD">
 </div>

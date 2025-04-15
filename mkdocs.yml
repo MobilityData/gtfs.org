@@ -186,6 +186,15 @@ plugins:
             Continuous stops: Paradas continuas
             Demand responsive services: Servicios sobre demanda
             Fares (v2): Tarifas (v2)
+            Introduction: Introducción
+            Fare Media: Medios de Tarifa
+            Fare Products: Productos de Tarifa
+            Route-Based Fares: Tarifas Basadas en Rutas
+            Zone-Based Fares: Tarifas Basadas en Tiempo
+            Time-Based Fares: Tarifas Basadas en Zonas
+            Fare Transfers: Tarifas de Transferencias
+            Rider Categories: Categorías de Usuarios
+            Archived examples: Ejemplos antiguos
             Legacy Fares (v1): Tarifas - versión antigua (v1)
             Feed information: Información del feed
             Frequencies: Frecuencias
@@ -247,6 +256,15 @@ plugins:
             Continuous stops: Arrêts continus
             Demand responsive services: Transport à la demande
             Fares (v2): Tarifs (v2)
+            Introduction: Introduction
+            Fare Media: Tarif Média
+            Fare Products: Produits tarifaires
+            Route-Based Fares: Tarifs Basés sur l'Itinéraire
+            Zone-Based Fares: Tarifs Basés sur le Temps
+            Time-Based Fares: Tarifs Basés a Zones
+            Fare Transfers: Transferts Tarifaires
+            Rider Categories: Catégories d'usagers
+            Archived examples: Exemples archivés
             Legacy Fares (v1): Tarifs - ancienne version (v1)
             Feed information: Informations sur le flux
             Frequencies: Fréquences
@@ -321,6 +339,15 @@ plugins:
             Continuous stops: 連続ストップ
             Demand responsive services: デマンド対応輸送
             Fares (v2): 運賃 (v2)
+            Introduction: 紹介
+            Fare Media: フェアメディア
+            Fare Products: 運賃商品
+            Route-Based Fares: 路線別運賃
+            Zone-Based Fares: ゾーン別運賃
+            Time-Based Fares: 時間制運賃
+            Fare Transfers: 運賃の乗り換え
+            Rider Categories: 乗客カテゴリ
+            Archived examples: アーカイブされた例
             Legacy Fares (v1): 運賃 - 旧バージョン (v1)
             Feed information: フィード情報
             Frequencies: フリークエンシー
@@ -411,7 +438,16 @@ nav:
         - Attributions: documentation/schedule/examples/attributions.md
         - Continuous stops: documentation/schedule/examples/continuous-stops.md
         - Demand responsive services: documentation/schedule/examples/flex.md
-        - Fares (v2): documentation/schedule/examples/fares-v2.md
+        - Fares (v2):
+          - Introduction: documentation/schedule/examples/fares/intro.md
+          - Fare Media: documentation/schedule/examples/fares/fare-media.md
+          - Fare Products: documentation/schedule/examples/fares/fare-products.md
+          - Route-Based Fares: documentation/schedule/examples/fares/route-based-fares.md
+          - Zone-Based Fares: documentation/schedule/examples/fares/zone-based-fares.md
+          - Time-Based Fares: documentation/schedule/examples/fares/time-based-fares.md
+          - Fare Transfers: documentation/schedule/examples/fares/fare-transfers.md
+          - Rider Categories: documentation/schedule/examples/fares/rider-categories.md
+          - Archived examples: documentation/schedule/examples/fares/archived-fares-examples.md
         - Legacy Fares (v1): documentation/schedule/examples/fares-v1.md
         - Feed information: documentation/schedule/examples/feed-info.md
         - Frequencies: documentation/schedule/examples/frequencies.md
