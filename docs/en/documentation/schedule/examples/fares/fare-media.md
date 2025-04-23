@@ -1,4 +1,4 @@
-# Fare media
+# Fare Media
 
 *Main files: fare_media.txt, fare_products.txt*  
 *Example: [Translink (Vancouver)](../intro/#translink-vancouver)*

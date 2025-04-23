@@ -1,19 +1,19 @@
-# Route-based Fares
+# Route-Based Fares
 
 *Main files: fare_leg_rules.txt, networks.txt, route_networks.txt, routes.txt*  
 *Example: [Translink (Vancouver)](../intro/#translink-vancouver)*
 
 !!! info "Reminder"
 
-    Route-based fares provide a different fare product based on which route is used. A Fare Product is the type of fare offered by an agency to access a service. For more information revisit the [Features section](../intro/#fares-features-and-their-files) in the Introduction page.
+    Route-Based Fares assign different fares based on which route is used. Fare Products are the types of fares offered by a transit agency to access a service. For more information revisit the [Features section](../intro/#fares-features-and-their-files) in the Introduction page.
 
 !!! Note
 
     This section will display different types of fare media for the same fare product. In later sections, only fare products with *contactless* fare media will be shown to simplify the guide.
 
-## Create Fare Products
+## Create fare products
 
-Route-Based fares are represented by fare products that offer a flat-rate fare. Route-based fare products are created in `fare_products.txt` as follows:
+Route-Based Fares are represented by fare products that offer a flat-rate fare. Route-based fare products are created in `fare_products.txt` as follows:
 
 1. Fill the **fare_product_id** column with a unique ID identifying the fare product.  
 2. Fill the **fare_product_name** column with the rider-facing name of the fare product (e.g., Bus Flat Fare, Bus Flat Fare Monthly).  
@@ -23,7 +23,7 @@ Route-Based fares are represented by fare products that offer a flat-rate fare. 
     * Multiple fare media can be associated with the same fare product, potentially at different prices.  
     * An empty **fare_media_id** means that the fare media is unknown.
 
-[Consult the documentation](../../../reference/#fare_productstxt) for more details on fare products.
+[Consult the documentation](../../../reference/#fare_productstxt) for more details on Fare Products.
 
 In this example, a fare product called `bus_flat_fare` represents the flat fares for Translink Buses. Since there are three entries with different `fare_media_id` values, this fare product can be validated with cash, a contactless card, or a Compass Card. The price for paying with a Compass Card is lower than the other fare media options.
 
@@ -39,7 +39,7 @@ In this example, a fare product called `bus_flat_fare` represents the flat fares
 
 ## Create networks that group the routes
 
-For route-based fares, each group of routes has a different fare. These groups are also called networks. If all routes for an agency have the same fare, then they could be grouped under one network.
+For Route-Based Fares, each group of routes has a different fare. These groups are also called networks. If all routes for an agency have the same fare, then they could be grouped under one network.
 
 Networks are created in `networks.txt` as follows:
 
@@ -60,8 +60,8 @@ In this example, a network called translink_bus is created to represent Translin
 
 After creating the network, it needs to be associated with the routes contained by it. Routes are associated with networks in `route_networks.txt` as follows:
 
-1. Fill the **route_id** column with the ID of the route.  
-2. Fill the **network_id** column with the ID of the corresponding network.
+1. Fill the **route_id** column with the ID of the route from `routes.txt`.  
+2. Fill the **network_id** column with the ID of the corresponding network from `networks.txt`.
 
 [Consult the documentation](../../../reference/#networkstxt) for more details on networks.
 
@@ -80,13 +80,13 @@ In this example, each bus route is associated with the `translink_bus` network. 
 
 !!! info "Reminder"
 
-    **Leg**: Travel in which a rider boards and alights between a pair of subsequent locations along a trip.
+    **Leg**: A single continuous segment of a journey taken on a specific service or route, typically between two stops, with no transfer.
 
-    **Leg Group**: A set of one or more legs that share common fare rules or conditions.
+    **Leg Group**: A set of one or more legs that share specific common attributes or fare conditions as defined in the context of the `fare_leg_rules.txt` file.
 
-The fare of a leg is determined by matching the leg to a fare product using a fare leg rule. For route-based fares, a fare leg rule associates a network of routes (which was created in `networks.txt`) to a fare product (which was created in `fare_products.txt`). 
+The fare of a leg is determined by matching the leg to a fare product using a fare leg rule. For Route-Based Fares, a fare leg rule associates a network of routes (which was created in `networks.txt`) to a fare product (which was created in `fare_products.txt`). 
 
-Route-based fare leg rules are created as follows:
+Route-based fare leg rules are created in `fare_leg_rules.txt` as follows:
 
 1. Fill the **leg_group_id** column with a unique ID identifying a group of legs.  
 2. Fill the **network_id** column with the ID of the network associated with the routes covered by the leg.  

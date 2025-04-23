@@ -18,7 +18,7 @@ Each rider category is created in `rider_categories.txt` as follows:
 3. Fill **is_default_fare_cateory;** if the category is the default one, set this field to 1, otherwise set to 0 or keep it empty.  
 4. If available, fill **eligibility_url** with a web page that contains information about the conditions for the rider category. Otherwise, the entire column is optional.
 
-[Consult the documentation](../../../reference/#rider_categoriestxt) for more information regarding rider categories.
+[Consult the documentation](../../../reference/#rider_categoriestxt) for more information regarding Rider Categories.
 
 For this example, two categories are specified for [Translink](../intro/#translink-vancouver), adult and concession. adult is the default category. An **eligibility_url** is also added for the concession category, explaining which riders are included in the category.
 
@@ -33,7 +33,7 @@ For this example, two categories are specified for [Translink](../intro/#transli
 
 Each fare product can be eligible for one or multiple rider categories. To showcase this eligibility, rider categories are associated with fare products in `fare_products.txt` as follows:
 
-1. For each fare product, fill **rider_category_id** with the ID of the Rider Category that determines the cost of the leg.  
+1. For each fare product, fill **rider_category_id** with the ID of the rider category that determines the cost of the leg.  
    * This is a Foreign Key referencing **rider_category_id** in `rider_categories.txt`.  
    * An empty **rider_category_id** in `fare_products.txt` means that the fare product is eligible for any rider category.
 

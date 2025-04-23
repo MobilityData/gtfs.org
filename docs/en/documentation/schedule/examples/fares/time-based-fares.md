@@ -1,11 +1,11 @@
-# Time-based fares
+# Time-Based Fares
 
 *Main files: fare_leg_rules.txt, timeframes.txt*  
 *Example: [Translink (Vancouver)](../intro/#translink-vancouver)*
 
 !!! info "Reminder"
 
-    Time-Based Fares assign different fares to journeys based on different times of the day of different weekdays. This fare feature models peak/off-peak fares and fare updates for special occasions. For more information revisit the [Features section](../intro/#fares-features-and-their-files) in the Introduction page.
+    Time-Based Fares assigns fares for specific time-of-day or day-of-week, such as peak and off-peak fares and/or weekend fares. For more information revisit the [Features section](../intro/#fares-features-and-their-files) in the Introduction page.
 
 ## Create fare products and fare leg rules
 
@@ -25,9 +25,9 @@ Timeframes contain both the days of the week and the times of day under which th
 1. Fill **timeframe_group_id** with the id for the group of timeframes.  
 2. Fill **start_time** with the start time of the timeframe for the special fare  
 3. Fill **end_time** with the end time of the timeframe for the special fare  
-4. Fill **service_id**: with the ID that references a **service_id** from `calendar.txt` or `calendar_dates.txt`. This allows the Time-based fare to be matched to a service day or a range of service days.
+4. Fill **service_id**: with the ID that references a **service_id** from `calendar.txt` or `calendar_dates.txt`. This allows the time-based fare to be matched to a service day or a range of service days.
 
-[Consult the documentation](../../../reference/#timeframestxt) to read more about timeframe.txt and how to set it up.
+[Consult the documentation](../../../reference/#timeframestxt) to read more about `timeframes.txt` and how to set it up.
 
 !!! Note  
 
@@ -38,7 +38,7 @@ Timeframes contain both the days of the week and the times of day under which th
 
     Translink offers reduced fares during the evening (6:30 PM to 3:00 AM) and on weekends. All SkyTrain and Seabus fares become a one zone fare (CAD 3.20). Travel from Sea Island during the evening and weekends costs CAD 8.20 (the CAD 5.00 surcharge + one zone fare of CAD 3.20).
 
-This can be modeled using the file `timeframes.txt`. The cheaper time-based fares (fare products and fare leg rules) will be added to all the fare products that were created in the previous sections ([Route-Based fares](../route-based-fares) section, [Zone-Based fares](../zone-based-fares) section).
+This can be modeled using the file `timeframes.txt`. The cheaper time-based fares (fare products and fare leg rules) will be added to all the fare products that were created in the previous sections ([Route-Based Fares](../route-based-fares) section, [Zone-Based Fares](../zone-based-fares) section).
 
 In this example, three timeframe groups are created. 
 
@@ -71,7 +71,7 @@ Here's a quick look at `calendar.txt`, showing the service_ids that appear in `t
 Fare leg rules are associated with different timeframes to ensure that leg matching is restricted to the time periods when the fare is applicable. This is done in `fare_leg_rules.txt` as follows:
 
 1. Fill **from_timeframe_group_id** and **to_timeframe_group_id** of the fare leg rule with the ID for the timeframe (or timeframe group) when the fare is applicable.  
-   * This is a Foreign Key referencing **timeframe_group_id** from `timeframes.txt`.  
+    * This is a Foreign Key referencing **timeframe_group_id** from `timeframes.txt`.  
 2. Replicate the same **leg_group_id** but with different **from_timeframe_group_id**, **to_timeframe_group_id** and **fare_product_id** to represent legs that have similar matching rules (**network_id**, **from_area_id**, **to_area_id**) but different timeframes and cost.
 
 !!! Note
@@ -117,9 +117,9 @@ With `rule_priority=1` for Sea Island legs, they keep their priority in applying
 
     The `rule_priority` field determines the order in which matching rules are applied: rules with higher `rule_priority` values take precedence over those with lower or empty values.
 
-Since the weekday evening and weekend fare is the same as a flat fare or a one-zone fare, further simplification can be achieved using **rule_priority**.
+Since the weekday evening and weekend fare is the same as a flat fare or a one-zone fare, further simplification can be achieved using **rule_priority**. This is done in `fare_leg_rules.txt` as follows:
 
-1. Assign a higher priority to evening/weekend legs.  
+1. Assign a higher **rule_priority** to evening/weekend legs.  
 2. Remove the timeframe association to weekday daytime legs.
 
 In this example, by setting a higher `rule_priority` for the weekday evening and weekend legs, and leaving the `rule_priority` field empty for the weekday daytime legs (which is the same as setting it to 0), the evening and weekend legs are prioritized over the weekday daytime leg when they are in effect (during their timeframes). This will lead to the calculation of the correct fare.

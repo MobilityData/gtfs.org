@@ -1,15 +1,15 @@
-# Zone-based Fares
+# Zone-Based Fares
 
 *Main files: fare_leg_rules.txt, areas.txt, stop_areas.txt*  
 *Example: [Translink (Vancouver)](../intro/#translink-vancouver)*
 
 !!! info "Reminder"
 
-    Zone-Based Fares is used to represent zone-based fare schemes, where a specific fare applies when traveling from one particular zone to another zone. A zone is defined by an area or group of stops. For more information revisit the [Features section](../intro/#fares-features-and-their-files) in the Introduction page.
+    Zone-Based Fares is used to represent zone-based fare systems, where a specific fare applies when traveling from one particular zone to another zone. A zone is defined by an area or group of stops. For more information revisit the [Features section](../intro/#fares-features-and-their-files) in the Introduction page.
 
 !!! Note
 
-    This section includes examples for Contactless fares only. To support other fare media types, duplicate the relevant `fare_products.txt` rows and update the amount and fare_media_id fields accordingly.
+    This section includes examples for Contactless fares only. To support other fare media types, duplicate the relevant `fare_products.txt` rows and update the amount and `fare_media_id` fields accordingly.
 
 ## Define zones
 
@@ -28,7 +28,7 @@ For routes operating under zone-based fares, each stop served by the route is lo
     - A **2-zone** fare is for legs that cross only two zones (ZN1 to ZN2, ZN2 to ZN3)  
     - A **3-zone** fare is for legs that cross all three zones (ZN1 to ZN3, passing through ZN2)
 
-    Additionally, there is an additional zone contained within ZN2 called Sea Island, containing **Vancouver Airport (YVR)**, **Sea Island Centre**, and **Templeton** stations. 
+    Furthermore, there is an additional zone contained within ZN2 called Sea Island, containing **Vancouver Airport (YVR)**, **Sea Island Centre**, and **Templeton** stations. 
 
     * Journeys that start from Sea Island charge an additional CAD 5.00 over journeys starting from ZN2.   
     * Journeys that end in Sea Island charge the same amount as journeys ending in ZN2. Journeys that take place entirely within Sea Island are free.
@@ -82,17 +82,17 @@ Here's a quick look at `stops.txt`, showing the stop_ids of some stops that appe
 
 ## Create fare products
 
-Just like with [Route-Based fares](../route-based-fares), fare products for zone-based fares are created in `fare_products.txt` as follows:
+Just like with [Route-Based Fares](../route-based-fares), fare products for Zone-Based Fares are created in `fare_products.txt` as follows:
 
 1. Fill the **fare_product_id** column with a unique ID identifying the fare product.  
 2. Fill the **fare_product_name** column with the rider-facing name of the fare product (e.g., 1-Zone Fare, 2-Zone Fare, 1-Zone Fare Monthly).  
 3. Fill the **amount** and **currency** columns with the cost of the fare and its currency ([currency codes](https://en.wikipedia.org/wiki/ISO_4217#Active_codes)).  
-4. Fill the **fare_media_id** column with the fare media where this fare product can be stored and used.  
-   * This is a Foreign Key referencing **fare_media_id** in `fare_media.txt` ([Fare Media](../../../reference/#faremediatxt)).  
-   * Multiple fare media can be associated with the same fare product, potentially at different prices.  
-   * An empty **fare_media_id** means that the fare media is unknown.
+4. Fill the **fare_media_id** column with the fare media where this fare product can be stored and used. 
+    * This is a Foreign Key referencing **fare_media_id** in `fare_media.txt` ([Fare Media](../../../reference/#faremediatxt)).  
+    * Multiple fare media can be associated with the same fare product, potentially at different prices.  
+    * An empty **fare_media_id** means that the fare media is unknown.
 
-[Consult the documentation](../../../reference/#fare_productstxt) for more details on fare products.
+[Consult the documentation](../../../reference/#fare_productstxt) for more details on Fare Products.
 
 In this example, a fare product is created for each zone-based fare in `fare_products.txt`.
 
@@ -118,7 +118,7 @@ In this example, a fare product is created for each zone-based fare in `fare_pro
 
 ## Create networks that group the routes
 
-For Zone-based fares, the relevant routes need to be grouped together under networks since they have the same fare structure.
+For Zone-Based Fares, the relevant routes need to be grouped together under networks since they have the same fare structure.
 
 Networks are created in `networks.txt` as follows:
 
@@ -127,7 +127,7 @@ Networks are created in `networks.txt` as follows:
 
 [Consult the documentation](../../../reference/#networkstxt) for more details on networks.
 
-In [Translink’s](../intro/#translink-vancouver) case, buses were previously separated into their own network (see [Route-based Fares](../route-based-fares) section), since they have a flat fare structure. Similarly, SkyTrain and Seabus will be grouped under one network since their fare depends on the number of crossed zones. A `network_id` called `skytrain_seabus` is created.
+In [Translink’s](../intro/#translink-vancouver) case, buses were previously separated into their own network (see [Route-Based Fares](../route-based-fares) section), since they have a flat fare structure. Similarly, SkyTrain and Seabus will be grouped under one network since their fare depends on the number of crossed zones. A `network_id` called `skytrain_seabus` is created.
 
 [**networks.txt**](../../../reference/#networkstxt)
 
@@ -139,8 +139,8 @@ In [Translink’s](../intro/#translink-vancouver) case, buses were previously se
 
 After creating the network, it needs to be associated with the routes contained by it. Routes are associated with networks in `route_networks.txt` as follows:
 
-1. Fill the **route_id** column with the ID of the route.  
-2. Fill the **network_id** column with the ID of the corresponding network.
+1. Fill the **route_id** column with the ID of the route from `routes.txt`.
+2. Fill the **network_id** column with the ID of the corresponding network from `networks.txt`.
 
 [Consult the documentation](../../../reference/#route_networkstxt) for more details on route networks.
 
@@ -158,31 +158,31 @@ In this example, The `route_ids` for the SkyTrain routes (Canada Line, Millenniu
 
 !!! info "Reminder"
 
-    **Leg**: Travel in which a rider boards and alights between a pair of subsequent locations along a trip.
+    **Leg**: A single continuous segment of a journey taken on a specific service or route, typically between two stops, with no transfer.
 
-    **Leg Group**: A set of one or more legs that share common fare rules or conditions.
+    **Leg Group**: A set of one or more legs that share specific common attributes or fare conditions as defined in the context of the `fare_leg_rules.txt` file.
 
-The fare of a leg is determined by matching the leg to a fare product using a fare leg rule. For zone-based fares, a fare leg rule associates a network of routes (which was created in `networks.txt`) operating between zones (defined in `areas.txt`) to a fare product (which was created in `fare_products.txt`).
+The fare of a leg is determined by matching the leg to a fare product using a fare leg rule. For Zone-Based Fares, a fare leg rule associates a network of routes (which was created in `networks.txt`) operating between zones (defined in `areas.txt`) to a fare product (which was created in `fare_products.txt`).
 
-Zone-based fare leg rules are created as follows:
+Zone-based fare leg rules are created in `fare_leg_rules.txt` as follows:
 
 1. Fill the **leg_group_id** column with a unique ID identifying a group of legs.  
 2. Fill the **network_id** column with the ID of the network associated with the routes covered by the leg.  
-   * This is a Foreign Key referencing **network_id** in `networks.txt`.  
+    * This is a Foreign Key referencing **network_id** in `networks.txt`.  
 3. Fill **from_area_id** with the ID of the zone that the leg departs from.  
 4. Fill **to_area_id** with the ID of the zone that the leg arrives to.  
 5. Fill the **fare_product_id** column with the ID of the fare product that determines the cost of the leg.  
-   * This is a Foreign Key referencing **fare_product_id** in `fare_products.txt`.
+    * This is a Foreign Key referencing **fare_product_id** in `fare_products.txt`.
 
 [Consult the documentation](../../../reference/#fare_leg_rulestxt) for more details on fare leg rules.
 
-In this example, multiple leg groups are added for each possible zone combination. For example, `ZN1_ZN1` is the leg that remains within Zone 1 because `from_area_id=ZN1` and `to_area_id=ZN1`. `ZN1_ZN1` is associated with the `1_zone_fare` `fare_product_id`. 
+In this example, multiple leg groups are added for each possible zone combination. For example, `ZN1_ZN1` is the leg that remains within Zone 1 because `from_area_id=ZN1` and `to_area_id=ZN1`. `ZN1_ZN1` is associated with  `fare_product_id=1_zone_fare`. 
 
 Note that `ZN1_ZN2` is listed twice in the example below. It is first associated with (`from_area_id=ZN1`, `to_area_id=ZN2`), then with (`from_area_id=ZN2`, `to_area_id=ZN1`) in a second line. This means that `ZN1_ZN2` represents a leg group whose fare rules match both directions of travel between `ZN1` and `ZN2`.
 
 !!! Note
 
-    The example below does not contain Sea Island legs which will be dealt with in the next step.
+    The example below does not include Sea Island leg rules; these will be addressed in the following step.
 
 [**fare_leg_rules.txt**](../../../reference/#fare_leg_rulestxt)
 

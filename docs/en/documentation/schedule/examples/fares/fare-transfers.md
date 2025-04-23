@@ -16,6 +16,10 @@
     * Transfers within the same fare zone number (as supported by the original fare) are also free.  
     * If the rider transfers to a zone with a higher fare, they only pay the difference, known as an AddFare.
 
+!!! Note
+
+    This section includes examples for Contactless fares only. To support other fare media types, duplicate the relevant `fare_products.txt` rows and update the amount and `fare_media_id` fields accordingly.
+
 ## Create transfer fare products
 
 Transfer fare products represent the cost of transfers that are not free. Free transfers do not have to be created. Transfer fare products are created in `fare_products.txt` as follows:
@@ -24,11 +28,11 @@ Transfer fare products represent the cost of transfers that are not free. Free t
 2. Fill the **fare_product_name** column with the rider-facing name of the fare product (e.g., Zone 1 to Zone 2 Transfer Upgrade, Bus to Zone 1 Transfer Upgrade).  
 3. Fill the **amount** and **currency** columns with the cost of the transfer and its currency ([currency codes](https://en.wikipedia.org/wiki/ISO_4217#Active_codes)).  
 4. Fill the **fare_media_id** column with the fare media where this fare product can be stored and used.  
-   * This is a Foreign Key referencing **fare_media_id** in `fare_media.txt` ([Fare Media](../../../reference/#fare_mediatxt)).  
-   * Multiple fare media can be associated with the same fare product, potentially at different prices.  
-   * An empty **fare_media_id** means that the fare media is unknown.
+    * This is a Foreign Key referencing **fare_media_id** in `fare_media.txt` ([Fare Media](../../../reference/#fare_mediatxt)).  
+    * Multiple fare media can be associated with the same fare product, potentially at different prices.  
+    * An empty **fare_media_id** means that the fare media is unknown.
 
-[Consult the documentation](../../../reference/#fare_productstxt) for more details on fare products.
+[Consult the documentation](../../../reference/#fare_productstxt) for more details on Fare Products.
 
 In [Translink’s](../intro/#translink-vancouver) case, three transfer fare products are created.
 
@@ -50,7 +54,7 @@ In [Translink’s](../intro/#translink-vancouver) case, three transfer fare prod
 Transfers rules allow the possible transfers to be applied to eligible legs of a journey. They are created in `fare_transfer_rules.txt` as follows:
 
 1. Fill **from_leg_group_id** and **to_leg_group_id**.  
-   * These are Foreign Keys referencing **leg_group_id** from `fare_leg_rules.txt`. They reference respectively the pre-transfer leg group and the post-transfer leg group.  
+    * These are Foreign Keys referencing **leg_group_id** from `fare_leg_rules.txt`. They reference respectively the pre-transfer leg group and the post-transfer leg group.  
 2. Fill **duration_limit** to the number of seconds for which the transfer remains valid, if there is no time limit, leave empty.  
    Fill **duration_limit_type** If **duration_limit** is not empty.  **duration_limit_type** describes how to calculate the bounds of **duration_limit**.  
 3. Fill **fare_transfer_type** to explain how the fare is calculated.  
@@ -58,7 +62,7 @@ Transfers rules allow the possible transfers to be applied to eligible legs of a
 
 [Consult the documentation](../../../reference/#fare_transfer_rulestxt) to learn more about the different values for transfer rules.
 
-In this example, multiple transfers are defined between all possible leg groups of Translink. All transfers are valid for 5400 seconds (180 minutes). The **duration_limit_type** is set to 1, since the transfer time starts when the rider departs on any route in the **flat_fare_leg fare leg** and ends when they depart on a different fare leg.
+In this example, multiple transfers are defined between all possible leg groups of Translink. All transfers are valid for 5400 seconds (180 minutes). The **duration_limit_type** is set to 1, since the transfer time starts when the rider departs on any route in the **flat_fare_leg** fare leg and ends when they depart on a different fare leg.
 
 The **fare_transfer_type** is set to 0. This is also called an A + AB transfer, where the rider pays the first leg fare (A) plus a transfer fare to B (AB). Finally, **transfer_count** is set to -1 since there is no limit on the number of transfers permitted.
 
