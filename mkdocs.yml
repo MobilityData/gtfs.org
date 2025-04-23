@@ -442,11 +442,11 @@ nav:
           - Introduction: documentation/schedule/examples/fares/intro.md
           - Fare Media: documentation/schedule/examples/fares/fare-media.md
           - Fare Products: documentation/schedule/examples/fares/fare-products.md
+          - Rider Categories: documentation/schedule/examples/fares/rider-categories.md
           - Route-Based Fares: documentation/schedule/examples/fares/route-based-fares.md
           - Zone-Based Fares: documentation/schedule/examples/fares/zone-based-fares.md
           - Time-Based Fares: documentation/schedule/examples/fares/time-based-fares.md
           - Fare Transfers: documentation/schedule/examples/fares/fare-transfers.md
-          - Rider Categories: documentation/schedule/examples/fares/rider-categories.md
           - Archived examples: documentation/schedule/examples/fares/archived-fares-examples.md
         - Legacy Fares (v1): documentation/schedule/examples/fares-v1.md
         - Feed information: documentation/schedule/examples/feed-info.md
