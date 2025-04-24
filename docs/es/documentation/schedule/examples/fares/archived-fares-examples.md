@@ -1,10 +1,15 @@
 # Tarifas (v2)
 
- Tarifas (también conocidas como Fares v2) es una [función de GTFS Schedule](../../../../getting-started/features/overview/) que estandariza la información de tarifas para los pasajeros, lo que permite a los usuarios descubrir opciones de emisión de boletos y precios según las estructuras y condiciones de tarifas de cada sistema de tránsito y sus conexiones.
+!!! info
+    
+    Los ejemplos en esta página pueden estar desactualizados. Esta página dejará de estar disponible pronto. Para ver los ejemplos más actualizados, consulta la nueva [sección de ejemplos de tarifas](../intro).
+
+
+Tarifas (también conocidas como Fares v2) es una [función de GTFS Schedule](../../../../getting-started/features/overview/) que estandariza la información de tarifas para los pasajeros, lo que permite a los usuarios descubrir opciones de emisión de boletos y precios según las estructuras y condiciones de tarifas de cada sistema de tránsito y sus conexiones.
  
- Las funciones de Tarifas (v2) incluyen Productos de Tarifa, Medios de Tarifa, Tarifas basadas en rutas, Tarifas basadas en zonas, Tarifas basadas en tiempo y Reglas de transferencia.
+Las funciones de Tarifas (v2) incluyen Productos de Tarifa, Medios de Tarifa, Tarifas basadas en rutas, Tarifas basadas en zonas, Tarifas basadas en tiempo y Reglas de transferencia.
  
- Tarifas (v2) continúa evolucionando como un proyecto impulsado por la comunidad, desarrollado bajo el nombre de trabajo [GTFS-Fares v2](../../../../community/extensions/fares-v2). Para obtener orientación sobre el modelado de funciones experimentales, consulte [el documento de propuesta completo](https://share.mobilitydata.org/gtfs-fares-v2).
+Tarifas (v2) continúa evolucionando como un proyecto impulsado por la comunidad, desarrollado bajo el nombre de trabajo [GTFS-Fares v2](../../../../community/extensions/fares-v2). Para obtener orientación sobre el modelado de funciones experimentales, consulte [el documento de propuesta completo](https://share.mobilitydata.org/gtfs-fares-v2).
  
 ## Capacitación y recursos gratuitos de Tarifas v2 
  

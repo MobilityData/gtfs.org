@@ -1,10 +1,14 @@
 # Tarifs (v2)
  
- Tarifs (également appelés Fares v2) est une [fonctionnalité de GTFS Schedule](../../../../getting-started/features/overview/) qui normalise les informations tarifaires destinées aux usagers, permettant aux utilisateurs de découvrir les options de billetterie et de tarification en fonction des structures tarifaires et des conditions de chaque système de transport et de ses connexions. 
+!!! info
+
+    Les exemples sur cette page peuvent être obsolètes. Cette page sera bientôt supprimée. Pour des exemples à jour, veuillez consulter la nouvelle [section d'exemples des tarifs](../intro).
+
+Tarifs (également appelés Fares v2) est une [fonctionnalité de GTFS Schedule](../../../../getting-started/features/overview/) qui normalise les informations tarifaires destinées aux usagers, permettant aux utilisateurs de découvrir les options de billetterie et de tarification en fonction des structures tarifaires et des conditions de chaque système de transport et de ses connexions. 
  
- Les tarifs clés de Tarifs (v2) incluent les produits tarifaires, les médias tarifaires, les tarifs basés sur l’itinéraire, les tarifs basés sur la zone, les tarifs basés sur le temps et les règles de transfert.
+Les tarifs clés de Tarifs (v2) incluent les produits tarifaires, les médias tarifaires, les tarifs basés sur l’itinéraire, les tarifs basés sur la zone, les tarifs basés sur le temps et les règles de transfert.
  
- GTFS Tarifs (v2) continue d’évoluer en tant que projet communautaire, développé sous le nom de travail [GTFS-Fares v2](../../../../community/extensions/fares-v2). Pour obtenir des conseils sur la modélisation des fonctionnalités expérimentales, reportez-vous au [document de proposition complet](https://share.mobilitydata.org/gtfs-fares-v2).
+GTFS Tarifs (v2) continue d’évoluer en tant que projet communautaire, développé sous le nom de travail [GTFS-Fares v2](../../../../community/extensions/fares-v2). Pour obtenir des conseils sur la modélisation des fonctionnalités expérimentales, reportez-vous au [document de proposition complet](https://share.mobilitydata.org/gtfs-fares-v2).
  
 ## Formation sur les Tarifs et ressources gratuites
  
