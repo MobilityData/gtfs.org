@@ -18,7 +18,7 @@ Producers may implement Fares v2 in the same dataset with Fares v1, since there 
 [See the full proposal](https://share.mobilitydata.org/gtfs-fares-v2){ .md-button .md-button--primary }
 
 ## Participate in the conversation
-You can stay up to date and join the discussions around Fares v2 by joining our Slack Chanel and the recurring working group meetings.
+You can stay up to date and join the discussions around Fares v2 by joining our Slack channel and the recurring working group meetings.
 
 [Join #gtfs-fares on Slack](https://share.mobilitydata.org/slack){ .md-button .md-button--primary} [See the meeting schedule](https://www.eventbrite.ca/e/specifications-discussions-gtfs-fares-v2-monthly-meetings-tickets-522966225057){ .md-button .md-button--primary } [See meeting notes](https://docs.google.com/document/d/1d3g5bMXupdElCKrdv6rhFNN11mrQgEk-ibA7wdqVLTU/edit){ .md-button .md-button--primary } 
 
