@@ -4,11 +4,11 @@
 
     The examples on this page may be outdated. This page will be deprecated soon. For the most up-to-date examples, please refer to the new [Fares example section](../intro).
 
-Fares (also known as Fares v2) is a [GTFS Schedule feature](../../../../getting-started/features/overview/) that standardizes rider-facing fare information, allowing users to discover ticketing and pricing options based on the fare structures and conditions of each transit system and its connections.
+Fares (also known as Fares v2) is a [GTFS Schedule feature](../../../../../getting-started/features/overview/) that standardizes rider-facing fare information, allowing users to discover ticketing and pricing options based on the fare structures and conditions of each transit system and its connections.
 
 Key Fares (v2) features include Fare Products, Fare Media, Route-based fares, Zone-based fares, Time-based fares, and Transfer rules.
 
-GTFS Fares (v2) continues to evolve as a community-driven project, developed under the working name [GTFS-Fares v2](../../../../community/extensions/fares-v2). For guidance on modeling experimental features, refer to [the full proposal document](https://share.mobilitydata.org/gtfs-fares-v2).
+GTFS Fares (v2) continues to evolve as a community-driven project, developed under the working name [GTFS-Fares v2](../../../../../community/extensions/fares-v2). For guidance on modeling experimental features, refer to [the full proposal document](https://share.mobilitydata.org/gtfs-fares-v2).
 
 ## Fares training and free resources
 
@@ -34,9 +34,9 @@ There are several ways to pay fares to use the Maryland Transit Administration s
 - Weekly pass that costs $22 USD
 - A monthly pass that costs $77 USD
 
-Transit tickets or fares are referred to as fare products in GTFS. They can be described using the [fare_products.txt](../../reference/#fare_productstxt) file. Each entry corresponds to a specific fare.
+Transit tickets or fares are referred to as fare products in GTFS. They can be described using the [fare_products.txt](../../../reference/#fare_productstxt) file. Each entry corresponds to a specific fare.
 
-[**fare_products.txt**](../../reference/#fare_productstxt)
+[**fare_products.txt**](../../../reference/#fare_productstxt)
 
 | fare_product_id  | fare_product_name  | amount  | currency  |
 |------------------------|--------------------|---|---|
@@ -56,7 +56,7 @@ In GTFS, a fare leg corresponds to a trip that a rider makes without transferrin
 
 Leg groups define trips within a network from an origin to a destination (or a set of origins to a set of destinations if the area IDs correspond to grouped stops). The file below describes rules to travel anywhere within the Maryland Transit Administration’s core network. Each rule corresponds to one of the regular fare products in the [Define a transit fare example](#define-a-transit-fare).
 
-[**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
+[**fare_leg_rules.txt**](../../../reference/#fare_leg_rulestxt)
 
 |  leg_group_id |  network_id | fare_product_id  |
 |---|---|---|
@@ -73,7 +73,7 @@ Leg groups define trips within a network from an origin to a destination (or a s
 
 There is a 90 minute transfer for riders who purchase a one-way fare to ride BaltimoreLink local buses, Metro SubwayLink, or Light RailLink. This means that they can transfer an unlimited number of times between the local buses, subway, and light rail within the 90 minute timeframe.
 
-[**fare_transfer_rules.txt**](../../reference/#fare_transfer_rulestxt)
+[**fare_transfer_rules.txt**](../../../reference/#fare_transfer_rulestxt)
 
 | from_leg_group_id       | to_leg_group_id  | duration_limit | duration_limit_type | fare_transfer_type | transfer_count |
 |-------------------------|---|----------------|-------------------|---------------------|----------------|
@@ -99,11 +99,11 @@ After defining the fare, creating the appropriate `fare_leg_rule`, and defining 
 
 ### Describe service locations in the same fare zone
 
-Some transit agencies operate a zone-based fare structure. Fare zones are divided geographic areas associated with different fare prices. In Bay Area’s BART system, fares are different depending on the origin and destination <a href="https://www.bart.gov/sites/default/files/docs/BART%20Clipper%20Fares%20Triangle%20Chart%20July%202022.pdf" target="_blank">(BART fare differences)</a>, and transit riders will need to know the right fare. Fare areas can be described using the [stops_areas.txt](../../reference/#stop_areastxt) file, which assigns stops from [stops.txt](../../reference/#stopstxt) to [areas.txt](../../reference/#areastxt).
+Some transit agencies operate a zone-based fare structure. Fare zones are divided geographic areas associated with different fare prices. In Bay Area’s BART system, fares are different depending on the origin and destination <a href="https://www.bart.gov/sites/default/files/docs/BART%20Clipper%20Fares%20Triangle%20Chart%20July%202022.pdf" target="_blank">(BART fare differences)</a>, and transit riders will need to know the right fare. Fare areas can be described using the [stops_areas.txt](../../../reference/#stop_areastxt) file, which assigns stops from [stops.txt](../../../reference/#stopstxt) to [areas.txt](../../../reference/#areastxt).
 
-First, identify the area in [areas.txt](../../reference/#areastxt) . It is acceptable to leave `area_name` blank if there is no area name. In the table below, there are three `area_id` - `ASHB`, `GLEN`, and `OAKL`.
+First, identify the area in [areas.txt](../../../reference/#areastxt) . It is acceptable to leave `area_name` blank if there is no area name. In the table below, there are three `area_id` - `ASHB`, `GLEN`, and `OAKL`.
 
-[**areas.txt**](../../reference/#areastxt) 
+[**areas.txt**](../../../reference/#areastxt) 
 
 | area_id | area_name |
 |---------|-----------|
@@ -111,11 +111,11 @@ First, identify the area in [areas.txt](../../reference/#areastxt) . It is accep
 | GLEN    |           | 
 | OAKL    |           | 
 
-Afterwards, using `stop_id` from the [stops.txt](../../reference/#stopstxt) file, group stops together to its respective identified area (fare zone). 
+Afterwards, using `stop_id` from the [stops.txt](../../../reference/#stopstxt) file, group stops together to its respective identified area (fare zone). 
 
 Next, group `stop_id` to each `area_id`. In the BART example, each area contains only 1 `stop_id`. For instance, only stop `ASHB` (Ashby Station) is included in the area `ASHB` However, if an area includes multiple stops, multiple `stop_id` should be listed.
 
-[**stops_areas.txt**](../../reference/#stop_areastxt)
+[**stops_areas.txt**](../../../reference/#stop_areastxt)
 
 | area_id | stop_id |
 |---------|---------|
@@ -129,7 +129,7 @@ In `fare_leg_rules.txt`, different fare products can be identified based on diff
 * Arrival area is `GLEN`
 * The fare product for the departure/arrival area is `BA:matrix:ASHB-GLEN`
 
-[**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
+[**fare_leg_rules.txt**](../../../reference/#fare_leg_rulestxt)
 
 | leg_group_id | from_area_id|to_area_id|fare_product_id|
 |--------------|-----------|------------|---------------|
@@ -138,7 +138,7 @@ In `fare_leg_rules.txt`, different fare products can be identified based on diff
 
 The fare is identified in `fare_products.txt`. 
 
-[**fare_products.txt**](../../reference/#fare_productstxt)
+[**fare_products.txt**](../../../reference/#fare_productstxt)
 
 | fare_product_id     | fare_product_name| amount | currency |
 |---------------------|-----------|--------|----------|
@@ -164,7 +164,7 @@ Below is an example snippet from the <a href="https://511.org/open-data/transit"
 
 `Clipper` is described as a physical transit card with `fare_media_type=2`. `SFMTA Munimobile` is described as a mobile app with `fare_media_type=2`. `Cash` has no fare media, since it is given directly to the driver without a ticket. As a result, `Cash` is `fare_media_type=0`.
 
-[**fare_media.txt**](../../reference/#fare_mediatxt)
+[**fare_media.txt**](../../../reference/#fare_mediatxt)
 
 | fare_media_id | fare_media_name  | fare_media_type |
 |---------------|------------------|-----------------|
@@ -178,7 +178,7 @@ Additionally, producers who want to describe a physical ticket as a fare media c
 
 The <a href="https://www.mbta.com" target="_blank">Massachusetts Bay Transportation Authority (MBTA)</a> allows users to pay for trips and passes using a physical paper ticket called CharlieTicket. To reflect this, there is a `charlieticket` fare media in MBTA’s feed with a `fare_media_type=1`.
 
-[**fare_media.txt**](../../reference/#fare_mediatxt)
+[**fare_media.txt**](../../../reference/#fare_mediatxt)
 
 | fare_media_id | fare_media_name  | fare_media_type |
 |---------------|------------------|-----------------|
@@ -194,7 +194,7 @@ Muni's fare price is different based on the fare media the rider uses. This exam
 
 Each entry below describes a fare media.
 
-[**fare_media.txt**](../../reference/#fare_mediatxt)
+[**fare_media.txt**](../../../reference/#fare_mediatxt)
 
 | fare_media_id | fare_media_name  | fare_media_type |
 |---------------|------------------|-----------------|
@@ -203,7 +203,7 @@ Each entry below describes a fare media.
 
 The `fare_products.txt` file snippet below shows how the amount of the `Muni single local fare` product varies depending on the fare media that the rider uses.
 
-[**fare_products.txt**](../../reference/#fare_productstxt)
+[**fare_products.txt**](../../../reference/#fare_productstxt)
 
 | fare_product_id | fare_product_name  | amount | currency | fare_media_id |
 |---------------|------------------|-------|--- |---------------|
@@ -232,7 +232,7 @@ In the Clean Air Express feed, there is a `tap_to_ride` fare media with a  `fare
 
 The single ride fare product shown below has both `cash` and `tap-to-ride` fare media options. When the single ride is paid for with the `tap-to-ride` fare media, it is one USD dollar cheaper.
 
-[**fare_products.txt**](../../reference/#fare_productstxt)
+[**fare_products.txt**](../../../reference/#fare_productstxt)
 
 | fare_product_id | fare_product_name  | fare_media_id | amount | currency |
 |---------------|------------------|---------------|--------|----------|
@@ -250,7 +250,7 @@ Washington DC’s Metrorail fares vary based on multiple factors, including the 
 
 First, service days are defined using `calendar.txt`.
 
-[**calendar.txt**](../../reference/#calendartxt)
+[**calendar.txt**](../../../reference/#calendartxt)
 
 | service_id       | monday | tuesday | wednesday | thursday | friday | saturday | sunday | start_date | end_date |
 |------------------|--------|---------|-----------|----------|--------|----------|--------|------------|----------|
@@ -261,7 +261,7 @@ First, service days are defined using `calendar.txt`.
 
 Afterwards, the desired timeframes are defined in `timeframes.txt`, providing an id, the applicable days via a reference to `calendar.service_id`, and if applicable, the start time and end time for each time period.
 
-[**timeframes.txt**](../../reference/#timeframestxt)
+[**timeframes.txt**](../../../reference/#timeframestxt)
 
 | timeframe_group_id | start_time | end_time | service_id       |
 |--------------------|------------|----------|------------------|
@@ -276,7 +276,7 @@ Afterwards, the desired timeframes are defined in `timeframes.txt`, providing an
 
 Next, the corresponding time specific fares in `fare_products.txt` are created (e.g. Peak fare)
 
-[**fare_products.txt**](../../reference/#fare_productstxt)
+[**fare_products.txt**](../../../reference/#fare_productstxt)
 
 | fare_product_id | fare_product_name                             | amount | currency |
 |-----------------|-----------------------------------------------|--------|----------|
@@ -288,7 +288,7 @@ Next, the corresponding time specific fares in `fare_products.txt` are created (
 Lastly, timeframes are associated with fare products in `fare_leg_rules.txt` using the fields `from_timeframe_group_id` and `to_timeframe_group_id`. These fields determine whether a fare applies solely to the start of the leg or both the start and end of the leg.
 For this example, based on WMATA fares, the fare depends only on the leg's departure timeframe, so `to_timeframe_group_id` is left blank. 
 
-[**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
+[**fare_leg_rules.txt**](../../../reference/#fare_leg_rulestxt)
 
 | network_id | fare_product_id | from_timeframe_group_id | to_timeframe_group_id |
 |------------|-----------------|-------------------------|-----------------------|
@@ -308,7 +308,7 @@ In New York's MTA Metro-North railroad network, fares vary based on both the tim
 
 This example is based on a <a href="https://docs.google.com/spreadsheets/d/1-cD-R2OH5xAQAbNWNlrXD7WOw594lVdW-bomuLo6bI8/edit?usp=sharing" target="_blank">dataset</a> produced by <a href="https://www.itoworld.com/" target="_blank">ITO World</a>, featuring a trip that uses ten stops distributed in six different areas.
 
-[**stops.txt**](../../reference/#stopstxt)
+[**stops.txt**](../../../reference/#stopstxt)
 
 | stop_id | stop_name           | stop_lat  | stop_lon   |
 |---------|---------------------|-----------|------------|
@@ -324,7 +324,7 @@ This example is based on a <a href="https://docs.google.com/spreadsheets/d/1-cD-
 | ITO2383 | Grand Central       | 40.752823 | -73.977196 |
 
 
-[**stop_areas.txt**](../../reference/#stop_areastxt)
+[**stop_areas.txt**](../../../reference/#stop_areastxt)
 
 | area_id   | stop_id |
 |-----------|---------|
@@ -340,14 +340,14 @@ This example is based on a <a href="https://docs.google.com/spreadsheets/d/1-cD-
 | mnr_HUD-9 | ITO2096 |
 
 
-[**route_networks.txt**](../../reference/#route_networkstxt)
+[**route_networks.txt**](../../../reference/#route_networkstxt)
 
 | network_id | route_id |
 |------------|----------|
 | mnr_hudson | 669      |
 
 
-[**networks.txt**](../../reference/#networkstxt)
+[**networks.txt**](../../../reference/#networkstxt)
 
 | network_id | network_name    |
 |------------|-----------------|
@@ -355,7 +355,7 @@ This example is based on a <a href="https://docs.google.com/spreadsheets/d/1-cD-
 
 Service days for train services 3 and 13 are defined using `calendar.txt`. Notably, other records with generic days (i.e. weekdays, weekends, and anyday) that aren't associated with any trips are defined, and these will be associated with timeframes in order to model `time-variable fares`.
 
-[**calendar.txt**](../../reference/#calendartxt)
+[**calendar.txt**](../../../reference/#calendartxt)
 
 | service_id | monday | tuesday | wednesday | thursday | friday | saturday | sunday | start_date | end_date |
 |------------|--------|---------|-----------|----------|--------|----------|--------|------------|----------|
@@ -373,7 +373,7 @@ Records are created in `timeframes.txt`, including cases where the time covers t
 * Not AM Peak: weekday time not included in AM Peak
 * Not AM2PM Peak: weekday time not included in AM2PM Peak
 
-[**timeframes.txt**](../../reference/#timeframestxt)
+[**timeframes.txt**](../../../reference/#timeframestxt)
 
 | timeframe_group_id | start_time | end_time | service_id |
 |:------------------:|:----------:|:--------:|:----------:|
@@ -392,7 +392,7 @@ Records are created in `timeframes.txt`, including cases where the time covers t
 
 Each individual fare product is defined in `fare_products.txt`. Since Cold Spring is located in zone 7, this example only lists trips between zone 1 and 7. The full dataset would include a record for each price defined by a time and zone combination. Additionally, the example only displays one fare media (`paper`), but additional combinations could be created if prices would also vary based on the fare media.
 
-[**fare_products.txt**](../../reference/#fare_productstxt)
+[**fare_products.txt**](../../../reference/#fare_productstxt)
 
 | fare_product_id        | fare_product_name                  | fare_media_id | amount | currency |
 |------------------------|------------------------------------|---------------|--------|----------|
@@ -404,7 +404,7 @@ Each individual fare product is defined in `fare_products.txt`. Since Cold Sprin
 
 Lastly, the combinations of origin and destination areas, along with their respective timeframes are associated with the corresponding fare product in `fare_leg_rules.txt`. Here, trips starting or arriving in Zone 1 (i.e. `area_id=mnr_1`) during peak times are subject to a specific peak fare corresponding to the arrival and departure zones of the trip (i.e. `fare_product_id=mnr_1:HUD-7_adult_peak`).
 
-[**fare_leg_rules.txt**](../../reference/#fare_leg_rulestxt)
+[**fare_leg_rules.txt**](../../../reference/#fare_leg_rulestxt)
 
 | network_id | from_area_id | to_area_id | fare_product_id        | from_timeframe_group_id | to_timeframe_group_id |
 |------------|--------------|------------|------------------------|-------------------------|-----------------------|
