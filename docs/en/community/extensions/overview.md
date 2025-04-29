@@ -134,7 +134,7 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
             <p>Describes the additional capabilities that a service may be able to provide to serve people with disabilities and those who have mobility devices.</p>
             <ul>
                 <li>Information about services available to a rider from a person, such as a driver or other agency-provided human resource.</li>
-                <li>Vehicle information, described by the (further extended) <a href="https://docs.google.com/document/d/156RiBjI6FnWJvO8_XWX11Q9nLdOiBdS_rilA-oamlv8/edit#heading=h.tosuo6e9e0z7">GTFS-VehicleCategories</a> specification. See also the <a href="https://docs.google.com/document/d/1mcQ-oEaP5WiGh46DmUQqmeS-rQ5W96L-c3TRKinGS0g/edit#heading=h.oxdoxruczgni">GTFS-seats</a> draft extension.</li>
+                <li>Vehicle information, described by the (further extended) <a href="https://docs.google.com/document/d/156RiBjI6FnWJvO8_XWX11Q9nLdOiBdS_rilA-oamlv8/edit#heading=h.tosuo6e9e0z7">GTFS-VehicleCategories</a> specification, is also included in GTFS-VehicleBoardings to represent train compositions and suggested boarding areas. See also the <a href="https://docs.google.com/document/d/1mcQ-oEaP5WiGh46DmUQqmeS-rQ5W96L-c3TRKinGS0g/edit#heading=h.oxdoxruczgni">GTFS-seats</a> draft extension.</li>
                 <li>A focus on describing vehicle amenities related to mobility devices, and how boarding with those devices affects capacity for other riders and devices.</li>
             </ul>
         </div>
