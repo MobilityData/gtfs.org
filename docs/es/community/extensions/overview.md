@@ -134,7 +134,7 @@
     <p> Describe las capacidades adicionales que un servicio puede proporcionar para atender a personas con discapacidades y a quienes tienen dispositivos de movilidad.</p> 
     <ul> 
     <li> Información sobre los servicios disponibles para un pasajero por parte de una persona, como un conductor u otro recurso humano proporcionado por la agencia.</li> 
-    <li> Información del vehículo, descrita por la especificación <a href="https://docs.google.com/document/d/156RiBjI6FnWJvO8_XWX11Q9nLdOiBdS_rilA-oamlv8/edit#heading=h.tosuo6e9e0z7">GTFS-VehicleCategories</a> (ampliada aún más), también se incluye en GTFS-VehicleBoardings para representar composiciones de trenes y áreas de embarque sugeridas. Véase también el borrador de la extensión <a href="https://docs.google.com/document/d/1mcQ-oEaP5WiGh46DmUQqmeS-rQ5W96L-c3TRKinGS0g/edit#heading=h.oxdoxruczgni">de asientos GTFS</a> .</li> 
+    <li> Información del vehículo, descrita por la especificación <a href="https://docs.google.com/document/d/156RiBjI6FnWJvO8_XWX11Q9nLdOiBdS_rilA-oamlv8/edit#heading=h.tosuo6e9e0z7">GTFS-VehicleCategories</a> (ampliada aún más), también se incluye en GTFS-VehicleBoardings para representar composiciones de trenes y áreas de embarque sugeridas. Véase también el borrador de la extensión <a href="https://docs.google.com/document/d/1mcQ-oEaP5WiGh46DmUQqmeS-rQ5W96L-c3TRKinGS0g/edit#heading=h.oxdoxruczgni">GTFS-seats</a> .</li> 
     <li> Un enfoque en describir las comodidades del vehículo relacionadas con los dispositivos de movilidad y cómo abordar con esos dispositivos afecta la capacidad para otros pasajeros y dispositivos.
     </li> 
     </ul> 
