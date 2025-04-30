@@ -123,7 +123,7 @@
         <p> Décrit les capacités supplémentaires qu’un service peut être en mesure de fournir pour servir les personnes handicapées et celles qui disposent d’appareils de mobilité.</p> 
         <ul> 
             <li> Informations sur les services disponibles pour un passager par une personne, telle qu’un chauffeur ou une autre ressource humaine fournie par une agence.</li> 
-            <li> Informations sur le véhicule, décrites par la spécification (encore étendue) <a href="https://docs.google.com/document/d/156RiBjI6FnWJvO8_XWX11Q9nLdOiBdS_rilA-oamlv8/edit#heading=h.tosuo6e9e0z7">GTFS-VehicleCategories</a>. Voir également le projet d’extension <a href="https://docs.google.com/document/d/1mcQ-oEaP5WiGh46DmUQqmeS-rQ5W96L-c3TRKinGS0g/edit#heading=h.oxdoxruczgni">des GTFS-seats</a> .</li> 
+            <li> Informations sur le véhicule, décrites par la spécification (encore étendue) <a href="https://docs.google.com/document/d/156RiBjI6FnWJvO8_XWX11Q9nLdOiBdS_rilA-oamlv8/edit#heading=h.tosuo6e9e0z7">GTFS-VehicleCategories</a>, est également inclus dans GTFS-VehicleBoardings pour représenter les compositions des trains et les zones d'embarquement suggérées. Voir également le projet d’extension <a href="https://docs.google.com/document/d/1mcQ-oEaP5WiGh46DmUQqmeS-rQ5W96L-c3TRKinGS0g/edit#heading=h.oxdoxruczgni">des GTFS-seats</a> .</li> 
             <li> L’accent est mis sur la description des commodités du véhicule liées aux appareils de mobilité et sur la manière dont l’embarquement avec ces appareils affecte la capacité des autres passagers et appareils.</li> 
         </ul> 
     </div> 
