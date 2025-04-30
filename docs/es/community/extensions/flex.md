@@ -47,10 +47,13 @@ Visite la página Pull Request para leer la publicación completa y contribuir a
 [Únase a #gtfs-flex en Slack](https://share.mobilitydata.org/slack){ .md-button .md-button--primary } 
  
 ## Implementaciones tempranas
+
+A continuación, se muestran algunos ejemplos de implementaciones iniciales de GTFS-Flex. Para consultar las implementaciones actuales, visite la [Mobility Database](https://mobilitydatabase.org/).
+
 - [Proyecto piloto MNDoT Flex: Trillium, IBI, Transit, MNDoT, Cambridge Systematics y Token Transit](https://blog.transitapp.com/case-study/mndot-gtfs-flex-bringing-rural-riders-into-the-fold/) 
 - [Open Trip Planner](https://www.opentripplanner.org/) 
 - [Mobility on Demand Sandbox en Vermont](https://www.connectingcommuters.org/) 
-- [Tránsito del área del condado de Tulare](https://ridetcat.org/) 
+- [Tulare County Area Transit](https://gotcrta.org/)
 - [Alianza de tránsito del noroeste de Oregón (NW Connector)](https://nwconnector.org/other-services/) 
 - [Aplicación Vamos Mobility](https://vamosmobileapp.com/) 
 - [RTD Denver Flexride](https://www.rtd-denver.com/services/flexride) 

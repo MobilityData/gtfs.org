@@ -48,10 +48,12 @@ GTFS Flex は、デマンド レスポンシブ交通サービスの発見可能
 
 ## 初期実装
 
+以下はGTFS-Flexの初期実装例です。現在の実装例については、[Mobility Database](https://mobilitydatabase.org/)をご覧ください。
+
 - [MNDoT Flex パイロット プロジェクト: Trillium、IBI、Transit、MNDoT、Cambridge Systematics、Token Transit](https://blog.transitapp.com/case-study/mndot-gtfs-flex-bringing-rural-riders-into-the-fold/) 
 - [Open Trip Planner](https://www.opentripplanner.org/)
 - [バーモント州のモビリティ オンデマンド サンドボックス](https://www.connectingcommuters.org/)
-- [Tulare County Area Transit](https://ridetcat.org/)
+- [Tulare County Area Transit](https://gotcrta.org/)
 - [Northwest Oregon Transit Alliance (NW Connector)](https://nwconnector.org/other-services/)
 - [Vamos Mobility App](https://vamosmobileapp.com/)
 - [RTD Denver Flexride](https://www.rtd-denver.com/services/flexride)
