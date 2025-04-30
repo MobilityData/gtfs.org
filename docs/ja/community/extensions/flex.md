@@ -51,8 +51,8 @@ GTFS Flex は、デマンド レスポンシブ交通サービスの発見可能
 - [MNDoT Flex パイロット プロジェクト: Trillium、IBI、Transit、MNDoT、Cambridge Systematics、Token Transit](https://blog.transitapp.com/case-study/mndot-gtfs-flex-bringing-rural-riders-into-the-fold/) 
 - [Open Trip Planner](https://www.opentripplanner.org/)
 - [バーモント州のモビリティ オンデマンド サンドボックス](https://www.connectingcommuters.org/)
-- Tulare County Area Transit
-- Northwest Oregon Transit Alliance (NW Connector)
+- [Tulare County Area Transit](https://ridetcat.org/)
+- [Northwest Oregon Transit Alliance (NW Connector)](https://nwconnector.org/other-services/)
 - [Vamos Mobility App](https://vamosmobileapp.com/)
 - [RTD Denver Flexride](https://www.rtd-denver.com/services/flexride)
 - [Nebraska Public Transit DRT OTP Project: Trillium、Olsson、Cambridge Systematics、および TransitPlus](https://便.nebraskatransit.com/#/)

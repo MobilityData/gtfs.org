@@ -50,8 +50,8 @@ L’extension décrit les services qui fonctionnent selon un horaire, mais inclu
 - [Projet pilote MDoT Flex : Trillium, IBI, Transit, MNDoT, Cambridge Systematics et Token Transit](https://blog.transitapp.com/case-study/mndot-gtfs-flex-bringing-rural-riders-into-the-fold/) 
  - [Open Trip Planner](https://www.opentripplanner.org/) 
  - [Mobility on Demand Sandbox in Vermont](https://www.connectingcommuters.org/) 
- - Tulare County Area Transit
- - Northwest Oregon Transit Alliance (NW Connector) 
+ - [Tulare County Area Transit](https://ridetcat.org/) 
+ - [Northwest Oregon Transit Alliance (NW Connector)](https://nwconnector.org/other-services/) 
  - [Vamos Mobility App](https://vamosmobileapp.com/) 
  - [RTD Denver Flexride](https://www.rtd-denver.com/services/flexride) 
  - [Projet OTP DRT de transport en commun du Nebraska : Trillium, Olsson, Cambridge Systematics et TransitPlus](https://trips.nebraskatransit.com/#/)

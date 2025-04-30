@@ -50,8 +50,8 @@ Visite la página Pull Request para leer la publicación completa y contribuir a
 - [Proyecto piloto MNDoT Flex: Trillium, IBI, Transit, MNDoT, Cambridge Systematics y Token Transit](https://blog.transitapp.com/case-study/mndot-gtfs-flex-bringing-rural-riders-into-the-fold/) 
 - [Open Trip Planner](https://www.opentripplanner.org/) 
 - [Mobility on Demand Sandbox en Vermont](https://www.connectingcommuters.org/) 
-- Tránsito del área del condado de Tulare
-- Alianza de tránsito del noroeste de Oregón (NW Connector)
+- [Tránsito del área del condado de Tulare](https://ridetcat.org/) 
+- [Alianza de tránsito del noroeste de Oregón (NW Connector)](https://nwconnector.org/other-services/) 
 - [Aplicación Vamos Mobility](https://vamosmobileapp.com/) 
 - [RTD Denver Flexride](https://www.rtd-denver.com/services/flexride) 
 - [Proyecto OTP DRT de transporte público de Nebraska: Trillium, Olsson, Cambridge Systematics y TransitPlus](https://trips.nebraskatransit.com/#/)
