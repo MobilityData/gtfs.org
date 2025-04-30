@@ -48,10 +48,12 @@ Visit the Pull Request page to read the full post and contribute to the conversa
 
 ## Early Implementations
 
+The following are some examples of early implementation of GTFS-Flex. To find current implementations, please visit the [Mobility Database](https://mobilitydatabase.org/).
+
 - [MNDoT Flex Pilot Project: Trillium, IBI, Transit, MNDoT, Cambridge Systematics, and Token Transit](https://blog.transitapp.com/case-study/mndot-gtfs-flex-bringing-rural-riders-into-the-fold/) 
 - [Open Trip Planner](https://www.opentripplanner.org/)
 - [Mobility on Demand Sandbox in Vermont](https://www.connectingcommuters.org/)
-- [Tulare County Area Transit](https://ridetcat.org/)
+- [Tulare County Area Transit](https://gotcrta.org/)
 - [Northwest Oregon Transit Alliance (NW Connector)](https://nwconnector.org/other-services/)
 - [Vamos Mobility App](https://vamosmobileapp.com/)
 - [RTD Denver Flexride](https://www.rtd-denver.com/services/flexride)

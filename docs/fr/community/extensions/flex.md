@@ -47,10 +47,13 @@ L’extension décrit les services qui fonctionnent selon un horaire, mais inclu
  [Rejoindre #gtfs-flex sur Slack](https://share.mobilitydata.org/slack){ .md-button .md-button--primary } 
  
 ## Premières mises en œuvre
+
+Voici quelques exemples de premières implémentations de GTFS-Flex. Pour trouver les implémentations actuelles, veuillez consulter la [Mobility Database](https://mobilitydatabase.org/).
+
 - [Projet pilote MDoT Flex : Trillium, IBI, Transit, MNDoT, Cambridge Systematics et Token Transit](https://blog.transitapp.com/case-study/mndot-gtfs-flex-bringing-rural-riders-into-the-fold/) 
  - [Open Trip Planner](https://www.opentripplanner.org/) 
  - [Mobility on Demand Sandbox in Vermont](https://www.connectingcommuters.org/) 
- - [Tulare County Area Transit](https://ridetcat.org/) 
+ - [Tulare County Area Transit](https://gotcrta.org/)
  - [Northwest Oregon Transit Alliance (NW Connector)](https://nwconnector.org/other-services/) 
  - [Vamos Mobility App](https://vamosmobileapp.com/) 
  - [RTD Denver Flexride](https://www.rtd-denver.com/services/flexride) 
