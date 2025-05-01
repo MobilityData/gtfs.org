@@ -31,7 +31,10 @@ We do accept glossary changes. Simpleen uses a glossary for key terms that are c
    - macOS: `pip3 install pip` or `pip3 install --upgrade pip`
 1. Clone this repository:
    - `git clone https://github.com/MobilityData/gtfs.org`
-1. Change the directory to the cloned repository, and have [`requirements.txt`](requirements.txt) installed:
+1. Change the directory to the cloned repository, and create & enable a Python virtual environment:
+   - `python3 -m venv venv`
+   - `source venv/bin/activate`
+1. Have [`requirements.txt`](requirements.txt) installed:
    - Linux: `pip install --force-reinstall -r requirements.txt`
    - macOS: `pip3 install --force-reinstall -r requirements.txt`
 1. Have [Material for MkDocs Insiders](https://squidfunk.github.io/mkdocs-material/insiders/`) installed. Substitute `${GH_TOKEN}` with MobilityData's access token:
@@ -39,6 +42,9 @@ We do accept glossary changes. Simpleen uses a glossary for key terms that are c
    - macOS: `pip3 install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git`
 1. To run the site locally: `make serve`
 1. To build the site locally: `make build`
+1. Deactivate the Python virtual environment when done:
+   - `deactivate`
+
 
 ## License
 
