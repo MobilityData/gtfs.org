@@ -2,8 +2,10 @@
 
 ### 改訂履歴
 
-#### 2025年2月
+#### 2025年4月
+* DRTサービスの `continuous_pickup/continuous_drop_off` の値に1を指定できるように明確化しました。[ディスカッション](https://github.com/google/transit/pull/558) を参照してください。
 
+#### 2025年2月
 * rider_categories.txtを追加しました。[ディスカッション](https://github.com/google/transit/pull/511) を参照してください。
 
 #### 2025年1月
