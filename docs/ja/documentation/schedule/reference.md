@@ -1,11 +1,11 @@
----
+[改訂履歴]---
 title: GTFS scheduleリファレンス ドキュメント
 description: GTFS scheduleの詳細を確認し、リファレンス ドキュメントを参照してください。
 ---
 
 ##General Transit Feed Specificationリファレンス
 
-**2025 年 5 月 6 日に改訂されました。詳細については、[改訂履歴](../change-history/revision-history) を参照してください。**
+**2025年5月6日に改訂されました。詳細については、[改訂履歴](../change-history/revision-history) を参照してください。**
 
 このドキュメントでは、GTFS データセットを構成するファイルの形式と構造を定義します。
 
