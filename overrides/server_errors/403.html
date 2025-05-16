@@ -1,0 +1,38 @@
+<html style="height:100%">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/server_errors.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <title> 403 Forbidden </title>
+
+    </head>
+    <body class="body-style">
+        <div class="main-center-vert">
+            <div class="main-centered-block">
+                <div class="logo-container">
+                    <img src = "assets/gtfs_logo.svg" width="125px" height="125px" alt="GTFS logo"/>
+                </div>
+                <h1>403</h1>
+                <h2>Forbidden</h2>
+                <p style="margin-bottom: 50px;">This area is for authorized personnel only — your pass doesn&rsquo;t grant you access to this part of the system.</p>
+                <div class="info-section-wrapper">
+                    <div class="info-horiz-background">
+                        <div class="info-content">
+                            <h3>What exactly does it mean?</h3>
+                            <p style="margin-bottom: 50px;">The request contained valid data and was understood by the server, but the server is refusing action. This may be due to the user not having the necessary permissions for a resource or needing an account of some sort, or attempting a prohibited action (e.g. creating a duplicate record where only one is allowed).</p>
+                            <h3>What can you do?</h3>
+                            <p>Not much. It surely means you are not authorized to see this page. If you believe this to be a genuine error, drop us a line at <span id="email"></span> along with the URL you are trying to access and we'll do our best to help you.</p>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript" src="assets/email.js"></script>
+                <script>
+                showEmailAndHomepage("email", "homepage-link", "403", "Forbidden", "gtfs.org", "mobilitydata.org", "it");
+                </script>
+            </div>
+        </div>
+    </body>
+</html>

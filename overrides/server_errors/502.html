@@ -1,0 +1,38 @@
+<html style="height:100%">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/server_errors.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <title> 502 Bad Gateway </title>
+
+    </head>
+    <body class="body-style">
+        <div class="main-center-vert">
+            <div class="main-centered-block">
+                <div class="logo-container">
+                    <img src = "assets/gtfs_logo.svg" width="125px" height="125px" alt="GTFS logo"/>
+                </div>
+                <h1>502</h1>
+                <h2>Bad Gateway</h2>
+                <p style="margin-bottom: 50px;">We got a garbled announcement from the previous stop — the response didn&rsquo;t make it through clearly.</p>
+                <div class="info-section-wrapper">
+                    <div class="info-horiz-background">
+                        <div class="info-content">
+                            <h3>What exactly does it mean?</h3>
+                            <p style="margin-bottom: 50px;">This error occurs when a server acting as a gateway or proxy receives an invalid or faulty response from another server in the communication chain. Reasons can include server overload, misconfiguration or network issues.</p>
+                            <h3>What can you do?</h3>
+                            <p>For now, not much. We surely are working on it already. If it's not fixed shortly, send us a message at <span id="email"></span> to let us know!</p>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript" src="assets/email.js"></script>
+                <script>
+                showEmailAndHomepage("email", "homepage-link", "502", "Bad Gateway", "gtfs.org", "mobilitydata.org", "it");
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
