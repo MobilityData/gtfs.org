@@ -13,7 +13,7 @@
  
 ## StopTimeUpdate 
  
- Une mise à jour de trajet consiste en une ou plusieurs mises à jour des horaires d’arrêts du véhicule, appelées [StopTimeUpdates](../../reference/#message-stoptimeupdate). Ceux-ci peuvent être fournis pour les horaires d’arrêts passés et futurs. Vous êtes autorisé, mais pas obligé, à dépasser les horaires d’arrêts. Les producteurs ne doivent pas supprimer un `StopTimeUpdate` passé s’il fait référence à un arrêt avec une heure d’arrivée prévue dans le futur pour le trajet donné (c’est-à-dire que le véhicule a dépassé l’arrêt plus tôt que prévu), sinon il sera conclu qu’il n’y a pas d’arrêt.mise à jour pour cet arrêt. 
+ Une mise à jour de trajet consiste en une ou plusieurs mises à jour des horaires d’arrêts du véhicule, appelées [StopTimeUpdates](../../reference/#message-stoptimeupdate). Ceux-ci peuvent être fournis pour les horaires d’arrêts passés et futurs. Vous êtes autorisé, mais pas obligé, de déposer au-delà des horaires d’arrêts, sauf si le trajet est un nouveau trajet ou un trajet de remplacement non trouvé dans la statique GTFS. Français Les producteurs ne doivent pas supprimer une `StopTimeUpdate` passée si elle fait référence à un arrêt avec une heure d’arrivée prévue dans le futur pour le trajet donné (c’est-à-dire que le véhicule a dépassé l’arrêt plus tôt que prévu), sinon il sera conclu qu’il n’y a pas de mise à jour pour cet arrêt.
  
  Par exemple, si les données suivantes apparaissent dans le flux GTFS-rt : 
  
