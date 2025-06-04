@@ -22,7 +22,7 @@ Use `DUPLICATED` si su viaje es una copia de un viaje programado, que puede ejec
 
 ### Uso de entidades ADDED y NEW en el mismo feed
 
-Si usted es un productor que ha estado usando la enumeración `ADDED` para especificar viajes que no están relacionados con el cronograma, para evitar interrupciones a los consumidores existentes, se recomienda que continúe produciendo derechos `ADDED` para estos viajes pero que también agregue derechos `NEW` para el mismo viaje.
+Si usted es un productor que ha estado usando la enumeración `ADDED` para especificar viajes que no están relacionados con el cronograma, para evitar interrupciones a los consumidores existentes, se recomienda que continúe produciendo entidades `ADDED` para estos viajes pero que también agregue entidades `NEW` para el mismo viaje.
 
 Sin embargo, para evitar que los consumidores agreguen accidentalmente el mismo viaje dos veces, las entidades que hacen referencia al mismo viaje **deben** estar vinculadas usando los mismos `trip_id`, `route_id` y `start_date`, el contenido de `stop_time_update` también debe ser el mismo.
 
@@ -62,7 +62,7 @@ entidad {
 }
 ~~~
 
-Se sugiere que notifique a los consumidores existentes (por ejemplo, a través de una lista de correo para desarrolladores) que el uso de `ADDED` se considerará obsoleto en una fecha límite y los consumidores deberían comenzar a consumir los viajes "NUEVOS". También se debe mencionar la estrategia anterior que se utiliza para vincular las entidades de viaje `ADDED` y `NEW`, e incluir un enlace a esta guía de migración. Después de que pase la fecha límite, puede eliminar las entidades "`NEW`" de su feed y publicar solo las entidades "`NEW`" para los viajes recientemente agregados.
+Se sugiere que notifique a los consumidores existentes (por ejemplo, a través de una lista de correo para desarrolladores) que el uso de `ADDED` se considerará obsoleto en una fecha límite y los consumidores deberían comenzar a consumir los viajes "NUEVOS". También se debe mencionar la estrategia anterior que se utiliza para vincular las entidades de viaje `ADDED` y `NEW`, e incluir un enlace a esta guía de migración. Después de que pase la fecha límite, puede eliminar las entidades "`ADDED`" de su feed y publicar solo las entidades "`NEW`" para los viajes recientemente agregados.
 
 #### Consumidores
 
