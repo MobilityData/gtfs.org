@@ -22,7 +22,7 @@ Use `DUPLICATED` if your trip is a copy of a scheduled trip, which may run at th
 
 ### Using ADDED and NEW entities in the same feed
 
-If you are a producer who has been using the `ADDED` enumeration to specify trips which are unrelated to the schedule, to avoid disruption to existing consumers it is recommended that you continue to produce `ADDED` entitles for these trips but also add `NEW` entitles for the same trip.
+If you are a producer who has been using the `ADDED` enumeration to specify trips which are unrelated to the schedule, to avoid disruption to existing consumers it is recommended that you continue to produce `ADDED` entities for these trips but also add `NEW` entities for the same trip.
 
 However, to prevent consumers from accidentally adding the same trip twice, the entities referencing the same trip **must** be linked using the same `trip_id`, `route_id` and `start_date`.
 In addition, the contents of the `stop_time_update` must also be the same as well.
@@ -63,7 +63,7 @@ entity {
 }
 ~~~
 
-It is suggested that you notify existing consumers (e.g., via a developer mailing list) that the use of `ADDED` is being deprecated by a set deadline and that consumers should start consuming the `NEW` trips instead. The above strategy being used to match `ADDED` and `NEW` trip entities should also be mentioned and a link to this migration guide should be included. After the deadline passes, you can remove the `NEW` entities from your feed and publish only the `NEW` entities for newly-added trips.
+It is suggested that you notify existing consumers (e.g., via a developer mailing list) that the use of `ADDED` is being deprecated by a set deadline and that consumers should start consuming the `NEW` trips instead. The above strategy being used to match `ADDED` and `NEW` trip entities should also be mentioned and a link to this migration guide should be included. After the deadline passes, you can remove the `ADDED` entities from your feed and publish only the `NEW` entities for newly-added trips.
 
 #### Consumers
 
