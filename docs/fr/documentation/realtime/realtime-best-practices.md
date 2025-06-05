@@ -48,7 +48,7 @@
  Directives générales pour les annulations de voyage : 
  
  * Lors de l’annulation de voyages sur plusieurs jours, les producteurs doivent fournir des TripUpdates faisant référence aux `trip_ids` et aux `start_dates` donnés comme `CANCELED`. ainsi qu’une alerte avec `NO_SERVICE` faisant référence aux mêmes `trip_ids` et `TimeRange` qui peuvent être montrées aux passagers expliquant l’annulation (par exemple, un détour). 
- * Si aucun arrêt d’un voyage n’est visité, le voyage doit être `CANCELED` au lieu d’avoir toutes les `stop_time_updates` marquées comme `SKIPPED`. 
+ * Si aucun arrêt d’un trajet n’est visité, le trajet doit être `CANCELED` au lieu d’avoir tous les `stop_time_updates` marqués comme `SKIPPED`, à moins que le trajet ne soit un trajet `NOUVEAU` ou `DUPLICATED` et qu’il ait été annulé par la suite.
  
  | Nom du champ | Recommandation | 
  |---|---| 
@@ -69,7 +69,13 @@
  
  | Nom du champ | Recommandation | 
  |---|---| 
- | `schedule_relationship` | Le comportement des déplacements `ADDED` n’est pas spécifié et l’utilisation de cette énumération n’est pas recommandée. | 
+ | `schedule_relationship` | Le comportement des voyages « `ADDED` » n’est pas spécifié et l’utilisation de cette énumération n’est pas recommandée.<br/> Si le trajet n’est pas prévu pour s’exécuter à l’origine, utilisez « NOUVEAU » s’il ne suit pas le modèle d’arrêt d’un trajet existant, ou « `DUPLICATED` » s’il s’agit d’une copie d’un trajet existant.<br/> Si le trajet s’effectue selon un horaire ou des arrêts modifiés, mais peut être associé à un trajet planifié d’origine dans le GTFS statique, utilisez `REPLACEMENT` et spécifiez la liste complète des horaires d’arrêts pour le trajet modifié. |
+
+### TripProperties 
+
+| Nom du champ | Recommandation |
+|---|---|
+| `trip_headsign` | Doit toujours être fourni pour un trajet avec `TripDescriptor.schedule_relationship` = `NEW`, et fourni pour un trajet avec `TripDescriptor.schedule_relationship` = `REPLACEMENT` si le trajet est dévié. |
  
  
 ### VehicleDescriptor 
@@ -97,6 +103,7 @@
  | Nom du champ | Recommandation | 
  |---|---| 
  | `delay` | Si seul `delay` est fourni dans une `stop_time_update` `arrival` ou `departure` (et non `time`), alors le GTFS [`stop_times.txt`](../../schedule/reference/#stop_timestxt ) doit contenir `arrival_times` et/ou `departure_times` pour ces arrêts correspondants. Une valeur `delay` dans le flux en temps réel n’a de sens que si vous disposez d’une heure à laquelle l’ajouter dans le fichier GTFS `stop_times.txt`. | 
+ | `scheduled_time` | Si le trajet est un trajet nouveau ou de remplacement, et qu’il est exécuté selon un planning (qui peut être un planning modifié en cas de trajet de remplacement), « scheduled_time » doit être fourni pour tous les points temporels. Si les trajets dupliqués ont des temps d’exécution ou de séjour différents de l’original, « scheduled_time » peut également être utilisé pour les spécifier. |
  
 ### VehiclePosition 
  

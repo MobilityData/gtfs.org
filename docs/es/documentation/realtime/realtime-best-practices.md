@@ -48,7 +48,7 @@
  Pautas generales para cancelaciones de viajes: 
  
  * Al cancelar viajes durante varios días, los productores deben proporcionar TripUpdates que hagan referencia a los `trip_ids` y `start_dates` dados como `CANCELED` así como una alerta con "`NO_SERVICE`" que hace referencia a los mismos "`trip_ids`" y "`TimeRange`" que se puede mostrar a los pasajeros explicando la cancelación (por ejemplo, desvío). 
- * Si no se visitarán paradas en un viaje, el viaje debe ser `CANCELED` en lugar de tener todas las `stop_time_updates` marcadas como `SKIPPED`. 
+ * Si no se visitarán paradas en un viaje, el viaje debe ser `CANCELED` en lugar de tener todos los `stop_time_updates` marcados como `SKIPPED`, a menos que el viaje fuera un viaje `NUEVO` o `DUPLICATED` y se haya cancelado posteriormente.
 
  | Nombre del campo | Recomendación | 
  |---|---| 
@@ -69,7 +69,13 @@
 
  | Nombre del campo | Recomendación | 
  |---|---| 
- | `schedule_relationship` | El comportamiento de los viajes "`ADDED`" no está especificado y no se recomienda el uso de esta enumeración. | 
+ | `schedule_relationship` | El comportamiento de los viajes "`ADDED`" no está especificado y no se recomienda el uso de esta enumeración.<br/> Si el viaje no está programado para ejecutarse originalmente, use "NUEVO" si no sigue el patrón de parada de un viaje existente, o "`DUPLICATED`" si es una copia de un viaje existente.<br/> Si el viaje se ejecuta en un cronograma modificado o se detiene, pero se puede asociar a un viaje programado original en el GTFS estático, use `REPLACEMENT` y especifique la lista completa de horarios de parada para el viaje modificado. |
+
+### TripProperties 
+
+| Nombre del campo | Recomendación |
+|---|---|
+| `trip_headsign` | Siempre se debe proporcionar para un viaje con `TripDescriptor.schedule_relationship` = `NEW`, y para un viaje con `TripDescriptor.schedule_relationship` = `REPLACEMENT` si el viaje se desvía. |
  
  
 ### VehicleDescriptor 
@@ -97,6 +103,7 @@
  | Nombre del campo | Recomendación | 
  |---|---| 
  | `delay` | Si solo se proporciona `delay` (y no `time`) en un `stop_time_update` `arrival` o `departure`, entonces el GTFS [`stop_times.txt`](../../schedule/reference/#stop_timestxt) debe contener `arrival_times` y/o `departure_times` para estas paradas correspondientes. Un valor de "`delay`" en el feed en tiempo real no tiene sentido a menos que tenga una hora de reloj para agregarlo en el archivo GTFS "`stop_times.txt`". | 
+ | `scheduled_time` | Si el viaje es nuevo o de reemplazo, y se ejecutará según un cronograma (que puede ser modificado en caso de reemplazo), se debe proporcionar `scheduled_time` para todos los puntos de tiempo. Si un viaje duplicado tiene tiempos de ejecución o de permanencia diferentes a los del original, también se puede usar `scheduled_time` para especificarlos. |
  
 ### VehiclePosition 
  

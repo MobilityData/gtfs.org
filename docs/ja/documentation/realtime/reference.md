@@ -19,6 +19,7 @@ GTFS リアルタイム v2.0 以降では、*必須* 列は、交通事業者デ
 
 * **必須**: このフィールドは、GTFS リアルタイム フィード プロデューサーが提供するしなければならない。
 * **条件付きで必須**: このフィールドは、フィールド *説明* で概説されている特定の条件下では必須です。これらの条件以外では、フィールドは任意です。
+* **条件付きで禁止**: このフィールドは、*説明*フィールドに記載されている特定の条件下では禁止されています。これらの条件以外では、フィールドは任意です。
 * **任意**: このフィールドは任意であり、プロデューサーが実装する必須はありません。ただし、基礎となる自動車両位置システム（例： VehiclePosition `timestamp` ）でデータが利用可能な場合は、可能であればプロデューサーがこれらの任意フィールドを提供することが推奨 *セマンティック要件は GTFS リアルタイム バージョン 1.0 では定義されていないため、`gtfs_realtime_version`が`1`のフィードはこれらの要件を満たさないしてもよいがあることに注意してください（詳細については、[セマンティック要件の提案](https://github.com/google/transit/pull/64)を参照してください）。*
 
 ### カーディナリティ
@@ -150,6 +151,7 @@ ScheduleRelationship の値に応じて、TripUpdate では以下を指定でき
 * スケジュールに沿って進む便。
 * ルートに沿って進むが、スケジュールは固定されていない便。
 * スケジュールに関して追加または削除された便。
+* 静的 GTFS 内の既存の旅程を置き換える旅程。
 * 静的 GTFS の既存の便のコピーである新しい便。TripProperties で指定されたサービス日時で実行されます。
 
 更新は、将来の予測到着/出発イベント、またはすでに発生した過去のイベントに対して行うことができます。ほとんどの場合、過去のイベントに関する情報は測定値であるため、その不確実性の値は 0 にすることを推奨。ただし、これが当てはまらない場合もあり、その場合は過去のイベントの不確実性の値が 0 以外になることが許可されます。更新の不確実性が 0 でない場合、更新は完了していない便のおおよその予測であるか、測定が正確でないか、更新はイベント発生後に検証されていない過去の予測であったかのいずれかです。
@@ -167,17 +169,18 @@ ScheduleRelationship の値に応じて、TripUpdate では以下を指定でき
 |------------------|-----------|----------------|-------------------|-------------------|
 | **trip** | [TripDescriptor](#message-tripdescriptor) | 必須 | 1つ | このmessageが適用される便。実際の便インスタンスごとに最大 1つのTripUpdateエンティティが存在します。存在しない場合は、予測情報が利用できないことを意味します。便がスケジュールどおりに進んでいることを意味するわけではありません。 |
 | **vehicle** | [VehicleDescriptor](#message-vehicledescriptor) |任意| 1つ | この便にサービスを提供する車両に関する追加情報。 |
-| **stop_time_update** | [StopTimeUpdate](#message-stoptimeupdate) |条件付きで必須| 複数 | 便の StopTimes の更新 (将来の予測と、場合によっては過去の停止時刻、つまりすでに発生した停止時刻の両方)。更新はstop_sequenceで並べ替えるしなければならないがあり、次に指定された stop_time_update までの便のすべての後続の停留所等に適用する必要があります。 trip.schedule_relationship が CANCELED、DELETED、または DUPLICATED でない限り、少なくとも 1つの stop_time_update を便に指定するしなければならないがあります。便がキャンセルまたは削除された場合は、stop_time_updates を指定する必要はありません。キャンセルまたは削除された便に stop_time_updates が指定されている場合、trip.schedule_relationship は、stop_time_updates および関連する schedule_relationship よりも優先されます。便が重複している場合は、新しい便のリアルタイム情報を示すために stop_time_updates を指定してもよい。|
+|**stop_time_update**| [StopTimeUpdate](#message-stoptimeupdate) |条件付きで必須| 多数 | 旅程の StopTimes の更新（将来の予測と、場合によっては過去の停止時刻（すでに発生したもの）の両方）。更新はstop_sequenceで並べ替え、次に指定された stop_time_update までの旅程の後続のすべての停留所に適用するしなければならない。<br> trip.schedule_relationship が SCHEDULED または UNSCHEDULED の場合、旅行に対して少なくとも 1 つの stop_time_update を指定するしなければならない。<br> trip.schedule_relationship が `NEW` または `REPLACEMENT` の場合、過去の時刻の停留所も含め、新規または代替の旅程のすべての停留所に対して stop_time_updates を指定するしなければならないがあり、静的 GTFS の停車時刻は使用されません。<br>旅程がキャンセルまたは削除された場合、stop_time_updates を指定する必要はありません。キャンセルまたは削除された旅程に stop_time_updates が指定されている場合、trip.schedule_relationship は、stop_time_updates および関連する Schedule_relationship よりも優先されます。旅程が重複している場合は、新しい旅程のリアルタイム情報を示すために stop_time_updates を指定してもよい。|
 | **timestamp** | [uint64](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1つ | 将来の StopTimes を推定するために車両のリアルタイムの進行状況が測定された最新の瞬間。過去の StopTimes が指定されている場合、到着/出発時刻はこの値よりも早くなるしてもよい。 POSIX 時間 (つまり、1970 年 1 月 1 日 00:00:00 UTC からの秒数)。 |
 | **delay** | [int32](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1つ | 便の現在のスケジュールの偏差。遅延は、予測が GTFS の既存のスケジュールと比較して指定される場合にのみ指定するするべきである。<br>遅延 (秒単位) は、正 (車両が遅れていることを意味する) または負 (車両が予定より進んでいることを意味する) になります。遅延が 0 の場合、車両は正確に時間通りであることを意味します。<br> StopTimeUpdates の遅延情報は、便レベルの遅延情報よりも優先されるため、便レベルの遅延は、 StopTimeUpdate遅延値が指定された便の次の停留所までのみ伝播されます。<br>フィード プロバイダーは、データの鮮度を評価するために、遅延値が最後に更新された日時を示すTripUpdate.timestamp 値を提供することを強くお勧めします。<br><br>**注意:** このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。|
 | **trip_properties** | [TripProperties](#message-tripproperties) | 任意 | 1つ | 便の更新されたプロパティを提供します。<br><br>**注意:** このmessageはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。 |
 
 ### _message_ StopTimeEvent 
 
-単一の予測イベント (到着または出発) のタイミング情報。タイミングは、遅延および/または推定時間、および不確実性で構成されます。
+単一の予測イベント（到着または出発）の時刻情報。時刻は、遅延および／または推定時刻、および不確実性で構成されます。 `NEW`、`REPLACEMENT`、または`DUPLICATED` の便にもスケジュール時刻を追加できます。
 
 *   遅延は、GTFS の既存のスケジュールを基準にして予測が示される場合に使用するべきである。
-*   時間は、予測スケジュールがあるかどうかに関係なく指定するするべきである。時間と遅延の両方が指定されている場合は、時間が優先されます (ただし、通常、スケジュールされた便に対して時間が指定されている場合は、GTFS のスケジュールされた時間 + 遅延に等しくするするべきである)。
+*   予測されたスケジュールがあるかどうかにかかわらず、時間を与えられ、新規または交換旅行のために与えられる必要があります。時間と遅延の両方が指定されている場合、時間が優先されます（通常、時間は、予定されている旅行に与えられた場合、GTFS +遅延のスケジュールされた時間に等しくなければなりません）。
+*   旅行が新しい、交換または重複した旅行である場合、スケジュールされた時間が与えられる場合があります。
 
 不確実性は、時間と遅延の両方に等しく適用されます。不確実性は、実際の遅延の予想される誤差を大まかに指定します (ただし、その正確な統計的意味はまだ定義されていません)。たとえば、コンピューターのタイミング制御下で運転される列車の場合、不確実性が 0 になることがあります。
 
@@ -185,25 +188,28 @@ ScheduleRelationship の値に応じて、TripUpdate では以下を指定でき
 
 | _**フィールド名**_ | _**タイプ**_ | _**必須**_ | _**カーディナリティ**_ | _**説明**_ |
 |------------------|------------|----------------|-------------------|-------------------|
-|**delay**| [int32](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1つ | 遅延 (秒単位) は正 (車両が遅れていることを意味する) または負 (車両がスケジュールより進んでいることを意味する) になります。遅延が 0 の場合、車両は正確に時間通りです。StopTimeEvent 内では遅延または時間のいずれかを指定するしなければならない。両方のフィールドを空にすることはできません。 |
-|**time**| [int64](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1つ | 絶対時間としてのイベント。 POSIX 時間 (つまり、1970 年 1 月 1 日 00:00:00 UTC からの秒数) StopTimeEvent内では、遅延または時間のいずれかを指定するしなければならない。両方のフィールドを空にすることはできません。 |
-|**uncertainty**| [int32](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1つ | 不確実性が省略されている場合は、不明と解釈されます。完全に確実な予測を指定するには、不確実性を 0 に設定します。 |
+|**delay**| [int32](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1 つ |遅延（秒単位）は、正（車両が遅れていることを意味する）または負（車両が予定より進んでいることを意味する）の値になります。遅延が0の場合、車両は正確に時間通りに到着していることを意味します。<br> StopTimeUpdate.schedule_relationship が NO_DATA の場合、**禁止**です。<br>**必須**時刻が指定されていない場合は必須です。|
+|**time**| [int64](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1 | 推定または実際のイベントの絶対時刻。POSIX時間（1970年1月1日 00:00:00 UTCからの秒数）で表されます。<br> StopTimeUpdate.schedule_relationship が NO_DATA の場合、**禁止**です。<br>**必須**遅延が指定されていない場合は必須です。|
+|**scheduled_time**| [int64](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで禁止| 1 | スケジュールされた時刻。POSIX時間（1970年1月1日 00:00:00 UTCからの秒数）で表されます。<br>**任意**TripUpdateが `NEW`、`REPLACEMENT`、または`DUPLICATED` の場合、**省略可能**。それ以外の場合は**禁止**。|
+|**uncertainty**| [int32](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1つ | 不確実性が省略された場合は、不明と解釈されます。完全に確実な予測を指定するには、不確実性を0に設定してください。<br> StopTimeUpdateが NO_DATA の場合は**禁止**です。|
 
 ### _message_ StopTimeUpdate 
 
 便中の特定の停留所の到着イベントや出発イベントのリアルタイム更新。[TripDescriptor](#message-tripdescriptor) および [便更新エンティティ](../../../documentation/realtime/feed-entities/trip-updates) ドキュメントの停車時間更新に関する一般的な説明も参照してください。
 
-過去と未来の両方のイベントの更新を提供できます。プロデューサーは過去のイベントを削除できますが、必須ではありません。
+更新は、過去のイベントと将来のイベントの両方に対して提供できます。プロデューサーは、` TripUpdate`が `NEW` または `REPLACEMENT` である場合を除き、過去のイベントを削除できますが、必須ではありません。この場合、過去の停留所は車両が走行する旅程を定義するため、旅程全体が完了するまで削除してはしてはいけない。
 更新はstop_sequenceまたは stop_id のいずれかを介して特定の停留所にリンクされるため、これらのフィールドのいずれかが必ず設定されているしなければならないます。1つの旅程で同じ stop_id を複数回訪れる場合は、その旅程のその stop_id のすべての StopTimeUpdates でstop_sequence を指定するするべきである。
+
+新しい旅程または代替の便では、GTFS 静的データ内の既存の旅程を参照せずに、旅程で訪問する停留所を指定するために更新が使用されます。このような便では、 `stop_id`、 `stop_sequence`、 `departure` 、 `arrival`をすべて設定するしなければならない。
 
 **フィールド**
 
 | _**フィールド名**_ | _**タイプ**_ | _**必須**_ | _**カーディナリティ**_ | _**説明**_ |
 |------------------|------------|----------------|-------------------|-------------------|
-|**stop_sequence**| [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1つ | 対応する GTFS フィードのstop_times.txtと同じであるしなければならない。 StopTimeUpdate内ではstop_sequenceまたは stop_id のいずれかを指定するしなければならない。両方のフィールドを空にすることはできません`StopTimeProperties.assigned_stop_id`は、予測の対象となる停留所を区別するために、同じ stop_id を複数回訪れる便(ループなど) で必須です。`StopTimeProperties.assigned_stop_id` が設定されている場合は、`stop_sequence`も設定するしなければならない。|
-|**stop_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1つ | 対応する GTFS フィードのstops.txtと同じである必要がしなければならない。StopTimeUpdate 内ではstop_sequenceまたは stop_id のいずれ`StopTimeProperties.assigned_stop_id`を指定するしなければならない。両方のフィールドを空にすることはできません。`StopTimeProperties.assigned_stop_id` が設定StopTimeUpdateれている場合は、`stop_id` を省略して`stop_sequence`のみを使用することをお勧めします。 `StopTimeProperties.assigned_stop_id`と`stop_id`が設定されている場合、`stop_id` は`assigned_stop_id`と一致するしなければならない。 |
-|**arrival**| [StopTimeEvent](#message-stoptimeevent) |条件付きで必須| 1つ | schedule_relationship が空または SCHEDULED の場合、 StopTimeUpdate内で arrive または destination のいずれかを指定するしなければならない。両方のフィールドを空にすることはできません。schedule_relationship が SKIPPED の場合、arrival と destination の両方を空にすることができしてもよい。schedule_relationship が NO_DATA の場合、arrival と destination の両方を空にするしなければならない。 |
-|**departure**| [StopTimeEvent](#message-stoptimeevent) |条件付きで必須| 1つ | schedule_relationship が空または SCHEDULED の場合、 StopTimeUpdate内で arrive または destination のいずれかを指定するしなければならない。両方のフィールドを空にすることはできません。schedule_relationship が SKIPPED の場合、arrival と destination の両方を空にするしてもよい。 schedule_relationship が NO_DATA の場合、到着と出発は空でなければしなければならない。|
+|**stop_sequence**| [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1つ | 対応する GTFS フィードのstop_times.txtと同じであるしなければならないStopTimeUpdateではstop_sequenceまたは stop_id のいずれかを指定するしなければならない。両方のフィールドを空にすることはできません。stop_sequenceは、同じ stop_id を複数回訪れる便（ループなど）で、予測の対象となる停留所を明確にするために必須です。`StopTimeProperties.assigned_stop_id` が設定されている場合は、 `stop_sequence``StopTimeProperties.assigned_stop_id`設定するしなければならない。**必須**`TripUpdate.schedule_relationship` が `NEW` または `REPLACEMENT` の場合、値は旅程に沿って増加するしなければならない。|
+|**stop_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1 つ | 対応する GTFS フィードのstops.txtと同じであるしなければならない。StopTimeUpdate ではstop_sequenceまたは stop_id のいずれかを指定するしなければならない。両方のフィールドを空にすることはできませんStopTimeUpdateが設定されている場合は、 `stop_id`を省略して`stop_sequence`のみを使用する`StopTimeProperties.assigned_stop_id`をお勧めします。`StopTimeProperties.assigned_stop_id` と`stop_id`が設定されている場合、 `stop_id` は`assigned_stop_id`と一致するしなければならない。**必須**`TripUpdate.schedule_relationship` が `NEW` または `REPLACEMENT` の場合。 |
+|**arrival**| [StopTimeEvent](#message-stoptimeevent) |条件付きで必須| 1 | Schedule_relationship が空または SCHEDULED の場合、 StopTimeUpdate内で arrived または departure のいずれかを指定するしなければならない。両方のフィールドを空にすることはできません。schedule_relationship が SKIPPED の場合、arrival と departure の両方を空にするしてもよい。**必須**`TripUpdate.schedule_relationship` が `NEW` または `REPLACEMENT` の場合。 |
+|**departure**| [StopTimeEvent](#message-stoptimeevent) |条件付きで必須| 1 | Schedule_relationship が空または SCHEDULED の場合、 StopTimeUpdate内で arrived または departure のいずれかを指定するしなければならない。両方のフィールドを空にすることはできません。schedule_relationship が SKIPPED の場合、arrival と departure の両方を空にするしてもよい。**必須**`TripUpdate.schedule_relationship` が `NEW` または `REPLACEMEN`T` の場合。|
 |**departure_occupancy_status**| [OccupancyStatus](#enum-occupancystatus) |任意| 1つ | 指定された停留所から出発した直後の車両の乗客の占有状況の予測。指定されている場合は、 stop_sequence を指定するしなければならない。リアルタイムの到着または出発の予測を提供せずに、departure_occupancy_status を提供するには、このフィールドに値を入力し、 StopTimeUpdate.schedule_relationship = NO_DATA を設定します。<br><br>**注意:** このフィールドはまだ**試験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。|
 |**schedule_relationship**| [ScheduleRelationship](#enum-schedulerelationship) |任意| 1つ | デフォルトの関係は SCHEDULED です。|
 |**stop_time_properties**| [StopTimeProperties](#message-stoptimeproperties) |任意| 1つ | GTFS stop_times.txt内で定義されている特定のプロパティのリアルタイム更新<br><br>**注意:** このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。 |
@@ -218,7 +224,7 @@ ScheduleRelationship の値に応じて、TripUpdate では以下を指定でき
 |-------------|---------------|
 |**SCHEDULED**| 車両は、必ずしもスケジュールの時刻に従っているわけではありませんが、静的な停留所等スケジュールに従って進んでいます。これが**デフォルト**の動作です。到着と出発の少なくとも1つを指定するしなければならない。頻度ベースの便(exact_times = 0 の GTFS frequencies.txt) には SCHEDULED 値を指定するべきではない、代わりに UNSCHEDULED を使用するするべきである。 |
 |**SKIPPED**| 停留所はスキップされます。つまり、車両はこの停留所には停車しません。到着と出発は任意です。設定されている場合、`SKIPPED` は同じルート内の後続の停留所等には伝播されません (つまり、車両はルート内の後続の停留所等にも停止しますが、それらの停留所等にも`schedule_relationship: SKIPPED`の`stop_time_update`がある場合には除きます)。ルート内の前の停留所からの遅延は ` `SKIPPED`停留所にも伝播します。つまり、`SKIPPED`停留所後の停留所に対して`arrival`または`departure`予測を含む`stop_time_update`が設定されていない場合、`SKIPPED`停留所の上流の予測は、後続の停留所の`stop_time_update`が提供されるまで、ルート内の ` `SKIPPED`停留所後の停留所と後続の停留所等地に伝播します。|
-|**NO_DATA**| この停留所にはデータがありません。リアルタイムのタイミング情報がないことを示します。設定すると、NO_DATA は後続の停留所等にも伝播されるため、リアルタイムのタイミング情報がない停留所を指定するには、この方法を推奨するべきではない。NO_DATA が設定されている場合は、到着も出発も指定しないでするべきである。|
+|**NO_DATA**| この停留所にはリアルタイム データがありません。これは、リアルタイムのタイミング情報が利用できないことを示します。設定されている場合、NO_DATA は後続の停留所にも伝播されるため、リアルタイムのタイミング情報がない停留所を指定するには、この方法を使用することを推奨。NO_DATA が設定されている場合は、` TripDescriptor.schedule_relationship` が `NEW` または `REPLACEMENT` でない限り、到着または出発を指定してはいけない。その場合は、予測ではなく、スケジュールされた時刻のみを指定するしなければならない。 `TripDescriptorが `NEW` または `REPLACEMENT` の場合でも、 StopTimeUpdate が旅程の停留所リストを定義するため、 `arrival`と`departure`にはスケジュール時刻を指定するしなければならない。この場合、スケジュールは静的な GTFS とは無関係ですが、リアルタイム予測はまだ利用できないことを示しています。|
 |**UNSCHEDULED**| 車両は、頻度ベースの旅程 (GTFS frequencies.txtで exact_times = 0) を運行しています。この値は、GTFS frequencies.txtで定義されていない便、または GTFS frequencies.txtで exact_times = 1.の便には使用しないでください。`schedule_relationship : `schedule_relationship: UNSCHEDULED`の`stop_time_updates`を含む便では、 TripDescriptor `schedule_relationship: UNSCHEDULED`も設定するしなければならない。<br><br>**注意:** このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよいがあります。
 
 ### _message_ StopTimeProperties 
@@ -231,6 +237,20 @@ GTFS stop_times.txt内で定義されている特定のプロパティのリア�
 | _**フィールド名**_ | _**タイプ**_ | _**必須**_ | _**カーディナリティ**_ | _**説明**_ |
 |------------------|---------------------------|----------------|-------------------|-------------------|
 |**assigned_stop_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1つ | リアルタイムの停留所割り当てをサポートします。GTFS `stops.txt`で定義されている`stop_id`を参照します。<br>新しい`assigned_stop_id`によって、エンドユーザーの乗車体験が GTFS `stop_times.txt`で定義された`stop_id`と大幅に異なることはするべきではない。言い換えれば、新しい停留所が追加のコンテキストなしでアプリ内に表示された場合は、エンドユーザーがこの新しい`stop_id` を`異常な変更`と見なすべきではするべきではないん。たとえば、このフィールドは、GTFS `stop_times.txt`で元々定義された停留所と同じ駅に属する`stop_id` を使用してプラットフォームの割り当てに使用することを目的としています。<br>リアルタイムの到着または出発の予測を提供せずに停留所を割り当てるには、このフィールドに値を入力し、`StopTimeUpdate.schedule_relationship = NO_DATA`を設定します。<br>このフィールドに値を入力する場合は、`StopTimeUpdate.stop_sequence`を入力するしなければならないが、`StopTimeUpdate.stop_id` は入力するべきではない。停留所の割り当ては、他の GTFS リアルタイム フィールドにも反映されるするべきである(例: `VehiclePosition.stop_id`)。<br><br>**注意:** このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよいがあります。 |
+|**stop_headsign**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1つ | 停留所における車両の更新された行先表示。<br><br>**注意:**このフィールドはまだ**試験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。|
+|**drop_off_type**| [DropOffPickupType](#enum-dropoffpickuptype) |任意| 1つ | 停留所における車両の降車場所の更新値。<br><br>**注意:**このフィールドはまだ**試験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。|
+|**pickup_type**| [DropOffPickupType](#enum-dropoffpickuptype) |任意| 1つ | 停留所での車両の最新のピックアップ。<br><br>**注意:**このフィールドはまだ**実験的**であり、変更される可能性があります。将来、正式に採用されるしてもよい。 |
+
+## _enum_ DropOffPickupType
+
+**Values**
+
+| _**Value**_                | _**Comment**_                                             |
+|----------------------------|--------------------------------------------------------|
+|**REGULAR**| 定期的にスケジュールされた集荷/降車。                |
+|**NONE**| 集荷/降車はありません。                           |
+|**PHONE_AGENCY**| 集荷/降車を手配するには、事業者に電話するしなければならない。          |
+|**COORDINATE_WITH_DRIVER**| 集荷/降車を手配するには、ドライバーと調整するしなければならない。 |
 
 ### _message_ TripProperties 
 
@@ -245,7 +265,9 @@ GTFS stop_times.txt内で定義されている特定のプロパティのリア�
 |**trip_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1 | (CSV) GTFS trips.txtで定義されている既存の便の複製であるが、異なるサービスdateおよび/または時刻 ( `TripProperties.start_date`および`TripProperties.start_time`を使用して定義) に開始する新しい便の識別子を定義します。(CSV) GTFS の`trips.trip_id`の定義を参照してください。その値は、(CSV) GTFS で使用されている値と異なる必要がしなければならない。このフィールドは、`schedule_relationship`が`DUPLICATED`の場合に必須です。それ以外の場合、このフィールドに値を入力することはしてはいけない、コンシューマーによって無視されます。<br><br>**注意:** このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。 |
 |**start_date**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1つ | 複製された便が実行されるサービスdate。YYYYMMDD 形式で提供するしなければならない。このフィールドは、`schedule_relationship`が`DUPLICATED`の場合に必須です。それ以外の場合は、このフィールドに値を入力してはしてはいけない、コンシューマーによって無視されます。<br><br>**注意:** このフィールドはまだ**試験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。 |
 |**start_time**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1 | 重複している便の出発開始時刻を定義します。(CSV) GTFS の`stop_times.departure_time`の定義を参照してください。重複した便の予定到着時刻と出発時刻は、元の便の`departure_time`とこのフィールドのオフセットに基づいて計算されます。たとえば、GTFS の旅程に停留所 A の`departure_time`が`10:00:00` 、停留所 B の`departure_time`が`10:01:00`で、このフィールドに`10:30:00`の値が入力されている場合、複製された旅程の停留所 B のスケジュールされた`departure_time`は`10:31:00`になります。リアルタイム予測の`delay`値は、この計算されたスケジュール時間に適用され、予測時間を決定します。たとえば、停留所 B の出発`delay`が`30`の場合、予測される出発時刻は`10:31:30`です。リアルタイム予測の`time`値にはオフセットが適用されず、提供された予測時間を示します。たとえば、停留所 B の出発`time`が` 10:31:30 と指定されている場合、予測出発時刻は`10:31:30` になります。このフィールドは、`schedule_relationship`が`DUPLICATED`の場合に必須。それ以外の場合、このフィールドに値を入力するしてはいけない、消費者によって無視されます。<br><br>**注意:** このフィールドはまだ**試験的**であり、変更される可能性があります。将来正式に採用されるしてもよいがあります。 |
-|**shape_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1つ | この旅程の車両移動経路の形状が元のものと異なる場合に、その形状を指定します。(CSV) GTFS で定義された形状、またはリアルタイム フィードの新しい形状エンティティを参照します。(CSV) GTFS の`trips.shape_id`の定義をご覧ください。<br><br>**注意:** このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。|
+|**trip_headsign**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1 つ | この旅行の行先表示が元のものと異なる場合に、それを指定します。<br><br>**注意:**このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。|
+|**trip_short_name**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1つ | この旅行の名前が元の旅行と異なる場合に指定します。<br><br>**注意:**このフィールドはまだ**試験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。|
+|**shape_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1つ | 旅行の形状が (CSV) GTFS で指定された形状と異なる場合、または乗客の需要に基づいて異なる経路を取る車両など、(CSV) GTFS で提供されていない場合にリアルタイムで指定する場合に、車両の旅行経路の形状の識別子を指定します。(CSV) GTFS の`trips.shape_id`の定義をご覧ください。<br>シェイプが（CSV）GTFSでもリアルタイムでも定義されていない場合、そのシェイプは不明とみなされます。このフィールドは、（CSV）GTFSのshapes.txtで定義されたシェイプ、または同じ（protobuf）リアルタイムフィード内の`Shape`を参照できます。この旅程の停留所順序（停車シーケンス）は、（CSV）GTFSと同じであるしなければならない。同じリアルタイムフィード内の`Shape`エンティティを参照する場合、このフィールドの値は、エンティティ内の`shape_id`の1つであり、 `FeedEntity`の`id`ではするべきであるん。<br>迂回が発生した場合など、元の旅行の一部であったが、今後は行わない停留所は、schedule_relationship=SKIPPED としてマークするか、 `TripModifications`messageを介して詳細を提供するするべきである。<br><br>**注意:**このフィールドはまだ**試験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。|
 
 ### _message_ VehiclePosition 
 
@@ -439,7 +461,7 @@ GTFS stop_times.txt内で定義されている特定のプロパティのリア�
 
 ### _message_ TripDescriptor 
 
-GTFS 便の単一のインスタンスを識別する記述子。
+GTFS 旅行の単一のインスタンスを識別する記述子`schedule_relationship`が `NEW` の場合は、追加する旅行の新しいインスタンスを指定します。
 
 単一の便インスタンスを指定するには、多くの場合、`trip_id`だけで十分です。ただし、次の場合には、単一の便インスタンスを解決するために追加の情報が必要です:
 
@@ -453,12 +475,14 @@ GTFS 便の単一のインスタンスを識別する記述子。
 
 trip_idが不明な場合は、 TripUpdateの駅シーケンス ID では不十分であり、stop_id も提供するしなければならない。さらに、絶対的な到着/出発時刻も提供するしなければならないTripDescriptor.route_id は、ルートのすべての便に影響するルート全体のアラートを指定する Alert EntitySelector内では使用できません。代わりにEntitySelector.route_idを使用してください。
 
+`schedule_relationship`が `NEW` の場合は、旅行をルートに関連付けるために、 `trip_id` をしなければならないフィードにリストされていない値に設定し、 `route_id`を` GTFS スタティックの`routes.txt`にリストされている値に設定するしなければならない。新しい旅程には`start_date`を設定するするべきである、 `direction_id`を設定してもよい。
+
 **フィールド**
 
 | _**フィールド名**_ | _**タイプ**_ | _**必須**_ | _**カーディナリティ**_ | _**説明**_ |
 |------------------|------------|----------------|-------------------|-------------------|
-|**trip_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1つ | このセレクタが参照する GTFS フィードのtrip_id 。非定期運行の便(GTFS frequencies.txtで定義されていない便) の場合、このフィールドだけで旅程を一意に識別できます。GTFS frequencies.txtで定義されている定期運行の便の場合、 trip_id、start_time、start_date はすべて必須です。スケジュールベースの便（GTFS frequencies.txtで定義されていない便）の場合、 trip_idを省略できるのは、 route_id、 direction_id 、 start_time 、 start_date の組み合わせによって旅程を一意に識別でき、それらのフィールドがすべて指定されている場合のみです。 schedule_relationship がTripUpdate内で DUPLICATED の場合、 trip_id は複製される静的 GTFS からの旅程を識別します。 schedule_relationship がVehiclePosition内で DUPLICATED の場合、 trip_id は複製される新しい旅程を識別し、対応するTripUpdateの値を含めるしなければならない。 TripProperties。 trip_id。 |
-|**route_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1つ | このセレクタが参照する GTFS からのroute_id 。 trip_idを省略した場合、ルートインスタンスを識別するために、 route_id、 direction_id 、 start_time 、および schedule_relationship=SCHEDULED をすべて設定するしなければならない。ルートのすべての便に影響するルート全体のアラートを指定するために、 Alert EntitySelector内でTripDescriptor.route_idを使用しするべきではない。代わりにEntitySelector.route_id を使用してください。 |
+|**trip_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1 | このセレクタが参照する GTFS フィードからのtrip_id 。運行頻度に基づいていない便（GTFS frequencies.txtで定義されていない便）の場合、このフィールドだけで旅程を一意に識別できます。GTFS frequencies.txtで定義されている運行頻度に基づく便の場合、 trip_id、start_time、start_date はすべて必須です。スケジュールベースの便（GTFS frequencies.txtで定義されていない便）の場合、 trip_idを省略できるのは、 route_id、 direction_id 、 start_time 、 start_date の組み合わせで旅程を一意に識別でき、かつそれらのフィールドがすべて指定されている場合のみです。schedule_relationship が NEW の場合は、 GTFS 静的に定義されていない一意の値で指定するしなければならない。schedule_relationship が `REPLACEMENT` の場合、 trip_id は置換される静的 GTFS からの旅程を識別します。 TripUpdate内で schedule_relationship が`DUPLICATED`の場合、 trip_id は複製される静的 GTFS からの旅程を識別します。 VehiclePosition内で schedule_relationship が`DUPLICATED`の場合、 trip_id は複製される新しい旅程をしなければならないし、対応するTripUpdate. TripProperties.trip_id. |
+|**route_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1つ | このセレクタが参照する GTFS のroute_idを省略した場合、 trip_id 、 route_id、 start_time 、および schedule_relationship=SCHEDULED をすべて設定して、旅程インスタンスを識別するしなければならない。 Alert EntitySelector内で、ルートのすべての便に影響するルート全体のアラートを指定するためにTripDescriptor.route_idを使用しするべきではない。代わりにEntitySelector.route_id を使用してください。schedule_relationship が NEW の場合、新しい旅程が属するルートのroute_idを指定するしなければならない。|
 |**direction_id**| [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1つ | GTFS フィードのtrips.txtファイルの direction_id。このセレクタが参照する便の移動方向を示しますtrip_idを省略した場合、 direction_id を指定するしなければならない。<br><br>**注意:** このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。<br> |
 |**start_time**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1 | この旅程インスタンスの当初の予定開始時刻。trip_idが非頻度ベースの旅程に対応する場合、このフィールドは省略するか、GTFS フィードの値と同じにするするべきである。trip_idがGTFS frequencies.txtで定義された頻度ベースの旅程に対応する場合、start_time は必須であり、旅程の更新と車両の位置のために指定するしなければならない。旅程が exact_times=1 の GTFS レコードに対応する場合、start_time は対応する期間のfrequencies.txt のstart_time より headway_secs の倍数 (0 を含む) 後にするしなければならない。旅程が exact_times=0 に対応する場合、start_time は任意でかまいませしてもよいが、当初は旅程の最初の出発時刻になると予想されます。一度設定されると、この頻度ベースの exact_times=0 の旅程の start_time は、最初の出発時刻が変更された場合でも不変と見なすするべきである。その時間変更は、代わりにStopTimeUpdateに反映されるしてもよいtrip_idを省略する場合は、 start_time を指定するしなければならない。フィールドの形式とセマンティクスは、GTFS/frequencies.txt/start_time と同じです (例: 11:15:35 または 25:15:35)。|
 |**start_date**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |条件付きで必須| 1つ | この旅程インスタンスの開始date(YYYYMMDD 形式)。スケジュールされた便(GTFS frequencies.txtで定義されていない便) の場合、翌日のスケジュールされた旅程と重なるほど遅れている便を明確にするために、このフィールドを指定するしなければならない。たとえば、毎日 8:00 と 20:00 に出発し、12 時間遅れている列車の場合、同じ時間に 2つの異なる便が存在することになります。このフィールドは指定できますが、このような衝突が不可能なスケジュールでは必須ではありません。たとえば、1 時間遅れている車両はスケジュールとは関係がないと見なされる、1 時間ごとのスケジュールで実行されるサービスなどです。このフィールドは、GTFS frequencies.txtで定義されている頻度ベースの便では必須。trip_idが省略されている場合は、start_date を指定するしなければならない。|
@@ -467,17 +491,19 @@ trip_idが不明な場合は、 TripUpdateの駅シーケンス ID では不十�
 
 ### _enum_ ScheduleRelationship 
 
-この便と静的スケジュールの関係。旅程が GTFS に反映されていない臨時スケジュールに従って行われる場合、SCHEDULED ではなく ADDED としてマークする必要があります。
+この旅程と静的スケジュールの関係。新しい旅程が GTFS に反映されない一時的なスケジュールに従って行われる場合、その旅程は SCHEDULED ではなく NEW としてマークする必要があります。旅程が GTFS に反映されていない変更されたスケジュールに従って行われる場合、その旅程は`SCHEDULED`ではなく `REPLACEMENT` としてマークする必要があります。
 
 **値**
 
 | _**値**_ | _**コメント**_ |
 |-------------|---------------|
 | **SCHEDULED** | GTFS スケジュールに従って運行されている、またはスケジュールされた運行に十分近いため関連付けられている運行。 |
-| **ADDED** | 故障した車両を交換するため、または突然の乗客の増加に対応するためなど、運行スケジュールに加えて追加された運行。 *注: 現在、このモードを使用するフィードの動作は指定されていません。GTFS GitHub [(1)](https://github.com/google/transit/issues/106) [(2)](https://github.com/google/transit/pull/221) [(3)](https://github.com/google/transit/pull/219) では、ADDED 運行を完全に指定するか廃止するかについて議論されており、その議論が確定次第、ドキュメントが更新されます。* |
+| **ADDED** | *注: この値は動作が指定されていないため非推奨になりました。開始dateを除いてスケジュール済みの旅程と同じ追加の旅程の場合は**DUPLICATED**を使用し、既存の旅程とは無関係な追加の旅程の場合は**NEW**を使用してください。* |
 | **UNSCHEDULED** | スケジュールが関連付けられていない運行中の旅程 - この値は、GTFS frequencies.txt で exact_times = 0 に定義されている旅程を識別するために使用されます。GTFS frequencies.txt で定義されていない旅程や、GTFS frequencies.txt で exact_times = 1 に定義されている旅程を説明するために使用しないでください。`schedule_relationship: UNSCHEDULED` の旅程では、すべての StopTimeUpdates も `schedule_relationship: UNSCHEDULED` に設定する必要があります。|
 | **CANCELED** | スケジュールに存在していたが削除された旅程。|
+|**REPLACEMENT**| 変更されたスケジュールや迂回ルートなどにより、既存のスケジュール済みの旅程を置き換える旅程。代替旅行の完全な行程は`StopTimeUpdate`で指定するしなければならない、GTFS 静的からの元のスケジュールは、置き換えられたインスタンスには使用されません。<br> `REPLACEMENT` は、旅行が修正されたスケジュールで運行されている場合に使用できますが、車両が静的 GTFS の`stop_times.txt`にリストされているスケジュールに従うことを目的としている場合は、リアルタイムのスケジュールの逸脱 (予測) を伝えるために使用するしてはいけない。<br><br>**注意:**このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。|
 | **DUPLICATED** | サービス開始日時を除き、既存のスケジュールされた旅程と同じ新しい旅程。 `TripUpdate.TripProperties.trip_id`、`TripUpdate.TripProperties.start_date`、および `TripUpdate.TripProperties.start_time` と一緒に使用して、静的 GTFS から既存の旅程をコピーしますが、開始日は異なるサービス日付および/または時刻にします。(CSV) GTFS (`calendar.txt` または `calendar_dates.txt`) 内の元の旅程に関連するサービスが今後 30 日以内に運行される場合、旅程の複製が許可されます。複製する旅程は、`TripUpdate.TripDescriptor.trip_id` によって識別されます。<br><br> この列挙では、`TripUpdate.TripDescriptor.trip_id` によって参照される既存の旅程は変更されません。プロデューサーが元の旅程をキャンセルする場合は、CANCELED の値を持つ別の `TripUpdate` を公開する必要があります。 GTFS の `frequencies.txt` で定義されている、`exact_times` が空または `0` に等しい旅程は複製できません。新しい旅程の `VehiclePosition.TripDescriptor.trip_id` には、`TripUpdate.TripProperties.trip_id` の一致する値が含まれている必要があり、`VehiclePosition.TripDescriptor.ScheduleRelationship` も `DUPLICATED` に設定する必要があります。<br><br>*重複した旅程を表すために ADDED 列挙を使用していた既存のプロデューサーとコンシューマーは、[移行ガイド](../../realtime/examples//migration-duplicated) に従って DUPLICATED 列挙に移行する必要があります。* |
+|**NEW**| 既存の便とは無関係な追加の旅程。例えば、急激な乗客増加に対応するために使用します。新しい旅程の全行程（停留所と時刻を含む）は、 `StopTimeUpdate`で指定するしなければならない。<br><br> *静的 GTFS に関連しない新しい便を表すために`ADDED`列挙を使用していた既存のプロデューサーとコンシューマーは、[移行ガイド](/gtfs-realtime/spec/en/examples/migration-duplicated.md) に従って NEW 列挙に移行するしなければならない。*<br><br>**注意:**このフィールドはまだ**試験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。|
 | **DELETED** | スケジュールに存在していたが削除された旅程で、ユーザーに表示してはいけません。 <br><br> 交通事業者プロバイダーが、対応する便に関する情報を消費アプリケーションから完全に削除し、乗客に便がキャンセルされたと表示されないようにするには、CANCELED ではなく DELETED を使用する必要があります。たとえば、便が別の便に完全に置き換えられる場合などです。この指定は、複数の便がキャンセルされ、代替サービスに置き換えられる場合に特に重要になります。消費者がキャンセルに関する明確な情報を表示すると、より重要なリアルタイム予測が妨げられます。<br><br>**注意:** このフィールドはまだ **実験的** であり、変更される可能性があります。将来正式に採用される可能性があります。|
 
 ## _message_ ModifiedTripSelector
@@ -588,7 +614,7 @@ Textのスニペットまたは URL の言語別バージョンを含む国際�
 | _**フィールド名**_ | _**タイプ**_ | _**必須**_ | _**カーディナリティ**_ | _**説明**_ |
 |------------------|------------|----------------|-------------------|-------------------|
 |**shape_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |必須| 1つ | 形状の識別子。(CSV) GTFS で定義されている`shape_id`とは異なる必要がしなければならない。<br><br>**注意:** このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。 |
-|**encoded_polyline**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |必須| 1つ | 形状のエンコードされたポリライン表現。このポリラインには少なくとも 2つのポイントが含まれているしなければならない。エンコードされたポリラインの詳細については、https://developers.google.com/maps/documentation/utilities/polylinealgorithm をご覧ください。<br><br>**注意:** このフィールドはまだ**試験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。|
+|**encoded_polyline**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |必須| 1つ | 形状のエンコードされたポリライン表現。このポリラインは少なくとも2つのポイントを含み、使用されるルートの完全な形状を表すしなければならない。エンコードされたポリラインの詳細については、https://developers.google.com/maps/documentation/utilities/polylinealgorithm をご覧ください。<br><br>**注意:**このフィールドはまだ**試験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。 |
 
 ### _message_ Stop
 
@@ -601,7 +627,7 @@ Textのスニペットまたは URL の言語別バージョンを含む国際�
 | _**フィールド名**_ | _**タイプ**_ | _**必須**_ | _**カーディナリティ**_ | _**説明**_ |
 |------------------|------------|----------------|-------------------|-------------------|
 |**stop_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |必須| 1つ | 停留所の識別子。(CSV) GTFS で定義されている`stop_id`と異なる必要がしなければならない。|
-|**stop_code**| [TranslatedString](#message-translatedstring) |任意| 1つ | (CSV) GTFS の [停留所等.stop_code](https:](https: ) の定義を参照してください。|
+|**stop_code**| [TranslatedString](#message-translatedstring) |任意| 1つ | (CSV) GTFS の [停留所等.stop_code](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) の定義を参照してください。|
 |**stop_name**| [TranslatedString](#message-translatedstring) |必須| 1つ | (CSV) GTFS の [停留所等 .stop_name](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) の定義を参照してください。|
 |**tts_stop_name**| [TranslatedString](#message-translatedstring) |任意| 1つ | (CSV) GTFS の [停留所等.tts_stop_name](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) の定義を参照してください。|
 |**stop_desc**| [TranslatedString](#message-translatedstring) |任意| 1つ | (CSV) GTFS の [停留所等.stop_desc](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt) の定義を参照してください。|
@@ -690,8 +716,8 @@ Textのスニペットまたは URL の言語別バージョンを含む国際�
 
 | _**フィールド名**_ | _**タイプ**_ | _**必須**_ | _**カーディナリティ**_ | _**説明**_ |
 |------------------|------------|----------------|-------------------|-------------------|
-|**trip_ids**| [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | 多数 | 1つ | 元の (CSV) GTFS のtrip_idのリストで、含まれている置換によって影響を受けます。少なくとも 1つのtrip_idを含める必要があります。|
-|**shape_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |必須| 1つ |このSelectedTripsで変更された便の新しい形状のID-RT Shapemessageを使用して追加された新しい形状、または GTFS-Static フィードのshapes.txtで定義されている既存の形状を参照するしてもよいます。|
+|**trip_ids**| [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | 多数 | 1 | 包含する置換によって影響を受ける元の（CSV）GTFS のtrip_idのリスト。少なくとも 1 つのtrip_idを含める必要があります。`schedule_relationship=REPLACEMENT` が指定された`TripUpdate`が、この旅行にまだ存在してはしてはいけない。 |
+|**shape_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |必須| 1 | このSelectedTrips内の変更された便の新しいシェイプのID 。同じ GTFS-RT フィード内の`Shape`messageを使用して追加された新しいシェイプ、または GTFS-Static フィードのshapes.txtで定義されている既存のシェイプを参照する場合がしてもよい。リアルタイム フィード内の`Shape`エンティティを参照する場合、このフィールドの値はエンティティ内の`shape_id`のいずれかであり、 `FeedEntity`の`id`ではありするべきであるん。|
 
 ### _message_ ReplacementStop 
 
@@ -707,5 +733,5 @@ Modificationが旅程の最初の停留所に影響する場合、その停留�
 
 | _**フィールド名**_ | _**タイプ**_ | _**必須**_ | _**カーディナリティ**_ | _**説明**_ |
 |------------------|------------|----------------|-------------------|-------------------|
-|**stop_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |必須| 1つ | 旅程で今後訪問される代替の停留所ID-RT の`Stop`messageを使用して追加された新しい停留所、または (CSV) GTFS フィードの``stops.txt``で定義されている既存の停留所をしてもよいする場合があります。停留所には``location_type=0`` (ルート可能な停留所等) がしなければならない。|
+|**stop_id**| [string](https://protobuf.dev/programming-guides/proto2/#scalar) |必須| 1 つ | 旅程で今後訪問される代替の停留所ID 。同じGTFS-RTフィード内のGTFS-RT `Stop`messageを使用して追加された新しい停留所、または（CSV）GTFSフィードの`stops.txt`で定義されている既存の停留所を参照する場合がしてもよい。リアルタイムフィード内の`Shape`エンティティを参照する場合、このフィールドの値はエンティティ内の`stop_id`のいずれかでするべきである、 `FeedEntity`の`id`ではありません。停留所は`location_type=0` （ルート可能な停留所）であるしなければならない。|
 |**travel_time_to_stop**| [int32](https://protobuf.dev/programming-guides/proto2/#scalar) |任意| 1つ | この停留所への到着時間と参照停留所への到着時間の差 (秒単位)。参照停留所は、`start_stop_selector` の前の停留所です。Modificationが便の最初の停留所で開始される場合、便の最初の停留所が参照停留所になります。<br/><br/>この値は単調に増加するしなければならないがあり、元の便の最初の停留所が参照停留所である場合にのみ負の数になるしてもよい。<br/><br/>値が指定されていない場合、消費者は他のデータに基づいて `travel_time_to_stop` を補間または推測するしてもよい。|

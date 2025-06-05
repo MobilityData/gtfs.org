@@ -2,6 +2,12 @@
 
 ## Historial de revisiones
 
+#### Mayo de 2025
+
+* Se deprecia schedule_relationship `ADDED` en favor de `NEW` y se añade `REPLACEMENT`. Consulte la [discusión](https://github.com/google/transit/pull/504).
+* Más aclaraciones sobre las modificaciones de viajes (Trip Modifications). Consulte la [discusión](https://github.com/google/transit/pull/542).
+
+
 #### Diciembre de 2024
 
 * Se agregó un nuevo campo de string que coincide con feed_info.feed_version de la fuente de GTFS Schedule en la que se basan los datos en tiempo real. Consulte la [discusión](https://github.com/google/transit/pull/434).

@@ -46,7 +46,7 @@
 便キャンセルに関する一般的なガイドライン:
 
 * 数日間にわたる便をキャンセルする場合、プロデューサーは、指定された `trip_ids` と `start_dates` を `CANCELED` として参照する TripUpdates と、同じ `trip_ids` と `TimeRange` を参照する `NO_SERVICE` を含む Alert を提供して、乗客にキャンセルの理由 (迂回など) を説明する必要があります。
-* 便中に停留所が 1 つも訪問されない場合は、すべての `stop_time_updates` を `SKIPPED` としてマークするのではなく、便を `CANCELED` にする必要があります。
+* 旅程で停留所を訪問しない場合は、すべての`stop_time_updates`を`SKIPPED`としてマークするのではなく、その旅程を`CANCELED` にするするべきである。ただし、その旅程が `NEW` または`DUPLICATED`旅程で、その後キャンセルされた場合は除きます。
 
 | フィールド名 | 推奨事項 |
 |---|---|
@@ -67,7 +67,13 @@
 
 | フィールド名 | 推奨事項 |
 |---|---|
-| `schedule_relationship` | `ADDED`便の動作は指定されていないため、この列挙体の使用は推奨ません。 |
+| `schedule_relationship` | `ADDED`便の動作は指定されていないため、この列挙体の使用は推奨ません。<br/>旅行が元々実行予定でない場合、既存の旅行の停車パターンに従わない場合は `NEW` を使用し、既存の旅行のコピーの場合は`DUPLICATED` を使用します。<br/>旅行が変更されたスケジュールで運行または停留所が、GTFS 静的ファイル内の元のスケジュール済みの旅行に関連付けるするべきである場合は、`REPLACEMENT` を使用して、変更された旅行の停車時刻の完全なリストを指定します。 |
+
+### TripProperties 
+
+| フィールド名 | 推奨事項 |
+|---|---|
+| `trip_headsign` | ` TripDescriptor.schedule_relationship` = `NEW` の旅行には常に指定し、旅行が迂回する場合は `TripDescriptor.schedule_relationship` = `REPLACEMENT` の旅行に指定します。 |
 
 
 ### VehicleDescriptor 
@@ -95,6 +101,7 @@
 | フィールド名 | 推奨事項 |
 |---|---|
 | `delay` | `stop_time_update`の`arrival`または`departure`で`delay`のみが指定されている場合 ( `time`は指定されていない場合)、GTFS [`stop_times.txt`](../../schedule/reference/#stop_timestxt) には、これらの対応する停留所等の`arrival_times`および/または`departure_times`が含まれているするべきである。リアルタイム フィード内の`delay`値は、GTFS `stop_times.txt`ファイルに追加するための時刻がない限り、意味がありません。 |
+| `scheduled_time` |新規または代替の旅程で、スケジュールに従って運行される場合（代替旅程の場合は変更されたスケジュールでも構いません）、すべての時点に`scheduled_time`を指定するするべきである。複製された旅程の運行時間が元の運行時間と異なる場合も、`scheduled_time`を使用してそれらを指定することができます。|
 
 ### VehiclePosition 
 
