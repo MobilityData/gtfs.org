@@ -219,22 +219,22 @@ nav:
       - Descripción general: community/extensions/overview.md
       - Fares v2: community/extensions/fares-v2.md
       - Flex: community/extensions/flex.md
-  - Resources:
+  - Recursos:
     - Descripción general: resources/overview.md
     - Primeros pasos: resources/getting-started.md
     - Comunidad: resources/community.md
-    - Data: resources/data.md
-    - Software for Creating APIs: resources/software-for-creating-apis.md
-    - Agency Tools: resources/agency-tools.md
+    - Datos: resources/data.md
+    - Software para la creación de API: resources/software-for-creating-apis.md
+    - Herramientas de la agencia: resources/agency-tools.md
     - Hardware: resources/hardware.md
-    - Apps: resources/apps.md
-    - SDKs: resources/sdk.md
-    - Visualizations: resources/visualizations.md
+    - Aplicaciones: resources/apps.md
+    - SDK: resources/sdk.md
+    - Visualizaciones: resources/visualizations.md
     - GTFS: resources/gtfs.md
     - GTFS Realtime: resources/gtfs-realtime.md
     - SIRI: resources/siri.md
     - Multimodal: resources/multimodal.md
-    - Other: resources/other.md
+    - Otros: resources/other.md
   - Acerca de:
       - about/index.md
   - Blog:
