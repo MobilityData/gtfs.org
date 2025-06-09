@@ -15,3 +15,9 @@ overrides/pt/*
 overrides/ru/*
 overrides/zh/*
 overrides/zh-TW/*
+docs/fr/resources/*
+docs/es/resources/*
+docs/ja/resources/*
+docs/fr/documentation/schedule/examples/fares/*
+docs/es/documentation/schedule/examples/fares/*
+docs/ja/documentation/schedule/examples/fares/*
