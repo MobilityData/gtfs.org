@@ -2,8 +2,8 @@ site_name: General Transit Feed Specification
 site_url: https://gtfs.org
 repo_url: https://github.com/google/transit
 repo_name: GTFS-Repository
-docs_dir: ../../docs/de       # Where to find the markdown files
-site_dir: ../../generated/    # Where to put the HTML files
+docs_dir: ../../docs/de         # Where to find the markdown files
+site_dir: ../../generated/de    # Where to put the HTML files
 
 validation:
   nav:
