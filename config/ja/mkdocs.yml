@@ -1,0 +1,238 @@
+site_name: General Transit Feed Specification
+site_url: https://gtfs.org
+repo_url: https://github.com/google/transit
+repo_name: GTFSリポジトリ
+docs_dir: ../../docs/ja       # Where to find the markdown files
+site_dir: ../../generated/    # Where to put the HTML files
+
+validation:
+  nav:
+    omitted_files: info
+    not_found: warn
+    absolute_links: info
+  links:
+    not_found: warn
+    absolute_links: ignore
+    unrecognized_links: ignore
+
+theme:
+  locale: ja
+  custom_dir: overrides/
+  logo: assets/logo.png
+  logo_light_mode: assets/logo.png
+  favicon: assets/favicon.ico
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: gtfs
+      primary: custom
+      accent: custom
+  name: material
+  font:
+    text: Mulish
+    code: SF Mono
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - content.tabs.link
+    - search.suggest
+  icon:
+    repo: fontawesome/brands/github
+extra_css:
+  - assets/stylesheets/extra.css
+  - assets/stylesheets/footer.css
+extra_javascript:
+  - assets/javascript/anchor-redirects.js
+extra:
+  analytics:
+    provider: google
+    property: G-DRBTC7SSDT
+  consent:
+    title: クッキーの同意
+    description: >-
+      当サイトでは、訪問状況を匿名で記録するためにクッキーを使用しています。ご同意いただければ、ドキュメントの改善にご協力いただけます。<a href="https://mobilitydata.org/privacy-policy/">プライバシーポリシー</a>をご覧ください。
+    actions:
+        - accept
+        - reject
+        - manage
+  social:
+    - icon: fontawesome/solid/square-rss
+      name: GTFS Digest RSS feed
+      link: https://gtfs.org/blog/feed_rss_created.xml
+    - icon: fontawesome/brands/github
+      link: https://github.com/MobilityData
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/mobilitydata
+    - icon: fontawesome/brands/slack
+      link: https://share.mobilitydata.org/slack
+  alternate:
+      - name: English
+        link: /
+        lang: en
+      - name: Français
+        link: /fr/
+        lang: fr
+      - name: Español
+        link: /es/
+        lang: es
+      - name: 日本語
+        link: /ja/
+        lang: ja
+      - name: Deutsch (wird bald verfügbar sein)
+        link: /de/
+        lang: de
+      - name: Português (em breve)
+        link: /pt/
+        lang: pt
+      - name: Русский (будет добавлен позже)
+        link: /ru/
+        lang: ru
+      - name: Bahasa Indonesia (akan segera hadir)
+        link: /id/
+        lang: id
+      - name: 한국어 (곧 제공 예정)
+        link: /ko/
+        lang: ko
+      - name: 中文 - 简体（即将推出）
+        link: /zh/
+        lang: zh
+      - name: 中文 - 繁體（即將推出）
+        link: /zh-TW/
+        lang: zh-TW
+
+markdown_extensions:
+  - attr_list
+  - footnotes
+  - md_in_html
+  - admonition
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.tabbed:
+      alternate_style: true 
+plugins:
+  - external-markdown
+  - privacy:
+      assets: false
+      links_attr_map:
+        target: _blank
+  - search:
+      lang: 
+        - ja
+nav:
+  - ホーム: index.md
+  - 始めに:
+    - GTFS とは何ですか?: getting-started/what-is-GTFS.md
+    - GTFS を使用する理由: getting-started/why-use-GTFS.md
+    - GTFS を作成するには?: 
+      - 作る: getting-started/create.md
+      - 検証: getting-started/validate.md
+      - 公開: getting-started/publish.md
+    - GTFS で何ができる?:
+      - 概要: getting-started/features/overview.md
+      - ベース: getting-started/features/base.md
+      - ベースアドオン: getting-started/features/base-add-ons.md
+      - アクセシビリティ: getting-started/features/accessibility.md
+      - 運賃: getting-started/features/fares.md
+      - 経路: getting-started/features/pathways.md
+      - 柔軟なサービス: getting-started/features/flexible-services.md
+    - GTFS フィードの例: getting-started/example-feed.md
+  - 技術文書:
+    - 概要: documentation/overview.md
+    - 参照:
+      - 参照: documentation/schedule/reference.md
+      - ベストプラクティス: documentation/schedule/schedule-best-practices.md
+      - データ例:
+        - 帰属: documentation/schedule/examples/attributions.md
+        - 連続ストップ: documentation/schedule/examples/continuous-stops.md
+        - デマンド対応輸送: documentation/schedule/examples/flex.md
+        - 運賃 (v2):
+          - 紹介: documentation/schedule/examples/fares/intro.md
+          - フェアメディア: documentation/schedule/examples/fares/fare-media.md
+          - 運賃商品: documentation/schedule/examples/fares/fare-products.md
+          - 乗客カテゴリ: documentation/schedule/examples/fares/rider-categories.md
+          - 路線別運賃: documentation/schedule/examples/fares/route-based-fares.md
+          - ゾーン別運賃: documentation/schedule/examples/fares/zone-based-fares.md
+          - 時間制運賃: documentation/schedule/examples/fares/time-based-fares.md
+          - 運賃の乗り換え: documentation/schedule/examples/fares/fare-transfers.md
+          - アーカイブされた例: documentation/schedule/examples/fares/archived-fares-examples.md
+        - 運賃 - 旧バージョン (v1): documentation/schedule/examples/fares-v1.md
+        - フィード情報: documentation/schedule/examples/feed-info.md
+        - フリークエンシー: documentation/schedule/examples/frequencies.md
+        - 経路: documentation/schedule/examples/pathways.md
+        - ルート、ストップ、トリップ: documentation/schedule/examples/routes-stops-trips.md
+        - ルート形状: documentation/schedule/examples/shapes.md
+        - テキスト読み上げ: documentation/schedule/examples/text-to-speech.md
+        - トランスファー: documentation/schedule/examples/transfers.md
+        - 翻訳: documentation/schedule/examples/translations.md
+      - 変更履歴:
+        - 最近の追加: documentation/schedule/change-history/recent-additions.md
+        - 完全な改訂履歴: documentation/schedule/change-history/revision-history.md
+    - リアルタイム:
+      - 参照: documentation/realtime/reference.md
+      - ベストプラクティス: documentation/realtime/realtime-best-practices.md
+      - フィードエンティティ: 
+          - 概要: documentation/realtime/feed-entities/overview.md
+          - 旅行最新情報: documentation/realtime/feed-entities/trip-updates.md
+          - サービスアラート: documentation/realtime/feed-entities/service-alerts.md
+          - 自車位置: documentation/realtime/feed-entities/vehicle-positions.md
+          - 旅行の変更: documentation/realtime/feed-entities/trip-modifications.md
+      - Protobuf: documentation/realtime/proto.md
+      - 言語のバインディング:
+        - 概要: documentation/realtime/language-bindings/overview.md
+        - .NET: documentation/realtime/language-bindings/dotnet.md
+        - Java: documentation/realtime/language-bindings/java.md
+        - JavaScript/Node.js: documentation/realtime/language-bindings/nodejs.md
+        - Python: documentation/realtime/language-bindings/python.md
+        - Golang: documentation/realtime/language-bindings/golang.md
+        - Ruby: documentation/realtime/language-bindings/ruby.md
+        - PHP: documentation/realtime/language-bindings/php.md
+      - データ例:
+        - サービスアラート: documentation/realtime/examples/service-alerts.md
+        - 旅行最新情報: documentation/realtime/examples/trip-updates.md
+        - 重複した移行: documentation/realtime/examples/migration-duplicated.md
+      - 変更履歴:
+        - 最近の追加: documentation/realtime/change-history/recent-additions.md
+        - 完全な改訂履歴: documentation/realtime/change-history/revision-history.md
+  - コミュニティ:
+    - 参加する: community/get-involved.md
+    - 統治:
+      - GTFS スケジュール修正プロセス: community/governance/gtfs-schedule-amendment-process.md
+      - GTFS realtime 修正プロセス: community/governance/gtfs-realtime-amendment-process.md
+    - エクステンション:
+      - 概要: community/extensions/overview.md
+      - 運賃v2: community/extensions/fares-v2.md
+      - Flex: community/extensions/flex.md
+  - リソース:
+    - 概要: resources/overview.md
+    - 始めに: resources/getting-started.md
+    - コミュニティ: resources/community.md
+    - データ: resources/data.md
+    - API作成用ソフトウェア: resources/software-for-creating-apis.md
+    - エージェンシーツール: resources/agency-tools.md
+    - ハードウェア: resources/hardware.md
+    - アプリ: resources/apps.md
+    - SDK: resources/sdk.md
+    - 視覚化: resources/visualizations.md
+    - GTFS: resources/gtfs.md
+    - GTFS Realtime: resources/gtfs-realtime.md
+    - SIRI: resources/siri.md
+    - マルチモーダル: resources/multimodal.md
+    - その他: resources/other.md
+  - アバウト:
+      - about/index.md
+  - ブログ:
+      - blog/index.md
