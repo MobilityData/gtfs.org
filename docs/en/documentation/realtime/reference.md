@@ -660,7 +660,7 @@ Represents a new Stop added to the feed dynamically. All fields are as described
 A `TripModifications` message identifies a list of similar trips which are all affected by particular modifications, such as a detour.
 
 <br><br>**Caution:** this field is still **experimental**, and subject to change. It may be formally adopted in the future.
- 
+
 [More about Trip Modifications...](../../../documentation/realtime/feed-entities/trip-modifications)
 
 **Fields**
