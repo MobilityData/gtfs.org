@@ -16,8 +16,8 @@ validation:
     unrecognized_links: ignore
 
 theme:
-  locale: fr
-  custom_dir: overrides/
+  language: fr
+  custom_dir: ../../overrides/
   logo: assets/logo.png
   logo_light_mode: assets/logo.png
   favicon: assets/favicon.ico
@@ -122,119 +122,117 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
 plugins:
-  # - offline:
-  #     enabled: !ENV [OFFLINE, true]
   - external-markdown
   - privacy:
-      assets: false
       links_attr_map:
         target: _blank
   - search:
-      lang: 
+      lang:
         - fr
+
 nav:
-- Accueil: index.md
-- Premiers pas:
-  - Qu'est-ce que GTFS ?: getting-started/what-is-GTFS.md
-  - Pourquoi utiliser GTFS ?: getting-started/why-use-GTFS.md
-  - Comment produire du GTFS ?:
-    - Créer: getting-started/create.md
-    - Valider: getting-started/validate.md
-    - Publier: getting-started/publish.md
-  - Que peut faire GTFS ?:
-    - Aperçu: getting-started/features/overview.md
-    - Base: getting-started/features/base.md
-    - Modules Complémentaires à Base: getting-started/features/base-add-ons.md
-    - Accessibilité: getting-started/features/accessibility.md
-    - Tarifs: getting-started/features/fares.md
-    - Pathways: getting-started/features/pathways.md
-    - Services flexibles: getting-started/features/flexible-services.md
-  - Exemple de flux GTFS: getting-started/example-feed.md
-- Documentation technique:
-  - Aperçu: documentation/overview.md
-  - Schedule:
-    - Référence: documentation/schedule/reference.md
-    - Bonnes pratiques: documentation/schedule/schedule-best-practices.md
-    - Exemples de données:
-      - Attributions: documentation/schedule/examples/attributions.md
-      - Arrêts continus: documentation/schedule/examples/continuous-stops.md
-      - Transport à la demande: documentation/schedule/examples/flex.md
-      - Tarifs (v2):
-        - Introduction: documentation/schedule/examples/fares/intro.md
-        - Tarif Média: documentation/schedule/examples/fares/fare-media.md
-        - Produits tarifaires: documentation/schedule/examples/fares/fare-products.md
-        - Catégories d'usagers: documentation/schedule/examples/fares/rider-categories.md
-        - Tarifs Basés sur l'Itinéraire: documentation/schedule/examples/fares/route-based-fares.md
-        - Tarifs Basés a Zones: documentation/schedule/examples/fares/zone-based-fares.md
-        - Tarifs Basés sur le Temps: documentation/schedule/examples/fares/time-based-fares.md
-        - Transferts Tarifaires: documentation/schedule/examples/fares/fare-transfers.md
-        - Exemples archivés: documentation/schedule/examples/fares/archived-fares-examples.md
-      - Tarifs - ancienne version (v1): documentation/schedule/examples/fares-v1.md
-      - Informations sur le flux: documentation/schedule/examples/feed-info.md
-      - Fréquences: documentation/schedule/examples/frequencies.md
-      - Pathways: documentation/schedule/examples/pathways.md
-      - Lignes, arrêts et trajets: documentation/schedule/examples/routes-stops-trips.md
-      - Tracé des lignes (Shapes): documentation/schedule/examples/shapes.md
-      - Synthèse vocale: documentation/schedule/examples/text-to-speech.md
-      - Transferts: documentation/schedule/examples/transfers.md
-      - Traductions: documentation/schedule/examples/translations.md
-    - Historique des changements:
-      - Ajouts récents: documentation/schedule/change-history/recent-additions.md
-      - Historique complet des révisions: documentation/schedule/change-history/revision-history.md
-  - Realtime:
-    - Référence: documentation/realtime/reference.md
-    - Bonnes pratiques: documentation/realtime/realtime-best-practices.md
-    - Entités de flux:
-        - Aperçu: documentation/realtime/feed-entities/overview.md
-        - Mises à jour du voyage: documentation/realtime/feed-entities/trip-updates.md
-        - Alertes de service: documentation/realtime/feed-entities/service-alerts.md
-        - Positions des véhicules: documentation/realtime/feed-entities/vehicle-positions.md
-        - Trip Modifications: documentation/realtime/feed-entities/trip-modifications.md
-    - Protobuf: documentation/realtime/proto.md
-    - Binding de langage:
-      - Aperçu: documentation/realtime/language-bindings/overview.md
-      - .NET: documentation/realtime/language-bindings/dotnet.md
-      - Java: documentation/realtime/language-bindings/java.md
-      - JavaScript/Node.js: documentation/realtime/language-bindings/nodejs.md
-      - Python: documentation/realtime/language-bindings/python.md
-      - Golang: documentation/realtime/language-bindings/golang.md
-      - Ruby: documentation/realtime/language-bindings/ruby.md
-      - PHP: documentation/realtime/language-bindings/php.md
-    - Exemples de données:
-      - Alertes de service: documentation/realtime/examples/service-alerts.md
-      - Mises à jour du voyage: documentation/realtime/examples/trip-updates.md
-      - Migration dupliquée: documentation/realtime/examples/migration-duplicated.md
-    - Historique des changements:
-      - Ajouts récents: documentation/realtime/change-history/recent-additions.md
-      - Historique complet des révisions: documentation/realtime/change-history/revision-history.md
-- Communauté:
-  - S'impliquer: community/get-involved.md
-  - Gouvernance:
-    - Processus de modification GTFS Schedule: community/governance/gtfs-schedule-amendment-process.md
-    - Processus de modification GTFS Realtime: community/governance/gtfs-realtime-amendment-process.md
-  - Extensions:
-    - Aperçu: community/extensions/overview.md
-    - Fares v2: community/extensions/fares-v2.md
-    - Flex: community/extensions/flex.md
-- Resources:
-  - Aperçu: resources/overview.md
-  - Premiers pas: resources/getting-started.md
-  - Communauté: resources/community.md
-  - Données: resources/data.md
-  - Logiciel de création d'API: resources/software-for-creating-apis.md
-  - Outils pour les agences: resources/agency-tools.md
-  - Matériel: resources/hardware.md
-  - Apps: resources/apps.md
-  - SDKs: resources/sdk.md
-  - Visualisations: resources/visualizations.md
-  - GTFS: resources/gtfs.md
-  - GTFS Realtime: resources/gtfs-realtime.md
-  - SIRI: resources/siri.md
-  - Multimodal: resources/multimodal.md
-  - Autre: resources/other.md
-- À propos:
-    - about/index.md
-- Blogue:
-    - blog/index.md
+  - Accueil: index.md
+  - Premiers pas:
+    - Qu'est-ce que GTFS ?: getting-started/what-is-GTFS.md
+    - Pourquoi utiliser GTFS ?: getting-started/why-use-GTFS.md
+    - Comment produire du GTFS ?:
+      - Créer: getting-started/create.md
+      - Valider: getting-started/validate.md
+      - Publier: getting-started/publish.md
+    - Que peut faire GTFS ?:
+      - Aperçu: getting-started/features/overview.md
+      - Base: getting-started/features/base.md
+      - Modules Complémentaires à Base: getting-started/features/base-add-ons.md
+      - Accessibilité: getting-started/features/accessibility.md
+      - Tarifs: getting-started/features/fares.md
+      - Pathways: getting-started/features/pathways.md
+      - Services flexibles: getting-started/features/flexible-services.md
+    - Exemple de flux GTFS: getting-started/example-feed.md
+  - Documentation technique:
+    - Aperçu: documentation/overview.md
+    - Schedule:
+      - Référence: documentation/schedule/reference.md
+      - Bonnes pratiques: documentation/schedule/schedule-best-practices.md
+      - Exemples de données:
+        - Attributions: documentation/schedule/examples/attributions.md
+        - Arrêts continus: documentation/schedule/examples/continuous-stops.md
+        - Transport à la demande: documentation/schedule/examples/flex.md
+        - Tarifs (v2):
+          - Introduction: documentation/schedule/examples/fares/intro.md
+          - Tarif Média: documentation/schedule/examples/fares/fare-media.md
+          - Produits tarifaires: documentation/schedule/examples/fares/fare-products.md
+          - Catégories d'usagers: documentation/schedule/examples/fares/rider-categories.md
+          - Tarifs Basés sur l'Itinéraire: documentation/schedule/examples/fares/route-based-fares.md
+          - Tarifs Basés a Zones: documentation/schedule/examples/fares/zone-based-fares.md
+          - Tarifs Basés sur le Temps: documentation/schedule/examples/fares/time-based-fares.md
+          - Transferts Tarifaires: documentation/schedule/examples/fares/fare-transfers.md
+          - Exemples archivés: documentation/schedule/examples/fares/archived-fares-examples.md
+        - Tarifs - ancienne version (v1): documentation/schedule/examples/fares-v1.md
+        - Informations sur le flux: documentation/schedule/examples/feed-info.md
+        - Fréquences: documentation/schedule/examples/frequencies.md
+        - Pathways: documentation/schedule/examples/pathways.md
+        - Lignes, arrêts et trajets: documentation/schedule/examples/routes-stops-trips.md
+        - Tracé des lignes (Shapes): documentation/schedule/examples/shapes.md
+        - Synthèse vocale: documentation/schedule/examples/text-to-speech.md
+        - Transferts: documentation/schedule/examples/transfers.md
+        - Traductions: documentation/schedule/examples/translations.md
+      - Historique des changements:
+        - Ajouts récents: documentation/schedule/change-history/recent-additions.md
+        - Historique complet des révisions: documentation/schedule/change-history/revision-history.md
+    - Realtime:
+      - Référence: documentation/realtime/reference.md
+      - Bonnes pratiques: documentation/realtime/realtime-best-practices.md
+      - Entités de flux:
+          - Aperçu: documentation/realtime/feed-entities/overview.md
+          - Mises à jour du voyage: documentation/realtime/feed-entities/trip-updates.md
+          - Alertes de service: documentation/realtime/feed-entities/service-alerts.md
+          - Positions des véhicules: documentation/realtime/feed-entities/vehicle-positions.md
+          - Trip Modifications: documentation/realtime/feed-entities/trip-modifications.md
+      - Protobuf: documentation/realtime/proto.md
+      - Binding de langage:
+        - Aperçu: documentation/realtime/language-bindings/overview.md
+        - .NET: documentation/realtime/language-bindings/dotnet.md
+        - Java: documentation/realtime/language-bindings/java.md
+        - JavaScript/Node.js: documentation/realtime/language-bindings/nodejs.md
+        - Python: documentation/realtime/language-bindings/python.md
+        - Golang: documentation/realtime/language-bindings/golang.md
+        - Ruby: documentation/realtime/language-bindings/ruby.md
+        - PHP: documentation/realtime/language-bindings/php.md
+      - Exemples de données:
+        - Alertes de service: documentation/realtime/examples/service-alerts.md
+        - Mises à jour du voyage: documentation/realtime/examples/trip-updates.md
+        - Migration dupliquée: documentation/realtime/examples/migration-duplicated.md
+      - Historique des changements:
+        - Ajouts récents: documentation/realtime/change-history/recent-additions.md
+        - Historique complet des révisions: documentation/realtime/change-history/revision-history.md
+  - Communauté:
+    - S'impliquer: community/get-involved.md
+    - Gouvernance:
+      - Processus de modification GTFS Schedule: community/governance/gtfs-schedule-amendment-process.md
+      - Processus de modification GTFS Realtime: community/governance/gtfs-realtime-amendment-process.md
+    - Extensions:
+      - Aperçu: community/extensions/overview.md
+      - Fares v2: community/extensions/fares-v2.md
+      - Flex: community/extensions/flex.md
+  - Resources:
+    - Aperçu: resources/overview.md
+    - Premiers pas: resources/getting-started.md
+    - Communauté: resources/community.md
+    - Données: resources/data.md
+    - Logiciel de création d'API: resources/software-for-creating-apis.md
+    - Outils pour les agences: resources/agency-tools.md
+    - Matériel: resources/hardware.md
+    - Apps: resources/apps.md
+    - SDKs: resources/sdk.md
+    - Visualisations: resources/visualizations.md
+    - GTFS: resources/gtfs.md
+    - GTFS Realtime: resources/gtfs-realtime.md
+    - SIRI: resources/siri.md
+    - Multimodal: resources/multimodal.md
+    - Autre: resources/other.md
+  - À propos:
+      - about/index.md
+  - Blogue:
+      - blog/index.md

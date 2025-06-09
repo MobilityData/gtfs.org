@@ -16,7 +16,7 @@ validation:
     unrecognized_links: ignore
 
 theme:
-  locale: en
+  language: en
   custom_dir: ../../overrides/
   logo: assets/logo.png
   logo_light_mode: assets/logo.png

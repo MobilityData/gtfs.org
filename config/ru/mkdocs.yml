@@ -16,8 +16,8 @@ validation:
     unrecognized_links: ignore
 
 theme:
-  locale: ru
-  custom_dir: overrides/
+  language: ru
+  custom_dir: ../../overrides/
   logo: assets/logo.png
   logo_light_mode: assets/logo.png
   favicon: assets/favicon.ico
