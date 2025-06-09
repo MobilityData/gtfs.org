@@ -1,19 +1,22 @@
-PHONY: help
-
-help: ## This help.
-	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z0-9_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+BUILD_DIR = generated # Variable for the output directory
+LANGUAGES = en fr es ja ru ko id de pt zh zh-TW
 
 clean:
-	rm -rf site/
+	rm -rf $(BUILD_DIR)/
 
 serve:
-	make clean
-	./scripts/i18n-landing-assets-setup.sh
-	mkdocs serve --watch overrides
+	make build
+	@echo "Serving MkDocs site..."
+	@trap 'echo "Stopping MkDocs server..."; pkill -f "mkdocs serve"' SIGINT SIGTERM; \
+	mkdocs serve -d $(BUILD_DIR) --dev-addr 127.0.0.1:8000 & \
+	wait
 
 build:
-	scripts/i18n-landing-assets-setup.sh
-	mkdocs build
-
-deploy:
-	mkdocs gh-deploy
+	@echo "Preparing to build..."
+	make clean
+	./scripts/i18n-landing-assets-setup.sh
+	mkdir -p $(BUILD_DIR)
+	@echo "Building MkDocs sites..."
+	$(foreach lang, $(LANGUAGES), \
+		mkdocs build -f config/$(lang)/mkdocs.yml --clean; \
+	)
