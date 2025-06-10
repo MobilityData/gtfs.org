@@ -20,25 +20,37 @@ GTFS.org uses [Simpleen](https://simpleen.io/), an automated machine learning tr
 
 We do accept glossary changes. Simpleen uses a glossary for key terms that are commonly used across GTFS.org, like trip or station. If you want to suggest a translation for a key term that should be applied across the entire site, you can [create an issue on the GTFS.org repository](https://github.com/MobilityData/gtfs.org/issues/new/choose).
 
-## Building the site locally
+## Building or Serving the site locally
 
 > [!WARNING]
 > A private token from MKDocs Material Insiders is required to build this site.
 
 1. In Terminal, change the directory to one where you wish to build the site.
-1. Ensure you have an up-to-date version of pip:
+1. Ensure you have an up-to-date version of pip: 
    - Linux: `pip install pip` or `pip install --upgrade pip`
    - macOS: `pip3 install pip` or `pip3 install --upgrade pip`
 1. Clone this repository:
    - `git clone https://github.com/MobilityData/gtfs.org`
-1. Change the directory to the cloned repository, and have [`requirements.txt`](requirements.txt) installed:
+1. Change the directory to the cloned repository, and create & enable a Python virtual environment:
+   - `python3 -m venv venv`
+   - `source venv/bin/activate`
+1. Have [`requirements.txt`](requirements.txt) installed:
    - Linux: `pip install --force-reinstall -r requirements.txt`
    - macOS: `pip3 install --force-reinstall -r requirements.txt`
-1. Have [Material for MkDocs Insiders](https://squidfunk.github.io/mkdocs-material/insiders/`) installed. Substitute `${GH_TOKEN}` with MobilityData's access token:
+1. Have [Material for MkDocs Insiders](https://squidfunk.github.io/mkdocs-material/insiders/`) installed. Substitute `${GH_TOKEN}` with a valid access token:
    - Linux: `pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git`
    - macOS: `pip3 install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git`
-1. To run the site locally: `make serve`
-1. To build the site locally: `make build`
+1. To run the site locally (command defined in `MakeFile`):
+   - `make serve`
+   - Then each language will have it's own address:
+     - English: `http://127.0.0.1:8000/`
+     - French: `http://127.0.0.1:8001/`
+     - Spanish: `http://127.0.0.1:8002/`
+     - Japanese: `http://127.0.0.1:8003/`
+1. To build the site locally only (command defined in `MakeFile`):
+   - `make build`
+1. Deactivate the Python virtual environment when done:
+   - `deactivate`
 
 ## License
 
