@@ -3,7 +3,11 @@ LANGUAGES = en fr es ja ru ko id de pt zh zh-TW
 SEPARATOR = "---------------------------------------------------------"
 
 clean:
-	rm -rf $(BUILD_DIR)
+	rm -Rf $(BUILD_DIR)
+
+setup:
+	pip3 install --force-reinstall -r requirements.txt && \
+	pip3 install git+https://${MATERIAL_INSIDER_GITHUB_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git
 
 serve:
 	make clean
