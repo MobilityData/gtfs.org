@@ -132,6 +132,35 @@ plugins:
   - search:
       lang: 
         - en
+  - redirects:
+      redirect_maps:
+        'redirections_only/home/index.md': 'https://gtfs.org/'
+        'redirections_only/getting_started/what_is_GTFS.md': 'https://gtfs.org/getting_started/what_is_GTFS/'
+        'redirections_only/documentation/overview.md': 'https://gtfs.org/documentation/overview/'
+        'redirections_only/community/get_involved.md': 'https://gtfs.org/community/get_involved/'
+        'redirections_only/resources/overview.md': 'https://gtfs.org/resources/overview/'
+        'redirections_only/about/index.md': 'https://gtfs.org/about/'
+  - blog:
+      enabled: true
+      archive: false
+      post_dir: "{blog}/posts"
+      blog_dir: blog
+      authors_file: "blog/.authors.yml"
+      authors_profiles: true
+      post_date_format: long
+      post_url_date_format: yyyy/MM/dd
+      categories_allowed:
+        - Announcements
+        - GTFS
+        - GTFS Digest
+        - GTFS Realtime
+        - GTFS Schedule
+  - rss:
+        match_path: "blog/posts/*"
+        date_from_meta:
+          as_creation: date.created
+          as_update: date.updated
+
 nav:
   - Home: index.md
   - Getting started:
@@ -236,3 +265,5 @@ nav:
       - about/index.md
   - Blog:
       - blog/index.md
+not_in_nav: |
+  /blog/registration-complete.md
