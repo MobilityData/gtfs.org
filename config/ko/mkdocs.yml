@@ -18,9 +18,9 @@ validation:
 theme:
   language: ko
   custom_dir: ../../overrides/
-  logo: assets/logo.png
-  logo_light_mode: assets/logo.png
-  favicon: assets/favicon.ico
+  logo: assets/images/logo.png
+  logo_light_mode: assets/images/logo.png
+  favicon: assets/images/favicon.ico
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: gtfs
@@ -134,5 +134,3 @@ plugins:
         - ko
 nav:
   - Home: index.md
-  - Blog:
-      - blog/index.md

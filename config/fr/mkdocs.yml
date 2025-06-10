@@ -18,9 +18,9 @@ validation:
 theme:
   language: fr
   custom_dir: ../../overrides/
-  logo: assets/logo.png
-  logo_light_mode: assets/logo.png
-  favicon: assets/favicon.ico
+  logo: assets/images/logo.png
+  logo_light_mode: assets/images/logo.png
+  favicon: assets/images/favicon.ico
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: gtfs
@@ -37,6 +37,7 @@ theme:
     - navigation.footer
     - content.tabs.link
     - search.suggest
+    - announce.dismiss
   icon:
     repo: fontawesome/brands/github
 extra_css:
@@ -126,6 +127,7 @@ markdown_extensions:
 plugins:
   - external-markdown
   - privacy:
+      assets: false
       links_attr_map:
         target: _blank
   - search:
@@ -216,7 +218,7 @@ nav:
       - Aperçu: community/extensions/overview.md
       - Fares v2: community/extensions/fares-v2.md
       - Flex: community/extensions/flex.md
-  - Resources:
+  - Ressources:
     - Aperçu: resources/overview.md
     - Premiers pas: resources/getting-started.md
     - Communauté: resources/community.md

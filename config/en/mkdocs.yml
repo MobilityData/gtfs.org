@@ -18,9 +18,9 @@ validation:
 theme:
   language: en
   custom_dir: ../../overrides/
-  logo: assets/logo.png
-  logo_light_mode: assets/logo.png
-  favicon: assets/favicon.ico
+  logo: assets/images/logo.png
+  logo_light_mode: assets/images/logo.png
+  favicon: assets/images/favicon.ico
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: gtfs
@@ -37,6 +37,7 @@ theme:
     - navigation.footer
     - content.tabs.link
     - search.suggest
+    - announce.dismiss
   icon:
     repo: fontawesome/brands/github
 extra_css:
@@ -44,6 +45,7 @@ extra_css:
   - assets/stylesheets/footer.css
 extra_javascript:
   - assets/javascript/anchor-redirects.js
+  - assets/javascript/hide-announcement.js
 extra:
   analytics:
     provider: google
@@ -132,19 +134,11 @@ plugins:
   - search:
       lang: 
         - en
-  - redirects:
-      redirect_maps:
-        'redirections_only/home/index.md': 'https://gtfs.org/'
-        'redirections_only/getting_started/what_is_GTFS.md': 'https://gtfs.org/getting_started/what_is_GTFS/'
-        'redirections_only/documentation/overview.md': 'https://gtfs.org/documentation/overview/'
-        'redirections_only/community/get_involved.md': 'https://gtfs.org/community/get_involved/'
-        'redirections_only/resources/overview.md': 'https://gtfs.org/resources/overview/'
-        'redirections_only/about/index.md': 'https://gtfs.org/about/'
   - blog:
       enabled: true
       archive: false
-      post_dir: "{blog}/posts"
       blog_dir: blog
+      post_dir: "{blog}/posts"
       authors_file: "blog/.authors.yml"
       authors_profiles: true
       post_date_format: long
