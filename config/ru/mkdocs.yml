@@ -37,6 +37,7 @@ theme:
     - navigation.footer
     - content.tabs.link
     - search.suggest
+    - announce.dismiss
   icon:
     repo: fontawesome/brands/github
 extra_css:
