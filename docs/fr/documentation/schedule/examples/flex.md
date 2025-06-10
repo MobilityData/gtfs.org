@@ -116,7 +116,7 @@ t_5374947_b_77497_tn_0 | area_715 | 2 | 08:00:00 | 12:45:00 | 1 | 2 | booking_ro
  
  Certains services à la demande fonctionnent dans plusieurs zones distinctes, où les passagers peuvent réserver des prises en charge à n’importe quel endroit A dans une zone et des dépôts à n’importe quel endroit dans une autre zone. Par exemple, [Minnesota River Valley Transit](https://www.saintpetermn.gov/330/Dial-a-Ride) propose des services à la demande entre les villes de Saint Peter et Kasota : 
  
- <sup>[Télécharger l’exemple de River Valley Transit](../../../assets/on-demand-services-between-multiple-zones(r).zip)</sup> 
+ <sup>[Télécharger l’exemple de River Valley Transit](../../../assets/on-demand-services-between-multiple-zones-river-valley.zip)</sup> 
  
 ### Définir les trajets 
  

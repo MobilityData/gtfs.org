@@ -113,7 +113,7 @@ t_5374947_b_77497_tn_0 | area_715 | 2 | 08:00:00 | 12:45:00 | 1 | 2 | booking_ro
 
 一部のデマンド対応サービスは複数の異なるゾーンにまたがって運営されており、乗客は 1 つのエリア内の任意の場所 A で乗車を予約し、別のエリア内の任意の場所で降車を予約できます。たとえば、[Minnesota River Valley Transit](https:( https://www.saintpetermn.gov/330/Dial-a-Ride) は、セントピーター市とカソタ市の間でオンデマンド サービスを提供しています。
 
- <sup>[River Valley Transit のサンプル データセットをダウンロード](../../../assets/on-demand-services-between-multiple-zones(r).zip)</sup> 
+ <sup>[River Valley Transit のサンプル データセットをダウンロード](../../../assets/on-demand-services-between-multiple-zones-river-valley.zip)</sup> 
 
 ### 便の定義 
 
