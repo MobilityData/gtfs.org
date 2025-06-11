@@ -3,18 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const switcherLinks = document.querySelectorAll(".md-header__option .md-select__item a");
 
     switcherLinks.forEach(link => {
-        const lang = link.getAttribute("hreflang");
-        const langCode = lang === "en" ? "" : "/" + lang;
+        const langCode = link.getAttribute("hreflang") === "en" ? "" : "/" + link.getAttribute("hreflang");
 
-        if (lang === "en") {
-            link.href = "/";
-            link.addEventListener("click", function (e) {
-                e.preventDefault();
-                window.location.href = "/";
-            });
-            return; // Skip the rest for English
-        }
-
+        // Detect the current language from the URL
         const langPrefixes = ["en", "fr", "es"];
         const pathParts = currentPath.split("/").filter(Boolean);
         let currentLang = langPrefixes.includes(pathParts[0]) ? pathParts[0] : "en"; // Default to "en"
