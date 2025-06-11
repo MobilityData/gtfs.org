@@ -45,6 +45,7 @@ extra_css:
   - assets/stylesheets/footer.css
 extra_javascript:
   - assets/javascript/anchor-redirects.js
+  - assets/javascript/fix-search-path.js
 extra:
   analytics:
     provider: google
