@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const langCode = link.getAttribute("hreflang") === "en" ? "" : "/" + link.getAttribute("hreflang");
 
         // Detect the current language from the URL
-        const langPrefixes = ["en", "fr", "es"];
+        const langPrefixes = ["en", "fr", "es", "ja", "de", "pt", "ru", "ko", "id", "zh", "zh-TW"];
         const pathParts = currentPath.split("/").filter(Boolean);
         let currentLang = langPrefixes.includes(pathParts[0]) ? pathParts[0] : "en"; // Default to "en"
 
