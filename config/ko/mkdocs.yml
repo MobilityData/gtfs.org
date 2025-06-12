@@ -1,5 +1,5 @@
 site_name: General Transit Feed Specification
-site_url: https://gtfs.org/ko
+site_url: https://gtfs.org
 repo_url: https://github.com/google/transit
 repo_name: GTFS 저장소
 docs_dir: ../../docs/ko       # Where to find the markdown files
@@ -73,7 +73,7 @@ extra:
         link: /
         lang: en
       - name: Français
-        link: ../fr/
+        link: /fr/
         lang: fr
       - name: Español
         link: /es/
