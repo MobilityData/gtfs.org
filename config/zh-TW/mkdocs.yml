@@ -136,5 +136,15 @@ plugins:
         - en # Lunr Languages does not currently include support for Chinese or other Asian languages. However, some users have reported decent results using Japanese.
         # Option search.lang 'zh-TW' is not supported, falling back to 'en'. Possible fix:
         # https://squidfunk.github.io/mkdocs-material/blog/2022/05/05/chinese-search-support/
+  - redirects:
+    redirect_maps:
+      'getting-started/what-is-GTFS.md': 'index.md'
+      'getting-started/why-use-GTFS.md': 'index.md'
+      'getting-started/why-use-GTFS.md': 'index.md'
+      'getting-started/create.md': 'index.md'
+      'getting-started/validate.md': 'index.md'
+      'getting-started/publish.md': 'index.md'
+      'about/index.md': 'index.md'
+      'blog/index.md': 'http://staging.gtfs.org/blog'
 nav:
   - Home: index.md

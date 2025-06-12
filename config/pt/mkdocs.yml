@@ -136,5 +136,15 @@ plugins:
   - search:
       lang: 
         - pt
+  - redirects:
+    redirect_maps:
+      'getting-started/what-is-GTFS.md': 'index.md'
+      'getting-started/why-use-GTFS.md': 'index.md'
+      'getting-started/why-use-GTFS.md': 'index.md'
+      'getting-started/create.md': 'index.md'
+      'getting-started/validate.md': 'index.md'
+      'getting-started/publish.md': 'index.md'
+      'about/index.md': 'index.md'
+      'blog/index.md': 'http://staging.gtfs.org/blog'
 nav:
   - Home: index.md
