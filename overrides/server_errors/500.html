@@ -1,0 +1,38 @@
+<html style="height:100%">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/server_errors.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <title> 500 Internal Server Error </title>
+
+    </head>
+    <body class="body-style">
+        <div class="main-center-vert">
+            <div class="main-centered-block">
+                <div class="logo-container">
+                    <img src = "assets/gtfs_logo.svg" width="125px" height="125px" alt="GTFS logo"/>
+                </div>
+                <h1>500</h1>
+                <h2>Internal Server Error</h2>
+                <p style="margin-bottom: 50px;">We&rsquo;ve hit an unexpected stop, and while we don&rsquo;t have the exact cause we&rsquo;re working to get things moving again.</p>
+                <div class="info-section-wrapper">
+                    <div class="info-horiz-background">
+                        <div class="info-content">
+                            <h3>What exactly does it mean?</h3>
+                            <p style="margin-bottom: 50px;">This is a generic error when an unexpected condition was encountered and no specific message is suitable.</p>
+                            <h3>What can you do?</h3>
+                            <p>Contact us at <span id="email"></span> and we'll make sure to fix this as soon as possible.</p>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript" src="assets/email.js"></script>
+                <script>
+                showEmailAndHomepage("email", "homepage-link", "500", "Internal Server Error", "gtfs.org", "mobilitydata.org", "it");
+                </script>
+            </div>
+        </div>
+    </body>
+</html>

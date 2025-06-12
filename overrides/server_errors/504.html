@@ -1,0 +1,38 @@
+<html style="height:100%">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/server_errors.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <title> 504 Gateway Timeout </title>
+
+    </head>
+    <body class="body-style">
+        <div class="main-center-vert">
+            <div class="main-centered-block">
+                <div class="logo-container">
+                    <img src = "assets/gtfs_logo.svg" width="125px" height="125px" alt="GTFS logo"/>
+                </div>
+                <h1>504</h1>
+                <h2>Gateway Timeout</h2>
+                <p style="margin-bottom: 50px;">Looks like the server missed its connection — it took too long to respond and timed out at the station.</p>
+                <div class="info-section-wrapper">
+                    <div class="info-horiz-background">
+                        <div class="info-content">
+                            <h3>What exactly does it mean?</h3>
+                            <p style="margin-bottom: 50px;">The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing).</p>
+                            <h3>What can you do?</h3>
+                            <p>Send us a message at <span id="email"></span> so we can investigate!</p>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript" src="assets/email.js"></script>
+                <script>
+                showEmailAndHomepage("email", "homepage-link", "504", "Gateway Timeout", "gtfs.org", "mobilitydata.org", "it");
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
