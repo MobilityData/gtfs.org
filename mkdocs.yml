@@ -112,6 +112,16 @@ extra:
       - name: 中文 - 繁體（即將推出）
         link: /zh-TW/
         lang: zh-TW
+        
+extra_templates:
+  - 400.html
+  - 403.html
+  - 405.html
+  - 429.html
+  - 500.html
+  - 502.html
+  - 503.html
+  - 504.html
 
 markdown_extensions:
   - attr_list
