@@ -222,4 +222,4 @@ plugins:
         'about/index.md': 'index.md'
         'blog/index.md': 'http://staging.gtfs.org/blog'
 nav:
-  - Home: index.md
+  - Início: index.md
