@@ -535,9 +535,6 @@ table.example {
   }
 }
 
-.md-banner {
-  background: linear-gradient(0deg, #172f50 10%, #08111d 100%) !important;
-}
 .md-banner > * > a {
   color: var(--md-secondary-fg-color);
 }
