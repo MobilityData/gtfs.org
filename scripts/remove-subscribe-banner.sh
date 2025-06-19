@@ -30,7 +30,7 @@ if [ -z "$1" ]; then
 fi
 
 # Get base directory from argument
-BASE_DIR="$1"
+BASE_DIR="${1%/}"
 
 # The HTML snippet to insert
 INSERT='      <style>[data-md-component="announce"] {display: none !important;}</style>'
