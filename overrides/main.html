@@ -1,0 +1,143 @@
+{% extends "base.html" %} {% block announce %}
+<div style="max-width: 61rem; margin: 0 auto; padding: 4px">
+  <form
+    action="https://mobilitydata.us19.list-manage.com/subscribe/post?u=d5942d8a23eea21b6c6bc2efb&id=426c31a5d0"
+    method="post"
+    target="_blank"
+    novalidate
+    style="
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5em;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    "
+  >
+  <h4 style="font-weight: normal;color: white; margin-bottom: 8px; margin-top: 0; margin-right: 4px;">
+    Subscribe to the GTFS Digest
+  </h4>
+    <div style="max-width: 100%;">
+
+      <div>
+        <input
+          type="email"
+          name="EMAIL"
+          placeholder="Enter your email"
+          required
+          style="
+            padding: 4px;
+            border: 1px solid #ccc;
+            width: 24em;
+            max-width: calc(100% - 78px);
+            height: 100%;
+          "
+        />
+        <button
+          type="submit"
+          id="submitBtn"
+          disabled
+          class="md-button md-button--primary"
+          style="
+          padding: 5px;
+          font-size: 14px;"
+        >
+          Subscribe
+        </button>
+      </div>
+      <label style="display: flex; align-items: center; gap: 0.25em; font-size: 12px; line-height: 16px; margin-top: 4px;">
+        <input type="checkbox" id="consentBox" style="margin: 0" /> I agree to
+        receive communications from MobilityData.
+        <a
+          href="#"
+          id="privacyLink"
+          style="text-decoration: underline; color: white; font-weight: bold;"
+          >Privacy & Terms</a
+        >
+    </div>
+
+
+    </label>
+  </form>
+
+  <div
+    id="privacyModal"
+    style="
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    "
+  >
+    <div
+      style="
+        background: #fff;
+        padding: 2em;
+        max-width: 600px;
+        margin: 5% auto;
+        border-radius: 8px;
+        position: relative;
+        color: black;
+      "
+    >
+      <h2 style="margin-top: 0;">Privacy & Legal Terms</h2>
+      <p>
+        By subscribing, you agree to receive communications from MobilityData.
+        You can unsubscribe at any time by clicking the link in the footer of
+        our emails. For information about our privacy practices, please read
+        <a href="https://mobilitydata.org/privacy-policy/" target="_blank">our Privacy Policy</a>.
+      </p>
+      <p>
+        We use Mailchimp as our marketing platform. By clicking Subscribe, you
+        aknowledge that your information will be transferred to Mailchimp for
+        processing. Learn more about Mailchimp's
+        <a href="https://mailchimp.com/legal/terms" target="_blank">privacy practices</a>.
+      </p>
+      <button
+        id="closeModal"
+        class="md-button md-button--primary"
+        style="padding: 8px; font-size: medium;"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const checkbox = document.getElementById("consentBox");
+    const submitBtn = document.getElementById("submitBtn");
+
+    function updateButtonState() {
+      if (checkbox.checked) {
+        submitBtn.disabled = false;
+        submitBtn.style.backgroundColor = "var(--md-primary-fg-color)";
+        submitBtn.style.color = "var(--md-primary-bg-color)";
+        submitBtn.style.cursor = "pointer";
+      } else {
+        submitBtn.disabled = true;
+        submitBtn.style.backgroundColor = "#ccc";
+        submitBtn.style.color = "#666";
+        submitBtn.style.cursor = "not-allowed";
+      }
+    }
+
+    checkbox.addEventListener("change", updateButtonState);
+
+    // 🔧 Run once on page load
+    updateButtonState();
+  });
+  document
+    .getElementById("privacyLink")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      document.getElementById("privacyModal").style.display = "block";
+    });
+  document.getElementById("closeModal").addEventListener("click", function () {
+    document.getElementById("privacyModal").style.display = "none";
+  });
+</script>
+{% endblock %}

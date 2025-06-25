@@ -115,7 +115,7 @@ t_5374947_b_77497_tn_0 | area_715 | 2 | 08:00:00 | 12:45:00 | 1 | 2 | booking_ro
 
 Some demand-responsive services operate across multiple distinct zones, where riders can book pickups at any location A within one area and drop-offs at any location within another area. For example, [Minnesota River Valley Transit](https://www.saintpetermn.gov/330/Dial-a-Ride) offers on-demand services between Saint Peter and Kasota cities:
 
-<sup>[Download River Valley Transit example dataset](../../../assets/on-demand-services-between-multiple-zones(r).zip)</sup>
+<sup>[Download River Valley Transit example dataset](../../../assets/on-demand-services-between-multiple-zones-river-valley.zip)</sup>
 
 ### Define trips
 

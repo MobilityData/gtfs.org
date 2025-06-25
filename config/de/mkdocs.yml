@@ -1,0 +1,224 @@
+site_name: General Transit Feed Specification
+site_url: https://gtfs.org
+repo_url: https://github.com/google/transit
+repo_name: GTFS-Repository
+docs_dir: ../../docs/de         # Where to find the markdown files
+site_dir: ../../generated/de    # Where to put the HTML files
+
+validation:
+  nav:
+    omitted_files: info
+    not_found: warn
+    absolute_links: info
+  links:
+    not_found: warn
+    absolute_links: ignore
+    unrecognized_links: ignore
+
+theme:
+  language: de
+  custom_dir: ../../overrides/
+  logo: assets/images/logo.png
+  logo_light_mode: assets/images/logo.png
+  favicon: assets/images/favicon.ico
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: gtfs
+      primary: custom
+      accent: custom
+  name: material
+  font:
+    text: Mulish
+    code: SF Mono
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - content.tabs.link
+    - search.suggest
+    - announce.dismiss
+  icon:
+    repo: fontawesome/brands/github
+extra_css:
+  - assets/stylesheets/extra.css
+  - assets/stylesheets/footer.css
+extra_javascript:
+  - assets/javascript/anchor-redirects.js
+  - assets/javascript/languageSwitchUrls.js
+extra:
+  analytics:
+    provider: google
+    property: G-DRBTC7SSDT
+  consent:
+    title: Cookie-Einwilligung
+    description: >-
+      Wir verwenden Cookies, um Besuche anonym zu verfolgen. Mit Ihrer Einwilligung helfen Sie uns, unsere Dokumentation zu verbessern. Siehe unsere <a href="https://mobilitydata.org/privacy-policy/">Datenschutzerklärung</a>.
+    actions:
+        - accept
+        - reject
+        - manage
+  social:
+    - icon: fontawesome/solid/square-rss
+      name: GTFS Digest RSS feed
+      link: https://gtfs.org/blog/feed_rss_created.xml
+    - icon: fontawesome/brands/github
+      link: https://github.com/MobilityData
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/mobilitydata
+    - icon: fontawesome/brands/slack
+      link: https://share.mobilitydata.org/slack
+  alternate:
+      - name: English
+        link: /
+        lang: en
+      - name: Français
+        link: /fr/
+        lang: fr
+      - name: Español
+        link: /es/
+        lang: es
+      - name: 日本語
+        link: /ja/
+        lang: ja
+      - name: Deutsch (wird bald verfügbar sein)
+        link: /de/
+        lang: de
+      - name: Português (em breve)
+        link: /pt/
+        lang: pt
+      - name: Русский (будет добавлен позже)
+        link: /ru/
+        lang: ru
+      - name: Bahasa Indonesia (akan segera hadir)
+        link: /id/
+        lang: id
+      - name: 한국어 (곧 제공 예정)
+        link: /ko/
+        lang: ko
+      - name: 中文 - 简体（即将推出）
+        link: /zh/
+        lang: zh
+      - name: 中文 - 繁體（即將推出）
+        link: /zh-TW/
+        lang: zh-TW
+
+markdown_extensions:
+  - attr_list
+  - footnotes
+  - md_in_html
+  - admonition
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.tabbed:
+      alternate_style: true 
+plugins:
+  - external-markdown
+  - privacy:
+      assets: false
+      links_attr_map:
+        target: _blank
+  - search:
+      lang: 
+        - de
+  - redirects:
+      redirect_maps:
+        'getting-started/what-is-GTFS.md': 'index.md'
+        'getting-started/why-use-GTFS.md': 'index.md'
+        'getting-started/create.md': 'index.md'
+        'getting-started/validate.md': 'index.md'
+        'getting-started/publish.md': 'index.md'
+        'getting-started/features/overview.md': 'index.md'
+        'getting-started/features/base.md': 'index.md'
+        'getting-started/features/base-add-ons.md': 'index.md'
+        'getting-started/features/accessibility.md': 'index.md'
+        'getting-started/features/fares.md': 'index.md'
+        'getting-started/features/pathways.md': 'index.md'
+        'getting-started/features/flexible-services.md': 'index.md'
+        'getting-started/example-feed.md': 'index.md'
+        'documentation/overview.md': 'index.md'
+        'documentation/schedule/reference.md': 'index.md'
+        'documentation/schedule/schedule-best-practices.md': 'index.md'
+        'documentation/schedule/examples/attributions.md': 'index.md'
+        'documentation/schedule/examples/continuous-stops.md': 'index.md'
+        'documentation/schedule/examples/flex.md': 'index.md'
+        'documentation/schedule/examples/fares/intro.md': 'index.md'
+        'documentation/schedule/examples/fares/fare-media.md': 'index.md'
+        'documentation/schedule/examples/fares/fare-products.md': 'index.md'
+        'documentation/schedule/examples/fares/rider-categories.md': 'index.md'
+        'documentation/schedule/examples/fares/route-based-fares.md': 'index.md'
+        'documentation/schedule/examples/fares/zone-based-fares.md': 'index.md'
+        'documentation/schedule/examples/fares/time-based-fares.md': 'index.md'
+        'documentation/schedule/examples/fares/fare-transfers.md': 'index.md'
+        'documentation/schedule/examples/fares/archived-fares-examples.md': 'index.md'
+        'documentation/schedule/examples/fares-v1.md': 'index.md'
+        'documentation/schedule/examples/feed-info.md': 'index.md'
+        'documentation/schedule/examples/frequencies.md': 'index.md'
+        'documentation/schedule/examples/pathways.md': 'index.md'
+        'documentation/schedule/examples/routes-stops-trips.md': 'index.md'
+        'documentation/schedule/examples/shapes.md': 'index.md'
+        'documentation/schedule/examples/text-to-speech.md': 'index.md'
+        'documentation/schedule/examples/transfers.md': 'index.md'
+        'documentation/schedule/examples/translations.md': 'index.md'
+        'documentation/schedule/change-history/recent-additions.md': 'index.md'
+        'documentation/schedule/change-history/revision-history.md': 'index.md'
+        'documentation/realtime/reference.md': 'index.md'
+        'documentation/realtime/realtime-best-practices.md': 'index.md'
+        'documentation/realtime/feed-entities/overview.md': 'index.md'
+        'documentation/realtime/feed-entities/trip-updates.md': 'index.md'
+        'documentation/realtime/feed-entities/service-alerts.md': 'index.md'
+        'documentation/realtime/feed-entities/vehicle-positions.md': 'index.md'
+        'documentation/realtime/feed-entities/trip-modifications.md': 'index.md'
+        'documentation/realtime/proto.md': 'index.md'
+        'documentation/realtime/language-bindings/overview.md': 'index.md'
+        'documentation/realtime/language-bindings/dotnet.md': 'index.md'
+        'documentation/realtime/language-bindings/java.md': 'index.md'
+        'documentation/realtime/language-bindings/nodejs.md': 'index.md'
+        'documentation/realtime/language-bindings/python.md': 'index.md'
+        'documentation/realtime/language-bindings/golang.md': 'index.md'
+        'documentation/realtime/language-bindings/ruby.md': 'index.md'
+        'documentation/realtime/language-bindings/php.md': 'index.md'
+        'documentation/realtime/examples/service-alerts.md': 'index.md'
+        'documentation/realtime/examples/trip-updates.md': 'index.md'
+        'documentation/realtime/examples/migration-duplicated.md': 'index.md'
+        'documentation/realtime/change-history/recent-additions.md': 'index.md'
+        'documentation/realtime/change-history/revision-history.md': 'index.md'
+        'community/get-involved.md': 'index.md'
+        'community/governance/gtfs-schedule-amendment-process.md': 'index.md'
+        'community/governance/gtfs-realtime-amendment-process.md': 'index.md'
+        'community/extensions/overview.md': 'index.md'
+        'community/extensions/fares-v2.md': 'index.md'
+        'community/extensions/flex.md': 'index.md'
+        'resources/overview.md': 'index.md'
+        'resources/getting-started.md': 'index.md'
+        'resources/community.md': 'index.md'
+        'resources/data.md': 'index.md'
+        'resources/software-for-creating-apis.md': 'index.md'
+        'resources/agency-tools.md': 'index.md'
+        'resources/hardware.md': 'index.md'
+        'resources/apps.md': 'index.md'
+        'resources/sdk.md': 'index.md'
+        'resources/visualizations.md': 'index.md'
+        'resources/gtfs.md': 'index.md'
+        'resources/gtfs-realtime.md': 'index.md'
+        'resources/siri.md': 'index.md'
+        'resources/multimodal.md': 'index.md'
+        'resources/other.md': 'index.md'
+        'about/index.md': 'index.md'
+        'blog/index.md': 'http://staging.gtfs.org/blog'
+
+nav:
+  - Startseite: index.md
