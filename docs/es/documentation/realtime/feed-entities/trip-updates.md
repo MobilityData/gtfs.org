@@ -13,7 +13,7 @@
  
 ## StopTimeUpdate 
  
- Una actualización de viaje consta de una o más actualizaciones de los horarios de parada del vehículo, que se denominan [StopTimeUpdates](../../reference/#message-stoptimeupdate). Estos pueden suministrarse para horarios de parada pasados ​​y futuros. Se le permite, pero no es obligatorio, pasar de los horarios de parada. Los productores no deben eliminar un `StopTimeUpdate` pasado si se refiere a una parada con una hora de llegada programada en el futuro para el viaje dado (es decir, el vehículo ha pasado la parada antes de lo previsto), ya que de lo contrario se concluirá que no hay actualización para esta parada. 
+ Una actualización de viaje consta de una o más actualizaciones de los horarios de parada del vehículo, que se denominan [StopTimeUpdates](../../reference/#message-stoptimeupdate). Estos pueden suministrarse para horarios de parada pasados ​​y futuros  a menos que el viaje sea nuevo o de reemplazo y no se encuentre en la información estática de GTFS. Se le permite, pero no es obligatorio, pasar de los horarios de parada. Los productores no deben eliminar un `StopTimeUpdate` pasado si se refiere a una parada con una hora de llegada programada en el futuro para el viaje dado (es decir, el vehículo ha pasado la parada antes de lo previsto), ya que de lo contrario se concluirá que no hay actualización para esta parada. 
  
  Por ejemplo, si los siguientes datos aparecen en el feed GTFS-rt: 
  

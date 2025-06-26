@@ -2,6 +2,11 @@
 
 ### 改訂履歴
 
+#### 2025年5月
+
+* スケジュール関係の `ADDED` を廃止し、代わりに `NEW` を導入し、`REPLACEMENT` を追加しました。[ディスカッション](https://github.com/google/transit/pull/504) をご覧ください。
+* 旅程の変更に関する説明を追加しました。[ディスカッション](https://github.com/google/transit/pull/542) をご覧ください。
+
 #### 2024年12月
 
 * リアルタイム データのベースとなるGTFS Scheduleフィードの feed_info.feed_version に一致する新しいstringフィールドを追加しました。 [ディスカッション](https://github.com/google/transit/pull/434) を参照してください。
