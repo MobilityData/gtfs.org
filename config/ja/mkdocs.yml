@@ -220,20 +220,10 @@ nav:
       - Flex: community/extensions/flex.md
   - リソース:
     - 概要: resources/overview.md
-    - 始めに: resources/getting-started.md
-    - コミュニティ: resources/community.md
-    - データ: resources/data.md
-    - API作成用ソフトウェア: resources/software-for-creating-apis.md
-    - エージェンシーツール: resources/agency-tools.md
-    - ハードウェア: resources/hardware.md
-    - アプリ: resources/apps.md
-    - SDK: resources/sdk.md
-    - 視覚化: resources/visualizations.md
-    - GTFS: resources/gtfs.md
-    - GTFS Realtime: resources/gtfs-realtime.md
-    - SIRI: resources/siri.md
-    - マルチモーダル: resources/multimodal.md
-    - その他: resources/other.md
+    - データの作成: resources/producing-data.md
+    - データの共有: resources/sharing-data.md
+    - データの使用: resources/using-data.md
+    - その他のリソース: resources/other.md
   - アバウト:
       - about/index.md
   - ブログ:
