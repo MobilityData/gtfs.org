@@ -251,20 +251,10 @@ nav:
       - Flex: community/extensions/flex.md
   - Resources:
     - Overview: resources/overview.md
-    - Getting Started: resources/getting-started.md
-    - Community: resources/community.md
-    - Data: resources/data.md
-    - Software for Creating APIs: resources/software-for-creating-apis.md
-    - Agency Tools: resources/agency-tools.md
-    - Hardware: resources/hardware.md
-    - Apps: resources/apps.md
-    - SDKs: resources/sdk.md
-    - Visualizations: resources/visualizations.md
-    - GTFS: resources/gtfs.md
-    - GTFS Realtime: resources/gtfs-realtime.md
-    - SIRI: resources/siri.md
-    - Multimodal: resources/multimodal.md
-    - Other: resources/other.md
+    - Producing Data: resources/producing-data.md
+    - Sharing Data: resources/sharing-data.md
+    - Using Data: resources/using-data.md
+    - Other Resources: resources/other.md
   - About:
       - about/index.md
   - Blog:
