@@ -140,8 +140,6 @@ nav:
   - Primeros pasos:
     - ¿Qué es GTFS?: getting-started/what-is-GTFS.md
     - ¿Por qué utilizar GTFS?: getting-started/why-use-GTFS.md
-    - ¿Qué es GTFS?: getting-started/what-is-GTFS.md
-    - ¿Por qué utilizar GTFS?: getting-started/why-use-GTFS.md
     - ¿Cómo producir GTFS?: 
       - Crear: getting-started/create.md
       - Validar: getting-started/validate.md
