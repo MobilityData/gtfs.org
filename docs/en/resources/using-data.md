@@ -153,7 +153,7 @@ Experimental and production transit hardware.
 
 ## Agency Tools
 
-Tools for transit agencies.  See also [GTFS Data Collection and Maintenance Tools](#gtfs-data-collection-and-maintenance-tools) for tools specific to GTFS.
+Tools for transit agencies.  See also [GTFS Data Collection and Maintenance Tools](../producing-data/#gtfs-data-collection-and-maintenance-tools) for tools specific to GTFS.
 
 - [Remix](http://getremix.com/) - A webapp that lets transit agencies easily plan routes.
 - [Next Train API](https://github.com/data-creative/next-train-api) - Serves any GTFS feed as a JSON API. Transit agencies and developers alike can deploy the open source code to their own Heroku server.
