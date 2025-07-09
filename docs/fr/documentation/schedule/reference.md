@@ -1,6 +1,6 @@
 ## Référence de General Transit Feed Specification 
  
- **Révisé le 6 mai 2025. Voir [Historique des révisions](../change-history/revision-history) pour plus de détails.** 
+ **Révisé le 9 julliet 2025. Voir [Historique des révisions](../change-history/revision-history) pour plus de détails.** 
  
  Ce document définit le format et la structure de les fichiers qui composent un jeu de données GTFS. 
  
@@ -263,6 +263,7 @@
  | `shape_id` | ID étranger faisant référence à `shapes.shape_id` | **Requis sous condition** | Identifie une forme géospatiale décrivant le trajet du véhicule pour un voyage.<br><br> Requis sous condition:<br> - **Requis** si le trajet a un comportement de prise en charge ou de dépose continu défini soit dans [routes.txt](#routestxt) soit dans [stop_times.txt](#stop_timestxt).<br> - Optionnel sinon. | 
  | `wheelchair_accessible` | Énumération | Optionnel | Indique l’accessibilité en fauteuil roulant. Les options valides sont :<br><br> `0` ou vide- Aucune information d’accessibilité pour le voyage.<br> `1` - Le véhicule utilisé lors de ce voyage particulier peut accueillir au moins un passager en fauteuil roulant.<br> `2` - Aucun passager en fauteuil roulant ne peut être accueilli lors de ce voyage. | 
  | `bikes_allowed` | Énumération | Optionnel | Indique si les vélos sont autorisés. Les options valides sont :<br><br> `0` ou vide- Aucune information sur le vélo pour le trajet.<br> `1` - Le véhicule utilisé lors de ce voyage particulier peut accueillir au moins un vélo.<br> `2` - Aucun vélo n’est autorisé lors de ce voyage. | 
+ | `cars_allowed` | Énumération | Optionnel | Indique si les voitures sont autorisées. Les options valides sont :<br><br> « 0 » ou vide- Aucune information sur la voiture pour le trajet.<br> « `1` » - Le véhicule utilisé pour ce voyage particulier peut accueillir au moins une voiture.<br> `2` - Aucune voiture n’est autorisée sur ce trajet. |
  
 #### Exemple : Blocs et jour de service 
  
