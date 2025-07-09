@@ -2,6 +2,9 @@
 
 ### 改訂履歴
 
+#### 2025年6月
+* `trips.txt`に `cars_allowed` フィールドを追加しました。[ディスカッション](https://github.com/google/transit/pull/547)をご覧ください。
+
 #### 2025年4月
 * DRTサービスの `continuous_pickup/continuous_drop_off` の値に1を指定できるように明確化しました。[ディスカッション](https://github.com/google/transit/pull/558) を参照してください。
 
