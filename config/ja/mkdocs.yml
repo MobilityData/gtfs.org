@@ -213,13 +213,13 @@ nav:
     - 参加する: community/get-involved.md
     - 統治:
       - GTFSスケジュールガバナンス:
-      - 概要: community/governance/gtfs-schedule-governance/introduction.md
-      - 基本原則: community/governance/gtfs-schedule-governance/guiding-principles.md
-      - 役割: community/governance/gtfs-schedule-governance/roles.md
-      - 変更の種類: community/governance/gtfs-schedule-governance/change-types.md
-      - 変更プロセス: community/governance/gtfs-schedule-governance/change-process.md
-      - 以前のガバナンス: community/governance/gtfs-schedule-governance/CHANGES.md
-      - GTFS realtime 修正プロセス: community/governance/gtfs-realtime-amendment-process.md
+        - 概要: community/governance/gtfs-schedule-governance/introduction.md
+        - 基本原則: community/governance/gtfs-schedule-governance/guiding-principles.md
+        - 役割: community/governance/gtfs-schedule-governance/roles.md
+        - 変更の種類: community/governance/gtfs-schedule-governance/change-types.md
+        - 変更プロセス: community/governance/gtfs-schedule-governance/change-process.md
+        - 以前のガバナンス: community/governance/gtfs-schedule-governance/CHANGES.md
+        - GTFS realtime 修正プロセス: community/governance/gtfs-realtime-amendment-process.md
     - エクステンション:
       - 概要: community/extensions/overview.md
       - 運賃v2: community/extensions/fares-v2.md
