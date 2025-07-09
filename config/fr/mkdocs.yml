@@ -213,7 +213,13 @@ nav:
   - Communauté:
     - S'impliquer: community/get-involved.md
     - Gouvernance:
-      - Processus de modification GTFS Schedule: community/governance/gtfs-schedule-amendment-process.md
+      - Gouvernance GTFS Schedule: 
+        - Introduction: community/governance/gtfs-schedule-governance/introduction.md
+        - Principes Directeurs: community/governance/gtfs-schedule-governance/guiding-principles.md
+        - Rôles: community/governance/gtfs-schedule-governance/roles.md
+        - Types de Modifications: community/governance/gtfs-schedule-governance/change-types.md
+        - Processus de modification: community/governance/gtfs-schedule-governance/change-process.md
+        - Ancienne Gouvernance: community/governance/gtfs-schedule-governance/CHANGES.md
       - Processus de modification GTFS Realtime: community/governance/gtfs-realtime-amendment-process.md
     - Extensions:
       - Aperçu: community/extensions/overview.md
