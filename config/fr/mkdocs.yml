@@ -227,8 +227,6 @@ nav:
       - Flex: community/extensions/flex.md
   - Ressources:
     - Aperçu: resources/overview.md
-  - Ressources:
-    - Aperçu: resources/overview.md
     - Produire des données: resources/producing-data.md
     - Partager des données: resources/sharing-data.md
     - Utiliser des données: resources/using-data.md
