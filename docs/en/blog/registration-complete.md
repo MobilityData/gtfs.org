@@ -14,9 +14,3 @@ hide:
 <p style="text-align: center;">
   <a href="https://gtfs.org/blog/" class="md-button md-button--primary">Continue to website</a>
 </p>
-
-<p style="text-align: center; margin-top: 0.5em;">
-  <a href="https://mobilitydata.us19.list-manage.com/profile/?u=d5942d8a23eea21b6c6bc2efb&id=426c31a5d0&e=a794c4a63f" style="font-size: 0.75rem; opacity: 0.7;">
-    Manage subscription preferences
-  </a>
-</p>
