@@ -1,6 +1,6 @@
 ## Referencia de General Transit Feed Specification 
  
- **Revisado el 6 de mayo de 2025. Consulte [Historial de revisiones](../change-history/revision-history) para obtener más detalles.** 
+ **Revisado el 9 de julio de 2025. Consulte [Historial de revisiones](../change-history/revision-history) para obtener más detalles.** 
  
  Este documento define el formato y la estructura de los archivos que componen un conjunto de datos GTFS. 
  
@@ -262,6 +262,7 @@ La **clave principal** de un conjunto de datos es el campo o combinación de cam
  | `shape_id` | ID extranjera que hace referencia a `shapes.shape_id` | **Condicionalmente Obligatorio** | Identifica una forma geoespacial que describe la ruta del vehículo para un viaje.<br><br> Condicionalmente Obligatorio:<br> - **Obligatorio** si el viaje tiene un comportamiento continuo de inicio o regreso definido en [routes.txt](#routestxt) o en [stop_times.txt](#stop_timestxt).<br> - Opcional en caso contrario. | 
  | `wheelchair_accessible` | Enumeración | Opcional | Indica accesibilidad para sillas de ruedas. Las opciones válidas son:<br><br> `0` o vacío: no hay información de accesibilidad para el viaje.<br> `1` : el vehículo que se utiliza en este viaje en particular tiene capacidad para al menos un pasajero en silla de ruedas.<br> `2` - No se pueden acomodar pasajeros en sillas de ruedas en este viaje. | 
  | `bikes_allowed` | Enumeración | Opcional | Indica si se permiten bicicletas. Las opciones válidas son:<br><br> `0` o vacío: no hay información de bicicleta para el viaje.<br> `1` : el vehículo que se utiliza en este viaje en particular tiene capacidad para al menos una bicicleta.<br> `2` - No se permiten bicicletas en este viaje. | 
+ | `cars_allowed` | Enumeración | Opcional | Indica si se permiten coches. Las opciones válidas son:<br><br> `0` o vacío- No hay información del vehículo para el viaje.<br> `1` - El vehículo utilizado en este viaje en particular puede acomodar al menos un automóvil.<br> `2` - No se permiten coches en este viaje. |
  
 #### Ejemplo: Bloques y día de servicio 
  

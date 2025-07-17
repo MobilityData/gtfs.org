@@ -2,6 +2,9 @@
 
 ### Historial de revisiones
 
+#### Junio ​​de 2025
+* Se agregó el campo `cars_allowed` a `trips.txt`. Ver [discusión](https://github.com/google/transit/pull/547).
+
 #### Abril de 2025
 * Se agregó una aclaración para permitir el valor 1 en `continuous_pickup/continuous_drop_off` para servicios sobre demanda. Ver [discusión](https://github.com/google/transit/pull/558).
 
