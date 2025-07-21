@@ -1,4 +1,4 @@
-[改訂履歴]---
+---
 title: GTFS scheduleリファレンス ドキュメント
 description: GTFS scheduleの詳細を確認し、リファレンス ドキュメントを参照してください。
 ---
