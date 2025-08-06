@@ -267,3 +267,4 @@ nav:
       - blog/index.md
 not_in_nav: |
   /blog/registration-complete.md
+  /blog/registration-almost.md
