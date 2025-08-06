@@ -44,7 +44,7 @@ jobs:
 
     - name: Check for errors in the output
       run: |
-        if grep -i -e "error" -e "fatal" -e "exception" -e "fail" -e "critical" -e "segfault" -e "panic" -e "abort" -e "unable" -e "invalid" -e "stack trace" -e "segmentation fault" -e "timeout" -e "missing" -e "not found" -e "permission denied" -e "unsuccessful" -e "could not" -e "fatal error" -e "unsupported" -e "unable to" output.log; then
+        if echo "${{ steps.ssh-step.outputs.stdout }}" | grep -i -e "error" -e "fatal" -e "exception" -e "fail" -e "critical" -e "segfault" -e "panic" -e "abort" -e "unable" -e "invalid" -e "stack trace" -e "segmentation fault" -e "timeout" -e "missing" -e "not found" -e "permission denied" -e "unsuccessful" -e "could not" -e "fatal error" -e "unsupported" -e "unable to"; then
           echo "Error found, failing the workflow."
           exit 1
         fi
