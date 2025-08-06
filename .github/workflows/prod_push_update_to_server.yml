@@ -33,6 +33,7 @@ jobs:
           ACTION_GXFS_WEBSERVER_SSH_PRIVATE_KEY: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/kttdw7r3jp6rir7rtgkwk2a22q/ACTION_GXFS_WEBSERVER_SSH_PRIVATE_KEY"
           
     - name: executing remote ssh commands using password
+      id: ssh-step
       uses: appleboy/ssh-action@master
       with:
         host: ${{ env.ACTION_GXFS_WEBSERVER_SSH_HOST }}
