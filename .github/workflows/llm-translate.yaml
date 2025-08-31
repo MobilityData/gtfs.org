@@ -1,0 +1,102 @@
+name: LLM Translation
+
+on:
+  push:
+    branches: [ "llm-translation" ]
+    paths:
+      - "docs/en/**"
+  workflow_dispatch:
+    inputs:
+      target_lang:
+        description: "Target language code"
+        required: true
+        default: "ja"
+      force_full:
+        description: "Force full translation (true/false)"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    env:
+      BASE_BRANCH: llm-translation
+      SRC_ROOT: docs/en
+      DST_ROOT_BASE: docs
+      TARGET_LANG: ${{ github.event.inputs.target_lang || 'ja' }} 
+      FORCE_FULL: ${{ github.event.inputs.force_full || 'false' }} 
+
+    steps:
+      - name: Checkout base branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.BASE_BRANCH }}
+          fetch-depth: 0
+
+      - name: Decide target files
+        id: pick
+        shell: bash
+        run: |
+          set -euo pipefail
+          RECORD_FILE="docs/${TARGET_LANG}-llm/last_translated_source_commit.txt"
+          TARGET_SHA=$(git rev-parse HEAD)
+
+          if [ "$FORCE_FULL" = "true" ] || [ ! -f "$RECORD_FILE" ]; then
+            echo "Full translation (force or no record)."
+            git ls-tree -r --name-only "$TARGET_SHA" -- "$SRC_ROOT" > files.txt
+          else
+            LAST_SHA=$(cat "$RECORD_FILE" | tr -d ' \n')
+            echo "Diff: $LAST_SHA..$TARGET_SHA"
+            git diff --name-only --diff-filter=ACMR "$LAST_SHA..$TARGET_SHA" -- "$SRC_ROOT" > files.txt
+          fi
+          if [ -s files.txt ]; then
+            echo "has_files=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_files=false" >> $GITHUB_OUTPUT
+          fi
+          echo "target_sha=${TARGET_SHA}" >> "$GITHUB_OUTPUT"
+          
+      - name: Setup Python
+        if: steps.pick.outputs.has_files == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        if: steps.pick.outputs.has_files == 'true'
+        run: |
+          python -m pip install --upgrade pip
+          pip install openai markdown
+
+      - name: Run translation
+        if: steps.pick.outputs.has_files == 'true'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          mapfile -t FILES_ARR < files.txt
+          python -m scripts.translate_with_gpt \
+            --src "${SRC_ROOT}" \
+            --dst "docs/${TARGET_LANG}-llm" \
+            --lang "$TARGET_LANG" \
+            --files "${FILES_ARR[@]}"
+
+      - name: Update record file (to HEAD)
+        if: steps.pick.outputs.has_files == 'true'
+        run: |
+          echo "${{ steps.pick.outputs.target_sha }}" > "docs/${TARGET_LANG}-llm/last_translated_source_commit.txt"
+
+      - name: Create a single PR for all changes
+        if: steps.pick.outputs.has_files == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(i18n): llm-translate docs/en/* -> ${{ env.TARGET_LANG }}"
+          branch: chore/llm-translate-${{ env.TARGET_LANG }}-${{ github.run_id }}
+          base: ${{ env.BASE_BRANCH }}
+          title: "LLM translation: docs/en -> ${{ env.TARGET_LANG }}"
+          add-paths: |
+            docs/${{ env.TARGET_LANG }}-llm/**
+          delete-branch: true
