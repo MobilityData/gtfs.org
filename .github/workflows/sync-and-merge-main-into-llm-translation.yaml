@@ -1,0 +1,84 @@
+name: Sync upstream and merge main into llm-translation
+
+on:
+  schedule:
+    - cron: "0 18 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-and-merge-main-into-llm-translation
+  cancel-in-progress: false
+
+env:
+  UPSTREAM_REPO: ${{ vars.UPSTREAM_REPO }}
+  UPSTREAM_BRANCH: main
+  TARGET_MAIN: main
+  TARGET_LLM: llm-translation
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout fork/main
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TARGET_MAIN }}
+          fetch-depth: 0
+
+      - name: Setup Git author
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Add and fetch upstream
+        run: |
+          set -euo pipefail
+          git remote add upstream https://github.com/${{ env.UPSTREAM_REPO }}.git
+          git fetch upstream ${{ env.UPSTREAM_BRANCH }} --depth=1
+          git fetch origin ${{ env.TARGET_MAIN }} --depth=1
+
+      - name: Fast-forward origin/main from upstream/main if possible
+        run: |
+          set -euo pipefail
+          git checkout ${{ env.TARGET_MAIN }}
+          
+          if git merge-base --is-ancestor HEAD upstream/${{ env.UPSTREAM_BRANCH }}; then
+            echo "origin/main is behind upstream/main"
+            git merge --ff-only upstream/${{ env.UPSTREAM_BRANCH }}
+            git push origin ${{ env.TARGET_MAIN }}
+          else
+            echo "Not fast-forwardable (diverged or up-to-date). Skipping."
+          fi
+
+  merge:
+    runs-on: ubuntu-latest
+    needs: [sync]
+    steps:
+      - name: Checkout llm-translation
+        uses: actions/checkout@v4
+        with:
+          ref: llm-translation
+          fetch-depth: 0
+
+      - name: Configure Git author
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Merge origin/main with -X ours and push
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin ${{ env.TARGET_MAIN }}
+          git merge --no-commit -X ours origin/${{ env.TARGET_MAIN }} || true
+
+          if git diff --quiet HEAD; then
+            echo "No changes to merge."
+            exit 0
+          fi
+
+          git commit -m "chore: merge main into llm-translation (-X ours on conflicts)"
+          git push origin HEAD:${{ env.TARGET_LLM }}
