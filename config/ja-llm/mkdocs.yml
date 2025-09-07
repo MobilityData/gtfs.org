@@ -1,0 +1,144 @@
+site_name: General Transit Feed Specification (LLM翻訳)
+site_url: https://gtfs-translation.odpt.org
+repo_url: https://github.com/yrp-unl/gtfs.org
+repo_name: GTFS LLM翻訳
+docs_dir: ../../docs/ja-llm       # Where to find the markdown files
+site_dir: ../../generated_llm/ja  # Where to put the HTML files
+
+validation:
+  nav:
+    omitted_files: info
+    not_found: warn
+    absolute_links: info
+  links:
+    not_found: warn
+    absolute_links: ignore
+    unrecognized_links: ignore
+
+theme:
+  language: ja
+  custom_dir: ../../overrides_odpt/
+  logo: assets/images/logo.png
+  logo_light_mode: assets/images/logo.png
+  favicon: assets/images/favicon.ico
+  palette:
+    primary: black
+  name: material
+  font:
+    text: Mulish
+    code: SF Mono
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - content.tabs.link
+    - search.suggest
+    - announce.dismiss
+
+markdown_extensions:
+  - attr_list
+  - footnotes
+  - md_in_html
+  - admonition
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.tabbed:
+      alternate_style: true 
+plugins:
+  - external-markdown
+  - privacy:
+      assets: false
+      links_attr_map:
+        target: _blank
+  - search:
+      lang: 
+        - ja
+nav:
+  - ホーム: index.md
+  - はじめに:
+    - GTFS とは何ですか？: getting-started/what-is-GTFS.md
+    - なぜ GTFS を使うのですか？: getting-started/why-use-GTFS.md
+    - GTFS をどのように作成しますか？: 
+      - 作成: getting-started/create.md
+      - 検証: getting-started/validate.md
+      - 公開: getting-started/publish.md
+    - GTFS でできることは何ですか？:
+      - 概要: getting-started/features/overview.md
+      - 基本: getting-started/features/base.md
+      - 基本の追加機能: getting-started/features/base-add-ons.md
+      - アクセシビリティ: getting-started/features/accessibility.md
+      - 運賃: getting-started/features/fares.md
+      - 構内通路(pathway): getting-started/features/pathways.md
+      - フレキシブルサービス: getting-started/features/flexible-services.md
+    - GTFS フィードの例: getting-started/example-feed.md
+  - 技術ドキュメント:
+    - 概要: documentation/overview.md
+    - スケジュール:
+      - リファレンス: documentation/schedule/reference.md
+      - ベストプラクティス: documentation/schedule/schedule-best-practices.md
+      - データ例:
+        - 帰属表示: documentation/schedule/examples/attributions.md
+        - 連続する停留所等(stop): documentation/schedule/examples/continuous-stops.md
+        - デマンド型サービス: documentation/schedule/examples/flex.md
+        - 運賃 (v2):
+          - 導入: documentation/schedule/examples/fares/intro.md
+          - チケットメディア: documentation/schedule/examples/fares/fare-media.md
+          - チケット商品: documentation/schedule/examples/fares/fare-products.md
+          - 乗客区分: documentation/schedule/examples/fares/rider-categories.md
+          - ルート・路線系統(route)に基づく運賃: documentation/schedule/examples/fares/route-based-fares.md
+          - ゾーンに基づく運賃: documentation/schedule/examples/fares/zone-based-fares.md
+          - 時間に基づく運賃: documentation/schedule/examples/fares/time-based-fares.md
+          - 乗り継ぎ運賃: documentation/schedule/examples/fares/fare-transfers.md
+          - アーカイブ済みの例: documentation/schedule/examples/fares/archived-fares-examples.md
+        - レガシー運賃 (v1): documentation/schedule/examples/fares-v1.md
+        - フィード情報: documentation/schedule/examples/feed-info.md
+        - 運行頻度: documentation/schedule/examples/frequencies.md
+        - 構内通路(pathway): documentation/schedule/examples/pathways.md
+        - ルート・路線系統(route)、停留所等(stop) & 便(trip): documentation/schedule/examples/routes-stops-trips.md
+        - ルート形状(shape): documentation/schedule/examples/shapes.md
+        - テキスト読み上げ: documentation/schedule/examples/text-to-speech.md
+        - 乗り換え: documentation/schedule/examples/transfers.md
+        - 翻訳: documentation/schedule/examples/translations.md
+      - 変更履歴:
+        - 最近の追加: documentation/schedule/change-history/recent-additions.md
+        - 完全な改訂履歴: documentation/schedule/change-history/revision-history.md
+    - リアルタイム:
+      - リファレンス: documentation/realtime/reference.md
+      - ベストプラクティス: documentation/realtime/realtime-best-practices.md
+      - フィードエンティティ: 
+          - 概要: documentation/realtime/feed-entities/overview.md
+          - 便(trip)の更新: documentation/realtime/feed-entities/trip-updates.md
+          - サービスアラート: documentation/realtime/feed-entities/service-alerts.md
+          - 車両位置: documentation/realtime/feed-entities/vehicle-positions.md
+          - 便(trip)の変更: documentation/realtime/feed-entities/trip-modifications.md
+      - Protobuf: documentation/realtime/proto.md
+      - 言語バインディング:
+        - 概要: documentation/realtime/language-bindings/overview.md
+        - .NET: documentation/realtime/language-bindings/dotnet.md
+        - Java: documentation/realtime/language-bindings/java.md
+        - JavaScript/Node.js: documentation/realtime/language-bindings/nodejs.md
+        - Python: documentation/realtime/language-bindings/python.md
+        - Golang: documentation/realtime/language-bindings/golang.md
+        - Ruby: documentation/realtime/language-bindings/ruby.md
+        - PHP: documentation/realtime/language-bindings/php.md
+      - データ例:
+        - サービスアラート: documentation/realtime/examples/service-alerts.md
+        - 便(trip)の更新: documentation/realtime/examples/trip-updates.md
+        - 移行の重複: documentation/realtime/examples/migration-duplicated.md
+      - 変更履歴:
+        - 最近の追加: documentation/realtime/change-history/recent-additions.md
+        - 完全な改訂履歴: documentation/realtime/change-history/revision-history.md

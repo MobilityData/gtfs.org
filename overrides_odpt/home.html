@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+
+{% block content %}
+  <section class="md-typeset">
+    <h1>{{ config.site_name }}</h1>
+    <h2>このウェブサイトについて</h2>
+    <p>このサイトは、<a href="https://gtfs.org/">General Transit Feed Specification (GTFS) の公式ドキュメント</a>を、LLM（大規模言語モデル）を活用して翻訳したものです。</p>
+    <p>GTFSは、公共交通期間の時刻表などの情報を表現するための、標準的なオープンデータフォーマットです。カナダに拠点を置く、<a href="https://mobilitydata.org/">MobilityData</a>という非営利団体が仕様を管理しています。</p>
+    <p>現行の公式ドキュメントは、機械翻訳により、日本語を含む多言語に翻訳されています。しかし日本語訳については、機械翻訳に由来する、不自然な表現や不正確な表現が含まれていることがあります。本プロジェクトは、LLM（大規模言語モデル）を活用し、より自然な日本語訳を提供することを目的としています。</p>
+    <h2>このウェブサイトの運営者について</h2>
+    <p>本ウェブサイトは、<a href="https://mobilitydata.org/">MobilityData</a>の了承を得て、<a href="https://www.odpt.org">公共交通オープンデータ協議会</a>が運営しています。</p>
+    <p>公共交通オープンデータ協議会は、2022年より、MobilityDataと戦略的パートナーシップに関するMoUを締結しています。</p>
+  </section>
+{% endblock %}
