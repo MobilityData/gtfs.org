@@ -19,7 +19,7 @@
  
  - :material-file-document-edit:{ .lg.middle } __GTFS Schedule - Proceso de modificación de la especificación__ 
  
-    [:octicons-arrow-right-24: Más información](../../community/governance/gtfs_schedule_amendment_process) 
+    [:octicons-arrow-right-24: Más información](../../community/governance/gtfs-schedule-governance/introduction) 
  
  - :material-file-document-edit:{ .lg.middle } __GTFS Realtime - Proceso de modificación de especificación__ 
  

@@ -24,7 +24,7 @@ GTFS 仕様は固定されたものではありません。GTFS を使用する�
 
 -   :material-file-document-edit:{ .lg.middle } __GTFS スケジュール - 仕様修正プロセス__
 
-    [:octicons-arrow-right-24: 詳細](../../community/governance/gtfs_schedule_amendment_process)
+    [:octicons-arrow-right-24: 詳細](../../community/governance/gtfs-schedule-governance/introduction)
 
 -   :material-file-document-edit:{ .lg.middle } __GTFS リアルタイム - 仕様修正プロセス__
 
