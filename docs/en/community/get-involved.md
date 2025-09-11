@@ -19,7 +19,7 @@ To formalize this process, we've established the GTFS Governance framework, whic
 
 -   :material-file-document-edit:{ .lg .middle } __GTFS Schedule - Specification Amendment Process__
 
-    [:octicons-arrow-right-24: Learn more](../../community/governance/gtfs_schedule_amendment_process)
+    [:octicons-arrow-right-24: Learn more](../../community/governance/gtfs-schedule-governance/introduction)
 
 -   :material-file-document-edit:{ .lg .middle } __GTFS Realtime - Specification Amendment Process__
 
