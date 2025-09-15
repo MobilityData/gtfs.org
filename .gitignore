@@ -4,6 +4,7 @@ node_modules
 /.cache
 site/
 generated/
+generated_llm/
 venv/
 overrides/fr/*
 overrides/es/*
