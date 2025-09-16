@@ -1,0 +1,42 @@
+{
+  "hosting": {
+    "public": "generated_llm/ja",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "regex": "^/getting_started(/.*)?$",
+        "destination": "/getting-started:1",
+        "type": 301
+      },
+      {
+        "regex": "^/(about|assets|blog|community|documentation|getting-started|resources)/(.*)_(.*)$",
+        "destination": "/:1/:2-:3",
+        "type": 301
+      }
+    ],
+    "headers": [
+      {
+        "source": "**/*.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(css|js|png|jpg|jpeg|gif|svg|webp)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=86400, stale-while-revalidate=86400"
+          }
+        ]
+      }
+    ]
+  }
+}

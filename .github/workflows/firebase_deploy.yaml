@@ -1,0 +1,41 @@
+name: Deploy web site to Firebase
+
+on:
+  push:
+    branches: [ "llm-translation" ]
+    paths:
+      - "docs/ja-llm/**"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+env:
+  FB_PROJECT_ID: ${{ vars.FIREBASE_PROJECT_ID }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install MkDocs deps
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build MkDocs (LLM)
+        run: make -f Makefile.llm build
+
+      - name: Install Firebase CLI
+        run: npm i -g firebase-tools
+
+      - name: Deploy to Firebase Hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN_LLM }}
+        run: |
+          firebase deploy --only hosting --project ${FB_PROJECT_ID}
