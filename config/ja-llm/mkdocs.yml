@@ -2,8 +2,8 @@ site_name: General Transit Feed Specification (LLM翻訳)
 site_url: https://gtfs-translation.odpt.org
 repo_url: https://github.com/yrp-unl/gtfs.org
 repo_name: GTFS LLM翻訳
-docs_dir: ../../docs/ja-llm       # Where to find the markdown files
-site_dir: ../../generated_llm/ja  # Where to put the HTML files
+docs_dir: ../../docs/ja-llm
+site_dir: ../../generated_llm/ja
 
 validation:
   nav:
@@ -36,6 +36,11 @@ theme:
     - search.suggest
     - announce.dismiss
 
+copyright: |
+  <div style="text-align:center;">
+    This website is maintained by <a href="https://www.odpt.org/">ODPT</a> and was forked from <a href="https://mobilitydata.org/">MobilityData</a>’s official <a href="https://gtfs.org/">gtfs.org</a> repository.
+  </div>
+
 markdown_extensions:
   - attr_list
   - footnotes
@@ -67,6 +72,21 @@ plugins:
   - search:
       lang: 
         - ja
+  - blog:
+      enabled: true
+      archive: false
+      blog_dir: blog
+      post_dir: "{blog}/posts"
+      authors_file: "blog/.authors.yml"
+      authors_profiles: true
+      post_date_format: long
+      post_url_date_format: yyyy/MM/dd
+      categories_allowed:
+        - Announcements
+        - GTFS
+        - GTFS Digest
+        - GTFS Realtime
+        - GTFS Schedule
 nav:
   - ホーム: index.md
   - はじめに:
@@ -142,3 +162,28 @@ nav:
       - 変更履歴:
         - 最近の追加: documentation/realtime/change-history/recent-additions.md
         - 完全な改訂履歴: documentation/realtime/change-history/revision-history.md
+  - コミュニティ:
+    - 参加する: community/get-involved.md
+    - ガバナンス:
+      - GTFS スケジュールのガバナンス:
+        - 概要: community/governance/gtfs-schedule-governance/introduction.md
+        - 指針: community/governance/gtfs-schedule-governance/guiding-principles.md
+        - 役割: community/governance/gtfs-schedule-governance/roles.md
+        - 変更の種類: community/governance/gtfs-schedule-governance/change-types.md
+        - 変更プロセス: community/governance/gtfs-schedule-governance/change-process.md
+        - 以前のガバナンス: community/governance/gtfs-schedule-governance/CHANGES.md
+        - GTFS リアルタイムの修正プロセス: community/governance/gtfs-realtime-amendment-process.md
+    - エクステンション:
+      - 概要: community/extensions/overview.md
+      - 運賃v2: community/extensions/fares-v2.md
+      - Flex: community/extensions/flex.md
+  - リソース:
+    - 概要: resources/overview.md
+    - データの作成: resources/producing-data.md
+    - データの共有: resources/sharing-data.md
+    - データの利用: resources/using-data.md
+    - その他のリソース: resources/other.md
+  - 概要:
+      - about/index.md
+  - ブログ:
+      - blog/index.md
