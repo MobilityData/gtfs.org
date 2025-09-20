@@ -37,8 +37,12 @@ theme:
     - announce.dismiss
 
 copyright: |
-  <div style="text-align:center;">
-    This website is maintained by <a href="https://www.odpt.org/">ODPT</a> and was forked from <a href="https://mobilitydata.org/">MobilityData</a>’s official <a href="https://gtfs.org/">gtfs.org</a> repository.
+  <div>
+    This website is maintained by <a href="https://www.odpt.org/">ODPT</a> and was forked from <a href="https://mobilitydata.org/">MobilityData</a>’s official <a href="https://gtfs.org/">gtfs.org</a> repository.<br>
+    Content is licensed under 
+    <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>, 
+    and code samples under the 
+    <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2.0 License</a>.
   </div>
 
 markdown_extensions:
