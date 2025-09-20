@@ -1,5 +1,10 @@
 en,ja
 Agency,事業者
-Fare Product,チケット商品
-Fare Media,チケットメディア
-Demand Responsive Services,デマンド型サービス
+Fare product,チケット商品
+Fare media,チケットメディア
+Demand responsive services,デマンド型サービス
+Dataset,データセット
+Record,レコード
+Field,フィールド
+Field value,フィールド値
+Rider,乗客
