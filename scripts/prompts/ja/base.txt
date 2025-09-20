@@ -32,17 +32,8 @@
 
 ### 対訳表（英語表記を併記すべきもの）
 
-- Stop: 停留所等(stop)
-- Route: ルート・路線系統(route)
-- Trip: 便(trip)
-- Stop Time: 停車時刻(stop_time)
-- Headsign: 行先表示(headsign)
-- Shape: ルート形状(shape)
-- Pathway: 構内通路(pathway)
+{}
 
 ### 対訳表（英語表記を併記すべきでないもの）
 
-- Agency: 事業者
-- Fare Product: チケット商品
-- Fare Media: チケットメディア
-- Demand Responsive Services: デマンド型サービス
+{}

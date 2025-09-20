@@ -1,4 +1,5 @@
 import argparse
+import csv
 import re
 from pathlib import Path
 from typing import List, Tuple
@@ -28,8 +29,42 @@ def _load_prompt(lang: str) -> str:
         The prompt string read from scripts/prompts/{lang}/base.txt.
     """
     base_path = Path(f'scripts/prompts/{lang}/base.txt')
-    prompt = base_path.read_text(encoding='utf-8')
+    glosssary_both = Path(f'scripts/prompts/{lang}/glossary_both.csv')
+    glosssary_ja = Path(f'scripts/prompts/{lang}/glossary_ja.csv')
+    
+    prompt_template = base_path.read_text(encoding='utf-8')
+
+    both = _read_glossary_csv(glosssary_both)
+    ja_only = _read_glossary_csv(glosssary_ja)
+    both_lines = "\n".join(f"- {en}: {ja}" for en, ja in both)
+    ja_only_lines = "\n".join(f"- {en}: {ja}" for en, ja in ja_only)
+
+    prompt = prompt_template.format(both_lines, ja_only_lines)
     return prompt
+
+
+def _read_glossary_csv(csv_path: Path) -> List[Tuple[str, str]]:
+    """
+    Read a glossary CSV file (en,ja) and return a list of term pairs.
+
+    Args:
+        csv_path: Path to the glossary CSV file.
+
+    Returns:
+        A list of (en, ja) tuples.
+        - en: Source term in English.
+        - ja: Target term in Japanese (final form to be used in the prompt,
+              may already include parentheses if English should be shown).
+    """
+    items: List[Tuple[str, str]] = []
+    with csv_path.open(encoding='utf-8', newline='') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            en = (row.get('en') or '').strip()
+            ja = (row.get('ja') or '').strip()
+            if en and ja:
+                items.append((en, ja))
+    return items
 
 
 def _extract_front(md: str) -> Tuple[str, str]:
