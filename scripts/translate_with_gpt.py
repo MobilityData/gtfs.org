@@ -3,12 +3,13 @@ import csv
 import re
 from pathlib import Path
 from typing import List, Tuple
-
+from concurrent.futures import ThreadPoolExecutor
 from markdown.extensions.toc import slugify
 from openai import OpenAI
 
 # Constants and regex patterns (non-public)
 _GPT_MODEL = 'gpt-5-chat-latest'
+_MAX_WORKERS = 10
 _HEADING = re.compile(r'^(?: {0,3})(#{1,6})[ \t]+(.+?)\s*$')
 _ID_AT_END = re.compile(r'\s\{#([^}]+)\}\s*$')
 _FENCE   = re.compile(r'^(?: {0,3})(`{3,}|~{3,})')
@@ -184,14 +185,17 @@ def _translate_file(src: Path, out: Path, prompt: str):
     front, sections = _split_sections(content)
     translated = []
 
-    for heading, body in sections:
-        print(f'Translating: {heading}')
-        section_text = f'{heading}\n\n{body}'
-        translated.append(_translate_text(section_text, prompt))
+    section_texts = [f"{heading}\n\n{body}" for (heading, body) in sections]
+    translated = [None] * len(section_texts)
+    with ThreadPoolExecutor(max_workers=_MAX_WORKERS) as ex:
+        futures = [ex.submit(_translate_text, text, prompt) for text in section_texts]
+        for i, fut in enumerate(futures):
+            translated[i] = fut.result()
+            print(f"Translated: {sections[i][0]}")
 
     if front and not front.endswith('\n'):
         front += '\n'
-    translated_content = front + '\n\n'.join(translated).rstrip() + '\n'
+    translated_content = front + '\n\n'.join(t for t in translated if t is not None).rstrip() + '\n'
 
     out.parent.mkdir(parents=True, exist_ok=True)
     with open(out, 'w', encoding='utf-8') as f:
