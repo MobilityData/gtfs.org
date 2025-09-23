@@ -1,14 +1,49 @@
 {% extends "main.html" %}
 
 {% block content %}
-  <section class="md-typeset">
-    <h1>{{ config.site_name }}</h1>
-    <h2>このウェブサイトについて</h2>
-    <p>このサイトは、<a href="https://gtfs.org/">General Transit Feed Specification (GTFS) の公式ドキュメント</a>を、LLM（大規模言語モデル）を活用して翻訳したものです。</p>
-    <p>GTFSは、公共交通期間の時刻表などの情報を表現するための、標準的なオープンデータフォーマットです。カナダに拠点を置く、<a href="https://mobilitydata.org/">MobilityData</a>という非営利団体が仕様を管理しています。</p>
-    <p>現行の公式ドキュメントは、機械翻訳により、日本語を含む多言語に翻訳されています。しかし日本語訳については、機械翻訳に由来する、不自然な表現や不正確な表現が含まれていることがあります。本プロジェクトは、LLM（大規模言語モデル）を活用し、より自然な日本語訳を提供することを目的としています。</p>
-    <h2>このウェブサイトの運営者について</h2>
-    <p>本ウェブサイトは、<a href="https://mobilitydata.org/">MobilityData</a>の了承を得て、<a href="https://www.odpt.org">公共交通オープンデータ協議会</a>が運営しています。</p>
-    <p>公共交通オープンデータ協議会は、2022年より、MobilityDataと戦略的パートナーシップに関するMoUを締結しています。</p>
-  </section>
+<section class="md-typeset">
+  <h1>{{ config.site_name }}</h1>
+
+  <div class="admonition note">
+    <p class="admonition-title">このサイトは試験的翻訳版です。</p>
+    <p>
+      本サイトは、<a href="https://gtfs.org/">GTFS.org</a>の内容を、<a href="https://www.odpt.org">ODPT（公共交通オープンデータ協議会）</a>が、LLMを利用して翻訳した<strong>試験的翻訳版</strong>です。
+      正式情報は、公式サイト<a href="https://gtfs.org/">GTFS.org</a>をご参照ください。
+    </p>
+  </div>
+
+  <h2>このウェブサイトについて</h2>
+  <p>
+    GTFS（General Transit Feed Specification）は、公共交通機関の時刻表などの情報を表現するための、標準的なオープンフォーマットです。
+    カナダに拠点を置く非営利団体<a href="https://mobilitydata.org/">MobilityData</a>が、仕様を管理しています。
+  </p>
+  <p>
+    GTFSの現行の公式ドキュメントは、機械翻訳により、日本語を含む多言語に翻訳されています。
+    しかし日本語訳については、機械翻訳に由来する、不自然・不正確な表現が含まれていることがあります。
+    本プロジェクトは、LLM（大規模言語モデル）を活用し、より自然で分かりやすい日本語訳を提供することを目的としています。
+  </p>
+
+  <h2>公開方針とフィードバック</h2>
+  <p>
+    本サイトは、<a href="https://gtfs.org/">GTFS.org</a>のLLMを活用した翻訳を掲載します。
+    十分な検証後、公式サイトである<a href="https://gtfs.org/">GTFS.org</a>への取り込みを目指します。
+  </p>
+  <p>
+    翻訳や用語に関するご意見・改善提案は、<a href="mailto:translation-feedback@odpt.org">translation-feedback@odpt.org</a>まで、お寄せください。
+    今後、GitHub Issuesなどを通じて、より広いコミュニティからのフィードバックも、受け付ける予定です。
+  </p>
+
+  <h2>このウェブサイトの運営者について</h2>
+  <p>
+    本ウェブサイトは、<a href="https://mobilitydata.org/">MobilityData</a>の了承を得て、<a href="https://www.odpt.org">公共交通オープンデータ協議会</a>が運営しています。<br>
+    公共交通オープンデータ協議会は、2022年より、MobilityDataと戦略的パートナーシップに関するMoUを締結しています。
+  </p>
+
+  <h2>ライセンス</h2>
+  <p>
+    このコンテンツのライセンスは、<a href="https://github.com/MobilityData/gtfs.org">MobilityData/gtfs.org</a>のライセンスに準拠します。<br>
+    特に記載がない限り、このサイトのコンテンツは、<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>の下でライセンスされており、コードサンプルは、<a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>の下でライセンスされています。
+  </p>
+
+</section>
 {% endblock %}

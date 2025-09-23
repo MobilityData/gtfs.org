@@ -1,8 +1,9 @@
-# GTFS.org LLM-based Japanese Translation
+# GTFS.org LLM-based Japanese Translation (Experimental)
 
-This project is a fork of [MobilityData/gtfs.org](https://github.com/MobilityData/gtfs.org),  
-maintained by the [Association for Open Data of Public Transportation (ODPT)](https://www.odpt.org/).
-It provides a Japanese translation of the official GTFS.org website using LLM-based translation workflows.
+This project is an **experimental Japanese translation** of the official [MobilityData/gtfs.org](https://github.com/MobilityData/gtfs.org),  
+maintained by the [Association for Open Data of Public Transportation (ODPT)](https://www.odpt.org/).  
+The translation is generated through LLM-based workflows, aiming to provide more natural Japanese than conventional machine translation.  
+Official information remains available at [GTFS.org](https://gtfs.org).
 
 ## Workflow overview
 

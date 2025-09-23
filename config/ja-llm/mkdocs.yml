@@ -1,5 +1,5 @@
 site_name: General Transit Feed Specification (LLM翻訳)
-site_url: https://gtfs-translation.odpt.org
+site_url: https://gtfs-llm-translation.odpt.org
 repo_url: https://github.com/yrp-unl/gtfs.org
 repo_name: GTFS LLM翻訳
 docs_dir: ../../docs/ja-llm
@@ -39,11 +39,14 @@ theme:
 copyright: |
   <div>
     This website is maintained by <a href="https://www.odpt.org/">ODPT</a> and was forked from <a href="https://mobilitydata.org/">MobilityData</a>’s official <a href="https://gtfs.org/">gtfs.org</a> repository.<br>
-    Content is licensed under 
+    Except as otherwise noted, the content is licensed under 
     <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>, 
     and code samples under the 
     <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2.0 License</a>.
   </div>
+
+extra:
+  generator: false
 
 markdown_extensions:
   - attr_list
