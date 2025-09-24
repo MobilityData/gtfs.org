@@ -1,6 +1,6 @@
 site_name: General Transit Feed Specification (LLM翻訳)
 site_url: https://gtfs-llm-translation.odpt.org
-repo_url: https://github.com/yrp-unl/gtfs.org
+repo_url: https://github.com/odpt-jp/gtfs.org
 repo_name: GTFS LLM翻訳
 docs_dir: ../../docs/ja-llm
 site_dir: ../../generated_llm/ja
