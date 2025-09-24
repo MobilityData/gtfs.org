@@ -25,7 +25,7 @@ This repository maintains two main branches:
 ### Deployment
 
 - Japanese LLM-translated site is built using [MkDocs](https://www.mkdocs.org/) with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).  
-- The site is deployed automatically to Firebase Hosting at [https://gtfs-translation.odpt.org](https://gtfs-translation.odpt.org).
+- The site is deployed automatically to Firebase Hosting at [https://gtfs-llm-translation.odpt.org](https://gtfs-translation.odpt.org).
 
 ## License
 
