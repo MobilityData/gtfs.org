@@ -97,8 +97,7 @@ We really value your feedback and would like to know what you think of the new l
 | Event | Date | Location |
 | :---- | :---- | :---- |
 | GTFS Fares V2 Working Group Meeting | Oct 28, 2025 | [Online](https://mobilitydata.org/event/specifications-discussions-gtfs-fares-v2-monthly-meeting-8/2025-10-28/) |
-
-## 
+ 
 
 ## 💬 Join the GTFS Community
 
