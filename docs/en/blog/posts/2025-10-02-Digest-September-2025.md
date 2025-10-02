@@ -4,7 +4,7 @@ pin: false
 date:
   created: 2025-10-02
 title: GTFS Digest - September 2025 - New cEMV Field Adopted
-description: The September 2025 GTFS Digest is here! 
+description: The September 2025 GTFS Digest is here! This month, the GTFS community voted on a few proposals, two of which have been adopted into the specification, such as a new cEMV field.
 authors: 
   - mobilitydata
 categories:
