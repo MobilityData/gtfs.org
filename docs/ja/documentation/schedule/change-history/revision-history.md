@@ -2,6 +2,10 @@
 
 ### 改訂履歴
 
+#### 2025年9月
+* `agency.txt`と`routes.txt`に `cemv_support` フィールドを追加しました。[ディスカッション](https://github.com/google/transit/pull/545) を参照してください。
+* `stops.txt`に `stop_access` フィールドを追加しました。[ディスカッション](https://github.com/google/transit/pull/515) を参照してください。
+
 #### 2025年6月
 * `trips.txt`に `cars_allowed` フィールドを追加しました。[ディスカッション](https://github.com/google/transit/pull/547)をご覧ください。
 
