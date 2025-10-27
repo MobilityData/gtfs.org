@@ -2,6 +2,10 @@
 
 ### Historial de revisiones
 
+#### Septiembre de 2025
+* Se agregó el campo `cemv_support` en `agency.txt` y `routes.txt`. Ver [discusión](https://github.com/google/transit/pull/545).
+* Se agregó el campo `stop_access` en `stops.txt`. Ver [discusión](https://github.com/google/transit/pull/515).
+
 #### Junio ​​de 2025
 * Se agregó el campo `cars_allowed` a `trips.txt`. Ver [discusión](https://github.com/google/transit/pull/547).
 
