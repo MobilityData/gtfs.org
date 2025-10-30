@@ -48,11 +48,11 @@ There are no proposals currently in the voting process.
 
 | Proposal | Advocate | Description | Status |
 | :---- | :---- | :---- | :---- |
-| [Add images.txt + agency logo #585](https://github.com/google/transit/pull/585) | Felixguendling (Transitous) | This proposal adds a new “agency_brand_image_url” column to agency.txt, allowing brand logos to appear in trip planning applications. | Discussion Period |
+| [Add images.txt + agency logo #585](https://github.com/google/transit/pull/585) | Felixguendling (Transitous) | This proposal adds a new `agency_brand_image_url` column to `agency.txt`, allowing brand logos to appear in trip planning applications. | Discussion Period |
 | [Add new SPECIAL_EVENT Cause to GTFS-realtime Service Alerts #577](https://github.com/google/transit/pull/577) | Ckraatz (SimplifyTransit) | This proposal adds a new Cause called "Special Event" to GTFS-realtime Service Alerts applicable to disruptions such as parades, sporting events, concerts, etc. | Discussion Period |
 | [Add addition best practice on hosting GTFS files #567](https://github.com/google/transit/pull/567) | doconnoronca (Transee) | This proposal introduces a best practice for hosting GTFS files, recommending that public web servers avoid blocking non-browser requests or limiting access by region, focusing instead on preventing abusive behavior. | Discussion Period |
-| [[GTFS-Fares v2] Add Distance-Based Fares #556](https://github.com/google/transit/pull/556) | skalexch (MobilityData) | This PR adds a new functionality to allow the modelling of distance-based fare systems, by introducing multiple new fields on fare_leg_rules.txt and stop_times.txt as well as a new fare_leg_distance_rules.txt file. | Discussion Period |
-| [[GTFS Fares v2] Add network sets and relax constraint on networks in fare_leg_join_rules.txt #578](https://github.com/google/transit/pull/578) | skalexch (MobilityData) | This proposal adds two new files: `network_sets.txt` network_set_elements.txt, while also relaxing some of the requirements for fare_leg_join_rules.txt. This would allow to match effective fare legs that span multiple networks. | Discussion Period |
+| [[GTFS-Fares v2] Add Distance-Based Fares #556](https://github.com/google/transit/pull/556) | skalexch (MobilityData) | This PR adds a new functionality to allow the modelling of distance-based fare systems, by introducing multiple new fields on `fare_leg_rules.txt` and `stop_times.txt` as well as a new `fare_leg_distance_rules.txt` file. | Discussion Period |
+| [[GTFS Fares v2] Add network sets and relax constraint on networks in fare_leg_join_rules.txt #578](https://github.com/google/transit/pull/578) | skalexch (MobilityData) | This proposal adds two new files: `network_sets.txt` network_set_elements.txt, while also relaxing some of the requirements for `fare_leg_join_rules.txt`. This would allow to match effective fare legs that span multiple networks. | Discussion Period |
 
 ### Other open proposals:
 
@@ -83,8 +83,8 @@ There are no proposals currently in the voting process.
 
 | Author | Description | Slack Channel |
 | :---- | :---- | :---- |
-| Gabriel Masiero | Asked about a [project on bus location in GTFS Realtime](https://mobilitydata-io.slack.com/archives/C3D321CKB/p1761134635290789) | #gtfs-realtime |
-| Eva Leake | Asked about [implementing a "max distance" limitation for a trip](https://mobilitydata-io.slack.com/archives/CSP7HDF37/p1761232949894399). | #gtfs-flex |
+| Gabriel Masiero | Asked about a [project on bus location in GTFS Realtime](https://mobilitydata-io.slack.com/archives/C3D321CKB/p1761134635290789) | [#gtfs-realtime](https://mobilitydata-io.slack.com/archives/C3D321CKB) |
+| Eva Leake | Asked about [implementing a "max distance" limitation for a trip](https://mobilitydata-io.slack.com/archives/CSP7HDF37/p1761232949894399). | [#gtfs-flex](https://mobilitydata-io.slack.com/archives/CSP7HDF37) |
 
 ## 📅 Upcoming Events
 
