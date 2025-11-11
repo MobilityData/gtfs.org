@@ -5,7 +5,7 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
 
 ##General Transit Feed Specificationリファレンス
 
-**2025年10月10日に改訂されました。詳細については、[改訂履歴](../change-history/revision-history) を参照してください。**
+**2025年10月28日に改訂されました。詳細については、[改訂履歴](../change-history/revision-history) を参照してください。**
 
 このドキュメントでは、GTFS データセットを構成するファイルの形式と構造を定義します。
 
@@ -93,6 +93,7 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
 - **Integer**- 整数。
 - **Phone number**- 電話番号。
 - **Time**- HH:MM:SS 形式の時間 (H:MM:SS も使用できます)。時間は、サービス日の「正午から 12 時間前」から計測されます (夏時間の変更が行われる日を除いて、実質的には真夜中)。サービス日の真夜中以降の時間については、HH:MM:SS で 24:00:00 より大きい値として時間を入力します。<br> *例: 2:30PM の場合は `14:30:00`、翌日の 1:35AM の場合は `25:35:00`。*
+**Local time**- HH:MM:SS 形式の時刻 (H:MM:SS も受け入れられます)。指定された場所の現地時間で表示されるウォールクロック時間を表します。
 - **Text**- UTF-8 文字の文字string。表示を目的としているため、人間が判読できるしなければならない**タイムゾーン**- [https://www.iana.org/time-zones](https://www.iana.org/time-zones) の TZ タイムゾーン。タイムゾーン名にはスペース文字は含まれませんが、アンダースコアは含めるしてもよい。有効な値の一覧については、[http://en.wikipedia.org/wiki/List\_of\_tz\_zones](http://en.wikipedia.org/wiki/List\_of\_tz\_zones) を参照してください。<br> *例: `Asia/Tokyo`、 `America/Los_Angeles` 、 `Africa/Cairo`。*
 - **URL**- http://または https://を含む完全修飾 URL。URL 内の特殊文字は正しくエスケープするしなければならない。完全修飾 URL 値の作成方法については、次の [http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html](http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html) を参照してください。
 
@@ -248,7 +249,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | `route_sort_order` | 負でない整数 | 任意 | 顧客へのプレゼンテーションに最適な方法でルートを順序付けます。 `route_sort_order` 値が小さいルートが最初に表示されます。 |
 | `continuous_pickup` | 列挙型 | **条件付きで禁止** | ルートのすべての便で、[shapes.txt](#shapestxt) で説明されているように、乗客が車両の移動経路に沿った任意の地点で交通事業者の車両に乗車できることを示します。有効なオプションは次のとおりです: <br><br>`0` - 連続停止ピックアップ。 <br>`1` または空 - 連続停止ピックアップなし。 <br>`2` - 連続停止ピックアップを手配するには代理店に電話する必要があります。 <br>`3` - 連続停止ピックアップを手配するにはドライバーと調整する必要があります。 <br><br>`routes.continuous_pickup` の値は、ルート沿いの特定の `stop_time` の `stop_times.continuous_pickup` の値を定義することで上書きできます。 <br><br>**条件付きで禁止**:<br>- このルートのいずれかの旅行に `stop_times.start_pickup_drop_off_window` または `stop_times.end_pickup_drop_off_window` が定義されている場合、`1` 以外の値または空は **禁止** です。<br> - それ以外の場合は任意です。 |
 | `continuous_drop_off` | 列挙型 | **条件付き禁止** | 乗客は、ルートのすべての便において、[shapes.txt](#shapestxt) で説明されているように、車両の移動経路に沿った任意の地点で交通事業者の車両から降車できることを示します。有効なオプションは次のとおりです: <br><br>`0` - 連続停車降車。 <br>`1` または空 - 連続停車降車なし。 <br>`2` - 連続停車降車を手配するには、代理店に電話する必要があります。 <br>`3` - 連続停車降車を手配するには、運転手と調整する必要があります。 <br><br>`routes.continuous_drop_off` の値は、ルート沿いの特定の `stop_time` に対して `stop_times.continuous_drop_off` の値を定義することで上書きできます。 <br><br>**条件付きで禁止**:<br>- このルートのいずれかの旅行に `stop_times.start_pickup_drop_off_window` または `stop_times.end_pickup_drop_off_window` が定義されている場合、`1` 以外の値または空は **禁止** です。<br> - それ以外の場合は任意です。|
-| `network_id` | ID | **条件付きで禁止** | ルートのグループを識別します。[routes.txt](#routestxt) 内の複数の行に同じ `network_id` が含まれる場合があります。<br><br>条件付きで禁止:<br>- **禁止**: [route_networks.txt](#route_networkstxt) ファイルが存在する場合。<br> - それ以外の場合は任意です。
+| `network_id` | ID |**条件付きで禁止**|ルート・路線系統のグループを識別します。 [routes.txt](#routestxt) 内の複数の行に同じ`network_id` が含まれるしてもよい。<br><br>条件付きで禁止:<br> - [route_networks.txt](#route_networkstxt) または [networks.txt](#networkstxt) ファイルが存在する場合は**禁止**です。<br> - それ以外の場合は任意。
 | `cemv_support` | 列挙型 |任意| 乗客が、運賃検証装置（ペイ・アズ・ユー・ゴーやオープンループシステムなど）において、非接触型EMV（Europay、Mastercard、Visa）カードまたはモバイルデバイスを運賃メディアとして使用することで、このルートに関連する交通サービス（便）を利用できるかどうかを示します。このフィールドは、cEMVを使用して他の運賃商品を購入したり、他の運賃メディアに残高を追加したりできることを示すものではありません。<br><br> cEMV のサポートは、このルートのすべてのサービスが運賃メディアとして cEMV カードまたはモバイルデバイスを利用してアクセスできる場合にのみ示すべきです。<br><br>有効なオプションは次のとおりです。<br><br> `0` または空 - このルートに関連する便に関する cEMV 情報はありません。<br> `1` - このルートに関連する便では、cEMV を運賃メディアとして利用できます。<br> `2` - このルートに関連する便では、cEMV は運賃メディアとしてサポートされていません。<br><br>同じサービスに対して agency.cemv_support と routes.cemv_support の両方が指定されている場合には、routes.cemv_support の値を優先しなければなりません。<br><br>このフィールドは、他のすべての運賃関連ファイルとは独立しており、個別に使用することができます。このフィールドと運賃関連ファイル（例：`fare_media.txt`、 `fare_products.txt`、 `fare_leg_rules.txt` ）の情報が矛盾する場合は、それらのファイルの情報が`agency.cemv_support`よりも優先されなければなりません。|
 
 ### trips.txt 
@@ -410,14 +411,14 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | フィールド名 | タイプ | 存在 | 説明 |
 | ------ | ------ | ------ | ------ |
 | `timeframe_group_id` | ID | **必須** | 時間枠または時間枠のセットを識別します。|
-| `start_time` | 時間 | **条件付きで必須** | 時間枠の開始を定義します。間隔には開始時刻が含まれます。<br> `24:00:00` より大きい値は禁止されています。 `start_time` の値が空の場合、`00:00:00` とみなされます。<br><br> 条件付きで必須:<br> - `timeframes.end_time` が定義されている場合は **必須** です。<br> - それ以外の場合は **禁止** です |
-| `end_time` | 時間 | **条件付きで必須** | 時間枠の終了を定義します。間隔には終了時刻は含まれません。<br> `24:00:00` より大きい値は禁止されています。`end_time` の値が空の場合、`24:00:00` とみなされます。<br><br> 条件付きで必須:<br> - `timeframes.start_time` が定義されている場合は **必須** です。<br> - それ以外の場合は **禁止** です |
+| `start_time` | 現地時間 | **条件付きで必須** | 時間枠の開始を定義します。間隔には開始時刻が含まれます。<br> `24:00:00` より大きい値は禁止されています。 `start_time` の値が空の場合、`00:00:00` とみなされます。<br><br> 条件付きで必須:<br> - `timeframes.end_time` が定義されている場合は **必須** です。<br> - それ以外の場合は **禁止** です |
+| `end_time` | 現地時間 | **条件付きで必須** | 時間枠の終了を定義します。間隔には終了時刻は含まれません。<br> `24:00:00` より大きい値は禁止されています。`end_time` の値が空の場合、`24:00:00` とみなされます。<br><br> 条件付きで必須:<br> - `timeframes.start_time` が定義されている場合は **必須** です。<br> - それ以外の場合は **禁止** です |
 | `service_id` | `calendar.service_id` または `calendar_dates.service_id` を参照する外部 ID | **必須** |期間が有効な日付のセットを識別します。 |
 
 #### タイムフレームのローカル時間セマンティクス
 - 運賃イベントの時間を [timeframes.txt](#timeframestxt) に対して評価する場合、イベント時間は、運賃イベントの停車駅または親駅の `stop_timezone` (指定されている場合) によって決定されるローカル タイムゾーンを使用してローカル時間で計算されます。指定されていない場合は、フィードの事業者のタイムゾーンを代わりに使用するするべきである。
 - `現在の日`は、ローカル タイムゾーンを基準に計算された運賃イベントの時間の現在のdateです。`現在の日`は、特に深夜を過ぎる便の場合、運賃区間の便のサービス日とは異なるしてもよい。
-- 運賃イベントの`時刻`は、GTFS 時間フィールドタイプのセマンティクスを使用して、`現在の日`を基準にして計算されます。
+- 運賃イベントの`時刻`は、GTFS ローカル時間フィールドタイプのセマンティクスを使用して`現在の日`を基準として計算されます。
 
 ### rider_categories.txt 
 
@@ -544,7 +545,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 
 複数区間の旅程の費用を処理するには:
 
-1. `fare_leg_rules.txt`で定義された適用可能な運賃区間グループは、乗客の旅程に基づいて、すべての個々の旅行区間に対して決定するするべきである。
+1. `fare_leg_rules.txt`で定義されている適用可能な運賃区間グループは、乗客の旅程に基づいて、すべての個別の区間または有効な運賃区間に対して決定するするべきである。
 2. ファイル [fare_transfer_rules.txt](#fare_transfer_rulestxt) は、乗り換えの特性を定義するフィールドでフィルタリングするしなければならない。これらのフィールドは次のとおりです:
    - `fare_transfer_rules.from_leg_group_id` 
    - `fare_transfer_rules.to_leg_group_id`<br/> 
@@ -564,7 +565,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | `to_leg_group_id` | `fare_leg_rules.leg_group_id` 部 ID |**任意**| 転送後の運賃区間ルールのグループを識別します。<br><br>フィルタリングされている`leg_group_id`に一致する`fare_transfer_rules.to_leg_group_id`値がない場合、デフォルトで空の`fare_transfer_rules.to_leg_group_id`が一致します。<br><br> `fare_transfer_rules.to_leg_group_id`の空のエントリは、 `fare_leg_rules.leg_group_id`にリストされているものを除く、 `fare_transfer_rules.to_leg_group_id`で定義されているすべての区間グループに対応します |
 | `transfer_count` | ゼロ以外の整数 |**条件付きで禁止**| 乗り換えルールを適用してもよい連続乗り換えの数を定義します。<br><br>有効なオプションは次のとおりです。<br> `-1` - 制限なし。<br> `1`以上 - 転送ルールが適用さしてもよい乗り換えの数を定義します。<br><br>サブジャーニーが異なる`transfer_count`を持つ複数のレコードと一致する場合、サブジャーニーの現在の転送カウント以上の最小`transfer_count`を持つルールが選択されます。<br><br>条件付きで禁止:<br> - `fare_transfer_rules.from_leg_group_id` が`fare_transfer_rules.to_leg_group_id`と等しくない場合は**禁止**です。<br> -**必須**`fare_transfer_rules.from_leg_group_id`が`fare_transfer_rules.to_leg_group_id`と等しい場合。 |
 | `duration_limit` | 正の整数 |任意| 乗り換えの期間制限を定義します。<br><br>秒単位の整数増分で表現するしなければならない。<br><br>期間制限がない場合は、 `fare_transfer_rules.duration_limit` は空にするしなければならない。 |
-| `duration_limit_type` | 列挙型 |**条件付きで必須**| `fare_transfer_rules.duration_limit`の相対的な開始と終了を定義します。<br><br>有効なオプションは次のとおりです。<br> `0` - 現在の区間の出発運賃の検証と次の区間の到着運賃の検証の間。<br> `1` - 現在の区間の出発運賃の検証と次の区間の出発運賃の検証の間。<br> `2` - 現在の区間の到着運賃の検証と次の区間の出発運賃の検証の間。<br> `3` - 現在の区間の到着運賃の検証と次の区間の到着運賃の検証の間。<br><br>条件付きで必須:<br> -** `fare_transfer_rules.duration_limit`が定義されている場合は必須。<br> - `fare_transfer_rules.duration_limit`が空の場合は**禁止**です。 |
+| `duration_limit_type` | 列挙型 |**条件付きで必須**| `fare_transfer_rules.duration_limit`の相対的な開始と終了を定義します。<br><br>有効なオプションは次のとおりです。<br> `0` - 乗り換えサブ旅程の最初の区間の出発運賃検証と乗り換えサブ旅程の最後の区間の到着運賃検証の間。<br> `1` - 乗り換えサブ旅程の最初の区間の出発運賃の検証と、乗り換えサブ旅程の最後の区間の出発運賃の検証の間。<br> `2` - 乗り換えサブ旅程の最初の区間の到着運賃検証と乗り換えサブ旅程の最後の区間の出発運賃検証の間。<br> `3` - 乗り換えサブ旅程の最初の区間の到着運賃検証と、乗り換えサブ旅程の最後の区間の到着運賃検証の間。<br><br>同じ`from_leg_group_id`と`to_leg_group_id`を持つ乗り換えルールが、複数区間の旅程内で連続して複数回一致した場合、ルールで指定された`duration_limit`は、最初に一致した区間から測定されるするべきである。<br><br>条件付きで必須:<br> -**必須**`fare_transfer_rules.duration_limit`が定義されている場合。<br> - `fare_transfer_rules.duration_limit`が空の場合は**禁止**です。 |
 | `fare_transfer_type` | 列挙型 |**必須**| 旅程中の区間間の乗り換えのコスト処理方法を示します。<br> ![](../../assets/2-leg.svg)<br>有効なオプションは次のとおりです。<br> `0` - 出発区間`fare_leg_rules.fare_product_id`と`fare_transfer_rules.fare_product_id`を加算したもの。A + AB。<br> `1` - 出発区間の`fare_leg_rules.fare_product_id`と`fare_transfer_rules.fare_product_id`と到着区間の`fare_leg_rules.fare_product_id` を加算します。A + AB + B。<br> `2` - `fare_transfer_rules.fare_product_id`; AB.<br><br>旅程中の複数の乗り換え間のコスト処理のやり取り:<br> ![](../../assets/3-leg.svg)<br><table><thead><tr><th> `fare_transfer_type`</th><th>処理A > B</th><th>処理B > C</th></tr></thead><tbody><tr><td> `0`</td><td> A + A +B プラス</td><td>S + BC</td></tr><tr><td> `1`</td><td> A + AB + B</td><td> S + BC + C</td></tr><tr><td> `2`</td><td> AB</td><td> S + BC</td></tr></tbody></table>ここで、S は、前の区間と乗り換えの合計処理コストを示します。 |
 | `fare_product_id` | `fare_products.fare_product_id`部 ID |任意| 2 つの運賃区間間の乗り換えに必須チケット商品。空の場合、乗り換えルールのコストは 0 です。|
 
