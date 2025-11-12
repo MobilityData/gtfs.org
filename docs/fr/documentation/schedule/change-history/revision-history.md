@@ -2,6 +2,9 @@
 
 ### Historique des révisions
 
+#### Octobre 2025
+* Ajout des clarifications pour `fare_transfer_rules.txt` et introduction d’un nouveau type de champ `heure locale`. Voir [discussion](https://github.com/google/transit/pull/561).
+
 #### Septembre 2025
 * Ajout du champ `cemv_support` dans `agency.txt` et `routes.txt`. Voir [discussion](https://github.com/google/transit/pull/545).
 * Ajout du champ `stop_access` dans `stops.txt`. Voir [discussion](https://github.com/google/transit/pull/515).
@@ -49,7 +52,7 @@
  * Ajoutez les networks.txt et route_networks.txt. Voir [discussion](https://github.com/google/transit/pull/405). 
  
 #### Août 2023 
- * Ajouter fare_media_type= 1. Voir [discussion](https:). 
+ * Ajouter fare_media_type=1. Voir [discussion](https://github.com/google/transit/pull/385). 
  
 #### Juillet 2023 
  * Interdire les sous-dossiers dans les fichiers GTFS. Voir [discussion](https://github.com/google/transit/pull/379). 
@@ -202,7 +205,7 @@
  
 #### 16 mars 2016 
  
- * Transition de la documentation GTFS vers Github sur https://github.com/google/transit
+ * Transition de la documentation GTFS vers Github sur [https://github.com/google/transit](https://github.com/google/transit).
  
 #### 3 février 2016
 
@@ -230,11 +233,11 @@
  
 #### 18 janvier 2012 
  
- * Migration de la documentation de l’ancien code.google.com vers son nouvel emplacement chez les développeurs.google.com. 
+ * Migration de la documentation de l’ancien code.google.com vers son nouvel emplacement à l'adresse: [developers.google.com](https://developers.google.com)
  
 #### 26 septembre 2011 
  
- * Ajout de la proposition ’feed_info’ à la spécification : [discussion](https://groups.google.com/forum/#!topic/gtfs-changes/Sh0e4o9o2Gw ) 
+ * Ajout de la proposition ’feed_info’ à la spécification : [discussion](https://groups.google.com/forum/#!topic/gtfs-changes/Sh0e4o9o2Gw )
  
 #### 6 septembre 2011 
  

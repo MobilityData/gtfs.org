@@ -2,6 +2,9 @@
 
 ### 改訂履歴
 
+#### 2025年10月
+* `fare_transfer_rules.txt`の説明を追加し、新しい `現地時間` フィールド タイプを導入しました。[ディスカッション](https:( https://github.com/google/transit/pull/561) を参照してください。
+
 #### 2025年9月
 * `agency.txt`と`routes.txt`に `cemv_support` フィールドを追加しました。[ディスカッション](https://github.com/google/transit/pull/545) を参照してください。
 * `stops.txt`に `stop_access` フィールドを追加しました。[ディスカッション](https://github.com/google/transit/pull/515) を参照してください。
