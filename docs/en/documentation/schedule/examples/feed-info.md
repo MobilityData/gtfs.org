@@ -9,7 +9,7 @@ On top of providing information about agencies and their services, it is possibl
 - Feed validity 
 - Version
 
-Below is an example from Transport for Cairio:
+Below is an example from Transport for Cairo:
 
 [**feed_info.txt**](../../reference/#feed_infotxt)
 
