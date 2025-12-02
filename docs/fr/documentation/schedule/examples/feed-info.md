@@ -9,7 +9,7 @@
  - Validité du flux
  - Version 
  
- Vous trouverez ci-dessous un exemple de Transport for Cairio : 
+ Vous trouverez ci-dessous un exemple de Transport for Cairo : 
  
  [**feed_info.txt**](../../reference/#feed_infotxt) 
  
