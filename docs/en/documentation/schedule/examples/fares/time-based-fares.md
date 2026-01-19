@@ -115,7 +115,7 @@ With `rule_priority=1` for Sea Island legs, they keep their priority in applying
 
 !!! info "Reminder"
 
-    The `rule_priority` field determines the order in which matching rules are applied: rules with higher `rule_priority` values take precedence over those with lower or empty values.
+    The `rule_priority` field determines the order in which matching rules are applied: For a set of rules that match the same conditions, rules with higher `rule_priority` values take precedence over those with lower or empty values.
 
 Since the weekday evening and weekend fare is the same as a flat fare or a one-zone fare, further simplification can be achieved using **rule_priority**. This is done in `fare_leg_rules.txt` as follows:
 

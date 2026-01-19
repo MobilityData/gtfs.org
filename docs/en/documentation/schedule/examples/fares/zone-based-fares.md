@@ -201,7 +201,7 @@ Note that `ZN1_ZN2` is listed twice in the example below. It is first associated
 
 ## Prioritize overlapping zones
 
-In some cases, multiple zones may share the same stop. This can create ambiguity about which zone should be used when applying a fare leg rule to a leg. To resolve this, the `rule_priority` field is used in `fare_leg_rules.txt`. It determines the order in which matching rules are applied: rules with higher `rule_priority` values take precedence over those with lower or empty values.
+In some cases, multiple zones may share the same stop. This can create ambiguity about which zone should be used when applying a fare leg rule to a leg. To resolve this, the `rule_priority` field is used in `fare_leg_rules.txt`. It determines the order in which matching rules are applied: For a set of rules that match the same conditions, rules with higher `rule_priority` values take precedence over those with lower or empty values.
 
 This is done in `fare_leg_rules.txt` as follows:
 
