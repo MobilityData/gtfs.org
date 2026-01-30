@@ -71,6 +71,23 @@ The community is constantly developing new additions to the specification that c
 
 </div>
 
+## Working Groups Meetings
+
+**[Join the next sessions](https://community.mobilitydata.org/working-groups) to improve the GTFS standard.**
+
+### How it works
+
+We meet **monthly on Tuesdays** via Zoom. Materials are shared beforehand, summaries posted after.
+
+---
+
+### Three focus areas:
+
+- **Station Modeling** — Defining complex transit hubs
+- **Service Alerts** — Real-time disruption info  
+- **Fares** — Ticketing and pricing structures
+
+### [Learn more about the Working Groups Meetings →](https://community.mobilitydata.org/working-groups)
 
 
 ## Community Resources
