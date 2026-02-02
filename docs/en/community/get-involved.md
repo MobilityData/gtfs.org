@@ -71,6 +71,23 @@ The community is constantly developing new additions to the specification that c
 
 </div>
 
+## Working Group Meetings
+
+Working Group Meetings are an opportunity for the GTFS Community to come together and improve the specification.
+
+### How it works
+
+We meet on the fourth Tuesday of every month at 11:30AM EST via Zoom. Materials are shared beforehand, summaries posted after.
+
+---
+
+### Three focus areas:
+
+- **Station Modeling** — Defining complex transit hubs
+- **Service Alerts** — Real-time disruption info  
+- **Fares** — Ticketing and pricing structures
+
+### [Learn more about the Working Group Meetings →](https://community.mobilitydata.org/working-groups)
 
 
 ## Community Resources
