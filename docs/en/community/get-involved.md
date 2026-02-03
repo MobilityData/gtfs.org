@@ -77,7 +77,7 @@ Working Group Meetings are an opportunity for the GTFS Community to come togethe
 
 ### How it works
 
-We meet on the fourth Tuesday of every month at 11:30AM EST via Zoom. Materials are shared beforehand, summaries posted after.
+We meet on the fourth Tuesday of every month at 11:00 EST via Zoom. Materials are shared beforehand, summaries posted after.
 
 ---
 
