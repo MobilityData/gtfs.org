@@ -367,13 +367,9 @@ Cars Allowed indicates if vehicles serving specific trips are able to accommodat
         | RA       | WE         | AWE2    |             2 |
 
 
-
-
 ## Stop Access
 
 Indicates how the stop is accessed for a particular station. This allows trip planners to generate directions for the stop either using pathways or the street network.
-
-
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -385,16 +381,17 @@ Indicates how the stop is accessed for a particular station. This allows trip pl
 - [Base features](../base)
 
 ??? note "Sample Data"
+
     <p style="font-size:16px">
- The following sample specifies that the stop with `stop_id` = `STOP1` must be accessed from a station entrance or using pathways (`stop_access=0`), and the stop with `stop_id` = `STOP2` can be accessed directly without taking into account entrances or pathways of the parent station `STATION0` (`stop_access=1`).
+    The following sample specifies that the stop with `stop_id` = `STOP1` must be accessed from a station entrance or using pathways (`stop_access=0`), and the stop with `stop_id` = `STOP2` can be accessed directly without taking into account entrances or pathways of the parent station `STATION0` (`stop_access=1`).
     </p>
     !!! note ""
         <p style="font-size:16px">
-        <a href="../../../documentation/schedule/reference/#tripstxt"><b>stops.txt</b></a> <br>
+        <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
         </p>
 
         | stop_id | stop_name | location_type | parent_station | stop_access |
         |----------|--|------------|---------|---------------|
-        | STATION0  | Main Street Bus Station  |  1         |    |   |
-        | STOP1  |  Main Street Bus Station - Platform 1  | 0         | STATION0    |             0 |
+        | STATION0   | Main Street Bus Station                | 1            |       |      |
+        | STOP1      |  Main Street Bus Station - Platform 1  | 0            | STATION0   | 0 |
         | STOP2   |  |  Main Street Station - Street Bus Stop  | STATION0    |             1 |
