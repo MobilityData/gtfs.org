@@ -112,6 +112,17 @@ These features enhance a GTFS dataset, improving rider experience and facilitati
 
     [:octicons-arrow-right-24: Learn more](../base_add-ons/#attributions)
 
+- :material-plus-box-multiple-outline:{ .lg .middle } __Cars Allowed__
+
+    Communicate if vehicles are able to accommodate cars or not.
+
+    [:octicons-arrow-right-24: Learn more](../base_add-ons/#cars-allowed)
+
+- :material-plus-box-multiple-outline:{ .lg .middle } __Stop Access__
+
+    Communicate how a stop is accessed relative to its parent station.
+
+    [:octicons-arrow-right-24: Learn more](../base_add-ons/#stop-access)
 </div>
 
 
