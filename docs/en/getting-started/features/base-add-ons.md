@@ -335,3 +335,66 @@ Attributions makes it possible to share additional details regarding the organiz
         | au01           | gra       |          |         | Greater Region Transport |           1 |             |            1 | https://www.gra1.org             | contact@gra1.org        | (555)        555-5555    |
         | op02           |           | rtd023   |         | Bus company A            |             |           1 |              | https://www.buscompanya.com      | contact@buscompanya.com | (333)        333-3333    |
         | op03           |           | rtd025   |         | Bus company B            |             |           1 |              | https://www.buscompanyb.com      | contact@buscompanyb.com | (888)        888-8888    |
+
+## Cars Allowed
+
+Cars Allowed indicates if vehicles serving specific trips are able to accommodate cars or not, helping users to plan and access services that enable them to make multimodal trips (such as car ferries and trains that can transport cars in a similar way).
+
+
+
+| Files included                   | Fields included   |
+|----------------------------------|-------------------|
+|[trips.txt](../../../documentation/schedule/reference/#tripstxt)|`cars_allowed` |
+
+
+**Prerequisites**: 
+
+- [Base features](../base)
+
+??? note "Sample Data"
+
+    <p style="font-size:16px">
+    The following sample specifies that the vehicle used in trip `AWE1` can accommodate at least one car on board (`cars_allowed=1`), and the vehicle used in trip `AWE2` cannot (`cars_allowed=2`).
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
+        </p>
+
+        | route_id | service_id | trip_id | cars_allowed |
+        |----------|------------|---------|---------------|
+        | RA       | WE         | AWE1    |             1 |
+        | RA       | WE         | AWE2    |             2 |
+
+
+
+
+## Stop Access
+
+Indicates how the stop is accessed for a particular station. This allows trip planners to generate directions for the stop either using pathways or the street network.
+
+
+
+| Files included                   | Fields included   |
+|----------------------------------|-------------------|
+|[stops.txt](../../../documentation/schedule/reference/#tripstxt)|`stop_access` |
+
+
+**Prerequisites**: 
+
+- [Base features](../base)
+
+??? note "Sample Data"
+    <p style="font-size:16px">
+ The following sample specifies that the stop with `stop_id` = `STOP1` must be accessed from a station entrance or using pathways (`stop_access=0`), and the stop with `stop_id` = `STOP2` can be accessed directly without taking into account entrances or pathways of the parent station `STATION0` (`stop_access=1`).
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#tripstxt"><b>stops.txt</b></a> <br>
+        </p>
+
+        | stop_id | stop_name | location_type | parent_station | stop_access |
+        |----------|--|------------|---------|---------------|
+        | STATION0  | Main Street Bus Station  |  1         |    |   |
+        | STOP1  |  Main Street Bus Station - Platform 1  | 0         | STATION0    |             0 |
+        | STOP2   |  |  Main Street Station - Street Bus Stop  | STATION0    |             1 |
