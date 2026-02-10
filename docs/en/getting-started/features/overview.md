@@ -199,6 +199,12 @@ GTFS can model various fare structures, such as zone, distance, or time-of-day b
 
     [:octicons-arrow-right-24: Learn more](../fares/#fare-transfers)
 
+-   :material-cash:{ .lg .middle } __cEMV Support__
+
+    Communicate if users can pay their fare using contactless EMV cards or devices.
+
+    [:octicons-arrow-right-24: Learn more](../fares/#cemv-support)
+
 -   :material-cash:{ .lg .middle } __Fares V1__
 
     Legacy feature that allows a simpler representation of fare information.

@@ -330,6 +330,65 @@ Fare Transfers is used to define rules applicable when transferring between legs
         | a                 | a               | -1             | 7200           | 1                   | 0                  | free_transfer   |
 
 
+## cEMV Support
+
+The cEMV support feature allows data producers to indicate whether riders can access a transit service using contactless cards or devices (for example, in tap-to-pay systems).
+It provides a simplified way to communicate the availability of contactless payment when publishing full fare media and fare rules is not possible.
+This feature is intended to complement, not replace, detailed fare information provided through [Fare Media](../fares/#fare-media).
+
+
+| Files included                   | Fields included   |
+|----------------------------------|-------------------|
+|[agency.txt](../../../documentation/schedule/reference/#agencytxt)|`cemv_support`|
+|[routes.txt](../../../documentation/schedule/reference/#routestxt)|`cemv_support`|
+
+**Prerequisites**:
+
+- [Base features](../base)
+
+??? note "Sample Data"
+
+    <p style="font-size:16px">
+    In the following example, the first table specifies that all services operated by agency `AA` can be accessed by riders paying with contactless cards or devices (cEMV). </p>
+
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#agencytxt"><b>agency.txt</b></a> <br>
+        </p>
+
+        | agency\_id | agency\_name | agency\_url | agency\_timezone | cemv\_support |
+        | :---- | :---- | :---- | :---- | :---- |
+        | AA | Agency A | [www.gtfsagencya.org](http://www.gtfsagencya.org) | America/Denver | 1 |
+        | BB | Agency B | [www.gtfsagencyb.org](http://www.gtfsagencyb.org) | America/Denver |  |
+        | CC | Agency C | [www.gtfsagencyc.org](http://www.gtfsagencyc.org) | America/Denver |  |
+
+    <p style="font-size:16px">
+    In the second table, only specific routes (`BB001`, `BB003` and `CC001`) can be accessed by riders paying with contactless cards or devices (cEMV). All other routes from agencies `BB` and `CC` do not support contactless payment. </p>
+
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#routestxt"><b>routes.txt</b></a> <br>
+        </p>
+
+        | route\_id | agency\_id | route\_short\_name | route\_type | cemv\_support |
+        | :---- | :---- | :---- | :---- | :---- |
+        | AA001 | AA | A1 | 3 |  |
+        | AA002 | AA | A2 | 3 |  |
+        | AA003 | AA | A3 | 3 |  |
+        | BB001 | BB | B1 | 3 | 1 |
+        | BB002 | BB | B2 | 3 | 2 |
+        | BB003 | BB | B3 | 3 | 1 |
+        | CC001 | CC | C1 | 3 | 1 |
+        | CC002 | CC | C2 | 3 | 2 |
+        | CC003 | CC | C3 | 3 | 2 |
+
+
+
+
+
+
+
+
 ## Fares v1
 
 Fares v1 is a legacy alternative to other Fares features described above. It allows to model basic fare information such as fare pricing, payment methods transfers and zone-based fares using the `fare_rules.txt` and `fare_attributes.txt` files. While simpler to produce, it's less capable or modeling more complex fare structures and may be deprecated with sufficient endorsement of other Fare features (that are part of what is called Fares v2).
