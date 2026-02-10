@@ -340,3 +340,62 @@
         | au01           | gra       |          |         | Greater Region Transport |           1 |             |            1 | https://www.gra1.org             | contact@gra1.org        | (555)        555-5555    |
         | op02           |           | rtd023   |         | Bus company A            |             |           1 |              | https://www.buscompanya.com      | contact@buscompanya.com | (333)        333-3333    |
         | op03           |           | rtd025   |         | Bus company B            |             |           1 |              | https://www.buscompanyb.com      | contact@buscompanyb.com | (888)        888-8888    |
+
+## Voiture Autorisée
+
+ Voiture Autorisée indique si les véhicules effectuant des déplacements spécifiques sont en mesure d’accueillir des voitures ou non, aidant ainsi les utilisateurs à planifier et à accéder aux services qui leur permettent d’effectuer des déplacements multimodaux (comme les ferries et les trains qui peuvent transporter des voitures de manière similaire).
+
+
+| Fichiers inclus | Champs inclus   |
+|----------------------------------|-------------------|
+|[trips.txt](../../../documentation/schedule/reference/#tripstxt)|`cars_allowed` |
+
+
+**Prérequis**: 
+
+- [fonctionnalités de Base](../base)
+
+??? note "Exemples de données"
+
+    <p style="font-size:16px">
+    L'exemple suivant spécifie que le véhicule utilisé dans le trajet `AWE1` peut accueillir au moins une voiture à bord (`cars_allowed=1`), et que le véhicule utilisé dans le trajet `AWE2` ne le peut pas (`cars_allowed=2`).
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
+        </p>
+
+        | route_id | service_id | trip_id | cars_allowed |
+        |----------|------------|---------|---------------|
+        | RA       | WE         | AWE1    |             1 |
+        | RA       | WE         | AWE2    |             2 |
+
+
+## Accès aux Arrêts
+
+Indique comment accéder à l'arrêt depuis une station donnée. Cela permet aux applications de planification d’itinéraire de générer des itinéraires vers l'arrêt en utilisant soit les parcours (pathways), soit le réseau routier.
+
+| Fichiers inclus | Champs inclus   |
+|----------------------------------|-------------------|
+|[stops.txt](../../../documentation/schedule/reference/#tripstxt)|`stop_access` |
+
+
+**Prérequis**: 
+
+- [fonctionnalités de Base](../base)
+
+??? note "Exemples de données"
+
+    <p style="font-size:16px">
+    L'exemple suivant spécifie que l'arrêt avec `stop_id` = `STOP1` doit être accessible depuis une entrée de station ou en utilisant des parcours (`stop_access=0`), et que l'arrêt avec `stop_id` = `STOP2` peut être accessible directement sans tenir compte des entrées ou des parcours de la station parent `STATION0` (`stop_access=1`).
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
+        </p>
+
+        | stop_id | stop_name | location_type | parent_station | stop_access |
+        |----------|--|------------|---------|---------------|
+        | STATION0   | Main Street Bus Station                | 1            |       |      |
+        | STOP1      |  Main Street Bus Station - Platform 1  | 0            | STATION0   | 0 |
+        | STOP2   |  |  Main Street Station - Street Bus Stop  | STATION0    |             1 |
