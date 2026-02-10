@@ -373,7 +373,7 @@
 
 ## Accès aux Arrêts
 
-Indique comment accéder à l'arrêt depuis une station donnée. Cela permet aux applications de planification d’itinéraire de générer des itinéraires vers l'arrêt en utilisant soit les parcours (pathways), soit le réseau routier.
+Indique comment accéder à l'arrêt pour une station donnée. Cela permet aux applications de planification d’itinéraire de générer des itinéraires vers l'arrêt en utilisant soit les parcours (pathways), soit le réseau routier.
 
 | Fichiers inclus | Champs inclus   |
 |----------------------------------|-------------------|
