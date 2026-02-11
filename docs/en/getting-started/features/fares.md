@@ -334,8 +334,7 @@ Fare Transfers is used to define rules applicable when transferring between legs
 
 The cEMV support feature allows data producers to indicate whether riders can access a transit service using contactless cards or devices (for example, in tap-to-pay systems).
 It provides a simplified way to communicate the availability of contactless payment when publishing full fare media and fare rules is not possible.
-This feature is intended to complement, not replace, detailed fare information provided through [Fare Media](../fares/#fare-media).
-
+This feature is intended as a simplified alternative, and not replacement to detailed fare information provided through [Fare Media](../fares/#fare-media).
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -381,12 +380,6 @@ This feature is intended to complement, not replace, detailed fare information p
         | CC001 | CC | C1 | 3 | 1 |
         | CC002 | CC | C2 | 3 | 2 |
         | CC003 | CC | C3 | 3 | 2 |
-
-
-
-
-
-
 
 
 ## Fares v1

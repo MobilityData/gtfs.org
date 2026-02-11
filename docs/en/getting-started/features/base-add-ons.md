@@ -369,7 +369,7 @@ Cars Allowed indicates if vehicles serving specific trips are able to accommodat
 
 ## Stop Access
 
-Indicates how the stop is accessed for a particular station. This allows trip planners to generate directions for the stop either using pathways or the street network.
+This feature indicates how the stop is accessed for a particular station. This allows trip planners to generate directions for the stop either using pathways or the street network.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
