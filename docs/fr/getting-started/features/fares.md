@@ -332,9 +332,9 @@ Les catégories de passagers sont utilisées pour représenter les différents t
  
  La fonctionnalité de support sans contact EMV permet aux producteurs de données d'indiquer si les usagers peuvent accéder à un service de transport en commun à l'aide de cartes ou d'appareils sans contact.
  Elle offre un moyen simplifié de communiquer la disponibilité du paiement sans contact lorsqu'il est impossible de publier l'intégralité des média tarifaires et des règles tarifaires.
- Cette fonctionnalité est conçue pour compléter, et non remplacer, les informations tarifaires détaillées fournies via [Tarif Média](../fares/#fare-media).
+ Cette fonctionnalité est conçue comme une alternative simplifiée, et non comme un remplacement, aux informations tarifaires détaillées fournies via [Tarif Média](../fares/#fare-media).
  
- 
+
  | Fichiers inclus | Champs inclus   |
  |----------------------------------|-------------------|
  |[agency.txt](../../../documentation/schedule/reference/#agencytxt)|`cemv_support`|
@@ -344,12 +344,13 @@ Les catégories de passagers sont utilisées pour représenter les différents t
  
  - [Fonctionnalités de Base](../base)
  
- ??? note "Exemples de données"
+??? note "Exemples de données"
  
      <p style="font-size:16px">
-     Dans l'exemple suivant, le premier tableau précise que tous les services exploités par l'agence « AA » sont accessibles aux usagers payant avec des cartes ou des appareils sans contact (cEMV). </p>
+     Dans l'exemple suivant, le premier tableau précise que tous les services exploités par l'agence « AA » sont accessibles aux usagers payant avec des cartes ou des appareils sans contact (cEMV). 
+     </p>
  
-     !!! note ""
+    !!! note ""
          <p style="font-size:16px">
          <a href="../../../documentation/schedule/reference/#agencytxt"><b>agency.txt</b></a> <br>
          </p>
@@ -362,9 +363,9 @@ Les catégories de passagers sont utilisées pour représenter les différents t
  
      <p style="font-size:16px">
      Dans le deuxième tableau, seuls certains itinéraires (`BB001`, `BB003` et `CC001`) sont accessibles aux voyageurs payant avec une carte ou un appareil sans contact (cEMV). Tous les autres itinéraires des agences `BB` et `CC` ne prennent pas en charge le paiement sans contact.
- </p>
+     </p>
  
-     !!! note ""
+    !!! note ""
          <p style="font-size:16px">
          <a href="../../../documentation/schedule/reference/#routestxt"><b>routes.txt</b></a> <br>
          </p>
@@ -399,7 +400,8 @@ Les catégories de passagers sont utilisées pour représenter les différents t
 ??? note "Exemples de données"
 
     <p style="font-size:16px">
-    L’exemple suivant illustre qu’un déplacement sur un réseau coûte 3,20 $ CAD en utilisant une carte prépayée, permettant des transferts gratuits dans une fenêtre de 2 heures.</p>
+    L’exemple suivant illustre qu’un déplacement sur un réseau coûte 3,20 $ CAD en utilisant une carte prépayée, permettant des transferts gratuits dans une fenêtre de 2 heures.
+    </p>
 
     !!! note ""
         <p style="font-size:16px">
