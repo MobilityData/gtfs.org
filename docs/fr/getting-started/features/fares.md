@@ -328,6 +328,59 @@ Les catégories de passagers sont utilisées pour représenter les différents t
         |-------------------|-----------------|----------------|----------------|---------------------|--------------------|-----------------|
         | a                 | a               | -1             | 7200           | 1                   | 0                  | free_transfer   | 
  
+## Support sans contact EMV
+ 
+ La fonctionnalité de support sans contact EMV permet aux producteurs de données d'indiquer si les usagers peuvent accéder à un service de transport en commun à l'aide de cartes ou d'appareils sans contact.
+ Elle offre un moyen simplifié de communiquer la disponibilité du paiement sans contact lorsqu'il est impossible de publier l'intégralité des média tarifaires et des règles tarifaires.
+ Cette fonctionnalité est conçue pour compléter, et non remplacer, les informations tarifaires détaillées fournies via [Tarif Média](../fares/#fare-media).
+ 
+ 
+ | Fichiers inclus | Champs inclus   |
+ |----------------------------------|-------------------|
+ |[agency.txt](../../../documentation/schedule/reference/#agencytxt)|`cemv_support`|
+ |[routes.txt](../../../documentation/schedule/reference/#routestxt)|`cemv_support`|
+ 
+ **Prérequis**:
+ 
+ - [Fonctionnalités de Base](../base)
+ 
+ ??? note "Exemples de données"
+ 
+     <p style="font-size:16px">
+     Dans l'exemple suivant, le premier tableau précise que tous les services exploités par l'agence « AA » sont accessibles aux usagers payant avec des cartes ou des appareils sans contact (cEMV). </p>
+ 
+     !!! note ""
+         <p style="font-size:16px">
+         <a href="../../../documentation/schedule/reference/#agencytxt"><b>agency.txt</b></a> <br>
+         </p>
+ 
+         | agency\_id | agency\_name | agency\_url | agency\_timezone | cemv\_support |
+         | :---- | :---- | :---- | :---- | :---- |
+         | AA | Agency A | [www.gtfsagencya.org](http://www.gtfsagencya.org) | America/Denver | 1 |
+         | BB | Agency B | [www.gtfsagencyb.org](http://www.gtfsagencyb.org) | America/Denver |  |
+         | CC | Agency C | [www.gtfsagencyc.org](http://www.gtfsagencyc.org) | America/Denver |  |
+ 
+     <p style="font-size:16px">
+     Dans le deuxième tableau, seuls certains itinéraires (`BB001`, `BB003` et `CC001`) sont accessibles aux voyageurs payant avec une carte ou un appareil sans contact (cEMV). Tous les autres itinéraires des agences `BB` et `CC` ne prennent pas en charge le paiement sans contact.
+ </p>
+ 
+     !!! note ""
+         <p style="font-size:16px">
+         <a href="../../../documentation/schedule/reference/#routestxt"><b>routes.txt</b></a> <br>
+         </p>
+ 
+         | route\_id | agency\_id | route\_short\_name | route\_type | cemv\_support |
+         | :---- | :---- | :---- | :---- | :---- |
+         | AA001 | AA | A1 | 3 |  |
+         | AA002 | AA | A2 | 3 |  |
+         | AA003 | AA | A3 | 3 |  |
+         | BB001 | BB | B1 | 3 | 1 |
+         | BB002 | BB | B2 | 3 | 2 |
+         | BB003 | BB | B3 | 3 | 1 |
+         | CC001 | CC | C1 | 3 | 1 |
+         | CC002 | CC | C2 | 3 | 2 |
+         | CC003 | CC | C3 | 3 | 2 |
+ 
 ## Fares v1 
  
  Fares v1 est une alternative héritée aux autres fonctionnalités Tarifs décrites ci-dessus. Il permet de modéliser les informations tarifaires de base telles que la tarification, les transferts de modes de paiement et les tarifs par zone à l’aide des fichiers `fare_rules.txt` et `fare_attributes.txt`. Bien que plus simple à produire, il est moins performant ou modélise des structures tarifaires plus complexes et peut être obsolète avec une approbation suffisante d’autres fonctionnalités tarifaires (qui font partie de ce qu’on appelle Fares v2). 
