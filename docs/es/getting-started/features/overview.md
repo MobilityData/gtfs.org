@@ -200,11 +200,11 @@
  
     [:octicons-arrow-right-24: Más información](../fares/#transferencias-de-tarifas) 
 
--   :material-cash:{ .lg .middle } __Soporte cEMV__
+-   :material-cash:{ .lg .middle } __Soporte Contactless EMV__
 
     Indicar si las personas pueden pagar utilizando tarjetas o dispositivos Contactless EMV.
 
-    [:octicons-arrow-right-24: Learn more](../fares/#soporte-cemv)
+    [:octicons-arrow-right-24: Learn more](../fares/#soporte-contactless-emv)
  
  - :material-cash:{ .lg.middle } __Tarifas V1__ 
  

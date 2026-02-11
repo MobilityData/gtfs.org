@@ -331,9 +331,9 @@ Las categorías de pasajeros se utilizan para representar los diferentes tipos d
         | a                 | a               | -1             | 7200           | 1                   | 0                  | free_transfer   |
  
 
-## Soporte cEMV
+## Soporte Contactless EMV
 
-Soporte cEMV se utiliza para indicar si los pasajeros pueden acceder a un servicio de transporte utilizando tarjetas o dispositivos contactless (por ejemplo, en sistemas "tap-to-pay").
+Soporte Contactless EMV se utiliza para indicar si los pasajeros pueden acceder a un servicio de transporte utilizando tarjetas o dispositivos contactless (por ejemplo, en sistemas "tap-to-pay").
 Proporciona una forma simplificada de comunicar la disponibilidad de pagos contactless cuando no es posible publicar la información completa de tarifas.
 Esta función pensada como una alternativa simplificada, y no un sustituto a la información detallada de tarifas proporcionada mediante [Medios de Tarifa](../fares/#medios-de-tarifa).
 
