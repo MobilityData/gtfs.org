@@ -338,3 +338,60 @@
         | op02           |           | rtd023   |         | Bus company A            |             |           1 |              | https://www.buscompanya.com      | contact@buscompanya.com | (333)        333-3333    |
         | op03           |           | rtd025   |         | Bus company B            |             |           1 |              | https://www.buscompanyb.com      | contact@buscompanyb.com | (888)        888-8888    |
 
+## Autos Permitidos
+
+Autos permitidos indica si los vehículos que prestan servicio en viajes específicos pueden transportar automóviles o no, lo cual ayuda a las personas usuarias a planear y acceder a servicios que les permiten realizar viajes multimodales (como ferris y trenes que pueden transportar autos).
+
+| Archivos incluidos | Campos incluidos | 
+|----------------------------------|-------------------|
+|[trips.txt](../../../documentation/schedule/reference/#tripstxt)|`cars_allowed` |
+
+
+**Requisitos previos**: 
+ 
+- [Funciones Base](../base) 
+
+??? note "Datos de muestra"
+
+    <p style="font-size:16px">
+    El siguiente ejemplo especifica que el vehículo utilizado en el viaje `AWE1` puede transportar al menos un automóvil a bordo (`cars_allowed=1`), y que el vehículo utilizado en el viaje `AWE2` no puede (`cars_allowed=2`).
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a> <br>
+        </p>
+
+        | route_id | service_id | trip_id | cars_allowed |
+        |----------|------------|---------|---------------|
+        | RA       | WE         | AWE1    |             1 |
+        | RA       | WE         | AWE2    |             2 |
+
+
+## Acceso a la Parada
+
+Esta función indica cómo se accede a una parada en una estación determinada. Esto permite que los planificadores de viajes generen indicaciones hacia la parada utilizando los recorridos internos (pathways) o la red vial.
+
+| Archivos incluidos | Campos incluidos | 
+|----------------------------------|-------------------|
+|[stops.txt](../../../documentation/schedule/reference/#stopstxt)|`stop_access` |
+
+
+**Requisitos previos**: 
+ 
+- [Funciones Base](../base) 
+
+??? note "Datos de muestra"
+
+    <p style="font-size:16px">
+    El siguiente ejemplo especifica que a la parada con `stop_id` = `STOP1` se debe acceder desde una entrada de la estación o utilizando recorridos (pathways) internos (`stop_access=0`), y que a la parada con `stop_id` = `STOP2` se puede acceder directamente, sin tener en cuenta las entradas ni los recorridos (pathways) internos de la estación principal `STATION0` (`stop_access=1`).
+    </p>
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a> <br>
+        </p>
+
+        | stop_id | stop_name | location_type | parent_station | stop_access |
+        |----------|--|------------|---------|---------------|
+        | STATION0   | Main Street Bus Station                | 1            |       |      |
+        | STOP1      |  Main Street Bus Station - Platform 1  | 0            | STATION0   | 0 |
+        | STOP2   |  |  Main Street Station - Street Bus Stop  | STATION0    |             1 |
