@@ -377,7 +377,7 @@ Indique comment accéder à l'arrêt pour une station donnée. Cela permet aux a
 
 | Fichiers inclus | Champs inclus   |
 |----------------------------------|-------------------|
-|[stops.txt](../../../documentation/schedule/reference/#tripstxt)|`stop_access` |
+|[stops.txt](../../../documentation/schedule/reference/#stopstxt)|`stop_access` |
 
 
 **Prérequis**: 
