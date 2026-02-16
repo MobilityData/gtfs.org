@@ -333,8 +333,7 @@ Fare Transfers is used to define rules applicable when transferring between legs
 ## cEMV Support
 
 The cEMV support feature allows data producers to indicate whether riders can access a transit service using contactless cards or devices (for example, in tap-to-pay systems).
-It provides a simplified way to communicate the availability of contactless payment when publishing full fare media and fare rules is not possible.
-This feature is intended as a simplified alternative, and not replacement to detailed fare information provided through [Fare Media](../fares/#fare-media).
+This feature provides a simplified alternative to communicate the availability of contactless payment at an agency or route level, but it is not a replacement for detailed fare information provided through [Fare Media](../fares/#fare-media).
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|
@@ -355,7 +354,7 @@ This feature is intended as a simplified alternative, and not replacement to det
         <a href="../../../documentation/schedule/reference/#agencytxt"><b>agency.txt</b></a> <br>
         </p>
 
-        | agency\_id | agency\_name | agency\_url | agency\_timezone | cemv\_support |
+        | agency_id | agency_name | agency_url | agency_timezone | cemv_support |
         | :---- | :---- | :---- | :---- | :---- |
         | AA | Agency A | [www.gtfsagencya.org](http://www.gtfsagencya.org) | America/Denver | 1 |
         | BB | Agency B | [www.gtfsagencyb.org](http://www.gtfsagencyb.org) | America/Denver |  |
@@ -369,7 +368,7 @@ This feature is intended as a simplified alternative, and not replacement to det
         <a href="../../../documentation/schedule/reference/#routestxt"><b>routes.txt</b></a> <br>
         </p>
 
-        | route\_id | agency\_id | route\_short\_name | route\_type | cemv\_support |
+        | route_id | agency_id | route_short\_name | route_type | cemv_support |
         | :---- | :---- | :---- | :---- | :---- |
         | AA001 | AA | A1 | 3 |  |
         | AA002 | AA | A2 | 3 |  |

@@ -334,8 +334,7 @@ Las categorías de pasajeros se utilizan para representar los diferentes tipos d
 ## Soporte Contactless EMV
 
 Soporte Contactless EMV se utiliza para indicar si los pasajeros pueden acceder a un servicio de transporte utilizando tarjetas o dispositivos contactless (por ejemplo, en sistemas "tap-to-pay").
-Proporciona una forma simplificada de comunicar la disponibilidad de pagos contactless cuando no es posible publicar la información completa de tarifas.
-Esta función pensada como una alternativa simplificada, y no un sustituto a la información detallada de tarifas proporcionada mediante [Medios de Tarifa](../fares/#medios-de-tarifa).
+Esta función proporciona una alternativa simplificada para comunicar la disponibilidad de pagos contactless a nivel de agencia o ruta, pero no reemplaza la información detallada sobre tarifas proporcionada mediate [Medios de Tarifa](../fares/#medios-de-tarifa).
 
 
 | Archivos incluidos                   | Campos incluidos   |
@@ -357,7 +356,7 @@ Esta función pensada como una alternativa simplificada, y no un sustituto a la 
         <a href="../../../documentation/schedule/reference/#agencytxt"><b>agency.txt</b></a> <br>
         </p>
 
-        | agency\_id | agency\_name | agency\_url | agency\_timezone | cemv\_support |
+        | agency_id | agency_name | agency_url | agency_timezone | cemv_support |
         | :---- | :---- | :---- | :---- | :---- |
         | AA | Agency A | [www.gtfsagencya.org](http://www.gtfsagencya.org) | America/Denver | 1 |
         | BB | Agency B | [www.gtfsagencyb.org](http://www.gtfsagencyb.org) | America/Denver |  |
@@ -371,7 +370,7 @@ Esta función pensada como una alternativa simplificada, y no un sustituto a la 
         <a href="../../../documentation/schedule/reference/#routestxt"><b>routes.txt</b></a> <br>
         </p>
 
-        | route\_id | agency\_id | route\_short\_name | route\_type | cemv\_support |
+        | route_id | agency_id | route_short_name | route_type | cemv_support |
         | :---- | :---- | :---- | :---- | :---- |
         | AA001 | AA | A1 | 3 |  |
         | AA002 | AA | A2 | 3 |  |
