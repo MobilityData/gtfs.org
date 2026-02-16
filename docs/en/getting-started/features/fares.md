@@ -330,9 +330,9 @@ Fare Transfers is used to define rules applicable when transferring between legs
         | a                 | a               | -1             | 7200           | 1                   | 0                  | free_transfer   |
 
 
-## cEMV Support
+## Contactless EMV Support
 
-The cEMV support feature allows data producers to indicate whether riders can access a transit service using contactless cards or devices (for example, in tap-to-pay systems).
+The Contactless EMV support feature allows data producers to indicate whether riders can access a transit service using contactless cards or devices (for example, in tap-to-pay systems).
 This feature provides a simplified alternative to communicate the availability of contactless payment at an agency or route level, but it is not a replacement for detailed fare information provided through [Fare Media](../fares/#fare-media).
 
 | Files included                   | Fields included   |
