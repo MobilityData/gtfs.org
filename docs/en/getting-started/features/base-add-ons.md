@@ -338,8 +338,7 @@ Attributions makes it possible to share additional details regarding the organiz
 
 ## Cars Allowed
 
-Cars Allowed indicates if vehicles serving specific trips are able to accommodate cars or not, helping users to plan and access services that enable them to make multimodal trips (such as car ferries and trains that can transport cars in a similar way).
-
+Cars Allowed indicates if vehicles serving specific trips (such as car ferries or trains capable of transporting cars) are able to accommodate cars or not on the vehicle. This feature helps users plan and access services that enable them to make multimodal trips.
 
 
 | Files included                   | Fields included   |
@@ -369,7 +368,7 @@ Cars Allowed indicates if vehicles serving specific trips are able to accommodat
 
 ## Stop Access
 
-This feature indicates how the stop is accessed for a particular station. This allows trip planners to generate directions for the stop either using pathways or the street network.
+Stop Access indicates if the stop or platform can be directly accessed from the street network or not. This feature allows trip planners to generate more accurate directions to reach the stop or platform.
 
 | Files included                   | Fields included   |
 |----------------------------------|-------------------|

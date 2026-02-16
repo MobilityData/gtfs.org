@@ -343,7 +343,7 @@
 
 ## Voiture Autorisée
 
- Voiture Autorisée indique si les véhicules effectuant des déplacements spécifiques sont en mesure d’accueillir des voitures ou non, aidant ainsi les utilisateurs à planifier et à accéder aux services qui leur permettent d’effectuer des déplacements multimodaux (comme les ferries et les trains qui peuvent transporter des voitures de manière similaire).
+Voiture Autorisée indique si les véhicules (comme les ferries et les trains qui peuvent transporter des voitures) effectuant des déplacements spécifiques sont en mesure d’accueillir des voitures ou non, aidant ainsi les utilisateurs à planifier et à accéder aux services qui leur permettent d’effectuer des déplacements multimodaux.
 
 
 | Fichiers inclus | Champs inclus   |
@@ -373,7 +373,7 @@
 
 ## Accès aux Arrêts
 
-Indique comment accéder à l'arrêt pour une station donnée. Cela permet aux applications de planification d’itinéraire de générer des itinéraires vers l'arrêt en utilisant soit les parcours (pathways), soit le réseau routier.
+L'accès aux Arrêts indique si l'arrêt ou le quai est directement accessible depuis le réseau routier. Cette fonctionnalité permet aux planificateurs de trajets de générer des itinéraires. Cela permet aux applications de planification d’itinéraire de générer des itinéraires plus précis pour atteindre l'arrêt ou le quai.
 
 | Fichiers inclus | Champs inclus   |
 |----------------------------------|-------------------|
