@@ -340,7 +340,7 @@
 
 ## Autos Permitidos
 
-Autos permitidos indica si los vehículos que prestan servicio en viajes específicos pueden transportar automóviles o no, lo cual ayuda a las personas usuarias a planear y acceder a servicios que les permiten realizar viajes multimodales (como ferris y trenes que pueden transportar autos).
+Autos permitidos indica si los vehículos que prestan servicio en viajes específicos (como ferris y trenes que pueden transportar autos) pueden transportar automóviles o no. Esta función ayuda a las personas usuarias a planear y acceder a servicios que les permiten realizar viajes multimodales.
 
 | Archivos incluidos | Campos incluidos | 
 |----------------------------------|-------------------|
@@ -369,7 +369,7 @@ Autos permitidos indica si los vehículos que prestan servicio en viajes especí
 
 ## Acceso a la Parada
 
-Esta función indica cómo se accede a una parada en una estación determinada. Esto permite que los planificadores de viajes generen indicaciones hacia la parada utilizando los recorridos internos (pathways) o la red vial.
+Acceso a la Parada indica si se puede acceder directamente a la parada o andén desde la red vial. Esta función permite a los planificadores de viajes generar indicaciones más precisas para llegar a la parada o andén.
 
 | Archivos incluidos | Campos incluidos | 
 |----------------------------------|-------------------|
