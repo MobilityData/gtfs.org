@@ -336,22 +336,22 @@
 | :----| :----|
 | [trips.txt](http://../../../documentation/schedule/reference/#tripstxt) | `cars_allowed` |**前提条件**:
 
-- [基本機能](http://../ベース)
+- [基本機能](../base)
 
- ??? note “サンプルデータ"
+??? note "サンプルデータ"
 
-<p style="font-size:16px"> 
-次のサンプルでは、​​旅行 `AWE1` で使用される車両には少なくとも 1 台の車を搭載できること (`cars_allowed=1`)、旅行 `AWE2` で使用される車両には搭載できないこと (`cars_allowed=2`) を指定しています。
-</p> 
-!!! 注記 ””
-   <p style="font-size:16px"> 
-    <a href="../../../documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a><br> 
-   </p> 
+    <p style="font-size:16px"> 
+    </p>
 
-    | route_id | service_id | trip_id | cars_allowed |
-    |----------|-----------|----------|---------------|
-    | RA       | WE         | AWE1     |             1 |
-    | RA       | WE         | AWE2     |             2 |
+    !!! note ""
+        <p style="font-size:16px"> 
+            <a href="../../../documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a><br> 
+        </p> 
+
+        | route_id | service_id | trip_id | cars_allowed |
+        |----------|-----------|----------|---------------|
+        | RA       | WE         | AWE1     |             1 |
+        | RA       | WE         | AWE2     |             2 |
 
 ## 停留所アクセス
 
@@ -361,21 +361,21 @@
 | :----| :----|
 | [stops.txt](http://../../../documentation/schedule/reference/#tripstxt) | `stop_access` |**前提条件**:
 
-- [基本機能](http://../ベース)
+- [基本機能](../base)
 
- ??? note "サンプルデータ"
+??? note "サンプルデータ"
 
-```
-<p style="font-size:16px"> 
-次のサンプルでは、 ​​`stop_id` = `STOP1` の停留所には駅の入口または構内通路を使用してアクセスするしなければならない(`stop_access=0`)、 `stop_id` = `STOP2` の停留所には親駅 `STATION0` の入口または構内通路を考慮せずに直接アクセスできること (`stop_access=1`) を指定します。
-</p> 
-!!! 注記 ""
-   <p style="font-size:16px"> 
-    <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a><br> 
-   </p> 
+    <p style="font-size:16px"> 
+        次のサンプルでは、 ​​`stop_id` = `STOP1` の停留所には駅の入口または構内通路を使用してアクセスするしなければならない(`stop_access=0`)、 `stop_id` = `STOP2` の停留所には親駅 `STATION0` の入口または構内通路を考慮せずに直接アクセスできること (`stop_access=1`) を指定します。
+    </p>
 
-    | stop_id | stop_name | location_type | parent_station | stop_access |
-    |----------|--|------------|---------|---------------|
-    | STATION0   | メインストリート バスターミナル                | 1            |       |      |
-    | STOP1      | メインストリート バスターミナル - プラットフォーム 1 | 0            | STATION0   | 0 |
-    | STOP2   | | メインストリート ステーション - ストリート バス停 | STATION0    |             1 |
+    !!! note ""
+        <p style="font-size:16px"> 
+            <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a><br> 
+        </p> 
+
+        | stop_id | stop_name | location_type | parent_station | stop_access |
+        |----------|--|------------|---------|---------------|
+        | STATION0   | メインストリート バスターミナル                | 1            |       |      |
+        | STOP1      | メインストリート バスターミナル - プラットフォーム 1 | 0            | STATION0   | 0 |
+        | STOP2   | | メインストリート ステーション - ストリート バス停 | STATION0    |             1 |

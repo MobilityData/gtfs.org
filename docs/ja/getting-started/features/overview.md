@@ -104,7 +104,7 @@ GTFS リファレンス フォーマットは、交通システムの現在の�
 
     [:octicons-arrow-right-24: 詳細はこちら](../base-add-ons/#_9)
 
--   :material-plus-box-multiple-outline:{ .lg.middle } __翻訳__ 
+- :material-plus-box-multiple-outline:{ .lg.middle } __翻訳__ 
 
     複数の言語でサービス情報を伝えます。
 
@@ -118,11 +118,15 @@ GTFS リファレンス フォーマットは、交通システムの現在の�
 
 - :material-plus-box-multiple-outline:{ .lg.middle } __車の通行可能__  
     
- [:octicons-arrow-right-24: 詳細はこちら](http://../base_add-ons/#cars-allowed) 
+    車両に車を収容できるかどうかを伝達します。 
+    
+    [:octicons-arrow-right-24: 詳細はこちら](http://../base_add-ons/#cars-allowed) 
     
 - :material-plus-box-multiple-outline:{ .lg.middle } __停留所へのアクセス__ 
+
+    親駅を基準とした停留所へのアクセス方法を伝えます。
     
- [:octicons-arrow-right-24: 詳細はこちら](http://../base_add-ons/#stop-access)
+    [:octicons-arrow-right-24: 詳細はこちら](http://../base_add-ons/#stop-access)
 
 </div> 
 
@@ -199,9 +203,11 @@ GTFS は、ゾーン、距離、時間帯に基づく運賃など、さまざま
 
     [:octicons-arrow-right-24: 詳細はこちら](../fares/#_8)
 
-- :material-cash:{ .lg.middle } __非接触型EMVサポート__
+-   :material-cash:{ .lg.middle } __非接触型EMVサポート__
+
+    ユーザーが非接触型EMVカードまたはデバイスを使用して運賃を支払うことができるかどうかを通知します。
     
- [:octicons-arrow-right-24: 詳細はこちら](http://../運賃/#contactless-emv-support)
+    [:octicons-arrow-right-24: 詳細はこちら](http://../運賃/#contactless-emv-support)
 
 -   :material-cash:{ .lg.middle } __Fares v1__ 
 
@@ -255,31 +261,31 @@ GTFS は、ゾーン、距離、時間帯に基づく運賃など、さまざま
 
 <div class="grid cards" markdown> 
 
-- :material-transit-detour:{ .lg.middle } __連続した停留所等__ 
+-   :material-transit-detour:{ .lg.middle } __連続した停留所等__ 
 
     停留所等間でユーザーを乗せたり降ろしたりできるかどうかを示します。
     
     [:octicons-arrow-right-24: 詳細はこちら](../flexible-services/#_2)
 
-- :material-transit-detour:{ .lg.middle } __予約ルール__ 
+-   :material-transit-detour:{ .lg.middle } __予約ルール__ 
 
     ユーザーがデマンド応答型サービスで便を予約できるかどうかを示します。            
 
     [:octicons-arrow-right-24: 詳細はこちら](../flexible-services/#_3)
 
-- :material-transit-detour:{ .lg.middle } __逸脱する定義済みルート・路線系統__
+-   :material-transit-detour:{ .lg.middle } __逸脱する定義済みルート・路線系統__
 
     乗車または降車のためにルートから一時的に逸脱できる車両。   
 
     [:octicons-arrow-right-24: 詳細はこちら](../flexible-services/#_4)
 
-- :material-transit-detour:{ .lg.middle } __ゾーンベースのデマンドサービス__
+-   :material-transit-detour:{ .lg.middle } __ゾーンベースのデマンドサービス__
 
     特定のエリア内の任意の場所での乗車/降車を可能にするサービス。
 
     [:octicons-arrow-right-24: 詳細はこちら](../flexible-services/#_5)
 
-- :material-transit-detour:{ .lg.middle } __固定停留所型のデマンドサービス__
+-   :material-transit-detour:{ .lg.middle } __固定停留所型のデマンドサービス__
 
     停留所等グループ内の任意の場所での乗車/降車を可能にするサービス。
    

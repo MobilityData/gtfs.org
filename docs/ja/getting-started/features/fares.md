@@ -333,43 +333,44 @@ GTFS では、世界中のさまざまな交通事業者が使用する、ゾー
 | [agency.txt](http://../../../documentation/schedule/reference/#agencytxt) | `cemv_support` |
 | [routes.txt](http://../../../documentation/schedule/reference/#routestxt) | `cemv_support` |**前提条件**:
 
-- [基本機能](http://../ベース)
+- [基本機能](../base)
 
- ??? note"サンプルデータ"
+??? note "サンプルデータ"
 
-<p style="font-size:16px"> 
-次の例では、最初の表は、事業者`AA`が運営するすべてのサービスに、非接触型カードまたはデバイス (cEMV) で支払う乗客がアクセスできることを指定します。</p> 
+    <p style="font-size:16px"> 
+    次の例では、最初の表は、事業者`AA`が運営するすべてのサービスに、非接触型カードまたはデバイス (cEMV) で支払う乗客がアクセスできることを指定します。</p> 
 
-注記 ""
-   <p style="font-size:16px"> 
-    <a href="../../../documentation/schedule/reference/#agencytxt"><b>agency.txt</b></a><br> 
-   </p> 
+    !!! note ""
+        <p style="font-size:16px"> 
+        <a href="../../../documentation/schedule/reference/#agencytxt"><b>agency.txt</b></a><br> 
+        </p> 
 
-    | agency_id | agency_name | agency_url | agency_timezone | cemv_support |
-    | :----| :----| :----| :----| :----|
-    | AA |事業者A | [www.gtfsagencya.org](http://www.gtfsagencya.org) | America/Denver | 1 |
-    | BB |事業者B | [www.gtfsagencyb.org](http://www.gtfsagencyb.org) | America/Denver | |
-    | CC |事業者C | [www.gtfsagencyc.org](http://www.gtfsagencyc.org) | America/Denver | |
+        | agency_id | agency_name | agency_url | agency_timezone | cemv_support |
+        | :----| :----| :----| :----| :----|
+        | AA |事業者A | [www.gtfsagencya.org](http://www.gtfsagencya.org) | America/Denver | 1 |
+        | BB |事業者B | [www.gtfsagencyb.org](http://www.gtfsagencyb.org) | America/Denver | |
+        | CC |事業者C | [www.gtfsagencyc.org](http://www.gtfsagencyc.org) | America/Denver | |
 
-<p style="font-size:16px"> 
-2番目の表では、非接触型カードまたはデバイス（cEMV）で支払いを行う乗客は、特定のルート・路線系統（`BB001`、`BB003`、`CC001`）のみを利用できます。`BB`および`CC`のその他のルート・路線系統は、非接触型決済に対応していません。</p> 
+??? note "サンプルデータ"
+    <p style="font-size:16px"> 
+    2番目の表では、非接触型カードまたはデバイス（cEMV）で支払いを行う乗客は、特定のルート・路線系統（`BB001`、`BB003`、`CC001`）のみを利用できます。`BB`および`CC`のその他のルート・路線系統は、非接触型決済に対応していません。</p> 
 
-注記 ""
-   <p style="font-size:16px"> 
-    <a href="../../../documentation/schedule/reference/#routestxt"><b>routes.txt</b></a><br> 
-   </p> 
+    !!! note ""
+        <p style="font-size:16px"> 
+            <a href="../../../documentation/schedule/reference/#routestxt"><b>routes.txt</b></a><br> 
+        </p> 
 
-    | route_id | agency_id | route_short_name | route_type | cemv_support |
-    | :----| :----| :----| :----| :----|
-    | AA001 | AA | A1 | 3 | |
-    | AA002 | AA | A2 | 3 | |
-    | AA003 | AA | A3 | 3 | |
-    | BB001 | BB | B1 | 3 | 1 |
-    | BB002 | BB | B2 | 3 | 2 |
-    | BB003 | BB | B3 | 3 | 1 |
-    | CC001 | CC | C1 | 3 | 1 |
-    | CC002 | CC | C2 | 3 | 2 |
-    | CC003 | CC | C3 | 3 | 2 |
+        | route_id | agency_id | route_short_name | route_type | cemv_support |
+        | :----| :----| :----| :----| :----|
+        | AA001 | AA | A1 | 3 | |
+        | AA002 | AA | A2 | 3 | |
+        | AA003 | AA | A3 | 3 | |
+        | BB001 | BB | B1 | 3 | 1 |
+        | BB002 | BB | B2 | 3 | 2 |
+        | BB003 | BB | B3 | 3 | 1 |
+        | CC001 | CC | C1 | 3 | 1 |
+        | CC002 | CC | C2 | 3 | 2 |
+        | CC003 | CC | C3 | 3 | 2 |
 
 ## Fares V1 
 
