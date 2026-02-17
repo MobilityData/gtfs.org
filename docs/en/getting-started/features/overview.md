@@ -112,6 +112,17 @@ These features enhance a GTFS dataset, improving rider experience and facilitati
 
     [:octicons-arrow-right-24: Learn more](../base_add-ons/#attributions)
 
+- :material-plus-box-multiple-outline:{ .lg .middle } __Cars Allowed__
+
+    Communicate if vehicles are able to accommodate cars or not.
+
+    [:octicons-arrow-right-24: Learn more](../base_add-ons/#cars-allowed)
+
+- :material-plus-box-multiple-outline:{ .lg .middle } __Stop Access__
+
+    Communicate how a stop is accessed relative to its parent station.
+
+    [:octicons-arrow-right-24: Learn more](../base_add-ons/#stop-access)
 </div>
 
 
@@ -187,6 +198,12 @@ GTFS can model various fare structures, such as zone, distance, or time-of-day b
     Define fees applicable when transferring from one leg of the trip to another.
 
     [:octicons-arrow-right-24: Learn more](../fares/#fare-transfers)
+
+-   :material-cash:{ .lg .middle } __Contactless EMV Support__
+
+    Communicate if users can pay their fare using contactless EMV cards or devices.
+
+    [:octicons-arrow-right-24: Learn more](../fares/#contactless-emv-support)
 
 -   :material-cash:{ .lg .middle } __Fares V1__
 

@@ -111,6 +111,18 @@
     Comunicar quién participó en la creación del conjunto de datos. 
  
     [:octicons-arrow-right-24: Más información](../base-add-ons/#atribuciones) 
+
+ - :material-plus-box-multiple-outline:{ .lg .middle } __Autos Permitidos__
+
+    Indicar si los vehículos pueden transportar automóviles o no.
+
+    [:octicons-arrow-right-24: Learn more](../base_add-ons/#autos-permitidos)
+
+ - :material-plus-box-multiple-outline:{ .lg .middle } __Acceso a la parada__
+
+    Indicar cómo se accede a una parada con respecto a su estación principal.
+
+    [:octicons-arrow-right-24: Learn more](../base_add-ons/#acceso-a-la-parada)
  
 </div> 
  
@@ -136,7 +148,8 @@
  
     Proporciona las entradas necesarias para convertir el texto de los nombres de las paradas en audio. 
  
-    [:octicons-arrow-right-24: Más información](../accessibility/#texto-a-voz) 
+    [:octicons-arrow-right-24: Más información](../accessibility/#texto-a-voz)
+
 </div> 
  
  
@@ -186,6 +199,12 @@
     Definir las tarifas aplicables al transbordo de un tramo del viaje a otro. 
  
     [:octicons-arrow-right-24: Más información](../fares/#transferencias-de-tarifas) 
+
+-   :material-cash:{ .lg .middle } __Soporte Contactless EMV__
+
+    Indicar si las personas pueden pagar utilizando tarjetas o dispositivos Contactless EMV.
+
+    [:octicons-arrow-right-24: Learn more](../fares/#soporte-contactless-emv)
  
  - :material-cash:{ .lg.middle } __Tarifas V1__ 
  

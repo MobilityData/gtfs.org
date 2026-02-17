@@ -330,7 +330,58 @@ Las categorías de pasajeros se utilizan para representar los diferentes tipos d
         |-------------------|-----------------|----------------|----------------|---------------------|--------------------|-----------------|
         | a                 | a               | -1             | 7200           | 1                   | 0                  | free_transfer   |
  
+
+## Soporte Contactless EMV
+
+Soporte Contactless EMV se utiliza para indicar si los pasajeros pueden acceder a un servicio de transporte utilizando tarjetas o dispositivos contactless (por ejemplo, en sistemas "tap-to-pay").
+Esta función proporciona una alternativa simplificada para comunicar la disponibilidad de pagos contactless a nivel de agencia o ruta, pero no reemplaza la información detallada sobre tarifas proporcionada mediate [Medios de Tarifa](../fares/#medios-de-tarifa).
+
+
+| Archivos incluidos                   | Campos incluidos   |
+|----------------------------------|-------------------|
+|[agency.txt](../../../documentation/schedule/reference/#agencytxt)|`cemv_support`|
+|[routes.txt](../../../documentation/schedule/reference/#routestxt)|`cemv_support`|
+
+**Requisitos previos**: 
  
+- [Funciones Base](../base) 
+
+??? note "Datos de muestra"
+
+    <p style="font-size:16px">
+    En el siguiente ejemplo, la primera tabla indica que todos los servicios operados por la agencia `AA` pueden ser utilizados pagando con tarjetas o dispositivos contactless (cEMV). </p>
+
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#agencytxt"><b>agency.txt</b></a> <br>
+        </p>
+
+        | agency_id | agency_name | agency_url | agency_timezone | cemv_support |
+        | :---- | :---- | :---- | :---- | :---- |
+        | AA | Agency A | [www.gtfsagencya.org](http://www.gtfsagencya.org) | America/Denver | 1 |
+        | BB | Agency B | [www.gtfsagencyb.org](http://www.gtfsagencyb.org) | America/Denver |  |
+        | CC | Agency C | [www.gtfsagencyc.org](http://www.gtfsagencyc.org) | America/Denver |  |
+
+    <p style="font-size:16px">
+    En la segunda tabla, únicamente ciertas rutas (`BB001`, `BB003` y `CC001`) pueden ser utilizadas pagando con tarjetas o dispositivos contactless (cEMV). El resto de las rutas de las agencias `BB` y `CC` no admiten pagos contactless. </p>
+
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#routestxt"><b>routes.txt</b></a> <br>
+        </p>
+
+        | route_id | agency_id | route_short_name | route_type | cemv_support |
+        | :---- | :---- | :---- | :---- | :---- |
+        | AA001 | AA | A1 | 3 |  |
+        | AA002 | AA | A2 | 3 |  |
+        | AA003 | AA | A3 | 3 |  |
+        | BB001 | BB | B1 | 3 | 1 |
+        | BB002 | BB | B2 | 3 | 2 |
+        | BB003 | BB | B3 | 3 | 1 |
+        | CC001 | CC | C1 | 3 | 1 |
+        | CC002 | CC | C2 | 3 | 2 |
+        | CC003 | CC | C3 | 3 | 2 |
+
 ## Tarifas v1 
  
  Tarifas v1 es una alternativa heredada a otras funciones de Tarifas descritas anteriormente. Permite modelar información básica de tarifas, como precios de tarifas, transferencias de métodos de pago y tarifas basadas en zonas utilizando los archivos `fare_rules.txt` y `fare_attributes.txt`. Si bien es más simple de producir, es menos capaz de modelar estructuras de tarifas más complejas y puede quedar obsoleto con el respaldo suficiente de otras funciones de Fare (que son parte de lo que se llama Tarifas v2). 
