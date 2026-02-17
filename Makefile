@@ -14,10 +14,10 @@ serve:
 	./scripts/i18n-landing-assets-setup.sh
 	@echo "Serving MkDocs site..."
 	@trap 'echo "Stopping MkDocs server..."; pkill -f "mkdocs serve"' SIGINT SIGTERM; \
-	mkdocs serve --dev-addr 127.0.0.1:8000 --config-file config/en/mkdocs.yml & \
-	mkdocs serve --dev-addr 127.0.0.1:8001 --config-file config/fr/mkdocs.yml & \
-	mkdocs serve --dev-addr 127.0.0.1:8002 --config-file config/es/mkdocs.yml & \
-	mkdocs serve --dev-addr 127.0.0.1:8003 --config-file config/ja/mkdocs.yml & \
+	mkdocs serve --dev-addr 127.0.0.1:8000 --config-file config/en/mkdocs.yml --livereload & \
+	mkdocs serve --dev-addr 127.0.0.1:8001 --config-file config/fr/mkdocs.yml --livereload & \
+	mkdocs serve --dev-addr 127.0.0.1:8002 --config-file config/es/mkdocs.yml --livereload & \
+	mkdocs serve --dev-addr 127.0.0.1:8003 --config-file config/ja/mkdocs.yml --livereload & \
 	wait
 
 build:
