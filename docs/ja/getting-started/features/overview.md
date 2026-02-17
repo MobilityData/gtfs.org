@@ -116,8 +116,15 @@ GTFS リファレンス フォーマットは、交通システムの現在の�
 
     [:octicons-arrow-right-24: 詳細はこちら](../base-add-ons/#_11)
 
-</div> 
+- :material-plus-box-multiple-outline:{ .lg.middle } __車の通行可能__  
+    
+ [:octicons-arrow-right-24: 詳細はこちら](http://../base_add-ons/#cars-allowed) 
+    
+- :material-plus-box-multiple-outline:{ .lg.middle } __停留所へのアクセス__ 
+    
+ [:octicons-arrow-right-24: 詳細はこちら](http://../base_add-ons/#stop-access)
 
+</div> 
 
 ##アクセシビリティ
 アクセシビリティ機能は、障害のある人がサービスにアクセスするために必要な情報を提供します。
@@ -191,6 +198,10 @@ GTFS は、ゾーン、距離、時間帯に基づく運賃など、さまざま
     便の 1 つの区間から別の区間に乗り換えるときに適用される料金を定義します。
 
     [:octicons-arrow-right-24: 詳細はこちら](../fares/#_8)
+
+- :material-cash:{ .lg.middle } __非接触型EMVサポート__
+    
+ [:octicons-arrow-right-24: 詳細はこちら](http://../運賃/#contactless-emv-support)
 
 -   :material-cash:{ .lg.middle } __Fares v1__ 
 
