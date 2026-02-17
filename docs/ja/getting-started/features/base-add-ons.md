@@ -327,3 +327,55 @@
         | au01           | gra       |          |         | Greater Region Transport |           1 |             |            1 | https://www.gra1.org             | contact@gra1.org        | (555)        555-5555    |
         | op02           |           | rtd023   |         | Bus company A            |             |           1 |              | https://www.buscompanya.com      | contact@buscompanya.com | (333)        333-3333    |
         | op03           |           | rtd025   |         | Bus company B            |             |           1 |              | https://www.buscompanyb.com      | contact@buscompanyb.com | (888)        888-8888    |
+
+## 車の持ち込み可
+
+車の持ち込み可は、特定の便を運行する車両（カーフェリーや自動車輸送可能な列車など）が車両に自動車を積載できるかどうかを示します。この機能は、ユーザーが複合便を可能にするサービスを計画し、利用するのに役立ちます。
+
+| 含まれるファイル | 含まれるフィールド |
+| :----| :----|
+| [trips.txt](http://../../../documentation/schedule/reference/#tripstxt) | `cars_allowed` |**前提条件**:
+
+- [基本機能](../base)
+
+??? note "サンプルデータ"
+
+    <p style="font-size:16px"> 
+    </p>
+
+    !!! note ""
+        <p style="font-size:16px"> 
+            <a href="../../../documentation/schedule/reference/#tripstxt"><b>trips.txt</b></a><br> 
+        </p> 
+
+        | route_id | service_id | trip_id | cars_allowed |
+        |----------|-----------|----------|---------------|
+        | RA       | WE         | AWE1     |             1 |
+        | RA       | WE         | AWE2     |             2 |
+
+## 停留所アクセス
+
+停留所アクセスは、停留所またはプラットフォームが道路網から直接アクセスできるかどうかを示します。この機能により、旅行計画者は停留所またはプラットフォームへのより正確なルート案内を作成できます。
+
+| 含まれるファイル | 含まれるフィールド |
+| :----| :----|
+| [stops.txt](http://../../../documentation/schedule/reference/#tripstxt) | `stop_access` |**前提条件**:
+
+- [基本機能](../base)
+
+??? note "サンプルデータ"
+
+    <p style="font-size:16px"> 
+        次のサンプルでは、 ​​`stop_id` = `STOP1` の停留所には駅の入口または構内通路を使用してアクセスするしなければならない(`stop_access=0`)、 `stop_id` = `STOP2` の停留所には親駅 `STATION0` の入口または構内通路を考慮せずに直接アクセスできること (`stop_access=1`) を指定します。
+    </p>
+
+    !!! note ""
+        <p style="font-size:16px"> 
+            <a href="../../../documentation/schedule/reference/#stopstxt"><b>stops.txt</b></a><br> 
+        </p> 
+
+        | stop_id | stop_name | location_type | parent_station | stop_access |
+        |----------|--|------------|---------|---------------|
+        | STATION0   | メインストリート バスターミナル                | 1            |       |      |
+        | STOP1      | メインストリート バスターミナル - プラットフォーム 1 | 0            | STATION0   | 0 |
+        | STOP2   | | メインストリート ステーション - ストリート バス停 | STATION0    |             1 |

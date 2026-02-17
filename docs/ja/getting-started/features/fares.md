@@ -324,6 +324,54 @@ GTFS では、世界中のさまざまな交通事業者が使用する、ゾー
         |-------------------|-----------------|----------------|----------------|---------------------|--------------------|-----------------|
         | a                 | a               | -1             | 7200           | 1                   | 0                  | free_transfer   |
 
+## 非接触型 EMV サポート
+
+非接触型 EMV サポート機能により、データ プロデューサーは、乗客が非接触型カードまたはデバイス (たとえば、タップして支払うシステム) を使用して交通サービスにアクセスできるかどうかを示すことができます。この機能は、事業者またはルート レベルで非接触型支払いの可用性を伝えるための簡略化された代替手段を提供しますが、[チケットメディア](http://../運賃/#fare-media) を通じて提供される詳細な運賃情報の代わりになるものではありません。
+
+| 含まれているファイル |含まれるフィールド |
+| :----| :----|
+| [agency.txt](http://../../../documentation/schedule/reference/#agencytxt) | `cemv_support` |
+| [routes.txt](http://../../../documentation/schedule/reference/#routestxt) | `cemv_support` |**前提条件**:
+
+- [基本機能](../base)
+
+??? note "サンプルデータ"
+
+    <p style="font-size:16px"> 
+    次の例では、最初の表は、事業者`AA`が運営するすべてのサービスに、非接触型カードまたはデバイス (cEMV) で支払う乗客がアクセスできることを指定します。</p> 
+
+    !!! note ""
+        <p style="font-size:16px"> 
+        <a href="../../../documentation/schedule/reference/#agencytxt"><b>agency.txt</b></a><br> 
+        </p> 
+
+        | agency_id | agency_name | agency_url | agency_timezone | cemv_support |
+        | :----| :----| :----| :----| :----|
+        | AA |事業者A | [www.gtfsagencya.org](http://www.gtfsagencya.org) | America/Denver | 1 |
+        | BB |事業者B | [www.gtfsagencyb.org](http://www.gtfsagencyb.org) | America/Denver | |
+        | CC |事業者C | [www.gtfsagencyc.org](http://www.gtfsagencyc.org) | America/Denver | |
+
+??? note "サンプルデータ"
+    <p style="font-size:16px"> 
+    2番目の表では、非接触型カードまたはデバイス（cEMV）で支払いを行う乗客は、特定のルート・路線系統（`BB001`、`BB003`、`CC001`）のみを利用できます。`BB`および`CC`のその他のルート・路線系統は、非接触型決済に対応していません。</p> 
+
+    !!! note ""
+        <p style="font-size:16px"> 
+            <a href="../../../documentation/schedule/reference/#routestxt"><b>routes.txt</b></a><br> 
+        </p> 
+
+        | route_id | agency_id | route_short_name | route_type | cemv_support |
+        | :----| :----| :----| :----| :----|
+        | AA001 | AA | A1 | 3 | |
+        | AA002 | AA | A2 | 3 | |
+        | AA003 | AA | A3 | 3 | |
+        | BB001 | BB | B1 | 3 | 1 |
+        | BB002 | BB | B2 | 3 | 2 |
+        | BB003 | BB | B3 | 3 | 1 |
+        | CC001 | CC | C1 | 3 | 1 |
+        | CC002 | CC | C2 | 3 | 2 |
+        | CC003 | CC | C3 | 3 | 2 |
+
 ## Fares V1 
 
  Fares v1 は、上で説明した他の運賃機能の従来の代替手段です。`fare_rules.txt` および `fare_attributes.txt` ファイルを使用して、`fare_rules.txt` 設定、支払い方法の乗り換え、ゾーンベースの運賃などの基本的な運賃情報をモデル化できます。作成は簡単ですが、より複雑な運賃構造をモデル化する能力が低く、他の運賃機能( Fares v2と呼ばれる機能の一部) の十分な承認があれば廃止されるしてもよい。

@@ -112,6 +112,17 @@
  
     [:octicons-arrow-right-24: En savoir plus](../base-add-ons/#attributions) 
  
+ - :material-plus-box-multiple-outline:{ .lg .middle } __Voiture Autorisée__
+ 
+    Communiquer si les véhicules peuvent accueillir des voitures ou non.
+ 
+    [:octicons-arrow-right-24: En savoir plus](../base-add-ons/#voiture-autorisee)
+ 
+ - :material-plus-box-multiple-outline:{ .lg .middle } __Accès aux Arrêts__
+ 
+    Communiquer comment un arrêts est accédé par rapport à sa station parent.
+ 
+    [:octicons-arrow-right-24: En savoir plus](../base-add-ons/#acces-aux-arrets)
 </div> 
  
  
@@ -187,6 +198,13 @@
     Définir les frais applicables lors du transfert d’une étape du voyage à une autre. 
  
     [:octicons-arrow-right-24: En savoir plus](../fares/#transferts-tarifaires) 
+
+-   :material-cash:{ .lg .middle } __Support sans contact EMV__
+
+    Communiquer si les utilisateurs peuvent utiliser les paiements sans contact EMV pour valider leurs trajets.
+
+    [:octicons-arrow-right-24: En savoir plus](../fares/#support-sans-contact-emv)
+
  
  - :material-cash:{ .lg.middle } __Fares v1__ 
  
