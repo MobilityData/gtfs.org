@@ -192,22 +192,10 @@ nav:
         - Attributions: documentation/schedule/examples/attributions.md
         - Continuous stops: documentation/schedule/examples/continuous-stops.md
         - Demand responsive services: documentation/schedule/examples/flex.md
-        - Fares (v2):
-          - Introduction: documentation/schedule/examples/fares/intro.md
-          - Fare Media: documentation/schedule/examples/fares/fare-media.md
-          - Fare Products: documentation/schedule/examples/fares/fare-products.md
-          - Rider Categories: documentation/schedule/examples/fares/rider-categories.md
-          - Route-Based Fares: documentation/schedule/examples/fares/route-based-fares.md
-          - Zone-Based Fares: documentation/schedule/examples/fares/zone-based-fares.md
-          - Time-Based Fares: documentation/schedule/examples/fares/time-based-fares.md
-          - Fare Transfers: documentation/schedule/examples/fares/fare-transfers.md
-          - Archived examples: documentation/schedule/examples/fares/archived-fares-examples.md
-        - Legacy Fares (v1): documentation/schedule/examples/fares-v1.md
         - Feed information: documentation/schedule/examples/feed-info.md
         - Frequencies: documentation/schedule/examples/frequencies.md
         - Pathways: documentation/schedule/examples/pathways.md
         - Routes, Stops & Trips: documentation/schedule/examples/routes-stops-trips.md
-        - Shapes: documentation/schedule/examples/shapes.md
         - Text-to-speech: documentation/schedule/examples/text-to-speech.md
         - Transfers: documentation/schedule/examples/transfers.md
         - Translations: documentation/schedule/examples/translations.md
@@ -257,6 +245,19 @@ nav:
       - Flex: community/extensions/flex.md
   - Resources:
     - Overview: resources/overview.md
+    - GTFS Schedule Feature Guides:
+      - Fares V2:
+        - Introduction: resources/gtfs-schedule-feature-guides/fares/intro.md
+        - Fare Media: resources/gtfs-schedule-feature-guides/fares/fare-media.md
+        - Fare Products: resources/gtfs-schedule-feature-guides/fares/fare-products.md
+        - Rider Categories: resources/gtfs-schedule-feature-guides/fares/rider-categories.md
+        - Route-Based Fares: resources/gtfs-schedule-feature-guides/fares/route-based-fares.md
+        - Time-Based Fares: resources/gtfs-schedule-feature-guides/fares/time-based-fares.md
+        - Zone-Based Fares: resources/gtfs-schedule-feature-guides/fares/zone-based-fares.md
+        - Fare Transfers: resources/gtfs-schedule-feature-guides/fares/fare-transfers.md
+        - Legacy Fares: resources/gtfs-schedule-feature-guides/fares/fares-v1.md
+      - Shapes (shapes.txt): resources/gtfs-schedule-feature-guides/shapes.md
+    - MobilityData Recommendations: resources/mobilitydata-recommendations/overview.md    
     - Producing Data: resources/producing-data.md
     - Sharing Data: resources/sharing-data.md
     - Using Data: resources/using-data.md
