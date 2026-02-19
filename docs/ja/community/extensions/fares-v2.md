@@ -41,7 +41,7 @@ Slack チャネルや定期的なワーキング グループ ミーティング
 
 ## 議論中のFares v2の機能
 
-<iframe src="https://portal.productboard.com/rhk8dbtic1iqakfznucry448" frameborder="0" width="100%", style="min-height:1060px;"></iframe>
+<iframe class="airtable-embed" src="https://airtable.com/embed/appqkG4yZwMY8b1Bj/shrjS3zRpYOQ6IE8G" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
 
 ## 履歴
 
