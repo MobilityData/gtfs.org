@@ -138,8 +138,8 @@ plugins:
 nav:
   - Inicio: index.md
   - Primeros pasos:
-    - ¿Qué es GTFS?: getting-started/what-is-GTFS.md
-    - ¿Por qué utilizar GTFS?: getting-started/why-use-GTFS.md
+    - ¿Qué es GTFS?: getting-started/what-is-gtfs.md
+    - ¿Por qué utilizar GTFS?: getting-started/why-use-gtfs.md
     - ¿Cómo producir GTFS?: 
       - Crear: getting-started/create.md
       - Validar: getting-started/validate.md
@@ -219,7 +219,7 @@ nav:
         - Roles: community/governance/gtfs-schedule-governance/roles.md
         - Tipos de Cambios: community/governance/gtfs-schedule-governance/change-types.md
         - Proceso de Cambio: community/governance/gtfs-schedule-governance/change-process.md
-        - Antigua Governanza: community/governance/gtfs-schedule-governance/CHANGES.md
+        - Antigua Governanza: community/governance/gtfs-schedule-governance/changes.md
       - Proceso de modificación GTFS Realtime: community/governance/gtfs-realtime-amendment-process.md
     - Extensiones:
       - Descripción general: community/extensions/overview.md

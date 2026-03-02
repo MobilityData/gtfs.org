@@ -168,8 +168,8 @@ plugins:
 nav:
   - Home: index.md
   - Getting started:
-    - What is GTFS?: getting-started/what-is-GTFS.md
-    - Why use GTFS?: getting-started/why-use-GTFS.md
+    - What is GTFS?: getting-started/what-is-gtfs.md
+    - Why use GTFS?: getting-started/why-use-gtfs.md
     - How to produce GTFS?: 
       - Create: getting-started/create.md
       - Validate: getting-started/validate.md
@@ -237,7 +237,7 @@ nav:
         - Roles: community/governance/gtfs-schedule-governance/roles.md
         - Change types: community/governance/gtfs-schedule-governance/change-types.md
         - Change Process: community/governance/gtfs-schedule-governance/change-process.md
-        - Former Governance: community/governance/gtfs-schedule-governance/CHANGES.md
+        - Former Governance: community/governance/gtfs-schedule-governance/changes.md
       - GTFS Realtime Amendment Process: community/governance/gtfs-realtime-amendment-process.md
     - Extensions:
       - Overview: community/extensions/overview.md

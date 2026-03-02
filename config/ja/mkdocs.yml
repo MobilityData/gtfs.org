@@ -137,8 +137,8 @@ plugins:
 nav:
   - ホーム: index.md
   - 始めに:
-    - GTFS とは何ですか?: getting-started/what-is-GTFS.md
-    - GTFS を使用する理由: getting-started/why-use-GTFS.md
+    - GTFS とは何ですか?: getting-started/what-is-gtfs.md
+    - GTFS を使用する理由: getting-started/why-use-gtfs.md
     - GTFS を作成するには?: 
       - 作る: getting-started/create.md
       - 検証: getting-started/validate.md
@@ -218,7 +218,7 @@ nav:
         - 役割: community/governance/gtfs-schedule-governance/roles.md
         - 変更の種類: community/governance/gtfs-schedule-governance/change-types.md
         - 変更プロセス: community/governance/gtfs-schedule-governance/change-process.md
-        - 以前のガバナンス: community/governance/gtfs-schedule-governance/CHANGES.md
+        - 以前のガバナンス: community/governance/gtfs-schedule-governance/changes.md
         - GTFS realtime 修正プロセス: community/governance/gtfs-realtime-amendment-process.md
     - エクステンション:
       - 概要: community/extensions/overview.md
