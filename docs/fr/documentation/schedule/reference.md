@@ -156,7 +156,7 @@
  * La première ligne de chaque fichier doit contenir des noms de champs. Chaque sous-section de la section [Définitions des champs](#definitions-des-champs) correspond à l’un des fichiers d’un jeu de données GTFS et répertorie les noms de champs qui peuvent être utilisés dans ce fichier. 
  * Tous les noms de fichiers et de champs sont sensibles à la casse. 
  * Les valeurs des champs ne doivent pas contenir de tabulations, de retours chariot ou de nouvelles lignes. 
- * Les valeurs de champ contenant des guillemets ou des virgules doivent être placées entre guillemets. De plus, chaque guillemet dans le champ valeur doit être précédé d’un guillemet. Ceci est cohérent avec la manière dont Microsoft Excel génère des fichiers CSV (délimités par des virgules). Pour plus d’informations sur le format de fichier CSV, voir [http://tools.ietf.org/html/rfc4180](http://tools.ietf.org/html/rfc4180). 
+ * Les valeurs de champ contenant des guillemets ou des virgules doivent être placées entre guillemets. De plus, chaque guillemet dans le champ valeur doit être précédé d’un guillemet. Ceci est cohérent avec la manière dont Microsoft Excel génère des fichiers CSV (délimités par des virgules). Pour plus d’informations sur le format de fichier CSV, voir [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180). 
  L’exemple suivant montre comment une valeur de champ apparaîtrait dans un fichier délimité par des virgules : 
  * **Valeur de champ d’origine :** `t` des "guillemets", des virgules et du texte` 
  * **Valeur de champ dans le fichier CSV :** `"Contient ""citations"", virgules et texte"` 
