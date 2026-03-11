@@ -460,7 +460,7 @@ Used to describe the range of fares available for purchase by riders or taken in
 | `fare_product_name` | Text | Optional | The name of the fare product as displayed to riders. |
 | `rider_category_id` | Foreign ID referencing `rider_categories.rider_category_id` | Optional | Identifies a rider category eligible for the fare product.<br><br>If `fare_products.rider_category_id` is empty, the fare product is eligible for any `rider_category_id`.<br><br>When multiple rider categories are eligible for a single fare product specified by a `fare_product_id`, there must be only one of these rider categories indicated as the default rider category (`is_default_fare_category = 1`). |
 |  `fare_media_id` | Foreign ID referencing `fare_media.fare_media_id` | Optional |  Identifies a fare media that can be employed to use the fare product during the trip. When `fare_media_id` is empty, it is considered that the fare media is unknown.|
-| `amount` | Currency amount | **Required** | The cost of the fare product. May be negative to represent transfer discounts. May be zero to represent a fare product that is free. |
+| `amount` | Currency amount | **Required** | The cost of the fare product. May be negative to represent transfer discounts. May be zero to represent a fare product that is free. The currency amount must contain the number of decimal places specified by the norm ISO 4217 for the accompanying Currency code.<hr>*Example: If the fare is 2 US Dollars, the amount is 2.00 instead of 2.* |
 | `currency` | Currency code | **Required** | The currency of the cost of the fare product. |
 
 
