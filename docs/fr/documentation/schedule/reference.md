@@ -538,7 +538,7 @@ Pour un sous-trajet de deux tronçons consécutifs avec un transfert, si le tran
  
  Clé primaire (`from_leg_group_id, to_leg_group_id, fare_product_id, transfer_count, durée_limit`) 
  
- Règles tarifaires pour les transferts entre les tronçons du voyage défini dans [`fare_leg_rules.txt`](#fare_leg_rulestxt). 
+ Règles tarifaires pour les transferts entre les tronçons du voyage défini dans [`fare_leg_rules.txt`](#fare_leg_rulestxt). Une règle de correspondance tarifaire définie de `from_leg_group_id` à `to_leg_group_id` ne s’applique pas dans le sens inverse. 
  
  Pour traiter le coût d’un voyage multi-tronçons : 
  
