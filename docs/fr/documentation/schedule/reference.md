@@ -1,6 +1,6 @@
 ## Référence de General Transit Feed Specification 
  
- **Révisé le 3 mars 2026. Voir [Historique des révisions](/schedule/process/#revision-history) pour plus de détails.**
+ **Révisé le 3 mars 2026. Voir [Historique des révisions](../change-history/revision-history/) pour plus de détails.**
  
  Ce document définit le format et la structure de les fichiers qui composent un jeu de données GTFS. 
  
