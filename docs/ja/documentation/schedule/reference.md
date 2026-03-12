@@ -201,7 +201,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | `agency_phone` | 電話番号 |任意| 指定された事業者の音声電話番号。このフィールドは、事業者のサービスエリアの一般的な電話番号を表すstring値です。番号の桁をグループ化するために句読点を含めるしてもよい。ダイヤル可能なText(TriMet の`503-238-RIDE`など) は許可されていますが、フィールドにその他の説明Textを含めるしてはいけない。 |
 | `agency_fare_url` | URL |任意| 乗客がその機関のチケットやその他の運賃手段を購入できるウェブページ、またはその機関の運賃に関する情報を含むウェブページの URL。|
 | `agency_email` | 電子メール |任意| 交通事業者のカスタマー サービス部門によってアクティブに監視されている電子メール アドレス。この電子メール アドレスは、交通事業者の乗客が事業者のカスタマー サービス担当者に連絡できる直接の連絡先であるするべきである。 |
-| `cemv_support` | 列挙型 |任意| 乗客が、運賃検証システム（ペイ・アズ・ユー・ゴーやオープンループシステムなど）において、非接触型EMV（Europay、Mastercard、Visa）カードまたはモバイルデバイスを運賃メディアとして使用することで、この事業者が提供する交通サービス（便）を利用できるかどうかを示します。このフィールドは、cEMVを使用して他の運賃商品を購入したり、他の運賃メディアに残高を追加したりできることを示すものではありません。<br><br> cEMV のサポートは、この事業者のすべてのサービスが運賃メディアとして cEMV カードまたはモバイルデバイスを利用してアクセスできる場合にのみ示すべきです。<br><br>有効なオプションは次のとおりです。<br><br> `0` または空 - この事業者に関連する便に関する cEMV 情報はありません。<br> `1` - この事業者に関連する便では、cEMV を運賃メディアとして利用できます。<br> `2` - この事業者に関連する便では、cEMV は運賃メディアとしてサポートされていません。<br><br>同じサービスに対して agency.cemv_support と routes.cemv_support の両方が指定されている場合には、routes.cemv_support の値を優先しなければなりません。<br><br>このフィールドは、他のすべての運賃関連ファイルとは独立しており、個別に使用することができます。このフィールドと運賃関連ファイル（例：`fare_media.txt`、 `fare_products.txt`、 `fare_leg_rules.txt` ）の情報が矛盾する場合は、それらのファイルの情報が` agency.cemv_support`よりも優先されなければなりません。|
+| `cemv_support` | 列挙型 |任意| 乗客が、運賃検証システム（ペイ・アズ・ユー・ゴーやオープンループシステムなど）において、非接触型EMV（Europay、Mastercard、Visa）カードまたはモバイルデバイスを運賃メディアとして使用することで、この事業者が提供する交通サービス（便）を利用できるかどうかを示します。このフィールドは、cEMVを使用して他の運賃商品を購入したり、他の運賃メディアに残高を追加したりできることを示すものではありません。<br><br> cEMV のサポートは、この事業者のすべてのサービスが運賃メディアとして cEMV カードまたはモバイルデバイスを利用してアクセスできる場合にのみ示すべきです。<br><br>有効なオプションは次のとおりです。<br><br> `0` または空 - この事業者に関連する便に関する cEMV 情報はありません。<br> `1` - この事業者に関連する便では、cEMV を運賃メディアとして利用できます。<br> `2` - この事業者に関連する便では、cEMV は運賃メディアとしてサポートされていません。<br><br>同じサービスに対して agency.cemv_support と routes.cemv_support の両方が指定されている場合には、routes.cemv_support の値を優先しなければなりません。<br><br>このフィールドは、他のすべての運賃関連ファイルとは独立しており、個別に使用することができます。このフィールドと運賃関連ファイル（例：[fare_media.txt](#fare_mediatxt)、[fare_products.txt](#fare_productstxt)、[fare_leg_rules.txt](#fare_leg_rulestxt)など）の情報が矛盾する場合は、それらのファイルの情報が` agency.cemv_support`よりも優先されなければなりません。|
 
 ### stops.txt 
 
@@ -250,7 +250,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | `continuous_pickup` | 列挙型 | **条件付きで禁止** | ルートのすべての便で、[shapes.txt](#shapestxt) で説明されているように、乗客が車両の移動経路に沿った任意の地点で交通事業者の車両に乗車できることを示します。有効なオプションは次のとおりです: <br><br>`0` - 連続停止ピックアップ。 <br>`1` または空 - 連続停止ピックアップなし。 <br>`2` - 連続停止ピックアップを手配するには代理店に電話する必要があります。 <br>`3` - 連続停止ピックアップを手配するにはドライバーと調整する必要があります。 <br><br>`routes.continuous_pickup` の値は、ルート沿いの特定の `stop_time` の `stop_times.continuous_pickup` の値を定義することで上書きできます。 <br><br>**条件付きで禁止**:<br>- このルートのいずれかの旅行に `stop_times.start_pickup_drop_off_window` または `stop_times.end_pickup_drop_off_window` が定義されている場合、`1` 以外の値または空は **禁止** です。<br> - それ以外の場合は任意です。 |
 | `continuous_drop_off` | 列挙型 | **条件付き禁止** | 乗客は、ルートのすべての便において、[shapes.txt](#shapestxt) で説明されているように、車両の移動経路に沿った任意の地点で交通事業者の車両から降車できることを示します。有効なオプションは次のとおりです: <br><br>`0` - 連続停車降車。 <br>`1` または空 - 連続停車降車なし。 <br>`2` - 連続停車降車を手配するには、代理店に電話する必要があります。 <br>`3` - 連続停車降車を手配するには、運転手と調整する必要があります。 <br><br>`routes.continuous_drop_off` の値は、ルート沿いの特定の `stop_time` に対して `stop_times.continuous_drop_off` の値を定義することで上書きできます。 <br><br>**条件付きで禁止**:<br>- このルートのいずれかの旅行に `stop_times.start_pickup_drop_off_window` または `stop_times.end_pickup_drop_off_window` が定義されている場合、`1` 以外の値または空は **禁止** です。<br> - それ以外の場合は任意です。|
 | `network_id` | ID |**条件付きで禁止**|ルート・路線系統のグループを識別します。 [routes.txt](#routestxt) 内の複数の行に同じ`network_id` が含まれるしてもよい。<br><br>条件付きで禁止:<br> - [route_networks.txt](#route_networkstxt) または [networks.txt](#networkstxt) ファイルが存在する場合は**禁止**です。<br> - それ以外の場合は任意。
-| `cemv_support` | 列挙型 |任意| 乗客が、運賃検証装置（ペイ・アズ・ユー・ゴーやオープンループシステムなど）において、非接触型EMV（Europay、Mastercard、Visa）カードまたはモバイルデバイスを運賃メディアとして使用することで、このルートに関連する交通サービス（便）を利用できるかどうかを示します。このフィールドは、cEMVを使用して他の運賃商品を購入したり、他の運賃メディアに残高を追加したりできることを示すものではありません。<br><br> cEMV のサポートは、このルートのすべてのサービスが運賃メディアとして cEMV カードまたはモバイルデバイスを利用してアクセスできる場合にのみ示すべきです。<br><br>有効なオプションは次のとおりです。<br><br> `0` または空 - このルートに関連する便に関する cEMV 情報はありません。<br> `1` - このルートに関連する便では、cEMV を運賃メディアとして利用できます。<br> `2` - このルートに関連する便では、cEMV は運賃メディアとしてサポートされていません。<br><br>同じサービスに対して agency.cemv_support と routes.cemv_support の両方が指定されている場合には、routes.cemv_support の値を優先しなければなりません。<br><br>このフィールドは、他のすべての運賃関連ファイルとは独立しており、個別に使用することができます。このフィールドと運賃関連ファイル（例：`fare_media.txt`、 `fare_products.txt`、 `fare_leg_rules.txt` ）の情報が矛盾する場合は、それらのファイルの情報が`agency.cemv_support`よりも優先されなければなりません。|
+| `cemv_support` | 列挙型 |任意| 乗客が、運賃検証装置（ペイ・アズ・ユー・ゴーやオープンループシステムなど）において、非接触型EMV（Europay、Mastercard、Visa）カードまたはモバイルデバイスを運賃メディアとして使用することで、このルートに関連する交通サービス（便）を利用できるかどうかを示します。このフィールドは、cEMVを使用して他の運賃商品を購入したり、他の運賃メディアに残高を追加したりできることを示すものではありません。<br><br> cEMV のサポートは、このルートのすべてのサービスが運賃メディアとして cEMV カードまたはモバイルデバイスを利用してアクセスできる場合にのみ示すべきです。<br><br>有効なオプションは次のとおりです。<br><br> `0` または空 - このルートに関連する便に関する cEMV 情報はありません。<br> `1` - このルートに関連する便では、cEMV を運賃メディアとして利用できます。<br> `2` - このルートに関連する便では、cEMV は運賃メディアとしてサポートされていません。<br><br>同じサービスに対して agency.cemv_support と routes.cemv_support の両方が指定されている場合には、routes.cemv_support の値を優先しなければなりません。<br><br>このフィールドは、他のすべての運賃関連ファイルとは独立しており、個別に使用することができます。このフィールドと運賃関連ファイル（例：[fare_media.txt](#fare_mediatxt)、[fare_products.txt](#fare_productstxt)、[fare_leg_rules.txt](#fare_leg_rulestxt) など））の情報が矛盾する場合は、それらのファイルの情報が`agency.cemv_support`よりも優先されなければなりません。|
 
 ### trips.txt 
 
@@ -463,7 +463,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | `fare_product_name` |Text|任意| 乗客に表示されるチケット商品の名前。|
 | `rider_category_id` | `rider_categories.rider_category_id` を参照する外部 ID |任意| 運賃商品の対象となるライダー カテゴリを識別します。<br><br> `fare_products.rider_category_id` が空の場合、運賃商品はどの `rider_category_id` でも対象となります。<br><br> `fare_product_id`で指定された単一の運賃商品に複数の乗客カテゴリが該当する場合、これらの乗客カテゴリのうち 1 つだけがデフォルトの乗客カテゴリとして指定されるしなければならない(`is_default_fare_category = 1`)。|
 | `fare_media_id` | `fare_media.fare_media_id`部 ID |任意| 便中にチケット商品を使用するために使用できる運賃メディアを識別します。`fare_media_id` が空の場合、運賃メディアは不明であると見なされます。|
-| `amount` |通貨金額 |**必須**| チケット商品のコスト。乗り継ぎ割引を表す場合は負の値になる場合がしてもよい。無料のチケット商品を表す場合はゼロになる場合がしてもよい。|
+| `amount` | 通貨金額 |**必須**|運賃商品の料金。乗り継ぎ割引を表す場合は負の値、無料運賃商品を表す場合はゼロの値となりしてもよい。通貨金額は、対応する通貨コードに対してISO 4217規格で規定されている小数点以下の桁数でなけれしなければならない。<hr> *例: 運賃が 2 米ドルの場合、金額は2.ではなく 2.00 になります。 |
 | `currency` | 通貨コード |**必須**| チケット商品のコストの通貨。 |
 
 
@@ -475,7 +475,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 
 旅行の各区間の運賃規則。
 
- [`fare_leg_rules.txt`](#fare_leg_rulestxt) の運賃は、乗客が移動する区間に一致する規則を見つけるために、ファイル内のすべてのレコードをフィルタリングして照会するしなければならない。
+ [fare_leg_rules.txt](#fare_leg_rulestxt) の運賃は、乗客が移動する区間に一致する規則を見つけるために、ファイル内のすべてのレコードをフィルタリングして照会するしなければならない。
 
 区間のコストを処理するには:
 
@@ -516,7 +516,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | `from_timeframe_group_id` | `timeframes.timeframe_group_id`部 ID |任意| 運賃区間の開始時の運賃検証イベントのタイムフレームを定義します。<br><br>運賃区間の`開始時間`は、イベントの発生が予定されている時間です。たとえば、乗客が乗車して運賃を確認する運賃区間の開始時のバスの予定出発時刻がその時間になります。以下のルール マッチング セマンティクスでは、開始時間は [timeframes.txt](#timeframestxt) の [ローカル時間セマンティクス](#_14) によって決定されるローカル時間で計算されます。運賃区間の出発イベントの停留所または駅は、必要に応じてタイムゾーン解決に使用する必要があります。<br><br> `from_timeframe_group_id`を指定する運賃区間ルールの場合、[timeframes.txt](#timeframestxt) に以下の条件がすべて満たされるレコードが少なくとも 1 つ存在する場合、そのルールは特定の区間と一致します。<br> - `timeframe_group_id`の値は`from_timeframe_group_id`の値と同じです。<br> - レコードの`service_id`によって識別される日のセットには、運賃区間の開始時刻の`現在の日`が含まれます。<br> - 運賃区間の開始時間の`時刻`は、レコードの`timeframes.start_time`値以上であり、 `timeframes.end_time`値未満です。<br><br>空の`fare_leg_rules.from_timeframe_group_id`は、区間の開始時刻がこのルールの一致に影響しないことを示します。<br><br> [複数の区間の有効な運賃区間](#fare_leg_join_rulestxt)と照合する場合、有効な運賃区間の最初の区間が運賃検証イベントの開始を決定するために使用されます。 |
 | `to_timeframe_group_id` | `timeframes.timeframe_group_id` を参照する外部 ID |任意| 運賃区間の終了時の運賃検証イベントのタイムフレームを定義します。<br><br>運賃区間の`終了時間`は、イベントの発生が予定されている時間です。たとえば、乗客が降りて運賃を確認する運賃区間の終了時のバスの予定到着時間などが考えられます。以下のルールマッチングセマンティクスでは、終了時間は [timeframes.txt](#timeframestxt) の [ローカルタイムセマンティクス](#_14) によって決定されるローカルタイムで計算されます。運賃区間の到着イベントの停留所または駅は、必要に応じてタイムゾーン解決に使用する必要があります。<br><br> `to_timeframe_group_id`を指定する運賃区間ルールの場合、[timeframes.txt](#timeframestxt) に以下の条件がすべて満たされるレコードが少なくとも 1 つ存在する場合、そのルールは特定の区間と一致します。<br> - `timeframe_group_id`の値は`to_timeframe_group_id`の値と同じです。<br> - レコードの`service_id`によって識別される日のセットには、運賃区間の終了時刻の`現在の日`が含まれます。<br> - 運賃区間の終了時間の`時刻`は、レコードの`timeframes.start_time`値以上であり、 `timeframes.end_time`値未満です。<br><br>空の`fare_leg_rules.to_timeframe_group_id`は、区間の終了時刻がこのルールの一致に影響しないことを示します。<br><br> [複数の区間の有効な運賃区間](#fare_leg_join_rulestxt)と照合する場合、有効な運賃区間の最後の区間が終了運賃検証イベントの決定に使用されます。 |
 | `fare_product_id` | `fare_products.fare_product_id` を参照する外部 ID | **必須** | 区間を移動するために必要なチケット商品。 |
-| `rule_priority` | 負でない整数 | 任意 | マッチング ルールが区間に適用される優先順位を定義し、特定のルールを他のルールよりも優先できるようにします。`fare_leg_rules.txt` 内の複数のエントリが一致する場合、`rule_priority` の値が最も高いルールまたはルール セットが選択されます。<br><br>`rule_priority` の値が空の場合、ゼロとして扱われます。 |
+| `rule_priority` | 負でない整数 | 任意 | マッチング ルールが区間に適用される優先順位を定義し、特定のルールを他のルールよりも優先できるようにします。[fare_leg_rules.txt](#fare_leg_rulestxt) 内の複数のエントリが一致する場合、`rule_priority` の値が最も高いルールまたはルール セットが選択されます。<br><br>`rule_priority` の値が空の場合、ゼロとして扱われます。 |
 
 ### fare_leg_join_rules.txt 
 
@@ -541,11 +541,11 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 
 主キー(`from_leg_group_id, to_leg_group_id, fare_product_id, transfer_count, duration_limit`)
 
-[`fare_leg_rules.txt`](#fare_leg_rulestxt) で定義された旅行区間間の乗り換えの運賃規則。
+[fare_leg_rules.txt](#fare_leg_rulestxt) で定義されている旅行区間間の乗り換えに関する運賃ルール。`from_leg_group_id` から `to_leg_group_id` に定義された運賃乗り換えルールは、逆方向には適用されません。
 
 複数区間の旅程の費用を処理するには:
 
-1. `fare_leg_rules.txt`で定義されている適用可能な運賃区間グループは、乗客の旅程に基づいて、すべての個別の区間または有効な運賃区間に対して決定するするべきである。
+1. [fare_leg_rules.txt](#fare_leg_rulestxt)で定義されている適用可能な運賃区間グループは、乗客の旅程に基づいて、すべての個別の区間または有効な運賃区間に対して決定するするべきである。
 2. ファイル [fare_transfer_rules.txt](#fare_transfer_rulestxt) は、乗り換えの特性を定義するフィールドでフィルタリングするしなければならない。これらのフィールドは次のとおりです:
    - `fare_transfer_rules.from_leg_group_id` 
    - `fare_transfer_rules.to_leg_group_id`<br/> 
@@ -679,7 +679,8 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 
 | フィールド名 | タイプ | 存在 | 説明 |
 |------|------|------|------|
-| `from_stop_id` | `stops.stop_id` を参照する外部 ID |**条件付きで必須**|ルート・路線系統間の接続が開始される停留所または駅を識別します。このフィールドが駅を参照する場合、乗り換えルールはそのすべての子の停留所等に適用されます。`transfer_types` 4 および5.では駅の参照は禁止されています。|
+| `from_stop_id` | `stops.stop_id` を参照する外部 ID |**条件付きで必須**|ルート・路線系統間の接続が始まる停留所 ( `location_type=0`) または駅 ( `location_type=1`) を識別します。このフィールドが駅を参照している場合、乗り換えルールはそのすべての子停留所に適用されます。`transfer_type` が `4` または `5` の場合、停留所 (`location_type=0`) を参照するしなければならない。<br><br>条件付きで必須:<br> -**必須** `transfer_type` が空、`0`、`1`、`2`、または `3` の場合。<br> - `transfer_type` が `4` または `5` の場合は任意。| 
+| `to_stop_id` | `stops.stop_id` を参照する外部 ID |**条件付きで必須**|ルート・路線系統間の接続が終了する停留所 ( `location_type=0`) または駅 ( `location_type=1`) を識別します。このフィールドが駅を参照している場合、乗り換えルールはすべての子停留所に適用されます。`transfer_type` が 4 または 5 の場合、停留所 (`location_type=0`) を参照するしなければならない。<br><br>条件付きで必須:<br> -**必須** `transfer_type` が空、`0`、`1`、`2`、または`3` の場合。<br> -`transfer_type` が `4` または `5` の場合は任意。 | 
 | `transfer_types` `to_stop_id` | `stops.stop_id` 部 ID |**条件付きで必須**|ルート・路線系統間の接続が終了する停留所または駅を識別します。このフィールドが駅を参照する場合、転送ルールはすべての子停留所等に適用されます。`transfer_types` 4 および5.では、駅の参照は禁止されています。|
 | `from_route_id` | `routes.route_id` 部 ID |任意| 接続が始まるルートを識別します。<br><br> `from_route_id`が定義されている場合、乗り換えは指定された`from_stop_id`のルート上の到着便に適用されます。<br><br> `from_trip_id`と`from_route_id` の両方が定義されている場合、 `trip_id`は`route_id`に属しているしなければならない、 `from_trip_id` が優先されます。 |
 | `to_route_id` | `routes.route_id` を参照する外部 ID |任意| 接続が終了するルートを識別します。<br><br> `to_route_id`が定義されている場合、乗り換えは指定された`to_stop_id`のルートの出発便に適用されます。<br><br> `to_trip_id`と`to_route_id` の両方が定義されている場合、 `trip_id`は`route_id`に属しているしなければならない、 `to_trip_id` が優先されます。 |
