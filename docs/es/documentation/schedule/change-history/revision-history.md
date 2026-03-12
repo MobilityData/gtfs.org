@@ -2,6 +2,13 @@
 
 ### Historial de revisiones
 
+#### Febrero de 2026 
+* Obligatorio `from_stop_id` y `to_stop_id` cuando transfer_type = 0 o está vacío (punto de transferencia recomendado). Consulte la [discusión](https://github.com/google/transit/pull/591). 
+* Se mejoró la descripción del importe de la moneda. Consulte la [discusión](https://github.com/google/transit/pull/615). 
+* Se aclaró que las reglas de transferencia de tarifas son direccionales. Consulte la [discusión](https://github.com/google/transit/pull/602). 
+* Se añadieron enlaces a referencias de/`fare_leg_rules.txt/`. Consulte la [discusión](https://github.com/google/transit/pull/601). 
+* Se añadieron los espacios que faltaban. Consulte la [discusión](https://github.com/google/transit/pull/587).
+
 #### Octubre de 2025
 * Se agregaron aclaraciones para `fare_transfer_rules.txt` y se introdujo un nuevo tipo de campo `hora local`. Ver [discusión] (https:https://github.com/google/transit/pull/561).
 
