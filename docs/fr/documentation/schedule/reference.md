@@ -460,7 +460,7 @@ Définit les catégories de passagers (par exemple, personnes âgées, étudiant
  | `fare_product_name` | Texte | Optionnel | Le nom du produit tarifaire tel qu’affiché aux passagers. | 
  | `rider_category_id` | ID étranger référençant `rider_categories.rider_category_id` | Optionnel | Identifie une catégorie de passager éligible pour le produit tarifaire.<br><br> Si `fare_products.rider_category_id` est vide, le produit tarifaire est éligible pour n’importe quel `rider_category_id`.<br><br> Lorsque plusieurs catégories de passagers sont éligibles à un produit tarifaire unique spécifié par un `fare_product_id`, une seule de ces catégories de passagers doit être indiquée comme catégorie de passager par défaut (`is_default_fare_category = 1`).
  | `fare_media_id` | ID étranger faisant référence à `fare_media.fare_media_id` | Optionnel | Identifie un support tarifaire qui peut être utilisé pour utiliser le produit tarifaire pendant le voyage. Lorsque `fare_media_id` est vide, on considère que le support tarifaire est inconnu.| 
- | `amount` | Montant en devise | **Requis** | Le coût du produit tarifaire. Peut être négatif pour représenter les remises de transfert. Peut être zéro pour représenter un produit tarifaire gratuit. | 
+ | `amount` | Montant en devise | **Requis** | Le coût du produit tarifaire. Peut être négatif pour représenter les remises de transfert. Peut être zéro pour représenter un produit tarifaire gratuit. Le montant en devise doit comporter le nombre de décimales spécifié par la norme ISO 4217 pour le code devise associé.<hr> *Exemple : Si le tarif est de 2 dollars américains, le montant est de 2,00 au lieu de 2.* | | 
  | `currency` | Code devise | **Requis** | La devise du coût du produit tarifaire. | 
  
  
