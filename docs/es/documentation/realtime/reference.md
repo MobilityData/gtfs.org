@@ -721,7 +721,7 @@ Lista de viajes seleccionados con una forma asociada.
 
 | _**Nombre de campo**_ | _**Tipo**_ | _**Obligatorio**_ | _**Cardenalidad**_ | _**Descripción**_ | 
 |------------------|------------|----------------|-------------------|-------------------| 
-| **trip_ids** | [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | Muchos | Uno | Una lista de trip_id del GTFS original (CSV) que se ven afectados por el reemplazo que los contiene. Debe contener al menos un trip_id. No debe existir ya un `TripUpdate` con `schedule_relationship=REPLACEMENT` para el viaje. |
+| **trip_ids** | [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | Obligatorio | Muchos | Una lista de trip_id del GTFS original (CSV) que se ven afectados por el reemplazo que los contiene. Debe contener al menos un trip_id. No debe existir ya un `TripUpdate` con `schedule_relationship=REPLACEMENT` para el viaje. |
 | **shape_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Obligatorio | Uno | El ID de la nueva forma para los viajes modificados en este SelectedTrips. Puede referirse a una nueva forma añadida mediante un message `Shape` en la misma fuente GTFS-RT, o a una forma existente definida en el shapes.txt de la fuente GTFS-Static. Si se refiere a una entidad `Shape` en la fuente en tiempo real, el valor de este campo debe ser el del `shape_id` dentro de la entidad, y no el `id` de `FeedEntity`. |
 
 ### _message_ ReplacementStop 

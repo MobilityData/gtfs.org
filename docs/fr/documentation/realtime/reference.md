@@ -720,7 +720,7 @@ Liste des trajets sélectionnés avec une forme associée.
 
 | _**Nom du champ**_ | _**Tapez**_ | _**Requis**_ | _**Cardinalité**_ | _**Description**_ | 
 |--------|------------|----------------|----------------------------------|-------------------| 
-| **trip_ids** | [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | Plusieurs | Un | Une liste de trip_id du GTFS d’origine (CSV) qui sont affectés par le remplacement contenant. Doit contenir au moins un trip_id. Un `TripUpdate` avec `schedule_relationship=REPLACEMENT` ne doit pas déjà exister pour le voyage. |
+| **trip_ids** | [uint32](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis | Plusieurs | Une liste de trip_id du GTFS d’origine (CSV) qui sont affectés par le remplacement contenant. Doit contenir au moins un trip_id. Un `TripUpdate` avec `schedule_relationship=REPLACEMENT` ne doit pas déjà exister pour le voyage. |
 | **shape_id** | [string](https://protobuf.dev/programming-guides/proto2/#scalar) | Requis | Un | L’ID de la nouvelle forme pour les trajets modifiés dans ce SelectedTrips. Peut faire référence à une nouvelle forme ajoutée à l’aide d’un message « `Shape` » dans le même flux GTFS-RT, ou à une forme existante définie dans le fichier shapes.txt du flux GTFS-Static. S’il fait référence à une entité « `Shape` » dans le flux en temps réel, la valeur de ce champ doit être celle de « `shape_id` » dans l’entité, et non celle de « `id` » de « `FeedEntity` ». |
 
 ### _message_ ReplacementStop 

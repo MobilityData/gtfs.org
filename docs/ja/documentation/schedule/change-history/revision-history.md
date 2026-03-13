@@ -2,6 +2,13 @@
 
 ### 改訂履歴
 
+#### 2026年2月 
+* transfer_type=0 または空の場合 (推奨乗換ポイント)、/`from_stop_id/` と/`to_stop_id/`が必須。 [ディスカッション](https://github.com/google/transit/pull/591) を参照してください。
+* 通貨金額の説明を改善しました。[ディスカッション](https://github.com/google/transit/pull/615) を参照してください。
+* 運賃の乗り換えルールが方向性を持つことを明確にしました。[ディスカッション](https://github.com/google/transit/pull/602) を参照してください。
+*/`fare_leg_rules.txt/` の参照へのリンクを追加しました。[ディスカッション](https://github.com/google/transit/pull/601) を参照してください。
+* 不足していたスペースを追加しました。[ディスカッション](https://github.com/google/transit/pull/587) を参照してください。
+
 #### 2025年10月
 * `fare_transfer_rules.txt`の説明を追加し、新しい `現地時間` フィールド タイプを導入しました。[ディスカッション](https:( https://github.com/google/transit/pull/561) を参照してください。
 

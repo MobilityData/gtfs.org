@@ -2,6 +2,11 @@
 
 ### 改訂履歴
 
+#### 2026年2月 
+ 
+* SelectedTripsの trip_ids 要件とカーディナリティを修正しました。[ディスカッション](https://github.com/google/transit/pull/609) を参照してください。 
+* 不足していたスペースを追加しました。[ディスカッション](https://github.com/google/transit/pull/587) を参照してください。
+
 #### 2025年5月
 
 * スケジュール関係の `ADDED` を廃止し、代わりに `NEW` を導入し、`REPLACEMENT` を追加しました。[ディスカッション](https://github.com/google/transit/pull/504) をご覧ください。

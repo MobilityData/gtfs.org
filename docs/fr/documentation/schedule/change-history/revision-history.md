@@ -2,6 +2,13 @@
 
 ### Historique des révisions
 
+#### Février 2026 
+* Requis de `from_stop_id` et `to_stop_id` lorsque transfer_type = 0 ou est vide (point de correspondance recommandé). Voir [discussion](https://github.com/google/transit/pull/591). 
+* Amélioration de la description du montant en devise. Voir [discussion](https://github.com/google/transit/pull/615). 
+* Clarifier les règles de correspondance tarifaire sont directionnelles. Voir [discussion](https://github.com/google/transit/pull/602). 
+* Ajout de liens vers les références de `fare_leg_rules.txt`. Voir [discussion](https://github.com/google/transit/pull/601). 
+* Ajout des espaces manquants. Voir [discussion](https://github.com/google/transit/pull/587). 
+
 #### Octobre 2025
 * Ajout des clarifications pour `fare_transfer_rules.txt` et introduction d’un nouveau type de champ `heure locale`. Voir [discussion](https://github.com/google/transit/pull/561).
 
