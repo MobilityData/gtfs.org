@@ -257,7 +257,9 @@ nav:
         - Fare Transfers: resources/gtfs-schedule-feature-guides/fares/fare-transfers.md
         - Legacy Fares: resources/gtfs-schedule-feature-guides/fares/fares-v1.md
       - Shapes (shapes.txt): resources/gtfs-schedule-feature-guides/shapes.md
-    - MobilityData Recommendations: resources/mobilitydata-recommendations/overview.md    
+    - MobilityData Recommendations:
+      - Overview: resources/mobilitydata-recommendations/overview.md
+      - GTFS Schedule vs GTFS Realtime: resources/mobilitydata-recommendations/gtfs-schedule-vs-gtfs-realtime.md   
     - Producing Data: resources/producing-data.md
     - Sharing Data: resources/sharing-data.md
     - Using Data: resources/using-data.md
