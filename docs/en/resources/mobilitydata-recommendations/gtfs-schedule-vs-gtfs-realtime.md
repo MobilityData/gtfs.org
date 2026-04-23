@@ -69,7 +69,7 @@ Transit agencies generally aim to offer regular, predictable schedules, carefull
 
 According to the official GTFS Schedule reference, a *“GTFS dataset should be valid for at least the next 7 days, and ideally for as long as the operator is confident that the schedule will continue to be operated.”* Even when no major service changes are required, producers are expected to perform **regular, periodic maintenance of their GTFS feeds** to ensure that the service schedules included in the feed remain accurate and up-to-date.
 
-Since GTFS Schedule serves as the foundation of any GTFS implementation as it contains the essential planned elements of a transit system, including routes, trips, stops, and schedules, these updates should rely on GTFS Schedule to represent all planned services. Planned services include regular operations (e.g., weekday and weekend services),but also upcoming special services such as holiday timetables, seasonally adjusted schedules, and service changes for major planned events (e.g., sporting events or concerts).
+Since GTFS Schedule serves as the foundation of any GTFS implementation as it contains the essential planned elements of a transit system, including routes, trips, stops, and schedules, these updates should rely on GTFS Schedule to represent all planned services. Planned services include regular operations (e.g., weekday and weekend services), but also upcoming special services such as holiday timetables, seasonally adjusted schedules, and service changes for major planned events (e.g., sporting events or concerts).
 
 Any planned service disruptions or operational modifications known in advance, such as temporary route changes, station closures, or trip cancellations, should also be incorporated into the Schedule feed **as early as possible**. Maintaining an up-to-date Schedule feed ensures that trip planners and other consumers can provide accurate information to users well ahead of time.
 
@@ -113,7 +113,7 @@ An important concert expected to draw big crowds is announced for **May 24**. Th
 
 * **April 10 – Updated GTFS Schedule published**  
   * The team in charge of maintaining GTFS for the agency prepares the May dataset with the special trips and adjusted schedules.  
-  * The updated Schedule feed is published in the agency’s open data portal on **April 10\.**  
+  * The updated Schedule feed is published in the agency’s open data portal on **April 10\**.  
     * This includes the service information for May and the reminder of April, combining the current schedule with the future one.
 
 
@@ -123,7 +123,7 @@ An important concert expected to draw big crowds is announced for **May 24**. Th
 
 
 * **May 22 – Realtime Service Alert added**  
-  * To increase visibility of the upcoming change, the agency publishes a Service Alert on **May 22,** two days before the event.  
+  * To increase visibility of the upcoming change, the agency publishes a Service Alert on **May 22**, two days before the event.  
   * Trip-planning apps start displaying the alert within minutes.  
   * This alert complements the Schedule information already available.
 
@@ -134,7 +134,7 @@ An important concert expected to draw big crowds is announced for **May 24**. Th
 
 ### Example 2: Start of Summer Schedule
 
-Ahead of the summer season, a transit agency plans a seasonal schedule that adjusts the frequencies on several bus routes and restores a seasonal beach shuttle. This seasonal plan will start on **June 1** and stay in place for almost 4 months. These are planned, recurring changes that must be reflected in the **GTFS Schedule** feed, as part of the agency’s regular update cycle. To help riders prepare for the transition, the agency also uses **GTFS Realtime Service Alerts** to highlight the upcoming changes shortly before it takes effect.
+Ahead of the summer season, a transit agency plans a seasonal schedule that adjusts the frequencies on several bus routes and restores a seasonal beach shuttle. This seasonal plan will start on **June 1** and stay in place for almost 4 months. These are planned, recurring changes that must be reflected in the **GTFS Schedule** feed, as part of the agency’s regular update cycle. To help riders prepare for the transition, the agency also uses **GTFS Realtime Service Alerts** to highlight the upcoming changes shortly before they takes effect.
 
 **Example 2 Timeline**
 
@@ -194,7 +194,7 @@ On November 8, an unexpected power outage forces authorities to temporarily clos
 **Example 3 Timeline**
 
 * **November 8 (4:45 pm) – Power outage detected**  
-  * Around 4:45 pm Oakwood Station is forced to close immediately due to the loss of power.
+  * Around 4:45 pm, Oakwood Station is forced to close immediately due to the loss of power.
 
 
 * **November 8 (5:15 pm) – GTFS Realtime feed update**  
@@ -205,7 +205,7 @@ On November 8, an unexpected power outage forces authorities to temporarily clos
 
 
 * **November 8 (6:05 pm) – Power restored and normal service resumes**  
-  * Shortly after 6:00 pm power is restored and the station reopens.  
+  * Shortly after 6:00 pm, power is restored and the station reopens.  
   * The transit agency removes the alert in the Service Alerts feed and the `skipped` status for the stop in Trip Updates.  
   * Trip-planning apps reflect the updated feeds in their apps, reenabling the stop for trip planning and removing the alert immediately.
 
@@ -293,7 +293,7 @@ On August 17, a moderate earthquake causes structural damage to a city’s Centr
   * The updated Schedule feed is published by the agency on **August 23**.
 
 
-* **August 25 –  Updated GTFS Schedule ingestion**  
+* **August 25 – Updated GTFS Schedule ingestion**  
   * Trip-planning applications detect the updated Schedule as soon as it is released.  
   * They ingest the feed, run quality checks, and begin showing the updated September service to riders by **August 25**, five (5) days before it becomes effective.
 
