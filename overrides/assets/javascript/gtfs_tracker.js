@@ -91,7 +91,7 @@
     }).join('');
 
     el.innerHTML = `
-      <div class="gft-header-container"><h3 class="gft-main-title">Features Adoption Tracker</h3><a href="https://community.mobilitydata.org/gtfs-features" target="_blank" class="gft-btn-source">Full Features Tracker</a></div>
+      <div class="gft-header-container"><h3 class="gft-main-title">Features Adoption Tracker</h3><a href="https://mobilitydatabase.org/gtfs-feature-tracker" target="_blank" class="gft-btn-source">Full Features Tracker</a></div>
       <div class="gft-wrapper"><div class="gft-table-wrap"><table class="gft-table"><thead><tr><th>Feature</th>${CONSUMERS.map(c => `<th><div class="gft-consumer-header"><img src="/assets/${c.id}.png" alt="" class="gft-consumer-logo" onerror="this.style.display='none'"><span>${c.label}</span></div></th>`).join('')}</tr></thead><tbody>${tableRows}</tbody></table></div></div>`;
   }
 
