@@ -90,9 +90,29 @@
       return `<tr class="gft-row"><td class="gft-feature-name" title="${f.name}">${f.name}</td>${cells}</tr>`;
     }).join('');
 
-    el.innerHTML = `
-      <div class="gft-header-container"><h3 class="gft-main-title">Features Adoption Tracker</h3><a href="https://mobilitydatabase.org/gtfs-feature-tracker" target="_blank" class="gft-btn-source">Full Features Tracker</a></div>
-      <div class="gft-wrapper"><div class="gft-table-wrap"><table class="gft-table"><thead><tr><th>Feature</th>${CONSUMERS.map(c => `<th><div class="gft-consumer-header"><img src="/assets/${c.id}.png" alt="" class="gft-consumer-logo" onerror="this.style.display='none'"><span>${c.label}</span></div></th>`).join('')}</tr></thead><tbody>${tableRows}</tbody></table></div></div>`;
+el.innerHTML = `
+      <div class="gft-wrapper">
+        <div class="gft-table-wrap">
+          <table class="gft-table" style="width:100%; border-collapse:collapse; font-family:sans-serif;">
+            <thead>
+              <tr style="background:#f9fafb;">
+                <th style="border:1px solid #eee; padding:8px;"></th>
+                ${CONSUMERS.map(c => `
+                  <th style="border:1px solid #eee; padding:8px;">
+                    <div class="gft-consumer-header" style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+                      <img src="/assets/${c.id}.png" alt="" style="height:16px; width:auto;" onerror="this.style.display='none'">
+                      <span style="font-size:11px;">${c.label}</span>
+                    </div>
+                  </th>`).join('')}
+              </tr>
+            </thead>
+            <tbody>${tableRows}</tbody>
+          </table>
+        </div>
+        <div class="gft-footer-link">
+          Learn more about the <a href="https://mobilitydata.org" target="_blank">GTFS Features Tracker</a>
+        </div>
+      </div>`;
   }
 
   function boot() {

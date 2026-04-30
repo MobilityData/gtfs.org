@@ -35,7 +35,7 @@
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    border: 1px solid var(--md-default-fg-color--lightest);
+    border: 0px solid var(--md-default-fg-color--lightest);
     border-radius: 8px;
     background: var(--md-default-bg-color);
 }
@@ -87,6 +87,10 @@
     padding: 6px 10px;
     border-bottom: 1px solid var(--md-default-fg-color--lightest);
     vertical-align: middle;
+}
+
+.gft-table thead tr:first-child th {
+    border-top: none !important;
 }
 
 .gft-feature-name {
@@ -186,11 +190,32 @@
     line-height: 1.2;
     margin: 1px 0;
 }
+.gft-footer-link a::after {
+    display: none !important;
+    content: "" !important;
+    background: none !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+}
 
-.gft-link {
-    color: #2563eb;
-    text-decoration: underline;
-    font-weight: 500;
+.gft-footer-link {
+    margin-top: 12px;
+    text-align: left;
+    font-size: 0.75rem;
+    color: #94a3b8 !important;
+}
+
+.gft-footer-link a {
+    color: #94a3b8 !important;
+    text-decoration: underline !important;
+    transition: color 0.2s;
+}
+
+.gft-footer-link a:hover {
+    color: #64748b !important;
 }
 
 .gft-modal-body {
