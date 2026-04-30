@@ -41,9 +41,11 @@ theme:
   icon:
     repo: fontawesome/brands/github
 extra_css:
+  - assets/stylesheets/gtfs_tracker.css
   - assets/stylesheets/extra.css
   - assets/stylesheets/footer.css
 extra_javascript:
+  - assets/javascript/gtfs_tracker.js
   - assets/javascript/anchor-redirects.js
   - assets/javascript/languageSwitchUrls.js
 extra:
