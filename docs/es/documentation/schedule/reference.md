@@ -1,6 +1,6 @@
 ## Referencia de General Transit Feed Specification 
  
- **Revisado el 3 de marzo de 2026. Consulte el [Historial de revisiones](../schedule/process/revision-history) para obtener más detalles.**
+ **Revisado el 27 de abril de 2026. Consulte el [Historial de revisiones](../schedule/process/revision-history) para obtener más detalles.**
  
  Este documento define el formato y la estructura de los archivos que componen un conjunto de datos GTFS. 
  
@@ -267,6 +267,13 @@ La **clave principal** de un conjunto de datos es el campo o combinación de cam
  | `wheelchair_accessible` | Enumeración | Opcional | Indica accesibilidad para sillas de ruedas. Las opciones válidas son:<br><br> `0` o vacío: no hay información de accesibilidad para el viaje.<br> `1` : el vehículo que se utiliza en este viaje en particular tiene capacidad para al menos un pasajero en silla de ruedas.<br> `2` - No se pueden acomodar pasajeros en sillas de ruedas en este viaje. | 
  | `bikes_allowed` | Enumeración | Opcional | Indica si se permiten bicicletas. Las opciones válidas son:<br><br> `0` o vacío: no hay información de bicicleta para el viaje.<br> `1` : el vehículo que se utiliza en este viaje en particular tiene capacidad para al menos una bicicleta.<br> `2` - No se permiten bicicletas en este viaje. | 
  | `cars_allowed` | Enumeración | Opcional | Indica si se permiten coches. Las opciones válidas son:<br><br> `0` o vacío- No hay información del vehículo para el viaje.<br> `1` - El vehículo utilizado en este viaje en particular puede acomodar al menos un automóvil.<br> `2` - No se permiten coches en este viaje. |
+  | `safe_duration_factor` | Flotante | Opcional | Multiplicador aplicado a las estimaciones de tiempo de viaje calculadas para viajes a demanda.<br><br> Consulte la sección ["Cálculo de estimaciones de tiempo de viaje bajo demanda con campos de duración segura"](#cálculo-de-estimaciones-de-tiempo-de-viaje-bajo-demanda-con-campos-de-duración-segura) a continuación para obtener orientación sobre cómo usar este campo y el campo `safe_duration_offset`. | 
+ | `safe_duration_offset` | Flotante | Opcional | Valor de desplazamiento fijo en segundos aplicado a las estimaciones de tiempo de viaje calculadas para viajes bajo demanda.<br><br> Consulte la sección ["Cálculo de estimaciones de tiempo de viaje bajo demanda con campos de duración segura"](#cálculo-de-estimaciones-de-tiempo-de-viaje-bajo-demanda-con-campos-de-duración-segura) a continuación para obtener orientación sobre cómo usar este campo y el campo `safe_duration_factor`. | 
+ 
+#### Cálculo de estimaciones de tiempo de viaje bajo demanda con campos de duración segura 
+Juntos, `safe_duration_factor` y `safe_duration_offset` permiten estimar la cantidad máxima de tiempo que un pasajero puede esperar que dure el viaje bajo demanda, en el 95% de los casos. Se espera que los consumidores de datos utilicen `safe_duration_factor` y `safe_duration_offset` para realizar el siguiente cálculo:<br> `n` de viaje segura (segundos) = factor de duración segura × duración de conducción (segundos) + desplazamiento de duración segura (segundos)`<br> donde `DrivingDuration` es el tiempo que tardaría un coche particular en recorrer la distancia que se está calculando para el servicio a demanda, y `SafeTravelDuration` es el tiempo máximo que un pasajero puede esperar que dure el viaje a demanda.<br><br> 
+
+Este cálculo solo debe aplicarse a la parte del viaje que sea a demanda. Si un servicio es un servicio fijo desviado, o si el viaje de un pasajero incluye un transbordo de un servicio a demanda a un servicio de ruta fija, la duración de la parte de ruta fija del viaje debe calcularse de acuerdo con los campos `departure_time` y `arrival_time`.
  
 #### Ejemplo: Bloques y día de servicio 
  

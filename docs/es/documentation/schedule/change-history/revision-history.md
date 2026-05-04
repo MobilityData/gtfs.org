@@ -2,6 +2,9 @@
 
 ### Historial de revisiones
 
+#### Abril 2026 
+* Se agregaron campos de duración segura a `trips.txt` para proporcionar mejores estimaciones de tiempo de viaje flexibles. Ver [discusión](https://github.com/google/transit/pull/598). 
+
 #### Febrero de 2026 
 * Se obligaron `from_stop_id` y `to_stop_id` cuando transfer_type = 0 o está vacío (punto de transferencia recomendado). Consulte la [discusión](https://github.com/google/transit/pull/591). 
 * Se mejoró la descripción del importe de la moneda. Consulte la [discusión](https://github.com/google/transit/pull/615). 
@@ -10,7 +13,7 @@
 * Se añadieron los espacios que faltaban. Consulte la [discusión](https://github.com/google/transit/pull/587).
 
 #### Octubre de 2025
-* Se agregaron aclaraciones para `fare_transfer_rules.txt` y se introdujo un nuevo tipo de campo `hora local`. Ver [discusión] (https:https://github.com/google/transit/pull/561).
+* Se agregaron aclaraciones para `fare_transfer_rules.txt` y se introdujo un nuevo tipo de campo `hora local`. Ver [discusión] (https://github.com/google/transit/pull/561).
 
 #### Septiembre de 2025
 * Se agregó el campo `cemv_support` en `agency.txt` y `routes.txt`. Ver [discusión](https://github.com/google/transit/pull/545).
