@@ -1,6 +1,6 @@
 ## Référence de General Transit Feed Specification 
  
- **Révisé le 3 mars 2026. Voir [Historique des révisions](../change-history/revision-history/) pour plus de détails.**
+ **Révisé le 27 avril 2026. Voir [Historique des révisions](../change-history/revision-history/) pour plus de détails.**
  
  Ce document définit le format et la structure de les fichiers qui composent un jeu de données GTFS. 
  
@@ -268,6 +268,12 @@
  | `wheelchair_accessible` | Énumération | Optionnel | Indique l’accessibilité en fauteuil roulant. Les options valides sont :<br><br> `0` ou vide- Aucune information d’accessibilité pour le voyage.<br> `1` - Le véhicule utilisé lors de ce voyage particulier peut accueillir au moins un passager en fauteuil roulant.<br> `2` - Aucun passager en fauteuil roulant ne peut être accueilli lors de ce voyage. | 
  | `bikes_allowed` | Énumération | Optionnel | Indique si les vélos sont autorisés. Les options valides sont :<br><br> `0` ou vide- Aucune information sur le vélo pour le trajet.<br> `1` - Le véhicule utilisé lors de ce voyage particulier peut accueillir au moins un vélo.<br> `2` - Aucun vélo n’est autorisé lors de ce voyage. | 
  | `cars_allowed` | Énumération | Optionnel | Indique si les voitures sont autorisées. Les options valides sont :<br><br> `0` ou vide - Aucune information sur la voiture pour le trajet.<br> `1` - Le véhicule utilisé pour ce voyage particulier peut accueillir au moins une voiture.<br> `2` - Aucune voiture n’est autorisée sur ce trajet. |
+  
+| `safe_duration_factor` | Flotteur | Optionnel | Multiplicateur appliqué aux estimations de temps de trajet calculées pour les trajets à la demande.<br><br> Consultez la section [Calcul des estimations de temps de trajet à la demande avec les champs de durée de sécurité](#calcul-des-estimations-de-durée-de-trajet-à-la-demande-avec-les-champs-de-durée-de-sécurité) ci-dessous pour obtenir des instructions sur l’utilisation de ce champ et du champ `safe_duration_offset`. | 
+| `safe_duration_offset` | Flotteur | Optionnel | Valeur de décalage fixe en secondes appliquée aux estimations de temps de trajet calculées pour les trajets à la demande.<br><br> Consultez la section [Calcul des estimations de durée de trajet à la demande avec les champs de durée de sécurité](#calcul-des-estimations-de-durée-de-trajet-à-la-demande-avec-les-champs-de-durée-de-sécurité) ci-dessous pour obtenir des instructions sur l’utilisation de ce champ et du champ `safe_duration_factor`. | 
+ 
+#### Calcul des estimations de durée de trajet à la demande avec les champs de durée de sécurité 
+ Les champs `safe_duration_factor` et `safe_duration_offset` permettent, ensemble, d’estimer la durée maximale du trajet à la demande pour un utilisateur dans 95 % des cas. Les utilisateurs de données sont invités à utiliser `safe_duration_factor` et `safe_duration_offset` pour effectuer le calcul suivant :<br> `SafeTravelDuration (secondes) = safe_duration_factor × DrivingDuration (secondes) + safe_duration_offset (secondes)`<br> où « DrivingDuration » correspond au temps nécessaire à une voiture privée pour parcourir la distance calculée pour le service à la demande, et « SafeTravelDuration » correspond à la durée maximale pendant laquelle un passager peut s’attendre à ce que le trajet à la demande prenne.<br><br> Ce calcul ne doit s’appliquer qu’à la partie du trajet effectuée à la demande. Si le service est un service à itinéraire fixe avec déviation, ou si le trajet d’un passager comprend une correspondance entre un service à la demande et un service à itinéraire fixe, la durée de la partie du trajet effectuée sur itinéraire fixe doit être calculée en fonction des champs « departure_time » et « arrival_time ».
  
 #### Exemple : Blocs et jour de service 
  

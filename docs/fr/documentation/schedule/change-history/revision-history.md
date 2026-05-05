@@ -2,6 +2,9 @@
 
 ### Historique des révisions
 
+#### Avril 2026 
+* Ajout de champs de durée de sécurité à `trips.txt` pour fournir de meilleures estimations flexibles de la durée des trajets. Voir [discussion](https://github.com/google/transit/pull/598). 
+
 #### Février 2026 
 * Requis de `from_stop_id` et `to_stop_id` lorsque transfer_type = 0 ou est vide (point de correspondance recommandé). Voir [discussion](https://github.com/google/transit/pull/591). 
 * Amélioration de la description du montant en devise. Voir [discussion](https://github.com/google/transit/pull/615). 

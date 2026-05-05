@@ -2,6 +2,9 @@
 
 ### Historique des révisions
 
+#### Avril 2026 
+* Correction de fautes de frappe dans gtfs-realtime.proto. Voir [discussion](https://github.com/google/transit/pull/541). 
+
 #### Février 2026 
   
 * Correction des exigences et de la cardinalité des trip_ids pour selectedTrips. Voir [discussion](https://github.com/google/transit/pull/609). 
