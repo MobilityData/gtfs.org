@@ -2,8 +2,11 @@
 
 ### 改訂履歴
 
+#### 2026年4月 
+* より柔軟な旅行時間の見積もりを提供するために、`trips.txt`に安全な期間フィールドを追加しました。[ディスカッション](https://github.com/google/transit/commit/9769bc8638aac22ac843ee3f5c6031ee4ee784b9)を参照してください。
+
 #### 2026年2月 
-* transfer_type=0 または空の場合 (推奨乗換ポイント)、/`from_stop_id/` と/`to_stop_id/`が必須。 [ディスカッション](https://github.com/google/transit/pull/591) を参照してください。
+* transfer_type=0 または空の場合 (推奨乗換ポイント)、`from_stop_id` と`to_stop_id`が必須。 [ディスカッション](https://github.com/google/transit/pull/591) を参照してください。
 * 通貨金額の説明を改善しました。[ディスカッション](https://github.com/google/transit/pull/615) を参照してください。
 * 運賃の乗り換えルールが方向性を持つことを明確にしました。[ディスカッション](https://github.com/google/transit/pull/602) を参照してください。
 */`fare_leg_rules.txt/` の参照へのリンクを追加しました。[ディスカッション](https://github.com/google/transit/pull/601) を参照してください。

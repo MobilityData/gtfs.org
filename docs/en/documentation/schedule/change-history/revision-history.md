@@ -2,6 +2,9 @@
 
 ### Revision History
 
+#### April 2026
+* Added safe duration fields to `trips.txt` to provide better flexible trip time estimates. See [discussion](https://github.com/google/transit/pull/598).
+
 #### February 2026
 * Required `from_stop_id` and `to_stop_id` when transfer_type = 0 or is empty (recommended transfer point). See [discussion](https://github.com/google/transit/pull/591).
 * Improved currency amount description. See [discussion](https://github.com/google/transit/pull/615).

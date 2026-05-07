@@ -2,6 +2,10 @@
 
 ### 改訂履歴
 
+#### 2026年4月 
+
+* gtfs-realtime.proto のタイプミスを修正しました。[ディスカッション](https://github.com/google/transit/pull/541) を参照してください。 
+
 #### 2026年2月 
  
 * SelectedTripsの trip_ids 要件とカーディナリティを修正しました。[ディスカッション](https://github.com/google/transit/pull/609) を参照してください。 
