@@ -93,11 +93,14 @@ In most cases, Service Alerts for planned adjustments **should be published no m
 
 ### Recommended Practices
 
-* **Producers**  
+**Producers**
+
   * **Establish a predictable update cadence for the Schedule feed:** The appropriate frequency depends on each agency’s operational context. Some agencies may update weekly or monthly, while others do so quarterly. A predictable cadence helps consumers anticipate changes and prepare for updates.  
   * **Publish updated Schedule feeds in advance:** Ideally, feeds should be published as soon as changes are known, but releasing updates **3-4 weeks** before service changes take effect is sufficient. When unexpected changes occur, producers should still aim to release an updated GTFS Schedule feed **at least seven (7) days** before the new service plan becomes effective.  If the service change is known in less time than that, changes should be reflected using the corresponding GTFS Realtime  
   * **Use `feed_info.txt` to communicate key feed details:** Include accurate contact information (`feed_contact_email`, `feed_publisher_name`, `feed_publisher_url`), `feed_start_date`, `feed_end_date`, and `feed_version`. This information helps consumers confirm they are using the most up-to-date data and contact producers if issues arise. Including `feed_version` in both Realtime and Schedule feeds provides additional certainty that the correct data is being ingested.  
-* **Consumers**  
+
+**Consumers** 
+
   * **Check for new feed versions daily:** Consumers are expected to ingest new data within **48 hours** of its release, ensuring that accurate service information is available to end users **at least five (5) days** before the changes take effect.
 
 ### Example 1: Service adjustment around a major concert
@@ -106,31 +109,31 @@ An important concert expected to draw big crowds is announced for **May 24**. Th
 
 **Example 1 Timeline**
 
-* **March 31 – Operational plan finalized**  
-  * The agency becomes aware of the concert months in advance and identifies the need for additional service.  
-  * The agency finalizes the full service plan for May, including the special event service on **March 31\.**
+1. **March 31 – Operational plan finalized**  
+    * The agency becomes aware of the concert months in advance and identifies the need for additional service.  
+    * The agency finalizes the full service plan for May, including the special event service on **March 31.**
 
 
-* **April 10 – Updated GTFS Schedule published**  
-  * The team in charge of maintaining GTFS for the agency prepares the May dataset with the special trips and adjusted schedules.  
-  * The updated Schedule feed is published in the agency’s open data portal on **April 10\**.  
-    * This includes the service information for May and the reminder of April, combining the current schedule with the future one.
+1. **April 10 – Updated GTFS Schedule published**  
+    * The team in charge of maintaining GTFS for the agency prepares the May dataset with the special trips and adjusted schedules.  
+    * The updated Schedule feed is published in the agency’s open data portal on **April 10**.  
+        * This includes the service information for May and the reminder of April, combining the current schedule with the future one.
 
 
-* **April 10-14 – Consumer ingestion**  
-  * Trip-planning applications detect the update the day it is released.  
-  * They ingest the feed, run quality checks, and begin displaying the updated May schedules to users by **April 14**.
+1. **April 10-14 – Consumer ingestion**  
+    * Trip-planning applications detect the update the day it is released.  
+    * They ingest the feed, run quality checks, and begin displaying the updated May schedules to users by **April 14**.
 
 
-* **May 22 – Realtime Service Alert added**  
-  * To increase visibility of the upcoming change, the agency publishes a Service Alert on **May 22**, two days before the event.  
-  * Trip-planning apps start displaying the alert within minutes.  
-  * This alert complements the Schedule information already available.
+1. **May 22 – Realtime Service Alert added**  
+    * To increase visibility of the upcoming change, the agency publishes a Service Alert on **May 22**, two days before the event.  
+    * Trip-planning apps start displaying the alert within minutes.  
+    * This alert complements the Schedule information already available.
 
 
-* **May 25 – Service Alert removed**  
-  * After the event, the agency removes the alert from the Realtime feed.  
-  * Trip-planning apps stop showing it immediately.
+1. **May 25 – Service Alert removed**  
+    * After the event, the agency removes the alert from the Realtime feed.  
+    * Trip-planning apps stop showing it immediately.
 
 ### Example 2: Start of Summer Schedule
 
@@ -138,30 +141,31 @@ Ahead of the summer season, a transit agency plans a seasonal schedule that adju
 
 **Example 2 Timeline**
 
-* **May 2 – Summer schedule finalized**  
-  * The agency prepares its summer service plan months ahead, including frequency adjustments on several bus routes and the reintroduction of a seasonal beach shuttle.  
-  * The updated schedule is finalized on **May 2.**
+1. **May 2 – Summer schedule finalized**
+    * The agency prepares its summer service plan months ahead, including frequency adjustments on several bus routes and the reintroduction of a seasonal beach shuttle.  
+    * The updated schedule is finalized on **May 2.**
 
 
-* **May 14 – Updated GTFS Schedule published**  
-  * The team in charge of maintaining GTFS for the agency prepares the June dataset with the special trips and adjusted schedules.  
-  * The June Schedule feed, containing the summer service changes effective June 1st and the remainder of the May services, is published on **May 14**.
+1. **May 14 – Updated GTFS Schedule published**
+    * The team in charge of maintaining GTFS for the agency prepares the June dataset with the special trips and adjusted schedules.  
+    * The June Schedule feed, containing the summer service changes effective June 1st and the remainder of the May services, is published on **May 14**.
 
 
-* **May 14-18 – Consumer ingestion**  
-  * Trip-planning applications detect the updated Schedule as soon as it is released.  
-  * They ingest the feed, run their quality checks, and begin showing the June service changes to riders by **May 18**.
+1. **May 14-18 – Consumer ingestion**
+    * Trip-planning applications detect the updated Schedule as soon as it is released.  
+    * They ingest the feed, run their quality checks, and begin showing the June service changes to riders by **May 18**.
 
 
-* **May 25 – Realtime Service Alert added**  
-  * To increase visibility and remind riders of the upcoming summer schedule, the agency publishes a GTFS Realtime Service Alert on **May 25**, one week before the change takes effect.  
-  * The alert description reads: *“Summer schedule begins June 1st. Please note that some services will change their usual frequency, and the seasonal beach shuttle will be in service. Please refer to our website for further details.”*  
-  * Trip-planning apps start displaying the alert within minutes.
+1. **May 25 – Realtime Service Alert added**
+    * To increase visibility and remind riders of the upcoming summer schedule, the agency publishes a GTFS Realtime Service Alert on **May 25**, one week before the change takes effect.  
+    * The alert description reads: *“Summer schedule begins June 1st. Please note that some services will change their usual frequency, and the seasonal beach shuttle will be in service. Please refer to our website for further details.”*  
+    * Trip-planning apps start displaying the alert within minutes.
 
 
-* **June 6 – Service Alert removed**  
-  * The agency removes the alert from the Realtime feed on **June 6**, ensuring riders see it both before and immediately after the transition.  
-  * Trip-planning apps stop showing it immediately.
+1. **June 6 – Service Alert removed**
+
+    * The agency removes the alert from the Realtime feed on **June 6**, ensuring riders see it both before and immediately after the transition.  
+    * Trip-planning apps stop showing it immediately.
 
 ## Unforeseen Short-Term Service Disruptions Recommendations
 
@@ -179,12 +183,15 @@ GTFS Realtime is composed of four different entities that can be used to provide
 
 ### Recommended Practices
 
-* **Producers:**  
+**Producers:**
+
   * **Ensure identifier consistency between Realtime and Schedule data:** Realtime entities that reference scheduled service (such as `trip_id`, `route_id`, or `stop_id`) must match the identifiers published in the corresponding GTFS Schedule feed. This ensures that consumers can correctly associate Realtime updates with scheduled service, improving data ingestion, reliability, and user-facing accuracy.  
   * **Include a clear reference to the correct Schedule feed version:** Producers should populate the `feed_version` field in GTFS Realtime (and in `feed_info.txt`) to indicate which GTFS Schedule dataset the Realtime feed is aligned with. This allows consumers to validate that the Realtime data is mapped to the appropriate version of the Schedule feed, reducing misalignment issues during periods of frequent updates or operational changes.  
   * **Avoid over-reliance on New or Replacement trips created in GTFS Realtime:** New or Replacement trip creation in GTFS Realtime should be used sparingly and only when operationally required (e.g., unscheduled extra service). Overreliance on Realtime-added trips can complicate ingestion for consumers, make service harder to predict, and lead to inconsistencies between planned and operated service. Whenever possible, prioritize the use of GTFS Schedule and/or Trip Modifications in Realtime.  
-  * **Remove Realtime information when it is no longer valid:** Producers should ensure that outdated Realtime data (such as resolved service alerts, expired detours, or completed cancellations) is removed as soon as it no longer reflects current service. Timely removal prevents user confusion, reduces the risk of conflicts between Schedule and Realtime information, and helps consumers maintain an accurate representation of active service conditions.  
-* **Consumers:**  
+  * **Remove Realtime information when it is no longer valid:** Producers should ensure that outdated Realtime data (such as resolved service alerts, expired detours, or completed cancellations) is removed as soon as it no longer reflects current service. Timely removal prevents user confusion, reduces the risk of conflicts between Schedule and Realtime information, and helps consumers maintain an accurate representation of active service conditions.
+
+**Consumers:**  
+
   * **Communicate detected data issues to producers proactively:** When problems arise, such as inconsistent calendars, missing geometry, persistent identifier conflicts, or unexpected trip behavior, consumers should follow established communication channels to notify producers promptly. Early feedback enables faster correction and benefits the broader data ecosystem.
 
 ### Example 3: Temporary Station Closure Due to Power Outage
@@ -193,21 +200,24 @@ On November 8, an unexpected power outage forces authorities to temporarily clos
 
 **Example 3 Timeline**
 
-* **November 8 (4:45 pm) – Power outage detected**  
-  * Around 4:45 pm, Oakwood Station is forced to close immediately due to the loss of power.
+1. **November 8 (4:45 pm) – Power outage detected**  
+
+    * Around 4:45 pm, Oakwood Station is forced to close immediately due to the loss of power.
 
 
-* **November 8 (5:15 pm) – GTFS Realtime feed update**  
-  * The agency updates its **GTFS Realtime Service Alerts** feed to add an alert notifying riders that the station is temporarily closed and indicating the expected duration of the disruption.  
-  * Simultaneously, the **GTFS Realtime Trip Updates** feed is used to mark the station as `skipped` in the affected trips, effectively communicating that the vehicles will not stop at Oakwood Station.  
-  * Trip-planning applications ingest the Realtime feeds instantly and begin displaying the alert in the trip planner’s user interface as well as closing Oakwood Station for trip planning purposes.  
-  * Riders are notified about the closure and can adjust their travel plans accordingly.
+1. **November 8 (5:15 pm) – GTFS Realtime feed update**  
+
+    * The agency updates its **GTFS Realtime Service Alerts** feed to add an alert notifying riders that the station is temporarily closed and indicating the expected duration of the disruption.  
+    * Simultaneously, the **GTFS Realtime Trip Updates** feed is used to mark the station as `skipped` in the affected trips, effectively communicating that the vehicles will not stop at Oakwood Station.  
+    * Trip-planning applications ingest the Realtime feeds instantly and begin displaying the alert in the trip planner’s user interface as well as closing Oakwood Station for trip planning purposes.  
+    * Riders are notified about the closure and can adjust their travel plans accordingly.
 
 
-* **November 8 (6:05 pm) – Power restored and normal service resumes**  
-  * Shortly after 6:00 pm, power is restored and the station reopens.  
-  * The transit agency removes the alert in the Service Alerts feed and the `skipped` status for the stop in Trip Updates.  
-  * Trip-planning apps reflect the updated feeds in their apps, reenabling the stop for trip planning and removing the alert immediately.
+1. **November 8 (6:05 pm) – Power restored and normal service resumes**  
+
+    * Shortly after 6:00 pm, power is restored and the station reopens.  
+    * The transit agency removes the alert in the Service Alerts feed and the `skipped` status for the stop in Trip Updates.  
+    * Trip-planning apps reflect the updated feeds in their apps, reenabling the stop for trip planning and removing the alert immediately.
 
 ### Example 4: Adjusted Bus Service Due to Emergency Road Closure
 
@@ -215,32 +225,37 @@ On the morning of June 12, a major water main break forces authorities to close 
 
 **Example 4 Timeline**
 
-* **June 12 (9:30 am) – Emergency road closure detected**  
-  * Trips using Route 17 are disrupted by a sudden water main break, forcing buses to detour via an alternative avenue, skipping three stops and causing delays.
+1. **June 12 (9:30 am) – Emergency road closure detected**  
+
+    * Trips using Route 17 are disrupted by a sudden water main break, forcing buses to detour via an alternative avenue, skipping three stops and causing delays.
 
 
-* **June 12 (10:00 am) – GTFS Realtime feed update**  
-  * The agency updates the **GTFS Realtime Service Alert** feed to add an alert stating that delays should be expected on Route 17 for the rest of the day.  
-  * The **GTFS Realtime Trip Updates** feed is used to mark the three affected stops as `skipped` and to assign estimated delays to the corresponding trips for the day.  
-  * Trip-planning applications ingest the Realtime feed immediately and begin displaying the alert in the trip planner’s user interface, as well as deactivating the three affected stops for trip-planning purposes.  
-  * Riders are notified of the delays and the canceled stops and can adjust their travel plans accordingly.
+1. **June 12 (10:00 am) – GTFS Realtime feed update**  
+
+    * The agency updates the **GTFS Realtime Service Alert** feed to add an alert stating that delays should be expected on Route 17 for the rest of the day.  
+   * The **GTFS Realtime Trip Updates** feed is used to mark the three affected stops as `skipped` and to assign estimated delays to the corresponding trips for the day.  
+    * Trip-planning applications ingest the Realtime feed immediately and begin displaying the alert in the trip planner’s user interface, as well as deactivating the three affected stops for trip-planning purposes.  
+    * Riders are notified of the delays and the canceled stops and can adjust their travel plans accordingly.
 
 
-* **June 12 (4:00 pm)  – Adjusted service plan finalized**  
-  * The transit agency receives confirmation that repairs will be completed by June 14 before midnight, and that the intersection will reopen during the early hours of June 15.  
-  * The agency prepares a temporary adjusted service plan for trips using Route 17 with a new detour and relocated stops, to take effect at the beginning of service the following day.
+1. **June 12 (4:00 pm)  – Adjusted service plan finalized**  
+
+    * The transit agency receives confirmation that repairs will be completed by June 14 before midnight, and that the intersection will reopen during the early hours of June 15.  
+    * The agency prepares a temporary adjusted service plan for trips using Route 17 with a new detour and relocated stops, to take effect at the beginning of service the following day.
 
 
-* **June 12 (7:00 pm)  – Second GTFS Realtime feed update**  
-  * The transit agency updates the **GTFS Realtime Service Alerts** feed to remove the previous alert and replace it with a new one announcing that the temporary adjusted service will be in effect for the next two days.  
-  * A new **GTFS Realtime Trip Updates** feed is prepared to communicate the details of the modified service (e.g., detour path, replacement stops, delays) for Route 17 trips over the next two days.  
-  * Trip-planning applications begin showing the updated detour and relocated stops along with the new service alert immediately.
+1. **June 12 (7:00 pm)  – Second GTFS Realtime feed update**  
+
+    * The transit agency updates the **GTFS Realtime Service Alerts** feed to remove the previous alert and replace it with a new one announcing that the temporary adjusted service will be in effect for the next two days.  
+    * A new **GTFS Realtime Trip Updates** feed is prepared to communicate the details of the modified service (e.g., detour path, replacement stops, delays) for Route 17 trips over the next two days.  
+    * Trip-planning applications begin showing the updated detour and relocated stops along with the new service alert immediately.
 
 
-* **June 14 (11:00 pm)  – Repairs conclude, normal service resuming the next day**  
-  * Around 10:30 pm on June 14, repair work on the water main is completed and the intersection is ready to be reopened in a few hours.  
-  * The transit agency removes the corresponding alert and trip updates from the GTFS Realtime feed.  
-  * Trip-planning applications reflect the updated feed, re-enabling regular service information from the GTFS Schedule and removing the service alert.
+1. **June 14 (11:00 pm)  – Repairs conclude, normal service resuming the next day**  
+
+    * Around 10:30 pm on June 14, repair work on the water main is completed and the intersection is ready to be reopened in a few hours.  
+    * The transit agency removes the corresponding alert and trip updates from the GTFS Realtime feed.  
+    * Trip-planning applications reflect the updated feed, re-enabling regular service information from the GTFS Schedule and removing the service alert.
 
 ## Unforeseen Long-term Service Disruptions
 
@@ -257,12 +272,15 @@ Producers and consumers should work together and continually reassess the situat
 
 ### Recommended Practices
 
-* **Producers:**  
+**Producers:**  
+
   * **Maintain proactive and continuous communication with consumers:** During extended disruptions, the service plan may evolve frequently as operational conditions change. It is recommended that producers communicate expected timelines, planned data updates, and potential changes in strategy (e.g., switching from Realtime to Schedule) to ensure consumers can prepare for and ingest new data without delays.  
   * **Ensure a structured transition from Realtime to GTFS Schedule:** When the disruption reaches a level of stability that warrants a GTFS Schedule update, producers should clearly coordinate the transition ensuring that temporary Realtime messages and trip adjustments are removed or updated once the new Schedule feed becomes effective.  
   * **Avoid publishing Schedule feeds that cover only very short validity periods:** When GTFS Schedule is used to represent adjusted service, producers should avoid issuing multiple short-duration feeds (e.g., covering only a few weeks). Instead, Schedule updates should reflect service patterns with reasonably stable validity windows.  
   * **Use Realtime Service Alerts to supplement Schedule updates:** Even when an updated Schedule feed is published for a long-term disruption, Realtime can still provide valuable context, for example, highlighting affected stations, providing safety information, or noting expected fluctuations in operations.  
-* **Consumers:**  
+
+**Consumers:**  
+
   * **Coordinate with producers to anticipate major updates or changes in communication strategy:** In special situations, Consumers should proactively engage with producers to understand expected timelines, planned publication dates, and any complexities that may affect ingestion or display. Early coordination reduces the risk of inconsistencies and ensures that rider-facing systems incorporate new information promptly and accurately.
 
 ### Example 5: Indefinite Station Closure Following Earthquake Damage
@@ -271,59 +289,69 @@ On August 17, a moderate earthquake causes structural damage to a city’s Centr
 
 **Example 5 Timeline**
 
-* **August 17 – Earthquake and initial closure**  
-  * The station is closed immediately due to structural damage.  
-  * A **GTFS Realtime Service Alert** is published to inform riders that trips on the Red Line will not stop at Central Station, as it will remain closed until further notice.  
-  * The **Trip Updates feed** is used to adjust affected trips by marking Central Station as `skipped` in a StopTimeUpdate.
+1. **August 17 – Earthquake and initial closure**  
+
+    * The station is closed immediately due to structural damage.  
+    * A **GTFS Realtime Service Alert** is published to inform riders that trips on the Red Line will not stop at Central Station, as it will remain closed until further notice.  
+    * The **Trip Updates feed** is used to adjust affected trips by marking Central Station as `skipped` in a StopTimeUpdate.
 
 
-* **August 17-31 – Realtime updates only**  
-  * Given the uncertainty surrounding repairs, the agency continues to rely on Realtime to keep riders informed.  
-  * The Service Alert is updated as new information becomes available, and the Trip Updates feed continues to be updated for all affected trips.  
-  * Trip-planning apps display the updated alerts within minutes of their publication.
+1. **August 17-31 – Realtime updates only**  
+
+    * Given the uncertainty surrounding repairs, the agency continues to rely on Realtime to keep riders informed.  
+    * The Service Alert is updated as new information becomes available, and the Trip Updates feed continues to be updated for all affected trips.  
+    * Trip-planning apps display the updated alerts within minutes of their publication.
 
 
-* **August 21 – Repair timeline confirmed**  
-  * The agency receives confirmation that repairs will take at least two months to complete.  
-  * The agency begins planning a modified service pattern without stops at Central Station.
+1. **August 21 – Repair timeline confirmed** 
+
+    * The agency receives confirmation that repairs will take at least two months to complete.  
+    * The agency begins planning a modified service pattern without stops at Central Station.
 
 
-* **August 23 – Updated GTFS Schedule published**  
-  * The modified service pattern is included in the September-October GTFS Schedule feed, removing the stop from the `stop_times` file for Red Line trips.  
-  * The updated Schedule feed is published by the agency on **August 23**.
+1. **August 23 – Updated GTFS Schedule published** 
+
+    * The modified service pattern is included in the September-October GTFS Schedule feed, removing the stop from the `stop_times` file for Red Line trips.  
+    * The updated Schedule feed is published by the agency on **August 23**.
 
 
-* **August 25 – Updated GTFS Schedule ingestion**  
-  * Trip-planning applications detect the updated Schedule as soon as it is released.  
-  * They ingest the feed, run quality checks, and begin showing the updated September service to riders by **August 25**, five (5) days before it becomes effective.
+1. **August 25 – Updated GTFS Schedule ingestion**  
+
+    * Trip-planning applications detect the updated Schedule as soon as it is released.  
+    * They ingest the feed, run quality checks, and begin showing the updated September service to riders by **August 25**, five (5) days before it becomes effective.
 
 
-* **September 1 – Updated Service Alert**  
-  * The agency stops using the Trip Updates feed to adjust affected trips, relying instead on the updated service data in the GTFS Schedule feed.  
-  * The agency replaces the previous Service Alert with a new one communicating that the station will remain closed until at least **October 31**.  
-  * Trip-planning apps begin displaying the updated alert within minutes.
+1. **September 1 – Updated Service Alert**  
+
+    * The agency stops using the Trip Updates feed to adjust affected trips, relying instead on the updated service data in the GTFS Schedule feed.  
+    * The agency replaces the previous Service Alert with a new one communicating that the station will remain closed until at least **October 31**.  
+    * Trip-planning apps begin displaying the updated alert within minutes.
 
 
-* **October 20 – Station reopening date confirmed, Updated GTFS Schedule published**  
-  * The agency confirms that the station will reopen on **November 1**, after repairs conclude during the last week of October.  
-  * On **October 20**, the agency publishes the updated Schedule in the agency’s open data portal.  
-    * This includes the service information for November and the reminder of October, combining the current schedule with the future one.
+1. **October 20 – Station reopening date confirmed, Updated GTFS Schedule published**  
+
+    * The agency confirms that the station will reopen on **November 1**, after repairs conclude during the last week of October.  
+    * On **October 20**, the agency publishes the updated Schedule in the agency’s open data portal.  
+      * This includes the service information for November and the reminder of October, combining the current schedule with the future one.
 
 
-* **October 22 – Consumer ingestion**  
-  * Trip-planning applications detect the update the day it is released.  
-  * They ingest the feed, run quality checks, and begin displaying the updated November schedules to users by **October 22**.
+1. **October 22 – Consumer ingestion**  
+
+    * Trip-planning applications detect the update the day it is released.  
+    * They ingest the feed, run quality checks, and begin displaying the updated November schedules to users by **October 22**.
 
 
-* **October 22 – Realtime Service Alert added**  
-  * To inform riders about the upcoming reopening, the agency publishes a Service Alert on **October 22**, one week before service resumes at the station.  
-  * Trip-planning apps start displaying the alert within minutes.  
-  * This alert complements the Schedule information already available.
+1. **October 22 – Realtime Service Alert added**  
+
+    * To inform riders about the upcoming reopening, the agency publishes a Service Alert on **October 22**, one week before service resumes at the station.  
+    * Trip-planning apps start displaying the alert within minutes.  
+    * This alert complements the Schedule information already available.
 
 
-* **November 3 – Service Alert removed**  
-  * Two days after the reopening, the agency removes the alert from the Realtime feed.  
-  * Trip-planning apps stop showing it immediately.
+1. **November 3 – Service Alert removed** 
+
+    * Two days after the reopening, the agency removes the alert from the Realtime feed.  
+    * Trip-planning apps stop showing it immediately.
 
 ### Example 6: Unforeseen Long-term Service Disruption Due to Staff Strike
 
@@ -331,45 +359,50 @@ On **March 3**, a transit workers’ strike is announced, affecting subway, bus,
 
 **Example 6 Timeline**
 
-* **March 3 – Strike begins**  
-  * All transit services are suspended during the first daily shutdown window (**10:00 am – 4:00 pm**) with service gradually resuming afterward.  
-  * A **GTFS Realtime Service Alert** is published to notify riders of the disruption, including the expected shutdown window and limited operations.  
-  * The **GTFS Realtime Trip Modifications** feed is used to cancel trips within the shutdown window and adjust operating trips.
+1. **March 3 – Strike begins**  
+
+    * All transit services are suspended during the first daily shutdown window (**10:00 am – 4:00 pm**) with service gradually resuming afterward.  
+    * A **GTFS Realtime Service Alert** is published to notify riders of the disruption, including the expected shutdown window and limited operations.  
+    * The **GTFS Realtime Trip Modifications** feed is used to cancel trips within the shutdown window and adjust operating trips.
 
 
-* **March 3-10 – Realtime updates only**  
-  * The agency provides daily Realtime updates for each day’s shutdown windows and modified schedules.  
-  * **Service Alerts** are updated frequently as the strike evolves.  
-  * **Trip Modifications** continue to reflect cancellations and adjusted service patterns.
+1. **March 3-10 – Realtime updates only**  
+
+    * The agency provides daily Realtime updates for each day’s shutdown windows and modified schedules.  
+   * **Service Alerts** are updated frequently as the strike evolves.  
+    * **Trip Modifications** continue to reflect cancellations and adjusted service patterns.
 
 
-* **March 10 – Expected strike duration confirmed**  
-  * Negotiations indicate that the rolling shutdowns are expected to **continue for the rest of the month** if no agreement is reached beforehand.  
-  * The agency begins planning a more stable temporary service plan to reduce operational uncertainty, including consistent daily shutdown windows and adjusted frequencies outside those periods.  
-  * Given the fluidity of the situation and the possibility that the strike could end suddenly if an agreement is reached, the agency decides to continue relying on **GTFS Realtime** to communicate the adjusted service schedule until a stable pattern can be fully implemented.
+1. **March 10 – Expected strike duration confirmed** 
+
+    * Negotiations indicate that the rolling shutdowns are expected to **continue for the rest of the month** if no agreement is reached beforehand.  
+    * The agency begins planning a more stable temporary service plan to reduce operational uncertainty, including consistent daily shutdown windows and adjusted frequencies outside those periods.  
+    * Given the fluidity of the situation and the possibility that the strike could end suddenly if an agreement is reached, the agency decides to continue relying on **GTFS Realtime** to communicate the adjusted service schedule until a stable pattern can be fully implemented.
 
 
-* **March 11-23 – Realtime updates continue**  
-  * The agency continues providing daily Realtime updates for each day’s shutdown windows, modified schedules.  
-  * The use of **Service Alerts** remains in place to keep riders informed of disruptions.  
-  * **Trip Modifications** continue to reflect cancellations and temporary service adjustments.
+1. **March 11-23 – Realtime updates continue**  
+
+    * The agency continues providing daily Realtime updates for each day’s shutdown windows, modified schedules.  
+    * The use of **Service Alerts** remains in place to keep riders informed of disruptions.  
+    * **Trip Modifications** continue to reflect cancellations and temporary service adjustments.
 
 
-* **March 23 – End of strike**  
-  * An agreement is reached between the agency and the workers’ union, effectively ending the strike and allowing regular service to resume the following day.  
-  * The agency publishes an updated **Service Alert** notifying riders that normal service is expected to resume on March 24.  
-  * Trip-planning apps start displaying the alert within minutes.
+1. **March 23 – End of strike**  
+
+    * An agreement is reached between the agency and the workers’ union, effectively ending the strike and allowing regular service to resume the following day.  
+    * The agency publishes an updated **Service Alert** notifying riders that normal service is expected to resume on March 24.  
+    * Trip-planning apps start displaying the alert within minutes.
 
 
-* **March 24 – Transition to regular service**  
-  * **Trip Modifications** and previous **Service Alerts** are removed, relying on the **GTFS Schedule feed** to communicate standard service information.  
-  * The agency publishes an updated **Service Alert** confirming that normal service is now in effect.  
-  * Trip-planning apps display the alert within minutes.
+1. **March 24 – Transition to regular service**  
+    * **Trip Modifications** and previous **Service Alerts** are removed, relying on the **GTFS Schedule feed** to communicate standard service information.  
+    * The agency publishes an updated **Service Alert** confirming that normal service is now in effect.  
+    * Trip-planning apps display the alert within minutes.
 
 
-* **March 26 – Service Alert removed**  
-  * The agency removes the alert from the Realtime feed two days after regular service resumes.  
-  * Trip-planning apps stop displaying it immediately.
+1. **March 26 – Service Alert removed**  
+    * The agency removes the alert from the Realtime feed two days after regular service resumes.  
+    * Trip-planning apps stop displaying it immediately.
 
 Although service disruptions and operational changes are often difficult to predict, using GTFS Schedule and GTFS Realtime in a complementary way helps ensure that riders are not left navigating this uncertainty on their own. 
 
