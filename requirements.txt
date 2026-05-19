@@ -14,7 +14,7 @@ mkdocs-embed-external-markdown==3.0.2
 mkdocs-rss-plugin==1.19.0
 packaging==26.2
 pygments==2.20.0
-pymdown-extensions==10.21.2
+pymdown-extensions==10.21.3
 pyparsing==3.3.2
 python-dateutil>=2.9.0.post0
 pyyaml==6.0.3
