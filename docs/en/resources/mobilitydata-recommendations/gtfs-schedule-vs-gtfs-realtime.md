@@ -1,7 +1,7 @@
 # When to Use GTFS Schedule vs Realtime
 ## Introduction
 
-Currently, GTFS producers have options for conveying information about transit service changes or disruptions: GTFS Schedule, GTFS Realtime, or a combination of both. However, there is limited guidance on when to use each format and how they should work together. This lack of clarity can result in inconsistent implementations and confusion among GTFS consumers, ultimately affecting the quality of information available to transit riders.
+Currently, GTFS producers have options for conveying information about transit service changes or disruptions: [GTFS Schedule](https://gtfs.org/documentation/schedule/reference/), [GTFS Realtime](https://gtfs.org/documentation/realtime/reference/), or a combination of both. However, there is limited guidance on when to use each format and how they should work together. This lack of clarity can result in inconsistent implementations and confusion among GTFS consumers, ultimately affecting the quality of information available to transit riders.
 
 This document provides guidance for using GTFS Schedule and GTFS Realtime effectively to communicate special services and/or service changes or adjustments. It aims to clarify the intended use cases for each feed, outline their complementary roles, and support the effective use of each standard in practice. By aligning GTFS producers and consumers on these practices, we hope to reduce interpretation ambiguity, simplify integration, and improve the quality and accuracy of information delivered to transit users.
 
@@ -9,7 +9,7 @@ This document provides guidance for using GTFS Schedule and GTFS Realtime effect
 
 GTFS Schedule data serves as the foundation of any GTFS implementation. As the name implies, this dataset contains all scheduled services as they are planned to operate during the time period covered by the feed.
 
-In contrast, GTFS Realtime provides dynamic updates to scheduled GTFS data through several types of feeds. The **Trip Updates** feed expresses delays, cancellations, and other schedule changes. The **Vehicle Positions** feed provides the real-time locations of vehicles in service while the **Service Alerts** feed communicates notices about disruptions, detours, or other important situations that should be conveyed to users. Finally, the experimental **Trip Modifications** feed enables agencies to adjust trips beyond the static schedule to reflect service changes.
+In contrast, GTFS Realtime provides dynamic updates to scheduled GTFS data through several types of feeds. The [Trip Updates](https://gtfs.org/documentation/realtime/feed-entities/trip-updates/) feed expresses delays, cancellations, and other schedule changes. The [Vehicle Positions](https://gtfs.org/documentation/realtime/feed-entities/vehicle-positions/) feed provides the real-time locations of vehicles in service while the [Service Alerts](https://gtfs.org/documentation/realtime/feed-entities/service-alerts/) feed communicates notices about disruptions, detours, or other important situations that should be conveyed to users. Finally, the experimental [Trip Modifications](https://gtfs.org/documentation/realtime/feed-entities/trip-modifications/) feed enables agencies to adjust trips beyond the static schedule to reflect service changes.
 
 These two components of GTFS are designed to coexist and complement each other, working together to give riders the most accurate and up-to-date view of a transit service, as it’s planned and as it’s actually operating.
 
@@ -27,7 +27,7 @@ Above all, when publishing service information using GTFS, **the priority should
 
 When unexpected or short-notice changes occur, GTFS Realtime should be used to communicate disruptions, delays, or temporary service modifications. It serves as a dynamic supplement to the static schedule, ensuring riders receive timely updates when plans change unexpectedly.
 
-From the official GTFS Schedule Reference:
+From the official [GTFS Schedule Reference](https://gtfs.org/documentation/schedule/reference/):
 
 > *“At any time, the published GTFS \[Schedule\] dataset should be valid for at least the next 7 days… If a service modification will go into effect in 7 days or fewer, this service change should be expressed through a GTFS Realtime feed (service advisories or trip updates) rather than static GTFS dataset.”*
 
@@ -180,7 +180,7 @@ Realtime feeds support frequent updates, enabling consumer applications to inges
 
 As stated in the GTFS Schedule reference, *if an updated GTFS Schedule feed cannot be released at least seven (7) days before the service changes take effect, the changes should instead be communicated through GTFS Realtime*. When determining whether this timeframe can be met, producers should account for the full end-to-end process, including data preparation, internal validation, publication, and the time required for consumers to retrieve, process, and deploy the updated dataset in their applications.
 
-GTFS Realtime is composed of four different entities that can be used to provide updates: **Service Alerts, Trip Updates, Vehicle Positions** and **Trip Modifications** (currently an experimental feature). These feed entities can be used alone or in combination to express service updates depending on the situation. For more information on the details concerning each entity please refer to the GTFS Realtime Reference.
+GTFS Realtime is composed of four different entities that can be used to provide updates: **Service Alerts, Trip Updates, Vehicle Positions** and **Trip Modifications** (currently an experimental feature). These feed entities can be used alone or in combination to express service updates depending on the situation. For more information on the details concerning each entity please refer to the [GTFS Realtime Reference](https://gtfs.org/documentation/realtime/reference/).
 
 #### Recommended Practices
 
@@ -409,4 +409,4 @@ Although service disruptions and operational changes are often difficult to pred
 
 This document has outlined recommended practices for many of the most common scenarios transit agencies and data consumers encounter in day-to-day operations. However, real-world situations can be more complex and may require additional coordination and tailored approaches.
 
-When questions remain, or when a situation falls outside the examples covered here, agencies and consumers are encouraged to engage with the broader GTFS community to seek guidance and share experiences. Learning from peers and discussing emerging use cases can help strengthen implementations and improve outcomes for both data providers and riders.
+When questions remain, or when a situation falls outside the examples covered here, agencies and consumers are encouraged to engage with the broader [GTFS Community](https://gtfs.org/community/get-involved/) to seek guidance and share experiences. Learning from peers and discussing emerging use cases can help strengthen implementations and improve outcomes for both data providers and riders.
