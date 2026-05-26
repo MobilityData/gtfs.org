@@ -16,17 +16,18 @@ validation:
     unrecognized_links: ignore
 
 theme:
+  name: materialx
   language: en
   custom_dir: ../../overrides/
   logo: assets/images/logo.png
   logo_light_mode: assets/images/logo.png
   favicon: assets/images/favicon.ico
+  topbar_style: glass
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: gtfs
       primary: custom
       accent: custom
-  name: material
   font:
     text: Mulish
     code: SF Mono
