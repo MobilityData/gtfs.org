@@ -1,6 +1,7 @@
-# Introduction
+# When to Use GTFS Schedule vs Realtime
+## Introduction
 
-Currently, GTFS producers have options for conveying information about transit service changes or disruptions: GTFS Schedule, GTFS Realtime, or a combination of both. However, there is limited guidance on when to use each format and how they should work together. This lack of clarity can result in inconsistent implementations and confusion among GTFS consumers, ultimately affecting the quality of information available to transit riders.
+Currently, GTFS producers have options for conveying information about transit service changes or disruptions: [GTFS Schedule](../../../documentation/schedule/reference/), [GTFS Realtime](../../../documentation/realtime/reference/), or a combination of both. However, there is limited guidance on when to use each format and how they should work together. This lack of clarity can result in inconsistent implementations and confusion among GTFS consumers, ultimately affecting the quality of information available to transit riders.
 
 This document provides guidance for using GTFS Schedule and GTFS Realtime effectively to communicate special services and/or service changes or adjustments. It aims to clarify the intended use cases for each feed, outline their complementary roles, and support the effective use of each standard in practice. By aligning GTFS producers and consumers on these practices, we hope to reduce interpretation ambiguity, simplify integration, and improve the quality and accuracy of information delivered to transit users.
 
@@ -8,7 +9,7 @@ This document provides guidance for using GTFS Schedule and GTFS Realtime effect
 
 GTFS Schedule data serves as the foundation of any GTFS implementation. As the name implies, this dataset contains all scheduled services as they are planned to operate during the time period covered by the feed.
 
-In contrast, GTFS Realtime provides dynamic updates to scheduled GTFS data through several types of feeds. The **Trip Updates** feed expresses delays, cancellations, and other schedule changes. The **Vehicle Positions** feed provides the real-time locations of vehicles in service while the **Service Alerts** feed communicates notices about disruptions, detours, or other important situations that should be conveyed to users. Finally, the experimental **Trip Modifications** feed enables agencies to adjust trips beyond the static schedule to reflect service changes.
+In contrast, GTFS Realtime provides dynamic updates to scheduled GTFS data through several types of feeds. The [Trip Updates](../../../documentation/realtime/feed-entities/trip-updates/) feed expresses delays, cancellations, and other schedule changes. The [Vehicle Positions](../../../documentation/realtime/feed-entities/vehicle-positions/) feed provides the real-time locations of vehicles in service while the [Service Alerts](../../../documentation/realtime/feed-entities/service-alerts/) feed communicates notices about disruptions, detours, or other important situations that should be conveyed to users. Finally, the experimental [Trip Modifications](../../../documentation/realtime/feed-entities/trip-modifications/) feed enables agencies to adjust trips beyond the static schedule to reflect service changes.
 
 These two components of GTFS are designed to coexist and complement each other, working together to give riders the most accurate and up-to-date view of a transit service, as it’s planned and as it’s actually operating.
 
@@ -26,7 +27,7 @@ Above all, when publishing service information using GTFS, **the priority should
 
 When unexpected or short-notice changes occur, GTFS Realtime should be used to communicate disruptions, delays, or temporary service modifications. It serves as a dynamic supplement to the static schedule, ensuring riders receive timely updates when plans change unexpectedly.
 
-From the official GTFS Schedule Reference:
+From the official [GTFS Schedule Reference](../../../documentation/schedule/reference/):
 
 > *“At any time, the published GTFS \[Schedule\] dataset should be valid for at least the next 7 days… If a service modification will go into effect in 7 days or fewer, this service change should be expressed through a GTFS Realtime feed (service advisories or trip updates) rather than static GTFS dataset.”*
 
@@ -48,7 +49,7 @@ It is recommended that GTFS producers publish updated Schedule feeds well in adv
 
 Allowing time for data propagation requires producers and consumers working together to complete the release and ingestion process to ensure updated information is available to end-users **at least five (5) days before the new service plan takes effect**. With sufficient time, travellers benefit from the most accurate information.
 
-## Schedule or Realtime?: When to Use Which
+## Schedule or Realtime?
 
 Determining when to rely primarily on GTFS Schedule versus GTFS Realtime is essential to ensure that service information is conveyed effectively to riders. While both formats serve complementary roles, their recommended use depends on the duration and nature of a service change or update. 
 
@@ -63,11 +64,11 @@ Please note that this matrix is not a definitive or absolute guide. Service disr
 
 The sections that follow will elaborate on the recommended practices for both planned and unforeseen service updates.
 
-## Planned Services: Short- and Long-Term
+### Planned Services: Short- and Long-Term
 
 Transit agencies generally aim to offer regular, predictable schedules, carefully planning operations to maximize efficiency. While some of these plans may remain stable for a period of time, services are often adjusted or adapted for various reasons, including operational constraints, special events, or seasonal changes.
 
-According to the official GTFS Schedule reference, a *“GTFS dataset should be valid for at least the next 7 days, and ideally for as long as the operator is confident that the schedule will continue to be operated.”* Even when no major service changes are required, producers are expected to perform **regular, periodic maintenance of their GTFS feeds** to ensure that the service schedules included in the feed remain accurate and up-to-date.
+According to the official [GTFS Schedule reference](../../../documentation/schedule/reference/), a *“GTFS dataset should be valid for at least the next 7 days, and ideally for as long as the operator is confident that the schedule will continue to be operated.”* Even when no major service changes are required, producers are expected to perform **regular, periodic maintenance of their GTFS feeds** to ensure that the service schedules included in the feed remain accurate and up-to-date.
 
 Since GTFS Schedule serves as the foundation of any GTFS implementation as it contains the essential planned elements of a transit system, including routes, trips, stops, and schedules, these updates should rely on GTFS Schedule to represent all planned services. Planned services include regular operations (e.g., weekday and weekend services), but also upcoming special services such as holiday timetables, seasonally adjusted schedules, and service changes for major planned events (e.g., sporting events or concerts).
 
@@ -83,7 +84,7 @@ The following table summarizes the most common cases of planned services and pro
 
 The following practices are encouraged to create a reliable environment for regular feed updates for planned services.
 
-## Complementary Use of GTFS Realtime for Planned Service Adjustments
+### Complementary Use of GTFS Realtime for Planned Service Adjustments
 
 While GTFS Schedule should remain the primary source for communicating planned service updates, GTFS Realtime Service Alerts complements it by notifying users of upcoming disruptions or adjustments.
 
@@ -91,7 +92,7 @@ For example, before the launch of a summer schedule or the temporary detour of a
 
 In most cases, Service Alerts for planned adjustments **should be published no more than seven (7) days before the changes take effect**. Support for this functionality may vary between different consumers. 
 
-### Recommended Practices
+#### Recommended Practices
 
 **Producers**
 
@@ -103,7 +104,7 @@ In most cases, Service Alerts for planned adjustments **should be published no m
 
   * **Check for new feed versions daily:** Consumers are expected to ingest new data within **48 hours** of its release, ensuring that accurate service information is available to end users **at least five (5) days** before the changes take effect.
 
-### Example 1: Service adjustment around a major concert
+##### Example 1: Service adjustment around a major concert
 
 An important concert expected to draw big crowds is announced for **May 24**. The transit agency knows about the event six months in advance and plans to provide **extended evening service** on routes serving the venue. Since this is a planned adjustment, it must be reflected in the **GTFS Schedule feed** as part of its regular maintenance updates.
 
@@ -135,7 +136,7 @@ An important concert expected to draw big crowds is announced for **May 24**. Th
     * After the event, the agency removes the alert from the Realtime feed.  
     * Trip-planning apps stop showing it immediately.
 
-### Example 2: Start of Summer Schedule
+##### Example 2: Start of Summer Schedule
 
 Ahead of the summer season, a transit agency plans a seasonal schedule that adjusts the frequencies on several bus routes and restores a seasonal beach shuttle. This seasonal plan will start on **June 1** and stay in place for almost 4 months. These are planned, recurring changes that must be reflected in the **GTFS Schedule** feed, as part of the agency’s regular update cycle. To help riders prepare for the transition, the agency also uses **GTFS Realtime Service Alerts** to highlight the upcoming changes shortly before they takes effect.
 
@@ -167,7 +168,7 @@ Ahead of the summer season, a transit agency plans a seasonal schedule that adju
     * The agency removes the alert from the Realtime feed on **June 6**, ensuring riders see it both before and immediately after the transition.  
     * Trip-planning apps stop showing it immediately.
 
-## Unforeseen Short-Term Service Disruptions Recommendations
+### Unforeseen Short-Term Service Disruptions
 
 Even with careful planning, transit services are frequently affected by sudden events that disrupt operations for a brief period. Examples include vehicle breakdowns, minor accidents, temporary detours, emergency closures, or short-term spikes in demand.
 
@@ -177,11 +178,11 @@ GTFS Realtime is therefore the most effective method to communicate short-term d
 
 Realtime feeds support frequent updates, enabling consumer applications to ingest data continuously or at short intervals, ensuring that riders receive the most current information, helping them make informed decisions in real time.
 
-As stated in the GTFS Schedule reference, *if an updated GTFS Schedule feed cannot be released at least seven (7) days before the service changes take effect, the changes should instead be communicated through GTFS Realtime*. When determining whether this timeframe can be met, producers should account for the full end-to-end process, including data preparation, internal validation, publication, and the time required for consumers to retrieve, process, and deploy the updated dataset in their applications.
+As stated in the [GTFS Schedule Reference](../../../documentation/schedule/reference/), *if an updated GTFS Schedule feed cannot be released at least seven (7) days before the service changes take effect, the changes should instead be communicated through GTFS Realtime*. When determining whether this timeframe can be met, producers should account for the full end-to-end process, including data preparation, internal validation, publication, and the time required for consumers to retrieve, process, and deploy the updated dataset in their applications.
 
-GTFS Realtime is composed of four different entities that can be used to provide updates: **Service Alerts, Trip Updates, Vehicle Positions** and **Trip Modifications** (currently an experimental feature). These feed entities can be used alone or in combination to express service updates depending on the situation. For more information on the details concerning each entity please refer to the GTFS Realtime Reference.
+GTFS Realtime is composed of four different entities that can be used to provide updates: **Service Alerts, Trip Updates, Vehicle Positions** and **Trip Modifications** (currently an experimental feature). These feed entities can be used alone or in combination to express service updates depending on the situation. For more information on the details concerning each entity please refer to the [GTFS Realtime Reference](../../../documentation/realtime/reference/).
 
-### Recommended Practices
+#### Recommended Practices
 
 **Producers:**
 
@@ -194,7 +195,7 @@ GTFS Realtime is composed of four different entities that can be used to provide
 
   * **Communicate detected data issues to producers proactively:** When problems arise, such as inconsistent calendars, missing geometry, persistent identifier conflicts, or unexpected trip behavior, consumers should follow established communication channels to notify producers promptly. Early feedback enables faster correction and benefits the broader data ecosystem.
 
-### Example 3: Temporary Station Closure Due to Power Outage
+##### Example 3: Temporary Station Closure Due to Power Outage
 
 On November 8, an unexpected power outage forces authorities to temporarily close an important station servicing the city’s Orange Subway Line. The outage is unexpected and requires immediate closure of the station until power is restored, but trains can still continue to operate normally in the rest of the system, only skipping the affected station. The disruption is expected to last around 1 hour, thus the agency relies entirely on **GTFS Realtime** to communicate the temporary service disruption.
 
@@ -219,7 +220,7 @@ On November 8, an unexpected power outage forces authorities to temporarily clos
     * The transit agency removes the alert in the Service Alerts feed and the `skipped` status for the stop in Trip Updates.  
     * Trip-planning apps reflect the updated feeds in their apps, reenabling the stop for trip planning and removing the alert immediately.
 
-### Example 4: Adjusted Bus Service Due to Emergency Road Closure
+##### Example 4: Adjusted Bus Service Due to Emergency Road Closure
 
 On the morning of June 12, a major water main break forces authorities to close a key intersection along Route 17, causing an unexpected disruption to the bus service. Because the repairs are expected to take a few days, the agency relies entirely on **GTFS Realtime** to inform users about the temporary disruption, the adjusted service, and the estimated timeline for when regular service will resume.
 
@@ -257,7 +258,7 @@ On the morning of June 12, a major water main break forces authorities to close 
     * The transit agency removes the corresponding alert and trip updates from the GTFS Realtime feed.  
     * Trip-planning applications reflect the updated feed, re-enabling regular service information from the GTFS Schedule and removing the service alert.
 
-## Unforeseen Long-term Service Disruptions
+### Unforeseen Long-term Service Disruptions
 
 Sometimes, unforeseen or sudden events can lead to medium- or long-term service disruptions, with a high degree of uncertainty about when regular operations will resume. Examples include natural disasters that prevent transit operations, prolonged strikes or demonstrations blocking certain routes, or structural damage that forces indefinite station closures.
 
@@ -270,7 +271,7 @@ The appropriate approach will depend on the nature and duration of the disruptio
 
 Producers and consumers should work together and continually reassess the situation as it evolves and update their communication strategy accordingly to maintain clarity, accuracy, and usability for riders.
 
-### Recommended Practices
+#### Recommended Practices
 
 **Producers:**  
 
@@ -283,7 +284,7 @@ Producers and consumers should work together and continually reassess the situat
 
   * **Coordinate with producers to anticipate major updates or changes in communication strategy:** In special situations, Consumers should proactively engage with producers to understand expected timelines, planned publication dates, and any complexities that may affect ingestion or display. Early coordination reduces the risk of inconsistencies and ensures that rider-facing systems incorporate new information promptly and accurately.
 
-### Example 5: Indefinite Station Closure Following Earthquake Damage
+##### Example 5: Indefinite Station Closure Following Earthquake Damage
 
 On August 17, a moderate earthquake causes structural damage to a city’s Central Station, one of the busiest stops on the metro system’s Red Line. The station is immediately closed for safety inspections, with no clear timeline for reopening. The transit agency initially relies on **GTFS Realtime** to notify riders of the closure and provide updates as the situation evolves.
 
@@ -353,7 +354,7 @@ On August 17, a moderate earthquake causes structural damage to a city’s Centr
     * Two days after the reopening, the agency removes the alert from the Realtime feed.  
     * Trip-planning apps stop showing it immediately.
 
-### Example 6: Unforeseen Long-term Service Disruption Due to Staff Strike
+##### Example 6: Unforeseen Long-term Service Disruption Due to Staff Strike
 
 On **March 3**, a transit workers’ strike is announced, affecting subway, bus, and tram operations at specific times of day across the city. The agency initially does not know how long the strike will last, creating uncertainty for riders and requiring immediate, continuous communication. The agency relies on **GTFS Realtime** to communicate the impact while assessing potential medium-term service adjustments.
 
@@ -408,4 +409,4 @@ Although service disruptions and operational changes are often difficult to pred
 
 This document has outlined recommended practices for many of the most common scenarios transit agencies and data consumers encounter in day-to-day operations. However, real-world situations can be more complex and may require additional coordination and tailored approaches.
 
-When questions remain, or when a situation falls outside the examples covered here, agencies and consumers are encouraged to engage with the broader GTFS community to seek guidance and share experiences. Learning from peers and discussing emerging use cases can help strengthen implementations and improve outcomes for both data providers and riders.
+When questions remain, or when a situation falls outside the examples covered here, agencies and consumers are encouraged to engage with the broader [GTFS Community](../../community/get-involved/) to seek guidance and share experiences. Learning from peers and discussing emerging use cases can help strengthen implementations and improve outcomes for both data providers and riders.
