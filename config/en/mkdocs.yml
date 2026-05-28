@@ -4,6 +4,7 @@ repo_url: https://github.com/google/transit
 repo_name: GTFS Repository
 docs_dir: ../../docs/en       # Where to find the markdown files
 site_dir: ../../generated/    # Where to put the HTML files
+edit_uri: edit/main/docs/
 
 validation:
   nav:
@@ -39,6 +40,7 @@ theme:
     - content.tabs.link
     - search.suggest
     - announce.dismiss
+    - content.action.agents
   icon:
     repo: fontawesome/brands/github
 extra_css:
