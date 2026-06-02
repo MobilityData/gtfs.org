@@ -46,7 +46,7 @@ For GTFS producers who do not have the capacity to produce GTFS Fares (v2), it i
     * 1: Riders may use cEMVs as fare media on all trips associated with the agency (or route).
     * 2: cEMVs are not supported as fare media on all trips associated with the agency (or route).
 
-[Consult the documentation](https://gtfs.org/documentation/schedule/reference) for more information on cEMV support.
+[Consult the documentation](./../../reference/) for more information on cEMV support.
 
 For [Translink](../intro/#translink-vancouver), cEMV is supported on all routes. Therefore, **cemv_support** can be defined in `agency.txt`.
 
