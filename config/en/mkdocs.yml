@@ -252,8 +252,8 @@ nav:
         - Fare Products: resources/gtfs-schedule-feature-guides/fares/fare-products.md
         - Rider Categories: resources/gtfs-schedule-feature-guides/fares/rider-categories.md
         - Route-Based Fares: resources/gtfs-schedule-feature-guides/fares/route-based-fares.md
-        - Time-Based Fares: resources/gtfs-schedule-feature-guides/fares/time-based-fares.md
         - Zone-Based Fares: resources/gtfs-schedule-feature-guides/fares/zone-based-fares.md
+        - Time-Based Fares: resources/gtfs-schedule-feature-guides/fares/time-based-fares.md
         - Fare Transfers: resources/gtfs-schedule-feature-guides/fares/fare-transfers.md
         - Legacy Fares: resources/gtfs-schedule-feature-guides/fares/fares-v1.md
       - Shapes (shapes.txt): resources/gtfs-schedule-feature-guides/shapes.md
