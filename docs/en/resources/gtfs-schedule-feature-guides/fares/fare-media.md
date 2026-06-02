@@ -29,3 +29,29 @@ For this example, five different fare media are created, each assigned an ID, a 
 | compass_card | Compass Card | 2 |
 | compass_ticket | Compass Ticket | 1 |
 | wallet | Mobile Wallet | 3 |
+
+## (Alternative) Specify cEMV support
+
+For GTFS producers who do not have the capacity to produce GTFS Fares (v2), it is possible to specify cEMV support without having Fares (v2). This allows consumers to show whether the agency (or certain routes) supports payment using contactless EMV without having to implement Fares (v2).
+
+!!! tip "Tip" 
+
+    It is recommended to implement Fares (v2) to allow for showing comprehensive fare information, not just cEMV support.
+
+1. Choose either `agency.txt` or `routes.txt` to specify cEMV information.  
+    * If the entire agency has the same cEMV support across all of its trips, use `agency.txt`.  
+    * If cEMV support varies from route to route, use \routes.txt`.  
+2. Fill in the **cemv_support** field in `agency.txt` or `routes.txt` with the appropriate enum with the appropriate enum.
+    * 0: No cEMV information.
+    * 1: Riders may use cEMVs as fare media on all trips associated with the agency (or route).
+    * 2: cEMVs are not supported as fare media on all trips associated with the agency (or route).
+
+[Consult the documentation](./../../reference/) for more information on cEMV support.
+
+For [Translink](../intro/#translink-vancouver), cEMV is supported on all routes. Therefore, **cemv_support** can be defined in `agency.txt`.
+
+[**agency.txt**](../../../reference/#agencytxt)
+
+| agency_id | agency_name | cemv_support | … |
+| :---- | :---- | :---- | :---- |
+| TL | TransLink | 1 | … |
