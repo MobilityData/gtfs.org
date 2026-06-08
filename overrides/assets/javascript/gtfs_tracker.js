@@ -110,7 +110,7 @@ el.innerHTML = `
           </table>
         </div>
         <div class="gft-footer-link">
-          Learn more about the <a href="https://mobilitydata.org" target="_blank">GTFS Features Tracker</a>
+          Learn more about the <a href="https://mobilitydatabase.org/gtfs-feature-tracker" target="_blank">GTFS Features Tracker</a>
         </div>
       </div>`;
   }
