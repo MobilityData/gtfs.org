@@ -47,6 +47,8 @@ These essential features form the core of a GTFS feed. They are the minimal elem
 
 </div>
 
+<div class="gtfs-feature-tracker" data-category="Base"></div>
+
 ## Base add-ons
 These features enhance a GTFS dataset, improving rider experience and facilitating collaboration between agencies, vendors, and data re-users. They may involve adding new fields to existing files or creating new files.
 
@@ -78,7 +80,7 @@ These features enhance a GTFS dataset, improving rider experience and facilitati
 
 - :material-plus-box-multiple-outline:{ .lg .middle } __Headsigns__
 
-    Communicate the signage used by vehicles indicating the trip’s destination.
+    Communicate the signage used by vehicles indicating the trip's destination.
 
     [:octicons-arrow-right-24: Learn more](../base_add-ons/#headsigns)
 
@@ -125,6 +127,7 @@ These features enhance a GTFS dataset, improving rider experience and facilitati
     [:octicons-arrow-right-24: Learn more](../base_add-ons/#stop-access)
 </div>
 
+<div class="gtfs-feature-tracker" data-category="Base add-ons"></div>
 
 ## Accessibility
 Accessibility features provide essential information for people with disabilities to access the service.
@@ -151,6 +154,7 @@ Accessibility features provide essential information for people with disabilitie
 
 </div>
 
+<div class="gtfs-feature-tracker" data-category="Accessibility"></div>
 
 ## Fares
 GTFS can model various fare structures, such as zone, distance, or time-of-day based fares. It informs riders of trip prices and payment methods.
@@ -213,6 +217,7 @@ GTFS can model various fare structures, such as zone, distance, or time-of-day b
 
 </div>
 
+<div class="gtfs-feature-tracker" data-category="Fares"></div>
 
 ##  Pathways
 
@@ -252,6 +257,8 @@ Pathways features allows to model large transit stations, so that riders are gui
 
 </div>
 
+<div class="gtfs-feature-tracker" data-category="Pathways"></div>
+
 ## Flexible services
 Flexible services, or demand-responsive services, that do not follow regular schedules or fixed routes.
 
@@ -288,3 +295,5 @@ Flexible services, or demand-responsive services, that do not follow regular sch
     [:octicons-arrow-right-24: Learn more](../flexible_services/#fixed-stops-demand-responsive-services)
 
 </div>
+
+<div class="gtfs-feature-tracker" data-category="Flexible services"></div>
