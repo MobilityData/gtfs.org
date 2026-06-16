@@ -1,15 +1,9 @@
 (function () {
   const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSu9_3lyF9caXrDdlGCtO1Bg17Uhkh_L9l-REYkYVUINvrEEaVwrx1mSZ--_iKAGcJ2x8bFBzYHVU74/pub?output=csv';
   const FIELDS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSu9_3lyF9caXrDdlGCtO1Bg17Uhkh_L9l-REYkYVUINvrEEaVwrx1mSZ--_iKAGcJ2x8bFBzYHVU74/pub?gid=1583091937&single=true&output=csv';
+  const CONSUMERS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSu9_3lyF9caXrDdlGCtO1Bg17Uhkh_L9l-REYkYVUINvrEEaVwrx1mSZ--_iKAGcJ2x8bFBzYHVU74/pub?gid=1998786437&single=true&output=csv';
 
-  const CONSUMERS = [
-    { id: 'google', label: 'Google' },
-    { id: 'transitapp', label: 'Transit' },
-    { id: 'motis', label: 'MOTIS' },
-    { id: 'OpenTripPlanner', label: 'OTP' },
-    { id: 'aubin', label: 'Aubin' },
-  ];
-
+  let CONSUMERS = [];
   let knownFields = [];
 
   const ICONS = {
@@ -77,20 +71,22 @@
     const tableRows = catRows.map(f => {
       const cells = CONSUMERS.map(c => {
         const s = f.support[c.id];
-        const m = getStatusMeta(s.rawStatus);
-        const hasDet = s.details && s.details.trim().length > 0;
+        const rawStatus = s ? s.rawStatus : '';
+        const details = s ? s.details : '';
+        const m = getStatusMeta(rawStatus);
+        const hasDet = details && details.trim().length > 0;
         return `<td class="gft-cell">
           <div class="gft-badge ${m.cls}">
             <span class="gft-icon-anchor">${m.icon}</span>
             <span class="gft-label">${m.label}</span>
-            ${hasDet ? `<i class="gft-info-btn" onclick="showGftDetails('${f.name.replace(/'/g, "\\'")} • ${c.label}', \`${s.details.replace(/`/g, '\\`').replace(/\\/g, '\\\\')}\`)">i</i>` : ''}
+            ${hasDet ? `<i class="gft-info-btn" onclick="showGftDetails('${f.name.replace(/'/g, "\\'")} • ${c.label}', \`${details.replace(/`/g, '\\`').replace(/\\/g, '\\\\')}\`)">i</i>` : ''}
           </div>
         </td>`;
       }).join('');
       return `<tr class="gft-row"><td class="gft-feature-name" title="${f.name}">${f.name}</td>${cells}</tr>`;
     }).join('');
 
-el.innerHTML = `
+    el.innerHTML = `
       <div class="gft-wrapper">
         <div class="gft-table-wrap">
           <table class="gft-table" style="width:100%; border-collapse:collapse; font-family:sans-serif;">
@@ -100,7 +96,7 @@ el.innerHTML = `
                 ${CONSUMERS.map(c => `
                   <th style="border:1px solid #eee; padding:8px;">
                     <div class="gft-consumer-header" style="display:flex; flex-direction:column; align-items:center; gap:4px;">
-                      <img src="/assets/${c.id}.png" alt="" style="height:16px; width:auto;" onerror="this.style.display='none'">
+                      ${c.logo ? `<img src="${c.logo}" alt="${c.label} logo" style="height:16px; width:auto;" onerror="this.style.display='none'">` : ''}
                       <span style="font-size:11px;">${c.label}</span>
                     </div>
                   </th>`).join('')}
@@ -129,19 +125,49 @@ el.innerHTML = `
 
     Promise.all([
       fetch(FIELDS_URL).then(r => r.text()),
-      fetch(CSV_URL).then(r => r.text())
-    ]).then(([fieldsText, dataText]) => {
+      fetch(CSV_URL).then(r => r.text()),
+      fetch(CONSUMERS_URL).then(r => r.text())
+    ]).then(([fieldsText, dataText, consumersText]) => {
       const fieldRows = parseCSV(fieldsText);
       knownFields = fieldRows.slice(1).map(r => r[0]).filter(name => name && name.length > 2);
 
       const rows = parseCSV(dataText);
       const headers = rows[0];
+
+      const discoveredConsumers = [];
+      headers.forEach(header => {
+        if (header && header.endsWith('_use')) {
+          const id = header.replace('_use', '');
+          const defaultLabel = id.charAt(0).toUpperCase() + id.slice(1);
+          discoveredConsumers.push({ id, label: defaultLabel, logo: '' });
+        }
+      });
+
+      const consumerRows = parseCSV(consumersText);
+      const cHeaders = consumerRows[0];
+      const consumerIdIdx = cHeaders.indexOf('consumer');
+      const logoUrlIdx = cHeaders.indexOf('logo_url');
+      const labelIdx = cHeaders.indexOf('consumer_public_label');
+
+      consumerRows.slice(1).forEach(r => {
+        const rawId = (r[consumerIdIdx] || '').trim().toLowerCase();
+        const target = discoveredConsumers.find(c => c.id.toLowerCase() === rawId);
+        if (!target) return;
+        if (logoUrlIdx !== -1 && r[logoUrlIdx]) target.logo = r[logoUrlIdx].trim();
+        if (labelIdx !== -1 && r[labelIdx]) target.label = r[labelIdx].trim();
+      });
+
+      CONSUMERS = discoveredConsumers;
+
       const data = rows.slice(1).filter(r => r[0]).map(r => {
         const support = {};
         CONSUMERS.forEach(c => {
           const useIdx = headers.indexOf(c.id + '_use');
           const detIdx = headers.indexOf(c.id + '_details');
-          support[c.id] = { rawStatus: r[useIdx] || '', details: r[detIdx] || '' };
+          support[c.id] = {
+            rawStatus: useIdx !== -1 ? r[useIdx] || '' : '',
+            details: detIdx !== -1 ? r[detIdx] || '' : ''
+          };
         });
         return { name: r[0], category: r[1], support };
       });
