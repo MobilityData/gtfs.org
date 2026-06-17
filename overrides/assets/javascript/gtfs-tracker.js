@@ -1,24 +1,18 @@
 (function () {
   const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSu9_3lyF9caXrDdlGCtO1Bg17Uhkh_L9l-REYkYVUINvrEEaVwrx1mSZ--_iKAGcJ2x8bFBzYHVU74/pub?output=csv';
   const FIELDS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSu9_3lyF9caXrDdlGCtO1Bg17Uhkh_L9l-REYkYVUINvrEEaVwrx1mSZ--_iKAGcJ2x8bFBzYHVU74/pub?gid=1583091937&single=true&output=csv';
+  const CONSUMERS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSu9_3lyF9caXrDdlGCtO1Bg17Uhkh_L9l-REYkYVUINvrEEaVwrx1mSZ--_iKAGcJ2x8bFBzYHVU74/pub?gid=1998786437&single=true&output=csv';
 
-  const CONSUMERS = [
-    { id: 'google', label: 'Google' },
-    { id: 'transitapp', label: 'Transit' },
-    { id: 'motis', label: 'MOTIS' },
-    { id: 'OpenTripPlanner', label: 'OTP' },
-    { id: 'aubin', label: 'Aubin' },
-  ];
-
+  let CONSUMERS = [];
   let knownFields = [];
 
   const ICONS = {
     check: `<svg class="gft-icon icon-success" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>`,
     x: `<svg class="gft-icon icon-danger" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/></svg>`,
-    clock: `<svg class="gft-icon icon-warning" viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.53 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>`,
+    clock: `<svg class="gft-icon icon-warning" viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.53 2,12A10,10 0 0,1 12,2Z"/></svg>`,
     partial: `<svg class="gft-icon" viewBox="0 0 24 24" fill="#FFE296"><path d="M12,2A10,10 0 0,0 12,22A10,10 0 0,0 12,2M12,4V20A8,8 0 0,1 12,4Z"/></svg>`,
     planned: `<svg class="gft-icon icon-info" viewBox="0 0 24 24"><path d="M4,15V9H12V4.16L19.84,12L12,19.84V15H4Z"/></svg>`,
-    na: `<svg class="gft-icon" viewBox="0 0 24 24" fill="#9aa0a6"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.86.64-3.57 1.71-4.93L16.93 18.29C15.57 19.36 13.86 20 12 20zm6.29-4.71L7.71 5.71C9.07 4.64 10.78 4 12 4c4.41 0 8 3.59 8 8 0 1.86-.64 3.57-1.71 4.93z"/></svg>`
+    na: `<svg class="gft-icon" viewBox="0 0 24 24" fill="#9aa0a6"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.86.64-3.57 1.71-4.93L16.93 13.5l-1.41 1.41L4.5 3.5l1.41-1.41 12.02 12.02z"/></svg>`,
   };
 
   function getStatusMeta(raw) {
@@ -77,20 +71,22 @@
     const tableRows = catRows.map(f => {
       const cells = CONSUMERS.map(c => {
         const s = f.support[c.id];
-        const m = getStatusMeta(s.rawStatus);
-        const hasDet = s.details && s.details.trim().length > 0;
+        const rawStatus = s ? s.rawStatus : '';
+        const details = s ? s.details : '';
+        const m = getStatusMeta(rawStatus);
+        const hasDet = details && details.trim().length > 0;
         return `<td class="gft-cell">
           <div class="gft-badge ${m.cls}">
             <span class="gft-icon-anchor">${m.icon}</span>
             <span class="gft-label">${m.label}</span>
-            ${hasDet ? `<i class="gft-info-btn" onclick="showGftDetails('${f.name.replace(/'/g, "\\'")} • ${c.label}', \`${s.details.replace(/`/g, '\\`').replace(/\\/g, '\\\\')}\`)">i</i>` : ''}
+            ${hasDet ? `<i class="gft-info-btn" onclick="showGftDetails('${f.name.replace(/'/g, "\\'")} • ${c.label}', \`${details.replace(/`/g, '\\`').replace(/\\/g, '\\\\')}\`)">i</i>` : ''}
           </div>
         </td>`;
       }).join('');
       return `<tr class="gft-row"><td class="gft-feature-name" title="${f.name}">${f.name}</td>${cells}</tr>`;
     }).join('');
 
-el.innerHTML = `
+    el.innerHTML = `
       <div class="gft-wrapper">
         <div class="gft-table-wrap">
           <table class="gft-table" style="width:100%; border-collapse:collapse; font-family:sans-serif;">
@@ -100,7 +96,7 @@ el.innerHTML = `
                 ${CONSUMERS.map(c => `
                   <th style="border:1px solid #eee; padding:8px;">
                     <div class="gft-consumer-header" style="display:flex; flex-direction:column; align-items:center; gap:4px;">
-                      <img src="/assets/${c.id}.png" alt="" style="height:16px; width:auto;" onerror="this.style.display='none'">
+                      ${c.logo ? `<img src="${c.logo}" alt="${c.label} logo" style="height:16px; width:auto;" onerror="this.style.display='none'">` : ''}
                       <span style="font-size:11px;">${c.label}</span>
                     </div>
                   </th>`).join('')}
@@ -129,19 +125,54 @@ el.innerHTML = `
 
     Promise.all([
       fetch(FIELDS_URL).then(r => r.text()),
-      fetch(CSV_URL).then(r => r.text())
-    ]).then(([fieldsText, dataText]) => {
+      fetch(CSV_URL).then(r => r.text()),
+      fetch(CONSUMERS_URL).then(r => r.text())
+    ]).then(([fieldsText, dataText, consumersText]) => {
       const fieldRows = parseCSV(fieldsText);
       knownFields = fieldRows.slice(1).map(r => r[0]).filter(name => name && name.length > 2);
 
       const rows = parseCSV(dataText);
       const headers = rows[0];
+
+      const discoveredConsumers = [];
+      headers.forEach(header => {
+        if (header && header.endsWith('_use')) {
+          const id = header.replace('_use', '');
+          const defaultLabel = id.charAt(0).toUpperCase() + id.slice(1);
+          discoveredConsumers.push({ id, label: defaultLabel, logo: '' });
+        }
+      });
+
+      if (!discoveredConsumers || discoveredConsumers.length === 0) {
+        console.warn("No consumers discovered from spreadsheet headers");
+        return;
+      }
+
+      const consumerRows = parseCSV(consumersText);
+      const cHeaders = consumerRows[0];
+      const consumerIdIdx = cHeaders.indexOf('consumer');
+      const logoUrlIdx = cHeaders.indexOf('logo_url');
+      const labelIdx = cHeaders.indexOf('consumer_public_label');
+
+      consumerRows.slice(1).forEach(r => {
+        const rawId = (r[consumerIdIdx] || '').trim().toLowerCase();
+        const target = discoveredConsumers.find(c => c.id.toLowerCase() === rawId);
+        if (!target) return;
+        if (logoUrlIdx !== -1 && r[logoUrlIdx]) target.logo = r[logoUrlIdx].trim();
+        if (labelIdx !== -1 && r[labelIdx]) target.label = r[labelIdx].trim();
+      });
+
+      CONSUMERS = discoveredConsumers;
+
       const data = rows.slice(1).filter(r => r[0]).map(r => {
         const support = {};
         CONSUMERS.forEach(c => {
           const useIdx = headers.indexOf(c.id + '_use');
           const detIdx = headers.indexOf(c.id + '_details');
-          support[c.id] = { rawStatus: r[useIdx] || '', details: r[detIdx] || '' };
+          support[c.id] = {
+            rawStatus: useIdx !== -1 ? r[useIdx] || '' : '',
+            details: detIdx !== -1 ? r[detIdx] || '' : ''
+          };
         });
         return { name: r[0], category: r[1], support };
       });
