@@ -9,10 +9,10 @@
   const ICONS = {
     check: `<svg class="gft-icon icon-success" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>`,
     x: `<svg class="gft-icon icon-danger" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/></svg>`,
-    clock: `<svg class="gft-icon icon-warning" viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.53 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>`,
+    clock: `<svg class="gft-icon icon-warning" viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.53 2,12A10,10 0 0,1 12,2Z"/></svg>`,
     partial: `<svg class="gft-icon" viewBox="0 0 24 24" fill="#FFE296"><path d="M12,2A10,10 0 0,0 12,22A10,10 0 0,0 12,2M12,4V20A8,8 0 0,1 12,4Z"/></svg>`,
     planned: `<svg class="gft-icon icon-info" viewBox="0 0 24 24"><path d="M4,15V9H12V4.16L19.84,12L12,19.84V15H4Z"/></svg>`,
-    na: `<svg class="gft-icon" viewBox="0 0 24 24" fill="#9aa0a6"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.86.64-3.57 1.71-4.93L16.93 18.29C15.57 19.36 13.86 20 12 20zm6.29-4.71L7.71 5.71C9.07 4.64 10.78 4 12 4c4.41 0 8 3.59 8 8 0 1.86-.64 3.57-1.71 4.93z"/></svg>`
+    na: `<svg class="gft-icon" viewBox="0 0 24 24" fill="#9aa0a6"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-1.86.64-3.57 1.71-4.93L16.93 13.5l-1.41 1.41L4.5 3.5l1.41-1.41 12.02 12.02z"/></svg>`,
   };
 
   function getStatusMeta(raw) {
@@ -142,6 +142,11 @@
           discoveredConsumers.push({ id, label: defaultLabel, logo: '' });
         }
       });
+
+      if (!discoveredConsumers || discoveredConsumers.length === 0) {
+        console.warn("No consumers discovered from spreadsheet headers");
+        return;
+      }
 
       const consumerRows = parseCSV(consumersText);
       const cHeaders = consumerRows[0];
