@@ -51,7 +51,7 @@ The Maintainer supports and facilitates the specification [Change Process](chang
 
 ## Special roles
 
-General Contributors, Producers, Consumers and the Maintainer can take on special roles to support the development of specification changes. The [Advocate](#advocate) and [First Adopter](#first-adopter) roles are particularly critical for the [Change Process](../change-process) to function effectively.
+General Contributors, Producers, Consumers and the Maintainer can take on special roles to support the development of specification changes. The [Advocate](#advocate) and [First Adopter](#first-adopter) roles are particularly critical for the [Change Process](change-process.md) to function effectively.
 
 
 <img class="center" width="1000" height="100%" src="../../../../../assets/governance-roles-2.svg">

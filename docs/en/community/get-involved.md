@@ -20,11 +20,11 @@ To formalize this process, we've established the GTFS Governance framework, whic
 
 -   :material-file-document-edit:{ .lg .middle } __GTFS Schedule - Specification Amendment Process__
 
-    [:octicons-arrow-right-24: Learn more](../../community/governance/gtfs-schedule-governance/introduction)
+    [:octicons-arrow-right-24: Learn more](governance/gtfs-schedule-governance/introduction.md)
 
 -   :material-file-document-edit:{ .lg .middle } __GTFS Realtime - Specification Amendment Process__
 
-    [:octicons-arrow-right-24: Learn more](../../community/governance/gtfs_realtime_amendment_process)
+    [:octicons-arrow-right-24: Learn more](governance/gtfs-realtime-amendment-process.md)
 
 </div>
 
@@ -38,13 +38,13 @@ Extensions are proposals to change the specification that are composed by a coll
    
     ---
 
-    [:octicons-arrow-right-24: Learn more](../../community/extensions/overview/#__tabbed_1_1)
+    [:octicons-arrow-right-24: Learn more](extensions/overview.md#__tabbed_1_1)
 
 -   :material-bus-marker:{ .lg .middle } __GTFS Realtime Extensions__
 
     ---
 
-    [:octicons-arrow-right-24: Learn more](../../community/extensions/overview/#__tabbed_1_2)
+    [:octicons-arrow-right-24: Learn more](extensions/overview.md#__tabbed_1_2)
 
 </div>
 
@@ -60,7 +60,7 @@ The community is constantly developing new additions to the specification that c
 
     GTFS-Fares v2 aims to enhance fare representation in GTFS, introducing features like fare products and rider categories.
 
-    [:octicons-arrow-right-24: Learn more](../../community/extensions/fares-v2)
+    [:octicons-arrow-right-24: Learn more](extensions/fares-v2.md)
 
 -   :material-file-document-edit:{ .lg .middle } __GTFS Governance__
 
@@ -101,7 +101,7 @@ Make sure to check out the Resources section for an extensive selection of tips,
 
     ---
 
-    [:octicons-arrow-right-24: Learn more](../../resources/overview)
+    [:octicons-arrow-right-24: Learn more](../resources/overview.md)
 
 </div>
 

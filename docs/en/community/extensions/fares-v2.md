@@ -11,7 +11,7 @@ The main concepts that Fares v2 plans to represent are
 
 These concepts will allow data producers to model zone-based, time-dependent, and inter-agency fares. This extension project is being adopted in iterations. 
 
-You can see [examples here](../../../documentation/schedule/examples/fares-v2) that show what can be modelled using what has been officially adopted in GTFS.
+You can see [examples here](../../resources/gtfs-schedule-feature-guides/fares/intro.md) that show what can be modelled using what has been officially adopted in GTFS.
 
 Producers may implement Fares v2 in the same dataset with Fares v1, since there is no technical conflict between the two. Consumers can choose which version to use independent of the other. With adoption and sufficient endorsement of Fares v2, Fares v1 may be deprecated in the future.
 

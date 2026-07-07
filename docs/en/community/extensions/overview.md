@@ -13,13 +13,13 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
 
 === "GTFS Schedule"
 
-    Additional files and fields can be extended onto GTFS Schedule datasets to accommodate a variety of application-specific needs communicated between transit agencies and software vendors, even if these fields are not in the [official specification](../../../documentation/schedule/reference). 
+    Additional files and fields can be extended onto GTFS Schedule datasets to accommodate a variety of application-specific needs communicated between transit agencies and software vendors, even if these fields are not in the [official specification](../../documentation/schedule/reference.md). 
     
     Below is a list of GTFS Schedule extensions that may be implemented.
     
     !!! info "Making an extension official in the specification" 
 
-        Extensions may become active proposals and subsequently [merged](../../../documentation/schedule/change-history/recent_additions/) into the official specification via the [Specification Amendment Process](../../governance/gtfs_schedule_amendment_process/).
+        Extensions may become active proposals and subsequently [merged](../../documentation/schedule/change-history/recent-additions.md) into the official specification via the [Specification Amendment Process](../governance/gtfs-schedule-governance/change-process.md).
 
     !!! note "Contributing to this list"
 
@@ -143,13 +143,13 @@ For more information, contact [specifications@mobilitydata.org](mailto:specifica
 
 === "GTFS Realtime"
 
-    Additional files and fields can be extended onto GTFS Realtime feeds to accommodate a variety of application-specific needs communicated between transit agencies and software vendors, even if these fields are not in the [official specification](../../../documentation/realtime/reference). 
+    Additional files and fields can be extended onto GTFS Realtime feeds to accommodate a variety of application-specific needs communicated between transit agencies and software vendors, even if these fields are not in the [official specification](../../documentation/realtime/reference.md). 
     
     Below is a list of GTFS Realtime extensions that may be implemented.
     
     !!! info "Making an extension official in the specification" 
         
-        Extensions may become active proposals and subsequently [merged](../../../documentation/realtime/change-history/recent_additions/) into the official specification via the [Specification Amendment Process](../../governance/gtfs_realtime_amendment_process/).
+        Extensions may become active proposals and subsequently [merged](../../documentation/realtime/change-history/recent-additions.md) into the official specification via the [Specification Amendment Process](../../community/governance/gtfs-realtime-amendment-process.md).
     
     !!! note "Contributing to this list"
 

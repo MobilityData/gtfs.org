@@ -4,7 +4,7 @@
 
 The specification Change Process guides how the community proposes, reviews, and adopts changes to the specification in the [GTFS Repository](https://github.com/google/transit/pulls). 
 
-The specification Change Process is divided into **2 main stages** and categorized into **3 tracks** according to the three [change types](change-types.md): [functional changes](change-types.md/#functional-changes), [non-functional changes](change-types.md/#non-functional-changes), and [documentation maintenance](change-types.md/#documentation-maintenance). 
+The specification Change Process is divided into **2 main stages** and categorized into **3 tracks** according to the three [change types](change-types.md): [functional changes](change-types.md#functional-changes), [non-functional changes](change-types.md#non-functional-changes), and [documentation maintenance](change-types.md#documentation-maintenance). 
 
 <img class="center" width="1000" height="100%" src="../../../../../assets/governance-process-overview.svg">
 
@@ -28,13 +28,13 @@ Depending on the type of the proposed change, different tracks apply to the Chan
 
 <img class="center" width="1000" height="100%" src="../../../../../assets/governance-process-functional.svg">
 
-This process guides how the community proposes, reviews, and adopts [Functional changes](change-types.md/#functional-changes) to the specification in the [GTFS Repository](https://github.com/google/transit/pulls). 
+This process guides how the community proposes, reviews, and adopts [Functional changes](change-types.md#functional-changes) to the specification in the [GTFS Repository](https://github.com/google/transit/pulls). 
 
 * A proposal is submitted by opening a Pull Request in the GTFS Repository.   
 * The community engages in discussions to refine the proposal. This period must last at least 7 days.
-* The [Contributors](roles.md/#contributors) and the [Maintainer](roles.md/#maintainer) review the proposed changes. This period must last at least 7 days.  
+* The [Contributors](roles.md#contributors) and the [Maintainer](roles.md#maintainer) review the proposed changes. This period must last at least 7 days.  
 * Before testing, the community holds a vote to confirm unanimous consensus on the proposal. This means all participating voters must be in favor. For the vote to be valid, it must include at least five contributors, with a minimum of two Producers and two Consumers. The voting period must last at least 14 days. 
-* [First Adopters](roles.md/#first-adopter) test the proposed changes.   
+* [First Adopters](roles.md#first-adopter) test the proposed changes.   
 * The community holds a vote to determine whether the changes should be officially adopted. This vote follows an 80% majority rule, meaning at least 80% of votes must be in favor for it to pass. To be valid, the vote must include at least five contributors, with a minimum of two Producers and two Consumers. The voting period must last at least 14 days.
 * Finally, changes are implemented into the specification.
 
@@ -42,11 +42,11 @@ This process guides how the community proposes, reviews, and adopts [Functional 
 
 <img class="center" width="1000" height="100%" src="../../../../../assets/governance-process-non-functional.svg">
 
-This process guides how the community proposes, reviews, and adopts [Non-Functional changes](change-types.md/#non-functional-changes) to the specification in the [GTFS Repository](https://github.com/google/transit/pulls).
+This process guides how the community proposes, reviews, and adopts [Non-Functional changes](change-types.md#non-functional-changes) to the specification in the [GTFS Repository](https://github.com/google/transit/pulls).
 
 * A proposal is submitted by opening a Pull Request in the GTFS Repository.   
 * The community engages in discussions to refine the proposal. This period must last at least 7 days.
-* The [Contributors](roles.md/#contributors) and the [Maintainer](roles.md/#maintainer) review the proposed changes. This period must last at least 7 days.   
+* The [Contributors](roles.md#contributors) and the [Maintainer](roles.md#maintainer) review the proposed changes. This period must last at least 7 days.   
 * The community holds a vote to determine whether the changes should be officially adopted. This vote follows an 80% majority rule, meaning at least 80% of votes must be in favor for it to pass. To be valid, the vote must include at least five contributors, with a minimum of two Producers and two Consumers. The voting period must last at least 14 days.
 * Finally, changes are implemented into the specification.
 
@@ -54,11 +54,11 @@ This process guides how the community proposes, reviews, and adopts [Non-Functio
 
 <img class="center" width="1000" height="100%" src="../../../../../assets/governance-process-documentation.svg">
 
-This process guides how the community proposes, reviews, and adopts [changes to maintain the documentation](change-types.md/#documentation-maintenance) in the [GTFS Repository](https://github.com/google/transit/pulls).
+This process guides how the community proposes, reviews, and adopts [changes to maintain the documentation](change-types.md#documentation-maintenance) in the [GTFS Repository](https://github.com/google/transit/pulls).
 
 * A proposal is submitted by opening a Pull Request in the GTFS Repository.   
 * The community engages in discussions to refine the proposal. This period must last at least 7 days.
-* The [Contributors](roles.md/#contributors) and the [Maintainer](roles.md/#maintainer) review the proposed changes. This period must last at least 7 days.  
+* The [Contributors](roles.md#contributors) and the [Maintainer](roles.md#maintainer) review the proposed changes. This period must last at least 7 days.  
 * Finally, changes are implemented into the specification.
 
 ## Process Steps
@@ -81,7 +81,7 @@ All of the steps in the Issue and Pull Request Stages are highlighted below. Con
 
 <img class="center" width="1000" height="100%" src="../../../../../assets/governance-process-step-1.1.svg">
 
-A [Contributor](roles.md/#contributors) shares their idea to improve the specification by opening an Issue in [the GTFS Repository](https://github.com/google/transit/pulls). 
+A [Contributor](roles.md#contributors) shares their idea to improve the specification by opening an Issue in [the GTFS Repository](https://github.com/google/transit/pulls). 
 
 * Anyone can open an Issue to start a discussion.
 
@@ -89,7 +89,7 @@ A [Contributor](roles.md/#contributors) shares their idea to improve the specifi
 
 1. **Issue Submission**
 
-    * A [Contributor](roles.md/#contributors) posts an Issue describing an idea and the problem it would solve.
+    * A [Contributor](roles.md#contributors) posts an Issue describing an idea and the problem it would solve.
 
 **<ins>Suggestions</ins>** 
 
@@ -109,12 +109,12 @@ The community engages in discussions to help develop a proposal for modifying th
 
 1. **Issue Discussion**
 
-    * [Contributors](roles.md/#contributors) reply to the original Issue post and share their feedback.
+    * [Contributors](roles.md#contributors) reply to the original Issue post and share their feedback.
 
 2. **Working Group Proposal**
 
-    * If necessary, any [Contributor](roles.md/#contributors) can propose the creation of a Working Group to facilitate a discussion between all interested parties using video-conferencing software.  
-    * The Working Group can be organized by any [Contributor](roles.md/#contributors) or the [Maintainer](roles.md/#maintainer).  
+    * If necessary, any [Contributor](roles.md#contributors) can propose the creation of a Working Group to facilitate a discussion between all interested parties using video-conferencing software.  
+    * The Working Group can be organized by any [Contributor](roles.md#contributors) or the [Maintainer](roles.md#maintainer).  
     * Discussions held in Working Group meetings should be summarized in the Issue comments.
 
 **<ins>Suggestions</ins>** 
@@ -133,18 +133,18 @@ The community engages in discussions to help develop a proposal for modifying th
 
 > Note: Applicable to all Tracks 
 
-A proposal to change the specification is published by opening a Pull Request in [the GTFS Repository](https://github.com/google/transit/pulls). The [Advocate](roles.md/#advocate) who publishes the proposal must focus on a single change; anyone is welcome to propose a modification.
+A proposal to change the specification is published by opening a Pull Request in [the GTFS Repository](https://github.com/google/transit/pulls). The [Advocate](roles.md#advocate) who publishes the proposal must focus on a single change; anyone is welcome to propose a modification.
 
 **<ins>Actions</ins>** 
 
 1. **Applying the Changes**
 
-    * The [Advocate](roles.md/#advocate) creates a [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#forking-a-repository) of the original [GTFS Repository](https://github.com/google/transit/pulls) to either their personal or their organization’s account.  
-    * The [Advocate](roles.md/#advocate) creates a branch in their fork and applies the proposed changes. 
+    * The [Advocate](roles.md#advocate) creates a [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#forking-a-repository) of the original [GTFS Repository](https://github.com/google/transit/pulls) to either their personal or their organization’s account.  
+    * The [Advocate](roles.md#advocate) creates a branch in their fork and applies the proposed changes. 
 
 2. **Pull Request Submission**
 
-    * The [Advocate](roles.md/#advocate) creates a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) in the [GTFS Repository](https://github.com/google/transit/pulls) from their fork. 
+    * The [Advocate](roles.md#advocate) creates a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) in the [GTFS Repository](https://github.com/google/transit/pulls) from their fork. 
 
 **<ins>Requirements</ins>**
 
@@ -168,16 +168,16 @@ The community engages in conversations to help refine and develop the proposal.
 
 1. **Proposal Discussion**
 
-    * [Contributors](roles.md/#contributors) discuss the proposal in the Pull Request comment section.
+    * [Contributors](roles.md#contributors) discuss the proposal in the Pull Request comment section.
 
 2. **Proposal Updates**
 
-    * The [Advocate](roles.md/#advocate) updates the proposal’s contents based on the comments received.
+    * The [Advocate](roles.md#advocate) updates the proposal’s contents based on the comments received.
 
 3. **Working Group Proposal**
 
-    * If necessary, any [Contributor](roles.md/#contributors) can propose the creation of a Working Group to facilitate a discussion between all interested parties using video-conferencing software.  
-    * The Working Group can be organized by either the [Advocate](roles.md/#advocate) or the [Maintainer](roles.md/#maintainer).  
+    * If necessary, any [Contributor](roles.md#contributors) can propose the creation of a Working Group to facilitate a discussion between all interested parties using video-conferencing software.  
+    * The Working Group can be organized by either the [Advocate](roles.md#advocate) or the [Maintainer](roles.md#maintainer).  
     * Discussions held in Working Group meetings should be summarized in the Pull Request comments.
 
 **<ins>Requirements</ins>** 
@@ -193,22 +193,22 @@ The community engages in conversations to help refine and develop the proposal.
 
 > Note: Applicable to all Tracks 
 
-The community provides feedback to the [Advocate](roles.md/#advocate) to prepare the proposal for testing. 
+The community provides feedback to the [Advocate](roles.md#advocate) to prepare the proposal for testing. 
 
 **<ins>Actions</ins>** 
 
 1. **Review Period Announcement**
 
-    * The [Advocate](roles.md/#advocate) announces the start of the review period in the Pull Request comment section.
+    * The [Advocate](roles.md#advocate) announces the start of the review period in the Pull Request comment section.
 
 2. **Maintainer’s Review**
 
-    * The [Maintainer](roles.md/#maintainer) reviews the Pull Request to ensure the terminology aligns with the current specification.   
-    * The [Maintainer](roles.md/#maintainer) can either suggest changes in the comments or confirm the language is correct, prompting the [Advocate](roles.md/#advocate) to adjust as needed and proceed to the next step.
+    * The [Maintainer](roles.md#maintainer) reviews the Pull Request to ensure the terminology aligns with the current specification.   
+    * The [Maintainer](roles.md#maintainer) can either suggest changes in the comments or confirm the language is correct, prompting the [Advocate](roles.md#advocate) to adjust as needed and proceed to the next step.
 
 3. **Contributor Feedback**
 
-    * [Contributors](roles.md/#contributors) can also review the Pull Request during this period and provide feedback to help the [Advocate](roles.md/#advocate) make any final adjustments before testing.
+    * [Contributors](roles.md#contributors) can also review the Pull Request during this period and provide feedback to help the [Advocate](roles.md#advocate) make any final adjustments before testing.
 
 **<ins>Requirements</ins>** 
 
@@ -228,29 +228,29 @@ The community votes to confirm consensus on the proposal’s scope and to ensure
 
 1. **Vote announcement**
 
-    * The [Advocate](roles.md/#advocate) announces the beginning of the vote in the Pull Request comment section, specifying the end time of the vote.  
-    * The [Advocate](roles.md/#advocate) announces the vote in the [GTFS Changes mailing list](https://groups.google.com/g/gtfs-changes) discussion thread providing a link to the Pull Request comment and the end time of the vote.
+    * The [Advocate](roles.md#advocate) announces the beginning of the vote in the Pull Request comment section, specifying the end time of the vote.  
+    * The [Advocate](roles.md#advocate) announces the vote in the [GTFS Changes mailing list](https://groups.google.com/g/gtfs-changes) discussion thread providing a link to the Pull Request comment and the end time of the vote.
 
 2. **Voting Process**  
      
-    * [Contributors](roles.md/#contributors) must vote in the comment section of the Pull Request.
+    * [Contributors](roles.md#contributors) must vote in the comment section of the Pull Request.
 
 3. **Editing and Canceling**  
      
-    * The [Advocate](roles.md/#advocate) can edit the proposal only for editorial purposes during the voting period. Any other change would require restarting the voting process.  
-    * The [Advocate](roles.md/#advocate) can cancel the vote at any time.  
+    * The [Advocate](roles.md#advocate) can edit the proposal only for editorial purposes during the voting period. Any other change would require restarting the voting process.  
+    * The [Advocate](roles.md#advocate) can cancel the vote at any time.  
     
 4. **End of Vote Announcement**  
      
-    * The [Advocate](roles.md/#advocate) announces the end of the vote in the Pull Request comment section and includes the result.  
-    * The [Advocate](roles.md/#advocate) also announces the end of the vote in the [GTFS Changes mailing list](https://groups.google.com/g/gtfs-changes) discussion thread, including the result.
+    * The [Advocate](roles.md#advocate) announces the end of the vote in the Pull Request comment section and includes the result.  
+    * The [Advocate](roles.md#advocate) also announces the end of the vote in the [GTFS Changes mailing list](https://groups.google.com/g/gtfs-changes) discussion thread, including the result.
 
 5. **Failed Vote**  
      
-    * If the vote fails, the [Advocate](roles.md/#advocate) can choose to:  
+    * If the vote fails, the [Advocate](roles.md#advocate) can choose to:  
         1. Continue working on the proposal, or  
         2. Abandon the proposal.  
-    * The [Advocate](roles.md/#advocate) must announce their decision in the Pull Request comment section and in the [GTFS Changes mailing list](https://groups.google.com/g/gtfs-changes) discussion thread.
+    * The [Advocate](roles.md#advocate) must announce their decision in the Pull Request comment section and in the [GTFS Changes mailing list](https://groups.google.com/g/gtfs-changes) discussion thread.
 
 **<ins>Requirements</ins>** 
 
@@ -273,26 +273,26 @@ The vote must meet the following conditions:
 
 > Note: Not applicable to Track B: Non-Functional Changes and Track C: Documentation Maintenance
 
-One GTFS [Producer](roles.md/#producers) and one GTFS [Consumer](roles.md/#consumers) volunteer to serve as [First Adopters](roles.md/#first-adopter) by implementing the proposed changes for testing.
+One GTFS [Producer](roles.md#producers) and one GTFS [Consumer](roles.md#consumers) volunteer to serve as [First Adopters](roles.md#first-adopter) by implementing the proposed changes for testing.
 
 **<ins>Actions</ins>** 
 
 1. **Tester Confirmation**  
      
-    * The [Advocate](roles.md/#advocate) confirms the identity of the [First Adopters](roles.md/#first-adopter) which will test the changes and provide commentary in the Pull Request comment section.
+    * The [Advocate](roles.md#advocate) confirms the identity of the [First Adopters](roles.md#first-adopter) which will test the changes and provide commentary in the Pull Request comment section.
     
 2. **Testing**
 
-    * The [First Adopters](roles.md/#first-adopter) apply and test the changes in a public-facing environment. For the Producer, this means a public GTFS feed; for the Consumer, this means a public-facing, production version of an application.
+    * The [First Adopters](roles.md#first-adopter) apply and test the changes in a public-facing environment. For the Producer, this means a public GTFS feed; for the Consumer, this means a public-facing, production version of an application.
     * Testing lasts as long as necessary to ensure that all requirements are met before calling a vote to adopt.
 
 3. **Proof of Testing**
 
-    * The [First Adopters](roles.md/#first-adopter) show proof of testing by sharing a link to the implemented changes in the pull request comments.
+    * The [First Adopters](roles.md#first-adopter) show proof of testing by sharing a link to the implemented changes in the pull request comments.
 
 **<ins>Requirements</ins>** 
 
-The [Advocate](roles.md/#advocate) can proceed with a Vote to Adopt ([step 2.6](#step-26-vote-to-adopt)) only after all requirements of the testing period have been completed.
+The [Advocate](roles.md#advocate) can proceed with a Vote to Adopt ([step 2.6](#step-26-vote-to-adopt)) only after all requirements of the testing period have been completed.
 
 | Requirement | Details |
 | :---- | :---- |
@@ -313,30 +313,30 @@ The community votes to confirm whether or not the proposed changes are to be off
 
 1. **Announcement of Vote**  
      
-    * The [Advocate](roles.md/#advocate) announces the beginning of the vote in the Pull Request comment section, specifying the end time of the vote.  
-    * The [Advocate](roles.md/#advocate) announces the vote in the [GTFS Changes mailing list](https://groups.google.com/g/gtfs-changes) discussion thread providing a link to the Pull Request comment and the end time of the vote.  
+    * The [Advocate](roles.md#advocate) announces the beginning of the vote in the Pull Request comment section, specifying the end time of the vote.  
+    * The [Advocate](roles.md#advocate) announces the vote in the [GTFS Changes mailing list](https://groups.google.com/g/gtfs-changes) discussion thread providing a link to the Pull Request comment and the end time of the vote.  
     
 2. **Voting Process**  
      
-    * [Contributors](roles.md/#contributors) must vote in the comment section of the Pull Request.  
+    * [Contributors](roles.md#contributors) must vote in the comment section of the Pull Request.  
     
 3. **Editing and Canceling**  
      
-    * The [Advocate](roles.md/#advocate) can edit the proposal only for editorial purposes during the voting period.  
-    * The [Advocate](roles.md/#advocate) can cancel the vote at any time.  
+    * The [Advocate](roles.md#advocate) can edit the proposal only for editorial purposes during the voting period.  
+    * The [Advocate](roles.md#advocate) can cancel the vote at any time.  
     
 4. **End of Vote Announcement**  
      
-    * The [Advocate](roles.md/#advocate) announces the end of the vote in the Pull Request comment section and includes the result.  
-    * The [Advocate](roles.md/#advocate) also announces the end of the vote in the [GTFS Changes mailing list](https://groups.google.com/g/gtfs-changes) discussion thread, including the result.
+    * The [Advocate](roles.md#advocate) announces the end of the vote in the Pull Request comment section and includes the result.  
+    * The [Advocate](roles.md#advocate) also announces the end of the vote in the [GTFS Changes mailing list](https://groups.google.com/g/gtfs-changes) discussion thread, including the result.
 
 5. **Failed Vote**  
      
-    * If the vote fails, the [Advocate](roles.md/#advocate) can choose to either:  
+    * If the vote fails, the [Advocate](roles.md#advocate) can choose to either:  
         1. Adjust proposal based on actionable feedback provided and call another vote,  
         2. Go back to the discussion step ([step 2.2](#step-22-pull-request-discussion)) and redefine the scope, or  
         3. Abandon the proposal.  
-    * The [Advocate](roles.md/#advocate) must announce their decision in the Pull Request comment section and in the [GTFS Changes mailing list](https://groups.google.com/g/gtfs-changes) discussion thread.
+    * The [Advocate](roles.md#advocate) must announce their decision in the Pull Request comment section and in the [GTFS Changes mailing list](https://groups.google.com/g/gtfs-changes) discussion thread.
 
 **<ins>Requirements</ins>** 
 
@@ -359,17 +359,17 @@ The vote must meet the following conditions based on the:
   
 > Note: Applicable to all tracks.
 
-The [Maintainer](roles.md/#maintainer) implements the changes officially adopted after a successful vote.
+The [Maintainer](roles.md#maintainer) implements the changes officially adopted after a successful vote.
 
 **<ins>Actions</ins>** 
 
 1. **Implementation**
 
-    * If the vote passes, the [Maintainer](roles.md/#maintainer) merges the voted Pull Request within 14 calendar days, provided that the [Contributors](roles.md/#contributors) have signed the Contributor License Agreement.
+    * If the vote passes, the [Maintainer](roles.md#maintainer) merges the voted Pull Request within 14 calendar days, provided that the [Contributors](roles.md#contributors) have signed the Contributor License Agreement.
 
 2. **Revision History update**
 
-    * The [Maintainer](roles.md/#maintainer) documents all changes adopted after a successful vote in the Revision History once a month.
+    * The [Maintainer](roles.md#maintainer) documents all changes adopted after a successful vote in the Revision History once a month.
 
 **<ins>Requirements</ins>** 
 
