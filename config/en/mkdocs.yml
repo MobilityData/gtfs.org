@@ -262,6 +262,11 @@ nav:
     - MobilityData Recommendations:
       - Overview: resources/mobilitydata-recommendations/overview.md
       - GTFS Schedule vs GTFS Realtime: resources/mobilitydata-recommendations/gtfs-schedule-vs-gtfs-realtime.md   
+      - GTFS Realtime Service Alerts:
+        - Introduction: resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/intro.md
+        - Guidelines: resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/guidelines.md
+        - Real-world Use Cases: resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/real-world-use-cases.md
+        - Real-life Examples: resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/real-life-examples.md
     - Producing Data: resources/producing-data.md
     - Sharing Data: resources/sharing-data.md
     - Using Data: resources/using-data.md
