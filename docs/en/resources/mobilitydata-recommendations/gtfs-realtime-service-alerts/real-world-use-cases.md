@@ -10,12 +10,12 @@ Example of service change:
 
 Effect:
 
-* \`NO\_SERVICE\`
+* `NO_SERVICE`
 
 Informed Entity:
 
-* \`route\_id\`  
-* \`direction\_id\` (if the route is not running along a direction).
+* `route_id`  
+* `direction_id` (if the route is not running along a direction).
 
 Suggestions:
 
@@ -26,16 +26,16 @@ Suggestions:
   * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).  
   * If there is any replacement service, include the information (in the description).
 
-* If \`tripUpdates\` are provided, change \`ScheduleRelationship\` in the \`TripDescriptor\` of the affected trips to CANCELED if possible.  
+* If `tripUpdates` are provided, change `ScheduleRelationship` in the `TripDescriptor` of the affected trips to CANCELED if possible.  
 * If there is any replacement service and it is possible to create, then you can either:  
   * Create it in the GTFS Schedule feed if the closure is planned or once it extends over time and you have more certainty around the closure.  
-  * If that replacement service corresponds to a route in the GTFS and you cannot define the additional trips in the GTFS Schedule feed, then create it in \`tripUpdates\` with the \`TripDescriptor \= NEW\`.
+  * If that replacement service corresponds to a route in the GTFS and you cannot define the additional trips in the GTFS Schedule feed, then create it in `tripUpdates` with the `TripDescriptor \= NEW`.
 
 !!! Note "Suggested template"
 
-    Header: “ Service interrupted on route \`{route name}\`”
+    Header: “ Service interrupted on route `{route name}`”
 
-    Description: “Due to {cause}, service is suspended on route/line \`{route name}\` from\`{start time}\` to \`{end time if applicable}\`. Please use \`{replacement suggestion}\` instead.”
+    Description: “Due to {cause}, service is suspended on route/line `{route name}` from`{start time}` to `{end time if applicable}`. Please use `{replacement suggestion}` instead.”
 
 ---
 
@@ -47,14 +47,14 @@ Example of service change:
 
 Effect:
 
-* \`NO\_SERVICE\`
+* `NO_SERVICE`
 
 Informed Entity:
 
-* \`route\_id\`  
-* \`direction\_id\` (if the route is not running along a direction).  
-* \`trip\_id\` using TripDescriptor.  
-  * If the trips are frequency-based, add \`start\_time\` and \`start\_date\` under TripDescriptor to match to a single trip.
+* `route_id`  
+* `direction_id` (if the route is not running along a direction).  
+* `trip_id` using TripDescriptor.  
+  * If the trips are frequency-based, add `start_time` and `start_date` under TripDescriptor to match to a single trip.
 
 Suggestions:
 
@@ -65,16 +65,16 @@ Suggestions:
   * Human-readable identifier of the cancelled trips if possible, such as the start time (in the description).  
   * If there is any replacement service, include the information (in the description).
 
-* If \`tripUpdates\` are provided, change \`ScheduleRelationship\` in the \`TripDescriptor\` of the affected trips to CANCELED if possible.  
+* If `tripUpdates` are provided, change `ScheduleRelationship` in the `TripDescriptor` of the affected trips to CANCELED if possible.  
 * If there is any replacement service and it is possible to create, then you can either:  
   * Create it in the GTFS Schedule feed if the closure is planned or once it extends over time and you have more certainty around the closure.  
-  * If that replacement service corresponds to a route in the GTFS and you cannot define the additional trips in the GTFS Schedule feed, then create it in \`tripUpdates\` with the \`TripDescriptor \= NEW\`.
+  * If that replacement service corresponds to a route in the GTFS and you cannot define the additional trips in the GTFS Schedule feed, then create it in `tripUpdates` with the `TripDescriptor \= NEW`.
 
 !!! Note "Suggested template"
 
-    Header: “ Trips cancelled on route \`{route name}\`”
+    Header: “ Trips cancelled on route `{route name}`”
 
-    Description: “Due to {cause}, a few trips are cancelled on \`{direction}\` route/line \`{route name}\`. The current trips are affected \`{human-readable trip identifier, e.g. start time}\`. Please use \`{replacement suggestion}\` instead.”
+    Description: “Due to {cause}, a few trips are cancelled on `{direction}` route/line `{route name}`. The current trips are affected `{human-readable trip identifier, e.g. start time}`. Please use `{replacement suggestion}` instead.”
 
 ---
 
@@ -86,15 +86,15 @@ Example of service change:
 
 Effect:
 
-* \`NO\_SERVICE\`  
-* You may also use \`MODIFIED\_SERVICE\` when you expect consumers to use the alert to adjust journey suggestions or routing, and if you expect that setting an effect of \`NO\_SERVICE\` could result in presenting inaccurate information to riders.
+* `NO_SERVICE`  
+* You may also use `MODIFIED_SERVICE` when you expect consumers to use the alert to adjust journey suggestions or routing, and if you expect that setting an effect of `NO_SERVICE` could result in presenting inaccurate information to riders.
 
 Informed Entity:
 
-* \`route\_id\`  
-* \`direction\_id\` (if the route is not running along a direction).  
-* \`stop\_id\`  
-  * If the bus route is not running from \`stop\_A\` to \`stop\_B\`, include the\`route\_id\`, \`direction\_id\`, and all the \`stop\_ids\` between \`stop\_A\` and \`stop\_B\` along the direction.  
+* `route_id`  
+* `direction_id` (if the route is not running along a direction).  
+* `stop_id`  
+  * If the bus route is not running from `stop_A` to `stop_B`, include the`route_id`, `direction_id`, and all the `stop_ids` between `stop_A` and `stop_B` along the direction.  
   * Do not include the first and last stop of the segment in the informed entity if they are not affected by the disruption. Only include the stops of the segment that are actually closed.
 
 Suggestions:
@@ -106,16 +106,16 @@ Suggestions:
   * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).  
   * If there is any replacement service, include the information (in the description).
 
-* If \`tripUpdates\` are provided, change \`ScheduleRelationship\` in the \`StopTimeUpdate\` of affected \`stop\_times\` of each relevant trip to SKIPPED if possible.  
+* If `tripUpdates` are provided, change `ScheduleRelationship` in the `StopTimeUpdate` of affected `stop_times` of each relevant trip to SKIPPED if possible.  
 * If there is any replacement service and it is possible to create, then you can either:  
   * Create it in the GTFS Schedule feed if the closure is planned or once it extends over time and you have more certainty around the closure.  
-  * If that replacement service is operated by a pre-existing route and you cannot define it in the GTFS Schedule feed, then create it in \`tripUpdates\` with the \`TripDescriptor \= NEW\`.
+  * If that replacement service is operated by a pre-existing route and you cannot define it in the GTFS Schedule feed, then create it in `tripUpdates` with the `TripDescriptor \= NEW`.
 
 !!! Note "Suggested template"
 
-    Header: “No route \`{route name}\` service between \`{start stop}\` and \`{end stop}\`”
+    Header: “No route `{route name}` service between `{start stop}` and `{end stop}`”
 
-    Description: “Due to {cause}, route/line \`{route name}\` does not serve the stops between \`{start stop}\` and \`{end stop}\`, from\`{start time}\` to \`{end time if applicable}\`. Please use \`{replacement suggestion}\` instead.”
+    Description: “Due to {cause}, route/line `{route name}` does not serve the stops between `{start stop}` and `{end stop}`, from`{start time}` to `{end time if applicable}`. Please use `{replacement suggestion}` instead.”
 
 ---
 
@@ -128,11 +128,11 @@ Example of service change:
 
 Effect:
 
-* \`NO\_SERVICE\`
+* `NO_SERVICE`
 
 Informed Entity:
 
-* \`stop\_id\`
+* `stop_id`
 
 Suggestions:
 
@@ -141,15 +141,15 @@ Suggestions:
   * The name of the affected stop or platform (in the header).  
   * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
-* If \`tripUpdates\` are provided, change ScheduleRelationship in the \`StopTimeUpdate\` of affected \`stop\_times\` to SKIPPED if possible.  
-* Remove the \`stop\_id\` from the stop time entries in \`[stop\_times.txt](https://gtfs.org/documentation/schedule/reference/#stop_timestxt)\` for trips that serve the closed stop. This is more important if the alert extends over time (weeks to months).  
-* If it is certain that the stop is going to be permanently closed, remove it from the GTFS Schedule feed. Otherwise, you do not need to remove the stop from \`[stops.txt](https://gtfs.org/documentation/schedule/reference/#stopstxt)\`. 
+* If `tripUpdates` are provided, change ScheduleRelationship in the `StopTimeUpdate` of affected `stop_times` to SKIPPED if possible.  
+* Remove the `stop_id` from the stop time entries in `[stop_times.txt](https://gtfs.org/documentation/schedule/reference/#stop_timestxt)` for trips that serve the closed stop. This is more important if the alert extends over time (weeks to months).  
+* If it is certain that the stop is going to be permanently closed, remove it from the GTFS Schedule feed. Otherwise, you do not need to remove the stop from `[stops.txt](https://gtfs.org/documentation/schedule/reference/#stopstxt)`. 
 
 !!! Note "Suggested template"
 
-    Header: “Stop \`{stop name and location}\` is out of service”
+    Header: “Stop `{stop name and location}` is out of service”
 
-    Description: “Due to {cause}, stop \`{stop name and location}\` will be out of service from\`{start time}\` to \`{end time if applicable}\`. Please use \`{replacement stop}\` instead.”
+    Description: “Due to {cause}, stop `{stop name and location}` will be out of service from`{start time}` to `{end time if applicable}`. Please use `{replacement stop}` instead.”
 
 ---
 
@@ -161,11 +161,11 @@ Example of service change:
 
 Effect:
 
-* \`NO\_SERVICE\`
+* `NO_SERVICE`
 
 Informed Entity:
 
-* \`stop\_id\` of the station.
+* `stop_id` of the station.
 
 Suggestions:
 
@@ -174,15 +174,15 @@ Suggestions:
   * The name of the affected station (in the header).  
   * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
-* If \`tripUpdates\` are provided, change \`ScheduleRelationship\` in the \`StopTimeUpdate\` of affected \`stop\_times\` to SKIPPED if possible.  
-* Remove the \`stop\_ids\` of the station platforms from the stop time entries in \`[stop\_times.txt](https://gtfs.org/documentation/schedule/reference/#stop_timestxt)\` for trips that serve the closed station. This is more important if the incident extends over time (weeks to months).  
-* If it is certain that the station is going to be permanently closed, remove it and its child stops from the GTFS Schedule feed. Otherwise, you do not need to remove the station and its stops from \`[stops.txt](https://gtfs.org/documentation/schedule/reference/#stopstxt)\`.
+* If `tripUpdates` are provided, change `ScheduleRelationship` in the `StopTimeUpdate` of affected `stop_times` to SKIPPED if possible.  
+* Remove the `stop_ids` of the station platforms from the stop time entries in `[stop_times.txt](https://gtfs.org/documentation/schedule/reference/#stop_timestxt)` for trips that serve the closed station. This is more important if the incident extends over time (weeks to months).  
+* If it is certain that the station is going to be permanently closed, remove it and its child stops from the GTFS Schedule feed. Otherwise, you do not need to remove the station and its stops from `[stops.txt](https://gtfs.org/documentation/schedule/reference/#stopstxt)`.
 
 !!! Note "Suggested template"
 
-    Header: “Station \`{station name}\` is out of service”
+    Header: “Station `{station name}` is out of service”
 
-    Description: “Due to {cause}, station \`{station name}\` will be out of service from\`{start time}\` to \`{end time if applicable}\`. Please use \`{bus replacement service or nearest in-service station}\` instead.”
+    Description: “Due to {cause}, station `{station name}` will be out of service from`{start time}` to `{end time if applicable}`. Please use `{bus replacement service or nearest in-service station}` instead.”
 
 ---
 
@@ -195,18 +195,18 @@ Example of service change:
 
 Effect:
 
-* \`DETOUR\`
+* `DETOUR`
 
 Informed Entity:
 
-* \`route\_id\`  
-* \`direction\_id\` (direction of the detour).  
-* Include \`stop\_id\` (\`stop\_ids\` of the stops inside the segment that is deviated from).  
-* If only some trips are detoured during the incident, include \`trip\_id\` if possible, using TripDescriptor .
+* `route_id`  
+* `direction_id` (direction of the detour).  
+* Include `stop_id` (`stop_ids` of the stops inside the segment that is deviated from).  
+* If only some trips are detoured during the incident, include `trip_id` if possible, using TripDescriptor .
 
 Suggestions:
 
-* Do not create a \`DETOUR\` alert if the detour does not move any stops and only changes the shape of a route. In that case, if the detour causes significant delays, treat the incident as a [\`SIGNIFICANT\_DELAYS\` alert](#strong-delays).
+* Do not create a `DETOUR` alert if the detour does not move any stops and only changes the shape of a route. In that case, if the detour causes significant delays, treat the incident as a [`SIGNIFICANT_DELAYS` alert](#strong-delays).
 
 * Add an alert that clearly mentions:  
   * That there is a detour (in the header).  
@@ -216,14 +216,14 @@ Suggestions:
   * If the detour changes the location of some stops, mention the affected stops or the start and end stops of the affected segment (in the header and/or description).  
   * If the detour only changes the shape of the route but keeps all stops in their original locations, mention that the no stop is affected (in the header and/or description).
 
-* If \`tripModifications\` are provided, use \`tripModifications\` to indicate the \`stop\_ids\` of the new stops and their new \`stop\_times\` along with the propagated delay. Consult the [\`tripModifications\` reference](https://gtfs.org/documentation/realtime/feed-entities/trip-modifications/) for more information.  
+* If `tripModifications` are provided, use `tripModifications` to indicate the `stop_ids` of the new stops and their new `stop_times` along with the propagated delay. Consult the [`tripModifications` reference](https://gtfs.org/documentation/realtime/feed-entities/trip-modifications/) for more information.  
 * If the detour is planned, make sure it is reflected in the GTFS Schedule feed. If the detour is unplanned and it extends over time, consider adding it to the GTFS Schedule feed once you have more certainty around it.
 
 !!! Note "Suggested template"
 
-    Header: “Route \`{route name}\` is detoured between \`{start stop}\` and \`{end stop}\`”
+    Header: “Route `{route name}` is detoured between `{start stop}` and `{end stop}`”
 
-    Description: “Due to \`{cause}\`, route/line \`{route name}\` is detoured. It will not serve the stops between \`{start stop}\` and \`{end stop}\` and will run through \`{replacement streets/roads}\` from\`{start time}\` to \`{end time if applicable}\`. Please use \`{replacement stops}\` instead.”
+    Description: “Due to `{cause}`, route/line `{route name}` is detoured. It will not serve the stops between `{start stop}` and `{end stop}` and will run through `{replacement streets/roads}` from`{start time}` to `{end time if applicable}`. Please use `{replacement stops}` instead.”
 
 ---
 
@@ -235,15 +235,15 @@ Example of service change:
 
 Effect:
 
-* \`NO\_SERVICE\`  
-* You may also use \`MODIFIED\_SERVICE\` when you expect consumers to use the alert to adjust journey suggestions or routing, and when not doing so could result in presenting inaccurate information to riders.
+* `NO_SERVICE`  
+* You may also use `MODIFIED_SERVICE` when you expect consumers to use the alert to adjust journey suggestions or routing, and when not doing so could result in presenting inaccurate information to riders.
 
 Informed Entity:
 
-* \`route\_id\`  
-* \`direction\_id\` (direction of the route).  
-* \`trip\_id\` (using TripDescriptor) of the trip(s) where the short turn occurs.  
-* \`stop\_id\` (\`stop\_ids\` that will be skipped due to the short turn)
+* `route_id`  
+* `direction_id` (direction of the route).  
+* `trip_id` (using TripDescriptor) of the trip(s) where the short turn occurs.  
+* `stop_id` (`stop_ids` that will be skipped due to the short turn)
 
 Suggestions:
 
@@ -255,13 +255,13 @@ Suggestions:
   * The affected trip(s) (in the description).  
   * The stops that will be skipped due to the short turn (in the header and/or description).
 
-* If \`tripUpdates\` are provided, change ScheduleRelationship in the \`StopTimeUpdate\` of affected \`stop\_times\` to SKIPPED if possible.
+* If `tripUpdates` are provided, change ScheduleRelationship in the `StopTimeUpdate` of affected `stop_times` to SKIPPED if possible.
 
 !!! Note "Suggested template"
 
-    Header: “Route \`{route name}\` is short turning before \`{stop name}\`”
+    Header: “Route `{route name}` is short turning before `{stop name}`”
 
-    Description: “Route/line \`{route name}\` is short turning before \`{stop name}\`. It will not serve the stops between \`{start stop}\` and \`{end stop}\`. The affected trips are \`{human-readable trip identifier. e.g. Trip start time}\`”
+    Description: “Route/line `{route name}` is short turning before `{stop name}`. It will not serve the stops between `{start stop}` and `{end stop}`. The affected trips are `{human-readable trip identifier. e.g. Trip start time}`”
 
 ---
 
@@ -274,11 +274,11 @@ Example of service change:
 
 Effect:
 
-* \`STOP\_MOVED\`
+* `STOP_MOVED`
 
 Informed Entity:
 
-* \`stop\_id\` (of the stop that changed location).
+* `stop_id` (of the stop that changed location).
 
 Suggestions:
 
@@ -288,14 +288,14 @@ Suggestions:
   * The new location of the stop (in the description).  
   * The time period(s) that the service change spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
-* The alert might exist even when the stop was changed in the GTFS Schedule feed. (Just for informative reasons; could lead to mismatch issues as no \`stop\_id\` in GTFS).  
-* If the alert is planned or extends over time (weeks to months), consider updating \`stops.txt\` and \`[stop\_times.txt](https://gtfs.org/documentation/schedule/reference/#stop_timestxt)\` to reflect the new stop.
+* The alert might exist even when the stop was changed in the GTFS Schedule feed. (Just for informative reasons; could lead to mismatch issues as no `stop_id` in GTFS).  
+* If the alert is planned or extends over time (weeks to months), consider updating `stops.txt` and `[stop_times.txt](https://gtfs.org/documentation/schedule/reference/#stop_timestxt)` to reflect the new stop.
 
 !!! Note "Suggested template"
 
-    Header: “Stop \`{stop name and location}\` is moved”
+    Header: “Stop `{stop name and location}` is moved”
 
-    Description: “Due to {cause}, stop \`{stop name and location}\` is moved \`{definitely or indefinitely until {end time if applicable}}\` to  \`{new location}\`.”
+    Description: “Due to {cause}, stop `{stop name and location}` is moved `{definitely or indefinitely until {end time if applicable}}` to  `{new location}`.”
 
 ---
 
@@ -307,8 +307,8 @@ Example of service change:
 
 Suggestions:
 
-* In \`tripUpdates\`, make sure that the \`StopTimeUpdate\` of affected \`stop\_times\` is adjusted.  
-* Insignificant delays should be in \`tripUpdates\`, do not create an alert.
+* In `tripUpdates`, make sure that the `StopTimeUpdate` of affected `stop_times` is adjusted.  
+* Insignificant delays should be in `tripUpdates`, do not create an alert.
 
   ---
 
@@ -321,12 +321,12 @@ Example of service change:
 
 Effect:
 
-* \`SIGNIFICANT\_DELAYS\`
+* `SIGNIFICANT_DELAYS`
 
 Informed Entity:
 
-* \`route\_id\`  
-* \`direction\_id\` (if route delays are only for one direction).
+* `route_id`  
+* `direction_id` (if route delays are only for one direction).
 
 Suggestions:
 
@@ -335,13 +335,13 @@ Suggestions:
   * The name of the affected route(s) (in the header and/or description).  
   * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
-* If \`tripUpdates\` are provided, make sure that the \`StopTimeUpdate\` of affected \`stop\_times\`  is adjusted.
+* If `tripUpdates` are provided, make sure that the `StopTimeUpdate` of affected `stop_times`  is adjusted.
 
 !!! Note "Suggested template"
 
-    Header: “ Delayed service on route \`{route name}\`”
+    Header: “ Delayed service on route `{route name}`”
 
-    Description: “Due to {cause}, route/line \`{route name}\` is experiencing delays up to \`{estimated current delay}\`.”
+    Description: “Due to {cause}, route/line `{route name}` is experiencing delays up to `{estimated current delay}`.”
 
 ---
 
@@ -354,12 +354,12 @@ Example of service change:
 
 Effect:
 
-* \`MODIFIED\_SERVICE\`
+* `MODIFIED_SERVICE`
 
 Informed Entity:
 
-* \`route\_id\` (if the modified service affects a route).  
-* \`direction\_id\` (if the modified service is along one direction only).
+* `route_id` (if the modified service affects a route).  
+* `direction_id` (if the modified service is along one direction only).
 
 Suggestions:
 
@@ -370,13 +370,13 @@ Suggestions:
 
 !!! Note "Suggested template"
 
-    Header: “ Schedule adjustment for \`{route names} from \`{start time}\` to {end time if applicable}\`”
+    Header: “ Schedule adjustment for `{route names} from `{start time}` to {end time if applicable}`”
 
-    Description: “Due to {cause: new service, short term change}, service is adjusted for \`{routes names}\` from \`{start time}\` to {end time if applicable}. Please refer to our website \`{URL (also included in the URL field)}\` for further details.”
+    Description: “Due to {cause: new service, short term change}, service is adjusted for `{routes names}` from `{start time}` to {end time if applicable}. Please refer to our website `{URL (also included in the URL field)}` for further details.”
 
     Or
 
-    Description: “Due to {cause: new service, short term change}, \`{routes names}\` will run on a \`{special schedule: holiday, weekend, etc}\` schedule from \`{start time}\` to {end time if applicable}. Please refer to our website \`{URL (also included in the URL field)}\` for further details.”
+    Description: “Due to {cause: new service, short term change}, `{routes names}` will run on a `{special schedule: holiday, weekend, etc}` schedule from `{start time}` to {end time if applicable}. Please refer to our website `{URL (also included in the URL field)}` for further details.”
 
 ---
 
@@ -389,12 +389,12 @@ Example of service change:
 
 Effect:
 
-* \`ADDITIONAL\_SERVICE\`
+* `ADDITIONAL_SERVICE`
 
 Informed Entity:
 
-* \`route\_id\` (if the increased service affects a route).  
-* \`direction\_id\` (if the modified service is along one direction only).
+* `route_id` (if the increased service affects a route).  
+* `direction_id` (if the modified service is along one direction only).
 
 Suggestions:
 
@@ -405,14 +405,14 @@ Suggestions:
 
 * If the additional trips are not added in the GTFS Schedule feed:
 
-  * If \`tripUpdates\` are provided, and if the service increase is unscheduled and you cannot add to a GTFS Schedule feed before 7 days of the service change: In \`tripUpdates\`, add the new trips with \`ScheduleRelationship\` in \`TripDescriptor\` set as \`NEW\`.  
+  * If `tripUpdates` are provided, and if the service increase is unscheduled and you cannot add to a GTFS Schedule feed before 7 days of the service change: In `tripUpdates`, add the new trips with `ScheduleRelationship` in `TripDescriptor` set as `NEW`.  
   * Do not overrely on GTFS realtime TripUpdates for adding trips if you can do it in the GTFS Schedule feed.
 
 !!! Note "Suggested template"
 
-    Header: “ More trips running for \`{route names}\`”
+    Header: “ More trips running for `{route names}`”
 
-    Description: “Due to \`{cause: new service, short term change}\`, more departures will run for \`{routes names}\` starting \`{start time}\` until \`{end time if applicable}\`. Please refer to our website \`{URL (also included in the URL field)}\` for further details.”
+    Description: “Due to `{cause: new service, short term change}`, more departures will run for `{routes names}` starting `{start time}` until `{end time if applicable}`. Please refer to our website `{URL (also included in the URL field)}` for further details.”
 
 ---
 
@@ -424,12 +424,12 @@ Example of service change:
 
 Effect:
 
-* \`REDUCED\_SERVICE\`
+* `REDUCED_SERVICE`
 
 Informed Entity:
 
-* \`route\_id\` (if the service cut affects a route).  
-* \`direction\_id\` (if the service cut is along one direction only).
+* `route_id` (if the service cut affects a route).  
+* `direction_id` (if the service cut is along one direction only).
 
 Suggestions:
 
@@ -440,14 +440,14 @@ Suggestions:
 
 * If the removed trips are not removed in the GTFS Schedule feed:
 
-  * If \`tripUpdates\` are provided, and if the service cut is unscheduled and you cannot remove them from a GTFS Schedule feed before 7 days of the service change: In \`tripUpdates\`, change \`ScheduleRelationship\` in \`TripDescriptor\` of the affected trips to CANCELED if possible.  
+  * If `tripUpdates` are provided, and if the service cut is unscheduled and you cannot remove them from a GTFS Schedule feed before 7 days of the service change: In `tripUpdates`, change `ScheduleRelationship` in `TripDescriptor` of the affected trips to CANCELED if possible.  
   * Do not overrely on GTFS realtime TripUpdates for removing trips if you can do it in the GTFS Schedule feed.
 
 !!! Note "Suggested template"
 
-    Header: “ Fewer trips running for \`{route names}\`”
+    Header: “ Fewer trips running for `{route names}`”
 
-    Description: “Due to {cause: new service, short term change}, fewer departures will run for \`{routes names}\` starting \`{start time}\` until {end time if applicable}. Please refer to our website \`{URL (also included in the URL field)}\` for further details.”
+    Description: “Due to {cause: new service, short term change}, fewer departures will run for `{routes names}` starting `{start time}` until {end time if applicable}. Please refer to our website `{URL (also included in the URL field)}` for further details.”
 
 ---
 
@@ -461,13 +461,13 @@ Example of service change:
 
 Effect:
 
-* \`ACCESSIBILITY\_ISSUE\`
+* `ACCESSIBILITY_ISSUE`
 
 Informed Entity:
 
-* \`route\_id\`, \`trip\_id\` (using TripDescriptor) and \`direction\_id\` if needed (if the accessibility issue occurs on a route vehicle).  
-* \`stop\_id\` of the affected platforms and entrances/exits, and \`direction\_id\` if needed.  
-* The \`stop\_id\` of the station is not required, as the station can be found using the GTFS Schedule feed.
+* `route_id`, `trip_id` (using TripDescriptor) and `direction_id` if needed (if the accessibility issue occurs on a route vehicle).  
+* `stop_id` of the affected platforms and entrances/exits, and `direction_id` if needed.  
+* The `stop_id` of the station is not required, as the station can be found using the GTFS Schedule feed.
 
 Suggestions:
 
@@ -485,12 +485,12 @@ Suggestions:
 
 !!! Note "Suggested template"
 
-    Header: “\`{station name}\`: {pathway. e.g. Southbound platform elevator}\` out of commission.”
+    Header: “`{station name}`: {pathway. e.g. Southbound platform elevator}` out of commission.”
 
-    Description: “Due to \`{cause: maintenance, mechanical error, etc}\`, the \`{pathway}\` to the \`{platform}\` in \`{station}\` is not in service from \`{start\_time}\` to \`{end\_time}\`. Please use \`{replacement pathway}\` instead.”
+    Description: “Due to `{cause: maintenance, mechanical error, etc}`, the `{pathway}` to the `{platform}` in `{station}` is not in service from `{start_time}` to `{end_time}`. Please use `{replacement pathway}` instead.”
 
 !!! Note "Suggested template"
 
-    Header: “ \`{route names}\`: The vehicle on {human-readable trip identifier. e.g. trip start time} is not accessible”
+    Header: “ `{route names}`: The vehicle on {human-readable trip identifier. e.g. trip start time} is not accessible”
 
-    Description: “Due to \`{cause: e.g. mechanical error}\`, the vehicle operating under \`{route names}\` on the trip \`{human-readable trip identifier}\` is not  accessible.”
+    Description: “Due to `{cause: e.g. mechanical error}`, the vehicle operating under `{route names}` on the trip `{human-readable trip identifier}` is not  accessible.”

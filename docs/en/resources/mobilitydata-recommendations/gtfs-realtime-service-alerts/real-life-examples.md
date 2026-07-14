@@ -9,10 +9,10 @@ Published on 28-03-2025
 * The header is badly formatted. It seems to continue into the description.   
 * The header should be modified to “Line 1 Yonge-University: No service between St George and St Andrew”.  
 * The description should be finished: “Service will resume…”  
-* The effect should be modified to \`MODIFIED\_SERVICE\`.  
-  * Do not set \`NO\_SERVICE\` as this effect is currently generally concerned with stop and platform closures. In this case, it seems like the trip is effectively split in the middle into two separate trips.  
-* The cause should be modified to \`MAINTENANCE\`.  
-* Too many \`route\_ids\` included as informed entities. The only route that should be mentioned is the Yonge-University Line (\`route\_id=1\`). And all station stop\_ids between St George and St Andrew should be mentioned.  
+* The effect should be modified to `MODIFIED_SERVICE`.  
+  * Do not set `NO_SERVICE` as this effect is currently generally concerned with stop and platform closures. In this case, it seems like the trip is effectively split in the middle into two separate trips.  
+* The cause should be modified to `MAINTENANCE`.  
+* Too many `route_ids` included as informed entities. The only route that should be mentioned is the Yonge-University Line (`route_id=1`). And all station stop_ids between St George and St Andrew should be mentioned.  
 * No time period is associated with the alert.
 
 ```  
@@ -168,9 +168,9 @@ Published on 28-03-2025
 Published on 28-03-2025
 
 * The header should be expanded: “No service in the Cowichan Valley due to Labour action.”   
-* The cause should be modified to \`STRIKE\`.  
-* The effect should be modified to \`NO\_SERVICE\`.  
-* The URL mentioned in the description should be included in the \`url\` field.
+* The cause should be modified to `STRIKE`.  
+* The effect should be modified to `NO_SERVICE`.  
+* The URL mentioned in the description should be included in the `url` field.
 
 ```  
 {  
@@ -257,9 +257,9 @@ Published on 28-03-2025
 
 Published on 02-04-2025
 
-* Really good \`informed\_entity\`, including the exact trip and direction.  
+* Really good `informed_entity`, including the exact trip and direction.  
 * The header contains information that can be transferred to the description.  
-* The alert could use a \`SIGNIFICANT\_DELAYS\` effect.
+* The alert could use a `SIGNIFICANT_DELAYS` effect.
 
 ```  
 {  
@@ -427,7 +427,7 @@ Published on 28-03-2025
 
 Published on 28-03-2025
 
-* The cause should be modified to \`OTHER\_CAUSE\`.  
+* The cause should be modified to `OTHER_CAUSE`.  
 * A description should be added.
 
 ```  
@@ -481,10 +481,10 @@ Published on 28-03-2025
 
 Published on 02-04-2025
 
-* No cause or effect are mentioned. At least a \`MODIFIED\_SERVICE\` effect should be added.  
-  * Do not set \`NO\_SERVICE\` as this effect is currently generally concerned with stop and platform closures. In this case, it seems like the trip is effectively split in the middle into two separate trips.  
-* The \`route\_id\` for the metro should be included in \`informed\_entity\`, along with the unserved segment of stations.  
-* If the replacement bus service does not exist in the GTFS Schedule, it should be added to the GTFS Schedule. If the replacement bus service corresponds to a route in the GTFS and you cannot define the additional trips in the GTFS Schedule, then create it in \`tripUpdates\` with the \`TripDescriptor \= NEW\`.  
+* No cause or effect are mentioned. At least a `MODIFIED_SERVICE` effect should be added.  
+  * Do not set `NO_SERVICE` as this effect is currently generally concerned with stop and platform closures. In this case, it seems like the trip is effectively split in the middle into two separate trips.  
+* The `route_id` for the metro should be included in `informed_entity`, along with the unserved segment of stations.  
+* If the replacement bus service does not exist in the GTFS Schedule, it should be added to the GTFS Schedule. If the replacement bus service corresponds to a route in the GTFS and you cannot define the additional trips in the GTFS Schedule, then create it in `tripUpdates` with the `TripDescriptor \= NEW`.  
 * The language codes need to be provided with the header and description text.
 
 ```  
@@ -526,12 +526,12 @@ Published on 02-04-2025
 
 Published on 02-04-2025
 
-* The field \`agency\_id\` does not exist in the GTFS Schedule. So the agency\_id in informed entities points to the agency\_name. Since there is only one agency in the GTFS Schedule feed (Calgary Transit), it is better to only keep the \`route\_id\` in \`informed\_entity\`.  
+* The field `agency_id` does not exist in the GTFS Schedule. So the agency_id in informed entities points to the agency_name. Since there is only one agency in the GTFS Schedule feed (Calgary Transit), it is better to only keep the `route_id` in `informed_entity`.  
 * A header should be added.  
 * The description text should become plain text.   
 * The description seems to include the cause and effect of the alert.  
-  * The cause should be added as \`WEATHER\`.  
-  * The effect mentioned is \`SIGNIFICANT\_DELAYS\`. However, the description alludes to closed stops or potentially a detour. Therefore, the description should be clarified along with the effect.  
+  * The cause should be added as `WEATHER`.  
+  * The effect mentioned is `SIGNIFICANT_DELAYS`. However, the description alludes to closed stops or potentially a detour. Therefore, the description should be clarified along with the effect.  
   * If possible, split the alert into multiple alerts; one for the stop closure or detour, the other for any significant delays that might arise from it.
 
 ```  
@@ -575,9 +575,9 @@ Published on 02-04-2025
 Published on 02-04-2025
 
 * The header is much longer than the description. The second part of the header “ \- use the stops on Lexington Ave at E 53rd St or E 41st St instead” can be transferred to the description.  
-* The \`stop\_id\` for Lexington Ave at E 46th St should be added to each entity in informed entities, to specify that the alert is only applied to the affected routes at the “Lexington Ave at E 46th St “ stop only. If the affected routes are the only routes that use that stop, then the \`route\_ids\` are not necessary to include.  
-* The cause should be added as \`CONSTRUCTION\`.  
-* The effect should be added as \`NO\_SERVICE\`.  
+* The `stop_id` for Lexington Ave at E 46th St should be added to each entity in informed entities, to specify that the alert is only applied to the affected routes at the “Lexington Ave at E 46th St “ stop only. If the affected routes are the only routes that use that stop, then the `route_ids` are not necessary to include.  
+* The cause should be added as `CONSTRUCTION`.  
+* The effect should be added as `NO_SERVICE`.  
 * HTML entities like “\</b\>” should be replaced with plain text alternatives.  
 * The “en-html” translation should be removed.
 
@@ -633,9 +633,9 @@ Published on 02-04-2025
 
 Published on 02-04-2025
 
-* The effect should be modified to \`ACCESSIBILITY\_ISSUE\`.  
-* The cause should be modified to \`MAINTENANCE\` or \`CONSTRUCTION\`.  
-* In \`informed\_entity\`, the \`stop\_id\` for the \[7\] platform should be mentioned, the station as well.  
+* The effect should be modified to `ACCESSIBILITY_ISSUE`.  
+* The cause should be modified to `MAINTENANCE` or `CONSTRUCTION`.  
+* In `informed_entity`, the `stop_id` for the \[7\] platform should be mentioned, the station as well.  
 * “accessibility icon” should be removed, and HTML entities like “\&nbsp;” should be replaced with plain text alternatives.  
 * The “en-html” translation should be removed.
 
@@ -688,7 +688,7 @@ Published on 02-04-2025
 
 Published on 02-04-2025
 
-* The alert includes the effect, cause, \`informed\_entity\` and an open-ended \`active\_period\`.  
+* The alert includes the effect, cause, `informed_entity` and an open-ended `active_period`.  
 * The description is concise and shares the necessary information.  
 * The alert could also include route 7 in the header. It could also include route 7 in informed entities if the stop is skipped only by route 7\.  
 * The alternate stops should be listed in the alert description.  
