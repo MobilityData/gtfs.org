@@ -207,6 +207,7 @@ nav:
         - Alertas de servicio (Service Alerts): documentation/realtime/examples/service-alerts.md
         - Actualizaciones de viaje (Trip Updates): documentation/realtime/examples/trip-updates.md
         - Migración duplicada: documentation/realtime/examples/migration-duplicated.md
+        - Migración Active Period: documentation/realtime/examples/migration-active-period.md
       - Historial de cambios:
         - Adiciones recientes: documentation/realtime/change-history/recent-additions.md
         - Historial completo de revisiones: documentation/realtime/change-history/revision-history.md
