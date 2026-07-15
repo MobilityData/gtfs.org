@@ -46,6 +46,7 @@
  * Construction 
  * Activité de police 
  * Urgence médicale
+ * Évenement spéciale
  
 ## Effet 
  
