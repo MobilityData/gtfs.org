@@ -228,7 +228,7 @@ nav:
         - Trip updates: documentation/realtime/examples/trip-updates.md
         - Migration duplicated: documentation/realtime/examples/migration-duplicated.md
         - Migration Active Period: documentation/realtime/examples/migration-active-period.md 
-      Change history:
+      - Change history:
         - Recent Additions: documentation/realtime/change-history/recent-additions.md
         - Full revision history: documentation/realtime/change-history/revision-history.md
   - Community:
