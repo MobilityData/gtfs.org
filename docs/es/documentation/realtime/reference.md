@@ -364,7 +364,7 @@ Una alerta, que indica algún tipo de incidencia en la red de transporte públic
 
 | _**Nombre de campo**_ | _**Tipo**_ | _**Obligatorio**_ | _**Cardenalidad**_ | _**Descripción**_ | 
 |------------------|------------|----------------|-------------------|-------------------| 
-| **active_period** | [TimeRange](#message-timerange) | Opcional | Muchos | Hora en la que se debe mostrar la alerta al usuario. Si falta, la alerta se mostrará mientras aparezca en el feed. Si se dan varios rangos, la alerta se mostrará durante todos ellos. | 
+| **active_period** | [TimeRange](#message-timerange) | Opcional | Muchos | Tiempo en que la alerta debe mostrarse al usuario. Si no está presente, la alerta se mostrará mientras aparezca en el feed. Si se dan varios rangos, la alerta se mostrará durante todos ellos. | 
 | **communication_period** | [TimeRange](#message-timerange) | Opcional | Varios | Tiempo en el que se debe mostrar la alerta al usuario estrictamente por razones informativas. Si no se especifica, la aplicación consumidora puede decidir cuándo es apropiado mostrarla. Si se dan varios rangos, la alerta se mostrará durante todos ellos.| 
 | **impact_period** | [TimeRange](#message-timerange) | Opcional | Varios | Tiempo en el que los servicios se ven afectados por la alerta. Si se especifica communication_period, cada intervalo de tiempo en impact_period debe estar completamente contenido dentro de al menos un intervalo de tiempo de communication_period.| 
 | **informed_entity** | [EntitySelector](#message-entityselector) | Obligatorio | Muchos | Entidades a cuyos usuarios debemos notificar esta alerta. Se debe proporcionar al menos una entidad_informada. | 
