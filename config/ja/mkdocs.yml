@@ -206,6 +206,7 @@ nav:
         - サービスアラート: documentation/realtime/examples/service-alerts.md
         - 旅行最新情報: documentation/realtime/examples/trip-updates.md
         - 重複した移行: documentation/realtime/examples/migration-duplicated.md
+        - 移行ガイド Active Period: documentation/realtime/examples/migration-active-period.md
       - 変更履歴:
         - 最近の追加: documentation/realtime/change-history/recent-additions.md
         - 完全な改訂履歴: documentation/realtime/change-history/revision-history.md

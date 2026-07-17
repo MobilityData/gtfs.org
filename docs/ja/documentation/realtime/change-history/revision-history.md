@@ -2,6 +2,11 @@
 
 ### 改訂履歴
 
+#### 2026年6月 
+* アラートに communication_period と impact_period という 2 つの新しいフィールドを追加し、active_period をより適切に定義できるようにしました。[ディスカッション](https://github.com/google/transit/pull/546) を参照してください。 
+* サービス アラートに、新しい SPECIAL_EVENT Cause to Cause リストを追加しました。[ディスカッション](https://github.com/google/transit/pull/577) を参照してください。
+
+
 #### 2026年4月 
 
 * gtfs-realtime.proto のタイプミスを修正しました。[ディスカッション](https://github.com/google/transit/pull/541) を参照してください。 

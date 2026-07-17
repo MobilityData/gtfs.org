@@ -46,6 +46,7 @@
  * Construcción 
  * Actividad policial 
  * Emergencia médica
+ * Evento_especial
  
 ## Efecto 
  
