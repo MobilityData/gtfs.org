@@ -375,6 +375,9 @@ table.example {
   .md-nav__link--active code {
     color: var(--md-default-fg-color--light) !important;
     font-weight: 700;
+  .md-nav--primary .md-nav__link--active {
+    background-color: var(--md-primary-fg-color) !important;
+    color: var(--md-primary-bg-color) !important;
   }
 
   .md-sidebar.md-sidebar--primary {
