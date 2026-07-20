@@ -371,6 +371,11 @@ table.example {
     font-weight: bold !important;
   }
 
+  .md-nav--primary .md-nav__link--active {
+    background-color: var(--md-primary-fg-color) !important;
+    color: var(--md-primary-bg-color) !important;
+  }
+
   .md-sidebar.md-sidebar--primary {
     width: 200px;
   }
