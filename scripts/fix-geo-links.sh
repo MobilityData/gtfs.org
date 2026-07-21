@@ -51,5 +51,9 @@ else
   SED_INPLACE=(-i)
 fi
 
+# Escape regex metacharacters (., in this case) so OLD_BASE is matched
+# literally rather than as a sed pattern.
+OLD_BASE_ESCAPED=$(printf '%s' "$OLD_BASE" | sed -e 's/[]\/$*.^[]/\\&/g')
+
 # Replace all instances of OLD_BASE with NEW_BASE in BASE_DIR
-find "$BASE_DIR" -name "*.html" -type f -exec sed "${SED_INPLACE[@]}" "s|${OLD_BASE}|${NEW_BASE}|g" {} +
+find "$BASE_DIR" -name "*.html" -type f -exec sed "${SED_INPLACE[@]}" "s|${OLD_BASE_ESCAPED}|${NEW_BASE}|g" {} +
