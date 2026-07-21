@@ -323,6 +323,11 @@ table.example {
   }
 }
 
+.md-nav--primary .md-nav__link--active {
+  background-color: var(--md-primary-fg-color) !important;
+  color: var(--md-primary-bg-color) !important;
+}
+
 @media only screen and (min-width: 1220px) {
   body {
     display: flex;
@@ -369,11 +374,6 @@ table.example {
     > .md-nav__link
     > span {
     font-weight: bold !important;
-  }
-
-  .md-nav--primary .md-nav__link--active {
-    background-color: var(--md-primary-fg-color) !important;
-    color: var(--md-primary-bg-color) !important;
   }
 
   .md-sidebar.md-sidebar--primary {
