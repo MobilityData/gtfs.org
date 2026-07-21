@@ -12,7 +12,7 @@ The more ideas, the merrier! If you have an idea for how to improve GTFS.org's c
 
 **Suggest a change with a Pull Request**
 
-To propose edits to the content, navigate to the page you want to change on [GTFS.org](https://gtfs.org/) and click on the "Edit this page" icon on the top-right of the page. The "Edit this page" icon will direct you to an editable page on the appropriate Github repository. You can then submit your edits as a pull request. 📝
+To propose edits to the content, navigate to the page you want to change on [GTFS.org](https://gtfs.org/) and click on the "Edit this page" icon on the top-right of the page. The "Edit this page" icon will direct you to an editable page on the appropriate Github repository. You can then submit your edits as a pull request.
 
 **Contributing translations**
 
