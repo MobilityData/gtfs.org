@@ -1,0 +1,88 @@
+name: PR Syntax Check
+
+# Validates the syntax of config/content files modified by a pull request
+# (.yml/.yaml, .json, .md/.markdown, requirements.txt, Makefile). A problem
+# fails the check (visible red X) and, on same-repo PRs, posts inline review
+# suggestions. This check is intentionally NOT a required status check — it
+# does not block merging, it just makes syntax problems visible before merge.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+# One run per PR; cancel superseded runs on rapid pushes.
+concurrency:
+  group: pr-syntax-check-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  syntax-check:
+    name: Validate changed files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.0
+        with:
+          fetch-depth: 0 # full history so base...head diff is computable
+
+      - name: Set up Python
+        uses: actions/setup-python@v6.3.0
+        with:
+          python-version: '3.11'
+
+      - name: Install checker dependencies
+        run: pip install pyyaml packaging
+
+      - name: Determine changed files
+        id: changed
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          # Added/copied/modified/renamed files only (skip deletions), then
+          # keep only the types we validate.
+          git diff --name-only --diff-filter=ACMR "${BASE_SHA}...${HEAD_SHA}" \
+            | grep -E '(\.ya?ml|\.json|\.md|\.markdown)$|(^|/)requirements\.txt$|(^|/)Makefile$' \
+            > changed.txt || true
+          echo "Files to check:"
+          cat changed.txt
+          echo "count=$(wc -l < changed.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
+
+      - name: Run syntax checker
+        if: steps.changed.outputs.count != '0'
+        run: |
+          mapfile -t FILES < changed.txt
+          python3 scripts/ci/check-syntax.py "${FILES[@]}" \
+            --findings-out syntax-findings.json
+
+      - name: Post inline review suggestions
+        # Fork PRs get a read-only token and cannot create reviews; they still
+        # receive annotations and the failing check below.
+        if: >-
+          steps.changed.outputs.count != '0' &&
+          github.event.pull_request.head.repo.full_name == github.repository
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          FINDINGS: syntax-findings.json
+        run: python3 scripts/ci/post-review.py
+
+      - name: Fail if problems were found
+        if: steps.changed.outputs.count != '0'
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          findings = json.load(open("syntax-findings.json"))
+          if findings:
+              print(f"{len(findings)} syntax problem(s) found in changed files "
+                    f"- see the annotations and inline comments above.")
+              sys.exit(1)
+          print("All changed files passed syntax validation.")
+          PY
