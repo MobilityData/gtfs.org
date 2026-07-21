@@ -31,14 +31,14 @@ Translations live under `docs/<lang>/` for each supported language. To add or im
    - `source venv/bin/activate`
 1. Install dependencies, including the `mkdocs-materialx` theme (command defined in `Makefile`):
    - `make setup`
-1. To run the site locally (command defined in `MakeFile`):
+1. To run the site locally (command defined in `Makefile`):
    - `make serve`
-   - Then each language will have it's own address:
+   - Then each language will have its own address:
      - English: `http://127.0.0.1:8000/`
      - French: `http://127.0.0.1:8001/`
      - Spanish: `http://127.0.0.1:8002/`
      - Japanese: `http://127.0.0.1:8003/`
-1. To build the site locally only (command defined in `MakeFile`):
+1. To build the site locally only (command defined in `Makefile`):
    - `make build`
 1. Deactivate the Python virtual environment when done:
    - `deactivate`
