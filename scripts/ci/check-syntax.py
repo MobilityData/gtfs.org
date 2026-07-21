@@ -46,6 +46,25 @@ def _finding(path, line, col, message, suggestion=None):
     }
 
 
+def _escape_data(value):
+    """Escape a workflow-command *message*. GitHub decodes these sequences,
+    so untrusted text (e.g. an invalid requirement string from the PR) must be
+    escaped or it could inject additional ::commands. Escape % first so the
+    %0A/%0D we introduce aren't themselves re-escaped."""
+    return (
+        str(value)
+        .replace("%", "%25")
+        .replace("\r", "%0D")
+        .replace("\n", "%0A")
+    )
+
+
+def _escape_property(value):
+    """Escape a workflow-command *property* value (e.g. file). Same as data,
+    plus ':' and ',' which are property delimiters."""
+    return _escape_data(value).replace(":", "%3A").replace(",", "%2C")
+
+
 def check_yaml(path, text):
     """Validate YAML syntax. Uses compose_all, which parses the node graph
     without constructing Python objects — so it tolerates the
@@ -239,9 +258,9 @@ def main():
 
     # Emit GitHub Actions annotations (inline on the Files-changed tab).
     for f in all_findings:
-        msg = f["message"].replace("\n", " ")
         print(
-            f"::error file={f['path']},line={f['line']},col={f['col']}::{msg}"
+            f"::error file={_escape_property(f['path'])},"
+            f"line={f['line']},col={f['col']}::{_escape_data(f['message'])}"
         )
 
     with open(args.findings_out, "w", encoding="utf-8") as handle:
