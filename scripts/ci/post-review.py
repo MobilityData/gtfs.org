@@ -4,7 +4,7 @@ post-review.py — post syntax-check findings as one inline PR review.
 
 Reads the findings JSON produced by check-syntax.py and posts a single review
 (event=COMMENT) whose comments sit on the offending lines, embedding a
-```suggestion block when the finding carries an unambiguous fix.
+``suggestion`` block when the finding carries an unambiguous fix.
 
 Only runs on same-repo PRs (the workflow gates this), because PRs from forks
 get a read-only GITHUB_TOKEN that cannot create reviews. Those PRs still get
@@ -48,17 +48,30 @@ def added_lines(base_sha, head_sha, path):
 
     lines = set()
     new_line = 0
+    in_hunk = False
     for row in result.stdout.splitlines():
         header = HUNK_RE.match(row)
         if header:
             new_line = int(header.group(1))
+            in_hunk = True
             continue
-        if row.startswith("+++"):
+        if not in_hunk:
+            # Pre-hunk header region ("diff --git", "index", "---", "+++").
+            # Skipping here avoids mistaking the "+++ b/path" header for an
+            # added line, while still counting real added lines whose content
+            # begins with "+++" (those only appear after the first hunk).
+            continue
+        if row.startswith("\\"):
+            # "\ No newline at end of file" marker — not a real line, and must
+            # not advance the new-side counter or later hunks desync.
             continue
         if row.startswith("+"):
             lines.add(new_line)
             new_line += 1
-        elif not row.startswith("-"):
+        elif row.startswith("-"):
+            # Deletion — does not exist on the new side; do not advance.
+            continue
+        else:
             # Context line (rare with --unified=0) advances the new counter.
             new_line += 1
     return lines
