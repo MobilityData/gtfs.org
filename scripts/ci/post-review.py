@@ -131,8 +131,18 @@ def post_review(repo, pr_number, token, commit_id, comments):
 
 def main():
     findings_path = os.environ.get("FINDINGS", "syntax-findings.json")
-    with open(findings_path, "r", encoding="utf-8") as handle:
-        findings = json.load(handle)
+    try:
+        with open(findings_path, "r", encoding="utf-8") as handle:
+            findings = json.load(handle)
+    except (OSError, json.JSONDecodeError) as exc:
+        # Best-effort: if the findings file is missing or malformed (e.g. the
+        # checker step errored before writing it), rely on annotations and the
+        # enforce step rather than failing the job from here.
+        print(
+            f"Warning: could not read findings ({exc}); skipping review.",
+            file=sys.stderr,
+        )
+        return 0
     if not findings:
         print("No findings; nothing to post.")
         return 0

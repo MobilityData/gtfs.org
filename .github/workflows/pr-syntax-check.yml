@@ -35,7 +35,13 @@ jobs:
           python-version: '3.11'
 
       - name: Install checker dependencies
-        run: pip install pyyaml packaging
+        # Pin to the exact versions from requirements.txt so the checker's
+        # parser behaviour stays reproducible and in sync with the site build
+        # (requirements.txt is the single source of truth, bumped monthly).
+        run: |
+          pip install \
+            "$(grep -iE '^pyyaml==' requirements.txt)" \
+            "$(grep -iE '^packaging==' requirements.txt)"
 
       - name: Determine changed files
         id: changed

@@ -145,10 +145,12 @@ def check_makefile(path, text):
         # it. Otherwise a tab-indented line in the block would wrongly set
         # in_rule and produce false positives on later space-indented lines.
         if in_define:
-            if re.match(r"\s*endef(\s|$)", raw):
+            # endef ends the block. Leading whitespace before a directive may
+            # only be spaces — a tab would make it a recipe line, not endef.
+            if re.match(r" *endef(\s|$)", raw):
                 in_define = False
             continue
-        if re.match(r"\s*define(\s|$)", raw):
+        if re.match(r" *define(\s|$)", raw):
             in_define = True
             in_rule = False
             continue
