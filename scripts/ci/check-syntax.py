@@ -27,6 +27,7 @@ no suggestion, because the correct repair cannot be guessed reliably.
 import argparse
 import json
 import os
+import re
 import sys
 
 # packaging + pyyaml are installed by the workflow (pip install) before this
@@ -136,8 +137,21 @@ def check_makefile(path, text):
     replaces the leading spaces with a single tab."""
     findings = []
     in_rule = False
+    in_define = False
     lines = text.splitlines()
     for i, raw in enumerate(lines, start=1):
+        # A define ... endef block holds arbitrary text where any indentation
+        # (tabs or spaces) is valid, so skip recipe-indentation checks inside
+        # it. Otherwise a tab-indented line in the block would wrongly set
+        # in_rule and produce false positives on later space-indented lines.
+        if in_define:
+            if re.match(r"\s*endef(\s|$)", raw):
+                in_define = False
+            continue
+        if re.match(r"\s*define(\s|$)", raw):
+            in_define = True
+            in_rule = False
+            continue
         if raw.strip() == "":
             in_rule = False
             continue

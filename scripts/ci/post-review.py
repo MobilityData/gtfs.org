@@ -112,17 +112,21 @@ def post_review(repo, pr_number, token, commit_id, comments):
             "Content-Type": "application/json",
         },
     )
+    # Never fail the workflow on a review-posting problem — annotations and
+    # the enforce step already communicate the failure. HTTPError is caught
+    # first for its response body; OSError covers URLError (DNS/TLS/refused)
+    # and bare timeouts, both of which subclass OSError.
     try:
-        with urllib.request.urlopen(request) as response:
+        with urllib.request.urlopen(request, timeout=30) as response:
             print(f"Posted review ({response.status}) with {len(comments)} comment(s).")
     except urllib.error.HTTPError as exc:
-        # Never fail the workflow on a review-posting problem — annotations
-        # and the enforce step already communicate the failure.
         detail = exc.read().decode("utf-8", "replace")
         print(
             f"Warning: could not post review ({exc.code}): {detail}",
             file=sys.stderr,
         )
+    except OSError as exc:
+        print(f"Warning: could not post review: {exc}", file=sys.stderr)
 
 
 def main():
