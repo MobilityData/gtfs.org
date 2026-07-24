@@ -1,14 +1,14 @@
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
 
 User-agent: Google-Extended
-Disallow: /
+Allow: /
 
 User-agent: Claude-Web
 Allow: /
@@ -20,19 +20,19 @@ User-agent: anthropic-ai
 Allow: /
 
 User-agent: CCBot
-Disallow: /
+Allow: /
 
 User-agent: PerplexityBot
-Disallow: /
+Allow: /
 
 User-agent: Amazonbot
-Disallow: /
+Allow: /
 
 User-agent: Bytespider
-Disallow: /
+Allow: /
 
 User-agent: Applebot-Extended
-Disallow: /
+Allow: /
 
 User-agent: *
 Content-Signal: ai-train=no, search=yes, ai-input=no
