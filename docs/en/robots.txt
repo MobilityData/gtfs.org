@@ -37,3 +37,5 @@ Allow: /
 User-agent: *
 Content-Signal: ai-train=yes, search=yes, ai-input=no
 Allow: /
+
+Sitemap: https://gtfs.org/sitemap.xml
