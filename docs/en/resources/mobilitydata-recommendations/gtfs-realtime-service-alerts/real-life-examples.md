@@ -80,7 +80,7 @@ Published on 28-03-2025
         "agencyId": "1",  
         "routeId": "305"  
       }  
-    `],  
+    ],  
     "cause": "UNKNOWN_CAUSE",  
     "effect": "UNKNOWN_EFFECT",  
     "headerText": {  
@@ -113,36 +113,41 @@ Published on 28-03-2025
 {  
  "agencyId": "1",  
  "routeId": "1",  
- "stopId": "14445", // St George Station - southbound platform`  
+ "stopId": "14445", // St George Station - southbound platform  
 },  
 {  
  "agencyId": "1",  
  "routeId": "1",  
- "stopId": "14446", // Museum Station - southbound platform`  
+ "stopId": "14446", // Museum Station - southbound platform  
 },  
-`…`
+...
 
 {  
  "agencyId": "1",  
  "routeId": "1",  
- "stopId": "14421", // St Andrew Station - southbound platform`  
+ "stopId": "14421", // St Andrew Station - southbound platform  
 },  
 {  
  "agencyId": "1",  
  "routeId": "1",  
- "stopId": "14422", // Osgoode Station - southbound platform`  
+ "stopId": "14422", // Osgoode Station - southbound platform  
 },  
-`...`  
-       `],  
+...  
+       ],  
        "cause": "MAINTENANCE",  
        "effect": "NO_SERVICE",  
-       "activePeriod": [  
- {  
-   "start": ...`  
-   "end": ...`  
- }  
-`],
-
+       "communicationPeriod": [  
+          {  
+            "start": ...  
+            "end": ...
+          }, ...
+        ],
+        "impactPeriod": [  
+          {  
+            "start": ...  
+            "end": ...
+          }, ...
+        ],
        "headerText": {  
          "translation": [  
            {  
@@ -171,6 +176,7 @@ Published on 28-03-2025
 * The cause should be modified to `STRIKE`.  
 * The effect should be modified to `NO_SERVICE`.  
 * The URL mentioned in the description should be included in the `url` field.
+* The fields `communication_period` and `impact_period` should be used instead of `active_period`.
 
 ```  
 {  
@@ -180,7 +186,7 @@ Published on 28-03-2025
      {  
        "start": "1739001600"  
      }  
-   `],  
+   ],  
    "informedEntity": [  
      {  
        "routeId": "2-COW"  
@@ -188,9 +194,9 @@ Published on 28-03-2025
      {  
        "routeId": "3-COW"  
      },  
-	`...`
+	...
 
-   `],  
+   ],  
    "cause": "UNKNOWN_CAUSE",  
    "effect": "OTHER_EFFECT",  
    "headerText": {  
@@ -217,11 +223,23 @@ Published on 28-03-2025
 {  
  "id": "ft-TX1173397",  
  "alert": {  
-   "activePeriod": [  
-     {  
-       "start": "1739001600"  
-     }  
-   `],  
+    "activePeriod": [  <-- You could still keep this field, refer to the migration guide in the GTFS reference.
+      {  
+        "start": "1739001600"  
+      }
+  ],  
+    "communicationPeriod": [  
+      {  
+        "start": ...  
+        "end": ...
+      }, ...
+  ],
+    "impactPeriod": [  
+      {  
+        "start": ...  
+        "end": ...
+      }, ...
+  ],
    "informedEntity": [  
      {  
        "routeId": "2-COW"  
@@ -229,9 +247,9 @@ Published on 28-03-2025
      {  
        "routeId": "3-COW"  
      },  
-	`...`
+	...
 
-   `],  
+   ],  
    "cause": "STRIKE",  
    "effect": "NO_SERVICE",  
    "headerText": {  
@@ -248,7 +266,7 @@ Published on 28-03-2025
        }  
      ]  
    },  
-	`“url”: “https://www.bctransit.com/cowichan-valley”,  
+	“url”: “https://www.bctransit.com/cowichan-valley”,  
  }  
 }  
 ```
@@ -260,6 +278,7 @@ Published on 02-04-2025
 * Really good `informed_entity`, including the exact trip and direction.  
 * The header contains information that can be transferred to the description.  
 * The alert could use a `SIGNIFICANT_DELAYS` effect.
+* The fields `communication_period` and `impact_period` should be used instead of `active_period`.
 
 ```  
 {  
@@ -270,7 +289,7 @@ Published on 02-04-2025
        "start": "1743086220",  
        "end": "1743091200"  
      }  
-   `],  
+   ],  
    "informedEntity": [  
      {  
        "agencyId": "1",  
@@ -279,10 +298,10 @@ Published on 02-04-2025
        "trip": {  
          "tripId": "SPRING2025V2-728425-1231-HaverhillBradfordVan",  
          "routeId": "CR-Haverhill",  
-         "directionId": 0`  
+         "directionId": 0  
        }  
      }  
-   `],  
+   ],  
    "cause": "UNKNOWN_CAUSE",  
    "effect": "OTHER_EFFECT",  
    "headerText": {  
@@ -312,12 +331,24 @@ Published on 02-04-2025
 {  
  "id": "634445",  
  "alert": {  
-   "activePeriod": [  
+    "activePeriod": [  <-- You could still keep this field, refer to the migration guide in the GTFS reference.
      {  
        "start": "1743086220",  
        "end": "1743091200"  
      }  
-   `],  
+  ],  
+    "communicationPeriod": [  
+      {  
+        "start": ...  
+        "end": ...
+      }, ...
+  ],
+    "impactPeriod": [  
+      {  
+        "start": ...  
+        "end": ...
+      }, ...
+  ],
    "informedEntity": [  
      {  
        "agencyId": "1",  
@@ -326,10 +357,10 @@ Published on 02-04-2025
        "trip": {  
          "tripId": "SPRING2025V2-728425-1231-HaverhillBradfordVan",  
          "routeId": "CR-Haverhill",  
-         "directionId": 0`  
+         "directionId": 0  
        }  
      }  
-   `],  
+   ],  
    "cause": "UNKNOWN_CAUSE",  
    "effect": "SIGNIFICANT_DELAYS",  
    "headerText": {  
@@ -359,6 +390,7 @@ Published on 28-03-2025
 
 * The affected stops (if known) should be added to both the description and to informed entities.  
 * Characters like \&nbsp; and \\n should be replaced by plain text counterparts.
+* The fields `communication_period` and `impact_period` should be used instead of `active_period`.
 
 ```  
 {  
@@ -369,7 +401,7 @@ Published on 28-03-2025
        "start": "1743724800",  
        "end": "1743811140"  
      }  
-   `],  
+   ],  
    "informedEntity": [  
      {  
        "routeId": "302"  
@@ -380,7 +412,7 @@ Published on 28-03-2025
      {  
        "stopId": "107046"  
      }  
-   `],  
+   ],  
    "cause": "MAINTENANCE",  
    "effect": "DETOUR",  
    "url": {  
@@ -427,8 +459,9 @@ Published on 28-03-2025
 
 Published on 28-03-2025
 
-* The cause should be modified to `OTHER_CAUSE`.  
+* The cause should be modified to `OTHER_CAUSE`.
 * A description should be added.
+* The fields `communication_period` and `impact_period` should be used instead of `active_period`.
 
 ```  
 {  
@@ -438,14 +471,14 @@ Published on 28-03-2025
      {  
        "start": "1657226640"  
      }  
-   `],  
+   ],  
    "informedEntity": [  
      {  
        "agencyId": "1",  
        "routeId": "102698",  
-       "routeType": 3`  
+       "routeType": 3  
      }  
-   `],  
+   ],  
    "cause": "UNKNOWN_CAUSE",  
    "effect": "NO_SERVICE",  
    "url": {  
@@ -486,6 +519,7 @@ Published on 02-04-2025
 * The `route_id` for the metro should be included in `informed_entity`, along with the unserved segment of stations.  
 * If the replacement bus service does not exist in the GTFS Schedule, it should be added to the GTFS Schedule. If the replacement bus service corresponds to a route in the GTFS and you cannot define the additional trips in the GTFS Schedule, then create it in `tripUpdates` with the `TripDescriptor \= NEW`.  
 * The language codes need to be provided with the header and description text.
+* The fields `communication_period` and `impact_period` should be used instead of `active_period`.
 
 ```  
 {  
@@ -496,7 +530,7 @@ Published on 02-04-2025
        "start": "1743130800",  
        "end": "1762218000"  
      }  
-   `],  
+   ],  
    "url": {},  
    "headerText": {  
      "translation": [  
@@ -533,6 +567,7 @@ Published on 02-04-2025
   * The cause should be added as `WEATHER`.  
   * The effect mentioned is `SIGNIFICANT_DELAYS`. However, the description alludes to closed stops or potentially a detour. Therefore, the description should be clarified along with the effect.  
   * If possible, split the alert into multiple alerts; one for the stop closure or detour, the other for any significant delays that might arise from it.
+  * The fields `communication_period` and `impact_period` should be used instead of `active_period`.
 
 ```  
 {  
@@ -543,13 +578,13 @@ Published on 02-04-2025
        "start": "1743605700",  
        "end": "1743832740"  
      }  
-   `],  
+   ],  
    "informedEntity": [  
      {  
        "agencyId": "Calgary Transit",  
        "routeId": "123"  
      }  
-   `],  
+   ],  
    "headerText": {  
      "translation": [  
        {  
@@ -580,6 +615,7 @@ Published on 02-04-2025
 * The effect should be added as `NO_SERVICE`.  
 * HTML entities like “\</b\>” should be replaced with plain text alternatives.  
 * The “en-html” translation should be removed.
+* The fields `communication_period` and `impact_period` should be used instead of `active_period`.
 
 ```  
 {  
@@ -590,7 +626,7 @@ Published on 02-04-2025
        "start": "1733288400",  
        "end": "1759104000"  
      }  
-   `],  
+   ],  
    "informedEntity": [  
      {  
        "agencyId": "MTA NYCT",  
@@ -600,7 +636,7 @@ Published on 02-04-2025
        "agencyId": "MTA NYCT",  
        "routeId": "SIM6"  
      }  
-   `],  
+   ],  
    "headerText": {  
      "translation": [  
        {  
@@ -638,6 +674,7 @@ Published on 02-04-2025
 * In `informed_entity`, the `stop_id` for the \[7\] platform should be mentioned, the station as well.  
 * “accessibility icon” should be removed, and HTML entities like “\&nbsp;” should be replaced with plain text alternatives.  
 * The “en-html” translation should be removed.
+* The fields `communication_period` and `impact_period` should be used instead of `active_period`.
 
 ```  
 {  
@@ -648,14 +685,14 @@ Published on 02-04-2025
        "start": "1734411600",  
        "end": "1758672000"  
      }  
-   `],  
+   ],  
    "informedEntity": [  
      {  
        "agencyId": "MTABC",  
        "routeId": "Q70+"
 
      }  
-   `],  
+   ],  
    "headerText": {  
      "translation": [  
        {  
@@ -693,6 +730,7 @@ Published on 02-04-2025
 * The alert could also include route 7 in the header. It could also include route 7 in informed entities if the stop is skipped only by route 7\.  
 * The alternate stops should be listed in the alert description.  
 * The URL seems to be a link to the agency’s general alerts page, rather than specific information related to this alert. The URL needs to direct the rider to a page that details the alert or contains information directly related to it.
+* The fields `communication_period` and `impact_period` should be used instead of `active_period`.
 
 ```  
 {  
@@ -702,12 +740,12 @@ Published on 02-04-2025
      {  
        "start": "1736185080"  
      }  
-   `],  
+   ],  
    "informedEntity": [  
      {  
        "stopId": "1717"  
      }  
-   `],  
+   ],  
    "cause": "MAINTENANCE",  
    "effect": "NO_SERVICE",  
    "url": {  
