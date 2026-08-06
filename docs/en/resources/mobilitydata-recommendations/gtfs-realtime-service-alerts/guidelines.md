@@ -6,48 +6,61 @@ In this section, we suggest general practices regarding the use of the Service A
 
 * It is possible to include multiple affected services (routes, stops, etc) per alert if the affected services are part of the same incident and under the same effect (e.g. the same `NO_SERVICE` alert for multiple routes closed due to the same event, or the same `STOP_MOVED` alert for multiple stops moved in bulk due to the same construction). This helps consolidate information for riders under the same alert.  
 * Although `communication_period`, `impact_period`, `cause` and `effect` are not required fields, it is recommended to include these fields in all alerts to provide as much information about the alert as possible.  
-* If more details exist, such as further information about the cause of the alert or the extent of the effect, it is possible to elaborate on them using `cause_detail` and `effect_detail` (Note: `cause_detail` and `effect_detail` are experimental fields).  
+* If more details exist, such as further information about the cause of the alert or the extent of the effect, it is possible to elaborate on them using `cause_detail` and `effect_detail` (Note: `cause_detail` and `effect_detail` are [experimental fields](https://gtfs.org/community/governance/gtfs-realtime-amendment-process/#experimental-fields)).  
 * If a web page with details of the alert exists, such as detailed graphics of detours, it can be included in the `url` field.  
 * If a service disruption is known in advance, add it to the feed prior to its start time.  
-* If an alert is still not in effect yet, consider adding a note in the header. e.g. Add *“Upcoming: “* to the header. Remember to update the Header so it is always accurate at the time a rider sees it.  
-* Once the `communication_period` (or `active_period`) of the alert has passed, remove the alert from the feed. It is possible to have an alert with a `NO_EFFECT` effect that informs the rider that the incident ended. This is not necessary.
+* If an alert is still not in effect yet, consider adding a note in the header such as *“Upcoming: “*. Remember to update the header, so it is always accurate at the time a rider sees it.  
+* Once the `communication_period` (or `active_period`) of the alert has passed, remove the alert from the feed. It is possible to have an alert with a `NO_EFFECT` effect that informs the rider that the incident ended. However, this is not necessary.
+
+## Prioritization of GTFS Schedule
+
+* If the service disruption is planned, try to incorporate the service change in the [GTFS Schedule feed](https://gtfs.org/documentation/schedule/reference/) (eg: remove a closed stop from [`stop_times.txt`](https://gtfs.org/documentation/schedule/reference/#stop_timestxt) for the corresponding trip until the stop is back in service). You can still use GTFS Realtime Service Alerts as a complement to notify users of upcoming disruptions or adjustments.  
+* If the alert is the result of an unplanned short-term event (usually lasting less than one week), you do not need to make adjustments to the corresponding GTFS Schedule.  
+* If the unplanned alert continues over a longer period of time, continue using GTFS Realtime Service Alerts and consider incorporating the service change in the GTFS Schedule feed if the event is expected to last over one month.
+
+For more detailed information regarding the tradeoff between GTFS Schedule and GTFS-RT, visit the **[Realtime vs Schedule Best Practices document](../../../resources/mobilitydata-recommendations/gtfs-schedule-vs-gtfs-realtime.md)**.
 
 ## Cause & Effect
 
-* `Cause` and `effect` should not be empty, even if that information is included in the header or description of the alert.  
+* `cause` and `effect` should not be empty, even if that information is included in the header or description of the alert.  
 * When possible, include a specific effect. Try to minimize the number of unknown or generic effects (`UNKNOWN_EFFECT`, `OTHER_EFFECT`). This allows trip planners to extract the nature of the service disruption without having to analyze the header or description.
 
-## Communication_period and impact_period (previously active_period)
+## Communication Period and Impact Period (previously Active Period)
 
 !!! Note
+    The field `active_period` was used to specify the time periods covered by the alert. However, it was deprecated in [PR\#546](https://github.com/google/transit/pull/546) to resolve the ambiguity around its use. You could still use `active_period` for backward compatibility reasons.
 
-    Prior to `communication_period` and `impact_period`, time periods for alerts were described using `active_period`, which was deprecated in [PR\#546](https://github.com/google/transit/pull/546) to resolve the uncertainty around its use.  
-    Producers can still create `active_period` and consumers can still use it with the same general guidelines mentioned below for `communication_period` and `impact_period`. However, it is recommended to use `communication_period` and `impact_period` to make sure that the display time of the alert is distinct from when it comes into effect.  
-    A migration guide from `active_period` to `communication_period` and `impact_period` can be found in the spec examples [here](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/examples/migration-active-period.md).
+    We recommend the usage of `communication_period` and `impact_period`. Please refer to the migration guide [here](https://github.com/google/transit/blob/master/gtfs-realtime/spec/en/examples/migration-active-period.md) to ensure a smooth transition.
+
+Guidelines specific to `communication_period` and `impact_period`:
 
 * The communication period is the time when the alert should be shown to the user strictly for informative reasons.  
-* The impact period is the time when the services are actually affected by the alert on the ground.  
-* If the end time of the alert is known, include it in the impact period and . Otherwise, leave the end time empty and make sure to include it once it is known.  
-* If the alert is recurrent, create multiple time intervals.  
-* Always make sure that each impact period is contained within at least one communication period to make sure that the alert is communicated to riders during any time the service disruption is in effect. 
+* The impact period is the time when the services are actually affected by the alert on the ground. 
+* Always ensure that each impact period is contained within at least one communication period to ensure that the alert is communicated to riders during any time the service disruption is in effect.
 
-## Informed_entity
+General time period guidelines:
+
+* If the end time of the alert is known, include it in the impact period/active period. Otherwise, leave the end time empty and make sure to include it once it is known.  
+* If the alert is recurrent, create multiple time intervals.
+    * If using `communication_period` and `impact_period`, you could keep a single continuous communication period and multiple time intervals in the impact period. This is done to keep the information available for riders even when the disruption is not happening.
+
+## Informed Entity
 
 * If an incident occurs, first consider setting an alert with the most granular entity possible, and then assess whether additional alerts at higher level entities are necessary.  
-  * e.g. A station serving multiple metro routes is closed for one metro route only due to maintenance. Only the platforms serving that specific route are closed.  
-    * Start by creating a `NO_SERVICE` alert where the `informed_entity` includes the `stop_id` for the metro’s platform, as well as the `route_id` of the metro.  
-    * Then you might be able to create additional alerts with other effects. E.g. For the same example above, you can create an additional `MODIFIED_SERVICE` or `OTHER_EFFECT` alert that informs the riders about the maintenance, and includes the station’s `stop_id` in `informed_entity`.
+    * e.g. A station serving multiple metro routes is closed for one metro route only due to maintenance. Only the platforms serving that specific route are closed.  
+        * Start by creating a `NO_SERVICE` alert where the `informed_entity` includes the `stop_id` for the metro’s platform, as well as the `route_id` of the metro.  
+        * Then you might be able to create additional alerts with other effects. E.g. For the same example above, you can create an additional `MODIFIED_SERVICE` or `OTHER_EFFECT` alert that informs the riders about the maintenance, and includes the station’s `stop_id` in `informed_entity`.
 
 * **If you do not specify the most granular entity, be careful with the effect of the alert and do not set it to `NO_SERVICE`. This is because many consumers might actually use the `NO_SERVICE` alert to not suggest the affected services, which will lead to incorrect journey suggestions for users.**  
-  * e.g. A stop serving multiple routes is skipped by only one of the routes. If you only specify the `stop_id` in `informed_entity` without including `route_id`, then do not set `NO_SERVICE` as the effect. This is because certain consumers might decide to close the stop for all routes based on the information provided in `informed_entity`. You can set an effect such as `MODIFIED_SERVICE`.
+    * e.g. A stop serving multiple routes is skipped by only one of the routes. If you only specify the `stop_id` in `informed_entity` without including `route_id`, then do not set `NO_SERVICE` as the effect. This is because certain consumers might decide to close the stop for all routes based on the information provided in `informed_entity`. You can set an effect such as `MODIFIED_SERVICE`.
 
 * Make sure the informed entities are as granular as possible  
-  * If the alert is for the whole agency, include `agency_id`.  
-  * If the alert is for certain routes, include `route_id`.  
-  * If the alert is along certain directions, include `direction_id`.  
-  * If the alert is for certain stops, include `stop_id`.  
-  * If the alert is along certain directions, and the stop it affects serves multiple directions in the GTFS, include both `stop_id` and `direction_id`.  
-  * If the alert is for certain trips, include `trip_id` using [TripDescriptor](https://gtfs.org/documentation/realtime/reference/#message-tripdescriptor).
+    * If the alert is for the whole agency, include `agency_id`.  
+    * If the alert is for certain routes, include `route_id`.  
+    * If the alert is along certain directions, include `direction_id`.  
+    * If the alert is for certain stops, include `stop_id`.  
+    * If the alert is along certain directions, and the stop it affects serves multiple directions in the GTFS, include both `stop_id` and `direction_id`.  
+    * If the alert is for certain trips, include `trip_id` using [TripDescriptor](https://gtfs.org/documentation/realtime/reference/#message-tripdescriptor).
 
 !!! Note
 
@@ -70,7 +83,7 @@ A decision tree containing major use cases of Service Alerts and the correspondi
 
     Informed Entity can be expanded in the future to allow for the inclusion of other entities such as `pathway_id`. This expansion is subject to ongoing community discussions mainly in the [transit repo](https://github.com/google/transit), or from conversations that start in [working groups](https://community.mobilitydata.org/working-groups#events) and lead to proposals in the transit repo.
 
-## Header_text
+## Header Text
 
 * Keep the header as short as possible, while conveying the message.  
 * Mention the effect in the header in a straightforward way.  
@@ -78,13 +91,13 @@ A decision tree containing major use cases of Service Alerts and the correspondi
 * Do not list multiple alerts in the header text.  
 * While HTML and Markdown characters and tags are UTF-8, it is discouraged to use those characters in the header text, as the spec currently defines the header text as plain text.  
 * Similarly, do not include language codes such as “en-html”, since it is not BCP-47.  
-* Examples of headers:  
-  * ✅”Interrupted Service” (*Can be improved*)  
-  * ✅”Blue Line: No service between Snowdon and Acadie”  
-  * ✅”Orbit Earth Detour between Rio Salado Pkwy./Packard Dr. and Tempe Transportation Center \- Reggae Festival”  
-  * ❌”No service for Subway Line A, buses running for Subway Line K” *(multiple alerts).*
+* Examples of headers 
+    * ✅”Interrupted Service” (*Can be improved*)  
+    * ✅”Blue Line: No service between Snowdon and Acadie”  
+    * ✅”Orbit Earth Detour between Rio Salado Pkwy./Packard Dr. and Tempe Transportation Center \- Reggae Festival”  
+    * ❌”No service for Subway Line A, buses running for Subway Line K” *(multiple alerts).*
 
-## Description_text
+## Description Text
 
 * Do not list multiple alerts in the same alert description.  
 * While HTML and Markdown characters and tags are UTF-8, it is discouraged to use those characters in the description text, as the spec currently defines the description text as plain text.  
@@ -127,28 +140,20 @@ Bad example (MBTA): The alert mentions all needed information in the header and 
 
 ## URL
 
-* Make sure the URL directs to a page that details the alert or contains information directly related to it. E.g. The URL directs to a page containing illustrations of a detour or a moved stop.  
+* Make sure the URL directs to a page that details the alert or contains information directly related to it. For example, the URL directs to a page containing illustrations of a detour or a moved stop.  
 * ِAvoid generic URLs or URLs that direct to pages where the user has to navigate further to find details about the alert.
 
-## Image (experimental*)
+## Image (Experimental)
 
 * The image field contains a URL that links to an image that further details the alert. Examples include: Shape of a detour along a map, new location of a moved stop, etc.  
 * The image must not contain too much text.  
 * The image should not contain new textual information that is not mentioned in the alert header or description.
 
-## Prioritization against GTFS Schedule
-
-* If the service disruption is planned, try to incorporate the service change in the [GTFS Schedule feed](https://gtfs.org/documentation/schedule/reference/) (eg: remove a closed stop from [`stop_times.txt`](https://gtfs.org/documentation/schedule/reference/#stop_timestxt) for the corresponding trip until the stop is back in service). You can still use GTFS Realtime Service Alerts as a complement to notify users of upcoming disruptions or adjustments.  
-* If the alert is the result of an unplanned short-term event (usually lasting less than one week), you do not need to make adjustments to the corresponding GTFS Schedule.  
-* If the unplanned alert continues over a longer period of time, continue using GTFS Realtime Service Alerts and consider incorporating the service change in the GTFS Schedule feed if the event is expected to last over one month.
-
-For more detailed information regarding the tradeoff between GTFS Schedule and GTFS-RT, visit the **[Realtime vs Schedule Best Practices document](../../../resources/mobilitydata-recommendations/gtfs-schedule-vs-gtfs-realtime.md)**.
-
 ## Handling suspicious and ambiguous alerts
 
-Some alerts are ambiguous or incomplete, examples of these alerts include:
+Some alerts are ambiguous or incomplete. Examples of these alerts include:
 
-* An alert with no `impact_period`/ `active_period` when the service disruption has a start time and/or a foreseeable end time.  
+* An alert with no `impact_period`/ `active_period` to indicate the service disruption's start time and/or foreseeable end time.  
 * A `NO_SERVICE` alert with the no informed entity or with the whole `agency_id` as an informed entity.  
 * A `NO_SERVICE` alert describing a segment closure but the informed entities include only the `route_id`.  
 * A `NO_SERVICE` alert describing a platform closure but the `stop_id` for the entire station is provided.  

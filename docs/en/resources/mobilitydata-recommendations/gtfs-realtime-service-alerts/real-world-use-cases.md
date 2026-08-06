@@ -20,16 +20,16 @@ Informed Entity:
 Suggestions:
 
 * Add an alert that clearly mentions:  
-  * That there is a route closure (in the header).  
-  * The name of the affected route (in the header).  
-  * Direction of the affected route if applicable (in the header).  
-  * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).  
-  * If there is any replacement service, include the information (in the description).
+    * That there is a route closure (in the header).  
+    * The name of the affected route (in the header).  
+    * Direction of the affected route if applicable (in the header).  
+    * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).  
+    * If there is any replacement service, include the information (in the description).
 
 * If `tripUpdates` are provided, change `ScheduleRelationship` in the `TripDescriptor` of the affected trips to CANCELED if possible.  
 * If there is any replacement service and it is possible to create, then you can either:  
-  * Create it in the GTFS Schedule feed if the closure is planned or once it extends over time and you have more certainty around the closure.  
-  * If that replacement service corresponds to a route in the GTFS and you cannot define the additional trips in the GTFS Schedule feed, then create it in `tripUpdates` with the `TripDescriptor \= NEW`.
+    * Create it in the GTFS Schedule feed if the closure is planned or once it extends over time and you have more certainty around the closure.  
+    * If that replacement service corresponds to a route in the GTFS and you cannot define the additional trips in the GTFS Schedule feed, then create it in `tripUpdates` with the `TripDescriptor \= NEW`.
 
 !!! Note "Suggested template"
 
@@ -54,21 +54,21 @@ Informed Entity:
 * `route_id`  
 * `direction_id` (if the route is not running along a direction).  
 * `trip_id` using TripDescriptor.  
-  * If the trips are frequency-based, add `start_time` and `start_date` under TripDescriptor to match to a single trip.
+    * If the trips are frequency-based, add `start_time` and `start_date` under TripDescriptor to match to a single trip.
 
 Suggestions:
 
 * Add an alert that clearly mentions:  
-  * That there is a trip cancellation (in the header).  
-  * The name of the affected route (in the header).  
-  * Direction of the affected route if applicable (in the header).  
-  * Human-readable identifier of the cancelled trips if possible, such as the start time (in the description).  
-  * If there is any replacement service, include the information (in the description).
+    * That there is a trip cancellation (in the header).  
+    * The name of the affected route (in the header).  
+    * Direction of the affected route if applicable (in the header).  
+    * Human-readable identifier of the cancelled trips if possible, such as the start time (in the description).  
+    * If there is any replacement service, include the information (in the description).
 
 * If `tripUpdates` are provided, change `ScheduleRelationship` in the `TripDescriptor` of the affected trips to CANCELED if possible.  
 * If there is any replacement service and it is possible to create, then you can either:  
-  * Create it in the GTFS Schedule feed if the closure is planned or once it extends over time and you have more certainty around the closure.  
-  * If that replacement service corresponds to a route in the GTFS and you cannot define the additional trips in the GTFS Schedule feed, then create it in `tripUpdates` with the `TripDescriptor \= NEW`.
+    * Create it in the GTFS Schedule feed if the closure is planned or once it extends over time and you have more certainty around the closure.  
+    * If that replacement service corresponds to a route in the GTFS and you cannot define the additional trips in the GTFS Schedule feed, then create it in `tripUpdates` with the `TripDescriptor \= NEW`.
 
 !!! Note "Suggested template"
 
@@ -94,22 +94,22 @@ Informed Entity:
 * `route_id`  
 * `direction_id` (if the route is not running along a direction).  
 * `stop_id`  
-  * If the bus route is not running from `stop_A` to `stop_B`, include the`route_id`, `direction_id`, and all the `stop_ids` between `stop_A` and `stop_B` along the direction.  
-  * Do not include the first and last stop of the segment in the informed entity if they are not affected by the disruption. Only include the stops of the segment that are actually closed.
+    * If the bus route is not running from `stop_A` to `stop_B`, include the`route_id`, `direction_id`, and all the `stop_ids` between `stop_A` and `stop_B` along the direction.  
+    * Do not include the first and last stop of the segment in the informed entity if they are not affected by the disruption. Only include the stops of the segment that are actually closed.
 
 Suggestions:
 
 * Add an alert that clearly mentions:  
-  * That there is a route segment closure (in the header).  
-  * The name of the affected route (in the header).  
-  * Direction (header) and the extremity stops of the affected segment (in the header and/or description).  
-  * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).  
-  * If there is any replacement service, include the information (in the description).
+    * That there is a route segment closure (in the header).  
+    * The name of the affected route (in the header).  
+    * Direction (header) and the extremity stops of the affected segment (in the header and/or description).  
+    * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).  
+    * If there is any replacement service, include the information (in the description).
 
 * If `tripUpdates` are provided, change `ScheduleRelationship` in the `StopTimeUpdate` of affected `stop_times` of each relevant trip to SKIPPED if possible.  
 * If there is any replacement service and it is possible to create, then you can either:  
-  * Create it in the GTFS Schedule feed if the closure is planned or once it extends over time and you have more certainty around the closure.  
-  * If that replacement service is operated by a pre-existing route and you cannot define it in the GTFS Schedule feed, then create it in `tripUpdates` with the `TripDescriptor \= NEW`.
+    * Create it in the GTFS Schedule feed if the closure is planned or once it extends over time and you have more certainty around the closure.  
+    * If that replacement service is operated by a pre-existing route and you cannot define it in the GTFS Schedule feed, then create it in `tripUpdates` with the `TripDescriptor \= NEW`.
 
 !!! Note "Suggested template"
 
@@ -137,9 +137,9 @@ Informed Entity:
 Suggestions:
 
 * Add an alert that clearly mentions:  
-  * That there is a stop closure (in the header).  
-  * The name of the affected stop or platform (in the header).  
-  * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
+    * That there is a stop closure (in the header).  
+    * The name of the affected stop or platform (in the header).  
+    * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
 * If `tripUpdates` are provided, change ScheduleRelationship in the `StopTimeUpdate` of affected `stop_times` to SKIPPED if possible.  
 * Remove the `stop_id` from the stop time entries in `[stop_times.txt](https://gtfs.org/documentation/schedule/reference/#stop_timestxt)` for trips that serve the closed stop. This is more important if the alert extends over time (weeks to months).  
@@ -170,9 +170,9 @@ Informed Entity:
 Suggestions:
 
 * Add an alert that clearly mentions:  
-  * That there is a station closure (in the header).  
-  * The name of the affected station (in the header).  
-  * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
+    * That there is a station closure (in the header).  
+    * The name of the affected station (in the header).  
+    * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
 * If `tripUpdates` are provided, change `ScheduleRelationship` in the `StopTimeUpdate` of affected `stop_times` to SKIPPED if possible.  
 * Remove the `stop_ids` of the station platforms from the stop time entries in `[stop_times.txt](https://gtfs.org/documentation/schedule/reference/#stop_timestxt)` for trips that serve the closed station. This is more important if the incident extends over time (weeks to months).  
@@ -209,12 +209,12 @@ Suggestions:
 * Do not create a `DETOUR` alert if the detour does not move any stops and only changes the shape of a route. In that case, if the detour causes significant delays, treat the incident as a [`SIGNIFICANT_DELAYS` alert](#strong-delays).
 
 * Add an alert that clearly mentions:  
-  * That there is a detour (in the header).  
-  * The name of the affected route (in the header).  
-  * Direction (in the header)  
-  * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).  
-  * If the detour changes the location of some stops, mention the affected stops or the start and end stops of the affected segment (in the header and/or description).  
-  * If the detour only changes the shape of the route but keeps all stops in their original locations, mention that the no stop is affected (in the header and/or description).
+    * That there is a detour (in the header).  
+    * The name of the affected route (in the header).  
+    * Direction (in the header)  
+    * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).  
+    * If the detour changes the location of some stops, mention the affected stops or the start and end stops of the affected segment (in the header and/or description).  
+    * If the detour only changes the shape of the route but keeps all stops in their original locations, mention that the no stop is affected (in the header and/or description).
 
 * If `tripModifications` are provided, use `tripModifications` to indicate the `stop_ids` of the new stops and their new `stop_times` along with the propagated delay. Consult the [`tripModifications` reference](https://gtfs.org/documentation/realtime/feed-entities/trip-modifications/) for more information.  
 * If the detour is planned, make sure it is reflected in the GTFS Schedule feed. If the detour is unplanned and it extends over time, consider adding it to the GTFS Schedule feed once you have more certainty around it.
@@ -248,12 +248,12 @@ Informed Entity:
 Suggestions:
 
 * Add an alert that clearly mentions:  
-  * That there is a short turn (in the header).  
-  * The name of the affected route (in the header).  
-  * Direction (in the header).  
-  * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).  
-  * The affected trip(s) (in the description).  
-  * The stops that will be skipped due to the short turn (in the header and/or description).
+    * That there is a short turn (in the header).  
+    * The name of the affected route (in the header).  
+    * Direction (in the header).  
+    * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).  
+    * The affected trip(s) (in the description).  
+    * The stops that will be skipped due to the short turn (in the header and/or description).
 
 * If `tripUpdates` are provided, change ScheduleRelationship in the `StopTimeUpdate` of affected `stop_times` to SKIPPED if possible.
 
@@ -283,10 +283,10 @@ Informed Entity:
 Suggestions:
 
 * Add an alert that clearly mentions:  
-  * That the stop is moved (in the header).  
-  * The name of the stop  (in the header).  
-  * The new location of the stop (in the description).  
-  * The time period(s) that the service change spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
+    * That the stop is moved (in the header).  
+    * The name of the stop  (in the header).  
+    * The new location of the stop (in the description).  
+    * The time period(s) that the service change spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
 * The alert might exist even when the stop was changed in the GTFS Schedule feed. (Just for informative reasons; could lead to mismatch issues as no `stop_id` in GTFS).  
 * If the alert is planned or extends over time (weeks to months), consider updating `stops.txt` and `[stop_times.txt](https://gtfs.org/documentation/schedule/reference/#stop_timestxt)` to reflect the new stop.
@@ -331,9 +331,9 @@ Informed Entity:
 Suggestions:
 
 * Add an alert that clearly mentions:  
-  * That there are delays (in the header).  
-  * The name of the affected route(s) (in the header and/or description).  
-  * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
+    * That there are delays (in the header).  
+    * The name of the affected route(s) (in the header and/or description).  
+    * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
 * If `tripUpdates` are provided, make sure that the `StopTimeUpdate` of affected `stop_times`  is adjusted.
 
@@ -364,9 +364,9 @@ Informed Entity:
 Suggestions:
 
 * Add an alert that clearly mentions:  
-  * That there is a special or modified service (in the header).  
-  * The name(s) of the affected route(s) (in the header and/or description).  
-  * The time period(s) that the service change spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
+    * That there is a special or modified service (in the header).  
+    * The name(s) of the affected route(s) (in the header and/or description).  
+    * The time period(s) that the service change spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
 !!! Note "Suggested template"
 
@@ -399,14 +399,14 @@ Informed Entity:
 Suggestions:
 
 * Add an alert that clearly mentions:  
-  * That the service is increased (in the header).  
-  * The name(s) of the affected route(s) (in the header and/or description).  
-  * The time period(s) that the service change spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
+    * That the service is increased (in the header).  
+    * The name(s) of the affected route(s) (in the header and/or description).  
+    * The time period(s) that the service change spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
 * If the additional trips are not added in the GTFS Schedule feed:
 
-  * If `tripUpdates` are provided, and if the service increase is unscheduled and you cannot add to a GTFS Schedule feed before 7 days of the service change: In `tripUpdates`, add the new trips with `ScheduleRelationship` in `TripDescriptor` set as `NEW`.  
-  * Do not overrely on GTFS realtime TripUpdates for adding trips if you can do it in the GTFS Schedule feed.
+    * If `tripUpdates` are provided, and if the service increase is unscheduled and you cannot add to a GTFS Schedule feed before 7 days of the service change: In `tripUpdates`, add the new trips with `ScheduleRelationship` in `TripDescriptor` set as `NEW`.  
+    * Do not overrely on GTFS realtime TripUpdates for adding trips if you can do it in the GTFS Schedule feed.
 
 !!! Note "Suggested template"
 
@@ -434,14 +434,14 @@ Informed Entity:
 Suggestions:
 
 * Add an alert that clearly mentions:  
-  * That the service is reduced (in the header).  
-  * The name(s) of the affected route(s) (in the header and/or description).  
-  * The time period(s) that the service change spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
+    * That the service is reduced (in the header).  
+    * The name(s) of the affected route(s) (in the header and/or description).  
+    * The time period(s) that the service change spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
 * If the removed trips are not removed in the GTFS Schedule feed:
 
-  * If `tripUpdates` are provided, and if the service cut is unscheduled and you cannot remove them from a GTFS Schedule feed before 7 days of the service change: In `tripUpdates`, change `ScheduleRelationship` in `TripDescriptor` of the affected trips to CANCELED if possible.  
-  * Do not overrely on GTFS realtime TripUpdates for removing trips if you can do it in the GTFS Schedule feed.
+    * If `tripUpdates` are provided, and if the service cut is unscheduled and you cannot remove them from a GTFS Schedule feed before 7 days of the service change: In `tripUpdates`, change `ScheduleRelationship` in `TripDescriptor` of the affected trips to CANCELED if possible.  
+    * Do not overrely on GTFS realtime TripUpdates for removing trips if you can do it in the GTFS Schedule feed.
 
 !!! Note "Suggested template"
 
@@ -472,16 +472,16 @@ Informed Entity:
 Suggestions:
 
 * Add an alert that clearly mentions:  
-  * That there is an accessibility issue (in the header).  
-  * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).  
-  * If the accessibility issue occurs on a vehicle  
-    * Mention the name(s) of the affected route(s) (in the header and/or description).  
-    * Mention the direction of the affected route(s) (in the header and/or description).  
-    * Mention an identifier of the exact trip on which the accessibility issue occurs if applicable (in the description).  
-  * If the accessibility issue occurs in a station  
-    * Mention the name of the affected station (in the header and/or description).  
-    * Mention the platforms to which the access will be affected (in the description).  
-    * Mention the exact pathway (elevator, ramp, etc) that was affected (in the description).
+    * That there is an accessibility issue (in the header).  
+    * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).  
+    * If the accessibility issue occurs on a vehicle  
+        * Mention the name(s) of the affected route(s) (in the header and/or description).  
+        * Mention the direction of the affected route(s) (in the header and/or description).  
+        * Mention an identifier of the exact trip on which the accessibility issue occurs if applicable (in the description).  
+    * If the accessibility issue occurs in a station  
+        * Mention the name of the affected station (in the header and/or description).  
+        * Mention the platforms to which the access will be affected (in the description).  
+        * Mention the exact pathway (elevator, ramp, etc) that was affected (in the description).
 
 !!! Note "Suggested template"
 
