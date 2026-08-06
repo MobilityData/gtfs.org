@@ -4,6 +4,7 @@ repo_url: https://github.com/google/transit
 repo_name: Репозиторий GTFS
 docs_dir: ../../docs/ru       # Where to find the markdown files
 site_dir: ../../generated/ru  # Where to put the HTML files
+edit_uri: edit/main/docs/
 
 validation:
   nav:
@@ -21,12 +22,13 @@ theme:
   logo: assets/images/logo.png
   logo_light_mode: assets/images/logo.png
   favicon: assets/images/favicon.ico
+  topbar_style: glass
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: gtfs
       primary: custom
       accent: custom
-  name: material
+  name: materialx
   font:
     text: Mulish
     code: SF Mono

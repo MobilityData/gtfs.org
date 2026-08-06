@@ -4,6 +4,7 @@ repo_url: https://github.com/google/transit
 repo_name: GTFSリポジトリ
 docs_dir: ../../docs/ja       # Where to find the markdown files
 site_dir: ../../generated/ja  # Where to put the HTML files
+edit_uri: edit/main/docs/ja/
 
 validation:
   nav:
@@ -21,12 +22,13 @@ theme:
   logo: assets/images/logo.png
   logo_light_mode: assets/images/logo.png
   favicon: assets/images/favicon.ico
+  topbar_style: glass
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: gtfs
       primary: custom
       accent: custom
-  name: material
+  name: materialx
   font:
     text: Mulish
     code: SF Mono
@@ -38,6 +40,7 @@ theme:
     - content.tabs.link
     - search.suggest
     - announce.dismiss
+    - content.action.agents
   icon:
     repo: fontawesome/brands/github
 extra_css:
@@ -206,6 +209,7 @@ nav:
         - サービスアラート: documentation/realtime/examples/service-alerts.md
         - 旅行最新情報: documentation/realtime/examples/trip-updates.md
         - 重複した移行: documentation/realtime/examples/migration-duplicated.md
+        - 移行ガイド Active Period: documentation/realtime/examples/migration-active-period.md
       - 変更履歴:
         - 最近の追加: documentation/realtime/change-history/recent-additions.md
         - 完全な改訂履歴: documentation/realtime/change-history/revision-history.md

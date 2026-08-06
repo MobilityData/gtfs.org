@@ -2,6 +2,10 @@
 
 ### Historique des révisions
 
+#### Juin 2026
+* Ajout de deux nouveaux champs dans Service Alerts: `communication_period` et `impact_period` pour mieux définir active_period. Voir [discussion](https://github.com/google/transit/pull/546)
+* Ajout d'une nouvelle cause SPECIAL_EVENT à la liste des causes dans Service Alerts. Voir [discussion](https://github.com/google/transit/pull/577)
+
 #### Avril 2026 
 * Correction de fautes de frappe dans gtfs-realtime.proto. Voir [discussion](https://github.com/google/transit/pull/541). 
 

@@ -14,11 +14,11 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4.1.7
+        uses: actions/checkout@v7.0.0
 
       - name: Load secrets from 1Password
         id: onepw_secrets
-        uses: 1password/load-secrets-action@v2.0.0
+        uses: 1password/load-secrets-action@v4.0.1
         with:
             export-env: true # Export loaded secrets as environment variables
         env:
@@ -60,6 +60,6 @@ jobs:
         uses: dacbd/create-issue-action@v2.0.0
         with:
           token: ${{ env.GITHUB_TOKEN }}
-          assignees: Sergiodero
+          assignees: abigailmbd
           title: ${{ steps.parse-output.outputs.issue_title }}
           body: ${{ steps.parse-output.outputs.issue_body }}

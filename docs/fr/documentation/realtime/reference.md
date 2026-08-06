@@ -363,7 +363,9 @@ Une alerte, indiquant une sorte d’incident dans le réseau de transport en com
 
 | _**Nom du champ**_ | _**Tapez**_ | _**Requis**_ | _**Cardinalité**_ | _**Description**_ | 
 |--------|------------|----------------|----------------------------------|-------------------| 
-| **active_period** | [TimeRange](#message-timerange) | Optionnel | Plusieurs | Heure à laquelle l’alerte doit être affichée à l'utilisateur. En cas d’absence, l’alerte sera affichée tant qu’elle apparaîtra dans le flux. Si plusieurs plages sont données, l’alerte sera affichée pendant chacune d’elles. | 
+| **active_period** | [TimeRange](#message-timerange) | Optionnel | Plusieurs | Période pendant laquelle l’alerte doit être affichée à l’ utilisateur·rice. Si cette valeur est manquante, l’alerte sera affichée tant qu’elle apparaît dans le flux. Si plusieurs plages sont spécifiées, l’alerte sera affichée pendant chacune d’elles. | 
+| **communication_period** | [TimeRange](#message-timerange) | Optionnel | Plusieurs | Période pendant laquelle l’alerte doit être affichée à l’ utilisateur·rice à titre purement informatif. Si cette valeur est manquante, l’application consommatrice peut décider du moment opportun pour l’affichage. Si plusieurs plages sont spécifiées, l’alerte sera affichée pendant chacune d’elles. | 
+| **impact_period** | [TimeRange](#message-timerange) | Optionnel | Plusieurs | Période pendant laquelle les services sont affectés par l’alerte. Si `communication_period` est spécifié, chaque intervalle de temps de `impact_period` doit être entièrement inclus dans au moins un intervalle de temps de `communication_period.` | 
 | **informed_entity** | [EntitySelector](#message-entityselector) | Requis | Plusieurs | Entités dont nous devons informer les utilisateurs de cette alerte. Au moins une entité informée doit être fournie. | 
 | **cause** | [Cause](#enum-cause) | Requis sous condition | Un | Si cause_detail est inclus, alors Cause doit également être inclus. 
 | **cause_detail** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Description de la cause de l’alerte qui permet d’utiliser un langage spécifique à l’agence ; plus spécifique que la Cause. Si cause_detail est inclus, alors Cause doit également être inclus.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. 
@@ -398,7 +400,8 @@ Cause de cette alerte.
 | **MAINTENANCE** | 
 | **CONSTRUCTION** | 
 | **POLICE_ACTIVITY** | 
-| **MEDICAL_EMERGENCY** | 
+| **MEDICAL_EMERGENCY** |
+| **SPECIAL_EVENT** | 
 
 ### _enum_ Effect 
 

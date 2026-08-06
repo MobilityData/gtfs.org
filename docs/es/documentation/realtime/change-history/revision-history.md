@@ -2,10 +2,17 @@
 
 ## Historial de revisiones
 
-#### Abril 2026 
+#### Junio 2026
+
+* Se agregaron dos nuevos campos en Alerts: `communication_period` e `impact_period` para definir mejor `active_period`. Consulte la [discusión](https://github.com/google/transit/pull/546)
+* Se agregó una nueva causa SPECIAL_EVENT a la lista de causas en Service Alerts. Consulte la [discusión](https://github.com/google/transit/pull/577)
+
+#### Abril 2026
+
 * Se corrigieron errores tipográficos en gtfs-realtime.proto. Consulte [discusión](https://github.com/google/transit/pull/541). 
 
-#### Febrero de 2026 
+#### Febrero de 2026
+
 * Se corrigió el requisito de trip_ids y la cardinalidad para selectedTrips. Consulte la [discusión](https://github.com/google/transit/pull/609). 
 * Se añadieron los espacios faltantes. Consulte la [discusión](https://github.com/google/transit/pull/587).
 
@@ -13,7 +20,6 @@
 
 * Se deprecia schedule_relationship `ADDED` en favor de `NEW` y se añade `REPLACEMENT`. Consulte la [discusión](https://github.com/google/transit/pull/504).
 * Más aclaraciones sobre las modificaciones de viajes (Trip Modifications). Consulte la [discusión](https://github.com/google/transit/pull/542).
-
 
 #### Diciembre de 2024
 
