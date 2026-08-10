@@ -142,8 +142,8 @@ Suggestions:
     * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
 * If `tripUpdates` are provided, change ScheduleRelationship in the `StopTimeUpdate` of affected `stop_times` to SKIPPED if possible.  
-* Remove the `stop_id` from the stop time entries in `[stop_times.txt](https://gtfs.org/documentation/schedule/reference/#stop_timestxt)` for trips that serve the closed stop. This is more important if the alert extends over time (weeks to months).  
-* If it is certain that the stop is going to be permanently closed, remove it from the GTFS Schedule feed. Otherwise, you do not need to remove the stop from `[stops.txt](https://gtfs.org/documentation/schedule/reference/#stopstxt)`. 
+* Remove the `stop_id` from the stop time entries in [`stop_times.txt`](https://gtfs.org/documentation/schedule/reference/#stop_timestxt) for trips that serve the closed stop. This is more important if the alert extends over time (weeks to months).  
+* If it is certain that the stop is going to be permanently closed, remove it from the GTFS Schedule feed. Otherwise, you do not need to remove the stop from [`stops.txt`](https://gtfs.org/documentation/schedule/reference/#stopstxt). 
 
 !!! Note "Suggested template"
 
@@ -175,8 +175,8 @@ Suggestions:
     * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
 * If `tripUpdates` are provided, change `ScheduleRelationship` in the `StopTimeUpdate` of affected `stop_times` to SKIPPED if possible.  
-* Remove the `stop_ids` of the station platforms from the stop time entries in `[stop_times.txt](https://gtfs.org/documentation/schedule/reference/#stop_timestxt)` for trips that serve the closed station. This is more important if the incident extends over time (weeks to months).  
-* If it is certain that the station is going to be permanently closed, remove it and its child stops from the GTFS Schedule feed. Otherwise, you do not need to remove the station and its stops from `[stops.txt](https://gtfs.org/documentation/schedule/reference/#stopstxt)`.
+* Remove the `stop_ids` of the station platforms from the stop time entries in [`stop_times.txt`](https://gtfs.org/documentation/schedule/reference/#stop_timestxt) for trips that serve the closed station. This is more important if the incident extends over time (weeks to months).  
+* If it is certain that the station is going to be permanently closed, remove it and its child stops from the GTFS Schedule feed. Otherwise, you do not need to remove the station and its stops from [`stops.txt`](https://gtfs.org/documentation/schedule/reference/#stopstxt).
 
 !!! Note "Suggested template"
 
@@ -289,7 +289,7 @@ Suggestions:
     * The time period(s) that the service change spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
 * The alert might exist even when the stop was changed in the GTFS Schedule feed. (Just for informative reasons; could lead to mismatch issues as no `stop_id` in GTFS).  
-* If the alert is planned or extends over time (weeks to months), consider updating `stops.txt` and `[stop_times.txt](https://gtfs.org/documentation/schedule/reference/#stop_timestxt)` to reflect the new stop.
+* If the alert is planned or extends over time (weeks to months), consider updating [`stops.txt`](https://gtfs.org/documentation/schedule/reference/#stopstxt) and [`stop_times.txt`](https://gtfs.org/documentation/schedule/reference/#stop_timestxt) to reflect the new stop.
 
 !!! Note "Suggested template"
 
