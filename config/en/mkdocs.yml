@@ -138,6 +138,8 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
+  - pymdownx.highlight:
+      anchor_linenums: true
   - pymdownx.tabbed:
       alternate_style: true 
 plugins:
@@ -146,9 +148,7 @@ plugins:
       assets: false
       links_attr_map:
         target: _blank
-  - search:
-      lang: 
-        - en
+  - search
   - blog:
       enabled: true
       archive: false
@@ -269,8 +269,8 @@ nav:
       - GTFS Realtime Service Alerts:
         - Introduction: resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/intro.md
         - Guidelines: resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/guidelines.md
-        - Real-world Use Cases: resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/real-world-use-cases.md
-        - Real-life Examples: resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/real-life-examples.md
+        - Real-life Use Cases: resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/real-life-use-cases.md
+        - Real-world Examples: resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/real-world-examples.md
     - Producing Data: resources/producing-data.md
     - Sharing Data: resources/sharing-data.md
     - Using Data: resources/using-data.md
