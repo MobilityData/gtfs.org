@@ -123,7 +123,7 @@ Bad example (MBTA): The alert mentions all needed information in the header and 
 "headerText": {
  "translation": [
    { 
-     `"text": "Haverhill Line Train 1231 (10:25 am from North Station) is operating 10-20 minutes behind schedule between North Station and Reading due to a signal issue.",
+     "text": "Haverhill Line Train 1231 (10:25 am from North Station) is operating 10-20 minutes behind schedule between North Station and Reading due to a signal issue.",
      "language": "en"
    }
  ]
@@ -141,7 +141,7 @@ Bad example (MBTA): The alert mentions all needed information in the header and 
 ## URL
 
 * Make sure the URL directs to a page that details the alert or contains information directly related to it. For example, the URL directs to a page containing illustrations of a detour or a moved stop.  
-* ِAvoid generic URLs or URLs that direct to pages where the user has to navigate further to find details about the alert.
+* Avoid generic URLs or URLs that direct to pages where the user has to navigate further to find details about the alert.
 
 ## Image (Experimental)
 
