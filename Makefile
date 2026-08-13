@@ -7,7 +7,7 @@ clean:
 
 setup:
 	pip3 install --force-reinstall -r requirements.txt && \
-	pip3 install --upgrade --force-reinstall mkdocs-material
+	pip3 install --upgrade --force-reinstall mkdocs-materialx
 
 serve:
 	make clean
