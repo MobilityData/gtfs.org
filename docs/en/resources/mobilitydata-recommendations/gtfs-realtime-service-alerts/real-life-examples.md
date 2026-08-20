@@ -7,8 +7,8 @@ In this example, we present examples of Service Alerts that were created for rea
 Published on 28-03-2025
 
 * The header is badly formatted. It seems to continue into the description.   
-* The header should be modified to "Line 1 Yonge-University: No service between St George and St Andrew".  
-* The description should be finished: "Service will resume…"  
+* The header should be modified to “Line 1 Yonge-University: No service between St George and St Andrew”.  
+* The description should be finished: “Service will resume…”  
 * The effect should be modified to `MODIFIED_SERVICE`.  
   * Do not set `NO_SERVICE` as this effect is currently generally concerned with stop and platform closures. In this case, it seems like the trip is effectively split in the middle into two separate trips.  
 * The cause should be modified to `MAINTENANCE`.  
@@ -172,7 +172,7 @@ Published on 28-03-2025
 
 Published on 28-03-2025
 
-* The header should be expanded: "No service in the Cowichan Valley due to Labour action."   
+* The header should be expanded: “No service in the Cowichan Valley due to Labour action.”   
 * The cause should be modified to `STRIKE`.  
 * The effect should be modified to `NO_SERVICE`.  
 * The URL mentioned in the description should be included in the `url` field.
@@ -266,7 +266,7 @@ Published on 28-03-2025
        }  
      ]  
    },  
-	"url": "https://www.bctransit.com/cowichan-valley",  
+	“url”: “https://www.bctransit.com/cowichan-valley”,  
  }  
 }  
 ```
@@ -609,12 +609,12 @@ Published on 02-04-2025
 
 Published on 02-04-2025
 
-* The header is much longer than the description. The second part of the header " \- use the stops on Lexington Ave at E 53rd St or E 41st St instead" can be transferred to the description.  
-* The `stop_id` for Lexington Ave at E 46th St should be added to each entity in informed entities, to specify that the alert is only applied to the affected routes at the "Lexington Ave at E 46th St " stop only. If the affected routes are the only routes that use that stop, then the `route_ids` are not necessary to include.  
+* The header is much longer than the description. The second part of the header “ \- use the stops on Lexington Ave at E 53rd St or E 41st St instead” can be transferred to the description.  
+* The `stop_id` for Lexington Ave at E 46th St should be added to each entity in informed entities, to specify that the alert is only applied to the affected routes at the “Lexington Ave at E 46th St “ stop only. If the affected routes are the only routes that use that stop, then the `route_ids` are not necessary to include.  
 * The cause should be added as `CONSTRUCTION`.  
 * The effect should be added as `NO_SERVICE`.  
-* HTML entities like "\</b\>" should be replaced with plain text alternatives.  
-* The "en-html" translation should be removed.
+* HTML entities like “\</b\>” should be replaced with plain text alternatives.  
+* The “en-html” translation should be removed.
 * The fields `communication_period` and `impact_period` should be used instead of `active_period`.
 
 ```  
@@ -672,8 +672,8 @@ Published on 02-04-2025
 * The effect should be modified to `ACCESSIBILITY_ISSUE`.  
 * The cause should be modified to `MAINTENANCE` or `CONSTRUCTION`.  
 * In `informed_entity`, the `stop_id` for the \[7\] platform should be mentioned, the station as well.  
-* "accessibility icon" should be removed, and HTML entities like "\&nbsp;" should be replaced with plain text alternatives.  
-* The "en-html" translation should be removed.
+* “accessibility icon” should be removed, and HTML entities like “\&nbsp;” should be replaced with plain text alternatives.  
+* The “en-html” translation should be removed.
 * The fields `communication_period` and `impact_period` should be used instead of `active_period`.
 
 ```  

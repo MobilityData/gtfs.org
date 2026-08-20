@@ -29,11 +29,11 @@ Suggestions:
 * If `tripUpdates` are provided, change `ScheduleRelationship` in the `TripDescriptor` of the affected trips to CANCELED if possible.  
 * If there is any replacement service and it is possible to create, then you can either:  
     * Create it in the GTFS Schedule feed if the closure is planned or once it extends over time and you have more certainty around the closure.  
-    * If that replacement service corresponds to a route in the GTFS and you cannot define the additional trips in the GTFS Schedule feed, then create it in `tripUpdates` with the `TripDescriptor = NEW`.
+    * If that replacement service corresponds to a route in the GTFS and you cannot define the additional trips in the GTFS Schedule feed, then create it in `tripUpdates` with the `TripDescriptor \= NEW`.
 
 !!! Note "Suggested template"
 
-    Header: “Service interrupted on route `{route name}`”
+    Header: “ Service interrupted on route `{route name}`”
 
     Description: “Due to {cause}, service is suspended on route/line `{route name}` from`{start time}` to `{end time if applicable}`. Please use `{replacement suggestion}` instead.”
 
@@ -72,7 +72,7 @@ Suggestions:
 
 !!! Note "Suggested template"
 
-    Header: “Trips cancelled on route `{route name}`”
+    Header: “ Trips cancelled on route `{route name}`”
 
     Description: “Due to {cause}, a few trips are cancelled on `{direction}` route/line `{route name}`. The current trips are affected `{human-readable trip identifier, e.g. start time}`. Please use `{replacement suggestion}` instead.”
 
@@ -142,8 +142,8 @@ Suggestions:
     * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
 * If `tripUpdates` are provided, change ScheduleRelationship in the `StopTimeUpdate` of affected `stop_times` to SKIPPED if possible.  
-* Remove the `stop_id` from the stop time entries in [`stop_times.txt`](https://gtfs.org/documentation/schedule/reference/#stop_timestxt) for trips that serve the closed stop. This is more important if the alert extends over time (weeks to months).  
-* If it is certain that the stop is going to be permanently closed, remove it from the GTFS Schedule feed. Otherwise, you do not need to remove the stop from [`stops.txt`](https://gtfs.org/documentation/schedule/reference/#stopstxt). 
+* Remove the `stop_id` from the stop time entries in `[stop_times.txt](https://gtfs.org/documentation/schedule/reference/#stop_timestxt)` for trips that serve the closed stop. This is more important if the alert extends over time (weeks to months).  
+* If it is certain that the stop is going to be permanently closed, remove it from the GTFS Schedule feed. Otherwise, you do not need to remove the stop from `[stops.txt](https://gtfs.org/documentation/schedule/reference/#stopstxt)`. 
 
 !!! Note "Suggested template"
 
@@ -175,8 +175,8 @@ Suggestions:
     * The time period(s) that the service disruption spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
 * If `tripUpdates` are provided, change `ScheduleRelationship` in the `StopTimeUpdate` of affected `stop_times` to SKIPPED if possible.  
-* Remove the `stop_ids` of the station platforms from the stop time entries in [`stop_times.txt`](https://gtfs.org/documentation/schedule/reference/#stop_timestxt) for trips that serve the closed station. This is more important if the incident extends over time (weeks to months).  
-* If it is certain that the station is going to be permanently closed, remove it and its child stops from the GTFS Schedule feed. Otherwise, you do not need to remove the station and its stops from [`stops.txt`](https://gtfs.org/documentation/schedule/reference/#stopstxt).
+* Remove the `stop_ids` of the station platforms from the stop time entries in `[stop_times.txt](https://gtfs.org/documentation/schedule/reference/#stop_timestxt)` for trips that serve the closed station. This is more important if the incident extends over time (weeks to months).  
+* If it is certain that the station is going to be permanently closed, remove it and its child stops from the GTFS Schedule feed. Otherwise, you do not need to remove the station and its stops from `[stops.txt](https://gtfs.org/documentation/schedule/reference/#stopstxt)`.
 
 !!! Note "Suggested template"
 
@@ -289,7 +289,7 @@ Suggestions:
     * The time period(s) that the service change spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
 * The alert might exist even when the stop was changed in the GTFS Schedule feed. (Just for informative reasons; could lead to mismatch issues as no `stop_id` in GTFS).  
-* If the alert is planned or extends over time (weeks to months), consider updating [`stops.txt`](https://gtfs.org/documentation/schedule/reference/#stopstxt) and [`stop_times.txt`](https://gtfs.org/documentation/schedule/reference/#stop_timestxt) to reflect the new stop.
+* If the alert is planned or extends over time (weeks to months), consider updating `stops.txt` and `[stop_times.txt](https://gtfs.org/documentation/schedule/reference/#stop_timestxt)` to reflect the new stop.
 
 !!! Note "Suggested template"
 
@@ -310,7 +310,7 @@ Suggestions:
 * In `tripUpdates`, make sure that the `StopTimeUpdate` of affected `stop_times` is adjusted.  
 * Insignificant delays should be in `tripUpdates`, do not create an alert.
 
----
+  ---
 
 ## Strong Delays
 
@@ -339,7 +339,7 @@ Suggestions:
 
 !!! Note "Suggested template"
 
-    Header: “Delayed service on route `{route name}`”
+    Header: “ Delayed service on route `{route name}`”
 
     Description: “Due to {cause}, route/line `{route name}` is experiencing delays up to `{estimated current delay}`.”
 
@@ -370,7 +370,7 @@ Suggestions:
 
 !!! Note "Suggested template"
 
-    Header: “Schedule adjustment for `{route names} from `{start time}` to {end time if applicable}`”
+    Header: “ Schedule adjustment for `{route names} from `{start time}` to {end time if applicable}`”
 
     Description: “Due to {cause: new service, short term change}, service is adjusted for `{routes names}` from `{start time}` to {end time if applicable}. Please refer to our website `{URL (also included in the URL field)}` for further details.”
 
@@ -410,7 +410,7 @@ Suggestions:
 
 !!! Note "Suggested template"
 
-    Header: “More trips running for `{route names}`”
+    Header: “ More trips running for `{route names}`”
 
     Description: “Due to `{cause: new service, short term change}`, more departures will run for `{routes names}` starting `{start time}` until `{end time if applicable}`. Please refer to our website `{URL (also included in the URL field)}` for further details.”
 
@@ -445,7 +445,7 @@ Suggestions:
 
 !!! Note "Suggested template"
 
-    Header: “Fewer trips running for `{route names}`”
+    Header: “ Fewer trips running for `{route names}`”
 
     Description: “Due to {cause: new service, short term change}, fewer departures will run for `{routes names}` starting `{start time}` until {end time if applicable}. Please refer to our website `{URL (also included in the URL field)}` for further details.”
 
@@ -491,6 +491,6 @@ Suggestions:
 
 !!! Note "Suggested template"
 
-    Header: “`{route names}`: The vehicle on {human-readable trip identifier. e.g. trip start time} is not accessible”
+    Header: “ `{route names}`: The vehicle on {human-readable trip identifier. e.g. trip start time} is not accessible”
 
     Description: “Due to `{cause: e.g. mechanical error}`, the vehicle operating under `{route names}` on the trip `{human-readable trip identifier}` is not  accessible.”
