@@ -1,3 +1,5 @@
+<div class="hollow-nested" markdown="1">
+
 # Guidelines
 
 In this section, we suggest general practices regarding the use of the Service Alerts feed.
@@ -41,18 +43,23 @@ Guidelines specific to `communication_period` and `impact_period`:
 General time period guidelines:
 
 * If the end time of the alert is known, include it in the impact period/active period. Otherwise, leave the end time empty and make sure to include it once it is known.  
-* If the alert is recurrent, create multiple time intervals.
-    * If using `communication_period` and `impact_period`, you could keep a single continuous communication period and multiple time intervals in the impact period. This is done to keep the information available for riders even when the disruption is not happening.
+* If the alert is recurrent, create multiple time intervals. If using `communication_period` and `impact_period`, you could keep a single continuous communication period and multiple time intervals in the impact period. This is done to keep the information available for riders even when the disruption is not happening.
 
 ## Informed Entity
 
+!!! Tip
+
+    To supplement this theoretical section with practical examples, please consult informed entities in the next section, [Real-life Use Cases](../../../../resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/real-life-use-cases).
+
+
 * If an incident occurs, first consider setting an alert with the most granular entity possible, and then assess whether additional alerts at higher level entities are necessary.  
-    * e.g. A station serving multiple metro routes is closed for one metro route only due to maintenance. Only the platforms serving that specific route are closed.  
-        * Start by creating a `NO_SERVICE` alert where the `informed_entity` includes the `stop_id` for the metro’s platform, as well as the `route_id` of the metro.  
-        * Then you might be able to create additional alerts with other effects. E.g. For the same example above, you can create an additional `MODIFIED_SERVICE` or `OTHER_EFFECT` alert that informs the riders about the maintenance, and includes the station’s `stop_id` in `informed_entity`.
+<br>**Example**: A station serving multiple metro routes is closed for one metro route only due to maintenance. Only the platforms serving that specific route are closed. 
+
+    * Start by creating a `NO_SERVICE` alert where the `informed_entity` includes the `stop_id` for the metro’s platform, as well as the `route_id` of the metro.
+    * Then you might be able to create additional alerts with other effects. E.g. For the same example above, you can create an additional `MODIFIED_SERVICE` or `OTHER_EFFECT` alert that informs the riders about the maintenance, and includes the station’s `stop_id` in `informed_entity`.
 
 * **If you do not specify the most granular entity, be careful with the effect of the alert and do not set it to `NO_SERVICE`. This is because many consumers might actually use the `NO_SERVICE` alert to not suggest the affected services, which will lead to incorrect journey suggestions for users.**  
-    * e.g. A stop serving multiple routes is skipped by only one of the routes. If you only specify the `stop_id` in `informed_entity` without including `route_id`, then do not set `NO_SERVICE` as the effect. This is because certain consumers might decide to close the stop for all routes based on the information provided in `informed_entity`. You can set an effect such as `MODIFIED_SERVICE`.
+    <br>**Example**: A stop serving multiple routes is skipped by only one of the routes. If you only specify the `stop_id` in `informed_entity` without including `route_id`, then do not set `NO_SERVICE` as the effect. This is because certain consumers might decide to close the stop for all routes based on the information provided in `informed_entity`. You can set an effect such as `MODIFIED_SERVICE`.
 
 * Make sure the informed entities are as granular as possible  
     * If the alert is for the whole agency, include `agency_id`.  
@@ -62,7 +69,7 @@ General time period guidelines:
     * If the alert is along certain directions, and the stop it affects serves multiple directions in the GTFS, include both `stop_id` and `direction_id`.  
     * If the alert is for certain trips, include `trip_id` using [TripDescriptor](https://gtfs.org/documentation/realtime/reference/#message-tripdescriptor).
 
-!!! Note
+!!! Info
 
     Currently, `direction_id` is still an experimental field.
 
@@ -79,9 +86,9 @@ A decision tree containing major use cases of Service Alerts and the correspondi
 </div>
 <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGvUIUG_YQ&#x2F;XrgB7cCqySAB0H4OlMDdjg&#x2F;view?utm_content=DAGvUIUG_YQ&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">[MobilityData][Public] Decision tree for informed_entities</a>
 
-!!! Note
+!!! Info
 
-    Informed Entity can be expanded in the future to allow for the inclusion of other entities such as `pathway_id`. This expansion is subject to ongoing community discussions mainly in the [transit repo](https://github.com/google/transit), or from conversations that start in [working groups](https://community.mobilitydata.org/working-groups#events) and lead to proposals in the transit repo.
+    Informed Entity could be expanded in the future to allow for the inclusion of other entities such as `pathway_id`. This expansion is subject to ongoing community discussions mainly in the [transit repo](https://github.com/google/transit), or from conversations that start in [working groups](https://community.mobilitydata.org/working-groups#events) and lead to proposals in the transit repo.
 
 ## Header Text
 
@@ -90,23 +97,23 @@ A decision tree containing major use cases of Service Alerts and the correspondi
 * It is possible to add the time period and the cause of the alert in the header if they do not make the header too long.  
 * Do not list multiple alerts in the header text.  
 * While HTML and Markdown characters and tags are UTF-8, it is discouraged to use those characters in the header text, as the spec currently defines the header text as plain text.  
-* Similarly, do not include language codes such as “en-html”, since it is not BCP-47.  
-* Examples of headers 
-    * ✅”Interrupted Service” (*Can be improved*)  
-    * ✅”Blue Line: No service between Snowdon and Acadie”  
-    * ✅”Orbit Earth Detour between Rio Salado Pkwy./Packard Dr. and Tempe Transportation Center \- Reggae Festival”  
-    * ❌”No service for Subway Line A, buses running for Subway Line K” *(multiple alerts).*
+* Similarly, do not include language codes such as “en-html", since it is not BCP-47.  
+* **Examples of headers** 
+    * ✅ *"Interrupted Service"* ← Can be improved  
+    * ✅ *"Blue Line: No service between Snowdon and Acadie"* 
+    * ✅ *"Orbit Earth Detour between Rio Salado Pkwy./Packard Dr. and Tempe Transportation Center \- Reggae Festival"*  
+    * ❌ *"No service for Subway Line A, buses running for Subway Line K"* ← Multiple alerts
 
 ## Description Text
 
 * Do not list multiple alerts in the same alert description.  
 * While HTML and Markdown characters and tags are UTF-8, it is discouraged to use those characters in the description text, as the spec currently defines the description text as plain text.  
-* Similarly, do not include language codes such as “en-html”, since it is not BCP-47.  
+* Similarly, do not include language codes such as “en-html", since it is not BCP-47.  
 * Keep the description short enough but as detailed as possible.
 
 Good example (Halifax Transit)
 
-```
+```json
 "descriptionText": {
  "translation": [
    { 
@@ -119,7 +126,7 @@ Good example (Halifax Transit)
 
 Bad example (MBTA): The alert mentions all needed information in the header and leaves only the direction for the description.
 
-```
+```json
 "headerText": {
  "translation": [
    { 
@@ -167,3 +174,5 @@ Such cases indicate incomplete information which hinder the consumer’s interpr
 * Consumers are encouraged to be very careful if they decide to use Service Alerts to impact journey planning. If a consumer uses alerts to affect their routing, they should monitor the alerts’ descriptions and contact the agency if an alert contains incomplete information.  
 * **If a consumer chooses to use Service Alerts to affect routing, using alert effects other than `NO_SERVICE` to affect routing is strongly discouraged, as it carries significant risk and can lead to unintended consequences.**  
 * Producers are encouraged to implement [TripModifications](https://gtfs.org/documentation/realtime/feed-entities/trip-modifications/) and include all detours there.
+
+</div>

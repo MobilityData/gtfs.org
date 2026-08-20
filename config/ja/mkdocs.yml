@@ -134,9 +134,7 @@ plugins:
       assets: false
       links_attr_map:
         target: _blank
-  - search:
-      lang: 
-        - ja
+  - search
 nav:
   - ホーム: index.md
   - 始めに:

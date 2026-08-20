@@ -1,5 +1,7 @@
-# GTFS-Realtime Service Alerts Guidance: Introduction
+# GTFS-Realtime Service Alerts Guidance
 
+
+## Introduction
 [GTFS-Realtime Service Alerts](https://gtfs.org/documentation/realtime/reference/#message-alert) allow producers to provide updates whenever there is disruption on the network. Service Alerts can be used to express multiple types of service disruptions, incidents and information, including:
 
 * Closed routes and route segments  
@@ -24,9 +26,9 @@ The screenshots below show possible trip planner behaviours based on GTFS-RT Ser
 * Influence journey suggestions to remove irrelevant and disrupted routes and stops
 
 <p align="center">
-  <img src="../../../../assets/rt_alerts_guide_transit_screenshot.png" width="27%" height="400">
-  <img src="../../../../assets/rt_alerts_guide_citymapper_screenshot.png" width="27.5%" height="400">
-  <img src="../../../../assets/rt_alerts_guide_citymapper_screenshot_2.png" width="26%" height="400">
+  <img src="../../../../assets/rt-alerts-guide-transit-screenshot.png" width="27%" height="400">
+  <img src="../../../../assets/rt-alerts-guide-citymapper-screenshot.png" width="27.5%" height="400">
+  <img src="../../../../assets/rt-alerts-guide-citymapper-screenshot-2.png" width="26%" height="400">
 </p>
 <p align="center"><em>Screenshots from TransitApp (left) and Citymapper (middle and right), employing Service Alerts.</em></p>
 
@@ -37,8 +39,10 @@ For more information, please refer to:
 
 To validate your GTFS-Realtime Service Alerts feed, please refer to the [GTFS Realtime Validator](https://github.com/MobilityData/gtfs-realtime-validator).
 
+## Chapters
+
 This document details some recommendations on how to use Service Alerts to the best of their abilities to provide alerts.
 
-1) We will attach each possible use case to its appropriate Service Alert setup.  
-2) We will explore the potential good and bad uses of certain fields.  
-3) We will go through some real life examples of Service Alerts to evaluate them and suggest improvements to them.
+1. In [Guidelines](../../../../resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/guidelines), we will explore the potential good and bad uses of certain fields.  
+2. In [Real-life Use Cases](../../../../resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/real-life-use-cases), we will attach each possible use case to its appropriate Service Alert setup.  
+3. In [Real-world Examples](../../../../resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/real-world-examples), we will go through some real life examples of Service Alerts to evaluate them and suggest improvements to them.
