@@ -133,9 +133,7 @@ plugins:
       assets: false
       links_attr_map:
         target: _blank
-  - search:
-      lang: 
-        - en # id (Indonesian) is not supported as of June 2025. See https://www.mkdocs.org/user-guide/configuration/#search
+  - search
   - redirects:
       redirect_maps:
         'getting-started/what-is-GTFS.md': 'index.md'
