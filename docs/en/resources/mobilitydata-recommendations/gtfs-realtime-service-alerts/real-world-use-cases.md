@@ -1,4 +1,4 @@
-# Real-life use cases
+# Real-world use cases
 
 In this section, we explore all possible use cases of Service Alerts in real life. For each use case, we include the best alert practices.
 
@@ -31,7 +31,7 @@ Suggestions:
     * Create it in the GTFS Schedule feed if the closure is planned or once it extends over time and you have more certainty around the closure.  
     * If that replacement service corresponds to a route in the GTFS and you cannot define the additional trips in the GTFS Schedule feed, then create it in `tripUpdates` with the `TripDescriptor = NEW`.
 
-!!! example "Suggested template"
+!!! Note "Suggested template"
 
     Header: “Service interrupted on route `{route name}`”
 
@@ -70,7 +70,7 @@ Suggestions:
     * Create it in the GTFS Schedule feed if the closure is planned or once it extends over time and you have more certainty around the closure.  
     * If that replacement service corresponds to a route in the GTFS and you cannot define the additional trips in the GTFS Schedule feed, then create it in `tripUpdates` with the `TripDescriptor \= NEW`.
 
-!!! example "Suggested template"
+!!! Note "Suggested template"
 
     Header: “Trips cancelled on route `{route name}`”
 
@@ -111,7 +111,7 @@ Suggestions:
     * Create it in the GTFS Schedule feed if the closure is planned or once it extends over time and you have more certainty around the closure.  
     * If that replacement service is operated by a pre-existing route and you cannot define it in the GTFS Schedule feed, then create it in `tripUpdates` with the `TripDescriptor \= NEW`.
 
-!!! example "Suggested template"
+!!! Note "Suggested template"
 
     Header: “No route `{route name}` service between `{start stop}` and `{end stop}`”
 
@@ -145,7 +145,7 @@ Suggestions:
 * Remove the `stop_id` from the stop time entries in [`stop_times.txt`](https://gtfs.org/documentation/schedule/reference/#stop_timestxt) for trips that serve the closed stop. This is more important if the alert extends over time (weeks to months).  
 * If it is certain that the stop is going to be permanently closed, remove it from the GTFS Schedule feed. Otherwise, you do not need to remove the stop from [`stops.txt`](https://gtfs.org/documentation/schedule/reference/#stopstxt). 
 
-!!! example "Suggested template"
+!!! Note "Suggested template"
 
     Header: “Stop `{stop name and location}` is out of service”
 
@@ -178,7 +178,7 @@ Suggestions:
 * Remove the `stop_ids` of the station platforms from the stop time entries in [`stop_times.txt`](https://gtfs.org/documentation/schedule/reference/#stop_timestxt) for trips that serve the closed station. This is more important if the incident extends over time (weeks to months).  
 * If it is certain that the station is going to be permanently closed, remove it and its child stops from the GTFS Schedule feed. Otherwise, you do not need to remove the station and its stops from [`stops.txt`](https://gtfs.org/documentation/schedule/reference/#stopstxt).
 
-!!! example "Suggested template"
+!!! Note "Suggested template"
 
     Header: “Station `{station name}` is out of service”
 
@@ -219,7 +219,7 @@ Suggestions:
 * If `tripModifications` are provided, use `tripModifications` to indicate the `stop_ids` of the new stops and their new `stop_times` along with the propagated delay. Consult the [`tripModifications` reference](https://gtfs.org/documentation/realtime/feed-entities/trip-modifications/) for more information.  
 * If the detour is planned, make sure it is reflected in the GTFS Schedule feed. If the detour is unplanned and it extends over time, consider adding it to the GTFS Schedule feed once you have more certainty around it.
 
-!!! example "Suggested template"
+!!! Note "Suggested template"
 
     Header: “Route `{route name}` is detoured between `{start stop}` and `{end stop}`”
 
@@ -257,7 +257,7 @@ Suggestions:
 
 * If `tripUpdates` are provided, change ScheduleRelationship in the `StopTimeUpdate` of affected `stop_times` to SKIPPED if possible.
 
-!!! example "Suggested template"
+!!! Note "Suggested template"
 
     Header: “Route `{route name}` is short turning before `{stop name}`”
 
@@ -291,7 +291,7 @@ Suggestions:
 * The alert might exist even when the stop was changed in the GTFS Schedule feed. (Just for informative reasons; could lead to mismatch issues as no `stop_id` in GTFS).  
 * If the alert is planned or extends over time (weeks to months), consider updating [`stops.txt`](https://gtfs.org/documentation/schedule/reference/#stopstxt) and [`stop_times.txt`](https://gtfs.org/documentation/schedule/reference/#stop_timestxt) to reflect the new stop.
 
-!!! example "Suggested template"
+!!! Note "Suggested template"
 
     Header: “Stop `{stop name and location}` is moved”
 
@@ -337,7 +337,7 @@ Suggestions:
 
 * If `tripUpdates` are provided, make sure that the `StopTimeUpdate` of affected `stop_times`  is adjusted.
 
-!!! example "Suggested template"
+!!! Note "Suggested template"
 
     Header: “Delayed service on route `{route name}`”
 
@@ -368,7 +368,7 @@ Suggestions:
     * The name(s) of the affected route(s) (in the header and/or description).  
     * The time period(s) that the service change spans (in the description, can be also additionally included in the header if it doesn’t make the header overlong).
 
-!!! example "Suggested template"
+!!! Note "Suggested template"
 
     Header: “Schedule adjustment for `{route names} from `{start time}` to {end time if applicable}`”
 
@@ -408,7 +408,7 @@ Suggestions:
     * If `tripUpdates` are provided, and if the service increase is unscheduled and you cannot add to a GTFS Schedule feed before 7 days of the service change: In `tripUpdates`, add the new trips with `ScheduleRelationship` in `TripDescriptor` set as `NEW`.  
     * Do not overrely on GTFS realtime TripUpdates for adding trips if you can do it in the GTFS Schedule feed.
 
-!!! example "Suggested template"
+!!! Note "Suggested template"
 
     Header: “More trips running for `{route names}`”
 
@@ -443,7 +443,7 @@ Suggestions:
     * If `tripUpdates` are provided, and if the service cut is unscheduled and you cannot remove them from a GTFS Schedule feed before 7 days of the service change: In `tripUpdates`, change `ScheduleRelationship` in `TripDescriptor` of the affected trips to CANCELED if possible.  
     * Do not overrely on GTFS realtime TripUpdates for removing trips if you can do it in the GTFS Schedule feed.
 
-!!! example "Suggested template"
+!!! Note "Suggested template"
 
     Header: “Fewer trips running for `{route names}`”
 
@@ -483,13 +483,13 @@ Suggestions:
         * Mention the platforms to which the access will be affected (in the description).  
         * Mention the exact pathway (elevator, ramp, etc) that was affected (in the description).
 
-!!! example "Suggested template"
+!!! Note "Suggested template"
 
     Header: “`{station name}`: {pathway. e.g. Southbound platform elevator}` out of commission.”
 
     Description: “Due to `{cause: maintenance, mechanical error, etc}`, the `{pathway}` to the `{platform}` in `{station}` is not in service from `{start_time}` to `{end_time}`. Please use `{replacement pathway}` instead.”
 
-!!! example "Suggested template"
+!!! Note "Suggested template"
 
     Header: “`{route names}`: The vehicle on {human-readable trip identifier. e.g. trip start time} is not accessible”
 
