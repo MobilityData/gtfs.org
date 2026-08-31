@@ -625,8 +625,6 @@ message Alert {
   // Time when the alert should be shown to the user. If missing, the
   // alert will be shown as long as it appears in the feed.
   // If multiple ranges are given, the alert will be shown during all of them.
-  repeated TimeRange active_period = 1;
-
   // Should not be used - for backwards-compatibility only.
   repeated TimeRange active_period = 1 [deprecated = true];
 
