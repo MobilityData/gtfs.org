@@ -145,7 +145,6 @@ A definition (or update) of an entity in the transit feed. If the entity is not 
 ### _message_ TripUpdate
 
 Realtime update on the progress of a vehicle along a trip. Please also refer to the general discussion of the [trip updates entities](../../../documentation/realtime/feed-entities/trip-updates).
-upd
 Depending on the value of ScheduleRelationship, a TripUpdate can specify:
 
 *   A trip that proceeds along the schedule.
