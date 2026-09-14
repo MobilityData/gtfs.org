@@ -2,7 +2,7 @@
 
 ## Describe a frequency-based service
 
-The Société de Transport de Montréal operates transit services in Montréal and runs a frequency-based service for its metro lines. Hence, instead of providing a schedule with arrival and departure times in a GTFS dataset, the file [frequencies.txt](../../reference/#frequenciestxt) is used to describe the service frequency throughout the span of the service. Having a trip repeat only works in cases where the timing between stops remains consistent for all stops. When modeling a Frequency-based service, stop_times.txt (@TODO link) contains the relative times between stops in order to determine the times to be displayed to riders. 
+The Société de Transport de Montréal operates transit services in Montréal and runs a frequency-based service for its metro lines. Hence, instead of providing a schedule with arrival and departure times in a GTFS dataset, the file [frequencies.txt](../../reference/#frequenciestxt) is used to describe the service frequency throughout the span of the service. Having a trip repeat only works in cases where the timing between stops remains consistent for all stops. When modeling a Frequency-based service, [stop_times.txt](../../reference/#stop_timestxt) contains the relative times between stops in order to determine the times to be displayed to riders. 
 
 [**frequencies.txt**](../../reference/#frequenciestxt)
 
@@ -16,4 +16,4 @@ Above, a trip on the Green line with a `trip_id=22M-GLOBAUX-00-S_1_2` is used as
 
 
 
-<sup>[Example source](https://www.stm.info/en/about/developers)</sup>
+<sup>[Example source: STM (Société de Transport de Montréal)](https://www.stm.info/en/about/developers) — For a list of real-world GTFS feeds that include frequencies, see the [Mobility Database](https://mobilitydatabase.org/feeds?features=Frequencies).</sup>
