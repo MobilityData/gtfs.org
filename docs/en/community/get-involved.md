@@ -62,13 +62,13 @@ The community is constantly developing new additions to the specification that c
 
     [:octicons-arrow-right-24: Learn more](../../community/extensions/fares-v2)
 
--   :material-file-document-edit:{ .lg .middle } __GTFS Governance__
+-   :material-file-document-edit:{ .lg .middle } __Open GTFS Proposals__
 
     ---
 
-    A Working Group has been formed to modify the current GTFS Spec Amendment Process.
+    Browse current active proposals and working group discussions on GitHub.
 
-    [:octicons-arrow-right-24: Learn more](https://github.com/google/transit/issues/436)
+    [:octicons-arrow-right-24: View open proposals](https://github.com/google/transit/pulls)
 
 </div>
 
@@ -109,8 +109,8 @@ Make sure to check out the Resources section for an extensive selection of tips,
 
 There are a number of mailing lists that can be good resources when you have questions about public transit data, software, formats like GTFS and GTFS-realtime, and other issues:
 
-* [GTFS Changes](https://groups.google.com/group/gtfs-changes): Follow this group to get announcement on votes on the GTFS Schedule Format as outlined in the [GTFS Schedule Specification Amendment Process](../../community/governance/gtfs_schedule_amendment_process). 
-* [GTFS Realtime](https://groups.google.com/group/gtfs-realtime): This group is the official forum for discussing GTFS Realtime, asking questions, and proposing changes as outlined in the [GTFS Realtime Specification Amendment Process](../../community/governance/gtfs_realtime_amendment_process).
+* [GTFS Changes](https://groups.google.com/group/gtfs-changes): Follow this group to get announcement on votes on the GTFS Schedule Format as outlined in the [GTFS Schedule Specification Amendment Process](../../community/governance/gtfs-schedule-governance/introduction). 
+* [GTFS Realtime](https://groups.google.com/group/gtfs-realtime): This group is the official forum for discussing GTFS Realtime, asking questions, and proposing changes as outlined in the [GTFS Realtime Specification Amendment Process](../../community/governance/gtfs-realtime-amendment-process).
 * [transit-developers](https://groups.google.com/group/transit-developers): general transit developer discussions.
   * Many transit agencies also have their own developer mailing lists specific to the agency. For example:
     * [NYC MTA](https://groups.google.com/group/mtadeveloperresources)
