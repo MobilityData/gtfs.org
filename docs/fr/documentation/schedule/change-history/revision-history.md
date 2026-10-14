@@ -3,7 +3,7 @@
 ### Historique des révisions
 
 #### Septembre 2026
-* Mise à jour de `shapes.txt`: passage de « Optionnel» à « Requis sous condition». Voir [discussion](https://github.com/google/transit/pull/660). 
+* Mettre à jour de `shapes.txt` passage de "Optionnel" à "Requis sous condition". Voir [discussion](https://github.com/google/transit/pull/660). 
 * Correction du lien de référence pour les codes de langue IETF BCP 47. Voir [discussion](https://github.com/google/transit/pull/658).
 
 #### Août 2026
