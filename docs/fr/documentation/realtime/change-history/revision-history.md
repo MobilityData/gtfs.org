@@ -2,6 +2,12 @@
 
 ### Historique des révisions
 
+#### Septembre 2026
+* Correction de problèmes mineurs de formatage. Voir [discussion](https://github.com/google/transit/pull/641)
+
+#### Août 2026
+* Images adoptées dans les alertes de service conformément à la spécification et suppression de l’étiquette « expérimental ». Voir [discussion](https://github.com/google/transit/pull/651).
+
 #### Juin 2026
 * Ajout de deux nouveaux champs dans Service Alerts: `communication_period` et `impact_period` pour mieux définir active_period. Voir [discussion](https://github.com/google/transit/pull/546)
 * Ajout d'une nouvelle cause SPECIAL_EVENT à la liste des causes dans Service Alerts. Voir [discussion](https://github.com/google/transit/pull/577)
