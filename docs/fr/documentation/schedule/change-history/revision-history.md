@@ -9,7 +9,7 @@
 #### Août 2026
 * `min_transfer_time` Requis pour les transferts programmés (transfer_type = 2). Voir [discussion](https://github.com/google/transit/pull/640).
 
-Historique des révisions- Temps réel
+Historique des révisions — Temps réel
 
 #### Avril 2026 
 * Ajout de champs de durée de sécurité à `trips.txt` pour fournir de meilleures estimations flexibles de la durée des trajets. Voir [discussion](https://github.com/google/transit/pull/598). 
