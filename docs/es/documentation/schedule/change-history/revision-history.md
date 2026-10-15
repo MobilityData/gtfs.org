@@ -3,8 +3,8 @@
 ### Historial de revisiones
 
 #### Septiembre de 2026
-* Se actualizó `shapes.txt` de "Opcional" a "Condicionalmente Obligatorio". Ver [discusión](https://github.com/google/transit/pull/660/changes). 
-* Se corrigió el enlace de referencia para los códigos de idioma IETF BCP 47. Ver [discusión](https://github.com/google/transit/pull/658/changes)
+* Se actualizó `shapes.txt` de "Opcional" a "Condicionalmente Obligatorio". Ver [discusión](https://github.com/google/transit/pull/660). 
+* Se corrigió el enlace de referencia para los códigos de idioma IETF BCP 47. Ver [discusión](https://github.com/google/transit/pull/658).
 
 #### Agosto de 2026
 * Obligatorio `min_transfer_time` para transferencias temporizadas (transfer_type = 2). Ver [discusión](https:).
