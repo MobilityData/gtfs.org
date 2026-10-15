@@ -2,6 +2,12 @@
 
 ### 改訂履歴
 
+#### 2026年9月
+* 軽微な書式の問題を修正しました。[ディスカッション](https://github.com/google/transit/pull/641)を参照してください。
+
+#### 2026年8月
+* サービス アラートの画像を仕様に採用し、`experimental`タグを削除しました。[ディスカッション](https://github.com/google/transit/pull/651)を参照してください。
+
 #### 2026年4月 
 * より柔軟な旅行時間の見積もりを提供するために、`trips.txt`に安全な期間フィールドを追加しました。[ディスカッション](https://github.com/google/transit/commit/9769bc8638aac22ac843ee3f5c6031ee4ee784b9)を参照してください。
 

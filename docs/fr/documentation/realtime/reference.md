@@ -119,10 +119,10 @@ Détermine si la récupération actuelle est incrémentielle.
 
 **Valeurs** 
 
-| _**Valeur**_ | 
-|-------------| 
-| **FULL_DATASET** | 
-| **DIFFERENTIAL** | 
+| ***Valeur*** | ***Commentaire*** |
+|--------------|-------------------|
+| **FULL_DATASET** | Cette mise à jour du flux écrasera toutes les informations en temps réel précédentes. Elle devrait donc fournir un instantané complet de toutes les informations en temps réel connues. |
+| **DIFFERENTIAL** | Actuellement, ce mode est **non pris en charge** et son comportement est **non spécifié** pour les flux qui utilisent ce mode. Des discussions sont en cours sur [la liste de diffusion GTFS Realtime](http://groups.google.com/group/gtfs-realtime) afin de préciser le comportement du mode DIFFÉRENTIEL. La documentation sera mise à jour une fois ces discussions terminées. |
 
 ### _message_ FeedEntity 
 
@@ -254,7 +254,7 @@ Mise à jour en temps réel de certaines propriétés définies dans GTFS stop_t
 
 ### _message_ TripProperties 
 
-Définit les propriétés mises à jour du voyage 
+Définit les propriétés mises à jour du voyage. 
 
 **Attention :** ce message est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir.<br>. 
 
@@ -328,15 +328,15 @@ Pour décrire les niveaux d’occupation des passagers sur une échelle linéair
 
 | _**Valeur**_ | _**Commentaire**_ | 
 |-------------|--------------------| 
-| _**EMPTY**_ | _Le véhicule est considéré comme vide par la plupart des mesures et a peu ou pas de passagers à bord, mais accepte toujours des passagers._ | 
-| _**MANY_SEATS_AVAILABLE**_ | _Le véhicule ou la voiture dispose d’un grand nombre de places disponibles. Le nombre de places gratuites sur le total des places disponibles pour être considéré comme suffisamment important pour entrer dans cette catégorie est déterminé à la discrétion du producteur._ | 
-| _**FEW_SEATS_AVAILABLE**_ | _Le véhicule ou la voiture dispose d’un petit nombre de places disponibles. Le nombre de places gratuites sur le total des places disponibles pour être considéré comme suffisamment petit pour entrer dans cette catégorie est déterminé à la discrétion du producteur._ | 
-| _**STANDING_ROOM_ONLY**_ | _Le véhicule ou la voiture ne peut actuellement accueillir que des passagers debout._ | 
-| _**CRUSHED_STANDING_ROOM_ONLY**_ | _Le véhicule ou la voiture ne peut actuellement accueillir que des passagers debout et dispose d’un espace limité pour eux._ | 
-| _**FULL**_ | _Le véhicule est considéré comme plein selon la plupart des mesures, mais il se peut qu’il permette toujours aux passagers de monter à bord._ | 
-| _**NOT_ACCEPTING_PASSENGERS**_ | _Le véhicule ou la voiture n’accepte pas de passagers. Le véhicule ou la voiture accepte généralement des passagers pour l’embarquement._ | 
-| _**NO_DATA_AVAILABLE**_ | _Le véhicule ou la voiture ne dispose d’aucune donnée d’occupation disponible à ce moment-là._ | 
-| _**NOT_BOARDABLE**_ | _Le véhicule ou la calèche n’est pas embarquable et n’accepte jamais de passagers. Utile pour les véhicules ou chariots spéciaux (moteur, chariot de maintenance, etc…)._ | 
+| **EMPTY** | Le véhicule est considéré comme vide par la plupart des mesures et a peu ou pas de passagers à bord, mais accepte toujours des passagers. | 
+| **MANY_SEATS_AVAILABLE** | Le véhicule ou la voiture dispose d’un grand nombre de places disponibles. Le nombre de places gratuites sur le total des places disponibles pour être considéré comme suffisamment important pour entrer dans cette catégorie est déterminé à la discrétion du producteur. | 
+| **FEW_SEATS_AVAILABLE** | Le véhicule ou la voiture dispose d’un petit nombre de places disponibles. Le nombre de places gratuites sur le total des places disponibles pour être considéré comme suffisamment petit pour entrer dans cette catégorie est déterminé à la discrétion du producteur. | 
+| **STANDING_ROOM_ONLY** | Le véhicule ou la voiture ne peut actuellement accueillir que des passagers debout. | 
+| **CRUSHED_STANDING_ROOM_ONLY** | Le véhicule ou la voiture ne peut actuellement accueillir que des passagers debout et dispose d’un espace limité pour eux. | 
+| **FULL** | Le véhicule est considéré comme plein selon la plupart des mesures, mais il se peut qu’il permette toujours aux passagers de monter à bord. | 
+| **NOT_ACCEPTING_PASSENGERS** | Le véhicule ou la voiture n’accepte pas de passagers. Le véhicule ou la voiture accepte généralement des passagers pour l’embarquement. | 
+| **NO_DATA_AVAILABLE** | Le véhicule ou la voiture ne dispose d’aucune donnée d’occupation disponible à ce moment-là. | 
+| **NOT_BOARDABLE** | Le véhicule ou la calèche n’est pas embarquable et n’accepte jamais de passagers. Utile pour les véhicules ou chariots spéciaux (moteur, chariot de maintenance, etc…). | 
 
 
 ### _message_ CarriageDetails 
@@ -377,8 +377,8 @@ Une alerte, indiquant une sorte d’incident dans le réseau de transport en com
 | **tts_header_text** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Text contenant l’en-tête de l’alerte à utiliser pour les implémentations de synthèse vocale. Ce champ est la version synthèse vocale de header_text. Il doit contenir les mêmes informations que header_text mais formaté de manière à pouvoir être lu sous forme de synthèse vocale (par exemple, les abréviations supprimées, les chiffres épelés, etc.) | 
 | **tts_description_text** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Text contenant une description de l’alerte à utiliser pour les implémentations de synthèse vocale. Ce champ est la version synthèse vocale de description_text. Il doit contenir les mêmes informations que description_text mais formaté de manière à pouvoir être lu sous forme de synthèse vocale (par exemple, les abréviations supprimées, les chiffres épelés, etc.) | 
 | **severity_level** | [SeverityLevel](#enum-severitylevel) | Optionnel | Un | Gravité de l’alerte. | 
-| **image** | [TranslatedImage](#message-translatedimage) | Optionnel | Un | TranslatedImage à afficher avec le texte de l’alerte. Utilisé pour expliquer visuellement l’effet d’alerte d’un détour, d’une fermeture de gare, etc. L’image doit améliorer la compréhension de l’alerte et ne doit pas être le seul emplacement d’informations essentielles. Les types d’images suivants sont déconseillés : image contenant principalement du texte, images marketing ou de marque n’ajoutant aucune information supplémentaire.<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
-| **image_alternative_text** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Text décrivant l’apparence de l’image liée dans le champ « `image` » (par exemple, dans le cas où l’image ne peut pas être affichée ou si l'utilisateur ne peut pas voir l’image pour des raisons d’accessibilité). Voir le HTML [spécification pour le texte de l’image alternative](https://html.spec.whatwg.org/#alt).<br><br> **Attention :** ce champ est encore **expérimental** et est susceptible de changer. Il pourrait être formellement adopté à l’avenir. | 
+| **image** | [TranslatedImage](#message-translatedimage) | Optionnel | Un | TranslatedImage à afficher avec le texte de l’alerte. Utilisé pour expliquer visuellement l’effet d’alerte d’un détour, d’une fermeture de gare, etc. L’image doit améliorer la compréhension de l’alerte et ne doit pas être le seul emplacement d’informations essentielles. Les types d’images suivants sont déconseillés : image contenant principalement du texte, images marketing ou de marque n’ajoutant aucune information supplémentaire.|
+| **image_alternative_text** | [TranslatedString](#message-translatedstring) | Optionnel | Un | Text décrivant l’apparence de l’image liée dans le champ « `image` » (par exemple, dans le cas où l’image ne peut pas être affichée ou si l'utilisateur ne peut pas voir l’image pour des raisons d’accessibilité). Voir le HTML [spécification pour le texte de l’image alternative](https://html.spec.whatwg.org/#alt).|
 
 
 ### _enum_ Cause 
@@ -590,8 +590,6 @@ Une string localisée mappée à une langue.
 ### _message_ TranslatedImage 
 
 Un message internationalisé contenant des versions par langue d’une image. L’une des images d’un message sera récupérée. La résolution se déroule comme suit : Si la langue de l’interface utilisateur correspond au code de langue d’une traduction, la première traduction correspondante est sélectionnée. Si une langue par défaut de l’interface utilisateur (par exemple l’anglais) correspond au code de langue d’une traduction, la première traduction correspondante est sélectionnée. Si une traduction a un code de langue non spécifié, cette traduction est sélectionnée. 
-
-**Attention :** ce message est encore **expérimental** et sujet à changement. Il pourrait être formellement adopté à l’avenir. 
 
 **Champs** 
 

@@ -114,15 +114,12 @@ Metadatos sobre un feed, incluidos en los mensajes del feed.
 
 Determina si la recuperación actual es incremental. 
 
-* **FULL_DATASET**: esta actualización del feed sobrescribirá toda la información anterior en tiempo real del feed. Por lo tanto, se espera que esta actualización proporcione una instantánea completa de toda la información conocida en tiempo real. 
-* **DIFFERENTIAL**: actualmente, este modo **no es compatible** y el comportamiento **no está especificado** para los feeds que usan este modo. Hay discusiones en la [lista de correo GTFS Realtime](http://groups.google.com/group/gtfs-realtime) sobre la especificación completa del comportamiento del modo DIFERENCIAL y la documentación se actualizará cuando finalicen esas discusiones. 
-
 **Valores** 
 
-| _**Valor**_ | 
-|-------------| 
-| **FULL_DATASET** | 
-| **DIFFERENTIAL** | 
+| _**Valor**_ | _**Comentario**_ | 
+|-------------|---------------| 
+| **FULL_DATASET** | Esta actualización del feed sobrescribirá toda la información anterior en tiempo del feed. Por lo tanto, se espera que esta actualización proporcione una instantánea completa de toda la información conocida en tiempo real. | 
+| **DIFFERENTIAL** | Actualmente, este modo **no es compatible** y el comportamiento **no está especificado** para los feeds que usan este modo. Hay discusiones en la [lista de correo GTFS Realtime](http://groups.google.com/group/gtfs-realtime) sobre la especificación completa del comportamiento del modo DIFERENCIAL y la documentación se actualizará cuando esas discusiones se hayan finalizado. |
 
 ### _message_ FeedEntity 
 
@@ -255,9 +252,9 @@ Actualización en tiempo real para ciertas propiedades definidas en GTFS stop_ti
 
 ### _message_ TripProperties 
 
-Define propiedades actualizadas del viaje 
+Define propiedades actualizadas del viaje. 
 
-**Precaución:**este message aún es **experimental** y está sujeto a cambios. Es posible que se adopte formalmente en el futuro.<br>. 
+**Precaución:**este message aún es **experimental** y está sujeto a cambios. Es posible que se adopte formalmente en el futuro.<br> 
 
 **Campos** 
 
@@ -325,19 +322,19 @@ Para describir los niveles de ocupación de pasajeros en una escala lineal, cons
 
 **Precaución:**este campo aún es **experimental** y está sujeto a cambios. Es posible que se adopte formalmente en el futuro. 
 
-***Valores*** 
+**Valores** 
 
 | _**Valor**_ | _**Comentario**_ | 
 |-------------|---------------| 
-| _**EMPTY**_ | _El vehículo se considera vacío según la mayoría de las medidas y tiene pocos o ningún pasajero a bordo, pero aún acepta pasajeros._ | 
-| _**MANY_SEATS_AVAILABLE**_ | _El vehículo o carruaje dispone de un gran número de plazas disponibles. La cantidad de asientos libres del total de asientos disponibles para considerarse lo suficientemente grande como para entrar en esta categoría se determina a discreción del productor._ | 
-| _**FEW_SEATS_AVAILABLE**_ | _El vehículo o carruaje tiene un número reducido de plazas disponibles. La cantidad de asientos libres del total de asientos disponibles para que se considere lo suficientemente pequeña como para entrar en esta categoría se determina a discreción del productor._ | 
-| _**STANDING_ROOM_ONLY**_ | _El vehículo o vagón actualmente sólo puede alojar a pasajeros de pie._ | 
-| _**CRUSHED_STANDING_ROOM_ONLY**_ | _El vehículo o vagón actualmente sólo puede alojar a pasajeros de pie y tiene un espacio limitado para ellos._ | 
-| _**FULL**_ | _El vehículo se considera lleno según la mayoría de las medidas, pero es posible que aún permita el embarque de pasajeros._ | 
-| _**NOT_ACCEPTING_PASSENGERS**_ | _El vehículo o carruaje no acepta pasajeros. El vehículo o vagón suele aceptar pasajeros para el embarque._ | 
-| _**NO_DATA_AVAILABLE**_ | _El vehículo o vagón no tiene datos de ocupación disponibles en ese momento._ | 
-| _**NOT_BOARDABLE**_ | _El vehículo o carruaje no es abordable y nunca acepta pasajeros. Útil para vehículos o carros especiales (motor, carro de mantenimiento, etc…)._ | 
+| **EMPTY** | El vehículo se considera vacío según la mayoría de las medidas y tiene pocos o ningún pasajero a bordo, pero aún acepta pasajeros. | 
+| **MANY_SEATS_AVAILABLE** | El vehículo o carruaje dispone de un gran número de plazas disponibles. La cantidad de asientos libres del total de asientos disponibles para considerarse lo suficientemente grande como para entrar en esta categoría se determina a discreción del productor. | 
+| **FEW_SEATS_AVAILABLE** | El vehículo o carruaje tiene un número reducido de plazas disponibles. La cantidad de asientos libres del total de asientos disponibles para que se considere lo suficientemente pequeña como para entrar en esta categoría se determina a discreción del productor. | 
+| **STANDING_ROOM_ONLY** | El vehículo o vagón actualmente sólo puede alojar a pasajeros de pie. | 
+| **CRUSHED_STANDING_ROOM_ONLY** | El vehículo o vagón actualmente sólo puede alojar a pasajeros de pie y tiene un espacio limitado para ellos. | 
+| **FULL** | El vehículo se considera lleno según la mayoría de las medidas, pero es posible que aún permita el embarque de pasajeros. | 
+| **NOT_ACCEPTING_PASSENGERS** | El vehículo o carruaje no acepta pasajeros. El vehículo o vagón suele aceptar pasajeros para el embarque. | 
+| **NO_DATA_AVAILABLE** | El vehículo o vagón no tiene datos de ocupación disponibles en ese momento. | 
+| **NOT_BOARDABLE** | El vehículo o carruaje no es abordable y nunca acepta pasajeros. Útil para vehículos o carros especiales (motor, carro de mantenimiento, etc…). | 
 
 
 ### _message_ CarriageDetails 
@@ -378,8 +375,8 @@ Una alerta, que indica algún tipo de incidencia en la red de transporte públic
 | **tts_header_text** | [TranslatedString](#message-translatedstring) | Opcional | Uno | Text que contiene el encabezado de la alerta que se utilizará para implementaciones de texto a voz. Este campo es la versión de texto a voz de header_text. Debe contener la misma información que header_text pero con un formato tal que pueda leerse como texto a voz (por ejemplo, abreviaturas eliminadas, números deletreados, etc.) | 
 | **tts_description_text** | [TranslatedString](#message-translatedstring) | Opcional | Uno | Text que contiene una descripción de la alerta que se utilizará para implementaciones de texto a voz. Este campo es la versión de texto a voz de descripción_texto. Debe contener la misma información que descripción_texto, pero con un formato tal que pueda leerse como texto a voz (por ejemplo, abreviaturas eliminadas, números deletreados, etc.) | 
 | **severity_level** | [SeverityLevel](#enum-severitylevel) | Opcional | Uno | Gravedad de la alerta. | 
-| **image** | [TranslatedImage](#message-translatedimage) | Opcional | Uno | TranslatedImage que se mostrará junto al texto de alerta. Se utiliza para explicar visualmente el efecto de alerta de un desvío, cierre de estación, etc. La imagen debe mejorar la comprensión de la alerta y no debe ser la única ubicación de información esencial. Se desaconsejan los siguientes tipos de imágenes: imágenes que contienen principalmente texto, marketing o imágenes de marca que no añaden información adicional.<br><br> **Precaución:**este campo aún es **experimental** y está sujeto a cambios. Es posible que se adopte formalmente en el futuro. | 
-| **image_alternative_text** | [TranslatedString](#message-translatedstring) | Opcional | Uno | Text que describe la apariencia de la imagen vinculada en el campo "`image`" (por ejemplo, en caso de que la imagen no se pueda mostrar o el usuario no pueda verla por razones de accesibilidad). Consulte HTML [especificación para texto de imagen alternativa](https://html.spec.whatwg.org/#alt).<br><br> **Precaución:**este campo aún es **experimental** y está sujeto a cambios. Es posible que se adopte formalmente en el futuro. | 
+| **image** | [TranslatedImage](#message-translatedimage) | Opcional | Uno | TranslatedImage que se mostrará junto al texto de alerta. Se utiliza para explicar visualmente el efecto de alerta de un desvío, cierre de estación, etc. La imagen debe mejorar la comprensión de la alerta y no debe ser la única ubicación de información esencial. Se desaconsejan los siguientes tipos de imágenes: imágenes que contienen principalmente texto, marketing o imágenes de marca que no añaden información adicional.| 
+| **image_alternative_text** | [TranslatedString](#message-translatedstring) | Opcional | Uno | Text que describe la apariencia de la imagen vinculada en el campo "`image`" (por ejemplo, en caso de que la imagen no se pueda mostrar o el usuario no pueda verla por razones de accesibilidad). Consulte HTML [especificación para texto de imagen alternativa](https://html.spec.whatwg.org/#alt). | 
 
 
 ### _enum_ Cause
@@ -592,7 +589,6 @@ Una string localizada asignada a un idioma.
 
 Un message internacionalizado que contiene versiones por idioma de una imagen. Se recogerá una de las imágenes de un message. La resolución procede de la siguiente manera: si el idioma de la interfaz de usuario coincide con el código de idioma de una traducción, se elige la primera traducción coincidente. Si un idioma de interfaz de usuario predeterminado (por ejemplo, inglés) coincide con el código de idioma de una traducción, se elige la primera traducción coincidente. Si alguna traducción tiene un código de idioma no especificado, se selecciona esa traducción. 
 
-**Precaución:**este message aún es **experimental** y está sujeto a cambios. Es posible que se adopte formalmente en el futuro. 
 
 **Campos** 
 

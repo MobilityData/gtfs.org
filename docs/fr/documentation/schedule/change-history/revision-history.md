@@ -2,6 +2,15 @@
 
 ### Historique des révisions
 
+#### Septembre 2026
+* Mettre à jour de `shapes.txt` passage de "Optionnel" à "Requis sous condition". Voir [discussion](https://github.com/google/transit/pull/660). 
+* Correction du lien de référence pour les codes de langue IETF BCP 47. Voir [discussion](https://github.com/google/transit/pull/658).
+
+#### Août 2026
+* `min_transfer_time` Requis pour les transferts programmés (transfer_type = 2). Voir [discussion](https://github.com/google/transit/pull/640).
+
+Historique des révisions — Temps réel
+
 #### Avril 2026 
 * Ajout de champs de durée de sécurité à `trips.txt` pour fournir de meilleures estimations flexibles de la durée des trajets. Voir [discussion](https://github.com/google/transit/pull/598). 
 

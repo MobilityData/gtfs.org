@@ -86,7 +86,7 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
 - **Email**- 電子メール アドレス。<br> *例: `example@example.com`*
 - **Enum**- `説明`列で定義された定義済み定数のセットからの任意。<br> *例: `route_type`フィールドには、路面電車の場合は `0`、地下鉄の場合は`1`す`...*
 - **ID**- ID フィールドの値は内部 ID であり、乗客に表示されることは意図されておらず、UTF-8 文字のシーケンスです。印刷可能な ASCII 文字のみを使用することをお勧めします。ファイル内で一意である必要がある ID には、「一意の ID」というラベルが付けられます。1 つの .txt ファイルで定義された ID は、別の .txt ファイルで参照されることがよくあります。別のテーブルの ID を参照する ID には、「外部 ID」というラベルが付けられます。<br> *例: [stops.txt](#stopstxt) の `stop_id` フィールドは「一意の ID」です。[stops.txt](#stopstxt) の `parent_station` フィールドは、「`stops.stop_id` を参照する外部 ID」です。*
-- **Language code**- IETF BCP 47 言語コード。IETF BCP 47 の概要については、[http://www.rfc-editor.org/rfc/bcp/bcp47 .txt](http://www.rfc-editor.org/rfc/bcp/bcp47 .txt) および [https://www.w3.org/International/articles/language-tags/](https://www.w3.org/International/articles/language-tags/) を参照してください。<br> *例: 英語の場合は`en` 、アメリカ英語の場合は`en-US` 、ドイツ語の場合は `de`。*
+- **Language code**- IETF BCP 47 言語コード。IETF BCP 47 の概要については、[https://www.rfc-editor.org/info/rfc5646/](https://www.rfc-editor.org/info/rfc5646/) および [https://www.w3.org/International/articles/language-tags/](https://www.w3.org/International/articles/language-tags/) を参照してください。<br> *例: 英語の場合は`en` 、アメリカ英語の場合は`en-US` 、ドイツ語の場合は `de`。*
 - **latitude**- 10 進度での WGS84 緯度。値は -90.0 以上 90.0 以下であるしなければならない。 *<br>例: ローマのコロッセオの場合は `41.890169`。*
 - **longitude**- 10 進度での WGS84 経度。値は -180.0 以上 180.0 以下であるしなければならない。<br> *例: ローマのコロッセオの場合は `12.492269`。*
 - **Float** - 浮動小数点数。
@@ -119,38 +119,38 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 
 | ファイル名 | 存在 | 説明 |
 |------|------|------|
-| [agency.txt](#agencytxt) |**必須**| このデータセットで表されるサービスを提供する交通事業者。|
-| [stops.txt](#stopstxt) |**条件付きで必須**| 車両が乗客を乗降させる停留所等。駅と駅の入口も定義します。<br><br>条件付きで必須:<br> - [locations.geojson](#locationsgeojson ) で需要対応ゾーンが定義されている場合は任意。<br> -**それ以外の場合は必須**。 |
-| [routes.txt](#routestxt) |**必須**| 交通ルート・路線系統。ルートは、乗客に単一のサービスとして表示される便のグループです。 |
-| [trips.txt](#tripstxt) |**必須**| 各ルートの便。便とは、特定の期間内に発生する 2 つ以上の停留所等のシーケンスです。 |
-| [stop_times.txt](#stop_timestxt) |**必須**| 各便で車両が停留所等に到着および出発する時刻。 |
-| [calendar.txt](#calendartxt) |**条件付きで必須**| 開始日と終了日を含む週間スケジュールを使用して指定された運行日。<br><br>条件付きで必須:<br> - [calendar_dates.txt](#calendar_datestxt) ですべてのサービス日付が定義されていない限り、**必須**です。<br> - それ以外の場合は任意。 |
-| [calendar_dates.txt](#calendar_datestxt) |**条件付きで必須**| [calendar.txt](#calendartxt) で定義されたサービスの例外。<br><br>条件付きで必須:<br> -** [calendar.txt](#calendartxt) が省略されている場合は必須。その場合、[calendar_dates.txt](#calendar_datestxt) にはサービスの日付がすべて含まれているしなければならない。<br> - それ以外の場合は任意。 |
+| [agency.txt](#agencytxt) | **必須** | このデータセットで表されるサービスを提供する交通事業者。|
+| [stops.txt](#stopstxt) | **条件付きで必須** | 車両が乗客を乗降させる停留所等。駅と駅の入口も定義します。<br><br>条件付きで必須:<br> - [locations.geojson](#locationsgeojson ) で需要対応ゾーンが定義されている場合は任意。<br> -**それ以外の場合は必須**。 |
+| [routes.txt](#routestxt) | **必須** | 交通ルート・路線系統。ルートは、乗客に単一のサービスとして表示される便のグループです。 |
+| [trips.txt](#tripstxt) | **必須** | 各ルートの便。便とは、特定の期間内に発生する 2 つ以上の停留所等のシーケンスです。 |
+| [stop_times.txt](#stop_timestxt) | **必須** | 各便で車両が停留所等に到着および出発する時刻。 |
+| [calendar.txt](#calendartxt) | **条件付きで必須** | 開始日と終了日を含む週間スケジュールを使用して指定された運行日。<br><br>条件付きで必須:<br> - [calendar_dates.txt](#calendar_datestxt) ですべてのサービス日付が定義されていない限り、**必須**です。<br> - それ以外の場合は任意。 |
+| [calendar_dates.txt](#calendar_datestxt) | **条件付きで必須** | [calendar.txt](#calendartxt) で定義されたサービスの例外。<br><br>条件付きで必須:<br> -** [calendar.txt](#calendartxt) が省略されている場合は必須。その場合、[calendar_dates.txt](#calendar_datestxt) にはサービスの日付がすべて含まれているしなければならない。<br> - それ以外の場合は任意。 |
 | [fare_attributes.txt](#fare_attributestxt) |任意| 交通事業者のルート・路線系統の運賃情報。 |
-| [fare_rules.txt](#fare_rulestxt) |任意| 旅程に運賃を適用するルール。 |
-| [timeframes.txt](#timeframestxt) |任意|dateと時間の要素に依存する運賃の運賃ルールで使用するdateと時間の期間。 |
+| [fare_rules.txt](#fare_rulestxt) | 任意 | 旅程に運賃を適用するルール。 |
+| [timeframes.txt](#timeframestxt) | 任意 |dateと時間の要素に依存する運賃の運賃ルールで使用するdateと時間の期間。 |
 | [rider_categories.txt](#rider_categoriestxt) |任意| 乗客のカテゴリを定義します (例: 高齢者、学生)。 |
-| [fare_media.txt](#fare_mediatxt) |任意|チケット商品を使用するために使用できる運賃メディアを説明します。<br><br>ファイル [fare_media.txt](#fare_mediatxt) は、[fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) に示されていない概念を説明しています。そのため、[fare_media.txt](#fare_mediatxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に独立しています。|
-| [fare_products.txt](#fare_productstxt) |任意| 乗客が購入できるさまざまな種類のチケットまたは運賃を説明しています。<br><br>ファイル [fare_products.txt](#fare_productstxt) には、[fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) に示されていないチケット商品が記載されています。そのため、[fare_products.txt](#fare_productstxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に独立しています。|
-| [fare_leg_rules.txt](#fare_leg_rulestxt) |任意| 個々の旅行区間の運賃規則。<br><br>ファイル [fare_leg_rules.txt](#fare_leg_rulestxt) は、運賃構造をモデル化するためのより詳細な方法を提供します。そのため、[fare_leg_rules.txt](#fare_leg_rulestxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に別です。 |
-| [fare_leg_join_rules.txt](#fare_leg_join_rulestxt) |任意| 2 つ以上の区間を定義するルールは、[fare_leg_rules.txt](#fare_leg_rulestxt)|
-| [fare_transfer_rules.txt](#fare_transfer_rulestxt) |任意| 旅行区間間の乗り換えに関する運賃規則。<br><br> [fare_leg_rules.txt](#fare_leg_rulestxt) とともに、ファイル [fare_transfer_rules.txt](#fare_transfer_rulestxt) は、運賃構造をモデル化するより詳細な方法を提供します。そのため、[fare_transfer_rules.txt](#fare_transfer_rulestxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に別です。 |
-| [areas.txt](#areastxt) |任意| 場所のエリアグループ化。 |
-| [stop_areas.txt](#stop_areastxt) |任意|停留所等をエリアに割り当てるルール。 |
+| [fare_media.txt](#fare_mediatxt) | 任意 |チケット商品を使用するために使用できる運賃メディアを説明します。<br><br>ファイル [fare_media.txt](#fare_mediatxt) は、[fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) に示されていない概念を説明しています。そのため、[fare_media.txt](#fare_mediatxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に独立しています。|
+| [fare_products.txt](#fare_productstxt) | 任意 | 乗客が購入できるさまざまな種類のチケットまたは運賃を説明しています。<br><br>ファイル [fare_products.txt](#fare_productstxt) には、[fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) に示されていないチケット商品が記載されています。そのため、[fare_products.txt](#fare_productstxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に独立しています。|
+| [fare_leg_rules.txt](#fare_leg_rulestxt) | 任意 | 個々の旅行区間の運賃規則。<br><br>ファイル [fare_leg_rules.txt](#fare_leg_rulestxt) は、運賃構造をモデル化するためのより詳細な方法を提供します。そのため、[fare_leg_rules.txt](#fare_leg_rulestxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に別です。 |
+| [fare_leg_join_rules.txt](#fare_leg_join_rulestxt) | 任意 | 二つ以上の区間を定義するルールは、[fare_leg_rules.txt](#fare_leg_rulestxt)|
+| [fare_transfer_rules.txt](#fare_transfer_rulestxt) | 任意 | 旅行区間間の乗り換えに関する運賃規則。<br><br> [fare_leg_rules.txt](#fare_leg_rulestxt) とともに、ファイル [fare_transfer_rules.txt](#fare_transfer_rulestxt) は、運賃構造をモデル化するより詳細な方法を提供します。そのため、[fare_transfer_rules.txt](#fare_transfer_rulestxt) の使用は、ファイル [fare_attributes.txt](#fare_attributestxt) および [fare_rules.txt](#fare_rulestxt) とは完全に別です。 |
+| [areas.txt](#areastxt) | 任意 | 場所のエリアグループ化。 |
+| [stop_areas.txt](#stop_areastxt) | 任意 | 停留所等をエリアに割り当てるルール。 |
 | [networks.txt](#networkstxt) | **条件付きで禁止** | ルートのネットワーク グループ化。<br><br>条件付きで禁止:<br>- `network_id` が [routes.txt](#routestxt) に存在する場合は **禁止**。<br>- それ以外の場合は任意。|
 | [route_networks.txt](#route_networkstxt) | **条件付きで禁止** | ルートをネットワークに割り当てるルール。<br><br>条件付きで禁止:<br>- `network_id` が [routes.txt](#routestxt) に存在する場合は **禁止**。<br>- それ以外の場合は任意。|
-| [shapes.txt](#shapestxt) |任意| 車両の移動経路をマッピングするためのルール。ルート配置と呼ばれることもあります。 |
-| [frequencies.txt](#frequenciestxt) |任意| ヘッドウェイベースのサービスのヘッドウェイ (便間の時間) または固定スケジュールサービスの圧縮表現。 |
-| [transfers.txt](#transferstxt) |任意|ルート・路線系統間の乗り換えポイントで接続を行うためのルール。 |
-| [pathways.txt](#pathwaystxt) |任意| 駅内の場所をリンクする構内通路。 |
-| [levels.txt](#levelstxt) |**条件付きで必須**| 駅内の階・フロア。<br><br>条件付きで必須:<br> - エレベーター付きの構内通路を記述する場合 (`pathway_mode=5` )**必須**。<br> - それ以外の場合は任意。 |
+| [shapes.txt](#shapestxt) | **条件付きで必須** | 車両の走行経路をマッピングするためのルール。ルートアライメントと呼ばれることもあります。<br><br>条件付きで必須：<br> -**必須**ルートファイル [routes.txt](#routestxt) またはストップタイムファイル [stop_times.txt](#stop_timestxt) で定義されている連続的なピックアップまたはドロップオフ動作がある場合。<br>それ以外の場合は推奨ん。|
+| [frequencies.txt](#frequenciestxt) | 任意 | ヘッドウェイベースのサービスのヘッドウェイ (便間の時間) または固定スケジュールサービスの圧縮表現。 |
+| [transfers.txt](#transferstxt) | 任意 | ルート・路線系統間の乗り換えポイントで接続を行うためのルール。 |
+| [pathways.txt](#pathwaystxt) | 任意 | 駅内の場所をリンクする構内通路。 |
+| [levels.txt](#levelstxt) | **条件付きで必須** | 駅内の階・フロア。<br><br>条件付きで必須:<br> - エレベーター付きの構内通路を記述する場合 (`pathway_mode=5` )**必須**。<br> - それ以外の場合は任意。 |
 | [location_groups.txt](#location_groupstxt) |任意| 乗客が乗車または降車をリクエストしてもよい場所を示す停留所等のグループ。 |
 | [location_group_stops.txt](#location_group_stopstxt) |任意|停留所等を場所グループに割り当てるルール。 |
-| [locations.geojson](#locationsgeojson) |任意| オンデマンド サービスによる乗客の乗車または降車リクエストのゾーン。GeoJSON ポリゴンとして表されます。 |
-| [booking_rules.txt](#booking_rulestxt) |任意| 乗客がリクエストしたサービスの予約情報。 |
-| [translations.txt](#translationstxt) |任意| 顧客向けのデータセット値の翻訳。 |
-| [feed_info.txt](#feed_infotxt) |**条件付きで必須**| 発行者、バージョン、有効期限情報を含むデータセットのメタデータ。<br><br>条件付きで必須:<br> - [translations.txt](#translationstxt) が提供されている場合は**必須**です。<br> - それ以外の場合は推奨。|
-| [attributions.txt](#attributionstxt) |任意| データセットの帰属帰属組織。 |
+| [locations.geojson](#locationsgeojson) | 任意 | オンデマンド サービスによる乗客の乗車または降車リクエストのゾーン。GeoJSON ポリゴンとして表されます。 |
+| [booking_rules.txt](#booking_rulestxt) | 任意 | 乗客がリクエストしたサービスの予約情報。 |
+| [translations.txt](#translationstxt) | 任意 | 顧客向けのデータセット値の翻訳。 |
+| [feed_info.txt](#feed_infotxt) | **条件付きで必須** | 発行者、バージョン、有効期限情報を含むデータセットのメタデータ。<br><br>条件付きで必須:<br> - [translations.txt](#translationstxt) が提供されている場合は**必須**です。<br> - それ以外の場合は推奨。|
+| [attributions.txt](#attributionstxt) | 任意 | データセットの帰属帰属組織。 |
 
 ## ファイル要件
 
@@ -694,7 +694,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | `from_trip_id` | `trips.trip_id` 部 ID |**条件付きで必須**|ルート・路線系統間の接続が始まる便を識別します。<br><br> `from_trip_id`が定義されている場合、乗り換えは指定された`from_stop_id`の到着便に適用されます。<br><br> `from_trip_id`と`from_route_id` の両方が定義されている場合、 `trip_id`は`route_id`に属しているしなければならない、 `from_trip_id` が優先されます。 `transfer_type`が `4` または `5` の場合は必須。 |
 | `to_trip_id` | `trips.trip_id` 部 ID |**条件付きで必須**|ルート・路線系統間の接続が終了する便を識別します。<br><br> `to_trip_id`が定義されている場合、乗り換えは指定された`to_stop_id`の出発便に適用されます。<br><br> `to_trip_id`と`to_route_id` の両方が定義されている場合、 `trip_id`は`route_id`に属しているしなければならない、 `to_trip_id` が優先されます。 `transfer_type`が `4` または `5` の場合は必須。 |
 | `transfer_type` | Enum |**必須**| 指定された (`from_stop_id`、 `to_stop_id` ) ペアの接続タイプを示します。有効なオプションは次のとおりです。<br><br> `0` または空 -ルート・路線系統間の推奨乗換ポイント。<br> `1` - 2 つのルート・路線系統間の時間指定の乗り換えポイント。出発車両は到着車両を待機し、乗客がルート・路線系統間を乗り換えるのに十分な時間を残すことが求められます。<br> `2` - 乗り継ぎを確実に行うには、到着から出発までの間に最低限の時間が必要です。乗り継ぎに必須時間は`min_transfer_time`で指定します。<br> `3` - その場所ではルート・路線系統間の乗り換えはできません。<br> `4` - 乗客は同じ車両に乗車したまま、ある便から別の便へ乗り換えることができます (`座席内乗り換え`)。このタイプの乗り換えの詳細については、[以下](#_15) を参照してください。<br> `5` - 連続する便間での座席内乗り換えは許可されません。乗客は車両から降りて再び乗車しなければならない。このタイプの乗り換えの詳細については、[下記](#_15)を参照してください。 |
-| `min_transfer_time` | 負でない整数 | 任意 | 指定された停留所等でルート・路線系統間の乗り換えを許可するためにしなければならない時間 (秒単位)。`min_transfer_time` は、各ルートのスケジュール変更を可能にするバッファ時間を含め、一般的な乗客が 2 つの停留所等間を移動するのに十分な時間であるするべきである。 |
+| `min_transfer_time` | 負でない整数 |**条件付きで必須**| 指定された停留所でルート・路線系統間の乗り換えを許可するために利用可能でなけれしなければならない時間 (秒単位)。 `min_transfer_time`は、各ルートのスケジュール変動に対応するためのバッファ時間を含め、一般的な乗客が2つの停留所間を移動するのに十分な時間であるするべきである。<br><br>条件付きで必須：<br> -**必須**`transfer_type`が`2`の場合。<br> - それ以外の場合は任意。| 
 
 #### リンクされた便
 
