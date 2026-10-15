@@ -328,15 +328,15 @@ Pour décrire les niveaux d’occupation des passagers sur une échelle linéair
 
 | _**Valeur**_ | _**Commentaire**_ | 
 |-------------|--------------------| 
-| _**EMPTY**_ | Le véhicule est considéré comme vide par la plupart des mesures et a peu ou pas de passagers à bord, mais accepte toujours des passagers. | 
-| _**MANY_SEATS_AVAILABLE**_ | Le véhicule ou la voiture dispose d’un grand nombre de places disponibles. Le nombre de places gratuites sur le total des places disponibles pour être considéré comme suffisamment important pour entrer dans cette catégorie est déterminé à la discrétion du producteur. | 
-| _**FEW_SEATS_AVAILABLE**_ | Le véhicule ou la voiture dispose d’un petit nombre de places disponibles. Le nombre de places gratuites sur le total des places disponibles pour être considéré comme suffisamment petit pour entrer dans cette catégorie est déterminé à la discrétion du producteur. | 
-| _**STANDING_ROOM_ONLY**_ | Le véhicule ou la voiture ne peut actuellement accueillir que des passagers debout. | 
-| _**CRUSHED_STANDING_ROOM_ONLY**_ | Le véhicule ou la voiture ne peut actuellement accueillir que des passagers debout et dispose d’un espace limité pour eux. | 
-| _**FULL**_ | Le véhicule est considéré comme plein selon la plupart des mesures, mais il se peut qu’il permette toujours aux passagers de monter à bord. | 
-| _**NOT_ACCEPTING_PASSENGERS**_ | Le véhicule ou la voiture n’accepte pas de passagers. Le véhicule ou la voiture accepte généralement des passagers pour l’embarquement. | 
-| _**NO_DATA_AVAILABLE**_ | Le véhicule ou la voiture ne dispose d’aucune donnée d’occupation disponible à ce moment-là. | 
-| _**NOT_BOARDABLE**_ | _Le véhicule ou la calèche n’est pas embarquable et n’accepte jamais de passagers. Utile pour les véhicules ou chariots spéciaux (moteur, chariot de maintenance, etc…)._ | 
+| **EMPTY** | Le véhicule est considéré comme vide par la plupart des mesures et a peu ou pas de passagers à bord, mais accepte toujours des passagers. | 
+| **MANY_SEATS_AVAILABLE** | Le véhicule ou la voiture dispose d’un grand nombre de places disponibles. Le nombre de places gratuites sur le total des places disponibles pour être considéré comme suffisamment important pour entrer dans cette catégorie est déterminé à la discrétion du producteur. | 
+| **FEW_SEATS_AVAILABLE** | Le véhicule ou la voiture dispose d’un petit nombre de places disponibles. Le nombre de places gratuites sur le total des places disponibles pour être considéré comme suffisamment petit pour entrer dans cette catégorie est déterminé à la discrétion du producteur. | 
+| **STANDING_ROOM_ONLY** | Le véhicule ou la voiture ne peut actuellement accueillir que des passagers debout. | 
+| **CRUSHED_STANDING_ROOM_ONLY** | Le véhicule ou la voiture ne peut actuellement accueillir que des passagers debout et dispose d’un espace limité pour eux. | 
+| **FULL** | Le véhicule est considéré comme plein selon la plupart des mesures, mais il se peut qu’il permette toujours aux passagers de monter à bord. | 
+| **NOT_ACCEPTING_PASSENGERS** | Le véhicule ou la voiture n’accepte pas de passagers. Le véhicule ou la voiture accepte généralement des passagers pour l’embarquement. | 
+| **NO_DATA_AVAILABLE** | Le véhicule ou la voiture ne dispose d’aucune donnée d’occupation disponible à ce moment-là. | 
+| **NOT_BOARDABLE** | Le véhicule ou la calèche n’est pas embarquable et n’accepte jamais de passagers. Utile pour les véhicules ou chariots spéciaux (moteur, chariot de maintenance, etc…). | 
 
 
 ### _message_ CarriageDetails 
