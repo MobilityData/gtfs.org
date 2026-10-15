@@ -359,22 +359,22 @@ GTFS stop_times.txt内で定義されている特定のプロパティのリア�
 
 | _**フィールド名**_ | _**タイプ**_ | _**必須**_ | _**カーディナリティ**_ | _**説明**_ |
 |------------------|------------|----------------|-------------------|-------------------|
-|**active_period**| [TimeRange](#message-timerange) |任意| 複数 | アラートをユーザーにするべきである時間。指定しない場合は、フィードに表示される限りアラートが表示されます。複数の範囲が指定されている場合は、そのすべての範囲でアラートが表示されます。 |
-|**communication_period**| [TimeRange](#message-timerange) |任意| 複数 |アラートを情報提供のみを目的としてユーザーに表示するするべきであるがある時間。指定しない場合、コンシューマーアプリケーションが表示するタイミングを決定できます。複数の範囲が指定されている場合、アラートはそれらのすべての期間に表示されます。| 
-|**impact_period**| [TimeRange](#message-timerange) |任意| 複数 | サービスがアラートの影響を受ける時間。communication_period が指定されている場合、impact_period のすべての時間間隔は、少なくとも 1 つの communication_period の時間間隔内に完全に含まれているしなければならない。| 
-|**informed_entity**| [EntitySelector](#message-entityselector) |必須| 複数 | このアラートをユーザーに通知するするべきであるエンティティ。少なくとも 1つの inform_entity を指定するしなければならない。|
-|**cause**| [Cause](#enum-cause) |条件付きで必須| 1つ | cause_detail が含まれている場合は、Cause も含める必要がしなければならない。
-|**cause_detail**| [TranslatedString](#message-translatedstring) |任意| 1つ | アラートの原因の説明。事業者固有の言語を使用できます。Cause よりも具体的です。cause_detail が含まれている場合は、Cause も含めるしなければならない。<br><br>**注意:** このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。
-|**effect**| [Effect](#enum-effect) |条件付きで必須| 1つ | effect_detail が含まれている場合は、Effect も含めるしなければならない。
-|**effect_detail**| [TranslatedString](#message-translatedstring) |任意| 1つ | アラートの効果の説明。事業者固有の言語を使用できます。Effect よりも具体的です。effect_detail が含まれている場合は、Effect も含めるしなければならない。<br><br>**注意:** このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよい性があります。
-|**url**| [TranslatedString](#message-translatedstring) |任意| 1つ | アラートに関する追加情報を提供する URL。|
-|**header_text**| [TranslatedString](#message-translatedstring) |必須| 1つ | アラートのヘッダー。このプレーン テキスト文字stringは、たとえば太字で強調表示されます。|
-|**description_text**| [TranslatedString](#message-translatedstring) |必須| 1つ | アラートの説明。このプレーン テキスト文字stringは、アラートの本文としてフォーマットされます (または、ユーザーによる明示的な`展開`要求で表示されます)。説明の情報は、ヘッダーの情報に追加されるするべきである。|
-|**tts_header_text**| [TranslatedString](#message-translatedstring) |任意| 1つ |テキスト読み上げの実装に使用されるアラートのヘッダーを含むText。このフィールドは、header_text のテキスト読み上げバージョンです。header_text と同じ情報を含めるするべきであるが、テキスト読み上げとして読み取れる形式にする必要があります (たとえば、省略形は削除、数字はスペルアウトなど)。|
-|**tts_description_text**| [TranslatedString](#message-translatedstring) |任意| 1つ |テキスト読み上げの実装に使用されるアラートの説明を含むText。このフィールドは、description_text のテキスト読み上げバージョンです。description_text と同じ情報を含めるするべきであるが、テキスト読み上げとして読み取れる形式にする必要があります (たとえば、省略形は削除、数字はスペルアウトなど)。|
-|**severity_level**| [SeverityLevel](#enum-severitylevel) | 任意 | 1つ | アラートの重大度。 |
-|**image**| [TranslatedImage](#message-translatedimage) | 任意 | 1つ | アラートTextに沿って表示される 1つのTranslatedImage 。迂回、駅の閉鎖などのアラート効果を視覚的に説明するために使用されます。画像はアラートの理解を深めるするべきである、重要な情報の唯一の場所であってはしてはいけない。次の種類の画像は推奨されません : 主にTextを含む画像、追加情報を含まないマーケティングまたはブランド画像。|
-|**image_alternative_text**| [TranslatedString](#message-translatedstring) | 任意 | 1つ | `image`フィールドでリンクされた画像の外観を説明するText(たとえば、画像を表示できない場合や、アクセシビリティの理由でユーザーが画像を見ることができない場合など)。HTML [alt 画像のTextの仕様](https://html.spec.whatwg.org/#alt) を参照してください。|
+| **active_period** | [TimeRange](#message-timerange) | 任意 | 複数 | アラートをユーザーにするべきである時間。指定しない場合は、フィードに表示される限りアラートが表示されます。複数の範囲が指定されている場合は、そのすべての範囲でアラートが表示されます。 |
+| **communication_period** | [TimeRange](#message-timerange) | 任意 | 複数 |アラートを情報提供のみを目的としてユーザーに表示するするべきであるがある時間。指定しない場合、コンシューマーアプリケーションが表示するタイミングを決定できます。複数の範囲が指定されている場合、アラートはそれらのすべての期間に表示されます。| 
+| **impact_period** | [TimeRange](#message-timerange) |任意| 複数 | サービスがアラートの影響を受ける時間。communication_period が指定されている場合、impact_period のすべての時間間隔は、少なくとも 1 つの communication_period の時間間隔内に完全に含まれているしなければならない。| 
+| **informed_entity** | [EntitySelector](#message-entityselector) | 必須 | 複数 | このアラートをユーザーに通知するするべきであるエンティティ。少なくとも 1つの inform_entity を指定するしなければならない。|
+| **cause** | [Cause](#enum-cause) |条件付きで必須| 1つ | cause_detail が含まれている場合は、Cause も含める必要がしなければならない。
+| **cause_detail** | [TranslatedString](#message-translatedstring) | 任意 | 1つ | アラートの原因の説明。事業者固有の言語を使用できます。Cause よりも具体的です。cause_detail が含まれている場合は、Cause も含めるしなければならない。<br><br>**注意:** このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよい。
+| **effect** | [Effect](#enum-effect) |条件付きで必須| 1つ | effect_detail が含まれている場合は、Effect も含めるしなければならない。
+| **effect_detail** | [TranslatedString](#message-translatedstring) | 任意 | 1つ | アラートの効果の説明。事業者固有の言語を使用できます。Effect よりも具体的です。effect_detail が含まれている場合は、Effect も含めるしなければならない。<br><br>**注意:** このフィールドはまだ**実験的**であり、変更される可能性があります。将来正式に採用されるしてもよい性があります。
+| **url** | [TranslatedString](#message-translatedstring) | 任意 | 1つ | アラートに関する追加情報を提供する URL。|
+| **header_text** | [TranslatedString](#message-translatedstring) | 必須 | 1つ | アラートのヘッダー。このプレーン テキスト文字stringは、たとえば太字で強調表示されます。|
+| **description_text** | [TranslatedString](#message-translatedstring) |必須| 1つ | アラートの説明。このプレーン テキスト文字stringは、アラートの本文としてフォーマットされます (または、ユーザーによる明示的な`展開`要求で表示されます)。説明の情報は、ヘッダーの情報に追加されるするべきである。|
+| **tts_header_text** | [TranslatedString](#message-translatedstring) | 任意 | 1つ | テキスト読み上げの実装に使用されるアラートのヘッダーを含むText。このフィールドは、header_text のテキスト読み上げバージョンです。header_text と同じ情報を含めるするべきであるが、テキスト読み上げとして読み取れる形式にする必要があります (たとえば、省略形は削除、数字はスペルアウトなど)。|
+| **tts_description_text** | [TranslatedString](#message-translatedstring) | 任意 | 1つ | テキスト読み上げの実装に使用されるアラートの説明を含むText。このフィールドは、description_text のテキスト読み上げバージョンです。description_text と同じ情報を含めるするべきであるが、テキスト読み上げとして読み取れる形式にする必要があります (たとえば、省略形は削除、数字はスペルアウトなど)。|
+| **severity_level** | [SeverityLevel](#enum-severitylevel) | 任意 | 1つ | アラートの重大度。 |
+| **image**| [TranslatedImage](#message-translatedimage) | 任意 | 1つ | アラートTextに沿って表示される 1つのTranslatedImage 。迂回、駅の閉鎖などのアラート効果を視覚的に説明するために使用されます。画像はアラートの理解を深めるするべきである、重要な情報の唯一の場所であってはしてはいけない。次の種類の画像は推奨されません : 主にTextを含む画像、追加情報を含まないマーケティングまたはブランド画像。|
+| **image_alternative_text** | [TranslatedString](#message-translatedstring) | 任意 | 1つ | `image`フィールドでリンクされた画像の外観を説明するText(たとえば、画像を表示できない場合や、アクセシビリティの理由でユーザーが画像を見ることができない場合など)。HTML [alt 画像のTextの仕様](https://html.spec.whatwg.org/#alt) を参照してください。|
 
 
 ### _enum_ Cause
