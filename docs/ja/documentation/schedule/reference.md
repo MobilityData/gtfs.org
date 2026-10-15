@@ -86,7 +86,7 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
 - **Email**- 電子メール アドレス。<br> *例: `example@example.com`*
 - **Enum**- `説明`列で定義された定義済み定数のセットからの任意。<br> *例: `route_type`フィールドには、路面電車の場合は `0`、地下鉄の場合は`1`す`...*
 - **ID**- ID フィールドの値は内部 ID であり、乗客に表示されることは意図されておらず、UTF-8 文字のシーケンスです。印刷可能な ASCII 文字のみを使用することをお勧めします。ファイル内で一意である必要がある ID には、「一意の ID」というラベルが付けられます。1 つの .txt ファイルで定義された ID は、別の .txt ファイルで参照されることがよくあります。別のテーブルの ID を参照する ID には、「外部 ID」というラベルが付けられます。<br> *例: [stops.txt](#stopstxt) の `stop_id` フィールドは「一意の ID」です。[stops.txt](#stopstxt) の `parent_station` フィールドは、「`stops.stop_id` を参照する外部 ID」です。*
-- **Language code**- IETF BCP 47 言語コード。IETF BCP 47 の概要については、[http://www.rfc-editor.org/rfc/bcp/bcp47 .txt](http://www.rfc-editor.org/rfc/bcp/bcp47 .txt) および [https://www.w3.org/International/articles/language-tags/](https://www.w3.org/International/articles/language-tags/) を参照してください。<br> *例: 英語の場合は`en` 、アメリカ英語の場合は`en-US` 、ドイツ語の場合は `de`。*
+- **Language code**- IETF BCP 47 言語コード。IETF BCP 47 の概要については、[https://www.rfc-editor.org/info/rfc5646/](https://www.rfc-editor.org/info/rfc5646/) および [https://www.w3.org/International/articles/language-tags/](https://www.w3.org/International/articles/language-tags/) を参照してください。<br> *例: 英語の場合は`en` 、アメリカ英語の場合は`en-US` 、ドイツ語の場合は `de`。*
 - **latitude**- 10 進度での WGS84 緯度。値は -90.0 以上 90.0 以下であるしなければならない。 *<br>例: ローマのコロッセオの場合は `41.890169`。*
 - **longitude**- 10 進度での WGS84 経度。値は -180.0 以上 180.0 以下であるしなければならない。<br> *例: ローマのコロッセオの場合は `12.492269`。*
 - **Float** - 浮動小数点数。
@@ -139,7 +139,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | [stop_areas.txt](#stop_areastxt) |任意|停留所等をエリアに割り当てるルール。 |
 | [networks.txt](#networkstxt) | **条件付きで禁止** | ルートのネットワーク グループ化。<br><br>条件付きで禁止:<br>- `network_id` が [routes.txt](#routestxt) に存在する場合は **禁止**。<br>- それ以外の場合は任意。|
 | [route_networks.txt](#route_networkstxt) | **条件付きで禁止** | ルートをネットワークに割り当てるルール。<br><br>条件付きで禁止:<br>- `network_id` が [routes.txt](#routestxt) に存在する場合は **禁止**。<br>- それ以外の場合は任意。|
-| [shapes.txt](#shapestxt) |任意| 車両の移動経路をマッピングするためのルール。ルート配置と呼ばれることもあります。 |
+| [shapes.txt](#shapestxt) |**条件付きで必須**| 車両の走行経路をマッピングするためのルール。ルートアライメントと呼ばれることもあります。<br><br>条件付きで必須：<br> -**必須**ルートファイル [routes.txt](#routestxt) またはストップタイムファイル [stop_times.txt](#stop_timestxt) で定義されている連続的なピックアップまたはドロップオフ動作がある場合。<br>それ以外の場合は推奨ん。|
 | [frequencies.txt](#frequenciestxt) |任意| ヘッドウェイベースのサービスのヘッドウェイ (便間の時間) または固定スケジュールサービスの圧縮表現。 |
 | [transfers.txt](#transferstxt) |任意|ルート・路線系統間の乗り換えポイントで接続を行うためのルール。 |
 | [pathways.txt](#pathwaystxt) |任意| 駅内の場所をリンクする構内通路。 |
@@ -694,7 +694,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | `from_trip_id` | `trips.trip_id` 部 ID |**条件付きで必須**|ルート・路線系統間の接続が始まる便を識別します。<br><br> `from_trip_id`が定義されている場合、乗り換えは指定された`from_stop_id`の到着便に適用されます。<br><br> `from_trip_id`と`from_route_id` の両方が定義されている場合、 `trip_id`は`route_id`に属しているしなければならない、 `from_trip_id` が優先されます。 `transfer_type`が `4` または `5` の場合は必須。 |
 | `to_trip_id` | `trips.trip_id` 部 ID |**条件付きで必須**|ルート・路線系統間の接続が終了する便を識別します。<br><br> `to_trip_id`が定義されている場合、乗り換えは指定された`to_stop_id`の出発便に適用されます。<br><br> `to_trip_id`と`to_route_id` の両方が定義されている場合、 `trip_id`は`route_id`に属しているしなければならない、 `to_trip_id` が優先されます。 `transfer_type`が `4` または `5` の場合は必須。 |
 | `transfer_type` | Enum |**必須**| 指定された (`from_stop_id`、 `to_stop_id` ) ペアの接続タイプを示します。有効なオプションは次のとおりです。<br><br> `0` または空 -ルート・路線系統間の推奨乗換ポイント。<br> `1` - 2 つのルート・路線系統間の時間指定の乗り換えポイント。出発車両は到着車両を待機し、乗客がルート・路線系統間を乗り換えるのに十分な時間を残すことが求められます。<br> `2` - 乗り継ぎを確実に行うには、到着から出発までの間に最低限の時間が必要です。乗り継ぎに必須時間は`min_transfer_time`で指定します。<br> `3` - その場所ではルート・路線系統間の乗り換えはできません。<br> `4` - 乗客は同じ車両に乗車したまま、ある便から別の便へ乗り換えることができます (`座席内乗り換え`)。このタイプの乗り換えの詳細については、[以下](#_15) を参照してください。<br> `5` - 連続する便間での座席内乗り換えは許可されません。乗客は車両から降りて再び乗車しなければならない。このタイプの乗り換えの詳細については、[下記](#_15)を参照してください。 |
-| `min_transfer_time` | 負でない整数 | 任意 | 指定された停留所等でルート・路線系統間の乗り換えを許可するためにしなければならない時間 (秒単位)。`min_transfer_time` は、各ルートのスケジュール変更を可能にするバッファ時間を含め、一般的な乗客が 2 つの停留所等間を移動するのに十分な時間であるするべきである。 |
+| `min_transfer_time` | 負でない整数 |**条件付きで必須**| 指定された停留所でルート・路線系統間の乗り換えを許可するために利用可能でなけれしなければならない時間 (秒単位)。 `min_transfer_time`は、各ルートのスケジュール変動に対応するためのバッファ時間を含め、一般的な乗客が2つの停留所間を移動するのに十分な時間であるするべきである。<br><br>条件付きで必須：<br> -**必須**`transfer_type`が`2`の場合。<br> - それ以外の場合は任意。| 
 
 #### リンクされた便
 
