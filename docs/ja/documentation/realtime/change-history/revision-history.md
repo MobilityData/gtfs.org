@@ -2,10 +2,19 @@
 
 ### 改訂履歴
 
+#### 2026年9月
+
+* `shapes.txt` を`任意`から`条件付きで必須`に更新しました。[discussion](https://github.com/google/transit/pull/660) を参照してください。
+* IETF BCP 47 言語コードの参照リンクを修正しました。[discussion](https://github.com/google/transit/pull/658) を参照してください。
+
+#### 2026年8月
+
+* 時間指定乗り換え(transfer\_type \= 2) には`min_transfer_time`が必須。[discussion](https:://github.com/google/transit/pull/640) を参照してください。
+
 #### 2026年6月 
+
 * アラートに communication_period と impact_period という 2 つの新しいフィールドを追加し、active_period をより適切に定義できるようにしました。[ディスカッション](https://github.com/google/transit/pull/546) を参照してください。 
 * サービス アラートに、新しい SPECIAL_EVENT Cause to Cause リストを追加しました。[ディスカッション](https://github.com/google/transit/pull/577) を参照してください。
-
 
 #### 2026年4月 
 
