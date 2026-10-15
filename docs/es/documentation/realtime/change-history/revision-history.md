@@ -4,11 +4,11 @@
 
 #### Septiembre 2026
 
-* Se corrigieron problemas menores de formato. Ver [discusión](https://github.com/google/transit/pull/641/changes)
+* Se corrigieron problemas menores de formato. Ver [discusión](https://github.com/google/transit/pull/641).
 
 #### Agosto 2026 
 
-* Se adoptaron las imágenes en las alertas de servicio a la especificación y se eliminó la etiqueta "experimental". Consulte la [discusión](https://github.com/google/transit/pull/651/changes). 
+* Se adoptaron las imágenes en las alertas de servicio a la especificación y se eliminó la etiqueta "experimental". Consulte la [discusión](https://github.com/google/transit/pull/651). 
 
 #### Junio 2026
 
