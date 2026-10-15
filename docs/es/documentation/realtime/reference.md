@@ -118,8 +118,8 @@ Determina si la recuperación actual es incremental.
 
 | _**Valor**_ | _**Comentario**_ | 
 |-------------|---------------| 
-|**FULL_DATASET**| esta actualización del feed sobrescribirá toda la información anterior en tiempo del feed. Por lo tanto, se espera que esta actualización proporcione una instantánea completa de toda la información conocida en tiempo real. | 
-|**DIFFERENTIAL**| actualmente, este modo **no es compatible** y el comportamiento **no está especificado** para los feeds que usan este modo. Hay discusiones en la [lista de correo GTFS Realtime](http://groups.google.com/group/gtfs-realtime) sobre la especificación completa del comportamiento del modo DIFERENCIAL y la documentación se actualizará cuando esas discusiones se hayan finalizado. |
+| **FULL_DATASET** | Esta actualización del feed sobrescribirá toda la información anterior en tiempo del feed. Por lo tanto, se espera que esta actualización proporcione una instantánea completa de toda la información conocida en tiempo real. | 
+| **DIFFERENTIAL** | Actualmente, este modo **no es compatible** y el comportamiento **no está especificado** para los feeds que usan este modo. Hay discusiones en la [lista de correo GTFS Realtime](http://groups.google.com/group/gtfs-realtime) sobre la especificación completa del comportamiento del modo DIFERENCIAL y la documentación se actualizará cuando esas discusiones se hayan finalizado. |
 
 ### _message_ FeedEntity 
 
