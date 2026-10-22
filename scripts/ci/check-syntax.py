@@ -21,7 +21,8 @@ job, so that annotations print and suggestions post first regardless.
 A "suggestion" in a finding is an unambiguous one-line fix (e.g. a Makefile
 recipe line that must start with a tab). Genuine syntax breaks (a missing
 JSON brace, bad YAML indentation) get a precise location + parser message but
-no suggestion, because the correct repair cannot be guessed reliably.
+no suggestion, because the correct repair cannot be guessed reliably. Common
+YAML errors also get a plain-language "Fix:" hint appended to the message.
 """
 
 import argparse
@@ -66,24 +67,145 @@ def _escape_property(value):
     return _escape_data(value).replace(":", "%3A").replace(",", "%2C")
 
 
+# Fix hints for the PyYAML errors contributors hit most often. Each entry is
+# (substring of the parser's problem text, substring of its context text or
+# None, report at context_mark instead of problem_mark, hint). First match
+# wins. Reporting at context_mark matters for unclosed quotes: the parser only
+# notices at end of file, but the context mark is where the quote was opened.
+_YAML_HINTS = [
+    (
+        "'\\t'",
+        None,
+        False,
+        "YAML does not allow tabs for indentation. Replace the tab(s) on "
+        "this line with spaces, matching the indentation of sibling keys.",
+    ),
+    (
+        "end of stream",
+        "quoted scalar",
+        True,
+        "A quoted value opened on this line is never closed. Add the "
+        "matching closing quote (\" or ') at the end of the value; to use the "
+        "same quote character inside the value, escape it (\\\" in "
+        "double-quoted, '' in single-quoted strings).",
+    ),
+    (
+        "mapping values are not allowed here",
+        None,
+        False,
+        "Either this line is indented deeper than the keys around it (align "
+        "it with its sibling keys), or a value contains ': ' and must be "
+        "quoted, e.g. title: \"Note: something\".",
+    ),
+    (
+        "expected <block end>",
+        None,
+        False,
+        "This line's indentation does not match any enclosing level. Align "
+        "it with the keys or list items at the level it belongs to, using "
+        "the same number of spaces.",
+    ),
+    (
+        "did not find expected",
+        None,
+        False,
+        "Indentation is inconsistent here: list items ('- ') and keys at the "
+        "same level must start in the same column.",
+    ),
+    (
+        "could not find expected ':'",
+        "simple key",
+        True,
+        "This line is missing the ':' after its key, or it is the "
+        "continuation of a multi-line value that should be quoted or "
+        "indented under its key.",
+    ),
+]
+
+
+def _yaml_hint(exc):
+    """Return (mark, hint) for a known YAMLError shape, else (None, None)."""
+    problem = getattr(exc, "problem", None) or ""
+    context = getattr(exc, "context", None) or ""
+    for prob_sub, ctx_sub, use_context, hint in _YAML_HINTS:
+        if prob_sub in problem and (ctx_sub is None or ctx_sub in context):
+            mark = getattr(exc, "context_mark", None) if use_context else None
+            return mark, hint
+    return None, None
+
+
+def _yaml_duplicate_keys(path, node, findings, visited=None):
+    """Walk a composed node graph and flag duplicate scalar keys in any
+    mapping. YAML requires unique keys, but PyYAML (and so MkDocs) silently
+    keeps the last value, which makes the earlier entry vanish without an
+    error. Merge keys ('<<') are exempt since repeating them is not a
+    duplicate definition. `visited` stops an aliased node (*anchor) from
+    being walked, and reported, more than once."""
+    import yaml
+
+    if visited is None:
+        visited = set()
+    if id(node) in visited:
+        return
+    visited.add(id(node))
+    if isinstance(node, yaml.MappingNode):
+        seen = {}
+        for key_node, value_node in node.value:
+            if isinstance(key_node, yaml.ScalarNode) and key_node.value != "<<":
+                key = key_node.value
+                mark = key_node.start_mark
+                if key in seen:
+                    findings.append(
+                        _finding(
+                            path,
+                            mark.line + 1,
+                            mark.column + 1,
+                            f"Invalid YAML: duplicate key '{key}' (first "
+                            f"defined on line {seen[key]}). Fix: the later "
+                            f"value silently replaces the earlier one; "
+                            f"remove or rename one of them, or merge their "
+                            f"contents.",
+                        )
+                    )
+                else:
+                    seen[key] = mark.line + 1
+            _yaml_duplicate_keys(path, key_node, findings, visited)
+            _yaml_duplicate_keys(path, value_node, findings, visited)
+    elif isinstance(node, yaml.SequenceNode):
+        for item in node.value:
+            _yaml_duplicate_keys(path, item, findings, visited)
+
+
 def check_yaml(path, text):
     """Validate YAML syntax. Uses compose_all, which parses the node graph
     without constructing Python objects — so it tolerates the
     `!!python/name:...` tags in config/*/mkdocs.yml that a plain safe_load
-    would reject with a false 'could not determine a constructor' error."""
+    would reject with a false 'could not determine a constructor' error.
+
+    Common errors (tabs, bad indentation, unclosed quotes) get a fix hint
+    appended to the message, and duplicate keys are reported too."""
     import yaml
 
     findings = []
     try:
         # Consume the generator so multi-document files are fully parsed.
-        list(yaml.compose_all(text))
+        documents = list(yaml.compose_all(text))
     except yaml.YAMLError as exc:
         line, col = 1, 1
         mark = getattr(exc, "problem_mark", None)
+        hint_mark, hint = _yaml_hint(exc)
+        if hint_mark is not None:
+            mark = hint_mark
         if mark is not None:
             line, col = mark.line + 1, mark.column + 1
         problem = getattr(exc, "problem", None) or str(exc).splitlines()[0]
-        findings.append(_finding(path, line, col, f"Invalid YAML: {problem}"))
+        message = f"Invalid YAML: {problem}"
+        if hint:
+            message += f". Fix: {hint}"
+        findings.append(_finding(path, line, col, message))
+        return findings
+    for document in documents:
+        _yaml_duplicate_keys(path, document, findings)
     return findings
 
 
