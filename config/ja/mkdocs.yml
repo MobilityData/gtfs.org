@@ -4,6 +4,8 @@ repo_url: https://github.com/google/transit
 repo_name: GTFSリポジトリ
 docs_dir: ../../docs/ja       # Where to find the markdown files
 site_dir: ../../generated/ja  # Where to put the HTML files
+exclude_docs: |               # Generated for LLMs/GEO; kept in the repo but never built as a page
+  *.generated.md
 edit_uri: edit/main/docs/ja/
 
 validation:
