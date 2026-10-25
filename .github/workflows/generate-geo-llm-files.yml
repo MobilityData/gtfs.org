@@ -17,6 +17,7 @@ on:
       - 'config/**'
       - 'overrides/home.html'
       - 'overrides/locales/**'
+      - 'scripts/geo_llm_files/**'
 
 permissions:
   contents: read

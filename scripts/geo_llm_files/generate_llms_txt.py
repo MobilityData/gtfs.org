@@ -100,7 +100,10 @@ def shorten(text: str) -> str:
 
 
 def first_sentence(text: str) -> str:
-    """First sentence of a paragraph: up to the first . ! or ? followed by a capital letter, a digit or an opening mark."""
+    """First sentence of a paragraph: up to the first . ! or ? followed by a capital letter, a digit or an opening mark, or the first CJK full stop (。！？), which takes no following space."""
+    cjk = re.search(r"[。！？]", text)
+    if cjk:
+        return text[: cjk.end()]
     for match in re.finditer(r"[.!?](?=\s+(\S))", text):
         following = match.group(1)
         if following.isupper() or following.isdigit() or following in "¿¡\"'«(":
