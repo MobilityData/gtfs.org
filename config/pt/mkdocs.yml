@@ -135,9 +135,7 @@ plugins:
       assets: false
       links_attr_map:
         target: _blank
-  - search:
-      lang: 
-        - pt
+  - search
   - redirects:
       redirect_maps:
         'getting-started/what-is-GTFS.md': 'index.md'

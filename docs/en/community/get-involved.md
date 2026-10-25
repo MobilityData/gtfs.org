@@ -88,7 +88,7 @@ We meet on the fourth Tuesday of every month at 11:00 EST via Zoom. Materials ar
 - **Service Alerts** — Real-time disruption info  
 - **Fares** — Ticketing and pricing structures
 
-### [Learn more about the Working Group Meetings →](https://community.mobilitydata.org/working-groups)
+### [Learn more about the Working Group Meetings →](https://community.gtfs.org/working-groups)
 
 
 ## Community Resources

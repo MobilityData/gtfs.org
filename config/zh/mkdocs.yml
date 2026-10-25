@@ -133,9 +133,7 @@ plugins:
       assets: false
       links_attr_map:
         target: _blank
-  - search:
-      lang: 
-        - zh # Lunr Languages does not currently include support for Chinese or other Asian languages. However, some users have reported decent results using Japanese.
+  - search
   - redirects:
       redirect_maps:
         'getting-started/what-is-GTFS.md': 'index.md'

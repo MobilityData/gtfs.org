@@ -134,10 +134,7 @@ plugins:
       assets: false
       links_attr_map:
         target: _blank
-  - search:
-      lang: 
-        - es
-
+  - search
 nav:
   - Inicio: index.md
   - Primeros pasos:

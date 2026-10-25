@@ -22,6 +22,7 @@ Configuration comes from the environment:
   BASE_SHA   - PR base commit
   HEAD_SHA   - PR head commit (used as the review commit_id)
   FINDINGS   - path to findings JSON (default: syntax-findings.json)
+  REVIEW_BODY - summary text for the review (default: the syntax-check wording)
 """
 
 import json
@@ -91,13 +92,17 @@ def comment_body(finding):
 
 
 def post_review(repo, pr_number, token, commit_id, comments):
-    """POST a single review with the given inline comments."""
+    """POST a single review with the given inline comments.
+
+    The summary body is overridable via REVIEW_BODY so other checks can reuse
+    this poster without claiming to be the syntax check."""
     payload = {
         "commit_id": commit_id,
         "event": "COMMENT",
-        "body": (
+        "body": os.environ.get(
+            "REVIEW_BODY",
             "Automated syntax check found issues in changed files. "
-            "See the inline comments below."
+            "See the inline comments below.",
         ),
         "comments": comments,
     }

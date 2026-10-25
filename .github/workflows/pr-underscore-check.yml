@@ -1,0 +1,105 @@
+name: PR Underscore Check
+
+# Flags underscores in URL-visible paths introduced by a pull request: link
+# targets on added/modified lines of docs/**/*.md, and the paths of files the
+# PR adds under docs/** or overrides/**.
+#
+# The site's Nginx config carries an unconditional redirect —
+#   rewrite ^/(.*)_(.*)$ /$1-$2 permanent;
+# — so any underscored URL is 301'd to its hyphenated form whether or not the
+# underscored file exists. A file added with an underscore in its path is
+# therefore unreachable: every request for it arrives hyphenated and 404s.
+#
+# Anchor fragments (#stop_timestxt), query strings and external URLs are exempt
+# because the rewrite cannot reach them — see scripts/ci/check-underscores.py
+# for the full rules. Like the syntax check, this is intentionally NOT a
+# required status check: it makes the problem visible (red X plus inline
+# comments) without blocking merge.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+# One run per PR; cancel superseded runs on rapid pushes.
+concurrency:
+  group: pr-underscore-check-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  underscore-check:
+    name: Check paths for underscores
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.0
+        with:
+          fetch-depth: 0 # full history so base...head diff is computable
+
+      - name: Set up Python
+        uses: actions/setup-python@v6.3.0
+        with:
+          python-version: '3.11'
+
+      # No pip install step: the checker is stdlib-only by design, so this
+      # check stays independent of requirements.txt and of the syntax check.
+
+      - name: Run underscore checker
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          python3 scripts/ci/check-underscores.py \
+            --base "${BASE_SHA}" \
+            --head "${HEAD_SHA}" \
+            --findings-out underscore-findings.json
+
+      - name: Post inline review comments
+        # Fork PRs get a read-only token and cannot create reviews; they still
+        # receive annotations and the failing check below.
+        if: >-
+          github.event.pull_request.head.repo.full_name == github.repository
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          FINDINGS: underscore-findings.json
+          REVIEW_BODY: >-
+            This PR introduces paths containing underscores. The site's Nginx
+            config permanently redirects any underscored URL to its hyphenated
+            form (`rewrite ^/(.*)_(.*)$ /$1-$2 permanent;`) regardless of
+            whether the underscored file exists, so these paths either 404 or
+            depend on the redirect to resolve. Use hyphens instead. See the
+            inline comments below.
+        run: python3 scripts/ci/post-review.py
+
+      - name: Fail if underscored paths were found
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          findings = json.load(open("underscore-findings.json"))
+          if findings:
+              print(f"{len(findings)} underscored path(s) found - see the "
+                    f"annotations and inline comments above.\n")
+              print(
+                  "Why this fails: the site's Nginx config redirects any URL\n"
+                  "containing an underscore to its hyphenated equivalent:\n\n"
+                  "    rewrite ^/(.*)_(.*)$ /$1-$2 permanent;\n\n"
+                  "The redirect is unconditional, so it fires whether or not\n"
+                  "the underscored file exists. A file whose path contains an\n"
+                  "underscore can never be served: every request for it\n"
+                  "arrives at the origin hyphenated and 404s. A link with an\n"
+                  "underscore costs a 301 round-trip and breaks outright if\n"
+                  "no hyphenated target exists.\n\n"
+                  "Fix: rename the file or retarget the link using hyphens.\n"
+                  "Underscores after '#' (GTFS field anchors) and in external\n"
+                  "URLs are not flagged - the rewrite never sees them."
+              )
+              sys.exit(1)
+          print("No underscored paths introduced by this PR.")
+          PY

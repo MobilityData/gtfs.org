@@ -2,6 +2,14 @@
 
 ## Historial de revisiones
 
+#### Septiembre 2026
+
+* Se corrigieron problemas menores de formato. Ver [discusión](https://github.com/google/transit/pull/641).
+
+#### Agosto 2026 
+
+* Se adoptaron las imágenes en las alertas de servicio a la especificación y se eliminó la etiqueta "experimental". Consulte la [discusión](https://github.com/google/transit/pull/651). 
+
 #### Junio 2026
 
 * Se agregaron dos nuevos campos en Alerts: `communication_period` e `impact_period` para definir mejor `active_period`. Consulte la [discusión](https://github.com/google/transit/pull/546)
