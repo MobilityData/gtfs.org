@@ -2,7 +2,7 @@
 
 GTFS Flex es un proyecto de extensión del GTFS Schedule que tiene como objetivo facilitar la visibilidad de los servicios de transporte sensibles a la demanda. 
 
-En su mayor parte, se adoptó en GTFS en Match 2024. Se pueden encontrar algunos ejemplos en [esta página](../../../documentation/schedule/examples/flex) que muestran lo que se puede modelarse utilizando la parte adoptada oficialmente de GTFS Flex. 
+En su mayor parte, se adoptó en GTFS en marzo de 2024. Se pueden encontrar algunos ejemplos en [esta página](../../../documentation/schedule/examples/flex) que muestran lo que se puede modelarse utilizando la parte adoptada oficialmente de GTFS Flex. 
 
 🤔 Servicios como dial-a-ride suelen ser ignorados por los usuarios, que a veces ni siquiera tienen idea de su existencia. Esta falta de accesibilidad es un problema para las agencias de transporte, los planificadores de viajes y los pasajeros. Imagine un grupo de turistas que llegan a su aeropuerto local y desean llegar a una zona rural que solo ofrece un servicio de autobús bajo demanda. Los turistas consultan su aplicación de planificación de viajes preferida y no encuentran una opción viable de transporte público. Terminan alquilando un coche. Al ser turistas, extrañan todos los folletos impresos colocados en el pasillo que anuncian el servicio a pedido. Su servicio no sólo está infrautilizado, sino que carece de la capacidad de descubrimiento para satisfacer la demanda actual y futura de los usuarios. Aquí es donde entra en juego GTFS-Flex. GTFS-Flex ayuda a los pasajeros a descubrir su servicio, para que disfruten de los servicios que usted trabajó arduamente para promover. 
  
