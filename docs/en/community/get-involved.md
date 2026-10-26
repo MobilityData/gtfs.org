@@ -62,13 +62,13 @@ The community is constantly developing new additions to the specification that c
 
     [:octicons-arrow-right-24: Learn more](../../community/extensions/fares-v2)
 
--   :material-file-document-edit:{ .lg .middle } __GTFS Governance__
+-   :material-source-pull:{ .lg .middle } __Live spec proposals__
 
     ---
 
-    A Working Group has been formed to modify the current GTFS Spec Amendment Process.
+    The current list of changes under discussion lives on GitHub.
 
-    [:octicons-arrow-right-24: Learn more](https://github.com/google/transit/issues/436)
+    [:octicons-arrow-right-24: View pull requests](https://github.com/google/transit/pulls)
 
 </div>
 
