@@ -1,0 +1,154 @@
+# General Transit Feed Specification
+
+> General Transit Feed Specificationの公式ドキュメント。このサイトとそのソースリポジトリ（https://github.com/google/transit）は、この標準に関する唯一の信頼できる情報源です。
+
+## ホーム
+
+- [ホーム](https://gtfs.org/ja/)
+
+## 始めに
+
+- [GTFS とは何ですか?](https://gtfs.org/ja/getting-started/what-is-gtfs/): GTFS の基本、重要性、作成方法、主な機能について説明します。
+- [GTFS を使用する理由](https://gtfs.org/ja/getting-started/why-use-gtfs/): GTFS は現代の交通システムのバックボーンとして機能し、事業者が正確で最新の情報を乗客、アプリ開発者、政策立案者に提供できるようにします。
+
+### GTFS を作成するには?
+
+- [作る](https://gtfs.org/ja/getting-started/create/): すべての GTFS フィードは、GTFS リファレンス形式のデータセットから始まります。
+- [検証](https://gtfs.org/ja/getting-started/validate/): 高品質の GTFS は、完全かつ正確で最新のものです。
+- [公開](https://gtfs.org/ja/getting-started/publish/): GTFS データはさまざまな方法で利用できます。
+
+### GTFS で何ができる?
+
+- [概要](https://gtfs.org/ja/getting-started/features/overview/): GTFS schedule の機能について理解を深め、その機能について理解を深めましょう。
+- [ベース](https://gtfs.org/ja/getting-started/features/base/): 以下の機能は、 GTFS が交通サービスを表すために必要な最も基本的かつ重要な要素を提供します。
+- [ベースアドオン](https://gtfs.org/ja/getting-started/features/base-add-ons/): これらの機能は、 ベースで説明されている機能を拡張し、GTFS データセットの包括性を高めて乗客の体験を向上させるか、事業者、データベンダー、およびデータ再利用者間のコラボレーションを促進します。
+- [アクセシビリティ](https://gtfs.org/ja/getting-started/features/accessibility/): アクセシビリティ機能は、障害を持つ人々がサービスにアクセスするために必要な情報を提供することを目的としています。
+- [運賃](https://gtfs.org/ja/getting-started/features/fares/): GTFS では、世界中のさまざまな交通事業者が使用する、ゾーン別、移動距離別、または時間帯別の運賃など、さまざまな運賃体系を正確にモデル化できます。
+- [経路](https://gtfs.org/ja/getting-started/features/pathways/): 構内通路機能は、大規模な交通事業者の駅をモデル化し、駅の入口や出口から、交通事業者の車両に乗車または降車する場所まで乗客を誘導することができます。
+- [柔軟なサービス](https://gtfs.org/ja/getting-started/features/flexible-services/): フレキシブルサービスは、需要対応サービスとも呼ばれ、スケジュールされたサービスや固定サービスの一般的な動作に従わないサービスです。
+
+- [GTFS フィードの例](https://gtfs.org/ja/getting-started/example-feed/): この GTFS フィードの例には、交通フィード内の各ファイルのデータ サンプルがカンマ区切りで表示されています。
+
+## 技術文書
+
+- [概要](https://gtfs.org/ja/documentation/overview/): GTFS scheduleとGTFS realtimeの両方について、GTFS リファレンス ドキュメント、ベスト プラクティス、データ例、変更履歴にアクセスします。
+
+### 参照
+
+- [参照](https://gtfs.org/ja/documentation/schedule/reference/): GTFS scheduleの詳細を確認し、リファレンス ドキュメントを参照してください。
+- [ベストプラクティス](https://gtfs.org/ja/documentation/schedule/schedule-best-practices/): これらは、General Transit Feed Specific (GTFS) で公共交通事業者のサービスを記述するための推奨プラクティスです。
+
+#### データ例
+
+- [帰属](https://gtfs.org/ja/documentation/schedule/examples/attributions/): 一部の GTFS データセットには、同じ管轄区域にサービスを提供する異なるサービス プロバイダーなど、複数のソースから集約されたデータが含まれています。
+- [連続ストップ](https://gtfs.org/ja/documentation/schedule/examples/continuous-stops/): 交通事業者 The Current (ロッキンガム、米国バーモント州) は、ルート 2、53、55 に連続停車ポリシーを適用しています。
+- [デマンド対応輸送](https://gtfs.org/ja/documentation/schedule/examples/flex/): GTFS Flex は、2024 年 3 月に GTFS 仕様に正式に採用された GTFS 拡張プロジェクトであり、デマンド レスポンシブ交通 (DRT) サービスの検出可能性を高めることを目的としています。
+
+##### 運賃 (v2)
+
+- [紹介](https://gtfs.org/ja/documentation/schedule/examples/fares/intro/)
+- [フェアメディア](https://gtfs.org/ja/documentation/schedule/examples/fares/fare-media/)
+- [運賃商品](https://gtfs.org/ja/documentation/schedule/examples/fares/fare-products/)
+- [乗客カテゴリ](https://gtfs.org/ja/documentation/schedule/examples/fares/rider-categories/)
+- [路線別運賃](https://gtfs.org/ja/documentation/schedule/examples/fares/route-based-fares/)
+- [ゾーン別運賃](https://gtfs.org/ja/documentation/schedule/examples/fares/zone-based-fares/)
+- [時間制運賃](https://gtfs.org/ja/documentation/schedule/examples/fares/time-based-fares/)
+- [運賃の乗り換え](https://gtfs.org/ja/documentation/schedule/examples/fares/fare-transfers/)
+- [アーカイブされた例](https://gtfs.org/ja/documentation/schedule/examples/fares/archived-fares-examples/)
+
+- [運賃 - 旧バージョン (v1)](https://gtfs.org/ja/documentation/schedule/examples/fares-v1/): 料金 - 旧バージョン (v1) は、限られた運賃要素をサポートする、以前の基本的な GTFS運賃モデルです。
+- [フィード情報](https://gtfs.org/ja/documentation/schedule/examples/feed-info/): 事業者とそのサービスに関する情報を提供するだけでなく、feed_info.txt ファイルを使用して GTFS データセットに関する情報を提供することもできます。
+- [フリークエンシー](https://gtfs.org/ja/documentation/schedule/examples/frequencies/): モントリオール交通局はモントリオールで交通サービスを運営しており、地下鉄路線で頻度ベースのサービスを提供しています。
+- [経路](https://gtfs.org/ja/documentation/schedule/examples/pathways/): 人口の大部分に影響: 世界保健事業者は、世界中の 16% の人が障害を抱えていると推定しており、障害のある人は「障害のない人よりもアクセスできない、または手頃でない交通手段を 15 倍も利用しにくい」としています。
+- [ルート、ストップ、トリップ](https://gtfs.org/ja/documentation/schedule/examples/routes-stops-trips/): ルート・路線系統は、交通ネットワークの地理的範囲を記述するため、固定ルートの交通運営の中核となります。
+- [ルート形状](https://gtfs.org/ja/documentation/schedule/examples/shapes/): shapes.txtファイルに含まれるデータは、交通サービスの表現において重要な役割を果たします。
+- [テキスト読み上げ](https://gtfs.org/ja/documentation/schedule/examples/text-to-speech/): 略語、珍しい発音、大きな数字は、GTFSTextフィールドでよく使用されます。
+- [トランスファー](https://gtfs.org/ja/documentation/schedule/examples/transfers/): ブロックトランスファー(座席内トランスファーとも呼ばれる) は、一連の便が次の条件を満たす場合に利用できます。
+- [翻訳](https://gtfs.org/ja/documentation/schedule/examples/translations/): 一部の交通事業者プロバイダーは複数の言語でサービスを提供しています。
+
+#### 変更履歴
+
+- [最近の追加](https://gtfs.org/ja/documentation/schedule/change-history/recent-additions/): GTFS スケジュール リファレンスは、固定されたものではありません。
+- [完全な改訂履歴](https://gtfs.org/ja/documentation/schedule/change-history/revision-history/): */fare_leg_rules.txt/ の参照へのリンクを追加しました。
+
+### リアルタイム
+
+- [参照](https://gtfs.org/ja/documentation/realtime/reference/): GTFS realtimeを詳しく調べて、リファレンス ドキュメントを参照してください。
+- [ベストプラクティス](https://gtfs.org/ja/documentation/realtime/realtime-best-practices/): これらは、GTFS realtime データ形式でリアルタイムの公共交通事業者情報を記述するための推奨プラクティスです。
+
+#### フィードエンティティ
+
+- [概要](https://gtfs.org/ja/documentation/realtime/feed-entities/overview/): GTFS realtime は、単一のリアルタイムフィードに組み合わせることができる4つの異なるタイプのリアルタイムデータをサポートしています。
+- [旅行最新情報](https://gtfs.org/ja/documentation/realtime/feed-entities/trip-updates/): 旅程の更新は時刻表の変動を表します。
+- [サービスアラート](https://gtfs.org/ja/documentation/realtime/feed-entities/service-alerts/): サービスアラートを使用すると、ネットワークに混乱が生じたときに更新情報を提供できます。
+- [自車位置](https://gtfs.org/ja/documentation/realtime/feed-entities/vehicle-positions/): 車両の位置は、車載 GPS デバイスなどから、車両の位置に関する自動生成された情報を提供するために使用されます。
+- [旅行の変更](https://gtfs.org/ja/documentation/realtime/feed-entities/trip-modifications/): TripModifications メッセージは、迂回などの特定の変更の影響を受ける、(CSV) GTFS からの類似の trip_ids のリストを識別します。
+
+- [Protobuf](https://gtfs.org/ja/documentation/realtime/proto/): gtfs-realtime.proto ファイルをダウンロードし、それを使用して GTFS-realtime フィードをコンパイルします。
+
+#### 言語のバインディング
+
+- [概要](https://gtfs.org/ja/documentation/realtime/language-bindings/overview/): GTFS Realtime は、公共交通事業者に関するリアルタイム情報を伝達するためのデータ形式です。
+- [.NET](https://gtfs.org/ja/documentation/realtime/language-bindings/dotnet/): GTFS-realtime プロトコル バッファ仕様から生成された.NETクラスを提供します。
+- [Java](https://gtfs.org/ja/documentation/realtime/language-bindings/java/): GTFS-realtime プロトコル バッファ仕様から生成された Java クラスを提供します。
+- [JavaScript/Node.js](https://gtfs.org/ja/documentation/realtime/language-bindings/nodejs/): [](http://badge.fury.io/js/gtfs-realtime-bindings)
+- [Python](https://gtfs.org/ja/documentation/realtime/language-bindings/python/): [](http://badge.fury.io/py/gtfs-realtime-bindings)
+- [Golang](https://gtfs.org/ja/documentation/realtime/language-bindings/golang/): GTFS-realtime プロトコル バッファ仕様から生成された Golang 構造体を提供します。
+- [Ruby](https://gtfs.org/ja/documentation/realtime/language-bindings/ruby/): [](https://badge.fury.io/rb/gtfs-realtime-bindings)
+- [PHP](https://gtfs.org/ja/documentation/realtime/language-bindings/php/): [](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings)
+
+#### データ例
+
+- [サービスアラート](https://gtfs.org/ja/documentation/realtime/examples/service-alerts/)
+- [旅行最新情報](https://gtfs.org/ja/documentation/realtime/examples/trip-updates/)
+- [重複した移行](https://gtfs.org/ja/documentation/realtime/examples/migration-duplicated/): GTFS リアルタイムの trip.schedule_relationship が NEW の場合、既存の定期旅程とは無関係のスケジュールで運行される新しい旅程を表します。
+- [移行ガイド Active Period](https://gtfs.org/ja/documentation/realtime/examples/migration-active-period/): GTFS-realtime の alert.active_period は次のように定義されていました。
+
+#### 変更履歴
+
+- [最近の追加](https://gtfs.org/ja/documentation/realtime/change-history/recent-additions/): GTFS realtimeリファレンスは固定されたものではありません。
+- [完全な改訂履歴](https://gtfs.org/ja/documentation/realtime/change-history/revision-history/)
+
+## コミュニティ
+
+- [参加する](https://gtfs.org/ja/community/get-involved/): GTFS コミュニティに参加して、最新情報を入手し、ガバナンスについて相談し、変更を提案し、進行中のプロジェクトで協力しましょう。
+
+### 統治
+
+#### GTFSスケジュールガバナンス
+
+- [概要](https://gtfs.org/ja/community/governance/gtfs-schedule-governance/introduction/)
+- [基本原則](https://gtfs.org/ja/community/governance/gtfs-schedule-governance/guiding-principles/)
+- [役割](https://gtfs.org/ja/community/governance/gtfs-schedule-governance/roles/)
+- [変更の種類](https://gtfs.org/ja/community/governance/gtfs-schedule-governance/change-types/)
+- [変更プロセス](https://gtfs.org/ja/community/governance/gtfs-schedule-governance/change-process/)
+- [以前のガバナンス](https://gtfs.org/ja/community/governance/gtfs-schedule-governance/changes/)
+- [GTFS realtime 修正プロセス](https://gtfs.org/ja/community/governance/gtfs-realtime-amendment-process/): GTFSGTFS realtime仕様は固定されたものではありません。
+
+### エクステンション
+
+- [概要](https://gtfs.org/ja/community/extensions/overview/): 詳細については、specifications@mobilitydata.orgまでお問い合わせください
+- [運賃v2](https://gtfs.org/ja/community/extensions/fares-v2/): Fares v2は、Fares v1 の制限に対処することを目的としたGTFS schedule拡張プロジェクトです。
+- [Flex](https://gtfs.org/ja/community/extensions/flex/): GTFS Flex は、デマンド レスポンシブ交通サービスの発見可能性を促進することを目的としたGTFS schedule拡張プロジェクトです。
+
+## リソース
+
+- [概要](https://gtfs.org/ja/resources/overview/)
+- [データの作成](https://gtfs.org/ja/resources/producing-data/)
+- [データの共有](https://gtfs.org/ja/resources/sharing-data/)
+- [データの使用](https://gtfs.org/ja/resources/using-data/)
+- [その他のリソース](https://gtfs.org/ja/resources/other/)
+
+## アバウト
+
+- [GTFS.org について](https://gtfs.org/ja/about/): GTFS.org、MobilityData による管理、GTFS の進化、貢献ガイドライン、ライセンスの詳細について説明します。
+
+## ブログ
+
+- [blog](https://gtfs.org/ja/blog/)
+
+## 他の言語
+
+- [English](https://gtfs.org/llms.txt)
+- [Français](https://gtfs.org/fr/llms.txt)
+- [Español](https://gtfs.org/es/llms.txt)

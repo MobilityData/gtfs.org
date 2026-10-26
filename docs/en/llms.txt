@@ -1,0 +1,169 @@
+# General Transit Feed Specification
+
+> Official documentation of the General Transit Feed Specification. This site and its source repository (https://github.com/google/transit) are the only authoritative sources for this standard.
+
+## Home
+
+- [Home](https://gtfs.org/)
+
+## Getting started
+
+- [What is GTFS?](https://gtfs.org/getting-started/what-is-gtfs/): The General Transit Feed Specification, also known as GTFS, is a standardized data format that provides a structure for public transit agencies to describe the details of their services such as...
+- [Why use GTFS?](https://gtfs.org/getting-started/why-use-gtfs/): GTFS serves as the backbone of modern transit systems, enabling agencies to provide accurate and up-to-date information to riders, app developers, and policymakers.
+
+### How to produce GTFS?
+
+- [Create](https://gtfs.org/getting-started/create/): All GTFS feeds start with a dataset in the GTFS Reference format, which is a series of CSV files saved with a .txt file extension.
+- [Validate](https://gtfs.org/getting-started/validate/): A high-quality GTFS is complete, accurate, and up-to-date.
+- [Publish](https://gtfs.org/getting-started/publish/): GTFS data can be utilized in many ways, and publicly sharing your agency’s GTFS data provides many benefits to your riders and your agency as a whole.
+
+### What can GTFS do?
+
+- [Overview](https://gtfs.org/getting-started/features/overview/): As the GTFS Reference format evolves to meet the current needs of transit systems, its functions can become increasingly complex.
+- [Base](https://gtfs.org/getting-started/features/base/): The following features provide the most basic and essential elements that a GTFS needs to represent a transit service.
+- [Base add-ons](https://gtfs.org/getting-started/features/base-add-ons/): These features expand the capabilities described in Base, serving to either enhance the comprehensiveness of a GTFS dataset to provide a better experience for riders, or facilitate collaboration...
+- [Accessibility](https://gtfs.org/getting-started/features/accessibility/): The Accessibility features are intended to provide people with disabilities the information they need to access the service.
+- [Fares](https://gtfs.org/getting-started/features/fares/): GTFS allows to precisely model a wide variety of fare structures used by different transit agencies around the world, such as fares based by zone, by distance traveled, or by time-of-day.
+- [Pathways](https://gtfs.org/getting-started/features/pathways/): Pathways features can model large transit stations, guiding riders from station entrances and exists to the location where they board or disembark from a transit vehicle.
+- [Flexible services](https://gtfs.org/getting-started/features/flexible-services/): Flexible services, also called demand-responsibe services, are services that do not follow the common behavior of scheduled and/or fixed service.
+
+- [Example GTFS feed](https://gtfs.org/getting-started/example-feed/): This example GTFS feed shows comma-delimited data samples for each file in a transit feed.
+
+## Technical Documentation
+
+- [Overview](https://gtfs.org/documentation/overview/): The General Transit Feed Specification (GTFS) is an Open Standard used to distribute relevant information about transit systems to riders.
+
+### Schedule
+
+- [Reference](https://gtfs.org/documentation/schedule/reference/): Revised April 27, 2026.
+- [Best Practices](https://gtfs.org/documentation/schedule/schedule-best-practices/): These are recommended practices for describing public transportation services in the General Transit Feed Specification (GTFS).
+
+#### Data examples
+
+- [Attributions](https://gtfs.org/documentation/schedule/examples/attributions/): Some GTFS datasets contain data aggregated from multiple sources, such as different service providers that serve the same jurisdiction.
+- [Continuous stops](https://gtfs.org/documentation/schedule/examples/continuous-stops/): The transit agency The Current (Rockingham, US-VT) applies a continuous-stop policy on routes 2, 53, and 55.
+- [Demand responsive services](https://gtfs.org/documentation/schedule/examples/flex/): GTFS Flex is a GTFS extension project which was adopted officially into the GTFS specification in March 2024, its aims to facilitate the discoverability of demand-responsive transportation (DRT)...
+- [Feed information](https://gtfs.org/documentation/schedule/examples/feed-info/): On top of providing information about agencies and their services, it is possible to provide information about the GTFS dataset using the file feed_info.txt.
+- [Frequencies](https://gtfs.org/documentation/schedule/examples/frequencies/): The Société de Transport de Montréal operates transit services in Montréal and runs a frequency-based service for its metro lines.
+- [Pathways](https://gtfs.org/documentation/schedule/examples/pathways/): Impacts a large percentage of the population: The World Health Organization estimates that 16% of people worldwide have a disability and that people with disabilities “find inaccessible and...
+- [Routes, Stops & Trips](https://gtfs.org/documentation/schedule/examples/routes-stops-trips/): Routes are at the core of fixed route transit operations as they describe the geographic reach of a transit network.
+- [Text-to-speech](https://gtfs.org/documentation/schedule/examples/text-to-speech/): Abbreviations, unusual pronunciation and large digits are common to GTFS text fields.
+- [Transfers](https://gtfs.org/documentation/schedule/examples/transfers/): Block transfer, also called in-seat transfer, is available when a set of trips meets the following conditions:
+- [Translations](https://gtfs.org/documentation/schedule/examples/translations/): Some transit providers offer services in multiple languages - one of which is the National Railway Company of Belgium (locally known as NMBS/SNCB, for Nationale Maatschappij der Belgische...
+
+#### Change history
+
+- [Recent additions](https://gtfs.org/documentation/schedule/change-history/recent-additions/): The GTFS Schedule Reference is not set in stone.
+- [Full revision history](https://gtfs.org/documentation/schedule/change-history/revision-history/): Added trips.txt 'wheelchair_accessible' proposal to spec: discussion
+
+### Realtime
+
+- [Reference](https://gtfs.org/documentation/realtime/reference/): A GTFS Realtime feed lets transit agencies provide consumers with realtime information about disruptions to their service (stations closed, lines not operating, important delays, etc.) location of...
+- [Best Practices](https://gtfs.org/documentation/realtime/realtime-best-practices/): These are recommended practices for describing realtime public transportation information in the GTFS Realtime data format.
+
+#### Feed Entities
+
+- [Overview](https://gtfs.org/documentation/realtime/feed-entities/overview/): GTFS Realtime supports four distinct types of realtime data, that can be combined witin a single realtime feed.
+- [Trip Updates](https://gtfs.org/documentation/realtime/feed-entities/trip-updates/): Trip updates represent fluctuations in the timetable.
+- [Service Alerts](https://gtfs.org/documentation/realtime/feed-entities/service-alerts/): Service alerts allow you to provide updates whenever there is disruption on the network.
+- [Vehicle Positions](https://gtfs.org/documentation/realtime/feed-entities/vehicle-positions/): Vehicle position is used to provide automatically generated information on the location of a vehicle, such as from a GPS device on board.
+- [Trip Modifications](https://gtfs.org/documentation/realtime/feed-entities/trip-modifications/): A TripModifications message identifies a list of similar trip_ids from the (CSV) GTFS which are all affected by particular modifications, such as a detour.
+
+- [Protobuf](https://gtfs.org/documentation/realtime/proto/)
+
+#### Language Bindings
+
+- [Overview](https://gtfs.org/documentation/realtime/language-bindings/overview/): GTFS Realtime is a data format for communicating real-time information about public transit systems.
+- [.NET](https://gtfs.org/documentation/realtime/language-bindings/dotnet/): Provides .NET classes generated from the GTFS-realtime Protocol Buffer specification.
+- [Java](https://gtfs.org/documentation/realtime/language-bindings/java/): Provides Java classes generated from the GTFS-realtime Protocol Buffer specification.
+- [JavaScript/Node.js](https://gtfs.org/documentation/realtime/language-bindings/nodejs/): [](http://badge.fury.io/js/gtfs-realtime-bindings)
+- [Python](https://gtfs.org/documentation/realtime/language-bindings/python/): [](http://badge.fury.io/py/gtfs-realtime-bindings)
+- [Golang](https://gtfs.org/documentation/realtime/language-bindings/golang/): Provides Golang structs generated from the GTFS-realtime Protocol Buffer specification.
+- [Ruby](https://gtfs.org/documentation/realtime/language-bindings/ruby/): [](https://badge.fury.io/rb/gtfs-realtime-bindings)
+- [PHP](https://gtfs.org/documentation/realtime/language-bindings/php/): [](https://badge.fury.io/ph/google%2Fgtfs-realtime-bindings)
+
+#### Data examples
+
+- [Service alerts](https://gtfs.org/documentation/realtime/examples/service-alerts/): The following example is an ASCII representation of an Alert feed.
+- [Trip updates](https://gtfs.org/documentation/realtime/examples/trip-updates/): The following example is an ASCII representation of an full-dataset Trip Update feed.
+- [Migration duplicated](https://gtfs.org/documentation/realtime/examples/migration-duplicated/): The GTFS-realtime trip.schedule_relationship of NEW represents a new trip that runs on a schedule unrelated to any existing scheduled trip.
+- [Migration Active Period](https://gtfs.org/documentation/realtime/examples/migration-active-period/): The GTFS-realtime alert.active_period was defined as “Time when the alert should be shown to the user.
+
+#### Change history
+
+- [Recent Additions](https://gtfs.org/documentation/realtime/change-history/recent-additions/): The GTFS Realtime Reference is not set in stone.
+- [Full revision history](https://gtfs.org/documentation/realtime/change-history/revision-history/)
+
+## Community
+
+- [Get involved](https://gtfs.org/community/get-involved/): The GTFS Specification is not set in stone.
+
+### Governance
+
+#### GTFS Schedule Governance
+
+- [Introduction](https://gtfs.org/community/governance/gtfs-schedule-governance/introduction/): The GTFS standard is not set in stone; it is an open specification developed and maintained by a community of transit agencies, developers, and other stakeholders who actively use it.
+- [Guiding Principles](https://gtfs.org/community/governance/gtfs-schedule-governance/guiding-principles/): In order to preserve the original vision of GTFS, a number of guiding principles have been established to take into consideration when changing the specification:
+- [Roles](https://gtfs.org/community/governance/gtfs-schedule-governance/roles/): The community is composed of two main stakeholder categories: Contributors and the Maintainer.
+- [Change types](https://gtfs.org/community/governance/gtfs-schedule-governance/change-types/): Proposed changes to the specification are categorized based on their impact on its functionality and interpretation.
+- [Change Process](https://gtfs.org/community/governance/gtfs-schedule-governance/change-process/): The specification Change Process guides how the community proposes, reviews, and adopts changes to the specification in the GTFS Repository.
+- [Former Governance](https://gtfs.org/community/governance/gtfs-schedule-governance/changes/): The GTFS Specification is not set in stone.
+
+- [GTFS Realtime Amendment Process](https://gtfs.org/community/governance/gtfs-realtime-amendment-process/): The GTFS Realtime Specification is not set in stone.
+
+### Extensions
+
+- [Overview](https://gtfs.org/community/extensions/overview/): Extensions that are currently in development can be found on MobilityData's roadmap.
+- [Fares v2](https://gtfs.org/community/extensions/fares-v2/): Fares v2 is a GTFS Schedule extension project that aims to address the limitations of Fares v1.
+- [Flex](https://gtfs.org/community/extensions/flex/): GTFS Flex is a GTFS Schedule extension project that aims to facilitate the discoverability of Demand Responsive Transportation Services.
+
+## Resources
+
+- [Overview](https://gtfs.org/resources/overview/): Open technology provides an opportunity for various stakeholders to collaborate efforts to improve public transit.
+
+### GTFS Schedule Feature Guides
+
+#### Fares V2
+
+- [Introduction](https://gtfs.org/resources/gtfs-schedule-feature-guides/fares/intro/): Fares (also known as Fares v2) is a GTFS Schedule feature that standardizes rider-facing fare information, allowing users to discover ticketing and pricing options based on the fare structures and...
+- [Fare Media](https://gtfs.org/resources/gtfs-schedule-feature-guides/fares/fare-media/): Main files: fare_media.txt, fare_products.txt Example: Translink (Vancouver)
+- [Fare Products](https://gtfs.org/resources/gtfs-schedule-feature-guides/fares/fare-products/): Main files: fare_products.txt Example: Translink (Vancouver)
+- [Rider Categories](https://gtfs.org/resources/gtfs-schedule-feature-guides/fares/rider-categories/): Main files: rider_categories.txt, fare_products.txt Example: Translink (Vancouver)
+- [Route-Based Fares](https://gtfs.org/resources/gtfs-schedule-feature-guides/fares/route-based-fares/): Main files: fare_leg_rules.txt, networks.txt, route_networks.txt, routes.txt Example: Translink (Vancouver)
+- [Zone-Based Fares](https://gtfs.org/resources/gtfs-schedule-feature-guides/fares/zone-based-fares/): Main files: fare_leg_rules.txt, areas.txt, stop_areas.txt Example: Translink (Vancouver)
+- [Time-Based Fares](https://gtfs.org/resources/gtfs-schedule-feature-guides/fares/time-based-fares/): Main files: fare_leg_rules.txt, timeframes.txt Example: Translink (Vancouver)
+- [Fare Transfers](https://gtfs.org/resources/gtfs-schedule-feature-guides/fares/fare-transfers/): Main files: fare_leg_rules.txt, fare_transfer_rules.txt Example: Translink (Vancouver)
+- [Legacy Fares](https://gtfs.org/resources/gtfs-schedule-feature-guides/fares/fares-v1/): Legacy Fares (v1) is an earlier, basic GTFS fares model that supports limited fare elements.
+
+- [Shapes (shapes.txt)](https://gtfs.org/resources/gtfs-schedule-feature-guides/shapes/): The data contained in shapes.txt file plays a critical role in the representation of transit services.
+
+### MobilityData Recommendations
+
+- [Overview](https://gtfs.org/resources/mobilitydata-recommendations/overview/): MobilityData is the non-profit organization responsible for the maintenance of GTFS.
+- [GTFS Schedule vs GTFS Realtime](https://gtfs.org/resources/mobilitydata-recommendations/gtfs-schedule-vs-gtfs-realtime/): Currently, GTFS producers have options for conveying information about transit service changes or disruptions: GTFS Schedule, GTFS Realtime, or a combination of both.
+
+#### GTFS Realtime Service Alerts
+
+- [Introduction](https://gtfs.org/resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/intro/): GTFS-Realtime Service Alerts allow producers to provide updates whenever there is disruption on the network.
+- [Guidelines](https://gtfs.org/resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/guidelines/): In this section, we suggest general practices regarding the use of the Service Alerts feed.
+- [Real-life Use Cases](https://gtfs.org/resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/real-life-use-cases/): In this section, we explore all possible use cases of Service Alerts in real life.
+- [Real-world Examples](https://gtfs.org/resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/real-world-examples/): In this example, we present examples of Service Alerts that were created for real-world agencies.
+
+- [Producing Data](https://gtfs.org/resources/producing-data/): Software that makes it easy to consume GTFS data in a variety of languages.
+- [Sharing Data](https://gtfs.org/resources/sharing-data/): Places to access collections of GTFS and other transit and multimodal data.
+- [Using Data](https://gtfs.org/resources/using-data/): Tools for transit agencies.
+- [Other Resources](https://gtfs.org/resources/other/): Places to ask questions and find other community resources.
+
+## About
+
+- [About](https://gtfs.org/about/): GTFS.org is the central documentation platform for the General Transit Feed Specification.
+
+## Blog
+
+- [blog](https://gtfs.org/blog/)
+
+## Other languages
+
+- [Français](https://gtfs.org/fr/llms.txt)
+- [Español](https://gtfs.org/es/llms.txt)
+- [日本語](https://gtfs.org/ja/llms.txt)
