@@ -3,13 +3,10 @@
 ### 改訂履歴
 
 #### 2026年9月
-
-* `shapes.txt` を `任意` から `条件付きで必須` に更新しました。[discussion](https://github.com/google/transit/pull/660) を参照してください。
-* IETF BCP 47 言語コードの参照リンクを修正しました。[discussion](https://github.com/google/transit/pull/658) を参照してください。
+* 軽微な書式の問題を修正しました。[ディスカッション](https://github.com/google/transit/pull/641)を参照してください。
 
 #### 2026年8月
-
-* 時間指定乗り換え `(transfer\_type \= 2)` には `min_transfer_time` が必須。[discussion](https:://github.com/google/transit/pull/640) を参照してください。
+* サービス アラートの画像を仕様に採用し、`experimental`タグを削除しました。[ディスカッション](https://github.com/google/transit/pull/651)を参照してください。
 
 #### 2026年6月 
 
