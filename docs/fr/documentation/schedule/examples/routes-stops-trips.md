@@ -68,7 +68,7 @@ service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,e
 weekend_service,0,0,0,0,0,1,1,20220623,20220903
 ```
  
- Ici, un service qui fonctionne uniquement les samedis et dimanches est décrit, donc le les champs pour ces jours sont renseignés avec 1 et les champs pour les jours restants sont renseignés avec zéro. Ce service fonctionne du 23 juin 2022 au 3 septembre 2022, comme indiqué sous les champs `start_date` et `end_date`. 
+ Ici, un service qui fonctionne uniquement les samedis et dimanches est décrit, donc les champs pour ces jours sont renseignés avec 1 et les champs pour les jours restants sont renseignés avec zéro. Ce service fonctionne du 23 juin 2022 au 3 septembre 2022, comme indiqué sous les champs `start_date` et `end_date`. 
  
  Dans cet exemple, le fichier [trips.txt](../../reference/#tripstxt) décrit 3 voyages de week-end desservis par l’itinéraire MAX Orange décrit ci-dessus. 
  
