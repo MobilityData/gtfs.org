@@ -101,7 +101,7 @@ Similarly, the second record describes the escalator (`pathway_mode` set to `4`)
 [**pathways.txt**](../../reference/#pathwaystxt)
 
 ```
-pathway_id,from_stop_id,to_stop_id_pathway_mode,is_bidirectional
+pathway_id,from_stop_id,to_stop_id,pathway_mode,is_bidirectional
 stairsA,90,95,2,1
 escalatorA,96,91,4,0
 ```
@@ -131,7 +131,7 @@ Lastly, the nodes are connected together to define the underground pathway as sh
 [**pathways.txt**](../../reference/#pathwaystxt)
 
 ```
-pathway_id,from_stop_id,to_stop_id_pathway_mode,is_bidirectional
+pathway_id,from_stop_id,to_stop_id,pathway_mode,is_bidirectional
 underground_walkway1,99,96,1,1
 underground_walkway2,96,95,1,1
 underground_walkway3,95,97,1,1
