@@ -8,7 +8,7 @@ To represent this complexity, a `stops.txt` file in GTFS includes two important 
 
 <figure>
   <img 
-    src="../../../../assets/fig-01_station-modelling.png" 
+    src="../../../../assets/fig-01-station-modelling.png" 
     alt="Flowchart showing Station at the top, branching into Stop/Platform, Entrance/Exit, and Generic Node. Stop/Platform branches down to Boarding Area." 
     width="500"
   >
@@ -51,7 +51,7 @@ The image below shows the relationship between `location_type` and `parent_stati
 
 <figure>
   <img 
-    src="../../../../assets/fig-02_relational-diagram.png" 
+    src="../../../../assets/fig-02-relational-diagram.png" 
     alt="Hierarchy diagram of GTFS location_type values (0 to 4) and their parent_station requirements across Station, Stop/Platform, Entrance/Exit, Generic Node, and Boarding area."
     width="700"
   >

@@ -10,7 +10,7 @@ Terminus Longueuil is one of the most active multimodal transit hubs in the Grea
 
 <figure>
   <img 
-    src="../../../../assets/fig-11_terminus-longueuil.jpeg" 
+    src="../../../../assets/fig-11-terminus-longueuil.jpeg" 
     alt="Google Earth aerial view of Terminus Longueuil showing multiple parallel bus platforms connected by covered walkways."
     width="750"
   >
@@ -45,7 +45,7 @@ In total, over 80 bus routes use the terminal infrastructure daily as a stop on 
 
 <figure>
   <img 
-    src="../../../../assets/fig-12_terminus-longueuil.jpeg" 
+    src="../../../../assets/fig-12-terminus-longueuil.jpeg" 
     alt="STM neighborhood map showing Terminus Longueuil, the Longueuil–Université-de-Sherbrooke metro station, and a 5-minute walking radius."
     width="750"
   >
@@ -64,7 +64,7 @@ This modelling focuses on the bus terminal infrastructure only, based on the GTF
 
 <figure>
   <img 
-    src="../../../../assets/fig-13_terminus-longueuil.jpeg" 
+    src="../../../../assets/fig-13-terminus-longueuil.jpeg" 
     alt="Satellite view of Terminus Longueuil bus platforms and adjacent buildings, with a callout box marking the parent station."
     width="750"
   >
@@ -84,7 +84,7 @@ This modelling focuses on the bus terminal infrastructure only, based on the GTF
 
 <figure>
   <img 
-    src="../../../../assets/fig-14_terminus-longueuil.jpeg" 
+    src="../../../../assets/fig-14-terminus-longueuil.jpeg" 
     alt="Satellite view of Terminus Longueuil with callout boxes marking the parent station and Platforms A through G."
     width="750"
   >
@@ -111,7 +111,7 @@ In the official documentation for Terminus Longueuil, entrance and exit points a
 
 <figure>
   <img 
-    src="../../../../assets/fig-15_terminus-longueuil.jpeg" 
+    src="../../../../assets/fig-15-terminus-longueuil.jpeg" 
     alt="Satellite view of Terminus Longueuil with callout boxes marking the parent station and Access Points 1 through 5."
     width="750"
   >
@@ -136,7 +136,7 @@ In the official documentation for Terminus Longueuil, the boarding platforms are
 
 <figure>
   <img 
-    src="../../../../assets/fig-16_terminus-longueuil.jpeg" 
+    src="../../../../assets/fig-16-terminus-longueuil.jpeg" 
     alt="Satellite view of Terminus Longueuil with callout boxes marking Platform B and Gates 10 through 17."
     width="750"
   >
@@ -216,7 +216,7 @@ Malden Center is a well-connected multimodal station in the Greater Boston regio
 
 <figure>
   <img 
-    src="../../../../assets/fig-17_malden-center.jpeg" 
+    src="../../../../assets/fig-17-malden-center.jpeg" 
     alt="Satellite view of Malden Center station showing the elevated rail tracks, busway, parking lots, and surrounding urban neighborhood."
     width="750"
   >
@@ -264,7 +264,7 @@ This modelling includes the station infrastructure serving both the subway and c
 
 <figure>
   <img 
-    src="../../../../assets/fig-18_malden-center.jpeg" 
+    src="../../../../assets/fig-18-malden-center.jpeg" 
     alt="Aerial map of Malden Center station, with GTFS callouts marking the central parent station, six stops across the metro, commuter rail, and bus platforms, and three entrances."
     width="750"
   >
@@ -316,7 +316,7 @@ This bus station in Kyoto consists of eight boarding and alighting locations (st
 
 <figure>
   <img 
-    src="../../../../assets/fig-19_shijo-kawaramachi.jpeg" 
+    src="../../../../assets/fig-19-shijo-kawaramachi.jpeg" 
     alt="Satellite view of the Shijo Kawaramachi intersection with callout boxes marking the parent station and eight street-level bus stops (Platforms A through H) along the surrounding avenues."
     width="750"
   >
@@ -365,7 +365,7 @@ This bus station in Kyoto consists of eight boarding and alighting locations (st
 
 <figure>
   <img 
-    src="../../../../assets/fig-20_glen-park.jpeg" 
+    src="../../../../assets/fig-20-glen-park.jpeg" 
     alt="Aerial map of Glen Park station with GTFS callouts marking the central parent station, two platforms to the north, and three entrances along the west and south sides."
     width="750"
   >
@@ -395,7 +395,7 @@ This bus station in Kyoto consists of eight boarding and alighting locations (st
 
 <figure>
   <img 
-    src="../../../../assets/fig-21_gouda.jpeg" 
+    src="../../../../assets/fig-21-gouda.jpeg" 
     alt="Schematic layout map of Gouda station showing tracks, platforms, underground pedestrian passage, entrances, and surrounding bus, bike, and taxi facilities."
     width="750"
   >
@@ -424,7 +424,7 @@ The modelling scope here focuses only on the railway station. Bus bays near the 
 
 <figure>
   <img 
-    src="../../../../assets/fig-22_gouda.jpeg" 
+    src="../../../../assets/fig-22-gouda.jpeg" 
     alt="Aerial map of Gouda station, with GTFS callouts marking one parent station, five platforms, and two entrances."
     width="750"
   >
@@ -473,7 +473,7 @@ The modelling scope here focuses only on the railway station. Bus bays near the 
 
 <figure>
   <img 
-    src="../../../../assets/fig-23_uruguai-tijuca.jpeg" 
+    src="../../../../assets/fig-23-uruguai-tijuca.jpeg" 
     alt="Aerial map of Uruguai / Tijuca station, with GTFS callouts marking one parent station, two platforms, and eleven street-level entrances."
     width="750"
   >
@@ -482,7 +482,7 @@ The modelling scope here focuses only on the railway station. Bus bays near the 
 
 <figure>
   <img 
-    src="../../../../assets/fig-24_uruguai-tijuca.jpeg" 
+    src="../../../../assets/fig-24-uruguai-tijuca.jpeg" 
     alt="Zoomed-in aerial view of Entrance D along the sidewalk, showing covered entry stairs, a central elevator shaft, and a covered exit escalator arranged in a row."
     width="750"
   >
@@ -540,7 +540,7 @@ In cases like Entrance D, where multiple physical access points share the same e
 
 <figure>
   <img 
-    src="../../../../assets/fig-25_guelatao.jpeg" 
+    src="../../../../assets/fig-25-guelatao.jpeg" 
     alt="Aerial map of Guelatao station, with GTFS callouts marking the central parent station and two platforms inside a median, connected via an overpass to two entrances on opposite sides."
     width="750"
   >
@@ -641,7 +641,7 @@ The sample data above assumes a GTFS feed integrating multiple operators (i.e., 
 
 <figure>
   <img 
-    src="../../../../assets/fig-27_yokohama.jpeg" 
+    src="../../../../assets/fig-27-yokohama.jpeg" 
     alt="Aerial map of Yokohama Station West Gate, with GTFS callouts marking one central parent station, fifteen bus bay stops across the plaza, and nine entrances around the surrounding streets."
     width="750"
   >
@@ -704,7 +704,7 @@ The sample data above assumes a GTFS feed integrating multiple operators (i.e., 
 
 <figure>
   <img 
-    src="../../../../assets/fig-28_waterfront.jpeg" 
+    src="../../../../assets/fig-28-waterfront.jpeg" 
     alt="Aerial map of Waterfront station, with GTFS callouts marking the central parent station, nine stops across the metro, rail, ferry, and street-level bus platforms, and four entrances."
     width="750"
   >

@@ -34,7 +34,7 @@ As shown in the figure below, there are multiple stations in the vicinity of Ham
 
 <figure>
   <img 
-    src="../../../../assets/fig-03_hamburg.jpeg" 
+    src="../../../../assets/fig-03-hamburg.jpeg" 
     alt="Aerial map marking five locations in red circles: Hamburg Hauptbahnhof at center, Nord to the top left, Süd below, and Hauptbahnhof/ZOB and ZOB Hamburg to the bottom right."
     width="700"
   >
@@ -60,7 +60,7 @@ As shown in the figure below, there are multiple stations in the vicinity of Oka
 
 <figure>
   <img 
-    src="../../../../assets/fig-04_okayama.jpeg" 
+    src="../../../../assets/fig-04-okayama.jpeg" 
     alt="Aerial map marking four locations in red circles: Okayama Station at center-left, West Gate above it, East Gate below it, and Okayama Station Front to the bottom right."
     width="700"
   >
@@ -75,7 +75,7 @@ Therefore, it is appropriate to model each of these stations with its own indepe
 
 <figure>
   <img 
-    src="../../../../assets/fig-05_larkspur.jpeg" 
+    src="../../../../assets/fig-05-larkspur.jpeg" 
     alt="Aerial map marking four transit points: Larkspur train station, 600 Larkspur Landing Circle bus stop, E Sir Francis Drake Blvd & Larkspur Landing bus stop, and Larkspur ferry terminal."
     width="700"
   >
@@ -95,7 +95,7 @@ There are two subway stations in this area named "Hongo-sanchome," operated by T
 
 <figure>
   <img 
-    src="../../../../assets/fig-06_hongo-sanchome.jpeg" 
+    src="../../../../assets/fig-06-hongo-sanchome.jpeg" 
     alt="Diagram of Hongo-sanchome Station detailing floor levels, exits, and the ground-level transfer between the Marunouchi and Toei Oedo lines."
     width="700"
   >
@@ -117,7 +117,7 @@ However, in environments with physical constraints, such as buildings, walls, el
 
 <figure>
   <img 
-    src="../../../../assets/fig-07_ikebukuro.jpeg" 
+    src="../../../../assets/fig-07-ikebukuro.jpeg" 
     alt="Google Maps screenshot illustrating incorrect routing, where a dotted pedestrian route erroneously follows a highway ramp beside a building to reach a bus stop."
     width="700"
   >
@@ -126,7 +126,7 @@ However, in environments with physical constraints, such as buildings, walls, el
 
 <figure>
   <img 
-    src="../../../../assets/fig-08_ikebukuro.jpeg" 
+    src="../../../../assets/fig-08-ikebukuro.jpeg" 
     alt="Google Street View image showing an enclosed highway onramp with no-pedestrian signs."
     width="700"
   >
@@ -137,7 +137,7 @@ By modelling entrances, trip planners can instead guide passengers to an appropr
 
 <figure>
   <img 
-    src="../../../../assets/fig-09_ikebukuro.jpeg" 
+    src="../../../../assets/fig-09-ikebukuro.jpeg" 
     alt="Google Maps screenshot illustrating improved routing, where passengers are first directed to the building entrance to reach the bus stop."
     width="700"
   >
@@ -173,7 +173,7 @@ However, if physical access points are co-located but connected to different tra
 
 <figure>
   <img 
-    src="../../../../assets/fig-10_seattle.jpeg" 
+    src="../../../../assets/fig-10-seattle.jpeg" 
     alt="3D station diagram showing a single entrance node labeled 'International District Station Entrance B southwest' with lines branching out to connect the surrounding access points."
     width="700"
   >
