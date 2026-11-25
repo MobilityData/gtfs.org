@@ -1,0 +1,9 @@
+# Introduction
+
+Public transit infrastructure is often complex, made up of street-level stops, large intermodal terminals, underground stations, and everything in between. Accurately modelling this infrastructure in GTFS is critical for enabling useful, accessible, and trustworthy information for riders through trip planning apps and other tools.
+
+When transit infrastructure is poorly modeled in GTFS, it can lead to a range of problems that directly impact the rider experience. Trip planning apps may generate confusing or misleading directions. Such instructions may include suggesting entrances that are not accessible, showing unrealistic transfer paths, or omitting important platform details. Riders may find themselves taking unnecessary detours or arriving at an entrance that is closed or not suitable for people with limited mobility.
+
+Additionally, inconsistent modelling can affect how information appears in user interfaces. Some transit hubs are cluttered with dozens of overlapping stops while others are too vague and lack the detail needed for riders to navigate the system confidently. These issues reduce the reliability of transit apps, weaken rider trust, and create additional barriers for users who depend on this information to move about their world.
+
+While there are many real-world challenges that GTFS cannot fully address on its own, such as infrastructure shared across agencies, spanning both public and private spaces, or lacking clearly defined boundaries, this guidance aims to help data producers navigate these situations by offering recommendations and modelling examples that promote consistent and thoughtful practices. It may not provide a perfect solution for every case, but it is a step toward coordinated approaches that improve data quality and, ultimately, the rider experience.

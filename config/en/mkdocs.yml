@@ -273,6 +273,12 @@ nav:
         - Guidelines: resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/guidelines.md
         - Real-life Use Cases: resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/real-life-use-cases.md
         - Real-world Examples: resources/mobilitydata-recommendations/gtfs-realtime-service-alerts/real-world-examples.md
+      - Station-stop-entrance:
+        - Summary: resources/mobilitydata-recommendations/station-stop-entrance/summary.md
+        - Introduction: resources/mobilitydata-recommendations/station-stop-entrance/intro.md
+        - Explaining the use of stops.txt: resources/mobilitydata-recommendations/station-stop-entrance/explaining-use-of-stops.md
+        - Implementation considerations: resources/mobilitydata-recommendations/station-stop-entrance/implementation-considerations.md
+        - Station modelling in practice: resources/mobilitydata-recommendations/station-stop-entrance/station-modelling-in-practice.md
     - Producing Data: resources/producing-data.md
     - Sharing Data: resources/sharing-data.md
     - Using Data: resources/using-data.md
