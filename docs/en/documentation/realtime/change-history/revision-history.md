@@ -2,10 +2,16 @@
 
 ### Revision History
 
+#### November 2026
+
+* Clarified expected behaviour in `feed_entities.md` and adds details for Cause and Effect values for Service Alerts. See [discussion](https://github.com/google/transit/pull/648).
+
 #### September 2026
+
 * Corrected minor formatting issues. See [discussion](https://github.com/google/transit/pull/641)
 
 #### August 2026
+
 * Adopted images in Service Alerts to the spec and removed the "experimental" tag. See [discussion](https://github.com/google/transit/pull/651).
 
 #### June 2026
