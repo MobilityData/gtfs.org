@@ -87,7 +87,7 @@ As shown in the figure above, both the Larkspur train station and Larkspur ferry
 Therefore, they should not be all grouped under a single station-stop hierarchy (parent station). Similarly, adjacent bus stops containing "Larkspur" in their names should also be modelled separately.
 
 !!! note 
-    Not all ferry terminals sharing a name with other transit modes must be modelled separately; see [Use case 10: Waterfront station](station-modelling-in-practice.md#use-case-10-a-transit-hub-with-ferry-commuter-rail-metro-and-bus-service) for a contrasting case of an integrated multimodal station.
+    Not all ferry terminals sharing a name with other transit modes must be modelled separately; see [Use case 10: Waterfront Station](station-modelling-in-practice.md#use-case-10-a-transit-hub-with-ferry-commuter-rail-metro-and-bus-service) for a contrasting case of an integrated multimodal station.
 
 #### **4\. Hongo-sanchome \[JP\]**
 
