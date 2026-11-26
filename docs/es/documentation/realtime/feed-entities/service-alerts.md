@@ -63,7 +63,7 @@
 * **Servicio adicional**: Se aumenta el número o la frecuencia de los viajes. Por ejemplo, circulan más autobuses para cubrir un evento especial.
 * **Servicio modificado**: Las operaciones son diferentes a las que el pasajero normalmente esperaría. Un ejemplo es una alerta que recuerda a los pasajeros sobre un próximo horario festivo diferente al servicio normal ese día de la semana.
 * **Parada movida**: La ubicación de una parada cambia de forma temporal o permanente (si se sabe que es permanente, asegúrese de que la nueva ubicación se refleje en los datos de horarios).
-* **Otro efecto** No representado por ninguna de estas opciones.
+* **Otro efecto**: No está representado por ninguna de estas opciones.
 * **Efecto desconocido**: Se utiliza para alertas cuyo efecto aún no se ha identificado. No utilice “Efecto desconocido” si el efecto de la alerta se conoce o se puede deducir del encabezado o de la descripción de la alerta.
 * **Sin efecto**: La alerta proporciona información a los pasajeros pero no afecta las operaciones. Los ejemplos incluyen anunciar reuniones públicas y solicitar comentarios a través de encuestas. A menos que sea necesario, se recomienda no utilizar este efecto.
 * **Problema de Accesibilidad**: La alerta proporciona información sobre problemas de accesibilidad que afectan el acceso sin escalones. Los ejemplos incluyen un ascensor fuera de servicio o rampas móviles, un autobús que no puede inclinarse (arrodillarse) o un servicio excepcional con trenes que tienen una gran separación respecto al andén.
