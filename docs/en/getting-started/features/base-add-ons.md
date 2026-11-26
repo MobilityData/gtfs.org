@@ -413,6 +413,7 @@ License information communicates how a GTFS feed or specific files can be used b
         <p style="font-size:16px">
         <a href="../../../documentation/schedule/reference/#licensestxt"><b>licenses.txt</b></a> <br>
         </p>
+        
          | licensed_table_name | license_spdx_id |
          |---------------------|-----------------|
          |                     | CC-BY-SA-4.0    |
