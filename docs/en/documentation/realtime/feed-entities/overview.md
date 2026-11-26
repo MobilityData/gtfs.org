@@ -38,7 +38,7 @@ structured information to help us understand who this service alert affects.
 
 #### Usage of Trip Updates and Service Alerts
 
-If producers provide both Trip Updates and Service Alerts, producers SHOULD be able update their service alerts independently from their TripUpdates. These two feeds should not fully depend on each other.  
+If producers provide both Trip Updates and Service Alerts, producers SHOULD be able to update their service alerts independently from their TripUpdates. These two feeds should not fully depend on each other.  
 
 Producers MUST also ensure that there is no conflict between their Trip Updates and Service Alerts feeds.  
 
