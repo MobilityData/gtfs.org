@@ -1,6 +1,6 @@
 ## Referencia de General Transit Feed Specification 
  
- **Revisado el 27 de abril de 2026. Consulte el [Historial de revisiones](../schedule/process/revision-history) para obtener más detalles.**
+ **Revisado el 26 de novembre de 2026. Consulte el [Historial de revisiones](../change-history/revision-history) para obtener más detalles.**
  
  Este documento define el formato y la estructura de los archivos que componen un conjunto de datos GTFS. 
  
@@ -43,6 +43,7 @@
     - [translations.txt](#translationstxt) 
     - [feed_info.txt](#feed_infotxt) 
     - [attributions.txt](#attributionstxt) 
+    - [licenses.txt](#licensestxt)
  
 ## Convenciones de documentos 
  Las palabras clave "DEBE", "NO DEBE", "OBLIGATORIO", "DEBERÁ", “NO DEBERÁ", "DEBERÍA", "NO DEBERÍA", "RECOMENDADO", "PUEDE" y "OPCIONAL" en este documento deben interpretarse como se describe en [RFC 2119](https://tools.ietf.org/html/rfc2119). 
@@ -92,6 +93,7 @@
  - **Text** - Una string de caracteres UTF-8, que está destinado a ser mostrado y que, por lo tanto, debe ser legible por humanos. 
  - **Zona horaria** - Zona horaria TZ de [https://www.iana.org/time-zones](https://www.iana.org/time-zones). Los nombres de zonas horarias nunca contienen el carácter de espacio, pero pueden contener un guión bajo. Consulte [http://en.wikipedia.org/wiki/List\_of\_tz\_zones](http://en.wikipedia.org/wiki/List\_of\_tz\_zones) para obtener una lista de valores válidos..<br> *Ejemplo: `Asia/Tokyo`, `America/Los_Angeles` o `Africa/Cairo`.* 
  - **URL** - Una URL completa que incluye http://o https://, y cualquier enlace especial Los caracteres de la URL deben tener caracteres de escape correctamente. Consulte lo siguiente [http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html](http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html) para una descripción de cómo crear valores de URL completos. 
+ - **ID SPDX**: [Identificador de licencia SPDX](https://spdx.dev/learn/handling-license-info/#:~:text=SEE%20LICENSE%20LIST-,SPDX%20License%20IDs,-//%20SPDX%2DLicense%2DIdentifier) que comunica la información de la licencia de forma sencilla y legible por máquina. Los valores válidos de ID SPDX se pueden encontrar en la [lista de licencias SPDX](https://spdx.org/licenses/).
  
 ### Signos de campo 
  Signos aplicables a tipos de campo flotantes o enteros: 
@@ -146,6 +148,7 @@ La **clave principal** de un conjunto de datos es el campo o combinación de cam
  | [translations.txt](#translationstxt) | Opcional | Traducciones de valores de conjuntos de datos de cara al cliente. | 
  | [feed_info.txt](#feed_infotxt) | **Condicionalmente Obligatorio** | Metadatos del conjunto de datos, incluida la información del editor, la versión y la caducidad. <br><br>Condicionalmente Obligatorio:<br>- **Obligatorio** si se proporciona [translations.txt](#translationstxt).<br>- Recomendado en caso contrario. | 
  | [attributions.txt](#attributionstxt) | Opcional | Atribuciones de conjuntos de datos. | 
+ | [licenses.txt](#licensestxt) | Opcional | Las licencias que se aplican al feed o a archivos específicos. | 
  
 ## Requisitos de archivo 
 
@@ -905,4 +908,18 @@ Para un sub-viaje de dos tramos consecutivos con una transferencia, si la transf
  | `attribution_url` | URL | Opcional | URL de la organización. | 
  | `attribution_email` | Correo electrónico | Opcional | Correo electrónico de la organización. | 
  | `attribution_phone` | Número de teléfono | Opcional | Número de teléfono de la organización. | 
+
+### licenses.txt
+
+Archivo: **Opcional**
+
+Clave principal (`licensed_table_name`)
+
+Este archivo define las licencias que se aplican al feed o a archivos específicos.
+
+| Nombre del campo | Tipo | Presencia | Descripción |
+| :---- | :---- | :---- | :---- |
+| `licensed_table_name` | Text | Opcional | Define la tabla a la que se aplica la licencia.<br><br>Si está vacío, la licencia se aplica al propio feed y a todas las tablas del feed que no figuren explícitamente en otros registros de este archivo. De lo contrario, se puede usar como valor cualquier nombre de archivo GTFS, omitiendo la extensión `.txt`.<br><br>_Ejemplo: shapes hace referencia a `shapes.txt`_ |
+| `license_spdx_id` | ID SPDX | Condicionalmente Prohibido | El identificador SPDX de la licencia. <br><br>**Condicionalmente Prohibido**: <br>- **Obligatorio** si `custom_license_url` está vacío.<br> - **Prohibido** en caso contrario. |
+| `custom_license_url` | URL | Condicionalmente Prohibido | La URL que contiene los términos de la licencia personalizada.<br><br>**Condicionalmente Prohibido:**<br> - **Obligatorio** si `license_spdx_id` está vacío.<br> - **Prohibido** en caso contrario. |
  
