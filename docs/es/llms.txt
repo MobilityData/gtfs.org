@@ -35,7 +35,7 @@
 
 ### Schedule
 
-- [Referencia](https://gtfs.org/es/documentation/schedule/reference/): Revisado el 27 de abril de 2026.
+- [Referencia](https://gtfs.org/es/documentation/schedule/reference/): Revisado el 26 de noviembre de 2026.
 - [Mejores prácticas](https://gtfs.org/es/documentation/schedule/schedule-best-practices/): Estas son prácticas recomendadas para describir los servicios de transporte público en la General Transit Feed Specification (GTFS).
 
 #### Ejemplos de datos
