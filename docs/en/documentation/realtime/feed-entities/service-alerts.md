@@ -63,7 +63,7 @@ What effect does this problem have on the specified entity? You may specify one 
 * **Additional service**: The number or frequency of trips is increased. For example, more buses are running to cover for a special event.
 * **Modified service**: Operations are different from what the rider would normally expect. An example is an alert that reminds riders of an upcoming holiday schedule that is different from normal service on that day of the week.
 * **Stop moved**: A stop location is changed temporarily or permanently (if known to be permanent, ensure the new location is reflected in the schedule data).
-* **Other effect** Not represented by any of these options.
+* **Other effect**: Not represented by any of these options.
 * **Unknown effect**: Used for alerts whose effect has not been identified yet. Do not use “Unknown effect” if the effect of the alert is known or can be deduced from the alert header or description.
 * **No effect**: The alert provides information to riders but does not affect operations. Examples include advertising public meetings and soliciting feedback via surveys. Unless necessary, it is advised not to use this effect.
 * **Accessibility issue**: The alert provides information about accessibility issues that affect step-free access. Examples include an out of service elevator or movable ramps, a bus that is unable to kneel, or an exceptional service with trains that have a big platform gap.
