@@ -63,7 +63,7 @@
 * **Prestation supplémentaire** : Le nombre ou la fréquence des voyages est augmenté. Par exemple, davantage de bus circulent pour desservir un événement spécial.
 * **Prestation modifiée** : Les opérations sont différentes de ce à quoi le passager s’attendrait normalement. Un exemple est une alerte qui rappelle aux passagers un horaire de vacances à venir différent du service normal ce jour de la semaine.
 * **Arrêt déplacé** : L’emplacement d’un arrêt est modifié temporairement ou définitivement (si le changement est connu comme définitif, s’assurer que le nouvel emplacement est reflété dans les données horaires).
-* **Autre effet** Non représenté par aucune de ces options.
+* **Autre effet** : Non représenté par aucune de ces options.
 * **Effet inconnu** : Utilisé pour les alertes dont l’effet n’a pas encore été identifié. N’utilisez pas « Effet inconnu » si l’effet de l’alerte est connu ou peut être déduit de l’en-tête ou de la description de l’alerte.
 * **Aucun effet** : L’alerte informe les usagers mais n’affecte pas les opérations. Les exemples incluent la publicité de réunions publiques et la sollicitation de commentaires via des enquêtes. Sauf si nécessaire, il est conseillé de ne pas utiliser cet effet.
 * **Problème d’accessibilité** : L’alerte fournit des informations sur les problèmes d’accessibilité qui affectent l’accès de plain-pied. Par exemple, un ascenseur hors service ou des rampes mobiles, un bus qui ne peut pas s’abaisser, ou un service exceptionnel avec des trains présentant un espace important entre le quai et le train.
