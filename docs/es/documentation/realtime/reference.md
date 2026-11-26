@@ -385,21 +385,21 @@ Causa de esta alerta.
 
 **Valores** 
 
-| _**Valor**_ | 
-|-------------| 
-| **UNKNOWN_CAUSE** | 
-| **OTHER_CAUSE** | 
-| **TECHNICAL_PROBLEM** | 
-| **STRIKE** | 
-| **DEMONSTRATION** | 
-| **ACCIDENT** | 
-| **HOLIDAY** | 
-| **WEATHER** | 
-| **MAINTENANCE** | 
-| **CONSTRUCTION** | 
-| **POLICE_ACTIVITY** | 
-| **MEDICAL_EMERGENCY** |
-| **SPECIAL_EVENT** | 
+| _**Valor**_ | _**Comentario**_ |
+|-------------|----------------|
+| **UNKNOWN_CAUSE** | Se utiliza cuando la causa de la interrupción no se conoce o no se ha determinado. Debe evitarse si se puede identificar razonablemente una causa más específica. |
+| **OTHER_CAUSE** | Se utiliza para causas que no están representadas por ninguna de las opciones predefinidas. |
+| **TECHNICAL_PROBLEM** | Problemas relacionados con fallos de funcionamiento de vehículos o de infraestructura. Algunos ejemplos son las averías mecánicas y los errores en los sistemas de información. |
+| **STRIKE** | Interrupciones del servicio causadas por una huelga laboral que involucra a la agencia de transporte o al operador. |
+| **DEMONSTRATION** | Interrupciones del servicio causadas por una manifestación, protesta o concentración pública. |
+| **ACCIDENT** | Incidentes como colisiones o descarrilamientos que interrumpen los servicios. |
+| **HOLIDAY** | Cualquier día festivo que pueda dar lugar a un cambio en el servicio. |
+| **WEATHER** | Interrupciones causadas por condiciones meteorológicas como nieve, tormentas, inundaciones, etc. |
+| **MAINTENANCE** | Mantenimiento planificado relacionado con los servicios. Algunos ejemplos son el mantenimiento de vías, de ascensores y de vehículos. |
+| **CONSTRUCTION** | Cualquier obra que afecte al servicio, independientemente de que esté relacionada o no con los servicios. Algunos ejemplos son las obras en estaciones y las obras viales que afectan a las rutas de autobús. |
+| **POLICE_ACTIVITY** | Interrupciones debidas a actuaciones de las fuerzas del orden o a incidentes de seguridad. Algunos ejemplos son las investigaciones o las amenazas a la seguridad. |
+| **MEDICAL_EMERGENCY** | Incidentes que involucran emergencias médicas de pasajeros o del personal. Un ejemplo es un problema médico a bordo que obliga a un tren a detenerse. |
+| **SPECIAL_EVENT** | Un evento especial, único o recurrente, como un desfile, un festival, un espectáculo, un mercado de agricultores o un evento deportivo. |
 
 ### _enum_ Effect
 
@@ -407,19 +407,19 @@ El efecto de este problema en la entidad afectada.
 
 **Valores** 
 
-| _**Valor**_ | 
-|-------------| 
-| **NO_SERVICE** | 
-| **REDUCED_SERVICE** | 
-| **SIGNIFICANT_DELAYS** | 
-| **DETOUR** | 
-| **ADDITIONAL_SERVICE** | 
-| **MODIFIED_SERVICE** | 
-| **OTHER_EFFECT** | 
-| **UNKNOWN_EFFECT** | 
-| **STOP_MOVED** | 
-| **NO_EFFECT** | 
-| **ACCESSIBILITY_ISSUE** | 
+| _**Valor**_ | _**Comentario**_ |
+|-------------|----------------|
+| **NO_SERVICE** | No hay servicio de transporte para la(s) entidad(es) especificada(s).<br>- Para las agencias, ninguna de las rutas de la agencia está en funcionamiento.<br>- Para las rutas, ninguno de los viajes de la ruta se realizará.<br>- Para los viajes, esos viajes específicos se cancelan.<br>- Para las estaciones (<code>location_type</code> = 1) o paradas (<code>location_type</code> = 0), el pasajero no podrá subir ni bajar. |
+| **REDUCED_SERVICE** | Se reduce el número o la frecuencia de los viajes. |
+| **SIGNIFICANT_DELAYS** | La ruta circulará con retraso de forma constante (los retrasos poco significativos solo deben proporcionarse mediante [actualizaciones de viaje](trip-updates.md)). |
+| **DETOUR** | La ruta cambia su trazado, lo que puede afectar a la subida o bajada en algunas paradas. |
+| **ADDITIONAL_SERVICE** | Se aumenta el número o la frecuencia de los viajes. Por ejemplo, circulan más autobuses para cubrir un evento especial. |
+| **MODIFIED_SERVICE** | La operación es diferente de lo que el pasajero esperaría normalmente. Un ejemplo es una alerta que recuerda a los pasajeros un próximo horario festivo que difiere del servicio normal de ese día de la semana. |
+| **OTHER_EFFECT** | No está representado por ninguna de estas opciones. |
+| **UNKNOWN_EFFECT** | Se utiliza para alertas cuyo efecto aún no se ha identificado. No utilice "Efecto desconocido" si el efecto de la alerta se conoce o puede deducirse del encabezado o de la descripción de la alerta. |
+| **STOP_MOVED** | La ubicación de una parada cambia de forma temporal o permanente (si se sabe que es permanente, asegúrese de que la nueva ubicación se refleje en los datos de horarios). |
+| **NO_EFFECT** | La alerta proporciona información a los pasajeros, pero no afecta a la operación. Algunos ejemplos son la difusión de reuniones públicas y la solicitud de opiniones mediante encuestas. Salvo que sea necesario, se recomienda no utilizar este efecto. |
+| **ACCESSIBILITY_ISSUE** | La alerta proporciona información sobre problemas de accesibilidad que afectan al acceso sin escalones. Algunos ejemplos son un ascensor o rampas móviles fuera de servicio, un autobús que no puede inclinarse o un servicio excepcional con trenes que dejan un gran hueco con el andén. |
 
 ### _enum_ SeverityLevel 
 

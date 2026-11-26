@@ -2,10 +2,16 @@
 
 ### 改訂履歴
 
+#### 2026年11月
+
+* `feed_entities.md` で想定される動作を明確化し、サービス アラートの Cause と Effect の値に関する詳細を追加しました。[ディスカッション](https://github.com/google/transit/pull/648)を参照してください。
+
 #### 2026年9月
+
 * 軽微な書式の問題を修正しました。[ディスカッション](https://github.com/google/transit/pull/641)を参照してください。
 
 #### 2026年8月
+
 * サービス アラートの画像を仕様に採用し、`experimental`タグを削除しました。[ディスカッション](https://github.com/google/transit/pull/651)を参照してください。
 
 #### 2026年6月 

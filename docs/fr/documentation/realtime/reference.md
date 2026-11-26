@@ -387,21 +387,21 @@ Cause de cette alerte.
 
 **Valeurs** 
 
-| _**Valeur**_ | 
-|-------------| 
-| **UNKNOWN_CAUSE** | 
-| **OTHER_CAUSE** | 
-| **TECHNICAL_PROBLEM** | 
-| **STRIKE** | 
-| **DEMONSTRATION** | 
-| **ACCIDENT** | 
-| **HOLIDAY** | 
-| **WEATHER** | 
-| **MAINTENANCE** | 
-| **CONSTRUCTION** | 
-| **POLICE_ACTIVITY** | 
-| **MEDICAL_EMERGENCY** |
-| **SPECIAL_EVENT** | 
+| _**Valeur**_ | _**Commentaire**_ |
+|-------------|----------------|
+| **UNKNOWN_CAUSE** | Utilisé lorsque la cause de la perturbation n’est pas connue ou n’a pas été déterminée. À éviter si une cause plus précise peut raisonnablement être identifiée. |
+| **OTHER_CAUSE** | Utilisé pour les causes qui ne correspondent à aucune des options prédéfinies. |
+| **TECHNICAL_PROBLEM** | Problèmes liés à un dysfonctionnement des véhicules ou des infrastructures. Par exemple, une panne mécanique ou un bogue du système d’information. |
+| **STRIKE** | Perturbations du service causées par une grève impliquant l’agence de transport ou l’exploitant. |
+| **DEMONSTRATION** | Perturbations du service causées par une manifestation publique, une protestation ou un rassemblement. |
+| **ACCIDENT** | Incidents tels que des collisions ou des déraillements qui perturbent le service. |
+| **HOLIDAY** | Tout jour férié susceptible d’entraîner une modification du service. |
+| **WEATHER** | Perturbations causées par des conditions météorologiques telles que la neige, les tempêtes, les inondations, etc. |
+| **MAINTENANCE** | Maintenance planifiée liée aux services. Par exemple, l’entretien des voies, des ascenseurs ou des véhicules. |
+| **CONSTRUCTION** | Tous travaux affectant le service, qu’ils soient liés ou non aux services. Par exemple, des travaux en station ou des travaux de voirie qui affectent des lignes de bus. |
+| **POLICE_ACTIVITY** | Perturbations dues à une intervention des forces de l’ordre ou à des incidents de sécurité. Par exemple, des enquêtes ou des menaces pour la sécurité. |
+| **MEDICAL_EMERGENCY** | Incidents impliquant une urgence médicale concernant un passager ou un membre du personnel. Par exemple, un problème médical à bord qui oblige un train à s’arrêter. |
+| **SPECIAL_EVENT** | Un événement spécial ponctuel ou récurrent, tel qu’un défilé, un festival, un spectacle, un marché de producteurs ou un événement sportif. |
 
 ### _enum_ Effect 
 
@@ -409,19 +409,19 @@ L’effet de ce problème sur l’entité affectée.
 
 **Valeurs** 
 
-| _**Valeur**_ | 
-|-------------| 
-| **NO_SERVICE** | 
-| **REDUCED_SERVICE** | 
-| **SIGNIFICANT_DELAYS** | 
-| **DETOUR** | 
-| **ADDITIONAL_SERVICE** | 
-| **MODIFIED_SERVICE** | 
-| **OTHER_EFFECT** | 
-| **UNKNOWN_EFFECT** | 
-| **STOP_MOVED** | 
-| **NO_EFFECT** | 
-| **ACCESSIBILITY_ISSUE** | 
+| _**Valeur**_ | _**Commentaire**_ |
+|-------------|----------------|
+| **NO_SERVICE** | Aucun service de transport pour la ou les entités spécifiées.<br>- Pour les agences, aucune des lignes de l’agence n’est exploitée.<br>- Pour les lignes, aucun des trajets de la ligne ne circulera.<br>- Pour les trajets, ces trajets spécifiques sont annulés.<br>- Pour les stations (<code>location_type</code> = 1) ou les arrêts (<code>location_type</code> = 0), l’usager ne pourra ni monter ni descendre. |
+| **REDUCED_SERVICE** | Le nombre ou la fréquence des trajets est réduit. |
+| **SIGNIFICANT_DELAYS** | La ligne circulera systématiquement en retard (les retards peu importants doivent uniquement être fournis via les [mises à jour de trajet](trip-updates.md)). |
+| **DETOUR** | La ligne modifie son tracé, ce qui peut affecter la montée ou la descente à certains arrêts. |
+| **ADDITIONAL_SERVICE** | Le nombre ou la fréquence des trajets est augmenté. Par exemple, davantage de bus circulent pour desservir un événement spécial. |
+| **MODIFIED_SERVICE** | L’exploitation diffère de ce à quoi l’usager s’attendrait normalement. Par exemple, une alerte rappelant aux usagers un prochain horaire de jour férié différent du service habituel pour ce jour de la semaine. |
+| **OTHER_EFFECT** | Ne correspond à aucune de ces options. |
+| **UNKNOWN_EFFECT** | Utilisé pour les alertes dont l’effet n’a pas encore été identifié. N’utilisez pas « effet inconnu » si l’effet de l’alerte est connu ou peut être déduit de l’en-tête ou de la description de l’alerte. |
+| **STOP_MOVED** | L’emplacement d’un arrêt est modifié temporairement ou définitivement (si la modification est connue comme définitive, assurez-vous que le nouvel emplacement est reflété dans les données d’horaires). |
+| **NO_EFFECT** | L’alerte fournit des informations aux usagers mais n’affecte pas l’exploitation. Par exemple, l’annonce de réunions publiques ou la sollicitation d’avis au moyen d’enquêtes. Sauf nécessité, il est conseillé de ne pas utiliser cet effet. |
+| **ACCESSIBILITY_ISSUE** | L’alerte fournit des informations sur des problèmes d’accessibilité qui affectent l’accès de plain-pied. Par exemple, un ascenseur ou des rampes mobiles hors service, un bus qui ne peut pas s’abaisser, ou un service exceptionnel avec des trains présentant un espace important entre le quai et le train. |
 
 ### _enum_ SeverityLevel 
 
