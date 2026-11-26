@@ -1,6 +1,6 @@
 ## Référence de General Transit Feed Specification 
  
- **Révisé le 27 avril 2026. Voir [Historique des révisions](../change-history/revision-history/) pour plus de détails.**
+ **Révisé le 26 novembre 2026. Voir [Historique des révisions](../change-history/revision-history/) pour plus de détails.**
  
  Ce document définit le format et la structure de les fichiers qui composent un jeu de données GTFS. 
  
@@ -42,7 +42,8 @@
       - [booking_rules.txt](#booking_rulestxt) 
       - [translations.txt](#translationstxt) 
       - [feed_info.txt](#feed_infotxt) 
-      - [attributions.txt](#attributionstxt) 
+      - [attributions.txt](#attributionstxt)
+      - [licenses.txt](#licensestxt) 
  
 ## Conventions du document 
  Les mots clés "DOIT", "NE DOIT PAS", "OBLIGATOIRE", "DEVRA", "NE DEVRA PAS", "DEVRAIT", "NE DEVRAIT PAS", "RECOMMANDÉ", "PEUT" et "OPTIONNELLE" dans ce document doivent être interprétés comme décrit dans la [RFC 2119](https://tools.ietf.org/html/rfc2119). 
@@ -93,7 +94,8 @@
  - **Heure locale**- Heure au format HH:MM:SS (H:MM:SS est également accepté). Représente l’heure locale de l’emplacement spécifié.
  - **Texte** - Une string de caractères UTF-8, qui est destiné à être affiché et doit donc être lisible par l’homme. 
  - **Timezone** - Fuseau horaire TZ du [https://www.iana.org/time-zones](https://www.iana.org/time-zones). Les noms de fuseau horaire ne contiennent jamais de caractère espace mais peuvent contenir un trait de soulignement. Reportez-vous à [http://en.wikipedia.org/wiki/List\_of\_tz\_zones](http://en.wikipedia.org/wiki/List\_of\_tz\_zones) pour une liste de valeurs valides .<br> *Exemple : `Asia/Tokyo`, `America/Los_Angeles` ou `Africa/Cairo`.* 
- - **URL** - Une URL complète qui inclut http://ou https://, et tout élément spécial les caractères de l’URL doivent être correctement échappés. Voir ce qui suit [http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html](http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html) pour une description de la façon de créer des valeurs d’URL complètes. 
+ - **URL** - Une URL complète qui inclut http://ou https://, et tout élément spécial les caractères de l’URL doivent être correctement échappés. Voir ce qui suit [http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html](http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html) pour une description de la façon de créer des valeurs d’URL complètes.
+ - **ID SPDX** : [identifiant de licence SPDX](https://spdx.dev/learn/handling-license-info/#:~:text=SEE%20LICENSE%20LIST-,SPDX%20License%20IDs,-//%20SPDX%2DLicense%2DIdentifier) qui communique les informations de licence de manière simple et lisible par machine. Les valeurs d’ID SPDX valides sont répertoriées dans la [liste des licences SPDX](https://spdx.org/licenses/). 
  
 ### Signes de champ 
  Signes applicables aux types de champ Float ou Integer : 
@@ -146,7 +148,8 @@
  | [booking_rules.txt](#booking_rulestxt) | Optionnel | Informations de réservation pour les services demandés par le passager. | 
  | [translations.txt](#translationstxt) | Optionnel | Traductions des valeurs des jeux de données destinés aux clients. | 
  | [feed_info.txt](#feed_infotxt) | **Requis sous condition** | Métadonnées du jeu de données, y compris les informations sur l’éditeur, la version et l’expiration. <br><br>Requis sous condition :<br>- **Requis** si [translations.txt](#translationstxt) est fourni.<br>- Recommandé sinon.| 
- | [attributions.txt](#attributionstxt) | Optionnel | Attributions des jeux de données. | 
+ | [attributions.txt](#attributionstxt) | Optionnel | Attributions des jeux de données. |
+ | [licenses.txt](#licensestxt) | Optionnel | Les licences qui s’appliquent au flux ou à des fichiers spécifiques. | 
  
 ## Exigences relatives aux fichiers 
  
@@ -908,5 +911,19 @@ Trip B              /
  | `is_authority` | Énumération | Optionnel | Fonctionne de la même manière que `is_producer`, sauf que le rôle de l’organisation est l’autorité. | 
  | `attribution_url` | URL | Optionnel | URL de l’organisation. | 
  | `attribution_email` | Courriel | Optionnel | Email de l’organisation. | 
- | `attribution_phone` | Numéro de téléphone | Optionnel | Numéro de téléphone de l’organisation. | 
+ | `attribution_phone` | Numéro de téléphone | Optionnel | Numéro de téléphone de l’organisation. |
+
+### licenses.txt
+
+Fichier : **Optionnel**
+
+Clé primaire (`licensed_table_name`)
+
+Ce fichier définit les licences qui s’appliquent au flux ou à des fichiers spécifiques.
+
+| Nom du champ | Type | Présence | Description |
+| :---- | :---- | :---- | :---- |
+| `licensed_table_name` | Texte | Optionnel | Définit la table à laquelle la licence s’applique.<br><br>Si vide, la licence s’applique au flux lui-même et à toutes les tables du flux qui ne sont pas explicitement répertoriées dans d’autres entrées de ce fichier. Sinon, tout nom de fichier GTFS peut être utilisé comme valeur, en omettant l’extension `.txt`.<br><br>_Exemple : shapes fait référence à `shapes.txt`_ |
+| `license_spdx_id` | ID SPDX | Interdit sous condition | L’identifiant SPDX de la licence. <br><br>**Interdit sous condition** : <br>- **Requis** si `custom_license_url` est vide.<br> - **Interdit** sinon. |
+| `custom_license_url` | URL | Interdit sous condition | L’URL qui contient les conditions de la licence personnalisée.<br><br>**Interdit sous condition :**<br> - **Requis** si `license_spdx_id` est vide.<br> - **Interdit** sinon. | 
  

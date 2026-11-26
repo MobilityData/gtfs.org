@@ -2,6 +2,9 @@
 
 ### 改訂履歴
 
+#### 2026年11月
+* 標準ライセンスの SPDX 識別子を参照するための新しいフィールドを1つ追加し、ライセンス情報を記述するための新しいファイル `licenses.txt` を追加しました。[ディスカッション](https://github.com/google/transit/pull/607) を参照してください。
+
 #### 2026年9月
 
 * `shapes.txt` を `任意` から `条件付きで必須` に更新しました。[discussion](https://github.com/google/transit/pull/660) を参照してください。

@@ -2,6 +2,9 @@
 
 ### Revision History
 
+#### November 2026
+* Added one new field to reference SPDX Identifiers for standard licenses and new `licenses.txt` file to describe the license information. See [discussion](https://github.com/google/transit/pull/607).
+
 #### September 2026
 * Updated `shapes.txt`from "Optional" to "Conditionally Required". See [discussion](https://github.com/google/transit/pull/660).
 * Fixed reference link for IETF BCP 47 language codes. See [discussion](https://github.com/google/transit/pull/658)

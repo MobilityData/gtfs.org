@@ -394,3 +394,29 @@ Stop Access indicates if the stop or platform can be directly accessed from the 
         | STATION0   | Main Street Bus Station                | 1            |       |      |
         | STOP1      |  Main Street Bus Station - Platform 1  | 0            | STATION0   | 0 |
         | STOP2   |  |  Main Street Station - Street Bus Stop  | STATION0    |             1 |
+
+## License Information
+
+License information communicates how a GTFS feed or specific files can be used by a consuming application. This feature allows the feed producer to define the conditions for its use and allows feed consumers to automatically check if they’re able to use a feed.
+
+| Files included | Fields included |
+| :---- | :---- |
+| [licenses.txt](../../../documentation/schedule/reference/#licensestxt) | `licensed_table_name`, `license_spdx_id`, `custom_license_url` |
+
+**Prerequisites**:
+
+- [Base features](../base)
+
+??? note "Sample Data"
+
+    !!! note ""
+        <p style="font-size:16px">
+        <a href="../../../documentation/schedule/reference/#licensestxt"><b>licenses.txt</b></a> <br>
+        </p>
+        
+         | licensed_table_name | license_spdx_id |
+         |---------------------|-----------------|
+         |                     | CC-BY-SA-4.0    |
+         | shapes              | 0BSD            |
+         | areas               | ODbL-1.0        |
+          Example from [Github](https://github.com/google/transit/pull/607#issuecomment-6423533717) 

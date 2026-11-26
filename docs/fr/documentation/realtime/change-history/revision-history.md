@@ -2,10 +2,16 @@
 
 ### Historique des révisions
 
+#### Novembre 2026
+
+* Clarification du comportement attendu dans `feed_entities.md` et ajout de détails sur les valeurs de cause et d’effet des alertes de service. Voir [discussion](https://github.com/google/transit/pull/648).
+
 #### Septembre 2026
+
 * Correction de problèmes mineurs de formatage. Voir [discussion](https://github.com/google/transit/pull/641)
 
 #### Août 2026
+
 * Images adoptées dans les alertes de service conformément à la spécification et suppression de l’étiquette « expérimental ». Voir [discussion](https://github.com/google/transit/pull/651).
 
 #### Juin 2026

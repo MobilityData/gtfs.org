@@ -2,6 +2,10 @@
 
 ## Historial de revisiones
 
+#### Noviembre de 2026
+
+* Se aclaró el comportamiento esperado en `feed_entities.md` y se añaden detalles sobre los valores de causa (Cause) y efecto (Effect) para las alertas de servicio. Consulte la [discusión](https://github.com/google/transit/pull/648).
+
 #### Septiembre 2026
 
 * Se corrigieron problemas menores de formato. Ver [discusión](https://github.com/google/transit/pull/641).

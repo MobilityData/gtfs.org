@@ -5,7 +5,7 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
 
 ##General Transit Feed Specificationリファレンス
 
-**2026年4月27 日に改訂されました。詳細については、[改訂履歴](../change-history/revision-history) を参照してください。**
+**2026年11月26日に改訂されました。詳細については、[改訂履歴](../change-history/revision-history) を参照してください。**
 
 このドキュメントでは、GTFS データセットを構成するファイルの形式と構造を定義します。
 
@@ -48,6 +48,7 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
     -   [translations.txt](#translationstxt)
     -   [feed_info.txt](#feed_infotxt)
     -   [attributions.txt](#attributionstxt)
+    -   [licenses.txt](#licensestxt)
 
 ## ドキュメントの規則
 このドキュメント内のキーワード「しなければならない」、「してはいけない」、「必須」、「しなければならない」、「してはならない」、「するべきである」、「するべきではない」、「推奨」、「してもよい」、および「任意」は、[RFC 2119](https://tools.ietf.org/html/rfc2119) で説明されているとおりに解釈されます。
@@ -96,6 +97,7 @@ description: GTFS scheduleの詳細を確認し、リファレンス ドキュ�
 **Local time**- HH:MM:SS 形式の時刻 (H:MM:SS も受け入れられます)。指定された場所の現地時間で表示されるウォールクロック時間を表します。
 - **Text**- UTF-8 文字の文字string。表示を目的としているため、人間が判読できるしなければならない**タイムゾーン**- [https://www.iana.org/time-zones](https://www.iana.org/time-zones) の TZ タイムゾーン。タイムゾーン名にはスペース文字は含まれませんが、アンダースコアは含めるしてもよい。有効な値の一覧については、[http://en.wikipedia.org/wiki/List\_of\_tz\_zones](http://en.wikipedia.org/wiki/List\_of\_tz\_zones) を参照してください。<br> *例: `Asia/Tokyo`、 `America/Los_Angeles` 、 `Africa/Cairo`。*
 - **URL**- http://または https://を含む完全修飾 URL。URL 内の特殊文字は正しくエスケープするしなければならない。完全修飾 URL 値の作成方法については、次の [http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html](http://www.w3.org/Addressing/URL/4\_URI\_Recommentations.html) を参照してください。
+- **SPDX ID**: ライセンス情報を簡潔かつ機械可読な形で伝える [SPDX ライセンス識別子](https://spdx.dev/learn/handling-license-info/#:~:text=SEE%20LICENSE%20LIST-,SPDX%20License%20IDs,-//%20SPDX%2DLicense%2DIdentifier)。有効な SPDX ID の値は [SPDX ライセンスリスト](https://spdx.org/licenses/) に掲載されています。
 
 ### フィールドの符号
 浮動小数点または整数フィールド タイプに適用可能な符号:
@@ -151,6 +153,7 @@ _例: `trip_id` フィールドと `stop_sequence` フィールドは、[stop_ti
 | [translations.txt](#translationstxt) | 任意 | 顧客向けのデータセット値の翻訳。 |
 | [feed_info.txt](#feed_infotxt) | **条件付きで必須** | 発行者、バージョン、有効期限情報を含むデータセットのメタデータ。<br><br>条件付きで必須:<br> - [translations.txt](#translationstxt) が提供されている場合は**必須**です。<br> - それ以外の場合は推奨。|
 | [attributions.txt](#attributionstxt) | 任意 | データセットの帰属帰属組織。 |
+| [licenses.txt](#licensestxt) | 任意 | フィードまたは特定のファイルに適用されるライセンス。 |
 
 ## ファイル要件
 
@@ -909,3 +912,17 @@ Trip B              /
 | `attribution_url` | URL | 任意 | 組織の URL。 |
 | `attribution_email` | 電子メール | 任意 | 組織の電子メール。 |
 | `attribution_phone` | 電話番号 | 任意 | 組織の電話番号。 |
+
+### licenses.txt
+
+ファイル: **任意**
+
+主キー(`licensed_table_name`)
+
+このファイルは、フィードまたは特定のファイルに適用されるライセンスを定義します。
+
+| フィールド名 | タイプ | 存在 | 説明 |
+| :---- | :---- | :---- | :---- |
+| `licensed_table_name` | テキスト | 任意 | ライセンスが適用されるテーブルを定義します。<br><br>空の場合、ライセンスはフィード自体と、このファイルの他のレコードで明示的に指定されていないフィード内のすべてのテーブルに適用されます。それ以外の場合は、`.txt` 拡張子を省略した任意の GTFS ファイル名を値として使用できます。<br><br>_例: shapes は `shapes.txt` を指します_ |
+| `license_spdx_id` | SPDX ID | 条件付きで禁止 | ライセンスの SPDX 識別子。 <br><br>**条件付きで禁止**: <br>- `custom_license_url` が空の場合は **必須**。<br> - それ以外の場合は **禁止**。 |
+| `custom_license_url` | URL | 条件付きで禁止 | カスタムライセンスの条項を含む URL。<br><br>**条件付きで禁止:**<br> - `license_spdx_id` が空の場合は **必須**。<br> - それ以外の場合は **禁止**。 |
